@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "./animations.css";
+
+/*
+ * Design tokens extracted from the Claude Design handoff:
+ *   ai-tool-kart-ui design/project/AI Tool Kart Site.dc.html  (dark theme)
+ *
+ * The handoff is styled entirely with inline `style` attributes, so these tokens
+ * are the single place where the design's raw values live. Components should
+ * compose from these rather than re-deriving hex/px values.
+ *
+ * Dark theme only — the light variant in the bundle is out of scope.
+ */
+@theme {
+  /* ---- Typography -------------------------------------------------------
+   * The source font stack is
+   *   Britanica, Britannica, 'Schibsted Grotesk', Coolvetica, 'Helvetica Neue', Arial
+   * but Britanica/Britannica/Coolvetica have no @font-face anywhere in the bundle,
+   * so the design actually renders in Schibsted Grotesk. We declare what it renders as.
+   */
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --text-hero: clamp(46px, 7.1vw, 94px);
+  --text-hero--line-height: 1.055;
+  --text-hero--letter-spacing: -0.042em;
+
+  /* ---- Surfaces ---------------------------------------------------------- */
+  --color-canvas: #040407;
+  --color-nav-glass: rgba(13, 11, 19, 0.66);
+  --color-option-bg: #121019;
+  --color-option-fg: #edeaf7;
+
+  /* Hairline borders used on nearly every card, pill and panel. */
+  --color-hairline: rgba(255, 255, 255, 0.075);
+  --color-hairline-strong: rgba(255, 255, 255, 0.1);
+
+  /* Grid-table row fills (Compare page + Pricing matrix). */
+  --color-row-head: rgba(255, 255, 255, 0.055);
+  --color-row-body: rgba(255, 255, 255, 0.035);
+
+  /* ---- Text -------------------------------------------------------------- */
+  --color-ink: #f4f1fc;
+  --color-ink-bright: #fcfbff;
+  --color-ink-soft: #f6f4fe;
+  --color-body: #a29cb8;
+  --color-muted: #9e99b8;
+  --color-muted-dim: #8e88a8;
+  --color-muted-soft: #aba5c2;
+  --color-subtle: #7b7595;
+  --color-subtle-dim: #6f6a88;
+  --color-subtle-soft: #a6a0bc;
+  --color-placeholder: #6b6588;
+
+  /* ---- Accents ----------------------------------------------------------- */
+  --color-accent: #b49bff;
+  --color-accent-strong: #a98bff;
+  --color-accent-soft: #b79bff;
+  --color-link: #b9a5ff;
+  --color-link-hover: #dccfff;
+  --color-pink: #ff7c9e;
+  --color-pink-bg: rgba(255, 124, 158, 0.14);
+
+  /* CTA gradient stops, also used directly where a solid is needed. */
+  --color-grad-from: #a488ff;
+  --color-grad-mid: #7c5af6;
+  --color-grad-to: #5b3ee0;
+
+  /* ---- Radii ------------------------------------------------------------- */
+  --radius-tag: 8px;
+  --radius-chip: 10px;
+  --radius-field: 14px;
+  --radius-tile: 16px;
+  --radius-card: 18px;
+  --radius-card-lg: 22px;
+  --radius-nav: 22px;
+  --radius-panel: 24px;
+  --radius-panel-lg: 28px;
+  --radius-hero: 30px;
+  --radius-search: 52px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows ----------------------------------------------------------- */
+  --shadow-nav: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 24px 60px -34px rgba(0, 0, 0, 1);
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 1px 2px rgba(0, 0, 0, 0.43), 0 10px 26px -20px rgba(0, 0, 0, 0.9);
+  --shadow-card-flat: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 1px 2px rgba(0, 0, 0, 0.43);
+  --shadow-button: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 26px -14px rgba(116, 80, 244, 0.9);
+  --shadow-search: inset 0 1.5px 0 rgba(255, 255, 255, 0.34), inset 0 -1.5px 0 rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 -14px 26px -16px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7), 0 10px 20px -12px rgba(0, 0, 0, 0.8), 0 48px 90px -38px rgba(0, 0, 0, 1), 0 0 70px -34px rgba(132, 92, 255, 0.5);
+
+  /* ---- Containers -------------------------------------------------------- */
+  --container-site: 1240px;
+  --container-nav: 1060px;
+}
+
+/*
+ * Composite values that aren't a Tailwind theme namespace (gradients, backdrop
+ * filter stacks). Referenced from components via arbitrary values, e.g.
+ *   className="bg-[image:var(--gradient-cta)]"
+ */
+:root {
+  --gradient-cta: linear-gradient(180deg, #a488ff 0%, #7c5af6 46%, #5b3ee0 100%);
+  --gradient-monogram: linear-gradient(150deg, #b48cff, #4e3ad8);
+  --gradient-banner: linear-gradient(100deg, #150e2e 0%, #33249e 46%, #6b34d4 100%);
+  --gradient-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.022) 100%);
+  --gradient-search: linear-gradient(180deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.03) 100%);
+
+  --blur-nav: blur(28px) saturate(1.7);
+  --blur-search: blur(3px) saturate(1.6) brightness(1.04);
+
+  /* Vertical rhythm from the source: home sections 104px, sub-page tops 64px. */
+  --section-gap: 104px;
+  --section-gap-sub: 64px;
+  --gutter: 32px;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-canvas);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+    color: var(--color-body);
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+
+  select option {
+    background: var(--color-option-bg);
+    color: var(--color-option-fg);
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+  }
+
+  ::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  input,
+  textarea {
+    caret-color: var(--color-accent-soft);
+  }
+}

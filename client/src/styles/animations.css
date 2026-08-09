@@ -1,0 +1,90 @@
+/*
+ * Keyframes ported from the Claude Design handoff:
+ *   ai-tool-kart-ui design/project/AI Tool Kart Site.dc.html  (dark theme, <helmet> style block)
+ *
+ * Only the keyframes actually referenced by the dark design are ported here.
+ * The source also defines 16 keyframes that are never referenced by any element
+ * (akHalo, akFloat, akGridDrift, akCube, akRing1/2/3, akStack, akOrbitA/B,
+ * akTumble, akSheet, akShaft, akHaze, akMeshA, akSheen) — leftovers from design
+ * iteration. They are intentionally omitted; re-port from the source if a later
+ * phase turns out to need one.
+ *
+ * Timing/easing is applied at each usage site (as it is in the source), not here.
+ */
+
+@keyframes akMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes akPulse {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+@keyframes akRise {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes akMeshB {
+  0% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
+  40% { transform: translate3d(-5%, -4%, 0) rotate(-7deg) scale(1.02); }
+  75% { transform: translate3d(-2%, 5%, 0) rotate(5deg) scale(1.1); }
+  100% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
+}
+
+@keyframes akGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes akCaret {
+  0%, 45% { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+@keyframes akFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes akLineIn {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(16px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes akShine {
+  0%, 62% { transform: translate3d(-140%, 0, 0) skewX(-16deg); opacity: 0; }
+  68% { opacity: .55; }
+  92% { transform: translate3d(360%, 0, 0) skewX(-16deg); opacity: 0; }
+  100% { transform: translate3d(360%, 0, 0) skewX(-16deg); opacity: 0; }
+}
+
+@keyframes akSweep {
+  0% { transform: translate3d(-60vw, 0, 0) rotate(14deg); }
+  100% { transform: translate3d(140vw, 0, 0) rotate(14deg); }
+}
+
+@keyframes akIdleA {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes akIdleB {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-2deg); }
+}
+
+/* Matches the source's global reduced-motion override. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
