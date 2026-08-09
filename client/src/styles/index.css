@@ -84,6 +84,8 @@
   --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 1px 2px rgba(0, 0, 0, 0.43), 0 10px 26px -20px rgba(0, 0, 0, 0.9);
   --shadow-card-flat: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 1px 2px rgba(0, 0, 0, 0.43);
   --shadow-button: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 26px -14px rgba(116, 80, 244, 0.9);
+  --shadow-button-hover: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 16px 36px -14px rgba(116, 80, 244, 1), 0 0 40px -14px rgba(150, 110, 255, 0.7);
+  --shadow-nav-item: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   --shadow-search: inset 0 1.5px 0 rgba(255, 255, 255, 0.34), inset 0 -1.5px 0 rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 -14px 26px -16px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7), 0 10px 20px -12px rgba(0, 0, 0, 0.8), 0 48px 90px -38px rgba(0, 0, 0, 1), 0 0 70px -34px rgba(132, 92, 255, 0.5);
 
   /* ---- Containers -------------------------------------------------------- */
