@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #040407; }
+  body { -webkit-font-smoothing: antialiased; }
+  a { color: #B9A5FF; text-decoration: none; }
+  a:hover { color: #DCCFFF; }
+  input, select, textarea, button { font-family: inherit; }
+  select option { background: #121019; color: #EDEAF7; }
+  ::selection { background: rgba(139,92,246,0.35); color: #FFFFFF; }
+  ::placeholder { color: #6B6588; }
+  input, textarea { caret-color: #B79BFF; }
+  @keyframes akHalo { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: .85; transform: scale(1.04); } }
+  @keyframes akFloat { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(0,-38px,0) scale(1.08); } }
+  @keyframes akMarquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes akPulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+  @keyframes akRise { from { opacity: 0; transform: translate3d(0,20px,0); } to { opacity: 1; transform: none; } }
+  @keyframes akSheen { from { transform: translate3d(-120%,0,0); } to { transform: translate3d(320%,0,0); } }
+  @keyframes akMeshA {
+    0%   { transform: translate3d(-4%,-2%,0) rotate(0deg) scale(1.05); }
+    33%  { transform: translate3d(3%,4%,0) rotate(6deg) scale(1.14); }
+    66%  { transform: translate3d(6%,-3%,0) rotate(-4deg) scale(1.08); }
+    100% { transform: translate3d(-4%,-2%,0) rotate(0deg) scale(1.05); }
+  }
+  @keyframes akMeshB {
+    0%   { transform: translate3d(2%,3%,0) rotate(0deg) scale(1.12); }
+    40%  { transform: translate3d(-5%,-4%,0) rotate(-7deg) scale(1.02); }
+    75%  { transform: translate3d(-2%,5%,0) rotate(5deg) scale(1.1); }
+    100% { transform: translate3d(2%,3%,0) rotate(0deg) scale(1.12); }
+  }
+  @keyframes akGridDrift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-72px,-72px,0); } }
+  @keyframes akCube {
+    0%   { transform: rotateX(-24deg) rotateY(0deg) rotateZ(4deg) translate3d(0,0,0); }
+    50%  { transform: rotateX(-8deg) rotateY(180deg) rotateZ(-4deg) translate3d(0,-26px,0); }
+    100% { transform: rotateX(-24deg) rotateY(360deg) rotateZ(4deg) translate3d(0,0,0); }
+  }
+  @keyframes akRing1 { from { transform: rotateX(72deg) rotateY(0deg) rotateZ(0deg); } to { transform: rotateX(72deg) rotateY(0deg) rotateZ(360deg); } }
+  @keyframes akRing2 { from { transform: rotateY(74deg) rotateX(10deg) rotateZ(360deg); } to { transform: rotateY(74deg) rotateX(10deg) rotateZ(0deg); } }
+  @keyframes akRing3 { from { transform: rotateX(46deg) rotateY(38deg) rotateZ(0deg); } to { transform: rotateX(46deg) rotateY(38deg) rotateZ(360deg); } }
+  @keyframes akStack {
+    0%   { transform: rotateX(56deg) rotateZ(-18deg) translate3d(0,0,0); }
+    50%  { transform: rotateX(48deg) rotateZ(14deg) translate3d(0,-30px,0); }
+    100% { transform: rotateX(56deg) rotateZ(-18deg) translate3d(0,0,0); }
+  }
+  @keyframes akOrbitA { from { transform: rotateX(74deg) rotateZ(0deg); } to { transform: rotateX(74deg) rotateZ(360deg); } }
+  @keyframes akOrbitB { from { transform: rotateX(64deg) rotateY(14deg) rotateZ(360deg); } to { transform: rotateX(64deg) rotateY(14deg) rotateZ(0deg); } }
+  @keyframes akTumble {
+    0%   { transform: rotateX(58deg) rotateY(-18deg) rotateZ(0deg) translate3d(0,0,0); }
+    50%  { transform: rotateX(42deg) rotateY(22deg) rotateZ(180deg) translate3d(0,-40px,0); }
+    100% { transform: rotateX(58deg) rotateY(-18deg) rotateZ(360deg) translate3d(0,0,0); }
+  }
+  @keyframes akSheet {
+    0%   { transform: rotateY(-26deg) rotateX(12deg) translate3d(0,0,0); }
+    50%  { transform: rotateY(26deg) rotateX(-8deg) translate3d(0,-34px,0); }
+    100% { transform: rotateY(-26deg) rotateX(12deg) translate3d(0,0,0); }
+  }
+  @keyframes akGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+  @keyframes akCaret { 0%,45% { opacity: 1; } 55%,100% { opacity: 0; } }
+  @keyframes akFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes akLineIn { from { opacity: 0; transform: translate3d(0,26px,0); filter: blur(16px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes akShine {
+    0%, 62%  { transform: translate3d(-140%,0,0) skewX(-16deg); opacity: 0; }
+    68%      { opacity: .55; }
+    92%      { transform: translate3d(360%,0,0) skewX(-16deg); opacity: 0; }
+    100%     { transform: translate3d(360%,0,0) skewX(-16deg); opacity: 0; }
+  }
+  @keyframes akShaft { 0%,100% { opacity: .35; transform: translate3d(0,0,0) scaleY(1); } 50% { opacity: .85; transform: translate3d(0,-2%,0) scaleY(1.04); } }
+  @keyframes akHaze { 0%,100% { transform: translate3d(-3%,0,0) scaleX(1); opacity: .55; } 50% { transform: translate3d(3%,1%,0) scaleX(1.08); opacity: .9; } }
+  @keyframes akSweep { 0% { transform: translate3d(-60vw,0,0) rotate(14deg); } 100% { transform: translate3d(140vw,0,0) rotate(14deg); } }
+  @keyframes akIdleA {
+    0%, 100% { transform: rotate(0deg); }
+    50%      { transform: rotate(2deg); }
+  }
+  @keyframes akIdleB {
+    0%, 100% { transform: rotate(0deg); }
+    50%      { transform: rotate(-2deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</helmet>
+
+<div data-ak-root="1" style="position:relative;min-height:100vh;background:#040407;color:#A29CB8;font-family:Britanica,Britannica,'Schibsted Grotesk',Coolvetica,'Helvetica Neue',Arial,sans-serif;overflow-x:clip">
+
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;contain:strict;background:#040407">
+    <div data-par="0.02" style="position:absolute;inset:-12%;will-change:transform">
+      <div style="position:absolute;top:6%;left:-18%;width:64%;height:70%;background:radial-gradient(ellipse 58% 50% at 50% 50%,rgba(126,84,242,0.1) 0%,rgba(96,64,220,0.032) 44%,rgba(96,64,220,0) 74%);filter:blur(40px)"></div>
+      <div style="position:absolute;bottom:-24%;right:-16%;width:66%;height:78%;background:radial-gradient(ellipse 55% 52% at 50% 50%,rgba(88,74,235,0.085) 0%,rgba(88,74,235,0.026) 46%,rgba(88,74,235,0) 76%);filter:blur(48px)"></div>
+    </div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 66% 56% at 50% 42%,rgba(0,0,0,0) 44%,rgba(2,2,5,0.55) 78%,rgba(2,2,5,0.86) 100%)"></div>
+    <div style="position:absolute;inset:0;opacity:0.34;mix-blend-mode:overlay;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.82%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22220%22 height=%22220%22 filter=%22url%28%23n%29%22 opacity=%220.5%22/%3E%3C/svg%3E');background-size:220px 220px"></div>
+  </div>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div data-stage="1" style="position:absolute;top:0;left:0;right:0;height:1160px;pointer-events:none;z-index:0;overflow:hidden">
+    <div data-par="-0.05" style="position:absolute;left:min(15.5%,calc(50% - 352px));top:0;bottom:0;width:0;perspective:2600px;will-change:transform">
+      <div style="position:absolute;left:-700px;top:62%;width:700px;height:1240px;margin-top:-620px;transform-origin:50% 50%;animation:akIdleA 62s cubic-bezier(.42,0,.58,1) infinite;will-change:transform">
+          <svg viewBox="0 0 700 1240" width="700" height="1240" aria-hidden="true" style="position:absolute;inset:0;display:block;overflow:visible">
+    <defs>
+      <linearGradient id="akGradL" x1="1" y1="0.08" x2="0" y2="0.92">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.66"/>
+        <stop offset="13%" stop-color="#EFE3FF" stop-opacity="0.4"/>
+        <stop offset="36%" stop-color="#B084FA" stop-opacity="0.19"/>
+        <stop offset="62%" stop-color="#7848E4" stop-opacity="0.07"/>
+        <stop offset="90%" stop-color="#5A34C0" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="akDepthL" x="-45%" y="-18%" width="190%" height="136%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="38" result="bloomFar"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="13" result="bloomMid"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="bloomNear"/>
+        <feOffset in="SourceAlpha" dx="3.5" dy="6" result="isOff"/>
+        <feGaussianBlur in="isOff" stdDeviation="5.5" result="isBlur"/>
+        <feComposite in="isBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="isMask"/>
+        <feFlood flood-color="#150B2C" flood-opacity="0.8" result="isCol"/>
+        <feComposite in="isCol" in2="isMask" operator="in" result="innerShadow"/>
+        <feOffset in="SourceAlpha" dx="-2.5" dy="-4" result="ihOff"/>
+        <feGaussianBlur in="ihOff" stdDeviation="3.2" result="ihBlur"/>
+        <feComposite in="ihBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="ihMask"/>
+        <feFlood flood-color="#FFFFFF" flood-opacity="0.5" result="ihCol"/>
+        <feComposite in="ihCol" in2="ihMask" operator="in" result="innerHigh"/>
+        <feOffset in="SourceAlpha" dx="-0.9" dy="-1.1" result="ehOff"/>
+        <feGaussianBlur in="ehOff" stdDeviation="0.7" result="ehBlur"/>
+        <feComposite in="ehBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="ehMask"/>
+        <feFlood flood-color="#F6EEFF" flood-opacity="0.85" result="ehCol"/>
+        <feComposite in="ehCol" in2="ehMask" operator="in" result="edgeHigh"/>
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="bump"/>
+        <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.62" specularExponent="26" lighting-color="#E9DDFF" result="spec">
+          <feDistantLight azimuth="232" elevation="60"/>
+        </feSpecularLighting>
+        <feComposite in="spec" in2="SourceAlpha" operator="in" result="specClip"/>
+        <feMerge>
+          <feMergeNode in="bloomFar"/>
+          <feMergeNode in="bloomMid"/>
+          <feMergeNode in="bloomNear"/>
+          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="innerShadow"/>
+          <feMergeNode in="innerHigh"/>
+          <feMergeNode in="edgeHigh"/>
+          <feMergeNode in="specClip"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <path d="M52 74 L636 620 L52 1166" fill="none" stroke="url(#akGradL)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#akDepthL)"/>
+  </svg>
+      </div>
+    </div>
+    <div data-par="-0.045" style="position:absolute;left:max(84.5%,calc(50% + 352px));top:0;bottom:0;width:0;perspective:2600px;will-change:transform">
+      <div style="position:absolute;left:0;top:32%;width:700px;height:1240px;margin-top:-620px;transform-origin:50% 50%;animation:akIdleB 74s cubic-bezier(.42,0,.58,1) infinite;animation-delay:-25s;will-change:transform">
+          <svg viewBox="0 0 700 1240" width="700" height="1240" aria-hidden="true" style="position:absolute;inset:0;display:block;overflow:visible">
+    <defs>
+      <linearGradient id="akGradR" x1="0" y1="0.08" x2="1" y2="0.92">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.66"/>
+        <stop offset="13%" stop-color="#EFE3FF" stop-opacity="0.4"/>
+        <stop offset="36%" stop-color="#B084FA" stop-opacity="0.19"/>
+        <stop offset="62%" stop-color="#7848E4" stop-opacity="0.07"/>
+        <stop offset="90%" stop-color="#5A34C0" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="akDepthR" x="-45%" y="-18%" width="190%" height="136%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="38" result="bloomFar"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="13" result="bloomMid"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="bloomNear"/>
+        <feOffset in="SourceAlpha" dx="3.5" dy="6" result="isOff"/>
+        <feGaussianBlur in="isOff" stdDeviation="5.5" result="isBlur"/>
+        <feComposite in="isBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="isMask"/>
+        <feFlood flood-color="#150B2C" flood-opacity="0.8" result="isCol"/>
+        <feComposite in="isCol" in2="isMask" operator="in" result="innerShadow"/>
+        <feOffset in="SourceAlpha" dx="-2.5" dy="-4" result="ihOff"/>
+        <feGaussianBlur in="ihOff" stdDeviation="3.2" result="ihBlur"/>
+        <feComposite in="ihBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="ihMask"/>
+        <feFlood flood-color="#FFFFFF" flood-opacity="0.5" result="ihCol"/>
+        <feComposite in="ihCol" in2="ihMask" operator="in" result="innerHigh"/>
+        <feOffset in="SourceAlpha" dx="-0.9" dy="-1.1" result="ehOff"/>
+        <feGaussianBlur in="ehOff" stdDeviation="0.7" result="ehBlur"/>
+        <feComposite in="ehBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="ehMask"/>
+        <feFlood flood-color="#F6EEFF" flood-opacity="0.85" result="ehCol"/>
+        <feComposite in="ehCol" in2="ehMask" operator="in" result="edgeHigh"/>
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="bump"/>
+        <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.62" specularExponent="26" lighting-color="#E9DDFF" result="spec">
+          <feDistantLight azimuth="308" elevation="60"/>
+        </feSpecularLighting>
+        <feComposite in="spec" in2="SourceAlpha" operator="in" result="specClip"/>
+        <feMerge>
+          <feMergeNode in="bloomFar"/>
+          <feMergeNode in="bloomMid"/>
+          <feMergeNode in="bloomNear"/>
+          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="innerShadow"/>
+          <feMergeNode in="innerHigh"/>
+          <feMergeNode in="edgeHigh"/>
+          <feMergeNode in="specClip"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <path d="M648 74 L64 620 L648 1166" fill="none" stroke="url(#akGradR)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#akDepthR)"/>
+  </svg>
+      </div>
+    </div>
+    <div data-focal="1" style="position:absolute;left:50%;top:360px;width:1020px;margin-left:-510px;height:500px;background:radial-gradient(ellipse 44% 42% at 50% 52%,rgba(116,78,236,0.16) 0%,rgba(104,70,224,0.045) 46%,rgba(104,70,224,0) 74%);filter:blur(52px);transition:opacity 1s cubic-bezier(.2,.8,.2,1)"></div>
+    <div data-floor="1" style="position:absolute;left:50%;top:700px;width:1180px;margin-left:-590px;height:230px;background:radial-gradient(ellipse 40% 46% at 50% 0%,rgba(168,136,252,0.11) 0%,rgba(120,80,232,0.03) 44%,rgba(120,80,232,0) 74%);filter:blur(34px);transition:opacity 1s cubic-bezier(.2,.8,.2,1)"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 42% 44% at 50% 28%,rgba(4,4,7,0.94) 0%,rgba(4,4,7,0.62) 46%,rgba(4,4,7,0) 78%)"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:340px;background:linear-gradient(180deg,rgba(4,4,7,0) 0%,#040407 92%)"></div>
+  </div>
+  </sc-if>
+
+  <header data-header="1" style="position:sticky;top:0;z-index:60;padding:20px 24px 0;background:transparent">
+    <div data-navpill="1" style="max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:26px;padding:8px 8px 8px 18px;border-radius:22px;border:1px solid rgba(255,255,255,0.075);background:rgba(13,11,19,0.66);backdrop-filter:blur(28px) saturate(1.7);-webkit-backdrop-filter:blur(28px) saturate(1.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 24px 60px -34px rgba(0,0,0,1);transition:background .5s ease,box-shadow .5s ease,border-color .5s ease">
+      <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:0 0 auto;transition:opacity .25s" style-hover="opacity:.72">
+        <img src="assets/mark-e7.png" alt="ai tool kart" style="width:24px;height:25px;display:block;filter:brightness(0) invert(1) drop-shadow(0 2px 10px rgba(170,130,255,0.6));opacity:.95">
+        <span style="font-size:17.5px;font-weight:700;letter-spacing:-0.026em;color:#F6F4FE">ai tool kart</span>
+      </div>
+      <nav style="display:flex;align-items:center;justify-content:center;gap:2px;flex:1 1 auto">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+          <div onClick="{{ item.onClick }}" style="position:relative;padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;color:#A6A0BC;transition:background .25s,color .25s" style-hover="background:rgba(255,255,255,0.06);color:#F4F1FC">
+            <sc-if value="{{ item.active }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;border-radius:999px;background:rgba(255,255,255,0.07);box-shadow:inset 0 1px 0 rgba(255,255,255,0.1)"></div>
+            </sc-if>
+            <span style="position:relative">{{ item.label }}</span>
+          </div>
+        </sc-for>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex:0 0 auto">
+        <span style="padding:0 6px;font-size:14px;font-weight:500;color:#A6A0BC;cursor:pointer;transition:color .25s" style-hover="color:#F4F1FC">Sign in</span>
+        <div onClick="{{ goSignup }}" data-magnet="1" style="padding:10px 18px;border-radius:999px;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:14px;font-weight:600;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),0 10px 26px -14px rgba(116,80,244,0.9);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),0 16px 36px -14px rgba(116,80,244,1),0 0 40px -14px rgba(150,110,255,0.7)">Get started free</div>
+      </div>
+    </div>
+  </header>
+
+  <main style="position:relative;z-index:1">
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <section style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:148px 32px 0;text-align:center">
+        <div style="display:inline-flex;align-items:center;gap:11px;font-size:13.5px;letter-spacing:-0.005em;color:#B3ACC8;animation:akFade 1.2s cubic-bezier(.16,.84,.44,1) both">
+          <span style="width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#F0E6FF,#9C5CF6 70%);box-shadow:0 0 14px 3px rgba(156,92,246,0.85),0 0 32px 8px rgba(156,92,246,0.35);animation:akPulse 3s ease-in-out infinite"></span>
+          2,412 tools indexed · 61 added this week
+        </div>
+        <h1 style="margin:36px auto 0;max-width:1000px;padding-bottom:14px;font-size:clamp(46px,7.1vw,94px);line-height:1.055;font-weight:700;letter-spacing:-0.042em;color:#FCFBFF;text-wrap:balance">
+          <span style="display:block;animation:akLineIn 1.25s cubic-bezier(.16,.84,.44,1) .1s both">Every AI tool, sorted by</span>
+          <span style="display:block;animation:akLineIn 1.25s cubic-bezier(.16,.84,.44,1) .26s both"><span style="display:inline-block;white-space:nowrap;max-width:100%"><span style="background:linear-gradient(96deg,#FFFFFF 0%,#EADCFF 34%,#BE9CFF 62%,#FFFFFF 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(167,139,250,0.34));animation:akGradient 30s ease-in-out infinite;will-change:background-position"><span data-typed="1">what you actually need</span></span><span style="display:inline-block;width:3px;height:0.7em;margin-left:8px;border-radius:2px;background:#C9B2FF;box-shadow:0 0 14px 2px rgba(167,139,250,0.7);vertical-align:baseline;animation:akCaret 1.2s steps(1,end) infinite"></span></span></span>
+        </h1>
+        <p style="margin:28px auto 0;max-width:568px;font-size:17px;line-height:1.62;color:#9C96B2;text-wrap:pretty;animation:akLineIn 1.25s cubic-bezier(.16,.84,.44,1) .42s both">Search the catalog, compare tools side by side, and get recommendations from the stack you already run. No affiliate rankings — every listing is tested and dated.</p>
+
+        <div style="position:relative;margin:54px auto 0;max-width:640px;animation:akLineIn 1.6s cubic-bezier(.16,.84,.44,1) .56s both">
+          <div style="position:absolute;left:6%;right:6%;top:0;bottom:-22px;border-radius:52px;background:radial-gradient(ellipse 54% 130% at 50% 52%,rgba(132,88,250,0.3) 0%,rgba(132,88,250,0) 74%);filter:blur(36px);pointer-events:none"></div>
+          <div data-search-shell="1" style="position: relative; overflow: hidden; display: flex; align-items: center; gap: 8px; padding: 7px 7px 7px 16px; border-radius: 52px; border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(180deg,rgba(255,255,255,0.075) 0%,rgba(255,255,255,0.03) 100%); backdrop-filter: blur(3px) saturate(1.6) brightness(1.04); -webkit-backdrop-filter: blur(3px) saturate(1.6) brightness(1.04); box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.34),inset 0 -1.5px 0 rgba(0,0,0,0.55),inset 0 0 0 1px rgba(255,255,255,0.05),inset 0 -14px 26px -16px rgba(0,0,0,0.5),0 1px 2px rgba(0,0,0,0.7),0 10px 20px -12px rgba(0,0,0,0.8),0 48px 90px -38px rgba(0,0,0,1),0 0 70px -34px rgba(132,92,255,0.5); transition: box-shadow .7s cubic-bezier(.2,.8,.2,1),border-color .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-3px);border-color:rgba(180,152,255,0.4);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.42),inset 0 -1.5px 0 rgba(0,0,0,0.55),0 1px 2px rgba(0,0,0,0.7),0 14px 26px -12px rgba(0,0,0,0.85),0 60px 104px -40px rgba(0,0,0,1),0 0 96px -30px rgba(140,98,255,0.62)">
+            <div style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.58),transparent);pointer-events:none"></div>
+            <div style="position:absolute;bottom:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(196,168,255,0.26),transparent);pointer-events:none"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(190,160,255,0.045) 100%);pointer-events:none"></div>
+            <div style="position:absolute;top:0;bottom:0;left:0;width:24%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.11) 48%,rgba(255,255,255,0) 100%);pointer-events:none;animation:akShine 14s cubic-bezier(.4,0,.6,1) infinite;will-change:transform,opacity"></div>
+            <span style="position:relative;font-size:17px;color:#8A83A6">⌕</span>
+            <input value="{{ q }}" onChange="{{ setQ }}" onKeyDown="{{ onSearchKey }}" placeholder="Describe the job — “summarize sales calls”…" style="position:relative;flex:1 1 auto;min-width:0;padding:13px 4px;border:0;outline:none;background:transparent;color:#FFFFFF;font-size:15.5px;letter-spacing:-0.011em">
+            <select value="{{ cat }}" onChange="{{ setCat }}" style="position: relative; flex: 0 0 auto; padding: 10px 8px; border: 1px solid rgba(255,255,255,0.08); outline: none; border-radius: 42px; background: rgba(255,255,255,0.05); color: #B9B3CE; font-size: 13.5px; font-weight: 500; cursor: pointer">
+              <sc-for list="{{ catOptions }}" as="c" hint-placeholder-count="4">
+                <option value="{{ c }}">{{ c }}</option>
+              </sc-for>
+            </select>
+            <div onClick="{{ runSearch }}" data-magnet="1" style="position:relative;flex:0 0 auto;padding:12px 22px;border-radius:999px;background:linear-gradient(180deg,#B08CFF 0%,#8858F2 48%,#6A32DC 100%);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.34),0 10px 26px -12px rgba(136,88,242,0.9);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 18px 40px -14px rgba(136,88,242,1),0 0 46px -14px rgba(160,110,255,0.8)">Search</div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:24px">
+            <span style="font-size:12.5px;color:#6F6A88;padding:6px 2px">Popular:</span>
+            <sc-for list="{{ popularSearches }}" as="p" hint-placeholder-count="5">
+              <div onClick="{{ p.onClick }}" style="padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.028);font-size:12.5px;color:#A7A1BD;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,color .3s,background .3s" style-hover="transform:translateY(-2px);border-color:rgba(178,150,255,0.38);background:rgba(178,150,255,0.09);color:#EFEAFF">{{ p.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div data-reveal="0" style="margin:104px 0 0">
+          <div style="display:flex;align-items:center;gap:22px">
+            <div style="flex:1 1 auto;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 100%)"></div>
+            <div style="font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#6F6A88;white-space:nowrap">Independent · tested · dated</div>
+            <div style="flex:1 1 auto;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0) 100%)"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:36px">
+            <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+              <div style="text-align:center">
+                <div style="font-size:30px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">{{ s.value }}</div>
+                <div style="margin-top:7px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#6F6A88">{{ s.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <sc-if value="{{ showTrending }}" hint-placeholder-val="{{ true }}">
+        <section style="padding:96px 0 0;overflow:hidden">
+          <div data-reveal="0" style="max-width:1240px;margin:0 auto;padding:0 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+            <div>
+              <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Trending this week</div>
+              <h2 style="margin:12px 0 0;font-size:40px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">What people are switching to</h2>
+            </div>
+            <div onClick="{{ goBrowse }}" style="font-size:14.5px;font-weight:500;color:#ABA5C2;cursor:pointer;white-space:nowrap;transition:color .2s" style-hover="color:#B49BFF">See the full catalog →</div>
+          </div>
+          <div style="margin-top:36px;position:relative;mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)">
+            <div style="display:flex;width:max-content;gap:18px;padding:6px 32px 26px;animation:akMarquee 68s linear infinite;will-change:transform" style-hover="animation-play-state:paused">
+              <sc-for list="{{ marquee }}" as="t" hint-placeholder-count="8">
+                <div onClick="{{ t.onClick }}" style="width:300px;padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.40),0 8px 22px -16px rgba(0,0,0,0.90);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .3s" style-hover="transform:translateY(-6px);border-color:rgba(167,139,250,0.45);box-shadow:0 2px 4px rgba(0,0,0,0.46),0 26px 46px -24px rgba(116,80,244,0.4)">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:42px;height:42px;flex:0 0 auto;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#B48CFF,#4E3AD8);border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:15px;font-weight:700;letter-spacing:-0.02em;box-shadow:0 6px 14px -8px rgba(116,80,244,0.9)">{{ t.mono }}</div>
+                    <div style="min-width:0">
+                      <div style="font-size:16px;font-weight:600;color:#F4F1FC;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
+                      <div style="font-size:12.5px;color:#7B7595">{{ t.cat }}</div>
+                    </div>
+                    <div style="margin-left:auto;flex:0 0 auto;padding:5px 9px;border-radius:8px;background:rgba(139,92,246,0.18);color:#B49BFF;font-size:12px;font-weight:600">{{ t.trend }}</div>
+                  </div>
+                  <div style="margin-top:14px;font-size:13.5px;line-height:1.5;color:#9E99B8;text-wrap:pretty">{{ t.tagline }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </sc-if>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0">
+        <div data-reveal="0" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+          <div>
+            <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Tested by our editors</div>
+            <h2 style="margin:12px 0 0;font-size:40px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">Featured tools</h2>
+          </div>
+          <div onClick="{{ goBrowse }}" style="padding:11px 20px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.035);font-size:14.5px;font-weight:500;color:#F4F1FC;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(139,92,246,0.12);border-color:rgba(167,139,250,0.45);transform:translateY(-2px)">Browse all 2,412</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px">
+          <sc-for list="{{ featured }}" as="t" hint-placeholder-count="6">
+            <div onClick="{{ t.onClick }}" data-reveal="stagger" data-glow="1" style="position:relative;overflow:hidden;padding:24px;border-radius:22px;border:1px solid rgba(255,255,255,0.075);background:linear-gradient(180deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.022) 100%);cursor:pointer;display:flex;flex-direction:column;gap:15px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.09),0 1px 2px rgba(0,0,0,0.43),0 10px 26px -20px rgba(0,0,0,0.90);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s,background .3s" style-hover="transform:translateY(-7px);border-color:rgba(167,139,250,0.45);background:linear-gradient(180deg,rgba(160,120,255,0.13),rgba(255,255,255,0.03) 46%);box-shadow:0 2px 6px rgba(0,0,0,0.46),0 34px 60px -28px rgba(116,80,244,0.45)">
+              <div data-glow-dot="1" style="position:absolute;top:0;left:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,rgba(202,168,255,0.252) 0%,rgba(202,168,255,0.090) 45%,rgba(202,168,255,0.000) 70%);opacity:0;pointer-events:none;transition:opacity .45s ease"></div>
+              <div style="position:absolute;top:0;left:24px;right:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(154,110,255,0.7),rgba(146,172,255,0.425),transparent)"></div>
+              <sc-if value="{{ t.badge }}" hint-placeholder-val="{{ false }}">
+                <div style="align-self:flex-start;padding:5px 10px;border-radius:8px;background:rgba(255,124,158,0.14);color:#FF7C9E;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap">{{ t.badge }}</div>
+              </sc-if>
+              <div style="display:flex;align-items:center;gap:13px">
+                <div style="width:48px;height:48px;flex:0 0 auto;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#B48CFF,#4E3AD8);border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:17px;font-weight:700;letter-spacing:-0.02em;box-shadow:0 8px 18px -8px rgba(116,80,244,0.9)">{{ t.mono }}</div>
+                <div style="min-width:0;flex:1 1 auto">
+                  <div style="font-size:18px;font-weight:600;color:#F4F1FC;letter-spacing:-0.015em;overflow-wrap:anywhere">{{ t.name }}</div>
+                  <div style="margin-top:3px;font-size:13px;color:#7B7595;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.cat }} · {{ t.model }}</div>
+                </div>
+              </div>
+              <div style="font-size:14.5px;line-height:1.55;color:#9E99B8;text-wrap:pretty;flex:1 1 auto">{{ t.tagline }}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <sc-for list="{{ t.tags }}" as="tag" hint-placeholder-count="3">
+                  <div style="padding:5px 10px;border-radius:8px;background:rgba(255,255,255,0.06);font-size:12px;color:#ABA5C2">{{ tag }}</div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px;padding-top:15px;border-top:1px solid rgba(255,255,255,0.07)">
+                <div style="font-size:13.5px;color:#8E88A8;white-space:nowrap"><span style="color:#F4F1FC;font-weight:600">★ {{ t.rating }}</span> · {{ t.reviews }}</div>
+                <div style="font-size:13.5px;font-weight:600;color:#F4F1FC;white-space:nowrap">{{ t.price }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0">
+        <div data-reveal="0" style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">38 categories</div>
+        <h2 data-reveal="0.06" style="margin:12px 0 0;font-size:40px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">Browse by what you're trying to do</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px">
+          <sc-for list="{{ categoryTiles }}" as="c" hint-placeholder-count="8">
+            <div onClick="{{ c.onClick }}" data-reveal="stagger" data-glow="1" style="position:relative;overflow:hidden;padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,0.075);background:linear-gradient(180deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.022) 100%);cursor:pointer;display:flex;flex-direction:column;gap:8px;min-height:140px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.09),0 1px 2px rgba(0,0,0,0.43);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .3s,background .3s" style-hover="transform:translateY(-5px);border-color:rgba(167,139,250,0.45);background:rgba(255,255,255,0.055);box-shadow:0 24px 44px -26px rgba(116,80,244,0.45)">
+              <div data-glow-dot="1" style="position:absolute;top:0;left:0;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;background:radial-gradient(circle,rgba(202,168,255,0.234) 0%,rgba(202,168,255,0.072) 45%,rgba(202,168,255,0.000) 70%);opacity:0;pointer-events:none;transition:opacity .45s ease"></div>
+              <div style="font-size:17px;font-weight:600;color:#F4F1FC;letter-spacing:-0.01em">{{ c.name }}</div>
+              <div style="font-size:13px;line-height:1.5;color:#8E88A8;flex:1 1 auto;text-wrap:pretty">{{ c.note }}</div>
+              <div style="font-size:12.5px;letter-spacing:0.04em;font-weight:600;color:#B49BFF">{{ c.count }} tools →</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0">
+        <div data-reveal="0" style="padding:40px;border-radius:28px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(120deg,rgba(139,92,246,0.13),rgba(255,255,255,0.028) 52%,rgba(56,110,240,0.11))">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <div>
+              <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Side by side</div>
+              <h2 style="margin:12px 0 0;font-size:36px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">Stop reading six pricing pages</h2>
+            </div>
+            <div onClick="{{ goCompare }}" style="padding:13px 24px;border-radius:999px;background:linear-gradient(180deg,#FFFFFF,#E7E2F8);color:#171226;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(0,0,0,0.90)">Open the comparison tool</div>
+          </div>
+          <div style="margin-top:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;background:rgba(255,255,255,0.035);box-shadow:0 20px 44px -32px rgba(0,0,0,0.90)">
+            <div style="display:grid;grid-template-columns:200px repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.075)">
+              <div style="background:rgba(255,255,255,0.055);padding:16px 18px;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:#7B7595">Feature</div>
+              <sc-for list="{{ compareHeads }}" as="h" hint-placeholder-count="3">
+                <div style="background:rgba(255,255,255,0.055);padding:16px 18px;font-size:16px;font-weight:600;color:#F4F1FC">{{ h }}</div>
+              </sc-for>
+              <sc-for list="{{ compareRows }}" as="row" hint-placeholder-count="5">
+                <div style="background:rgba(255,255,255,0.035);padding:15px 18px;font-size:14px;color:#8E88A8">{{ row.label }}</div>
+                <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                  <div style="background:rgba(255,255,255,0.035);padding:15px 18px;font-size:14px;color:#F4F1FC">{{ cell }}</div>
+                </sc-for>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0;text-align:center">
+        <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Pricing</div>
+        <h2 style="margin:12px 0 0;font-size:40px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC">Free to browse. Pay when it saves you time.</h2>
+        <div style="display:inline-flex;align-items:center;gap:4px;margin-top:26px;padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.04)">
+          <sc-for list="{{ billingOptions }}" as="b" hint-placeholder-count="2">
+            <div onClick="{{ b.onClick }}" style="position:relative;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;color:#ABA5C2;transition:color .2s" style-hover="color:#F4F1FC">
+              <sc-if value="{{ b.active }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:0;border-radius:999px;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);box-shadow:0 8px 18px -10px rgba(116,80,244,0.9)"></div>
+                <span style="position:relative;color:#fff">{{ b.label }}</span>
+              </sc-if>
+              <sc-if value="{{ b.inactive }}" hint-placeholder-val="{{ true }}">
+                <span style="position:relative">{{ b.label }}</span>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;text-align:left">
+          <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3">
+            <div data-reveal="stagger" style="position:relative;padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 2px rgba(0,0,0,0.40),0 14px 34px -26px rgba(0,0,0,0.90);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s" style-hover="transform:translateY(-6px);box-shadow:0 2px 6px rgba(0,0,0,0.46),0 34px 60px -30px rgba(116,80,244,0.5)">
+              <sc-if value="{{ t.highlight }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:-1px;border-radius:24px;border:1.5px solid rgba(154,110,255,0.6);box-shadow:0 20px 50px -34px rgba(116,80,244,0.8);pointer-events:none"></div>
+              </sc-if>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <div style="font-size:19px;font-weight:600;color:#F4F1FC">{{ t.name }}</div>
+                <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:5px 10px;border-radius:8px;background:rgba(139,92,246,0.18);color:#B49BFF;font-size:11.5px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">{{ t.tag }}</div>
+                </sc-if>
+              </div>
+              <div style="display:flex;align-items:flex-end;gap:8px">
+                <div style="font-size:52px;line-height:0.9;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC">{{ t.price }}</div>
+                <div style="font-size:13.5px;color:#7B7595;padding-bottom:5px">{{ t.unit }}</div>
+              </div>
+              <div style="font-size:14.5px;line-height:1.55;color:#9E99B8;text-wrap:pretty">{{ t.blurb }}</div>
+              <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 auto">
+                <sc-for list="{{ t.features }}" as="f" hint-placeholder-count="5">
+                  <div style="display:flex;gap:10px;font-size:14px;line-height:1.45;color:#D6D2E6">
+                    <span style="color:#A98BFF;flex:0 0 auto">✓</span>
+                    <span>{{ f }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div onClick="{{ t.onClick }}" style="padding:14px;border-radius:999px;text-align:center;font-size:14.5px;font-weight:600;cursor:pointer;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);color:#fff;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(116,80,244,0.8)">{{ t.cta }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0">
+        <div style="display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:start">
+          <div>
+            <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">FAQ</div>
+            <h2 style="margin:12px 0 0;font-size:40px;font-weight:700;letter-spacing:-0.032em;color:#F4F1FC;text-wrap:balance">Questions we get every week</h2>
+            <p style="margin:18px 0 0;font-size:15px;line-height:1.6;color:#9E99B8">Still stuck? <a href="#contact">Ask the editors</a> — a human answers within a day.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.075);border-top:1px solid rgba(255,255,255,0.075);border-bottom:1px solid rgba(255,255,255,0.075)">
+            <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+              <div onClick="{{ f.onClick }}" data-reveal="stagger" style="background:rgba(255,255,255,0.035);padding:22px 12px;cursor:pointer;transition:background .25s" style-hover="background:rgba(255,255,255,0.055)">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+                  <div style="font-size:18px;font-weight:600;color:#F4F1FC">{{ f.q }}</div>
+                  <div style="flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px;color:#B49BFF;background:rgba(255,255,255,0.035)">{{ f.sign }}</div>
+                </div>
+                <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:14px;max-width:640px;font-size:15px;line-height:1.65;color:#9E99B8;text-wrap:pretty;animation:akRise .35s ease both">{{ f.a }}</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1240px;margin:0 auto;padding:104px 32px 0">
+        <div data-reveal="0" style="position:relative;overflow:hidden;padding:56px;border-radius:30px;background:linear-gradient(100deg,#150E2E 0%,#33249E 46%,#6B34D4 100%);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;box-shadow:0 40px 70px -40px rgba(78,92,232,0.7)">
+          <div style="position:absolute;right:-22%;top:-70%;width:70%;height:240%;background:radial-gradient(ellipse 50% 46% at 50% 50%,rgba(154,110,255,0.5) 0%,rgba(202,168,255,0.216) 45%,rgba(202,168,255,0.000) 72%);filter:blur(26px);transform-origin:50% 50%;animation:akMeshB 54s cubic-bezier(.45,0,.55,1) infinite;will-change:transform"></div>
+          <div style="position:absolute;top:0;left:-40%;width:28%;height:100%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.09) 50%,rgba(255,255,255,0) 100%);animation:akSweep 26s linear infinite;animation-delay:-6s;will-change:transform"></div>
+          <div style="position:relative;max-width:560px">
+            <h2 style="margin:0;font-size:38px;line-height:1.06;font-weight:700;letter-spacing:-0.032em;color:#fff;text-wrap:balance">Built something? Get it in front of 190,000 monthly searchers.</h2>
+            <p style="margin:16px 0 0;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.78)">Free listings, reviewed in 48 hours. No pay-to-rank, ever.</p>
+          </div>
+          <div style="position:relative;display:flex;gap:12px;flex-wrap:wrap">
+            <div onClick="{{ goSubmit }}" style="padding:15px 28px;border-radius:999px;background:linear-gradient(180deg,#FFFFFF,#EAE5FA);color:#241046;font-size:15px;font-weight:600;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 18px 34px -16px rgba(0,0,0,0.6)">Submit a tool</div>
+            <div onClick="{{ goPricing }}" style="padding:15px 28px;border-radius:999px;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:background .25s,transform .25s" style-hover="background:rgba(255,255,255,0.14);transform:translateY(-3px)">See plans</div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBrowse }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1240px;margin:0 auto;padding:64px 32px 0">
+        <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Catalog</div>
+        <h1 style="margin:12px 0 0;font-size:52px;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC">Browse tools</h1>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;flex:1 1 340px;gap:10px;padding:4px 4px 4px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.035);transition:border-color .25s,box-shadow .25s" style-hover="border-color:rgba(167,139,250,0.45);box-shadow:0 12px 26px -20px rgba(116,80,244,0.6)">
+            <span style="font-size:16px;color:#6F6A88">⌕</span>
+            <input value="{{ q }}" onChange="{{ setQ }}" placeholder="Search by name, task or tag" style="flex:1 1 auto;min-width:0;padding:12px 4px;border:0;outline:none;background:transparent;color:#F4F1FC;font-size:15px">
+          </div>
+          <select value="{{ sort }}" onChange="{{ setSort }}" style="padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.035);color:#F4F1FC;font-size:14px;font-weight:500;cursor:pointer;outline:none">
+            <sc-for list="{{ sortOptions }}" as="s" hint-placeholder-count="3">
+              <option value="{{ s }}">{{ s }}</option>
+            </sc-for>
+          </select>
+          <div onClick="{{ resetFilters }}" style="padding:13px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.035);font-size:14px;font-weight:500;color:#ABA5C2;cursor:pointer;transition:background .2s,color .2s,border-color .2s" style-hover="background:rgba(139,92,246,0.12);color:#B49BFF;border-color:rgba(167,139,250,0.45)">Reset</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:236px 1fr;gap:34px;margin-top:34px;align-items:start">
+          <aside style="position:sticky;top:104px;display:flex;flex-direction:column;gap:26px;padding:22px;border-radius:22px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);box-shadow:0 1px 2px rgba(0,0,0,0.40),0 18px 40px -34px rgba(0,0,0,0.90)">
+            <div>
+              <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#7B7595">Category</div>
+              <div style="display:flex;flex-direction:column;gap:2px;margin-top:12px">
+                <sc-for list="{{ catFilters }}" as="c" hint-placeholder-count="7">
+                  <div onClick="{{ c.onClick }}" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:10px;font-size:14px;cursor:pointer;color:#ABA5C2;transition:background .2s,color .2s" style-hover="background:rgba(255,255,255,0.07);color:#F4F1FC">
+                    <sc-if value="{{ c.active }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;width:3px;height:16px;border-radius:2px;background:#B79BFF"></div>
+                    </sc-if>
+                    <span>{{ c.label }}</span>
+                    <span style="font-size:12.5px;color:#6F6A88">{{ c.count }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#7B7595">Pricing model</div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+                <sc-for list="{{ priceFilters }}" as="p" hint-placeholder-count="4">
+                  <div onClick="{{ p.onClick }}" style="padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);font-size:13px;cursor:pointer;color:#ABA5C2;transition:border-color .2s,color .2s,background .2s" style-hover="border-color:rgba(167,139,250,0.45);color:#B49BFF;background:rgba(139,92,246,0.12)">{{ p.label }}</div>
+                </sc-for>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#7B7595">Minimum rating</div>
+              <div style="display:flex;align-items:center;gap:12px;margin-top:14px">
+                <input type="range" min="0" max="5" step="0.5" value="{{ minRating }}" onChange="{{ setMinRating }}" style="flex:1 1 auto;min-width:0;accent-color:#A98BFF">
+                <span style="font-size:14px;font-weight:600;color:#F4F1FC;white-space:nowrap">★ {{ minRating }}</span>
+              </div>
+            </div>
+          </aside>
+
+          <div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:16px">
+              <div style="font-size:14px;color:#9E99B8">{{ resultCount }} tools match</div>
+              <div style="font-size:13px;color:#6F6A88">Last catalog refresh: 2 hours ago</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
+              <sc-for list="{{ results }}" as="t" hint-placeholder-count="6">
+                <div data-reveal="stagger" data-glow="1" style="position:relative;overflow:hidden;padding:22px;border-radius:20px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 2px rgba(0,0,0,0.40);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .3s" style-hover="transform:translateY(-5px);border-color:rgba(167,139,250,0.45);box-shadow:0 26px 50px -30px rgba(116,80,244,0.5)">
+                  <div data-glow-dot="1" style="position:absolute;top:0;left:0;width:320px;height:320px;margin:-160px 0 0 -160px;border-radius:50%;background:radial-gradient(circle,rgba(202,168,255,0.216) 0%,rgba(202,168,255,0.072) 45%,rgba(202,168,255,0.000) 70%);opacity:0;pointer-events:none;transition:opacity .45s ease"></div>
+                  <div style="display:flex;align-items:flex-start;gap:12px">
+                    <div style="width:44px;height:44px;flex:0 0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#B48CFF,#4E3AD8);border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:15px;font-weight:700;box-shadow:0 8px 16px -10px rgba(116,80,244,0.9)">{{ t.mono }}</div>
+                    <div style="min-width:0;flex:1 1 auto">
+                      <div style="font-size:17px;font-weight:600;color:#F4F1FC;letter-spacing:-0.012em">{{ t.name }}</div>
+                      <div style="margin-top:2px;font-size:12.5px;color:#7B7595;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.cat }} · {{ t.model }}</div>
+                    </div>
+                    <div style="flex:0 0 auto;font-size:13.5px;font-weight:600;color:#F4F1FC">★ {{ t.rating }}</div>
+                  </div>
+                  <div style="font-size:14px;line-height:1.5;color:#9E99B8;flex:1 1 auto;text-wrap:pretty">{{ t.tagline }}</div>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:13px;border-top:1px solid rgba(255,255,255,0.07)">
+                    <div style="font-size:13.5px;color:#ABA5C2;white-space:nowrap">{{ t.price }}</div>
+                    <div onClick="{{ t.onCompare }}" style="padding:8px 15px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);font-size:13px;font-weight:600;color:#F4F1FC;cursor:pointer;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(139,92,246,0.18);border-color:rgba(167,139,250,0.45);color:#B49BFF">Compare</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:64px 24px;text-align:center;border-radius:20px;border:1px dashed rgba(255,255,255,0.13);background:rgba(255,255,255,0.055)">
+                <div style="font-size:20px;font-weight:600;color:#F4F1FC">Nothing matches those filters</div>
+                <div style="margin-top:10px;font-size:14.5px;color:#9E99B8">Loosen the rating, or clear the category.</div>
+                <div onClick="{{ resetFilters }}" style="display:inline-block;margin-top:20px;padding:12px 22px;border-radius:999px;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);color:#fff;font-size:14px;font-weight:600;cursor:pointer">Reset filters</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isCompare }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1240px;margin:0 auto;padding:64px 32px 0">
+        <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Comparison</div>
+        <h1 style="margin:12px 0 0;font-size:52px;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC">Compare three tools</h1>
+        <p style="margin:16px 0 0;max-width:600px;font-size:16px;line-height:1.6;color:#9E99B8">Swap any column. Numbers come from our own testing runs, re-checked monthly.</p>
+        <div style="margin-top:34px;border-radius:24px;border:1px solid rgba(255,255,255,0.075);overflow:hidden;box-shadow:0 24px 50px -36px rgba(0,0,0,0.90)">
+          <div style="display:grid;grid-template-columns:220px repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.075)">
+            <div style="background:rgba(255,255,255,0.055);padding:20px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:#7B7595">Pick your tools</div>
+            <sc-for list="{{ compareSlots }}" as="s" hint-placeholder-count="3">
+              <div style="background:rgba(255,255,255,0.055);padding:16px 20px">
+                <select data-cmp-slot="{{ s.slot }}" value="{{ s.value }}" onChange="{{ s.onChange }}" style="width:100%;padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.035);color:#F4F1FC;font-size:15px;font-weight:600;cursor:pointer;outline:none">
+                  <sc-for list="{{ allToolNames }}" as="n" hint-placeholder-count="6">
+                    <option value="{{ n }}">{{ n }}</option>
+                  </sc-for>
+                </select>
+              </div>
+            </sc-for>
+            <sc-for list="{{ compareFullRows }}" as="row" hint-placeholder-count="8">
+              <div style="background:rgba(255,255,255,0.035);padding:17px 20px;font-size:14px;color:#8E88A8">{{ row.label }}</div>
+              <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                <div style="background:rgba(255,255,255,0.035);padding:17px 20px;font-size:14.5px;color:#F4F1FC">{{ cell }}</div>
+              </sc-for>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPricing }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1240px;margin:0 auto;padding:64px 32px 0;text-align:center">
+        <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Plans</div>
+        <h1 style="margin:12px 0 0;font-size:56px;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC">Pick a plan</h1>
+        <p style="margin:16px auto 0;max-width:560px;font-size:17px;line-height:1.6;color:#9E99B8">The catalog stays free forever. Paid plans add the recommendation engine, saved stacks and team seats.</p>
+        <div style="display:inline-flex;align-items:center;gap:4px;margin-top:28px;padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.04)">
+          <sc-for list="{{ billingOptions }}" as="b" hint-placeholder-count="2">
+            <div onClick="{{ b.onClick }}" style="position:relative;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;color:#ABA5C2;transition:color .2s" style-hover="color:#F4F1FC">
+              <sc-if value="{{ b.active }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:0;border-radius:999px;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);box-shadow:0 8px 18px -10px rgba(116,80,244,0.9)"></div>
+                <span style="position:relative;color:#fff">{{ b.label }}</span>
+              </sc-if>
+              <sc-if value="{{ b.inactive }}" hint-placeholder-val="{{ true }}">
+                <span style="position:relative">{{ b.label }}</span>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;text-align:left">
+          <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3">
+            <div data-reveal="stagger" style="position:relative;padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 2px rgba(0,0,0,0.40),0 14px 34px -26px rgba(0,0,0,0.90);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s" style-hover="transform:translateY(-6px);box-shadow:0 2px 6px rgba(0,0,0,0.46),0 34px 60px -30px rgba(116,80,244,0.5)">
+              <sc-if value="{{ t.highlight }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:-1px;border-radius:24px;border:1.5px solid rgba(154,110,255,0.6);pointer-events:none"></div>
+              </sc-if>
+              <div style="font-size:19px;font-weight:600;color:#F4F1FC">{{ t.name }}</div>
+              <div style="display:flex;align-items:flex-end;gap:8px">
+                <div style="font-size:52px;line-height:0.9;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC">{{ t.price }}</div>
+                <div style="font-size:13.5px;color:#7B7595;padding-bottom:5px">{{ t.unit }}</div>
+              </div>
+              <div style="font-size:14.5px;line-height:1.55;color:#9E99B8">{{ t.blurb }}</div>
+              <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 auto">
+                <sc-for list="{{ t.features }}" as="f" hint-placeholder-count="5">
+                  <div style="display:flex;gap:10px;font-size:14px;line-height:1.45;color:#D6D2E6">
+                    <span style="color:#A98BFF;flex:0 0 auto">✓</span>
+                    <span>{{ f }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div onClick="{{ t.onClick }}" style="padding:14px;border-radius:999px;text-align:center;font-size:14.5px;font-weight:600;cursor:pointer;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);color:#fff;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(116,80,244,0.8)">{{ t.cta }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:40px;border-radius:22px;border:1px solid rgba(255,255,255,0.075);overflow:hidden;text-align:left">
+          <div style="display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.075)">
+            <div style="background:rgba(255,255,255,0.055);padding:15px 20px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:#7B7595">What's included</div>
+            <sc-for list="{{ tierNames }}" as="n" hint-placeholder-count="3">
+              <div style="background:rgba(255,255,255,0.055);padding:15px 20px;font-size:14.5px;font-weight:600;color:#F4F1FC">{{ n }}</div>
+            </sc-for>
+            <sc-for list="{{ matrixRows }}" as="row" hint-placeholder-count="8">
+              <div style="background:rgba(255,255,255,0.035);padding:14px 20px;font-size:14px;color:#8E88A8">{{ row.label }}</div>
+              <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                <div style="background:rgba(255,255,255,0.035);padding:14px 20px;font-size:14px;color:#F4F1FC">{{ cell }}</div>
+              </sc-for>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isSubmit }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1240px;margin:0 auto;padding:64px 32px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+          <div>
+            <div style="font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#B49BFF">Submit a tool</div>
+            <h1 style="margin:12px 0 0;font-size:52px;line-height:1;font-weight:700;letter-spacing:-0.04em;color:#F4F1FC;text-wrap:balance">Get listed in the catalog</h1>
+            <p style="margin:20px 0 0;max-width:460px;font-size:16.5px;line-height:1.6;color:#9E99B8;text-wrap:pretty">Send us the link. An editor runs your tool against the same test set everyone else gets, then writes the listing. Free, and we never sell placement.</p>
+            <div style="display:flex;flex-direction:column;gap:14px;margin-top:34px">
+              <sc-for list="{{ submitPoints }}" as="p" hint-placeholder-count="4">
+                <div style="display:flex;gap:14px;padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);box-shadow:0 1px 2px rgba(0,0,0,0.40);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .25s" style-hover="transform:translateX(4px);border-color:rgba(167,139,250,0.45);box-shadow:0 18px 36px -28px rgba(116,80,244,0.6)">
+                  <div style="flex:0 0 auto;width:28px;height:28px;border-radius:9px;background:linear-gradient(150deg,#B48CFF,#4E3AD8);border:1px solid rgba(255,255,255,0.14);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ p.n }}</div>
+                  <div>
+                    <div style="font-size:15.5px;font-weight:600;color:#F4F1FC">{{ p.title }}</div>
+                    <div style="margin-top:5px;font-size:14px;line-height:1.5;color:#9E99B8">{{ p.body }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="padding:32px;border-radius:26px;border:1px solid rgba(255,255,255,0.075);background:rgba(255,255,255,0.035);box-shadow:0 30px 70px -46px rgba(0,0,0,0.90)">
+            <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:48px 8px;text-align:center;animation:akRise .4s ease both">
+                <div style="width:58px;height:58px;margin:0 auto;border-radius:50%;background:linear-gradient(150deg,#B48CFF,#4E3AD8);border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 16px 30px -12px rgba(116,80,244,0.9)">✓</div>
+                <div style="margin-top:22px;font-size:24px;font-weight:700;letter-spacing:-0.03em;color:#F4F1FC">Submission received</div>
+                <div style="margin-top:12px;font-size:15px;line-height:1.6;color:#9E99B8">We'll email you within 48 hours, either with the live listing or with what we need next.</div>
+                <div onClick="{{ resetSubmit }}" style="display:inline-block;margin-top:26px;padding:12px 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;color:#F4F1FC;cursor:pointer;transition:background .2s" style-hover="background:rgba(139,92,246,0.12)">Submit another</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:18px">
+                <div style="font-size:20px;font-weight:600;color:#F4F1FC">Tool details</div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">Tool name</label>
+                  <input value="{{ form.name }}" onChange="{{ onFormName }}" placeholder="Nova Write" style="padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#A98BFF;box-shadow:0 0 0 4px rgba(202,168,255,0.216);background:rgba(255,255,255,0.035)">
+                </div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">URL</label>
+                  <input value="{{ form.url }}" onChange="{{ onFormUrl }}" placeholder="https://" style="padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#A98BFF;box-shadow:0 0 0 4px rgba(202,168,255,0.216);background:rgba(255,255,255,0.035)">
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">Category</label>
+                    <select value="{{ form.cat }}" onChange="{{ onFormCat }}" style="padding:13px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;cursor:pointer;outline:none">
+                      <sc-for list="{{ catNames }}" as="c" hint-placeholder-count="6">
+                        <option value="{{ c }}">{{ c }}</option>
+                      </sc-for>
+                    </select>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">Pricing model</label>
+                    <select value="{{ form.model }}" onChange="{{ onFormModel }}" style="padding:13px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;cursor:pointer;outline:none">
+                      <sc-for list="{{ modelNames }}" as="m" hint-placeholder-count="4">
+                        <option value="{{ m }}">{{ m }}</option>
+                      </sc-for>
+                    </select>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">One line on what it does</label>
+                  <textarea value="{{ form.pitch }}" onChange="{{ onFormPitch }}" rows="3" placeholder="Drafts long-form copy in your own voice from a 5-minute brief." style="padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;line-height:1.5;outline:none;resize:vertical;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#A98BFF;box-shadow:0 0 0 4px rgba(202,168,255,0.216);background:rgba(255,255,255,0.035)"></textarea>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <label style="font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#7B7595">Your email</label>
+                  <input value="{{ form.email }}" onChange="{{ onFormEmail }}" placeholder="you@company.com" style="padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#F4F1FC;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#A98BFF;box-shadow:0 0 0 4px rgba(202,168,255,0.216);background:rgba(255,255,255,0.035)">
+                </div>
+                <div onClick="{{ doSubmit }}" style="margin-top:4px;padding:15px;border-radius:999px;text-align:center;background:linear-gradient(180deg,#A488FF 0%,#7C5AF6 46%,#5B3EE0 100%);border:1px solid rgba(255,255,255,0.16);color:#fff;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 10px 24px -12px rgba(116,80,244,0.8);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(116,80,244,0.9)">Send for review</div>
+                <div style="font-size:12.5px;line-height:1.5;color:#6F6A88;text-align:center">No fees, no affiliate terms. We may ask for a test account.</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <footer id="contact" style="max-width:1240px;margin:120px auto 0;padding:44px 32px 56px;border-top:1px solid rgba(255,255,255,0.075)">
+      <div style="display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <img src="assets/mark-e7.png" alt="" style="width:26px;height:27px;display:block;filter:brightness(0) invert(1);opacity:.85">
+            <span style="font-size:19px;font-weight:700;letter-spacing:-0.025em;color:#F4F1FC">ai tool kart</span>
+          </div>
+          <p style="margin:16px 0 0;max-width:320px;font-size:14px;line-height:1.6;color:#8E88A8;text-wrap:pretty">The world's most intuitive AI discovery platform. Independent, tested, dated.</p>
+          <div style="margin-top:18px;font-size:13px;color:#6F6A88">© 2026 ai tool kart</div>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+          <div>
+            <div style="font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:#7B7595">{{ col.title }}</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+              <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4">
+                <div style="font-size:14px;color:#ABA5C2;cursor:pointer;transition:color .2s" style-hover="color:#B49BFF">{{ l }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </footer>
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;browse&quot;,&quot;compare&quot;,&quot;pricing&quot;,&quot;submit&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;headlinePhrases&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;what you actually need|the job you're doing|how your team works&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;showTrending&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;featuredCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6,&quot;min&quot;:3,&quot;max&quot;:12,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;annualDefault&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Pricing&quot;}}">
+const TOOLS = [
+  { id: "nova", name: "Nova Write", mono: "NW", cat: "Writing", model: "Freemium", tagline: "Drafts long-form copy in your voice from a five-minute brief.", rating: 4.8, reviews: 1204, price: "Free · $18/mo", trend: "+142%", badge: "Editors' pick", tags: ["Long-form", "Brand voice", "SEO"], pop: 98, api: "Yes", ctx: "200k tokens", team: "Unlimited seats", trial: "14 days", integr: "31 apps" },
+  { id: "vectra", name: "Vectra Vision", mono: "VV", cat: "Image", model: "Credits", tagline: "Product photography from a single reference shot, no studio.", rating: 4.7, reviews: 2871, price: "$0.04 / image", trend: "+96%", badge: "", tags: ["Product shots", "Upscale", "Batch"], pop: 95, api: "Yes", ctx: "n/a", team: "5 seats", trial: "50 credits", integr: "18 apps" },
+  { id: "cadence", name: "Cadence", mono: "Cd", cat: "Audio", model: "Subscription", tagline: "Transcribes and tags every call, then writes the follow-up.", rating: 4.6, reviews: 743, price: "$24/mo", trend: "+71%", badge: "", tags: ["Transcripts", "CRM sync", "Summaries"], pop: 88, api: "Yes", ctx: "8 hr audio", team: "Unlimited seats", trial: "7 days", integr: "24 apps" },
+  { id: "draft", name: "Draftsmith", mono: "Ds", cat: "Code", model: "Freemium", tagline: "Reviews pull requests against your own style guide, not a generic one.", rating: 4.9, reviews: 3310, price: "Free · $29/seat", trend: "+188%", badge: "Fastest growing", tags: ["Code review", "CI", "Self-host"], pop: 99, api: "Yes", ctx: "Repo-wide", team: "Per seat", trial: "30 days", integr: "12 apps" },
+  { id: "atlas", name: "Atlas Research", mono: "At", cat: "Research", model: "Subscription", tagline: "Answers with sources attached, and tells you when it can't find them.", rating: 4.5, reviews: 986, price: "$15/mo", trend: "+54%", badge: "", tags: ["Citations", "PDF", "Reports"], pop: 84, api: "No", ctx: "1M tokens", team: "3 seats", trial: "14 days", integr: "9 apps" },
+  { id: "relay", name: "Relay Agents", mono: "Ra", cat: "Agents", model: "Usage-based", tagline: "Runs multi-step back-office work and stops to ask when unsure.", rating: 4.4, reviews: 512, price: "$0.02 / step", trend: "+210%", badge: "New", tags: ["Workflows", "Approvals", "Logs"], pop: 90, api: "Yes", ctx: "Session memory", team: "Unlimited seats", trial: "1,000 steps", integr: "60 apps" },
+  { id: "prism", name: "Prism Motion", mono: "Pm", cat: "Video", model: "Credits", tagline: "Cuts a 40-minute recording into shorts that actually keep the point.", rating: 4.3, reviews: 1650, price: "$0.60 / minute", trend: "+62%", badge: "", tags: ["Shorts", "Captions", "B-roll"], pop: 81, api: "No", ctx: "2 hr video", team: "5 seats", trial: "10 minutes", integr: "14 apps" },
+  { id: "ledger", name: "Ledger Sense", mono: "Ls", cat: "Data", model: "Subscription", tagline: "Plain-English questions over your warehouse, with the SQL shown.", rating: 4.7, reviews: 604, price: "$49/mo", trend: "+83%", badge: "", tags: ["SQL", "Warehouse", "Charts"], pop: 86, api: "Yes", ctx: "Schema-aware", team: "Per seat", trial: "14 days", integr: "22 apps" },
+  { id: "signal", name: "Signal Brief", mono: "Sb", cat: "Marketing", model: "Freemium", tagline: "Watches competitor launches and writes you a Monday summary.", rating: 4.2, reviews: 388, price: "Free · $12/mo", trend: "+47%", badge: "", tags: ["Monitoring", "Digest", "Slack"], pop: 74, api: "No", ctx: "n/a", team: "3 seats", trial: "Free tier", integr: "7 apps" },
+  { id: "kiln", name: "Kiln Design", mono: "Kd", cat: "Design", model: "Subscription", tagline: "Turns a screenshot into an editable, token-aware component set.", rating: 4.6, reviews: 1122, price: "$26/mo", trend: "+118%", badge: "", tags: ["Design tokens", "Handoff", "Figma"], pop: 89, api: "Yes", ctx: "Per file", team: "Per seat", trial: "14 days", integr: "11 apps" },
+  { id: "porter", name: "Porter Support", mono: "Ps", cat: "Agents", model: "Usage-based", tagline: "Handles tier-one tickets and escalates with a written handover.", rating: 4.4, reviews: 927, price: "$0.18 / ticket", trend: "+69%", badge: "", tags: ["Support", "Escalation", "Macros"], pop: 79, api: "Yes", ctx: "Ticket history", team: "Unlimited seats", trial: "200 tickets", integr: "19 apps" },
+  { id: "quarry", name: "Quarry", mono: "Qy", cat: "Data", model: "Free", tagline: "Scrapes and structures public datasets without writing a parser.", rating: 4.1, reviews: 274, price: "Free", trend: "+38%", badge: "", tags: ["Scraping", "CSV", "Schedules"], pop: 66, api: "Yes", ctx: "n/a", team: "1 seat", trial: "Free", integr: "5 apps" },
+];
+
+const CATEGORIES = [
+  { name: "Writing", count: 284, note: "Drafting, editing, rewriting and translation." },
+  { name: "Image", count: 361, note: "Generation, retouching, product shots, upscaling." },
+  { name: "Code", count: 219, note: "Review, refactors, test generation, agents in CI." },
+  { name: "Video", count: 148, note: "Editing, dubbing, shorts, avatars and captions." },
+  { name: "Audio", count: 132, note: "Transcription, voice, music, meeting notes." },
+  { name: "Agents", count: 176, note: "Multi-step automations that touch real systems." },
+  { name: "Data", count: 203, note: "Warehouse queries, cleanup, enrichment, charts." },
+  { name: "Design", count: 167, note: "Layout, tokens, handoff and asset generation." },
+];
+
+class Component extends DCLogic {
+  state = {
+    page: "home", q: "", cat: "All categories", sort: "Most popular",
+    price: "Any", minRating: 4, openFaq: 0, annual: true,
+    cmp: ["Nova Write", "Draftsmith", "Relay Agents"],
+    submitted: false,
+    form: { name: "", url: "", cat: "Writing", model: "Freemium", pitch: "", email: "" },
+  };
+
+  componentDidMount() {
+    const p = this.props.startPage;
+    if (p && p !== "home") this.setState({ page: p });
+    if (this.props.annualDefault === false) this.setState({ annual: false });
+    this.initMotion();
+    this.syncCompareSelects();
+  }
+
+  componentDidUpdate() { this.scanReveal(); this.syncCompareSelects(); }
+
+  /* The comparison selects get their options from an sc-for that mounts after the
+     select itself, so React's value never lands. Reconcile straight on the DOM. */
+  syncCompareSelects() {
+    const apply = () => {
+      document.querySelectorAll("[data-cmp-slot]").forEach((el) => {
+        const want = this.state.cmp[Number(el.getAttribute("data-cmp-slot"))];
+        if (want && el.options.length && el.value !== want) el.value = want;
+      });
+    };
+    apply();
+    requestAnimationFrame(apply);
+    clearTimeout(this._cmpT);
+    this._cmpT = setTimeout(apply, 260);
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+    if (this._onResize) window.removeEventListener("resize", this._onResize);
+    if (this._revealT) clearTimeout(this._revealT);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._typeT) clearTimeout(this._typeT);
+  }
+
+  /* ---- motion system ------------------------------------------------- */
+
+  initMotion() {
+    const root = document.querySelector("[data-ak-root]");
+    if (!root) return;
+    this._root = root;
+    this.initSearchLight(root);
+    this._reduce = typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (this._reduce) return;
+
+    this.initMagnets(root);
+    this.initParallax(root);
+    this.initReveal();
+    this.initPointerLight(root);
+    this.initTypewriter(root);
+  }
+
+  /* Headline types and backspaces through the phrases. Driven straight on the
+     DOM node — no setState — so the rest of the page never re-renders. */
+  initTypewriter(root) {
+    const node = root.querySelector("[data-typed]");
+    if (!node) return;
+    const phrases = (this.props.headlinePhrases || "what you actually need|the job you're doing|how your team works")
+      .split("|").map((s) => s.trim()).filter(Boolean);
+    if (phrases.length < 2) return;
+    let pi = 0, ci = phrases[0].length, mode = "hold";
+    const tick = () => {
+      let delay = 58;
+      if (mode === "hold") { mode = "del"; delay = 2400; }
+      else if (mode === "del") {
+        ci -= 2;
+        delay = 26;
+        if (ci <= 0) { ci = 0; pi = (pi + 1) % phrases.length; mode = "type"; delay = 260; }
+      } else {
+        ci += 1;
+        delay = 52 + Math.random() * 46;
+        if (ci >= phrases[pi].length) { ci = phrases[pi].length; mode = "hold"; }
+      }
+      node.textContent = phrases[pi].slice(0, Math.max(0, ci));
+      this._typeT = setTimeout(tick, delay);
+    };
+    this._typeT = setTimeout(tick, 2600);
+  }
+
+  /* Magnetic buttons: the element leans a few px toward the cursor and lifts,
+     so a hover reads as weight rather than a colour change. One rAF, transform only. */
+  initMagnets(root) {
+    const pull = 6;
+    let pending = null, queued = false;
+    const paint = () => {
+      queued = false;
+      if (!pending) return;
+      const { el, x, y } = pending;
+      el.style.transform = "translate3d(" + x.toFixed(2) + "px," + (y - 3).toFixed(2) + "px,0)";
+    };
+    root.addEventListener("pointermove", (e) => {
+      if (e.pointerType === "touch") return;
+      const el = e.target.closest ? e.target.closest("[data-magnet]") : null;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      pending = {
+        el,
+        x: ((e.clientX - r.left) / r.width - 0.5) * 2 * pull,
+        y: ((e.clientY - r.top) / r.height - 0.5) * 2 * (pull * 0.5),
+      };
+      if (!queued) { queued = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    root.addEventListener("pointerout", (e) => {
+      const el = e.target.closest ? e.target.closest("[data-magnet]") : null;
+      if (el && !el.contains(e.relatedTarget)) el.style.transform = "";
+    }, { passive: true });
+  }
+
+  /* Focus lighting on the hero search: the shell lifts, the rim warms and the
+     ambient halo behind it brightens. Runs even under reduced motion. */
+  initSearchLight(root) {
+    const shell = root.querySelector("[data-search-shell]");
+    if (!shell) return;
+    const lit = "inset 0 1.5px 0 rgba(255,255,255,0.5),inset 0 -1.5px 0 rgba(0,0,0,0.55),0 2px 6px rgba(0,0,0,0.7),0 66px 110px -40px rgba(0,0,0,1),0 0 130px -24px rgba(130,90,255,0.8)";
+    const amb = (on) => {
+      ["[data-focal]", "[data-floor]"].forEach((sel) => {
+        const el = document.querySelector(sel);
+        if (el) el.style.opacity = on ? "1.5" : "";
+      });
+    };
+    shell.addEventListener("focusin", () => {
+      shell.style.borderColor = "rgba(182,156,255,0.64)";
+      shell.style.boxShadow = lit;
+      shell.style.transform = "translateY(-3px)";
+      amb(true);
+    });
+    shell.addEventListener("focusout", () => {
+      shell.style.borderColor = "";
+      shell.style.boxShadow = "";
+      shell.style.transform = "";
+      amb(false);
+    });
+  }
+
+  /* Layered scroll parallax: three depth planes counter-move at different
+     rates so the background sits behind the content instead of on it. */
+  initParallax(root) {
+    const layers = Array.from(root.querySelectorAll("[data-par]"));
+    const header = root.querySelector("[data-header]");
+    let queued = false, lastY = -1;
+    const apply = () => {
+      queued = false;
+      const y = window.pageYOffset || 0;
+      if (y === lastY) return;
+      lastY = y;
+      for (let i = 0; i < layers.length; i++) {
+        const el = layers[i];
+        el.style.transform = "translate3d(0," + (-y * parseFloat(el.dataset.par)).toFixed(2) + "px,0)";
+      }
+      const pill = header && header.querySelector("[data-navpill]");
+      if (pill) {
+        const on = y > 8;
+        pill.style.background = on ? "rgba(11,9,17,0.86)" : "rgba(13,11,19,0.66)";
+        pill.style.borderColor = on ? "rgba(255,255,255,0.11)" : "rgba(255,255,255,0.075)";
+        pill.style.boxShadow = on
+          ? "inset 0 1px 0 rgba(255,255,255,0.09), 0 30px 70px -34px rgba(0,0,0,1)"
+          : "inset 0 1px 0 rgba(255,255,255,0.07), 0 24px 60px -34px rgba(0,0,0,1)";
+      }
+      this.sweepReveal();
+    };
+    const onScroll = () => { if (!queued) { queued = true; this._raf = requestAnimationFrame(apply); } };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    this._onScroll = onScroll;
+    apply();
+  }
+
+  /* Entry reveals: fade + 18px rise, staggered across siblings, once each.
+     Position-driven (evaluated in the scroll rAF) rather than IntersectionObserver-
+     driven, so an element skipped by a scroll jump can never stay hidden. */
+  initReveal() {
+    this._pending = [];
+    this.scanReveal();
+    this._onResize = () => this.sweepReveal();
+    window.addEventListener("resize", this._onResize, { passive: true });
+    // failsafe: anything still hidden after load gets shown regardless of position
+    this._revealT = setTimeout(() => this.sweepReveal(true), 4000);
+    window.addEventListener("load", () => this.sweepReveal(), { once: true });
+  }
+
+  scanReveal() {
+    if (this._reduce || !this._root || !this._pending) return;
+    const nodes = this._root.querySelectorAll("[data-reveal]:not([data-ak-seen])");
+    const counters = new Map();
+    nodes.forEach((el) => {
+      el.setAttribute("data-ak-seen", "1");
+      let d;
+      if (el.dataset.reveal === "stagger") {
+        const n = counters.get(el.parentNode) || 0;
+        counters.set(el.parentNode, n + 1);
+        d = Math.min(n * 0.055, 0.33);
+      } else {
+        d = parseFloat(el.dataset.reveal) || 0;
+      }
+      el.dataset.akDelay = String(d);
+      el.style.opacity = "0";
+      el.style.transform = "translate3d(0,18px,0)";
+      el.style.willChange = "opacity, transform";
+      this._pending.push(el);
+    });
+    this.sweepReveal();
+  }
+
+  sweepReveal(force) {
+    if (this._reduce || !this._pending || !this._pending.length) return;
+    const h = window.innerHeight || 800;
+    const still = [];
+    for (const el of this._pending) {
+      if (!el.isConnected) continue;
+      const r = el.getBoundingClientRect();
+      if (!force && r.top > h * 0.92) { still.push(el); continue; }
+      const d = Number(el.dataset.akDelay || 0);
+      el.style.transition =
+        "opacity .75s cubic-bezier(.16,.84,.44,1) " + d + "s, transform .85s cubic-bezier(.16,.84,.44,1) " + d + "s";
+      el.style.opacity = "1";
+      el.style.transform = "translate3d(0,0,0)";
+      setTimeout(() => { el.style.willChange = "auto"; }, 1100 + d * 1000);
+    }
+    this._pending = still;
+  }
+
+  /* Specular highlight that tracks the pointer inside a card — one delegated
+     listener, GPU transform only, no per-card handlers. */
+  initPointerLight(root) {
+    let active = null, pending = null, queued = false;
+    const paint = () => {
+      queued = false;
+      if (!pending) return;
+      const { dot, x, y } = pending;
+      dot.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+    };
+    root.addEventListener("pointermove", (e) => {
+      if (e.pointerType === "touch") return;
+      const card = e.target.closest ? e.target.closest("[data-glow]") : null;
+      if (card !== active) {
+        if (active) { const d = active.querySelector("[data-glow-dot]"); if (d) d.style.opacity = "0"; }
+        active = card;
+        if (card) { const d = card.querySelector("[data-glow-dot]"); if (d) { d.style.opacity = "1"; d.style.willChange = "transform"; } }
+      }
+      if (!card) return;
+      const dot = card.querySelector("[data-glow-dot]");
+      if (!dot) return;
+      const r = card.getBoundingClientRect();
+      pending = { dot, x: Math.round(e.clientX - r.left), y: Math.round(e.clientY - r.top) };
+      if (!queued) { queued = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    root.addEventListener("pointerleave", () => {
+      if (active) { const d = active.querySelector("[data-glow-dot]"); if (d) { d.style.opacity = "0"; d.style.willChange = "auto"; } }
+      active = null;
+    }, { passive: true });
+  }
+
+  go = (page) => { this.setState({ page }); if (typeof window !== "undefined") window.scrollTo(0, 0); };
+
+  find = (name) => TOOLS.find((t) => t.name === name) || TOOLS[0];
+
+  filtered() {
+    const q = this.state.q.trim().toLowerCase();
+    const cat = this.state.cat;
+    let out = TOOLS.filter((t) => {
+      if (cat !== "All categories" && t.cat !== cat) return false;
+      if (this.state.price !== "Any" && t.model !== this.state.price) return false;
+      if (t.rating < Number(this.state.minRating)) return false;
+      if (!q) return true;
+      return (t.name + " " + t.cat + " " + t.tagline + " " + t.tags.join(" ")).toLowerCase().includes(q);
+    });
+    const s = this.state.sort;
+    out = out.slice().sort((a, b) =>
+      s === "Highest rated" ? b.rating - a.rating :
+      s === "Most reviewed" ? b.reviews - a.reviews :
+      s === "A–Z" ? a.name.localeCompare(b.name) : b.pop - a.pop);
+    return out;
+  }
+
+  renderVals() {
+    const st = this.state;
+    const featuredCount = this.props.featuredCount ?? 6;
+    const nav = [
+      { key: "browse", label: "Browse" },
+      { key: "compare", label: "Compare" },
+      { key: "pricing", label: "Pricing" },
+      { key: "submit", label: "Submit a tool" },
+    ];
+    const results = this.filtered();
+    const cmpTools = st.cmp.map(this.find);
+    const money = (m, a) => "$" + (st.annual ? a : m);
+
+    return {
+      isHome: st.page === "home", isBrowse: st.page === "browse", isCompare: st.page === "compare",
+      isPricing: st.page === "pricing", isSubmit: st.page === "submit",
+      showTrending: this.props.showTrending ?? true,
+      goHome: () => this.go("home"), goBrowse: () => this.go("browse"), goCompare: () => this.go("compare"),
+      goPricing: () => this.go("pricing"), goSubmit: () => this.go("submit"), goSignup: () => this.go("pricing"),
+      navItems: nav.map((n) => ({ label: n.label, active: st.page === n.key, onClick: () => this.go(n.key) })),
+
+      q: st.q,
+      setQ: (e) => this.setState({ q: e.target.value }),
+      onSearchKey: (e) => { if (e.key === "Enter") this.go("browse"); },
+      runSearch: () => this.go("browse"),
+      cat: st.cat,
+      setCat: (e) => this.setState({ cat: e.target.value }),
+      catOptions: ["All categories"].concat(CATEGORIES.map((c) => c.name)),
+      catNames: CATEGORIES.map((c) => c.name),
+      modelNames: ["Free", "Freemium", "Subscription", "Credits", "Usage-based"],
+      popularSearches: ["summarize sales calls", "product photography", "PR review", "meeting notes", "SQL from plain English"]
+        .map((label) => ({ label, onClick: () => this.setState({ q: label, page: "browse" }) })),
+      stats: [
+        { value: "2,412", label: "tools indexed" },
+        { value: "38", label: "categories" },
+        { value: "190k", label: "monthly searches" },
+        { value: "48 hrs", label: "review turnaround" },
+      ],
+
+      marquee: TOOLS.concat(TOOLS).map((t, i) => ({ ...t, key: t.id + i, onClick: () => this.go("browse") })),
+      featured: TOOLS.slice(0, featuredCount).map((t) => ({ ...t, onClick: () => this.go("browse") })),
+      categoryTiles: CATEGORIES.map((c) => ({ ...c, onClick: () => this.setState({ cat: c.name, page: "browse" }) })),
+
+      compareHeads: cmpTools.map((t) => t.name),
+      compareRows: [
+        { label: "Starting price", cells: cmpTools.map((t) => t.price) },
+        { label: "Rating", cells: cmpTools.map((t) => "★ " + t.rating) },
+        { label: "Public API", cells: cmpTools.map((t) => t.api) },
+        { label: "Free trial", cells: cmpTools.map((t) => t.trial) },
+        { label: "Integrations", cells: cmpTools.map((t) => t.integr) },
+      ],
+      compareFullRows: [
+        { label: "Category", cells: cmpTools.map((t) => t.cat) },
+        { label: "Pricing model", cells: cmpTools.map((t) => t.model) },
+        { label: "Starting price", cells: cmpTools.map((t) => t.price) },
+        { label: "Editor rating", cells: cmpTools.map((t) => "★ " + t.rating + " (" + t.reviews + ")") },
+        { label: "Context / limits", cells: cmpTools.map((t) => t.ctx) },
+        { label: "Public API", cells: cmpTools.map((t) => t.api) },
+        { label: "Team plan", cells: cmpTools.map((t) => t.team) },
+        { label: "Free trial", cells: cmpTools.map((t) => t.trial) },
+        { label: "Integrations", cells: cmpTools.map((t) => t.integr) },
+      ],
+      compareSlots: st.cmp.map((value, i) => ({
+        value, slot: String(i),
+        onChange: (e) => { const next = st.cmp.slice(); next[i] = e.target.value; this.setState({ cmp: next }); },
+      })),
+      allToolNames: TOOLS.map((t) => t.name),
+
+      sort: st.sort,
+      setSort: (e) => this.setState({ sort: e.target.value }),
+      sortOptions: ["Most popular", "Highest rated", "Most reviewed", "A–Z"],
+      minRating: st.minRating,
+      setMinRating: (e) => this.setState({ minRating: e.target.value }),
+      resetFilters: () => this.setState({ q: "", cat: "All categories", price: "Any", minRating: 0 }),
+      catFilters: [{ name: "All categories", count: TOOLS.length }].concat(CATEGORIES.map((c) => ({ name: c.name, count: c.count })))
+        .map((c) => ({ label: c.name, count: c.count, active: st.cat === c.name, onClick: () => this.setState({ cat: c.name }) })),
+      priceFilters: ["Any", "Free", "Freemium", "Subscription", "Credits", "Usage-based"]
+        .map((label) => ({ label, active: st.price === label, onClick: () => this.setState({ price: label }) })),
+      results: results.map((t) => ({ ...t, onCompare: () => this.setState({ cmp: [t.name, st.cmp[1] === t.name ? "Nova Write" : st.cmp[1], st.cmp[2]], page: "compare" }) })),
+      resultCount: results.length,
+      noResults: results.length === 0,
+
+      annual: st.annual,
+      billingOptions: [
+        { label: "Monthly", active: !st.annual, inactive: st.annual, onClick: () => this.setState({ annual: false }) },
+        { label: "Annual · save 25%", active: st.annual, inactive: !st.annual, onClick: () => this.setState({ annual: true }) },
+      ],
+      tiers: [
+        { name: "Free", price: "$0", unit: "forever", blurb: "The whole catalog, searchable, with dated editor notes.", tag: "", highlight: false, cta: "Create free account", onClick: () => this.go("submit"),
+          features: ["Full catalog and search", "Side-by-side comparison of 3 tools", "Weekly new-tools digest", "5 saved tools"] },
+        { name: "Pro", price: money(12, 9), unit: st.annual ? "/mo, billed yearly" : "/month", blurb: "Recommendations built from the stack you already run.", tag: "Most popular", highlight: true, cta: "Start 14-day trial", onClick: () => this.go("submit"),
+          features: ["Everything in Free", "Stack-aware recommendations", "Unlimited saved stacks", "Compare up to 8 tools", "Price-change and shutdown alerts", "Full test-run data and exports"] },
+        { name: "Team", price: money(29, 24), unit: st.annual ? "/seat/mo, yearly" : "/seat/month", blurb: "For teams that have to justify the tools they buy.", tag: "", highlight: false, cta: "Talk to us", onClick: () => this.go("submit"),
+          features: ["Everything in Pro", "Shared stacks and internal notes", "Procurement-ready comparison PDFs", "SSO and audit log", "Spend overlap report", "Named account contact"] },
+      ],
+      tierNames: ["Free", "Pro", "Team"],
+      matrixRows: [
+        { label: "Catalog and search", cells: ["✓", "✓", "✓"] },
+        { label: "Tools compared at once", cells: ["3", "8", "8"] },
+        { label: "Saved stacks", cells: ["5 tools", "Unlimited", "Unlimited + shared"] },
+        { label: "Stack-aware recommendations", cells: ["—", "✓", "✓"] },
+        { label: "Price-change alerts", cells: ["—", "✓", "✓"] },
+        { label: "Test-run data export", cells: ["—", "CSV", "CSV + API"] },
+        { label: "Procurement PDFs", cells: ["—", "—", "✓"] },
+        { label: "SSO and audit log", cells: ["—", "—", "✓"] },
+        { label: "Support", cells: ["Community", "Email, 1 day", "Named contact"] },
+      ],
+
+      faqs: [
+        { q: "How do tools get ranked?", a: "By our own test runs plus verified user reviews. Nobody can pay for position, and every listing shows the date it was last re-tested." },
+        { q: "What counts as a test run?", a: "Each category has a fixed task set — the same prompts, files and edge cases for every tool in it. We publish the raw outputs alongside the score." },
+        { q: "Do you take affiliate revenue?", a: "No. Revenue is Pro and Team subscriptions only, which is the whole reason the rankings can stay boring and honest." },
+        { q: "What are stack-aware recommendations?", a: "You tell us the tools you already pay for. We only suggest things that fit that stack, and we flag overlap you're already paying twice for." },
+        { q: "How fast do new tools get listed?", a: "Submissions are reviewed within 48 hours. Anything that clears the test set goes live the same week." },
+      ].map((f, i) => ({ ...f, open: st.openFaq === i, sign: st.openFaq === i ? "−" : "+", onClick: () => this.setState({ openFaq: st.openFaq === i ? -1 : i }) })),
+
+      submitPoints: [
+        { n: "1", title: "Send the link", body: "Name, URL, category and one line on what it does." },
+        { n: "2", title: "We run the test set", body: "The same tasks every tool in your category gets — no special treatment." },
+        { n: "3", title: "An editor writes it up", body: "Plain description, real pricing, honest limitations." },
+        { n: "4", title: "It goes live, dated", body: "Re-tested monthly. You get told before anything changes." },
+      ],
+      submitted: st.submitted,
+      notSubmitted: !st.submitted,
+      form: st.form,
+      onFormName: (e) => this.setState({ form: { ...st.form, name: e.target.value } }),
+      onFormUrl: (e) => this.setState({ form: { ...st.form, url: e.target.value } }),
+      onFormCat: (e) => this.setState({ form: { ...st.form, cat: e.target.value } }),
+      onFormModel: (e) => this.setState({ form: { ...st.form, model: e.target.value } }),
+      onFormPitch: (e) => this.setState({ form: { ...st.form, pitch: e.target.value } }),
+      onFormEmail: (e) => this.setState({ form: { ...st.form, email: e.target.value } }),
+      doSubmit: () => this.setState({ submitted: true }),
+      resetSubmit: () => this.setState({ submitted: false, form: { name: "", url: "", cat: "Writing", model: "Freemium", pitch: "", email: "" } }),
+
+      footerCols: [
+        { title: "Catalog", links: ["Browse all tools", "Categories", "New this week", "Trending", "Compare tools"] },
+        { title: "Company", links: ["How we test", "Editorial policy", "Careers", "Press kit"] },
+        { title: "Get in touch", links: ["Submit a tool", "Ask the editors", "Report a listing", "Advertise (we don't)"] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
