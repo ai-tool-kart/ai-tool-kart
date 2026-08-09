@@ -60,6 +60,11 @@
   --color-pink: #ff7c9e;
   --color-pink-bg: rgba(255, 124, 158, 0.14);
 
+  /* Interactive accent washes — the design's shared hover treatment. */
+  --color-accent-line: rgba(167, 139, 250, 0.45);
+  --color-accent-wash: rgba(139, 92, 246, 0.12);
+  --color-accent-wash-strong: rgba(139, 92, 246, 0.18);
+
   /* CTA gradient stops, also used directly where a solid is needed. */
   --color-grad-from: #a488ff;
   --color-grad-mid: #7c5af6;

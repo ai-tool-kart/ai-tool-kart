@@ -3,6 +3,7 @@ import PageShell from '@/components/layout/PageShell'
 import BrowsePage from '@/pages/BrowsePage'
 import ComparePage from '@/pages/ComparePage'
 import HomePage from '@/pages/HomePage'
+import KitchenSinkPage from '@/pages/KitchenSinkPage'
 import PricingPage from '@/pages/PricingPage'
 import SubmitPage from '@/pages/SubmitPage'
 
@@ -22,6 +23,8 @@ export default function App() {
         <Route path="compare" element={<ComparePage />} />
         <Route path="pricing" element={<PricingPage />} />
         <Route path="submit" element={<SubmitPage />} />
+        {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}
+        <Route path="kitchen-sink" element={<KitchenSinkPage />} />
       </Route>
     </Routes>
   )
