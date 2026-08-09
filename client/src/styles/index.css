@@ -131,6 +131,14 @@
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-sans);
     color: var(--color-body);
+    /*
+     * The handoff sets no root line-height, so unstyled text uses the browser
+     * default. Tailwind's preflight forces 1.5, which made every un-leaded text
+     * block taller and drifted the page ~40px by the CTA banner. The design
+     * specifies leading explicitly wherever it matters, and those values are
+     * reproduced at each call site.
+     */
+    line-height: normal;
   }
 
   a {

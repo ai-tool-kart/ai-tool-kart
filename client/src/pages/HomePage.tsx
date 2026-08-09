@@ -1,9 +1,25 @@
-/* Placeholder — the real Home sections land in Phase 4. */
+import CategoriesSection from '@/pages/home/sections/CategoriesSection'
+import CompareTeaser from '@/pages/home/sections/CompareTeaser'
+import CtaBanner from '@/pages/home/sections/CtaBanner'
+import FaqSection from '@/pages/home/sections/FaqSection'
+import FeaturedSection from '@/pages/home/sections/FeaturedSection'
+import Hero from '@/pages/home/sections/Hero'
+import PricingTeaser from '@/pages/home/sections/PricingTeaser'
+import TrendingSection from '@/pages/home/sections/TrendingSection'
+
+/* Composition only — section order matches the handoff exactly. */
+
 export default function HomePage() {
   return (
-    <section className="mx-auto max-w-site px-8 pt-16">
-      <h1 className="text-[40px] font-bold tracking-[-0.032em] text-ink">Home</h1>
-      <p className="mt-3 text-[15px] text-muted-dim">Hero, trending, featured, categories, compare teaser, pricing teaser and FAQ arrive in Phase 4.</p>
-    </section>
+    <>
+      <Hero />
+      <TrendingSection />
+      <FeaturedSection />
+      <CategoriesSection />
+      <CompareTeaser />
+      <PricingTeaser />
+      <FaqSection />
+      <CtaBanner />
+    </>
   )
 }

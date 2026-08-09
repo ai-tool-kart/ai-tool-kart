@@ -21,7 +21,7 @@ interface GridTableProps {
   /** One node per data column — a select on Compare, a tier name on Pricing. */
   headCells: ReactNode[]
   rows: GridTableRow[]
-  density?: 'compare' | 'matrix'
+  density?: 'compare' | 'matrix' | 'teaser'
 }
 
 const PRESETS = {
@@ -40,6 +40,16 @@ const PRESETS = {
     headCell: 'px-5 py-[15px] text-[14.5px] font-semibold text-ink',
     labelCell: 'px-5 py-[14px] text-[14px]',
     cell: 'px-5 py-[14px] text-[14px]',
+  },
+  /* Home compare teaser — narrower first column, tighter padding, larger heads. */
+  teaser: {
+    shell:
+      'rounded-card-lg border-white/[0.08] bg-white/[0.035] shadow-[0_20px_44px_-32px_rgba(0,0,0,0.90)]',
+    columns: 'grid-cols-[200px_repeat(3,1fr)]',
+    headLabelCell: 'px-[18px] py-4 tracking-[0.08em]',
+    headCell: 'px-[18px] py-4 text-[16px] font-semibold text-ink',
+    labelCell: 'px-[18px] py-[15px] text-[14px]',
+    cell: 'px-[18px] py-[15px] text-[14px]',
   },
 } as const
 

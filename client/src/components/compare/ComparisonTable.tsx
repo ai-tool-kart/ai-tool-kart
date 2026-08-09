@@ -14,6 +14,7 @@ interface ComparisonTableProps {
   headLabel?: string
   /** Column headers — plain names on the teaser, selects on the Compare page. */
   headCells?: ReactNode[]
+  density?: 'compare' | 'teaser'
 }
 
 export default function ComparisonTable({
@@ -21,10 +22,11 @@ export default function ComparisonTable({
   rows,
   headLabel = 'Pick your tools',
   headCells,
+  density = 'compare',
 }: ComparisonTableProps) {
   return (
     <GridTable
-      density="compare"
+      density={density}
       headLabel={headLabel}
       headCells={headCells ?? tools.map((tool) => tool.name)}
       rows={rows.map((row) => ({
