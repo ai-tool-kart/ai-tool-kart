@@ -1,0 +1,201 @@
+/*
+ * Typography for WordPress `content.rendered`.
+ *
+ * Every rule is scoped under `.article-content`, so nothing here reaches the
+ * rest of the application — the CMS controls the markup inside this block and
+ * only inside it. Values are composed from the design tokens in index.css
+ * rather than re-deriving colours.
+ *
+ * Long-form leading (1.75) and a 17px base are deliberately looser than the
+ * card/UI scale: this column is read, not scanned.
+ */
+
+.article-content {
+  color: var(--color-body);
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.article-content > :first-child {
+  margin-top: 0;
+}
+
+.article-content > :last-child {
+  margin-bottom: 0;
+}
+
+.article-content p {
+  margin: 0 0 22px;
+  text-wrap: pretty;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  margin: 44px 0 14px;
+  color: var(--color-ink);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.article-content h1 { font-size: 32px; }
+.article-content h2 { font-size: 27px; }
+.article-content h3 { font-size: 21px; }
+.article-content h4 { font-size: 18px; }
+
+.article-content ul,
+.article-content ol {
+  margin: 0 0 22px;
+  padding-left: 24px;
+}
+
+.article-content ul { list-style: disc; }
+.article-content ol { list-style: decimal; }
+
+.article-content li {
+  margin: 0 0 9px;
+  padding-left: 4px;
+}
+
+.article-content li::marker {
+  color: var(--color-accent);
+}
+
+.article-content li > ul,
+.article-content li > ol {
+  margin: 9px 0 0;
+}
+
+.article-content a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(185, 165, 255, 0.4);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-content a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: var(--color-link-hover);
+}
+
+.article-content strong,
+.article-content b {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.article-content em,
+.article-content i {
+  font-style: italic;
+}
+
+.article-content blockquote {
+  margin: 30px 0;
+  padding: 4px 0 4px 22px;
+  border-left: 2px solid var(--color-accent-line);
+  color: var(--color-muted-soft);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.article-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article-content hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* WordPress emits bare <img>, <figure>, and wp-block-image wrappers. */
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.article-content figure {
+  margin: 30px 0;
+}
+
+.article-content figcaption {
+  margin-top: 11px;
+  color: var(--color-subtle-dim);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.article-content code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--color-hairline);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+.article-content pre {
+  margin: 26px 0;
+  padding: 18px 20px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-hairline);
+  background: rgba(255, 255, 255, 0.035);
+  /* Wide code scrolls inside its own box; the page must never scroll sideways. */
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.article-content pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-muted-soft);
+  font-size: inherit;
+}
+
+.article-content table {
+  display: block;
+  width: 100%;
+  margin: 26px 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.article-content th,
+.article-content td {
+  padding: 11px 14px;
+  border: 1px solid var(--color-hairline);
+  text-align: left;
+}
+
+.article-content th {
+  background: var(--color-row-head);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.article-content iframe,
+.article-content video {
+  max-width: 100%;
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 640px) {
+  .article-content { font-size: 16px; }
+  .article-content h1 { font-size: 27px; }
+  .article-content h2 { font-size: 23px; }
+  .article-content h3 { font-size: 19px; }
+}

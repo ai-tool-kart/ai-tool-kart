@@ -35,8 +35,8 @@ export default function CtaBanner() {
           <Button variant="light" to="/submit">
             Submit a tool
           </Button>
-          <Button variant="outlineLight" to="/pricing">
-            See plans
+          <Button variant="outlineLight" to="/browse">
+            Browse the catalog
           </Button>
         </div>
       </div>

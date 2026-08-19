@@ -1,20 +1,32 @@
 /*
- * Primary nav, ported from the `nav` array in the Claude Design handoff
- * (AI Tool Kart Site.dc.html, renderVals()).
+ * Primary nav, ported from the `nav` array in the latest design
+ * (ai tool kart ui design v2/AI Tool Kart Site.dc.html, renderVals(), ~line 1846):
  *
- * The prototype switched views via in-memory `state.page`; here each key becomes
- * a real route path. Home is reachable through the logo only, exactly as in the
- * design — it is not a nav item.
+ *   Browse · New Launches · Our AI Assistant · Blog · Community
+ *
+ * Pricing and the "Sign in / Get started free" pair are gone from that design and
+ * from the product direction, so they are gone from here too.
+ *
+ * The prototype routed by in-memory `state.page` and tracked the selected item
+ * separately in `state.navKey`, which let two items share a destination while
+ * only one looked selected. React derives the active state from the URL instead,
+ * so items that share a destination with another opt out of the active treatment
+ * via `matchesRoute: false` — otherwise "Browse" and "New Launches" would both
+ * light up on /browse. They still navigate exactly where the design sends them;
+ * each gains its own route once that view is designed.
  */
 
 export interface NavItem {
   label: string
   to: string
+  /** False when another item owns this destination's active state. Defaults to true. */
+  matchesRoute?: boolean
 }
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
-  { label: 'Compare', to: '/compare' },
-  { label: 'Pricing', to: '/pricing' },
-  { label: 'Submit a tool', to: '/submit' },
+  { label: 'New Launches', to: '/browse', matchesRoute: false },
+  { label: 'Our AI Assistant', to: '/', matchesRoute: false },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Community', to: '/', matchesRoute: false },
 ]

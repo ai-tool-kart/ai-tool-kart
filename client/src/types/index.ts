@@ -1,3 +1,4 @@
+export type { BlogPost } from '@/types/blog'
 export type { Category } from '@/types/category'
 export type { ComparisonRow, Faq, Stat } from '@/types/content'
 export type { BillingPeriod, FeatureMatrixRow, PricingTier } from '@/types/pricing'

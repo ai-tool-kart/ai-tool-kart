@@ -4,7 +4,6 @@ import CtaBanner from '@/pages/home/sections/CtaBanner'
 import FaqSection from '@/pages/home/sections/FaqSection'
 import FeaturedSection from '@/pages/home/sections/FeaturedSection'
 import Hero from '@/pages/home/sections/Hero'
-import PricingTeaser from '@/pages/home/sections/PricingTeaser'
 import TrendingSection from '@/pages/home/sections/TrendingSection'
 
 /* Composition only — section order matches the handoff exactly. */
@@ -17,7 +16,6 @@ export default function HomePage() {
       <FeaturedSection />
       <CategoriesSection />
       <CompareTeaser />
-      <PricingTeaser />
       <FaqSection />
       <CtaBanner />
     </>

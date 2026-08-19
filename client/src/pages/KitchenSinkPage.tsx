@@ -60,7 +60,7 @@ export default function KitchenSinkPage() {
       <Block title="Buttons">
         <div className="flex flex-wrap items-center gap-4">
           <Button variant="gradient" magnetic>
-            Get started free
+            Submit Your Tool
           </Button>
           <Button variant="outline">Browse all 2,412</Button>
           <Button variant="ghost">Compare</Button>
