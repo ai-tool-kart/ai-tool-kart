@@ -1,0 +1,25 @@
+{
+  "name": "aitoolkart-news-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Server-side AI news pipeline for AI Tool Kart. Discovers, verifies and drafts AI news into WordPress. See NEWS_AGENT.md.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "agent": "node --env-file-if-exists=.env src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "node --test --experimental-test-module-mocks tests/**/*.test.ts",
+    "db:inspect": "node --env-file-if-exists=.env src/cli.ts --inspect-db"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "~6.0.2"
+  }
+}

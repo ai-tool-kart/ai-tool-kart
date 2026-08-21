@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Node 26 strips types natively, so `node src/cli.ts` runs without a build
+     * step. `tsc` is kept for typechecking and for emitting a deployable dist/.
+     * `erasableSyntaxOnly` forbids the TS constructs Node cannot strip
+     * (enum, namespace, parameter properties) so the two paths never diverge. */
+    "target": "es2023",
+    "lib": ["es2023"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": false,
+
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", "dist", "data"]
+}

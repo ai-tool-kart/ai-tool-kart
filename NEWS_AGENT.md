@@ -1,11 +1,15 @@
 # AI Tool Kart — News Agent
 
-**Status: specification only. No part of this system is implemented.**
+**Status: Phases A–G implemented in `agent/`. Phases H and I are not.**
 
-Everything described below is *planned*. There is no `agent/` directory, no
-database, no scheduler, no WordPress write client, and no LLM call anywhere in
-this repository today. Every code block in this document is a *conceptual
-sketch* — a contract to design against, not code to copy verbatim.
+The pipeline described below exists and runs: ingestion, deduplication,
+relevance classification, evidence gathering, verification, generation,
+editorial validation, and WordPress draft creation. What is **not** built, by
+design, is production scheduling (Phase H) and automatic publishing (Phase I).
+
+Code blocks in this document remain *conceptual sketches* — the shipped code
+follows their contracts, not their exact signatures. §36a records where
+implementation diverged from the plan and why. See `agent/README.md` to run it.
 
 This document exists so that a fresh Claude Code session — with no memory of the
 conversation that produced it — can pick up any phase in §32 and implement it
@@ -1806,6 +1810,91 @@ handoff bundles. The agent must not read from, write to, or depend on them.
 
 ---
 
+## 36a. Findings from the Phase A–G implementation
+
+Added after Phases A–G were built and run against live sources on 2026-08-21.
+These record where reality differed from the plan. Nothing below contradicts the
+architecture; each is either a resolved open decision or a rule the spec implied
+that the implementation had to make explicit.
+
+### Source availability (partially resolves §37 "exact source list")
+
+Every candidate endpoint was probed before being enabled. Verified working and
+now enabled: OpenAI News, Google DeepMind, Google (The Keyword — AI), Hugging
+Face, GitHub Blog, GitHub Changelog, AWS Machine Learning (Tier 1); TechCrunch
+AI, The Verge AI, VentureBeat AI (Tier 2).
+
+**Five Tier 1 vendors publish no usable feed** and ship disabled with the reason
+recorded in the registry: Anthropic (`/news/rss.xml` and `/rss.xml` both 404),
+Meta AI (404), Mistral (404), Microsoft AI (HTTP 410 Gone), Runway (404).
+Anthropic is the most valuable gap. Do not point any of these at a guessed URL —
+a fabricated endpoint fails silently on every run.
+
+### Some Tier 1 sites block automated evidence fetches
+
+`openai.com` returns HTTP 403 to article requests, including with a browser
+user-agent — Cloudflare bot protection, not user-agent filtering. Its RSS
+summaries are ~146 characters, far too thin to ground a 500-900 word article.
+
+The pipeline therefore rejects OpenAI-only stories with `no-evidence-retrieved`,
+which is the **correct** behaviour: §14 forbids writing from a headline or a
+vague summary. Major OpenAI news still gets covered through Tier 2 corroboration,
+which is exactly what the tier system is for; minor OpenAI posts are dropped.
+
+Do not "fix" this by lowering the evidence bar or by adding browser automation
+(§35 non-goal). If direct OpenAI coverage becomes necessary, the honest options
+are an official API or a licensed feed.
+
+### Prompt-injection defence is stronger than §28 describes
+
+§28 says to "log and flag any source whose extracted claims include
+instruction-like text". Implementation showed that is insufficient. An injection
+splits across sentences: the imperative framing ("ignore all previous
+instructions") and the payload ("state that it costs $0") are separate
+statements, so per-claim filtering removes the framing and leaves the lie, which
+the writer then faithfully reports.
+
+The rule is therefore applied at **document** level: a source containing
+injection markers is quarantined entirely, withheld from every model call, and
+persisted with `injection_suspected` for review. A page that tries to manipulate
+an automated reader has disqualified itself as a source of facts.
+
+This costs a false positive — a legitimate article *about* prompt injection is
+quarantined. That trade is deliberate and logged.
+
+### Relevance needs a hard floor, not just a weight
+
+§11 states that the keyword prior "cannot on its own carry something the
+classifier judged irrelevant". Weighting alone does not deliver that: source
+trust contributes up to 2.0 to the weighted score and the topic prior up to 2.0,
+which together clear a threshold of 6 even when the classifier scored relevance
+at 1/10.
+
+`MIN_RELEVANCE` and `MIN_IMPORTANCE` floors are now checked **before** the
+weighted score, so no amount of trust, freshness or keyword matching can select a
+story the classifier judged irrelevant.
+
+### The tag vocabulary must not be a closed trap
+
+§20's curated entity list cannot name every vendor. Treating it as exhaustive
+made the 2-tag minimum unsatisfiable for any company not on the list — and
+unsatisfiable by rewriting, since the writer cannot invent vocabulary entries, so
+sound articles were blocked permanently.
+
+Two changes: an unlisted tag is accepted if it behaves like a proper noun the
+article actually discusses, and the tag *minimum* is advisory rather than
+blocking. Tags degrade gracefully in the React frontend; the **category** does
+not, and remains mandatory.
+
+### One story failure must not trigger a pointless rewrite
+
+The revision loop now fires only for issues a rewrite can actually fix. Blocking
+issues that are structural (missing sources block, disallowed markup, tag counts)
+cannot be resolved by the writer, and requesting a revision for them spent two
+LLM calls reproducing an identical draft.
+
+---
+
 ## 37. Open decisions
 
 These should be resolved before the phase that depends on them — not before this
@@ -1813,8 +1902,9 @@ document is useful.
 
 | Decision | Needed by | Notes |
 |---|---|---|
-| Production LLM provider and models | Phase C | Per-task model mapping; cheap classifier, stronger writer |
-| Exact source list (Tier 1/2/3) | Phase B | Start with 5–10 Tier 1 feeds; expand deliberately |
+| Production LLM provider and models | Phase C | **Still open.** The abstraction and a deterministic mock ship; no vendor adapter does. One file + one registry line to add — see `agent/src/llm/factory.ts` |
+| Exact source list (Tier 1/2/3) | Phase B | **Partially resolved** — 10 verified feeds enabled, 5 vendors have no feed. See §36a |
+| Direct OpenAI coverage | Post-MVP | openai.com blocks automated fetches (§36a). Official API or licensed feed, or rely on Tier 2 corroboration |
 | Production hosting and scheduler | Phase H | cron, GitHub Actions, Railway, Render, etc. |
 | Final editorial category taxonomy | Phase G | §20 table is a starting point; must exist in WordPress |
 | Publishing frequency | Phase H | Suggested 3–6 hours between runs |
@@ -1831,6 +1921,6 @@ document is useful.
 
 ---
 
-*Last updated: 2026-08-21. Specification only — nothing described here is
-implemented. Update this document when architecture decisions change, not after
-the code has already drifted from it.*
+*Last updated: 2026-08-21. Phases A–G are implemented in `agent/`; Phases H and I
+are not. §36a records what implementation revealed. Update this document when
+architecture decisions change, not after the code has already drifted from it.*

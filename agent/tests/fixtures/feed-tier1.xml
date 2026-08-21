@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vendor AI — News</title>
+    <link>https://vendor.example.com/news</link>
+    <description>Official announcements</description>
+    <item>
+      <title>Vendor launches Aurora 2 with a 500,000 token context window</title>
+      <link>https://vendor.example.com/news/aurora-2?utm_source=rss&amp;utm_medium=feed</link>
+      <guid>https://vendor.example.com/news/aurora-2</guid>
+      <pubDate>Wed, 20 Aug 2026 09:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Aurora 2 is available today in the API with a 500,000 token context window and improved tool use.</p>]]></description>
+    </item>
+    <item>
+      <title>Vendor publishes updated safety documentation</title>
+      <link>https://vendor.example.com/news/safety-docs</link>
+      <pubDate>Tue, 19 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Routine documentation update covering deployment guidance.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://vendor.example.com/news/broken</link>
+    </item>
+    <item>
+      <title>An item with no usable link at all</title>
+    </item>
+  </channel>
+</rss>

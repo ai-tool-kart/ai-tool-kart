@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TechPress — AI</title>
+  <entry>
+    <title>Aurora 2 officially launches with 500,000 token context | TechPress</title>
+    <link rel="alternate" href="https://techpress.example.com/2026/08/20/aurora-2-launch"/>
+    <id>tag:techpress.example.com,2026:aurora-2</id>
+    <published>2026-08-20T10:30:00Z</published>
+    <summary>Vendor has released Aurora 2, confirming a 500,000 token context window.</summary>
+  </entry>
+  <entry>
+    <title>Rumor: Vendor reportedly working on Aurora 3</title>
+    <link rel="alternate" href="https://techpress.example.com/2026/08/20/aurora-3-rumor"/>
+    <published>2026-08-20T11:00:00Z</published>
+    <summary>Sources say a follow-up could launch next year. Nothing is confirmed.</summary>
+  </entry>
+  <entry>
+    <title>Top 10 AI prompts you should be using right now</title>
+    <link rel="alternate" href="https://techpress.example.com/2026/08/20/top-10-prompts"/>
+    <published>2026-08-20T11:30:00Z</published>
+    <summary>Tips and tricks for getting more from your assistant.</summary>
+  </entry>
+</feed>
