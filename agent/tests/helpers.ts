@@ -14,6 +14,7 @@ import type { NewsSource } from '../src/domain/types.ts'
 import { openDatabase } from '../src/storage/db.ts'
 import { createRepositories, type Repositories } from '../src/storage/repositories.ts'
 import { createLogger, type Logger } from '../src/utils/logger.ts'
+import { fixedClock, type Clock } from '../src/utils/time.ts'
 import type {
   CreatePostPayload,
   WordPressClient,
@@ -25,6 +26,27 @@ const FIXTURE_DIR = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
 export function fixture(name: string): string {
   return readFileSync(join(FIXTURE_DIR, name), 'utf8')
+}
+
+/*
+ * The instant the fixture feeds are read as happening "now".
+ *
+ * The feed fixtures carry absolute publication dates spanning
+ * 2026-08-19T12:00Z .. 2026-08-20T11:30Z. Pinning the run just after the newest
+ * of them keeps every fixture story inside EDITORIAL_SCOPE.maxStoryAgeHours
+ * without touching that threshold, so the production freshness gate runs at
+ * full strength and the suite stays correct on any calendar date.
+ *
+ * If you add a feed fixture, give it a date at or before this instant.
+ */
+export const FIXTURE_NOW = '2026-08-20T12:00:00.000Z'
+
+/** Clock pinned to FIXTURE_NOW; pass to executePipeline as `clock`. */
+export const TEST_CLOCK: Clock = fixedClock(FIXTURE_NOW)
+
+/** A clock offset from FIXTURE_NOW, for exercising the staleness boundary. */
+export function clockHoursAfterFixtures(hours: number): Clock {
+  return fixedClock(new Date(Date.parse(FIXTURE_NOW) + hours * 3_600_000))
 }
 
 /** Discards output unless TEST_LOGS=1, so failures stay readable. */

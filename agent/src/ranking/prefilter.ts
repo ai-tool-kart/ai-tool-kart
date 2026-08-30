@@ -12,7 +12,7 @@
 import { EDITORIAL_SCOPE, type TopicRule } from '../config/editorial.ts'
 import type { CandidateStory, NewsItem } from '../domain/types.ts'
 import { isBannedDomain, registrableDomain } from '../dedupe/url.ts'
-import { hoursSince } from '../utils/time.ts'
+import { hoursSince, systemClock, type Clock } from '../utils/time.ts'
 
 export interface PrefilterVerdict {
   pass: boolean
@@ -43,6 +43,8 @@ export interface PrefilterInput {
   items: NewsItem[]
   /** Trust tier per source id, from the registry. */
   tierBySourceId: Map<string, 1 | 2 | 3>
+  /** Editorial "now" for the staleness gate. Defaults to the real clock. */
+  clock?: Clock
 }
 
 /**
@@ -52,7 +54,12 @@ export interface PrefilterInput {
  * one §4 asks for: banned domains and excluded topics veto, everything else
  * nudges.
  */
-export function prefilterStory({ story, items, tierBySourceId }: PrefilterInput): PrefilterVerdict {
+export function prefilterStory({
+  story,
+  items,
+  tierBySourceId,
+  clock = systemClock,
+}: PrefilterInput): PrefilterVerdict {
   const scope = EDITORIAL_SCOPE
 
   const tiers = items
@@ -95,7 +102,8 @@ export function prefilterStory({ story, items, tierBySourceId }: PrefilterInput)
    * even if the first outlet published it two days ago; using the oldest item
    * would drop stories the moment a laggard feed picked them up.
    */
-  const ages = items.map((item) => hoursSince(item.publishedAt ?? item.discoveredAt))
+  const now = clock.now()
+  const ages = items.map((item) => hoursSince(item.publishedAt ?? item.discoveredAt, now))
   const freshestHours = Math.min(...ages)
   if (freshestHours > scope.maxStoryAgeHours) {
     return { ...base, pass: false, reason: `stale (${Math.round(freshestHours)}h old)` }

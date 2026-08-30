@@ -40,7 +40,7 @@ import { computeScores, selectStory } from '../ranking/score.ts'
 import { enabledSources, SOURCES } from '../sources/registry.ts'
 import type { Repositories } from '../storage/repositories.ts'
 import { errorFields, type Logger } from '../utils/logger.ts'
-import { hoursSince, nowIso } from '../utils/time.ts'
+import { hoursSince, nowIso, systemClock, type Clock } from '../utils/time.ts'
 import { verifyClaims } from '../verification/verify.ts'
 import { createWordPressClient, type WordPressClient } from '../wordpress/client.ts'
 import { isPublishingBlocked, publishDraft } from '../wordpress/publish.ts'
@@ -62,6 +62,13 @@ export interface RunOptions {
   gather?: Pick<GatherDeps, 'fetchPage'>
   mock?: MockProviderOptions
   wordPressClient?: WordPressClient
+  /**
+   * Editorial "now" for story age, freshness and the dedupe window. Defaults
+   * to the real clock; tests pin it so fixtures with absolute publication
+   * dates stay fresh without weakening the production freshness rule.
+   * Run-lock staleness deliberately keeps using real wall-clock time.
+   */
+  clock?: Clock
 }
 
 export interface RunResult {
@@ -71,7 +78,8 @@ export interface RunResult {
 }
 
 export async function executePipeline(options: RunOptions): Promise<RunResult> {
-  const { env, repos, logger, dryRun } = options
+  const { env, repos, logger, dryRun, clock = systemClock } = options
+  // Run bookkeeping uses real time: the run lock measures process liveness.
   const startedAt = nowIso()
 
   const run: PipelineRun = {
@@ -130,6 +138,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
     const ingested = await ingestSources(sources, {
       env,
       logger: log,
+      clock,
       ...(options.ingest?.fetchFeed ? { fetchFeed: options.ingest.fetchFeed } : {}),
     })
 
@@ -143,7 +152,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
     }
 
     /* ── Step 5: dedupe and cluster ──────────────────────────────────────── */
-    const clustered = clusterItems(ingested.items, { repos, logger: log, runId: run.id })
+    const clustered = clusterItems(ingested.items, { repos, logger: log, runId: run.id, clock })
     run.counters.itemsDuplicate = clustered.itemsDuplicate + ingested.droppedBeforePersist
     run.counters.storiesCandidate = clustered.stories.length
 
@@ -164,7 +173,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
       const items = repos.newsItems.listByIds(story.newsItemIds)
       const storyLog = log.child({ storyId: story.id })
 
-      const prefilter = prefilterStory({ story, items, tierBySourceId })
+      const prefilter = prefilterStory({ story, items, tierBySourceId, clock })
       if (!prefilter.pass) {
         repos.stories.setStatus(story.id, 'rejected', prefilter.reason)
         run.counters.itemsRejected += items.length
@@ -182,7 +191,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
         .map((item) => tierBySourceId.get(item.sourceId))
         .filter((tier): tier is TrustTier => tier !== undefined)
       const ageHours = Math.min(
-        ...items.map((item) => hoursSince(item.publishedAt ?? item.discoveredAt)),
+        ...items.map((item) => hoursSince(item.publishedAt ?? item.discoveredAt, clock.now())),
       )
 
       let classification
@@ -230,7 +239,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
         ? classification.category
         : 'industry'
 
-      repos.stories.upsert({ ...story, scores, category, lastUpdatedAt: nowIso() })
+      repos.stories.upsert({ ...story, scores, category, lastUpdatedAt: clock.nowIso() })
 
       const selection = selectStory({
         weighted: scores.weighted,

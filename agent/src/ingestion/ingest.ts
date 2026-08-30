@@ -15,7 +15,7 @@ import { fetchText } from '../utils/http.ts'
 import { newsItemId } from '../utils/ids.ts'
 import type { Logger } from '../utils/logger.ts'
 import { errorFields } from '../utils/logger.ts'
-import { nowIso, parseFeedDate } from '../utils/time.ts'
+import { parseFeedDate, systemClock, type Clock } from '../utils/time.ts'
 import { truncateWords } from '../utils/text.ts'
 import { parseFeed, type RawFeedItem } from './feedParser.ts'
 
@@ -30,14 +30,19 @@ export interface IngestResult {
 /** Feed summaries are untrusted text and only ever used as classifier context. */
 const MAX_SUMMARY_CHARS = 1200
 
-export function toNewsItem(raw: RawFeedItem, source: NewsSource, discoveredAt: string): NewsItem | undefined {
+export function toNewsItem(
+  raw: RawFeedItem,
+  source: NewsSource,
+  discoveredAt: string,
+  reference: Date = new Date(),
+): NewsItem | undefined {
   const canonicalUrl = canonicalizeUrl(raw.link)
   if (!canonicalUrl) return undefined
 
   const title = raw.title.trim()
   if (title.length < EDITORIAL_SCOPE.minTitleLength) return undefined
 
-  const publishedAt = parseFeedDate(raw.publishedAt)
+  const publishedAt = parseFeedDate(raw.publishedAt, reference)
 
   return {
     id: newsItemId(canonicalUrl),
@@ -57,6 +62,8 @@ export interface IngestDeps {
   logger: Logger
   /** Test seam: replaced with a fixture reader in tests. */
   fetchFeed?: (source: NewsSource) => Promise<string>
+  /** Editorial "now": stamps discoveredAt and bounds future-dated feed items. */
+  clock?: Clock
 }
 
 async function defaultFetchFeed(source: NewsSource, env: AgentEnv): Promise<string> {
@@ -80,8 +87,10 @@ export async function ingestSources(
   sources: NewsSource[],
   deps: IngestDeps,
 ): Promise<IngestResult> {
-  const { env, logger } = deps
+  const { env, logger, clock = systemClock } = deps
   const fetchFeed = deps.fetchFeed ?? ((source: NewsSource) => defaultFetchFeed(source, env))
+  const discoveredAt = clock.nowIso()
+  const reference = clock.now()
 
   const items: NewsItem[] = []
   const seenCanonical = new Set<string>()
@@ -122,7 +131,7 @@ export async function ingestSources(
     for (const raw of parsed.items) {
       if (accepted >= cap) break
 
-      const item = toNewsItem(raw, source, nowIso())
+      const item = toNewsItem(raw, source, discoveredAt, reference)
       if (!item) {
         skipped += 1
         continue

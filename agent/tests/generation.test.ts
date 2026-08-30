@@ -7,6 +7,8 @@ import { deterministicChecks } from '../src/editorial/validate.ts'
 import { computeScores, freshnessScore, selectStory, sourceTrustScore } from '../src/ranking/score.ts'
 import { prefilterStory } from '../src/ranking/prefilter.ts'
 import { buildPostPayload } from '../src/wordpress/publish.ts'
+import { EDITORIAL_SCOPE } from '../src/config/editorial.ts'
+import { fixedClock } from '../src/utils/time.ts'
 import type { ArticleDraft, CandidateStory, NewsItem, TrustTier } from '../src/domain/types.ts'
 
 /* ── Slugs ────────────────────────────────────────────────────────────────── */
@@ -256,6 +258,40 @@ test('stale stories are rejected', () => {
   })
   assert.equal(verdict.pass, false)
   assert.match(verdict.reason ?? '', /stale/)
+})
+
+/*
+ * The staleness gate is what the test-clock work in helpers.ts steers around,
+ * so it gets pinned from both sides here. If someone ever "fixes" a rotting
+ * fixture by widening maxStoryAgeHours, the boundary case below fails.
+ */
+test('the staleness gate is exact at maxStoryAgeHours', async (t) => {
+  const publishedAt = '2026-08-20T12:00:00.000Z'
+  const max = EDITORIAL_SCOPE.maxStoryAgeHours
+
+  const verdictAt = (hoursLater: number) =>
+    prefilterStory({
+      story: story({ firstSeenAt: publishedAt }),
+      items: [newsItem({ publishedAt, discoveredAt: publishedAt })],
+      tierBySourceId: TIERS,
+      clock: fixedClock(new Date(Date.parse(publishedAt) + hoursLater * 3_600_000)),
+    })
+
+  await t.test('just inside the window passes', () => {
+    const verdict = verdictAt(max - 1)
+    assert.equal(verdict.pass, true, `a story ${max - 1}h old must still be current`)
+  })
+
+  await t.test('just outside the window is rejected', () => {
+    const verdict = verdictAt(max + 1)
+    assert.equal(verdict.pass, false, `a story ${max + 1}h old must be stale`)
+    assert.match(verdict.reason ?? '', /stale/)
+  })
+
+  await t.test('the threshold is a real limit, not an accident of test data', () => {
+    assert.ok(max > 0 && Number.isFinite(max), 'maxStoryAgeHours must bound something')
+    assert.equal(verdictAt(max * 10).pass, false, 'genuinely old news must never pass')
+  })
 })
 
 test('an already-published story is never reconsidered', () => {

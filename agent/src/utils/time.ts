@@ -1,5 +1,40 @@
 /** Time helpers. All timestamps crossing a module boundary are ISO 8601 UTC. */
 
+/**
+ * The pipeline's source of "now" for *editorial* decisions — story age, the
+ * freshness score, the dedupe window, and the discovery timestamp that feeds
+ * both.
+ *
+ * These decisions are relative to when the run happens, so tests that pin them
+ * to real wall-clock time rot: a feed fixture with an absolute pubDate is fresh
+ * the week it is written and stale forever after. Injecting the clock lets a
+ * test place the run at a fixed instant relative to its fixtures, so the
+ * production freshness rule stays fully in force and still gets exercised.
+ *
+ * Deliberately NOT used for run-lock staleness, log lines, or migration
+ * timestamps: those measure real process liveness, and must keep reading the
+ * real clock even if a run is ever backfilled against an earlier editorial now.
+ */
+export interface Clock {
+  now(): Date
+  nowIso(): string
+}
+
+export const systemClock: Clock = {
+  now: () => new Date(),
+  nowIso: () => new Date().toISOString(),
+}
+
+/** Test seam: a clock frozen at one instant. */
+export function fixedClock(instant: string | Date): Clock {
+  const at = typeof instant === 'string' ? new Date(instant) : new Date(instant.getTime())
+  if (Number.isNaN(at.getTime())) {
+    throw new TypeError(`fixedClock received an unparseable instant: ${String(instant)}`)
+  }
+  const iso = at.toISOString()
+  return { now: () => new Date(at.getTime()), nowIso: () => iso }
+}
+
 export function nowIso(): string {
   return new Date().toISOString()
 }

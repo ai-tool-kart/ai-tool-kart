@@ -9,6 +9,8 @@ import {
   testEnv,
   testLogger,
   testRepos,
+  TEST_CLOCK,
+  clockHoursAfterFixtures,
 } from './helpers.ts'
 import type { Repositories } from '../src/storage/repositories.ts'
 
@@ -51,6 +53,10 @@ async function runPipeline(h: RunHarness, overrides: Record<string, unknown> = {
     ingest: { fetchFeed: FEEDS },
     gather: { fetchPage: PAGES },
     wordPressClient: h.wp,
+    // Pinned editorial clock: the fixtures carry absolute publication dates, so
+    // without this the production staleness gate would reject them as the real
+    // date moved on, and every stage below the prefilter would go untested.
+    clock: TEST_CLOCK,
     ...overrides,
   })
 }
@@ -159,6 +165,34 @@ test('dry run never writes to WordPress', async () => {
   // The rest of the pipeline still ran.
   assert.ok(run.counters.itemsDiscovered > 0)
   assert.ok(run.counters.articlesGenerated >= 1, 'dry run should still generate drafts')
+
+  h.repos.close()
+})
+
+/*
+ * The counterpart to the pinned clock in runPipeline(): the fixtures are only
+ * fresh *because* the run is placed next to them. Move the run far enough
+ * forward and the same fixtures must be thrown away as stale, all the way
+ * through the real pipeline. This is what stops the staleness gate from being
+ * quietly weakened the next time a fixture rots.
+ */
+test('the same fixtures are rejected as stale once the run moves past the window', async () => {
+  const h = harness()
+  const { run, exitCode } = await runPipeline(h, {
+    clock: clockHoursAfterFixtures(24 * 30),
+  })
+
+  assert.equal(exitCode, 0, 'stale input is a normal outcome, not a run failure')
+  assert.equal(run.status, 'completed')
+  assert.ok(run.counters.itemsDiscovered > 0, 'the items are still ingested')
+  assert.equal(run.counters.articlesGenerated, 0, 'nothing may be written from stale news')
+  assert.equal(h.wp.created.length, 0, 'no draft may be created from stale news')
+
+  const rejected = h.repos.stories.listByStatus('rejected')
+  assert.ok(
+    rejected.some((story) => /stale/.test(story.rejectionReason ?? '')),
+    'the staleness rejection must be recorded, not silent',
+  )
 
   h.repos.close()
 })

@@ -17,7 +17,7 @@ import type { CandidateStory, NewsItem } from '../domain/types.ts'
 import type { Repositories } from '../storage/repositories.ts'
 import { storyId as makeStoryId } from '../utils/ids.ts'
 import type { Logger } from '../utils/logger.ts'
-import { hoursSince, nowIso } from '../utils/time.ts'
+import { hoursSince, systemClock, type Clock } from '../utils/time.ts'
 import { compareTitles, normalizeTitle } from './title.ts'
 import { registrableDomain } from './url.ts'
 
@@ -47,6 +47,12 @@ export interface ClusterDeps {
   repos: Repositories
   logger: Logger
   runId: string
+  /**
+   * Editorial "now". Must be the same clock ingestion stamped discoveredAt
+   * with: the level-3 window is compared against stories.first_seen_at, which
+   * derives from it, so mixing two clocks would silently narrow the window.
+   */
+  clock?: Clock
 }
 
 /**
@@ -57,7 +63,7 @@ export interface ClusterDeps {
  * run free (§27).
  */
 export function clusterItems(items: NewsItem[], deps: ClusterDeps): ClusterResult {
-  const { repos, logger, runId } = deps
+  const { repos, logger, runId, clock = systemClock } = deps
   const log = logger.child({ step: 'dedupe' })
 
   const known = repos.newsItems.findKnownCanonicalUrls(items.map((item) => item.canonicalUrl))
@@ -66,7 +72,10 @@ export function clusterItems(items: NewsItem[], deps: ClusterDeps): ClusterResul
 
   // Recent stories are the candidates for level-3 matching. The window bounds
   // both the comparison cost and the risk of merging unrelated anniversaries.
-  const windowStart = new Date(Date.now() - DEDUPE.clusterWindowHours * 3_600_000).toISOString()
+  const now = clock.now()
+  const windowStart = new Date(
+    now.getTime() - DEDUPE.clusterWindowHours * 3_600_000,
+  ).toISOString()
   const recentStories = repos.stories.listSince(windowStart)
 
   // Working set: existing stories plus ones created during this run, so two
@@ -80,7 +89,7 @@ export function clusterItems(items: NewsItem[], deps: ClusterDeps): ClusterResul
   let storiesMerged = 0
 
   for (const item of unseen) {
-    const match = findMatchingStory(item, working, repos)
+    const match = findMatchingStory(item, working, repos, now)
 
     let story: CandidateStory
     if (match) {
@@ -121,7 +130,7 @@ export function clusterItems(items: NewsItem[], deps: ClusterDeps): ClusterResul
       }
     }
 
-    story = { ...story, lastUpdatedAt: nowIso() }
+    story = { ...story, lastUpdatedAt: clock.nowIso() }
 
     /*
      * Order matters: the story row must exist before news_items.story_id points
@@ -181,13 +190,14 @@ function findMatchingStory(
   item: NewsItem,
   working: Map<string, CandidateStory>,
   repos: Repositories,
+  now: Date,
 ): StoryMatch | undefined {
   let best: StoryMatch | undefined
 
   for (const story of working.values()) {
     // Stories already published or rejected still absorb duplicates: that is how
     // a re-reported story avoids becoming a second article.
-    if (hoursSince(story.firstSeenAt) > DEDUPE.clusterWindowHours) continue
+    if (hoursSince(story.firstSeenAt, now) > DEDUPE.clusterWindowHours) continue
 
     const verdict = compareTitles(item.title, story.title, DEDUPE)
     if (!verdict.sameStory) continue

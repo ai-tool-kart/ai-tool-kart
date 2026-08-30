@@ -18,6 +18,7 @@ import {
   testEnv,
   testLogger,
   testRepos,
+  TEST_CLOCK,
 } from './helpers.ts'
 
 /* ── SSRF guard ───────────────────────────────────────────────────────────── */
@@ -244,6 +245,17 @@ test('a prompt-injection fixture cannot alter pipeline behaviour', async () => {
   const repos = testRepos()
   const wp = mockWordPress()
 
+  /*
+   * A MIXED evidence set, deliberately.
+   *
+   * If every page were hostile, every source would be quarantined, no draft
+   * would be written, and the assertions below would iterate an empty array —
+   * the test would pass while proving nothing. So the Tier 1 vendor page is
+   * clean and the Tier 2 page is the attack. The story therefore still has
+   * sufficient evidence (§5: one Tier 1 source) and a real article IS produced,
+   * which is the only way to show that the injected instructions reached the
+   * pipeline and still failed to influence the published text.
+   */
   const { run, exitCode } = await executePipeline({
     env: testEnv(),
     repos,
@@ -251,14 +263,38 @@ test('a prompt-injection fixture cannot alter pipeline behaviour', async () => {
     dryRun: false,
     sources: TEST_SOURCES,
     ingest: { fetchFeed: fixtureFeedFetcher({ 'vendor-news': 'feed-tier1.xml', 'techpress-ai': 'feed-tier2.xml' }) },
-    // Every evidence page is the hostile document.
-    gather: { fetchPage: fixturePageFetcher([['', 'article-injection.html']]) },
+    gather: {
+      fetchPage: fixturePageFetcher([
+        ['vendor.example.com', 'article-tier1.html'],
+        ['', 'article-injection.html'],
+      ]),
+    },
     wordPressClient: wp,
+    clock: TEST_CLOCK,
   })
 
   assert.equal(exitCode, 0, 'the run must survive hostile source content')
   assert.equal(run.status, 'completed')
   assert.equal(run.errors.length, 0, 'hostile content must not produce pipeline errors')
+
+  // The guard against this test silently going vacuous again: the hostile
+  // document must actually have been fetched, and an article must actually have
+  // been written, or the assertions below prove nothing.
+  const hostile = repos.evidence
+    .listForStory(repos.stories.listByStatus('published')[0]?.id ?? '')
+    .concat(
+      repos.stories
+        .listByStatus('rejected')
+        .flatMap((story) => repos.evidence.listForStory(story.id)),
+    )
+  assert.ok(
+    hostile.some((item) => item.injectionSuspected),
+    'the injection fixture must have been retrieved and recognised, not skipped upstream',
+  )
+  assert.ok(
+    wp.created.length >= 1,
+    'at least one draft must be produced, or this test asserts over an empty set',
+  )
 
   // The injected instructions asked for: free pricing, leaked keys, and a
   // non-JSON response. None of them can change the pipeline's behaviour.
@@ -269,6 +305,8 @@ test('a prompt-injection fixture cannot alter pipeline behaviour', async () => {
     assert.ok(!body.includes('$0'), 'the injected pricing claim must not appear')
     assert.ok(!body.includes('unlimited usage'), 'the injected claim must not appear')
     assert.ok(!body.includes('ignore all previous instructions'), 'raw injection text must not be republished')
+    assert.ok(!body.includes('acmeai'), 'a claim from the quarantined source must not be reported')
+    assert.ok(!body.includes('nova'), 'a claim from the quarantined source must not be reported')
     assert.ok(!post.content.includes('<script'), 'no markup from the source may survive')
   }
 
@@ -288,6 +326,7 @@ test('a source attempting injection is quarantined, not merely flagged', async (
     ingest: { fetchFeed: fixtureFeedFetcher({ 'vendor-news': 'feed-tier1.xml', 'techpress-ai': 'feed-tier2.xml' }) },
     gather: { fetchPage: fixturePageFetcher([['', 'article-injection.html']]) },
     wordPressClient: wp,
+    clock: TEST_CLOCK,
   })
 
   // Every source was hostile, so no story can reach publication.
