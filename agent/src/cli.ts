@@ -10,6 +10,8 @@
  *   npm run agent -- --source=openai-news --limit=1
  *   npm run agent -- --sources          list the registry
  *   npm run agent -- --inspect-db       recent runs and pipeline state
+ *   npm run taxonomy:check              verify configured WP categories exist
+ *   npm run taxonomy:bootstrap          create missing configured categories
  */
 
 import { parseArgs } from 'node:util'
@@ -20,6 +22,13 @@ import { formatDuration, formatRunSummary } from './pipeline/summary.ts'
 import { SOURCES } from './sources/registry.ts'
 import { openDatabase } from './storage/db.ts'
 import { createRepositories } from './storage/repositories.ts'
+import { createWordPressClient } from './wordpress/client.ts'
+import {
+  bootstrapCategories,
+  checkTaxonomy,
+  formatTaxonomyReport,
+  taxonomyIsReady,
+} from './wordpress/bootstrap.ts'
 import { createLogger, errorFields, type Logger } from './utils/logger.ts'
 
 const USAGE = `
@@ -33,6 +42,11 @@ Options:
   --limit=<n>         Cap articles generated this run.
   --sources           List the configured source registry and exit.
   --inspect-db        Print recent runs and stored state, then exit.
+  --taxonomy-check    Verify the configured WordPress categories exist. Read-only.
+  --taxonomy-bootstrap
+                      Create the configured categories that are missing.
+                      Only allowlisted editorial categories; never tags, never
+                      a name from article output. Needs manage_categories.
   --log-format=<fmt>  json | pretty (overrides AGENT_LOG_FORMAT).
   --verbose           Shorthand for debug-level logging.
   --help              Show this message.
@@ -46,6 +60,8 @@ function main(): void {
       limit: { type: 'string' },
       sources: { type: 'boolean', default: false },
       'inspect-db': { type: 'boolean', default: false },
+      'taxonomy-check': { type: 'boolean', default: false },
+      'taxonomy-bootstrap': { type: 'boolean', default: false },
       'log-format': { type: 'string' },
       verbose: { type: 'boolean', default: false },
       help: { type: 'boolean', default: false },
@@ -89,6 +105,44 @@ function main(): void {
   if (values['inspect-db']) {
     inspectDatabase(repos, logger)
     repos.close()
+    return
+  }
+
+  if (values['taxonomy-check'] || values['taxonomy-bootstrap']) {
+    const bootstrap = values['taxonomy-bootstrap'] === true
+    repos.close()
+
+    if (!env.wordpress) {
+      process.stderr.write(
+        '\nWordPress is not configured. Set WORDPRESS_API_URL, WORDPRESS_USERNAME and ' +
+          'WORDPRESS_APP_PASSWORD before running a taxonomy command.\n\n',
+      )
+      process.exitCode = 1
+      return
+    }
+
+    const client = createWordPressClient({
+      credentials: env.wordpress,
+      logger,
+      timeoutMs: env.http.timeoutMs,
+      userAgent: env.http.userAgent,
+    })
+
+    const task = bootstrap
+      ? bootstrapCategories({ client, logger })
+      : checkTaxonomy({ client, logger })
+
+    task
+      .then((report) => {
+        logger.plain(formatTaxonomyReport(report, bootstrap ? 'bootstrap' : 'check'))
+        // Non-zero when the pipeline would defer on taxonomy, so CI and setup
+        // scripts can gate on it.
+        process.exitCode = taxonomyIsReady(report) ? 0 : 1
+      })
+      .catch((error: unknown) => {
+        logger.error('Taxonomy command failed', errorFields(error))
+        process.exitCode = 1
+      })
     return
   }
 

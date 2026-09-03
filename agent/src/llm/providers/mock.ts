@@ -19,7 +19,8 @@
 
 import { LLMRefusal, type LLMProvider, type LLMRawResponse, type LLMRequest, type ModelClass } from '../provider.ts'
 import { shortHash } from '../../utils/ids.ts'
-import { EDITORIAL_CATEGORIES } from '../../config/editorial.ts'
+import { EDITORIAL_CATEGORIES, TAG_ENTITIES } from '../../config/editorial.ts'
+import { containsWord, isNonEntityWord } from '../../editorial/tags.ts'
 
 /** Rough token estimate. Only used for budget accounting in offline runs. */
 function estimateTokens(text: string): number {
@@ -329,7 +330,7 @@ function mockWrite(input: string): string {
     },
   ]
 
-  const tags = deriveTags(input)
+  const tags = deriveTags(storyTitle, statements)
 
   const rawExcerpt = `${storyTitle}. ${lead}`.replace(/\s+/g, ' ')
   const excerpt =
@@ -347,14 +348,57 @@ function mockWrite(input: string): string {
   })
 }
 
-function deriveTags(input: string): string[] {
-  const known = [
-    'OpenAI', 'Anthropic', 'Claude', 'ChatGPT', 'Gemini', 'Google', 'DeepMind', 'GitHub',
-    'Microsoft', 'Meta', 'Llama', 'Mistral', 'Hugging Face', 'MCP', 'Figma', 'Runway', 'AWS',
-  ]
-  const found = known.filter((tag) => input.toLowerCase().includes(tag.toLowerCase()))
-  if (found.length >= 2) return found.slice(0, 5)
-  return [...found, 'AI Tools'].slice(0, 5)
+/**
+ * Entity tags for the mock draft, derived from the story itself.
+ *
+ * Two rules keep this honest, and both exist because the earlier version broke
+ * them. It matched with a plain substring `includes` over the ENTIRE writer
+ * prompt, so a GitHub Copilot story picked up the tag "Meta" — "meta" appears
+ * inside "metadata" in the prompt scaffolding, and the whole prompt includes
+ * URLs and publisher lists the article never discusses. A wrong tag is a wrong
+ * factual association on a published post.
+ *
+ *   1. Match on WORD BOUNDARIES, via the same containsWord() the production
+ *      normaliser uses, so "meta" cannot match "metadata".
+ *   2. Search only the STORY — its title and the claims the draft is built from
+ *      — never the surrounding prompt.
+ *
+ * It also reuses the curated vocabulary in config/editorial.ts rather than
+ * keeping a private list, so the mock cannot drift from production canonical
+ * forms. Everything it emits still passes through normalizeTags() downstream;
+ * this only stops the mock from proposing something unrelated in the first place.
+ */
+function deriveTags(storyTitle: string, statements: string[]): string[] {
+  const haystack = [storyTitle, ...statements].join(' ')
+  const found: string[] = []
+
+  for (const [key, canonical] of Object.entries(TAG_ENTITIES)) {
+    if (found.length >= 5) break
+    if (!found.includes(canonical) && containsWord(haystack, key)) found.push(canonical)
+  }
+
+  /*
+   * Product names the curated vocabulary does not list — "Visual Studio",
+   * "Aurora 2" — read out of the TITLE only, where a story names its subject.
+   * Capitalised runs of up to three words, which is what a product name looks
+   * like; the production entity check applies the same shape rule.
+   */
+  for (const match of storyTitle.matchAll(/[A-Z][\w.+-]*(?: [A-Z0-9][\w.+-]*){0,2}/g)) {
+    if (found.length >= 5) break
+    const candidate = match[0].trim()
+    if (candidate.length < 3) continue
+    if (TAG_ENTITIES[candidate.toLowerCase()]) continue
+    if (found.some((tag) => tag.toLowerCase() === candidate.toLowerCase())) continue
+    /*
+     * Calendar words and headline verbs capitalise exactly like product names,
+     * so "August" in "Copilot — August update" would otherwise become a tag.
+     * The same shared predicate production uses rejects them here.
+     */
+    if (isNonEntityWord(candidate)) continue
+    found.push(candidate)
+  }
+
+  return found.slice(0, 5)
 }
 
 /**

@@ -242,7 +242,7 @@ test('the run lock prevents a concurrent run', async () => {
       counters: {
         sourcesChecked: 0, sourcesFailed: 0, itemsDiscovered: 0, itemsDuplicate: 0,
         itemsRejected: 0, storiesCandidate: 0, storiesVerified: 0, articlesGenerated: 0,
-        articlesApproved: 0, draftsCreated: 0, storiesDeferred: 0,
+        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, storiesDeferred: 0,
       },
       llmUsage: { calls: 0, inputTokens: 0, outputTokens: 0 },
       errors: [],
@@ -273,7 +273,7 @@ test('a stale lock is reclaimed', async () => {
       counters: {
         sourcesChecked: 0, sourcesFailed: 0, itemsDiscovered: 0, itemsDuplicate: 0,
         itemsRejected: 0, storiesCandidate: 0, storiesVerified: 0, articlesGenerated: 0,
-        articlesApproved: 0, draftsCreated: 0, storiesDeferred: 0,
+        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, storiesDeferred: 0,
       },
       llmUsage: { calls: 0, inputTokens: 0, outputTokens: 0 },
       errors: [],

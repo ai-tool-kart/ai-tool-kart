@@ -26,7 +26,7 @@ import type { Repositories } from '../storage/repositories.ts'
 import type { Logger } from '../utils/logger.ts'
 import type { EditorialCategory } from '../config/editorial.ts'
 import type { CreatePostPayload, WordPressClient } from './client.ts'
-import type { TaxonomyResolver } from './taxonomy.ts'
+import { isCategoryConfigurationError, type TaxonomyResolver } from './taxonomy.ts'
 
 export interface PublishDeps {
   client: WordPressClient
@@ -117,6 +117,19 @@ export async function publishDraft(
     tagIds = await taxonomy.resolveTags(draft.tags)
   } catch (error) {
     if (isAgentError(error) && error.code === 'WORDPRESS_AUTH') throw error
+    /*
+     * A missing or unconfigured category defers this article and says so
+     * precisely. It is an editorial/configuration problem an operator fixes with
+     * `npm run taxonomy:check` — never something to paper over by inventing the
+     * term, which is why taxonomy.ts refuses to create one (§20).
+     */
+    if (isCategoryConfigurationError(error)) {
+      log.error('Category is not configured or does not exist in WordPress; deferring publish', {
+        category: draft.category,
+        err: error instanceof Error ? error.message : String(error),
+      })
+      return { status: 'deferred', reason: 'category-not-configured' }
+    }
     log.warn('Taxonomy resolution failed; deferring publish', {
       err: error instanceof Error ? error.message : String(error),
     })

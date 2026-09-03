@@ -1078,8 +1078,18 @@ taxonomy:
 Rules:
 
 - Category IDs are resolved **once, centrally**, in `agent/src/wordpress/taxonomy.ts`,
-  by looking up the slug and creating the term if it does not exist. Never hardcode
-  numeric IDs anywhere in the pipeline.
+  by looking up the slug. Never hardcode numeric IDs anywhere in the pipeline.
+- Categories are **never created while publishing.** The internal category is
+  validated against the allowlist above before any request is made, and a
+  configured-but-absent category defers the post with `category-not-configured`
+  rather than inventing a term. Seeding is an explicit operator step:
+  `npm run taxonomy:check` (read-only) and `npm run taxonomy:bootstrap`, which
+  can only create categories on this allowlist.
+- This split is also the least-privilege one. In WordPress, `category` is
+  hierarchical so REST term creation needs `edit_terms` → `manage_categories`,
+  while `post_tag` is flat so it needs `assign_terms` → `edit_posts`. An account
+  with only `edit_posts` can therefore grow the tag vocabulary but can never
+  invent editorial structure.
 - Cache resolved IDs for the duration of a run.
 - **Every generated post must carry exactly one real category.** The React
   frontend treats a missing category — and WordPress's default "Uncategorized" —
@@ -1097,7 +1107,14 @@ Tags come from **entities**, not themes: `OpenAI`, `Anthropic`, `Claude`,
 - 2–5 tags per post. Reject drafts with more.
 - Normalize aggressively — `Open AI`, `openai`, and `OpenAI` are one tag.
 - Prefer reusing existing tags over creating new ones; resolve through the same
-  central taxonomy module.
+  central taxonomy module. Tags are deduplicated by slug, so `OpenAI` and
+  `openai` can never become two terms.
+- Every tag is validated before it can reach WordPress (`agent/src/editorial/tags.ts`):
+  length, character class, no markup, no control characters, entity-shaped rather
+  than thematic, and actually named in the article. A tag that fails is skipped.
+- **Tag failure is never fatal.** An unresolvable or uncreatable tag is logged and
+  dropped; the post still publishes. A missing category is fatal, because the
+  frontend depends on one being present.
 - Never generate tags from adjectives or article phrasing.
 
 ---

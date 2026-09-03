@@ -7,8 +7,11 @@
  */
 
 import { ARTICLE, MAX_REVISION_ATTEMPTS } from '../config/limits.ts'
-import { EDITORIAL_SCOPE, isEditorialCategory, type EditorialCategory } from '../config/editorial.ts'
+import { isEditorialCategory, type EditorialCategory } from '../config/editorial.ts'
 import type { ArticleDraft, CandidateStory, Claim, SourceEvidence } from '../domain/types.ts'
+// Tag vocabulary, normalisation and validation live in one module (§20), shared
+// with the WordPress taxonomy layer so both sides agree on what a tag is.
+import { normalizeTags } from '../editorial/tags.ts'
 import { storyError } from '../domain/errors.ts'
 import type { LLMClient } from '../llm/client.ts'
 import { ARTICLE_SCHEMA_VERSION, ArticleDraftSchema } from '../llm/schemas.ts'
@@ -36,91 +39,6 @@ export interface WriteInput {
   /** Preserved across revisions so the URL never changes. */
   existingSlug?: string
   revisionCount?: number
-}
-
-/**
- * Words that look like tags but are themes, not entities (§20 forbids these).
- * Checked before the proper-noun fallback, which would otherwise let them in.
- */
-const NON_ENTITY_TAGS = new Set([
-  'ai', 'artificial intelligence', 'machine learning', 'llm', 'llms', 'technology',
-  'news', 'update', 'updates', 'launch', 'release', 'model', 'models', 'tools',
-  'ai tools', 'software', 'startup', 'innovation', 'future', 'productivity',
-  'the', 'new', 'best', 'top', 'guide', 'api', 'apis',
-])
-
-/**
- * Accepts a model-proposed tag that is not in the vocabulary.
- *
- * The curated list in config/editorial.ts cannot name every vendor, and treating
- * it as exhaustive made the tag floor unsatisfiable for any company not on it —
- * which blocked publication permanently, since no amount of rewriting can invent
- * a vocabulary entry. So an unknown tag is accepted only if it behaves like a
- * proper noun the article actually discusses: capitalised, short, not a theme
- * word, and present in the text. That keeps §20's "entities, not themes" rule
- * without making it a trap.
- */
-function looksLikeEntity(tag: string, haystack: string): boolean {
-  const trimmed = tag.trim()
-  if (trimmed.length < 2 || trimmed.length > 40) return false
-  if (NON_ENTITY_TAGS.has(trimmed.toLowerCase())) return false
-
-  const words = trimmed.split(/\s+/)
-  if (words.length > 3) return false
-  // Proper nouns and product names: initial capital, or internal capitals/digits
-  // as in "OpenAI", "GPT-4", "Aurora 2".
-  const properNoun = words.every((word) => /^[A-Z0-9][\w.+-]*$/.test(word))
-  if (!properNoun) return false
-
-  return haystack.toLowerCase().includes(trimmed.toLowerCase())
-}
-
-/**
- * Normalises model-proposed tags into entity tags.
- *
- * Curated vocabulary first, so "Open AI", "openai" and "OpenAI" collapse to one
- * canonical term and WordPress does not accumulate near-duplicate tags. Unknown
- * proposals then get the proper-noun check above.
- */
-/** Whole-word (or whole-phrase) containment, so "meta" never matches "metadata". */
-function containsWord(haystack: string, needle: string): boolean {
-  const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?![a-z0-9])`, 'i').test(haystack)
-}
-
-export function normalizeTags(proposed: string[], fallbackText: string): string[] {
-  const vocabulary = EDITORIAL_SCOPE.tagEntities
-  const resolved = new Set<string>()
-
-  for (const tag of proposed) {
-    const canonical = vocabulary[tag.trim().toLowerCase()]
-    if (canonical) resolved.add(canonical)
-  }
-
-  for (const tag of proposed) {
-    if (resolved.size >= ARTICLE.maxTags) break
-    const trimmed = tag.trim()
-    if (vocabulary[trimmed.toLowerCase()]) continue
-    if (looksLikeEntity(trimmed, fallbackText)) resolved.add(trimmed)
-  }
-
-  /*
-   * Backfill from the article text when the model proposed too few valid tags.
-   *
-   * Matched on word boundaries, not substrings: a plain `includes` tagged a
-   * Google story with "Meta" because the body contained "metadata", and would
-   * equally tag anything mentioning "parameters" with "Meta". A wrong tag is a
-   * wrong factual association on a published post.
-   */
-  if (resolved.size < ARTICLE.minTags) {
-    const haystack = fallbackText.toLowerCase()
-    for (const [key, canonical] of Object.entries(vocabulary)) {
-      if (resolved.size >= ARTICLE.maxTags) break
-      if (containsWord(haystack, key)) resolved.add(canonical)
-    }
-  }
-
-  return [...resolved].slice(0, ARTICLE.maxTags)
 }
 
 export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<ArticleDraft> {

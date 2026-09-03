@@ -23,6 +23,8 @@ export function formatRunSummary(run: PipelineRun): string {
     `generated=${counters.articlesGenerated}`,
     `approved=${counters.articlesApproved}`,
     `drafts=${counters.draftsCreated}`,
+    // ?? 0: runs persisted before this counter existed have no such key.
+    `retried=${counters.pendingRetried ?? 0}`,
     `deferred=${counters.storiesDeferred}`,
     `llm_calls=${run.llmUsage.calls}`,
     `tokens=${run.llmUsage.inputTokens + run.llmUsage.outputTokens}`,

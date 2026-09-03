@@ -487,7 +487,18 @@ export interface ArticleRepo {
   slugTaken(slug: string, exceptArticleId: string): boolean
   /** Titles already sent to WordPress, for the editor's duplication check. */
   listPublishedTitles(limit?: number): Array<{ title: string; storyId: string }>
-  listAwaitingPublication(): ArticleDraft[]
+  /**
+   * The publication work queue: approved articles that never reached WordPress
+   * (editorial_status = 'approved' AND wp_post_id IS NULL).
+   *
+   * An article that was written, approved and persisted but whose WordPress call
+   * failed is finished editorial work waiting on one HTTP request. §24 requires
+   * it to be retried on a later run rather than regenerated, and the underlying
+   * news items are duplicates by then, so nothing upstream will ever re-offer it.
+   * This query is how the retry stage finds it. Oldest first, so a backlog drains
+   * in the order it was generated.
+   */
+  listAwaitingPublication(limit?: number): ArticleDraft[]
 }
 
 function rowToArticle(row: Row): ArticleDraft {
@@ -613,14 +624,17 @@ function createArticleRepo(db: Db): ArticleRepo {
       return rows.map((row) => ({ title: String(row.title), storyId: String(row.story_id) }))
     },
 
-    listAwaitingPublication() {
+    listAwaitingPublication(limit) {
       const rows = db
         .prepare(
           `SELECT * FROM generated_articles
             WHERE editorial_status = 'approved' AND wp_post_id IS NULL
-            ORDER BY generated_at ASC`,
+            ORDER BY generated_at ASC
+            LIMIT ?`,
         )
-        .all() as Row[]
+        // SQLite treats a negative LIMIT as "no limit", which keeps the
+        // unbounded call sites (inspection, tests) on one code path.
+        .all(limit === undefined ? -1 : limit) as Row[]
       return rows.map(rowToArticle)
     },
   }

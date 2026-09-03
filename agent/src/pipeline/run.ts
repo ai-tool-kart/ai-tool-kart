@@ -4,6 +4,12 @@
  * One invocation = one complete run, then the process exits. No daemon, no
  * timers, no long-lived loop.
  *
+ * A run has two independent bodies of work: publishing what an earlier run
+ * approved but could not post (pipeline/pending.ts, step 1b), and the ingestion
+ * pipeline proper. The first is deliberately not gated on the second, because a
+ * pending draft's news items are already deduped and will never re-enter
+ * generation.
+ *
  * Failure isolation is the structural rule. Steps 9-16 run per story inside a
  * try/catch: a story that fails is marked with a reason and the run continues.
  * Only two things abort a run — failing to take the run lock, and a database
@@ -35,6 +41,7 @@ import { createProvider } from '../llm/factory.ts'
 import { ClassificationSchema } from '../llm/schemas.ts'
 import { CLASSIFIER_SYSTEM, classifierUserPrompt } from '../llm/prompts/index.ts'
 import type { MockProviderOptions } from '../llm/providers/mock.ts'
+import { retryPendingPublications } from './pending.ts'
 import { prefilterStory } from '../ranking/prefilter.ts'
 import { computeScores, selectStory } from '../ranking/score.ts'
 import { enabledSources, SOURCES } from '../sources/registry.ts'
@@ -121,6 +128,38 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
   }
 
   try {
+    /* ── WordPress client (only if configured) ───────────────────────────── */
+    let wordpress: WordPressClient | undefined = options.wordPressClient
+    if (!wordpress && env.wordpress && !dryRun) {
+      wordpress = createWordPressClient({
+        credentials: env.wordpress,
+        logger: log,
+        timeoutMs: env.http.timeoutMs,
+        userAgent: env.http.userAgent,
+      })
+    }
+    let publishingBlocked = false
+
+    /* ── Step 1b: publish what an earlier run approved but could not post ──
+     *
+     * Runs before ingestion, and independently of it. See pipeline/pending.ts
+     * for why: a pending draft is finished editorial work that costs no LLM
+     * budget to publish, nothing upstream will ever re-offer it once its news
+     * items are deduped, and an auth failure found here disables publishing
+     * before the run spends its budget generating posts it cannot deliver.
+     */
+    const pending = await retryPendingPublications({
+      env,
+      repos,
+      logger: log,
+      run,
+      dryRun,
+      addError,
+      ...(wordpress ? { wordpress } : {}),
+    })
+    run.counters.pendingRetried = pending.attempted
+    if (pending.publishingBlocked) publishingBlocked = true
+
     // Tests inject a fixture registry; production reads the real one.
     const registry = options.sources ?? SOURCES
     repos.sources.sync(registry)
@@ -271,18 +310,6 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
     scored.sort((a, b) => b.story.scores.weighted - a.story.scores.weighted)
 
     const maxArticles = Math.min(options.limit ?? Number.POSITIVE_INFINITY, env.limits.maxArticlesPerRun)
-
-    /* ── WordPress client (only if configured) ───────────────────────────── */
-    let wordpress: WordPressClient | undefined = options.wordPressClient
-    if (!wordpress && env.wordpress && !dryRun) {
-      wordpress = createWordPressClient({
-        credentials: env.wordpress,
-        logger: log,
-        timeoutMs: env.http.timeoutMs,
-        userAgent: env.http.userAgent,
-      })
-    }
-    let publishingBlocked = false
 
     /* ── Steps 9-16: per story, isolated ─────────────────────────────────── */
     let verifiedCount = 0
@@ -538,7 +565,8 @@ async function processStory(deps: ProcessStoryDeps): Promise<'ok' | 'publishing-
   const taxonomy = createTaxonomyResolver({
     client: wordpress as WordPressClient,
     logger,
-    createMissing: env.wordpress?.createTerms ?? true,
+    // Governs TAGS only. Categories are never created while publishing (§20).
+    createMissingTags: env.wordpress?.createTerms ?? true,
   })
 
   const outcome = await publishDraft(draft, {

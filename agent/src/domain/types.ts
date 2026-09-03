@@ -187,6 +187,8 @@ export interface RunCounters {
   articlesGenerated: number
   articlesApproved: number
   draftsCreated: number
+  /** Approved drafts from earlier runs that this run re-attempted publishing. */
+  pendingRetried: number
   storiesDeferred: number
 }
 
@@ -231,6 +233,7 @@ export function emptyCounters(): RunCounters {
     articlesGenerated: 0,
     articlesApproved: 0,
     draftsCreated: 0,
+    pendingRetried: 0,
     storiesDeferred: 0,
   }
 }

@@ -186,23 +186,21 @@ test('categories resolve by slug and are cached for the run', async () => {
     },
   }
 
-  const taxonomy = createTaxonomyResolver({ client: counting, logger: testLogger(), createMissing: true })
+  const taxonomy = createTaxonomyResolver({
+    client: counting,
+    logger: testLogger(),
+    createMissingTags: true,
+  })
 
   const first = await taxonomy.resolveCategory('ai-models')
   const second = await taxonomy.resolveCategory('ai-models')
 
   assert.equal(first, second, 'the same category must resolve to the same id')
   assert.equal(lookups, 1, 'the second resolution must come from the cache')
-  assert.equal(wp.terms[0]?.slug, 'ai-models', 'the term is keyed on the internal slug')
-  assert.equal(wp.terms[0]?.name, 'AI Models', 'the display name comes from the label map')
-})
 
-test('term creation can be disabled', async () => {
-  const wp = mockWordPress()
-  const taxonomy = createTaxonomyResolver({ client: wp, logger: testLogger(), createMissing: false })
-
-  await assert.rejects(() => taxonomy.resolveCategory('mcp'), /does not exist/)
-  assert.equal(wp.terms.length, 0)
+  const term = wp.terms.find((entry) => entry.slug === 'ai-models')
+  assert.ok(term, 'the term is keyed on the internal slug')
+  assert.equal(term.name, 'AI Models', 'the display name comes from the label map')
 })
 
 test('a tag that cannot be resolved is skipped, not fatal', async () => {
@@ -215,7 +213,11 @@ test('a tag that cannot be resolved is skipped, not fatal', async () => {
     },
   }
 
-  const taxonomy = createTaxonomyResolver({ client: failing, logger: testLogger(), createMissing: true })
+  const taxonomy = createTaxonomyResolver({
+    client: failing,
+    logger: testLogger(),
+    createMissingTags: true,
+  })
   const ids = await taxonomy.resolveTags(['OpenAI', 'Broken', 'Claude'])
 
   assert.equal(ids.length, 2, 'the working tags must still resolve')

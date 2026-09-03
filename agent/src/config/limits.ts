@@ -110,6 +110,22 @@ export const RETRY = {
   maxRedirects: 3,
 } as const
 
+/*
+ * Bounds on the pending-publication retry batch (§25: retries are bounded,
+ * always).
+ *
+ * `maxPerRun` keeps a large backlog from turning one run into a long series of
+ * CMS writes; the remainder is simply retried next run. `maxConsecutiveFailures`
+ * abandons the batch once WordPress has failed twice in a row — at that point it
+ * is down, and every further attempt costs a full HTTP retry ladder for nothing.
+ * Neither bound ever discards an article: anything not attempted stays approved
+ * with wp_post_id NULL and is found by the same query on the next run.
+ */
+export const PENDING_PUBLISH = {
+  maxPerRun: 10,
+  maxConsecutiveFailures: 2,
+} as const
+
 /**
  * Default models per task class. Overridable via LLM_MODEL_FAST/LLM_MODEL_STRONG.
  * The provider adapter decides what these strings mean; the pipeline only knows

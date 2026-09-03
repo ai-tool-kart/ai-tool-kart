@@ -10,6 +10,7 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import type { AgentEnv } from '../src/config/env.ts'
+import { CATEGORY_LABELS, EDITORIAL_CATEGORIES } from '../src/config/editorial.ts'
 import type { NewsSource } from '../src/domain/types.ts'
 import { openDatabase } from '../src/storage/db.ts'
 import { createRepositories, type Repositories } from '../src/storage/repositories.ts'
@@ -127,9 +128,13 @@ export function fixturePageFetcher(
   }
 }
 
+/** A mock term also records which taxonomy it belongs to, so a tag and a
+ * category with the same slug stay distinct — exactly as in WordPress. */
+export type MockTerm = WordPressTerm & { taxonomy?: 'categories' | 'tags' }
+
 export interface MockWordPress extends WordPressClient {
   readonly created: CreatePostPayload[]
-  readonly terms: WordPressTerm[]
+  readonly terms: MockTerm[]
   /** Forces the next createPost call to fail with this error. */
   failNextCreate(error: Error): void
 }
@@ -139,15 +144,32 @@ export interface MockWordPressOptions {
   alwaysFail?: Error
   /** Post ids handed out in order. */
   startId?: number
+  /**
+   * Whether the configured editorial categories already exist.
+   *
+   * Defaults to true, which mirrors a real CMS after `npm run taxonomy:bootstrap`.
+   * Categories are never created while publishing (§20), so a mock without them
+   * models an UNBOOTSTRAPPED site — pass false to exercise that deferral.
+   */
+  seedCategories?: boolean
+  /** Reject term creation with this error, e.g. a 403 from a low-privilege account. */
+  failTermCreation?: Error
 }
 
 export function mockWordPress(options: MockWordPressOptions = {}): MockWordPress {
   const created: CreatePostPayload[] = []
-  const terms: WordPressTerm[] = []
+  const terms: MockTerm[] = []
   const posts = new Map<number, WordPressPost>()
   let nextId = options.startId ?? 1000
   let nextTermId = 10
   let pendingFailure: Error | undefined
+
+  // A bootstrapped CMS: the fixed editorial categories exist, tags do not.
+  if (options.seedCategories !== false) {
+    for (const category of EDITORIAL_CATEGORIES) {
+      terms.push({ id: (nextTermId += 1), name: CATEGORY_LABELS[category], slug: category, taxonomy: 'categories' })
+    }
+  }
 
   return {
     baseUrl: 'https://cms.test/wp-json/wp/v2',
@@ -183,13 +205,14 @@ export function mockWordPress(options: MockWordPressOptions = {}): MockWordPress
       return posts.get(id)
     },
 
-    async findTerm(_taxonomy, slug) {
-      return terms.find((term) => term.slug === slug)
+    async findTerm(taxonomy, slug) {
+      return terms.find((term) => term.taxonomy === taxonomy && term.slug === slug)
     },
 
-    async createTerm(_taxonomy, name, slug) {
+    async createTerm(taxonomy, name, slug) {
+      if (options.failTermCreation) throw options.failTermCreation
       const term: WordPressTerm = { id: (nextTermId += 1), name, slug }
-      terms.push(term)
+      terms.push({ ...term, taxonomy })
       return term
     },
 
