@@ -1,0 +1,26 @@
+{
+  "name": "aitoolkart-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HTTP API for AI Tool Kart: the tool catalogue and the conversational assistant. See ASSISTANT_ARCHITECTURE_PLAN.md.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=.env src/index.ts",
+    "start": "node --env-file-if-exists=.env src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "node --test tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.13.3",
+    "typescript": "~6.0.2"
+  }
+}

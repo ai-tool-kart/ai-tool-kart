@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit. .env.example is the only tracked env file.
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Build output
+dist/
+coverage/
+
+# OS
+.DS_Store
