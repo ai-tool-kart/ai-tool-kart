@@ -16,7 +16,18 @@ import type { ErrorBody } from '../src/http/errorHandler.ts'
 import { INTERNAL_MESSAGE } from '../src/http/errorHandler.ts'
 import { REQUEST_ID_HEADER } from '../src/http/requestLogger.ts'
 import type { HealthResponse } from '../src/http/routes/health.ts'
-import { capturingLogger, readJson, testContainer, testEnv, withServer } from './helpers.ts'
+import type { ToolListResponse, ToolResponse } from '../src/http/routes/tools.ts'
+import type { Taxonomy } from '../src/domain/types.ts'
+import {
+  capturingLogger,
+  fixtureCatalogue,
+  makeTool,
+  readJson,
+  testContainer,
+  testEnv,
+  testLogger,
+  withServer,
+} from './helpers.ts'
 
 /** One parsed log line. Fields vary by call site, so values stay unknown. */
 type LogLine = Record<string, unknown>
@@ -50,17 +61,41 @@ await test('GET /api/health', async (t) => {
     })
   })
 
+  await t.test('reports the catalogue now that one exists behind the port', async () => {
+    await withServer(testContainer(), async ({ origin }) => {
+      const body = await readJson<HealthResponse>(await fetch(`${origin}/api/health`))
+      assert.equal(typeof body.catalogueSize, 'number')
+      assert.ok(body.catalogueSize > 0, 'a server with an empty catalogue is not healthy')
+      assert.equal(body.catalogueDriver, 'json')
+    })
+  })
+
+  await t.test('the reported size is the repository\'s, not a constant', async () => {
+    const catalogue = fixtureCatalogue([
+      makeTool({ id: 'one', slug: 'one' }),
+      makeTool({ id: 'two', slug: 'two' }),
+      makeTool({ id: 'hidden', slug: 'hidden', status: 'draft' }),
+    ])
+    await withServer(testContainer(testEnv(), testLogger(), catalogue), async ({ origin }) => {
+      const body = await readJson<HealthResponse>(await fetch(`${origin}/api/health`))
+      assert.equal(body.catalogueSize, 2, 'drafts are not recommendable and are not counted')
+    })
+  })
+
   await t.test('claims nothing about systems that do not exist yet', async () => {
-    // Phase B has no provider and no catalogue. Reporting either would keep
-    // reporting "ok" once they exist and are broken.
+    // There is still no LLM provider. Reporting one would keep reporting "ok"
+    // once it exists and is broken.
     await withServer(testContainer(), async ({ origin }) => {
       const body = await readJson<HealthResponse>(await fetch(`${origin}/api/health`))
       assert.deepEqual(Object.keys(body).sort(), [
+        'catalogueDriver',
+        'catalogueSize',
         'environment',
         'status',
         'uptimeSeconds',
         'version',
       ])
+      assert.equal('provider' in body, false, 'no provider exists until Phase D')
     })
   })
 
@@ -95,10 +130,12 @@ await test('unmatched routes', async (t) => {
   })
 
   await t.test('routes that belong to later phases are not mounted yet', async () => {
+    // /api/tools and /api/taxonomy landed in Phase C and are asserted below.
+    // The assistant belongs to Phase E and must not exist before its engine does.
     await withServer(testContainer(), async ({ origin }) => {
-      for (const path of ['/api/tools', '/api/taxonomy', '/api/assistant/chat']) {
+      for (const path of ['/api/assistant/chat', '/api/assistant']) {
         const response = await fetch(`${origin}${path}`)
-        assert.equal(response.status, 404, `${path} must not exist in Phase B`)
+        assert.equal(response.status, 404, `${path} must not exist before Phase E`)
       }
     })
   })
@@ -293,4 +330,383 @@ await test('server logs record the outcome without leaking the body', async () =
   assert.match(text, /"status":404/)
   assert.match(text, /Request rejected/, 'a 404 is logged as a rejection, not an error')
   assert.doesNotMatch(text, new RegExp(INTERNAL_MESSAGE), 'no 500 should have occurred')
+})
+
+/* ═══ Phase C — the catalogue endpoints ════════════════════════════════════ */
+
+/**
+ * A small, known catalogue.
+ *
+ * Route tests assert wire shape, status codes and parameter handling — none of
+ * which should change when a tool is added to the seed data. Relevance against
+ * the real catalogue is tests/retrieval.test.ts' job.
+ */
+function catalogueFixture() {
+  return fixtureCatalogue([
+    makeTool({
+      id: 'alpha-writer',
+      slug: 'alpha-writer',
+      name: 'Alpha Writer',
+      cat: 'Writing',
+      pop: 90,
+      rating: 4.5,
+      model: 'Free',
+      pricingTier: 'free',
+      tags: ['Long-form'],
+      stages: ['draft'],
+    }),
+    makeTool({
+      id: 'beta-editor',
+      slug: 'beta-editor',
+      name: 'Beta Editor',
+      cat: 'Video',
+      pop: 80,
+      model: 'Subscription',
+      pricingTier: 'paid',
+      tags: ['Video editing'],
+      roles: ['Video Editor'],
+      useCases: ['Edit long videos'],
+      stages: ['edit'],
+      tagline: 'Cuts long video down to the parts worth keeping.',
+    }),
+    makeTool({
+      id: 'gamma-coder',
+      slug: 'gamma-coder',
+      name: 'Gamma Coder',
+      cat: 'Code',
+      pop: 70,
+      tags: ['Autocomplete'],
+      roles: ['Developer'],
+      useCases: ['Write code faster'],
+      stages: ['build'],
+    }),
+    makeTool({
+      id: 'delta-hidden',
+      slug: 'delta-hidden',
+      name: 'Delta Hidden',
+      cat: 'Writing',
+      pop: 100,
+      status: 'draft',
+    }),
+  ])
+}
+
+function fixtureContainer() {
+  return testContainer(testEnv(), testLogger(), catalogueFixture())
+}
+
+await test('GET /api/tools', async (t) => {
+  await t.test('returns the catalogue in the documented shape', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools`)
+      assert.equal(response.status, 200)
+
+      const body = await readJson<ToolListResponse>(response)
+      assert.equal(body.total, 3, 'drafts are not listed')
+      assert.equal(body.items.length, 3)
+      assert.equal(body.items[0]?.name, 'Alpha Writer', 'default sort is most popular')
+    })
+  })
+
+  await t.test('returns a domain representation, not the storage record', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools`))
+      const [tool] = body.items
+      assert.ok(tool)
+      assert.equal('status' in tool, false, 'the editorial workflow field is internal')
+      // The display contract the frontend already types against must survive.
+      for (const field of ['id', 'name', 'mono', 'cat', 'model', 'tagline', 'price', 'tags']) {
+        assert.ok(field in tool, `the display contract must keep "${field}"`)
+      }
+      // ...and the recommendation fields Phase G needs must be there too.
+      for (const field of ['slug', 'url', 'summary', 'roles', 'useCases', 'stages']) {
+        assert.ok(field in tool, `the recommendation contract must expose "${field}"`)
+      }
+    })
+  })
+
+  await t.test('a draft record never appears', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?limit=50`))
+      assert.equal(body.items.some((tool) => tool.slug === 'delta-hidden'), false)
+    })
+  })
+
+  await t.test('limit and cursor page through the catalogue', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const first = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?limit=2`))
+      assert.equal(first.items.length, 2)
+      assert.equal(first.total, 3)
+      assert.ok(first.nextCursor)
+
+      const second = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?limit=2&cursor=${encodeURIComponent(first.nextCursor as string)}`),
+      )
+      assert.equal(second.items.length, 1)
+      assert.equal(second.nextCursor, undefined)
+
+      const seen = [...first.items, ...second.items].map((tool) => tool.slug)
+      assert.equal(new Set(seen).size, 3, 'every record appears exactly once')
+    })
+  })
+
+  await t.test('filters by category', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?cat=Video`))
+      assert.deepEqual(body.items.map((tool) => tool.slug), ['beta-editor'])
+    })
+  })
+
+  await t.test('filters by pricing tier', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?price=paid`))
+      assert.deepEqual(body.items.map((tool) => tool.slug), ['beta-editor'])
+    })
+  })
+
+  await t.test('accepts a repeated parameter and a comma list identically', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const repeated = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?cat=Video&cat=Code`),
+      )
+      const commas = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?cat=Video,Code`))
+      assert.deepEqual(
+        repeated.items.map((tool) => tool.slug),
+        commas.items.map((tool) => tool.slug),
+      )
+      assert.equal(repeated.total, 2)
+    })
+  })
+
+  await t.test('filters by minimum rating', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?minRating=4`))
+      assert.deepEqual(body.items.map((tool) => tool.slug), ['alpha-writer'])
+    })
+  })
+
+  await t.test('sorts on request', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?sort=name`))
+      assert.deepEqual(body.items.map((tool) => tool.name), [
+        'Alpha Writer',
+        'Beta Editor',
+        'Gamma Coder',
+      ])
+    })
+  })
+
+  await t.test('a text query is ranked, not merely filtered', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?q=${encodeURIComponent('edit long videos')}&limit=5`),
+      )
+      assert.equal(body.items[0]?.slug, 'beta-editor')
+    })
+  })
+
+  await t.test('total counts what matched, not the whole catalogue', async () => {
+    // Scoring ranks rather than filters, so without a relevance floor a search
+    // for "edit long videos" would report every record in the catalogue.
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?q=${encodeURIComponent('edit long videos')}`),
+      )
+      assert.ok(body.total < 3, `expected a narrowed match set, got ${body.total}`)
+      assert.ok(body.items.some((tool) => tool.slug === 'beta-editor'))
+    })
+  })
+
+  await t.test('a text query matching nothing returns nothing', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?q=zzzznothinghere`))
+      assert.deepEqual(body.items, [])
+      assert.equal(body.total, 0)
+    })
+  })
+
+  await t.test('a query we could not parse falls back rather than claiming zero', async () => {
+    // "the a of" normalises to nothing. We did not understand it, so reporting
+    // "no results" would be a stronger statement than we can make.
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?q=${encodeURIComponent('the a of')}`),
+      )
+      assert.equal(body.total, 3)
+    })
+  })
+
+  await t.test('a text query combines with a hard filter', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?q=${encodeURIComponent('edit videos')}&price=free`),
+      )
+      assert.ok(body.items.every((tool) => tool.pricingTier === 'free'))
+    })
+  })
+
+  await t.test('a query matching nothing is an empty 200, not a 404', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools?q=zzzznothinghere&cat=Video&price=free`)
+      assert.equal(response.status, 200)
+      const body = await readJson<ToolListResponse>(response)
+      assert.deepEqual(body.items, [])
+      assert.equal(body.total, 0)
+    })
+  })
+
+  /* ── Malformed input ───────────────────────────────────────────────────── */
+
+  await t.test('an unknown category is a 400 naming the parameter', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools?cat=Telepathy`)
+      assert.equal(response.status, 400)
+
+      const body = await readJson<ErrorBody>(response)
+      assert.equal(body.error.code, 'INVALID_REQUEST')
+      assert.match(body.error.message, /cat/)
+    })
+  })
+
+  await t.test('an out-of-range limit is a 400, not a silent clamp', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      for (const limit of ['0', '-3', '9999', 'abc']) {
+        const response = await fetch(`${origin}/api/tools?limit=${limit}`)
+        assert.equal(response.status, 400, `limit=${limit} must be rejected`)
+      }
+    })
+  })
+
+  await t.test('an out-of-range rating is a 400', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      assert.equal((await fetch(`${origin}/api/tools?minRating=9`)).status, 400)
+      assert.equal((await fetch(`${origin}/api/tools?minRating=nope`)).status, 400)
+    })
+  })
+
+  await t.test('an unknown sort is a 400', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      assert.equal((await fetch(`${origin}/api/tools?sort=whatever`)).status, 400)
+    })
+  })
+
+  await t.test('an unknown parameter is rejected rather than ignored', async () => {
+    // A silently dropped ?category=Video (the client meant ?cat=) presents as
+    // "the filter does not work", with nothing anywhere saying why.
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools?category=Video`)
+      assert.equal(response.status, 400)
+      assert.match((await readJson<ErrorBody>(response)).error.message, /category/)
+    })
+  })
+
+  await t.test('an oversized query string is a 400', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools?q=${'x'.repeat(500)}`)
+      assert.equal(response.status, 400)
+    })
+  })
+
+  await t.test('a garbage cursor restarts rather than failing', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools?cursor=not-a-cursor`)
+      assert.equal(response.status, 200, 'a stale bookmark must not be a 500')
+      assert.equal((await readJson<ToolListResponse>(response)).items.length, 3)
+    })
+  })
+})
+
+await test('GET /api/tools/:slug', async (t) => {
+  await t.test('returns one tool', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools/beta-editor`)
+      assert.equal(response.status, 200)
+
+      const body = await readJson<ToolResponse>(response)
+      assert.equal(body.tool.name, 'Beta Editor')
+      assert.equal('status' in body.tool, false)
+    })
+  })
+
+  await t.test('a missing slug is a 404 in the established error shape', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools/no-such-tool`)
+      assert.equal(response.status, 404)
+
+      const body = await readJson<ErrorBody>(response)
+      assert.equal(body.error.code, 'NOT_FOUND')
+      assert.match(body.error.message, /no-such-tool/)
+    })
+  })
+
+  await t.test('a draft record reads as missing, not as forbidden', async () => {
+    // Whether an unpublished tool exists is not something a public client is owed.
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools/delta-hidden`)
+      assert.equal(response.status, 404)
+    })
+  })
+
+  await t.test('a malformed slug is a 400', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/tools/NOT_A_SLUG`)
+      assert.equal(response.status, 400)
+      assert.equal((await readJson<ErrorBody>(response)).error.code, 'INVALID_REQUEST')
+    })
+  })
+})
+
+await test('GET /api/taxonomy', async (t) => {
+  await t.test('publishes every vocabulary the setup builder needs', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const response = await fetch(`${origin}/api/taxonomy`)
+      assert.equal(response.status, 200)
+
+      const taxonomy = await readJson<Taxonomy>(response)
+      assert.ok(taxonomy.categories.includes('Video'))
+      assert.ok(taxonomy.roles.includes('Video Editor'))
+      assert.ok(taxonomy.pricingTiers.includes('freemium'))
+      assert.ok(taxonomy.stages.some((stage) => stage.id === 'edit'))
+      assert.ok(taxonomy.useCases.length > 0)
+      assert.ok(taxonomy.sorts.some((sort) => sort.value === 'popular'))
+    })
+  })
+
+  await t.test('each stage carries the label and description a plan renders', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const taxonomy = await readJson<Taxonomy>(await fetch(`${origin}/api/taxonomy`))
+      for (const stage of taxonomy.stages) {
+        assert.ok(stage.label.length > 0, `${stage.id} has no label`)
+        assert.ok(stage.description.length > 0, `${stage.id} has no description`)
+      }
+    })
+  })
+
+  await t.test('the setup category chips map onto the real taxonomy', async () => {
+    // SETUP_CATS is a display grouping, not a second tool taxonomy (§5.3).
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const taxonomy = await readJson<Taxonomy>(await fetch(`${origin}/api/taxonomy`))
+      assert.ok(taxonomy.categoryGroups.length > 0)
+      for (const group of taxonomy.categoryGroups) {
+        for (const category of group.categories) {
+          assert.ok(
+            taxonomy.categories.includes(category),
+            `group "${group.label}" points at unknown category "${category}"`,
+          )
+        }
+      }
+    })
+  })
+
+  await t.test('every goal offered per role is in the flat use-case vocabulary', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const taxonomy = await readJson<Taxonomy>(await fetch(`${origin}/api/taxonomy`))
+      for (const [role, goals] of Object.entries(taxonomy.goalsByRole)) {
+        assert.ok(taxonomy.roles.includes(role as never), `unknown role "${role}"`)
+        for (const goal of goals) {
+          assert.ok(taxonomy.useCases.includes(goal), `goal "${goal}" is not in useCases`)
+        }
+      }
+    })
+  })
 })

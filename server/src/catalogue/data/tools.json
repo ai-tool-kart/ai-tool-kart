@@ -1,0 +1,3150 @@
+[
+  {
+    "id": "claude",
+    "name": "Claude",
+    "mono": "Cl",
+    "cat": "Writing",
+    "model": "Freemium",
+    "tagline": "Long-form drafting and analysis that holds its thread across a whole document.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Writing",
+      "Long-form",
+      "Summarising",
+      "Analysis",
+      "Assistant"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "claude",
+    "url": "https://claude.ai",
+    "summary": "Claude is a general-purpose AI assistant from Anthropic used for long-form writing, document analysis, summarisation and reasoning over large amounts of text. It handles code, structured extraction and multi-step reasoning alongside prose, which makes it a common default for drafting, editing and thinking work.",
+    "roles": [
+      "Writer",
+      "Developer",
+      "Researcher",
+      "Student",
+      "Entrepreneur",
+      "Product Manager",
+      "Marketer",
+      "Content Creator",
+      "UI/UX Designer"
+    ],
+    "useCases": [
+      "Draft an article",
+      "Rewrite content",
+      "Improve tone",
+      "Summarize research",
+      "Generate ideas",
+      "Write a spec",
+      "Write launch copy",
+      "Summarize notes",
+      "Write an essay",
+      "Structure findings",
+      "Draft a report",
+      "Improve UX copy"
+    ],
+    "stages": [
+      "ideate",
+      "draft",
+      "edit",
+      "research",
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "mono": "Gr",
+    "cat": "Writing",
+    "model": "Freemium",
+    "tagline": "Grammar, clarity and tone corrections applied wherever you already write.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Grammar",
+      "Proofreading",
+      "Tone",
+      "Editing"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "grammarly",
+    "url": "https://www.grammarly.com",
+    "summary": "Grammarly checks spelling, grammar, clarity and tone as you type, across the browser, desktop apps and documents. Its generative features rewrite sentences for concision or a target tone, so it sits at the polishing end of a writing workflow rather than the drafting end.",
+    "roles": [
+      "Writer",
+      "Student",
+      "Marketer",
+      "Content Creator",
+      "Product Manager",
+      "UI/UX Designer"
+    ],
+    "useCases": [
+      "Rewrite content",
+      "Improve tone",
+      "Write an essay",
+      "Improve UX copy"
+    ],
+    "stages": [
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "writesonic",
+    "name": "Writesonic",
+    "mono": "Ws",
+    "cat": "Writing",
+    "model": "Freemium",
+    "tagline": "Blog and ad drafts generated from a brief, with SEO guidance built in.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Blog posts",
+      "Ad copy",
+      "SEO",
+      "Templates"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "writesonic",
+    "url": "https://writesonic.com",
+    "summary": "Writesonic generates marketing and blog content from a short brief, with templates for landing pages, ads and product descriptions. It bundles SEO guidance into the drafting step, which suits teams producing a high volume of search-facing content.",
+    "roles": [
+      "Marketer",
+      "Writer",
+      "Content Creator",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Draft an article",
+      "Generate ad copy",
+      "Create social content",
+      "Write launch copy",
+      "Plan content"
+    ],
+    "stages": [
+      "draft",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "mono": "Nt",
+    "cat": "Writing",
+    "model": "Subscription",
+    "tagline": "Writing, summarising and search that sit on top of your own workspace.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Workspace",
+      "Summarising",
+      "Docs",
+      "Knowledge"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "notion-ai",
+    "url": "https://www.notion.so/product/ai",
+    "summary": "Notion AI works inside a Notion workspace, drafting and rewriting page content, summarising long documents and answering questions across connected pages. Because it is grounded in the workspace it is most useful for internal documentation, specs and meeting notes rather than published prose.",
+    "roles": [
+      "Product Manager",
+      "Writer",
+      "Entrepreneur",
+      "Student",
+      "Researcher"
+    ],
+    "useCases": [
+      "Write a spec",
+      "Summarize notes",
+      "Structure findings",
+      "Plan a roadmap",
+      "Plan content"
+    ],
+    "stages": [
+      "draft",
+      "collaborate",
+      "research"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "sudowrite",
+    "name": "Sudowrite",
+    "mono": "Su",
+    "cat": "Writing",
+    "model": "Subscription",
+    "tagline": "A drafting environment built specifically for fiction and narrative writing.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Fiction",
+      "Narrative",
+      "Drafting",
+      "Story"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "sudowrite",
+    "url": "https://www.sudowrite.com",
+    "summary": "Sudowrite is aimed at novelists and narrative writers, with features for expanding scenes, describing settings and holding character and plot notes alongside the manuscript. It is a writing environment rather than a general chat assistant.",
+    "roles": [
+      "Writer",
+      "Content Creator",
+      "Student"
+    ],
+    "useCases": [
+      "Draft an article",
+      "Generate ideas",
+      "Rewrite content"
+    ],
+    "stages": [
+      "ideate",
+      "draft",
+      "edit"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "quillbot",
+    "name": "QuillBot",
+    "mono": "Qu",
+    "cat": "Writing",
+    "model": "Freemium",
+    "tagline": "Paraphrasing, summarising and citation help for academic and study writing.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Paraphrasing",
+      "Summarising",
+      "Citations",
+      "Study"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "quillbot",
+    "url": "https://quillbot.com",
+    "summary": "QuillBot rewrites text in a chosen register, summarises long passages and generates citations. It is used heavily in coursework and academic writing, where the task is usually restating or condensing an existing source rather than generating something new.",
+    "roles": [
+      "Student",
+      "Writer",
+      "Researcher"
+    ],
+    "useCases": [
+      "Rewrite content",
+      "Summarize notes",
+      "Write an essay",
+      "Summarize papers",
+      "Study a topic"
+    ],
+    "stages": [
+      "edit",
+      "draft",
+      "research"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "wordtune",
+    "name": "Wordtune",
+    "mono": "Wt",
+    "cat": "Writing",
+    "model": "Freemium",
+    "tagline": "Sentence-level rewriting that offers several ways to say the same thing.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Rewriting",
+      "Tone",
+      "Summarising"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "wordtune",
+    "url": "https://www.wordtune.com",
+    "summary": "Wordtune suggests alternative phrasings for a selected sentence, adjusting length and formality, and can summarise long documents. It targets the revision pass rather than the blank page.",
+    "roles": [
+      "Writer",
+      "Student",
+      "Marketer",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Rewrite content",
+      "Improve tone",
+      "Improve UX copy",
+      "Summarize notes"
+    ],
+    "stages": [
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "mono": "Cr",
+    "cat": "Code",
+    "model": "Subscription",
+    "tagline": "An AI code editor that reads the repository before it edits across files.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Code editor",
+      "Refactoring",
+      "Codebase chat",
+      "Multi-file",
+      "Debugging"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "cursor",
+    "url": "https://cursor.com",
+    "summary": "Cursor is a code editor built around AI assistance, with codebase-aware chat, multi-file edits and inline completion. Because it indexes the whole project it is used for refactors and feature work that touch several files rather than single-line completion.",
+    "roles": [
+      "Developer",
+      "Entrepreneur",
+      "Student",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Write code faster",
+      "Debug an issue",
+      "Build a web app",
+      "Build APIs",
+      "Generate tests",
+      "Build an MVP",
+      "Build a project"
+    ],
+    "stages": [
+      "build",
+      "edit"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "mono": "Gc",
+    "cat": "Code",
+    "model": "Subscription",
+    "tagline": "Inline completion and chat wired into the editors developers already use.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Autocomplete",
+      "Code chat",
+      "Pull requests",
+      "IDE",
+      "Debugging"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "github-copilot",
+    "url": "https://github.com/features/copilot",
+    "summary": "GitHub Copilot suggests code as you type and answers questions about the current file or repository from inside the editor and on GitHub itself. Its reach across editors and its pull-request features make it the most widely deployed coding assistant.",
+    "roles": [
+      "Developer",
+      "Student",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Write code faster",
+      "Debug an issue",
+      "Generate tests",
+      "Build APIs",
+      "Research documentation"
+    ],
+    "stages": [
+      "build",
+      "edit"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "mono": "Cc",
+    "cat": "Code",
+    "model": "Subscription",
+    "tagline": "An agentic coding assistant that works from the terminal on a real repository.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Terminal",
+      "Agentic",
+      "Refactoring",
+      "Multi-file",
+      "Debugging"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "claude-code",
+    "url": "https://claude.com/product/claude-code",
+    "summary": "Claude Code runs in the terminal and operates on a project directly: reading files, making edits, running commands and following a multi-step task through to a diff. It suits larger changes and refactors where the work spans many files and several steps.",
+    "roles": [
+      "Developer",
+      "Entrepreneur",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Write code faster",
+      "Debug an issue",
+      "Build a web app",
+      "Build APIs",
+      "Generate tests",
+      "Automate dev chores",
+      "Build an MVP"
+    ],
+    "stages": [
+      "build",
+      "edit",
+      "automate"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "windsurf",
+    "name": "Windsurf",
+    "mono": "Wf",
+    "cat": "Code",
+    "model": "Freemium",
+    "tagline": "An AI-first editor with an agent that carries a task across the codebase.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Code editor",
+      "Agentic",
+      "Autocomplete",
+      "Debugging"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "windsurf",
+    "url": "https://windsurf.com",
+    "summary": "Windsurf is an editor with an integrated agent that plans and applies changes across a project, alongside conventional completion and chat. It also ships editor plugins for teams that do not want to switch IDE.",
+    "roles": [
+      "Developer",
+      "Student",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Write code faster",
+      "Debug an issue",
+      "Build a web app",
+      "Build a project"
+    ],
+    "stages": [
+      "build",
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "mono": "Rp",
+    "cat": "Code",
+    "model": "Freemium",
+    "tagline": "Prompt to a running application inside a hosted development workspace.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Hosted IDE",
+      "Agent",
+      "Prototyping",
+      "Deploy"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "replit",
+    "url": "https://replit.com",
+    "summary": "Replit is a browser-based development environment with an AI agent that scaffolds, edits and deploys applications without local setup. The hosting and the editor being in one place makes it a common route for a first working prototype.",
+    "roles": [
+      "Developer",
+      "Student",
+      "Entrepreneur",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Build a web app",
+      "Build a project",
+      "Build an MVP",
+      "Prototype a flow",
+      "Write code faster"
+    ],
+    "stages": [
+      "build",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "tabnine",
+    "name": "Tabnine",
+    "mono": "Tb",
+    "cat": "Code",
+    "model": "Subscription",
+    "tagline": "Code completion with self-hosted and privacy-controlled deployment options.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Autocomplete",
+      "Self-hosted",
+      "Privacy",
+      "IDE"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "tabnine",
+    "url": "https://www.tabnine.com",
+    "summary": "Tabnine provides completion and chat across many languages and editors, with deployment options that keep code inside a customer environment. That control is its distinguishing feature for teams with strict code-handling requirements.",
+    "roles": [
+      "Developer"
+    ],
+    "useCases": [
+      "Write code faster",
+      "Generate tests"
+    ],
+    "stages": [
+      "build"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "v0",
+    "name": "v0",
+    "mono": "V0",
+    "cat": "Code",
+    "model": "Freemium",
+    "tagline": "Generates React and Tailwind interfaces from a prompt or a screenshot.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "UI generation",
+      "React",
+      "Tailwind",
+      "Frontend"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "v0",
+    "url": "https://v0.app",
+    "summary": "v0 turns a description or a reference image into working React components styled with Tailwind, which can be copied into a project or iterated on in the browser. It sits between design and implementation: the output is code, not a mockup.",
+    "roles": [
+      "Developer",
+      "UI/UX Designer",
+      "Entrepreneur",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Build a web app",
+      "Generate UI concepts",
+      "Generate prototypes",
+      "Prototype a flow",
+      "Build an MVP"
+    ],
+    "stages": [
+      "design",
+      "build"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "mono": "Va",
+    "cat": "Code",
+    "model": "Free",
+    "tagline": "An open-source toolkit for building AI features into TypeScript applications.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "SDK",
+      "TypeScript",
+      "Streaming",
+      "Open source"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "vercel-ai-sdk",
+    "url": "https://ai-sdk.dev",
+    "summary": "The Vercel AI SDK is a TypeScript library for calling language models, streaming responses and wiring tool calls into web applications, with one interface across providers. It is developer infrastructure rather than an end-user product.",
+    "roles": [
+      "Developer"
+    ],
+    "useCases": [
+      "Build a web app",
+      "Build APIs",
+      "Write code faster"
+    ],
+    "stages": [
+      "build"
+    ],
+    "pricingTier": "free",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "mono": "Pm",
+    "cat": "Code",
+    "model": "Freemium",
+    "tagline": "API design, testing and documentation with AI assistance across the workflow.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "API",
+      "Testing",
+      "Documentation",
+      "Collections"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "postman",
+    "url": "https://www.postman.com",
+    "summary": "Postman is an API development platform for sending requests, organising collections, writing tests and publishing documentation. Its AI features help generate tests, documentation and request setups from an existing API definition.",
+    "roles": [
+      "Developer",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Build APIs",
+      "Generate tests",
+      "Research documentation",
+      "Debug an issue"
+    ],
+    "stages": [
+      "build",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "mono": "Fg",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Collaborative interface design with AI assistance for drafting and editing.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "UI design",
+      "Prototyping",
+      "Components",
+      "Handoff"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "figma",
+    "url": "https://www.figma.com",
+    "summary": "Figma is the standard collaborative interface design tool, covering layout, components, prototyping and developer handoff in one file. Its AI features generate first-draft layouts and help rename, rewrite and rearrange existing designs.",
+    "roles": [
+      "UI/UX Designer",
+      "Graphic Designer",
+      "Product Manager",
+      "Developer",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Generate UI concepts",
+      "Build wireframes",
+      "Create user flows",
+      "Generate prototypes",
+      "Prototype a flow",
+      "Design social assets"
+    ],
+    "stages": [
+      "design",
+      "collaborate",
+      "ideate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "mono": "Cv",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Template-driven design for social, decks and print with generative tools built in.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Templates",
+      "Social graphics",
+      "Presentations",
+      "Brand kit"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "canva",
+    "url": "https://www.canva.com",
+    "summary": "Canva is a browser design tool built on templates, aimed at people who are not full-time designers. Its Magic Studio features generate images, edit photos, resize designs for different channels and draft presentations.",
+    "roles": [
+      "Graphic Designer",
+      "Marketer",
+      "Content Creator",
+      "Student",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Design social assets",
+      "Create social content",
+      "Generate thumbnails",
+      "Generate variations",
+      "Create branding concepts",
+      "Generate images"
+    ],
+    "stages": [
+      "design",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "framer",
+    "name": "Framer",
+    "mono": "Fr",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Design and publish a real website from one canvas, with AI-assisted layout.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Website builder",
+      "Responsive",
+      "Publishing",
+      "Layout"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "framer",
+    "url": "https://www.framer.com",
+    "summary": "Framer combines a design canvas with a publishing pipeline, so a site is designed and shipped from the same file. Its AI features generate page layouts and copy from a prompt and translate a design into responsive breakpoints.",
+    "roles": [
+      "UI/UX Designer",
+      "Entrepreneur",
+      "Graphic Designer",
+      "Marketer"
+    ],
+    "useCases": [
+      "Generate UI concepts",
+      "Build wireframes",
+      "Generate prototypes",
+      "Build an MVP",
+      "Write launch copy"
+    ],
+    "stages": [
+      "design",
+      "build",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "uizard",
+    "name": "Uizard",
+    "mono": "Uz",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Turns rough sketches and text prompts into editable wireframes and screens.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Wireframes",
+      "Mockups",
+      "Sketch to design",
+      "Prototyping"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "uizard",
+    "url": "https://uizard.io",
+    "summary": "Uizard generates multi-screen app and web mockups from a text description, a screenshot or a hand-drawn sketch, and keeps the result editable as design components. It targets the earliest, roughest stage of interface work.",
+    "roles": [
+      "UI/UX Designer",
+      "Product Manager",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Build wireframes",
+      "Generate UI concepts",
+      "Create user flows",
+      "Generate prototypes",
+      "Prototype a flow"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "recraft",
+    "name": "Recraft",
+    "mono": "Rc",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Generates vector artwork, icons and brand assets in a consistent style.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Vector",
+      "Icons",
+      "Illustration",
+      "Brand style"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "recraft",
+    "url": "https://www.recraft.ai",
+    "summary": "Recraft generates illustrations, icons and mockups as editable vectors rather than raster images, and can hold a defined style across a set of assets. That style consistency is what makes it usable for a brand system rather than one-off images.",
+    "roles": [
+      "Graphic Designer",
+      "UI/UX Designer",
+      "Marketer",
+      "Content Creator"
+    ],
+    "useCases": [
+      "Create illustrations",
+      "Create branding concepts",
+      "Design social assets",
+      "Generate variations",
+      "Generate images"
+    ],
+    "stages": [
+      "design",
+      "ideate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "looka",
+    "name": "Looka",
+    "mono": "Lk",
+    "cat": "Design",
+    "model": "Subscription",
+    "tagline": "Generates logos and a matching brand kit from a name and a few preferences.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Logo",
+      "Brand kit",
+      "Identity",
+      "Templates"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "looka",
+    "url": "https://looka.com",
+    "summary": "Looka produces logo options from a business name, industry and style choices, then extends the chosen mark into a brand kit of colours, fonts and templated assets. It covers the specific moment where a new venture needs an identity quickly.",
+    "roles": [
+      "Entrepreneur",
+      "Graphic Designer",
+      "Marketer"
+    ],
+    "useCases": [
+      "Create branding concepts",
+      "Validate an idea",
+      "Design social assets"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "mono": "Ga",
+    "cat": "Design",
+    "model": "Freemium",
+    "tagline": "Turns an outline into a formatted presentation, document or web page.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Presentations",
+      "Decks",
+      "Documents",
+      "Layout"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "gamma",
+    "url": "https://gamma.app",
+    "summary": "Gamma generates presentations, documents and simple sites from a prompt or an outline, applying layout and theming automatically. It removes the slide-by-slide formatting work that usually dominates deck building.",
+    "roles": [
+      "Entrepreneur",
+      "Product Manager",
+      "Marketer",
+      "Student",
+      "Researcher"
+    ],
+    "useCases": [
+      "Write a spec",
+      "Plan a roadmap",
+      "Draft a report",
+      "Structure findings",
+      "Validate an idea",
+      "Create campaign ideas"
+    ],
+    "stages": [
+      "draft",
+      "design",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "mono": "Ba",
+    "cat": "Design",
+    "model": "Subscription",
+    "tagline": "Presentation software where slides re-layout themselves as content changes.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Presentations",
+      "Slides",
+      "Templates",
+      "Brand"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "beautiful-ai",
+    "url": "https://www.beautiful.ai",
+    "summary": "Beautiful.ai builds decks from smart templates that adjust their layout automatically when content is added or removed, and can generate a first draft deck from a prompt. It is aimed at business presentations that must stay on-brand.",
+    "roles": [
+      "Product Manager",
+      "Entrepreneur",
+      "Marketer"
+    ],
+    "useCases": [
+      "Plan a roadmap",
+      "Draft a report",
+      "Create campaign ideas"
+    ],
+    "stages": [
+      "design",
+      "draft"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "mono": "Mj",
+    "cat": "Image",
+    "model": "Subscription",
+    "tagline": "Stylised image generation with unusually strong art direction.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Image generation",
+      "Art direction",
+      "Style",
+      "Concept art"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "midjourney",
+    "url": "https://www.midjourney.com",
+    "summary": "Midjourney generates images from text prompts and reference images, with a distinctive aesthetic and fine control over style. It is used where the look of the image matters more than literal accuracy.",
+    "roles": [
+      "Graphic Designer",
+      "Content Creator",
+      "UI/UX Designer",
+      "Marketer"
+    ],
+    "useCases": [
+      "Generate images",
+      "Create illustrations",
+      "Generate variations",
+      "Create branding concepts",
+      "Generate thumbnails"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "mono": "Id",
+    "cat": "Image",
+    "model": "Freemium",
+    "tagline": "Image generation that reliably renders legible text inside the picture.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Image generation",
+      "Typography",
+      "Posters",
+      "Social graphics"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "ideogram",
+    "url": "https://ideogram.ai",
+    "summary": "Ideogram generates images from prompts with a particular strength in rendering readable typography, which most image models handle poorly. That makes it practical for posters, logos-in-context and social graphics that carry words.",
+    "roles": [
+      "Graphic Designer",
+      "Marketer",
+      "Content Creator"
+    ],
+    "useCases": [
+      "Generate images",
+      "Design social assets",
+      "Generate thumbnails",
+      "Create illustrations"
+    ],
+    "stages": [
+      "design",
+      "ideate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "mono": "Af",
+    "cat": "Image",
+    "model": "Freemium",
+    "tagline": "Generative image and editing models wired into the Adobe toolchain.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Image generation",
+      "Generative fill",
+      "Photoshop",
+      "Editing"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "adobe-firefly",
+    "url": "https://www.adobe.com/products/firefly.html",
+    "summary": "Adobe Firefly generates and edits images, including generative fill and expansion, and is available both standalone and inside Photoshop and Illustrator. Its integration with existing Adobe files is the main reason design teams reach for it.",
+    "roles": [
+      "Graphic Designer",
+      "Content Creator",
+      "Marketer"
+    ],
+    "useCases": [
+      "Generate images",
+      "Edit backgrounds",
+      "Generate variations",
+      "Create illustrations"
+    ],
+    "stages": [
+      "design",
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "photoroom",
+    "name": "Photoroom",
+    "mono": "Pr",
+    "cat": "Image",
+    "model": "Freemium",
+    "tagline": "Removes and replaces photo backgrounds, with batch editing for product shots.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Background removal",
+      "Product photos",
+      "Batch editing",
+      "Ecommerce"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "photoroom",
+    "url": "https://www.photoroom.com",
+    "summary": "Photoroom cuts subjects out of photographs, replaces backgrounds and generates product scenes, including in bulk. It is built around ecommerce and marketplace imagery, where the same operation is applied to hundreds of shots.",
+    "roles": [
+      "Graphic Designer",
+      "Marketer",
+      "Entrepreneur",
+      "Content Creator"
+    ],
+    "useCases": [
+      "Edit backgrounds",
+      "Generate images",
+      "Design social assets",
+      "Generate variations"
+    ],
+    "stages": [
+      "edit",
+      "design"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "leonardo-ai",
+    "name": "Leonardo.Ai",
+    "mono": "Le",
+    "cat": "Image",
+    "model": "Freemium",
+    "tagline": "Image generation with reusable trained styles and fine-grained controls.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Image generation",
+      "Custom models",
+      "Game assets",
+      "Style"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "leonardo-ai",
+    "url": "https://leonardo.ai",
+    "summary": "Leonardo.Ai generates images with control over composition and style, and lets users train and reuse custom style models. It is used where a set of images has to stay visually consistent across a project.",
+    "roles": [
+      "Graphic Designer",
+      "Content Creator",
+      "UI/UX Designer"
+    ],
+    "useCases": [
+      "Generate images",
+      "Generate variations",
+      "Create illustrations"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "mono": "Ds",
+    "cat": "Video",
+    "model": "Freemium",
+    "tagline": "Edit video and audio by editing the transcript, as if it were a document.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Video editing",
+      "Transcript editing",
+      "Captions",
+      "Podcast",
+      "Screen recording"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "descript",
+    "url": "https://www.descript.com",
+    "summary": "Descript transcribes a recording and lets you cut the video by deleting words in the transcript, along with filler-word removal, screen recording, captions and voice cleanup. Editing long interview and podcast footage is dramatically faster this way than on a conventional timeline.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Marketer",
+      "Researcher"
+    ],
+    "useCases": [
+      "Edit long videos",
+      "Add captions",
+      "Improve audio",
+      "Create shorts",
+      "Generate clips",
+      "Repurpose posts"
+    ],
+    "stages": [
+      "edit",
+      "draft",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "opus-clip",
+    "name": "Opus Clip",
+    "mono": "Op",
+    "cat": "Video",
+    "model": "Freemium",
+    "tagline": "Turns one long recording into ranked short-form clips, captioned and reframed.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Shorts",
+      "Clips",
+      "Repurposing",
+      "Captions",
+      "Video editing"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "opus-clip",
+    "url": "https://www.opus.pro",
+    "summary": "Opus Clip takes a long video or podcast, finds the segments most likely to work as short-form content, reframes them vertically and adds captions. It exists specifically to make repurposing long footage into shorts fast.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Marketer"
+    ],
+    "useCases": [
+      "Create shorts",
+      "Generate clips",
+      "Repurpose posts",
+      "Add captions",
+      "Edit long videos"
+    ],
+    "stages": [
+      "edit",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "mono": "Rw",
+    "cat": "Video",
+    "model": "Subscription",
+    "tagline": "Generative video, inpainting and cleanup tools in a single timeline.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Generative video",
+      "B-roll",
+      "Inpainting",
+      "Motion",
+      "Video editing"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "runway",
+    "url": "https://runwayml.com",
+    "summary": "Runway generates video from text and images and provides editing tools such as object removal, background replacement and motion controls. It is used both for generated footage and for cleanup work on real footage.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Graphic Designer"
+    ],
+    "useCases": [
+      "Generate B-roll",
+      "Generate clips",
+      "Edit long videos",
+      "Generate variations"
+    ],
+    "stages": [
+      "ideate",
+      "design",
+      "edit"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "capcut",
+    "name": "CapCut",
+    "mono": "Cp",
+    "cat": "Video",
+    "model": "Freemium",
+    "tagline": "Short-form video editing with auto-captions, effects and templates.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Short-form",
+      "Captions",
+      "Templates",
+      "Mobile",
+      "Video editing"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "capcut",
+    "url": "https://www.capcut.com",
+    "summary": "CapCut is a video editor for short-form social content, with automatic captions, background removal, templates and effects on both desktop and mobile. It is the default editor for a large share of vertical video.",
+    "roles": [
+      "Content Creator",
+      "Video Editor",
+      "Marketer",
+      "Student"
+    ],
+    "useCases": [
+      "Create shorts",
+      "Add captions",
+      "Edit long videos",
+      "Generate clips",
+      "Repurpose posts"
+    ],
+    "stages": [
+      "edit",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "kling",
+    "name": "Kling",
+    "mono": "Kl",
+    "cat": "Video",
+    "model": "Subscription",
+    "tagline": "Text and image to video generation with steady motion across longer shots.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Generative video",
+      "Text to video",
+      "Motion"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "kling",
+    "url": "https://klingai.com",
+    "summary": "Kling generates video clips from text prompts or a starting image, with controls for camera motion and shot length. It is used for generated sequences rather than for editing existing footage.",
+    "roles": [
+      "Content Creator",
+      "Video Editor",
+      "Graphic Designer"
+    ],
+    "useCases": [
+      "Generate clips",
+      "Generate B-roll",
+      "Generate variations"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "mono": "Sy",
+    "cat": "Video",
+    "model": "Subscription",
+    "tagline": "Presenter-led videos generated from a script using AI avatars and voices.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Avatars",
+      "Training video",
+      "Localisation",
+      "Script to video"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "synthesia",
+    "url": "https://www.synthesia.io",
+    "summary": "Synthesia turns a written script into a video presented by an AI avatar, in many languages, without a camera or studio. It is used for training, product explainers and internal communication where filming is impractical.",
+    "roles": [
+      "Marketer",
+      "Content Creator",
+      "Product Manager",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Script a video",
+      "Create social content",
+      "Plan content"
+    ],
+    "stages": [
+      "draft",
+      "design",
+      "publish"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "mono": "Hg",
+    "cat": "Video",
+    "model": "Freemium",
+    "tagline": "Avatar video generation plus translation and lip-sync for existing footage.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Avatars",
+      "Translation",
+      "Lip-sync",
+      "Script to video"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "heygen",
+    "url": "https://www.heygen.com",
+    "summary": "HeyGen generates avatar-presented video from a script and can translate an existing video into another language with matched lip movement. It covers both making new presenter video and extending the reach of video that already exists.",
+    "roles": [
+      "Marketer",
+      "Content Creator",
+      "Video Editor"
+    ],
+    "useCases": [
+      "Script a video",
+      "Repurpose posts",
+      "Create social content"
+    ],
+    "stages": [
+      "design",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "veed",
+    "name": "VEED",
+    "mono": "Ve",
+    "cat": "Video",
+    "model": "Freemium",
+    "tagline": "Browser video editing focused on subtitles, cleanup and social formats.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Subtitles",
+      "Browser editor",
+      "Social formats",
+      "Cleanup",
+      "Video editing"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "veed",
+    "url": "https://www.veed.io",
+    "summary": "VEED is a browser-based video editor with automatic subtitles, translation, background noise removal and resizing for social platforms. It is aimed at fast turnaround rather than complex timelines.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Marketer",
+      "Student"
+    ],
+    "useCases": [
+      "Add captions",
+      "Edit long videos",
+      "Create shorts",
+      "Improve audio"
+    ],
+    "stages": [
+      "edit",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "mono": "El",
+    "cat": "Audio",
+    "model": "Freemium",
+    "tagline": "Speech synthesis and voice cloning that hold up across long scripts.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Voiceover",
+      "Text to speech",
+      "Voice cloning",
+      "Dubbing",
+      "Narration"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "elevenlabs",
+    "url": "https://elevenlabs.io",
+    "summary": "ElevenLabs generates speech from text in many languages and can clone a voice from a sample, with controls for delivery and pacing. It is widely used for narration, dubbing and voiceover where recording is impractical.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Marketer",
+      "Writer"
+    ],
+    "useCases": [
+      "Improve audio",
+      "Script a video",
+      "Repurpose posts"
+    ],
+    "stages": [
+      "draft",
+      "design",
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "mono": "Sn",
+    "cat": "Audio",
+    "model": "Freemium",
+    "tagline": "Generates complete music tracks, including vocals, from a written brief.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Music generation",
+      "Songs",
+      "Soundtrack",
+      "Vocals"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "suno",
+    "url": "https://suno.com",
+    "summary": "Suno produces full songs from a text description of genre, mood and lyrics, including instrumentation and vocals. It is used for background music and scratch tracks where licensing real music is a barrier.",
+    "roles": [
+      "Content Creator",
+      "Video Editor",
+      "Marketer"
+    ],
+    "useCases": [
+      "Generate ideas",
+      "Generate variations",
+      "Script a video"
+    ],
+    "stages": [
+      "ideate",
+      "design"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "adobe-podcast",
+    "name": "Adobe Podcast",
+    "mono": "Ap",
+    "cat": "Audio",
+    "model": "Freemium",
+    "tagline": "Cleans up recorded speech to sound as if it were recorded in a studio.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Audio cleanup",
+      "Noise removal",
+      "Podcast",
+      "Speech"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "adobe-podcast",
+    "url": "https://podcast.adobe.com",
+    "summary": "Adobe Podcast enhances recorded speech by reducing background noise and reverb, and provides browser-based recording and editing for spoken audio. It targets the specific problem of usable audio recorded in a bad room.",
+    "roles": [
+      "Video Editor",
+      "Content Creator",
+      "Researcher"
+    ],
+    "useCases": [
+      "Improve audio",
+      "Edit long videos"
+    ],
+    "stages": [
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "otter-ai",
+    "name": "Otter.ai",
+    "mono": "Ot",
+    "cat": "Audio",
+    "model": "Freemium",
+    "tagline": "Live meeting transcription with searchable notes and summaries.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Transcription",
+      "Meeting notes",
+      "Summaries",
+      "Search"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "otter-ai",
+    "url": "https://otter.ai",
+    "summary": "Otter.ai joins meetings, transcribes them in real time and produces summaries and action items that stay searchable afterwards. Its value is in the record it leaves behind rather than in the transcription itself.",
+    "roles": [
+      "Researcher",
+      "Product Manager",
+      "Student",
+      "Marketer",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Summarize notes",
+      "Structure findings",
+      "Analyze feedback",
+      "Research users",
+      "Study a topic"
+    ],
+    "stages": [
+      "collaborate",
+      "research",
+      "draft"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "murf",
+    "name": "Murf",
+    "mono": "Mu",
+    "cat": "Audio",
+    "model": "Freemium",
+    "tagline": "Studio-style voiceover production with timing and background tracks.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Voiceover",
+      "Text to speech",
+      "Narration",
+      "Timeline"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "murf",
+    "url": "https://murf.ai",
+    "summary": "Murf generates voiceover from a script with a library of voices, and provides a timeline for syncing narration to slides or video and layering background audio. It is oriented toward finished voiceover deliverables rather than raw speech synthesis.",
+    "roles": [
+      "Content Creator",
+      "Video Editor",
+      "Marketer"
+    ],
+    "useCases": [
+      "Improve audio",
+      "Script a video"
+    ],
+    "stages": [
+      "draft",
+      "edit"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "mono": "Px",
+    "cat": "Research",
+    "model": "Freemium",
+    "tagline": "Answers questions from live sources and shows the citations behind them.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Search",
+      "Citations",
+      "Web research",
+      "Follow-ups"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "perplexity",
+    "url": "https://www.perplexity.ai",
+    "summary": "Perplexity answers questions by searching the web and citing the pages it drew from, and keeps follow-up questions on the same thread. The citations are the point: it is used where an answer has to be checkable.",
+    "roles": [
+      "Researcher",
+      "Marketer",
+      "Entrepreneur",
+      "Student",
+      "Writer",
+      "Product Manager",
+      "Developer",
+      "UI/UX Designer"
+    ],
+    "useCases": [
+      "Research a topic",
+      "Research competitors",
+      "Research the market",
+      "Study a topic",
+      "Research users",
+      "Research documentation",
+      "Validate an idea",
+      "Summarize research"
+    ],
+    "stages": [
+      "research"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "elicit",
+    "name": "Elicit",
+    "mono": "Ec",
+    "cat": "Research",
+    "model": "Freemium",
+    "tagline": "Screens academic papers and extracts findings into a comparable table.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Literature review",
+      "Papers",
+      "Extraction",
+      "Systematic review"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "elicit",
+    "url": "https://elicit.com",
+    "summary": "Elicit searches academic literature, screens papers against criteria and extracts specified fields from each one into a table. It automates the mechanical part of a literature review rather than the judgement.",
+    "roles": [
+      "Researcher",
+      "Student"
+    ],
+    "useCases": [
+      "Review literature",
+      "Summarize papers",
+      "Structure findings",
+      "Study a topic"
+    ],
+    "stages": [
+      "research",
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "notebooklm",
+    "name": "NotebookLM",
+    "mono": "Nb",
+    "cat": "Research",
+    "model": "Freemium",
+    "tagline": "Answers questions strictly from the sources you upload, with inline citations.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Grounded answers",
+      "Citations",
+      "Documents",
+      "Summaries"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "notebooklm",
+    "url": "https://notebooklm.google.com",
+    "summary": "NotebookLM grounds its answers in a set of documents the user provides, citing the passage behind each claim, and can produce summaries and audio overviews of that material. Because it will not answer outside the sources, it suits close reading of a fixed corpus.",
+    "roles": [
+      "Researcher",
+      "Student",
+      "Product Manager",
+      "Writer"
+    ],
+    "useCases": [
+      "Summarize papers",
+      "Summarize notes",
+      "Study a topic",
+      "Structure findings",
+      "Summarize research",
+      "Analyze feedback"
+    ],
+    "stages": [
+      "research",
+      "analyse",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "consensus",
+    "name": "Consensus",
+    "mono": "Cs",
+    "cat": "Research",
+    "model": "Freemium",
+    "tagline": "Searches scientific papers and summarises what the evidence actually says.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Evidence",
+      "Papers",
+      "Science",
+      "Search"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "consensus",
+    "url": "https://consensus.app",
+    "summary": "Consensus searches peer-reviewed literature for a specific question and summarises the direction and strength of the findings across papers. It is aimed at answering empirical questions rather than browsing a field.",
+    "roles": [
+      "Researcher",
+      "Student",
+      "Writer"
+    ],
+    "useCases": [
+      "Review literature",
+      "Summarize papers",
+      "Research a topic",
+      "Study a topic"
+    ],
+    "stages": [
+      "research"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "researchrabbit",
+    "name": "ResearchRabbit",
+    "mono": "Rr",
+    "cat": "Research",
+    "model": "Free",
+    "tagline": "Maps how papers cite each other so a literature can be explored visually.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Citation graph",
+      "Discovery",
+      "Papers",
+      "Literature review"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "researchrabbit",
+    "url": "https://www.researchrabbit.ai",
+    "summary": "ResearchRabbit builds a visual graph of related papers and authors from a starting set, surfacing work a keyword search would miss. It is a discovery tool for the shape of a field.",
+    "roles": [
+      "Researcher",
+      "Student"
+    ],
+    "useCases": [
+      "Review literature",
+      "Research a topic",
+      "Structure findings"
+    ],
+    "stages": [
+      "research"
+    ],
+    "pricingTier": "free",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "scispace",
+    "name": "SciSpace",
+    "mono": "Sc",
+    "cat": "Research",
+    "model": "Freemium",
+    "tagline": "Reads a paper alongside you and explains passages, maths and terminology.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Paper reading",
+      "Explanations",
+      "Comparison",
+      "Study"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "scispace",
+    "url": "https://scispace.com",
+    "summary": "SciSpace answers questions about an uploaded paper, explains equations and jargon in place, and can compare several papers side by side. It targets the moment of actually reading a difficult paper.",
+    "roles": [
+      "Student",
+      "Researcher"
+    ],
+    "useCases": [
+      "Summarize papers",
+      "Study a topic",
+      "Review literature",
+      "Practice problems"
+    ],
+    "stages": [
+      "research",
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "surfer-seo",
+    "name": "Surfer SEO",
+    "mono": "Sf",
+    "cat": "Marketing",
+    "model": "Subscription",
+    "tagline": "Content briefs and on-page scoring measured against the current ranking set.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "SEO",
+      "Content briefs",
+      "On-page",
+      "Keywords"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "surfer-seo",
+    "url": "https://surferseo.com",
+    "summary": "Surfer SEO analyses the pages currently ranking for a keyword and produces a brief with structure and term guidance, then scores a draft against it. It connects writing decisions to what is already winning the search result.",
+    "roles": [
+      "Marketer",
+      "Writer",
+      "Content Creator",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Research competitors",
+      "Draft an article",
+      "Plan content",
+      "Create campaign ideas"
+    ],
+    "stages": [
+      "research",
+      "draft",
+      "publish"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "buffer",
+    "name": "Buffer",
+    "mono": "Bf",
+    "cat": "Marketing",
+    "model": "Freemium",
+    "tagline": "Schedules social posts across channels and drafts variations for each one.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Social scheduling",
+      "Publishing",
+      "Repurposing",
+      "Analytics"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "buffer",
+    "url": "https://buffer.com",
+    "summary": "Buffer queues and publishes social content across networks, with an assistant that repurposes a post for different platforms and suggests ideas. Its role in a workflow is the distribution step.",
+    "roles": [
+      "Marketer",
+      "Content Creator",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Create social content",
+      "Repurpose posts",
+      "Plan content",
+      "Analyze audience"
+    ],
+    "stages": [
+      "publish",
+      "analyse",
+      "automate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "copy-ai",
+    "name": "Copy.ai",
+    "mono": "Co",
+    "cat": "Marketing",
+    "model": "Freemium",
+    "tagline": "Campaign copy and outbound sequences generated from a single brief.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Ad copy",
+      "Email sequences",
+      "Campaigns",
+      "Workflows"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "copy-ai",
+    "url": "https://www.copy.ai",
+    "summary": "Copy.ai generates marketing copy and multi-step go-to-market sequences from a brief, and can run those as repeatable workflows across a list. It targets volume copy production rather than a single considered piece.",
+    "roles": [
+      "Marketer",
+      "Entrepreneur",
+      "Writer"
+    ],
+    "useCases": [
+      "Generate ad copy",
+      "Build email campaigns",
+      "Create campaign ideas",
+      "Create social content",
+      "Write launch copy"
+    ],
+    "stages": [
+      "draft",
+      "automate",
+      "publish"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper",
+    "mono": "Js",
+    "cat": "Marketing",
+    "model": "Subscription",
+    "tagline": "Brand-tuned marketing content produced at team scale with shared voice rules.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Brand voice",
+      "Campaigns",
+      "Marketing copy",
+      "Teams"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "jasper",
+    "url": "https://www.jasper.ai",
+    "summary": "Jasper generates marketing content against a stored brand voice and style guide so output stays consistent across a team, with campaign-level workflows. The brand controls are what distinguish it from a general assistant.",
+    "roles": [
+      "Marketer",
+      "Writer",
+      "Content Creator"
+    ],
+    "useCases": [
+      "Generate ad copy",
+      "Create campaign ideas",
+      "Create social content",
+      "Build email campaigns",
+      "Draft an article"
+    ],
+    "stages": [
+      "draft",
+      "publish"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "mono": "Cy",
+    "cat": "Marketing",
+    "model": "Subscription",
+    "tagline": "Enriches lead lists from many data sources and drafts the first outreach.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Lead enrichment",
+      "Outbound",
+      "Prospecting",
+      "Data"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "clay",
+    "url": "https://www.clay.com",
+    "summary": "Clay builds and enriches prospect lists by combining many data providers in a spreadsheet-like interface, then uses that data to personalise outbound messages. It is the research-and-targeting half of outbound, not the sending.",
+    "roles": [
+      "Marketer",
+      "Entrepreneur",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Find early users",
+      "Analyze audience",
+      "Research competitors",
+      "Build email campaigns",
+      "Clean a dataset"
+    ],
+    "stages": [
+      "research",
+      "analyse",
+      "automate"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "adcreative-ai",
+    "name": "AdCreative.ai",
+    "mono": "Ac",
+    "cat": "Marketing",
+    "model": "Subscription",
+    "tagline": "Generates ad creatives and headline variants scored for likely performance.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Ad creative",
+      "Variants",
+      "Social ads",
+      "Testing"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "adcreative-ai",
+    "url": "https://www.adcreative.ai",
+    "summary": "AdCreative.ai produces sets of ad images and headline variations sized for each platform and ranks them by predicted engagement. It is built around producing many variants for testing rather than one hero asset.",
+    "roles": [
+      "Marketer",
+      "Graphic Designer",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Generate ad copy",
+      "Design social assets",
+      "Generate variations",
+      "Create campaign ideas"
+    ],
+    "stages": [
+      "design",
+      "publish"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "julius-ai",
+    "name": "Julius AI",
+    "mono": "Ju",
+    "cat": "Data",
+    "model": "Freemium",
+    "tagline": "Analyses an uploaded dataset from plain-English questions and returns charts.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Data analysis",
+      "Charts",
+      "Spreadsheets",
+      "Plain English"
+    ],
+    "pop": 55,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "julius-ai",
+    "url": "https://julius.ai",
+    "summary": "Julius AI takes a spreadsheet or CSV and answers questions about it by writing and running analysis code, returning charts and explanations. It covers exploratory analysis for people who do not want to write the code themselves.",
+    "roles": [
+      "Data Analyst",
+      "Researcher",
+      "Student",
+      "Product Manager",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Query in plain English",
+      "Analyze data",
+      "Explain a trend",
+      "Clean a dataset",
+      "Build a dashboard"
+    ],
+    "stages": [
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "hex",
+    "name": "Hex",
+    "mono": "Hx",
+    "cat": "Data",
+    "model": "Freemium",
+    "tagline": "Collaborative data notebooks with SQL, Python and AI-assisted analysis.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Notebooks",
+      "SQL",
+      "Python",
+      "Dashboards",
+      "Collaboration"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "hex",
+    "url": "https://hex.tech",
+    "summary": "Hex is a notebook environment where SQL and Python cells can be published as interactive apps, with AI assistance for writing queries and explaining results. It is aimed at analytics teams sharing work with stakeholders.",
+    "roles": [
+      "Data Analyst",
+      "Researcher",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Query in plain English",
+      "Build a dashboard",
+      "Analyze data",
+      "Clean a dataset",
+      "Automate reports"
+    ],
+    "stages": [
+      "analyse",
+      "build",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "rows",
+    "name": "Rows",
+    "mono": "Ro",
+    "cat": "Data",
+    "model": "Freemium",
+    "tagline": "A spreadsheet with live data connectors and AI functions in the formula bar.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Spreadsheet",
+      "Connectors",
+      "AI functions",
+      "Reports"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "rows",
+    "url": "https://rows.com",
+    "summary": "Rows is a spreadsheet that pulls live data from external services and exposes AI operations as ordinary formulas for classifying, extracting or summarising cell contents. It suits recurring reports assembled from several sources.",
+    "roles": [
+      "Data Analyst",
+      "Marketer",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Automate reports",
+      "Clean a dataset",
+      "Analyze data",
+      "Build a dashboard"
+    ],
+    "stages": [
+      "analyse",
+      "automate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "deepnote",
+    "name": "Deepnote",
+    "mono": "Dn",
+    "cat": "Data",
+    "model": "Freemium",
+    "tagline": "A collaborative Python notebook with an AI assistant for analysis steps.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Notebooks",
+      "Python",
+      "SQL",
+      "Collaboration"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "deepnote",
+    "url": "https://deepnote.com",
+    "summary": "Deepnote is a hosted notebook for Python and SQL with real-time collaboration and an assistant that drafts and fixes analysis code. It is the shared workspace end of data work rather than the dashboard end.",
+    "roles": [
+      "Data Analyst",
+      "Researcher",
+      "Student"
+    ],
+    "useCases": [
+      "Analyze data",
+      "Clean a dataset",
+      "Query in plain English",
+      "Build a project"
+    ],
+    "stages": [
+      "analyse",
+      "collaborate",
+      "build"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "mono": "Ch",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "A general assistant with browsing, file handling and custom instructions.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Assistant",
+      "General purpose",
+      "Browsing",
+      "Files"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "chatgpt",
+    "url": "https://chatgpt.com",
+    "summary": "ChatGPT is a general-purpose assistant that handles writing, analysis, code and image generation, with web browsing, file uploads and reusable custom instructions. Its breadth makes it a common first stop before a specialised tool.",
+    "roles": [
+      "Student",
+      "Writer",
+      "Developer",
+      "Marketer",
+      "Entrepreneur",
+      "Product Manager",
+      "Researcher",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Generate ideas",
+      "Study a topic",
+      "Practice problems",
+      "Write an essay",
+      "Draft an article",
+      "Write code faster",
+      "Debug an issue",
+      "Research a topic",
+      "Validate an idea",
+      "Analyze data"
+    ],
+    "stages": [
+      "ideate",
+      "draft",
+      "research",
+      "build",
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "gemini",
+    "name": "Gemini",
+    "mono": "Gm",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "A general assistant wired into Google documents, mail and long-context reading.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Assistant",
+      "Workspace",
+      "Long context",
+      "Summarising"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "gemini",
+    "url": "https://gemini.google.com",
+    "summary": "Gemini is a general assistant available standalone and inside Google Workspace, where it can draft in documents, summarise mail and work across long files. The Workspace integration is what distinguishes it for people already in those tools.",
+    "roles": [
+      "Student",
+      "Writer",
+      "Marketer",
+      "Product Manager",
+      "Researcher",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Summarize notes",
+      "Draft an article",
+      "Research a topic",
+      "Study a topic",
+      "Generate ideas",
+      "Summarize research"
+    ],
+    "stages": [
+      "draft",
+      "research",
+      "collaborate",
+      "ideate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "zapier",
+    "name": "Zapier",
+    "mono": "Zp",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Connects thousands of apps into triggered automations without code.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Automation",
+      "Integrations",
+      "No-code",
+      "Triggers",
+      "Workflow"
+    ],
+    "pop": 95,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "zapier",
+    "url": "https://zapier.com",
+    "summary": "Zapier links applications so an event in one triggers actions in others, with AI steps that classify, extract or draft along the way and agents that carry out multi-step tasks. Its breadth of integrations is its defining feature.",
+    "roles": [
+      "Marketer",
+      "Entrepreneur",
+      "Product Manager",
+      "Developer",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Automate reports",
+      "Build email campaigns",
+      "Find early users"
+    ],
+    "stages": [
+      "automate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "relay",
+    "name": "Relay.app",
+    "mono": "Rl",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Multi-step automations that pause for human approval at the risky steps.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Automation",
+      "Human in the loop",
+      "Approvals",
+      "Integrations",
+      "Workflow"
+    ],
+    "pop": 40,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "relay",
+    "url": "https://www.relay.app",
+    "summary": "Relay.app builds automations across apps with AI steps, and lets a run wait for a person to review or edit before it continues. That human-in-the-loop step is what makes it usable for work with consequences.",
+    "roles": [
+      "Product Manager",
+      "Marketer",
+      "Entrepreneur",
+      "Developer"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Automate reports",
+      "Build email campaigns"
+    ],
+    "stages": [
+      "automate",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "make",
+    "name": "Make",
+    "mono": "Mk",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Visual automation builder for branching, multi-step workflows across apps.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Automation",
+      "Visual builder",
+      "Integrations",
+      "Branching",
+      "Workflow"
+    ],
+    "pop": 85,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "make",
+    "url": "https://www.make.com",
+    "summary": "Make lays automations out on a visual canvas, supporting branching, iteration and error handling across many connected services, with AI modules available as steps. It handles more complex logic than a linear trigger-action tool.",
+    "roles": [
+      "Entrepreneur",
+      "Marketer",
+      "Developer",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Automate reports",
+      "Clean a dataset"
+    ],
+    "stages": [
+      "automate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "mono": "N8",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Source-available workflow automation that can be self-hosted and extended in code.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Automation",
+      "Self-hosted",
+      "Agents",
+      "Workflow",
+      "Open source"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "n8n",
+    "url": "https://n8n.io",
+    "summary": "n8n builds automations on a node canvas and can run on your own infrastructure, with the option to drop into JavaScript for any step and build AI agent workflows. It suits teams that need automation to stay inside their own environment.",
+    "roles": [
+      "Developer",
+      "Data Analyst",
+      "Entrepreneur"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Automate reports",
+      "Build APIs"
+    ],
+    "stages": [
+      "automate",
+      "build"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "glean",
+    "name": "Glean",
+    "mono": "Gl",
+    "cat": "Agents",
+    "model": "Subscription",
+    "tagline": "Searches and answers across every internal system a company already uses.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Enterprise search",
+      "Knowledge",
+      "Citations",
+      "Permissions"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "glean",
+    "url": "https://www.glean.com",
+    "summary": "Glean indexes a company documents, tickets, chats and wikis and answers questions from them with citations, respecting existing permissions. It addresses the problem of knowledge that exists but cannot be found.",
+    "roles": [
+      "Product Manager",
+      "Researcher",
+      "Developer",
+      "Data Analyst"
+    ],
+    "useCases": [
+      "Research users",
+      "Analyze feedback",
+      "Structure findings",
+      "Research documentation"
+    ],
+    "stages": [
+      "research",
+      "collaborate"
+    ],
+    "pricingTier": "paid",
+    "status": "active",
+    "verified": true
+  },
+  {
+    "id": "fathom",
+    "name": "Fathom",
+    "mono": "Fa",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Records and summarises meetings, then pushes the follow-ups into the CRM.",
+    "rating": 0,
+    "reviews": 0,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Meeting notes",
+      "Summaries",
+      "CRM sync",
+      "Action items"
+    ],
+    "pop": 70,
+    "api": "\u2014",
+    "ctx": "\u2014",
+    "team": "\u2014",
+    "trial": "\u2014",
+    "integr": "\u2014",
+    "slug": "fathom",
+    "url": "https://fathom.video",
+    "summary": "Fathom joins calls, records and transcribes them, and produces summaries and action items that sync into CRM and task tools. It closes the loop between a conversation and what happens afterwards.",
+    "roles": [
+      "Product Manager",
+      "Marketer",
+      "Entrepreneur",
+      "Researcher"
+    ],
+    "useCases": [
+      "Analyze feedback",
+      "Research users",
+      "Summarize notes",
+      "Find early users"
+    ],
+    "stages": [
+      "collaborate",
+      "automate",
+      "analyse"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true
+  }
+]

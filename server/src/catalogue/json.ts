@@ -1,0 +1,317 @@
+/*
+ * JsonToolCatalogue — the V1 adapter.
+ *
+ * THE ONLY MODULE IN THE SERVER THAT KNOWS A JSON FILE EXISTS.
+ * `grep -rn "tools.json" src --exclude-dir=catalogue` must stay empty, and
+ * tests/boundary.test.ts asserts exactly that (ASSISTANT_ARCHITECTURE_PLAN.md
+ * §6.1).
+ *
+ * Loads data/tools.json once at construction, validates every record, and builds
+ * the in-memory indexes retrieval leans on (byId, bySlug, byCategory, byStage,
+ * byRole). Invalid data throws before the server can listen — see schema.ts.
+ *
+ * The methods are async because the PORT is async, not because anything here
+ * awaits. That asymmetry is the entire point of §6.2: PostgresToolCatalogue
+ * changes what happens inside these methods and nothing about their signatures.
+ *
+ * ── Pagination ────────────────────────────────────────────────────────────────
+ *
+ * The cursor is an opaque base64 offset. Offsets are the honest choice for a
+ * catalogue in the tens: they are stable because the sort is total (every
+ * comparator falls through to `id`), and they translate directly to SQL
+ * OFFSET. If the catalogue ever grows to where offset paging hurts, the cursor
+ * is already opaque, so swapping it for a keyset cursor changes this file only.
+ */
+
+import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { configError } from '../domain/errors.ts'
+import type { Tool } from '../domain/types.ts'
+import type { Logger } from '../utils/logger.ts'
+import type { ToolCatalogueRepository, ToolPage, ToolQuery } from './repository.ts'
+import { parseCatalogue } from './schema.ts'
+import {
+  buildTaxonomy,
+  DEFAULT_STATUS,
+  type RoleName,
+  type SortOption,
+  type Taxonomy,
+  type ToolCategoryName,
+  type WorkflowStage,
+} from './taxonomy.ts'
+
+const DATA_FILE = 'tools.json'
+
+/** Resolved relative to this module so it works from src/ and from dist/. */
+function defaultDataPath(): string {
+  return join(dirname(fileURLToPath(import.meta.url)), 'data', DATA_FILE)
+}
+
+export interface JsonToolCatalogueOptions {
+  logger?: Logger
+  /**
+   * Test seam. Supplying records skips the file read entirely, which is what
+   * lets tests/catalogue.contract.ts run the reusable suite against a small
+   * fixture rather than against the real seed data.
+   */
+  records?: unknown
+  /** Override the file location. Production never sets this. */
+  path?: string
+}
+
+interface Indexes {
+  byId: Map<string, Tool>
+  bySlug: Map<string, Tool>
+  byCategory: Map<ToolCategoryName, Tool[]>
+  byStage: Map<WorkflowStage, Tool[]>
+  byRole: Map<RoleName, Tool[]>
+}
+
+export function createJsonToolCatalogue(
+  options: JsonToolCatalogueOptions = {},
+): ToolCatalogueRepository {
+  const { logger, records, path } = options
+  const origin = records !== undefined ? 'in-memory records' : (path ?? defaultDataPath())
+  const raw = records !== undefined ? records : readCatalogueFile(origin)
+
+  const tools = parseCatalogue(raw, { origin })
+  const indexes = buildIndexes(tools)
+  const taxonomy = buildTaxonomy()
+  const activeCount = tools.filter((tool) => tool.status === 'active').length
+
+  logger?.info('Catalogue loaded', {
+    driver: 'json',
+    records: tools.length,
+    active: activeCount,
+  })
+
+  return {
+    id: 'json',
+
+    async findById(id) {
+      return indexes.byId.get(id)
+    },
+
+    async findBySlug(slugValue) {
+      return indexes.bySlug.get(slugValue)
+    },
+
+    async findManyByIds(ids) {
+      const found: Tool[] = []
+      const seen = new Set<string>()
+      for (const id of ids) {
+        if (seen.has(id)) continue
+        seen.add(id)
+        const tool = indexes.byId.get(id)
+        if (tool) found.push(tool)
+      }
+      return found
+    },
+
+    async search(query) {
+      return runSearch(tools, indexes, query)
+    },
+
+    async taxonomy() {
+      return taxonomy
+    },
+
+    async size() {
+      return activeCount
+    },
+  }
+}
+
+function readCatalogueFile(file: string): unknown {
+  let contents: string
+  try {
+    contents = readFileSync(file, 'utf8')
+  } catch (error) {
+    throw configError(
+      `Could not read the tool catalogue at ${file}.\n` +
+        `  ${(error as Error).message}\n` +
+        '  The seed catalogue ships with the server; a missing file means the ' +
+        'build did not copy src/catalogue/data/.',
+      { origin: file },
+    )
+  }
+
+  try {
+    return JSON.parse(contents) as unknown
+  } catch (error) {
+    throw configError(
+      `The tool catalogue at ${file} is not valid JSON.\n  ${(error as Error).message}`,
+      { origin: file },
+    )
+  }
+}
+
+function buildIndexes(tools: Tool[]): Indexes {
+  const indexes: Indexes = {
+    byId: new Map(),
+    bySlug: new Map(),
+    byCategory: new Map(),
+    byStage: new Map(),
+    byRole: new Map(),
+  }
+
+  for (const tool of tools) {
+    indexes.byId.set(tool.id, tool)
+    indexes.bySlug.set(tool.slug, tool)
+    push(indexes.byCategory, tool.cat, tool)
+    for (const stage of tool.stages) push(indexes.byStage, stage, tool)
+    for (const role of tool.roles) push(indexes.byRole, role, tool)
+  }
+
+  return indexes
+}
+
+function push<K>(map: Map<K, Tool[]>, key: K, tool: Tool): void {
+  const bucket = map.get(key)
+  if (bucket) bucket.push(tool)
+  else map.set(key, [tool])
+}
+
+/* ─── Search ───────────────────────────────────────────────────────────────── */
+
+const DEFAULT_LIMIT = 24
+const MAX_LIMIT = 100
+
+/**
+ * Storage-level free-text matching.
+ *
+ * Deliberately simple substring matching over name, tagline, summary and tags —
+ * the direct analogue of a SQL ILIKE / to_tsvector filter. The RICH ranking that
+ * makes "edit videos faster" surface Descript lives in retrieval/, above this
+ * layer, because it is a product decision rather than a storage capability.
+ */
+function textMatchCount(tool: Tool, terms: string[]): number {
+  if (terms.length === 0) return 0
+  const haystack = [
+    tool.name,
+    tool.tagline,
+    tool.summary,
+    tool.tags.join(' '),
+    tool.cat,
+  ]
+    .join(' ')
+    .toLowerCase()
+  return terms.filter((term) => haystack.includes(term)).length
+}
+
+function splitTerms(q: string | undefined): string[] {
+  if (!q) return []
+  return q
+    .toLowerCase()
+    .split(/[^a-z0-9+.#]+/)
+    .filter((term) => term.length > 1)
+}
+
+function intersects(values: readonly string[], wanted: readonly string[]): boolean {
+  return wanted.some((value) => values.includes(value))
+}
+
+function comparator(sort: SortOption, relevance: Map<string, number>) {
+  return (a: Tool, b: Tool): number => {
+    let primary = 0
+    switch (sort) {
+      case 'relevance':
+        primary = (relevance.get(b.id) ?? 0) - (relevance.get(a.id) ?? 0)
+        if (primary === 0) primary = b.pop - a.pop
+        break
+      case 'popular':
+        primary = b.pop - a.pop
+        break
+      case 'rating':
+        primary = b.rating - a.rating
+        if (primary === 0) primary = b.reviews - a.reviews
+        break
+      case 'reviews':
+        primary = b.reviews - a.reviews
+        break
+      case 'name':
+        primary = a.name.localeCompare(b.name)
+        break
+    }
+    // Total order. Without a tiebreak the sort is unstable across engines and
+    // an offset cursor can skip or repeat a record between pages.
+    return primary !== 0 ? primary : a.id.localeCompare(b.id)
+  }
+}
+
+function encodeCursor(offset: number): string {
+  return Buffer.from(JSON.stringify({ o: offset }), 'utf8').toString('base64url')
+}
+
+/** Returns 0 for anything unparseable — a stale cursor restarts, never throws. */
+function decodeCursor(cursor: string | undefined): number {
+  if (!cursor) return 0
+  try {
+    const parsed: unknown = JSON.parse(Buffer.from(cursor, 'base64url').toString('utf8'))
+    if (parsed && typeof parsed === 'object' && 'o' in parsed) {
+      const offset = (parsed as { o: unknown }).o
+      if (typeof offset === 'number' && Number.isInteger(offset) && offset >= 0) {
+        return offset
+      }
+    }
+  } catch {
+    /* fall through */
+  }
+  return 0
+}
+
+function runSearch(tools: Tool[], indexes: Indexes, query: ToolQuery): ToolPage {
+  const status = query.status ?? DEFAULT_STATUS
+  const terms = splitTerms(query.q)
+  const excluded = new Set(query.excludeIds ?? [])
+  const wantedTags = (query.tags ?? []).map((tag) => tag.toLowerCase())
+
+  // Narrowing on a single category first is the one index shortcut worth taking:
+  // it is the common case from the browse page and it keeps the scan small.
+  const scanned =
+    query.categories?.length === 1
+      ? (indexes.byCategory.get(query.categories[0] as ToolCategoryName) ?? [])
+      : tools
+
+  const relevance = new Map<string, number>()
+  const matched: Tool[] = []
+
+  for (const tool of scanned) {
+    if (status !== 'all' && tool.status !== status) continue
+    if (excluded.has(tool.id)) continue
+    if (query.categories?.length && !query.categories.includes(tool.cat)) continue
+    if (query.pricingTiers?.length && !query.pricingTiers.includes(tool.pricingTier)) continue
+    if (query.roles?.length && !intersects(tool.roles, query.roles)) continue
+    if (query.stages?.length && !intersects(tool.stages, query.stages)) continue
+    if (query.minRating !== undefined && tool.rating < query.minRating) continue
+    if (
+      wantedTags.length > 0 &&
+      !tool.tags.some((tag) => wantedTags.includes(tag.toLowerCase()))
+    ) {
+      continue
+    }
+
+    if (terms.length > 0) {
+      const hits = textMatchCount(tool, terms)
+      if (hits === 0) continue
+      relevance.set(tool.id, hits)
+    }
+
+    matched.push(tool)
+  }
+
+  const sort: SortOption = query.sort ?? (terms.length > 0 ? 'relevance' : 'popular')
+  matched.sort(comparator(sort, relevance))
+
+  const limit = Math.min(Math.max(query.limit ?? DEFAULT_LIMIT, 1), MAX_LIMIT)
+  const offset = decodeCursor(query.cursor)
+  const items = matched.slice(offset, offset + limit)
+  const nextOffset = offset + items.length
+
+  const page: ToolPage = { items, total: matched.length }
+  if (nextOffset < matched.length) page.nextCursor = encodeCursor(nextOffset)
+  return page
+}
+
+export type { Taxonomy }

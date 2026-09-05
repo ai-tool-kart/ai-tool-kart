@@ -11,8 +11,11 @@
 import type { AddressInfo } from 'node:net'
 import type { Express } from 'express'
 import { createApp } from '../src/app.ts'
+import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
+import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
 import type { ServerEnv } from '../src/config/env.ts'
 import { createContainer, type Container } from '../src/container.ts'
+import type { Tool } from '../src/domain/types.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
 
 /**
@@ -61,8 +64,68 @@ export function testEnv(overrides: Partial<ServerEnv> = {}): ServerEnv {
   return { ...base, ...overrides }
 }
 
-export function testContainer(env: ServerEnv = testEnv(), logger: Logger = testLogger()): Container {
-  return createContainer({ env, logger })
+export function testContainer(
+  env: ServerEnv = testEnv(),
+  logger: Logger = testLogger(),
+  catalogue?: ToolCatalogueRepository,
+): Container {
+  return createContainer({ env, logger, ...(catalogue ? { catalogue } : {}) })
+}
+
+/* ─── Catalogue fixtures ───────────────────────────────────────────────────── */
+
+/**
+ * A valid tool record with every field filled in, overridable field by field.
+ *
+ * Tests state only what they are actually testing. A fixture that forces each
+ * test to restate twenty-five irrelevant fields is a fixture that gets copied
+ * wrong, and then a test asserts against a record nobody read.
+ */
+export function makeTool(overrides: Partial<Tool> = {}): Tool {
+  const id = overrides.id ?? overrides.slug ?? 'fixture-tool'
+  return {
+    id,
+    name: 'Fixture Tool',
+    mono: 'Ft',
+    cat: 'Writing',
+    model: 'Freemium',
+    tagline: 'A fixture used by the server test-suite.',
+    rating: 0,
+    reviews: 0,
+    price: 'Free tier + paid plans',
+    trend: '',
+    badge: '',
+    tags: ['Fixture'],
+    pop: 50,
+    api: '—',
+    ctx: '—',
+    team: '—',
+    trial: '—',
+    integr: '—',
+    slug: id,
+    url: 'https://example.com',
+    summary:
+      'A fixture record used by the server test-suite. It exists to exercise the ' +
+      'repository contract without depending on the real seed catalogue.',
+    roles: ['Writer'],
+    useCases: ['Draft an article'],
+    stages: ['draft'],
+    pricingTier: 'freemium',
+    status: 'active',
+    verified: true,
+    ...overrides,
+  }
+}
+
+/**
+ * An in-memory ToolCatalogueRepository over a fixture array.
+ *
+ * Deliberately the REAL adapter with its file read bypassed, not a hand-written
+ * stub. A stub would drift from the adapter's actual semantics — which is
+ * precisely the behaviour the contract suite exists to pin down.
+ */
+export function fixtureCatalogue(tools: Tool[]): ToolCatalogueRepository {
+  return createJsonToolCatalogue({ records: tools })
 }
 
 export interface TestServer {

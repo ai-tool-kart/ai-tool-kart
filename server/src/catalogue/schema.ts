@@ -1,0 +1,218 @@
+/*
+ * Catalogue validation.
+ *
+ * Strict per-record validation plus the cross-record invariants a per-record
+ * schema cannot see (unique ids, unique slugs). Invalid data fails startup
+ * loudly, naming the offending record and the failing field paths — the same
+ * fail-fast posture as news agent/src/config/env.ts.
+ *
+ * The rule that matters: a bad record is NEVER silently dropped. A catalogue
+ * that quietly discards a malformed record is a catalogue that quietly stops
+ * recommending a tool, and nothing in the system would ever say so.
+ *
+ * `.strict()` throughout. An unknown key is a typo or a half-finished field
+ * rename, and either way the author needs to hear about it at boot rather than
+ * discover months later that `stage` (singular) was being ignored.
+ */
+
+import { z } from 'zod'
+import { configError } from '../domain/errors.ts'
+import type { Tool } from '../domain/types.ts'
+import {
+  PRICING_MODELS,
+  PRICING_MODELS_BY_TIER,
+  PRICING_TIERS,
+  ROLES,
+  TOOL_CATEGORIES,
+  TOOL_STATUSES,
+  USE_CASES,
+  WORKFLOW_STAGES,
+} from './taxonomy.ts'
+
+/** A URL that is http/https and carries no credentials. */
+const httpUrl = z
+  .string()
+  .trim()
+  .min(1)
+  .refine(
+    (value) => {
+      let url: URL
+      try {
+        url = new URL(value)
+      } catch {
+        return false
+      }
+      return (
+        (url.protocol === 'http:' || url.protocol === 'https:') &&
+        url.username === '' &&
+        url.password === ''
+      )
+    },
+    { message: 'must be an http(s) URL with no embedded credentials' },
+  )
+
+/** Lowercase, hyphen-separated, no leading/trailing/doubled hyphens. */
+const slug = z
+  .string()
+  .regex(
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+    'must be lowercase alphanumeric words joined by single hyphens',
+  )
+  .max(64)
+
+const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
+
+export const ToolSchema = z
+  .object({
+    /* ── Display contract ─────────────────────────────────────────────────── */
+    id: slug,
+    name: nonEmpty(80),
+    mono: z.string().length(2, 'monogram is exactly two characters'),
+    cat: z.enum(TOOL_CATEGORIES),
+    model: z.enum(PRICING_MODELS),
+    tagline: nonEmpty(160),
+    /*
+     * 0 means "no ratings collected yet", which is the honest value for a seed
+     * catalogue with no review system behind it. Anything else must be a real
+     * 1–5 rating, so a typo'd 0.5 or 50 fails the boot rather than skewing the
+     * "Highest rated" sort silently.
+     */
+    rating: z
+      .number()
+      .min(0)
+      .max(5)
+      .refine((value) => value === 0 || value >= 1, {
+        message: 'must be 0 (unrated) or between 1 and 5',
+      }),
+    reviews: z.number().int().min(0),
+    price: nonEmpty(60),
+    trend: z.string().max(16),
+    badge: z.string().max(40),
+    tags: z.array(nonEmpty(40)).min(1).max(12),
+    pop: z.number().int().min(0).max(100),
+    api: nonEmpty(40),
+    ctx: nonEmpty(40),
+    team: nonEmpty(40),
+    trial: nonEmpty(40),
+    integr: nonEmpty(40),
+
+    /* ── Recommendation contract ──────────────────────────────────────────── */
+    slug,
+    url: httpUrl,
+    summary: z.string().trim().min(40).max(600),
+    roles: z.array(z.enum(ROLES)).min(1),
+    useCases: z.array(z.string()).min(1),
+    stages: z.array(z.enum(WORKFLOW_STAGES)).min(1),
+    pricingTier: z.enum(PRICING_TIERS),
+    status: z.enum(TOOL_STATUSES),
+    verified: z.boolean(),
+  })
+  .strict()
+  /*
+   * Cross-field invariants. Two vocabularies describe pricing (§5.3) and they
+   * must not drift: a record cannot claim pricingTier 'free' while its display
+   * chip reads "Subscription".
+   */
+  .refine((tool) => PRICING_MODELS_BY_TIER[tool.pricingTier].includes(tool.model), {
+    message: 'model is not a legal display value for this pricingTier',
+    path: ['model'],
+  })
+  /* useCases is a large open-ish list, so it is validated by membership rather
+   * than as a z.enum — the error message stays readable that way. */
+  .superRefine((tool, ctx) => {
+    const known = new Set(USE_CASES)
+    tool.useCases.forEach((useCase, index) => {
+      if (!known.has(useCase)) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['useCases', index],
+          message: `"${useCase}" is not in the taxonomy's USE_CASES vocabulary`,
+        })
+      }
+    })
+  })
+
+export type ToolRecord = z.infer<typeof ToolSchema>
+
+export interface ValidationSource {
+  /** Where the records came from, for the error message. Never a secret. */
+  origin: string
+}
+
+/**
+ * Validates a whole catalogue.
+ *
+ * Collects every failure before throwing rather than stopping at the first, so
+ * one boot reports the full repair list instead of one record per attempt.
+ * Every message names the record — by id where the id itself parsed, by array
+ * index otherwise — and the failing field paths.
+ */
+export function parseCatalogue(records: unknown, source: ValidationSource): Tool[] {
+  if (!Array.isArray(records)) {
+    throw configError(
+      `Catalogue at ${source.origin} must be a JSON array of tool records, got ` +
+        `${records === null ? 'null' : typeof records}.`,
+    )
+  }
+
+  const problems: string[] = []
+  const tools: Tool[] = []
+
+  records.forEach((record, index) => {
+    const parsed = ToolSchema.safeParse(record)
+    if (parsed.success) {
+      tools.push(parsed.data as Tool)
+      return
+    }
+
+    const label = describeRecord(record, index)
+    for (const issue of parsed.error.issues) {
+      const path = issue.path.length > 0 ? issue.path.join('.') : '(record)'
+      problems.push(`  ${label} — ${path}: ${issue.message}`)
+    }
+  })
+
+  problems.push(...findDuplicates(tools, 'id'))
+  problems.push(...findDuplicates(tools, 'slug'))
+
+  if (problems.length > 0) {
+    throw configError(
+      `Invalid tool catalogue (${source.origin}):\n${problems.join('\n')}\n\n` +
+        `${problems.length} problem(s) across ${records.length} record(s). ` +
+        'No record is dropped silently — fix the data and restart.',
+    )
+  }
+
+  return tools
+}
+
+/** Best available identity for an error message, however broken the record is. */
+function describeRecord(record: unknown, index: number): string {
+  if (record && typeof record === 'object') {
+    const candidate = record as { id?: unknown; name?: unknown }
+    if (typeof candidate.id === 'string' && candidate.id.length > 0) {
+      return `[${index}] id="${candidate.id}"`
+    }
+    if (typeof candidate.name === 'string' && candidate.name.length > 0) {
+      return `[${index}] name="${candidate.name}"`
+    }
+  }
+  return `[${index}] (no id or name)`
+}
+
+function findDuplicates(tools: Tool[], field: 'id' | 'slug'): string[] {
+  const seen = new Map<string, number>()
+  const problems: string[] = []
+  tools.forEach((tool, index) => {
+    const value = tool[field]
+    const first = seen.get(value)
+    if (first === undefined) {
+      seen.set(value, index)
+      return
+    }
+    problems.push(
+      `  [${index}] ${field}="${value}": duplicate — already used by record [${first}]`,
+    )
+  })
+  return problems
+}
