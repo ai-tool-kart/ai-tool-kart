@@ -14,9 +14,11 @@
  *   2. Secrets are registered with the logger for redaction here, and
  *      describeEnv() reports only whether a value is present — never what it is.
  *
- * Phase B holds no secrets. registerSecret() is deliberately not called yet
- * because there is nothing to register; the first credential a later phase adds
- * registers it here, next to where it is parsed.
+ * Phase D adds the first credential. LLM_API_KEY is registered with the logger
+ * for redaction the moment it is parsed, next to where it is read — the
+ * convention Phase B set aside this paragraph for. It is OPTIONAL and is never
+ * required by the default `mock` provider, so the server still runs with no
+ * configuration at all.
  *
  * ── Strict versus tolerant ───────────────────────────────────────────────────
  *
@@ -36,6 +38,7 @@
 
 import { z } from 'zod'
 import { configError } from '../domain/errors.ts'
+import { registerSecret } from '../utils/logger.ts'
 
 /** In a .env file an empty value means "unset", not "the empty string". */
 function emptyToUndefined(value: unknown): unknown {
@@ -65,6 +68,28 @@ const StrictSchema = z.object({
    * allow localhost origins in production.
    */
   CLIENT_ORIGIN: z.string().trim().optional(),
+
+  /*
+   * ─── LLM (Phase D) ────────────────────────────────────────────────────────
+   *
+   * STRICT, because every one of these is a value a wrong guess makes expensive:
+   * silently falling back to `mock` in production would serve fabricated plans
+   * from a server that looks healthy, which is far worse than refusing to boot.
+   *
+   * None is REQUIRED. The server's default provider is `mock`, which needs no
+   * key and no network, so a fresh checkout runs with an empty environment.
+   */
+  LLM_PROVIDER: z.preprocess(
+    emptyToUndefined,
+    z.string().trim().min(1).default('mock'),
+  ),
+  LLM_API_KEY: z.preprocess(emptyToUndefined, z.string().trim().min(8).optional()),
+  LLM_MODEL_FAST: z.preprocess(emptyToUndefined, z.string().trim().min(1).optional()),
+  LLM_MODEL_STRONG: z.preprocess(emptyToUndefined, z.string().trim().min(1).optional()),
+  LLM_TIMEOUT_MS: z.preprocess(
+    emptyToUndefined,
+    z.coerce.number().int().min(1_000).max(300_000).default(60_000),
+  ),
 })
 
 /**
@@ -76,6 +101,13 @@ const HINTS: Record<string, string> = {
   PORT: 'Set an integer between 1 and 65535, e.g. PORT=3001.',
   HOST: 'Set a hostname or IP address, e.g. HOST=127.0.0.1.',
   CLIENT_ORIGIN: `Set a comma-separated origin list, e.g. ${DEFAULT_ORIGINS}.`,
+  LLM_PROVIDER: 'Set a provider id, or leave it unset to use the offline mock.',
+  LLM_API_KEY:
+    'Set the provider credential, or leave it unset when LLM_PROVIDER=mock. ' +
+    'Never prefix it with VITE_ — that would publish it in the browser bundle.',
+  LLM_MODEL_FAST: 'Set a vendor model id, e.g. LLM_MODEL_FAST=<vendor-model-id>.',
+  LLM_MODEL_STRONG: 'Set a vendor model id, e.g. LLM_MODEL_STRONG=<vendor-model-id>.',
+  LLM_TIMEOUT_MS: 'Set milliseconds between 1000 and 300000, e.g. LLM_TIMEOUT_MS=60000.',
 }
 
 export type NodeEnvironment = 'development' | 'production' | 'test'
@@ -100,6 +132,15 @@ export interface ServerEnv {
   log: {
     format: LogFormat
     level: LogLevelName
+  }
+  llm: {
+    /** 'mock' by default. Resolved to an adapter in llm/factory.ts. */
+    provider: string
+    /** Never required for 'mock'. Registered for log redaction when present. */
+    apiKey?: string
+    modelFast?: string
+    modelStrong?: string
+    timeoutMs: number
   }
 }
 
@@ -233,12 +274,42 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
     )
   }
 
+  /*
+   * Registered the moment it is parsed, so it cannot reach a log line from
+   * anywhere — including a stack trace or an accidental object dump.
+   */
+  registerSecret(raw.LLM_API_KEY)
+
+  if (raw.LLM_PROVIDER !== 'mock' && !raw.LLM_API_KEY) {
+    // Not fatal here: llm/factory.ts throws with the actionable message, and it
+    // is the module that knows which providers exist. Warning at boot means the
+    // operator finds out at startup rather than on the first assistant request.
+    warnings.push(
+      `LLM_PROVIDER="${raw.LLM_PROVIDER}" is set but LLM_API_KEY is not. ` +
+        'The provider will fail to initialise.',
+    )
+  }
+
+  if (isProduction && raw.LLM_PROVIDER === 'mock') {
+    warnings.push(
+      'LLM_PROVIDER is "mock" in production. The assistant will return deterministic ' +
+        'offline responses built only from retrieved candidates, not real model output.',
+    )
+  }
+
   const env: ServerEnv = {
     environment,
     isProduction,
     http: { host: raw.HOST, port: raw.PORT },
     cors: { allowedOrigins },
     log: { format, level },
+    llm: {
+      provider: raw.LLM_PROVIDER,
+      ...(raw.LLM_API_KEY ? { apiKey: raw.LLM_API_KEY } : {}),
+      ...(raw.LLM_MODEL_FAST ? { modelFast: raw.LLM_MODEL_FAST } : {}),
+      ...(raw.LLM_MODEL_STRONG ? { modelStrong: raw.LLM_MODEL_STRONG } : {}),
+      timeoutMs: raw.LLM_TIMEOUT_MS,
+    },
   }
 
   return { env, warnings }
@@ -258,5 +329,9 @@ export function describeEnv(env: ServerEnv): Record<string, unknown> {
     corsOrigins: env.cors.allowedOrigins.length > 0 ? env.cors.allowedOrigins.join(',') : 'disabled',
     logLevel: env.log.level,
     logFormat: env.log.format,
+    llmProvider: env.llm.provider,
+    // Presence only. The convention this function established in Phase B, now
+    // that there is finally something to apply it to.
+    llmApiKey: env.llm.apiKey ? 'set' : 'absent',
   }
 }

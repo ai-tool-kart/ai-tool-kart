@@ -157,3 +157,109 @@ await test('the catalogue storage boundary holds', async (t) => {
     assert.ok(body.includes('SCORE_WEIGHTS.'), 'weights are read from config/limits.ts')
   })
 })
+
+/*
+ * The temporary LLM layer.
+ *
+ * server/src/llm/ is an explicitly temporary copy of the News Agent's LLM
+ * infrastructure, and ASSISTANT_ARCHITECTURE_PLAN.md §12 is emphatic about the
+ * risk: "Do not let the interface drift." Phase H MOVES this directory into
+ * shared/llm, where the News Agent — which has no HTTP server, no catalogue and
+ * no retrieval — will import it.
+ *
+ * So every dependency this directory grows on a server-only concern is a file
+ * that has to be untangled during that move. These guards make the untangling
+ * unnecessary by preventing the coupling in the first place.
+ */
+await test('the temporary LLM layer stays liftable into shared/', async (t) => {
+  const LLM_DIR = join(SRC, 'llm')
+  const llmFiles = files.filter((file) => file.startsWith(LLM_DIR))
+
+  await t.test('the scan found the LLM layer', () => {
+    assert.ok(llmFiles.length >= 8, `expected the llm/ tree, found ${llmFiles.length} files`)
+  })
+
+  await t.test('every file carries the drift warning', () => {
+    // The header is the only thing telling the next reader that this directory
+    // is scheduled for deletion rather than for extension.
+    const missing = llmFiles
+      .filter((file) => {
+        const head = readFileSync(file, 'utf8').slice(0, 1200)
+        return !/TEMPORARY/.test(head) || !/Phase H/.test(head)
+      })
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(missing, [], 'each llm/ file must state that Phase H deletes it')
+  })
+
+  await t.test('it never imports the catalogue, retrieval or HTTP layers', () => {
+    // The News Agent has none of these. An import here is a file that cannot
+    // move to shared/ without being rewritten.
+    const offenders = llmFiles
+      .filter((file) => /from '\.\.\/(catalogue|retrieval|http)\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('it never imports express or anything HTTP-shaped', () => {
+    const offenders = llmFiles
+      .filter((file) => /from 'express'|from 'node:http'/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('the LLM layer throws LLMError, never the HTTP ApiError', () => {
+    /*
+     * domain/errors.ts models errors by HTTP STATUS. An LLM client that threw
+     * one could not be shared with a package that has no HTTP layer, so llm/
+     * carries its own vocabulary and Phase E maps it at the route boundary.
+     *
+     * factory.ts is the documented exception: provider selection is a
+     * CONFIGURATION failure at boot, and the News Agent's factory throws its own
+     * configError for the same reason.
+     */
+    const offenders = llmFiles
+      .filter((file) => !file.endsWith('factory.ts'))
+      .filter((file) => /ApiError|from '\.\.\/domain\/errors/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('container.ts is the only module naming a concrete provider', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(LLM_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => /createMockProvider\(|createProvider\(/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'providers are wired at the composition root')
+  })
+
+  await t.test('no vendor SDK has crept in', () => {
+    // The production provider is an open decision (§12). An import of a vendor
+    // SDK would settle it silently.
+    const vendors = /@anthropic-ai|from 'openai'|@google\/|@azure\/|from 'cohere/
+    const offenders = files
+      .filter((file) => vendors.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('scoring weights and task limits stay in config', () => {
+    // Same rule Phase C applied to SCORE_WEIGHTS: tuning must not mean editing
+    // logic. §12 notes these move to shared/llm with the code in Phase H.
+    const client = codeOf(join(LLM_DIR, 'client.ts'))
+    assert.match(client, /LLM_RETRY\.schemaAttempts/)
+    assert.match(client, /TASK_MODEL_CLASS\[/)
+    assert.match(client, /TASK_MAX_OUTPUT_TOKENS\[/)
+    assert.equal(
+      /attempt <= 3|attempts = 3/.test(client),
+      false,
+      'the attempt count must come from config, never a literal',
+    )
+  })
+})

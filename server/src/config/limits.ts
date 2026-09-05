@@ -141,3 +141,65 @@ export const TOOLS_API = {
 export const TAXONOMY_API = {
   path: '/taxonomy',
 } as const
+
+/* ─── Phase D — the LLM layer ──────────────────────────────────────────────── */
+
+/*
+ * These four constants mirror news agent/src/config/limits.ts, because
+ * server/src/llm/ is an explicitly temporary copy of the News Agent's LLM layer
+ * (ASSISTANT_ARCHITECTURE_PLAN.md §12). Phase H moves them into shared/llm
+ * alongside the code that reads them — the plan calls that out specifically,
+ * because adding a task currently means touching provider.ts and limits.ts
+ * together, and that coupling belongs inside one package.
+ */
+
+export const LLM_RETRY = {
+  /**
+   * Attempts at getting valid structured output: one try, one repair pass, one
+   * clean retry.
+   *
+   * Three is the number the News Agent settled on and the plan specifies. Two
+   * gives the repair instruction no second chance after a transient blip; four
+   * mostly buys latency, because a model that has failed the same schema three
+   * times is failing for a reason a fourth attempt will not fix.
+   */
+  schemaAttempts: 3,
+} as const
+
+/**
+ * Model class per task.
+ *
+ * `assistant` is `strong`: it has to read forty candidate cards, infer intent
+ * from one sentence, and emit a six-section plan whose every tool id must be
+ * real. That is not a fast-class job.
+ */
+export const TASK_MODEL_CLASS = {
+  assistant: 'strong',
+} as const
+
+/**
+ * Output token ceilings per task — a runaway response is a bug, not content.
+ *
+ * 2048 for the assistant, per the plan. A full six-section plan with five tools
+ * and five workflow stages lands comfortably inside it; anything materially
+ * larger means the model is writing prose it was asked not to write.
+ */
+export const TASK_MAX_OUTPUT_TOKENS = {
+  assistant: 2048,
+} as const
+
+/**
+ * Spend ceiling for one unit of work.
+ *
+ * Phase E creates one budget per assistant turn, so a single pathological
+ * conversation cannot consume another request's headroom. Sized for the repair
+ * loop: three attempts at 2048 output tokens, plus the input side of a ~1.5k
+ * candidate table, with room to spare.
+ *
+ * This is a circuit breaker, not billing and not a rate limiter. Per-IP rate
+ * limiting arrives in Phase I (§13).
+ */
+export const LLM_BUDGET = {
+  maxLlmCalls: LLM_RETRY.schemaAttempts,
+  maxTokens: 60_000,
+} as const

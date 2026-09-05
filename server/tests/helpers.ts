@@ -60,6 +60,8 @@ export function testEnv(overrides: Partial<ServerEnv> = {}): ServerEnv {
     http: { host: '127.0.0.1', port: 0 },
     cors: { allowedOrigins: ['http://localhost:5173'] },
     log: { format: 'pretty', level: 'debug' },
+    // The offline default. No test may reach a real provider or a network.
+    llm: { provider: 'mock', timeoutMs: 60_000 },
   }
   return { ...base, ...overrides }
 }

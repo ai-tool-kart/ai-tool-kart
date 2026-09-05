@@ -9,6 +9,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { describeEnv, loadEnv } from '../src/config/env.ts'
 import { isApiError } from '../src/domain/errors.ts'
+import { capturingLogger } from './helpers.ts'
 
 function expectConfigError(source: NodeJS.ProcessEnv): Error {
   try {
@@ -160,8 +161,7 @@ await test('unrecognised values for tolerant variables fall back and warn', asyn
 await test('production-only warnings', async (t) => {
   await t.test('explicitly disabled CORS in production is called out', () => {
     const { warnings } = loadEnv({ NODE_ENV: 'production', CLIENT_ORIGIN: '' })
-    assert.equal(warnings.length, 1)
-    assert.match(warnings[0] as string, /CLIENT_ORIGIN is empty in production/)
+    assert.ok(warnings.some((warning) => /CLIENT_ORIGIN is empty in production/.test(warning)))
   })
 
   await t.test('unset CORS in production warns that dev defaults are in use', () => {
@@ -177,8 +177,7 @@ await test('production-only warnings', async (t) => {
       NODE_ENV: 'production',
       CLIENT_ORIGIN: 'http://aitoolkart.com',
     })
-    assert.equal(warnings.length, 1)
-    assert.match(warnings[0] as string, /plain-http origin in production/)
+    assert.ok(warnings.some((warning) => /plain-http origin in production/.test(warning)))
   })
 
   await t.test('neither fires outside production', () => {
@@ -208,8 +207,81 @@ await test('describeEnv reports shape, never raw values that could be secret', a
       'address',
       'corsOrigins',
       'environment',
+      'llmApiKey',
+      'llmProvider',
       'logFormat',
       'logLevel',
     ])
+  })
+
+  await t.test('the API key is reported by presence, never by value', () => {
+    const secret = 'sk-test-not-a-real-key-000111222'
+    const { env } = loadEnv({ LLM_PROVIDER: 'some-vendor', LLM_API_KEY: secret })
+    const described = describeEnv(env)
+
+    assert.equal(described.llmApiKey, 'set')
+    assert.equal(described.llmProvider, 'some-vendor')
+    assert.equal(JSON.stringify(described).includes(secret), false)
+  })
+
+  await t.test('an absent key is reported as absent, not omitted', () => {
+    // Omitting the field would make "no key configured" and "this build does not
+    // report keys" look identical in a startup log.
+    assert.equal(describeEnv(loadEnv({}).env).llmApiKey, 'absent')
+  })
+})
+
+/* ─── Phase D — the LLM configuration ──────────────────────────────────────── */
+
+await test('LLM configuration', async (t) => {
+  await t.test('defaults to the offline mock with no configuration at all', () => {
+    const { env, warnings } = loadEnv({})
+    assert.equal(env.llm.provider, 'mock')
+    assert.equal(env.llm.apiKey, undefined)
+    assert.deepEqual(warnings, [], 'a bare environment must boot cleanly')
+  })
+
+  await t.test('the mock never requires a key', () => {
+    const { warnings } = loadEnv({ LLM_PROVIDER: 'mock' })
+    assert.equal(
+      warnings.some((warning) => /LLM_API_KEY/.test(warning)),
+      false,
+    )
+  })
+
+  await t.test('a real provider without a key warns at boot, not on first request', () => {
+    const { warnings } = loadEnv({ LLM_PROVIDER: 'some-vendor' })
+    assert.ok(warnings.some((warning) => /LLM_API_KEY is not/.test(warning)))
+  })
+
+  await t.test('the mock in production is called out', () => {
+    // It would otherwise serve deterministic offline plans from a server that
+    // looks entirely healthy.
+    const { warnings } = loadEnv({ NODE_ENV: 'production', LLM_PROVIDER: 'mock' })
+    assert.ok(warnings.some((warning) => /"mock" in production/.test(warning)))
+  })
+
+  await t.test('an empty value means unset, not the empty string', () => {
+    const { env } = loadEnv({ LLM_PROVIDER: '', LLM_API_KEY: '   ' })
+    assert.equal(env.llm.provider, 'mock')
+    assert.equal(env.llm.apiKey, undefined)
+  })
+
+  await t.test('a too-short key is rejected rather than accepted as a typo', () => {
+    assert.throws(() => loadEnv({ LLM_API_KEY: 'abc' }), /LLM_API_KEY/)
+  })
+
+  await t.test('an out-of-range timeout fails to boot with a hint', () => {
+    assert.throws(() => loadEnv({ LLM_TIMEOUT_MS: '10' }), /LLM_TIMEOUT_MS/)
+    assert.throws(() => loadEnv({ LLM_TIMEOUT_MS: 'soon' }), /LLM_TIMEOUT_MS/)
+  })
+
+  await t.test('the key is registered for redaction the moment it is parsed', () => {
+    const secret = 'sk-test-not-a-real-key-333444555'
+    loadEnv({ LLM_API_KEY: secret })
+
+    const captured = capturingLogger('debug', 'json')
+    captured.logger.info('a line that should not carry it', { note: secret })
+    assert.equal(captured.text().includes(secret), false)
   })
 })
