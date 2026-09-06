@@ -1,4 +1,4 @@
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 
 export interface Faq {
   q: string
@@ -17,5 +17,5 @@ export interface Stat {
  */
 export interface ComparisonRow {
   label: string
-  cell: (tool: Tool) => string
+  cell: (tool: LegacyMockTool) => string
 }

@@ -17,5 +17,14 @@ export type { BlogPost } from '@/types/blog'
 export type { Category } from '@/types/category'
 export type { ComparisonRow, Faq, Stat } from '@/types/content'
 export type { BillingPeriod, FeatureMatrixRow, PricingTier } from '@/types/pricing'
-export type { SetupTaxonomy } from '@/types/taxonomy'
-export type { PricingModel, SortOption, Tool, ToolCategoryName, ToolFilters } from '@/types/tool'
+export type { SortDefinition, StageDefinition, Taxonomy } from '@/types/taxonomy'
+export type {
+  LegacyMockTool,
+  PricingModel,
+  PricingTierName,
+  SortOption,
+  Tool,
+  ToolCategoryName,
+  ToolFilters,
+  WorkflowStage,
+} from '@/types/tool'

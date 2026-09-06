@@ -1,15 +1,29 @@
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 
 /*
- * TEMPORARY mock data — ported verbatim from the TOOLS array in the Claude
+ * RETIRING mock data — ported verbatim from the TOOLS array in the Claude
  * Design handoff (AI Tool Kart Site.dc.html).
  *
- * This is the seam a real backend replaces. Nothing outside src/data should
- * hard-code tool records; filtering and sorting take Tool[] as input (see
- * src/utils/filterTools.ts) so the swap is a one-line import change.
+ * The backend catalogue replaced this as the source of truth in Milestone 3.
+ * GET /api/tools is the real catalogue (66 tools), reached through
+ * services/tools.ts; Browse no longer imports this file.
+ *
+ * It survives only because four surfaces still read it and all four are
+ * redesigned in Milestone 4:
+ *
+ *   pages/home/sections/FeaturedSection.tsx
+ *   pages/home/sections/TrendingSection.tsx
+ *   pages/home/sections/CompareTeaser.tsx
+ *   pages/KitchenSinkPage.tsx   (the temporary component surface)
+ *
+ * Deleting it now would blank those sections; migrating them now would be
+ * building Milestone 4's UI early. So it stays, typed as `LegacyMockTool[]` —
+ * NOT `Tool[]` — so the type system states plainly that these records are not
+ * catalogue records: they have no slug, no url and no taxonomy. Nothing new
+ * should import this file, and it is deleted with the last of those four.
  */
 
-export const TOOLS: Tool[] = [
+export const TOOLS: LegacyMockTool[] = [
   {
     id: 'nova',
     name: 'Nova Write',

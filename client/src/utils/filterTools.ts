@@ -1,52 +1,24 @@
-import { ALL_CATEGORIES, ANY_PRICE } from '@/data/filters'
-import type { SortOption, Tool, ToolFilters } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 
 /*
- * Pure filtering/sorting over a Tool list, ported from the handoff's
- * `filtered()` method.
+ * What is left of the v1 client-side catalogue helpers.
  *
- * These take Tool[] as input rather than importing the mock array, so swapping
- * in backend data later touches only the call sites.
+ * `filterTools`, `sortTools` and `filterAndSortTools` were removed in
+ * Milestone 3. They re-implemented in the browser what GET /api/tools does on
+ * the server — and did it over one fetched page, so under pagination they would
+ * have filtered 24 of 66 tools and presented the result as the whole catalogue.
+ * The API applies q, category, tier, stage, tag and sort across everything and
+ * returns an honest `total`; there is nothing left for them to do.
+ *
+ * `findToolByName` is not catalogue logic — it is a lookup by display name that
+ * the Compare surfaces use to resolve their hardcoded default selection. It
+ * stays until those surfaces move to the catalogue in Milestone 4, and is typed
+ * on the mock's shape for the same reason data/tools.ts is.
  */
 
-/** Matches the design's search: name, category, tagline and tags. */
-function matchesQuery(tool: Tool, query: string): boolean {
-  if (!query) return true
-  const haystack = `${tool.name} ${tool.cat} ${tool.tagline} ${tool.tags.join(' ')}`
-  return haystack.toLowerCase().includes(query)
-}
-
-export function filterTools(tools: Tool[], filters: ToolFilters): Tool[] {
-  const query = filters.q.trim().toLowerCase()
-
-  return tools.filter((tool) => {
-    if (filters.cat !== ALL_CATEGORIES && tool.cat !== filters.cat) return false
-    if (filters.price !== ANY_PRICE && tool.model !== filters.price) return false
-    if (tool.rating < filters.minRating) return false
-    return matchesQuery(tool, query)
-  })
-}
-
-export function sortTools(tools: Tool[], sort: SortOption): Tool[] {
-  return tools.slice().sort((a, b) => {
-    switch (sort) {
-      case 'Highest rated':
-        return b.rating - a.rating
-      case 'Most reviewed':
-        return b.reviews - a.reviews
-      case 'A–Z':
-        return a.name.localeCompare(b.name)
-      default:
-        return b.pop - a.pop
-    }
-  })
-}
-
-/** Filter then sort, matching the order the design applies them. */
-export function filterAndSortTools(tools: Tool[], filters: ToolFilters): Tool[] {
-  return sortTools(filterTools(tools, filters), filters.sort)
-}
-
-export function findToolByName(tools: Tool[], name: string): Tool | undefined {
+export function findToolByName(
+  tools: LegacyMockTool[],
+  name: string,
+): LegacyMockTool | undefined {
   return tools.find((tool) => tool.name === name)
 }

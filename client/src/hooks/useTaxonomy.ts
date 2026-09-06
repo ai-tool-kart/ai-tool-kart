@@ -1,47 +1,67 @@
-import { useEffect, useState } from 'react'
-import { getSetupTaxonomy } from '@/services/taxonomy'
-import type { SetupTaxonomy } from '@/types/taxonomy'
+import { useCallback, useEffect, useState } from 'react'
+import { getTaxonomy } from '@/services/taxonomy'
+import type { Taxonomy } from '@/types/taxonomy'
 
 /*
- * Roles and goals for the "Build Your AI Setup" pickers, from GET /api/taxonomy.
+ * The catalogue vocabulary, for whoever needs it.
  *
- * Loaded once per mount and never refetched — the taxonomy is the catalogue's
- * vocabulary, not live data. There is deliberately no local fallback list: if
- * the request fails the pickers fall back to their FREE-TEXT mode, which the
- * design already provides ("Type your role…"), and the assistant accepts free
- * text for both fields anyway. A hardcoded copy of the list would look like it
- * worked while quietly drifting from the catalogue it is supposed to describe.
+ * Backed by the module-level cache in services/taxonomy.ts, so mounting this in
+ * three places costs one request. There is deliberately no local fallback list:
+ * if the request fails, consumers degrade to something honest — the Browse chip
+ * row renders no chips rather than chips that would 400, and the assistant's
+ * setup pickers fall back to their free-text mode. A hardcoded copy would look
+ * like it worked while drifting from the catalogue it claims to describe.
  */
 
 export interface TaxonomyResource {
-  data: SetupTaxonomy | undefined
+  data: Taxonomy | undefined
   isLoading: boolean
-  /** True once the request has failed; the pickers offer typing instead. */
+  /** True once the request has failed; consumers offer their degraded path. */
   failed: boolean
+  /**
+   * Re-attempts the request.
+   *
+   * The vocabulary and the catalogue come from two endpoints, so one outage
+   * fails both — and a "Try again" that revived only the results would leave
+   * the page with tools but no filter chips and a dead sort control. Browse
+   * calls this alongside the catalogue's own retry.
+   */
+  retry: () => void
 }
 
 export function useTaxonomy(): TaxonomyResource {
-  const [data, setData] = useState<SetupTaxonomy | undefined>(undefined)
+  const [data, setData] = useState<Taxonomy | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
   const [failed, setFailed] = useState(false)
+  const [attempt, setAttempt] = useState(0)
 
   useEffect(() => {
-    const controller = new AbortController()
+    // The shared request cannot be aborted (see services/taxonomy.ts), so the
+    // unmount guard is a flag rather than an AbortController.
+    let live = true
+    setFailed(false)
 
-    getSetupTaxonomy(controller.signal)
+    getTaxonomy()
       .then((taxonomy) => {
-        if (controller.signal.aborted) return
+        if (!live) return
         setData(taxonomy)
         setIsLoading(false)
       })
       .catch(() => {
-        if (controller.signal.aborted) return
+        if (!live) return
         setFailed(true)
         setIsLoading(false)
       })
 
-    return () => controller.abort()
+    return () => {
+      live = false
+    }
+  }, [attempt])
+
+  const retry = useCallback(() => {
+    setIsLoading(true)
+    setAttempt((n) => n + 1)
   }, [])
 
-  return { data, isLoading, failed }
+  return { data, isLoading, failed, retry }
 }

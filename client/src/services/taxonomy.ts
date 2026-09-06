@@ -1,18 +1,38 @@
 import { apiRequest } from '@/services/http'
-import type { SetupTaxonomy } from '@/types/taxonomy'
+import type { Taxonomy } from '@/types/taxonomy'
 
 /*
  * GET /api/taxonomy.
  *
- * The vocabulary the catalogue is built on — roles, the goals that belong to
- * each role, categories, stages, pricing tiers. The "Build Your AI Setup"
- * pickers read `roles` and `goalsByRole` from here rather than from a static
- * array, because the server already seeds both lists verbatim from the design
- * and a second copy in the bundle would be a second thing to keep in step.
+ * One request, cached for the life of the page. The taxonomy is the catalogue's
+ * vocabulary, not live data: it changes when the server is redeployed, never
+ * between two renders. Without the cache every consumer — the Browse chip row,
+ * the sort control, the assistant's setup pickers — would fetch it separately on
+ * mount, which is three identical requests for a constant.
+ *
+ * ── Why this one takes no AbortSignal ────────────────────────────────────────
+ *
+ * The promise is SHARED: three components mounting in the same tick make one
+ * request and all await it. Wiring a caller's signal into it would let whichever
+ * component happened to unmount first abort the request the other two are still
+ * waiting on. So the fetch is deliberately uncancellable — it is a few hundred
+ * bytes for a constant — and cancellation is handled where it belongs, in the
+ * hook, which simply ignores a result that arrives after unmount.
+ *
+ * A rejection clears the slot so a later mount retries rather than replaying the
+ * same failure forever.
  */
 
 const TAXONOMY_PATH = '/taxonomy'
 
-export async function getSetupTaxonomy(signal?: AbortSignal): Promise<SetupTaxonomy> {
-  return apiRequest<SetupTaxonomy>(TAXONOMY_PATH, { signal })
+let inFlight: Promise<Taxonomy> | undefined
+
+export async function getTaxonomy(): Promise<Taxonomy> {
+  if (!inFlight) {
+    inFlight = apiRequest<Taxonomy>(TAXONOMY_PATH).catch((error: unknown) => {
+      inFlight = undefined
+      throw error
+    })
+  }
+  return inFlight
 }

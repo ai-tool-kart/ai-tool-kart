@@ -1,23 +1,21 @@
-import type { SortOption } from '@/types/tool'
 import { CATEGORIES } from '@/data/categories'
 
 /*
- * Filter/sort vocabularies, ported from `sortOptions`, `priceFilters`,
- * `catOptions` and `modelNames` in the handoff.
+ * Form vocabularies for the surfaces that are NOT the catalogue.
+ *
+ * Browse no longer reads this file. Its categories, pricing tiers and sort
+ * options come from GET /api/taxonomy, because those are the catalogue's own
+ * vocabulary and a second copy here is how the UI drifts into sending values
+ * the API rejects. What is left is genuinely local: the option lists a
+ * submission form offers, which describe what a person may TYPE rather than
+ * what the catalogue contains.
  */
 
 /** Sentinel values the design uses for "no filter applied". */
 export const ALL_CATEGORIES = 'All categories'
 export const ANY_PRICE = 'Any'
 
-export const SORT_OPTIONS: SortOption[] = [
-  'Most popular',
-  'Highest rated',
-  'Most reviewed',
-  'A–Z',
-]
-
-/** Pricing-model chips on the Browse sidebar (includes the "Any" sentinel). */
+/** Pricing-model chips still used by the kitchen-sink surface. */
 export const PRICE_FILTERS: string[] = [
   ANY_PRICE,
   'Free',

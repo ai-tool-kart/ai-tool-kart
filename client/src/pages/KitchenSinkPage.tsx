@@ -18,7 +18,7 @@ import StatBlock from '@/components/ui/StatBlock'
 import { CATEGORIES } from '@/data/categories'
 import { COMPARE_FULL_ROWS, DEFAULT_COMPARE_SELECTION } from '@/data/comparisonRows'
 import { FAQS } from '@/data/faqs'
-import { PRICE_FILTERS, SORT_OPTIONS } from '@/data/filters'
+import { PRICE_FILTERS } from '@/data/filters'
 import { FEATURE_MATRIX_ROWS, PRICING_TIERS, TIER_NAMES } from '@/data/pricing'
 import { HERO_STATS } from '@/data/stats'
 import { TOOLS } from '@/data/tools'
@@ -42,9 +42,12 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
   )
 }
 
+/* v1 display labels, kept only so the Select demo below has options to show. */
+const DEMO_SORT_OPTIONS = ['Most popular', 'Highest rated', 'Most reviewed', 'A–Z']
+
 export default function KitchenSinkPage() {
   const [billing, setBilling] = useState<BillingPeriod>('annual')
-  const [sort, setSort] = useState<SortOption>('Most popular')
+  const [sort, setSort] = useState(DEMO_SORT_OPTIONS[0])
   const [price, setPrice] = useState(PRICE_FILTERS[0])
   const [rating, setRating] = useState(4)
   const [name, setName] = useState('')
@@ -91,7 +94,7 @@ export default function KitchenSinkPage() {
 
       <Block title="Form controls">
         <div className="flex flex-wrap items-end gap-6">
-          <Select value={sort} onChange={(v) => setSort(v as SortOption)} options={SORT_OPTIONS} />
+          <Select value={sort} onChange={(v) => setSort(v as SortOption)} options={DEMO_SORT_OPTIONS} />
           <div className="w-[260px]">
             <RangeSlider value={rating} onChange={setRating} />
           </div>

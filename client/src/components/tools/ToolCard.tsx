@@ -3,11 +3,18 @@ import Button from '@/components/ui/Button'
 import Chip from '@/components/ui/Chip'
 import GlowCard from '@/components/ui/GlowCard'
 import Monogram from '@/components/ui/Monogram'
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 import { formatCategoryModel, formatRating } from '@/utils/format'
 
 /*
- * Tool card in its three treatments from the handoff:
+ * LEGACY tool card, in its three treatments from the first handoff.
+ *
+ * Milestone 3 replaced the Browse card with components/tools/CatalogueToolCard,
+ * which is typed on the real catalogue record. This one now serves only the
+ * four surfaces still reading data/tools.ts, all of which are redesigned in
+ * Milestone 4 — at which point this file goes with them.
+ *
+ * Its three treatments from the handoff:
  *
  *  - featured: Home "Featured tools" grid — 24px padding, r22, glass gradient,
  *              top accent hairline, badge, tags, rating/price footer.
@@ -20,7 +27,7 @@ import { formatCategoryModel, formatRating } from '@/utils/format'
  */
 
 interface ToolCardProps {
-  tool: Tool
+  tool: LegacyMockTool
   variant?: 'featured' | 'browse' | 'trending'
   onClick?: () => void
   onCompare?: () => void

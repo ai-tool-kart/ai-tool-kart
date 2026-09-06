@@ -1,6 +1,6 @@
 import GridTable from '@/components/ui/GridTable'
 import type { ComparisonRow } from '@/types/content'
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 import type { ReactNode } from 'react'
 
 /*
@@ -9,7 +9,7 @@ import type { ReactNode } from 'react'
  */
 
 interface ComparisonTableProps {
-  tools: Tool[]
+  tools: LegacyMockTool[]
   rows: ComparisonRow[]
   headLabel?: string
   /** Column headers — plain names on the teaser, selects on the Compare page. */

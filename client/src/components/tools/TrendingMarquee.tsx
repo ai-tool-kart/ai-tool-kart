@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import ToolCard from '@/components/tools/ToolCard'
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 
 /*
  * Auto-scrolling trending row.
@@ -12,7 +12,7 @@ import type { Tool } from '@/types/tool'
  */
 
 interface TrendingMarqueeProps {
-  tools: Tool[]
+  tools: LegacyMockTool[]
 }
 
 export default function TrendingMarquee({ tools }: TrendingMarqueeProps) {

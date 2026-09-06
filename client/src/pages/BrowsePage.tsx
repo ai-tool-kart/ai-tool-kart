@@ -1,117 +1,262 @@
+import { useCallback, useMemo, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import BrowseToolbar from '@/components/browse/BrowseToolbar'
-import EmptyState from '@/components/browse/EmptyState'
-import FilterSidebar from '@/components/browse/FilterSidebar'
-import Section from '@/components/layout/Section'
-import ToolGrid from '@/components/tools/ToolGrid'
-import SectionHeading from '@/components/ui/SectionHeading'
-import { ALL_CATEGORIES, ANY_PRICE, SORT_OPTIONS } from '@/data/filters'
-import { TOOLS } from '@/data/tools'
-import type { SortOption, Tool, ToolFilters } from '@/types/tool'
-import { filterAndSortTools } from '@/utils/filterTools'
+import BrowseControls from '@/components/catalogue/BrowseControls'
+import { BrowseEmptyState, BrowseErrorState } from '@/components/catalogue/BrowseStates'
+import CatalogueToolGrid from '@/components/catalogue/CatalogueToolGrid'
+import CatalogueToolSkeleton, {
+  CatalogueToolCardSkeleton,
+} from '@/components/catalogue/CatalogueToolSkeleton'
+import CategoryChipRow from '@/components/catalogue/CategoryChipRow'
+import RefineSidebar from '@/components/catalogue/RefineSidebar'
+import { useTaxonomy } from '@/hooks/useTaxonomy'
+import { SEARCH_DEBOUNCE_MS, useTools } from '@/hooks/useTools'
+import { BROWSE_PAGE_SIZE } from '@/services/tools'
+import {
+  EMPTY_FILTERS,
+  hasActiveFilters,
+  parseBrowseParams,
+  toBrowseParams,
+  toggle,
+} from '@/utils/browseParams'
+import type { PricingTierName, Tool, ToolCategoryName, ToolFilters } from '@/types/tool'
 
 /*
- * Browse — the catalog view.
+ * Browse — the catalogue, from GET /api/tools.
  *
- * Filter state lives in the URL rather than component state. The prototype kept
- * it in memory only because it had no URL at all; routing it makes results
- * shareable and correct under back/forward and reload. Nothing about the
- * rendering changes.
+ * The final design's layout, over the React implementation's URL-driven state.
+ * Neither was dropped for the other:
  *
- * Defaults mirror the design's initial state, and a param is written only when
- * it differs from its default, so a clean Browse visit stays at /browse.
+ *   FROM THE DESIGN  the heading block and live catalogue count, the pill
+ *                    control row, the scrolling category chips, the sticky
+ *                    Refine rail, the auto-fit results grid and its cards.
+ *   FROM THE APP     every filter lives in the query string, so a result set is
+ *                    shareable, survives a reload, and moves correctly under
+ *                    Back and Forward. The prototype held filters in component
+ *                    state and had none of that.
+ *
+ * ── Filtering is the server's, all of it ─────────────────────────────────────
+ *
+ * q, category, pricing tier and sort all travel to GET /api/tools, which applies
+ * them across the whole catalogue and returns an honest `total`. Nothing is
+ * filtered in the browser. That is not only less code: the endpoint paginates at
+ * 24, so a client-side filter would be filtering one page and reporting the
+ * result as the whole catalogue.
+ *
+ * ── Why the first request waits for the taxonomy ─────────────────────────────
+ *
+ * A URL is user-editable and outlives a deploy, and the API rejects an unknown
+ * filter value with a 400 for the WHOLE request rather than ignoring it. So the
+ * category and tier values out of the URL are checked against GET /api/taxonomy
+ * before they can become a query, and the catalogue request is held until that
+ * vocabulary is in. It costs one short request on a cold load, covered by the
+ * skeleton, and it means a stale bookmark loses one filter instead of erroring.
  */
-
-const DEFAULT_SORT: SortOption = 'Most popular'
-const DEFAULT_MIN_RATING = 4
-
-/* Reset matches the design's resetFilters(), which drops the rating floor to 0
-   (not back to the initial 4) and leaves sort untouched. */
-const RESET_MIN_RATING = 0
-
-function isSortOption(value: string | null): value is SortOption {
-  return value !== null && (SORT_OPTIONS as string[]).includes(value)
-}
 
 export default function BrowsePage() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
+  const taxonomy = useTaxonomy()
 
-  const rawMinRating = Number(searchParams.get('minRating'))
-  const rawSort = searchParams.get('sort')
-  const filters: ToolFilters = {
-    q: searchParams.get('q') ?? '',
-    cat: searchParams.get('cat') ?? ALL_CATEGORIES,
-    price: searchParams.get('price') ?? ANY_PRICE,
-    minRating:
-      searchParams.has('minRating') && Number.isFinite(rawMinRating)
-        ? rawMinRating
-        : DEFAULT_MIN_RATING,
-    sort: isSortOption(rawSort) ? rawSort : DEFAULT_SORT,
-  }
+  /*
+   * The URL is the state. Re-derived on every render rather than mirrored into
+   * useState, so Back/Forward and a pasted link all take the identical path
+   * through the component — there is no second copy to fall out of step.
+   */
+  const filters: ToolFilters = useMemo(
+    () => parseBrowseParams(searchParams, taxonomy.data),
+    [searchParams, taxonomy.data],
+  )
 
-  /** Writes only non-default params. `replace` avoids a history entry per keystroke. */
-  function update(patch: Partial<ToolFilters>, replace = false) {
-    const next = { ...filters, ...patch }
-    const params = new URLSearchParams()
-    if (next.q.trim()) params.set('q', next.q)
-    if (next.cat !== ALL_CATEGORIES) params.set('cat', next.cat)
-    if (next.price !== ANY_PRICE) params.set('price', next.price)
-    if (next.minRating !== DEFAULT_MIN_RATING) params.set('minRating', String(next.minRating))
-    if (next.sort !== DEFAULT_SORT) params.set('sort', next.sort)
-    setSearchParams(params, { replace })
-  }
+  /*
+   * Once the taxonomy has failed there is no vocabulary to validate against, so
+   * holding the catalogue request forever would leave the page on a skeleton.
+   * Browse proceeds with the query and sort only — both are free-form as far as
+   * the API is concerned — and the chip row and tier rail simply do not render.
+   */
+  const ready = !taxonomy.isLoading
 
-  function resetFilters() {
-    update({
-      q: '',
-      cat: ALL_CATEGORIES,
-      price: ANY_PRICE,
-      minRating: RESET_MIN_RATING,
-    })
-  }
+  /*
+   * Typing debounces; clicking does not. A chip or a sort should feel immediate,
+   * while a keystroke should not become a request. The two are told apart by
+   * which control last wrote to the URL.
+   */
+  const typingRef = useRef(false)
 
-  const results = filterAndSortTools(TOOLS, filters)
+  const results = useTools(filters, {
+    enabled: ready,
+    debounceMs: typingRef.current ? SEARCH_DEBOUNCE_MS : 0,
+    limit: BROWSE_PAGE_SIZE,
+  })
 
-  function compareTool(tool: Tool) {
-    navigate(`/compare?tool=${encodeURIComponent(tool.id)}`)
-  }
+  /**
+   * Writes the next filter state to the URL.
+   *
+   * A ten-character query must leave ONE history entry, not ten — but it must
+   * not swallow the entry before it either. So the FIRST keystroke pushes and
+   * the rest replace: Back from a typed query returns to the filter state the
+   * reader was in when they started typing, and one more Back undoes that.
+   * Replacing from the first keystroke, which is the obvious implementation,
+   * quietly eats the category click that preceded the search.
+   */
+  const update = useCallback(
+    (patch: Partial<ToolFilters>, { fromTyping = false } = {}) => {
+      const continuingToType = fromTyping && typingRef.current
+      typingRef.current = fromTyping
+      setSearchParams(toBrowseParams({ ...filters, ...patch }), { replace: continuingToType })
+    },
+    [filters, setSearchParams],
+  )
+
+  const reset = useCallback(() => {
+    typingRef.current = false
+    setSearchParams(toBrowseParams(EMPTY_FILTERS))
+  }, [setSearchParams])
+
+  /*
+   * One outage fails both endpoints, so one button revives both. Retrying the
+   * taxonomy is harmless when it already succeeded — it is a cached constant.
+   */
+  const retryAll = useCallback(() => {
+    if (taxonomy.failed) taxonomy.retry()
+    results.retry()
+  }, [taxonomy, results])
+
+  const compare = useCallback(
+    (tool: Tool) => navigate(`/compare?tool=${encodeURIComponent(tool.slug)}`),
+    [navigate],
+  )
+
+  const showSkeleton = !ready || results.isLoading
+  const canReset = hasActiveFilters(filters)
+  /*
+   * A failed request knows nothing about the catalogue's size, so the count
+   * must not render as "0 tools" — that is a claim about the catalogue, and a
+   * false one. Both counters fall back to an em dash and let the error panel
+   * do the explaining.
+   */
+  const countKnown = !showSkeleton && !results.error
 
   return (
-    <Section spacing="sub">
-      <SectionHeading eyebrow="Catalog" title="Browse tools" as="h1" />
-
-      <BrowseToolbar
-        query={filters.q}
-        onQueryChange={(q) => update({ q }, true)}
-        sort={filters.sort}
-        onSortChange={(sort) => update({ sort })}
-        onReset={resetFilters}
+    <section className="relative mx-auto max-w-site px-8 pt-16">
+      {/* The two drifting mesh glows the design puts behind this screen. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[4%] left-[-12%] h-[520px] w-[58%] bg-[radial-gradient(ellipse_50%_46%_at_50%_50%,rgba(124,88,244,0.2)_0%,rgba(96,52,210,0.06)_48%,transparent_76%)] blur-[46px] [animation:akMeshA_72s_cubic-bezier(.45,0,.55,1)_infinite]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[26%] right-[-16%] h-[600px] w-[52%] bg-[radial-gradient(ellipse_50%_46%_at_50%_50%,rgba(154,110,255,0.16)_0%,rgba(202,168,255,0.05)_46%,transparent_74%)] blur-[52px] [animation:akMeshB_88s_cubic-bezier(.45,0,.55,1)_infinite]"
       />
 
-      <div className="mt-[34px] grid grid-cols-[236px_1fr] items-start gap-[34px]">
-        <FilterSidebar
-          category={filters.cat}
-          onCategoryChange={(cat) => update({ cat })}
-          price={filters.price}
-          onPriceChange={(price) => update({ price })}
-          minRating={filters.minRating}
-          onMinRatingChange={(minRating) => update({ minRating }, true)}
-        />
+      <header className="relative flex flex-wrap items-end justify-between gap-7">
+        <div>
+          <p className="text-[11.5px] tracking-[0.2em] text-accent uppercase">Catalog</p>
+          <h1 className="mt-3 text-[clamp(34px,5vw,52px)] font-bold tracking-[-0.04em] text-ink">
+            Browse AI tools
+          </h1>
+          <p className="mt-[14px] max-w-[56ch] text-[15.5px] leading-[1.65] tracking-[-0.006em] text-pretty text-muted-dim">
+            Design, development, video, research, marketing and more — every listing tested on the
+            same brief.
+          </p>
+        </div>
+        {/*
+         * The design hardcodes "2,412 tools · refreshed 2h ago". The count is
+         * now the API's real `total` for the current filters. The refresh time
+         * is dropped: the catalogue exposes no such timestamp, and inventing one
+         * would be the one kind of number a catalogue must never fake.
+         */}
+        <div className="inline-flex items-center gap-[9px] rounded-pill border border-white/[0.09] bg-[linear-gradient(180deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.022)_100%)] px-4 py-[10px] shadow-[inset_0_1px_0_rgba(224,212,255,0.18)]">
+          <span
+            aria-hidden="true"
+            className="h-[6px] w-[6px] rounded-full bg-[#9BE7C4] shadow-[0_0_9px_2px_rgba(120,220,170,0.6)]"
+          />
+          <span className="text-[13.5px] font-semibold text-[#E4DEF5]">
+            {countKnown ? `${results.total.toLocaleString()} ${results.total === 1 ? 'tool' : 'tools'}` : '— tools'}
+          </span>
+          {countKnown && canReset && <span className="text-[13px] text-[#615C7A]">· filtered</span>}
+        </div>
+      </header>
+
+      <BrowseControls
+        query={filters.q}
+        onQueryChange={(q) => update({ q }, { fromTyping: true })}
+        sort={filters.sort}
+        onSortChange={(sort) => update({ sort })}
+        sorts={taxonomy.data?.sorts ?? []}
+        onReset={reset}
+        canReset={canReset}
+      />
+
+      <CategoryChipRow
+        categories={taxonomy.data?.categories ?? []}
+        selected={filters.cat}
+        onToggle={(cat: ToolCategoryName) => update({ cat: toggle(filters.cat, cat) })}
+        onClear={() => update({ cat: [] })}
+      />
+
+      <div className="relative mt-[22px] grid items-start gap-[34px] lg:grid-cols-[236px_1fr]">
+        {/* Below the design's two-column width the rail would squeeze the grid
+            to one card, so it drops out and the chip row carries the filtering. */}
+        <div className="hidden lg:block">
+          <RefineSidebar
+            tiers={taxonomy.data?.pricingTiers ?? []}
+            selected={filters.price}
+            onToggle={(tier: PricingTierName) => update({ price: toggle(filters.price, tier) })}
+          />
+        </div>
 
         <div>
-          <div className="mb-4 flex items-baseline justify-between gap-4">
-            <div className="text-[14px] text-muted">{results.length} tools match</div>
-            <div className="text-[13px] text-subtle-dim">Last catalog refresh: 2 hours ago</div>
+          <div className="mb-[18px] flex items-baseline justify-between gap-4">
+            <p className="text-[14px] text-muted-dim" aria-live="polite">
+              {showSkeleton && 'Loading tools…'}
+              {results.error && !showSkeleton && 'Catalogue unavailable'}
+              {countKnown && (
+                <>
+                  <span className="font-semibold text-[#E4DEF5]">
+                    {results.total.toLocaleString()}
+                  </span>{' '}
+                  {results.total === 1 ? 'tool matches' : 'tools match'}
+                </>
+              )}
+            </p>
+            <p className="text-[13px] text-[#615C7A]">
+              {taxonomy.data?.sorts.find((s) => s.value === filters.sort)?.label ?? ''}
+            </p>
           </div>
 
-          {results.length > 0 ? (
-            <ToolGrid tools={results} variant="browse" onCompare={compareTool} />
+          {showSkeleton ? (
+            <CatalogueToolSkeleton count={6} />
+          ) : results.error ? (
+            <BrowseErrorState message={results.error} onRetry={retryAll} />
+          ) : results.tools.length === 0 ? (
+            <BrowseEmptyState onReset={reset} />
           ) : (
-            <EmptyState onReset={resetFilters} />
+            <>
+              <CatalogueToolGrid tools={results.tools} onCompare={compare}>
+                {results.isLoadingMore &&
+                  Array.from({ length: 3 }, (_unused, index) => (
+                    <CatalogueToolCardSkeleton key={`more-${index}`} />
+                  ))}
+              </CatalogueToolGrid>
+
+              {results.hasMore && (
+                <div className="mt-8 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={results.loadMore}
+                    disabled={results.isLoadingMore}
+                    className="inline-flex h-[46px] cursor-pointer items-center gap-2 rounded-pill border border-white/[0.1] bg-[linear-gradient(180deg,rgba(255,255,255,0.075)_0%,rgba(255,255,255,0.025)_100%)] px-6 text-[14px] font-semibold text-muted-soft shadow-[inset_0_1px_0_rgba(224,212,255,0.18)] transition-[color,border-color,transform] duration-300 hover:-translate-y-px hover:border-[rgba(178,150,255,0.38)] hover:text-[#F0EBFC] disabled:cursor-default disabled:opacity-50"
+                  >
+                    {results.isLoadingMore
+                      ? 'Loading…'
+                      : `Show more (${(results.total - results.tools.length).toLocaleString()} left)`}
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
-    </Section>
+    </section>
   )
 }

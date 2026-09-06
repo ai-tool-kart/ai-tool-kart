@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { COMPARE_TEASER_ROWS, DEFAULT_COMPARE_SELECTION } from '@/data/comparisonRows'
 import { TOOLS } from '@/data/tools'
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 import { findToolByName } from '@/utils/filterTools'
 
 /*
@@ -12,9 +12,9 @@ import { findToolByName } from '@/utils/filterTools'
  * the design's default three tools.
  */
 
-const TEASER_TOOLS: Tool[] = DEFAULT_COMPARE_SELECTION.map((name) =>
+const TEASER_TOOLS: LegacyMockTool[] = DEFAULT_COMPARE_SELECTION.map((name) =>
   findToolByName(TOOLS, name),
-).filter((tool): tool is Tool => tool !== undefined)
+).filter((tool): tool is LegacyMockTool => tool !== undefined)
 
 export default function CompareTeaser() {
   return (

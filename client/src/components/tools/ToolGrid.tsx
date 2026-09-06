@@ -1,16 +1,18 @@
 import ToolCard from '@/components/tools/ToolCard'
-import type { Tool } from '@/types/tool'
+import type { LegacyMockTool } from '@/types/tool'
 
 /*
- * Grid of tool cards.
+ * LEGACY grid of tool cards. Retires with ToolCard in Milestone 4; the
+ * catalogue grid is components/tools/CatalogueToolGrid.
+ *
  * Columns match the design: 3-up for the featured grid, 2-up for Browse results.
  */
 
 interface ToolGridProps {
-  tools: Tool[]
+  tools: LegacyMockTool[]
   variant?: 'featured' | 'browse'
-  onToolClick?: (tool: Tool) => void
-  onCompare?: (tool: Tool) => void
+  onToolClick?: (tool: LegacyMockTool) => void
+  onCompare?: (tool: LegacyMockTool) => void
 }
 
 export default function ToolGrid({
