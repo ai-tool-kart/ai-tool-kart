@@ -66,6 +66,18 @@ export const STOPWORDS: ReadonlySet<string> = new Set([
   'good', 'great', 'better', 'nice', 'faster', 'fast', 'quick', 'quickly',
   'easy', 'easily', 'simple', 'simply', 'new', 'like', 'thing', 'things',
   'stuff', 'something', 'someone', 'way', 'ways', 'lot', 'bit',
+  /*
+   * Hedges and emphasis (Phase F).
+   *
+   * A refinement turn is mostly made of these — "mostly debugging and UI", "I
+   * only really care about X" — and they were surviving into the accumulated
+   * conversation goal, which is re-fed into the next turn's query. "mostly" and
+   * "care" then scored against every summary containing them, and read as part
+   * of the topic when a person looked at the context.
+   */
+  'mostly', 'mainly', 'primarily', 'especially', 'only', 'still', 'even',
+  'care', 'cares', 'sure', 'maybe', 'perhaps', 'probably', 'actually',
+  'currently', 'definitely', 'etc', 'ones', 'rather', 'quite', 'pretty',
 ])
 
 /**
@@ -119,6 +131,15 @@ export const TERM_SYNONYMS: Record<string, readonly string[]> = {
   repo: ['code', 'repository'],
   frontend: ['code', 'ui'],
   backend: ['code', 'api'],
+  /*
+   * "ui" and "ux" are two characters, so the length guard drops them before
+   * they can reach the Design keyword index — the design category was
+   * unreachable from "mostly debugging and UI", which is the exact sentence
+   * Phase F refinement is built around. An alias fires ahead of the guard, the
+   * same mechanism "vo" and "yt" already rely on.
+   */
+  ui: ['design', 'interface'],
+  ux: ['design', 'usability'],
   react: ['code', 'frontend'],
   python: ['code'],
   javascript: ['code'],
@@ -192,11 +213,21 @@ export function stem(word: string): string {
   return value
 }
 
-/** Splits on anything that is not alphanumeric, keeping "+", "." and "#". */
+/**
+ * Splits on anything that is not alphanumeric, keeping "+", "." and "#".
+ *
+ * Those three are kept because catalogue names use them — "Copy.ai", "n8n",
+ * "C#". Which means sentence punctuation attaches too: "mostly debugging and
+ * UI." tokenised to "ui.", which is not "ui", so the Design alias never fired
+ * and the sentence read as having no design signal at all. Edge punctuation is
+ * therefore trimmed and interior punctuation is not — "copy.ai" survives, "ui."
+ * becomes "ui".
+ */
 function tokenize(text: string): string[] {
   return text
     .toLowerCase()
     .split(/[^a-z0-9+.#]+/)
+    .map((token) => token.replace(/^[.#]+|[.#]+$/g, ''))
     .filter((token) => token.length > 0)
 }
 
@@ -361,6 +392,24 @@ function resolveUseCases(terms: readonly string[], raw: string): string[] {
     .map(({ goal }) => goal)
 }
 
+/**
+ * The subset of `terms` that names something in the taxonomy.
+ *
+ * Used by assistant/refine.ts to answer "how much has the user actually told
+ * us", which is a question about DISTINCT information rather than about how many
+ * vocabularies a word happens to appear in. "coding" names the Code category and
+ * the build stage; counting those separately would make one word look like two
+ * facts, and "tools for coding" would read as a specific request.
+ */
+export function recognisedTerms(terms: readonly string[]): string[] {
+  return terms.filter(
+    (term) =>
+      CATEGORY_INDEX.byTerm.has(term) ||
+      ROLE_INDEX.byTerm.has(term) ||
+      STAGE_INDEX.byTerm.has(term),
+  )
+}
+
 /* ─── The public shape ─────────────────────────────────────────────────────── */
 
 /** Caller-supplied context. Always wins over anything inferred from the text. */
@@ -371,6 +420,15 @@ export interface QueryContext {
   pricingTiers?: PricingTier[]
   /** Ids the user has already rejected. Never recommended again. */
   rejectedToolIds?: string[]
+  /**
+   * Ids the user said they already use or want kept.
+   *
+   * A PREFERENCE, not a filter: it adds a scoring signal, so a confirmed tool
+   * rises when it is relevant and still loses to a better match when it is not.
+   * Forcing it into every plan would be worse than ignoring it — the user would
+   * see their existing tool recommended for a job it does not do.
+   */
+  confirmedToolIds?: string[]
 }
 
 export interface NormalizedQuery {
@@ -383,6 +441,7 @@ export interface NormalizedQuery {
   useCases: string[]
   pricingTiers: PricingTier[]
   rejectedToolIds: string[]
+  confirmedToolIds: string[]
   /** True when nothing at all could be extracted — the caller must clarify. */
   empty: boolean
 }
@@ -419,6 +478,7 @@ export function normalizeQuery(query: string, context: QueryContext = {}): Norma
     useCases,
     pricingTiers,
     rejectedToolIds: [...new Set(context.rejectedToolIds ?? [])],
+    confirmedToolIds: [...new Set(context.confirmedToolIds ?? [])],
     empty:
       terms.length === 0 &&
       categories.length === 0 &&

@@ -36,6 +36,7 @@
 import { z } from 'zod'
 import { ASSISTANT } from '../config/limits.ts'
 import type { ConversationContext, ConversationMessage } from '../domain/types.ts'
+import { mapToRole } from './refine.ts'
 import type { AssistantReply } from './schema.ts'
 
 /**
@@ -131,34 +132,50 @@ export function truncateHistory(
 /**
  * The context to return with this turn's answer.
  *
- * `role`, `goal` and `constraints` are adopted from what the model reports it
- * understood, and otherwise carried forward. That is the whole of Phase E's
- * merge: an understanding the model states IS the interpretation the plan was
- * built on, so echoing it back is what lets the user correct it.
+ * Takes the context assistant/refine.ts already derived from the user's own
+ * words and advances the turn counter. The model's `understood` is consulted for
+ * exactly one thing: filling a gap the deterministic refiner could not.
  *
- * Note what is NOT done. A tool appearing in the plan is not moved into
- * `confirmedToolIds` — the user has not confirmed anything by being shown a
- * recommendation, and treating a suggestion as an acceptance would quietly pin
- * the conversation to tools nobody chose. Phase F owns that transition.
+ * ── Why the model cannot overwrite the derived state ──────────────────────────
+ *
+ * Phase E adopted `understood.role`, `understood.goal` and
+ * `understood.constraints` wholesale, which was right when nothing read them
+ * back. Phase F makes them drive retrieval — a pricing constraint filters the
+ * catalogue and a rejected tool is deleted from it — and state with that much
+ * authority cannot come from prose a model wrote about a user's message. A
+ * mis-summary of "not Descript" would invert the one instruction the user was
+ * most explicit about, and nothing downstream could tell it had happened.
+ *
+ * So the split is: the SERVER decides what is acted on, the MODEL says what it
+ * understood, and both reach the client. `understood` is rendered; `context` is
+ * executed.
+ *
+ * The model's role is still useful where the server has none, and it is mapped
+ * onto the taxonomy first: "a videographer" becomes `Video Editor` or nothing.
+ * Only when it maps to nothing AND the server knows no role does the raw text
+ * survive — as a label for the user to read and correct, never as a filter.
+ *
+ * Note what is still NOT done. A tool appearing in the plan is not moved into
+ * `confirmedToolIds`: the user has not confirmed anything by being shown a
+ * recommendation, and treating a suggestion as an acceptance would pin the
+ * conversation to tools nobody chose. Only their own words do that.
  */
-export function nextContext(
-  previous: ConversationContext,
+export function advanceContext(
+  context: ConversationContext,
   reply: Pick<AssistantReply, 'understood'>,
 ): ConversationContext {
-  const context: ConversationContext = {
-    constraints:
-      reply.understood.constraints.length > 0
-        ? cleanIds(reply.understood.constraints, ASSISTANT.maxConstraints)
-        : [...previous.constraints],
-    confirmedToolIds: [...previous.confirmedToolIds],
-    rejectedToolIds: [...previous.rejectedToolIds],
-    turn: Math.min(previous.turn + 1, ASSISTANT.maxConversationTurns),
+  const advanced: ConversationContext = {
+    constraints: [...context.constraints],
+    confirmedToolIds: [...context.confirmedToolIds],
+    rejectedToolIds: [...context.rejectedToolIds],
+    turn: Math.min(context.turn + 1, ASSISTANT.maxConversationTurns),
   }
 
-  const role = reply.understood.role?.trim() || previous.role
-  if (role) context.role = role
-  const goal = reply.understood.goal?.trim() || previous.goal
-  if (goal) context.goal = goal
+  const role = context.role ?? mapToRole(reply.understood.role) ?? reply.understood.role?.trim()
+  if (role) advanced.role = role
 
-  return context
+  const goal = context.goal ?? reply.understood.goal?.trim()
+  if (goal) advanced.goal = goal.slice(0, ASSISTANT.maxGoalChars)
+
+  return advanced
 }

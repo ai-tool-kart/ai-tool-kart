@@ -37,7 +37,6 @@
  */
 
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
-import { isRole } from '../catalogue/taxonomy.ts'
 import { ASSISTANT, RETRIEVAL } from '../config/limits.ts'
 import type {
   AssistantChatResponse,
@@ -51,16 +50,16 @@ import type {
 import { toToolSummary } from '../domain/types.ts'
 import type { LLMClient } from '../llm/client.ts'
 import type { ToolCard } from '../llm/prompts/cards.ts'
-import type { QueryContext } from '../retrieval/normalize.ts'
 import type { RetrievalService } from '../retrieval/service.ts'
 import type { Logger } from '../utils/logger.ts'
-import { normalizeContext, nextContext, truncateHistory } from './context.ts'
+import { advanceContext, normalizeContext, truncateHistory } from './context.ts'
 import {
   GROUNDING_FALLBACK_FOLLOW_UPS,
   GROUNDING_FALLBACK_MESSAGE,
   groundReply,
 } from './ground.ts'
 import { assistantSystemPrompt, assistantUserPrompt } from './prompts/assistant.ts'
+import { refineContext } from './refine.ts'
 import { ASSISTANT_SCHEMA_NAME, AssistantReplySchema } from './schema.ts'
 import type { ConversationContextInput } from './context.ts'
 
@@ -114,27 +113,52 @@ export function createAssistantEngine({
   return {
     async runTurn(request) {
       const log = logger.child({ step: 'assistant' })
-      const context = normalizeContext(request.context)
+      const previous = normalizeContext(request.context)
       const history = truncateHistory(request.messages)
 
       /*
-       * Retrieval gets the caller's context as facets, never as free text.
+       * The turn is understood BEFORE anything is retrieved.
        *
-       * `role` is only passed when it matches the taxonomy: QueryContext.role is
-       * a closed list, and a free-text role the user typed ("indie hacker") is a
-       * scoring signal the normaliser already extracts from the message itself.
-       * Rejected ids ARE passed, because §11 says they are excluded from future
-       * candidate sets, and honouring that is one line here.
+       * That order is the whole of Phase F. Refinement reads the user's own
+       * words — a rejected tool, a budget, a role, the subject they are still
+       * working on — and produces the directives retrieval runs with. Doing it
+       * after the model answered would make the context a record of the
+       * conversation rather than a participant in it.
        */
-      const queryContext: QueryContext = {}
-      if (context.role && isRole(context.role)) queryContext.role = context.role
-      if (context.rejectedToolIds.length > 0) {
-        queryContext.rejectedToolIds = context.rejectedToolIds
-      }
+      const refined = await refineContext({
+        previous,
+        message: request.message,
+        catalogue,
+        logger,
+      })
+      const context = refined.context
 
+      /*
+       * Stated constraints may FILTER; inferred signals only RANK.
+       *
+       * That is Phase C's rule (retrieval/service.ts) and Phase F is where it
+       * starts earning its keep. A budget the user stated and a tool they ruled
+       * out are hard: the answer must not contain them, whatever they score. A
+       * category the server merely inferred is passed as context, where it lifts
+       * the right tools without deleting the audio tool the video workflow needs.
+       */
       const retrieved = await retrieval.retrieve({
-        query: request.message,
-        context: queryContext,
+        query: refined.retrieval.query,
+        context: {
+          ...(refined.retrieval.role ? { role: refined.retrieval.role } : {}),
+          ...(refined.retrieval.categories.length > 0
+            ? { categories: refined.retrieval.categories }
+            : {}),
+          ...(refined.retrieval.rejectedToolIds.length > 0
+            ? { rejectedToolIds: refined.retrieval.rejectedToolIds }
+            : {}),
+          ...(refined.retrieval.confirmedToolIds.length > 0
+            ? { confirmedToolIds: refined.retrieval.confirmedToolIds }
+            : {}),
+        },
+        ...(refined.retrieval.pricingTiers.length > 0
+          ? { filters: { pricingTiers: refined.retrieval.pricingTiers } }
+          : {}),
         limit: RETRIEVAL.defaultCandidates,
       })
 
@@ -147,12 +171,17 @@ export function createAssistantEngine({
         log.info('No candidates; answering without the model', {
           terms: retrieved.interpretation.terms.length,
           emptyQuery: retrieved.interpretation.empty,
+          pricingFiltered: refined.retrieval.pricingTiers.length > 0,
+          excluded: refined.retrieval.rejectedToolIds.length,
         })
         return {
           message: NO_CANDIDATES_MESSAGE,
           intent: 'clarify',
           understood: understoodFrom(context),
           followUps: [...NO_CANDIDATES_FOLLOW_UPS].slice(0, ASSISTANT.maxFollowUps),
+          // The refinement still counts: the user's constraints were understood
+          // even though nothing could be recommended under them, and losing them
+          // here would make the next turn re-litigate what they already said.
           context: { ...context, turn: Math.min(context.turn + 1, ASSISTANT.maxConversationTurns) },
           meta: { model: NO_MODEL, attempts: 0, candidates: 0, droppedToolIds: [] },
         }
@@ -163,7 +192,12 @@ export function createAssistantEngine({
 
       const response = await client.run({
         task: 'assistant',
-        system: assistantSystemPrompt(cards),
+        system: assistantSystemPrompt(cards, {
+          breadth: refined.breadth,
+          turn: context.turn,
+          pricingFiltered: refined.retrieval.pricingTiers.length > 0,
+          excludedCount: refined.retrieval.rejectedToolIds.length,
+        }),
         user: assistantUserPrompt({ message: request.message, history, context }),
         schema: AssistantReplySchema,
         schemaName: ASSISTANT_SCHEMA_NAME,
@@ -230,6 +264,11 @@ export function createAssistantEngine({
        */
       log.info('Assistant turn complete', {
         intent,
+        turn: context.turn,
+        breadth: refined.breadth,
+        constraints: context.constraints,
+        excluded: refined.retrieval.rejectedToolIds.length,
+        confirmed: refined.retrieval.confirmedToolIds.length,
         candidates: candidates.length,
         planTools: plan?.tools.length ?? 0,
         attempts: response.attempts,
@@ -250,7 +289,7 @@ export function createAssistantEngine({
           constraints: [...reply.understood.constraints],
         },
         followUps: [...followUps],
-        context: nextContext(context, reply),
+        context: advanceContext(context, reply),
         meta: {
           model: response.model,
           attempts: response.attempts,

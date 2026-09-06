@@ -5,5 +5,6 @@ export {
   ASSISTANT_TASK,
   assistantSystemPrompt,
   assistantUserPrompt,
+  turnGuidance,
 } from './assistant.ts'
-export type { AssistantPromptInput } from './assistant.ts'
+export type { AssistantPromptInput, TurnGuidance } from './assistant.ts'

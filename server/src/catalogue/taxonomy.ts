@@ -183,11 +183,81 @@ export const PRICING_CONSTRAINT_EXPANSION: Record<PricingTier, readonly PricingT
   paid: ['paid'],
 }
 
-/** Query keywords that imply a budget constraint. */
+/**
+ * Query keywords that imply a budget constraint.
+ *
+ * Phase F added the negated forms. "I don't want paid tools" states the same
+ * constraint as "free tools only" and, before they were listed, inferred
+ * nothing at all — the word "paid" is not itself a `paid` keyword, so the
+ * sentence read as neutral and the constraint silently did not exist.
+ */
 export const PRICING_KEYWORDS: Record<PricingTier, readonly string[]> = {
-  free: ['free', 'no budget', 'zero budget', 'without paying', 'no cost', 'gratis'],
+  free: [
+    'free', 'no budget', 'zero budget', 'without paying', 'no cost', 'gratis',
+    'free only', 'only free', 'no paid', 'not paid', 'nothing paid', 'avoid paid',
+    'no subscription', 'without paying for',
+    "don't want paid", 'do not want paid', 'dont want paid',
+    "don't want to pay", 'do not want to pay', "don't want any paid",
+  ],
   freemium: ['free tier', 'free plan', 'try before', 'freemium'],
   paid: ['premium', 'enterprise', 'professional plan'],
+}
+
+/**
+ * Phrases that RELEASE a budget constraint rather than imposing one.
+ *
+ * A conversation moves in both directions: turn two says "free tools only" and
+ * turn four says "actually, budget is not an issue". Without these, a constraint
+ * could be added but never withdrawn, and the assistant would keep filtering out
+ * the paid tools the user just asked for — a bug the user cannot talk their way
+ * out of, which is the worst kind.
+ *
+ * These are matched BEFORE the constraint keywords above, so "paid is fine"
+ * clears rather than sets.
+ */
+export const PRICING_RELEASE_KEYWORDS: readonly string[] = [
+  'budget is not an issue',
+  'budget is no issue',
+  "budget doesn't matter",
+  'budget does not matter',
+  'budget is fine',
+  'paid is fine',
+  'paid is ok',
+  'paid is okay',
+  'paid tools are fine',
+  'happy to pay',
+  'willing to pay',
+  'can pay',
+  'money is no object',
+  "price doesn't matter",
+  'price does not matter',
+  "cost doesn't matter",
+  'cost does not matter',
+  'any price',
+]
+
+/**
+ * The role a category implies when the user never named one.
+ *
+ * "I build React websites" says nothing that ROLE_KEYWORDS recognises, but it
+ * says Code unambiguously — and a Developer is who asks for Code tools. This is
+ * a WEAK inference and the assistant treats it as one: a role the user actually
+ * stated always wins, and a category-derived role is only ever used to fill a
+ * gap (server/src/assistant/refine.ts).
+ *
+ * Agents has no entry on purpose. "I want to automate things" is said by every
+ * role in this list, so guessing one would be worse than leaving it unset.
+ */
+export const CATEGORY_ROLE_AFFINITY: Partial<Record<ToolCategoryName, RoleName>> = {
+  Code: 'Developer',
+  Design: 'UI/UX Designer',
+  Image: 'Graphic Designer',
+  Video: 'Video Editor',
+  Audio: 'Content Creator',
+  Writing: 'Writer',
+  Research: 'Researcher',
+  Marketing: 'Marketer',
+  Data: 'Data Analyst',
 }
 
 /* ─── Status ───────────────────────────────────────────────────────────────── */

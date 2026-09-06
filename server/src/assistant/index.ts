@@ -14,14 +14,31 @@ export type {
 } from './engine.ts'
 
 export {
+  advanceContext,
   ConversationContextSchema,
   ConversationMessageSchema,
   emptyContext,
   normalizeContext,
-  nextContext,
   truncateHistory,
 } from './context.ts'
 export type { ConversationContextInput } from './context.ts'
+
+export {
+  assessBreadth,
+  categoryFocusConstraint,
+  FREE_ONLY_CONSTRAINT,
+  mapToRole,
+  parseConstraints,
+  readPricingSignal,
+  refineContext,
+} from './refine.ts'
+export type {
+  Breadth,
+  ParsedConstraints,
+  Refinement,
+  RefineOptions,
+  RetrievalDirectives,
+} from './refine.ts'
 
 export { GROUNDING_FALLBACK_MESSAGE, groundReply } from './ground.ts'
 export type { GroundingResult } from './ground.ts'

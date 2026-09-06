@@ -99,6 +99,15 @@ export const SCORE_WEIGHTS = {
   pricingMismatch: -2.0,
   /** Editorially verified. Breaks ties only. */
   verified: 0.15,
+  /**
+   * The user said they already use this tool (Phase F).
+   *
+   * Sized deliberately between `role` (0.8) and `stage` (0.6): strong enough to
+   * lift a tool the user already owns above an equally relevant alternative,
+   * far too weak to drag an irrelevant tool into a plan. A preference is not a
+   * filter — see the note on QueryContext.confirmedToolIds.
+   */
+  confirmed: 0.7,
 } as const
 
 export const RETRIEVAL = {
@@ -269,4 +278,22 @@ export const ASSISTANT = {
   /* ── Context (§11) ─────────────────────────────────────────────────────── */
   /** Ids carried in the conversation context, per list. */
   maxContextToolIds: 20,
+
+  /* ── Refinement (Phase F) ──────────────────────────────────────────────── */
+  /**
+   * Topic terms accumulated into `context.goal`.
+   *
+   * The goal is re-fed into the retrieval query on every later turn, which is
+   * what carries "video editing" forward when turn two only says "not
+   * Descript". Eight is the point where it stops being a topic and starts being
+   * a transcript: past that the accumulated terms outweigh the message the user
+   * actually just typed.
+   */
+  maxGoalTerms: 8,
+  /** Category focuses recorded from one turn, e.g. "focus on Code". */
+  maxCategoryFocus: 2,
+  /** Tool names resolved from one message, per direction. */
+  maxToolPhrases: 4,
+  /** Words taken after a rejection or confirmation marker before resolving. */
+  maxToolPhraseWords: 4,
 } as const

@@ -80,9 +80,33 @@ When to ask instead of answering:
 - If the request is too vague to plan against — no task, no role, no goal — reply
   with intent "clarify", no plan, and ONE short question that would unblock you.
   Guessing at a plan and being wrong wastes more of the user's time than asking.
+  The TURN GUIDANCE section below tells you when the server has judged the
+  request too broad. Ask one question then, not three, and never a questionnaire.
 - If the request has nothing to do with finding or using AI tools, reply with
   intent "off_topic", no plan, and one sentence saying what you can help with.
   Do not answer the unrelated question. This assistant is not a general chatbot.
+
+Continuing a conversation:
+
+- Later turns REFINE the same job. Treat what the user told you earlier as still
+  true unless this turn contradicts it, and make the plan more specific rather
+  than starting again.
+- When the user rules a tool out or states a budget, the server has already
+  removed the tools that no longer qualify from your candidate list. Do not
+  mention the exclusion mechanically; just answer with what is left. If a tool
+  they named is missing from the candidates, it is not available — say so plainly
+  rather than recommending it anyway.
+- Use intent "refine" when you are narrowing a plan you already gave, and
+  "recommend" when this is the first real plan of the conversation.
+
+Follow-up chips:
+
+- "followUps" are the user's next move, not a summary of yours. Each one must be
+  something they could say to make the plan better, phrased as they would say it:
+  "Mostly debugging", "Free tools only", "Short-form clips".
+- Base them on what is still UNCERTAIN. If you had to guess at the budget, offer
+  a budget chip; if the job could be two different tasks, offer one chip per
+  task. Never offer a chip for something they have already told you.
 
 Hard rules:
 
@@ -105,6 +129,73 @@ export interface AssistantPromptInput {
 }
 
 /**
+ * The server's own judgement about the turn.
+ *
+ * TRUSTED, and the one piece of per-turn state that legitimately belongs in the
+ * system prompt: it is computed by assistant/refine.ts from taxonomy lookups,
+ * contains no user text, and is policy rather than content. It tells the model
+ * what the server has already decided — how broad the request is, whether tools
+ * have been excluded — so the model does not have to infer it from prose it was
+ * told not to trust.
+ */
+export interface TurnGuidance {
+  breadth: 'broad' | 'specific'
+  /** Turns already answered. 0 means this is the first. */
+  turn: number
+  /** True when a budget constraint has already filtered the candidate list. */
+  pricingFiltered: boolean
+  /** How many tools the user has ruled out. Ids stay out of the system prompt. */
+  excludedCount: number
+}
+
+/**
+ * Renders the server's judgement for the model.
+ *
+ * Counts and flags only. The ids and names behind them came from the user and
+ * stay in the user turn — a rejected tool's NAME in the system prompt would be
+ * user-controlled text sitting in trusted context, which is the exact thing the
+ * whole prompt structure exists to prevent.
+ */
+export function turnGuidance(guidance: TurnGuidance): string {
+  const lines = [
+    'TURN GUIDANCE',
+    '',
+    `REQUEST BREADTH: ${guidance.breadth}`,
+    `TURN: ${guidance.turn === 0 ? 'first' : 'continuing'}`,
+  ]
+
+  if (guidance.breadth === 'broad') {
+    lines.push(
+      '',
+      'The request names a subject but no task, role, stage of work or constraint.',
+      'Reply with intent "clarify", no plan, and exactly one question — the one',
+      'whose answer would most change which tools you would pick. Offer follow-up',
+      'chips that answer it for them.',
+    )
+  } else {
+    lines.push('', 'There is enough here to build a plan. Do not ask for permission to.')
+  }
+
+  if (guidance.pricingFiltered) {
+    lines.push(
+      '',
+      'A budget constraint is active: every candidate below already satisfies it.',
+      'Do not caveat pricing or apologise for it.',
+    )
+  }
+
+  if (guidance.excludedCount > 0) {
+    lines.push(
+      '',
+      `${guidance.excludedCount} tool(s) the user ruled out have been removed from the`,
+      'candidates. They are gone; do not name them or explain their absence.',
+    )
+  }
+
+  return lines.join('\n')
+}
+
+/**
  * The system prompt.
  *
  * The candidate table is the only variable part, and it is the compact card
@@ -118,7 +209,10 @@ export interface AssistantPromptInput {
  * returns an empty string for it, and this function throws rather than build a
  * prompt whose only honest completion is an invented tool.
  */
-export function assistantSystemPrompt(cards: readonly ToolCard[]): string {
+export function assistantSystemPrompt(
+  cards: readonly ToolCard[],
+  guidance?: TurnGuidance,
+): string {
   if (cards.length === 0) {
     throw new Error(
       'assistantSystemPrompt called with no candidates. An empty candidate set must be ' +
@@ -126,9 +220,13 @@ export function assistantSystemPrompt(cards: readonly ToolCard[]): string {
     )
   }
 
-  return [HOUSE_RULES, ASSISTANT_TASK, formatToolCards(cards), UNTRUSTED_CONTENT_RULES].join(
-    '\n\n',
-  )
+  return [
+    HOUSE_RULES,
+    ASSISTANT_TASK,
+    ...(guidance ? [turnGuidance(guidance)] : []),
+    formatToolCards(cards),
+    UNTRUSTED_CONTENT_RULES,
+  ].join('\n\n')
 }
 
 /**
@@ -164,19 +262,34 @@ export function assistantUserPrompt({
   return parts.join('\n\n')
 }
 
-/** The context as prose, or an empty string when it holds nothing yet. */
+/**
+ * The context as prose, or an empty string when it holds nothing yet.
+ *
+ * Ids are written as ids, matching the candidate cards, so the model can line a
+ * confirmed tool up with a card without being told a name it would then have to
+ * be trusted not to repeat. A rejected id will not appear in the cards at all —
+ * retrieval removed it — and stating it here is what stops the model wondering
+ * aloud why an obvious tool is missing.
+ */
 function describeContext(context: ConversationContext): string {
   const lines: string[] = []
+  if (context.turn > 0) lines.push(`turns so far: ${context.turn}`)
   if (context.role) lines.push(`role: ${context.role}`)
-  if (context.goal) lines.push(`goal: ${context.goal}`)
+  if (context.goal) lines.push(`what they are working on: ${context.goal}`)
   if (context.constraints.length > 0) {
-    lines.push(`constraints: ${context.constraints.join('; ')}`)
+    lines.push(`constraints they stated: ${context.constraints.join('; ')}`)
   }
   if (context.confirmedToolIds.length > 0) {
-    lines.push(`already using: ${context.confirmedToolIds.join(', ')}`)
+    lines.push(
+      `tools they already use (prefer these where they fit, do not force them): ` +
+        context.confirmedToolIds.join(', '),
+    )
   }
   if (context.rejectedToolIds.length > 0) {
-    lines.push(`does not want: ${context.rejectedToolIds.join(', ')}`)
+    lines.push(
+      `tools they ruled out (already removed from your candidates): ` +
+        context.rejectedToolIds.join(', '),
+    )
   }
   return lines.join('\n')
 }

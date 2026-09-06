@@ -890,6 +890,69 @@ await test('the mock provider', async (t) => {
     const response = await llm.run(assistantRequest())
     assert.equal(response.data.intent, 'clarify')
   })
+  await t.test('it reads a role out of a sentence, not out of the length limit', async () => {
+    /*
+     * Phase E left this producing "video editor and I want to spe" — the capture
+     * ran to its character limit rather than to the end of the job title.
+     * Schema-valid, and wrong in a way a reader notices immediately.
+     *
+     * The server does not depend on it: assistant/refine.ts derives the role it
+     * retrieves with from the taxonomy. This is the label a user reads, and a
+     * label that is visibly garbage undermines every correct thing beside it.
+     */
+    const cases: Array<[string, string | undefined]> = [
+      ['I am a video editor and I want to speed up my YouTube workflow', 'Video Editor'],
+      ["I'm a developer", 'Developer'],
+      ['I am a ui designer working on a dashboard', 'UI Designer'],
+      ['we are a content team, mostly shorts', 'Content Team'],
+      ['what tools help with video editing?', undefined],
+    ]
+
+    for (const [message, expected] of cases) {
+      const { llm } = client()
+      const response = await llm.run(assistantRequest(CARDS, message))
+      assert.equal(response.data.understood.role, expected, message)
+    }
+  })
+
+  await t.test('follow-up chips are refinements the candidates make possible', async () => {
+    const { llm } = client()
+    const mixed = await llm.run(assistantRequest(CARDS))
+
+    // CARDS holds two pricing tiers and several stages, so both kinds of chip
+    // are real choices here.
+    assert.ok(mixed.data.followUps.length > 0)
+    assert.ok(mixed.data.followUps.every((chip) => chip.length > 0))
+
+    const single: ToolCard[] = [CARDS[0] as ToolCard]
+    const narrow = await client().llm.run(assistantRequest(single))
+    assert.notDeepEqual(
+      narrow.data.followUps,
+      mixed.data.followUps,
+      'a different candidate set offers different refinements',
+    )
+  })
+
+  await t.test('it obeys the server breadth judgement in the system prompt', async () => {
+    // TRUSTED input: the server computes it from taxonomy lookups and it carries
+    // no user text. Obeying it deterministically is what makes the
+    // clarify-then-refine path testable with no model in the loop.
+    const { llm } = client()
+    const request = assistantRequest()
+    const broad = await llm.run({
+      ...request,
+      system: `${request.system}\n\nREQUEST BREADTH: broad`,
+    })
+    assert.equal(broad.data.intent, 'clarify')
+    assert.equal(broad.data.plan, undefined)
+
+    const specific = await client().llm.run({
+      ...request,
+      system: `${request.system}\n\nREQUEST BREADTH: specific`,
+    })
+    assert.equal(specific.data.intent, 'recommend')
+  })
+
 })
 
 /* ═══ Logging discipline ═══════════════════════════════════════════════════ */

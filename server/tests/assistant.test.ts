@@ -16,8 +16,8 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createAssistantEngine, NO_CANDIDATES_MESSAGE, NO_MODEL } from '../src/assistant/engine.ts'
 import {
+  advanceContext,
   emptyContext,
-  nextContext,
   normalizeContext,
   truncateHistory,
 } from '../src/assistant/context.ts'
@@ -311,29 +311,45 @@ await test('conversation context', async (t) => {
     assert.equal(kept[0]?.text.length, ASSISTANT.maxHistoryMessageChars)
   })
 
-  await t.test('the turn advances and the understanding is adopted', () => {
+  await t.test('the turn advances', () => {
     const before = normalizeContext({ turn: 2, role: 'Writer' })
-    const after = nextContext(before, {
-      understood: { role: 'Video Editor', goal: 'faster edits', constraints: ['free tools only'] },
-    })
+    const after = advanceContext(before, { understood: { constraints: [] } })
     assert.equal(after.turn, 3)
-    assert.equal(after.role, 'Video Editor')
-    assert.equal(after.goal, 'faster edits')
+  })
+
+  await t.test('the model cannot overwrite the state the server derived', () => {
+    // Phase F: context DRIVES retrieval, so it may not come from model prose.
+    const before = normalizeContext({
+      role: 'Writer',
+      goal: 'blog posts',
+      constraints: ['free tools only'],
+    })
+    const after = advanceContext(before, {
+      understood: { role: 'Video Editor', goal: 'faster edits', constraints: ['paid is fine'] },
+    })
+    assert.equal(after.role, 'Writer')
+    assert.equal(after.goal, 'blog posts')
     assert.deepEqual(after.constraints, ['free tools only'])
   })
 
-  await t.test('what the model did not state is carried forward, not erased', () => {
-    const before = normalizeContext({ role: 'Writer', goal: 'blog posts', constraints: ['free'] })
-    const after = nextContext(before, { understood: { constraints: [] } })
-    assert.equal(after.role, 'Writer')
-    assert.equal(after.goal, 'blog posts')
-    assert.deepEqual(after.constraints, ['free'])
+  await t.test('the model fills a gap the server could not, mapped to the taxonomy', () => {
+    const after = advanceContext(normalizeContext({}), {
+      understood: { role: 'a videographer', goal: 'ship weekly', constraints: [] },
+    })
+    assert.equal(after.role, 'Video Editor', 'free text is mapped, not stored raw')
+    assert.equal(after.goal, 'ship weekly')
+  })
+
+  await t.test('an unmappable role survives as a label, never as a filter', () => {
+    const after = advanceContext(normalizeContext({}), {
+      understood: { role: 'restaurant owner', constraints: [] },
+    })
+    assert.equal(after.role, 'restaurant owner')
   })
 
   await t.test('a recommendation is not an acceptance', () => {
-    // Phase F owns that transition. Being shown a tool is not choosing it.
-    const before = normalizeContext({})
-    const after = nextContext(before, { understood: { constraints: [] } })
+    // Being shown a tool is not choosing it. Only the user's own words confirm.
+    const after = advanceContext(normalizeContext({}), { understood: { constraints: [] } })
     assert.deepEqual(after.confirmedToolIds, [])
     assert.deepEqual(after.rejectedToolIds, [])
   })

@@ -36,6 +36,7 @@ export interface ScoreSignals {
   rating: number
   pricingMismatch: number
   verified: number
+  confirmed: number
 }
 
 export interface ScoredTool {
@@ -60,6 +61,7 @@ const EMPTY_SIGNALS: ScoreSignals = {
   rating: 0,
   pricingMismatch: 0,
   verified: 0,
+  confirmed: 0,
 }
 
 /**
@@ -192,6 +194,17 @@ export function scoreTool(tool: Tool, query: NormalizedQuery, index: ToolIndex):
   /* ── Constraints ──────────────────────────────────────────────────────── */
   if (query.pricingTiers.length > 0 && !query.pricingTiers.includes(tool.pricingTier)) {
     signals.pricingMismatch = SCORE_WEIGHTS.pricingMismatch
+  }
+
+  /*
+   * A tool the user says they already use.
+   *
+   * Added to the signal list rather than applied as a filter or a re-sort: it
+   * has to compete with relevance on the same scale as everything else, or
+   * "I already use Claude" turns into "Claude is in every plan forever".
+   */
+  if (query.confirmedToolIds.includes(tool.id)) {
+    signals.confirmed = SCORE_WEIGHTS.confirmed
   }
 
   const score = Object.values(signals).reduce((total, value) => total + value, 0)
