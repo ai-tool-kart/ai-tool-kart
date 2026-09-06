@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useCallback, useRef, useState } from 'react'
+import AssistantStage from '@/components/assistant/AssistantStage'
+import BuildSetupCard from '@/components/assistant/BuildSetupCard'
 import HeroSearch from '@/pages/home/sections/HeroSearch'
 import KindTabs from '@/pages/home/sections/KindTabs'
 import StatBlock from '@/components/ui/StatBlock'
 import TypedWord from '@/components/ui/TypedWord'
+import { useAssistant } from '@/hooks/useAssistant'
 import { HERO_INDEX_LINE, HERO_KINDS, HERO_WORD_CHAIN } from '@/data/hero'
 import { HERO_STATS } from '@/data/stats'
 
@@ -15,30 +17,46 @@ import { HERO_STATS } from '@/data/stats'
  * Task → Job → Niche → Business → Goal, sub-copy, the search shell, and the
  * proof strip of stat tiles.
  *
- * NOT YET BUILT: between the search and the stats the design places its two-pane
- * "AI Assistant / Your AI Plan" stage and the "Build Your AI Setup" card. Both
- * are conversational surfaces backed by POST /api/assistant/chat, which the
- * server already implements; they arrive in the milestone that wires that
- * endpoint up, so that they ship as the real thing rather than as a mock of it.
+ * Between the search and the stats sit the design's two-pane "AI Assistant /
+ * Your AI Plan" stage and the "Build Your AI Setup" card. Both are surfaces onto
+ * ONE conversation, which is why the session is owned here and passed down: the
+ * search box, the composer inside the chat panel and the "Let's Build" button
+ * are three ways into the same POST /api/assistant/chat thread, and a plan built
+ * from the setup card has to be refinable by the next message typed in the chat.
  *
  * The headline replaces the first export's "Every AI tool, sorted by …". Every
  * word of copy here is the final design's.
  */
 
 export default function Hero() {
-  const navigate = useNavigate()
   const [kind, setKind] = useState(HERO_KINDS[0].label)
   const [task, setTask] = useState<string | undefined>(undefined)
+  const assistant = useAssistant()
+  const stageRef = useRef<HTMLDivElement>(null)
 
   /*
-   * The design hands the query to its assistant panel. Until that panel exists,
-   * this keeps the behaviour the app already has: a catalogue search, with the
-   * query in the URL so the result is shareable and survives a reload.
+   * Brings the stage into view when a turn is sent from outside it — the hero
+   * search above it, or "Let's Build" below. Only scrolls when the panel is
+   * actually off-screen, as the design does: yanking the page on every send
+   * would fight a reader who has already scrolled to where they want to be.
    */
-  function runTask(query: string) {
-    setTask(query)
-    navigate(`/browse?q=${encodeURIComponent(query)}`)
-  }
+  const revealStage = useCallback(() => {
+    const el = stageRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    if (rect.top >= 80 && rect.bottom <= window.innerHeight) return
+    window.scrollTo({ top: window.scrollY + rect.top - 120, behavior: 'smooth' })
+  }, [])
+
+  /* The design hands the hero query straight to the assistant panel. */
+  const runTask = useCallback(
+    (query: string) => {
+      setTask(query)
+      assistant.send(query)
+      revealStage()
+    },
+    [assistant, revealStage],
+  )
 
   return (
     <section className="relative z-[1] mx-auto max-w-site px-8 pt-[125px] text-center">
@@ -78,6 +96,14 @@ export default function Hero() {
       </p>
 
       <HeroSearch onSubmit={runTask} activeTask={task} />
+
+      <AssistantStage session={assistant} panelRef={stageRef} />
+
+      <BuildSetupCard
+        onBuild={assistant.send}
+        onScrollToStage={revealStage}
+        busy={assistant.status === 'thinking'}
+      />
 
       <div data-reveal="0" className="mt-[65px]">
         <div className="flex items-center gap-[22px]">

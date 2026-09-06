@@ -12,11 +12,10 @@ import { QUICK_TASKS } from '@/data/hero'
  * Below it, the "Popular right now" task chips, which carry the design's
  * selected/unselected tone pair.
  *
- * WHERE IT GOES: in the design, submitting hands the query to the AI Assistant
- * panel that sits directly below the search. That panel is not built yet, so
- * submitting keeps the behaviour the app has today — a catalogue search — via
- * the `onSubmit` the Hero passes in. When the assistant panel lands, only that
- * one callback changes; nothing in this file does.
+ * WHERE IT GOES: submitting hands the query to the AI Assistant panel directly
+ * below the search, through the `onSubmit` the Hero passes in. This file has
+ * never known where the query goes and still does not — swapping the destination
+ * was a change to one callback in Hero.tsx and to nothing here.
  */
 
 const SHELL_BACKGROUND =
