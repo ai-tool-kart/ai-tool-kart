@@ -1,135 +1,32 @@
 /*
- * Home hero backdrop — the two large 3D "wing" chevrons plus the focal/floor
- * glows and vignettes behind the headline.
+ * Home hero backdrop — the tall column of drifting violet light behind the
+ * headline, search and assistant panel.
  *
  * Source: AI Tool Kart Site.dc.html, the [data-stage] block (home only).
  *
- * The wings are a stroked chevron path filled with a linear gradient and run
- * through a depth filter: three bloom passes, an inner shadow, two inner/edge
- * highlights and a specular lighting pass, merged in order. Ported verbatim —
- * it is the most distinctive element of the hero.
+ * This REPLACES the two 3D "wing" chevrons the first design export used. They
+ * are gone from the final design: it reads the hero's depth from stacked
+ * radial blooms on independent drift cycles instead of from a foreground
+ * object, which is why the wings, their SVG depth filter and the akIdleA/akIdleB
+ * keyframes all left with them.
  *
- * Both wings share the filter; only the gradient direction, path and animation
- * differ, so it is parameterised by side.
+ * Every layer is anchored to the same origin (left 50%, top 38% of a 1720px
+ * stage) and offset by its own negative margins, so the whole stack scales as
+ * one when the stage height changes.
+ *
+ * [data-focal] and [data-floor] keep their attributes because the design's
+ * hero-search focus handler brightens exactly those two layers when the input
+ * takes focus. That wiring arrives with the hero search's focus lighting.
  */
 
-function Wing({ side }: { side: 'left' | 'right' }) {
-  const gradientId = `akGrad${side === 'left' ? 'L' : 'R'}`
-  const filterId = `akDepth${side === 'left' ? 'L' : 'R'}`
-  const path =
-    side === 'left' ? 'M52 74 L636 620 L52 1166' : 'M648 74 L64 620 L648 1166'
-
-  return (
-    <svg
-      viewBox="0 0 700 1240"
-      width="700"
-      height="1240"
-      aria-hidden="true"
-      className="absolute inset-0 block overflow-visible"
-    >
-      <defs>
-        <linearGradient
-          id={gradientId}
-          x1={side === 'left' ? '1' : '0'}
-          y1="0.08"
-          x2={side === 'left' ? '0' : '1'}
-          y2="0.92"
-        >
-          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.66" />
-          <stop offset="13%" stopColor="#EFE3FF" stopOpacity="0.4" />
-          <stop offset="36%" stopColor="#B084FA" stopOpacity="0.19" />
-          <stop offset="62%" stopColor="#7848E4" stopOpacity="0.07" />
-          <stop offset="90%" stopColor="#5A34C0" stopOpacity="0" />
-        </linearGradient>
-
-        <filter
-          id={filterId}
-          x="-45%"
-          y="-18%"
-          width="190%"
-          height="136%"
-          colorInterpolationFilters="sRGB"
-        >
-          <feGaussianBlur in="SourceGraphic" stdDeviation="38" result="bloomFar" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="13" result="bloomMid" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="bloomNear" />
-
-          <feOffset in="SourceAlpha" dx="3.5" dy="6" result="isOff" />
-          <feGaussianBlur in="isOff" stdDeviation="5.5" result="isBlur" />
-          <feComposite
-            in="isBlur"
-            in2="SourceAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-            result="isMask"
-          />
-          <feFlood floodColor="#150B2C" floodOpacity="0.8" result="isCol" />
-          <feComposite in="isCol" in2="isMask" operator="in" result="innerShadow" />
-
-          <feOffset in="SourceAlpha" dx="-2.5" dy="-4" result="ihOff" />
-          <feGaussianBlur in="ihOff" stdDeviation="3.2" result="ihBlur" />
-          <feComposite
-            in="ihBlur"
-            in2="SourceAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-            result="ihMask"
-          />
-          <feFlood floodColor="#FFFFFF" floodOpacity="0.5" result="ihCol" />
-          <feComposite in="ihCol" in2="ihMask" operator="in" result="innerHigh" />
-
-          <feOffset in="SourceAlpha" dx="-0.9" dy="-1.1" result="ehOff" />
-          <feGaussianBlur in="ehOff" stdDeviation="0.7" result="ehBlur" />
-          <feComposite
-            in="ehBlur"
-            in2="SourceAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-            result="ehMask"
-          />
-          <feFlood floodColor="#F6EEFF" floodOpacity="0.85" result="ehCol" />
-          <feComposite in="ehCol" in2="ehMask" operator="in" result="edgeHigh" />
-
-          <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="bump" />
-          <feSpecularLighting
-            in="bump"
-            surfaceScale="6"
-            specularConstant="0.62"
-            specularExponent="26"
-            lightingColor="#E9DDFF"
-            result="spec"
-          >
-            <feDistantLight azimuth="232" elevation="60" />
-          </feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="specClip" />
-
-          <feMerge>
-            <feMergeNode in="bloomFar" />
-            <feMergeNode in="bloomMid" />
-            <feMergeNode in="bloomNear" />
-            <feMergeNode in="SourceGraphic" />
-            <feMergeNode in="innerShadow" />
-            <feMergeNode in="innerHigh" />
-            <feMergeNode in="edgeHigh" />
-            <feMergeNode in="specClip" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      <path
-        d={path}
-        fill="none"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="30"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        filter={`url(#${filterId})`}
-      />
-    </svg>
-  )
+/** left:50%; top:38% with a size and its centring offsets, as px. */
+function anchored(width: number, height: number, marginTop: number): React.CSSProperties {
+  return {
+    width: `${width}px`,
+    height: `${height}px`,
+    marginLeft: `${-width / 2}px`,
+    marginTop: `${marginTop}px`,
+  }
 }
 
 export default function HeroStage() {
@@ -137,40 +34,49 @@ export default function HeroStage() {
     <div
       data-stage="1"
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[1160px] overflow-hidden"
+      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[1720px] overflow-hidden"
     >
-      <div
-        data-par="-0.05"
-        className="absolute top-0 bottom-0 w-0 [left:min(15.5%,calc(50%_-_352px))] [perspective:2600px]"
-      >
-        <div className="absolute top-[62%] left-[-700px] mt-[-620px] h-[1240px] w-[700px] origin-center [animation:akIdleA_62s_cubic-bezier(.42,0,.58,1)_infinite]">
-          <Wing side="left" />
-        </div>
-      </div>
+      {/* Vertical wash: the canvas warms toward violet across the hero, then cools back. */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,#040409_0%,#06051200_0%,#070614_14%,#0A0720_28%,#0D0929_38%,#0A0722_50%,#070517_68%,#050410_84%,#040409_100%)]" />
 
+      {/* Outermost bloom — slow, huge, sets the overall glow. */}
       <div
-        data-par="-0.045"
-        className="absolute top-0 bottom-0 w-0 [left:max(84.5%,calc(50%_+_352px))] [perspective:2600px]"
-      >
-        <div className="absolute top-[32%] left-0 mt-[-620px] h-[1240px] w-[700px] origin-center [animation:akIdleB_74s_cubic-bezier(.42,0,.58,1)_infinite] [animation-delay:-25s]">
-          <Wing side="right" />
-        </div>
-      </div>
-
-      {/* Focal glow behind the headline. */}
+        data-lighta="1"
+        style={anchored(2600, 1720, -900)}
+        className="absolute top-[38%] left-1/2 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(124,80,240,0.2)_0%,rgba(102,58,214,0.085)_30%,rgba(88,46,196,0.028)_52%,rgba(88,46,196,0)_72%)] blur-[120px] will-change-[transform,opacity] [animation:akDrift1_13s_cubic-bezier(.42,0,.58,1)_infinite]"
+      />
+      {/* Focal bloom behind the headline. Brightens on hero-search focus. */}
       <div
         data-focal="1"
-        className="absolute top-[360px] left-1/2 -ml-[510px] h-[500px] w-[1020px] bg-[radial-gradient(ellipse_44%_42%_at_50%_52%,rgba(116,78,236,0.16)_0%,rgba(104,70,224,0.045)_46%,rgba(104,70,224,0)_74%)] blur-[52px]"
+        style={anchored(1760, 1060, -560)}
+        className="absolute top-[38%] left-1/2 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(186,152,255,0.42)_0%,rgba(146,100,248,0.2)_26%,rgba(112,66,228,0.075)_48%,rgba(96,52,206,0)_72%)] blur-[92px] transition-opacity duration-1000 ease-[cubic-bezier(.2,.8,.2,1)] will-change-[transform,opacity] [animation:akDrift2_19s_cubic-bezier(.42,0,.58,1)_infinite]"
       />
-      {/* Floor bounce beneath the search bar. */}
+      {/* Bright core, breathing on its own cycle. */}
+      <div
+        data-pulse="1"
+        style={anchored(940, 540, -296)}
+        className="absolute top-[38%] left-1/2 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(228,214,255,0.62)_0%,rgba(172,136,252,0.36)_24%,rgba(128,82,240,0.15)_46%,rgba(96,52,206,0)_74%)] blur-[64px] will-change-[transform,opacity] [animation:akBloomPulse_9.5s_ease-in-out_infinite]"
+      />
+      {/* Floor bounce under the search bar. Brightens on hero-search focus. */}
       <div
         data-floor="1"
-        className="absolute top-[700px] left-1/2 -ml-[590px] h-[230px] w-[1180px] bg-[radial-gradient(ellipse_40%_46%_at_50%_0%,rgba(168,136,252,0.11)_0%,rgba(120,80,232,0.03)_44%,rgba(120,80,232,0)_74%)] blur-[34px]"
+        style={anchored(1240, 430, 86)}
+        className="absolute top-[38%] left-1/2 bg-[radial-gradient(ellipse_50%_54%_at_50%_10%,rgba(206,186,255,0.2)_0%,rgba(154,110,248,0.09)_36%,rgba(120,74,236,0.04)_58%,rgba(120,74,236,0)_78%)] blur-[72px] transition-opacity duration-1000 ease-[cubic-bezier(.2,.8,.2,1)] will-change-[transform,opacity] [animation:akDrift3_23s_ease-in-out_infinite]"
       />
-      {/* Centre vignette so the wings read as background. */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_42%_44%_at_50%_28%,rgba(4,4,7,0.94)_0%,rgba(4,4,7,0.62)_46%,rgba(4,4,7,0)_78%)]" />
-      {/* Fade the stage out into the page. */}
-      <div className="absolute right-0 bottom-0 left-0 h-[340px] bg-[linear-gradient(180deg,rgba(4,4,7,0)_0%,#040407_92%)]" />
+      {/* Ceiling haze above the headline. */}
+      <div
+        style={anchored(1180, 680, -700)}
+        className="absolute top-[38%] left-1/2 bg-[radial-gradient(ellipse_50%_52%_at_50%_96%,rgba(178,142,255,0.2)_0%,rgba(134,88,242,0.08)_38%,rgba(110,64,220,0.02)_62%,rgba(110,64,220,0)_80%)] blur-[84px] will-change-[transform,opacity] [animation:akHaze_29s_ease-in-out_infinite]"
+      />
+
+      {/* Two skewed light shafts, out of phase with each other. */}
+      <div className="absolute top-[14%] left-[34%] h-[56%] w-[7%] skew-x-[-9deg] bg-[linear-gradient(180deg,rgba(196,170,255,0)_0%,rgba(196,170,255,0.05)_50%,rgba(196,170,255,0)_100%)] blur-[42px] [animation:akShaft_17s_ease-in-out_infinite]" />
+      <div className="absolute top-[16%] right-[33%] h-[52%] w-[6%] skew-x-[7deg] bg-[linear-gradient(180deg,rgba(214,196,255,0)_0%,rgba(214,196,255,0.045)_54%,rgba(214,196,255,0)_100%)] blur-[46px] [animation:akShaft_23s_ease-in-out_-8s_infinite]" />
+
+      {/* Vignette, header fade, and the fade back into the page below. */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_54%_40%_at_50%_38%,rgba(3,2,10,0)_20%,rgba(3,2,10,0.5)_58%,rgba(2,2,7,0.92)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,3,8,0.9)_0%,rgba(3,3,8,0.42)_9%,rgba(3,3,8,0)_20%)]" />
+      <div className="absolute right-0 bottom-0 left-0 h-[520px] bg-[linear-gradient(180deg,rgba(4,4,7,0)_0%,rgba(4,4,7,0.5)_34%,rgba(4,4,7,0.85)_68%,#040407_96%)]" />
     </div>
   )
 }

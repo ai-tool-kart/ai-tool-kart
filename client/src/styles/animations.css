@@ -1,16 +1,96 @@
 /*
  * Keyframes ported from the Claude Design handoff:
- *   ai-tool-kart-ui design/project/AI Tool Kart Site.dc.html  (dark theme, <helmet> style block)
+ *   ai-tool-kart-pre-final-design/project/AI Tool Kart Site.dc.html  (<helmet> style block)
  *
- * Only the keyframes actually referenced by the dark design are ported here.
- * The source also defines 16 keyframes that are never referenced by any element
- * (akHalo, akFloat, akGridDrift, akCube, akRing1/2/3, akStack, akOrbitA/B,
- * akTumble, akSheet, akShaft, akHaze, akMeshA, akSheen) — leftovers from design
- * iteration. They are intentionally omitted; re-port from the source if a later
- * phase turns out to need one.
+ * Only the keyframes the final design actually references are ported. The source
+ * also defines a dozen never-referenced ones (akFloat, akCube, akRing1/2/3,
+ * akStack, akOrbitA/B, akTumble, akSheet, akGridDrift, akBlink, akPlayhead,
+ * akTypeLine, akSavPulse, akRiseB/C, akDot, akBreathe/2) — leftovers from design
+ * iteration. Re-port from the source if a later section turns out to need one.
  *
  * Timing/easing is applied at each usage site (as it is in the source), not here.
  */
+
+/* ---- Ambient / stage ----------------------------------------------------- */
+
+@keyframes akDrift1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: .82; }
+  50% { transform: translate3d(0, -88px, 0) scale(1.06); opacity: 1; }
+}
+
+@keyframes akDrift2 {
+  0%, 100% { transform: translate3d(-1.5%, 26px, 0) scale(1.02); opacity: .74; }
+  46% { transform: translate3d(1.5%, -62px, 0) scale(1.1); opacity: 1; }
+}
+
+@keyframes akDrift3 {
+  0%, 100% { transform: translate3d(-3%, 12px, 0) scaleX(1); opacity: .78; }
+  50% { transform: translate3d(3%, -26px, 0) scaleX(1.09); opacity: 1; }
+}
+
+@keyframes akBloomPulse {
+  0%, 100% { opacity: .5; transform: scale(.97); filter: blur(90px); }
+  42% { opacity: 1; transform: scale(1.05); filter: blur(72px); }
+  62% { opacity: .78; transform: scale(1.01); filter: blur(84px); }
+}
+
+@keyframes akHaze {
+  0%, 100% { transform: translate3d(-3%, 0, 0) scaleX(1); opacity: .55; }
+  50% { transform: translate3d(3%, 1%, 0) scaleX(1.08); opacity: .9; }
+}
+
+@keyframes akShaft {
+  0%, 100% { opacity: .35; transform: translate3d(0, 0, 0) scaleY(1); }
+  50% { opacity: .85; transform: translate3d(0, -2%, 0) scaleY(1.04); }
+}
+
+@keyframes akHalo {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50% { opacity: .85; transform: scale(1.04); }
+}
+
+@keyframes akMeshA {
+  0% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1.05); }
+  33% { transform: translate3d(3%, 4%, 0) rotate(6deg) scale(1.14); }
+  66% { transform: translate3d(6%, -3%, 0) rotate(-4deg) scale(1.08); }
+  100% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1.05); }
+}
+
+@keyframes akMeshB {
+  0% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
+  40% { transform: translate3d(-5%, -4%, 0) rotate(-7deg) scale(1.02); }
+  75% { transform: translate3d(-2%, 5%, 0) rotate(5deg) scale(1.1); }
+  100% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
+}
+
+@keyframes akSweep {
+  0% { transform: translate3d(-60vw, 0, 0) rotate(14deg); }
+  100% { transform: translate3d(140vw, 0, 0) rotate(14deg); }
+}
+
+/* ---- Entrances ----------------------------------------------------------- */
+
+@keyframes akFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes akRise {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes akLineIn {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(16px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes akPanelIn {
+  from { opacity: 0; transform: translate3d(0, 28px, 0) scale(.985); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- Loops and accents --------------------------------------------------- */
 
 @keyframes akMarquee {
   from { transform: translate3d(0, 0, 0); }
@@ -20,18 +100,6 @@
 @keyframes akPulse {
   0%, 100% { opacity: .5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.25); }
-}
-
-@keyframes akRise {
-  from { opacity: 0; transform: translate3d(0, 20px, 0); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes akMeshB {
-  0% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
-  40% { transform: translate3d(-5%, -4%, 0) rotate(-7deg) scale(1.02); }
-  75% { transform: translate3d(-2%, 5%, 0) rotate(5deg) scale(1.1); }
-  100% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
 }
 
 @keyframes akGradient {
@@ -45,14 +113,13 @@
   55%, 100% { opacity: 0; }
 }
 
-@keyframes akFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes akSpin {
+  to { transform: rotate(360deg); }
 }
 
-@keyframes akLineIn {
-  from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(16px); }
-  to { opacity: 1; transform: none; filter: blur(0); }
+@keyframes akSheen {
+  from { transform: translate3d(-120%, 0, 0); }
+  to { transform: translate3d(320%, 0, 0); }
 }
 
 @keyframes akShine {
@@ -62,19 +129,30 @@
   100% { transform: translate3d(360%, 0, 0) skewX(-16deg); opacity: 0; }
 }
 
-@keyframes akSweep {
-  0% { transform: translate3d(-60vw, 0, 0) rotate(14deg); }
-  100% { transform: translate3d(140vw, 0, 0) rotate(14deg); }
+/* Idle "wake" cycle on the browse-filter chips, so the row hints it is tappable. */
+@keyframes akChipWake {
+  0%, 76%, 100% {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.028);
+    color: #8e88a8;
+  }
+  8%, 22% {
+    border-color: rgba(178, 150, 255, 0.42);
+    background: rgba(124, 88, 244, 0.16);
+    color: #ded3fa;
+  }
 }
 
-@keyframes akIdleA {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(2deg); }
+@keyframes akPlanTravel {
+  0% { top: 6%; opacity: 0; }
+  18% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { top: 94%; opacity: 0; }
 }
 
-@keyframes akIdleB {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-2deg); }
+/* The source pauses a marquee on hover via this exact selector pair. */
+[data-marquee]:hover [data-marquee-track] {
+  animation-play-state: paused;
 }
 
 /* Matches the source's global reduced-motion override. */

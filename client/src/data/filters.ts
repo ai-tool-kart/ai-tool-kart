@@ -41,11 +41,3 @@ export const CATEGORY_OPTIONS: string[] = [
   ALL_CATEGORIES,
   ...CATEGORIES.map((c) => c.name),
 ]
-
-export const POPULAR_SEARCHES: string[] = [
-  'summarize sales calls',
-  'product photography',
-  'PR review',
-  'meeting notes',
-  'SQL from plain English',
-]

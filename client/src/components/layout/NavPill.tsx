@@ -6,7 +6,7 @@ import { NAV_ITEMS } from '@/data/navigation'
 /*
  * The glass nav pill.
  *
- * Source: ai tool kart ui design v2/AI Tool Kart Site.dc.html, [data-navpill] —
+ * Source: ai-tool-kart-pre-final-design/project/AI Tool Kart Site.dc.html, [data-navpill] —
  * max-width 1060px, r22, rgba(13,11,19,0.66) behind a 28px blur, hairline border,
  * inset top highlight, and the violet "Submit Your Tool" CTA on the right.
  *
@@ -72,12 +72,12 @@ export default function NavPill() {
           </span>
         </Link>
 
-        {/* Full nav from 960px up; below that it moves into the panel. */}
-        <nav className="hidden flex-auto items-center justify-center gap-[2px] min-[960px]:flex">
+        {/* Full nav from 1080px up; below that it moves into the panel. */}
+        <nav className="hidden flex-auto items-center justify-center gap-[2px] min-[1080px]:flex">
           {links}
         </nav>
 
-        <div className="flex flex-auto items-center justify-end gap-[10px] min-[960px]:flex-none">
+        <div className="flex flex-auto items-center justify-end gap-[10px] min-[1080px]:flex-none">
           <Link to="/submit" data-magnet="1" className={CTA_CLASSES}>
             Submit Your Tool
           </Link>
@@ -88,7 +88,7 @@ export default function NavPill() {
             aria-controls="nav-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 flex-none cursor-pointer items-center justify-center rounded-pill border border-hairline text-ink transition-[background-color,border-color] duration-200 hover:bg-white/[0.06] min-[960px]:hidden"
+            className="flex h-10 w-10 flex-none cursor-pointer items-center justify-center rounded-pill border border-hairline text-ink transition-[background-color,border-color] duration-200 hover:bg-white/[0.06] min-[1080px]:hidden"
           >
             <span aria-hidden="true" className="flex w-[16px] flex-col gap-[4px]">
               <span className="h-[1.5px] w-full rounded-full bg-current" />
@@ -102,7 +102,7 @@ export default function NavPill() {
       {menuOpen && (
         <nav
           id="nav-menu"
-          className="flex flex-col gap-1 border-t border-hairline px-3 pt-3 pb-4 min-[960px]:hidden"
+          className="flex flex-col gap-1 border-t border-hairline px-3 pt-3 pb-4 min-[1080px]:hidden"
         >
           {links}
         </nav>
