@@ -15,6 +15,8 @@ import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
 import type { ServerEnv } from '../src/config/env.ts'
 import { createContainer, type Container } from '../src/container.ts'
+import type { MockProviderOptions } from '../src/llm/providers/mock.ts'
+import type { AssistantReply } from '../src/assistant/schema.ts'
 import type { Tool } from '../src/domain/types.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
 
@@ -66,12 +68,27 @@ export function testEnv(overrides: Partial<ServerEnv> = {}): ServerEnv {
   return { ...base, ...overrides }
 }
 
+/**
+ * A fully wired container against a silent logger and, optionally, a fixture
+ * catalogue and a scripted provider.
+ *
+ * `mock` is how a test injects malformed output, a refusal or an outage. The
+ * provider is REPLACED, never network-mocked: there is no network to intercept,
+ * and a test that stubbed one would stop proving anything the moment an adapter
+ * changed transport.
+ */
 export function testContainer(
   env: ServerEnv = testEnv(),
   logger: Logger = testLogger(),
   catalogue?: ToolCatalogueRepository,
+  mock?: MockProviderOptions,
 ): Container {
-  return createContainer({ env, logger, ...(catalogue ? { catalogue } : {}) })
+  return createContainer({
+    env,
+    logger,
+    ...(catalogue ? { catalogue } : {}),
+    ...(mock ? { mock } : {}),
+  })
 }
 
 /* ─── Catalogue fixtures ───────────────────────────────────────────────────── */
@@ -183,4 +200,40 @@ export async function withServer(
   } finally {
     await server.close()
   }
+}
+
+/* ─── Assistant fixtures (Phase E) ─────────────────────────────────────────── */
+
+/**
+ * A schema-valid model reply, overridable field by field.
+ *
+ * Grounding and engine tests are about what happens to a reply AFTER it
+ * validates, so every one of them needs a valid starting point. Building it here
+ * means a change to the contract breaks one function rather than fifteen
+ * literals, and — because the return type is the real `AssistantReply` — a test
+ * that drifts from the schema stops compiling instead of silently asserting
+ * against a shape the engine would have rejected.
+ */
+export function makeAssistantReply(overrides: Partial<AssistantReply> = {}): AssistantReply {
+  const base: AssistantReply = {
+    message: 'Here is a stack for that.',
+    intent: 'recommend',
+    understood: { constraints: [] },
+    plan: {
+      title: 'Video workflow',
+      toolIds: ['beta-editor'],
+      agents: [],
+      workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'It cuts long video down.' }],
+      prompts: 'Starter prompts for the first cut',
+      comparison: 'Beta Editor on one upload',
+      steps: ['Upload a recording to Beta Editor.'],
+    },
+    followUps: ['Compare the top two'],
+  }
+  return { ...base, ...overrides }
+}
+
+/** A mock script that makes the provider answer with exactly this reply. */
+export function scriptReply(reply: AssistantReply): MockProviderOptions {
+  return { script: [{ kind: 'text', text: JSON.stringify(reply) }] }
 }

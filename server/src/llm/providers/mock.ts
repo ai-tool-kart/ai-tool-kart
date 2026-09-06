@@ -148,11 +148,16 @@ export function createMockProvider(options: MockProviderOptions = {}): LLMProvid
 /**
  * The shape this branch emits.
  *
- * It anticipates the response contract in ASSISTANT_ARCHITECTURE_PLAN.md §10.1.
- * Phase E writes the authoritative Zod schema in server/src/assistant/schema.ts;
- * until it exists, this interface is the mock's own statement of what it
- * produces, and tests/llm.test.ts validates it against a stand-in schema so the
- * two cannot silently diverge before Phase E binds them.
+ * The authoritative contract is AssistantReplySchema in
+ * server/src/assistant/schema.ts, and tests/llm.test.ts validates this branch's
+ * output against it directly — so the mock and the engine can never be checked
+ * against two different shapes.
+ *
+ * This interface is NOT imported from there, and that is deliberate. src/llm/ is
+ * lifted into shared/llm in Phase H, where it will be imported by the News
+ * Agent, which has no assistant, no catalogue and no plan. A structural
+ * restatement here costs a few lines and keeps the directory movable; an import
+ * would make the move a rewrite. The test is what holds the two in agreement.
  */
 interface WorkflowEntry {
   stage: string

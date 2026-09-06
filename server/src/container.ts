@@ -16,28 +16,33 @@
  * and cannot tell what is behind either; swapping the catalogue for PostgreSQL
  * or the mock for a real vendor is one line below in each case.
  *
- * As later phases land this grows to:
- *
- *   const assistant = createAssistantEngine({ retrieval, llm, logger })  // Phase E
- *
  * Nothing is stubbed here in advance. A placeholder that returns undefined is
  * a dependency the rest of the code learns to work around.
  *
- * ── One budget per container, and why that changes in Phase E ─────────────────
+ * ── One budget per TURN, not one per process ──────────────────────────────────
  *
- * The budget created here is process-wide, which is right for Phase D: there is
- * exactly one caller, the manual verification path, and a shared circuit breaker
- * makes a runaway loop visible immediately. It is NOT right for a live chat
- * endpoint, where one conversation would consume every other request's headroom.
- * Phase E creates a per-turn budget inside the engine — see LLM_BUDGET in
- * config/limits.ts — and this one becomes the outer ceiling.
+ * Phase D created a single budget here, which was right when the only caller was
+ * a manual verification path. It is wrong for a live chat endpoint: a budget is
+ * mutable spend accounting, and one shared instance means the first pathological
+ * conversation of the process exhausts every later request's headroom. The
+ * symptom is unrelated users getting 503s from a healthy provider.
+ *
+ * So the container exposes a FACTORY. Every assistant turn calls it and gets a
+ * fresh budget derived from LLM_BUDGET in config/limits.ts. The provider is
+ * stateless and stays shared — it holds a credential and a base URL, not a
+ * counter — and the client is a thin binding of the two, so making one per turn
+ * costs an object allocation.
+ *
+ * This is a circuit breaker per unit of work, not a quota: there are no user
+ * accounts to bill and no per-IP limiting until Phase I (§13).
  */
 
+import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
 import { createJsonToolCatalogue } from './catalogue/json.ts'
 import type { ToolCatalogueRepository } from './catalogue/repository.ts'
 import type { ServerEnv } from './config/env.ts'
 import { LLM_BUDGET } from './config/limits.ts'
-import { createBudget, type Budget } from './llm/budget.ts'
+import { createBudget } from './llm/budget.ts'
 import { createLLMClient, type LLMClient } from './llm/client.ts'
 import { createProvider } from './llm/factory.ts'
 import type { MockProviderOptions } from './llm/providers/mock.ts'
@@ -49,8 +54,9 @@ export interface Container {
   readonly logger: Logger
   readonly catalogue: ToolCatalogueRepository
   readonly retrieval: RetrievalService
-  readonly llm: LLMClient
-  readonly llmBudget: Budget
+  /** One client, one budget, one unit of work. Never share the result. */
+  readonly createLLMClientForTurn: () => LLMClient
+  readonly assistant: AssistantEngine
 }
 
 export interface CreateContainerOptions {
@@ -85,13 +91,26 @@ export function createContainer({
   const catalogue = injected ?? createJsonToolCatalogue({ logger })
   const retrieval = createRetrievalService({ catalogue, logger })
 
-  // ...and the only line that names a concrete LLM provider.
+  // ...and the only line that names a concrete LLM provider. Stateless, so one
+  // instance serves every request.
   const provider = createProvider({ env, ...(mock ? { mock } : {}) })
-  const llmBudget = createBudget({
-    maxLlmCalls: LLM_BUDGET.maxLlmCalls,
-    maxTokens: LLM_BUDGET.maxTokens,
-  })
-  const llm = createLLMClient({ provider, budget: llmBudget, logger })
 
-  return { env, logger, catalogue, retrieval, llm, llmBudget }
+  const createLLMClientForTurn = (): LLMClient =>
+    createLLMClient({
+      provider,
+      budget: createBudget({
+        maxLlmCalls: LLM_BUDGET.maxLlmCalls,
+        maxTokens: LLM_BUDGET.maxTokens,
+      }),
+      logger,
+    })
+
+  const assistant = createAssistantEngine({
+    retrieval,
+    catalogue,
+    createClient: createLLMClientForTurn,
+    logger,
+  })
+
+  return { env, logger, catalogue, retrieval, createLLMClientForTurn, assistant }
 }

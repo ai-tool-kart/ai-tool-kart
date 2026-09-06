@@ -203,3 +203,70 @@ export const LLM_BUDGET = {
   maxLlmCalls: LLM_RETRY.schemaAttempts,
   maxTokens: 60_000,
 } as const
+
+/* ─── Phase E — the assistant ──────────────────────────────────────────────── */
+
+/**
+ * The assistant's request, response and conversation caps.
+ *
+ * Every number here is from ASSISTANT_ARCHITECTURE_PLAN.md §10.1, §11 and §13.
+ * They live in config rather than inside the Zod schema for the same reason
+ * SCORE_WEIGHTS does not live inside score.ts: tuning a limit must not mean
+ * editing the logic that enforces it, and "what is the cap" must have exactly
+ * one answer.
+ *
+ * ── Where the plan's numbers were relaxed, and why ───────────────────────────
+ *
+ * §10.1 describes a plan as 2–6 tools, 3–5 workflow stages and 3–5 steps. The
+ * MAXIMA are enforced by the schema. The MINIMA are not, and that is deliberate:
+ * they are enforced by the prompt instead.
+ *
+ * A minimum in the schema is a rejection. If retrieval can only offer one
+ * candidate — a narrow query against a young catalogue — a model that correctly
+ * recommends that one tool would fail validation three times and the turn would
+ * end in a 422, which is a worse answer than the honest single-tool plan. The
+ * failure mode of a missing minimum is a thin plan; the failure mode of an
+ * enforced one is no plan at all.
+ */
+export const ASSISTANT = {
+  /** Path the assistant router is mounted at, relative to the API base. */
+  path: '/assistant',
+  /** POST target, relative to the router. */
+  chatPath: '/chat',
+
+  /* ── Request (§13) ─────────────────────────────────────────────────────── */
+  /** The current message. Longer is rejected — the caller must know it was cut. */
+  maxMessageChars: 2_000,
+  /** Prior turns kept. Older ones are TRUNCATED, never rejected (§11). */
+  maxHistoryTurns: 8,
+  /** Per-message ceiling inside the history. Truncated, not rejected. */
+  maxHistoryMessageChars: 2_000,
+  /** Conversation length before `turn` stops counting up. Truncated (§11). */
+  maxConversationTurns: 12,
+
+  /* ── Response (§10.1) ──────────────────────────────────────────────────── */
+  maxMessageReplyChars: 600,
+  maxPlanTools: 6,
+  maxAgents: 3,
+  maxWorkflowStages: 5,
+  maxWhyChars: 160,
+  maxSteps: 6,
+  maxFollowUps: 3,
+  maxConstraints: 4,
+  /** Free-text fields the model fills. Bounded so a runaway string is a reject. */
+  maxTitleChars: 120,
+  maxRoleChars: 80,
+  maxGoalChars: 200,
+  maxConstraintChars: 80,
+  maxStepChars: 240,
+  maxNoteChars: 240,
+  maxFollowUpChars: 120,
+  maxAgentChars: 60,
+  maxStageChars: 40,
+  /** A catalogue id. Long enough for any slug, short enough to bound the parse. */
+  maxToolIdChars: 64,
+
+  /* ── Context (§11) ─────────────────────────────────────────────────────── */
+  /** Ids carried in the conversation context, per list. */
+  maxContextToolIds: 20,
+} as const

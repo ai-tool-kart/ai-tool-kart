@@ -30,63 +30,27 @@ import {
   wrapUntrusted,
 } from '../src/llm/prompts/shared.ts'
 import { createMockProvider, type MockScript } from '../src/llm/providers/mock.ts'
+import {
+  AssistantReplySchema,
+  type AssistantReply,
+} from '../src/assistant/schema.ts'
 import { describeSchema } from '../src/llm/schemas.ts'
 import { LLM_RETRY, TASK_MAX_OUTPUT_TOKENS, TASK_MODEL_CLASS } from '../src/config/limits.ts'
 import { capturingLogger, testEnv, testLogger } from './helpers.ts'
 
-/* ═══ A stand-in for the Phase E assistant schema ══════════════════════════ */
+/* ═══ The authoritative assistant schema ═══════════════════════════════════ */
 
-/**
- * The response contract from ASSISTANT_ARCHITECTURE_PLAN.md §10.1.
+/*
+ * Imported, never redeclared.
  *
- * Declared HERE, in the test, and not in src/. The authoritative schema is
- * server/src/assistant/schema.ts and belongs to Phase E; shipping it early would
- * be building the assistant contract a phase ahead of the engine that uses it.
- *
- * Its job in Phase D is narrower and worth stating: it proves the mock's
- * assistant branch emits something a `.strict()` schema accepts, so Phase E
- * inherits a provider that already satisfies the shape rather than discovering
- * on day one that it does not.
+ * Phase D carried a stand-in copy of the contract from
+ * ASSISTANT_ARCHITECTURE_PLAN.md §10.1 because the authoritative schema did not
+ * exist yet. It does now — server/src/assistant/schema.ts — and a test that kept
+ * its own copy would be a test that passes while the thing it claims to check
+ * has drifted. That is the specific failure this import removes: these
+ * assertions now prove the mock provider satisfies the shape the ENGINE
+ * validates against, not a shape the test agrees with itself about.
  */
-const AssistantReplySchema = z
-  .object({
-    message: z.string().min(1).max(600),
-    intent: z.enum(['clarify', 'recommend', 'refine', 'explain', 'off_topic']),
-    understood: z
-      .object({
-        role: z.string().optional(),
-        goal: z.string().optional(),
-        constraints: z.array(z.string()).max(4),
-      })
-      .strict(),
-    plan: z
-      .object({
-        title: z.string().min(1),
-        toolIds: z.array(z.string()).min(1).max(6),
-        agents: z.array(z.string()).max(3),
-        workflow: z
-          .array(
-            z
-              .object({
-                stage: z.string().min(1),
-                toolId: z.string().optional(),
-                why: z.string().min(1).max(160),
-              })
-              .strict(),
-          )
-          .min(1)
-          .max(5),
-        prompts: z.string().min(1),
-        comparison: z.string().min(1),
-        steps: z.array(z.string()).min(1).max(6),
-      })
-      .strict()
-      .optional(),
-    followUps: z.array(z.string()).max(3),
-  })
-  .strict()
-
-type AssistantReply = z.infer<typeof AssistantReplySchema>
 
 /* ═══ Fixtures ═════════════════════════════════════════════════════════════ */
 

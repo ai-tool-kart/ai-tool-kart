@@ -89,30 +89,163 @@ export interface Tool {
 }
 
 /**
- * The compact form the assistant is shown, roughly forty tokens per record.
+ * The projection of a catalogue record that leaves this process.
  *
- * Declared here in Phase C because retrieval already produces it; Phase D is the
- * first consumer. It exists so a candidate list can be serialised without the
- * display fields, which carry no signal for choosing between two tools.
+ * Two consumers, one shape, on purpose:
+ *
+ *   THE MODEL   retrieval serialises candidates from it (llm/prompts/cards.ts),
+ *               roughly forty tokens per record.
+ *   THE CLIENT  the assistant's hydrated plan is built from it
+ *               (ASSISTANT_ARCHITECTURE_PLAN.md §10.2).
+ *
+ * Phase C declared the first form; Phase E needs the display fields §10.2 lists
+ * — mono, price, rating, url — because "Your AI Plan" renders tool chips from
+ * exactly this object. Keeping ONE type rather than two nearly-identical ones
+ * means a tool the model was shown and a tool the client renders can never
+ * describe different records.
+ *
+ * `stages` is carried in addition to §10.2's list: it is what the candidate card
+ * format serialises, and it is what lets the workflow section be rendered
+ * without a second lookup. It is not sensitive, and it is not the whole record —
+ * the editorial fields (status, reviews, trend, badge, integrations) stay behind.
  */
 export interface ToolSummary {
   id: string
-  name: string
   slug: string
+  name: string
+  /** Two-character monogram shown in the card avatar. */
+  mono: string
   cat: ToolCategoryName
-  pricingTier: PricingTier
-  stages: WorkflowStage[]
   tagline: string
+  pricingTier: PricingTier
+  /** Display string, not an amount. */
+  price: string
+  /** 1–5, or 0 meaning "no ratings collected yet". */
+  rating: number
+  url: string
+  stages: WorkflowStage[]
 }
 
 export function toToolSummary(tool: Tool): ToolSummary {
   return {
     id: tool.id,
-    name: tool.name,
     slug: tool.slug,
+    name: tool.name,
+    mono: tool.mono,
     cat: tool.cat,
-    pricingTier: tool.pricingTier,
-    stages: [...tool.stages],
     tagline: tool.tagline,
+    pricingTier: tool.pricingTier,
+    price: tool.price,
+    rating: tool.rating,
+    url: tool.url,
+    stages: [...tool.stages],
   }
+}
+
+/* ── The assistant (Phase E) ───────────────────────────────────────────────── */
+
+/**
+ * What the assistant decided the turn was.
+ *
+ * Declared here rather than in assistant/schema.ts so the closed list has one
+ * definition that both the Zod schema and the hydrated response type read from,
+ * and so domain/ stays a leaf: assistant/ imports domain, never the reverse.
+ *
+ * `off_topic` exists so a request outside the product's scope has a structured
+ * answer instead of becoming a general-purpose chatbot reply
+ * (ASSISTANT_ARCHITECTURE_PLAN.md §10.1).
+ */
+export const ASSISTANT_INTENTS = [
+  'clarify',
+  'recommend',
+  'refine',
+  'explain',
+  'off_topic',
+] as const
+
+export type AssistantIntent = (typeof ASSISTANT_INTENTS)[number]
+
+/**
+ * The conversation, compressed to what the next turn actually needs.
+ *
+ * The server is stateless (§11): the client holds the transcript and echoes this
+ * object back, so nothing here is persisted, keyed to a user, or cleaned up.
+ * Phase F is what fills `confirmedToolIds` and `rejectedToolIds` from
+ * conversational refinement; Phase E carries them faithfully so a client that
+ * already sends them is not silently ignored.
+ */
+export interface ConversationContext {
+  role?: string
+  goal?: string
+  constraints: string[]
+  /** Tools the user accepted. */
+  confirmedToolIds: string[]
+  /** Tools the user turned down. Excluded from future candidate sets. */
+  rejectedToolIds: string[]
+  /** 1 for the first answered turn. Clamped, never rejected. */
+  turn: number
+}
+
+/** One transcript entry, as the client echoes it back. */
+export interface ConversationMessage {
+  role: 'user' | 'assistant'
+  text: string
+}
+
+/** One step of a plan, with its tool already hydrated. */
+export interface AssistantWorkflowStep {
+  stage: string
+  tool?: ToolSummary
+  why: string
+}
+
+/**
+ * The six sections of "Your AI Plan", one field each (§10.1's table).
+ *
+ * The field order below is the render order in the design, and the names are the
+ * design's own — Tools, Agents, Workflow, Prompts, Comparison, Steps — so the
+ * Phase G panel maps onto it without a translation layer.
+ */
+export interface AssistantPlan {
+  title: string
+  tools: ToolSummary[]
+  agents: string[]
+  workflow: AssistantWorkflowStep[]
+  prompts: string
+  comparison: string
+  steps: string[]
+}
+
+/**
+ * Diagnostics returned with every turn.
+ *
+ * `droppedToolIds` is the one that matters: it counts tool ids the model named
+ * that retrieval never offered. It is empty in normal operation, and §10.2 calls
+ * a non-empty value "the single most important metric this system emits".
+ */
+export interface AssistantMeta {
+  /** The model that answered, or 'none' when no call was made. */
+  model: string
+  /** Attempts the LLM client needed, including repairs. 0 when it was not called. */
+  attempts: number
+  /** Candidates retrieval offered the model. */
+  candidates: number
+  /** Ids the model named that were not in the candidate set. */
+  droppedToolIds: string[]
+}
+
+/** The body of a successful POST /api/assistant/chat (§10.2). */
+export interface AssistantChatResponse {
+  message: string
+  intent: AssistantIntent
+  understood: {
+    role?: string
+    goal?: string
+    constraints: string[]
+  }
+  plan?: AssistantPlan
+  followUps: string[]
+  /** Echo back on the next turn. */
+  context: ConversationContext
+  meta: AssistantMeta
 }

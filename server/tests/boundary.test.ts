@@ -263,3 +263,86 @@ await test('the temporary LLM layer stays liftable into shared/', async (t) => {
     )
   })
 })
+
+/*
+ * The assistant module.
+ *
+ * Phase E's engine sits between retrieval, the catalogue and the LLM layer, and
+ * is therefore the most tempting place in the server to reach through a
+ * boundary — one import of the JSON adapter would make the PostgreSQL migration
+ * touch the recommendation logic, and one import of express would make the
+ * engine untestable without a socket.
+ *
+ * These guards are the same shape as the ones above, for the same reason: an
+ * architectural rule defended only by comments is a rule that has already been
+ * broken somewhere nobody looked.
+ */
+await test('the assistant module keeps its dependencies pointing inward', async (t) => {
+  const ASSISTANT_DIR = join(SRC, 'assistant')
+  const LLM_DIR = join(SRC, 'llm')
+  const assistantFiles = files.filter((file) => file.startsWith(ASSISTANT_DIR))
+
+  await t.test('the scan found the assistant module', () => {
+    assert.ok(assistantFiles.length >= 6, `expected assistant/, found ${assistantFiles.length}`)
+  })
+
+  await t.test('it never imports express or anything HTTP-shaped', () => {
+    // The engine is driven by a route, not the other way round. An express
+    // import here would mean a turn could not be run from a test.
+    const offenders = assistantFiles
+      .filter((file) => /from 'express'|from '\.\.\/http\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('it reaches the catalogue only through the port', () => {
+    const offenders = assistantFiles
+      .filter((file) => /catalogue\/(json|data)/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'hydration goes through ToolCatalogueRepository')
+  })
+
+  await t.test('the LLM layer never imports the assistant', () => {
+    /*
+     * The reverse direction, and the one that would hurt in Phase H. src/llm/
+     * moves to shared/llm, where the News Agent imports it — and the News Agent
+     * has no assistant, no plan and no catalogue. An import here would turn that
+     * move into a rewrite.
+     */
+    const offenders = files
+      .filter((file) => file.startsWith(LLM_DIR))
+      .filter((file) => /from '\.\.?\/(\.\.\/)?assistant\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('container.ts is the only module that builds an engine', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(ASSISTANT_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => codeOf(file).includes('createAssistantEngine('))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'routes receive an engine, they do not wire one')
+  })
+
+  await t.test('the response caps live in config, not scattered through the schema', () => {
+    // Same rule Phase C applied to SCORE_WEIGHTS and Phase D to the retry count:
+    // tuning a limit must not mean editing the logic that enforces it.
+    const schema = codeOf(join(ASSISTANT_DIR, 'schema.ts'))
+    assert.match(schema, /ASSISTANT\./)
+    assert.equal(
+      /\.max\(\s*\d/.test(schema),
+      false,
+      'a cap must come from config/limits.ts, never a literal',
+    )
+  })
+
+  await t.test('grounding does no IO, so its guarantee is provable', () => {
+    const ground = codeOf(join(ASSISTANT_DIR, 'ground.ts'))
+    assert.equal(/await |async |from 'node:/.test(ground), false)
+  })
+})

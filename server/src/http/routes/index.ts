@@ -8,12 +8,15 @@
  * constructs a dependency, and none names a concrete implementation
  * (ASSISTANT_ARCHITECTURE_PLAN.md §6.4).
  *
- * Phase E mounts /assistant here, with the engine behind it, not before.
+ * Phase I adds rate limiting in front of /assistant; nothing is reserved for it
+ * here, because a middleware that does nothing is a middleware someone assumes
+ * is already protecting them.
  */
 
 import { Router } from 'express'
-import { HEALTH, TAXONOMY_API, TOOLS_API } from '../../config/limits.ts'
+import { ASSISTANT, HEALTH, TAXONOMY_API, TOOLS_API } from '../../config/limits.ts'
 import type { Container } from '../../container.ts'
+import { createAssistantRouter } from './assistant.ts'
 import { createHealthRouter } from './health.ts'
 import { createTaxonomyRouter, createToolsRouter } from './tools.ts'
 
@@ -29,6 +32,7 @@ export function createApiRouter(container: Container): Router {
     createToolsRouter({ catalogue: container.catalogue, retrieval: container.retrieval }),
   )
   router.use(TAXONOMY_API.path, createTaxonomyRouter({ retrieval: container.retrieval }))
+  router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
 
   return router
 }

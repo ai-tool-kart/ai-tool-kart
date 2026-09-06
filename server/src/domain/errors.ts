@@ -22,20 +22,37 @@
  */
 
 /**
- * Phase B vocabulary.
+ * The vocabulary, extended one phase at a time.
  *
- * Later phases extend this union rather than inventing parallel error types —
- * Phase E adds ASSISTANT_UNAVAILABLE and PROVIDER_UNAVAILABLE, Phase I adds
- * RATE_LIMITED (ASSISTANT_ARCHITECTURE_PLAN.md §13). They are deliberately not
- * declared yet: an unreachable error code is dead vocabulary that invites
- * someone to build the response before the system behind it exists.
+ * Phase B declared the first four. Phase E adds the two the assistant can
+ * actually reach (ASSISTANT_ARCHITECTURE_PLAN.md §13); Phase I adds
+ * RATE_LIMITED, which is deliberately still absent — an unreachable error code
+ * is dead vocabulary that invites someone to build the response before the
+ * system behind it exists.
+ *
+ * The two new codes describe WHOSE failure it was, which is what decides whether
+ * retrying is worth anything:
+ *
+ *   ASSISTANT_UNAVAILABLE  422  The model answered, repeatedly, with something
+ *                               that did not satisfy the schema. The request was
+ *                               fine; the answer was not. Retrying may help.
+ *   PROVIDER_UNAVAILABLE   503  The provider errored, refused, or the turn's
+ *                               budget tripped. Nothing was produced at all.
  */
-export type ApiErrorCode = 'CONFIG' | 'INVALID_REQUEST' | 'NOT_FOUND' | 'INTERNAL'
+export type ApiErrorCode =
+  | 'CONFIG'
+  | 'INVALID_REQUEST'
+  | 'NOT_FOUND'
+  | 'ASSISTANT_UNAVAILABLE'
+  | 'PROVIDER_UNAVAILABLE'
+  | 'INTERNAL'
 
 const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
   CONFIG: 500,
   INVALID_REQUEST: 400,
   NOT_FOUND: 404,
+  ASSISTANT_UNAVAILABLE: 422,
+  PROVIDER_UNAVAILABLE: 503,
   INTERNAL: 500,
 }
 
@@ -79,6 +96,28 @@ export function invalidRequest(message: string, details?: Record<string, unknown
 
 export function notFound(message: string, details?: Record<string, unknown>): ApiError {
   return new ApiError('NOT_FOUND', message, { details })
+}
+
+/**
+ * The model could not produce a valid answer.
+ *
+ * Distinct from PROVIDER_UNAVAILABLE because the two are different operational
+ * problems: this one is a prompt or a model regression and shows up in the logs
+ * as schema failures; the other is an outage.
+ */
+export function assistantUnavailable(
+  message: string,
+  details?: Record<string, unknown>,
+): ApiError {
+  return new ApiError('ASSISTANT_UNAVAILABLE', message, { details })
+}
+
+/** The provider errored, refused, or the turn's budget was exhausted. */
+export function providerUnavailable(
+  message: string,
+  details?: Record<string, unknown>,
+): ApiError {
+  return new ApiError('PROVIDER_UNAVAILABLE', message, { details })
 }
 
 /** Wraps an unexpected failure. The message is never sent to the client. */
