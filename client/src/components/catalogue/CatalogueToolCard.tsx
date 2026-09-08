@@ -103,9 +103,9 @@ export default function CatalogueToolCard({
         </span>
 
         {badge && (
-          <span className="absolute top-3 right-3 max-w-[calc(100%-24px)]">
+          <div className="absolute top-3 right-3 left-3 flex justify-end">
             <CardBadge>{badge}</CardBadge>
-          </span>
+          </div>
         )}
       </div>
 
