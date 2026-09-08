@@ -20,6 +20,12 @@ export type {
   SetupToneName,
 } from '@/types/aiSetup'
 export type { BlogPost } from '@/types/blog'
+export type {
+  FeaturedMediaOverride,
+  FeaturedSelection,
+  FeaturedTool,
+} from '@/types/featured'
+export type { ToolMediaFields } from '@/types/media'
 export type { Category } from '@/types/category'
 export type { ComparisonRow, Faq, Stat } from '@/types/content'
 export type { PopularWay, PopularWayIconName } from '@/types/popularWay'
