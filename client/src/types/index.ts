@@ -16,6 +16,7 @@ export type {
 export type { BlogPost } from '@/types/blog'
 export type { Category } from '@/types/category'
 export type { ComparisonRow, Faq, Stat } from '@/types/content'
+export type { PopularWay, PopularWayIconName } from '@/types/popularWay'
 export type { BillingPeriod, FeatureMatrixRow, PricingTier } from '@/types/pricing'
 export type { SortDefinition, StageDefinition, Taxonomy } from '@/types/taxonomy'
 export type {
