@@ -1,8 +1,12 @@
 import type { PricingModel, Tool } from '@/types/tool'
 
 /*
- * The card's colour logic, kept out of the component so both the card and its
- * skeleton can share the rotation and neither owns a palette.
+ * The values a card DERIVES from a tool: its tone rotation, its pricing colour,
+ * its call-to-action wording and its badge.
+ *
+ * Kept out of the components so the card and its skeleton share one palette,
+ * and so a caller can ask a question — "does this tool earn a badge?" — without
+ * rendering anything.
  *
  * Source: AI Tool Kart Site.dc.html — the `pal` array in the browse `results`
  * mapping and `priceTone()`.
@@ -84,4 +88,51 @@ export function priceTone(model: PricingModel): PriceTone {
  */
 export function ctaLabel(tool: Tool): string {
   return tool.pricingTier === 'paid' ? 'See pricing' : 'Start free'
+}
+
+/*
+ * ── Where a badge comes from, and why most cards have none ───────────────────
+ *
+ * The catalogue HAS a `badge` field — `z.string().max(40)` in the server's
+ * schema — and when it is set, it wins outright. It is the curator's own words
+ * and nothing here should second-guess them.
+ *
+ * It is empty on all 66 seeded records, though, alongside `rating`, `reviews`,
+ * `trend` and `verified`, which are 0 / 0 / "" / true on every single tool.
+ * Those five carry no information at all right now, so nothing can be derived
+ * from them without inventing it.
+ *
+ * `pop` is the exception. It varies — 95×12, 85×10, 70×22, 55×13, 40×9 — and
+ * the server names those exact thresholds in `PROMINENCE`
+ * (household / major / established / growing / niche), describing them as "how
+ * widely known and adopted a tool is, as judged by whoever curates the
+ * catalogue". Surfacing the top two bands is therefore restating an editorial
+ * judgement the catalogue already made, in the catalogue's own vocabulary —
+ * not manufacturing one. 22 of 66 cards carry a badge, which keeps it a signal
+ * rather than decoration.
+ *
+ * What is deliberately NOT done: no "Editors' pick" or "Fastest growing"
+ * inferred from a tool's name or category. Those are factual claims about real
+ * third-party products, and the seed catalogue's own convention is to record
+ * "not recorded" rather than fabricate — see NOT_RECORDED in the server's
+ * taxonomy. A badge that flatters a vendor the catalogue never assessed is the
+ * one thing a tool directory must not print.
+ */
+
+/** The server's `PROMINENCE` thresholds, and the label each earns. */
+const PROMINENCE_BADGES: ReadonlyArray<{ min: number; label: string }> = [
+  { min: 95, label: 'Widely used' },
+  { min: 85, label: 'Popular' },
+]
+
+/**
+ * The badge a tool should show, or undefined for none.
+ *
+ * Exported so a caller can ask the question without rendering — a compact list
+ * that has no room for a badge still wants to know whether one exists.
+ */
+export function badgeFor(tool: Tool): string | undefined {
+  const curated = tool.badge.trim()
+  if (curated) return curated
+  return PROMINENCE_BADGES.find((band) => tool.pop >= band.min)?.label
 }

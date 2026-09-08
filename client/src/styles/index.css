@@ -177,6 +177,55 @@
       transparent 64%
     );
   }
+
+  /*
+   * The cursor-tracking EDGE glow on a catalogue card — a 1px lit rim, not a
+   * wash across the surface.
+   *
+   * ── Why this cannot be Tailwind arbitrary values ─────────────────────────
+   *
+   * The ring is a radial gradient clipped to the border by the standard
+   * two-layer mask trick: paint the full box, mask out the content box, keep
+   * the 1px padding ring. That needs `mask` (or `mask-image`) and
+   * `mask-composite` to land in ONE rule, in that order.
+   *
+   * Written as two arbitrary classes — `[mask:…]` and `[mask-composite:…]` —
+   * Tailwind emits them as two separate rules of equal specificity, ~51KB
+   * apart in the sheet, with the `mask` SHORTHAND last. The shorthand resets
+   * `mask-composite` to `add`, so the cut-out never happens and the entire
+   * radial paints as a fill: on a card whose accent is `#7DD3FC`, that is a
+   * bright cyan bloom over half the card instead of a thin rim.
+   *
+   * Declaring it here makes the order a property of one rule rather than of
+   * the class sort, so it cannot come apart again.
+   *
+   * Tuned a touch calmer than the handoff: the accent is carried at 0.55
+   * rather than full strength and the fade runs 450ms rather than 350ms, so
+   * the rim reads as a surface response rather than a light source.
+   */
+  [data-spot-edge] {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+    background: radial-gradient(
+      190px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in srgb, var(--acc, #a78bfa) 55%, transparent) 0%,
+      rgba(255, 255, 255, 0.1) 40%,
+      transparent 68%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
 }
 
 @layer base {

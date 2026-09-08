@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
-import { ctaLabel, priceTone, toneForIndex } from '@/components/catalogue/toolCardTone'
+import CardBadge from '@/components/catalogue/CardBadge'
+import { badgeFor, ctaLabel, priceTone, toneForIndex } from '@/components/catalogue/toolCardTone'
 import type { Tool } from '@/types/tool'
 
 /*
@@ -55,6 +56,7 @@ export default function CatalogueToolCard({
 }: CatalogueToolCardProps) {
   const tone = toneForIndex(index)
   const price = priceTone(tool.model)
+  const badge = badgeFor(tool)
 
   const style: ToneVars = {
     '--acc': tone.accent,
@@ -68,21 +70,28 @@ export default function CatalogueToolCard({
       data-reveal="stagger"
       data-spot="1"
       style={style}
-      className="relative flex flex-col overflow-hidden rounded-panel border border-white/[0.075] bg-[linear-gradient(180deg,rgba(255,255,255,0.055)_0%,rgba(255,255,255,0.018)_100%)] shadow-[inset_0_1px_0_rgba(224,212,255,0.16),inset_0_-1px_0_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.4),0_24px_46px_-34px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow,background] duration-[380ms] ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[6px] hover:border-[rgba(178,150,255,0.32)] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.078)_0%,rgba(255,255,255,0.022)_100%)] hover:shadow-[inset_0_1px_0_rgba(240,232,255,0.3),0_2px_6px_rgba(0,0,0,0.45),0_34px_60px_-30px_var(--glow)]"
+      className="relative flex flex-col overflow-hidden rounded-panel border border-white/[0.075] bg-[linear-gradient(180deg,rgba(255,255,255,0.055)_0%,rgba(255,255,255,0.018)_100%)] shadow-[inset_0_1px_0_rgba(224,212,255,0.16),inset_0_-1px_0_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.4),0_24px_46px_-34px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow,background] duration-[420ms] ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[4px] hover:border-[rgba(178,150,255,0.3)] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.072)_0%,rgba(255,255,255,0.021)_100%)] hover:shadow-[inset_0_1px_0_rgba(240,232,255,0.26),0_2px_6px_rgba(0,0,0,0.45),0_26px_48px_-34px_var(--glow)]"
     >
-      {/* Cursor spotlight and the matching 1px edge glow, both driven by the
-          shared pointer hook. The edge uses a mask-composite ring so the glow
-          lands on the border rather than washing the card. */}
+      {/*
+       * The two cursor-tracking hover layers, faded in by the shared pointer
+       * hook: a soft fill and a 1px lit rim.
+       *
+       * The rim's geometry and its mask live in styles/index.css under
+       * [data-spot-edge]. It cannot be expressed as Tailwind arbitrary values:
+       * `mask` and `mask-composite` become two rules of equal specificity with
+       * the shorthand last, which resets the composite and turns the rim into
+       * a full-card wash of the accent colour.
+       *
+       * The fill is carried here because its radius keys off `--t1`, the
+       * card's own tone. Softened from the handoff's 220px/0.03 to 200px/0.022
+       * so it reads under the content rather than over it.
+       */}
       <span
         data-spot-layer="1"
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[4] rounded-panel opacity-0 transition-opacity duration-[350ms] [background:radial-gradient(220px_circle_at_var(--mx,50%)_var(--my,50%),var(--t1)_0%,rgba(255,255,255,0.03)_34%,transparent_64%)]"
+        className="pointer-events-none absolute inset-0 z-[4] rounded-panel opacity-0 transition-opacity duration-[450ms] [background:radial-gradient(200px_circle_at_var(--mx,50%)_var(--my,50%),var(--t1)_0%,rgba(255,255,255,0.022)_36%,transparent_66%)]"
       />
-      <span
-        data-spot-edge="1"
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[5] rounded-panel p-px opacity-0 transition-opacity duration-[350ms] [background:radial-gradient(190px_circle_at_var(--mx,50%)_var(--my,50%),var(--acc)_0%,rgba(255,255,255,0.13)_40%,transparent_68%)] [mask-composite:exclude] [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]"
-      />
+      <span data-spot-edge="1" aria-hidden="true" className="z-[5]" />
 
       <div className="relative flex h-[132px] items-center justify-center overflow-hidden border-b border-white/[0.06] bg-[linear-gradient(158deg,var(--t1)_0%,rgba(18,14,32,0.72)_62%,rgba(12,9,22,0.9)_100%)]">
         <span
@@ -93,14 +102,9 @@ export default function CatalogueToolCard({
           {tool.mono}
         </span>
 
-        {/* Empty across the seeded catalogue; rendered the day one is set. */}
-        {tool.badge && (
-          <span className="absolute top-3 right-3 inline-flex items-center gap-[5px] rounded-pill border border-[rgba(190,164,255,0.42)] bg-[linear-gradient(180deg,rgba(96,64,190,0.55),rgba(46,30,96,0.5))] px-[10px] py-[5px] text-[9.5px] font-bold tracking-[0.13em] text-[#EADFFF] uppercase">
-            <span
-              aria-hidden="true"
-              className="h-[4.5px] w-[4.5px] rounded-full bg-[#C4AAFF] shadow-[0_0_8px_1.5px_rgba(167,139,250,0.9)]"
-            />
-            {tool.badge}
+        {badge && (
+          <span className="absolute top-3 right-3 max-w-[calc(100%-24px)]">
+            <CardBadge>{badge}</CardBadge>
           </span>
         )}
       </div>
