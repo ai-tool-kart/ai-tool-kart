@@ -112,3 +112,78 @@ export async function getToolBySlug(slug: string, signal?: AbortSignal): Promise
 
 /** The sort the API applies when none is asked for. */
 export const DEFAULT_SORT: SortOption = 'relevance'
+
+/* ─── The slug index ─────────────────────────────────────────────────────────
+ *
+ * A slug → Tool map of the whole active catalogue, fetched once and shared.
+ *
+ * ── Why this exists ──────────────────────────────────────────────────────────
+ *
+ * Some surfaces do not filter the catalogue, they REFERENCE it: an editorial AI
+ * setup names three or four tools by slug, and the homepage's setup section
+ * holds nineteen such setups over about thirty distinct tools. The two obvious
+ * ways to resolve that are both wrong. One `GET /api/tools/:slug` per reference
+ * is thirty requests for one section. Re-querying on every filter chip is a
+ * request per interaction for data that has not changed.
+ *
+ * So the catalogue is read once — 66 records over two pages, about 46KB per page
+ * uncompressed — and every reference is answered from memory afterwards. Chip
+ * filtering then costs nothing, and a second consumer (the Workflows screen, a
+ * setup detail view) shares the same fetch.
+ *
+ * ── What it is not ───────────────────────────────────────────────────────────
+ *
+ * It is NOT a client-side substitute for the API's filtering. Browse still asks
+ * the server every question it asks, because the server paginates and ranks and
+ * this map would only ever be a stale copy of the first N records. This is a
+ * lookup table for known keys, which is the one job a full read is honestly good
+ * at.
+ *
+ * ── The size it stops being right at ─────────────────────────────────────────
+ *
+ * This reads the whole catalogue, so it scales with the catalogue and not with
+ * what is on screen. At 66 tools that is the cheaper trade by a wide margin; at
+ * a few hundred it stops being. The upgrade is a slug filter on the endpoint
+ * that already exists — `GET /api/tools?slug=claude&slug=cursor`, alongside the
+ * repeatable `cat` and `tag` it already accepts — at which point this function
+ * fetches only the slugs asked for and every caller stays as it is. That is a
+ * server change, so it is not made here.
+ *
+ * Like services/taxonomy.ts, the promise is shared and therefore takes no
+ * AbortSignal: one component unmounting must not cancel the read the others are
+ * waiting on. A rejection clears the slot so a later mount retries.
+ */
+
+/** Guards the paging loop against a server that never stops returning cursors. */
+const MAX_INDEX_PAGES = 20
+
+export type ToolIndex = ReadonlyMap<string, Tool>
+
+let indexInFlight: Promise<ToolIndex> | undefined
+
+export async function getToolIndex(): Promise<ToolIndex> {
+  if (!indexInFlight) {
+    indexInFlight = loadIndex().catch((error: unknown) => {
+      indexInFlight = undefined
+      throw error
+    })
+  }
+  return indexInFlight
+}
+
+async function loadIndex(): Promise<ToolIndex> {
+  const index = new Map<string, Tool>()
+  let cursor: string | undefined
+
+  for (let page = 0; page < MAX_INDEX_PAGES; page += 1) {
+    // `sort: 'name'` rather than the default: relevance with no query is the
+    // repository's popularity order, which is fine but arbitrary here, and a
+    // stable, obviously-total ordering makes a partial read easy to reason about.
+    const response = await getTools({ sort: 'name', limit: MAX_PAGE_SIZE, cursor })
+    for (const tool of response.items) index.set(tool.slug, tool)
+    cursor = response.nextCursor
+    if (!cursor) break
+  }
+
+  return index
+}

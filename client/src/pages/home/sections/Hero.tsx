@@ -1,11 +1,11 @@
-import { useCallback, useRef, useState } from 'react'
+import { useState } from 'react'
 import AssistantStage from '@/components/assistant/AssistantStage'
 import BuildSetupCard from '@/components/assistant/BuildSetupCard'
 import HeroSearch from '@/pages/home/sections/HeroSearch'
 import KindTabs from '@/pages/home/sections/KindTabs'
 import StatBlock from '@/components/ui/StatBlock'
 import TypedWord from '@/components/ui/TypedWord'
-import { useAssistant } from '@/hooks/useAssistant'
+import type { HomeAssistant } from '@/pages/home/useHomeAssistant'
 import { HERO_INDEX_LINE, HERO_KINDS, HERO_WORD_CHAIN } from '@/data/hero'
 import { HERO_STATS } from '@/data/stats'
 
@@ -19,44 +19,34 @@ import { HERO_STATS } from '@/data/stats'
  *
  * Between the search and the stats sit the design's two-pane "AI Assistant /
  * Your AI Plan" stage and the "Build Your AI Setup" card. Both are surfaces onto
- * ONE conversation, which is why the session is owned here and passed down: the
- * search box, the composer inside the chat panel and the "Let's Build" button
- * are three ways into the same POST /api/assistant/chat thread, and a plan built
- * from the setup card has to be refinable by the next message typed in the chat.
+ * ONE conversation: the search box, the composer inside the chat panel and the
+ * "Let's Build" button are three ways into the same POST /api/assistant/chat
+ * thread, and a plan built from the setup card has to be refinable by the next
+ * message typed in the chat.
+ *
+ * That session is no longer created here. The "AI for Your Work" cards further
+ * down the page are a fourth way into the same thread, so it is owned one level
+ * up in pages/home/useHomeAssistant.ts and handed in. Nothing else changed.
  *
  * The headline replaces the first export's "Every AI tool, sorted by …". Every
  * word of copy here is the final design's.
  */
 
-export default function Hero() {
+interface HeroProps {
+  /** The page's one assistant conversation. See pages/home/useHomeAssistant.ts. */
+  assistant: HomeAssistant
+}
+
+export default function Hero({ assistant }: HeroProps) {
   const [kind, setKind] = useState(HERO_KINDS[0].label)
   const [task, setTask] = useState<string | undefined>(undefined)
-  const assistant = useAssistant()
-  const stageRef = useRef<HTMLDivElement>(null)
-
-  /*
-   * Brings the stage into view when a turn is sent from outside it — the hero
-   * search above it, or "Let's Build" below. Only scrolls when the panel is
-   * actually off-screen, as the design does: yanking the page on every send
-   * would fight a reader who has already scrolled to where they want to be.
-   */
-  const revealStage = useCallback(() => {
-    const el = stageRef.current
-    if (!el) return
-    const rect = el.getBoundingClientRect()
-    if (rect.top >= 80 && rect.bottom <= window.innerHeight) return
-    window.scrollTo({ top: window.scrollY + rect.top - 120, behavior: 'smooth' })
-  }, [])
+  const { session, stageRef, revealStage, ask } = assistant
 
   /* The design hands the hero query straight to the assistant panel. */
-  const runTask = useCallback(
-    (query: string) => {
-      setTask(query)
-      assistant.send(query)
-      revealStage()
-    },
-    [assistant, revealStage],
-  )
+  const runTask = (query: string) => {
+    setTask(query)
+    ask(query)
+  }
 
   return (
     <section className="relative z-[1] mx-auto max-w-site px-8 pt-[125px] text-center">
@@ -97,12 +87,12 @@ export default function Hero() {
 
       <HeroSearch onSubmit={runTask} activeTask={task} />
 
-      <AssistantStage session={assistant} panelRef={stageRef} />
+      <AssistantStage session={session} panelRef={stageRef} />
 
       <BuildSetupCard
-        onBuild={assistant.send}
+        onBuild={session.send}
         onScrollToStage={revealStage}
-        busy={assistant.status === 'thinking'}
+        busy={session.status === 'thinking'}
       />
 
       <div data-reveal="0" className="mt-[65px]">
