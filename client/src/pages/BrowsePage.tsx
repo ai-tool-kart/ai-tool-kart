@@ -195,15 +195,27 @@ export default function BrowsePage() {
       />
 
       <div className="relative mt-[22px] grid items-start gap-[34px] lg:grid-cols-[236px_1fr]">
-        {/* Below the design's two-column width the rail would squeeze the grid
-            to one card, so it drops out and the chip row carries the filtering. */}
-        <div className="hidden lg:block">
-          <RefineSidebar
-            tiers={taxonomy.data?.pricingTiers ?? []}
-            selected={filters.price}
-            onToggle={(tier: PricingTierName) => update({ price: toggle(filters.price, tier) })}
-          />
-        </div>
+        {/*
+         * A DIRECT grid item, deliberately. `position: sticky` on a grid item
+         * resolves against its grid AREA, which is as tall as the results
+         * column beside it; nested inside a wrapper div it would resolve
+         * against that div, which under `items-start` is exactly its own
+         * height — no travel, and the rail scrolls away. The responsive
+         * hiding therefore rides on the aside itself, not on a wrapper.
+         *
+         * Below the design's two-column width the rail would squeeze the grid
+         * to a single card, so it drops out and the chip row carries the
+         * filtering.
+         */}
+        <RefineSidebar
+          className="hidden lg:flex"
+          tiers={taxonomy.data?.pricingTiers ?? []}
+          selected={filters.price}
+          onToggle={(tier: PricingTierName) => update({ price: toggle(filters.price, tier) })}
+          onClearTiers={() => update({ price: [] })}
+          minRating={filters.minRating}
+          onMinRatingChange={(minRating) => update({ minRating }, { fromTyping: true })}
+        />
 
         <div>
           <div className="mb-[18px] flex items-baseline justify-between gap-4">

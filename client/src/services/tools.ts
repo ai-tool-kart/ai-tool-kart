@@ -18,7 +18,7 @@ import type { SortOption, Tool, ToolFilters } from '@/types/tool'
  *   price      'free'|'freemium'|'paid'[]   NOTE: tier, not the `model` string
  *   stage      WorkflowStage[]         not yet surfaced in the UI
  *   tag        string[]                not yet surfaced in the UI
- *   minRating  0–5                     NOT SENT — see below
+ *   minRating  0–5                     rating floor; omitted when 0
  *   sort       relevance|popular|rating|reviews|name
  *   limit      1–50 (default 24)
  *   cursor     opaque, from nextCursor
@@ -27,9 +27,11 @@ import type { SortOption, Tool, ToolFilters } from '@/types/tool'
  * whole request. Callers must therefore pass values already validated against
  * the taxonomy; utils/browseParams.ts is where a hand-edited URL gets cleaned.
  *
- * `minRating` is deliberately never sent. Every tool in the seeded catalogue has
- * `rating: 0`, so any floor above 0 returns an empty catalogue: the parameter
- * works exactly as designed and is simply unusable until ratings exist.
+ * `minRating` is sent whenever the Refine rail's slider is above 0. Worth
+ * knowing what that means today: every tool in the seeded catalogue has
+ * `rating: 0`, so any floor above 0 returns an empty result set. That is the
+ * parameter working exactly as specified against a catalogue with no ratings —
+ * not a bug in either layer — and the page's empty state handles it.
  */
 
 const TOOLS_PATH = '/tools'
@@ -73,6 +75,8 @@ export function toolQueryString(query: ToolQuery): string {
   if (q) params.set('q', q)
   for (const cat of query.cat ?? []) params.append('cat', cat)
   for (const price of query.price ?? []) params.append('price', price)
+  // 0 is "no floor", which the API expresses by the parameter's absence.
+  if (query.minRating) params.set('minRating', String(query.minRating))
   // `relevance` is the server's default, so sending it says nothing.
   if (query.sort && query.sort !== 'relevance') params.set('sort', query.sort)
   if (query.limit !== undefined) params.set('limit', String(query.limit))

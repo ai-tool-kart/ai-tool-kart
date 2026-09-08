@@ -27,7 +27,28 @@ import type { PricingTierName, SortOption, ToolCategoryName, ToolFilters } from 
 /** No sort param in the URL means the API's own default. */
 export const DEFAULT_SORT: SortOption = 'relevance'
 
-export const EMPTY_FILTERS: ToolFilters = { q: '', cat: [], price: [], sort: DEFAULT_SORT }
+/** No floor. Also the value that is omitted from the URL and the request. */
+export const DEFAULT_MIN_RATING = 0
+/** The API's range, and the reference slider's step. */
+export const MIN_RATING_MAX = 5
+export const MIN_RATING_STEP = 0.5
+
+export const EMPTY_FILTERS: ToolFilters = {
+  q: '',
+  cat: [],
+  price: [],
+  minRating: DEFAULT_MIN_RATING,
+  sort: DEFAULT_SORT,
+}
+
+/** Clamps a URL value onto the API's accepted range and step. */
+function readMinRating(raw: string | null): number {
+  if (raw === null) return DEFAULT_MIN_RATING
+  const value = Number(raw)
+  if (!Number.isFinite(value)) return DEFAULT_MIN_RATING
+  const clamped = Math.min(Math.max(value, 0), MIN_RATING_MAX)
+  return Math.round(clamped / MIN_RATING_STEP) * MIN_RATING_STEP
+}
 
 /**
  * Reads filter state out of a query string.
@@ -49,6 +70,7 @@ export function parseBrowseParams(
 
   return {
     q: params.get('q') ?? '',
+    minRating: readMinRating(params.get('minRating')),
     cat: unique(params.getAll('cat')).filter((v): v is ToolCategoryName => categories.has(v)),
     price: unique(params.getAll('price')).filter((v): v is PricingTierName => tiers.has(v)),
     sort: rawSort && sorts.has(rawSort) ? (rawSort as SortOption) : DEFAULT_SORT,
@@ -68,6 +90,7 @@ export function toBrowseParams(filters: ToolFilters): URLSearchParams {
   if (q) params.set('q', q)
   for (const cat of filters.cat) params.append('cat', cat)
   for (const price of filters.price) params.append('price', price)
+  if (filters.minRating !== DEFAULT_MIN_RATING) params.set('minRating', String(filters.minRating))
   if (filters.sort !== DEFAULT_SORT) params.set('sort', filters.sort)
   return params
 }
@@ -78,6 +101,7 @@ export function hasActiveFilters(filters: ToolFilters): boolean {
     filters.q.trim().length > 0 ||
     filters.cat.length > 0 ||
     filters.price.length > 0 ||
+    filters.minRating !== DEFAULT_MIN_RATING ||
     filters.sort !== DEFAULT_SORT
   )
 }

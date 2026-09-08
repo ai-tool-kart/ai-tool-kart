@@ -133,5 +133,15 @@ export interface ToolFilters {
   q: string
   cat: ToolCategoryName[]
   price: PricingTierName[]
+  /**
+   * Rating floor, 0–5 in steps of 0.5. 0 means no floor and is not sent.
+   *
+   * The API has always supported this; the control is wired straight to it. Be
+   * aware of what the catalogue currently holds, though: `rating` is 0 on all 66
+   * seeded records, so any floor above 0 legitimately returns nothing. The
+   * filter is not broken when that happens — it is answering honestly about a
+   * catalogue that has no ratings yet.
+   */
+  minRating: number
   sort: SortOption
 }
