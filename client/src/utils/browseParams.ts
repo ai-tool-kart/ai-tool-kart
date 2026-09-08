@@ -41,13 +41,24 @@ export const EMPTY_FILTERS: ToolFilters = {
   sort: DEFAULT_SORT,
 }
 
-/** Clamps a URL value onto the API's accepted range and step. */
+/**
+ * Clamps a URL value onto the API's accepted range and the slider's step.
+ *
+ * Snapping DOWN, not to the nearest step. A hand-written `?minRating=4.8` is not
+ * representable on a 0.5-step slider, so it has to move — and it must move
+ * toward the looser filter. Rounding to nearest sent 4.8 up to 5.0, which is a
+ * STRICTER filter than the URL asked for and silently hid the four tools rated
+ * exactly 4.8. Flooring gives 4.5: a superset that still contains every tool
+ * the reader asked to see, and a value the slider can actually show.
+ *
+ * Slider-produced values are already on-step, so this is a no-op for them.
+ */
 function readMinRating(raw: string | null): number {
   if (raw === null) return DEFAULT_MIN_RATING
   const value = Number(raw)
   if (!Number.isFinite(value)) return DEFAULT_MIN_RATING
   const clamped = Math.min(Math.max(value, 0), MIN_RATING_MAX)
-  return Math.round(clamped / MIN_RATING_STEP) * MIN_RATING_STEP
+  return Math.floor(clamped / MIN_RATING_STEP) * MIN_RATING_STEP
 }
 
 /**

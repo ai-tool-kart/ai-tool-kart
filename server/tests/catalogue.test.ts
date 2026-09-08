@@ -211,13 +211,69 @@ await test('the real seed catalogue', async (t) => {
     }
   })
 
-  await t.test('ratings are the honest "unrated" sentinel, not invented numbers', () => {
-    // The seed catalogue has no review system behind it. 0 means "no ratings
-    // collected yet"; anything between 1 and 5 would be fabricated precision.
+  /*
+   * This block used to assert that every rating was 0.
+   *
+   * That was the right guardrail while the catalogue had no ratings at all: a
+   * number between 1 and 5 would have been fabricated precision. V1 now seeds
+   * ratings and review counts deliberately, as INTERNAL CATALOGUE METADATA —
+   * editorial standing, derived from each record's own `pop` band, not a
+   * measurement of an external review platform. The guardrail therefore moves
+   * rather than disappears: it now pins the shape that seeding must keep, so a
+   * later real review pipeline can drop in and a careless edit still fails.
+   *
+   * Read the accompanying note in src/catalogue/schema.ts before changing this.
+   */
+  await t.test('seeded ratings stay inside the believable band', () => {
     for (const tool of allTools) {
-      assert.equal(tool.rating, 0, `${tool.id} carries an invented rating`)
-      assert.equal(tool.reviews, 0, `${tool.id} carries an invented review count`)
+      if (tool.rating === 0) continue
+      assert.ok(
+        tool.rating >= 3 && tool.rating <= 5,
+        `${tool.id}: rating ${tool.rating} is outside the seeded 3–5 band`,
+      )
+      // One decimal place. 4.37 would claim a precision nothing measured.
+      assert.equal(
+        Math.round(tool.rating * 10) / 10,
+        tool.rating,
+        `${tool.id}: rating ${tool.rating} carries invented precision`,
+      )
     }
+  })
+
+  await t.test('an unrated record carries no reviews either', () => {
+    // The two fields are one statement: "nothing collected yet". A tool with 0
+    // rating and 900 reviews would be incoherent, and would sort above rated
+    // tools under `sort=reviews`.
+    for (const tool of allTools) {
+      if (tool.rating === 0) {
+        assert.equal(tool.reviews, 0, `${tool.id} is unrated but claims reviews`)
+      } else {
+        assert.ok(tool.reviews > 0, `${tool.id} is rated but claims no reviews`)
+      }
+    }
+  })
+
+  await t.test('ratings vary enough for the rating filter to mean something', () => {
+    // A catalogue where every tool scores 4.6 makes the Browse minimum-rating
+    // control a no-op. These floors must keep producing different result sets.
+    const atLeast = (floor: number) =>
+      allTools.filter((tool) => tool.rating > 0 && tool.rating >= floor).length
+
+    assert.ok(atLeast(3) > atLeast(4), 'a 4.0 floor must exclude more than a 3.0 floor')
+    assert.ok(atLeast(4) > atLeast(4.5), 'a 4.5 floor must exclude more than a 4.0 floor')
+    assert.ok(atLeast(4.5) > 0, 'a 4.5 floor must still return something')
+    assert.ok(
+      new Set(allTools.map((tool) => tool.rating)).size >= 8,
+      'too few distinct ratings for the filter to discriminate',
+    )
+  })
+
+  await t.test('some tools are honestly left unrated', () => {
+    // A seed catalogue that claims to have assessed all 66 tools it lists is
+    // claiming more than it has done — and the card's "no rating" path needs to
+    // stay exercised by real data rather than only by a unit test.
+    const unrated = allTools.filter((tool) => tool.rating === 0)
+    assert.ok(unrated.length > 0, 'every tool is rated; nothing exercises the unrated path')
   })
 
   await t.test('every record carries the recommendation metadata retrieval needs', () => {

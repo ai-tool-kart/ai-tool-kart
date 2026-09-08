@@ -72,10 +72,23 @@ export const ToolSchema = z
     model: z.enum(PRICING_MODELS),
     tagline: nonEmpty(160),
     /*
-     * 0 means "no ratings collected yet", which is the honest value for a seed
-     * catalogue with no review system behind it. Anything else must be a real
-     * 1–5 rating, so a typo'd 0.5 or 50 fails the boot rather than skewing the
-     * "Highest rated" sort silently.
+     * 0 means "not assessed yet"; anything else is a 1–5 score.
+     *
+     * ── What these numbers are, and are not ─────────────────────────────────
+     *
+     * V1 SEEDS ratings and review counts as INTERNAL CATALOGUE METADATA: an
+     * editorial read of how well regarded a tool is, derived deterministically
+     * from its own `pop` prominence band. They are not sampled from an external
+     * review platform and must not be presented as if they were. Four records
+     * are deliberately left at 0 — a catalogue that scores every tool it lists
+     * claims more assessment than it has done.
+     *
+     * The shape is pinned by tests/catalogue.test.ts (band, precision, spread,
+     * and the rule that unrated implies no reviews) so a real review pipeline
+     * can replace the seeding without loosening the contract.
+     *
+     * The bound stays strict either way: a typo'd 0.5 or 50 fails the boot
+     * rather than skewing the "Highest rated" sort silently.
      */
     rating: z
       .number()
