@@ -164,6 +164,19 @@ export const STORIES_API = {
   maxLimit: 50,
 } as const
 
+/**
+ * GET /api/work-savings — the role estimates behind "See What AI Can Save You".
+ *
+ * Editorial content, like the stories, so it has no default limit: the selector
+ * offers every role it holds and a silent truncation would drop roles from a
+ * dropdown with nothing saying why. `maxLimit` only bounds what a caller may
+ * ask for.
+ */
+export const SAVINGS_API = {
+  path: '/work-savings',
+  maxLimit: 50,
+} as const
+
 /* ─── Phase D — the LLM layer ──────────────────────────────────────────────── */
 
 /*

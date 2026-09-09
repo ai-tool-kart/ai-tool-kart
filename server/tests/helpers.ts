@@ -17,7 +17,9 @@ import type { ServerEnv } from '../src/config/env.ts'
 import { createContainer, type Container } from '../src/container.ts'
 import type { MockProviderOptions } from '../src/llm/providers/mock.ts'
 import type { AssistantReply } from '../src/assistant/schema.ts'
-import type { Tool, UsageStory } from '../src/domain/types.ts'
+import type { Tool, UsageStory, WorkSavingsEstimate } from '../src/domain/types.ts'
+import { createJsonWorkSavingsRepository } from '../src/savings/json.ts'
+import type { WorkSavingsRepository } from '../src/savings/repository.ts'
 import { createJsonUsageStoryRepository } from '../src/stories/json.ts'
 import type { UsageStoryRepository } from '../src/stories/repository.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
@@ -85,6 +87,7 @@ export function testContainer(
   catalogue?: ToolCatalogueRepository,
   mock?: MockProviderOptions,
   stories?: UsageStoryRepository,
+  savings?: WorkSavingsRepository,
 ): Container {
   return createContainer({
     env,
@@ -92,6 +95,7 @@ export function testContainer(
     ...(catalogue ? { catalogue } : {}),
     ...(mock ? { mock } : {}),
     ...(stories ? { stories } : {}),
+    ...(savings ? { savings } : {}),
   })
 }
 
@@ -184,6 +188,42 @@ export function makeStory(overrides: Partial<UsageStory> = {}): UsageStory {
  */
 export function fixtureStories(stories: UsageStory[]): UsageStoryRepository {
   return createJsonUsageStoryRepository({ records: stories })
+}
+
+/* ─── Work-savings fixtures ────────────────────────────────────────────────── */
+
+/**
+ * A valid work-savings estimate with every required field filled in.
+ *
+ * The three rows are Time, Cost and Effort in that order, because the schema
+ * requires exactly that — a fixture that got it wrong would fail every test
+ * using it rather than the one testing the rule.
+ */
+export function makeSavings(overrides: Partial<WorkSavingsEstimate> = {}): WorkSavingsEstimate {
+  return {
+    id: 'fixture-role',
+    role: 'Fixture Role',
+    hoursSavedPerWeek: 8,
+    costSaved: '20–30%',
+    effortSaved: 'Fixture work automated',
+    rows: [
+      { dimension: 'Time', without: '12 hrs/week on fixture work', withAi: '4 hrs/week' },
+      { dimension: 'Cost', without: 'Paying for fixture work twice', withAi: 'One fixture stack' },
+      { dimension: 'Effort', without: 'Fixture work done by hand', withAi: 'Fixture work batched' },
+    ],
+    order: 0,
+    ...overrides,
+  }
+}
+
+/**
+ * An in-memory WorkSavingsRepository over a fixture array.
+ *
+ * The REAL adapter with its file read bypassed, not a stub — same reasoning as
+ * `fixtureCatalogue` and `fixtureStories`.
+ */
+export function fixtureSavings(estimates: WorkSavingsEstimate[]): WorkSavingsRepository {
+  return createJsonWorkSavingsRepository({ records: estimates })
 }
 
 export interface TestServer {

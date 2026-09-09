@@ -215,6 +215,65 @@ export interface UsageStory {
   order: number
 }
 
+/* ── Work-savings estimates ────────────────────────────────────────────────── */
+
+/** The three axes the "See What AI Can Save You" comparison runs on. */
+export const SAVINGS_DIMENSIONS = ['Time', 'Cost', 'Effort'] as const
+export type SavingsDimension = (typeof SAVINGS_DIMENSIONS)[number]
+
+/** One row of a before/after comparison. */
+export interface SavingsComparisonRow {
+  dimension: SavingsDimension
+  /** What the week looks like without AI. */
+  without: string
+  /** What the same week looks like with it. */
+  withAi: string
+}
+
+/**
+ * What AI-assisted work is estimated to save someone doing a given kind of work.
+ *
+ * ── These are WRITTEN estimates, not measurements ────────────────────────────
+ *
+ * Every number here is editorial. Nothing was benchmarked, no cohort was
+ * sampled, and no test log exists behind any of it — the figures come from the
+ * design handoff and describe what a plausible AI-assisted week looks like. The
+ * UI says so in the reader's own words; see SAVINGS_COPY on the client, which is
+ * the single place that wording lives so it can be replaced the day real
+ * benchmarking does exist.
+ *
+ * That is also why this type carries no confidence interval, sample size, date
+ * or source. Adding one would make an invented figure LOOK sourced, which is
+ * strictly worse than an obviously editorial one.
+ *
+ * ── Roles ────────────────────────────────────────────────────────────────────
+ *
+ * `role` is the label the dropdown shows. `catalogueRole` links it to the
+ * catalogue's own role vocabulary (taxonomy.ts `ROLES`) WHERE ONE MATCHES, so
+ * the site does not grow a second set of role names — but it is optional,
+ * because this section legitimately covers kinds of work no tool is tagged with
+ * ("Restaurant Owner", "Freelancer", "Sales Professional"). One vocabulary where
+ * they overlap, and an honest gap where they do not.
+ */
+export interface WorkSavingsEstimate {
+  /** Stable, URL-safe id. */
+  id: string
+  /** The label shown in the selector. */
+  role: string
+  /** The matching catalogue role, when the vocabulary has one. */
+  catalogueRole?: RoleName
+  /** Whole hours a week. Rendered as "N hrs/week". */
+  hoursSavedPerWeek: number
+  /** A written range, e.g. "25–35%". Never computed. */
+  costSaved: string
+  /** One phrase, e.g. "Repeat admin automated". */
+  effortSaved: string
+  /** Time, Cost and Effort, in that order. */
+  rows: SavingsComparisonRow[]
+  /** Editorial sequence, ascending. Distinct per estimate. */
+  order: number
+}
+
 /* ── The assistant (Phase E) ───────────────────────────────────────────────── */
 
 /**

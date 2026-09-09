@@ -258,6 +258,110 @@ await test('the usage-story boundary holds', async (t) => {
 })
 
 /*
+ * The work-savings boundary.
+ *
+ * A third content source behind a third port, and it earns the same guards for
+ * the same reason. The rule specific to this one is that it must contain NO
+ * ARITHMETIC: the moment a figure here is computed rather than written, the
+ * section stops presenting editorial estimates and starts making a quantitative
+ * claim the project has no measurement behind.
+ */
+await test('the work-savings boundary holds', async (t) => {
+  const SAVINGS_DIR = join(SRC, 'savings')
+  const savingsFiles = files.filter((file) => file.startsWith(SAVINGS_DIR))
+
+  await t.test('the scan found the savings module', () => {
+    assert.ok(savingsFiles.length >= 4, `expected savings/, found ${savingsFiles.length} files`)
+  })
+
+  await t.test('nothing outside savings/ names workSavings.json', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(SAVINGS_DIR))
+      .filter((file) => readFileSync(file, 'utf8').includes('workSavings.json'))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'only src/savings/ may know the estimates are stored as JSON')
+  })
+
+  await t.test('only the JSON adapter reads it, even inside savings/', () => {
+    const offenders = savingsFiles
+      .filter((file) => !file.endsWith('json.ts'))
+      .filter((file) => codeOf(file).includes('workSavings.json'))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the file read belongs in savings/json.ts alone')
+  })
+
+  await t.test('nothing outside savings/ imports from savings/data/', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(SAVINGS_DIR))
+      .filter((file) => /savings\/data/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('the estimates are written, never computed', () => {
+    /*
+     * No arithmetic on a figure anywhere in the module. This is the guard that
+     * keeps "See What AI Can Save You" an editorial section rather than a
+     * calculator: a rate multiplied by an hours field would be a financial claim
+     * with nothing behind it, and it would arrive one small commit at a time.
+     *
+     * The schema's own bounds checks are the documented exception — they compare
+     * against limits, they do not derive a figure.
+     */
+    const offenders = savingsFiles
+      .filter((file) => !file.endsWith('schema.ts'))
+      .filter((file) => /hoursSavedPerWeek\s*[*/+-]|[*/]\s*hoursSavedPerWeek/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'a savings figure must be written, not calculated')
+  })
+
+  await t.test('savings never import the catalogue adapter or the HTTP layer', () => {
+    // It reads ROLES from the taxonomy — vocabulary is configuration and that
+    // import is the whole point of `catalogueRole` — but it must not reach the
+    // repository, the data files, or express.
+    const offenders = savingsFiles
+      .filter((file) =>
+        /catalogue\/(json|data|repository)|from 'express'|from '\.\.\/http\//.test(codeOf(file)),
+      )
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('the catalogue never imports the savings', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(CATALOGUE_DIR))
+      .filter((file) => /from '\.\.\/savings\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('routes never import the JSON savings adapter', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(join(SRC, 'http')))
+      .filter((file) => /createJsonWorkSavingsRepository|savings\/json/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'routes receive a repository from the container')
+  })
+
+  await t.test('container.ts is the only module naming a concrete savings adapter', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(SAVINGS_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => codeOf(file).includes('createJsonWorkSavingsRepository('))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+})
+
+/*
  * The temporary LLM layer.
  *
  * server/src/llm/ is an explicitly temporary copy of the News Agent's LLM

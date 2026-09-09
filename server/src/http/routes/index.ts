@@ -14,12 +14,20 @@
  */
 
 import { Router } from 'express'
-import { ASSISTANT, HEALTH, STORIES_API, TAXONOMY_API, TOOLS_API } from '../../config/limits.ts'
+import {
+  ASSISTANT,
+  HEALTH,
+  SAVINGS_API,
+  STORIES_API,
+  TAXONOMY_API,
+  TOOLS_API,
+} from '../../config/limits.ts'
 import type { Container } from '../../container.ts'
 import { createAssistantRouter } from './assistant.ts'
 import { createHealthRouter } from './health.ts'
 import { createTaxonomyRouter, createToolsRouter } from './tools.ts'
 import { createUsageStoriesRouter } from './usageStories.ts'
+import { createWorkSavingsRouter } from './workSavings.ts'
 
 export function createApiRouter(container: Container): Router {
   const router = Router()
@@ -34,6 +42,7 @@ export function createApiRouter(container: Container): Router {
   )
   router.use(TAXONOMY_API.path, createTaxonomyRouter({ retrieval: container.retrieval }))
   router.use(STORIES_API.path, createUsageStoriesRouter({ stories: container.stories }))
+  router.use(SAVINGS_API.path, createWorkSavingsRouter({ savings: container.savings }))
   router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
 
   return router

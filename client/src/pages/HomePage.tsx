@@ -7,6 +7,7 @@ import FeaturedToolsSection from '@/pages/home/sections/FeaturedToolsSection'
 import Hero from '@/pages/home/sections/Hero'
 import HowPeopleAreUsingAISection from '@/pages/home/sections/HowPeopleAreUsingAISection'
 import PopularWaysSection from '@/pages/home/sections/PopularWaysSection'
+import SavingsSection from '@/pages/home/sections/SavingsSection'
 import RecentlyAddedToolsSection from '@/pages/home/sections/RecentlyAddedToolsSection'
 import TrendingSection from '@/pages/home/sections/TrendingSection'
 import { useHomeAssistant } from '@/pages/home/useHomeAssistant'
@@ -31,6 +32,7 @@ export default function HomePage() {
       <FeaturedToolsSection />
       <RecentlyAddedToolsSection />
       <HowPeopleAreUsingAISection />
+      <SavingsSection />
       <TrendingSection />
       <CategoriesSection />
       <CompareTeaser />

@@ -1,0 +1,389 @@
+[
+  {
+    "id": "restaurant-owner",
+    "role": "Restaurant Owner",
+    "hoursSavedPerWeek": 8,
+    "costSaved": "30–40%",
+    "effortSaved": "Repeat admin automated",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "12 hrs/week on menus, posts and customer follow-ups",
+        "withAi": "4–5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Outsourced design and copy for every campaign",
+        "withAi": "In-house content at a flat tool cost"
+      },
+      {
+        "dimension": "Effort",
+        "without": "The same weekly ops tasks, all done by hand",
+        "withAi": "Menus, posts and reminders generated on a schedule"
+      }
+    ],
+    "order": 10
+  },
+  {
+    "id": "video-editor",
+    "role": "Video Editor",
+    "catalogueRole": "Video Editor",
+    "hoursSavedPerWeek": 10,
+    "costSaved": "25–35%",
+    "effortSaved": "Rough cuts and captions handled",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "14 hrs/week on cuts, subtitles and versioning",
+        "withAi": "4–5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Paid captioning plus stock subscriptions",
+        "withAi": "One stack covers captions and B-roll search"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Scrubbing timelines to find usable takes",
+        "withAi": "Transcript-based selects and automatic subtitles"
+      }
+    ],
+    "order": 20
+  },
+  {
+    "id": "ui-ux-designer",
+    "role": "UI/UX Designer",
+    "catalogueRole": "UI/UX Designer",
+    "hoursSavedPerWeek": 7,
+    "costSaved": "20–30%",
+    "effortSaved": "Fewer manual first drafts",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "11 hrs/week on wires, specs and research notes",
+        "withAi": "4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Contractor hours for early exploration",
+        "withAi": "Explorations in-house before you commit budget"
+      },
+      {
+        "dimension": "Effort",
+        "without": "A blank canvas at the start of every screen",
+        "withAi": "Twenty variants to react to within minutes"
+      }
+    ],
+    "order": 30
+  },
+  {
+    "id": "graphic-designer",
+    "role": "Graphic Designer",
+    "catalogueRole": "Graphic Designer",
+    "hoursSavedPerWeek": 8,
+    "costSaved": "25–35%",
+    "effortSaved": "Resizing and variants automated",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "12 hrs/week on resizes, edits and revisions",
+        "withAi": "4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Stock licences and outsourced retouching",
+        "withAi": "Generated art plus one-click cleanup"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Hand-resizing every asset for every channel",
+        "withAi": "Sizes, crops and variants batched in one run"
+      }
+    ],
+    "order": 40
+  },
+  {
+    "id": "developer",
+    "role": "Developer",
+    "catalogueRole": "Developer",
+    "hoursSavedPerWeek": 9,
+    "costSaved": "20–30%",
+    "effortSaved": "Boilerplate and tests generated",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "13 hrs/week on boilerplate, tests and docs",
+        "withAi": "4–5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Contract help for glue code and cleanup",
+        "withAi": "The same work absorbed by the existing team"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Reading unfamiliar code line by line",
+        "withAi": "Explanations, tests and refactors on request"
+      }
+    ],
+    "order": 50
+  },
+  {
+    "id": "marketer",
+    "role": "Marketer",
+    "catalogueRole": "Marketer",
+    "hoursSavedPerWeek": 11,
+    "costSaved": "35–45%",
+    "effortSaved": "Campaign drafts on tap",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "16 hrs/week on copy, briefs and reporting",
+        "withAi": "5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Freelance copy and design per campaign",
+        "withAi": "One stack for copy, visuals and analysis"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Rewriting the same message for every channel",
+        "withAi": "One brief fanned out across every channel"
+      }
+    ],
+    "order": 60
+  },
+  {
+    "id": "content-creator",
+    "role": "Content Creator",
+    "catalogueRole": "Content Creator",
+    "hoursSavedPerWeek": 10,
+    "costSaved": "30–40%",
+    "effortSaved": "Ideas to posts in one flow",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "15 hrs/week on ideas, scripts and captions",
+        "withAi": "5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Editors and thumbnail designers every drop",
+        "withAi": "Drafts in-house, humans only for the polish"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Starting from nothing every single week",
+        "withAi": "A running idea bank and drafted scripts"
+      }
+    ],
+    "order": 70
+  },
+  {
+    "id": "writer",
+    "role": "Writer",
+    "catalogueRole": "Writer",
+    "hoursSavedPerWeek": 9,
+    "costSaved": "25–35%",
+    "effortSaved": "Research and drafts sped up",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "13 hrs/week on research, outlines and edits",
+        "withAi": "4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Paid research tools plus editing passes",
+        "withAi": "Outlines, sources and line edits in one place"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Blank pages and manual fact-chasing",
+        "withAi": "Structured outlines with sources pulled in"
+      }
+    ],
+    "order": 80
+  },
+  {
+    "id": "researcher",
+    "role": "Researcher",
+    "catalogueRole": "Researcher",
+    "hoursSavedPerWeek": 10,
+    "costSaved": "25–35%",
+    "effortSaved": "Reading load cut down",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "15 hrs/week reading, summarising and coding data",
+        "withAi": "5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Assistant hours for literature and transcripts",
+        "withAi": "Screening and transcription handled in-tool"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Skimming dozens of papers for one answer",
+        "withAi": "Summaries, themes and citations surfaced"
+      }
+    ],
+    "order": 90
+  },
+  {
+    "id": "student",
+    "role": "Student",
+    "catalogueRole": "Student",
+    "hoursSavedPerWeek": 7,
+    "costSaved": "20–30%",
+    "effortSaved": "Study time better spent",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "10 hrs/week on notes, reading and revision",
+        "withAi": "3–4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Tutoring plus paid study material",
+        "withAi": "Explanations and practice on demand"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Rewriting notes just to understand them",
+        "withAi": "Notes turned into quizzes and flashcards"
+      }
+    ],
+    "order": 100
+  },
+  {
+    "id": "freelancer",
+    "role": "Freelancer",
+    "hoursSavedPerWeek": 9,
+    "costSaved": "30–40%",
+    "effortSaved": "Admin off your plate",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "13 hrs/week on proposals, admin and delivery",
+        "withAi": "4–5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Subcontracting the overflow work",
+        "withAi": "More capacity without hiring it out"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Every proposal and invoice written from scratch",
+        "withAi": "Templates that fill themselves from a brief"
+      }
+    ],
+    "order": 110
+  },
+  {
+    "id": "founder",
+    "role": "Founder",
+    "catalogueRole": "Entrepreneur",
+    "hoursSavedPerWeek": 12,
+    "costSaved": "35–45%",
+    "effortSaved": "One person, more surface area",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "18 hrs/week across ops, content and hiring",
+        "withAi": "6 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Early hires or agencies to cover the gaps",
+        "withAi": "Gaps covered until the hire is justified"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Context-switching across every function",
+        "withAi": "A draft waiting in each lane when you arrive"
+      }
+    ],
+    "order": 120
+  },
+  {
+    "id": "sales-professional",
+    "role": "Sales Professional",
+    "hoursSavedPerWeek": 9,
+    "costSaved": "25–35%",
+    "effortSaved": "More time in conversations",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "13 hrs/week on research, emails and CRM notes",
+        "withAi": "4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Paid enrichment plus SDR support",
+        "withAi": "Research and follow-ups handled in-tool"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Manual prospect research before every call",
+        "withAi": "Briefs, drafts and notes prepared for you"
+      }
+    ],
+    "order": 130
+  },
+  {
+    "id": "product-manager",
+    "role": "Product Manager",
+    "catalogueRole": "Product Manager",
+    "hoursSavedPerWeek": 9,
+    "costSaved": "20–30%",
+    "effortSaved": "Less writing, more deciding",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "13 hrs/week on specs, notes and updates",
+        "withAi": "4–5 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Extra research and analyst support",
+        "withAi": "Synthesis and reporting done in-house"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Turning scattered feedback into documents",
+        "withAi": "Feedback clustered and specs drafted for review"
+      }
+    ],
+    "order": 140
+  },
+  {
+    "id": "data-analyst",
+    "role": "Data Analyst",
+    "catalogueRole": "Data Analyst",
+    "hoursSavedPerWeek": 8,
+    "costSaved": "20–30%",
+    "effortSaved": "Cleaning and reporting shortened",
+    "rows": [
+      {
+        "dimension": "Time",
+        "without": "12 hrs/week on cleaning, queries and dashboards",
+        "withAi": "4 hrs/week"
+      },
+      {
+        "dimension": "Cost",
+        "without": "Analyst hours spent on repeat reporting",
+        "withAi": "Recurring reports prepared without a request"
+      },
+      {
+        "dimension": "Effort",
+        "without": "Reshaping the same messy exports each week",
+        "withAi": "Cleanup scripted and summaries written for you"
+      }
+    ],
+    "order": 150
+  }
+]
