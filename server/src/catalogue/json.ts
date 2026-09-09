@@ -212,6 +212,20 @@ function intersects(values: readonly string[], wanted: readonly string[]): boole
   return wanted.some((value) => values.includes(value))
 }
 
+/**
+ * A record's intake date as epoch ms, or -Infinity when it has none.
+ *
+ * -Infinity rather than 0 so an undated record sorts BELOW every dated one under
+ * `newest` — including any dated 1970 — instead of landing in the middle of the
+ * list. "We do not know when this arrived" is not a claim that it arrived long
+ * ago, but it is certainly not a claim that it is new.
+ */
+function addedAtTime(tool: Tool): number {
+  if (!tool.addedAt) return Number.NEGATIVE_INFINITY
+  const parsed = Date.parse(tool.addedAt)
+  return Number.isNaN(parsed) ? Number.NEGATIVE_INFINITY : parsed
+}
+
 function comparator(sort: SortOption, relevance: Map<string, number>) {
   return (a: Tool, b: Tool): number => {
     let primary = 0
@@ -233,6 +247,15 @@ function comparator(sort: SortOption, relevance: Map<string, number>) {
       case 'name':
         primary = a.name.localeCompare(b.name)
         break
+      case 'newest': {
+        const left = addedAtTime(a)
+        const right = addedAtTime(b)
+        // The equality check is what keeps two UNDATED records comparable:
+        // -Infinity minus -Infinity is NaN, and a NaN comparator silently
+        // corrupts the sort rather than failing.
+        primary = left === right ? 0 : right - left
+        break
+      }
     }
     // Total order. Without a tiebreak the sort is unstable across engines and
     // an offset cursor can skip or repeat a record between pages.

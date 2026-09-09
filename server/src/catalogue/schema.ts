@@ -62,6 +62,26 @@ const slug = z
 
 const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
 
+/**
+ * An ISO `YYYY-MM-DD` calendar date that actually exists.
+ *
+ * The regex alone would accept 2026-02-31, which `Date` silently rolls forward
+ * to 3 March — a catalogue that quietly moves a date is worse than one that
+ * refuses to boot, so the round-trip check is part of the rule.
+ */
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be an ISO calendar date, YYYY-MM-DD')
+  .refine(
+    (value) => {
+      // `toISOString()` THROWS on an invalid date, so the guard comes first —
+      // an unparseable value must fail validation, not blow up the parser.
+      const parsed = new Date(`${value}T00:00:00Z`)
+      return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value
+    },
+    { message: 'is not a real calendar date' },
+  )
+
 export const ToolSchema = z
   .object({
     /* ── Display contract ─────────────────────────────────────────────────── */
@@ -119,6 +139,19 @@ export const ToolSchema = z
     pricingTier: z.enum(PRICING_TIERS),
     status: z.enum(TOOL_STATUSES),
     verified: z.boolean(),
+
+    /* ── Catalogue intake ─────────────────────────────────────────────────── */
+    /*
+     * The date the kart listed the tool. See `addedAt` in domain/types.ts for
+     * what it is and is not.
+     *
+     * OPTIONAL, deliberately. Making it required would mean either back-dating
+     * every future record on import or refusing to accept a tool whose intake
+     * date was lost — and "we do not know when this arrived" is a state the
+     * catalogue should be able to hold. An undated record simply never counts
+     * as recently added.
+     */
+    addedAt: isoDate.optional(),
   })
   .strict()
   /*

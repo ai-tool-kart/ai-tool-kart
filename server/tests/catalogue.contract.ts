@@ -32,6 +32,11 @@ import { makeTool } from './helpers.ts'
  * Shaped so each contract assertion has something to bite on: two categories,
  * all three pricing tiers, a draft record, a rated and an unrated record,
  * overlapping and disjoint stages, and enough records to page through.
+ *
+ * `addedAt` is set on every active record EXCEPT gamma-writer. That gap is
+ * deliberate — the field is optional, so an adapter has to say something
+ * sensible about a record whose intake date is unknown, and `sort: newest` is
+ * where that shows.
  */
 export const CONTRACT_FIXTURES: Tool[] = [
   makeTool({
@@ -47,6 +52,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     pricingTier: 'free',
     roles: ['Writer'],
     stages: ['draft', 'edit'],
+    addedAt: '2026-01-10',
   }),
   makeTool({
     id: 'beta-coder',
@@ -62,6 +68,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     roles: ['Developer'],
     useCases: ['Write code faster'],
     stages: ['build'],
+    addedAt: '2026-03-02',
   }),
   makeTool({
     id: 'gamma-writer',
@@ -91,6 +98,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     roles: ['Developer'],
     useCases: ['Generate tests'],
     stages: ['build', 'edit'],
+    addedAt: '2026-02-14',
   }),
   makeTool({
     id: 'epsilon-draft',
@@ -106,6 +114,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     roles: ['Writer'],
     stages: ['draft'],
     status: 'draft',
+    addedAt: '2026-04-01',
   }),
 ]
 
@@ -348,6 +357,47 @@ export async function runCatalogueContract({ name, create }: ContractOptions): P
       const page = await catalogue.search({ sort: 'name', limit: 100 })
       const names = page.items.map((tool) => tool.name)
       assert.deepEqual(names, [...names].sort((a, b) => a.localeCompare(b)))
+    })
+
+    await t.test('sort: newest orders by descending intake date', async () => {
+      const catalogue = await repo()
+      const page = await catalogue.search({ sort: 'newest', limit: 100 })
+      const dated = page.items.filter((tool) => tool.addedAt !== undefined)
+      const dates = dated.map((tool) => tool.addedAt as string)
+      assert.ok(dates.length >= 2, 'the fixture set must date at least two active records')
+      assert.deepEqual(dates, [...dates].sort().reverse())
+    })
+
+    await t.test('sort: newest puts records with no intake date last', async () => {
+      const catalogue = await repo()
+      const page = await catalogue.search({ sort: 'newest', limit: 100 })
+      const ids = page.items.map((tool) => tool.id)
+      const undated = page.items.filter((tool) => tool.addedAt === undefined)
+      assert.ok(undated.length >= 1, 'the fixture set must leave one active record undated')
+
+      // An unknown intake date is not a claim to be new. Every dated record
+      // outranks every undated one, whatever its date.
+      const firstUndated = ids.indexOf(undated[0]?.id as string)
+      const lastDated = page.items.reduce(
+        (last, tool, index) => (tool.addedAt !== undefined ? index : last),
+        -1,
+      )
+      assert.ok(firstUndated > lastDated, 'an undated record sorted above a dated one')
+    })
+
+    await t.test('sort: newest is total, so paging cannot skip or repeat', async () => {
+      const catalogue = await repo()
+      const all = await catalogue.search({ sort: 'newest', limit: 100 })
+      const first = await catalogue.search({ sort: 'newest', limit: 2 })
+      const second = await catalogue.search({
+        sort: 'newest',
+        limit: 2,
+        ...(first.nextCursor ? { cursor: first.nextCursor } : {}),
+      })
+      assert.deepEqual(
+        [...first.items, ...second.items].map((tool) => tool.id),
+        all.items.slice(0, first.items.length + second.items.length).map((tool) => tool.id),
+      )
     })
 
     await t.test('ordering is total, so repeated identical queries agree', async () => {

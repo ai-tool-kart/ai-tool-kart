@@ -1,0 +1,90 @@
+[
+  {
+    "id": "restaurant-owner-menu",
+    "role": "Restaurant Owner",
+    "personName": "Maya R.",
+    "location": "Lisbon",
+    "task": "Create a menu that boosts orders.",
+    "toolSlugs": ["chatgpt", "midjourney", "rows"],
+    "resultHeadline": "New menu live in 2 hrs.",
+    "resultDetail": "Sales up 18% in the first month.",
+    "order": 10
+  },
+  {
+    "id": "video-editor-shorts",
+    "role": "Video Editor",
+    "personName": "Dev P.",
+    "location": "Mumbai",
+    "task": "Turn long videos into short clips.",
+    "toolSlugs": ["descript", "opus-clip", "veed"],
+    "resultHeadline": "10 clips in 15 mins.",
+    "resultDetail": "3× more views across shorts.",
+    "order": 20
+  },
+  {
+    "id": "student-research",
+    "role": "Student",
+    "personName": "Aisha K.",
+    "location": "Toronto",
+    "task": "Summarize research papers fast.",
+    "toolSlugs": ["chatgpt", "elicit", "notion-ai"],
+    "resultHeadline": "Weeks of reading in one afternoon.",
+    "resultDetail": "Cited notes, ready for the essay.",
+    "order": 30
+  },
+  {
+    "id": "freelance-designer-pitch",
+    "role": "Freelance Designer",
+    "personName": "Noah B.",
+    "location": "Berlin",
+    "task": "Pitch three brand directions in a day.",
+    "toolSlugs": ["midjourney", "figma", "claude"],
+    "resultHeadline": "Three concepts, one afternoon.",
+    "resultDetail": "Client signed off on the first round.",
+    "order": 40
+  },
+  {
+    "id": "agency-founder-followups",
+    "role": "Agency Founder",
+    "personName": "Priya S.",
+    "location": "Bengaluru",
+    "task": "Stop losing leads to slow follow-ups.",
+    "toolSlugs": ["claude", "zapier", "clay"],
+    "resultHeadline": "Follow-ups out within the hour.",
+    "resultDetail": "Reply rate up from 9% to 24%.",
+    "order": 50
+  },
+  {
+    "id": "podcast-producer-notes",
+    "role": "Podcast Producer",
+    "personName": "Tom A.",
+    "location": "Dublin",
+    "task": "Turn each interview into notes and clips.",
+    "toolSlugs": ["otter-ai", "descript", "elevenlabs"],
+    "resultHeadline": "Show notes done before the guest leaves.",
+    "resultDetail": "Two hours of editing back every week.",
+    "order": 60
+  },
+  {
+    "id": "product-manager-spec",
+    "role": "Product Manager",
+    "personName": "Sofia M.",
+    "location": "São Paulo",
+    "task": "Turn scattered feedback into one spec.",
+    "toolSlugs": ["notebooklm", "claude", "gamma"],
+    "resultHeadline": "One spec from forty tickets.",
+    "resultDetail": "Kickoff pulled forward by a week.",
+    "order": 70
+  },
+  {
+    "id": "shop-owner-social",
+    "role": "Shop Owner",
+    "personName": "Ines V.",
+    "location": "Porto",
+    "task": "Keep the shop posting without a marketer.",
+    "toolSlugs": ["jasper", "canva", "buffer"],
+    "resultHeadline": "A month of posts in one sitting.",
+    "resultDetail": "First quarter the schedule never slipped.",
+    "order": 80
+  }
+]

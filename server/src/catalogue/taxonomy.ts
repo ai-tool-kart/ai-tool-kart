@@ -569,7 +569,14 @@ export const STAGE_BY_ID: Record<WorkflowStage, StageDefinition> = Object.fromEn
  * display labels, so the mapping is published through GET /api/taxonomy rather
  * than hardcoded a second time in React.
  */
-export const SORT_OPTIONS = ['relevance', 'popular', 'rating', 'reviews', 'name'] as const
+export const SORT_OPTIONS = [
+  'relevance',
+  'popular',
+  'rating',
+  'reviews',
+  'name',
+  'newest',
+] as const
 export type SortOption = (typeof SORT_OPTIONS)[number]
 
 export const SORT_LABELS: Record<SortOption, string> = {
@@ -578,6 +585,16 @@ export const SORT_LABELS: Record<SortOption, string> = {
   rating: 'Highest rated',
   reviews: 'Most reviewed',
   name: 'A–Z',
+  /*
+   * `newest` orders by `addedAt` — when the KART listed the tool, not when the
+   * tool launched — so the label says "added" rather than "newest tools", which
+   * would be a claim about the products themselves.
+   *
+   * It is one sort like any other: Browse offers it in its dropdown
+   * (/browse?sort=newest) and the homepage's "Recently Added Tools" rail is the
+   * same ordering, read from the shared catalogue rather than re-queried.
+   */
+  newest: 'Recently added',
 }
 
 /* ─── Editorial conventions for the display fields ─────────────────────────── */
@@ -608,6 +625,36 @@ export const PROMINENCE = {
  * Phase G renders the sentinel as an empty state.
  */
 export const NOT_RECORDED = '—'
+
+/**
+ * How the seed catalogue's `addedAt` dates were produced.
+ *
+ * The catalogue held no intake metadata before this, and none could be
+ * recovered: the 66 records were authored in one pass, grouped by category, so
+ * the file's own order is a table of contents and not a timeline. Reading
+ * recency out of it would have said "every Agents tool is newer than every
+ * Writing tool", which is not true of anything.
+ *
+ * So V1 DECLARES an intake sequence rather than inferring one, and generates the
+ * dates from it: `date(rank) = ANCHOR - rank * STEP_DAYS`, one record per step,
+ * newest first. That keeps the ordering total (no ties), reproducible, and
+ * trivial to throw away — when tools are added through a real admin path,
+ * `addedAt` becomes a row's insert timestamp and every consumer stays as it is.
+ *
+ * The sequence itself is EDITORIAL, and honestly so: its head is the eight tools
+ * the final design's "Recently Added Tools" rail names, and its tail follows the
+ * file's authoring order, most recently authored first. These are not
+ * observations about when anything really happened. What matters is that the
+ * claim lives HERE, in the catalogue, where a query can sort on it and a future
+ * import can overwrite it — and not in a React component deciding which cards
+ * look new.
+ */
+export const INTAKE = {
+  /** The most recently added record's date. */
+  anchor: '2026-09-06',
+  /** Days between consecutive records in the seeded sequence. */
+  stepDays: 3,
+} as const
 
 /* ─── The published taxonomy ───────────────────────────────────────────────── */
 

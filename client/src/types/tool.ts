@@ -95,6 +95,18 @@ export interface Tool {
   /** What `price` filtering actually keys on. */
   pricingTier: PricingTierName
   verified: boolean
+  /**
+   * When AI TOOL KART listed the tool. ISO `YYYY-MM-DD`.
+   *
+   * The catalogue's own intake record — not the tool's launch date, and not a
+   * claim about the vendor. It is the ONLY thing that makes a tool "recently
+   * added"; see utils/recency.ts, which is the single place that reads it.
+   *
+   * Optional, mirroring the server's schema: the catalogue is allowed to hold a
+   * record whose intake date is unknown, and such a record is never treated as
+   * recent. Every one of the 66 seeded records carries one.
+   */
+  addedAt?: string
 }
 
 /**
@@ -116,7 +128,7 @@ export type LegacyMockTool = Omit<
 /* ─── Browse state ──────────────────────────────────────────────────────────── */
 
 /** Server `SORT_OPTIONS`. The API rejects anything else with a 400. */
-export type SortOption = 'relevance' | 'popular' | 'rating' | 'reviews' | 'name'
+export type SortOption = 'relevance' | 'popular' | 'rating' | 'reviews' | 'name' | 'newest'
 
 /**
  * Browse filter state, in the API's own vocabulary.

@@ -151,6 +151,19 @@ export const TAXONOMY_API = {
   path: '/taxonomy',
 } as const
 
+/**
+ * GET /api/usage-stories — the homepage's "How People Are Using AI" rail.
+ *
+ * Editorial content rather than catalogue data, so it has no default limit: the
+ * rail renders the whole set and duplicates it to loop, and a default that
+ * silently truncated the set would shorten the loop with nothing saying why.
+ * `maxLimit` only bounds what a caller may ask for.
+ */
+export const STORIES_API = {
+  path: '/usage-stories',
+  maxLimit: 50,
+} as const
+
 /* ─── Phase D — the LLM layer ──────────────────────────────────────────────── */
 
 /*

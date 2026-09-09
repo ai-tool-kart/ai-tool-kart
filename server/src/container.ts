@@ -47,6 +47,8 @@ import { createLLMClient, type LLMClient } from './llm/client.ts'
 import { createProvider } from './llm/factory.ts'
 import type { MockProviderOptions } from './llm/providers/mock.ts'
 import { createRetrievalService, type RetrievalService } from './retrieval/service.ts'
+import { createJsonUsageStoryRepository } from './stories/json.ts'
+import type { UsageStoryRepository } from './stories/repository.ts'
 import type { Logger } from './utils/logger.ts'
 
 export interface Container {
@@ -54,6 +56,8 @@ export interface Container {
   readonly logger: Logger
   readonly catalogue: ToolCatalogueRepository
   readonly retrieval: RetrievalService
+  /** Editorial usage stories. Independent of the catalogue; references it by slug. */
+  readonly stories: UsageStoryRepository
   /** One client, one budget, one unit of work. Never share the result. */
   readonly createLLMClientForTurn: () => LLMClient
   readonly assistant: AssistantEngine
@@ -71,6 +75,13 @@ export interface CreateContainerOptions {
    */
   catalogue?: ToolCatalogueRepository
   /**
+   * Test seam for the usage stories.
+   *
+   * Same purpose as `catalogue`: route tests run against a small fixture set so
+   * they neither read the real seed content nor break when a story is written.
+   */
+  stories?: UsageStoryRepository
+  /**
    * Test seam for the provider.
    *
    * Scripted mock behaviour — malformed output, refusals, outages — is injected
@@ -85,11 +96,17 @@ export function createContainer({
   env,
   logger,
   catalogue: injected,
+  stories: injectedStories,
   mock,
 }: CreateContainerOptions): Container {
-  // The only line in the server that names a concrete repository implementation.
+  // The only line in the server that names a concrete catalogue implementation.
   const catalogue = injected ?? createJsonToolCatalogue({ logger })
   const retrieval = createRetrievalService({ catalogue, logger })
+
+  // ...and the only line that names a concrete story implementation. Built here
+  // rather than inside the catalogue: a story references tools by slug and the
+  // catalogue knows nothing of stories, so neither one constructs the other.
+  const stories = injectedStories ?? createJsonUsageStoryRepository({ logger })
 
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
@@ -112,5 +129,5 @@ export function createContainer({
     logger,
   })
 
-  return { env, logger, catalogue, retrieval, createLLMClientForTurn, assistant }
+  return { env, logger, catalogue, retrieval, stories, createLLMClientForTurn, assistant }
 }

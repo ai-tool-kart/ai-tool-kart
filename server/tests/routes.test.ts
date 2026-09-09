@@ -355,6 +355,7 @@ function catalogueFixture() {
       pricingTier: 'free',
       tags: ['Long-form'],
       stages: ['draft'],
+      addedAt: '2026-01-05',
     }),
     makeTool({
       id: 'beta-editor',
@@ -369,6 +370,7 @@ function catalogueFixture() {
       useCases: ['Edit long videos'],
       stages: ['edit'],
       tagline: 'Cuts long video down to the parts worth keeping.',
+      addedAt: '2026-04-20',
     }),
     makeTool({
       id: 'gamma-coder',
@@ -380,6 +382,7 @@ function catalogueFixture() {
       roles: ['Developer'],
       useCases: ['Write code faster'],
       stages: ['build'],
+      addedAt: '2026-03-11',
     }),
     makeTool({
       id: 'delta-hidden',
@@ -494,6 +497,29 @@ await test('GET /api/tools', async (t) => {
         'Beta Editor',
         'Gamma Coder',
       ])
+    })
+  })
+
+  await t.test('sort=newest orders by intake date, newest first', async () => {
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(await fetch(`${origin}/api/tools?sort=newest`))
+      assert.deepEqual(body.items.map((tool) => tool.slug), [
+        'beta-editor',
+        'gamma-coder',
+        'alpha-writer',
+      ])
+    })
+  })
+
+  await t.test('the intake date reaches the client', async () => {
+    // The homepage's "Recently Added Tools" rail reads `addedAt` off the record
+    // to decide what is new. Stripping it from the wire shape would leave the
+    // client with an order it could not explain or re-derive.
+    await withServer(fixtureContainer(), async ({ origin }) => {
+      const body = await readJson<ToolListResponse>(
+        await fetch(`${origin}/api/tools?sort=newest&limit=1`),
+      )
+      assert.equal(body.items[0]?.addedAt, '2026-04-20')
     })
   })
 
@@ -670,6 +696,9 @@ await test('GET /api/taxonomy', async (t) => {
       assert.ok(taxonomy.stages.some((stage) => stage.id === 'edit'))
       assert.ok(taxonomy.useCases.length > 0)
       assert.ok(taxonomy.sorts.some((sort) => sort.value === 'popular'))
+      // Browse builds its sort dropdown from this list, so `newest` being here
+      // is what makes /browse?sort=newest a real destination rather than a 400.
+      assert.ok(taxonomy.sorts.some((sort) => sort.value === 'newest'))
     })
   })
 

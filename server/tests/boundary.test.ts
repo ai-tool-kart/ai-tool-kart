@@ -159,6 +159,105 @@ await test('the catalogue storage boundary holds', async (t) => {
 })
 
 /*
+ * The usage-story boundary.
+ *
+ * stories/ is a second content source behind a second port, and it earns the
+ * same guards as the catalogue for the same reason: the JSON file is a V1
+ * detail, and every module that learns it is a file that has to be rewritten
+ * when the stories move into a table or a CMS.
+ *
+ * The extra rule here is the one about DIRECTION. A story references the
+ * catalogue by slug and the catalogue knows nothing of stories. If stories/ ever
+ * imported the catalogue it would stop being content and start being a join —
+ * and the tool metadata the section is specifically built not to duplicate would
+ * have somewhere to be duplicated into.
+ */
+await test('the usage-story boundary holds', async (t) => {
+  const STORIES_DIR = join(SRC, 'stories')
+  const storyFiles = files.filter((file) => file.startsWith(STORIES_DIR))
+
+  await t.test('the scan found the stories module', () => {
+    assert.ok(storyFiles.length >= 4, `expected stories/, found ${storyFiles.length} files`)
+  })
+
+  await t.test('nothing outside stories/ names stories.json', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(STORIES_DIR))
+      .filter((file) => readFileSync(file, 'utf8').includes('stories.json'))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'only src/stories/ may know the stories are stored as JSON')
+  })
+
+  await t.test('only the JSON adapter reads it, even inside stories/', () => {
+    const offenders = storyFiles
+      .filter((file) => !file.endsWith('json.ts'))
+      .filter((file) => codeOf(file).includes('stories.json'))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the file read belongs in stories/json.ts alone')
+  })
+
+  await t.test('nothing outside stories/ imports from stories/data/', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(STORIES_DIR))
+      .filter((file) => /stories\/data/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('stories never import the catalogue', () => {
+    // The reference is ONE-WAY: a story holds slugs, and resolving them is the
+    // client's job against a catalogue it has already read. An import here is
+    // how tool metadata gets copied into a second response shape.
+    const offenders = storyFiles
+      .filter((file) => /from '\.\.\/catalogue\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'a story references tools by slug and resolves nothing')
+  })
+
+  await t.test('the catalogue never imports the stories', () => {
+    // ...and the reverse, which would be worse: the tool port must not grow a
+    // content API the PostgreSQL adapter would have to implement.
+    const offenders = files
+      .filter((file) => file.startsWith(CATALOGUE_DIR))
+      .filter((file) => /from '\.\.\/stories\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('stories never import express or the HTTP layer', () => {
+    const offenders = storyFiles
+      .filter((file) => /from 'express'|from '\.\.\/http\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('routes never import the JSON story adapter', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(join(SRC, 'http')))
+      .filter((file) => /createJsonUsageStoryRepository|stories\/json/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'routes receive a repository from the container')
+  })
+
+  await t.test('container.ts is the only module naming a concrete story adapter', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(STORIES_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => codeOf(file).includes('createJsonUsageStoryRepository('))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+})
+
+/*
  * The temporary LLM layer.
  *
  * server/src/llm/ is an explicitly temporary copy of the News Agent's LLM

@@ -61,7 +61,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-02-23"
   },
   {
     "id": "grammarly",
@@ -109,7 +110,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-02-26"
   },
   {
     "id": "writesonic",
@@ -157,7 +159,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-31"
   },
   {
     "id": "notion-ai",
@@ -207,7 +210,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-01"
   },
   {
     "id": "sudowrite",
@@ -253,7 +257,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-04"
   },
   {
     "id": "quillbot",
@@ -301,7 +306,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-07"
   },
   {
     "id": "wordtune",
@@ -346,7 +352,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-10"
   },
   {
     "id": "cursor",
@@ -397,7 +404,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-19"
   },
   {
     "id": "github-copilot",
@@ -445,7 +453,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-13"
   },
   {
     "id": "claude-code",
@@ -496,7 +505,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-16"
   },
   {
     "id": "windsurf",
@@ -542,7 +552,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-16"
   },
   {
     "id": "replit",
@@ -590,7 +601,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-19"
   },
   {
     "id": "tabnine",
@@ -631,7 +643,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-22"
   },
   {
     "id": "v0",
@@ -679,7 +692,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-25"
   },
   {
     "id": "vercel-ai-sdk",
@@ -721,7 +735,8 @@
     ],
     "pricingTier": "free",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-28"
   },
   {
     "id": "postman",
@@ -766,7 +781,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-03-31"
   },
   {
     "id": "figma",
@@ -817,7 +833,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-03"
   },
   {
     "id": "canva",
@@ -867,7 +884,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-06"
   },
   {
     "id": "framer",
@@ -916,7 +934,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-09"
   },
   {
     "id": "uizard",
@@ -963,7 +982,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-12"
   },
   {
     "id": "recraft",
@@ -1011,7 +1031,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-15"
   },
   {
     "id": "looka",
@@ -1056,7 +1077,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-18"
   },
   {
     "id": "gamma",
@@ -1107,7 +1129,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-21"
   },
   {
     "id": "beautiful-ai",
@@ -1152,7 +1175,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-24"
   },
   {
     "id": "midjourney",
@@ -1200,7 +1224,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-27"
   },
   {
     "id": "ideogram",
@@ -1246,7 +1271,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-04-30"
   },
   {
     "id": "adobe-firefly",
@@ -1292,7 +1318,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-03"
   },
   {
     "id": "photoroom",
@@ -1339,7 +1366,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-28"
   },
   {
     "id": "leonardo-ai",
@@ -1384,7 +1412,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-06"
   },
   {
     "id": "descript",
@@ -1435,7 +1464,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-09"
   },
   {
     "id": "opus-clip",
@@ -1483,7 +1513,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-09-03"
   },
   {
     "id": "runway",
@@ -1531,7 +1562,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-12"
   },
   {
     "id": "capcut",
@@ -1580,7 +1612,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-15"
   },
   {
     "id": "kling",
@@ -1624,7 +1657,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-09-06"
   },
   {
     "id": "synthesia",
@@ -1671,7 +1705,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-18"
   },
   {
     "id": "heygen",
@@ -1716,7 +1751,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-21"
   },
   {
     "id": "veed",
@@ -1764,7 +1800,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-24"
   },
   {
     "id": "elevenlabs",
@@ -1812,7 +1849,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-27"
   },
   {
     "id": "suno",
@@ -1857,7 +1895,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-22"
   },
   {
     "id": "adobe-podcast",
@@ -1900,7 +1939,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-05-30"
   },
   {
     "id": "otter-ai",
@@ -1950,7 +1990,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-02"
   },
   {
     "id": "murf",
@@ -1994,7 +2035,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-05"
   },
   {
     "id": "perplexity",
@@ -2048,7 +2090,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-08"
   },
   {
     "id": "elicit",
@@ -2093,7 +2136,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-11"
   },
   {
     "id": "notebooklm",
@@ -2143,7 +2187,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-14"
   },
   {
     "id": "consensus",
@@ -2188,7 +2233,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-17"
   },
   {
     "id": "researchrabbit",
@@ -2231,7 +2277,8 @@
     ],
     "pricingTier": "free",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-20"
   },
   {
     "id": "scispace",
@@ -2276,7 +2323,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-23"
   },
   {
     "id": "surfer-seo",
@@ -2324,7 +2372,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-26"
   },
   {
     "id": "buffer",
@@ -2371,7 +2420,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-06-29"
   },
   {
     "id": "copy-ai",
@@ -2419,7 +2469,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-02"
   },
   {
     "id": "jasper",
@@ -2466,7 +2517,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-05"
   },
   {
     "id": "clay",
@@ -2514,7 +2566,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-08"
   },
   {
     "id": "adcreative-ai",
@@ -2560,7 +2613,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-11"
   },
   {
     "id": "julius-ai",
@@ -2608,7 +2662,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-14"
   },
   {
     "id": "hex",
@@ -2657,7 +2712,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-17"
   },
   {
     "id": "rows",
@@ -2703,7 +2759,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-20"
   },
   {
     "id": "deepnote",
@@ -2750,7 +2807,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-23"
   },
   {
     "id": "chatgpt",
@@ -2810,7 +2868,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-26"
   },
   {
     "id": "gemini",
@@ -2863,7 +2922,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-07-29"
   },
   {
     "id": "zapier",
@@ -2911,7 +2971,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-01"
   },
   {
     "id": "relay",
@@ -2958,7 +3019,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-04"
   },
   {
     "id": "make",
@@ -3004,7 +3066,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-07"
   },
   {
     "id": "n8n",
@@ -3050,7 +3113,8 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-10"
   },
   {
     "id": "glean",
@@ -3097,7 +3161,8 @@
     ],
     "pricingTier": "paid",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-25"
   },
   {
     "id": "fathom",
@@ -3145,6 +3210,7 @@
     ],
     "pricingTier": "freemium",
     "status": "active",
-    "verified": true
+    "verified": true,
+    "addedAt": "2026-08-13"
   }
 ]

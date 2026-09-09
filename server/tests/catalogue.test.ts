@@ -21,6 +21,7 @@ import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import { parseCatalogue } from '../src/catalogue/schema.ts'
 import {
   GOALS_BY_ROLE,
+  INTAKE,
   PRICING_MODELS_BY_TIER,
   ROLES,
   TOOL_CATEGORIES,
@@ -238,6 +239,77 @@ await test('the real seed catalogue', async (t) => {
         `${tool.id}: rating ${tool.rating} carries invented precision`,
       )
     }
+  })
+
+  /* ── Intake dates ─────────────────────────────────────────────────────── */
+
+  await t.test('every seeded record carries an intake date', () => {
+    // `addedAt` is optional on the SCHEMA — the catalogue must be able to hold a
+    // record whose intake date is unknown — but the seed set has no excuse: it
+    // was authored in one pass, so every record's date was authored with it.
+    // "Recently Added Tools" is only meaningful if the whole catalogue is dated.
+    for (const tool of allTools) {
+      assert.ok(tool.addedAt, `${tool.id} has no addedAt`)
+      assert.match(tool.addedAt as string, /^\d{4}-\d{2}-\d{2}$/, `${tool.id}: ${tool.addedAt}`)
+    }
+  })
+
+  await t.test('intake dates are distinct, so recency ordering is unambiguous', () => {
+    // A tie would make "the newest eight" depend on the id tiebreak rather than
+    // on recency, which is exactly the accident the field exists to prevent.
+    const dates = allTools.map((tool) => tool.addedAt as string)
+    assert.equal(new Set(dates).size, dates.length, 'two records share an intake date')
+  })
+
+  await t.test('intake dates follow the declared INTAKE sequence', () => {
+    // The seed generates dates as `anchor - rank * stepDays` (see INTAKE in
+    // taxonomy.ts). Pinning the anchor and the spacing is what makes the
+    // sequence reproducible rather than a set of numbers somebody typed.
+    const sorted = [...allTools].sort((a, b) =>
+      (b.addedAt as string).localeCompare(a.addedAt as string),
+    )
+    assert.equal(sorted[0]?.addedAt, INTAKE.anchor, 'the newest record is not on the anchor date')
+
+    const DAY_MS = 24 * 60 * 60 * 1000
+    sorted.forEach((tool, rank) => {
+      const expected = new Date(Date.parse(`${INTAKE.anchor}T00:00:00Z`) - rank * INTAKE.stepDays * DAY_MS)
+      assert.equal(
+        tool.addedAt,
+        expected.toISOString().slice(0, 10),
+        `${tool.id} is out of step at rank ${rank}`,
+      )
+    })
+  })
+
+  await t.test('no record claims to have been added in the future', () => {
+    // A future intake date would sit permanently at the top of the rail and
+    // permanently inside any "added in the last N days" window.
+    const today = new Date().toISOString().slice(0, 10)
+    for (const tool of allTools) {
+      assert.ok(
+        (tool.addedAt as string) <= today,
+        `${tool.id} claims an intake date in the future (${tool.addedAt})`,
+      )
+    }
+  })
+
+  await t.test('the newest records are spread across categories', () => {
+    // The homepage rail shows the newest eight. If the seed's ordering ever
+    // collapsed onto the file's category grouping, that rail would become "eight
+    // Agents tools" — the exact failure mode that ruled out using array order.
+    const newest = [...allTools]
+      .sort((a, b) => (b.addedAt as string).localeCompare(a.addedAt as string))
+      .slice(0, 8)
+    assert.ok(
+      new Set(newest.map((tool) => tool.cat)).size >= 4,
+      'the newest eight tools come from too few categories',
+    )
+  })
+
+  await t.test('sort: newest returns the catalogue in intake order', async () => {
+    const page = await real.search({ sort: 'newest', limit: 100 })
+    const dates = page.items.map((tool) => tool.addedAt as string)
+    assert.deepEqual(dates, [...dates].sort().reverse())
   })
 
   await t.test('an unrated record carries no reviews either', () => {

@@ -17,7 +17,9 @@ import type { ServerEnv } from '../src/config/env.ts'
 import { createContainer, type Container } from '../src/container.ts'
 import type { MockProviderOptions } from '../src/llm/providers/mock.ts'
 import type { AssistantReply } from '../src/assistant/schema.ts'
-import type { Tool } from '../src/domain/types.ts'
+import type { Tool, UsageStory } from '../src/domain/types.ts'
+import { createJsonUsageStoryRepository } from '../src/stories/json.ts'
+import type { UsageStoryRepository } from '../src/stories/repository.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
 
 /**
@@ -82,12 +84,14 @@ export function testContainer(
   logger: Logger = testLogger(),
   catalogue?: ToolCatalogueRepository,
   mock?: MockProviderOptions,
+  stories?: UsageStoryRepository,
 ): Container {
   return createContainer({
     env,
     logger,
     ...(catalogue ? { catalogue } : {}),
     ...(mock ? { mock } : {}),
+    ...(stories ? { stories } : {}),
   })
 }
 
@@ -145,6 +149,41 @@ export function makeTool(overrides: Partial<Tool> = {}): Tool {
  */
 export function fixtureCatalogue(tools: Tool[]): ToolCatalogueRepository {
   return createJsonToolCatalogue({ records: tools })
+}
+
+/* ─── Usage-story fixtures ─────────────────────────────────────────────────── */
+
+/**
+ * A valid usage story with every required field filled in, overridable field by
+ * field. Same rationale as `makeTool`.
+ *
+ * `order` defaults to 0, so a test building several stories must give each its
+ * own — which is what the schema requires anyway, and what keeps a fixture set's
+ * sequence obvious in the test that wrote it.
+ */
+export function makeStory(overrides: Partial<UsageStory> = {}): UsageStory {
+  return {
+    id: 'fixture-story',
+    role: 'Fixture Role',
+    personName: 'Fixture P.',
+    location: 'Nowhere',
+    task: 'Do the thing the fixture exists to do.',
+    toolSlugs: ['alpha-writer', 'beta-coder'],
+    resultHeadline: 'The fixture did the thing.',
+    resultDetail: 'Twice as fast as the fixture before it.',
+    order: 0,
+    ...overrides,
+  }
+}
+
+/**
+ * An in-memory UsageStoryRepository over a fixture array.
+ *
+ * The REAL adapter with its file read bypassed, not a stub — same reasoning as
+ * `fixtureCatalogue`.
+ */
+export function fixtureStories(stories: UsageStory[]): UsageStoryRepository {
+  return createJsonUsageStoryRepository({ records: stories })
 }
 
 export interface TestServer {

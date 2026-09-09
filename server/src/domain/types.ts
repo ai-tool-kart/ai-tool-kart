@@ -86,6 +86,26 @@ export interface Tool {
   pricingTier: PricingTier
   status: ToolStatus
   verified: boolean
+
+  /* ── Catalogue intake ───────────────────────────────────────────────────── */
+  /**
+   * When this tool entered the AI Tool Kart catalogue. ISO `YYYY-MM-DD`.
+   *
+   * PLATFORM METADATA, not a fact about the vendor: it is the date the kart
+   * listed the tool, never the date the tool launched. That distinction is what
+   * makes the field seedable — the catalogue is entitled to state its own intake
+   * record, and is not entitled to invent a product's launch date.
+   *
+   * It is the ONLY source of truth for "recently added" (the `newest` sort, and
+   * the homepage rail that reads it). Nothing may stand in for it: not array
+   * order, not `pop`, not `rating`.
+   *
+   * Optional, and a record without one is not treated as recent — it sorts after
+   * every dated record under `newest` rather than pretending to be old or new.
+   * The seed catalogue dates all 66 records — see INTAKE in
+   * catalogue/taxonomy.ts for how that sequence was authored.
+   */
+  addedAt?: string
 }
 
 /**
@@ -140,6 +160,59 @@ export function toToolSummary(tool: Tool): ToolSummary {
     url: tool.url,
     stages: [...tool.stages],
   }
+}
+
+/* ── Usage stories ─────────────────────────────────────────────────────────── */
+
+/**
+ * One "How People Are Using AI" story.
+ *
+ * A person, the task in front of them, the tools they combined, and what
+ * changed. It is EDITORIAL CONTENT, not a catalogue record, and it lives behind
+ * its own port (stories/repository.ts) rather than on the tool catalogue.
+ *
+ * ── These are illustrative, not testimonials ─────────────────────────────────
+ *
+ * THE SEEDED STORIES ARE PRODUCT-DEMO CONTENT. The names, locations and outcome
+ * figures are written, not collected: nobody was interviewed and no metric was
+ * measured. They are carried faithfully from the design handoff so the section
+ * can be built, and they are isolated in the seed file so replacing them with
+ * real, sourced stories is a data change and nothing more.
+ *
+ * That is why nothing in this type records a customer, a company, a date or a
+ * source. Adding one would make the card LOOK sourced without any of these
+ * records being so, and a directory that prints invented endorsements as
+ * verified ones has done the one thing a directory must not do. The UI states
+ * the same caveat where a reader can see it.
+ *
+ * ── Tools are references, never copies ───────────────────────────────────────
+ *
+ * `toolSlugs` holds catalogue slugs and nothing else. A story never carries a
+ * tool's name, monogram, category or pricing: those are the catalogue's, they
+ * change, and a second copy here would be wrong the day a tool is renamed. The
+ * client resolves the slugs against the catalogue index it has already read.
+ */
+export interface UsageStory {
+  /** Stable, URL-safe id. */
+  id: string
+  /** The person's job, as the card's headline. Always present. */
+  role: string
+  /** Display name, e.g. "Maya R.". Optional — a story may be anonymous. */
+  personName?: string
+  /** City or region, e.g. "Lisbon". Optional. */
+  location?: string
+  /** What they were trying to do, in one sentence. */
+  task: string
+  /** Catalogue slugs, in the order the person used them. Never tool objects. */
+  toolSlugs: string[]
+  /** The outcome, emphasised on the card. */
+  resultHeadline: string
+  /** A supporting line under the headline. Optional. */
+  resultDetail?: string
+  /** Portrait URL. Absent across the seed; the card falls back to initials. */
+  avatarUrl?: string
+  /** Editorial sequence, ascending. Distinct per story, so the rail is stable. */
+  order: number
 }
 
 /* ── The assistant (Phase E) ───────────────────────────────────────────────── */
