@@ -72,12 +72,21 @@ function toPosts(payload: unknown): BlogPost[] {
 
 /**
  * The most recent published posts, newest first.
- * Also the entry point a future Home "Latest from AI Tool Kart" section will use.
+ *
+ * Used by the Home "Blog & Insights" section, which takes the first as its
+ * featured story and the next two as secondary cards.
+ *
+ * `status`, `orderby` and `order` are WordPress's own defaults for this
+ * collection, and they are sent explicitly anyway: the ordering IS the
+ * section's editorial rule — the newest post is the featured one — so it should
+ * be stated in the request rather than inherited from whatever the CMS is
+ * currently configured to default to. An unauthenticated caller may only ask
+ * for `publish`, which is exactly what we want here.
  */
 export async function getLatestPosts(limit = 3, signal?: AbortSignal): Promise<BlogPost[]> {
   const payload = await request<unknown>('/posts', {
     signal,
-    params: { per_page: limit, _embed: 1 },
+    params: { per_page: limit, status: 'publish', orderby: 'date', order: 'desc', _embed: 1 },
   })
   return toPosts(payload)
 }

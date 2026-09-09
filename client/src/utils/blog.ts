@@ -50,6 +50,18 @@ export function formatPostMeta(post: BlogPost, withDate = false): string {
   return month ? `${readingTime} · ${month}` : readingTime
 }
 
+/**
+ * The label a card shows for a post's category.
+ *
+ * "Journal" stands in when the post carries none (or only WordPress's
+ * "Uncategorized", which `normalizePost` already discards). Shared so the /blog
+ * cards and Home's Blog & Insights cards cannot drift onto two different words
+ * for the same empty field.
+ */
+export function blogCategoryLabel(category?: string): string {
+  return category ?? 'Journal'
+}
+
 /** WordPress appends a "[…]" continuation marker to auto-generated excerpts. */
 function cleanExcerpt(html: string): string {
   return htmlToText(html)

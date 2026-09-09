@@ -1,4 +1,5 @@
 import AiForYourWorkSection from '@/pages/home/sections/AiForYourWorkSection'
+import BlogInsightsSection from '@/pages/home/sections/BlogInsightsSection'
 import CategoriesSection from '@/pages/home/sections/CategoriesSection'
 import CompareTeaser from '@/pages/home/sections/CompareTeaser'
 import CtaBanner from '@/pages/home/sections/CtaBanner'
@@ -33,6 +34,7 @@ export default function HomePage() {
       <RecentlyAddedToolsSection />
       <HowPeopleAreUsingAISection />
       <SavingsSection />
+      <BlogInsightsSection />
       <TrendingSection />
       <CategoriesSection />
       <CompareTeaser />
