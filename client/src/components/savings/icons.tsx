@@ -1,4 +1,4 @@
-import type { SavingsRowIcon } from '@/data/savings'
+import type { SavingsDimension } from '@/types/workSavings'
 
 /*
  * The marks "See What AI Can Save You" draws, traced from the final design
@@ -13,22 +13,28 @@ interface IconProps {
   className?: string
 }
 
-/** The two-path stroke icons the comparison table puts beside each dimension. */
-const ROW_PATHS: Record<SavingsRowIcon, readonly [string, string]> = {
-  time: ['M12 4.2a7.8 7.8 0 1 0 0 15.6 7.8 7.8 0 0 0 0-15.6Z', 'M12 8.4V12l2.8 1.8'],
-  cost: [
+/**
+ * The two-path stroke icons the comparison table puts beside each dimension.
+ *
+ * Keyed by the dimension itself: there are exactly three, each has exactly one
+ * mark, and a separate icon field on every row would only ever be a second place
+ * for the two to disagree.
+ */
+const ROW_PATHS: Record<SavingsDimension, readonly [string, string]> = {
+  Time: ['M12 4.2a7.8 7.8 0 1 0 0 15.6 7.8 7.8 0 0 0 0-15.6Z', 'M12 8.4V12l2.8 1.8'],
+  Cost: [
     'M12 4.5v15',
     'M15.6 8.2c0-1.5-1.6-2.4-3.6-2.4s-3.6.9-3.6 2.4 1.6 2.2 3.6 2.6 3.6 1 3.6 2.6-1.6 2.4-3.6 2.4-3.6-.9-3.6-2.4',
   ],
-  effort: ['M12 4.2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z', 'M4.6 20.4c0-3.6 3.3-6 7.4-6s7.4 2.4 7.4 6'],
+  Effort: ['M12 4.2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z', 'M4.6 20.4c0-3.6 3.3-6 7.4-6s7.4 2.4 7.4 6'],
 }
 
 /** Clock, currency or person — the dimension marks in the comparison table. */
 export function SavingsRowIconGlyph({
-  icon,
+  dimension,
   className,
-}: IconProps & { icon: SavingsRowIcon }) {
-  const [d, d2] = ROW_PATHS[icon]
+}: IconProps & { dimension: SavingsDimension }) {
+  const [d, d2] = ROW_PATHS[dimension]
   return (
     <svg
       viewBox="0 0 24 24"

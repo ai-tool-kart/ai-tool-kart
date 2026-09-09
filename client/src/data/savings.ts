@@ -5,18 +5,22 @@ import type { SavingsDimension } from '@/types/workSavings'
  *
  * Two things live here and nothing else:
  *
- *   1. The GENERAL benchmark table and the value strip — the left-hand side of
- *      the section, which is the same for every reader.
+ *   1. The GENERAL benchmark rows and the value strip — what the comparison
+ *      table shows before a role is chosen, and which is the same for every
+ *      reader.
  *   2. SAVINGS_COPY: every sentence in the section that makes a claim.
  *
- * ── Why the general table is not fetched ─────────────────────────────────────
+ * ── Why the generic rows are not fetched ─────────────────────────────────────
  *
- * The role estimates come from GET /api/work-savings. This does not, and that is
- * deliberate rather than an oversight: the general table is the part of the
- * section that must still be on screen when that endpoint is unreachable, and
- * content required to survive an outage should not sit behind the thing that
- * goes out. It is also genuinely static — three rows that do not vary by reader,
- * by role or by catalogue state.
+ * The role estimates come from GET /api/work-savings. These do not, and that is
+ * deliberate rather than an oversight: they are what the table shows when no
+ * role is selected AND when the endpoint is unreachable, so the section always
+ * has a table to draw. Content required to survive an outage should not sit
+ * behind the thing that goes out.
+ *
+ * They are NOT a second role dataset. A reader sees these or a role's rows,
+ * never a mixture, and the moment a role is chosen every figure on screen —
+ * both columns — comes from that one record.
  *
  * It is NOT computed from catalogue records and must never appear to be. No tool
  * in the catalogue is consulted to produce "20+ hrs a week"; it is written copy,
@@ -31,18 +35,30 @@ import type { SavingsDimension } from '@/types/workSavings'
  * hunt through JSX for the four places a claim leaked into.
  */
 
-/** The icon a comparison row draws. Keyed by dimension, resolved in icons.tsx. */
-export type SavingsRowIcon = 'time' | 'cost' | 'effort'
-
-export interface GeneralSavingsRow {
+/**
+ * One row of the comparison table.
+ *
+ * THE SAME SHAPE whether the row came from this file's generic default or from a
+ * selected role's record, so the table renders one type and never branches on
+ * where its data came from. The icon is derived from the dimension rather than
+ * stored, because there are exactly three dimensions and each has exactly one
+ * mark — a field would only ever be a second place for them to disagree.
+ */
+export interface SavingsTableRow {
   dimension: SavingsDimension
-  icon: SavingsRowIcon
   /** What the week looks like without AI. */
   without: string
-  /** The headline figure or phrase, emphasised in green. */
+  /** The figure or phrase, emphasised in green. */
   withAi: string
-  /** The supporting line under it. */
-  note: string
+  /**
+   * A supporting line under it.
+   *
+   * Present on the generic default, where `withAi` is a short headline
+   * ("40–60% lower") that benefits from a sentence beneath it. Absent on role
+   * rows, where `withAi` is already the sentence. The table sizes the cell to
+   * suit whichever it is given — see SavingsComparisonTable.
+   */
+  note?: string
 }
 
 /**
@@ -52,24 +68,21 @@ export interface GeneralSavingsRow {
  * description of what AI-assisted work tends to look like, not a measurement of
  * what it did look like for anyone in particular.
  */
-export const GENERAL_SAVINGS_ROWS: readonly GeneralSavingsRow[] = [
+export const GENERAL_SAVINGS_ROWS: readonly SavingsTableRow[] = [
   {
     dimension: 'Time',
-    icon: 'time',
     without: '20+ hrs a week on repetitive work',
     withAi: '5–8 hrs a week',
     note: 'The same output, most of it automated.',
   },
   {
     dimension: 'Cost',
-    icon: 'cost',
     without: 'High tool spend plus manual labour',
     withAi: '40–60% lower',
     note: 'Fewer overlapping subscriptions.',
   },
   {
     dimension: 'Effort',
-    icon: 'effort',
     without: 'Repetitive tasks filling the whole day',
     withAi: 'Focus on high value',
     note: 'Automated runs, you review the output.',
@@ -114,7 +127,7 @@ export const SAVINGS_COPY = {
     'AI-assisted week — written from common workflows, not measured from test data.',
 
   selectorHeading: 'See what this looks like for your work',
-  selectorSubtitle: 'Choose your role for a more relevant estimate.',
+  selectorSubtitle: 'Choose your role and the comparison updates to match it.',
   /** Shown in the dropdown before a role is chosen. */
   selectorPlaceholder: 'Select your work',
   selectorLabel: 'Select the kind of work you do',
@@ -130,8 +143,8 @@ export const SAVINGS_COPY = {
    */
   estimateNote: 'An indicative week for this kind of work — not a measured result.',
 
-  /** Shown when the estimates cannot be loaded. The table above still stands. */
-  unavailable: 'Role estimates are unavailable right now. The comparison above still applies.',
+  /** Shown when the estimates cannot be loaded. The general table still stands. */
+  unavailable: 'Role estimates are unavailable right now — the general comparison still applies.',
   /** Shown if a selected role somehow has no estimate behind it. */
   missingEstimate: 'No estimate is written for that kind of work yet.',
 
