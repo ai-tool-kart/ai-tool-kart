@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import mark from '@/assets/mark.png'
-import { NAV_ITEMS } from '@/data/navigation'
+import { NAV_ITEMS, SUBMIT_ROUTE } from '@/data/navigation'
 
 /*
  * The glass nav pill.
@@ -78,7 +78,7 @@ export default function NavPill() {
         </nav>
 
         <div className="flex flex-auto items-center justify-end gap-[10px] min-[1080px]:flex-none">
-          <Link to="/submit" data-magnet="1" className={CTA_CLASSES}>
+          <Link to={SUBMIT_ROUTE} data-magnet="1" className={CTA_CLASSES}>
             Submit Your Tool
           </Link>
 

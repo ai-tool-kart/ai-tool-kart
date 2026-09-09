@@ -63,11 +63,6 @@
   100% { transform: translate3d(2%, 3%, 0) rotate(0deg) scale(1.12); }
 }
 
-@keyframes akSweep {
-  0% { transform: translate3d(-60vw, 0, 0) rotate(14deg); }
-  100% { transform: translate3d(140vw, 0, 0) rotate(14deg); }
-}
-
 /* ---- Entrances ----------------------------------------------------------- */
 
 @keyframes akFade {

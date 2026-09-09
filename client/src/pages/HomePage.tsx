@@ -1,9 +1,9 @@
+import AddToKartSection from '@/pages/home/sections/AddToKartSection'
 import AiForYourWorkSection from '@/pages/home/sections/AiForYourWorkSection'
 import BlogInsightsSection from '@/pages/home/sections/BlogInsightsSection'
 import CategoriesSection from '@/pages/home/sections/CategoriesSection'
 import CommunitySection from '@/pages/home/sections/CommunitySection'
 import CompareTeaser from '@/pages/home/sections/CompareTeaser'
-import CtaBanner from '@/pages/home/sections/CtaBanner'
 import FaqSection from '@/pages/home/sections/FaqSection'
 import FeaturedToolsSection from '@/pages/home/sections/FeaturedToolsSection'
 import Hero from '@/pages/home/sections/Hero'
@@ -41,7 +41,7 @@ export default function HomePage() {
       <CategoriesSection />
       <CompareTeaser />
       <FaqSection />
-      <CtaBanner />
+      <AddToKartSection />
     </>
   )
 }
