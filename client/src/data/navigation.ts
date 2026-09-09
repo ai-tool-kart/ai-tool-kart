@@ -52,11 +52,25 @@ export const SUBMIT_ROUTE = '/submit'
  */
 export const WORKFLOWS_ROUTE = '/browse'
 
+/**
+ * The Community section's element id, and the link that reaches it.
+ *
+ * Community is a section of the homepage, not a page, so the nav item is a
+ * fragment link rather than a route. The id is single-sourced because it lives
+ * in two files that must agree — the `<section>` that carries it and the link
+ * that targets it — and a fragment that misses its target fails silently.
+ *
+ * Scrolling to it is components/layout/ScrollToTop.tsx's job; React Router does
+ * not act on a hash by itself.
+ */
+export const COMMUNITY_SECTION_ID = 'community'
+export const COMMUNITY_ROUTE = `/#${COMMUNITY_SECTION_ID}`
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
   { label: 'Workflows', to: WORKFLOWS_ROUTE, matchesRoute: false },
   { label: 'New Launches', to: '/browse', matchesRoute: false },
   { label: 'Our AI Assistant', to: '/', matchesRoute: false },
   { label: 'Blog', to: '/blog' },
-  { label: 'Community', to: '/', matchesRoute: false },
+  { label: 'Community', to: COMMUNITY_ROUTE, matchesRoute: false },
 ]
