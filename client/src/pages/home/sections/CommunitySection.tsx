@@ -2,6 +2,7 @@ import CommunityProofRow from '@/components/community/CommunityProofRow'
 import DiscordCard from '@/components/community/DiscordCard'
 import SocialCard from '@/components/community/SocialCard'
 import { COMMUNITY_PROOF, DISCORD_CHANNEL, SOCIAL_CHANNELS } from '@/data/community'
+import { COMMUNITY_SECTION_ID } from '@/data/navigation'
 import { resolveCommunityChannel, resolveCommunityChannels } from '@/utils/community'
 
 /*
@@ -25,10 +26,12 @@ import { resolveCommunityChannel, resolveCommunityChannels } from '@/utils/commu
  *
  * ── The anchor ───────────────────────────────────────────────────────────────
  *
- * `id="community"` is the design's, and `scroll-mt` clears the fixed header the
- * way the handoff's `scroll-margin-top:110px` does. Nothing links to it yet:
- * the header's Community nav item still points at `/`, and the assistant's
- * "Join Our Community" cluster is still absent. Both are their own change.
+ * The id is the design's, and `scroll-mt` clears the fixed header the way the
+ * handoff's `scroll-margin-top:110px` does — `scrollIntoView` honours it, so
+ * the heading is never left under the nav pill. The header's Community item
+ * links here; it reads the same COMMUNITY_SECTION_ID this section carries, so
+ * the link cannot outlive the anchor. The assistant's "Join Our Community"
+ * cluster is still absent and is its own change.
  *
  * ── The grid ─────────────────────────────────────────────────────────────────
  *
@@ -51,7 +54,10 @@ export default function CommunitySection() {
   const socials = resolveCommunityChannels(SOCIAL_CHANNELS)
 
   return (
-    <section id="community" className="relative scroll-mt-[110px] pt-[92px] pb-[88px]">
+    <section
+      id={COMMUNITY_SECTION_ID}
+      className="relative scroll-mt-[110px] pt-[92px] pb-[88px]"
+    >
       {/* The mauve band, its hairlines, and the pink bloom behind the header. */}
       <span
         aria-hidden="true"
