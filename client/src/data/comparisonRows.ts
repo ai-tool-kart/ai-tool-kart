@@ -1,22 +1,17 @@
 import type { ComparisonRow } from '@/types/content'
-import { formatRating, formatRatingWithReviews } from '@/utils/format'
+import { formatRatingWithReviews } from '@/utils/format'
 
 /*
- * Comparison-table row definitions, ported from `compareRows` (Home teaser) and
- * `compareFullRows` (Compare page) in the handoff.
+ * Comparison-table row definitions, ported from `compareFullRows` (Compare
+ * page) in the handoff.
  *
  * Each row is an accessor over a Tool rather than a literal cell, so the table
  * renders from whatever tools are selected.
+ *
+ * The handoff's `compareRows` — the 5-row teaser — was ported as
+ * COMPARE_TEASER_ROWS and is gone with the Home compare teaser that was its
+ * only consumer. The final design has no such teaser on Home.
  */
-
-/** The 5-row teaser used on the Home page. */
-export const COMPARE_TEASER_ROWS: ComparisonRow[] = [
-  { label: 'Starting price', cell: (t) => t.price },
-  { label: 'Rating', cell: (t) => formatRating(t.rating) },
-  { label: 'Public API', cell: (t) => t.api },
-  { label: 'Free trial', cell: (t) => t.trial },
-  { label: 'Integrations', cell: (t) => t.integr },
-]
 
 /** The full 9-row table on the Compare page. */
 export const COMPARE_FULL_ROWS: ComparisonRow[] = [

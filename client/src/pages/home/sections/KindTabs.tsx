@@ -1,11 +1,29 @@
 import { HERO_KINDS, type HeroKindIcon } from '@/data/hero'
 
 /*
- * The three-way catalogue-kind selector above the headline.
+ * The catalogue-kind selector above the headline.
  *
  * Source: AI Tool Kart Site.dc.html, the `kindTabs` pill group in the Hero
- * section — a glass rail holding three tabs, the selected one wearing a violet
- * gradient pill with an inset highlight and two outer glows.
+ * section — a glass rail, the selected tab wearing a violet gradient pill with
+ * an inset highlight and two outer glows.
+ *
+ * The handoff has three tabs; "AI Agents" was dropped by product decision, so
+ * this renders two. The rail is `inline-flex` and shrinks to its contents, so
+ * losing a tab narrows it around the remaining pair rather than leaving a hole
+ * — but two tabs sitting side by side make a width difference obvious in a way
+ * three did not (the remaining pair measured 165.1px and 161.7px).
+ *
+ * So the rail is an `inline-grid` of two equal columns rather than a flex row.
+ * An intrinsically-sized grid gives equal `1fr` columns the width of the widest
+ * one, so both pills match exactly and keep matching if a label is reworded;
+ * inside a shrink-to-fit FLEX row there is no free space to distribute, so
+ * `flex-1` would have left them at their own content widths, and a hard px
+ * width would have gone stale the first time someone edited the copy.
+ *
+ * Below 380px the columns stack — the flex row used to wrap for the same
+ * reason, and two nowrap pills do not fit a narrow phone side by side.
+ *
+ * That is the only change the removal required.
  *
  * The selection drives nothing but its own highlight, in the design and here.
  * See the note on HERO_KINDS in data/hero.ts.
@@ -25,22 +43,6 @@ const ICONS: Record<HeroKindIcon, React.ReactElement> = {
       <rect x="13.5" y="3.5" width="7" height="7" rx="1.6" />
       <rect x="3.5" y="13.5" width="7" height="7" rx="1.6" />
       <rect x="13.5" y="13.5" width="7" height="7" rx="1.6" />
-    </svg>
-  ),
-  agents: (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-[17px] w-[17px]"
-    >
-      <rect x="3.6" y="7.5" width="16.8" height="12" rx="3" />
-      <path d="M12 3.4v4.1" />
-      <path d="M9 12.6v1.8" />
-      <path d="M15 12.6v1.8" />
     </svg>
   ),
   mcp: (
@@ -72,7 +74,7 @@ export default function KindTabs({ value, onChange }: KindTabsProps) {
       <div
         role="tablist"
         aria-label="Catalogue kind"
-        className="inline-flex flex-wrap items-center justify-center gap-1 rounded-pill border border-white/[0.085] bg-[rgba(10,8,17,0.55)] p-[5px] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_18px_44px_-30px_rgba(0,0,0,1)] backdrop-blur-[24px] backdrop-saturate-[1.5]"
+        className="inline-grid grid-cols-1 items-center gap-1 rounded-pill border border-white/[0.085] bg-[rgba(10,8,17,0.55)] p-[5px] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_18px_44px_-30px_rgba(0,0,0,1)] backdrop-blur-[24px] backdrop-saturate-[1.5] min-[380px]:grid-cols-2"
       >
         {HERO_KINDS.map((kind) => {
           const active = kind.label === value
@@ -83,7 +85,7 @@ export default function KindTabs({ value, onChange }: KindTabsProps) {
               role="tab"
               aria-selected={active}
               onClick={() => onChange(kind.label)}
-              className={`relative inline-flex cursor-pointer items-center gap-[9px] rounded-pill px-[22px] py-[11px] text-[15px] font-semibold tracking-[-0.014em] whitespace-nowrap transition-colors duration-300 ${
+              className={`relative inline-flex cursor-pointer items-center justify-center gap-[9px] rounded-pill px-[22px] py-[11px] text-[15px] font-semibold tracking-[-0.014em] whitespace-nowrap transition-colors duration-300 ${
                 active ? 'text-white' : 'text-[#8F89A8] hover:text-[#DCD6F0]'
               }`}
             >
