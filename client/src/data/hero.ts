@@ -8,14 +8,22 @@
 export const HERO_WORD_CHAIN = ['Task', 'Job', 'Niche', 'Business', 'Goal'] as const
 
 /**
- * The three catalogue kinds offered above the headline.
+ * The catalogue kinds offered above the headline.
  *
  * In the design this selection drives nothing but its own highlight — no filter,
  * no query, no navigation — so it is reproduced as exactly that here. It becomes
- * a real filter when the catalogue distinguishes the three kinds; inventing that
+ * a real filter when the catalogue distinguishes the kinds; inventing that
  * behaviour now would be inventing a feature.
+ *
+ * The handoff offers three. "AI Agents" was dropped by product decision, so the
+ * union below no longer carries an `agents` icon either — this list is the only
+ * thing that decides what the rail renders, and KindTabs draws one icon per
+ * member of the union, so an unused member would be an unused drawing.
+ *
+ * NOTE: this is unrelated to the assistant's own 'agents' plan section in
+ * data/assistant.ts, which is a different vocabulary and is untouched.
  */
-export type HeroKindIcon = 'workflows' | 'agents' | 'mcp'
+export type HeroKindIcon = 'workflows' | 'mcp'
 
 export interface HeroKind {
   label: string
@@ -24,7 +32,6 @@ export interface HeroKind {
 
 export const HERO_KINDS: HeroKind[] = [
   { label: 'AI Workflows', icon: 'workflows' },
-  { label: 'AI Agents', icon: 'agents' },
   { label: 'MCP Servers', icon: 'mcp' },
 ]
 

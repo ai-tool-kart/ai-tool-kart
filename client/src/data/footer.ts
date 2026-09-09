@@ -1,3 +1,6 @@
+import { COMMUNITY_LINKS } from '@/data/community'
+import { isConfiguredLink } from '@/utils/community'
+
 /*
  * Footer content, ported from `footerCols` and the social rail in the final
  * design (ai-tool-kart-pre-final-design/project/AI Tool Kart Site.dc.html,
@@ -29,7 +32,18 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   },
 ]
 
-/** Social destinations. The design links to the platform roots, not to accounts. */
+/*
+ * Social destinations.
+ *
+ * The URLs are NOT written here. They come from COMMUNITY_LINKS in
+ * data/community.ts, which the homepage Community section reads too — so the
+ * real account links get pasted in exactly one place and both surfaces follow.
+ * Before that they were duplicated, and the footer would have kept pointing at
+ * discord.com after the Community section was updated.
+ *
+ * A channel with no usable URL configured drops out of the rail rather than
+ * rendering a dead icon; see `isConfiguredLink`.
+ */
 export interface SocialLink {
   /** Which icon to draw. See components/layout/Footer.tsx. */
   id: 'discord' | 'x' | 'instagram'
@@ -39,11 +53,17 @@ export interface SocialLink {
   showLabel?: boolean
 }
 
-export const FOOTER_SOCIALS: SocialLink[] = [
-  { id: 'discord', label: 'Join our Discord', href: 'https://discord.com', showLabel: true },
-  { id: 'x', label: 'Follow us on X', href: 'https://x.com' },
-  { id: 'instagram', label: 'Follow us on Instagram', href: 'https://instagram.com' },
+/** The three the design puts in the footer, of the five the site configures. */
+const FOOTER_SOCIAL_COPY: { id: SocialLink['id']; label: string; showLabel?: boolean }[] = [
+  { id: 'discord', label: 'Join our Discord', showLabel: true },
+  { id: 'x', label: 'Follow us on X' },
+  { id: 'instagram', label: 'Follow us on Instagram' },
 ]
+
+export const FOOTER_SOCIALS: SocialLink[] = FOOTER_SOCIAL_COPY.flatMap((social) => {
+  const href = COMMUNITY_LINKS[social.id]?.trim()
+  return isConfiguredLink(href) ? [{ ...social, href }] : []
+})
 
 export const FOOTER_TAGLINE =
   "The world's most intuitive AI discovery platform. Independent, tested, dated."

@@ -8,18 +8,18 @@ import type { LegacyMockTool } from '@/types/tool'
  * GET /api/tools is the real catalogue (66 tools), reached through
  * services/tools.ts; Browse no longer imports this file.
  *
- * It survives only because three surfaces still read it, and all three are
- * redesigned in Milestone 4:
+ * It survives only because ONE surface still reads it:
  *
- *   pages/home/sections/TrendingSection.tsx
- *   pages/home/sections/CompareTeaser.tsx
  *   pages/KitchenSinkPage.tsx   (the temporary component surface)
  *
- * Deleting it now would blank those sections; migrating them now would be
- * building Milestone 4's UI early. So it stays, typed as `LegacyMockTool[]` —
+ * The two Home sections that used to — TrendingSection and CompareTeaser —
+ * were built from the first design export and are gone; the final design has
+ * no equivalent of either on Home. This file goes with the kitchen sink, which
+ * is itself scheduled for removal. Until then it stays, typed as
+ * `LegacyMockTool[]` —
  * NOT `Tool[]` — so the type system states plainly that these records are not
  * catalogue records: they have no slug, no url and no taxonomy. Nothing new
- * should import this file, and it is deleted with the last of those three.
+ * should import this file.
  */
 
 export const TOOLS: LegacyMockTool[] = [

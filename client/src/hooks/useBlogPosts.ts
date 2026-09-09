@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useState } from 'react'
-import { getAllPosts, getPostBySlug, WordPressError } from '@/services/wordpress'
+import { getAllPosts, getLatestPosts, getPostBySlug, WordPressError } from '@/services/wordpress'
 import type { BlogPost } from '@/types/blog'
 
 /*
  * Data hooks for the blog views.
  *
  * Fetching lives here rather than in BlogPage/BlogArticlePage so the same
- * loading/error/retry contract is reused by any future consumer — the Home
- * "Latest from AI Tool Kart" section can call `getLatestPosts(3)` through the
- * same service without touching this file.
+ * loading/error/retry contract is reused by every consumer. The Home
+ * "Blog & Insights" section is one of them: it goes through `useLatestBlogPosts`
+ * below, over the same service and the same normalization, so there is exactly
+ * one path from WordPress into the app.
  */
 
 export interface AsyncResource<T> {
@@ -64,6 +65,19 @@ function useAsyncResource<T>(load: (signal: AbortSignal) => Promise<T>): AsyncRe
 /** Every published post, newest first. Powers the /blog listing. */
 export function useBlogPosts(): AsyncResource<BlogPost[]> {
   const load = useCallback((signal: AbortSignal) => getAllPosts(signal), [])
+  return useAsyncResource(load)
+}
+
+/**
+ * The newest `limit` published posts, newest first. Powers Home's Blog &
+ * Insights section.
+ *
+ * A separate request from `useBlogPosts` rather than a slice of it, because the
+ * homepage must not pull the whole archive to show three cards — `per_page`
+ * does that work on the CMS side.
+ */
+export function useLatestBlogPosts(limit: number): AsyncResource<BlogPost[]> {
+  const load = useCallback((signal: AbortSignal) => getLatestPosts(limit, signal), [limit])
   return useAsyncResource(load)
 }
 

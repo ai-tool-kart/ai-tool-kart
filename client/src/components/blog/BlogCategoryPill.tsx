@@ -1,9 +1,16 @@
+import { blogCategoryLabel } from '@/utils/blog'
+
 /*
- * Uppercase category pill.
+ * Uppercase category pill for the /blog views.
  *
  * Source: AI Tool Kart Site.dc.html — the featured card uses the violet-tinted
  * treatment, the grid cards a quieter neutral one. Both fall back to "Journal"
- * when the post carries no category (or only WordPress's "Uncategorized").
+ * when the post carries no category (or only WordPress's "Uncategorized"); the
+ * fallback word itself lives in utils/blog so Home uses the same one.
+ *
+ * Home's Blog & Insights pills are NOT this component: their colour is the
+ * card's own tone, carried on a CSS custom property, which a fixed variant map
+ * cannot express.
  */
 
 interface BlogCategoryPillProps {
@@ -21,5 +28,5 @@ export default function BlogCategoryPill({
   category,
   variant = 'card',
 }: BlogCategoryPillProps) {
-  return <span className={VARIANTS[variant]}>{category ?? 'Journal'}</span>
+  return <span className={VARIANTS[variant]}>{blogCategoryLabel(category)}</span>
 }

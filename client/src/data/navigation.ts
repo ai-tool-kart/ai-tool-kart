@@ -27,9 +27,34 @@ export interface NavItem {
   matchesRoute?: boolean
 }
 
+/*
+ * Named destinations, for the places outside this file that must land where the
+ * nav lands.
+ *
+ * Both are single-sourced rather than repeated as string literals, because both
+ * are duplicated somewhere the duplicate would silently rot: the nav pill's
+ * "Submit Your Tool" CTA and the closing "Submit a Tool" card are the same
+ * journey and must never disagree, and `WORKFLOWS_ROUTE` is a placeholder that
+ * will move the day Workflows gets a screen — at which point one edit here
+ * updates the nav item and the "Share an AI Setup" card together.
+ */
+
+/** Where "Submit Your Tool" and the closing CTA's "Submit" both go. */
+export const SUBMIT_ROUTE = '/submit'
+
+/**
+ * Where "Workflows" goes TODAY.
+ *
+ * There is no `/workflows` route yet — see App.tsx — and the nav has always
+ * sent this label to Browse rather than to a 404. Anything else pointing at
+ * "Workflows" reads this constant so it follows the nav, including the day the
+ * real screen arrives and this becomes '/workflows'.
+ */
+export const WORKFLOWS_ROUTE = '/browse'
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
-  { label: 'Workflows', to: '/browse', matchesRoute: false },
+  { label: 'Workflows', to: WORKFLOWS_ROUTE, matchesRoute: false },
   { label: 'New Launches', to: '/browse', matchesRoute: false },
   { label: 'Our AI Assistant', to: '/', matchesRoute: false },
   { label: 'Blog', to: '/blog' },

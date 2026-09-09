@@ -21,6 +21,12 @@ export type {
 } from '@/types/aiSetup'
 export type { BlogPost } from '@/types/blog'
 export type {
+  CommunityChannel,
+  CommunityLinks,
+  CommunityPlatform,
+  ResolvedCommunityChannel,
+} from '@/types/community'
+export type {
   FeaturedMediaOverride,
   FeaturedSelection,
   FeaturedTool,
