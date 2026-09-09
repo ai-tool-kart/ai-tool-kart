@@ -5,6 +5,7 @@ import BlogPage from '@/pages/BlogPage'
 import BrowsePage from '@/pages/BrowsePage'
 import ComparePage from '@/pages/ComparePage'
 import HomePage from '@/pages/HomePage'
+import NewLaunchesPage from '@/pages/NewLaunchesPage'
 import KitchenSinkPage from '@/pages/KitchenSinkPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import SubmitPage from '@/pages/SubmitPage'
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="compare" element={<ComparePage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogArticlePage />} />
+        <Route path="new-launches" element={<NewLaunchesPage />} />
         <Route path="submit" element={<SubmitPage />} />
         {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}
         <Route path="kitchen-sink" element={<KitchenSinkPage />} />

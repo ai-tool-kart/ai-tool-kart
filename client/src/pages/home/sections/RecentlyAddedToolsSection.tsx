@@ -3,7 +3,6 @@ import RecentToolCard from '@/components/recentlyAdded/RecentToolCard'
 import RecentlyAddedSkeleton from '@/components/recentlyAdded/RecentlyAddedSkeleton'
 import { useCardRail } from '@/hooks/useCardRail'
 import { useRecentlyAddedTools } from '@/hooks/useRecentlyAddedTools'
-import { EMPTY_FILTERS, toBrowseParams } from '@/utils/browseParams'
 import { isRecentlyAdded } from '@/utils/recency'
 
 /*
@@ -91,7 +90,7 @@ export default function RecentlyAddedToolsSection() {
    * `toBrowseParams` rather than a hand-written string so the URL stays in the
    * one vocabulary Browse parses back.
    */
-  const viewAllTo = `/browse?${toBrowseParams({ ...EMPTY_FILTERS, sort: 'newest' }).toString()}`
+  const viewAllTo = `/new-launches`
 
   return (
     <section className="relative pt-[92px] pb-[84px]">

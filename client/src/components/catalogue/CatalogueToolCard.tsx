@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import CardBadge from '@/components/catalogue/CardBadge'
 import { badgeFor, ctaLabel, priceTone, toneForIndex } from '@/components/catalogue/toolCardTone'
 import type { Tool } from '@/types/tool'
@@ -46,6 +46,16 @@ interface CatalogueToolCardProps {
   /** Opens the tool. Omit and the primary button links out to `tool.url`. */
   onOpen?: (tool: Tool) => void
   onCompare?: (tool: Tool) => void
+  /**
+   * Replaces the line beside the pricing chip.
+   *
+   * That slot normally carries the review count, or the tool's price string
+   * when there are no reviews. New Launches puts "Added 4 days ago" there
+   * instead, which is the one thing its cards say that Browse's do not — the
+   * handoff's launch card is otherwise this card exactly. An optional slot
+   * keeps that a two-line difference rather than a second copy of the card.
+   */
+  meta?: ReactNode
 }
 
 export default function CatalogueToolCard({
@@ -53,6 +63,7 @@ export default function CatalogueToolCard({
   index,
   onOpen,
   onCompare,
+  meta,
 }: CatalogueToolCardProps) {
   const tone = toneForIndex(index)
   const price = priceTone(tool.model)
@@ -144,7 +155,7 @@ export default function CatalogueToolCard({
           >
             {tool.model}
           </span>
-          {tool.reviews > 0 ? (
+          {meta ?? (tool.reviews > 0 ? (
             <span className="truncate text-[12px] text-[#615C7A]">
               {tool.reviews.toLocaleString()} reviews
             </span>
@@ -153,7 +164,7 @@ export default function CatalogueToolCard({
                slot carries the tool's actual price string instead — real
                information, in the space that was reserved for information. */
             <span className="truncate text-[12px] text-[#615C7A]">{tool.price}</span>
-          )}
+          ))}
         </div>
 
         <div className="mt-auto flex items-center gap-2 border-t border-white/[0.06] pt-[14px]">
