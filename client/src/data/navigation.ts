@@ -12,7 +12,9 @@
  * separately in `state.navKey`, which let two items share a destination while
  * only one looked selected. React derives the active state from the URL instead,
  * so an item that shares a destination opts out of the active treatment via
- * `matchesRoute: false` — otherwise three items would light up on /browse.
+ * `matchesRoute: false`. Two still do: Our AI Assistant and Community both
+ * resolve to the homepage, so without it they would light up together, and with
+ * Community's fragment they would light up on every homepage visit.
  *
  * Workflows points at an existing route on purpose: the design has a screen for
  * it, that screen is not built yet, and a nav link to a 404 is worse than one
@@ -38,23 +40,25 @@ export interface NavItem {
  * Both are single-sourced rather than repeated as string literals, because both
  * are duplicated somewhere the duplicate would silently rot: the nav pill's
  * "Submit Your Tool" CTA and the closing "Submit a Tool" card are the same
- * journey and must never disagree, and `WORKFLOWS_ROUTE` is a placeholder that
- * will move the day Workflows gets a screen — at which point one edit here
- * updates the nav item and the "Share an AI Setup" card together.
+ * journey and must never disagree, and `WORKFLOWS_ROUTE` is read by both the nav
+ * item and the "Share an AI Setup" card, so the two cannot drift apart.
  */
 
 /** Where "Submit Your Tool" and the closing CTA's "Submit" both go. */
 export const SUBMIT_ROUTE = '/submit'
 
 /**
- * Where "Workflows" goes TODAY.
+ * The AI setup library.
  *
- * There is no `/workflows` route yet — see App.tsx — and the nav has always
- * sent this label to Browse rather than to a 404. Anything else pointing at
- * "Workflows" reads this constant so it follows the nav, including the day the
- * real screen arrives and this becomes '/workflows'.
+ * A real screen as of this change (pages/WorkflowsPage.tsx). It pointed at
+ * '/browse' for as long as there was nothing behind the label — the nav has
+ * carried "Workflows" since the final design's export, and a link to Browse was
+ * judged better than a link to a 404. That placeholder is now retired.
+ *
+ * Anything pointing at "Workflows" reads this constant rather than the literal,
+ * so the nav item and the "Share an AI Setup" card move together.
  */
-export const WORKFLOWS_ROUTE = '/browse'
+export const WORKFLOWS_ROUTE = '/workflows'
 
 /**
  * The chronological catalogue view.
@@ -100,7 +104,7 @@ export const ASSISTANT_ROUTE = `/#${ASSISTANT_SECTION_ID}`
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
-  { label: 'Workflows', to: WORKFLOWS_ROUTE, matchesRoute: false },
+  { label: 'Workflows', to: WORKFLOWS_ROUTE },
   { label: 'New Launches', to: LAUNCHES_ROUTE },
   { label: 'Our AI Assistant', to: ASSISTANT_ROUTE, matchesRoute: false },
   { label: 'Blog', to: '/blog' },

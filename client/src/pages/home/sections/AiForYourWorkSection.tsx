@@ -33,16 +33,18 @@ import { composeSetupRequest, resolveSetup, setupsForCategory } from '@/utils/ai
  * Local state, no URL and no network. Deliberate: this is a homepage browsing
  * aid rather than a destination, and it filters a list already in memory, so
  * neither a request nor a history entry is warranted. Browse remains the
- * shareable, back/forward-correct surface. When the Workflows screen arrives
- * with its own route, its filter belongs in the URL — but that is that screen's
- * decision, not this section's.
+ * shareable, back/forward-correct surface. /workflows, which is the same library
+ * at full length, does put its chip in the URL — it is a destination, so a
+ * filtered view there has to be shareable. Same components, different job.
  *
  * ── Where "View Setup" goes, and why it goes there ───────────────────────────
  *
- * Into the assistant, on this page. The final design has a Workflows screen and
- * implies a setup detail view; neither route exists yet, and pointing a card at
- * a 404 — or at `/browse?q=Research → Draft → Polish`, which is a keyword search
- * dressed up as a destination — would be worse than the interim below.
+ * Into the assistant, on this page — and NOT to /workflows, even though that
+ * route now exists. This section's reader is already looking at the assistant
+ * further up the same page; sending them to the library to come back again
+ * would be a detour past the thing they wanted. /workflows makes the opposite
+ * call for the same reason: it has no assistant of its own, so its cards
+ * navigate here carrying the request.
  *
  * So the card composes one plain-English request out of the setup and its
  * resolved tools and sends it into the page's existing conversation, then scrolls
@@ -51,9 +53,9 @@ import { composeSetupRequest, resolveSetup, setupsForCategory } from '@/utils/ai
  * assistant rather than adding a second, and the reply is grounded server-side
  * against the same catalogue the card's tiles came from.
  *
- * When the setup detail route arrives, this becomes a <Link to={`/setups/${id}`}>
- * and `composeSetupRequest` moves to that page's "ask the assistant" action —
- * the setup type already carries a stable `id` for that URL.
+ * A setup DETAIL view is still unbuilt. When it arrives this becomes a
+ * <Link to={`/setups/${id}`}> and `composeSetupRequest` moves to that page's
+ * "ask the assistant" action — the setup type already carries a stable `id`.
  *
  * ── Failure ──────────────────────────────────────────────────────────────────
  *
