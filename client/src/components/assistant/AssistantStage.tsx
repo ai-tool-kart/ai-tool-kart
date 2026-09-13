@@ -1,6 +1,7 @@
 import type { RefObject } from 'react'
 import ChatPanel from '@/components/assistant/ChatPanel'
 import PlanPanel from '@/components/assistant/PlanPanel'
+import { ASSISTANT_SECTION_ID } from '@/data/navigation'
 import type { AssistantSession } from '@/hooks/useAssistant'
 
 /*
@@ -20,6 +21,12 @@ import type { AssistantSession } from '@/hooks/useAssistant'
  * item too, which is why it disappears cleanly into the gap when they stack.
  *
  * This component holds no state. It is handed a session and splits it in two.
+ *
+ * The shell carries ASSISTANT_SECTION_ID because the nav's "Our AI Assistant"
+ * item is a fragment link to it — the assistant is a section of the homepage in
+ * the final design, not a page. `scroll-mt` clears the fixed header, as the
+ * Community section does; `scrollIntoView` honours it, so nothing computes an
+ * offset. See data/navigation.ts.
  */
 
 /** The ambient pools behind the shell, outermost first. */
@@ -45,8 +52,9 @@ export default function AssistantStage({ session, panelRef }: AssistantStageProp
   return (
     <div
       ref={panelRef}
+      id={ASSISTANT_SECTION_ID}
       data-reveal="0"
-      className="relative mx-auto mt-[42px] w-[min(1120px,100%)] text-left"
+      className="relative mx-auto mt-[42px] w-[min(1120px,100%)] scroll-mt-[110px] text-left"
     >
       {GLOWS.map((glow) => (
         <div key={glow} aria-hidden="true" className={`pointer-events-none ${glow}`} />

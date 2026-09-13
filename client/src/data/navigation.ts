@@ -14,11 +14,14 @@
  * so an item that shares a destination opts out of the active treatment via
  * `matchesRoute: false` — otherwise three items would light up on /browse.
  *
- * Workflows and Our AI Assistant point at existing routes on purpose: the
- * design has a screen for each, but those screens are not built yet and a nav
- * link to a 404 is worse than one that lands somewhere sensible. Each gains its
- * own route in the milestone that builds it — New Launches already has, and
- * Community is now a fragment on the homepage.
+ * Workflows points at an existing route on purpose: the design has a screen for
+ * it, that screen is not built yet, and a nav link to a 404 is worse than one
+ * that lands somewhere sensible. It gains its own route in the milestone that
+ * builds it — New Launches already has.
+ *
+ * Our AI Assistant and Community are different: neither is a missing screen.
+ * Both are sections of the homepage in the final design, so both are fragment
+ * links to the section itself rather than placeholders waiting for a route.
  */
 
 export interface NavItem {
@@ -76,11 +79,30 @@ export const LAUNCHES_ROUTE = '/new-launches'
 export const COMMUNITY_SECTION_ID = 'community'
 export const COMMUNITY_ROUTE = `/#${COMMUNITY_SECTION_ID}`
 
+/**
+ * The assistant stage's element id, and the nav link that reaches it.
+ *
+ * The assistant is not a page. The final design puts it directly under the hero
+ * search as the homepage's centrepiece — one two-pane stage that the search box,
+ * the composer, "Let's Build" and the setup cards all talk to — so "Our AI
+ * Assistant" is a fragment link to that stage, exactly as Community is to its
+ * section, and NOT a route invented to give the nav item somewhere to go.
+ *
+ * It pointed at `/` before this, which meant the item did nothing at all for the
+ * reader most likely to click it: someone already on the homepage, above the
+ * stage, looking for the assistant.
+ *
+ * The id lives here because two files must agree on it — the stage that carries
+ * it and this link — and a fragment that misses its target fails silently.
+ */
+export const ASSISTANT_SECTION_ID = 'ai-assistant'
+export const ASSISTANT_ROUTE = `/#${ASSISTANT_SECTION_ID}`
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
   { label: 'Workflows', to: WORKFLOWS_ROUTE, matchesRoute: false },
   { label: 'New Launches', to: LAUNCHES_ROUTE },
-  { label: 'Our AI Assistant', to: '/', matchesRoute: false },
+  { label: 'Our AI Assistant', to: ASSISTANT_ROUTE, matchesRoute: false },
   { label: 'Blog', to: '/blog' },
   { label: 'Community', to: COMMUNITY_ROUTE, matchesRoute: false },
 ]
