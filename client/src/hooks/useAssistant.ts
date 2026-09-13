@@ -42,6 +42,18 @@ import type {
  * flight (or unmount mid-request). Every send aborts the previous request and
  * bumps a sequence number; a response whose sequence is stale is dropped rather
  * than applied, so a slow first answer can never overwrite a fast second one.
+ *
+ * ── Why the transcript is mirrored into a ref ────────────────────────────────
+ *
+ * `send` needs the transcript BEFORE this turn, to post as history. Reading it
+ * inside a `setTurns` updater is the obvious way to get it and is wrong: an
+ * updater must be pure, and React deliberately invokes it twice under
+ * StrictMode. Firing the request from in there sent every turn to the server
+ * TWICE in development — one request immediately aborted by its own duplicate,
+ * which is invisible in the UI and plainly visible in the server log.
+ *
+ * So the transcript is mirrored into `turnsRef` as it is appended, and `send`
+ * reads the ref. The updater does nothing but return the next array.
  */
 
 /** Turn ids only need to be unique within one mounted conversation. */
@@ -85,6 +97,8 @@ function toHistory(turns: ChatTurn[]): ConversationMessage[] {
 
 export function useAssistant(): AssistantSession {
   const [turns, setTurns] = useState<ChatTurn[]>([])
+  /* The transcript as `send` reads it — see the header note on purity. */
+  const turnsRef = useRef<ChatTurn[]>([])
   const [plan, setPlan] = useState<AssistantPlan | undefined>(undefined)
   const [understood, setUnderstood] = useState<AssistantUnderstood | undefined>(undefined)
   const [status, setStatus] = useState<AssistantStatus>('idle')
@@ -129,15 +143,16 @@ export function useAssistant(): AssistantSession {
         // A turn without a plan (a clarifying question) leaves the panel showing
         // whatever the last planned turn produced. See the header note.
         if (reply.plan) setPlan(reply.plan)
-        setTurns((current) => [
-          ...current,
+        turnsRef.current = [
+          ...turnsRef.current,
           {
             id: nextTurnId('assistant'),
             role: 'assistant',
             text: reply.message,
             ...(reply.followUps.length > 0 ? { followUps: reply.followUps } : {}),
           },
-        ])
+        ]
+        setTurns(turnsRef.current)
         setStatus('ready')
       })
       .catch((cause: unknown) => {
@@ -155,20 +170,21 @@ export function useAssistant(): AssistantSession {
       const message = text.trim()
       if (!message) return
 
-      setTurns((current) => {
-        const next: ChatTurn[] = [
-          ...current,
-          { id: nextTurnId('user'), role: 'user', text: message },
-        ]
-        // The history posted with this turn is the transcript BEFORE it — the
-        // message itself travels in `message`, and sending it twice would make
-        // the model answer a question it can see it has already been asked.
-        run({
-          message,
-          messages: toHistory(current),
-          ...(contextRef.current ? { context: contextRef.current } : {}),
-        })
-        return next
+      // The history posted with this turn is the transcript BEFORE it — the
+      // message itself travels in `message`, and sending it twice would make
+      // the model answer a question it can see it has already been asked.
+      const history = toHistory(turnsRef.current)
+
+      turnsRef.current = [
+        ...turnsRef.current,
+        { id: nextTurnId('user'), role: 'user', text: message },
+      ]
+      setTurns(turnsRef.current)
+
+      run({
+        message,
+        messages: history,
+        ...(contextRef.current ? { context: contextRef.current } : {}),
       })
     },
     [run],
@@ -186,6 +202,7 @@ export function useAssistant(): AssistantSession {
     sequenceRef.current += 1
     contextRef.current = undefined
     lastRequestRef.current = undefined
+    turnsRef.current = []
     setTurns([])
     setPlan(undefined)
     setUnderstood(undefined)

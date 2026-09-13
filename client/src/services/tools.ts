@@ -27,11 +27,13 @@ import type { SortOption, Tool, ToolFilters } from '@/types/tool'
  * whole request. Callers must therefore pass values already validated against
  * the taxonomy; utils/browseParams.ts is where a hand-edited URL gets cleaned.
  *
- * `minRating` is sent whenever the Refine rail's slider is above 0. Worth
- * knowing what that means today: every tool in the seeded catalogue has
- * `rating: 0`, so any floor above 0 returns an empty result set. That is the
- * parameter working exactly as specified against a catalogue with no ratings —
- * not a bug in either layer — and the page's empty state handles it.
+ * `minRating` is sent whenever the Refine rail's slider is above 0. Note what a
+ * floor does to an UNRATED record: the catalogue uses `rating: 0` to mean "no
+ * ratings collected yet", not "rated zero", and four of the 66 seeded tools
+ * carry it. Any floor above 0 therefore excludes them. That is the parameter
+ * working as specified rather than a bug in either layer, and it is the same
+ * distinction the cards make when they render no star row at all for a 0 —
+ * never a `0.0 ★`.
  */
 
 const TOOLS_PATH = '/tools'
