@@ -9,6 +9,7 @@ import NewLaunchesPage from '@/pages/NewLaunchesPage'
 import KitchenSinkPage from '@/pages/KitchenSinkPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import SubmitPage from '@/pages/SubmitPage'
+import WorkflowsPage from '@/pages/WorkflowsPage'
 
 /*
  * Route table only — no markup, no state, no data fetching.
@@ -23,6 +24,7 @@ export default function App() {
       <Route element={<PageShell />}>
         <Route index element={<HomePage />} />
         <Route path="browse" element={<BrowsePage />} />
+        <Route path="workflows" element={<WorkflowsPage />} />
         <Route path="compare" element={<ComparePage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogArticlePage />} />

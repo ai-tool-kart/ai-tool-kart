@@ -56,6 +56,29 @@ export function setupsForCategory(
 }
 
 /**
+ * The setups the /workflows LIBRARY shows.
+ *
+ * Same chip vocabulary as `setupsForCategory`, one deliberate difference: "All"
+ * here means ALL NINETEEN, not the curated six.
+ *
+ * That is not an inconsistency between the two surfaces, it is the difference
+ * between them. The homepage section is a taster with a "Browse all setups"
+ * link out of it, so defaulting to nineteen cards would bury the six it exists
+ * to show. The Workflows page IS the thing that link points at, and a library
+ * whose default view hides two thirds of the library is not a library.
+ *
+ * Returns a new array and never sorts, so the order is the declaration order on
+ * both surfaces and a card does not move when the reader arrives from Home.
+ */
+export function librarySetupsForCategory(
+  setups: readonly AiSetup[],
+  category: SetupCategory | undefined,
+): AiSetup[] {
+  if (!category) return [...setups]
+  return setups.filter((setup) => setup.category === category)
+}
+
+/**
  * The card's metadata line: "3 tools · 1 workflow · 4 prompts".
  *
  * The tool count is the number of tools that ACTUALLY RESOLVED, not the number

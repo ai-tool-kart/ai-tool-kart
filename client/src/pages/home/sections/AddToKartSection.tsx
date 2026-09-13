@@ -37,7 +37,7 @@ import { SUBMIT_ROUTE, WORKFLOWS_ROUTE } from '@/data/navigation'
  * Both destinations are named constants from data/navigation.ts rather than
  * literals, so "Submit" cannot drift away from the nav pill's "Submit Your
  * Tool", and "Share Setup" follows the nav's Workflows item to whatever it
- * points at — Browse today, a real Workflows screen when one exists.
+ * points at — the setup library at /workflows.
  */
 
 /* The design's gradient border: fill on padding-box, border on border-box. */
