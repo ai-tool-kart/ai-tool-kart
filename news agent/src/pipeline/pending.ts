@@ -96,7 +96,17 @@ export async function retryPendingPublications(
   const { env, repos, run, dryRun, wordpress, addError } = deps
   const log = deps.logger.child({ step: 'publish-retry' })
 
-  const queue = repos.articles.listAwaitingPublication(PENDING_PUBLISH.maxPerRun)
+  /*
+   * Two bounds apply, and the tighter wins. PENDING_PUBLISH.maxPerRun keeps a
+   * large backlog from turning one run into a long series of CMS writes;
+   * limits.maxDraftsPerRun is the operator's cap on how many posts a single
+   * scheduled run may create at all. Automation makes the second one matter:
+   * without it, a backlog could produce ten drafts on a run whose article cap
+   * was one.
+   */
+  const queue = repos.articles.listAwaitingPublication(
+    Math.min(PENDING_PUBLISH.maxPerRun, env.limits.maxDraftsPerRun),
+  )
   if (queue.length === 0) {
     log.debug('No approved drafts awaiting publication')
     return EMPTY

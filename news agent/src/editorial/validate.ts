@@ -10,6 +10,8 @@
  * is expensive and rarely converges after one pass.
  */
 
+import { formatRange } from './format.ts'
+import { mergeSeoIntoVerdict, validateSeo } from '../seo/validate.ts'
 import { ARTICLE, MIN_APPROVAL_CONFIDENCE, MAX_REVISION_ATTEMPTS } from '../config/limits.ts'
 import { EDITORIAL_SCOPE } from '../config/editorial.ts'
 import type { ArticleDraft, Claim, SourceEvidence } from '../domain/types.ts'
@@ -133,6 +135,9 @@ export async function validateDraft(
 
   const publishersByUrl = new Map(input.evidence.map((item) => [item.url, item.publisher]))
   const usableClaims = input.claims.filter((claim) => claim.supportLevel !== 'unsupported')
+  // The draft is judged against the format chosen from its own evidence, never
+  // against one global minimum.
+  const range = formatRange(input.draft.format)
 
   let review: EditorialReview
   try {
@@ -146,6 +151,9 @@ export async function validateDraft(
         tags: input.draft.tags,
         bodyText: sectionsToPlainText(input.draft.sections),
         wordCount: input.draft.wordCount,
+        format: input.draft.format,
+        targetMinWords: range.minWords,
+        targetMaxWords: range.maxWords,
         claims: usableClaims.map((claim) => ({
           id: claim.id,
           text: claim.text,
@@ -190,29 +198,65 @@ export async function validateDraft(
   const deterministic = deterministicChecks(input.draft, input.claims)
 
   /*
-   * Word count is reported, not enforced as blocking. A short article built from
-   * thin but genuine evidence is better than a padded one, and §15 says as much;
-   * the human reviewer sees the note.
+   * Word count is reported against the draft's own format, and stays advisory
+   * rather than blocking.
+   *
+   * Being under a brief's floor is not the same failure as being under the old
+   * global 500, and is usually not a failure at all: it means the verified
+   * claims ran out first, which §14 requires the writer to respect. Being OVER
+   * the range is the more interesting signal, because the extra words had to
+   * come from somewhere — so it is named distinctly for the reviewer.
    */
   const advisory: string[] = [...deterministic.advisory]
-  if (input.draft.wordCount < ARTICLE.minWords) {
-    advisory.push(`short-article (${input.draft.wordCount} words, target ${ARTICLE.minWords})`)
+  if (input.draft.wordCount < range.minWords) {
+    advisory.push(
+      `below-format-target (${input.draft.wordCount} words, ${input.draft.format} target ` +
+        `${range.minWords}-${range.maxWords}; expected when evidence is thin, padding is not a fix)`,
+    )
   }
-  if (input.draft.wordCount > ARTICLE.maxWords) {
-    advisory.push(`long-article (${input.draft.wordCount} words, target ${ARTICLE.maxWords})`)
+  if (input.draft.wordCount > range.maxWords) {
+    advisory.push(
+      `above-format-target (${input.draft.wordCount} words, ${input.draft.format} target ` +
+        `${range.minWords}-${range.maxWords})`,
+    )
   }
 
-  const blockingIssues = [...modelBlocking, ...deterministic.blocking]
+  /*
+   * SEO validation, folded in one direction only.
+   *
+   * mergeSeoIntoVerdict can lower an approved verdict but never raise one: a
+   * clean SEO brief is not a reason to publish something the factual editor
+   * rejected. Advisory SEO findings are reported and never block, so an article
+   * that is factually excellent and merely imperfectly optimised still ships.
+   */
+  const seoResult = input.draft.seo
+    ? validateSeo({
+        seo: input.draft.seo,
+        title: input.draft.title,
+        excerpt: input.draft.excerpt,
+        headings: input.draft.sections.map((section) => section.heading),
+        bodyText: sectionsToPlainText(input.draft.sections),
+        format: input.draft.format,
+        claims: input.claims.filter((claim) => claim.supportLevel === 'verified'),
+        storyTitle: input.draft.title,
+      })
+    : { blocking: [], advisory: [] }
+
+  advisory.push(...seoResult.advisory)
+
+  const blockingIssues = [...modelBlocking, ...deterministic.blocking, ...seoResult.blocking]
   // Everything the model called blocking is by definition about the prose, so a
   // rewrite is worth attempting; deterministic issues are only sometimes.
-  const writerFixableIssues = [...modelBlocking, ...deterministic.writerFixable]
+  const writerFixableIssues = [...modelBlocking, ...deterministic.writerFixable, ...seoResult.blocking]
   const allIssues = [...blockingIssues, ...modelMinor, ...advisory]
 
   let verdict: ValidationResult['verdict'] = review.verdict
-  if (blockingIssues.length > 0 && verdict === 'approved') {
+  if ([...modelBlocking, ...deterministic.blocking].length > 0 && verdict === 'approved') {
     // Deterministic checks override an over-generous model verdict.
     verdict = 'needs-revision'
   }
+  // SEO is applied last and separately, so the asymmetry stays explicit.
+  verdict = mergeSeoIntoVerdict(verdict, seoResult.blocking)
   if (verdict === 'approved' && review.confidence < MIN_APPROVAL_CONFIDENCE) {
     verdict = 'needs-revision'
     allIssues.push(
@@ -222,6 +266,10 @@ export async function validateDraft(
 
   log.info('Editorial review complete', {
     verdict,
+    format: input.draft.format,
+    seoBlocking: seoResult.blocking.length,
+    seoAdvisory: seoResult.advisory.length,
+    words: input.draft.wordCount,
     confidence: review.confidence,
     blocking: blockingIssues.length,
     minor: modelMinor.length,

@@ -64,6 +64,21 @@ export interface IngestDeps {
   fetchFeed?: (source: NewsSource) => Promise<string>
   /** Editorial "now": stamps discoveredAt and bounds future-dated feed items. */
   clock?: Clock
+  /**
+   * Observability seam: called once per source with its outcome.
+   *
+   * Undefined outside the demo dashboard. The aggregate IngestResult cannot
+   * distinguish "fetched fine, nothing new" from "the feed was down", and a
+   * dashboard that shows source collection has to.
+   */
+  onSource?: (outcome: {
+    source: NewsSource
+    ok: boolean
+    accepted: number
+    found: number
+    skipped: number
+    error?: string
+  }) => void
 }
 
 async function defaultFetchFeed(source: NewsSource, env: AgentEnv): Promise<string> {
@@ -87,7 +102,7 @@ export async function ingestSources(
   sources: NewsSource[],
   deps: IngestDeps,
 ): Promise<IngestResult> {
-  const { env, logger, clock = systemClock } = deps
+  const { env, logger, clock = systemClock, onSource } = deps
   const fetchFeed = deps.fetchFeed ?? ((source: NewsSource) => defaultFetchFeed(source, env))
   const discoveredAt = clock.nowIso()
   const reference = clock.now()
@@ -108,6 +123,14 @@ export async function ingestSources(
     } catch (error) {
       sourcesFailed += 1
       log.warn('Source fetch failed', errorFields(error))
+      onSource?.({
+        source,
+        ok: false,
+        accepted: 0,
+        found: 0,
+        skipped: 0,
+        error: error instanceof Error ? error.message : String(error),
+      })
       continue
     }
 
@@ -120,6 +143,14 @@ export async function ingestSources(
         ...errorFields(error),
         // Never log the body — it is untrusted and can be enormous.
         bytes: xml.length,
+      })
+      onSource?.({
+        source,
+        ok: false,
+        accepted: 0,
+        found: 0,
+        skipped: 0,
+        error: error instanceof Error ? error.message : String(error),
       })
       continue
     }
@@ -165,6 +196,7 @@ export async function ingestSources(
       skipped,
       cappedAt: accepted >= cap ? cap : undefined,
     })
+    onSource?.({ source, ok: true, accepted, found: parsed.items.length, skipped })
   }
 
   return { items, sourcesChecked, sourcesFailed, droppedBeforePersist }

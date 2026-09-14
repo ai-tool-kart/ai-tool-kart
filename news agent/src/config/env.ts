@@ -20,8 +20,68 @@ const boolish = z
   .pipe(z.enum(['true', 'false', '1', '0', 'yes', 'no', '']))
   .transform((value) => value === 'true' || value === '1' || value === 'yes')
 
+/*
+ * Numeric parsing for run limits.
+ *
+ * ── Why these do not use .catch() ────────────────────────────────────────────
+ *
+ * The previous helper was `z.coerce.number().int().positive().catch(fallback)`,
+ * which meant ANY value failing validation was silently replaced by the default.
+ * Setting AGENT_MAX_CANDIDATES_PER_RUN=0 to mean "score nothing" did not produce
+ * a no-op run — it produced the default 20-candidate run. A cost control that
+ * silently FAILS OPEN, expanding to the full default workload at the exact
+ * moment an operator was trying to restrict it, is the wrong shape for a circuit
+ * breaker. The same held for `abc`, `-5` and `1e9`.
+ *
+ * Both helpers below fail loudly instead. An unset or empty variable still takes
+ * the documented default; anything present but unusable stops startup with a
+ * message naming the variable.
+ */
+
+/** Blank/absent means "not configured", so the default applies. */
+const blankToUndefined = (value: unknown) =>
+  typeof value === 'string' && value.trim() === '' ? undefined : value
+
+/**
+ * A run/cost cap. Zero is VALID and means zero work.
+ *
+ * Zero is supported rather than rejected because the pipeline already has a
+ * first-class path for "this cap is reached": defer the remaining work with a
+ * logged reason and exit cleanly (§27). A cap of 0 is simply that path taken
+ * immediately — no candidates scored, no stories verified, no articles written,
+ * and nothing rejected. It is genuinely useful for exercising ingestion, dedupe
+ * and the pending-publication retry without spending a token.
+ *
+ * It also fails CLOSED: a mistyped 0 yields a no-op run, never a full one.
+ *
+ * Note that zeroing every cap does not make a run do nothing. Publishing an
+ * article an earlier run already approved costs no LLM budget and still happens
+ * (pipeline/pending.ts). That is deliberate, not a leak in the cap.
+ */
+const capInt = (fallback: number) =>
+  z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a whole number (0 or greater)' })
+      .int({ message: 'must be a whole number' })
+      .min(0, { message: 'must be 0 or greater' })
+      .default(fallback),
+  )
+
+/**
+ * An operational setting where zero is meaningless — a 0ms timeout or a 0-byte
+ * response cap breaks every request rather than limiting it. Still fails loudly
+ * rather than silently defaulting.
+ */
 const positiveInt = (fallback: number) =>
-  z.coerce.number().int().positive().catch(fallback).default(fallback)
+  z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a whole number greater than 0' })
+      .int({ message: 'must be a whole number' })
+      .positive({ message: 'must be greater than 0' })
+      .default(fallback),
+  )
 
 const EnvSchema = z.object({
   LLM_PROVIDER: z.string().trim().min(1).default('mock'),
@@ -36,15 +96,32 @@ const EnvSchema = z.object({
 
   AGENT_DB_PATH: z.string().trim().min(1).default('./data/news-agent.sqlite'),
   AGENT_AUTO_PUBLISH: boolish.catch(false).default(false),
+  /*
+   * Global kill switch for scheduled automation.
+   *
+   * Defaults to true so an unset variable does not silently disable a
+   * production schedule. When false the process exits 0 before opening the
+   * database, resolving the provider, or touching the network — an operator
+   * pausing the agent must not have to trust that nothing downstream fires.
+   */
+  AGENT_ENABLED: boolish.catch(true).default(true),
 
-  AGENT_MAX_ITEMS_PER_SOURCE_PER_RUN: positiveInt(25),
-  AGENT_MAX_CANDIDATES_PER_RUN: positiveInt(20),
-  AGENT_MAX_STORIES_VERIFIED_PER_RUN: positiveInt(5),
-  AGENT_MAX_ARTICLES_PER_RUN: positiveInt(2),
-  AGENT_MAX_LLM_CALLS_PER_RUN: positiveInt(60),
-  AGENT_MAX_TOKENS_PER_RUN: positiveInt(250_000),
+  AGENT_MAX_ITEMS_PER_SOURCE_PER_RUN: capInt(25),
+  AGENT_MAX_CANDIDATES_PER_RUN: capInt(20),
+  AGENT_MAX_STORIES_VERIFIED_PER_RUN: capInt(5),
+  AGENT_MAX_ARTICLES_PER_RUN: capInt(2),
+  AGENT_MAX_DRAFTS_PER_RUN: capInt(2),
+  AGENT_MAX_LLM_CALLS_PER_RUN: capInt(60),
+  AGENT_MAX_TOKENS_PER_RUN: capInt(250_000),
 
-  AGENT_MIN_WEIGHTED_SCORE: z.coerce.number().min(0).max(10).catch(6).default(6),
+  AGENT_MIN_WEIGHTED_SCORE: z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a number between 0 and 10' })
+      .min(0, { message: 'must be between 0 and 10' })
+      .max(10, { message: 'must be between 0 and 10' })
+      .default(6),
+  ),
 
   AGENT_HTTP_TIMEOUT_MS: positiveInt(15_000),
   AGENT_MAX_RESPONSE_BYTES: positiveInt(2_500_000),
@@ -68,6 +145,8 @@ export interface WordPressCredentials {
 }
 
 export interface AgentEnv {
+  /** False pauses all work: the run exits 0 having done nothing. */
+  enabled: boolean
   llm: {
     provider: string
     apiKey?: string
@@ -83,6 +162,8 @@ export interface AgentEnv {
     maxCandidatesPerRun: number
     maxStoriesVerifiedPerRun: number
     maxArticlesPerRun: number
+    /** Total WordPress posts a single run may create, retries included. */
+    maxDraftsPerRun: number
     maxLlmCallsPerRun: number
     maxTokensPerRun: number
   }
@@ -109,6 +190,27 @@ export interface AgentEnv {
  * in utils/http.ts — the CMS host is trusted by definition, a URL scraped from a
  * news feed never is.
  */
+/**
+ * Whether a hostname belongs to a local development machine.
+ *
+ * Exported because two independent policies depend on the same answer: plain
+ * http is accepted here only for these hosts, and the demo dashboard refuses to
+ * run the pipeline against a CMS that is not one of them. Keeping one predicate
+ * means the two can never disagree about what "local" means.
+ */
+export function isLocalDevelopmentHost(hostname: string): boolean {
+  const host = hostname.toLowerCase()
+  return (
+    host === 'localhost' ||
+    host === '127.0.0.1' ||
+    host === '::1' ||
+    host === '[::1]' ||
+    host.endsWith('.local') ||
+    host.endsWith('.localhost') ||
+    host.endsWith('.test')
+  )
+}
+
 function validateWordPressUrl(raw: string): { url: string; insecureLocal: boolean } {
   let parsed: URL
   try {
@@ -120,14 +222,7 @@ function validateWordPressUrl(raw: string): { url: string; insecureLocal: boolea
   }
 
   const host = parsed.hostname.toLowerCase()
-  const isLocalHost =
-    host === 'localhost' ||
-    host === '127.0.0.1' ||
-    host === '::1' ||
-    host === '[::1]' ||
-    host.endsWith('.local') ||
-    host.endsWith('.localhost') ||
-    host.endsWith('.test')
+  const isLocalHost = isLocalDevelopmentHost(host)
 
   if (parsed.protocol === 'https:') return { url: raw.replace(/\/+$/, ''), insecureLocal: false }
 
@@ -214,6 +309,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
   }
 
   const env: AgentEnv = {
+    enabled: raw.AGENT_ENABLED,
     llm: {
       provider: raw.LLM_PROVIDER,
       ...(raw.LLM_API_KEY ? { apiKey: raw.LLM_API_KEY } : {}),
@@ -228,6 +324,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
       maxCandidatesPerRun: raw.AGENT_MAX_CANDIDATES_PER_RUN,
       maxStoriesVerifiedPerRun: raw.AGENT_MAX_STORIES_VERIFIED_PER_RUN,
       maxArticlesPerRun: raw.AGENT_MAX_ARTICLES_PER_RUN,
+      maxDraftsPerRun: raw.AGENT_MAX_DRAFTS_PER_RUN,
       maxLlmCallsPerRun: raw.AGENT_MAX_LLM_CALLS_PER_RUN,
       maxTokensPerRun: raw.AGENT_MAX_TOKENS_PER_RUN,
     },
@@ -247,6 +344,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
 /** Startup summary. Reports presence of credentials, never their values. */
 export function describeEnv(env: AgentEnv): Record<string, unknown> {
   return {
+    enabled: env.enabled,
     llmProvider: env.llm.provider,
     llmKey: env.llm.apiKey ? 'set' : 'absent',
     wordpress: env.wordpress ? 'configured' : 'not configured',

@@ -10,7 +10,7 @@
  * actually written.
  */
 
-import { ARTICLE } from '../../config/limits.ts'
+import { type ArticleFormat, ARTICLE } from '../../config/limits.ts'
 import { EDITORIAL_SCOPE } from '../../config/editorial.ts'
 import { HOUSE_RULES, UNTRUSTED_CONTENT_RULES, wrapUntrusted } from './shared.ts'
 
@@ -53,6 +53,20 @@ CHECK, IN THIS ORDER
    "hype" or "structure" issues. Grammar problems are "grammar" issues. These are
    usually minor unless pervasive.
 
+7. LENGTH AGAINST THE ASSIGNED FORMAT
+   Each draft is assigned a format — brief, standard or analysis — from how much
+   verified evidence exists. Judge the length against THAT format's range, which
+   is stated with the word count below. There is no global minimum.
+
+   A draft below its range is only a problem if material in the claim list was
+   left unused. If the draft used the evidence and is simply short, that is
+   correct and is NOT an issue — do not ask for expansion, because the only way
+   to comply would be to invent or repeat.
+
+   A draft ABOVE its range is more suspicious: check whether the extra length is
+   padding, repetition, or unsupported elaboration, and raise it as "structure"
+   or "unsupported-claim" accordingly.
+
 BANNED PHRASES
 ${EDITORIAL_SCOPE.bannedPhrases.map((phrase) => `  - "${phrase}"`).join('\n')}
 
@@ -81,6 +95,10 @@ export interface EditorInput {
   tags: string[]
   bodyText: string
   wordCount: number
+  /** Evidence-derived format this draft is judged against. */
+  format: ArticleFormat
+  targetMinWords: number
+  targetMaxWords: number
   claims: Array<{ id: string; text: string; supportLevel: string; publishers: string[] }>
   publishedTitles: string[]
 }
@@ -105,7 +123,8 @@ Title: ${input.title}
 Excerpt: ${input.excerpt}
 Category: ${input.category}
 Tags: ${input.tags.join(', ')}
-Word count: ${input.wordCount} (target ${ARTICLE.minWords}-${ARTICLE.maxWords})
+Format: ${input.format} — target ${input.targetMinWords}-${input.targetMaxWords} words
+Word count: ${input.wordCount}
 
 Body:
 ${wrapUntrusted('generated draft', input.bodyText)}

@@ -372,6 +372,7 @@ function approvedDraft(overrides: Partial<ArticleDraft> = {}): ArticleDraft {
     wordCount: 620,
     generatedAt: '2026-08-20T09:05:00.000Z',
     model: 'mock:mock-strong-v1',
+    format: 'standard',
     schemaVersion: 1,
     confidence: 0.82,
     editorialStatus: 'approved',
@@ -397,6 +398,9 @@ test('the GitHub Copilot mock story tags the products it is actually about', asy
   const prompt = writerUserPrompt({
     storyTitle: 'GitHub Copilot in Visual Studio — August update',
     category: 'ai-agents',
+    format: 'standard',
+    targetMinWords: 500,
+    targetMaxWords: 900,
     claims: [
       {
         id: 'clm_aaa111',

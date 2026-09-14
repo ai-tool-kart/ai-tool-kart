@@ -13,7 +13,7 @@
 
 import { z } from 'zod'
 import { EDITORIAL_CATEGORIES } from '../config/editorial.ts'
-import { ARTICLE } from '../config/limits.ts'
+import { ARTICLE, SEO } from '../config/limits.ts'
 
 /** Bumped when a schema changes shape; persisted with each draft. */
 export const ARTICLE_SCHEMA_VERSION = 1
@@ -91,6 +91,49 @@ export const VerificationSchema = z
   .strict()
 
 export type Verification = z.infer<typeof VerificationSchema>
+
+/* ── 3b. SEO brief ────────────────────────────────────────────────────────── */
+
+export const SEARCH_INTENTS = ['informational', 'commercial', 'navigational', 'mixed'] as const
+
+/**
+ * Structured SEO guidance produced AFTER verification and BEFORE writing.
+ *
+ * Structured rather than free prose on purpose: every field below is checked
+ * deterministically in seo/validate.ts against the verified claim set. A blob of
+ * "SEO advice" could not be checked at all, and would become an unauditable
+ * channel through which the model could suggest a headline the evidence does not
+ * support.
+ *
+ * Note what is NOT here: no word-count target (that is the article format's job,
+ * chosen from evidence) and no keyword density. Both are ways SEO turns into
+ * padding.
+ */
+export const SeoBriefSchema = z
+  .object({
+    /** The one query this article should answer. Must be grounded in the story. */
+    primaryKeyword: z.string().min(2).max(80),
+    secondaryKeywords: z.array(z.string().min(2).max(60)).max(SEO.maxSecondaryKeywords),
+    searchIntent: z.enum(SEARCH_INTENTS),
+    /** Headline tuned for search. Still bound by the facts. */
+    seoTitle: z.string().min(10).max(SEO.seoTitleHardMaxChars),
+    metaDescription: z
+      .string()
+      .min(SEO.metaDescriptionMinChars)
+      .max(SEO.metaDescriptionMaxChars),
+    /** Normalised by slugify() afterwards; the model never sets the final URL. */
+    suggestedSlug: z.string().min(3).max(120),
+    /** Must map to material the verified claims actually support. */
+    suggestedHeadings: z.array(z.string().min(2).max(80)).max(SEO.maxSuggestedHeadings),
+    /**
+     * Chosen from a supplied allowlist of real site routes. The model picks from
+     * a menu; it never composes a URL (§7 of the SEO brief).
+     */
+    internalLinkTargets: z.array(z.string().max(200)).max(SEO.maxInternalLinks),
+  })
+  .strict()
+
+export type SeoBriefOutput = z.infer<typeof SeoBriefSchema>
 
 /* ── 4. Writer ────────────────────────────────────────────────────────────── */
 

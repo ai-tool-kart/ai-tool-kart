@@ -60,6 +60,7 @@ export function testLogger(): Logger {
 
 export function testEnv(overrides: Partial<AgentEnv> = {}): AgentEnv {
   return {
+    enabled: true,
     llm: { provider: 'mock' },
     dbPath: ':memory:',
     autoPublish: false,
@@ -68,6 +69,7 @@ export function testEnv(overrides: Partial<AgentEnv> = {}): AgentEnv {
       maxCandidatesPerRun: 20,
       maxStoriesVerifiedPerRun: 5,
       maxArticlesPerRun: 2,
+      maxDraftsPerRun: 2,
       maxLlmCallsPerRun: 60,
       maxTokensPerRun: 250_000,
     },

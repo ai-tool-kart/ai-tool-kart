@@ -15,8 +15,9 @@
  */
 
 import type { z } from 'zod'
+import { isAgentError } from '../domain/errors.ts'
 
-export type LLMTaskName = 'classify' | 'extract' | 'verify' | 'write' | 'edit'
+export type LLMTaskName = 'classify' | 'extract' | 'verify' | 'seo' | 'write' | 'edit'
 
 export type ModelClass = 'fast' | 'strong'
 
@@ -70,8 +71,33 @@ export interface LLMProvider {
 
 /** Signals the model declined rather than failed — retried once, then rejected. */
 export class LLMRefusal extends Error {
-  constructor(message: string) {
+  /** Tokens the refused call still consumed, when the provider reports them. */
+  readonly usage?: LLMUsageDelta
+
+  constructor(message: string, usage?: LLMUsageDelta) {
     super(message)
     this.name = 'LLMRefusal'
+    if (usage) this.usage = usage
   }
+}
+
+/**
+ * Usage a provider attached to a FAILURE.
+ *
+ * A refusal, a content filter, or a response truncated at max_output_tokens all
+ * cost real tokens, and the caller is about to retry. Without this, those tokens
+ * would be invisible to the run budget and a retry loop could outspend
+ * maxTokensPerRun while every counter still read zero (§27). Adapters report what
+ * they know by attaching usage to LLMRefusal or to `details.usage` on an
+ * AgentError; client.ts records whatever comes back before deciding what to do
+ * next.
+ */
+export function providerUsage(error: unknown): LLMUsageDelta | undefined {
+  if (error instanceof LLMRefusal) return error.usage
+  if (!isAgentError(error)) return undefined
+  const usage = error.details.usage
+  if (typeof usage !== 'object' || usage === null) return undefined
+  const { inputTokens, outputTokens } = usage as Partial<LLMUsageDelta>
+  if (typeof inputTokens !== 'number' || typeof outputTokens !== 'number') return undefined
+  return { inputTokens, outputTokens }
 }

@@ -769,6 +769,49 @@ Requirements:
 Model selection is per task: a small, cheap model for classification; a stronger
 model for writing and editing. That mapping belongs in configuration.
 
+### Shipped adapters
+
+| id | What it is |
+|---|---|
+| `mock` | Deterministic offline provider. No key, no network, no cost. Default, and what the test suite runs against. |
+| `openai` | Live provider. OpenAI **Responses API** with strict **Structured Outputs** (`text.format.type = "json_schema"`, `strict: true`). |
+
+The OpenAI adapter (`agent/src/llm/providers/openai.ts`):
+
+- sends `request.system` as `instructions` and `request.input` as the user turn,
+  never merged — untrusted source text cannot reach the instruction channel (§28);
+- asks for a strict JSON Schema derived from the same zod task schema the
+  response is validated against, so the decoder is constrained to the right
+  structure and zod still enforces the full contract (lengths, ranges, counts)
+  in `client.ts`. Strict mode does not accept value constraints, so they are
+  stripped for the request and kept in the prompt and in validation;
+- encodes optional fields as `anyOf: [T, null]` because strict mode requires
+  every property, and drops those nulls before validation;
+- reports `usage.input_tokens` / `usage.output_tokens` into the run budget —
+  including on refusals and truncated responses, so a retry cannot spend past
+  `maxTokensPerRun` unrecorded (§27);
+- maps 401/403 to a fatal config error that is never retried, 429/5xx/timeout to
+  bounded retries with backoff, and refusal / incomplete / off-schema output to
+  distinct typed errors (§24, §25);
+- uses no `openai` package. One POST via `fetch`, with a transport seam so every
+  case above is tested offline.
+
+Default models when `LLM_MODEL_FAST` / `LLM_MODEL_STRONG` are unset: `gpt-4.1-mini`
+for the fast class and `gpt-4.1` for the strong class. Both are non-reasoning
+models deliberately — `TASK_MAX_OUTPUT_TOKENS` budgets the *answer*, and on a
+reasoning model that ceiling also has to cover hidden reasoning tokens, which
+truncates responses rather than making them cheaper. The adapter omits
+`temperature` for reasoning models, which reject it.
+
+Verify a provider before spending a run:
+
+```bash
+npm run agent -- --llm-check
+```
+
+One tiny structured-output call against a fixed internal candidate story. No
+feeds, no database writes, no WordPress, no secrets printed.
+
 ---
 
 ## 13. LLM task separation
@@ -798,6 +841,82 @@ The Editor checks, at minimum:
 **Do not build fake multi-agent complexity.** These are five prompt+schema pairs
 called in sequence by ordinary code. There is no agent framework, no orchestrator
 abstraction, no inter-agent messaging. Named steps in a pipeline are enough.
+
+---
+
+## 13a. SEO layer
+
+Positioned deliberately: **after verification, before writing.**
+
+```text
+verification → article format selection → SEO brief → writer → SEO/editorial validator → renderer → draft
+```
+
+By the time SEO runs, the facts are settled. That is the whole point of the
+position — SEO can shape how an article is *found* without any power to change
+what it *says*.
+
+```text
+SEO shapes structure and wording. SEO does not invent facts.
+```
+
+### The brief
+
+A sixth LLM task (`seo`), on the **fast** model, producing a strict structured
+`SeoBrief`: primary keyword, secondary keywords, search intent, SEO title, meta
+description, suggested slug, suggested headings, internal link targets. It sees
+only verified claims — never raw source documents — so it is out of reach of
+prompt injection and cannot resurrect a claim the verifier rejected.
+
+Structured, never free prose, because every field is then checked in code.
+
+### Enforcement is deterministic, not prompted
+
+`agent/src/seo/validate.ts` checks the brief against the verified claim set. The
+prompt asks; this enforces.
+
+**Blocking** (materially misleading): an ungrounded primary keyword, an SEO title
+the claims do not support, an unsupported superlative anywhere ("best",
+"fastest", "cheapest" — a ranking claim about every competitor we never
+evaluated), keyword stuffing, a malformed slug, missing metadata.
+
+**Advisory** (reported, never blocks): weak keyword placement, a slightly long
+title or description, heading structure, format-shape overruns.
+
+A factually excellent article is never rejected for imperfect optimisation.
+
+### SEO can only lower a verdict, never raise one
+
+`mergeSeoIntoVerdict` is monotonic by construction: an SEO problem can hold back
+an approved draft, but a clean brief can never advance one the factual editor
+rejected. Search performance is not a reason to publish something untrue.
+
+### Format-aware
+
+SEO shape follows the evidence-derived article format (§15), or it becomes a back
+door to the padding formats exist to prevent — "add an H2 for the secondary
+keyword" is how a 200-word brief turns into 600 words of nothing. A `brief` gets
+at most 3 headings and 2 secondary keywords; `analysis` gets 8 and 6.
+
+### Internal links are chosen from a menu, never composed
+
+The model picks from a registry of routes known to exist
+(`agent/src/seo/routes.ts`); anything it returns that is not on the list is
+dropped. Individual tool pages are deliberately absent — the catalogue is still
+frontend mock data with no server-side source of truth, so per the rule "no
+reliable target, no link". Confirmed blog articles are included, because the
+agent created them.
+
+### CMS metadata: local only, behind an adapter
+
+The production site runs All in One SEO. It was inspected and offers no safe
+write path for this agent: `aioseo_*` fields are read-only output on
+`/wp/v2/posts`, its own save route is an undocumented editor endpoint, and the
+least-privilege `news-agent` role gets HTTP 403 from it. So the brief is
+persisted locally and a reviewer sets CMS SEO fields during review.
+
+`agent/src/wordpress/seoMetadata.ts` holds the seam so a future write path is one
+file, not a refactor. Post title and excerpt still reach the site normally.
 
 ---
 
@@ -856,10 +975,34 @@ database alone.
 
 ### Length
 
-**500–900 words** for a typical story. Longer only for major releases with
-genuinely more to say. A three-line changelog does not become 800 words — if
-there is not enough verified substance for ~500 words, the story was probably not
-worth writing.
+Length is an **output of evidence**, never a target the writer works backwards
+from. Before writing, the pipeline picks a format from how much verified material
+the story actually has (`agent/src/editorial/format.ts`):
+
+| Format | Target | Earned by |
+|---|---|---|
+| `brief` | 180–350 words | the floor — a changelog entry, a deprecation, one well-sourced announcement |
+| `standard` | 500–900 words | ≥6 verified claims, ≥2 sources, ≥2 independent publishers |
+| `analysis` | 900–1400 words | ≥12 verified claims, ≥3 sources, ≥3 publishers, importance ≥7 |
+
+Only **verified** claims count toward depth, and publishers are counted
+distinctly — twenty claims from a single press release is still one source's
+account and cannot buy a longer article. Selection is deterministic code, not an
+LLM call, so the model cannot argue itself into a longer piece.
+
+The writer receives the range as a ceiling on ambition, not a quota: when the
+claims run out first it writes less and stops. The editor judges the draft
+against that same range rather than a global minimum, and length stays advisory —
+being *over* the range is the more suspicious signal, since the extra words had
+to come from somewhere. The chosen format is persisted with the article.
+
+> This replaces an earlier rule of a flat 500–900 words with "if there is not
+> enough verified substance for ~500 words, the story was probably not worth
+> writing." The first real article the pipeline produced falsified that: a GitHub
+> deprecation notice yielded 8 verified claims and 176 words of accurate,
+> attributed prose. It *was* worth writing. The only way to reach 500 would have
+> been padding, which §14 forbids — so the target moved to the evidence instead
+> of the article being judged against an unreachable one.
 
 ### Structure
 
@@ -1180,6 +1323,99 @@ Workers/Cron Triggers, AWS EventBridge, or a plain systemd timer.
 
 The scheduler triggers **one clean run**. The agent does not hold a permanent
 loop, does not manage its own timers, and does not stay resident between runs.
+
+---
+
+## 22a. Scheduled automation (deployment guide)
+
+One invocation runs one cycle and exits. There is no daemon, no internal timer
+and no loop — the scheduler owns wall-clock timing, and the agent owns what
+happens during a run. That split is what keeps the agent portable across cron,
+Railway, Render, GitHub Actions, a VPS, or a hosted panel.
+
+### The production command
+
+Scheduled environments should run compiled JavaScript, not TypeScript source, so
+no dev tooling is needed on the box:
+
+```bash
+npm ci
+npm run build          # emits dist/
+node dist/src/cli.js   # one run, then exit
+```
+
+`npm run agent:once` is the same thing via the package script.
+
+Exit codes: `0` for a completed or skipped run — **including a run that produced
+zero drafts, which is a normal outcome** — and `1` only when the run itself
+failed. A scheduler should alert on `1`, never on "no articles today".
+
+### Recommended schedule
+
+Every 6 hours, on the hour, UTC:
+
+```text
+00:00  06:00  12:00  18:00
+```
+
+Linux cron (adjust the path to wherever the agent is deployed):
+
+```cron
+0 */6 * * * cd /srv/aitoolkart/agent && /usr/bin/node dist/src/cli.js >> /var/log/aitoolkart-agent.log 2>&1
+```
+
+Hosted schedulers (Railway, Render, Hostinger, GitHub Actions) take the same
+command and a `0 */6 * * *` expression. Set the environment variables in the
+platform's secret store — never in the repository, never in this document.
+
+Use UTC in the schedule unless the deployment platform forces otherwise. The
+pipeline has no timezone logic and must not grow any: story freshness is
+computed from publication timestamps, not from local wall-clock time.
+
+### Required environment
+
+Everything in `agent/.env.example`. The production profile is documented at the
+bottom of that file; the essentials:
+
+```text
+LLM_PROVIDER, LLM_API_KEY            the runtime provider
+WORDPRESS_API_URL, WORDPRESS_USERNAME, WORDPRESS_APP_PASSWORD
+AGENT_ENABLED=true                   kill switch
+AGENT_AUTO_PUBLISH=false             mandatory; startup refuses anything else
+AGENT_MAX_*                          cost and volume caps
+```
+
+### Before the first scheduled run
+
+```bash
+npm run agent:health     # read-only: config, DB, lock, WP auth, taxonomy. Zero tokens.
+npm run llm:check        # one tiny live structured-output call. Costs a few hundred tokens.
+```
+
+`agent:health` is safe to run on a timer as a liveness probe — it spends no LLM
+budget and writes nothing.
+
+### Pausing
+
+Set `AGENT_ENABLED=false`. The next scheduled process exits 0 before opening the
+database, resolving the provider or touching the network. No code change, no
+schedule change, and nothing half-done to clean up afterwards.
+
+### What automation still does not do
+
+Drafts only. The flow is:
+
+```text
+scheduler → agent → WordPress draft → human review → manual Publish
+```
+
+`AGENT_AUTO_PUBLISH=true` is refused at startup (§19), the post payload's status
+is typed as the literal `'draft'`, and the CMS account itself lacks
+`publish_posts`. Three independent layers, because an automated publisher that
+gets a fact wrong publishes it six times a day.
+
+Featured images are a deferred milestone: the agent attaches no `featured_media`
+and the frontend uses its own fallback for posts without one.
 
 ---
 
@@ -1919,7 +2155,7 @@ document is useful.
 
 | Decision | Needed by | Notes |
 |---|---|---|
-| Production LLM provider and models | Phase C | **Still open.** The abstraction and a deterministic mock ship; no vendor adapter does. One file + one registry line to add — see `agent/src/llm/factory.ts` |
+| Production LLM provider and models | Phase C | **Resolved — OpenAI.** `LLM_PROVIDER=openai`, Responses API with strict Structured Outputs. Adapter defaults `gpt-4.1-mini` (fast) / `gpt-4.1` (strong), overridable via `LLM_MODEL_FAST`/`LLM_MODEL_STRONG`. See `agent/src/llm/providers/openai.ts`; `mock` remains the offline default |
 | Exact source list (Tier 1/2/3) | Phase B | **Partially resolved** — 10 verified feeds enabled, 5 vendors have no feed. See §36a |
 | Direct OpenAI coverage | Post-MVP | openai.com blocks automated fetches (§36a). Official API or licensed feed, or rely on Tier 2 corroboration |
 | Production hosting and scheduler | Phase H | cron, GitHub Actions, Railway, Render, etc. |

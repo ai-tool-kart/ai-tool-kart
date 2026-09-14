@@ -80,6 +80,11 @@ export const MIN_IMPORTANCE = 3
 export const MIN_VERIFIED_CLAIMS = 3
 
 export const ARTICLE = {
+  /**
+   * Retained as the DEFAULT format's range and as schema bounds. Length is
+   * governed per-article by ARTICLE_FORMATS below; nothing should treat these
+   * two numbers as a universal minimum any more.
+   */
   minWords: 500,
   maxWords: 900,
   /** Hard ceiling before the draft is rejected as runaway output. */
@@ -89,6 +94,61 @@ export const ARTICLE = {
   excerptMinChars: 80,
   excerptMaxChars: 320,
   titleMaxChars: 110,
+} as const
+
+/*
+ * ── Article formats ──────────────────────────────────────────────────────────
+ *
+ * A single 500-word minimum was the wrong instrument. The first real article
+ * came in at 176 words because its source — a GitHub changelog entry — supported
+ * exactly eight small facts. The writer was right to stop; §14 forbids inventing
+ * anything, so the only way to reach 500 words would have been padding, which is
+ * the failure this pipeline exists to avoid. Yet the draft was then reported as
+ * "short" against a target it could never legitimately have hit.
+ *
+ * So length is chosen from the evidence rather than fixed in advance. Depth of
+ * verified material picks the format; the format sets the target range; the
+ * writer and the editor are both told which one applies.
+ *
+ * The ordering matters: a short, fully-grounded article is a SUCCESS, not a
+ * degraded standard article.
+ */
+export const ARTICLE_FORMATS = {
+  /** A changelog entry, a deprecation, a single well-sourced announcement. */
+  brief: { minWords: 180, maxWords: 350, minSections: 3, maxSections: 5 },
+  /** The common case: a launch or capability change with real detail. */
+  standard: { minWords: 500, maxWords: 900, minSections: 4, maxSections: 7 },
+  /** Only when the evidence genuinely carries it. Never reached by padding. */
+  analysis: { minWords: 900, maxWords: 1400, minSections: 5, maxSections: 9 },
+} as const
+
+export type ArticleFormat = keyof typeof ARTICLE_FORMATS
+
+export const DEFAULT_ARTICLE_FORMAT: ArticleFormat = 'standard'
+
+/**
+ * Evidence thresholds a story must MEET to earn each format.
+ *
+ * Read as "at least this much". Everything below `standard` is a brief, which is
+ * why brief has no entry: it is the floor, not a bar to clear.
+ *
+ * `substantiveClaims` counts VERIFIED claims only — single-source claims can
+ * appear in the prose with attribution, but they must not be what buys a longer
+ * article, or the format becomes a way to launder weak sourcing into length.
+ */
+export const FORMAT_THRESHOLDS = {
+  standard: {
+    substantiveClaims: 6,
+    evidenceSources: 2,
+    independentPublishers: 2,
+    importance: 0,
+  },
+  analysis: {
+    substantiveClaims: 12,
+    evidenceSources: 3,
+    independentPublishers: 3,
+    importance: 7,
+  },
 } as const
 
 /** Bounded writer→editor revision loop (§29 of the implementation brief). */
@@ -126,6 +186,62 @@ export const PENDING_PUBLISH = {
   maxConsecutiveFailures: 2,
 } as const
 
+/*
+ * ── SEO constraints ──────────────────────────────────────────────────────────
+ *
+ * The governing rule is in NEWS_AGENT.md: SEO shapes STRUCTURE AND WORDING; it
+ * never invents facts. Everything here is a shape constraint, not a licence to
+ * say something the claims do not support.
+ */
+export const SEO = {
+  /** Google truncates around 155-160 chars; below ~50 is not a description. */
+  metaDescriptionMinChars: 50,
+  metaDescriptionMaxChars: 160,
+  /** An SEO title longer than this is truncated in results. */
+  seoTitleMaxChars: 60,
+  /** Hard schema ceiling; the soft target is seoTitleMaxChars. */
+  seoTitleHardMaxChars: 80,
+  minSecondaryKeywords: 0,
+  maxSecondaryKeywords: 6,
+  maxSuggestedHeadings: 8,
+  maxInternalLinks: 4,
+  /**
+   * Times the primary keyword may appear across title + headings + meta before
+   * it reads as stuffing. Deliberately a count, not a density percentage —
+   * density targets are what produce robotic copy.
+   */
+  maxPrimaryKeywordRepeats: 4,
+} as const
+
+/**
+ * Comparative and superlative language that asserts a ranking.
+ *
+ * None of these may appear in SEO output unless the same word appears in a
+ * VERIFIED claim. A news pipeline has no basis for "the best AI coding tool" —
+ * that is a claim about every competitor, none of which were verified. This is
+ * the single highest-risk way SEO could smuggle an unsupported assertion into a
+ * headline, so it is checked deterministically rather than left to a prompt.
+ */
+export const UNSUPPORTED_SUPERLATIVES = [
+  'best', 'top', 'cheapest', 'fastest', 'greatest', 'leading', 'number one',
+  'number 1', '#1', 'ultimate', 'perfect', 'flawless', 'unbeatable', 'revolutionary',
+  'game-changing', 'game changing', 'most powerful', 'most advanced', 'world-class',
+  'industry-leading', 'unrivalled', 'unrivaled', 'superior', 'must-have',
+] as const
+
+/**
+ * Per-format SEO shape. Mirrors ARTICLE_FORMATS: a brief gets a brief's SEO.
+ *
+ * Without this, SEO becomes a back door to the padding that ARTICLE_FORMATS
+ * exists to prevent — "add an H2 for the secondary keyword" is exactly how a
+ * 200-word brief turns into 600 words of nothing.
+ */
+export const SEO_BY_FORMAT = {
+  brief: { maxHeadings: 3, maxSecondaryKeywords: 2, maxInternalLinks: 2 },
+  standard: { maxHeadings: 6, maxSecondaryKeywords: 4, maxInternalLinks: 3 },
+  analysis: { maxHeadings: 8, maxSecondaryKeywords: 6, maxInternalLinks: 4 },
+} as const
+
 /**
  * Default models per task class. Overridable via LLM_MODEL_FAST/LLM_MODEL_STRONG.
  * The provider adapter decides what these strings mean; the pipeline only knows
@@ -135,6 +251,14 @@ export const TASK_MODEL_CLASS = {
   classify: 'fast',
   extract: 'fast',
   verify: 'strong',
+  /*
+   * SEO runs on the fast model. It produces short, highly-constrained metadata
+   * from claims another step already verified, and every factual guarantee it
+   * could threaten is enforced deterministically afterwards (seo/validate.ts)
+   * rather than trusted to the model. There is no reasoning here worth paying
+   * strong-model rates for.
+   */
+  seo: 'fast',
   write: 'strong',
   edit: 'strong',
 } as const
@@ -144,6 +268,7 @@ export const TASK_MAX_OUTPUT_TOKENS = {
   classify: 512,
   extract: 2048,
   verify: 3072,
+  seo: 1024,
   write: 4096,
   edit: 2048,
 } as const

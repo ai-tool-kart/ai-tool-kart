@@ -45,6 +45,7 @@ npm run agent -- --dry-run           # everything except WordPress writes
 npm run agent -- --source=openai-news --limit=1
 npm run agent -- --sources           # list the source registry
 npm run agent -- --inspect-db        # recent runs, pending drafts, published posts
+npm run agent -- --llm-check         # one structured-output call to the provider
 npm run agent -- --verbose           # debug logging
 npm run agent -- --log-format=json   # structured logs for production
 ```
@@ -66,8 +67,37 @@ npm run build   # emits dist/ for deployment
 
 ## Activating a real LLM
 
-No production provider has been chosen (NEWS_AGENT.md §37), so no vendor adapter
-ships. To add one:
+Two adapters ship: `mock` (deterministic, offline, no key) and `openai`.
+
+```env
+LLM_PROVIDER=openai
+LLM_API_KEY=sk-...
+# optional — blank uses the adapter defaults below
+LLM_MODEL_FAST=
+LLM_MODEL_STRONG=
+```
+
+The OpenAI adapter uses the Responses API with strict Structured Outputs, so the
+model is constrained to the task's JSON Schema at decode time. Defaults are
+`gpt-4.1-mini` for the fast class (classifier, fact extractor) and `gpt-4.1` for
+the strong class (verifier, writer, editor); the task-to-class mapping is
+`TASK_MODEL_CLASS` in `src/config/limits.ts`. Both defaults are non-reasoning
+models on purpose — `TASK_MAX_OUTPUT_TOKENS` budgets the answer, and on a
+reasoning model that ceiling also has to cover hidden reasoning tokens.
+
+Verify the provider before spending a run:
+
+```bash
+npm run agent -- --llm-check
+```
+
+One tiny structured-output call on a fixed internal story. No feeds, no database
+writes, no WordPress. It reports the model and token usage, never the key.
+
+Then start small — `npm run agent -- --dry-run --limit=1` — before letting it run
+against the full source list.
+
+### Adding another vendor
 
 1. Create `src/llm/providers/<vendor>.ts` implementing `LLMProvider` — the
    contract is documented at the top of `src/llm/factory.ts`.
@@ -79,8 +109,26 @@ an adapter only has to turn a prompt into text. The one rule it must honour:
 `request.system` and `request.input` stay separate, because `input` carries
 untrusted source text.
 
-Start small — `npm run agent -- --dry-run --limit=1` — before letting it run
-against the full source list.
+## Article formats
+
+Length is derived from evidence, not fixed in advance. Before writing, the
+pipeline picks a format from how much verified material a story actually has:
+
+| Format | Target | Earned by |
+|---|---|---|
+| `brief` | 180-350 words | the floor — a changelog entry, a deprecation, one well-sourced announcement |
+| `standard` | 500-900 words | 6+ verified claims, 2+ sources, 2+ independent publishers |
+| `analysis` | 900-1400 words | 12+ verified claims, 3+ sources, 3+ publishers, importance 7+ |
+
+Only **verified** claims count toward depth, and publishers are counted
+distinctly — twenty claims from one press release is still one source's account,
+and cannot buy a longer article.
+
+The writer is given the range as a ceiling on ambition, never a quota: if the
+claims run out first it writes less and stops. The editor judges the draft
+against that same range. A short, fully-grounded article is a success, not a
+degraded standard one — padding to reach a word count is the failure this
+replaces. The chosen format is persisted with the article.
 
 ## Activating WordPress
 

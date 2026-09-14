@@ -219,3 +219,16 @@ export function normalizeTags(proposed: string[], fallbackText: string): string[
 
   return [...bySlug.values()].slice(0, ARTICLE.maxTags)
 }
+
+/**
+ * Entity names a story is actually about, for the SEO brief.
+ *
+ * Reuses normalizeTags rather than keeping a second extraction path, so the
+ * entities SEO reasons about are exactly the ones the tag layer would accept.
+ * That matters: the "Meta" false positive came from a second, looser matcher
+ * drifting from the production one, and one such matcher is enough.
+ */
+export function deriveEntityHints(storyTitle: string, claims: Array<{ text: string }>): string[] {
+  const corpus = [storyTitle, ...claims.map((claim) => claim.text)].join(' ')
+  return normalizeTags([], corpus)
+}

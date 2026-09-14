@@ -20,6 +20,7 @@ export function formatRunSummary(run: PipelineRun): string {
     `rejected=${counters.itemsRejected}`,
     `candidates=${counters.storiesCandidate}`,
     `verified=${counters.storiesVerified}`,
+    `seo=${counters.seoBriefsCreated ?? 0}`,
     `generated=${counters.articlesGenerated}`,
     `approved=${counters.articlesApproved}`,
     `drafts=${counters.draftsCreated}`,

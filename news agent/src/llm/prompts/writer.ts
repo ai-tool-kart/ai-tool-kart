@@ -9,7 +9,7 @@
  */
 
 import { CATEGORY_LABELS } from '../../config/editorial.ts'
-import { ARTICLE } from '../../config/limits.ts'
+import { ARTICLE, type ArticleFormat } from '../../config/limits.ts'
 import { EDITORIAL_SCOPE } from '../../config/editorial.ts'
 import { HOUSE_RULES, UNTRUSTED_CONTENT_RULES, wrapUntrusted } from './shared.ts'
 
@@ -46,9 +46,22 @@ verified material rather than padding it.
   5. Practical implications — availability, pricing, migration, what to do next
 
 LENGTH
-  Target ${ARTICLE.minWords}-${ARTICLE.maxWords} words across all sections. If the
-  verified material does not support ${ARTICLE.minWords} words, write less rather
-  than padding. Never repeat a claim to reach a length.
+  Each article is assigned a FORMAT before you write, chosen from how much
+  verified evidence exists. Your target range is stated in the user message.
+
+  The range is a CEILING ON AMBITION, not a quota. If the verified material does
+  not fill it, write less and stop. A short article in which every sentence is
+  grounded is a correct outcome and is preferred over a longer one that repeats
+  claims, restates the headline, speculates about significance, or pads with
+  generic industry context. Never stretch to reach a number.
+
+  Formats:
+    brief    — a single well-sourced development: a changelog entry, a
+               deprecation, one announcement. Few facts, stated cleanly.
+    standard — a launch or capability change with real detail from more than one
+               source.
+    analysis — reserved for stories whose evidence genuinely carries depth.
+               Never reached by padding.
 
 TITLE
   Specific and factual. Name the actor and the action: "Google ships Gemini 3 Pro
@@ -91,9 +104,22 @@ export interface WriterClaimInput {
   conflictNote?: string
 }
 
+export interface WriterSeoInput {
+  primaryKeyword: string
+  secondaryKeywords: string[]
+  seoTitle: string
+  suggestedHeadings: string[]
+}
+
 export interface WriterInput {
   storyTitle: string
   category: string
+  /** Search guidance. Advisory to the prose, never to the facts. */
+  seo?: WriterSeoInput
+  /** Evidence-derived length band, chosen before writing (editorial/format.ts). */
+  format: ArticleFormat
+  targetMinWords: number
+  targetMaxWords: number
   claims: WriterClaimInput[]
   evidence: Array<{ url: string; publisher: string; title: string; publishedAt?: string; trustTier: number }>
   /** Present on a revision pass: what the editor asked to be fixed. */
@@ -129,9 +155,38 @@ ${input.revisionNotes.map((note) => `  - ${note}`).join('\n')}\n`
   const categoryLabel =
     (CATEGORY_LABELS as Record<string, string>)[input.category] ?? input.category
 
+  /*
+   * SEO guidance is placed AFTER the claims and framed as subordinate to them.
+   * Order matters in a prompt: the facts are established first, and the search
+   * guidance arrives as shaping advice on material already fixed.
+   */
+  const seoBlock = input.seo
+    ? `
+SEARCH GUIDANCE (shapes wording and structure — NEVER the facts)
+  primary keyword:    ${input.seo.primaryKeyword}
+  secondary keywords: ${input.seo.secondaryKeywords.join(', ') || '(none)'}
+  suggested SEO title: ${input.seo.seoTitle}
+  suggested headings: ${input.seo.suggestedHeadings.join(' | ') || '(none)'}
+
+  Work the primary keyword in naturally where it already fits — typically the
+  headline and the opening sentence. Use a secondary keyword only where it is
+  the phrase you would have written anyway.
+
+  These are suggestions about PHRASING. If following one would require stating
+  something the verified claims do not support, ignore it and write the true
+  sentence. A heading you have no verified material for must be dropped, not
+  filled. Never repeat a keyword to hit a count — repetition reads as spam to
+  both readers and search engines.
+`
+    : ''
+
   return `
 Story: ${input.storyTitle}
 Category: ${input.category} (${categoryLabel})
+Format: ${input.format} — target ${input.targetMinWords}-${input.targetMaxWords} words
+  This format was chosen from the amount of verified evidence below, not from an
+  editorial preference. Write what the claims support and stop. Do not pad to
+  reach ${input.targetMinWords} words.
 ${revision}
 VERIFIED CLAIMS — these are the ONLY facts available to you
 ${claimLines}
@@ -142,7 +197,7 @@ ${claimTexts}
 
 SOURCES (trusted metadata, for attribution)
 ${sourceLines}
-
+${seoBlock}
 Write the article.
 `.trim()
 }
