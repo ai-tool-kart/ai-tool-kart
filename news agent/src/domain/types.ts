@@ -138,6 +138,30 @@ export interface SourceEvidence {
   injectionSuspected?: boolean
 }
 
+/**
+ * Search guidance produced after verification and before writing.
+ *
+ * Structured, not prose, so every field can be checked against the verified
+ * claims (seo/validate.ts). SEO shapes structure and wording; it never changes
+ * what the article asserts.
+ */
+export interface SeoBrief {
+  primaryKeyword: string
+  secondaryKeywords: string[]
+  searchIntent: 'informational' | 'commercial' | 'navigational' | 'mixed'
+  seoTitle: string
+  metaDescription: string
+  /** Already normalised by slugify(); the model never sets the final URL. */
+  suggestedSlug: string
+  suggestedHeadings: string[]
+  /** Verified against the route registry. Never a composed URL. */
+  internalLinkTargets: string[]
+  /** Suggestions dropped because no such route exists, kept for the audit trail. */
+  droppedLinkTargets?: string[]
+  /** provider:model that produced the brief. */
+  model?: string
+}
+
 /** Structured article body produced by the Writer. Never HTML. */
 export interface ArticleSection {
   heading: string
@@ -170,6 +194,11 @@ export interface ArticleDraft {
    * Determines the word-count range this draft is judged against.
    */
   format: ArticleFormat
+  /**
+   * Search guidance this draft was written against. Persisted so a reviewer can
+   * see what SEO asked for and what the article actually did.
+   */
+  seo?: SeoBrief
   /** Schema version that produced this draft (§16). */
   schemaVersion: number
   confidence: number
@@ -195,6 +224,8 @@ export interface RunCounters {
   draftsCreated: number
   /** Approved drafts from earlier runs that this run re-attempted publishing. */
   pendingRetried: number
+  /** SEO briefs successfully grounded and produced this run. */
+  seoBriefsCreated: number
   storiesDeferred: number
 }
 
@@ -240,6 +271,7 @@ export function emptyCounters(): RunCounters {
     articlesApproved: 0,
     draftsCreated: 0,
     pendingRetried: 0,
+    seoBriefsCreated: 0,
     storiesDeferred: 0,
   }
 }

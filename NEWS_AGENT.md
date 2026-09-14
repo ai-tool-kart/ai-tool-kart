@@ -844,6 +844,82 @@ abstraction, no inter-agent messaging. Named steps in a pipeline are enough.
 
 ---
 
+## 13a. SEO layer
+
+Positioned deliberately: **after verification, before writing.**
+
+```text
+verification → article format selection → SEO brief → writer → SEO/editorial validator → renderer → draft
+```
+
+By the time SEO runs, the facts are settled. That is the whole point of the
+position — SEO can shape how an article is *found* without any power to change
+what it *says*.
+
+```text
+SEO shapes structure and wording. SEO does not invent facts.
+```
+
+### The brief
+
+A sixth LLM task (`seo`), on the **fast** model, producing a strict structured
+`SeoBrief`: primary keyword, secondary keywords, search intent, SEO title, meta
+description, suggested slug, suggested headings, internal link targets. It sees
+only verified claims — never raw source documents — so it is out of reach of
+prompt injection and cannot resurrect a claim the verifier rejected.
+
+Structured, never free prose, because every field is then checked in code.
+
+### Enforcement is deterministic, not prompted
+
+`agent/src/seo/validate.ts` checks the brief against the verified claim set. The
+prompt asks; this enforces.
+
+**Blocking** (materially misleading): an ungrounded primary keyword, an SEO title
+the claims do not support, an unsupported superlative anywhere ("best",
+"fastest", "cheapest" — a ranking claim about every competitor we never
+evaluated), keyword stuffing, a malformed slug, missing metadata.
+
+**Advisory** (reported, never blocks): weak keyword placement, a slightly long
+title or description, heading structure, format-shape overruns.
+
+A factually excellent article is never rejected for imperfect optimisation.
+
+### SEO can only lower a verdict, never raise one
+
+`mergeSeoIntoVerdict` is monotonic by construction: an SEO problem can hold back
+an approved draft, but a clean brief can never advance one the factual editor
+rejected. Search performance is not a reason to publish something untrue.
+
+### Format-aware
+
+SEO shape follows the evidence-derived article format (§15), or it becomes a back
+door to the padding formats exist to prevent — "add an H2 for the secondary
+keyword" is how a 200-word brief turns into 600 words of nothing. A `brief` gets
+at most 3 headings and 2 secondary keywords; `analysis` gets 8 and 6.
+
+### Internal links are chosen from a menu, never composed
+
+The model picks from a registry of routes known to exist
+(`agent/src/seo/routes.ts`); anything it returns that is not on the list is
+dropped. Individual tool pages are deliberately absent — the catalogue is still
+frontend mock data with no server-side source of truth, so per the rule "no
+reliable target, no link". Confirmed blog articles are included, because the
+agent created them.
+
+### CMS metadata: local only, behind an adapter
+
+The production site runs All in One SEO. It was inspected and offers no safe
+write path for this agent: `aioseo_*` fields are read-only output on
+`/wp/v2/posts`, its own save route is an undocumented editor endpoint, and the
+least-privilege `news-agent` role gets HTTP 403 from it. So the brief is
+persisted locally and a reviewer sets CMS SEO fields during review.
+
+`agent/src/wordpress/seoMetadata.ts` holds the seam so a future write path is one
+file, not a refactor. Post title and excerpt still reach the site normally.
+
+---
+
 ## 14. Factual grounding
 
 This is the section that protects the brand. Treat it as non-negotiable.
@@ -1247,6 +1323,99 @@ Workers/Cron Triggers, AWS EventBridge, or a plain systemd timer.
 
 The scheduler triggers **one clean run**. The agent does not hold a permanent
 loop, does not manage its own timers, and does not stay resident between runs.
+
+---
+
+## 22a. Scheduled automation (deployment guide)
+
+One invocation runs one cycle and exits. There is no daemon, no internal timer
+and no loop — the scheduler owns wall-clock timing, and the agent owns what
+happens during a run. That split is what keeps the agent portable across cron,
+Railway, Render, GitHub Actions, a VPS, or a hosted panel.
+
+### The production command
+
+Scheduled environments should run compiled JavaScript, not TypeScript source, so
+no dev tooling is needed on the box:
+
+```bash
+npm ci
+npm run build          # emits dist/
+node dist/src/cli.js   # one run, then exit
+```
+
+`npm run agent:once` is the same thing via the package script.
+
+Exit codes: `0` for a completed or skipped run — **including a run that produced
+zero drafts, which is a normal outcome** — and `1` only when the run itself
+failed. A scheduler should alert on `1`, never on "no articles today".
+
+### Recommended schedule
+
+Every 6 hours, on the hour, UTC:
+
+```text
+00:00  06:00  12:00  18:00
+```
+
+Linux cron (adjust the path to wherever the agent is deployed):
+
+```cron
+0 */6 * * * cd /srv/aitoolkart/agent && /usr/bin/node dist/src/cli.js >> /var/log/aitoolkart-agent.log 2>&1
+```
+
+Hosted schedulers (Railway, Render, Hostinger, GitHub Actions) take the same
+command and a `0 */6 * * *` expression. Set the environment variables in the
+platform's secret store — never in the repository, never in this document.
+
+Use UTC in the schedule unless the deployment platform forces otherwise. The
+pipeline has no timezone logic and must not grow any: story freshness is
+computed from publication timestamps, not from local wall-clock time.
+
+### Required environment
+
+Everything in `agent/.env.example`. The production profile is documented at the
+bottom of that file; the essentials:
+
+```text
+LLM_PROVIDER, LLM_API_KEY            the runtime provider
+WORDPRESS_API_URL, WORDPRESS_USERNAME, WORDPRESS_APP_PASSWORD
+AGENT_ENABLED=true                   kill switch
+AGENT_AUTO_PUBLISH=false             mandatory; startup refuses anything else
+AGENT_MAX_*                          cost and volume caps
+```
+
+### Before the first scheduled run
+
+```bash
+npm run agent:health     # read-only: config, DB, lock, WP auth, taxonomy. Zero tokens.
+npm run llm:check        # one tiny live structured-output call. Costs a few hundred tokens.
+```
+
+`agent:health` is safe to run on a timer as a liveness probe — it spends no LLM
+budget and writes nothing.
+
+### Pausing
+
+Set `AGENT_ENABLED=false`. The next scheduled process exits 0 before opening the
+database, resolving the provider or touching the network. No code change, no
+schedule change, and nothing half-done to clean up afterwards.
+
+### What automation still does not do
+
+Drafts only. The flow is:
+
+```text
+scheduler → agent → WordPress draft → human review → manual Publish
+```
+
+`AGENT_AUTO_PUBLISH=true` is refused at startup (§19), the post payload's status
+is typed as the literal `'draft'`, and the CMS account itself lacks
+`publish_posts`. Three independent layers, because an automated publisher that
+gets a fact wrong publishes it six times a day.
+
+Featured images are a deferred milestone: the agent attaches no `featured_media`
+and the frontend uses its own fallback for posts without one.
 
 ---
 

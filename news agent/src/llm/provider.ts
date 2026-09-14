@@ -17,7 +17,7 @@
 import type { z } from 'zod'
 import { isAgentError } from '../domain/errors.ts'
 
-export type LLMTaskName = 'classify' | 'extract' | 'verify' | 'write' | 'edit'
+export type LLMTaskName = 'classify' | 'extract' | 'verify' | 'seo' | 'write' | 'edit'
 
 export type ModelClass = 'fast' | 'strong'
 

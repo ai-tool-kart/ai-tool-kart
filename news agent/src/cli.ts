@@ -11,6 +11,7 @@
  *   npm run agent -- --sources          list the registry
  *   npm run agent -- --inspect-db       recent runs and pipeline state
  *   npm run agent -- --llm-check        one structured-output call to the provider
+ *   npm run agent:health                read-only preflight, zero LLM tokens
  *   npm run taxonomy:check              verify configured WP categories exist
  *   npm run taxonomy:bootstrap          create missing configured categories
  */
@@ -19,6 +20,7 @@ import { parseArgs } from 'node:util'
 import { describeEnv, loadEnv } from './config/env.ts'
 import { isAgentError } from './domain/errors.ts'
 import { checkProvider, formatProviderCheck } from './llm/check.ts'
+import { formatHealthReport, runHealthCheck } from './health.ts'
 import { executePipeline } from './pipeline/run.ts'
 import { formatDuration, formatRunSummary } from './pipeline/summary.ts'
 import { SOURCES } from './sources/registry.ts'
@@ -44,6 +46,9 @@ Options:
   --limit=<n>         Cap articles generated this run.
   --sources           List the configured source registry and exit.
   --inspect-db        Print recent runs and stored state, then exit.
+  --health            Read-only preflight: config, database, run lock, WordPress
+                      auth, taxonomy, provider config. Spends no LLM tokens.
+                      Exit 0 healthy, 1 otherwise.
   --llm-check         Validate the LLM provider with one tiny structured-output
                       call. No feeds, no database writes, no WordPress.
   --taxonomy-check    Verify the configured WordPress categories exist. Read-only.
@@ -65,6 +70,7 @@ function main(): void {
       sources: { type: 'boolean', default: false },
       'inspect-db': { type: 'boolean', default: false },
       'llm-check': { type: 'boolean', default: false },
+      health: { type: 'boolean', default: false },
       'taxonomy-check': { type: 'boolean', default: false },
       'taxonomy-bootstrap': { type: 'boolean', default: false },
       'log-format': { type: 'string' },
@@ -103,6 +109,34 @@ function main(): void {
   })
 
   for (const warning of warnings) logger.warn(warning)
+
+  /*
+   * Global kill switch, checked before anything else does work.
+   *
+   * Deliberately the first thing after config: an operator who disables the
+   * agent must not have to trust that the database, the provider and the CMS all
+   * independently decline to act. Exits 0 because a paused agent is a healthy
+   * state, not a failed run — a scheduler should not alert on it.
+   */
+  if (!env.enabled) {
+    logger.info('Agent disabled by AGENT_ENABLED=false; exiting without doing work', {
+      note: 'No network calls, no LLM calls, no WordPress writes.',
+    })
+    return
+  }
+
+  if (values.health) {
+    runHealthCheck({ env, logger })
+      .then((report) => {
+        logger.plain(formatHealthReport(report, env))
+        process.exitCode = report.healthy ? 0 : 1
+      })
+      .catch((error: unknown) => {
+        logger.error('Health check failed', errorFields(error))
+        process.exitCode = 1
+      })
+    return
+  }
 
   /*
    * Runs before the database is opened: the provider check is deliberately

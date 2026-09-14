@@ -104,9 +104,18 @@ export interface WriterClaimInput {
   conflictNote?: string
 }
 
+export interface WriterSeoInput {
+  primaryKeyword: string
+  secondaryKeywords: string[]
+  seoTitle: string
+  suggestedHeadings: string[]
+}
+
 export interface WriterInput {
   storyTitle: string
   category: string
+  /** Search guidance. Advisory to the prose, never to the facts. */
+  seo?: WriterSeoInput
   /** Evidence-derived length band, chosen before writing (editorial/format.ts). */
   format: ArticleFormat
   targetMinWords: number
@@ -146,6 +155,31 @@ ${input.revisionNotes.map((note) => `  - ${note}`).join('\n')}\n`
   const categoryLabel =
     (CATEGORY_LABELS as Record<string, string>)[input.category] ?? input.category
 
+  /*
+   * SEO guidance is placed AFTER the claims and framed as subordinate to them.
+   * Order matters in a prompt: the facts are established first, and the search
+   * guidance arrives as shaping advice on material already fixed.
+   */
+  const seoBlock = input.seo
+    ? `
+SEARCH GUIDANCE (shapes wording and structure — NEVER the facts)
+  primary keyword:    ${input.seo.primaryKeyword}
+  secondary keywords: ${input.seo.secondaryKeywords.join(', ') || '(none)'}
+  suggested SEO title: ${input.seo.seoTitle}
+  suggested headings: ${input.seo.suggestedHeadings.join(' | ') || '(none)'}
+
+  Work the primary keyword in naturally where it already fits — typically the
+  headline and the opening sentence. Use a secondary keyword only where it is
+  the phrase you would have written anyway.
+
+  These are suggestions about PHRASING. If following one would require stating
+  something the verified claims do not support, ignore it and write the true
+  sentence. A heading you have no verified material for must be dropped, not
+  filled. Never repeat a keyword to hit a count — repetition reads as spam to
+  both readers and search engines.
+`
+    : ''
+
   return `
 Story: ${input.storyTitle}
 Category: ${input.category} (${categoryLabel})
@@ -163,7 +197,7 @@ ${claimTexts}
 
 SOURCES (trusted metadata, for attribution)
 ${sourceLines}
-
+${seoBlock}
 Write the article.
 `.trim()
 }

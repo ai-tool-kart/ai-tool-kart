@@ -242,7 +242,7 @@ test('the run lock prevents a concurrent run', async () => {
       counters: {
         sourcesChecked: 0, sourcesFailed: 0, itemsDiscovered: 0, itemsDuplicate: 0,
         itemsRejected: 0, storiesCandidate: 0, storiesVerified: 0, articlesGenerated: 0,
-        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, storiesDeferred: 0,
+        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, seoBriefsCreated: 0, storiesDeferred: 0,
       },
       llmUsage: { calls: 0, inputTokens: 0, outputTokens: 0 },
       errors: [],
@@ -273,7 +273,7 @@ test('a stale lock is reclaimed', async () => {
       counters: {
         sourcesChecked: 0, sourcesFailed: 0, itemsDiscovered: 0, itemsDuplicate: 0,
         itemsRejected: 0, storiesCandidate: 0, storiesVerified: 0, articlesGenerated: 0,
-        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, storiesDeferred: 0,
+        articlesApproved: 0, draftsCreated: 0, pendingRetried: 0, seoBriefsCreated: 0, storiesDeferred: 0,
       },
       llmUsage: { calls: 0, inputTokens: 0, outputTokens: 0 },
       errors: [],
@@ -391,6 +391,7 @@ test('a story deferred by a cap is reconsidered on the next run', async () => {
         maxCandidatesPerRun: 1,
         maxStoriesVerifiedPerRun: 5,
         maxArticlesPerRun: 2,
+        maxDraftsPerRun: 2,
         maxLlmCallsPerRun: 60,
         maxTokensPerRun: 250_000,
       },
@@ -433,6 +434,7 @@ test('a deferred story that has aged out is rejected, not resurrected', async ()
         maxCandidatesPerRun: 1,
         maxStoriesVerifiedPerRun: 5,
         maxArticlesPerRun: 2,
+        maxDraftsPerRun: 2,
         maxLlmCallsPerRun: 60,
         maxTokensPerRun: 250_000,
       },
@@ -468,6 +470,7 @@ test('caps set to zero produce no LLM calls and no drafts', async () => {
         maxCandidatesPerRun: 0,
         maxStoriesVerifiedPerRun: 0,
         maxArticlesPerRun: 0,
+        maxDraftsPerRun: 0,
         maxLlmCallsPerRun: 0,
         maxTokensPerRun: 0,
       },
@@ -559,6 +562,9 @@ test('zeroing every cap still publishes work an earlier run approved', async () 
         maxCandidatesPerRun: 0,
         maxStoriesVerifiedPerRun: 0,
         maxArticlesPerRun: 0,
+        // Left at 1: this test is about the LLM caps not blocking publication.
+        // The draft cap is a separate lever, exercised in the next test.
+        maxDraftsPerRun: 1,
         maxLlmCallsPerRun: 0,
         maxTokensPerRun: 0,
       },
@@ -570,4 +576,78 @@ test('zeroing every cap still publishes work an earlier run approved', async () 
   assert.equal(h.wp.created.length, 1, 'the pending article is posted exactly once')
   assert.equal(h.wp.created[0]?.slug, 'vendor-ships-aurora-2')
   assert.equal(h.wp.created[0]?.status, 'draft')
+})
+
+test('AGENT_MAX_DRAFTS_PER_RUN=0 stops every WordPress write', async () => {
+  /*
+   * The draft cap bounds CMS WRITES, which is a different axis from the LLM
+   * caps. Zero here means "run, but create no posts" — useful for a scheduled
+   * rehearsal against production data, and distinct from --dry-run in that
+   * everything up to the CMS boundary still really happens.
+   */
+  const h = harness()
+
+  h.repos.stories.upsert({
+    id: 'sty_no_drafts',
+    fingerprint: 'fp_no_drafts',
+    normalizedTitle: 'vendor ships aurora 2',
+    title: 'Vendor ships Aurora 2',
+    category: 'ai-models',
+    newsItemIds: [],
+    scores: { relevance: 8, importance: 8, freshness: 9, sourceTrust: 10, weighted: 8.5 },
+    evidenceState: 'sufficient',
+    status: 'generated',
+    firstSeenAt: '2026-08-20T09:00:00.000Z',
+    lastUpdatedAt: '2026-08-20T09:00:00.000Z',
+  })
+  h.repos.articles.upsert(
+    {
+      id: 'art_no_drafts',
+      storyId: 'sty_no_drafts',
+      title: 'Vendor ships Aurora 2',
+      slug: 'vendor-ships-aurora-2-nodraft',
+      excerpt: 'x'.repeat(120),
+      sections: [{ heading: 'What happened', paragraphs: ['Vendor released Aurora 2.'] }],
+      content: '<h2>What happened</h2>\n<p>Vendor released Aurora 2.</p>\n<h2>Sources</h2>',
+      category: 'ai-models',
+      tags: ['Vendor'],
+      sourceUrls: ['https://vendor.example.com/news/aurora-2'],
+      claimIds: ['clm_abc123'],
+      wordCount: 620,
+      generatedAt: '2026-08-20T09:05:00.000Z',
+      model: 'mock:mock-strong-v1',
+      format: 'standard',
+      schemaVersion: 1,
+      confidence: 0.82,
+      editorialStatus: 'approved',
+      editorialIssues: [],
+      revisionCount: 0,
+    },
+    'run_seed',
+  )
+
+  const { run } = await runPipeline(h, {
+    env: testEnv({
+      limits: {
+        maxItemsPerSourcePerRun: 25,
+        maxCandidatesPerRun: 20,
+        maxStoriesVerifiedPerRun: 5,
+        maxArticlesPerRun: 2,
+        maxDraftsPerRun: 0,
+        maxLlmCallsPerRun: 60,
+        maxTokensPerRun: 250_000,
+      },
+    }),
+  })
+
+  assert.equal(run.status, 'completed', 'a zero-draft run is still a clean run')
+  assert.equal(h.wp.created.length, 0, 'no WordPress post may be created')
+  assert.equal(run.counters.draftsCreated, 0)
+
+  // The work is preserved, not discarded: still approved, still unpublished.
+  const pending = h.repos.articles.listAwaitingPublication()
+  assert.ok(
+    pending.some((article) => article.id === 'art_no_drafts'),
+    'the pending article must stay queued for a later run',
+  )
 })

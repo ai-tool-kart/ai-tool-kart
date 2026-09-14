@@ -6,6 +6,7 @@ import BrowsePage from '@/pages/BrowsePage'
 import ComparePage from '@/pages/ComparePage'
 import HomePage from '@/pages/HomePage'
 import NewLaunchesPage from '@/pages/NewLaunchesPage'
+import NewsAgentDemoPage from '@/pages/NewsAgentDemoPage'
 import KitchenSinkPage from '@/pages/KitchenSinkPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import SubmitPage from '@/pages/SubmitPage'
@@ -21,6 +22,12 @@ import WorkflowsPage from '@/pages/WorkflowsPage'
 export default function App() {
   return (
     <Routes>
+      {/*
+        Internal News Agent observability dashboard. Deliberately OUTSIDE
+        PageShell: it is a local admin/debug surface, not part of the product,
+        and it talks to the agent's own demo server rather than the site API.
+      */}
+      <Route path="news-agent-demo" element={<NewsAgentDemoPage />} />
       <Route element={<PageShell />}>
         <Route index element={<HomePage />} />
         <Route path="browse" element={<BrowsePage />} />

@@ -8,7 +8,7 @@
 
 import { ARTICLE, MAX_REVISION_ATTEMPTS, type ArticleFormat } from '../config/limits.ts'
 import { isEditorialCategory, type EditorialCategory } from '../config/editorial.ts'
-import type { ArticleDraft, CandidateStory, Claim, SourceEvidence } from '../domain/types.ts'
+import type { ArticleDraft, CandidateStory, Claim, SeoBrief, SourceEvidence } from '../domain/types.ts'
 // Tag vocabulary, normalisation and validation live in one module (§20), shared
 // with the WordPress taxonomy layer so both sides agree on what a tag is.
 import { normalizeTags } from '../editorial/tags.ts'
@@ -42,6 +42,8 @@ export interface WriteInput {
    * different format.
    */
   format: ArticleFormat
+  /** Search guidance, when a brief was produced. Advisory to the prose only. */
+  seo?: SeoBrief
   /** Editor feedback on a revision pass. */
   revisionNotes?: string[]
   /** Preserved across revisions so the URL never changes. */
@@ -87,6 +89,16 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
       format: input.format,
       targetMinWords: range.minWords,
       targetMaxWords: range.maxWords,
+      ...(input.seo
+        ? {
+            seo: {
+              primaryKeyword: input.seo.primaryKeyword,
+              secondaryKeywords: input.seo.secondaryKeywords,
+              seoTitle: input.seo.seoTitle,
+              suggestedHeadings: input.seo.suggestedHeadings,
+            },
+          }
+        : {}),
       claims: claimInputs,
       evidence: input.evidence.map((item) => ({
         url: item.url,
@@ -176,6 +188,7 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
     generatedAt: nowIso(),
     model: `${llm.providerId}:${response.model}`,
     format: input.format,
+    ...(input.seo ? { seo: input.seo } : {}),
     schemaVersion: ARTICLE_SCHEMA_VERSION,
     confidence: 0,
     editorialStatus: 'pending',

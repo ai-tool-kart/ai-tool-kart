@@ -120,6 +120,8 @@ export function createMockProvider(options: MockProviderOptions = {}): LLMProvid
           return respond(mockExtract(request.input), request)
         case 'verify':
           return respond(mockVerify(request.input), request)
+        case 'seo':
+          return respond(mockSeo(request.input), request)
         case 'write':
           return respond(mockWrite(request.input), request)
         case 'edit':
@@ -259,6 +261,60 @@ function mockVerify(input: string): string {
     claims,
     ...(ids[0] ? { coreClaimId: ids[0] } : {}),
     summary: `Mock verification of ${ids.length} claims against ${evidenceUrls.length} evidence sources.`,
+  })
+}
+
+/**
+ * SEO brief: derived strictly from the story it was given.
+ *
+ * Like the rest of the mock, it states only what its input contains. The primary
+ * keyword is built from the story title, so a grounding bug in the SEO validator
+ * shows up here rather than being masked by a model that happens to guess a
+ * plausible keyword. It picks internal links only from the routes offered in the
+ * prompt, which is what the production rule requires.
+ */
+function mockSeo(input: string): string {
+  const storyTitle = /^Story: (.+)$/m.exec(input)?.[1]?.trim() ?? 'AI tooling update'
+  const format = /^Article format: (\w+)$/m.exec(input)?.[1] ?? 'standard'
+  const entities = [...input.matchAll(/^ {2}- (.+)$/gm)].map((match) => match[1]?.trim() ?? '')
+
+  // Only paths actually offered in the prompt, never composed.
+  const offeredRoutes = [...input.matchAll(/^ {2}(\/[a-z0-9/-]*) {2}— /gm)].map((m) => m[1] ?? '')
+
+  const words = storyTitle
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, ' ')
+    .split(/\s+/)
+    .filter((word) => word.length > 2)
+  const primaryKeyword = words.slice(0, 4).join(' ') || 'ai tool update'
+
+  const maxSecondary = format === 'brief' ? 2 : format === 'analysis' ? 6 : 4
+  const secondaryKeywords = entities
+    .filter(Boolean)
+    .slice(0, maxSecondary)
+    .map((entity) => `${entity.toLowerCase()} update`)
+    .filter((keyword) => keyword.toLowerCase() !== primaryKeyword)
+
+  const maxHeadings = format === 'brief' ? 3 : format === 'analysis' ? 8 : 6
+  const suggestedHeadings = ['What happened', "What's new", 'Why it matters'].slice(0, maxHeadings)
+
+  const description =
+    `${storyTitle}. What changed, who it affects, and what to do next, based on published sources.`
+      .replace(/\s+/g, ' ')
+      .slice(0, 160)
+
+  return JSON.stringify({
+    primaryKeyword,
+    secondaryKeywords,
+    searchIntent: 'informational',
+    seoTitle: storyTitle.slice(0, 70),
+    metaDescription:
+      description.length >= 50
+        ? description
+        : `${description} Details and sources are summarised for readers evaluating this tool.`.slice(0, 160),
+    suggestedSlug: primaryKeyword.replace(/\s+/g, '-'),
+    suggestedHeadings,
+    internalLinkTargets: offeredRoutes.slice(0, format === 'brief' ? 2 : 3),
   })
 }
 

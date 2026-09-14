@@ -30,6 +30,7 @@ const CAP_VARS = [
   'AGENT_MAX_CANDIDATES_PER_RUN',
   'AGENT_MAX_STORIES_VERIFIED_PER_RUN',
   'AGENT_MAX_ARTICLES_PER_RUN',
+  'AGENT_MAX_DRAFTS_PER_RUN',
   'AGENT_MAX_LLM_CALLS_PER_RUN',
   'AGENT_MAX_TOKENS_PER_RUN',
 ] as const
@@ -44,6 +45,7 @@ test('an explicit zero cap can never expand into the default workload', async (t
     AGENT_MAX_CANDIDATES_PER_RUN: 20,
     AGENT_MAX_STORIES_VERIFIED_PER_RUN: 5,
     AGENT_MAX_ARTICLES_PER_RUN: 2,
+    AGENT_MAX_DRAFTS_PER_RUN: 2,
     AGENT_MAX_LLM_CALLS_PER_RUN: 60,
     AGENT_MAX_TOKENS_PER_RUN: 250_000,
   }
@@ -52,6 +54,7 @@ test('an explicit zero cap can never expand into the default workload', async (t
     AGENT_MAX_CANDIDATES_PER_RUN: (l) => l.maxCandidatesPerRun,
     AGENT_MAX_STORIES_VERIFIED_PER_RUN: (l) => l.maxStoriesVerifiedPerRun,
     AGENT_MAX_ARTICLES_PER_RUN: (l) => l.maxArticlesPerRun,
+    AGENT_MAX_DRAFTS_PER_RUN: (l) => l.maxDraftsPerRun,
     AGENT_MAX_LLM_CALLS_PER_RUN: (l) => l.maxLlmCallsPerRun,
     AGENT_MAX_TOKENS_PER_RUN: (l) => l.maxTokensPerRun,
   }
@@ -73,6 +76,7 @@ test('every cap set to zero yields an entirely zeroed budget', () => {
     maxCandidatesPerRun: 0,
     maxStoriesVerifiedPerRun: 0,
     maxArticlesPerRun: 0,
+    maxDraftsPerRun: 0,
     maxLlmCallsPerRun: 0,
     maxTokensPerRun: 0,
   })

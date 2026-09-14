@@ -175,6 +175,21 @@ export const MIGRATIONS: Migration[] = [
       ALTER TABLE generated_articles ADD COLUMN format TEXT NOT NULL DEFAULT 'standard';
     `,
   },
+  {
+    version: 3,
+    name: 'seo_brief',
+    sql: `
+      /*
+       * Structured SEO brief, stored as JSON alongside the article.
+       *
+       * JSON rather than columns because the brief is read as a unit by
+       * reviewers and by any future SEO-plugin adapter, and is never queried
+       * field-by-field. NULL for articles generated before the SEO layer and
+       * for stories where no brief could be grounded.
+       */
+      ALTER TABLE generated_articles ADD COLUMN seo TEXT;
+    `,
+  },
 ]
 
 export const SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1]?.version ?? 0

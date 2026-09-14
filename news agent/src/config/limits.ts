@@ -186,6 +186,62 @@ export const PENDING_PUBLISH = {
   maxConsecutiveFailures: 2,
 } as const
 
+/*
+ * ── SEO constraints ──────────────────────────────────────────────────────────
+ *
+ * The governing rule is in NEWS_AGENT.md: SEO shapes STRUCTURE AND WORDING; it
+ * never invents facts. Everything here is a shape constraint, not a licence to
+ * say something the claims do not support.
+ */
+export const SEO = {
+  /** Google truncates around 155-160 chars; below ~50 is not a description. */
+  metaDescriptionMinChars: 50,
+  metaDescriptionMaxChars: 160,
+  /** An SEO title longer than this is truncated in results. */
+  seoTitleMaxChars: 60,
+  /** Hard schema ceiling; the soft target is seoTitleMaxChars. */
+  seoTitleHardMaxChars: 80,
+  minSecondaryKeywords: 0,
+  maxSecondaryKeywords: 6,
+  maxSuggestedHeadings: 8,
+  maxInternalLinks: 4,
+  /**
+   * Times the primary keyword may appear across title + headings + meta before
+   * it reads as stuffing. Deliberately a count, not a density percentage —
+   * density targets are what produce robotic copy.
+   */
+  maxPrimaryKeywordRepeats: 4,
+} as const
+
+/**
+ * Comparative and superlative language that asserts a ranking.
+ *
+ * None of these may appear in SEO output unless the same word appears in a
+ * VERIFIED claim. A news pipeline has no basis for "the best AI coding tool" —
+ * that is a claim about every competitor, none of which were verified. This is
+ * the single highest-risk way SEO could smuggle an unsupported assertion into a
+ * headline, so it is checked deterministically rather than left to a prompt.
+ */
+export const UNSUPPORTED_SUPERLATIVES = [
+  'best', 'top', 'cheapest', 'fastest', 'greatest', 'leading', 'number one',
+  'number 1', '#1', 'ultimate', 'perfect', 'flawless', 'unbeatable', 'revolutionary',
+  'game-changing', 'game changing', 'most powerful', 'most advanced', 'world-class',
+  'industry-leading', 'unrivalled', 'unrivaled', 'superior', 'must-have',
+] as const
+
+/**
+ * Per-format SEO shape. Mirrors ARTICLE_FORMATS: a brief gets a brief's SEO.
+ *
+ * Without this, SEO becomes a back door to the padding that ARTICLE_FORMATS
+ * exists to prevent — "add an H2 for the secondary keyword" is exactly how a
+ * 200-word brief turns into 600 words of nothing.
+ */
+export const SEO_BY_FORMAT = {
+  brief: { maxHeadings: 3, maxSecondaryKeywords: 2, maxInternalLinks: 2 },
+  standard: { maxHeadings: 6, maxSecondaryKeywords: 4, maxInternalLinks: 3 },
+  analysis: { maxHeadings: 8, maxSecondaryKeywords: 6, maxInternalLinks: 4 },
+} as const
+
 /**
  * Default models per task class. Overridable via LLM_MODEL_FAST/LLM_MODEL_STRONG.
  * The provider adapter decides what these strings mean; the pipeline only knows
@@ -195,6 +251,14 @@ export const TASK_MODEL_CLASS = {
   classify: 'fast',
   extract: 'fast',
   verify: 'strong',
+  /*
+   * SEO runs on the fast model. It produces short, highly-constrained metadata
+   * from claims another step already verified, and every factual guarantee it
+   * could threaten is enforced deterministically afterwards (seo/validate.ts)
+   * rather than trusted to the model. There is no reasoning here worth paying
+   * strong-model rates for.
+   */
+  seo: 'fast',
   write: 'strong',
   edit: 'strong',
 } as const
@@ -204,6 +268,7 @@ export const TASK_MAX_OUTPUT_TOKENS = {
   classify: 512,
   extract: 2048,
   verify: 3072,
+  seo: 1024,
   write: 4096,
   edit: 2048,
 } as const

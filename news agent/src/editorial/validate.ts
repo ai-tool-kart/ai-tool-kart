@@ -11,6 +11,7 @@
  */
 
 import { formatRange } from './format.ts'
+import { mergeSeoIntoVerdict, validateSeo } from '../seo/validate.ts'
 import { ARTICLE, MIN_APPROVAL_CONFIDENCE, MAX_REVISION_ATTEMPTS } from '../config/limits.ts'
 import { EDITORIAL_SCOPE } from '../config/editorial.ts'
 import type { ArticleDraft, Claim, SourceEvidence } from '../domain/types.ts'
@@ -220,17 +221,42 @@ export async function validateDraft(
     )
   }
 
-  const blockingIssues = [...modelBlocking, ...deterministic.blocking]
+  /*
+   * SEO validation, folded in one direction only.
+   *
+   * mergeSeoIntoVerdict can lower an approved verdict but never raise one: a
+   * clean SEO brief is not a reason to publish something the factual editor
+   * rejected. Advisory SEO findings are reported and never block, so an article
+   * that is factually excellent and merely imperfectly optimised still ships.
+   */
+  const seoResult = input.draft.seo
+    ? validateSeo({
+        seo: input.draft.seo,
+        title: input.draft.title,
+        excerpt: input.draft.excerpt,
+        headings: input.draft.sections.map((section) => section.heading),
+        bodyText: sectionsToPlainText(input.draft.sections),
+        format: input.draft.format,
+        claims: input.claims.filter((claim) => claim.supportLevel === 'verified'),
+        storyTitle: input.draft.title,
+      })
+    : { blocking: [], advisory: [] }
+
+  advisory.push(...seoResult.advisory)
+
+  const blockingIssues = [...modelBlocking, ...deterministic.blocking, ...seoResult.blocking]
   // Everything the model called blocking is by definition about the prose, so a
   // rewrite is worth attempting; deterministic issues are only sometimes.
-  const writerFixableIssues = [...modelBlocking, ...deterministic.writerFixable]
+  const writerFixableIssues = [...modelBlocking, ...deterministic.writerFixable, ...seoResult.blocking]
   const allIssues = [...blockingIssues, ...modelMinor, ...advisory]
 
   let verdict: ValidationResult['verdict'] = review.verdict
-  if (blockingIssues.length > 0 && verdict === 'approved') {
+  if ([...modelBlocking, ...deterministic.blocking].length > 0 && verdict === 'approved') {
     // Deterministic checks override an over-generous model verdict.
     verdict = 'needs-revision'
   }
+  // SEO is applied last and separately, so the asymmetry stays explicit.
+  verdict = mergeSeoIntoVerdict(verdict, seoResult.blocking)
   if (verdict === 'approved' && review.confidence < MIN_APPROVAL_CONFIDENCE) {
     verdict = 'needs-revision'
     allIssues.push(
@@ -241,6 +267,8 @@ export async function validateDraft(
   log.info('Editorial review complete', {
     verdict,
     format: input.draft.format,
+    seoBlocking: seoResult.blocking.length,
+    seoAdvisory: seoResult.advisory.length,
     words: input.draft.wordCount,
     confidence: review.confidence,
     blocking: blockingIssues.length,

@@ -96,11 +96,21 @@ const EnvSchema = z.object({
 
   AGENT_DB_PATH: z.string().trim().min(1).default('./data/news-agent.sqlite'),
   AGENT_AUTO_PUBLISH: boolish.catch(false).default(false),
+  /*
+   * Global kill switch for scheduled automation.
+   *
+   * Defaults to true so an unset variable does not silently disable a
+   * production schedule. When false the process exits 0 before opening the
+   * database, resolving the provider, or touching the network — an operator
+   * pausing the agent must not have to trust that nothing downstream fires.
+   */
+  AGENT_ENABLED: boolish.catch(true).default(true),
 
   AGENT_MAX_ITEMS_PER_SOURCE_PER_RUN: capInt(25),
   AGENT_MAX_CANDIDATES_PER_RUN: capInt(20),
   AGENT_MAX_STORIES_VERIFIED_PER_RUN: capInt(5),
   AGENT_MAX_ARTICLES_PER_RUN: capInt(2),
+  AGENT_MAX_DRAFTS_PER_RUN: capInt(2),
   AGENT_MAX_LLM_CALLS_PER_RUN: capInt(60),
   AGENT_MAX_TOKENS_PER_RUN: capInt(250_000),
 
@@ -135,6 +145,8 @@ export interface WordPressCredentials {
 }
 
 export interface AgentEnv {
+  /** False pauses all work: the run exits 0 having done nothing. */
+  enabled: boolean
   llm: {
     provider: string
     apiKey?: string
@@ -150,6 +162,8 @@ export interface AgentEnv {
     maxCandidatesPerRun: number
     maxStoriesVerifiedPerRun: number
     maxArticlesPerRun: number
+    /** Total WordPress posts a single run may create, retries included. */
+    maxDraftsPerRun: number
     maxLlmCallsPerRun: number
     maxTokensPerRun: number
   }
@@ -176,6 +190,27 @@ export interface AgentEnv {
  * in utils/http.ts — the CMS host is trusted by definition, a URL scraped from a
  * news feed never is.
  */
+/**
+ * Whether a hostname belongs to a local development machine.
+ *
+ * Exported because two independent policies depend on the same answer: plain
+ * http is accepted here only for these hosts, and the demo dashboard refuses to
+ * run the pipeline against a CMS that is not one of them. Keeping one predicate
+ * means the two can never disagree about what "local" means.
+ */
+export function isLocalDevelopmentHost(hostname: string): boolean {
+  const host = hostname.toLowerCase()
+  return (
+    host === 'localhost' ||
+    host === '127.0.0.1' ||
+    host === '::1' ||
+    host === '[::1]' ||
+    host.endsWith('.local') ||
+    host.endsWith('.localhost') ||
+    host.endsWith('.test')
+  )
+}
+
 function validateWordPressUrl(raw: string): { url: string; insecureLocal: boolean } {
   let parsed: URL
   try {
@@ -187,14 +222,7 @@ function validateWordPressUrl(raw: string): { url: string; insecureLocal: boolea
   }
 
   const host = parsed.hostname.toLowerCase()
-  const isLocalHost =
-    host === 'localhost' ||
-    host === '127.0.0.1' ||
-    host === '::1' ||
-    host === '[::1]' ||
-    host.endsWith('.local') ||
-    host.endsWith('.localhost') ||
-    host.endsWith('.test')
+  const isLocalHost = isLocalDevelopmentHost(host)
 
   if (parsed.protocol === 'https:') return { url: raw.replace(/\/+$/, ''), insecureLocal: false }
 
@@ -281,6 +309,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
   }
 
   const env: AgentEnv = {
+    enabled: raw.AGENT_ENABLED,
     llm: {
       provider: raw.LLM_PROVIDER,
       ...(raw.LLM_API_KEY ? { apiKey: raw.LLM_API_KEY } : {}),
@@ -295,6 +324,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
       maxCandidatesPerRun: raw.AGENT_MAX_CANDIDATES_PER_RUN,
       maxStoriesVerifiedPerRun: raw.AGENT_MAX_STORIES_VERIFIED_PER_RUN,
       maxArticlesPerRun: raw.AGENT_MAX_ARTICLES_PER_RUN,
+      maxDraftsPerRun: raw.AGENT_MAX_DRAFTS_PER_RUN,
       maxLlmCallsPerRun: raw.AGENT_MAX_LLM_CALLS_PER_RUN,
       maxTokensPerRun: raw.AGENT_MAX_TOKENS_PER_RUN,
     },
@@ -314,6 +344,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
 /** Startup summary. Reports presence of credentials, never their values. */
 export function describeEnv(env: AgentEnv): Record<string, unknown> {
   return {
+    enabled: env.enabled,
     llmProvider: env.llm.provider,
     llmKey: env.llm.apiKey ? 'set' : 'absent',
     wordpress: env.wordpress ? 'configured' : 'not configured',
