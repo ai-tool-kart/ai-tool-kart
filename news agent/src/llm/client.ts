@@ -20,7 +20,14 @@ import type { Logger } from '../utils/logger.ts'
 import type { Budget } from './budget.ts'
 import { describeSchema } from './schemas.ts'
 import { jsonOutputInstruction, repairInstruction } from './prompts/shared.ts'
-import { LLMRefusal, type LLMProvider, type LLMRequest, type LLMResponse, type LLMTaskName } from './provider.ts'
+import {
+  LLMRefusal,
+  providerUsage,
+  type LLMProvider,
+  type LLMRequest,
+  type LLMResponse,
+  type LLMTaskName,
+} from './provider.ts'
 
 export interface TaskRequest<T> {
   task: LLMTaskName
@@ -130,9 +137,16 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
         try {
           raw = await provider.complete(providerRequest as LLMRequest<unknown>)
         } catch (error) {
+          /*
+           * A failed call can still have cost tokens — a refusal, a content
+           * filter, a response truncated at the output ceiling. Charge them
+           * before deciding whether to retry, so a retry can never spend past
+           * the run budget unrecorded (§27).
+           */
+          const spent = providerUsage(error)
           if (error instanceof LLMRefusal) {
             // A refusal is recorded as a call: the provider was invoked.
-            budget.record(0, 0)
+            budget.record(spent?.inputTokens ?? 0, spent?.outputTokens ?? 0)
             lastError = new AgentError('LLM_REFUSAL', `Model declined the ${request.task} task`, {
               cause: error,
               storyScoped: true,
@@ -141,6 +155,7 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
             if (attempt < RETRY.llmSchemaAttempts) continue
             throw lastError
           }
+          if (spent) budget.record(spent.inputTokens, spent.outputTokens)
           if (isAgentError(error) && !error.retryable) throw error
           lastError = new AgentError('LLM_UNAVAILABLE', `LLM provider call failed`, {
             cause: error,

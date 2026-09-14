@@ -1,12 +1,13 @@
 /*
  * Provider selection.
  *
- * NEWS_AGENT.md §37 lists the production LLM provider as an OPEN DECISION, and
- * nothing in this repository or its environment picks one. So the agent ships
- * with the abstraction and the deterministic mock provider, and deliberately
- * does not smuggle in a vendor choice by being the first to write an adapter.
+ * Two adapters ship today: `mock`, the deterministic offline provider that makes
+ * the whole pipeline runnable with no key and no network, and `openai`, the
+ * first real runtime provider. Nothing else in the codebase knows either one
+ * exists — pipeline modules call the shared client against the LLMProvider
+ * interface, and LLM_PROVIDER is the only switch.
  *
- * ── Adding a real provider ───────────────────────────────────────────────────
+ * ── Adding another provider ──────────────────────────────────────────────────
  *
  * One file and one line. Create src/llm/providers/<vendor>.ts exporting a
  * factory that satisfies the LLMProvider interface:
@@ -40,6 +41,7 @@ import { configError } from '../domain/errors.ts'
 import type { AgentEnv } from '../config/env.ts'
 import type { LLMProvider } from './provider.ts'
 import { createMockProvider, type MockProviderOptions } from './providers/mock.ts'
+import { createOpenAIProvider } from './providers/openai.ts'
 
 export interface RealProviderOptions {
   apiKey: string
@@ -50,8 +52,10 @@ export interface RealProviderOptions {
 
 type ProviderFactory = (options: RealProviderOptions) => LLMProvider
 
-/** Real adapters go here. Empty until the provider decision is made. */
-const PROVIDER_FACTORIES: Record<string, ProviderFactory> = {}
+/** Real adapters. One entry per vendor; `mock` is handled separately below. */
+const PROVIDER_FACTORIES: Record<string, ProviderFactory> = {
+  openai: createOpenAIProvider,
+}
 
 export function availableProviders(): string[] {
   return ['mock', ...Object.keys(PROVIDER_FACTORIES)]
@@ -73,16 +77,24 @@ export function createProvider({ env, mock }: CreateProviderOptions): LLMProvide
     throw configError(
       `LLM_PROVIDER="${id}" has no adapter.\n\n` +
         `Available: ${availableProviders().join(', ')}.\n\n` +
-        'The production provider is an open decision (NEWS_AGENT.md §37), so no vendor adapter ' +
-        'ships by default. To add one, implement src/llm/providers/<vendor>.ts against the ' +
-        'LLMProvider interface and register it in PROVIDER_FACTORIES in src/llm/factory.ts — ' +
-        'see the contract documented at the top of that file. Until then, run with ' +
-        'LLM_PROVIDER=mock.',
+        'To add one, implement src/llm/providers/<vendor>.ts against the LLMProvider interface ' +
+        'and register it in PROVIDER_FACTORIES in src/llm/factory.ts — see the contract ' +
+        'documented at the top of that file. Until then, run with LLM_PROVIDER=mock.',
     )
   }
 
+  /*
+   * Second gate on the key. loadEnv() already refuses to start a non-mock
+   * provider without one; this catches a provider built from a hand-assembled
+   * env in a test or a script, so no adapter can ever be constructed with an
+   * empty credential and fail later mid-run.
+   */
   if (!env.llm.apiKey) {
-    throw configError(`LLM_PROVIDER="${id}" requires LLM_API_KEY to be set.`)
+    throw configError(
+      `LLM_PROVIDER="${id}" requires LLM_API_KEY to be set. ` +
+        'Set it in the agent environment (server-side only, never with a VITE_ prefix), ' +
+        'or use LLM_PROVIDER=mock to run offline.',
+    )
   }
 
   return factory({

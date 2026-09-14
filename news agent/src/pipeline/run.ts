@@ -259,6 +259,13 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
           storyLog.warn('Deferring story: LLM budget exhausted')
           continue
         }
+        /*
+         * A fatal error is not a property of this story — a rejected LLM
+         * credential fails identically for every candidate. Isolating it here
+         * would reject the whole queue one doomed API call at a time, so it
+         * aborts the run instead, exactly as it does in the per-story loop below.
+         */
+        if (isAgentError(error) && error.fatal) throw error
         addError('classify', error, { storyId: story.id })
         repos.stories.setStatus(story.id, 'rejected', 'classification-failed')
         storyLog.warn('Classification failed', errorFields(error))

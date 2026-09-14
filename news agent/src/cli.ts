@@ -10,6 +10,7 @@
  *   npm run agent -- --source=openai-news --limit=1
  *   npm run agent -- --sources          list the registry
  *   npm run agent -- --inspect-db       recent runs and pipeline state
+ *   npm run agent -- --llm-check        one structured-output call to the provider
  *   npm run taxonomy:check              verify configured WP categories exist
  *   npm run taxonomy:bootstrap          create missing configured categories
  */
@@ -17,6 +18,7 @@
 import { parseArgs } from 'node:util'
 import { describeEnv, loadEnv } from './config/env.ts'
 import { isAgentError } from './domain/errors.ts'
+import { checkProvider, formatProviderCheck } from './llm/check.ts'
 import { executePipeline } from './pipeline/run.ts'
 import { formatDuration, formatRunSummary } from './pipeline/summary.ts'
 import { SOURCES } from './sources/registry.ts'
@@ -42,6 +44,8 @@ Options:
   --limit=<n>         Cap articles generated this run.
   --sources           List the configured source registry and exit.
   --inspect-db        Print recent runs and stored state, then exit.
+  --llm-check         Validate the LLM provider with one tiny structured-output
+                      call. No feeds, no database writes, no WordPress.
   --taxonomy-check    Verify the configured WordPress categories exist. Read-only.
   --taxonomy-bootstrap
                       Create the configured categories that are missing.
@@ -60,6 +64,7 @@ function main(): void {
       limit: { type: 'string' },
       sources: { type: 'boolean', default: false },
       'inspect-db': { type: 'boolean', default: false },
+      'llm-check': { type: 'boolean', default: false },
       'taxonomy-check': { type: 'boolean', default: false },
       'taxonomy-bootstrap': { type: 'boolean', default: false },
       'log-format': { type: 'string' },
@@ -98,6 +103,31 @@ function main(): void {
   })
 
   for (const warning of warnings) logger.warn(warning)
+
+  /*
+   * Runs before the database is opened: the provider check is deliberately
+   * side-effect free, so it must not create or lock a SQLite file either.
+   */
+  if (values['llm-check']) {
+    logger.info('Checking LLM provider', describeEnv(env))
+    checkProvider({ env, logger })
+      .then((result) => {
+        logger.plain(formatProviderCheck(result))
+        logger.info('LLM provider check passed', {
+          provider: result.provider,
+          model: result.modelUsed,
+          totalTokens: result.usage.inputTokens + result.usage.outputTokens,
+        })
+      })
+      .catch((error: unknown) => {
+        logger.error('LLM provider check failed', errorFields(error))
+        if (isAgentError(error) && error.code === 'CONFIG') {
+          process.stderr.write(`\n${error.message}\n\n`)
+        }
+        process.exitCode = 1
+      })
+    return
+  }
 
   const db = openDatabase({ path: env.dbPath })
   const repos = createRepositories(db)
