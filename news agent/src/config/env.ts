@@ -20,8 +20,68 @@ const boolish = z
   .pipe(z.enum(['true', 'false', '1', '0', 'yes', 'no', '']))
   .transform((value) => value === 'true' || value === '1' || value === 'yes')
 
+/*
+ * Numeric parsing for run limits.
+ *
+ * ── Why these do not use .catch() ────────────────────────────────────────────
+ *
+ * The previous helper was `z.coerce.number().int().positive().catch(fallback)`,
+ * which meant ANY value failing validation was silently replaced by the default.
+ * Setting AGENT_MAX_CANDIDATES_PER_RUN=0 to mean "score nothing" did not produce
+ * a no-op run — it produced the default 20-candidate run. A cost control that
+ * silently FAILS OPEN, expanding to the full default workload at the exact
+ * moment an operator was trying to restrict it, is the wrong shape for a circuit
+ * breaker. The same held for `abc`, `-5` and `1e9`.
+ *
+ * Both helpers below fail loudly instead. An unset or empty variable still takes
+ * the documented default; anything present but unusable stops startup with a
+ * message naming the variable.
+ */
+
+/** Blank/absent means "not configured", so the default applies. */
+const blankToUndefined = (value: unknown) =>
+  typeof value === 'string' && value.trim() === '' ? undefined : value
+
+/**
+ * A run/cost cap. Zero is VALID and means zero work.
+ *
+ * Zero is supported rather than rejected because the pipeline already has a
+ * first-class path for "this cap is reached": defer the remaining work with a
+ * logged reason and exit cleanly (§27). A cap of 0 is simply that path taken
+ * immediately — no candidates scored, no stories verified, no articles written,
+ * and nothing rejected. It is genuinely useful for exercising ingestion, dedupe
+ * and the pending-publication retry without spending a token.
+ *
+ * It also fails CLOSED: a mistyped 0 yields a no-op run, never a full one.
+ *
+ * Note that zeroing every cap does not make a run do nothing. Publishing an
+ * article an earlier run already approved costs no LLM budget and still happens
+ * (pipeline/pending.ts). That is deliberate, not a leak in the cap.
+ */
+const capInt = (fallback: number) =>
+  z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a whole number (0 or greater)' })
+      .int({ message: 'must be a whole number' })
+      .min(0, { message: 'must be 0 or greater' })
+      .default(fallback),
+  )
+
+/**
+ * An operational setting where zero is meaningless — a 0ms timeout or a 0-byte
+ * response cap breaks every request rather than limiting it. Still fails loudly
+ * rather than silently defaulting.
+ */
 const positiveInt = (fallback: number) =>
-  z.coerce.number().int().positive().catch(fallback).default(fallback)
+  z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a whole number greater than 0' })
+      .int({ message: 'must be a whole number' })
+      .positive({ message: 'must be greater than 0' })
+      .default(fallback),
+  )
 
 const EnvSchema = z.object({
   LLM_PROVIDER: z.string().trim().min(1).default('mock'),
@@ -37,14 +97,21 @@ const EnvSchema = z.object({
   AGENT_DB_PATH: z.string().trim().min(1).default('./data/news-agent.sqlite'),
   AGENT_AUTO_PUBLISH: boolish.catch(false).default(false),
 
-  AGENT_MAX_ITEMS_PER_SOURCE_PER_RUN: positiveInt(25),
-  AGENT_MAX_CANDIDATES_PER_RUN: positiveInt(20),
-  AGENT_MAX_STORIES_VERIFIED_PER_RUN: positiveInt(5),
-  AGENT_MAX_ARTICLES_PER_RUN: positiveInt(2),
-  AGENT_MAX_LLM_CALLS_PER_RUN: positiveInt(60),
-  AGENT_MAX_TOKENS_PER_RUN: positiveInt(250_000),
+  AGENT_MAX_ITEMS_PER_SOURCE_PER_RUN: capInt(25),
+  AGENT_MAX_CANDIDATES_PER_RUN: capInt(20),
+  AGENT_MAX_STORIES_VERIFIED_PER_RUN: capInt(5),
+  AGENT_MAX_ARTICLES_PER_RUN: capInt(2),
+  AGENT_MAX_LLM_CALLS_PER_RUN: capInt(60),
+  AGENT_MAX_TOKENS_PER_RUN: capInt(250_000),
 
-  AGENT_MIN_WEIGHTED_SCORE: z.coerce.number().min(0).max(10).catch(6).default(6),
+  AGENT_MIN_WEIGHTED_SCORE: z.preprocess(
+    blankToUndefined,
+    z.coerce
+      .number({ message: 'must be a number between 0 and 10' })
+      .min(0, { message: 'must be between 0 and 10' })
+      .max(10, { message: 'must be between 0 and 10' })
+      .default(6),
+  ),
 
   AGENT_HTTP_TIMEOUT_MS: positiveInt(15_000),
   AGENT_MAX_RESPONSE_BYTES: positiveInt(2_500_000),

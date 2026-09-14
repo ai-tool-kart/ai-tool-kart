@@ -313,7 +313,7 @@ function draft(overrides: Partial<ArticleDraft> = {}): ArticleDraft {
     sections: SECTIONS, content: '<h2>What happened</h2>\n<p>Text.</p>\n<h2>Sources</h2>\n<ul><li>a</li></ul>',
     category: 'ai-models', tags: ['OpenAI', 'Claude'],
     sourceUrls: ['https://vendor.example.com/a'], claimIds: ['clm_1'], wordCount: 600,
-    generatedAt: new Date().toISOString(), model: 'mock:test', schemaVersion: 1,
+    generatedAt: new Date().toISOString(), model: 'mock:test', format: 'standard' as const, schemaVersion: 1,
     confidence: 0, editorialStatus: 'pending', revisionCount: 0,
     ...overrides,
   }

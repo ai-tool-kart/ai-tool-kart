@@ -187,7 +187,7 @@ test('an existing WordPress post id is never overwritten', () => {
       id: 'art_1', storyId: 'sty_1', title: 'A title', slug: 'a-title', excerpt: 'x'.repeat(90),
       sections: [], content: '<p>x</p>', category: 'ai-models', tags: ['OpenAI'],
       sourceUrls: ['https://a.test'], claimIds: ['clm_1'], wordCount: 600,
-      generatedAt: new Date().toISOString(), model: 'mock:test', schemaVersion: 1,
+      generatedAt: new Date().toISOString(), model: 'mock:test', format: 'standard' as const, schemaVersion: 1,
       confidence: 0.9, editorialStatus: 'approved', revisionCount: 0,
     },
     'run_1',
@@ -207,7 +207,7 @@ test('regenerating an article does not detach its WordPress post', () => {
     id: 'art_1', storyId: 'sty_1', title: 'A title', slug: 'a-title', excerpt: 'x'.repeat(90),
     sections: [], content: '<p>x</p>', category: 'ai-models' as const, tags: ['OpenAI'],
     sourceUrls: ['https://a.test'], claimIds: ['clm_1'], wordCount: 600,
-    generatedAt: new Date().toISOString(), model: 'mock:test', schemaVersion: 1,
+    generatedAt: new Date().toISOString(), model: 'mock:test', format: 'standard' as const, schemaVersion: 1,
     confidence: 0.9, editorialStatus: 'approved' as const, revisionCount: 0,
   }
 
@@ -231,7 +231,7 @@ test('slug collisions are detected across articles', () => {
     {
       id: 'art_1', storyId: 'sty_1', title: 'T', slug: 'taken-slug', excerpt: 'x'.repeat(90),
       sections: [], content: '', category: 'ai-models', tags: [], sourceUrls: [], claimIds: [],
-      wordCount: 0, generatedAt: new Date().toISOString(), model: 'm', schemaVersion: 1,
+      wordCount: 0, generatedAt: new Date().toISOString(), model: 'm', format: 'standard' as const, schemaVersion: 1,
       confidence: 0, editorialStatus: 'pending', revisionCount: 0,
     },
     'run_1',

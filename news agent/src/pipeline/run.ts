@@ -33,6 +33,7 @@ import { clusterItems } from '../dedupe/cluster.ts'
 import { extractClaims } from '../evidence/extract.ts'
 import { evidenceIsSufficient, gatherEvidence, type GatherDeps } from '../evidence/gather.ts'
 import { canRevise, validateDraft } from '../editorial/validate.ts'
+import { selectArticleFormat } from '../editorial/format.ts'
 import { writeArticle } from '../generation/write.ts'
 import { ingestSources, type IngestDeps } from '../ingestion/ingest.ts'
 import { createBudget } from '../llm/budget.ts'
@@ -193,7 +194,31 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
     /* ── Step 5: dedupe and cluster ──────────────────────────────────────── */
     const clustered = clusterItems(ingested.items, { repos, logger: log, runId: run.id, clock })
     run.counters.itemsDuplicate = clustered.itemsDuplicate + ingested.droppedBeforePersist
-    run.counters.storiesCandidate = clustered.stories.length
+
+    /*
+     * Work deferred by an earlier run's caps rejoins the queue here.
+     *
+     * §27 promises that deferring is not rejecting: "Deferred stories remain
+     * candidates for the next run." Clustering alone cannot keep that promise.
+     * It only yields stories built from THIS run's non-duplicate items, and a
+     * deferred story's items were persisted and marked seen the moment it was
+     * first clustered — so it can never re-cluster, and no later run would ever
+     * look at it again. The tighter the caps, the more finished ingestion work
+     * was silently stranded.
+     *
+     * Deferred stories go FIRST because listByStatus orders by weighted score,
+     * so anything already classified outranks an unscored newcomer. They are not
+     * resurrected unconditionally: every one still goes through prefilterStory
+     * below, which re-checks staleness against the current clock, so a deferral
+     * that aged out is rejected on this pass rather than lingering forever.
+     */
+    const deferred = repos.stories.listByStatus('deferred')
+    const candidates = [...deferred, ...clustered.stories]
+    if (deferred.length > 0) {
+      log.info('Resuming stories deferred by an earlier run', { count: deferred.length })
+    }
+
+    run.counters.storiesCandidate = candidates.length
 
     const tierBySourceId = new Map<string, TrustTier>(
       registry.map((source) => [source.id, source.trustTier]),
@@ -208,7 +233,7 @@ export async function executePipeline(options: RunOptions): Promise<RunResult> {
     /* ── Steps 6-8: prefilter, classify, score, select ───────────────────── */
     const scored: Array<{ story: CandidateStory; items: NewsItem[]; category: EditorialCategory }> = []
 
-    for (const story of clustered.stories) {
+    for (const story of candidates) {
       const items = repos.newsItems.listByIds(story.newsItemIds)
       const storyLog = log.child({ storyId: story.id })
 
@@ -468,6 +493,25 @@ async function processStory(deps: ProcessStoryDeps): Promise<'ok' | 'publishing-
   repos.stories.setStatus(story.id, 'verified')
   run.counters.storiesVerified += 1
 
+  /*
+   * Step 11b: choose the article format from the evidence, before writing.
+   *
+   * Deterministic and computed once. The writer is told the range as a
+   * constraint and the editor judges against the same one, so a revision can
+   * never drift into a different length band (§15).
+   */
+  const formatDecision = selectArticleFormat({
+    claims: verification.claims,
+    evidence: gathered.evidence,
+    importance: story.scores.importance,
+  })
+  logger.info('Article format selected', {
+    format: formatDecision.format,
+    target: `${formatDecision.targetMinWords}-${formatDecision.targetMaxWords}`,
+    reason: formatDecision.reason,
+    ...formatDecision.signals,
+  })
+
   /* Steps 12-13: write, review, bounded revision */
   const existing = repos.articles.findByStory(story.id)
   // The article's own row must be excluded from the collision check, or a
@@ -479,6 +523,7 @@ async function processStory(deps: ProcessStoryDeps): Promise<'ok' | 'publishing-
       claims: verification.claims,
       evidence: gathered.evidence,
       category,
+      format: formatDecision.format,
       ...(existing?.slug ? { existingSlug: existing.slug } : {}),
     },
     {
@@ -510,6 +555,9 @@ async function processStory(deps: ProcessStoryDeps): Promise<'ok' | 'publishing-
         claims: verification.claims,
         evidence: gathered.evidence,
         category,
+        // Same format as the first pass: a rewrite fixes issues, it does not
+        // renegotiate how long the article is allowed to be.
+        format: formatDecision.format,
         revisionNotes: review.writerFixableIssues,
         existingSlug: draft.slug,
         revisionCount: draft.revisionCount + 1,

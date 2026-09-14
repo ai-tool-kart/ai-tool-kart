@@ -6,12 +6,13 @@
  * vocabulary, word count, source list — is produced by code here.
  */
 
-import { ARTICLE, MAX_REVISION_ATTEMPTS } from '../config/limits.ts'
+import { ARTICLE, MAX_REVISION_ATTEMPTS, type ArticleFormat } from '../config/limits.ts'
 import { isEditorialCategory, type EditorialCategory } from '../config/editorial.ts'
 import type { ArticleDraft, CandidateStory, Claim, SourceEvidence } from '../domain/types.ts'
 // Tag vocabulary, normalisation and validation live in one module (§20), shared
 // with the WordPress taxonomy layer so both sides agree on what a tag is.
 import { normalizeTags } from '../editorial/tags.ts'
+import { formatRange } from '../editorial/format.ts'
 import { storyError } from '../domain/errors.ts'
 import type { LLMClient } from '../llm/client.ts'
 import { ARTICLE_SCHEMA_VERSION, ArticleDraftSchema } from '../llm/schemas.ts'
@@ -34,6 +35,13 @@ export interface WriteInput {
   claims: Claim[]
   evidence: SourceEvidence[]
   category: EditorialCategory
+  /**
+   * Evidence-derived length band, decided by editorial/format.ts before writing.
+   * Passed in rather than computed here so the writer and the editor judge the
+   * same draft against the same range, and so a revision cannot drift into a
+   * different format.
+   */
+  format: ArticleFormat
   /** Editor feedback on a revision pass. */
   revisionNotes?: string[]
   /** Preserved across revisions so the URL never changes. */
@@ -68,12 +76,17 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
     ...(claim.conflictNote ? { conflictNote: claim.conflictNote } : {}),
   }))
 
+  const range = formatRange(input.format)
+
   const response = await llm.run({
     task: 'write',
     system: WRITER_SYSTEM,
     user: writerUserPrompt({
       storyTitle: input.story.title,
       category: input.category,
+      format: input.format,
+      targetMinWords: range.minWords,
+      targetMaxWords: range.maxWords,
       claims: claimInputs,
       evidence: input.evidence.map((item) => ({
         url: item.url,
@@ -124,6 +137,8 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
 
   log.info('Draft generated', {
     words: rendered.wordCount,
+    format: input.format,
+    target: `${range.minWords}-${range.maxWords}`,
     sections: output.sections.length,
     tags: tags.length,
     claimsUsed: claimIds.length,
@@ -131,10 +146,17 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
     attempts: response.attempts,
   })
 
-  if (rendered.wordCount < ARTICLE.minWords) {
-    log.warn('Draft is shorter than the editorial target', {
+  /*
+   * Reported against the ASSIGNED format, not a global minimum. A brief coming
+   * in at 200 words is on target, not short; the previous version logged every
+   * such article as a failure to reach 500 words it was never asked for.
+   */
+  if (rendered.wordCount < range.minWords) {
+    log.info('Draft is below its format target', {
       words: rendered.wordCount,
-      target: ARTICLE.minWords,
+      format: input.format,
+      target: range.minWords,
+      note: 'Expected when the verified claims run out first; padding is not an acceptable fix.',
     })
   }
 
@@ -153,6 +175,7 @@ export async function writeArticle(input: WriteInput, deps: WriteDeps): Promise<
     wordCount: rendered.wordCount,
     generatedAt: nowIso(),
     model: `${llm.providerId}:${response.model}`,
+    format: input.format,
     schemaVersion: ARTICLE_SCHEMA_VERSION,
     confidence: 0,
     editorialStatus: 'pending',

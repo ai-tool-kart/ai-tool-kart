@@ -160,6 +160,21 @@ export const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_runs_started ON pipeline_runs(started_at);
     `,
   },
+  {
+    version: 2,
+    name: 'article_format',
+    sql: `
+      /*
+       * Evidence-derived length band for each article (§15).
+       *
+       * Backfilled to 'standard' because that is the range every pre-existing
+       * row was written and judged against; re-deriving a format for old rows
+       * would need claim and evidence counts that are no longer reconstructible
+       * once evidence text has been discarded.
+       */
+      ALTER TABLE generated_articles ADD COLUMN format TEXT NOT NULL DEFAULT 'standard';
+    `,
+  },
 ]
 
 export const SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1]?.version ?? 0

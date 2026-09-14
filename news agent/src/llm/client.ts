@@ -16,7 +16,7 @@
 import type { z } from 'zod'
 import { RETRY, TASK_MAX_OUTPUT_TOKENS, TASK_MODEL_CLASS } from '../config/limits.ts'
 import { AgentError, isAgentError } from '../domain/errors.ts'
-import type { Logger } from '../utils/logger.ts'
+import { errorFields, type Logger } from '../utils/logger.ts'
 import type { Budget } from './budget.ts'
 import { describeSchema } from './schemas.ts'
 import { jsonOutputInstruction, repairInstruction } from './prompts/shared.ts'
@@ -161,7 +161,15 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
             cause: error,
             storyScoped: true,
           })
-          log.warn('Provider call failed', { attempt })
+          /*
+           * The cause is included deliberately. This line used to read only
+           * "Provider call failed", which meant a run could retry three times
+           * and report nothing about WHY — diagnosing it needed a separate probe
+           * script. Provider messages are built from status codes and the
+           * vendor's own message field, and the logger redacts registered
+           * secrets and Authorization headers, so this cannot leak a credential.
+           */
+          log.warn('Provider call failed', { attempt, ...errorFields(error) })
           if (attempt < RETRY.llmSchemaAttempts) continue
           throw lastError
         }

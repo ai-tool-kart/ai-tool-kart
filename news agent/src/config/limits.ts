@@ -80,6 +80,11 @@ export const MIN_IMPORTANCE = 3
 export const MIN_VERIFIED_CLAIMS = 3
 
 export const ARTICLE = {
+  /**
+   * Retained as the DEFAULT format's range and as schema bounds. Length is
+   * governed per-article by ARTICLE_FORMATS below; nothing should treat these
+   * two numbers as a universal minimum any more.
+   */
   minWords: 500,
   maxWords: 900,
   /** Hard ceiling before the draft is rejected as runaway output. */
@@ -89,6 +94,61 @@ export const ARTICLE = {
   excerptMinChars: 80,
   excerptMaxChars: 320,
   titleMaxChars: 110,
+} as const
+
+/*
+ * ── Article formats ──────────────────────────────────────────────────────────
+ *
+ * A single 500-word minimum was the wrong instrument. The first real article
+ * came in at 176 words because its source — a GitHub changelog entry — supported
+ * exactly eight small facts. The writer was right to stop; §14 forbids inventing
+ * anything, so the only way to reach 500 words would have been padding, which is
+ * the failure this pipeline exists to avoid. Yet the draft was then reported as
+ * "short" against a target it could never legitimately have hit.
+ *
+ * So length is chosen from the evidence rather than fixed in advance. Depth of
+ * verified material picks the format; the format sets the target range; the
+ * writer and the editor are both told which one applies.
+ *
+ * The ordering matters: a short, fully-grounded article is a SUCCESS, not a
+ * degraded standard article.
+ */
+export const ARTICLE_FORMATS = {
+  /** A changelog entry, a deprecation, a single well-sourced announcement. */
+  brief: { minWords: 180, maxWords: 350, minSections: 3, maxSections: 5 },
+  /** The common case: a launch or capability change with real detail. */
+  standard: { minWords: 500, maxWords: 900, minSections: 4, maxSections: 7 },
+  /** Only when the evidence genuinely carries it. Never reached by padding. */
+  analysis: { minWords: 900, maxWords: 1400, minSections: 5, maxSections: 9 },
+} as const
+
+export type ArticleFormat = keyof typeof ARTICLE_FORMATS
+
+export const DEFAULT_ARTICLE_FORMAT: ArticleFormat = 'standard'
+
+/**
+ * Evidence thresholds a story must MEET to earn each format.
+ *
+ * Read as "at least this much". Everything below `standard` is a brief, which is
+ * why brief has no entry: it is the floor, not a bar to clear.
+ *
+ * `substantiveClaims` counts VERIFIED claims only — single-source claims can
+ * appear in the prose with attribution, but they must not be what buys a longer
+ * article, or the format becomes a way to launder weak sourcing into length.
+ */
+export const FORMAT_THRESHOLDS = {
+  standard: {
+    substantiveClaims: 6,
+    evidenceSources: 2,
+    independentPublishers: 2,
+    importance: 0,
+  },
+  analysis: {
+    substantiveClaims: 12,
+    evidenceSources: 3,
+    independentPublishers: 3,
+    importance: 7,
+  },
 } as const
 
 /** Bounded writer→editor revision loop (§29 of the implementation brief). */

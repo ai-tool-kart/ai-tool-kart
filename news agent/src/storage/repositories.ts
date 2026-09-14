@@ -20,6 +20,7 @@ import type {
 import type { EditorialCategory } from '../config/editorial.ts'
 import { storageError } from '../domain/errors.ts'
 import { nowIso } from '../utils/time.ts'
+import { toArticleFormat } from '../editorial/format.ts'
 import {
   fromJson,
   optionalNumber,
@@ -517,6 +518,7 @@ function rowToArticle(row: Row): ArticleDraft {
     wordCount: Number(row.word_count ?? 0),
     generatedAt: String(row.generated_at),
     model: String(row.model),
+    format: toArticleFormat(row.format),
     schemaVersion: Number(row.schema_version ?? 1),
     confidence: Number(row.confidence ?? 0),
     editorialStatus: String(row.editorial_status) as ArticleDraft['editorialStatus'],
@@ -544,17 +546,18 @@ function createArticleRepo(db: Db): ArticleRepo {
       db.prepare(
         `INSERT INTO generated_articles
            (id, story_id, title, slug, excerpt, sections, content, category, tags,
-            source_urls, claim_ids, word_count, generated_at, model, schema_version,
+            source_urls, claim_ids, word_count, generated_at, model, format, schema_version,
             confidence, editorial_status, editorial_notes, editorial_issues,
             revision_count, wp_post_id, wp_status, published_to_wp_at, run_id)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
          ON CONFLICT(story_id) DO UPDATE SET
            title = excluded.title, slug = excluded.slug, excerpt = excluded.excerpt,
            sections = excluded.sections, content = excluded.content,
            category = excluded.category, tags = excluded.tags,
            source_urls = excluded.source_urls, claim_ids = excluded.claim_ids,
            word_count = excluded.word_count, generated_at = excluded.generated_at,
-           model = excluded.model, schema_version = excluded.schema_version,
+           model = excluded.model, format = excluded.format,
+           schema_version = excluded.schema_version,
            confidence = excluded.confidence, editorial_status = excluded.editorial_status,
            editorial_notes = excluded.editorial_notes,
            editorial_issues = excluded.editorial_issues,
@@ -578,6 +581,7 @@ function createArticleRepo(db: Db): ArticleRepo {
         article.wordCount,
         article.generatedAt,
         article.model,
+        article.format,
         article.schemaVersion,
         article.confidence,
         article.editorialStatus,

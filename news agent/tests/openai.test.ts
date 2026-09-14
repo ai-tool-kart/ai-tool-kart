@@ -390,6 +390,57 @@ test('a 429 that clears is retried successfully', async () => {
   assert.equal(calls.length, 2)
 })
 
+test('a 429 for exhausted credit is fatal and never retried', async () => {
+  // Observed live: OpenAI returns 429 for billing failures as well as for rate
+  // limiting. Retrying a zero balance burns the ladder and then does it again
+  // for every remaining story, so the two must be told apart by error code.
+  const { instance, calls } = provider([
+    {
+      status: 429,
+      json: {
+        error: {
+          message: 'You have no credits remaining.',
+          code: 'credit_balance_exhausted',
+          type: 'insufficient_quota',
+        },
+      },
+    },
+  ])
+
+  await assert.rejects(
+    () => instance.complete(CLASSIFY_REQUEST),
+    (error: Error & { code?: string; fatal?: boolean; retryable?: boolean }) => {
+      assert.equal(error.code, 'CONFIG')
+      assert.equal(error.fatal, true)
+      assert.equal(error.retryable, false)
+      assert.match(error.message, /credit_balance_exhausted/)
+      assert.match(error.message, /not a transient rate limit/)
+      return true
+    },
+  )
+  assert.equal(calls.length, 1, 'a billing failure must not be retried')
+})
+
+test('insufficient_quota is treated the same way', async () => {
+  const { instance, calls } = provider([
+    { status: 429, json: { error: { message: 'quota exceeded', code: 'insufficient_quota' } } },
+  ])
+  await assert.rejects(() => instance.complete(CLASSIFY_REQUEST), /billing reasons/)
+  assert.equal(calls.length, 1)
+})
+
+test('a genuine rate limit is still retried', async () => {
+  // The discriminator is the error code, not the status: a real 429 with no
+  // billing code must keep its bounded backoff.
+  const { instance, calls } = provider([
+    { status: 429, json: { error: { message: 'Rate limit reached', code: 'rate_limit_exceeded' } }, headers: { 'retry-after': '0' } },
+    completed(VALID_CLASSIFICATION),
+  ])
+  const raw = await instance.complete(CLASSIFY_REQUEST)
+  assert.equal(JSON.parse(raw.text).category, 'ai-models')
+  assert.equal(calls.length, 2)
+})
+
 test('5xx is retried, then reported', async () => {
   const down = { status: 503, text: '<html>Service Unavailable</html>' }
   const { instance, calls } = provider([down, down, down])

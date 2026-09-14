@@ -370,3 +370,204 @@ test('the run summary records what happened', async () => {
 
   h.repos.close()
 })
+
+/* ── deferral is not rejection (§27) ──────────────────────────────────────── */
+
+test('a story deferred by a cap is reconsidered on the next run', async () => {
+  /*
+   * Regression guard. The scoring loop used to iterate only the stories built
+   * from the CURRENT run's non-duplicate items. A deferred story's items were
+   * already persisted and marked seen, so it could never re-cluster and no later
+   * run would ever look at it again — stories deferred at a cap were stranded
+   * permanently, which is the opposite of what §27 promises.
+   */
+  const h = harness()
+
+  // Run 1: a candidate cap of 1 forces everything past the first story to defer.
+  const first = await runPipeline(h, {
+    env: testEnv({
+      limits: {
+        maxItemsPerSourcePerRun: 25,
+        maxCandidatesPerRun: 1,
+        maxStoriesVerifiedPerRun: 5,
+        maxArticlesPerRun: 2,
+        maxLlmCallsPerRun: 60,
+        maxTokensPerRun: 250_000,
+      },
+    }),
+  })
+
+  assert.equal(first.run.status, 'completed')
+  assert.ok(first.run.counters.storiesDeferred > 0, 'the cap should have deferred stories')
+
+  const deferred = h.repos.stories.listByStatus('deferred')
+  assert.ok(deferred.length > 0, 'deferred stories should be persisted as deferred')
+
+  // Run 2: every feed item is now a duplicate, so clustering yields nothing new.
+  // The deferred backlog is the only thing left to work on, and it must be
+  // picked up rather than stranded.
+  const second = await runPipeline(h)
+
+  assert.equal(second.run.status, 'completed')
+  assert.ok(
+    second.run.counters.storiesCandidate > 0,
+    'the deferred backlog must be offered as candidates even when nothing new arrived',
+  )
+
+  const stillDeferred = h.repos.stories.listByStatus('deferred')
+  assert.ok(
+    stillDeferred.length < deferred.length,
+    'the second run must actually work through the backlog, not re-defer all of it',
+  )
+})
+
+test('a deferred story that has aged out is rejected, not resurrected', async () => {
+  // Re-offering the backlog must not bypass the freshness gate: the prefilter
+  // re-checks staleness against the current clock on every pass.
+  const h = harness()
+
+  await runPipeline(h, {
+    env: testEnv({
+      limits: {
+        maxItemsPerSourcePerRun: 25,
+        maxCandidatesPerRun: 1,
+        maxStoriesVerifiedPerRun: 5,
+        maxArticlesPerRun: 2,
+        maxLlmCallsPerRun: 60,
+        maxTokensPerRun: 250_000,
+      },
+    }),
+  })
+  assert.ok(h.repos.stories.listByStatus('deferred').length > 0)
+
+  // Come back far enough in the future that every fixture story is stale.
+  const later = await runPipeline(h, { clock: clockHoursAfterFixtures(24 * 90) })
+
+  assert.equal(later.run.status, 'completed')
+  assert.equal(later.run.counters.draftsCreated, 0, 'a stale backlog must not produce a draft')
+  assert.equal(
+    h.repos.stories.listByStatus('deferred').length,
+    0,
+    'aged-out deferrals must be resolved, not left pending forever',
+  )
+})
+
+/* ── zero caps do zero work (§27) ─────────────────────────────────────────── */
+
+test('caps set to zero produce no LLM calls and no drafts', async () => {
+  /*
+   * The end-to-end half of the config regression in tests/config.test.ts.
+   * Parsing 0 correctly is only half the guarantee — the run must actually
+   * honour it. This is the run that the zero-cap incident was supposed to be.
+   */
+  const h = harness()
+  const { run, exitCode } = await runPipeline(h, {
+    env: testEnv({
+      limits: {
+        maxItemsPerSourcePerRun: 25,
+        maxCandidatesPerRun: 0,
+        maxStoriesVerifiedPerRun: 0,
+        maxArticlesPerRun: 0,
+        maxLlmCallsPerRun: 0,
+        maxTokensPerRun: 0,
+      },
+    }),
+  })
+
+  assert.equal(exitCode, 0, 'a zeroed run is a clean run, not a failure')
+  assert.equal(run.status, 'completed')
+  assert.equal(run.llmUsage.calls, 0, 'no LLM call may be made')
+  assert.equal(run.llmUsage.inputTokens + run.llmUsage.outputTokens, 0)
+  assert.equal(run.counters.articlesGenerated, 0)
+  assert.equal(run.counters.draftsCreated, 0)
+  assert.equal(h.wp.created.length, 0, 'nothing may reach WordPress')
+
+  /*
+   * Deferring, not rejecting: the work is still there for a later run (§27).
+   * itemsRejected is deliberately NOT asserted to be zero — it counts prefilter
+   * rejections (stale, out of scope), which run before any cap is consulted and
+   * are unrelated to budget.
+   */
+  assert.ok(run.counters.storiesDeferred > 0, 'capped-out stories must defer')
+  assert.equal(
+    h.repos.stories.listByStatus('deferred').length,
+    run.counters.storiesDeferred,
+    'every deferred story must be persisted as deferred, not rejected',
+  )
+})
+
+test('zeroing every cap still publishes work an earlier run approved', async () => {
+  /*
+   * Deliberate asymmetry, documented on capInt in config/env.ts: the caps bound
+   * LLM SPEND, and posting an already-approved article costs no tokens. A run
+   * with every cap at zero is the cheapest way to drain the pending queue —
+   * which is exactly what the failed idempotency check was reaching for.
+   *
+   * The pending state is seeded directly rather than by clearing wp_post_id on a
+   * published article, because articles.upsert deliberately omits wp_post_id
+   * from its UPDATE clause: regenerating an article must never detach its post,
+   * or the next run would create a duplicate.
+   */
+  const h = harness()
+
+  h.repos.stories.upsert({
+    id: 'sty_zero_cap_pending',
+    fingerprint: 'fp_zero_cap_pending',
+    normalizedTitle: 'vendor ships aurora 2',
+    title: 'Vendor ships Aurora 2',
+    category: 'ai-models',
+    newsItemIds: [],
+    scores: { relevance: 8, importance: 8, freshness: 9, sourceTrust: 10, weighted: 8.5 },
+    evidenceState: 'sufficient',
+    status: 'generated',
+    firstSeenAt: '2026-08-20T09:00:00.000Z',
+    lastUpdatedAt: '2026-08-20T09:00:00.000Z',
+  })
+
+  h.repos.articles.upsert(
+    {
+      id: 'art_zero_cap_pending',
+      storyId: 'sty_zero_cap_pending',
+      title: 'Vendor ships Aurora 2',
+      slug: 'vendor-ships-aurora-2',
+      excerpt:
+        'Vendor released Aurora 2 with a larger context window and new developer tooling, ' +
+        'according to the vendor newsroom and independent coverage.',
+      sections: [{ heading: 'What happened', paragraphs: ['Vendor released Aurora 2.'] }],
+      content: '<h2>What happened</h2>\n<p>Vendor released Aurora 2.</p>\n<h2>Sources</h2>',
+      category: 'ai-models',
+      tags: ['AI Tools', 'Vendor'],
+      sourceUrls: ['https://vendor.example.com/news/aurora-2'],
+      claimIds: ['clm_abc123'],
+      wordCount: 620,
+      generatedAt: '2026-08-20T09:05:00.000Z',
+      model: 'mock:mock-strong-v1',
+      format: 'standard',
+      schemaVersion: 1,
+      confidence: 0.82,
+      editorialStatus: 'approved',
+      editorialIssues: [],
+      revisionCount: 0,
+    },
+    'run_seed',
+  )
+
+  const { run } = await runPipeline(h, {
+    env: testEnv({
+      limits: {
+        maxItemsPerSourcePerRun: 0,
+        maxCandidatesPerRun: 0,
+        maxStoriesVerifiedPerRun: 0,
+        maxArticlesPerRun: 0,
+        maxLlmCallsPerRun: 0,
+        maxTokensPerRun: 0,
+      },
+    }),
+  })
+
+  assert.equal(run.llmUsage.calls, 0, 'draining the queue must cost no LLM budget')
+  assert.ok(run.counters.pendingRetried >= 1, 'the pending article must be retried')
+  assert.equal(h.wp.created.length, 1, 'the pending article is posted exactly once')
+  assert.equal(h.wp.created[0]?.slug, 'vendor-ships-aurora-2')
+  assert.equal(h.wp.created[0]?.status, 'draft')
+})

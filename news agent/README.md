@@ -109,6 +109,27 @@ an adapter only has to turn a prompt into text. The one rule it must honour:
 `request.system` and `request.input` stay separate, because `input` carries
 untrusted source text.
 
+## Article formats
+
+Length is derived from evidence, not fixed in advance. Before writing, the
+pipeline picks a format from how much verified material a story actually has:
+
+| Format | Target | Earned by |
+|---|---|---|
+| `brief` | 180-350 words | the floor — a changelog entry, a deprecation, one well-sourced announcement |
+| `standard` | 500-900 words | 6+ verified claims, 2+ sources, 2+ independent publishers |
+| `analysis` | 900-1400 words | 12+ verified claims, 3+ sources, 3+ publishers, importance 7+ |
+
+Only **verified** claims count toward depth, and publishers are counted
+distinctly — twenty claims from one press release is still one source's account,
+and cannot buy a longer article.
+
+The writer is given the range as a ceiling on ambition, never a quota: if the
+claims run out first it writes less and stops. The editor judges the draft
+against that same range. A short, fully-grounded article is a success, not a
+degraded standard one — padding to reach a word count is the failure this
+replaces. The chosen format is persisted with the article.
+
 ## Activating WordPress
 
 1. Create a dedicated WordPress user (e.g. `aitoolkart-news-agent`) with the

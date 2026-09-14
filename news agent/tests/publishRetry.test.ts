@@ -71,6 +71,7 @@ function pendingArticle(overrides: Partial<ArticleDraft> = {}): ArticleDraft {
     wordCount: 620,
     generatedAt: '2026-08-20T09:05:00.000Z',
     model: 'mock:mock-strong-v1',
+    format: 'standard',
     schemaVersion: 1,
     confidence: 0.82,
     editorialStatus: 'approved',

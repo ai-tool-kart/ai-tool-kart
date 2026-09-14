@@ -202,6 +202,49 @@ function providerError(
   })
 }
 
+/**
+ * HTTP 429 codes that are NOT rate limiting.
+ *
+ * OpenAI returns 429 both for "you are going too fast" and for "your account
+ * cannot pay for this". They need opposite handling: the first clears on its own
+ * and deserves a backoff, the second never clears without an operator topping up
+ * the balance, so retrying it just burns the retry ladder — and then does it
+ * again for every remaining story in the run.
+ */
+const NON_TRANSIENT_429_CODES = new Set([
+  'insufficient_quota',
+  'credit_balance_exhausted',
+  'billing_hard_limit_reached',
+  'account_deactivated',
+])
+
+/** Reads the machine-readable error code from an error body, if present. */
+function errorCode(text: string): string | undefined {
+  if (!text) return undefined
+  try {
+    return (JSON.parse(text) as OpenAIErrorBody).error?.code ?? undefined
+  } catch {
+    return undefined
+  }
+}
+
+/**
+ * Billing / quota failure.
+ *
+ * Fatal for the same reason a rejected credential is: it fails identically for
+ * every story, so continuing would mean one doomed call per candidate. Stopping
+ * the run with an actionable message is the honest outcome.
+ */
+function billingError(code: string, detail: string): AgentError {
+  return new AgentError(
+    'CONFIG',
+    `OpenAI refused the request for billing reasons [${code}]. ${detail} ` +
+      'This is not a transient rate limit and is not retried. Add credit to the account, ' +
+      'or set LLM_PROVIDER=mock to run the pipeline offline.',
+    { fatal: true, retryable: false, details: { status: 429, code } },
+  )
+}
+
 /** Extracts OpenAI's own error message without echoing an entire HTML page. */
 function errorDetail(status: number, text: string): string {
   if (!text) return `(no response body, HTTP ${status})`
@@ -392,7 +435,14 @@ export function createOpenAIProvider(options: OpenAIProviderOptions): LLMProvide
         }
 
         if (response.status === 429 || response.status === 408 || response.status >= 500) {
-          const detail = errorDetail(response.status, await safeText(response))
+          const bodyText = await safeText(response)
+          const detail = errorDetail(response.status, bodyText)
+
+          if (response.status === 429) {
+            const code = errorCode(bodyText)
+            if (code && NON_TRANSIENT_429_CODES.has(code)) throw billingError(code, detail)
+          }
+
           lastError = providerError(`OpenAI responded ${response.status}. ${detail}`, {
             retryable: true,
             details: { status: response.status },

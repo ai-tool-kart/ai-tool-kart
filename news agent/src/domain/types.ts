@@ -5,6 +5,7 @@
  * SQLite rows; nothing else in the codebase knows the row shape.
  */
 
+import type { ArticleFormat } from '../config/limits.ts'
 import type { EditorialCategory } from '../config/editorial.ts'
 
 export type TrustTier = 1 | 2 | 3
@@ -164,6 +165,11 @@ export interface ArticleDraft {
   generatedAt: string
   /** provider:model that produced the draft. */
   model: string
+  /**
+   * Editorial format chosen from evidence depth before writing (§15).
+   * Determines the word-count range this draft is judged against.
+   */
+  format: ArticleFormat
   /** Schema version that produced this draft (§16). */
   schemaVersion: number
   confidence: number

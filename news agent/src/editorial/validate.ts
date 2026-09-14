@@ -10,6 +10,7 @@
  * is expensive and rarely converges after one pass.
  */
 
+import { formatRange } from './format.ts'
 import { ARTICLE, MIN_APPROVAL_CONFIDENCE, MAX_REVISION_ATTEMPTS } from '../config/limits.ts'
 import { EDITORIAL_SCOPE } from '../config/editorial.ts'
 import type { ArticleDraft, Claim, SourceEvidence } from '../domain/types.ts'
@@ -133,6 +134,9 @@ export async function validateDraft(
 
   const publishersByUrl = new Map(input.evidence.map((item) => [item.url, item.publisher]))
   const usableClaims = input.claims.filter((claim) => claim.supportLevel !== 'unsupported')
+  // The draft is judged against the format chosen from its own evidence, never
+  // against one global minimum.
+  const range = formatRange(input.draft.format)
 
   let review: EditorialReview
   try {
@@ -146,6 +150,9 @@ export async function validateDraft(
         tags: input.draft.tags,
         bodyText: sectionsToPlainText(input.draft.sections),
         wordCount: input.draft.wordCount,
+        format: input.draft.format,
+        targetMinWords: range.minWords,
+        targetMaxWords: range.maxWords,
         claims: usableClaims.map((claim) => ({
           id: claim.id,
           text: claim.text,
@@ -190,16 +197,27 @@ export async function validateDraft(
   const deterministic = deterministicChecks(input.draft, input.claims)
 
   /*
-   * Word count is reported, not enforced as blocking. A short article built from
-   * thin but genuine evidence is better than a padded one, and §15 says as much;
-   * the human reviewer sees the note.
+   * Word count is reported against the draft's own format, and stays advisory
+   * rather than blocking.
+   *
+   * Being under a brief's floor is not the same failure as being under the old
+   * global 500, and is usually not a failure at all: it means the verified
+   * claims ran out first, which §14 requires the writer to respect. Being OVER
+   * the range is the more interesting signal, because the extra words had to
+   * come from somewhere — so it is named distinctly for the reviewer.
    */
   const advisory: string[] = [...deterministic.advisory]
-  if (input.draft.wordCount < ARTICLE.minWords) {
-    advisory.push(`short-article (${input.draft.wordCount} words, target ${ARTICLE.minWords})`)
+  if (input.draft.wordCount < range.minWords) {
+    advisory.push(
+      `below-format-target (${input.draft.wordCount} words, ${input.draft.format} target ` +
+        `${range.minWords}-${range.maxWords}; expected when evidence is thin, padding is not a fix)`,
+    )
   }
-  if (input.draft.wordCount > ARTICLE.maxWords) {
-    advisory.push(`long-article (${input.draft.wordCount} words, target ${ARTICLE.maxWords})`)
+  if (input.draft.wordCount > range.maxWords) {
+    advisory.push(
+      `above-format-target (${input.draft.wordCount} words, ${input.draft.format} target ` +
+        `${range.minWords}-${range.maxWords})`,
+    )
   }
 
   const blockingIssues = [...modelBlocking, ...deterministic.blocking]
@@ -222,6 +240,8 @@ export async function validateDraft(
 
   log.info('Editorial review complete', {
     verdict,
+    format: input.draft.format,
+    words: input.draft.wordCount,
     confidence: review.confidence,
     blocking: blockingIssues.length,
     minor: modelMinor.length,
