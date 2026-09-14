@@ -769,6 +769,49 @@ Requirements:
 Model selection is per task: a small, cheap model for classification; a stronger
 model for writing and editing. That mapping belongs in configuration.
 
+### Shipped adapters
+
+| id | What it is |
+|---|---|
+| `mock` | Deterministic offline provider. No key, no network, no cost. Default, and what the test suite runs against. |
+| `openai` | Live provider. OpenAI **Responses API** with strict **Structured Outputs** (`text.format.type = "json_schema"`, `strict: true`). |
+
+The OpenAI adapter (`agent/src/llm/providers/openai.ts`):
+
+- sends `request.system` as `instructions` and `request.input` as the user turn,
+  never merged — untrusted source text cannot reach the instruction channel (§28);
+- asks for a strict JSON Schema derived from the same zod task schema the
+  response is validated against, so the decoder is constrained to the right
+  structure and zod still enforces the full contract (lengths, ranges, counts)
+  in `client.ts`. Strict mode does not accept value constraints, so they are
+  stripped for the request and kept in the prompt and in validation;
+- encodes optional fields as `anyOf: [T, null]` because strict mode requires
+  every property, and drops those nulls before validation;
+- reports `usage.input_tokens` / `usage.output_tokens` into the run budget —
+  including on refusals and truncated responses, so a retry cannot spend past
+  `maxTokensPerRun` unrecorded (§27);
+- maps 401/403 to a fatal config error that is never retried, 429/5xx/timeout to
+  bounded retries with backoff, and refusal / incomplete / off-schema output to
+  distinct typed errors (§24, §25);
+- uses no `openai` package. One POST via `fetch`, with a transport seam so every
+  case above is tested offline.
+
+Default models when `LLM_MODEL_FAST` / `LLM_MODEL_STRONG` are unset: `gpt-4.1-mini`
+for the fast class and `gpt-4.1` for the strong class. Both are non-reasoning
+models deliberately — `TASK_MAX_OUTPUT_TOKENS` budgets the *answer*, and on a
+reasoning model that ceiling also has to cover hidden reasoning tokens, which
+truncates responses rather than making them cheaper. The adapter omits
+`temperature` for reasoning models, which reject it.
+
+Verify a provider before spending a run:
+
+```bash
+npm run agent -- --llm-check
+```
+
+One tiny structured-output call against a fixed internal candidate story. No
+feeds, no database writes, no WordPress, no secrets printed.
+
 ---
 
 ## 13. LLM task separation
@@ -856,10 +899,34 @@ database alone.
 
 ### Length
 
-**500–900 words** for a typical story. Longer only for major releases with
-genuinely more to say. A three-line changelog does not become 800 words — if
-there is not enough verified substance for ~500 words, the story was probably not
-worth writing.
+Length is an **output of evidence**, never a target the writer works backwards
+from. Before writing, the pipeline picks a format from how much verified material
+the story actually has (`agent/src/editorial/format.ts`):
+
+| Format | Target | Earned by |
+|---|---|---|
+| `brief` | 180–350 words | the floor — a changelog entry, a deprecation, one well-sourced announcement |
+| `standard` | 500–900 words | ≥6 verified claims, ≥2 sources, ≥2 independent publishers |
+| `analysis` | 900–1400 words | ≥12 verified claims, ≥3 sources, ≥3 publishers, importance ≥7 |
+
+Only **verified** claims count toward depth, and publishers are counted
+distinctly — twenty claims from a single press release is still one source's
+account and cannot buy a longer article. Selection is deterministic code, not an
+LLM call, so the model cannot argue itself into a longer piece.
+
+The writer receives the range as a ceiling on ambition, not a quota: when the
+claims run out first it writes less and stops. The editor judges the draft
+against that same range rather than a global minimum, and length stays advisory —
+being *over* the range is the more suspicious signal, since the extra words had
+to come from somewhere. The chosen format is persisted with the article.
+
+> This replaces an earlier rule of a flat 500–900 words with "if there is not
+> enough verified substance for ~500 words, the story was probably not worth
+> writing." The first real article the pipeline produced falsified that: a GitHub
+> deprecation notice yielded 8 verified claims and 176 words of accurate,
+> attributed prose. It *was* worth writing. The only way to reach 500 would have
+> been padding, which §14 forbids — so the target moved to the evidence instead
+> of the article being judged against an unreachable one.
 
 ### Structure
 
@@ -1919,7 +1986,7 @@ document is useful.
 
 | Decision | Needed by | Notes |
 |---|---|---|
-| Production LLM provider and models | Phase C | **Still open.** The abstraction and a deterministic mock ship; no vendor adapter does. One file + one registry line to add — see `agent/src/llm/factory.ts` |
+| Production LLM provider and models | Phase C | **Resolved — OpenAI.** `LLM_PROVIDER=openai`, Responses API with strict Structured Outputs. Adapter defaults `gpt-4.1-mini` (fast) / `gpt-4.1` (strong), overridable via `LLM_MODEL_FAST`/`LLM_MODEL_STRONG`. See `agent/src/llm/providers/openai.ts`; `mock` remains the offline default |
 | Exact source list (Tier 1/2/3) | Phase B | **Partially resolved** — 10 verified feeds enabled, 5 vendors have no feed. See §36a |
 | Direct OpenAI coverage | Post-MVP | openai.com blocks automated fetches (§36a). Official API or licensed feed, or rely on Tier 2 corroboration |
 | Production hosting and scheduler | Phase H | cron, GitHub Actions, Railway, Render, etc. |
