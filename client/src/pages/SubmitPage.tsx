@@ -36,7 +36,7 @@ export default function SubmitPage() {
   // Started from the handleSubmit event handler, not from an effect, so it's
   // tracked in a ref and cleared on unmount below rather than via an effect's
   // own cleanup return.
-  const submitTimerRef = useRef<number>()
+  const submitTimerRef = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     return () => window.clearTimeout(submitTimerRef.current)

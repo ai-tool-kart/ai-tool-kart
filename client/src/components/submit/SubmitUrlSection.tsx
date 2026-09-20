@@ -19,7 +19,7 @@ interface SubmitUrlSectionProps {
 
 export default function SubmitUrlSection({ value, onChange }: SubmitUrlSectionProps) {
   const [status, setStatus] = useState<'idle' | 'checking' | 'ready'>('idle')
-  const checkTimerRef = useRef<number>()
+  const checkTimerRef = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     return () => window.clearTimeout(checkTimerRef.current)
