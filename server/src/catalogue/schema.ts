@@ -16,6 +16,7 @@
  */
 
 import { z } from 'zod'
+import { TOOL_FIELDS } from '../config/limits.ts'
 import { configError } from '../domain/errors.ts'
 import type { Tool } from '../domain/types.ts'
 import {
@@ -51,14 +52,17 @@ const httpUrl = z
     { message: 'must be an http(s) URL with no embedded credentials' },
   )
 
-/** Lowercase, hyphen-separated, no leading/trailing/doubled hyphens. */
+/**
+ * Lowercase, hyphen-separated, no leading/trailing/doubled hyphens.
+ * Exported so review/validate.ts can check a reviewer-typed slug against the
+ * identical rule, before write time rather than only at it.
+ */
+export const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
 const slug = z
   .string()
-  .regex(
-    /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
-    'must be lowercase alphanumeric words joined by single hyphens',
-  )
-  .max(64)
+  .regex(SLUG_PATTERN, 'must be lowercase alphanumeric words joined by single hyphens')
+  .max(TOOL_FIELDS.slugMaxChars)
 
 const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
 
@@ -87,7 +91,7 @@ export const ToolSchema = z
     /* ── Display contract ─────────────────────────────────────────────────── */
     id: slug,
     name: nonEmpty(80),
-    mono: z.string().length(2, 'monogram is exactly two characters'),
+    mono: z.string().length(TOOL_FIELDS.monoLength, 'monogram is exactly two characters'),
     cat: z.enum(TOOL_CATEGORIES),
     model: z.enum(PRICING_MODELS),
     tagline: nonEmpty(160),
@@ -118,11 +122,15 @@ export const ToolSchema = z
         message: 'must be 0 (unrated) or between 1 and 5',
       }),
     reviews: z.number().int().min(0),
-    price: nonEmpty(60),
+    price: nonEmpty(TOOL_FIELDS.priceMaxChars),
     trend: z.string().max(16),
     badge: z.string().max(40),
-    tags: z.array(nonEmpty(40)).min(1).max(12),
-    pop: z.number().int().min(0).max(100),
+    tags: z
+      .array(nonEmpty(TOOL_FIELDS.tagMaxChars))
+      .min(TOOL_FIELDS.tagsMin)
+      .max(TOOL_FIELDS.tagsMax),
+    pop: z.number().int().min(TOOL_FIELDS.popMin).max(TOOL_FIELDS.popMax),
+    isMcpServer: z.boolean().optional(),
     api: nonEmpty(40),
     ctx: nonEmpty(40),
     team: nonEmpty(40),
@@ -132,7 +140,7 @@ export const ToolSchema = z
     /* ── Recommendation contract ──────────────────────────────────────────── */
     slug,
     url: httpUrl,
-    summary: z.string().trim().min(40).max(600),
+    summary: z.string().trim().min(TOOL_FIELDS.summaryMinChars).max(TOOL_FIELDS.summaryMaxChars),
     roles: z.array(z.enum(ROLES)).min(1),
     useCases: z.array(z.string()).min(1),
     stages: z.array(z.enum(WORKFLOW_STAGES)).min(1),

@@ -339,6 +339,37 @@ export const ASSISTANT = {
  * copy. If the two drift and it starts causing bugs, the fix is a real
  * `shared/` workspace, not a one-off import.
  */
+/**
+ * Per-field length/range limits the catalogue schema enforces
+ * (catalogue/schema.ts's `ToolSchema`) — the single place both the schema
+ * and the review script's live prompt-time validation (review/validate.ts)
+ * read them from, so the two can never drift apart the way a second,
+ * hand-copied "40" and "600" would.
+ *
+ * Scoped to exactly the fields the review script prompts for (mono, price,
+ * pop, tags, summary, slug) — name/tagline/trend/badge/api/ctx/team/trial/
+ * integr are never reviewer-entered (copied from the submission or fixed by
+ * buildTool.ts), so their limits stay inline in schema.ts, same as before.
+ */
+export const TOOL_FIELDS = {
+  /** `mono` — the two-character card-avatar monogram. Fixed length, not a range. */
+  monoLength: 2,
+  /** `price` — the display price string. */
+  priceMaxChars: 60,
+  /** `pop` — editorial prominence score. */
+  popMin: 0,
+  popMax: 100,
+  /** `tags` — each entry, and the array itself. */
+  tagMaxChars: 40,
+  tagsMin: 1,
+  tagsMax: 12,
+  /** `summary` — what retrieval and the assistant reason over. */
+  summaryMinChars: 40,
+  summaryMaxChars: 600,
+  /** `slug`/`id` — see catalogue/schema.ts's SLUG_PATTERN for the format rule. */
+  slugMaxChars: 64,
+} as const
+
 export const SUBMISSIONS = {
   path: '/submissions',
 

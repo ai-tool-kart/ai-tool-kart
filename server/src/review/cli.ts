@@ -5,10 +5,12 @@
  * own order — see store.json.ts). For each: print it, ask approve / reject /
  * skip / quit. Approving walks through the fields review/propose.ts has no
  * source for, proposing a default and accepting Enter or a typed
- * replacement, then shows the complete record before anything is written and
- * asks write / edit a field / cancel — only "write" hands it to
- * review/approve.ts, which is where the actual write-ordering decisions
- * live. This file is only prompting, validating and formatting.
+ * replacement — validated against the catalogue schema's own limits
+ * (review/validate.ts) as each one is entered, not only at write time — then
+ * shows the complete record before anything is written and asks write / edit
+ * a field / cancel — only "write" hands it to review/approve.ts, which is
+ * where the actual write-ordering decisions live. This file is only
+ * prompting, validating and formatting.
  */
 
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
@@ -21,6 +23,8 @@ import { resolveListInput, splitList } from './listInput.ts'
 import { proposeMono, proposePrice, proposeRoles, proposeSummary, proposeTags, PROPOSED_POP } from './propose.ts'
 import type { Ask } from './prompt.ts'
 import { slugify, uniqueSlug } from './slug.ts'
+import { FIELD_RULES, validateMono, validatePopText, validatePrice, validateSlug, validateSummary, validateTag, type FieldValidator } from './validate.ts'
+import { TOOL_FIELDS } from '../config/limits.ts'
 
 export interface RunReviewOptions {
   dryRun: boolean
@@ -55,10 +59,45 @@ function printSubmission(submission: Submission): void {
   if (submission.faqs.length > 0) console.log(`faqs: ${submission.faqs.length}`)
 }
 
-/** One free-text field: shows the proposal, Enter accepts it, anything else replaces it. */
-export async function promptField(ask: Ask, label: string, proposed: string): Promise<string> {
-  const answer = (await ask(`${label} [${proposed}]: `)).trim()
-  return answer === '' ? proposed : answer
+/**
+ * One free-text field: shows the proposal, Enter accepts it, anything else
+ * replaces it. With `validate`, every candidate — the proposal included — is
+ * checked before it can be accepted or offered as a default. A proposal that
+ * fails is announced up front and NOT offered as an Enter-to-accept default;
+ * the reviewer has to type a real value. A typed value that fails becomes
+ * the new default so a small mistake (one character too long) can be
+ * corrected without retyping the whole field.
+ */
+export async function promptField(
+  ask: Ask,
+  label: string,
+  proposed: string,
+  validate?: FieldValidator,
+): Promise<string> {
+  let current = proposed
+  const proposalError = validate?.(current)
+  if (proposalError) {
+    console.log(`  Proposed ${label} is invalid — ${proposalError}`)
+    current = ''
+  }
+
+  for (;;) {
+    const promptText = current === '' ? `${label}: ` : `${label} [${current}]: `
+    const answer = (await ask(promptText)).trim()
+    const value = answer === '' ? current : answer
+
+    if (value === '') {
+      console.log('  A value is required.')
+      continue
+    }
+    const error = validate?.(value)
+    if (error) {
+      console.log(`  ${error}`)
+      current = value
+      continue
+    }
+    return value
+  }
 }
 
 /**
@@ -97,13 +136,46 @@ export async function promptClosedListField<T extends string>(
   }
 }
 
-/** A comma-separated free-text list field — no closed vocabulary, still ≥1 required. */
-export async function promptOpenListField(ask: Ask, label: string, proposed: readonly string[]): Promise<string[]> {
+export interface OpenListFieldOptions {
+  minCount?: number
+  maxCount?: number
+  /** Checked against each individual value, e.g. a per-tag length cap. */
+  validateItem?: FieldValidator
+}
+
+/** A comma-separated free-text list field — no closed vocabulary, but still bounded (count and, optionally, each item). */
+export async function promptOpenListField(
+  ask: Ask,
+  label: string,
+  proposed: readonly string[],
+  options: OpenListFieldOptions = {},
+): Promise<string[]> {
+  const { minCount = 1, maxCount, validateItem } = options
+  let defaultShown = proposed
+
   for (;;) {
-    const raw = await ask(`${label} (comma-separated) [${proposed.join(', ') || '(none proposed)'}]: `)
-    const values = raw.trim() === '' ? [...proposed] : splitList(raw)
-    if (values.length > 0) return values
-    console.log('  At least one value is required.')
+    const raw = await ask(`${label} (comma-separated) [${defaultShown.join(', ') || '(none proposed)'}]: `)
+    const values = raw.trim() === '' ? [...defaultShown] : splitList(raw)
+
+    if (values.length < minCount) {
+      console.log(`  At least ${minCount} value${minCount === 1 ? '' : 's'} required.`)
+      defaultShown = values
+      continue
+    }
+    if (maxCount !== undefined && values.length > maxCount) {
+      console.log(`  At most ${maxCount} values allowed (got ${values.length}).`)
+      defaultShown = values.slice(0, maxCount)
+      continue
+    }
+    if (validateItem) {
+      const errors = values.map((value) => validateItem(value)).filter((error): error is string => error !== undefined)
+      if (errors.length > 0) {
+        console.log(`  ${errors.join(' ')}`)
+        defaultShown = values
+        continue
+      }
+    }
+    return values
   }
 }
 
@@ -115,9 +187,9 @@ async function collectFields(
   const existingSlugs = await allSlugs(catalogue)
   const proposedSlug = uniqueSlug(slugify(submission.name), existingSlugs)
 
-  const mono = await promptField(ask, 'mono', proposeMono(submission.name))
-  const price = await promptField(ask, 'price', proposePrice(submission.price))
-  const popText = await promptField(ask, 'pop (0-100)', String(PROPOSED_POP))
+  const mono = await promptField(ask, `mono (${FIELD_RULES.mono})`, proposeMono(submission.name), validateMono)
+  const price = await promptField(ask, `price (${FIELD_RULES.price})`, proposePrice(submission.price), validatePrice)
+  const popText = await promptField(ask, `pop (${FIELD_RULES.pop})`, String(PROPOSED_POP), validatePopText)
   const pop = Number.parseInt(popText, 10)
 
   const roles = await promptClosedListField<RoleName>(ask, 'roles', proposeRoles(submission.audience), ROLES)
@@ -128,9 +200,18 @@ async function collectFields(
   // roles/stages's case, not the free-text case the review decisions
   // otherwise call for.
   const useCases = await promptClosedListField<string>(ask, 'useCases', [], USE_CASES)
-  const tags = await promptOpenListField(ask, 'tags', proposeTags(submission.tags, submission.category))
-  const summary = await promptField(ask, 'summary', proposeSummary(submission.description))
-  const slug = await promptField(ask, 'slug', proposedSlug)
+  const tags = await promptOpenListField(ask, `tags (${FIELD_RULES.tags})`, proposeTags(submission.tags, submission.category), {
+    minCount: TOOL_FIELDS.tagsMin,
+    maxCount: TOOL_FIELDS.tagsMax,
+    validateItem: validateTag,
+  })
+  const summary = await promptField(
+    ask,
+    `summary (${FIELD_RULES.summary})`,
+    proposeSummary(submission.description),
+    validateSummary,
+  )
+  const slug = await promptField(ask, `slug (${FIELD_RULES.slug})`, proposedSlug, validateSlug)
 
   return { mono, price, pop, roles, stages, useCases, tags, summary, slug }
 }
@@ -153,11 +234,11 @@ const EDITABLE_FIELDS: readonly FieldName[] = [
 async function editField(ask: Ask, name: FieldName, fields: ReviewedFields): Promise<ReviewedFields> {
   switch (name) {
     case 'mono':
-      return { ...fields, mono: await promptField(ask, 'mono', fields.mono) }
+      return { ...fields, mono: await promptField(ask, `mono (${FIELD_RULES.mono})`, fields.mono, validateMono) }
     case 'price':
-      return { ...fields, price: await promptField(ask, 'price', fields.price) }
+      return { ...fields, price: await promptField(ask, `price (${FIELD_RULES.price})`, fields.price, validatePrice) }
     case 'pop': {
-      const popText = await promptField(ask, 'pop (0-100)', String(fields.pop))
+      const popText = await promptField(ask, `pop (${FIELD_RULES.pop})`, String(fields.pop), validatePopText)
       return { ...fields, pop: Number.parseInt(popText, 10) }
     }
     case 'roles':
@@ -167,11 +248,21 @@ async function editField(ask: Ask, name: FieldName, fields: ReviewedFields): Pro
     case 'usecases':
       return { ...fields, useCases: await promptClosedListField<string>(ask, 'useCases', fields.useCases, USE_CASES) }
     case 'tags':
-      return { ...fields, tags: await promptOpenListField(ask, 'tags', fields.tags) }
+      return {
+        ...fields,
+        tags: await promptOpenListField(ask, `tags (${FIELD_RULES.tags})`, fields.tags, {
+          minCount: TOOL_FIELDS.tagsMin,
+          maxCount: TOOL_FIELDS.tagsMax,
+          validateItem: validateTag,
+        }),
+      }
     case 'summary':
-      return { ...fields, summary: await promptField(ask, 'summary', fields.summary) }
+      return {
+        ...fields,
+        summary: await promptField(ask, `summary (${FIELD_RULES.summary})`, fields.summary, validateSummary),
+      }
     case 'slug':
-      return { ...fields, slug: await promptField(ask, 'slug', fields.slug) }
+      return { ...fields, slug: await promptField(ask, `slug (${FIELD_RULES.slug})`, fields.slug, validateSlug) }
   }
 }
 
@@ -182,6 +273,12 @@ export type ConfirmOutcome = { action: 'write'; fields: ReviewedFields } | { act
  * field / cancel — the gate SPEC decision #5 puts before any write. "edit"
  * loops back into a single field's prompt and shows the record again;
  * "cancel" returns without ever calling approveSubmission.
+ *
+ * The per-field validation above catches the common case, but this is not
+ * where the final guard lives — approveSubmission's own call into
+ * catalogue.create() re-validates the WHOLE record through the same
+ * parseCatalogue the server's loader runs, and refuses to write anything
+ * that would fail. A hand-edited field can still only get caught there.
  */
 export async function confirmTool(
   ask: Ask,
