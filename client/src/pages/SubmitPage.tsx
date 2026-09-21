@@ -245,6 +245,27 @@ export default function SubmitPage() {
 
       <div className="relative mt-10 grid items-start gap-8 lg:grid-cols-[1fr_360px]">
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
+          {/*
+            The honeypot — SPEC-submit-backend.md §9. A real visitor never
+            sees, tabs to, or hears this field: aria-hidden removes it from
+            the accessibility tree, tabIndex -1 removes it from keyboard
+            navigation, and the positioning below removes it from the visual
+            layout. A bot that blindly fills every input in a form fills this
+            one too — that's the entire point. autoComplete="off" and a
+            plausible name (`company`) keep a browser's own autofill from
+            populating it on a real visitor's behalf.
+          */}
+          <input
+            type="text"
+            name="company"
+            value={form.company}
+            onChange={(event) => update({ company: event.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+          />
+
           <fieldset disabled={status === 'submitting'} className="contents">
             <SubmitUrlSection value={form.siteUrl} onChange={(siteUrl) => update({ siteUrl })} error={fieldErrors.siteUrl} />
 

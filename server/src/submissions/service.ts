@@ -1,6 +1,8 @@
 /*
  * SubmissionService — SPEC-submit-backend.md §7 orchestration, minus the two
- * abuse-control steps deferred to slices 5 (rate limiting) and 7 (honeypot):
+ * abuse-control steps that run ahead of this in http/middleware/ instead
+ * (§7's own order: rate limit, then honeypot, THEN the zod parse this file
+ * starts with — see routes/submissions.ts for how the three are chained):
  *
  *   1. zod parse                                     -> VALIDATION_FAILED
  *   2. normalize the URL
@@ -68,7 +70,13 @@ export function createSubmissionService({
           fieldsFromZodError(parsed.error),
         )
       }
-      const input = parsed.data
+      // The honeypot field, present in the schema only so .strict() accepts
+      // the harmless empty string a real submission always sends — a
+      // non-empty one is caught upstream, in http/middleware/honeypot.ts,
+      // which answers before this ever runs. Excluded here purely so it
+      // doesn't ride along into store.create()'s NewSubmission, which has no
+      // field for it.
+      const { company: _company, ...input } = parsed.data
 
       // Already proven parseable by SiteUrlSchema's own superRefine, so this
       // is not expected to throw — if it somehow did, that is a genuine bug,

@@ -218,6 +218,19 @@ export const SubmissionInputSchema = z
     launchWeekId: z
       .string({ message: 'Choose a launch week.' })
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: 'Choose a valid launch week.' }),
+
+    /**
+     * The honeypot — SPEC-submit-backend.md §9. A real visitor never sees or
+     * fills this field (client/src/pages/SubmitPage.tsx), so it always
+     * arrives empty from a human. `.strict()` would reject the key outright
+     * without this: the schema has to accept it precisely so service.ts can
+     * read it and answer a bot with a normal-looking 201 instead of a 400
+     * that would tell it what tripped.
+     */
+    company: z
+      .string()
+      .max(SUBMISSIONS.maxHoneypotChars, { message: 'Invalid submission.' })
+      .optional(),
   })
   .strict()
 

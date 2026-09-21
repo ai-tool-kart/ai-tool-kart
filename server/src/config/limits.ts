@@ -356,6 +356,8 @@ export const SUBMISSIONS = {
   maxFaqQuestionChars: 200,
   maxFaqAnswerChars: 1000,
   maxLaunchStoryChars: 600,
+  /** The honeypot field (`company`, SPEC-submit-backend.md §9) — a bot's junk, not a real name. */
+  maxHoneypotChars: 200,
 } as const
 
 /**

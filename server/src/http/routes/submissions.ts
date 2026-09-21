@@ -1,18 +1,16 @@
 /*
  * POST /api/submissions — SPEC-submit-backend.md §7.
  *
- * Rate limiting (§7 step 1 / §9) is applied directly to this one route, not
- * router-wide via router.use() — so a future non-POST route added to this
- * router (an admin listing, say) is never accidentally throttled by a limit
- * meant for intake abuse.
- *
- * The honeypot check (§7 step 2) is slice 7 — absent here on purpose, not
- * forgotten. Nothing is reserved for it, for the same reason routes/index.ts's
- * own header gives: a middleware slot that does nothing is a middleware
- * someone assumes is already protecting them.
+ * Both abuse-control steps (§7 steps 1-2) are applied directly to this one
+ * route, not router-wide via router.use() — so a future non-POST route added
+ * to this router (an admin listing, say) is never accidentally caught by
+ * either. Order matters and matches §7 exactly: rate limit, then honeypot,
+ * then the handler — which starts with submissions/service.ts's own zod
+ * parse (§7 step 3).
  */
 
 import { Router, type RequestHandler } from 'express'
+import { honeypot } from '../middleware/honeypot.ts'
 import { createRateLimiter } from '../middleware/rateLimit.ts'
 import type { SubmissionService } from '../../submissions/service.ts'
 
@@ -28,7 +26,7 @@ export function createSubmissionsRouter({
 }: SubmissionsRouterOptions): Router {
   const router = Router()
 
-  router.post('/', rateLimiter, (req, res, next) => {
+  router.post('/', rateLimiter, honeypot, (req, res, next) => {
     void (async () => {
       try {
         const { id, status, createdAt } = await service.submit(req.body)

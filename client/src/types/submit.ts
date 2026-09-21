@@ -34,6 +34,13 @@ export interface SubmitFormState {
   faqs: FaqDraft[]
   plan: LaunchPlan
   launchWeekId: string
+  /**
+   * The honeypot — SPEC-submit-backend.md §9. Bound to a hidden input
+   * (SubmitPage.tsx) a real visitor never sees, fills, or tabs to. Always
+   * sent, same as any other field — a human's is always empty; a bot's
+   * naive fill-every-input script is what this exists to catch.
+   */
+  company: string
 }
 
 export const TAGLINE_MAX = 80
@@ -59,6 +66,7 @@ export function createEmptySubmission(): SubmitFormState {
     faqs: [],
     plan: 'free',
     launchWeekId: '',
+    company: '',
   }
 }
 
@@ -102,6 +110,8 @@ export interface SubmissionPayload {
   launchStory?: string
   plan: LaunchPlan
   launchWeekId: string
+  /** The honeypot — see SubmitFormState.company. Always sent, always empty from a human. */
+  company?: string
 }
 
 /**
@@ -141,6 +151,7 @@ export function toSubmissionPayload(form: SubmitFormState): SubmissionPayload {
     launchStory: form.launchStory.trim(),
     plan: form.plan,
     launchWeekId: form.launchWeekId,
+    company: form.company.trim(),
   }
 }
 

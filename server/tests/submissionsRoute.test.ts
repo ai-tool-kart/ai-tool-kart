@@ -107,6 +107,47 @@ await test('POST /api/submissions', async (t) => {
     })
   })
 
+  await t.test('201 — an empty honeypot field is accepted and the submission proceeds normally', async () => {
+    await withSubmissionsServer(async ({ origin, store }) => {
+      // A real visitor's hidden `company` input is always present and always
+      // empty. This proves SubmissionInputSchema's .strict() doesn't reject
+      // the key outright, and that an untripped honeypot doesn't change the
+      // outcome at all — still stored, same as if `company` were absent.
+      const response = await postSubmission(origin, makeSubmissionPayload({ company: '' }))
+      assert.equal(response.status, 201)
+      assert.equal((await store.list()).length, 1)
+    })
+  })
+
+  await t.test('201 — a filled honeypot field is answered like a real submission and stores nothing', async () => {
+    await withSubmissionsServer(async ({ origin, store }) => {
+      const payload = makeSubmissionPayload({ company: 'Acme Bots Inc' })
+      // Also otherwise invalid — missing every required field — to prove the
+      // honeypot check runs BEFORE the zod parse (SPEC §7's step order), not
+      // after: a bot whose payload is garbage everywhere else still gets
+      // waved through with a normal-looking 201, not a 400 that would teach
+      // it which field to stop filling.
+      delete payload.name
+      delete payload.tagline
+      delete payload.description
+      delete payload.category
+      delete payload.pricingModel
+      delete payload.launchWeekId
+
+      const response = await postSubmission(origin, payload)
+      assert.equal(response.status, 201)
+
+      const body = await readJson<CreatedResponse>(response)
+      assert.deepEqual(Object.keys(body).sort(), ['createdAt', 'id', 'status'])
+      assert.equal(typeof body.id, 'string')
+      assert.ok(body.id.length > 0)
+      assert.equal(body.status, 'pending')
+      assert.ok(!Number.isNaN(Date.parse(body.createdAt)))
+
+      assert.equal((await store.list()).length, 0)
+    })
+  })
+
   await t.test('400 — VALIDATION_FAILED, fields keyed by the client’s own field names', async () => {
     await withSubmissionsServer(async ({ origin }) => {
       const payload = makeSubmissionPayload()
