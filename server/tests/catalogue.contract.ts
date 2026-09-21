@@ -53,6 +53,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     roles: ['Writer'],
     stages: ['draft', 'edit'],
     addedAt: '2026-01-10',
+    url: 'https://alpha-writer.example',
   }),
   makeTool({
     id: 'beta-coder',
@@ -69,6 +70,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     useCases: ['Write code faster'],
     stages: ['build'],
     addedAt: '2026-03-02',
+    url: 'https://beta-coder.example',
   }),
   makeTool({
     id: 'gamma-writer',
@@ -83,6 +85,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     pricingTier: 'freemium',
     roles: ['Writer', 'Student'],
     stages: ['edit'],
+    url: 'https://gamma-writer.example',
   }),
   makeTool({
     id: 'delta-coder',
@@ -99,6 +102,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     useCases: ['Generate tests'],
     stages: ['build', 'edit'],
     addedAt: '2026-02-14',
+    url: 'https://delta-coder.example',
   }),
   makeTool({
     id: 'epsilon-draft',
@@ -115,6 +119,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     stages: ['draft'],
     status: 'draft',
     addedAt: '2026-04-01',
+    url: 'https://epsilon-draft.example',
   }),
 ]
 
@@ -508,6 +513,28 @@ export async function runCatalogueContract({ name, create }: ContractOptions): P
       assert.equal(await catalogue.size(), ACTIVE_IDS.length)
     })
 
+    /* ── findByNormalizedUrl ──────────────────────────────────────────────── */
+
+    await t.test('findByNormalizedUrl finds a record by its normalized url', async () => {
+      const catalogue = await repo()
+      const tool = await catalogue.findByNormalizedUrl('alpha-writer.example')
+      assert.equal(tool?.id, 'alpha-writer')
+    })
+
+    await t.test('findByNormalizedUrl reaches drafts too', async () => {
+      // The same reasoning as "lookup by id reaches drafts" above: an
+      // unpublished draft at this address is still a reason to call a new
+      // submission a duplicate, so the duplicate check must see it.
+      const catalogue = await repo()
+      const tool = await catalogue.findByNormalizedUrl('epsilon-draft.example')
+      assert.equal(tool?.id, DRAFT.id)
+    })
+
+    await t.test('findByNormalizedUrl on an unknown url resolves undefined, never throws', async () => {
+      const catalogue = await repo()
+      assert.equal(await catalogue.findByNormalizedUrl('no-such-site.example'), undefined)
+    })
+
     /* ── Async contract ───────────────────────────────────────────────────── */
 
     await t.test('every method returns a promise', async () => {
@@ -522,6 +549,7 @@ export async function runCatalogueContract({ name, create }: ContractOptions): P
         catalogue.search({}),
         catalogue.taxonomy(),
         catalogue.size(),
+        catalogue.findByNormalizedUrl('alpha-writer.example'),
       ]
       for (const call of calls) assert.ok(call instanceof Promise)
       await Promise.all(calls)

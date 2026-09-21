@@ -8,7 +8,9 @@
  *
  * Loads data/tools.json once at construction, validates every record, and builds
  * the in-memory indexes retrieval leans on (byId, bySlug, byCategory, byStage,
- * byRole). Invalid data throws before the server can listen — see schema.ts.
+ * byRole) plus byNormalizedUrl, which backs the Submit intake's catalogue-side
+ * duplicate check (findByNormalizedUrl, repository.ts). Invalid data throws
+ * before the server can listen — see schema.ts.
  *
  * The methods are async because the PORT is async, not because anything here
  * awaits. That asymmetry is the entire point of §6.2: PostgresToolCatalogue
@@ -29,6 +31,7 @@ import { fileURLToPath } from 'node:url'
 import { configError } from '../domain/errors.ts'
 import type { Tool } from '../domain/types.ts'
 import type { Logger } from '../utils/logger.ts'
+import { normalizeUrl } from '../utils/normalizeUrl.ts'
 import type { ToolCatalogueRepository, ToolPage, ToolQuery } from './repository.ts'
 import { parseCatalogue } from './schema.ts'
 import {
@@ -66,6 +69,7 @@ interface Indexes {
   byCategory: Map<ToolCategoryName, Tool[]>
   byStage: Map<WorkflowStage, Tool[]>
   byRole: Map<RoleName, Tool[]>
+  byNormalizedUrl: Map<string, Tool>
 }
 
 export function createJsonToolCatalogue(
@@ -120,6 +124,10 @@ export function createJsonToolCatalogue(
     async size() {
       return activeCount
     },
+
+    async findByNormalizedUrl(url) {
+      return indexes.byNormalizedUrl.get(url)
+    },
   }
 }
 
@@ -154,6 +162,7 @@ function buildIndexes(tools: Tool[]): Indexes {
     byCategory: new Map(),
     byStage: new Map(),
     byRole: new Map(),
+    byNormalizedUrl: new Map(),
   }
 
   for (const tool of tools) {
@@ -162,6 +171,15 @@ function buildIndexes(tools: Tool[]): Indexes {
     push(indexes.byCategory, tool.cat, tool)
     for (const stage of tool.stages) push(indexes.byStage, stage, tool)
     for (const role of tool.roles) push(indexes.byRole, role, tool)
+
+    // Every record, active or draft — an unpublished duplicate is still a
+    // duplicate. A `url` that somehow fails to parse is left unindexed
+    // rather than failing catalogue load over one bad record.
+    try {
+      indexes.byNormalizedUrl.set(normalizeUrl(tool.url), tool)
+    } catch {
+      /* left unindexed */
+    }
   }
 
   return indexes

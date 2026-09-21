@@ -82,4 +82,14 @@ export interface ToolCatalogueRepository {
   taxonomy(): Promise<Taxonomy>
   /** Active records only — the number a health check should report. */
   size(): Promise<number>
+  /**
+   * A tool whose own `url` normalizes (utils/normalizeUrl.ts) to `url` —
+   * across every record, not just active ones, so an unpublished draft at
+   * this address still counts. Backs the Submit intake's catalogue-side
+   * duplicate check (SPEC-submit-backend.md §7 step 6). Deliberately a real
+   * lookup rather than a `search()` scan: `search()` is capped at
+   * RETRIEVAL.prefilterLimit, and a catalogue that outgrows that cap must
+   * not be able to silently stop catching duplicates past the cutoff.
+   */
+  findByNormalizedUrl(url: string): Promise<Tool | undefined>
 }

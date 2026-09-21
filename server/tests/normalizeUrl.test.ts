@@ -9,7 +9,7 @@
 
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { normalizeUrl } from '../src/submissions/normalizeUrl.ts'
+import { normalizeUrl } from '../src/utils/normalizeUrl.ts'
 
 await test('normalizeUrl', async (t) => {
   await t.test('the spec\'s own worked example', () => {

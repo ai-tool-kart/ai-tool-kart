@@ -22,9 +22,8 @@
 
 import type { z } from 'zod'
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
-import { RETRIEVAL } from '../config/limits.ts'
 import { duplicateUrl, validationFailed } from '../domain/errors.ts'
-import { normalizeUrl } from './normalizeUrl.ts'
+import { normalizeUrl } from '../utils/normalizeUrl.ts'
 import { SubmissionInputSchema } from './schema.ts'
 import type { SubmissionStore } from './store.ts'
 import type { Submission } from './types.ts'
@@ -56,32 +55,6 @@ function fieldsFromZodError(error: z.ZodError): Record<string, string> {
   return fields
 }
 
-/**
- * Whether any tool already in the catalogue answers to this normalized URL.
- *
- * `search()`, not a dedicated lookup: the catalogue port deliberately has no
- * listAll() (repository.ts §6.2's rule 3), and RETRIEVAL.prefilterLimit is
- * already documented there as "comfortably above the whole seed catalogue"
- * — the same bound retrieval itself scores against, reused here rather than
- * a second guess at how big "all of it" is. `status: 'all'` includes
- * drafts: an unpublished tool at this URL is still a reason to call this a
- * duplicate. A seed record whose own `url` happens to be unparseable is
- * treated as a non-match rather than failing the whole submission over it.
- */
-async function catalogueHasUrl(
-  catalogue: ToolCatalogueRepository,
-  normalizedUrl: string,
-): Promise<boolean> {
-  const page = await catalogue.search({ status: 'all', limit: RETRIEVAL.prefilterLimit })
-  return page.items.some((tool) => {
-    try {
-      return normalizeUrl(tool.url) === normalizedUrl
-    } catch {
-      return false
-    }
-  })
-}
-
 export function createSubmissionService({
   store,
   catalogue,
@@ -105,7 +78,11 @@ export function createSubmissionService({
       if (await store.findByNormalizedUrl(normalized)) {
         throw duplicateUrl(DUPLICATE_MESSAGE)
       }
-      if (await catalogueHasUrl(catalogue, normalized)) {
+      // A Map lookup built at catalogue load time (catalogue/json.ts), not a
+      // search() scan — search() is capped at RETRIEVAL.prefilterLimit, so a
+      // duplicate sitting past that cutoff in a large catalogue would have
+      // silently gone unnoticed under the earlier, search()-based approach.
+      if (await catalogue.findByNormalizedUrl(normalized)) {
         throw duplicateUrl(DUPLICATE_MESSAGE)
       }
 

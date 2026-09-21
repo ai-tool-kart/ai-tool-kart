@@ -21,6 +21,7 @@ import assert from 'node:assert/strict'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { RETRIEVAL } from '../src/config/limits.ts'
 import { INTERNAL_MESSAGE } from '../src/http/errorHandler.ts'
 import type { Tool } from '../src/domain/types.ts'
 import { createJsonSubmissionStore } from '../src/submissions/store.json.ts'
@@ -236,6 +237,59 @@ await test('POST /api/submissions', async (t) => {
       { tools: [makeTool({ url: 'https://existing-tool.example.com' })] },
     )
   })
+
+  await t.test(
+    '409 — a catalogue duplicate past RETRIEVAL.prefilterLimit is still caught',
+    async () => {
+      // This is the case that would have failed under the pre-fix approach:
+      // the service used to find catalogue duplicates via
+      // catalogue.search({ limit: RETRIEVAL.prefilterLimit }), so a match
+      // sitting beyond that cutoff was invisible to it. findByNormalizedUrl
+      // is a real index lookup (catalogue/json.ts), not a capped scan, so
+      // catalogue size must not matter.
+      //
+      // Array POSITION alone does not prove this: search() with no explicit
+      // sort defaults to 'popular' (descending pop, ties broken by id), so
+      // it was not enough to place the duplicate late in the input array —
+      // it had to actually rank outside the top `prefilterLimit` under that
+      // sort. High pop on every filler and low pop on the duplicate forces
+      // that, regardless of id ordering.
+      const filler = Array.from({ length: RETRIEVAL.prefilterLimit + 20 }, (_unused, index) =>
+        makeTool({
+          id: `filler-${index}`,
+          slug: `filler-${index}`,
+          url: `https://filler-${index}.example`,
+          pop: 100,
+        }),
+      )
+      assert.ok(
+        filler.length > RETRIEVAL.prefilterLimit,
+        'the fixture catalogue must actually exceed the old cutoff',
+      )
+
+      const targetIndex = RETRIEVAL.prefilterLimit + 10
+      filler[targetIndex] = makeTool({
+        id: 'buried-duplicate',
+        slug: 'buried-duplicate',
+        url: 'https://buried-duplicate.example',
+        pop: 1,
+      })
+
+      await withSubmissionsServer(
+        async ({ origin, store }) => {
+          const response = await postSubmission(
+            origin,
+            makeSubmissionPayload({ siteUrl: 'https://buried-duplicate.example' }),
+          )
+          assert.equal(response.status, 409)
+          const body = await readJson<ErrorResponse>(response)
+          assert.equal(body.error.code, 'DUPLICATE_URL')
+          assert.equal((await store.list()).length, 0)
+        },
+        { tools: filler },
+      )
+    },
+  )
 
   await t.test('500 — a store failure is logged and returns no internals', async () => {
     await withTempStore(async (store, filePath) => {

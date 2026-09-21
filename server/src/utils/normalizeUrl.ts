@@ -1,11 +1,21 @@
 /*
- * URL canonicalization for the duplicate-submission check —
- * SPEC-submit-backend.md §5. The original `siteUrl` is stored untouched;
- * this is only the comparison key.
+ * URL canonicalization — SPEC-submit-backend.md §5's 8 steps. The original
+ * `siteUrl` (or a catalogue tool's `url`) is stored untouched; this is only
+ * the comparison key duplicate checks compare.
+ *
+ * Lives in utils/, not submissions/, because both submissions/service.ts and
+ * catalogue/json.ts need it: a submission's duplicate check runs against the
+ * live catalogue as well as the submission store (SPEC §7 steps 5-6), and
+ * catalogue/json.ts is what builds the normalized-URL index that check reads.
+ * Putting this under submissions/ would make catalogue/ depend on a feature
+ * built on top of it — the wrong direction — for something this low-level.
  *
  * Assumes a valid, parseable URL. Rejecting garbage is validation's job
- * (schema.ts, a later slice) and happens before this is ever called — so
- * this throws (via `new URL()`) on unparseable input rather than guessing.
+ * (submissions/schema.ts) and happens before this is ever called on a
+ * submission's siteUrl — so this throws (via `new URL()`) on unparseable
+ * input rather than guessing. Every seeded catalogue tool's `url` is also
+ * expected to be parseable; catalogue/json.ts treats one that somehow isn't
+ * as unindexed rather than failing catalogue load over it.
  */
 
 const STRIPPED_QUERY_PARAMS = new Set(['ref', 'fbclid', 'gclid'])
