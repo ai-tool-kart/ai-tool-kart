@@ -363,8 +363,14 @@ export const SUBMISSIONS = {
  * http/middleware/rateLimit.ts is the only module that reads these.
  */
 export const RATE_LIMIT = {
-  /** Requests a single IP may make inside the rolling window. */
-  maxPerWindow: 5,
+  /**
+   * Requests a single IP may make inside the rolling window. Raised from 5 to
+   * 20 for slice 6 (client wiring, SPEC-submit-backend.md §8): the limiter
+   * counts every request regardless of outcome, so 5 left no room for an
+   * honest user who hits a 409 or two, fixes a typo, and tries again a few
+   * times in one sitting.
+   */
+  maxPerWindow: 20,
   /** The rolling window's length, in milliseconds. */
   windowMs: 60 * 60 * 1000,
 } as const

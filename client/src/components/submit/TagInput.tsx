@@ -9,15 +9,29 @@ import { useState } from 'react'
 
 interface TagInputProps {
   label: string
+  /** The field key an error is attached under, and what `[data-field]` is tagged with. */
+  name?: string
   hint?: string
   values: string[]
   onChange: (values: string[]) => void
   placeholder?: string
   max: number
+  /** A validation message for this field, e.g. from a 400's `fields` map. */
+  error?: string
 }
 
-export default function TagInput({ label, hint, values, onChange, placeholder, max }: TagInputProps) {
+export default function TagInput({
+  label,
+  name,
+  hint,
+  values,
+  onChange,
+  placeholder,
+  max,
+  error,
+}: TagInputProps) {
   const [draft, setDraft] = useState('')
+  const errorId = name && error ? `${name}-error` : undefined
 
   const commit = () => {
     const next = draft.trim()
@@ -30,7 +44,7 @@ export default function TagInput({ label, hint, values, onChange, placeholder, m
   const remove = (target: string) => onChange(values.filter((v) => v !== target))
 
   return (
-    <div className="flex flex-col gap-[7px]">
+    <div className="flex flex-col gap-[7px]" data-field={name}>
       <span className="flex items-baseline justify-between gap-3">
         <span className="text-[13px] tracking-[0.05em] uppercase text-subtle">{label}</span>
         <span className="text-[11px] font-medium tabular-nums text-subtle-dim">
@@ -62,6 +76,8 @@ export default function TagInput({ label, hint, values, onChange, placeholder, m
           <input
             type="text"
             aria-label={label}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={errorId}
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={(e) => {
@@ -78,6 +94,11 @@ export default function TagInput({ label, hint, values, onChange, placeholder, m
           />
         )}
       </div>
+      {error && (
+        <span id={errorId} role="alert" className="text-[12.5px] leading-[1.5] text-pink">
+          {error}
+        </span>
+      )}
     </div>
   )
 }

@@ -10,13 +10,11 @@ import { buildLaunchWeeks, LAUNCH_WEEKS_OUT, type LaunchWeek } from '@/utils/lau
 
 const STATUS_LABEL: Record<LaunchWeek['status'], string> = {
   featuredOnly: 'Featured only',
-  filling: 'Filling up',
   open: 'Open',
 }
 
 const STATUS_DOT: Record<LaunchWeek['status'], string> = {
   featuredOnly: 'bg-[#E5C48C] shadow-[0_0_8px_1px_rgba(214,172,104,0.55)]',
-  filling: 'bg-[#E8A5D6] shadow-[0_0_8px_1px_rgba(226,132,201,0.5)]',
   open: 'bg-[#9BE7C4] shadow-[0_0_8px_1px_rgba(120,220,170,0.55)]',
 }
 
@@ -25,6 +23,8 @@ interface SubmitLaunchSectionProps {
   onPlanChange: (plan: LaunchPlan) => void
   launchWeekId: string
   onLaunchWeekChange: (id: string) => void
+  /** Validation messages keyed by field name, from a 400's `fields` map. */
+  errors: Record<string, string>
 }
 
 export default function SubmitLaunchSection({
@@ -32,6 +32,7 @@ export default function SubmitLaunchSection({
   onPlanChange,
   launchWeekId,
   onLaunchWeekChange,
+  errors,
 }: SubmitLaunchSectionProps) {
   const weeks = useMemo(buildLaunchWeeks, [])
   const firstOpenWeek = weeks.find((week) => week.status === 'open')
@@ -52,27 +53,34 @@ export default function SubmitLaunchSection({
       title="Pricing & launch scheduler"
       description="Free listings queue in order; Featured skips the line and gets the week's homepage placement."
     >
-      <div role="radiogroup" aria-label="Launch plan" className="grid gap-4 sm:grid-cols-2">
-        <PlanCard
-          active={plan === 'free'}
-          onClick={() => onPlanChange('free')}
-          name="Free launch"
-          price="$0"
-          blurb="Joins the queue in submission order."
-          features={['Full catalogue listing', 'Standard review', `First open week: ${firstOpenWeek?.label ?? '—'}`]}
-        />
-        <PlanCard
-          active={plan === 'featured'}
-          onClick={() => onPlanChange('featured')}
-          name="Featured launch"
-          price="$19"
-          blurb="Priority review and the pick of the calendar."
-          features={['Everything in Free', 'Any open week, including this one', 'Homepage placement for the week']}
-          highlight
-        />
+      <div data-field="plan" className="flex flex-col gap-3">
+        <div role="radiogroup" aria-label="Launch plan" aria-describedby={errors.plan ? 'plan-error' : undefined} className="grid gap-4 sm:grid-cols-2">
+          <PlanCard
+            active={plan === 'free'}
+            onClick={() => onPlanChange('free')}
+            name="Free launch"
+            price="$0"
+            blurb="Joins the queue in submission order."
+            features={['Full catalogue listing', 'Standard review', `First open week: ${firstOpenWeek?.label ?? '—'}`]}
+          />
+          <PlanCard
+            active={plan === 'featured'}
+            onClick={() => onPlanChange('featured')}
+            name="Featured launch"
+            price="$19"
+            blurb="Priority review and the pick of the calendar."
+            features={['Everything in Free', 'Any open week, including this one', 'Homepage placement for the week']}
+            highlight
+          />
+        </div>
+        {errors.plan && (
+          <span id="plan-error" role="alert" className="text-[12.5px] leading-[1.5] text-pink">
+            {errors.plan}
+          </span>
+        )}
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div data-field="launchWeekId" className="flex flex-col gap-3">
         <span className="text-[13px] tracking-[0.05em] uppercase text-subtle">
           Launch week <span className="text-accent">*</span>
         </span>
@@ -80,7 +88,12 @@ export default function SubmitLaunchSection({
           Free launches start {firstOpenWeek?.label ?? 'soon'}, about {LAUNCH_WEEKS_OUT} weeks out. Featured can take any
           open week on the board.
         </p>
-        <div role="radiogroup" aria-label="Launch week" className="grid grid-cols-2 gap-[10px] sm:grid-cols-3">
+        <div
+          role="radiogroup"
+          aria-label="Launch week"
+          aria-describedby={errors.launchWeekId ? 'launchWeekId-error' : undefined}
+          className="grid grid-cols-2 gap-[10px] sm:grid-cols-3"
+        >
           {weeks.map((week) => {
             const selectable = isSelectable(week)
             const active = launchWeekId === week.id
@@ -109,6 +122,11 @@ export default function SubmitLaunchSection({
             )
           })}
         </div>
+        {errors.launchWeekId && (
+          <span id="launchWeekId-error" role="alert" className="text-[12.5px] leading-[1.5] text-pink">
+            {errors.launchWeekId}
+          </span>
+        )}
       </div>
     </SubmitSectionCard>
   )
