@@ -187,10 +187,35 @@ await test('SubmissionInputSchema', async (t) => {
 
   await t.test('a public address just outside the private ranges is accepted', async (t) => {
     // Guards against an off-by-one in the range checks rejecting real sites.
-    const allowed = ['http://172.15.0.1/', 'http://172.32.0.1/', 'http://8.8.8.8/']
+    const allowed = [
+      'http://172.15.0.1/',
+      'http://172.32.0.1/',
+      'http://8.8.8.8/',
+      'http://[::ffff:8.8.8.8]/', // IPv4-mapped, but the mapped address is public
+    ]
     for (const url of allowed) {
       await t.test(url, () => {
         assert.equal(isValid(makeSubmissionPayload({ siteUrl: url })), true)
+      })
+    }
+  })
+
+  await t.test('an IPv4-mapped IPv6 literal is blocked when the mapped address is', async (t) => {
+    // new URL() canonicalizes the dotted suffix into two hex groups — see
+    // schema.ts's isBlockedIPv6 — so this exercises that decoding, not just
+    // the surface syntax. Each one mirrors a blocked case already covered in
+    // plain IPv4 form above.
+    const blocked = [
+      'http://[::ffff:127.0.0.1]/', // loopback
+      'http://[::ffff:10.0.0.1]/', // 10.0.0.0/8
+      'http://[::ffff:172.16.0.1]/', // 172.16.0.0/12
+      'http://[::ffff:192.168.1.1]/', // 192.168.0.0/16
+      'http://[::ffff:169.254.1.1]/', // link-local
+      'http://[::ffff:0.0.0.0]/',
+    ]
+    for (const url of blocked) {
+      await t.test(url, () => {
+        assert.equal(isValid(makeSubmissionPayload({ siteUrl: url })), false)
       })
     }
   })
