@@ -252,14 +252,14 @@ export const LLM_BUDGET = {
  *
  * ── Where the plan's numbers were relaxed, and why ───────────────────────────
  *
- * §10.1 describes a plan as 2–6 tools, 3–5 workflow stages and 3–5 steps. The
- * MAXIMA are enforced by the schema. The MINIMA are not, and that is deliberate:
- * they are enforced by the prompt instead.
+ * The plan is a flat list of steps, at most `maxPlanSteps`. The MAXIMUM is
+ * enforced by the schema. There is no MINIMUM there, and that is deliberate: it
+ * is enforced by the prompt instead.
  *
  * A minimum in the schema is a rejection. If retrieval can only offer one
  * candidate — a narrow query against a young catalogue — a model that correctly
  * recommends that one tool would fail validation three times and the turn would
- * end in a 422, which is a worse answer than the honest single-tool plan. The
+ * end in a 422, which is a worse answer than the honest single-step plan. The
  * failure mode of a missing minimum is a thin plan; the failure mode of an
  * enforced one is no plan at all.
  */
@@ -279,25 +279,17 @@ export const ASSISTANT = {
   /** Conversation length before `turn` stops counting up. Truncated (§11). */
   maxConversationTurns: 12,
 
-  /* ── Response (§10.1) ──────────────────────────────────────────────────── */
+  /* ── Response (§10.1, simplified — see the plain-language plan note) ──── */
   maxMessageReplyChars: 600,
-  maxPlanTools: 6,
-  maxAgents: 3,
-  maxWorkflowStages: 5,
-  maxWhyChars: 160,
-  maxSteps: 6,
+  /** A plan is at most this many steps. Each step names one stage and one tool. */
+  maxPlanSteps: 4,
   maxFollowUps: 3,
   maxConstraints: 4,
   /** Free-text fields the model fills. Bounded so a runaway string is a reject. */
-  maxTitleChars: 120,
   maxRoleChars: 80,
   maxGoalChars: 200,
   maxConstraintChars: 80,
-  maxStepChars: 240,
-  maxNoteChars: 240,
   maxFollowUpChars: 120,
-  maxAgentChars: 60,
-  maxStageChars: 40,
   /** A catalogue id. Long enough for any slug, short enough to bound the parse. */
   maxToolIdChars: 64,
 

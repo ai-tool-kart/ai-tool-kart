@@ -42,31 +42,20 @@ export interface AssistantToolSummary {
   stages: string[]
 }
 
-/** One stage of the plan's workflow. `tool` is absent when nothing staffs it. */
-export interface AssistantWorkflowStep {
-  stage: string
-  tool?: AssistantToolSummary
-  /** Why this tool at this stage. One line. */
-  why: string
+/**
+ * One step of the plan: one plain-language action and the one tool that does
+ * it. `action` and the tool's tagline/pricing are the server's own words, read
+ * off the catalogue at answer time — never text the model wrote.
+ */
+export interface AssistantPlanStep {
+  action: string
+  tool: AssistantToolSummary
 }
 
-/**
- * "Your AI Plan", in the design's render order.
- *
- * tools → Tools · agents → Agents · workflow → Workflow · prompts → Prompts ·
- * comparison → Comparison · steps → Steps. One field per panel section, which is
- * why the panel needs no translation layer.
- */
+/** The plan: the user's own goal line, and a short list of steps. */
 export interface AssistantPlan {
-  title: string
-  tools: AssistantToolSummary[]
-  agents: string[]
-  workflow: AssistantWorkflowStep[]
-  /** One line, e.g. "4 prompts for hooks and titles". */
-  prompts: string
-  /** One line, e.g. "Opus Clip vs Descript on one upload". */
-  comparison: string
-  steps: string[]
+  goal: string
+  steps: AssistantPlanStep[]
 }
 
 /** The assistant's read of the request, echoed back so it can be corrected. */

@@ -17,8 +17,8 @@
  * rather than quietly acted on.
  *
  * `.strict()` is applied at every level, including inside the plan and inside
- * each workflow entry. A strict outer object with a loose inner one is not a
- * closed schema; it is a closed front door next to an open window.
+ * each step. A strict outer object with a loose inner one is not a closed
+ * schema; it is a closed front door next to an open window.
  *
  * ── What this schema deliberately does NOT do ─────────────────────────────────
  *
@@ -35,55 +35,74 @@
 
 import { z } from 'zod'
 import { ASSISTANT } from '../config/limits.ts'
+import { WORKFLOW_STAGES } from '../catalogue/taxonomy.ts'
 import { ASSISTANT_INTENTS } from '../domain/types.ts'
 
 /** A catalogue id as the model writes it back. Existence is ground.ts's job. */
 const ToolIdSchema = z.string().trim().min(1).max(ASSISTANT.maxToolIdChars)
 
 /**
- * One workflow stage.
+ * One step of the plan.
  *
- * `toolId` is optional because a stage the catalogue cannot staff is a real
- * outcome — retrieval reports it in `unmetStages` — and a plan that names the
- * step honestly, with no tool, is better than one that invents a tool for it.
+ * A step is a stage from the closed vocabulary and the one tool that does it —
+ * nothing else. The plain-language action shown to the reader, the tool's own
+ * tagline, and its free/paid label are never written by the model: they are
+ * read off the catalogue during hydration (assistant/engine.ts), because the
+ * reader is better served by our own words about a real tool than by the
+ * model's paraphrase of them.
+ *
+ * `toolId` is required, not optional. §9 already guarantees every stage a plan
+ * names has at least two real candidates behind it, so a step this assistant
+ * offers is a step it can staff — an unstaffed stage is not a plan the model
+ * should be describing to a non-technical reader at all.
  */
-export const AssistantWorkflowEntrySchema = z
+export const AssistantStepSchema = z
   .object({
-    stage: z.string().trim().min(1).max(ASSISTANT.maxStageChars),
-    toolId: ToolIdSchema.optional(),
-    /** Why THIS tool at THIS stage. One line; the panel renders it inline. */
-    why: z.string().trim().min(1).max(ASSISTANT.maxWhyChars),
+    stage: z.enum(WORKFLOW_STAGES),
+    toolId: ToolIdSchema,
   })
   .strict()
 
 /**
- * The six sections of "Your AI Plan", in the design's render order.
+ * The plan, as a short flat list of steps a non-technical reader can act on.
  *
- * toolIds → Tools · agents → Agents · workflow → Workflow · prompts → Prompts ·
- * comparison → Comparison · steps → Steps. One field per section, so Phase G
- * needs no translation layer (§10.1's table).
+ * At most `maxPlanSteps`. No minimum in the schema — see the note on ASSISTANT
+ * in config/limits.ts — but a real plan is never zero steps in practice,
+ * because §9 never lets an empty candidate set reach the model.
  *
- * The maxima are the plan's. The minima are 1 rather than the plan's 2–3: see
- * the note on ASSISTANT in config/limits.ts — a minimum in a schema is a
- * rejection, and rejecting an honest single-tool plan produces a 422 where a
- * thin plan would have been the right answer.
+ * The two dedup rules are enforced here rather than left to the model's good
+ * behaviour, because both are structural properties a reader can immediately
+ * see violated: the same tool doing two jobs, or two steps that are really one
+ * step twice.
  */
 export const AssistantPlanSchema = z
   .object({
-    title: z.string().trim().min(1).max(ASSISTANT.maxTitleChars),
-    toolIds: z.array(ToolIdSchema).min(1).max(ASSISTANT.maxPlanTools),
-    agents: z.array(z.string().trim().min(1).max(ASSISTANT.maxAgentChars)).max(ASSISTANT.maxAgents),
-    workflow: z.array(AssistantWorkflowEntrySchema).min(1).max(ASSISTANT.maxWorkflowStages),
-    /** One line, e.g. "4 prompts for hooks and titles". */
-    prompts: z.string().trim().min(1).max(ASSISTANT.maxNoteChars),
-    /** One line, e.g. "Opus Clip vs Descript on one upload". */
-    comparison: z.string().trim().min(1).max(ASSISTANT.maxNoteChars),
-    steps: z
-      .array(z.string().trim().min(1).max(ASSISTANT.maxStepChars))
-      .min(1)
-      .max(ASSISTANT.maxSteps),
+    steps: z.array(AssistantStepSchema).max(ASSISTANT.maxPlanSteps),
   })
   .strict()
+  .superRefine((plan, ctx) => {
+    const toolSeen = new Set<string>()
+    const stageSeen = new Set<string>()
+    plan.steps.forEach((step, index) => {
+      if (toolSeen.has(step.toolId)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'A tool cannot appear in two steps of the same plan.',
+          path: ['steps', index, 'toolId'],
+        })
+      }
+      toolSeen.add(step.toolId)
+
+      if (stageSeen.has(step.stage)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'A stage cannot appear in two steps of the same plan.',
+          path: ['steps', index, 'stage'],
+        })
+      }
+      stageSeen.add(step.stage)
+    })
+  })
 
 /**
  * What the assistant understood the user to be asking for.
@@ -129,7 +148,7 @@ export const AssistantReplySchema = z
 
 export type AssistantReply = z.infer<typeof AssistantReplySchema>
 export type AssistantReplyPlan = z.infer<typeof AssistantPlanSchema>
-export type AssistantWorkflowEntry = z.infer<typeof AssistantWorkflowEntrySchema>
+export type AssistantStep = z.infer<typeof AssistantStepSchema>
 
 /** The name the prompt and every error message call this contract. */
 export const ASSISTANT_SCHEMA_NAME = 'AssistantReply'

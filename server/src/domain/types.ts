@@ -67,6 +67,15 @@ export interface Tool {
   tags: string[]
   /** Editorial prominence score, 0–100. See PROMINENCE in taxonomy.ts. */
   pop: number
+  /**
+   * True when the tool ships an official MCP (Model Context Protocol) server —
+   * a connector an AI assistant can call directly, as opposed to a workflow a
+   * person runs by hand. Optional: absent/false for the ordinary catalogue
+   * tool. Backs GET /mcp-servers on the client; unrelated to a tool's own
+   * `cat`/`tags`, which describe what it does rather than how an assistant
+   * reaches it.
+   */
+  isMcpServer?: boolean
   api: string
   ctx: string
   team: string
@@ -324,28 +333,30 @@ export interface ConversationMessage {
   text: string
 }
 
-/** One step of a plan, with its tool already hydrated. */
-export interface AssistantWorkflowStep {
-  stage: string
-  tool?: ToolSummary
-  why: string
+/**
+ * One step of a plan, with its tool already hydrated.
+ *
+ * `action` is the plain-language phrase for the stage (STAGE_ACTIONS in
+ * catalogue/taxonomy.ts), computed here rather than written by the model — a
+ * reader is better served by our own words about a real tool than by the
+ * model's paraphrase of them. The tool's tagline and free/paid label live on
+ * `tool` itself; the step does not repeat them.
+ */
+export interface AssistantPlanStep {
+  action: string
+  tool: ToolSummary
 }
 
 /**
- * The six sections of "Your AI Plan", one field each (§10.1's table).
+ * "Your plan" — a goal line and a short list of steps, one tool each.
  *
- * The field order below is the render order in the design, and the names are the
- * design's own — Tools, Agents, Workflow, Prompts, Comparison, Steps — so the
- * Phase G panel maps onto it without a translation layer.
+ * `goal` is the user's own message, verbatim, not a title the model wrote:
+ * "Your goal: automate client follow-ups" reads back exactly what was asked
+ * for, which needs no model involvement to get right.
  */
 export interface AssistantPlan {
-  title: string
-  tools: ToolSummary[]
-  agents: string[]
-  workflow: AssistantWorkflowStep[]
-  prompts: string
-  comparison: string
-  steps: string[]
+  goal: string
+  steps: AssistantPlanStep[]
 }
 
 /**

@@ -35,7 +35,7 @@
  */
 
 import { ASSISTANT } from '../config/limits.ts'
-import type { AssistantReply, AssistantWorkflowEntry } from './schema.ts'
+import type { AssistantReply } from './schema.ts'
 
 /**
  * What the user is told when grounding removed everything.
@@ -62,13 +62,6 @@ export interface GroundingResult {
   droppedToolIds: string[]
   /** True when a plan was removed entirely and the reply became a clarification. */
   degraded: boolean
-  /**
-   * Real candidate ids a workflow entry referenced that could not be added to
-   * the plan's tool list because it was already full. Logged, never returned to
-   * the client: these are not hallucinations, so counting them in
-   * `droppedToolIds` would corrupt the one metric that matters.
-   */
-  unlistedToolIds: string[]
 }
 
 /**
@@ -79,17 +72,11 @@ export interface GroundingResult {
  *   1. A plan is only meaningful for an intent that recommends something. For
  *      `clarify` and `off_topic` the plan is dropped, per §10.1 — enforced here
  *      rather than as a Zod refinement so it costs a field instead of a retry.
- *   2. `plan.toolIds` keeps only ids present in the candidate set, deduplicated,
- *      first occurrence wins. Order is otherwise preserved: it is the model's
- *      ranking, and re-sorting it would discard the arrangement we asked for.
- *   3. A workflow `toolId` must be a candidate AND belong to the plan's tool
- *      set. A real candidate the plan forgot to list is ADDED to the list (up to
- *      the cap) rather than discarded — it is a tool retrieval offered, and the
- *      Tools section is meant to be the plan's tools.
- *   4. A workflow entry whose tool was dropped keeps its stage and loses its
- *      tool. The schema allows that, and a named step with no tool is more
- *      honest than a step deleted to hide a failure.
- *   5. If nothing survives, the reply degrades to a clarification.
+ *   2. Every step's `toolId` must be a candidate. A step whose tool is not in
+ *      the candidate set is removed entirely — the schema requires exactly one
+ *      tool per step, so there is no honest way to keep a step whose tool
+ *      turned out to be invented.
+ *   3. If nothing survives, the reply degrades to a clarification.
  */
 export function groundReply(
   reply: AssistantReply,
@@ -97,7 +84,6 @@ export function groundReply(
 ): GroundingResult {
   const allowed = new Set(candidateIds)
   const dropped: string[] = []
-  const unlisted: string[] = []
 
   /** Records a rejection once. A model repeating a forged id is one mistake. */
   const drop = (id: string): void => {
@@ -111,69 +97,36 @@ export function groundReply(
     if (plan) {
       // Ids inside a plan attached to a clarifying answer are still checked, so
       // a forged one is still counted rather than silently discarded with it.
-      for (const id of plan.toolIds) if (!allowed.has(id)) drop(id)
-      for (const entry of plan.workflow) {
-        if (entry.toolId && !allowed.has(entry.toolId)) drop(entry.toolId)
-      }
+      for (const step of plan.steps) if (!allowed.has(step.toolId)) drop(step.toolId)
     }
     const { plan: _removed, ...rest } = reply
     return {
       reply: normaliseIntent({ ...rest }),
       droppedToolIds: dropped,
       degraded: false,
-      unlistedToolIds: [],
     }
   }
 
-  // Rule 2 — the plan's own tool list.
-  const toolIds: string[] = []
-  for (const id of plan.toolIds) {
-    if (!allowed.has(id)) {
-      drop(id)
-      continue
-    }
-    if (!toolIds.includes(id)) toolIds.push(id)
-  }
-
-  // Rule 3 and 4 — workflow references.
-  const workflow: AssistantWorkflowEntry[] = plan.workflow.map((entry) => {
-    if (!entry.toolId) return { stage: entry.stage, why: entry.why }
-
-    if (!allowed.has(entry.toolId)) {
-      drop(entry.toolId)
-      return { stage: entry.stage, why: entry.why }
-    }
-
-    if (!toolIds.includes(entry.toolId)) {
-      if (toolIds.length < ASSISTANT.maxPlanTools) {
-        toolIds.push(entry.toolId)
-      } else {
-        if (!unlisted.includes(entry.toolId)) unlisted.push(entry.toolId)
-        return { stage: entry.stage, why: entry.why }
-      }
-    }
-
-    return { stage: entry.stage, toolId: entry.toolId, why: entry.why }
+  // Rule 2 — a step whose tool is not a real candidate cannot be kept.
+  const steps = plan.steps.filter((step) => {
+    if (allowed.has(step.toolId)) return true
+    drop(step.toolId)
+    return false
   })
 
-  // Rule 5 — nothing survived, so there is no plan to show.
-  if (toolIds.length === 0) {
+  // Rule 3 — nothing survived, so there is no plan to show.
+  if (steps.length === 0) {
     return {
       reply: clarifyFallback(reply),
       droppedToolIds: dropped,
       degraded: true,
-      unlistedToolIds: unlisted,
     }
   }
 
   return {
-    reply: {
-      ...reply,
-      plan: { ...plan, toolIds, workflow },
-    },
+    reply: { ...reply, plan: { steps } },
     droppedToolIds: dropped,
     degraded: false,
-    unlistedToolIds: unlisted,
   }
 }
 

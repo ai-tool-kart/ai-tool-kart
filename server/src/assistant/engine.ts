@@ -37,11 +37,12 @@
  */
 
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
+import { STAGE_ACTIONS, type WorkflowStage } from '../catalogue/taxonomy.ts'
 import { ASSISTANT, RETRIEVAL } from '../config/limits.ts'
 import type {
   AssistantChatResponse,
   AssistantPlan,
-  AssistantWorkflowStep,
+  AssistantPlanStep,
   ConversationContext,
   ConversationMessage,
   Tool,
@@ -217,7 +218,7 @@ export function createAssistantEngine({
        * record withdrawn between retrieval and hydration disappears from the
        * plan instead of being served from a stale copy.
        */
-      const wanted = grounded.reply.plan?.toolIds ?? []
+      const wanted = grounded.reply.plan?.steps.map((step) => step.toolId) ?? []
       const hydrated = wanted.length > 0 ? await hydrate(catalogue, wanted) : new Map()
       const missing = wanted.filter((id) => !hydrated.has(id))
       const droppedToolIds = [...grounded.droppedToolIds, ...missing]
@@ -230,11 +231,15 @@ export function createAssistantEngine({
       let degraded = grounded.degraded
 
       if (reply.plan) {
-        const tools = wanted
-          .map((id) => hydrated.get(id))
-          .filter((tool): tool is ToolSummary => tool !== undefined)
+        const steps = reply.plan.steps
+          .map((step): AssistantPlanStep | undefined => {
+            const tool = hydrated.get(step.toolId)
+            if (!tool) return undefined
+            return { action: STAGE_ACTIONS[step.stage as WorkflowStage], tool }
+          })
+          .filter((step): step is AssistantPlanStep => step !== undefined)
 
-        if (tools.length === 0) {
+        if (steps.length === 0) {
           // Everything the plan named vanished between retrieval and hydration.
           // Same rule as grounding: degrade, never render an empty plan.
           degraded = true
@@ -242,15 +247,7 @@ export function createAssistantEngine({
           message = GROUNDING_FALLBACK_MESSAGE
           followUps = [...GROUNDING_FALLBACK_FOLLOW_UPS].slice(0, ASSISTANT.maxFollowUps)
         } else {
-          plan = {
-            title: reply.plan.title,
-            tools,
-            agents: [...reply.plan.agents],
-            workflow: reply.plan.workflow.map((entry) => toWorkflowStep(entry, hydrated)),
-            prompts: reply.plan.prompts,
-            comparison: reply.plan.comparison,
-            steps: [...reply.plan.steps],
-          }
+          plan = { goal: request.message.trim(), steps }
         }
       }
 
@@ -270,14 +267,11 @@ export function createAssistantEngine({
         excluded: refined.retrieval.rejectedToolIds.length,
         confirmed: refined.retrieval.confirmedToolIds.length,
         candidates: candidates.length,
-        planTools: plan?.tools.length ?? 0,
+        planSteps: plan?.steps.length ?? 0,
         attempts: response.attempts,
         model: response.model,
         droppedToolIds,
         degraded,
-        ...(grounded.unlistedToolIds.length > 0
-          ? { unlistedToolIds: grounded.unlistedToolIds }
-          : {}),
       })
 
       const result: AssistantChatResponse = {
@@ -338,16 +332,6 @@ async function hydrate(
     map.set(tool.id, toToolSummary(tool))
   }
   return map
-}
-
-function toWorkflowStep(
-  entry: { stage: string; toolId?: string; why: string },
-  hydrated: Map<string, ToolSummary>,
-): AssistantWorkflowStep {
-  const tool = entry.toolId ? hydrated.get(entry.toolId) : undefined
-  const step: AssistantWorkflowStep = { stage: entry.stage, why: entry.why }
-  if (tool) step.tool = tool
-  return step
 }
 
 /** What we already believed, for a turn that never reached the model. */
