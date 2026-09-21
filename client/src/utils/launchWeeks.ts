@@ -9,10 +9,10 @@
 export interface LaunchWeek {
   id: string
   label: string
-  status: 'featuredOnly' | 'filling' | 'open'
+  status: 'featuredOnly' | 'open'
 }
 
-const STATUS_PATTERN: LaunchWeek['status'][] = ['featuredOnly', 'featuredOnly', 'filling', 'open', 'open', 'open']
+const STATUS_PATTERN: LaunchWeek['status'][] = ['featuredOnly', 'featuredOnly', 'open', 'open', 'open', 'open']
 
 /** How far out the calendar's first week opens. */
 export const LAUNCH_WEEKS_OUT = 8
