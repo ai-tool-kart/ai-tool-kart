@@ -357,3 +357,14 @@ export const SUBMISSIONS = {
   maxFaqAnswerChars: 1000,
   maxLaunchStoryChars: 600,
 } as const
+
+/**
+ * Rate limiting for the Submit intake — SPEC-submit-backend.md §9.
+ * http/middleware/rateLimit.ts is the only module that reads these.
+ */
+export const RATE_LIMIT = {
+  /** Requests a single IP may make inside the rolling window. */
+  maxPerWindow: 5,
+  /** The rolling window's length, in milliseconds. */
+  windowMs: 60 * 60 * 1000,
+} as const

@@ -38,6 +38,8 @@ export interface ErrorBody {
 export interface ErrorResponse {
   status: number
   body: ErrorBody
+  /** Response headers to set — e.g. Retry-After for RATE_LIMITED. Not part of the JSON body. */
+  headers?: Record<string, string>
   /** True when the cause was unexpected and deserves an error-level log line. */
   unexpected: boolean
 }
@@ -103,7 +105,12 @@ export function toErrorResponse(error: unknown): ErrorResponse {
     body.error.fields = apiError.fields
   }
 
-  return { status: apiError.status, body, unexpected: false }
+  return {
+    status: apiError.status,
+    body,
+    unexpected: false,
+    ...(apiError.headers ? { headers: apiError.headers } : {}),
+  }
 }
 
 export interface ErrorHandlerOptions {
@@ -123,7 +130,7 @@ export function createErrorHandler({ logger }: ErrorHandlerOptions) {
     res: Response,
     _next: NextFunction,
   ): void {
-    const { status, body, unexpected } = toErrorResponse(error)
+    const { status, body, headers, unexpected } = toErrorResponse(error)
     const log = logger.child({
       requestId: requestIdOf(res),
       method: req.method,
@@ -142,6 +149,9 @@ export function createErrorHandler({ logger }: ErrorHandlerOptions) {
       return
     }
 
+    if (headers) {
+      for (const [key, value] of Object.entries(headers)) res.setHeader(key, value)
+    }
     res.status(status).json(body)
   }
 }
