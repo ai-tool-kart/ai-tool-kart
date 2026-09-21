@@ -178,6 +178,32 @@ const MAX_PLAN_STEPS = 4
 const MAX_FOLLOW_UPS = 3
 
 /**
+ * The plain-language phrase for a stage, for chips only.
+ *
+ * A restatement of catalogue/taxonomy.ts's STAGE_ACTIONS, deliberately not
+ * imported: this directory has no dependency on the catalogue at all today,
+ * and Phase H lifts it into shared/llm for the News Agent, which has no
+ * catalogue either. Same reasoning as MockAssistantReply below.
+ */
+const STAGE_PHRASES: Record<string, string> = {
+  research: 'Look into your options',
+  ideate: 'Come up with ideas',
+  draft: 'Write the first version',
+  design: 'Make it look good',
+  build: 'Build it',
+  edit: 'Polish it',
+  analyse: 'See how it is doing',
+  automate: 'Make it run on its own',
+  publish: 'Share it',
+  collaborate: 'Work on it with your team',
+}
+
+/** Falls back to the raw stage rather than throwing on an unknown one. */
+function stagePhrase(stage: string): string {
+  return STAGE_PHRASES[stage] ?? stage
+}
+
+/**
  * Builds a plan out of the candidate cards, and nothing else.
  *
  * The ordering rule is worth stating: candidates arrive from retrieval already
@@ -401,7 +427,11 @@ function followUpsFrom(cards: readonly ToolCard[]): string[] {
 
   for (const stage of byFrequency(cards.flatMap((card) => card.stages))) {
     if (chips.length >= MAX_FOLLOW_UPS) break
-    chips.push(`Focus on ${stage}`)
+    // The raw stage id ("automate", "collaborate") is plumbing, not something a
+    // non-technical reader would say. See the plain-language rules in
+    // assistant/prompts/assistant.ts, which this mirrors for the same reason
+    // MockAssistantReply restates the schema rather than importing it.
+    chips.push(stagePhrase(stage))
   }
 
   if (chips.length < MAX_FOLLOW_UPS && cards.length > 1) chips.push('Compare the top two')
