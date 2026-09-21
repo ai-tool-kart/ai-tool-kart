@@ -30,6 +30,8 @@ export interface ErrorBody {
     code: string
     message: string
     details?: Record<string, unknown>
+    /** Per-field messages. Present only for errors that carry one — see ApiErrorOptions.fields. */
+    fields?: Record<string, string>
   }
 }
 
@@ -96,6 +98,9 @@ export function toErrorResponse(error: unknown): ErrorResponse {
   const body: ErrorBody = { error: { code: apiError.code, message: apiError.message } }
   if (Object.keys(apiError.details).length > 0) {
     body.error.details = apiError.details
+  }
+  if (apiError.fields) {
+    body.error.fields = apiError.fields
   }
 
   return { status: apiError.status, body, unexpected: false }

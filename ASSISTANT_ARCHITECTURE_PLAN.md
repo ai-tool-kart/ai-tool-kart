@@ -866,6 +866,12 @@ exact strings in the unimplemented-provider error message. **`npm test` in
 ## 13. API design
 
 Base path `/api`. JSON only. Every error body is `{ error: { code, message } }`.
+An error may also carry an optional `fields` map — `{ error: { code, message,
+fields: { <name>: <message> } } }` — when the failure is per-input rather than
+one message for the whole request. Today only `VALIDATION_FAILED` on
+`POST /api/submissions` (SPEC-submit-backend.md §7) sets it; every other error
+in this document omits it, and the extension is additive, not a second
+contract.
 
 ### `POST /api/assistant/chat`
 

@@ -323,3 +323,37 @@ export const ASSISTANT = {
   /** Words taken after a rejection or confirmation marker before resolving. */
   maxToolPhraseWords: 4,
 } as const
+
+/* ─── Submissions — SPEC-submit-backend.md §6, §7 ──────────────────────────── */
+
+/**
+ * Route mount point and length caps for the Submit intake
+ * (submissions/schema.ts, http/routes/submissions.ts). `path` gives
+ * `POST /api/submissions` per §7.
+ *
+ * The length caps mirror client/src/types/submit.ts's own constants
+ * (TAGLINE_MAX, DESCRIPTION_MAX, MAX_TAGS, MAX_ALTERNATIVES, MAX_FAQS,
+ * LAUNCH_STORY_MAX) — deliberately duplicated, not imported, per the spec's
+ * §6 note: the client/server boundary is not worth a shared package yet,
+ * and a half-working path alias across it would be worse than an honest
+ * copy. If the two drift and it starts causing bugs, the fix is a real
+ * `shared/` workspace, not a one-off import.
+ */
+export const SUBMISSIONS = {
+  path: '/submissions',
+
+  maxSiteUrlChars: 2048,
+  maxNameChars: 80,
+  maxTaglineChars: 80,
+  maxDescriptionChars: 2000,
+  maxPriceChars: 80,
+  maxTags: 6,
+  maxTagChars: 40,
+  maxAudienceChars: 200,
+  maxAlternatives: 6,
+  maxAlternativeChars: 80,
+  maxFaqs: 5,
+  maxFaqQuestionChars: 200,
+  maxFaqAnswerChars: 1000,
+  maxLaunchStoryChars: 600,
+} as const

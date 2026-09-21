@@ -49,6 +49,8 @@ import type { MockProviderOptions } from './llm/providers/mock.ts'
 import { createRetrievalService, type RetrievalService } from './retrieval/service.ts'
 import { createJsonWorkSavingsRepository } from './savings/json.ts'
 import type { WorkSavingsRepository } from './savings/repository.ts'
+import { createSubmissionService, type SubmissionService } from './submissions/service.ts'
+import { createSubmissionStore, type SubmissionStore } from './submissions/store.ts'
 import { createJsonUsageStoryRepository } from './stories/json.ts'
 import type { UsageStoryRepository } from './stories/repository.ts'
 import type { Logger } from './utils/logger.ts'
@@ -65,6 +67,8 @@ export interface Container {
   /** One client, one budget, one unit of work. Never share the result. */
   readonly createLLMClientForTurn: () => LLMClient
   readonly assistant: AssistantEngine
+  /** The Submit form's intake — SPEC-submit-backend.md §7's orchestration. */
+  readonly submissions: SubmissionService
 }
 
 export interface CreateContainerOptions {
@@ -88,6 +92,14 @@ export interface CreateContainerOptions {
   /** Test seam for the work-savings estimates. Same purpose as `stories`. */
   savings?: WorkSavingsRepository
   /**
+   * Test seam for the submission store.
+   *
+   * Same purpose as `catalogue`: a route test points this at an isolated
+   * `createJsonSubmissionStore(tempPath)` so it neither touches
+   * server/data/submissions.json nor leaks state between test files.
+   */
+  submissionStore?: SubmissionStore
+  /**
    * Test seam for the provider.
    *
    * Scripted mock behaviour — malformed output, refusals, outages — is injected
@@ -104,6 +116,7 @@ export function createContainer({
   catalogue: injected,
   stories: injectedStories,
   savings: injectedSavings,
+  submissionStore: injectedSubmissionStore,
   mock,
 }: CreateContainerOptions): Container {
   // The only line in the server that names a concrete catalogue implementation.
@@ -117,6 +130,13 @@ export function createContainer({
 
   // ...and the only line naming a concrete savings implementation.
   const savings = injectedSavings ?? createJsonWorkSavingsRepository({ logger })
+
+  // createSubmissionStore() (submissions/store.ts) is itself the switch point
+  // for a future Postgres implementation, so this line never has to name
+  // store.json.ts directly — unlike catalogue/stories/savings above, which
+  // have no such factory of their own yet.
+  const submissionStore = injectedSubmissionStore ?? createSubmissionStore()
+  const submissions = createSubmissionService({ store: submissionStore, catalogue })
 
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
@@ -148,5 +168,6 @@ export function createContainer({
     savings,
     createLLMClientForTurn,
     assistant,
+    submissions,
   }
 }

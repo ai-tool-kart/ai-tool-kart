@@ -38,6 +38,17 @@
  *                               fine; the answer was not. Retrying may help.
  *   PROVIDER_UNAVAILABLE   503  The provider errored, refused, or the turn's
  *                               budget tripped. Nothing was produced at all.
+ *
+ * Two more were added for the Submit intake (SPEC-submit-backend.md §7),
+ * after a first pass gave that one route its own flat, non-`{code,message}`
+ * error shape and that turned out to be a mistake — the single-errorHandler
+ * contract this file exists to enforce wins, not a per-route exception:
+ *
+ *   VALIDATION_FAILED      400  The submission failed schema validation.
+ *                               Carries `fields` (below) so the form can
+ *                               attach each message to its own input.
+ *   DUPLICATE_URL          409  The normalized siteUrl already exists, in
+ *                               the submission store or the live catalogue.
  */
 export type ApiErrorCode =
   | 'CONFIG'
@@ -45,6 +56,8 @@ export type ApiErrorCode =
   | 'NOT_FOUND'
   | 'ASSISTANT_UNAVAILABLE'
   | 'PROVIDER_UNAVAILABLE'
+  | 'VALIDATION_FAILED'
+  | 'DUPLICATE_URL'
   | 'INTERNAL'
 
 const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
@@ -53,6 +66,8 @@ const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
   NOT_FOUND: 404,
   ASSISTANT_UNAVAILABLE: 422,
   PROVIDER_UNAVAILABLE: 503,
+  VALIDATION_FAILED: 400,
+  DUPLICATE_URL: 409,
   INTERNAL: 500,
 }
 
@@ -62,12 +77,20 @@ export interface ApiErrorOptions {
   status?: number
   /** Structured context. Logged always; sent to the client only when safe. */
   details?: Record<string, unknown>
+  /**
+   * Per-field messages, keyed by the client's own field names — e.g.
+   * `{ tagline: "Must be 80 characters or fewer" }`. Optional, and specific
+   * to VALIDATION_FAILED today; errorHandler.ts includes it in the response
+   * body only when present, so every other error's shape is unaffected.
+   */
+  fields?: Record<string, string>
 }
 
 export class ApiError extends Error {
   readonly code: ApiErrorCode
   readonly status: number
   readonly details: Record<string, unknown>
+  readonly fields?: Record<string, string>
 
   constructor(code: ApiErrorCode, message: string, options: ApiErrorOptions = {}) {
     super(message, options.cause !== undefined ? { cause: options.cause } : undefined)
@@ -75,6 +98,7 @@ export class ApiError extends Error {
     this.code = code
     this.status = options.status ?? DEFAULT_STATUS[code]
     this.details = options.details ?? {}
+    this.fields = options.fields
   }
 }
 
@@ -96,6 +120,20 @@ export function invalidRequest(message: string, details?: Record<string, unknown
 
 export function notFound(message: string, details?: Record<string, unknown>): ApiError {
   return new ApiError('NOT_FOUND', message, { details })
+}
+
+/** A submission failed schema validation. `fields` is what the form renders. */
+export function validationFailed(
+  message: string,
+  fields?: Record<string, string>,
+  details?: Record<string, unknown>,
+): ApiError {
+  return new ApiError('VALIDATION_FAILED', message, { fields, details })
+}
+
+/** A submission's normalized siteUrl already exists — store or catalogue, caller's choice which. */
+export function duplicateUrl(message: string, details?: Record<string, unknown>): ApiError {
+  return new ApiError('DUPLICATE_URL', message, { details })
 }
 
 /**

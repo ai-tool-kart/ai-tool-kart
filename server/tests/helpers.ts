@@ -22,6 +22,8 @@ import { createJsonWorkSavingsRepository } from '../src/savings/json.ts'
 import type { WorkSavingsRepository } from '../src/savings/repository.ts'
 import { createJsonUsageStoryRepository } from '../src/stories/json.ts'
 import type { UsageStoryRepository } from '../src/stories/repository.ts'
+import type { SubmissionStore } from '../src/submissions/store.ts'
+import type { NewSubmission } from '../src/submissions/types.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
 
 /**
@@ -88,6 +90,7 @@ export function testContainer(
   mock?: MockProviderOptions,
   stories?: UsageStoryRepository,
   savings?: WorkSavingsRepository,
+  submissionStore?: SubmissionStore,
 ): Container {
   return createContainer({
     env,
@@ -96,6 +99,7 @@ export function testContainer(
     ...(mock ? { mock } : {}),
     ...(stories ? { stories } : {}),
     ...(savings ? { savings } : {}),
+    ...(submissionStore ? { submissionStore } : {}),
   })
 }
 
@@ -224,6 +228,60 @@ export function makeSavings(overrides: Partial<WorkSavingsEstimate> = {}): WorkS
  */
 export function fixtureSavings(estimates: WorkSavingsEstimate[]): WorkSavingsRepository {
   return createJsonWorkSavingsRepository({ records: estimates })
+}
+
+/* ─── Submission fixtures (SPEC-submit-backend.md) ─────────────────────────── */
+
+/**
+ * A valid NewSubmission with every required field filled in, overridable
+ * field by field. Same rationale as makeTool: a test states only what it is
+ * actually testing.
+ */
+export function makeSubmission(overrides: Partial<NewSubmission> = {}): NewSubmission {
+  return {
+    siteUrl: 'https://example.com',
+    normalizedUrl: 'example.com',
+    name: 'Fixture Tool',
+    tagline: 'A fixture used by the server test-suite.',
+    description:
+      'A fixture submission used to exercise the store without depending on real intake.',
+    category: 'Writing',
+    pricingModel: 'Freemium',
+    tags: [],
+    alternatives: [],
+    faqs: [],
+    plan: 'free',
+    launchWeekId: '2026-11-16',
+    ...overrides,
+  }
+}
+
+/**
+ * A valid raw submission REQUEST BODY — the shape a client actually POSTs,
+ * before normalizeUrl or the store add anything server-side. Distinct from
+ * makeSubmission's NewSubmission: a real request body has no normalizedUrl,
+ * id, status or createdAt at all, and schema.test.ts needs to inject
+ * invalid values (wrong types, missing keys, extra keys) that would not
+ * type-check against a strict interface — hence the loose return type.
+ */
+export function makeSubmissionPayload(
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return {
+    siteUrl: 'https://example.com',
+    name: 'Fixture Tool',
+    tagline: 'A fixture used by the server test-suite.',
+    description:
+      'A fixture submission used to exercise the schema without depending on real intake.',
+    category: 'Writing',
+    pricingModel: 'Freemium',
+    tags: [],
+    alternatives: [],
+    faqs: [],
+    plan: 'free',
+    launchWeekId: '2026-11-16',
+    ...overrides,
+  }
 }
 
 export interface TestServer {
