@@ -69,6 +69,8 @@ export interface Container {
   readonly assistant: AssistantEngine
   /** The Submit form's intake — SPEC-submit-backend.md §7's orchestration. */
   readonly submissions: SubmissionService
+  /** The raw store behind `submissions` — the review script reads/writes this directly. */
+  readonly submissionStore: SubmissionStore
 }
 
 export interface CreateContainerOptions {
@@ -169,5 +171,6 @@ export function createContainer({
     createLLMClientForTurn,
     assistant,
     submissions,
+    submissionStore,
   }
 }

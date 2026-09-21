@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "node --watch --env-file-if-exists=.env src/index.ts",
     "start": "node --env-file-if-exists=.env src/index.ts",
+    "review": "node --experimental-strip-types --env-file-if-exists=.env src/reviewSubmissions.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
     "test": "node --experimental-strip-types --test tests/**/*.test.ts"

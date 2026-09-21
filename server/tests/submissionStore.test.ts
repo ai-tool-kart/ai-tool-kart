@@ -147,6 +147,41 @@ await test('createJsonSubmissionStore', async (t) => {
     })
   })
 
+  await t.test('updateStatus() changes status and persists it', async () => {
+    await withStore(async (store) => {
+      const created = await store.create(makeSubmission())
+      const updated = await store.updateStatus(created.id, 'approved')
+      assert.equal(updated.status, 'approved')
+
+      // Read back through a FRESH store instance, over the same file — a
+      // second store reading its own set() call would prove nothing about
+      // whether the write actually reached disk.
+      const reread = await store.list({ status: 'approved' })
+      assert.equal(reread.length, 1)
+      assert.equal(reread[0]?.id, created.id)
+    })
+  })
+
+  await t.test('updateStatus() sets reviewNote only when one is given', async () => {
+    await withStore(async (store) => {
+      const created = await store.create(makeSubmission())
+      const rejected = await store.updateStatus(created.id, 'rejected', 'Broken link')
+      assert.equal(rejected.status, 'rejected')
+      assert.equal(rejected.reviewNote, 'Broken link')
+
+      const second = await store.create(makeSubmission({ normalizedUrl: 'no-note.example' }))
+      const approved = await store.updateStatus(second.id, 'approved')
+      assert.equal(approved.reviewNote, undefined)
+    })
+  })
+
+  await t.test('updateStatus() on an unknown id throws rather than silently no-op', async () => {
+    await withStore(async (store) => {
+      await store.create(makeSubmission())
+      await assert.rejects(() => store.updateStatus('not-a-real-id', 'approved'))
+    })
+  })
+
   await t.test('20 concurrent create() calls all land, each with a distinct id', async () => {
     await withStore(async (store) => {
       const submissions = Array.from({ length: 20 }, (_unused, index) =>

@@ -19,6 +19,12 @@ export interface SubmissionStore {
   create(input: NewSubmission): Promise<Submission>
   findByNormalizedUrl(url: string): Promise<Submission | null>
   list(opts?: { status?: SubmissionStatus; limit?: number }): Promise<Submission[]>
+  /**
+   * The review script's write — approve or reject a submission. `note` is
+   * kept only when given (a rejection reason); approving never sets one.
+   * Throws if `id` does not match any submission.
+   */
+  updateStatus(id: string, status: SubmissionStatus, note?: string): Promise<Submission>
 }
 
 /**

@@ -12,6 +12,18 @@
  * duplicate check (findByNormalizedUrl, repository.ts). Invalid data throws
  * before the server can listen — see schema.ts.
  *
+ * `create()` is the one write: the review script's approve step
+ * (review/approve.ts), and nothing else. Same atomic temp-file-then-rename
+ * technique submissions/store.json.ts uses (writeCatalogueFile below), and
+ * the same module-scope `writeChain` pattern to serialize concurrent writers
+ * — but that only serializes writers WITHIN this process. It does nothing
+ * for a second `node` process (the review script run against a live server)
+ * racing this one; that is why reviewSubmissions.ts refuses to run against a
+ * server that already has the port bound, rather than relying on this. Only
+ * `create()` ever pushes into `tools` or mutates `indexes` after
+ * construction — every other method treats both as read-only, which is what
+ * makes them safe to read without a lock.
+ *
  * The methods are async because the PORT is async, not because anything here
  * awaits. That asymmetry is the entire point of §6.2: PostgresToolCatalogue
  * changes what happens inside these methods and nothing about their signatures.
@@ -25,10 +37,12 @@
  * is already opaque, so swapping it for a keyset cursor changes this file only.
  */
 
+import { randomUUID } from 'node:crypto'
 import { readFileSync } from 'node:fs'
+import { mkdir, rename, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { configError } from '../domain/errors.ts'
+import { configError, internalError } from '../domain/errors.ts'
 import type { Tool } from '../domain/types.ts'
 import type { Logger } from '../utils/logger.ts'
 import { normalizeUrl } from '../utils/normalizeUrl.ts'
@@ -45,6 +59,24 @@ import {
 } from './taxonomy.ts'
 
 const DATA_FILE = 'tools.json'
+
+/**
+ * The single write queue for every catalogue this process creates — same
+ * reasoning as submissions/store.json.ts's `writeChain`: two concurrent
+ * writers racing the same read-modify-write cycle can silently drop one
+ * record, and a shared chain costs nothing real at this scale. Only
+ * `create()` (the review script's write) ever enqueues onto it.
+ */
+let writeChain: Promise<void> = Promise.resolve()
+
+function enqueueWrite<T>(task: () => Promise<T>): Promise<T> {
+  const result = writeChain.then(task)
+  writeChain = result.then(
+    () => undefined,
+    () => undefined,
+  )
+  return result
+}
 
 /** Resolved relative to this module so it works from src/ and from dist/. */
 function defaultDataPath(): string {
@@ -78,11 +110,17 @@ export function createJsonToolCatalogue(
   const { logger, records, path } = options
   const origin = records !== undefined ? 'in-memory records' : (path ?? defaultDataPath())
   const raw = records !== undefined ? records : readCatalogueFile(origin)
+  // Where create() writes. Independent of `origin`: a catalogue built from
+  // in-memory `records` (every fixture-backed test) has no real file behind
+  // it, so — unlike `origin` above — this must NOT fall back to
+  // defaultDataPath() in that case, or create() would silently overwrite the
+  // real seed file the moment a fixture-only test called it.
+  const filePath = records !== undefined ? path : (path ?? defaultDataPath())
 
   const tools = parseCatalogue(raw, { origin })
   const indexes = buildIndexes(tools)
   const taxonomy = buildTaxonomy()
-  const activeCount = tools.filter((tool) => tool.status === 'active').length
+  let activeCount = tools.filter((tool) => tool.status === 'active').length
 
   logger?.info('Catalogue loaded', {
     driver: 'json',
@@ -128,6 +166,49 @@ export function createJsonToolCatalogue(
     async findByNormalizedUrl(url) {
       return indexes.byNormalizedUrl.get(url)
     },
+
+    async create(tool) {
+      if (filePath === undefined) {
+        throw internalError(
+          'This catalogue has no real file to write to (built from in-memory records, no path given).',
+        )
+      }
+
+      return enqueueWrite(async () => {
+        // Revalidates the WHOLE catalogue, new record included, through the
+        // identical function the loader runs at boot — same duplicate-id and
+        // duplicate-slug checks, same field rules. A record that would fail
+        // the server's next startup must fail HERE, not get written and fail
+        // then. `tools` is already-parsed `Tool[]`, which `parseCatalogue`
+        // accepts as readily as raw JSON — no need to keep the original file
+        // text around just to re-validate it.
+        const validated = parseCatalogue([...tools, tool], { origin: `${origin} (pending write)` })
+        const created = validated[validated.length - 1] as Tool
+
+        await writeCatalogueFile(filePath, validated)
+
+        // Only after the write succeeds: a later call in this same process
+        // (there is at most one per review-script run, but retrieval and
+        // any other reader sharing this instance must see it too) finds the
+        // tool without a restart.
+        tools.push(created)
+        indexOne(indexes, created)
+        if (created.status === 'active') activeCount++
+
+        return created
+      })
+    },
+  }
+}
+
+async function writeCatalogueFile(filePath: string, tools: Tool[]): Promise<void> {
+  const tempPath = `${filePath}.${randomUUID()}.tmp`
+  try {
+    await mkdir(dirname(filePath), { recursive: true })
+    await writeFile(tempPath, JSON.stringify(tools, null, 2), 'utf8')
+    await rename(tempPath, filePath)
+  } catch (error) {
+    throw internalError('Could not write the tool catalogue.', error)
   }
 }
 
@@ -165,24 +246,27 @@ function buildIndexes(tools: Tool[]): Indexes {
     byNormalizedUrl: new Map(),
   }
 
-  for (const tool of tools) {
-    indexes.byId.set(tool.id, tool)
-    indexes.bySlug.set(tool.slug, tool)
-    push(indexes.byCategory, tool.cat, tool)
-    for (const stage of tool.stages) push(indexes.byStage, stage, tool)
-    for (const role of tool.roles) push(indexes.byRole, role, tool)
-
-    // Every record, active or draft — an unpublished duplicate is still a
-    // duplicate. A `url` that somehow fails to parse is left unindexed
-    // rather than failing catalogue load over one bad record.
-    try {
-      indexes.byNormalizedUrl.set(normalizeUrl(tool.url), tool)
-    } catch {
-      /* left unindexed */
-    }
-  }
+  for (const tool of tools) indexOne(indexes, tool)
 
   return indexes
+}
+
+/** One record's worth of buildIndexes's loop body — also `create()`'s way of updating the live indexes without a full rebuild. */
+function indexOne(indexes: Indexes, tool: Tool): void {
+  indexes.byId.set(tool.id, tool)
+  indexes.bySlug.set(tool.slug, tool)
+  push(indexes.byCategory, tool.cat, tool)
+  for (const stage of tool.stages) push(indexes.byStage, stage, tool)
+  for (const role of tool.roles) push(indexes.byRole, role, tool)
+
+  // Every record, active or draft — an unpublished duplicate is still a
+  // duplicate. A `url` that somehow fails to parse is left unindexed
+  // rather than failing catalogue load over one bad record.
+  try {
+    indexes.byNormalizedUrl.set(normalizeUrl(tool.url), tool)
+  } catch {
+    /* left unindexed */
+  }
 }
 
 function push<K>(map: Map<K, Tool[]>, key: K, tool: Tool): void {

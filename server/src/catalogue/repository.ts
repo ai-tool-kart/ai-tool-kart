@@ -92,4 +92,16 @@ export interface ToolCatalogueRepository {
    * not be able to silently stop catching duplicates past the cutoff.
    */
   findByNormalizedUrl(url: string): Promise<Tool | undefined>
+  /**
+   * Adds one tool to the catalogue. The review script's write
+   * (review/approve.ts) — nothing else calls this today.
+   *
+   * `tool` must already be a complete, valid record: this does not assign an
+   * id/slug, compute a pricing tier, or fill in a missing field. It DOES
+   * revalidate the whole catalogue with the new record included through the
+   * same parse function the loader uses, and refuses to write anything the
+   * server would refuse to boot with — see the JSON adapter for why that
+   * check has to happen before the write, not after.
+   */
+  create(tool: Tool): Promise<Tool>
 }

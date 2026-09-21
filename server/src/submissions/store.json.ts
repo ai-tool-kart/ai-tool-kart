@@ -116,5 +116,22 @@ export function createJsonSubmissionStore(filePath: string): SubmissionStore {
       const filtered = opts.status ? records.filter((record) => record.status === opts.status) : records
       return opts.limit !== undefined ? filtered.slice(0, opts.limit) : filtered
     },
+
+    async updateStatus(id, status, note) {
+      return enqueueWrite(async () => {
+        const records = await readAll()
+        const index = records.findIndex((record) => record.id === id)
+        if (index === -1) throw new Error(`No submission found for id "${id}".`)
+
+        const current = records[index] as Submission
+        // `reviewNote` is deliberately omitted rather than set to undefined
+        // when `note` is absent — the record should never carry an explicit
+        // `"reviewNote": null`-shaped key for an approval that had no note.
+        const updated: Submission = note !== undefined ? { ...current, status, reviewNote: note } : { ...current, status }
+        records[index] = updated
+        await writeAll(records)
+        return updated
+      })
+    },
   }
 }

@@ -37,6 +37,8 @@ export interface Submission {
   launchWeekId: string // local-date string, see client/src/utils/launchWeeks.ts
 
   submittedFromIp?: string // for abuse review — see §9
+  /** Why a reviewer rejected this submission. Set only by SubmissionStore.updateStatus. */
+  reviewNote?: string
 }
 
 /**
