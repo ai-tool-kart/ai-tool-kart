@@ -773,7 +773,7 @@ function assistantContainer(mock?: MockProviderOptions) {
 }
 
 await test('POST /api/assistant/chat', async (t) => {
-  await t.test('a valid request returns 200 and the hydrated six-section plan', async () => {
+  await t.test('a valid request returns 200 and the hydrated plan', async () => {
     await withServer(assistantContainer(), async ({ origin }) => {
       const response = await chat(origin, {
         message: 'I am a video editor and I want to speed up my YouTube editing workflow',
@@ -789,16 +789,13 @@ await test('POST /api/assistant/chat', async (t) => {
 
       const plan = body.plan
       assert.ok(plan, 'a recommendation carries a plan')
-      assert.ok(plan.title.length > 0)
-      assert.ok(plan.tools.length > 0)
-      assert.ok(Array.isArray(plan.agents))
-      assert.ok(plan.workflow.length > 0)
-      assert.equal(typeof plan.prompts, 'string')
-      assert.equal(typeof plan.comparison, 'string')
+      assert.ok(plan.goal.length > 0)
       assert.ok(plan.steps.length > 0)
 
-      // Hydrated records, not ids — this is what "Your AI Plan" renders.
-      for (const tool of plan.tools) {
+      // Hydrated records, not ids — this is what the plan panel renders.
+      for (const step of plan.steps) {
+        assert.ok(step.action.length > 0)
+        const tool = step.tool
         assert.equal(typeof tool.slug, 'string')
         assert.equal(typeof tool.mono, 'string')
         assert.equal(typeof tool.url, 'string')
@@ -817,9 +814,9 @@ await test('POST /api/assistant/chat', async (t) => {
         await chat(origin, { message: 'edit videos faster for youtube' }),
       )
 
-      for (const tool of body.plan?.tools ?? []) {
-        const lookup = await fetch(`${origin}/api/tools/${tool.slug}`)
-        assert.equal(lookup.status, 200, `${tool.slug} should be a real catalogue record`)
+      for (const step of body.plan?.steps ?? []) {
+        const lookup = await fetch(`${origin}/api/tools/${step.tool.slug}`)
+        assert.equal(lookup.status, 200, `${step.tool.slug} should be a real catalogue record`)
       }
     })
   })

@@ -160,7 +160,7 @@ function harness(
 await test('the authoritative assistant schema', async (t) => {
   const valid = makeAssistantReply()
 
-  await t.test('a recommendation with a six-section plan validates', () => {
+  await t.test('a recommendation with a plan validates', () => {
     const parsed = AssistantReplySchema.safeParse(valid)
     assert.equal(parsed.success, true)
     assert.ok(parsed.success && parsed.data.plan)
@@ -196,7 +196,7 @@ await test('the authoritative assistant schema', async (t) => {
         ...valid,
         plan: {
           ...valid.plan,
-          workflow: [{ stage: 'edit', why: 'a', run: 'rm -rf /' }],
+          steps: [{ stage: 'edit', toolId: 'beta-editor', run: 'rm -rf /' }],
         },
       }).success,
       false,
@@ -210,17 +210,17 @@ await test('the authoritative assistant schema', async (t) => {
     )
   })
 
-  await t.test('the plan carries tool IDS, never tool objects', () => {
+  await t.test('a step carries a tool ID, never a tool object', () => {
     // A schema that accepted tool objects would let the model DESCRIBE a tool,
     // which is the one thing it must never do.
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { ...valid.plan, toolIds: [{ id: 'beta-editor', name: 'Beta Editor' }] },
+      plan: { steps: [{ stage: 'edit', toolId: { id: 'beta-editor', name: 'Beta Editor' } }] },
     })
     assert.equal(result.success, false)
   })
 
-  await t.test('the caps from §10.1 are enforced', () => {
+  await t.test('the caps are enforced', () => {
     const over = <T>(value: T, count: number): T[] => Array.from({ length: count }, () => value)
     assert.equal(
       AssistantReplySchema.safeParse({ ...valid, followUps: over('x', 4) }).success,
@@ -233,41 +233,54 @@ await test('the authoritative assistant schema', async (t) => {
       }).success,
       false,
     )
-    assert.equal(
-      AssistantReplySchema.safeParse({
-        ...valid,
-        plan: { ...valid.plan, toolIds: over('beta-editor', ASSISTANT.maxPlanTools + 1) },
-      }).success,
-      false,
-    )
+    const stages = ['research', 'ideate', 'draft', 'design', 'build'] as const
     assert.equal(
       AssistantReplySchema.safeParse({
         ...valid,
         plan: {
-          ...valid.plan,
-          workflow: over({ stage: 'edit', why: 'a' }, ASSISTANT.maxWorkflowStages + 1),
+          steps: Array.from({ length: ASSISTANT.maxPlanSteps + 1 }, (_unused, index) => ({
+            stage: stages[index],
+            toolId: `tool-${index}`,
+          })),
         },
       }).success,
       false,
-    )
-    assert.equal(
-      AssistantReplySchema.safeParse({
-        ...valid,
-        plan: {
-          ...valid.plan,
-          workflow: [{ stage: 'edit', why: 'x'.repeat(ASSISTANT.maxWhyChars + 1) }],
-        },
-      }).success,
-      false,
+      'more steps than the schema allows must fail even with distinct tools and stages',
     )
   })
 
-  await t.test('a workflow tool id is optional, so an unstaffed stage is expressible', () => {
+  await t.test('a stage outside the closed vocabulary is rejected', () => {
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { ...valid.plan, workflow: [{ stage: 'publish', why: 'No candidate covers this.' }] },
+      plan: { steps: [{ stage: 'invent', toolId: 'beta-editor' }] },
     })
-    assert.equal(result.success, true)
+    assert.equal(result.success, false)
+  })
+
+  await t.test('a tool used in two steps is rejected', () => {
+    const result = AssistantReplySchema.safeParse({
+      ...valid,
+      plan: {
+        steps: [
+          { stage: 'draft', toolId: 'beta-editor' },
+          { stage: 'edit', toolId: 'beta-editor' },
+        ],
+      },
+    })
+    assert.equal(result.success, false)
+  })
+
+  await t.test('a stage used in two steps is rejected', () => {
+    const result = AssistantReplySchema.safeParse({
+      ...valid,
+      plan: {
+        steps: [
+          { stage: 'edit', toolId: 'beta-editor' },
+          { stage: 'edit', toolId: 'alpha-writer' },
+        ],
+      },
+    })
+    assert.equal(result.success, false)
   })
 
   await t.test('the plan/intent relationship is left to grounding, not refined here', () => {
@@ -423,42 +436,38 @@ await test('a normal recommendation turn', async (t) => {
     assert.ok(response.plan)
   })
 
-  await t.test('every plan tool is a real, hydrated catalogue record', () => {
+  await t.test('every step tool is a real, hydrated catalogue record', () => {
     const ids = new Set(TOOLS.filter((tool) => tool.status === 'active').map((tool) => tool.id))
-    for (const tool of response.plan?.tools ?? []) {
-      assert.ok(ids.has(tool.id), `${tool.id} is not in the catalogue`)
-      assert.equal(typeof tool.slug, 'string')
-      assert.equal(typeof tool.url, 'string')
-      assert.equal(typeof tool.mono, 'string')
-      assert.equal(typeof tool.price, 'string')
+    for (const step of response.plan?.steps ?? []) {
+      assert.ok(ids.has(step.tool.id), `${step.tool.id} is not in the catalogue`)
+      assert.equal(typeof step.tool.slug, 'string')
+      assert.equal(typeof step.tool.url, 'string')
+      assert.equal(typeof step.tool.mono, 'string')
+      assert.equal(typeof step.tool.price, 'string')
     }
   })
 
-  await t.test('all six plan sections are present', () => {
+  await t.test('the plan carries a goal line and at least one step', () => {
     const plan = response.plan
     assert.ok(plan)
-    assert.ok(plan.tools.length > 0)
-    assert.ok(Array.isArray(plan.agents))
-    assert.ok(plan.workflow.length > 0)
-    assert.equal(typeof plan.prompts, 'string')
-    assert.equal(typeof plan.comparison, 'string')
+    assert.equal(plan.goal, VIDEO_QUERY, 'the goal is the user\'s own message, verbatim')
     assert.ok(plan.steps.length > 0)
   })
 
-  await t.test('workflow tools are hydrated, not left as ids', () => {
-    const staffed = response.plan?.workflow.filter((step) => step.tool) ?? []
-    assert.ok(staffed.length > 0)
-    for (const step of staffed) {
-      assert.equal(typeof step.tool?.name, 'string')
-      assert.ok(response.plan?.tools.some((tool) => tool.id === step.tool?.id))
+  await t.test('each step names a plain-language action', () => {
+    for (const step of response.plan?.steps ?? []) {
+      assert.equal(typeof step.action, 'string')
+      assert.ok(step.action.length > 0)
     }
   })
 
+  await t.test('no tool repeats across steps', () => {
+    const steps = response.plan?.steps ?? []
+    assert.equal(new Set(steps.map((step) => step.tool.id)).size, steps.length)
+  })
+
   await t.test('the draft record never reaches the response', () => {
-    const shown = [
-      ...(response.plan?.tools ?? []),
-      ...(response.plan?.workflow.flatMap((step) => (step.tool ? [step.tool] : [])) ?? []),
-    ]
+    const shown = response.plan?.steps.map((step) => step.tool) ?? []
     assert.equal(shown.some((tool) => tool.id === 'draft-hidden'), false)
   })
 
@@ -523,16 +532,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Video workflow',
-                  toolIds: ['beta-editor', 'superfakeai'],
-                  agents: [],
-                  workflow: [
-                    { stage: 'edit', toolId: 'beta-editor', why: 'It cuts video.' },
-                    { stage: 'publish', toolId: 'superfakeai', why: 'It publishes.' },
+                  steps: [
+                    { stage: 'edit', toolId: 'beta-editor' },
+                    { stage: 'publish', toolId: 'superfakeai' },
                   ],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
                 },
               }),
             ),
@@ -543,13 +546,12 @@ await test('grounding is wired into the turn', async (t) => {
 
     const response = await h.engine.runTurn({ message: VIDEO_QUERY })
     assert.deepEqual(
-      response.plan?.tools.map((tool) => tool.id),
+      response.plan?.steps.map((step) => step.tool.id),
       ['beta-editor'],
     )
     assert.deepEqual(response.meta.droppedToolIds, ['superfakeai'])
     // Counted in meta, and present nowhere else in the response.
     assert.equal(JSON.stringify(response.plan).includes('superfakeai'), false)
-    assert.equal(response.plan?.workflow[1]?.tool, undefined)
   })
 
   await t.test('a plan of nothing but forged ids degrades to a clarification', async () => {
@@ -561,13 +563,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Invented',
-                  toolIds: ['superfakeai', 'ghost-tool'],
-                  agents: [],
-                  workflow: [{ stage: 'edit', toolId: 'superfakeai', why: 'x' }],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
+                  steps: [
+                    { stage: 'edit', toolId: 'superfakeai' },
+                    { stage: 'build', toolId: 'ghost-tool' },
+                  ],
                 },
               }),
             ),
@@ -603,13 +602,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Mixed',
-                  toolIds: ['beta-editor', 'superfakeai'],
-                  agents: [],
-                  workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'x' }],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
+                  steps: [
+                    { stage: 'edit', toolId: 'beta-editor' },
+                    { stage: 'build', toolId: 'superfakeai' },
+                  ],
                 },
               }),
             ),

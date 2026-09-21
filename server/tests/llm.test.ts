@@ -150,17 +150,11 @@ await test('extractJson degrades usefully rather than guessing', async (t) => {
 
 await test('structured output validation', async (t) => {
   const valid: AssistantReply = {
-    message: 'Here is a stack.',
+    message: 'Here is a plan.',
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      title: 'Video workflow',
-      toolIds: ['descript'],
-      agents: [],
-      workflow: [{ stage: 'edit', toolId: 'descript', why: 'It cuts by transcript.' }],
-      prompts: 'Starter prompts',
-      comparison: 'Descript on one upload',
-      steps: ['Try Descript.'],
+      steps: [{ stage: 'edit', toolId: 'descript' }],
     },
     followUps: ['Compare the top two'],
   }
@@ -204,7 +198,7 @@ await test('structured output validation', async (t) => {
 
   await t.test('describeSchema renders the contract for the prompt', () => {
     const described = describeSchema(AssistantReplySchema)
-    assert.match(described, /toolIds/)
+    assert.match(described, /toolId/)
     assert.match(described, /followUps/)
     assert.doesNotThrow(() => JSON.parse(described))
   })
@@ -430,13 +424,7 @@ function validReply(): AssistantReply {
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      title: 'Video workflow',
-      toolIds: ['descript'],
-      agents: [],
-      workflow: [{ stage: 'edit', toolId: 'descript', why: 'because' }],
-      prompts: 'p',
-      comparison: 'c',
-      steps: ['s'],
+      steps: [{ stage: 'edit', toolId: 'descript' }],
     },
     followUps: [],
   }
@@ -742,7 +730,7 @@ await test('prompt primitives', async (t) => {
     const instruction = jsonOutputInstruction('AssistantReply', describeSchema(AssistantReplySchema))
     assert.match(instruction, /AssistantReply/)
     assert.match(instruction, /raw JSON only/i)
-    assert.match(instruction, /toolIds/)
+    assert.match(instruction, /toolId/)
   })
 
   await t.test('the repair instruction restates the schema and the errors', () => {
@@ -794,11 +782,8 @@ await test('the mock provider', async (t) => {
     const response = await llm.run(assistantRequest())
     const allowed = new Set(CARDS.map((card) => card.id))
 
-    for (const id of response.data.plan?.toolIds ?? []) {
-      assert.ok(allowed.has(id), `${id} was not in the candidate set`)
-    }
-    for (const entry of response.data.plan?.workflow ?? []) {
-      if (entry.toolId) assert.ok(allowed.has(entry.toolId), `${entry.toolId} was invented`)
+    for (const step of response.data.plan?.steps ?? []) {
+      assert.ok(allowed.has(step.toolId), `${step.toolId} was not in the candidate set`)
     }
   })
 
@@ -811,8 +796,10 @@ await test('the mock provider', async (t) => {
       assistantRequest([CARDS[2] as ToolCard], 'I want to generate voiceovers'),
     )
 
-    assert.notDeepEqual(videoPlan.data.plan?.toolIds, audioPlan.data.plan?.toolIds)
-    assert.deepEqual(audioPlan.data.plan?.toolIds, ['elevenlabs'])
+    const videoIds = videoPlan.data.plan?.steps.map((step) => step.toolId)
+    const audioIds = audioPlan.data.plan?.steps.map((step) => step.toolId)
+    assert.notDeepEqual(videoIds, audioIds)
+    assert.deepEqual(audioIds, ['elevenlabs'])
   })
 
   await t.test('it cannot invent a tool the prompt never offered', async () => {
@@ -826,8 +813,8 @@ await test('the mock provider', async (t) => {
     const response = await llm.run(assistantRequest(only, 'I need to edit video and record audio'))
 
     const serialised = JSON.stringify(response.data)
-    assert.equal(response.data.plan?.toolIds.length, 1)
-    assert.equal(response.data.plan?.toolIds[0], 'opus-clip')
+    assert.equal(response.data.plan?.steps.length, 1)
+    assert.equal(response.data.plan?.steps[0]?.toolId, 'opus-clip')
     assert.equal(serialised.includes('descript'), false, 'named a tool it was not given')
     assert.equal(serialised.includes('elevenlabs'), false, 'named a tool it was not given')
   })
@@ -852,8 +839,8 @@ await test('the mock provider', async (t) => {
     const serialised = JSON.stringify(response.data).toLowerCase()
     assert.equal(serialised.includes('superfakeai'), false)
     assert.equal(serialised.includes('fake.example'), false)
-    for (const id of response.data.plan?.toolIds ?? []) {
-      assert.ok(CARDS.some((card) => card.id === id))
+    for (const step of response.data.plan?.steps ?? []) {
+      assert.ok(CARDS.some((card) => card.id === step.toolId))
     }
   })
 

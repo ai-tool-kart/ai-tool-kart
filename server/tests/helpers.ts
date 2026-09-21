@@ -353,17 +353,11 @@ export async function withServer(
  */
 export function makeAssistantReply(overrides: Partial<AssistantReply> = {}): AssistantReply {
   const base: AssistantReply = {
-    message: 'Here is a stack for that.',
+    message: 'Here is a plan for that.',
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      title: 'Video workflow',
-      toolIds: ['beta-editor'],
-      agents: [],
-      workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'It cuts long video down.' }],
-      prompts: 'Starter prompts for the first cut',
-      comparison: 'Beta Editor on one upload',
-      steps: ['Upload a recording to Beta Editor.'],
+      steps: [{ stage: 'edit', toolId: 'beta-editor' }],
     },
     followUps: ['Compare the top two'],
   }

@@ -159,10 +159,9 @@ export function createMockProvider(options: MockProviderOptions = {}): LLMProvid
  * restatement here costs a few lines and keeps the directory movable; an import
  * would make the move a rewrite. The test is what holds the two in agreement.
  */
-interface WorkflowEntry {
+interface PlanStep {
   stage: string
-  toolId?: string
-  why: string
+  toolId: string
 }
 
 interface MockAssistantReply {
@@ -170,19 +169,12 @@ interface MockAssistantReply {
   intent: 'clarify' | 'recommend'
   understood: { role?: string; goal?: string; constraints: string[] }
   plan?: {
-    title: string
-    toolIds: string[]
-    agents: string[]
-    workflow: WorkflowEntry[]
-    prompts: string
-    comparison: string
-    steps: string[]
+    steps: PlanStep[]
   }
   followUps: string[]
 }
 
-const MAX_PLAN_TOOLS = 5
-const MAX_WORKFLOW_STAGES = 4
+const MAX_PLAN_STEPS = 4
 const MAX_FOLLOW_UPS = 3
 
 /**
@@ -219,28 +211,18 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
     return JSON.stringify(clarify, null, 2)
   }
 
-  const chosen = cards.slice(0, MAX_PLAN_TOOLS)
-  const stages = deriveStages(chosen)
+  const steps = buildSteps(cards)
+  const chosen = steps
+    .map((step) => cards.find((card) => card.id === step.toolId))
+    .filter((card): card is ToolCard => card !== undefined)
 
   const reply: MockAssistantReply = {
-    message: `Here is a starting stack built from ${chosen.length} of the ${cards.length} tools I have for this.`,
+    message: 'Here is a plan for that.',
     intent: 'recommend',
     understood: {
       constraints: constraintsFrom(userText, cards),
     },
-    plan: {
-      title: planTitle(chosen),
-      toolIds: chosen.map((card) => card.id),
-      agents: [],
-      workflow: stages,
-      // One line each, as §10.1 specifies. Both name only tools already chosen.
-      prompts: `Starter prompts for ${chosen[0]?.name ?? 'the first step'}`,
-      comparison:
-        chosen.length > 1
-          ? `${chosen[0]?.name} vs ${chosen[1]?.name} on the same task`
-          : `${chosen[0]?.name} on a single task`,
-      steps: chosen.map((card) => `Try ${card.name} for the ${card.stages[0] ?? 'first'} step.`),
-    },
+    plan: { steps },
     followUps: followUpsFrom(chosen),
   }
 
@@ -271,41 +253,30 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
 }
 
 /**
- * One workflow entry per distinct stage present in the chosen cards.
+ * Assigns each stage one tool and each tool one stage, greedily.
  *
- * Stages come off the cards, so the mock cannot invent a step nothing can staff
- * — the same guarantee retrieval/select.ts enforces upstream.
+ * Candidates arrive already ranked, so walking them in order and taking the
+ * first still-unused stage each one covers is enough: it cannot repeat a tool
+ * or a stage (the schema's own two rules), and it never proposes a stage
+ * nothing in the candidate set can staff, because every stage it names came
+ * off a real card.
  */
-function deriveStages(cards: readonly ToolCard[]): WorkflowEntry[] {
-  const seen = new Set<string>()
-  const workflow: WorkflowEntry[] = []
+function buildSteps(cards: readonly ToolCard[]): PlanStep[] {
+  const usedStages = new Set<string>()
+  const usedTools = new Set<string>()
+  const steps: PlanStep[] = []
 
   for (const card of cards) {
-    for (const stage of card.stages) {
-      if (seen.has(stage) || workflow.length >= MAX_WORKFLOW_STAGES) continue
-      seen.add(stage)
-      workflow.push({
-        stage,
-        toolId: card.id,
-        why: `${card.name} covers the ${stage} step.`,
-      })
-    }
+    if (steps.length >= MAX_PLAN_STEPS) break
+    if (usedTools.has(card.id)) continue
+    const stage = card.stages.find((candidate) => !usedStages.has(candidate))
+    if (!stage) continue
+    usedStages.add(stage)
+    usedTools.add(card.id)
+    steps.push({ stage, toolId: card.id })
   }
 
-  if (workflow.length === 0 && cards[0]) {
-    workflow.push({
-      stage: 'start',
-      toolId: cards[0].id,
-      why: `${cards[0].name} is the closest match in the candidate set.`,
-    })
-  }
-
-  return workflow
-}
-
-function planTitle(cards: readonly ToolCard[]): string {
-  const category = cards[0]?.cat ?? 'AI'
-  return `${category} workflow`
+  return steps
 }
 
 /**
