@@ -1,6 +1,6 @@
 import CatalogueToolCard from '@/components/catalogue/CatalogueToolCard'
 import SpotCard from '@/components/ui/SpotCard'
-import { toPreviewTool, type SubmitFormState } from '@/types/submit'
+import { isFaqRowComplete, toPreviewTool, type SubmitFormState } from '@/types/submit'
 
 /*
  * The sticky right rail: a live render of the EXACT card Browse uses, built
@@ -13,7 +13,14 @@ interface SubmitPreviewPanelProps {
   form: SubmitFormState
 }
 
-const CHECKLIST: ReadonlyArray<{ label: string; done: (form: SubmitFormState) => boolean }> = [
+interface ChecklistItem {
+  label: string
+  done: (form: SubmitFormState) => boolean
+  /** Only listed when relevant — omit to always show. */
+  show?: (form: SubmitFormState) => boolean
+}
+
+const CHECKLIST: readonly ChecklistItem[] = [
   { label: 'Website added', done: (form) => form.siteUrl.trim() !== '' },
   {
     label: 'Essentials complete',
@@ -21,6 +28,13 @@ const CHECKLIST: ReadonlyArray<{ label: string; done: (form: SubmitFormState) =>
   },
   { label: 'Category & pricing set', done: (form) => form.category !== '' && form.pricingModel !== '' },
   { label: 'Launch week picked', done: (form) => form.launchWeekId !== '' },
+  {
+    label: 'Every FAQ has a question and an answer',
+    done: (form) => form.faqs.every(isFaqRowComplete),
+    // Only surfaced once there's an FAQ to judge — otherwise this is a
+    // permanently-green item nobody who skipped FAQs needs to see.
+    show: (form) => form.faqs.length > 0,
+  },
 ]
 
 export default function SubmitPreviewPanel({ form }: SubmitPreviewPanelProps) {
@@ -54,7 +68,7 @@ export default function SubmitPreviewPanel({ form }: SubmitPreviewPanelProps) {
       <SpotCard className="rounded-panel p-5">
         <div className="relative flex flex-col gap-[10px]">
           <span className="text-[11.5px] tracking-[0.14em] text-subtle uppercase">Before you launch</span>
-          {CHECKLIST.map(({ label, done }) => {
+          {CHECKLIST.filter(({ show }) => !show || show(form)).map(({ label, done }) => {
             const complete = done(form)
             return (
               <div key={label} className="flex items-center gap-[10px]">

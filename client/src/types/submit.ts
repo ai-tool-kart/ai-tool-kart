@@ -62,6 +62,16 @@ export function createEmptySubmission(): SubmitFormState {
   }
 }
 
+/**
+ * True when a FAQ row is either fully filled in or fully empty — never
+ * exactly one of question/answer. A half-filled row would otherwise be
+ * silently dropped by `toSubmissionPayload` below, which reads to the person
+ * who typed only one half as their input vanishing for no visible reason.
+ */
+export function isFaqRowComplete(faq: FaqDraft): boolean {
+  return (faq.question.trim() !== '') === (faq.answer.trim() !== '')
+}
+
 /** Whether the required fields for a listing are filled in — gates the launch button. */
 export function isSubmissionReady(form: SubmitFormState): boolean {
   return (
@@ -71,7 +81,8 @@ export function isSubmissionReady(form: SubmitFormState): boolean {
     form.description.trim() !== '' &&
     form.category !== '' &&
     form.pricingModel !== '' &&
-    form.launchWeekId !== ''
+    form.launchWeekId !== '' &&
+    form.faqs.every(isFaqRowComplete)
   )
 }
 
@@ -99,11 +110,13 @@ export interface SubmissionPayload {
  * Two things the form's shape doesn't match on its own:
  *  - `FaqDraft` carries a client-only `id` for React's `key`/editing, which
  *    `SubmissionInputSchema`'s `.strict()` FAQ object would reject outright.
- *  - A FAQ row the user opened and left blank (or half-filled) would 400 on
- *    "Enter a question."/"Enter an answer." for a row they can't see failed,
- *    since neither half is wired to a field-level error. Dropping any row
- *    that isn't fully answered avoids surfacing a validation error for
- *    something that reads to the user as simply "not filled in yet".
+ *  - A FAQ row the user opened and left entirely blank is dropped: an empty
+ *    row is not information, it's an unused slot. A HALF-filled row (only a
+ *    question or only an answer) is a different case and never reaches this
+ *    function at all — `isSubmissionReady` blocks the submit itself and
+ *    SubmitAdvancedSection.tsx shows the "add the other half, or remove
+ *    this" error on the row directly, so silently dropping it here would
+ *    bypass UI the user has already seen.
  *
  * Every string is trimmed here too, ahead of the schema's own `.trim()` —
  * redundant against the server, but it means what gets echoed back in

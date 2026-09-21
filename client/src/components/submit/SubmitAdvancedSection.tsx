@@ -109,40 +109,53 @@ export default function SubmitAdvancedSection({ form, update, errors }: SubmitAd
               </span>
             </div>
 
-            {form.faqs.map((faq, index) => (
-              <div
-                key={faq.id}
-                className="flex flex-col gap-3 rounded-field border border-hairline bg-white/[0.025] p-4"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-[12px] font-semibold text-subtle-dim">Question {index + 1}</span>
-                  <button
-                    type="button"
-                    onClick={() => removeFaq(faq.id)}
-                    aria-label="Remove this question"
-                    className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full text-subtle-dim transition-colors duration-150 hover:bg-white/[0.1] hover:text-ink"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" className="h-[13px] w-[13px]">
-                      <path d="M5 5l14 14M19 5 5 19" />
-                    </svg>
-                  </button>
+            {form.faqs.map((faq, index) => {
+              const hasQuestion = faq.question.trim() !== ''
+              const hasAnswer = faq.answer.trim() !== ''
+              // Blank rows are fine — dropped silently at submit time. Only a
+              // row with exactly one half filled in blocks Launch; see
+              // isFaqRowComplete's header note in types/submit.ts.
+              const questionError = hasAnswer && !hasQuestion ? 'Add a question, or remove this answer.' : undefined
+              const answerError = hasQuestion && !hasAnswer ? 'Add an answer, or remove this question.' : undefined
+              return (
+                <div
+                  key={faq.id}
+                  className="flex flex-col gap-3 rounded-field border border-hairline bg-white/[0.025] p-4"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-[12px] font-semibold text-subtle-dim">Question {index + 1}</span>
+                    <button
+                      type="button"
+                      onClick={() => removeFaq(faq.id)}
+                      aria-label="Remove this question"
+                      className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full text-subtle-dim transition-colors duration-150 hover:bg-white/[0.1] hover:text-ink"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" className="h-[13px] w-[13px]">
+                        <path d="M5 5l14 14M19 5 5 19" />
+                      </svg>
+                    </button>
+                  </div>
+                  <FormField
+                    label="Question"
+                    name={`faq-${faq.id}-question`}
+                    value={faq.question}
+                    placeholder="Does it have a free trial?"
+                    onChange={(question) => updateFaq(faq.id, { question })}
+                    error={questionError}
+                  />
+                  <FormField
+                    label="Answer"
+                    textarea
+                    rows={2}
+                    name={`faq-${faq.id}-answer`}
+                    value={faq.answer}
+                    placeholder="Yes — 14 days, no card required."
+                    onChange={(answer) => updateFaq(faq.id, { answer })}
+                    error={answerError}
+                  />
                 </div>
-                <FormField
-                  label="Question"
-                  value={faq.question}
-                  placeholder="Does it have a free trial?"
-                  onChange={(question) => updateFaq(faq.id, { question })}
-                />
-                <FormField
-                  label="Answer"
-                  textarea
-                  rows={2}
-                  value={faq.answer}
-                  placeholder="Yes — 14 days, no card required."
-                  onChange={(answer) => updateFaq(faq.id, { answer })}
-                />
-              </div>
-            ))}
+              )
+            })}
 
             {form.faqs.length < MAX_FAQS && (
               <button
