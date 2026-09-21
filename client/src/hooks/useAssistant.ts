@@ -101,7 +101,7 @@ export function useAssistant(): AssistantSession {
   const turnsRef = useRef<ChatTurn[]>([])
   const [plan, setPlan] = useState<AssistantPlan | undefined>(undefined)
   const [understood, setUnderstood] = useState<AssistantUnderstood | undefined>(undefined)
-  const [status, setStatus] = useState<AssistantStatus>('idle')
+  const [status, setStatusState] = useState<AssistantStatus>('idle')
   const [error, setError] = useState<string | undefined>(undefined)
   const [canRetry, setCanRetry] = useState(false)
 
@@ -112,6 +112,20 @@ export function useAssistant(): AssistantSession {
   const controllerRef = useRef<AbortController | undefined>(undefined)
   const sequenceRef = useRef(0)
   const mountedRef = useRef(true)
+
+  /*
+   * `send` needs to know whether a turn is in flight the INSTANT it is called,
+   * not after the next render. Two clicks inside one event-loop tick (a
+   * double-click, or two elements both wired to `send`) both read `status` from
+   * the same stale render and would both pass a `status === 'thinking'` check —
+   * React state updates are not synchronous. A ref is, so `send` reads this
+   * instead of the state value.
+   */
+  const statusRef = useRef<AssistantStatus>('idle')
+  const setStatus = useCallback((next: AssistantStatus) => {
+    statusRef.current = next
+    setStatusState(next)
+  }, [])
 
   useEffect(() => {
     mountedRef.current = true
@@ -163,12 +177,17 @@ export function useAssistant(): AssistantSession {
         setCanRetry(retryable)
         setStatus('error')
       })
-  }, [])
+  }, [setStatus])
 
   const send = useCallback(
     (text: string) => {
       const message = text.trim()
       if (!message) return
+      // A second send while a reply is loading is ignored outright, not
+      // queued: see the note on `statusRef` above. `run` already aborts and
+      // replaces an in-flight request, which is right for a genuine retry or
+      // refinement, but wrong for an accidental double-click of the same chip.
+      if (statusRef.current === 'thinking') return
 
       // The history posted with this turn is the transcript BEFORE it — the
       // message itself travels in `message`, and sending it twice would make
@@ -209,7 +228,7 @@ export function useAssistant(): AssistantSession {
     setError(undefined)
     setCanRetry(false)
     setStatus('idle')
-  }, [])
+  }, [setStatus])
 
   return {
     turns,
