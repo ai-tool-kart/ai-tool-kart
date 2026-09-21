@@ -562,6 +562,29 @@ export const STAGE_BY_ID: Record<WorkflowStage, StageDefinition> = Object.fromEn
   STAGE_DEFINITIONS.map((stage) => [stage.id, stage]),
 ) as Record<WorkflowStage, StageDefinition>
 
+/**
+ * The plain-language phrase a non-technical reader sees instead of the stage id.
+ *
+ * "research", "automate" and the rest are the closed vocabulary retrieval and
+ * scoring reason over — they stay exactly as they are everywhere else in this
+ * file. This map is the ONE place a stage becomes a sentence a reader outside
+ * the industry would say out loud, so the assistant's plan can show "Come up
+ * with ideas" instead of "ideate" without a second stage vocabulary appearing
+ * anywhere.
+ */
+export const STAGE_ACTIONS: Record<WorkflowStage, string> = {
+  research: 'Look into your options',
+  ideate: 'Come up with ideas',
+  draft: 'Write the first version',
+  design: 'Make it look good',
+  build: 'Build it',
+  edit: 'Polish it',
+  analyse: 'See how it is doing',
+  automate: 'Make it run on its own',
+  publish: 'Share it',
+  collaborate: 'Work on it with your team',
+}
+
 /* ─── Sorting ──────────────────────────────────────────────────────────────── */
 
 /**
