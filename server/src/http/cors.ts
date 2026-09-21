@@ -24,12 +24,22 @@ export interface CorsOptions {
 
 const DEFAULT_METHODS = ['GET', 'POST', 'OPTIONS']
 const ALLOWED_HEADERS = ['Content-Type']
+/**
+ * Response headers `fetch()` may read for a cross-origin request. Without
+ * this, only the small CORS-safelisted set (Content-Type, Content-Length,
+ * etc.) is visible to client JS — a header an ApiError attaches itself, like
+ * Retry-After on a 429 (domain/errors.ts's `rateLimited`), silently comes
+ * back as `null` from `response.headers.get()` even though curl sees it
+ * fine, because curl isn't subject to CORS at all.
+ */
+const EXPOSED_HEADERS = ['Retry-After']
 const PREFLIGHT_MAX_AGE_SECONDS = 600
 
 export function createCors({ allowedOrigins, methods = DEFAULT_METHODS }: CorsOptions) {
   const allowed = new Set(allowedOrigins)
   const methodList = methods.join(', ')
   const headerList = ALLOWED_HEADERS.join(', ')
+  const exposedHeaderList = EXPOSED_HEADERS.join(', ')
 
   return function cors(req: Request, res: Response, next: NextFunction): void {
     // Always vary on Origin, even when we send nothing else: the response for
@@ -42,6 +52,7 @@ export function createCors({ allowedOrigins, methods = DEFAULT_METHODS }: CorsOp
       res.setHeader('Access-Control-Allow-Origin', origin)
       res.setHeader('Access-Control-Allow-Methods', methodList)
       res.setHeader('Access-Control-Allow-Headers', headerList)
+      res.setHeader('Access-Control-Expose-Headers', exposedHeaderList)
       res.setHeader('Access-Control-Max-Age', String(PREFLIGHT_MAX_AGE_SECONDS))
     }
 
