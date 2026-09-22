@@ -73,11 +73,16 @@ function usePlanReveal(plan: AssistantPlan | undefined, busy: boolean): number {
   return revealed
 }
 
-/** Mirrors the design's `planStatus`, extended for the two states it lacked. */
+/**
+ * Mirrors the design's `planStatus`, extended for the two states it lacked —
+ * minus the design's own complete state, "Ready to run": a plan of catalogue
+ * tools isn't something the site runs on the user's behalf, so the label
+ * overpromised what "See these tools" actually does.
+ */
 function statusLabel(session: AssistantSession, complete: boolean): string {
   if (session.status === 'thinking') return 'Generating'
   if (session.status === 'error') return 'Paused'
-  if (session.plan) return complete ? 'Ready to run' : 'Generating'
+  if (session.plan) return complete ? '' : 'Generating'
   if (session.hasStarted) return 'Needs a little more'
   return 'Ready when you are'
 }
