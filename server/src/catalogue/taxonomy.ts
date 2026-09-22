@@ -363,6 +363,7 @@ export const GOALS_BY_ROLE: Record<RoleName, readonly string[]> = {
     'Create social content',
     'Analyze audience',
     'Build email campaigns',
+    'Follow up with clients',
   ],
   Writer: [
     'Research a topic',
