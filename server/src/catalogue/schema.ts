@@ -95,6 +95,13 @@ export const ToolSchema = z
     cat: z.enum(TOOL_CATEGORIES),
     model: z.enum(PRICING_MODELS),
     tagline: nonEmpty(160),
+    /**
+     * An even plainer restatement of the tagline, for a non-technical reader
+     * seeing the tool for the first time in a plan step. Optional and
+     * editorially written — most records do not have one yet, and the plan
+     * falls back to `tagline` when it is absent (assistant engine.ts).
+     */
+    plainLine: nonEmpty(120).optional(),
     /*
      * 0 means "not assessed yet"; anything else is a 1–5 score.
      *

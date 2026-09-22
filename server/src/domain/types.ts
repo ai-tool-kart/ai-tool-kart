@@ -55,6 +55,12 @@ export interface Tool {
   /** Display pricing chip. Must agree with `pricingTier`; the schema enforces it. */
   model: PricingModel
   tagline: string
+  /**
+   * An even plainer restatement of the tagline, written for a non-technical
+   * reader seeing the tool for the first time in a plan step. Optional —
+   * most records do not have one, and a reader falls back to `tagline`.
+   */
+  plainLine?: string
   /** 1–5, or 0 meaning "no ratings collected yet". */
   rating: number
   reviews: number
@@ -146,6 +152,8 @@ export interface ToolSummary {
   mono: string
   cat: ToolCategoryName
   tagline: string
+  /** See `Tool.plainLine`. Absent when the record has none. */
+  plainLine?: string
   pricingTier: PricingTier
   /** Display string, not an amount. */
   price: string
@@ -163,6 +171,7 @@ export function toToolSummary(tool: Tool): ToolSummary {
     mono: tool.mono,
     cat: tool.cat,
     tagline: tool.tagline,
+    plainLine: tool.plainLine,
     pricingTier: tool.pricingTier,
     price: tool.price,
     rating: tool.rating,

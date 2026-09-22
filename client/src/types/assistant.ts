@@ -34,6 +34,8 @@ export interface AssistantToolSummary {
   mono: string
   cat: string
   tagline: string
+  /** Plainer restatement of the tagline for a plan step. Absent on most tools. */
+  plainLine?: string
   pricingTier: ToolPricingTier
   /** Display string, e.g. "Free tier + paid plans". Not parseable. */
   price: string
