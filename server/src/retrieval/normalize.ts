@@ -199,6 +199,21 @@ export function stem(word: string): string {
   if (value.length > 4 && value.endsWith('s') && !value.endsWith('ss') && !value.endsWith('us')) {
     value = value.slice(0, -1) // "videos" -> "video"
   }
+  /*
+   * The "-ate" family: automate/automated/automation/automations (and every
+   * other verb of this shape — generate/generation, integrate/integration,
+   * collaborate/collaboration, …) must land on one stem, or a query typed in
+   * one form never reaches a catalogue record or keyword written in another.
+   * "automated" already reaches this root through the -ed rule below; these
+   * two catch the base verb and its noun form. The length guards keep this
+   * off short unrelated words ("rate", "nation", "station").
+   */
+  if (value.length > 7 && value.endsWith('ation')) {
+    return value.slice(0, -3) // "automation" -> "automat"
+  }
+  if (value.length > 5 && value.endsWith('ate')) {
+    return value.slice(0, -1) // "automate" -> "automat"
+  }
   if (value.length > 5 && value.endsWith('ing')) {
     const base = value.slice(0, -3)
     // "editing" -> "edit"; "running" -> "run" via the doubled-consonant check.
