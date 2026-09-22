@@ -753,3 +753,17 @@ export function isUseCase(value: string): boolean {
 export function isWorkflowStage(value: string): value is WorkflowStage {
   return STAGE_SET.has(value)
 }
+
+/* ─── Niches (automations, SPEC-automations.md §4) ────────────────────────────
+ *
+ * Not a Tool vocabulary — nothing above this line reads it, and no Tool field
+ * is validated against it. It exists here anyway because taxonomy.ts is the
+ * single source for every closed list in the server (§5.3), and an automation
+ * is close enough in kind (a curated, editorial record) that a second such
+ * list belongs beside this one rather than starting a new file for one array.
+ * It is deliberately NOT part of `Taxonomy`/`buildTaxonomy()` above: that
+ * shape backs the catalogue's public GET /api/taxonomy, and automations have
+ * no route yet to serve it through.
+ */
+export const NICHES = ['Students', 'Customer Support Teams'] as const
+export type NicheName = (typeof NICHES)[number]

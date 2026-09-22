@@ -11,6 +11,7 @@
 import type { AddressInfo } from 'node:net'
 import type { Express } from 'express'
 import { createApp } from '../src/app.ts'
+import type { Automation } from '../src/automations/types.ts'
 import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
 import type { ServerEnv } from '../src/config/env.ts'
@@ -157,6 +158,37 @@ export function makeTool(overrides: Partial<Tool> = {}): Tool {
  */
 export function fixtureCatalogue(tools: Tool[]): ToolCatalogueRepository {
   return createJsonToolCatalogue({ records: tools })
+}
+
+/* ─── Automation fixtures ──────────────────────────────────────────────────── */
+
+/**
+ * A valid automation record with every required field filled in, overridable
+ * field by field — same reasoning as `makeTool` above.
+ */
+export function makeAutomation(overrides: Partial<Automation> = {}): Automation {
+  const id = overrides.id ?? overrides.slug ?? 'fixture-automation'
+  return {
+    id,
+    slug: id,
+    niche: 'Students',
+    persona: 'A fixture persona used by the server test-suite.',
+    title: 'Fixture automation task',
+    intentLabels: ['fixture task'],
+    tools: [{ name: 'Fixture Tool', url: 'https://example.com' }],
+    workflowSummary: 'A fixture workflow summary used by the server test-suite.',
+    samplePrompt: 'Do the fixture task.',
+    beginnerFriendly: 'yes',
+    trustScore: 3,
+    pricingNote: 'Free tier available as of the fixture date.',
+    pricingTier: 'freemium',
+    sourceUrl: 'https://example.com/source',
+    sourceType: 'Vendor site',
+    freshness: 'Retrieved for the fixture suite',
+    batch: 'Fixture Batch',
+    status: 'active',
+    ...overrides,
+  }
 }
 
 /* ─── Usage-story fixtures ─────────────────────────────────────────────────── */

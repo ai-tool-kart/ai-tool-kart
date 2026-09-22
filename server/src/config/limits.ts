@@ -416,3 +416,39 @@ export const RATE_LIMIT = {
   /** The rolling window's length, in milliseconds. */
   windowMs: 60 * 60 * 1000,
 } as const
+
+/**
+ * Per-field length/count limits automations/schema.ts enforces
+ * (SPEC-automations.md §3). Same reasoning as TOOL_FIELDS above: tuning a
+ * cap must never mean editing the validation logic that enforces it.
+ *
+ * A rating-scale bound (`trustScore` 1–5) and a fixed literal union
+ * (`beginnerFriendly`, `status`) are not "caps" in this sense — catalogue/
+ * schema.ts's own `rating: z.number().min(0).max(5)` sets the same
+ * precedent of leaving a domain-fixed scale inline rather than here.
+ */
+export const AUTOMATIONS = {
+  idMaxChars: 64,
+  slugMaxChars: 64,
+  personaMaxChars: 300,
+  titleMaxChars: 160,
+  intentLabelMaxChars: 80,
+  maxIntentLabels: 12,
+  toolNameMaxChars: 80,
+  toolAccessNoteMaxChars: 200,
+  maxTools: 6,
+  workflowSummaryMaxChars: 600,
+  samplePromptMaxChars: 4000,
+  pricingNoteMaxChars: 300,
+  sourceTypeMaxChars: 60,
+  freshnessMaxChars: 60,
+  accessNotesMaxChars: 400,
+  batchMaxChars: 80,
+  /** `AutomationStep` fields — one authored step, not the derived default. */
+  stepTitleMaxChars: 80,
+  stepBodyMaxChars: 600,
+  stepPromptMaxChars: 4000,
+  stepToolNameMaxChars: 80,
+  stepTipMaxChars: 300,
+  maxSteps: 6,
+} as const
