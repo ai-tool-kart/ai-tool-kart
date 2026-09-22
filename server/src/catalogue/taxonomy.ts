@@ -543,7 +543,7 @@ export const STAGE_DEFINITIONS: readonly StageDefinition[] = [
     keywords: [
       'publish', 'post', 'posting', 'share', 'distribute', 'launch', 'ship',
       'deploy', 'upload', 'social', 'seo', 'promote', 'campaign', 'schedule',
-      'audience', 'reach', 'outreach',
+      'audience', 'reach',
     ],
   },
   {
