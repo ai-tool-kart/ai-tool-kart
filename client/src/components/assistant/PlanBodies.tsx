@@ -10,10 +10,16 @@ import type { AssistantPlanStep } from '@/types/assistant'
  * tool — `plainLine` when the record has one, its `tagline` otherwise.
  */
 
-/** "free"/"freemium" both read as "Free" here — a non-technical reader asked
- *  a yes/no question ("is it free or paid?"), not a three-way tier quiz. */
+/**
+ * "Free" is a claim only a fully free tool can make — a freemium tool has a
+ * paid tier behind it, so it reads "Free plan" instead: still a yes/no
+ * answer to "can I start without paying?", but not a promise the tool
+ * itself doesn't make.
+ */
 function priceLabel(pricingTier: AssistantPlanStep['tool']['pricingTier']): string {
-  return pricingTier === 'paid' ? 'Paid' : 'Free'
+  if (pricingTier === 'free') return 'Free'
+  if (pricingTier === 'freemium') return 'Free plan'
+  return 'Paid'
 }
 
 export function PlanSteps({ steps }: { steps: AssistantPlanStep[] }) {
