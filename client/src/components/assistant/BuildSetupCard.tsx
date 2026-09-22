@@ -67,9 +67,16 @@ interface BuildSetupCardProps {
   onScrollToStage: () => void
   /** True while a turn is in flight, so "Let's Build" cannot stack requests. */
   busy: boolean
+  /** Card title. Defaults to the design's own wording. */
+  label?: string
 }
 
-export default function BuildSetupCard({ onBuild, onScrollToStage, busy }: BuildSetupCardProps) {
+export default function BuildSetupCard({
+  onBuild,
+  onScrollToStage,
+  busy,
+  label = 'Build Your AI Setup',
+}: BuildSetupCardProps) {
   const navigate = useNavigate()
   const taxonomy = useTaxonomy()
   const [role, setRole] = useState('')
@@ -109,7 +116,7 @@ export default function BuildSetupCard({ onBuild, onScrollToStage, busy }: Build
             <PlanSectionIcon path={WORKFLOW_ICON} className="h-[15px] w-[15px]" />
           </span>
           <h2 className="text-[15.5px] font-semibold tracking-[-0.016em] text-[#F1EDFB]">
-            Build Your AI Setup
+            {label}
           </h2>
           <span className="rounded-pill border border-[rgba(178,150,255,0.3)] bg-[rgba(124,90,246,0.13)] px-[9px] py-1 text-[9.5px] font-bold tracking-[0.12em] text-[#C6B2FF] uppercase">
             Quick setup

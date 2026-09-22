@@ -5,6 +5,7 @@ import BlogPage from '@/pages/BlogPage'
 import BrowsePage from '@/pages/BrowsePage'
 import ComparePage from '@/pages/ComparePage'
 import HomePage from '@/pages/HomePage'
+import McpServersPage from '@/pages/McpServersPage'
 import NewLaunchesPage from '@/pages/NewLaunchesPage'
 import NewsAgentDemoPage from '@/pages/NewsAgentDemoPage'
 import KitchenSinkPage from '@/pages/KitchenSinkPage'
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogArticlePage />} />
         <Route path="new-launches" element={<NewLaunchesPage />} />
+        <Route path="mcp-servers" element={<McpServersPage />} />
         <Route path="submit" element={<SubmitPage />} />
         {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}
         <Route path="kitchen-sink" element={<KitchenSinkPage />} />

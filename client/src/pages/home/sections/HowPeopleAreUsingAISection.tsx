@@ -51,7 +51,14 @@ const MARQUEE = '[animation:akMarquee_46s_linear_infinite]'
 /** Placeholder cards while the stories load. Matches the seeded set's length. */
 const SKELETON_COUNT = 8
 
-export default function HowPeopleAreUsingAISection() {
+interface HowPeopleAreUsingAISectionProps {
+  /** Heading override. Defaults to the design's own wording. */
+  heading?: string
+}
+
+export default function HowPeopleAreUsingAISection({
+  heading = 'How People Are Using AI',
+}: HowPeopleAreUsingAISectionProps = {}) {
   const { stories, isLoading, failed } = useUsageStories()
 
   if (failed || (!isLoading && stories.length === 0)) return null
@@ -79,7 +86,7 @@ export default function HowPeopleAreUsingAISection() {
               Real setups
             </div>
             <h2 className="mt-3 text-[clamp(30px,3.2vw,40px)] leading-[1.08] font-bold tracking-[-0.032em] text-pretty text-ink">
-              How People Are Using AI
+              {heading}
             </h2>
             <p className="mt-[14px] max-w-[58ch] text-[15px] leading-[1.62] tracking-[-0.006em] text-pretty text-muted-dim">
               Not screenshots of features &mdash; a person, the task in front of them, the tools

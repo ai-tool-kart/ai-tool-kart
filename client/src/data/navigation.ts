@@ -70,6 +70,17 @@ export const WORKFLOWS_ROUTE = '/workflows'
 export const LAUNCHES_ROUTE = '/new-launches'
 
 /**
+ * The MCP server directory — catalogue tools that ship an official Model
+ * Context Protocol server, filtered from the same catalogue rather
+ * than a separate listing (`Tool.isMcpServer`, server/src/domain/types.ts).
+ *
+ * Named here so the hero's "MCP Servers" kind tab (data/hero.ts) and anything
+ * else that links here read one constant. Not on the primary nav — the hero
+ * tab is the only entry point this change adds; a nav item was not asked for.
+ */
+export const MCP_SERVERS_ROUTE = '/mcp-servers'
+
+/**
  * The Community section's element id, and the link that reaches it.
  *
  * Community is a section of the homepage, not a page, so the nav item is a
