@@ -162,6 +162,7 @@ export function createMockProvider(options: MockProviderOptions = {}): LLMProvid
 interface PlanStep {
   stage: string
   toolId: string
+  alsoGoodToolIds: string[]
 }
 
 interface MockAssistantReply {
@@ -175,7 +176,27 @@ interface MockAssistantReply {
 }
 
 const MAX_PLAN_STEPS = 4
+const MAX_ALSO_GOOD = 2
 const MAX_FOLLOW_UPS = 3
+/** A card must score at least this fraction of the leader's score to compete
+ *  for a step at all. Restated from config/limits.ts's ASSISTANT.stepScoreCutoffRatio. */
+const STEP_SCORE_CUTOFF_RATIO = 0.75
+/** Hard ceiling on the tool pool the ratio above can leave standing.
+ *  Restated from ASSISTANT.maxStepCandidates. */
+const MAX_STEP_CANDIDATES = 6
+
+/**
+ * The order a plan's steps are shown in.
+ *
+ * A restatement of catalogue/taxonomy.ts's PLAN_STEP_STAGE_ORDER, deliberately
+ * not imported — same reasoning as STAGE_PHRASES below: this directory has no
+ * dependency on the catalogue today, and Phase H lifts it into shared/llm for
+ * the News Agent, which has no plan to order at all.
+ */
+const STAGE_ORDER = [
+  'research', 'ideate', 'draft', 'design', 'build',
+  'edit', 'publish', 'automate', 'analyse', 'collaborate',
+]
 
 /**
  * The plain-language phrase for a stage, for chips only.
@@ -206,10 +227,12 @@ function stagePhrase(stage: string): string {
 /**
  * Builds a plan out of the candidate cards, and nothing else.
  *
- * The ordering rule is worth stating: candidates arrive from retrieval already
- * ranked, so the mock preserves that order rather than scoring anything itself.
- * Any "preference" the mock expressed would be a second, invisible ranking that
- * Phase E's tests would then be asserting against instead of the real one.
+ * The ranking rule is worth stating: candidates arrive from retrieval already
+ * scored, and the mock reads that score back off each card rather than
+ * scoring anything itself — see stepCandidatePool and buildSteps for the
+ * cutoff and the grouping. Any "preference" the mock expressed on top of the
+ * numbers would be a second, invisible ranking that Phase E's tests would
+ * then be asserting against instead of the real one.
  */
 function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOptions): string {
   const cards = parseToolCards(request.system)
@@ -279,36 +302,73 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
 }
 
 /**
- * Assigns each stage the one tool that does it best, by primary stage only.
+ * Cuts the candidate cards to the ones actually in the running for a step.
+ *
+ * `cards` arrive rank-ordered — retrieval's own score order, preserved end to
+ * end through the prompt and back (see cards.ts) — so the leader is always
+ * `cards[0]`. A card below `STEP_SCORE_CUTOFF_RATIO` of the leader's score did
+ * not really compete for this request; it is in the wider candidate set for
+ * stage coverage and follow-up chips, not because it is a plausible pick. The
+ * hard cap on top of that keeps a plan from reading as a long, unranked list
+ * even when many cards clear the ratio.
+ */
+function stepCandidatePool(cards: readonly ToolCard[]): ToolCard[] {
+  const topScore = cards[0]?.score ?? 0
+  const cutoff = topScore * STEP_SCORE_CUTOFF_RATIO
+  return cards.filter((card) => card.score >= cutoff).slice(0, MAX_STEP_CANDIDATES)
+}
+
+/**
+ * Groups the candidate cards into steps, by primary stage.
  *
  * A card's `stages[0]` is the stage it is FOR — the thing it is actually good
- * at, not a job it can also limp through. Candidates arrive already ranked, so
- * walking them in order and claiming a card's primary stage, when that stage
- * is still open, is enough to make the more relevant tool win any contest for
- * it: the first card to reach a given primary stage is, by construction, the
- * highest-ranked one that wanted it.
+ * at, not a job it can also limp through. This runs against the score-cut
+ * pool (`stepCandidatePool`), so every card considered here already competed
+ * on the numbers; the only question left is how to arrange them.
  *
- * A card whose primary stage is already taken is DROPPED, not reassigned to
- * whatever stage it lists second. Falling back to a card's weaker stages used
- * to mean a tool nobody ranked highly for that job could still end up staffing
- * it, just because it was the first one left standing when the slot came open
- * — a plan that looked complete while quietly recommending the wrong tool for
- * the step it named. Dropping it is honest: the plan gets a real answer for
- * fewer steps rather than a weak answer for every step.
+ * That arrangement is a single pass: walk the pool in rank order and file
+ * each card under its primary stage. Because the pool is rank-ordered, the
+ * first card filed under a stage is — by construction — the highest-scoring
+ * one that wanted it, which makes it that step's main pick; whichever cards
+ * land after it in the same bucket are the "also good" alternates, in the
+ * same rank order, capped at `MAX_ALSO_GOOD`.
+ *
+ * A card is NEVER moved to a stage it lists second because its first choice
+ * was taken by a higher-ranked one — that used to mean a tool nobody ranked
+ * highly for a job could still end up staffing it, a plan that looked
+ * complete while quietly recommending the wrong tool for the step it named.
+ * It becomes an alternate under ITS OWN primary stage instead, or is left out
+ * of the plan if that stage does not make the cut.
+ *
+ * Which stages make the cut is decided by the order buckets first FILL, same
+ * as before — the highest-ranked cards effectively choose which stages get a
+ * step. Once chosen, the steps are re-ordered for DISPLAY by `STAGE_ORDER`,
+ * which is a narrative reading order, not a relevance one.
  */
 function buildSteps(cards: readonly ToolCard[]): PlanStep[] {
-  const usedStages = new Set<string>()
-  const steps: PlanStep[] = []
+  const pool = stepCandidatePool(cards)
+  const groups = new Map<string, ToolCard[]>()
 
-  for (const card of cards) {
-    if (steps.length >= MAX_PLAN_STEPS) break
+  for (const card of pool) {
     const stage = card.stages[0]
-    if (stage === undefined || usedStages.has(stage)) continue
-    usedStages.add(stage)
-    steps.push({ stage, toolId: card.id })
+    if (stage === undefined) continue
+    const group = groups.get(stage)
+    if (group) group.push(card)
+    else groups.set(stage, [card])
   }
 
-  return steps
+  const chosenStages = [...groups.keys()].slice(0, MAX_PLAN_STEPS)
+
+  const steps = chosenStages.map((stage): PlanStep => {
+    const [main, ...rest] = groups.get(stage) as [ToolCard, ...ToolCard[]]
+    return {
+      stage,
+      toolId: main.id,
+      alsoGoodToolIds: rest.slice(0, MAX_ALSO_GOOD).map((card) => card.id),
+    }
+  })
+
+  return steps.sort((a, b) => STAGE_ORDER.indexOf(a.stage) - STAGE_ORDER.indexOf(b.stage))
 }
 
 /**

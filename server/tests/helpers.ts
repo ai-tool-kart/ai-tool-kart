@@ -357,7 +357,7 @@ export function makeAssistantReply(overrides: Partial<AssistantReply> = {}): Ass
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      steps: [{ stage: 'edit', toolId: 'beta-editor' }],
+      steps: [{ stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] }],
     },
     followUps: ['Compare the top two'],
   }

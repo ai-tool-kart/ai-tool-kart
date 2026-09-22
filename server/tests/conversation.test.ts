@@ -663,8 +663,8 @@ await test('multi-turn state is not a way around grounding', async (t) => {
             makeAssistantReply({
               plan: {
                 steps: [
-                  { stage: 'edit', toolId: 'opus-clip' },
-                  { stage: 'publish', toolId: 'superfakeai' },
+                  { stage: 'edit', toolId: 'opus-clip', alsoGoodToolIds: [] },
+                  { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
                 ],
               },
             }),

@@ -44,22 +44,28 @@ const ToolIdSchema = z.string().trim().min(1).max(ASSISTANT.maxToolIdChars)
 /**
  * One step of the plan.
  *
- * A step is a stage from the closed vocabulary and the one tool that does it —
- * nothing else. The plain-language action shown to the reader, the tool's own
- * tagline, and its free/paid label are never written by the model: they are
- * read off the catalogue during hydration (assistant/engine.ts), because the
- * reader is better served by our own words about a real tool than by the
+ * A step is a stage from the closed vocabulary, the one tool that leads it,
+ * and up to `maxAlsoGood` runners-up from the same primary stage — nothing
+ * else. The plain-language action shown to the reader, the tools' own
+ * taglines, and their free/paid labels are never written by the model: they
+ * are read off the catalogue during hydration (assistant/engine.ts), because
+ * the reader is better served by our own words about a real tool than by the
  * model's paraphrase of them.
  *
  * `toolId` is required, not optional. §9 already guarantees every stage a plan
  * names has at least two real candidates behind it, so a step this assistant
  * offers is a step it can staff — an unstaffed stage is not a plan the model
  * should be describing to a non-technical reader at all.
+ *
+ * `alsoGoodToolIds` is never empty by requirement — a step can legitimately be
+ * the only tool that covers its stage — but it is capped, because "also
+ * good" that lists everything left over reads as padding, not a shortlist.
  */
 export const AssistantStepSchema = z
   .object({
     stage: z.enum(WORKFLOW_STAGES),
     toolId: ToolIdSchema,
+    alsoGoodToolIds: z.array(ToolIdSchema).max(ASSISTANT.maxAlsoGood),
   })
   .strict()
 
@@ -92,6 +98,20 @@ export const AssistantPlanSchema = z
         })
       }
       toolSeen.add(step.toolId)
+
+      // A tool belongs to exactly one primary stage, so it can lead at most
+      // one step and be an alternate on at most one — never both, and never
+      // its own alternate.
+      step.alsoGoodToolIds.forEach((id, altIndex) => {
+        if (id === step.toolId || toolSeen.has(id)) {
+          ctx.addIssue({
+            code: 'custom',
+            message: 'A tool cannot be its own alternate or appear elsewhere in the plan.',
+            path: ['steps', index, 'alsoGoodToolIds', altIndex],
+          })
+        }
+        toolSeen.add(id)
+      })
 
       if (stageSeen.has(step.stage)) {
         ctx.addIssue({

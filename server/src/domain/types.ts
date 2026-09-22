@@ -343,17 +343,22 @@ export interface ConversationMessage {
 }
 
 /**
- * One step of a plan, with its tool already hydrated.
+ * One step of a plan, with its tools already hydrated.
  *
  * `action` is the plain-language phrase for the stage (STAGE_ACTIONS in
  * catalogue/taxonomy.ts), computed here rather than written by the model — a
  * reader is better served by our own words about a real tool than by the
  * model's paraphrase of them. The tool's tagline and free/paid label live on
  * `tool` itself; the step does not repeat them.
+ *
+ * `alsoGood` holds the step's runners-up — other tools that cleared the step
+ * cutoff and share this stage as their primary one, ranked below `tool` but
+ * still worth naming. Possibly empty: a step is not required to have any.
  */
 export interface AssistantPlanStep {
   action: string
   tool: ToolSummary
+  alsoGood: ToolSummary[]
 }
 
 /**

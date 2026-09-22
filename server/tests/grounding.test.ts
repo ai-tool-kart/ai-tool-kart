@@ -25,8 +25,8 @@ await test('a forged tool id never survives grounding', async (t) => {
       makeAssistantReply({
         plan: {
           steps: [
-            { stage: 'edit', toolId: 'beta-editor' },
-            { stage: 'publish', toolId: 'superfakeai' },
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+            { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
           ],
         },
       }),
@@ -46,9 +46,9 @@ await test('a forged tool id never survives grounding', async (t) => {
       makeAssistantReply({
         plan: {
           steps: [
-            { stage: 'draft', toolId: 'alpha-writer' },
-            { stage: 'edit', toolId: 'ghost-two' },
-            { stage: 'build', toolId: 'beta-editor' },
+            { stage: 'draft', toolId: 'alpha-writer', alsoGoodToolIds: [] },
+            { stage: 'edit', toolId: 'ghost-two', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'beta-editor', alsoGoodToolIds: [] },
           ],
         },
       }),
@@ -67,9 +67,9 @@ await test('a forged tool id never survives grounding', async (t) => {
       makeAssistantReply({
         plan: {
           steps: [
-            { stage: 'edit', toolId: 'ghost' },
-            { stage: 'build', toolId: 'ghost' },
-            { stage: 'draft', toolId: 'beta-editor' },
+            { stage: 'edit', toolId: 'ghost', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'ghost', alsoGoodToolIds: [] },
+            { stage: 'draft', toolId: 'beta-editor', alsoGoodToolIds: [] },
           ],
         },
       }),
@@ -85,9 +85,9 @@ await test('a forged tool id never survives grounding', async (t) => {
       makeAssistantReply({
         plan: {
           steps: [
-            { stage: 'build', toolId: 'gamma-coder' },
-            { stage: 'draft', toolId: 'alpha-writer' },
-            { stage: 'edit', toolId: 'beta-editor' },
+            { stage: 'build', toolId: 'gamma-coder', alsoGoodToolIds: [] },
+            { stage: 'draft', toolId: 'alpha-writer', alsoGoodToolIds: [] },
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
           ],
         },
       }),
@@ -107,8 +107,8 @@ await test('a plan grounding cannot save degrades to a clarification', async (t)
     message: 'Here are four excellent tools for that.',
     plan: {
       steps: [
-        { stage: 'edit', toolId: 'ghost-one' },
-        { stage: 'build', toolId: 'ghost-two' },
+        { stage: 'edit', toolId: 'ghost-one', alsoGoodToolIds: [] },
+        { stage: 'build', toolId: 'ghost-two', alsoGoodToolIds: [] },
       ],
     },
   })
@@ -157,7 +157,7 @@ await test('an intent that carries no plan cannot smuggle one', async (t) => {
       const result = groundReply(
         makeAssistantReply({
           intent,
-          plan: { steps: [{ stage: 'edit', toolId: 'ghost-two' }] },
+          plan: { steps: [{ stage: 'edit', toolId: 'ghost-two', alsoGoodToolIds: [] }] },
         }),
         CANDIDATES,
       )
@@ -184,8 +184,8 @@ await test('grounding is bounded by the candidate set, not by the catalogue', as
       makeAssistantReply({
         plan: {
           steps: [
-            { stage: 'edit', toolId: 'beta-editor' },
-            { stage: 'build', toolId: 'delta-hidden' },
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'delta-hidden', alsoGoodToolIds: [] },
           ],
         },
       }),

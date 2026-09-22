@@ -62,6 +62,7 @@ const CARDS: ToolCard[] = [
     pricingTier: 'freemium',
     stages: ['edit', 'draft'],
     tagline: 'Edit video by editing the transcript.',
+    score: 9,
   },
   {
     id: 'opus-clip',
@@ -70,6 +71,7 @@ const CARDS: ToolCard[] = [
     pricingTier: 'freemium',
     stages: ['edit', 'publish'],
     tagline: 'Turns long recordings into short clips.',
+    score: 8.5,
   },
   {
     id: 'elevenlabs',
@@ -78,6 +80,7 @@ const CARDS: ToolCard[] = [
     pricingTier: 'freemium',
     stages: ['draft', 'edit'],
     tagline: 'Speech synthesis and voice cloning.',
+    score: 8,
   },
 ]
 
@@ -154,7 +157,7 @@ await test('structured output validation', async (t) => {
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      steps: [{ stage: 'edit', toolId: 'descript' }],
+      steps: [{ stage: 'edit', toolId: 'descript', alsoGoodToolIds: [] }],
     },
     followUps: ['Compare the top two'],
   }
@@ -424,7 +427,7 @@ function validReply(): AssistantReply {
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      steps: [{ stage: 'edit', toolId: 'descript' }],
+      steps: [{ stage: 'edit', toolId: 'descript', alsoGoodToolIds: [] }],
     },
     followUps: [],
   }

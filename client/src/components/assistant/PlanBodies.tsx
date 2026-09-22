@@ -48,6 +48,11 @@ export function PlanSteps({ steps }: { steps: AssistantPlanStep[] }) {
             <span className="mt-[2px] inline-flex w-fit items-center rounded-pill border border-white/[0.09] bg-white/[0.03] px-[8px] py-[2px] text-[10.5px] font-semibold tracking-[0.04em] text-[#9E97B8] uppercase">
               {priceLabel(step.tool.pricingTier)}
             </span>
+            {step.alsoGood.length > 0 && (
+              <p className="text-[11px] leading-[1.4] tracking-[-0.006em] text-pretty text-[#8A83A6]">
+                Also good: {step.alsoGood.map((tool) => tool.name).join(', ')}
+              </p>
+            )}
           </div>
         </li>
       ))}

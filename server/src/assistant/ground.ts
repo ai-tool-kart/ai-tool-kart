@@ -74,9 +74,12 @@ export interface GroundingResult {
  *      rather than as a Zod refinement so it costs a field instead of a retry.
  *   2. Every step's `toolId` must be a candidate. A step whose tool is not in
  *      the candidate set is removed entirely — the schema requires exactly one
- *      tool per step, so there is no honest way to keep a step whose tool
+ *      main tool per step, so there is no honest way to keep a step whose tool
  *      turned out to be invented.
- *   3. If nothing survives, the reply degrades to a clarification.
+ *   3. A forged `alsoGoodToolIds` entry is dropped from its step rather than
+ *      taking the step with it — an alternate is a bonus, not a claim the
+ *      step depends on, so losing one shrinks a list instead of the plan.
+ *   4. If nothing survives, the reply degrades to a clarification.
  */
 export function groundReply(
   reply: AssistantReply,
@@ -97,7 +100,10 @@ export function groundReply(
     if (plan) {
       // Ids inside a plan attached to a clarifying answer are still checked, so
       // a forged one is still counted rather than silently discarded with it.
-      for (const step of plan.steps) if (!allowed.has(step.toolId)) drop(step.toolId)
+      for (const step of plan.steps) {
+        if (!allowed.has(step.toolId)) drop(step.toolId)
+        for (const id of step.alsoGoodToolIds) if (!allowed.has(id)) drop(id)
+      }
     }
     const { plan: _removed, ...rest } = reply
     return {
@@ -107,14 +113,24 @@ export function groundReply(
     }
   }
 
-  // Rule 2 — a step whose tool is not a real candidate cannot be kept.
-  const steps = plan.steps.filter((step) => {
-    if (allowed.has(step.toolId)) return true
-    drop(step.toolId)
-    return false
-  })
+  // Rule 2 — a step whose main tool is not a real candidate cannot be kept.
+  // Rule 3 — an alternate that is not a real candidate is dropped from the list.
+  const steps = plan.steps
+    .filter((step) => {
+      if (allowed.has(step.toolId)) return true
+      drop(step.toolId)
+      return false
+    })
+    .map((step) => ({
+      ...step,
+      alsoGoodToolIds: step.alsoGoodToolIds.filter((id) => {
+        if (allowed.has(id)) return true
+        drop(id)
+        return false
+      }),
+    }))
 
-  // Rule 3 — nothing survived, so there is no plan to show.
+  // Rule 4 — nothing survived, so there is no plan to show.
   if (steps.length === 0) {
     return {
       reply: clarifyFallback(reply),

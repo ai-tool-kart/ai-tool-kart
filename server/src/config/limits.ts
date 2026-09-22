@@ -283,6 +283,23 @@ export const ASSISTANT = {
   maxMessageReplyChars: 600,
   /** A plan is at most this many steps. Each step names one stage and one tool. */
   maxPlanSteps: 4,
+  /** Alternates shown under a step's main pick, e.g. "Also good: X, Y". */
+  maxAlsoGood: 2,
+  /**
+   * How a step's tool pool is cut from the ranked candidate list, before
+   * grouping by primary stage: a tool must score at least this fraction of
+   * the top candidate's score, and the pool is capped regardless.
+   *
+   * Below this line a tool did not really compete for the request — it is in
+   * the candidate set because retrieval keeps a broad pool for stage
+   * coverage and follow-up chips, not because it is a plausible pick. A plan
+   * built from the whole pool could put a tool scoring half the leader's
+   * relevance forward as an "also good" alternative, which reads as an
+   * endorsement the numbers do not support.
+   */
+  stepScoreCutoffRatio: 0.75,
+  /** Hard ceiling on the tool pool the cutoff above can leave standing. */
+  maxStepCandidates: 6,
   maxFollowUps: 3,
   maxConstraints: 4,
   /** Free-text fields the model fills. Bounded so a runaway string is a reject. */

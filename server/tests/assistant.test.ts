@@ -196,7 +196,7 @@ await test('the authoritative assistant schema', async (t) => {
         ...valid,
         plan: {
           ...valid.plan,
-          steps: [{ stage: 'edit', toolId: 'beta-editor', run: 'rm -rf /' }],
+          steps: [{ stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [], run: 'rm -rf /' }],
         },
       }).success,
       false,
@@ -215,7 +215,11 @@ await test('the authoritative assistant schema', async (t) => {
     // which is the one thing it must never do.
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { steps: [{ stage: 'edit', toolId: { id: 'beta-editor', name: 'Beta Editor' } }] },
+      plan: {
+        steps: [
+          { stage: 'edit', toolId: { id: 'beta-editor', name: 'Beta Editor' }, alsoGoodToolIds: [] },
+        ],
+      },
     })
     assert.equal(result.success, false)
   })
@@ -241,6 +245,7 @@ await test('the authoritative assistant schema', async (t) => {
           steps: Array.from({ length: ASSISTANT.maxPlanSteps + 1 }, (_unused, index) => ({
             stage: stages[index],
             toolId: `tool-${index}`,
+            alsoGoodToolIds: [],
           })),
         },
       }).success,
@@ -252,7 +257,7 @@ await test('the authoritative assistant schema', async (t) => {
   await t.test('a stage outside the closed vocabulary is rejected', () => {
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { steps: [{ stage: 'invent', toolId: 'beta-editor' }] },
+      plan: { steps: [{ stage: 'invent', toolId: 'beta-editor', alsoGoodToolIds: [] }] },
     })
     assert.equal(result.success, false)
   })
@@ -262,8 +267,8 @@ await test('the authoritative assistant schema', async (t) => {
       ...valid,
       plan: {
         steps: [
-          { stage: 'draft', toolId: 'beta-editor' },
-          { stage: 'edit', toolId: 'beta-editor' },
+          { stage: 'draft', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
         ],
       },
     })
@@ -275,8 +280,8 @@ await test('the authoritative assistant schema', async (t) => {
       ...valid,
       plan: {
         steps: [
-          { stage: 'edit', toolId: 'beta-editor' },
-          { stage: 'edit', toolId: 'alpha-writer' },
+          { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          { stage: 'edit', toolId: 'alpha-writer', alsoGoodToolIds: [] },
         ],
       },
     })
@@ -379,6 +384,7 @@ await test('the assistant prompt keeps the trust asymmetry', async (t) => {
       pricingTier: 'paid',
       stages: ['edit'],
       tagline: 'Cuts long video down.',
+      score: 5,
     },
   ]
 
@@ -533,8 +539,8 @@ await test('grounding is wired into the turn', async (t) => {
               makeAssistantReply({
                 plan: {
                   steps: [
-                    { stage: 'edit', toolId: 'beta-editor' },
-                    { stage: 'publish', toolId: 'superfakeai' },
+                    { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+                    { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
                   ],
                 },
               }),
@@ -564,8 +570,8 @@ await test('grounding is wired into the turn', async (t) => {
               makeAssistantReply({
                 plan: {
                   steps: [
-                    { stage: 'edit', toolId: 'superfakeai' },
-                    { stage: 'build', toolId: 'ghost-tool' },
+                    { stage: 'edit', toolId: 'superfakeai', alsoGoodToolIds: [] },
+                    { stage: 'build', toolId: 'ghost-tool', alsoGoodToolIds: [] },
                   ],
                 },
               }),
@@ -603,8 +609,8 @@ await test('grounding is wired into the turn', async (t) => {
               makeAssistantReply({
                 plan: {
                   steps: [
-                    { stage: 'edit', toolId: 'beta-editor' },
-                    { stage: 'build', toolId: 'superfakeai' },
+                    { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+                    { stage: 'build', toolId: 'superfakeai', alsoGoodToolIds: [] },
                   ],
                 },
               }),

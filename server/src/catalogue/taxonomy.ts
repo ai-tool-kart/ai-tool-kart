@@ -445,6 +445,31 @@ export const WORKFLOW_STAGES = [
 
 export type WorkflowStage = (typeof WORKFLOW_STAGES)[number]
 
+/**
+ * The order a plan's steps are shown in, once they have been chosen.
+ *
+ * Deliberately a SEPARATE list from `WORKFLOW_STAGES`, and not a re-sort of
+ * it: that array is the taxonomy's own declaration order (grouping research
+ * near ideation, editorial work near design), which is not the order a
+ * reader wants to see a plan unfold in. This one reads as a narrative —
+ * work out what to do, make it, ship it, then keep it running and in sync —
+ * so "publish" comes before "automate", not after "analyse" as it does
+ * above. A permutation of the same ten values, verified by
+ * tests/catalogue.test.ts.
+ */
+export const PLAN_STEP_STAGE_ORDER: readonly WorkflowStage[] = [
+  'research',
+  'ideate',
+  'draft',
+  'design',
+  'build',
+  'edit',
+  'publish',
+  'automate',
+  'analyse',
+  'collaborate',
+]
+
 export interface StageDefinition {
   readonly id: WorkflowStage
   readonly label: string

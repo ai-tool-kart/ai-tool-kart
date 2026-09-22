@@ -45,13 +45,18 @@ export interface AssistantToolSummary {
 }
 
 /**
- * One step of the plan: one plain-language action and the one tool that does
- * it. `action` and the tool's tagline/pricing are the server's own words, read
- * off the catalogue at answer time — never text the model wrote.
+ * One step of the plan: one plain-language action, the tool that leads it,
+ * and its runners-up. `action` and the tools' tagline/pricing are the
+ * server's own words, read off the catalogue at answer time — never text the
+ * model wrote.
+ *
+ * `alsoGood` holds other tools that scored well for this same stage, ranked
+ * below `tool`. Possibly empty — a step is not required to have alternates.
  */
 export interface AssistantPlanStep {
   action: string
   tool: AssistantToolSummary
+  alsoGood: AssistantToolSummary[]
 }
 
 /** The plan: the user's own goal line, and a short list of steps. */

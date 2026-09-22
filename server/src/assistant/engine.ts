@@ -45,12 +45,12 @@ import type {
   AssistantPlanStep,
   ConversationContext,
   ConversationMessage,
-  Tool,
   ToolSummary,
 } from '../domain/types.ts'
 import { toToolSummary } from '../domain/types.ts'
 import type { LLMClient } from '../llm/client.ts'
 import type { ToolCard } from '../llm/prompts/cards.ts'
+import type { ScoredTool } from '../retrieval/score.ts'
 import type { RetrievalService } from '../retrieval/service.ts'
 import type { Logger } from '../utils/logger.ts'
 import { advanceContext, normalizeContext, truncateHistory } from './context.ts'
@@ -188,7 +188,7 @@ export function createAssistantEngine({
         }
       }
 
-      const cards = candidates.map(toToolCard)
+      const cards = retrieved.candidates.map(toToolCard)
       const client = createClient()
 
       const response = await client.run({
@@ -218,7 +218,14 @@ export function createAssistantEngine({
        * record withdrawn between retrieval and hydration disappears from the
        * plan instead of being served from a stale copy.
        */
-      const wanted = grounded.reply.plan?.steps.map((step) => step.toolId) ?? []
+      const wanted = [
+        ...new Set(
+          (grounded.reply.plan?.steps ?? []).flatMap((step) => [
+            step.toolId,
+            ...step.alsoGoodToolIds,
+          ]),
+        ),
+      ]
       const hydrated = wanted.length > 0 ? await hydrate(catalogue, wanted) : new Map()
       const missing = wanted.filter((id) => !hydrated.has(id))
       const droppedToolIds = [...grounded.droppedToolIds, ...missing]
@@ -235,7 +242,14 @@ export function createAssistantEngine({
           .map((step): AssistantPlanStep | undefined => {
             const tool = hydrated.get(step.toolId)
             if (!tool) return undefined
-            return { action: STAGE_ACTIONS[step.stage as WorkflowStage], tool }
+            // An alternate that vanished between retrieval and hydration
+            // shrinks this list; it does not take the step down with it —
+            // the same forgiving rule ground.ts already applies to a forged
+            // alsoGood id.
+            const alsoGood = step.alsoGoodToolIds
+              .map((id) => hydrated.get(id))
+              .filter((candidate): candidate is ToolSummary => candidate !== undefined)
+            return { action: STAGE_ACTIONS[step.stage as WorkflowStage], tool, alsoGood }
           })
           .filter((step): step is AssistantPlanStep => step !== undefined)
 
@@ -297,9 +311,17 @@ export function createAssistantEngine({
   }
 }
 
-/** The compact projection the model is shown. Never the whole record. */
-function toToolCard(tool: Tool): ToolCard {
-  const summary = toToolSummary(tool)
+/**
+ * The compact projection the model is shown. Never the whole record.
+ *
+ * Carries the candidate's own retrieval `score` alongside the display fields
+ * so a step-building pass — the mock's buildSteps, or a real provider working
+ * to the same house rule — can apply the score cutoff itself, without engine
+ * code narrowing the candidate pool everyone else's follow-up chips, breadth
+ * check and "not just this stage" coverage still rely on being broad.
+ */
+function toToolCard(entry: ScoredTool): ToolCard {
+  const summary = toToolSummary(entry.tool)
   return {
     id: summary.id,
     name: summary.name,
@@ -307,6 +329,7 @@ function toToolCard(tool: Tool): ToolCard {
     pricingTier: summary.pricingTier,
     stages: summary.stages,
     tagline: summary.tagline,
+    score: entry.score,
   }
 }
 
