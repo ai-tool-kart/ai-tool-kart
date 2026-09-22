@@ -134,7 +134,10 @@ const CATALOGUE: Tool[] = [
     pricingTier: 'freemium',
     roles: ['Developer'],
     useCases: ['Debug an issue'],
-    stages: ['build', 'analyse'],
+    // Analysis, not building, is what this tool is FOR — its primary stage
+    // must be distinct from cursor/copilot's or the mock's step assignment
+    // (primary stage only, no fallback) drops it outright.
+    stages: ['analyse', 'build'],
     tags: ['Debugging'],
     tagline: 'Finds and explains the bug behind an error.',
     summary: 'Sentry AI triages errors and explains the bug behind a stack trace.',
@@ -154,7 +157,9 @@ const CATALOGUE: Tool[] = [
     pricingTier: 'freemium',
     roles: ['UI/UX Designer'],
     useCases: ['Build wireframes'],
-    stages: ['design', 'ideate'],
+    // Same reasoning as sentry-ai above: its primary stage must not collide
+    // with figma-ai's 'design'.
+    stages: ['ideate', 'design'],
     tags: ['Wireframe'],
     tagline: 'Turns a sketch into a UI wireframe.',
     summary: 'Uizard turns sketches into editable UI wireframes and prototypes.',

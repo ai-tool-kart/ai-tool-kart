@@ -279,26 +279,32 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
 }
 
 /**
- * Assigns each stage one tool and each tool one stage, greedily.
+ * Assigns each stage the one tool that does it best, by primary stage only.
  *
- * Candidates arrive already ranked, so walking them in order and taking the
- * first still-unused stage each one covers is enough: it cannot repeat a tool
- * or a stage (the schema's own two rules), and it never proposes a stage
- * nothing in the candidate set can staff, because every stage it names came
- * off a real card.
+ * A card's `stages[0]` is the stage it is FOR — the thing it is actually good
+ * at, not a job it can also limp through. Candidates arrive already ranked, so
+ * walking them in order and claiming a card's primary stage, when that stage
+ * is still open, is enough to make the more relevant tool win any contest for
+ * it: the first card to reach a given primary stage is, by construction, the
+ * highest-ranked one that wanted it.
+ *
+ * A card whose primary stage is already taken is DROPPED, not reassigned to
+ * whatever stage it lists second. Falling back to a card's weaker stages used
+ * to mean a tool nobody ranked highly for that job could still end up staffing
+ * it, just because it was the first one left standing when the slot came open
+ * — a plan that looked complete while quietly recommending the wrong tool for
+ * the step it named. Dropping it is honest: the plan gets a real answer for
+ * fewer steps rather than a weak answer for every step.
  */
 function buildSteps(cards: readonly ToolCard[]): PlanStep[] {
   const usedStages = new Set<string>()
-  const usedTools = new Set<string>()
   const steps: PlanStep[] = []
 
   for (const card of cards) {
     if (steps.length >= MAX_PLAN_STEPS) break
-    if (usedTools.has(card.id)) continue
-    const stage = card.stages.find((candidate) => !usedStages.has(candidate))
-    if (!stage) continue
+    const stage = card.stages[0]
+    if (stage === undefined || usedStages.has(stage)) continue
     usedStages.add(stage)
-    usedTools.add(card.id)
     steps.push({ stage, toolId: card.id })
   }
 
