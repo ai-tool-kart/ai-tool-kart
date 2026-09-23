@@ -8,6 +8,37 @@
  * the "Sign in / Get started free" pair are absent from the design and from the
  * product direction, so they are absent here too.
  *
+ * "Guides" is the one item the design does not have. /automations shipped with
+ * no way in at all — SPEC-automations.md §1a forbade touching the nav while it
+ * was built, so 1,560 records were reachable only through the assistant's
+ * "Step-by-step guide" button. The spec's §1a now records that the rule is
+ * lifted for this one addition.
+ *
+ * It is "Guides" and not "Automations" because of a hard width limit, not
+ * taste.
+ *
+ * ── The width budget, measured at the breakpoint ─────────────────────────────
+ *
+ * THE NUMBER THAT MATTERS IS THE ONE AT NavPill's min-[1100px] BREAKPOINT, not
+ * the one at a wide desktop. The pill is `mx-auto max-w-nav`, so it only
+ * reaches its 1060px cap at ~1123px viewport and is narrower below that. The
+ * row is therefore tightest the moment it appears, and that is the width an
+ * eighth item has to survive:
+ *
+ *     1100px viewport   nav box 686px   seven items 684px   HEADROOM 2px
+ *     1123px and up     nav box 709px   seven items 684px   headroom 25px
+ *
+ * So the nav is full. An eighth item does not fit at the breakpoint whatever
+ * it is called, and adding one means raising the breakpoint again, shortening
+ * an existing label, or dropping an item — not picking a short word.
+ *
+ * That is also why this one is "Guides" (74px) and not "Automations" (111px):
+ * at the OLD 1080px breakpoint the nav box was 666px against 608px of six
+ * items, 58px of headroom, and even "Tasks" (66px) overflowed. Overflow here
+ * is not a scroll or a truncation — the flex row has no wrap and the links no
+ * shrink-0, so a label breaks onto a second line and the whole row grows from
+ * 34px to 52px. The breakpoint moved to 1100px for exactly that reason.
+ *
  * The prototype routed by in-memory `state.page` and tracked the selected item
  * separately in `state.navKey`, which let two items share a destination while
  * only one looked selected. React derives the active state from the URL instead,
@@ -116,6 +147,7 @@ export const ASSISTANT_ROUTE = `/#${ASSISTANT_SECTION_ID}`
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
   { label: 'Workflows', to: WORKFLOWS_ROUTE },
+  { label: 'Guides', to: '/automations' },
   { label: 'New Launches', to: LAUNCHES_ROUTE },
   { label: 'Our AI Assistant', to: ASSISTANT_ROUTE, matchesRoute: false },
   { label: 'Blog', to: '/blog' },
