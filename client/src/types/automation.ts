@@ -84,7 +84,8 @@ export interface AutomationTool {
 /** One step — authored, or one of the three the server derives. */
 export interface AutomationStep {
   title: string
-  body: string
+  /** Absent on the derived "Use this prompt" step. */
+  body?: string
   /** Rendered in a bordered block with a copy button. */
   prompt?: string
   toolName?: string

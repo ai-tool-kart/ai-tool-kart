@@ -42,9 +42,11 @@ export default function AutomationStepList({ steps, tools }: AutomationStepListP
                 <span className="sr-only">Step {index + 1}: </span>
                 {step.title}
               </h3>
-              <p className="text-[14px] leading-[1.6] tracking-[-0.006em] text-pretty text-[#C0B9D6]">
-                {step.body}
-              </p>
+              {step.body && (
+                <p className="text-[14px] leading-[1.6] tracking-[-0.006em] text-pretty text-[#C0B9D6]">
+                  {step.body}
+                </p>
+              )}
 
               {linked?.url && (
                 <a

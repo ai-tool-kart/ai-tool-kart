@@ -52,7 +52,12 @@ export interface AutomationTool {
  */
 export interface AutomationStep {
   title: string
-  body: string
+  /**
+   * Optional on the TYPE because derived step 2 ("Use this prompt") has none —
+   * its title and prompt block say it all. AutomationStepSchema still requires
+   * a body on AUTHORED steps: an editor writing a step should write one.
+   */
+  body?: string
   /** Rendered with a copy button, same as `Automation.samplePrompt`. */
   prompt?: string
   /** Free text, not an `AutomationTool` — a step names a tool, it need not

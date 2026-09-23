@@ -216,7 +216,8 @@ steps ?? deriveSteps(automation)
 
 1. **Open the tool** — `tools[0].name`, linked to `url`. Shows
    `accessNote` when present.
-2. **Use this prompt** — `samplePrompt`, with a copy button.
+2. **Use this prompt** — `samplePrompt`, with a copy button. No body:
+   the title and the prompt block say it.
 3. **How it works** — `workflowSummary`.
 
 Step 3 is the weak one: `workflowSummary` describes the procedure, not
