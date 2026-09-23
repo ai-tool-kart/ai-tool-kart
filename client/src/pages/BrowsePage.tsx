@@ -210,6 +210,9 @@ export default function BrowsePage() {
         )}
       </header>
 
+      {/* The cards' names are h3s; this keeps the outline h1 → h2 → h3 in both
+          modes (the same fix as the automations list). */}
+      {isPlanView && <h2 className="sr-only">Results</h2>}
       {isPlanView ? (
         planTools.isLoading ? (
           <div className="mt-[34px]">
@@ -274,6 +277,7 @@ export default function BrowsePage() {
             />
 
             <div>
+              <h2 className="sr-only">Results</h2>
               <div className="mb-[18px] flex items-baseline justify-between gap-4">
                 <p className="text-[14px] text-muted-dim" aria-live="polite">
                   {showSkeleton && 'Loading tools…'}
