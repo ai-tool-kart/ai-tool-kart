@@ -8,8 +8,8 @@
     "node": ">=22.5.0"
   },
   "scripts": {
-    "dev": "node --watch --env-file-if-exists=.env src/index.ts",
-    "start": "node --env-file-if-exists=.env src/index.ts",
+    "dev": "node --experimental-strip-types --watch --env-file-if-exists=.env src/index.ts",
+    "start": "node --experimental-strip-types --env-file-if-exists=.env src/index.ts",
     "review": "node --experimental-strip-types --env-file-if-exists=.env src/reviewSubmissions.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
