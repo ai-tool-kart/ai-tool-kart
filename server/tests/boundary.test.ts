@@ -549,3 +549,95 @@ await test('the assistant module keeps its dependencies pointing inward', async 
     assert.equal(/await |async |from 'node:/.test(ground), false)
   })
 })
+
+/*
+ * The automations boundary.
+ *
+ * A fourth content source behind a fourth port (SPEC-automations.md §2), with
+ * the stories' guards plus two of its own. It must never import the catalogue
+ * or retrieval: an automation EMBEDS its tools and links to the catalogue only
+ * through `catalogueSlug`, and an import would turn a recipe into a join. And
+ * it is 25 files, not one, so the guard is on the data DIRECTORY and on the
+ * filesystem itself — only json.ts may touch either.
+ *
+ * The importer (server/scripts/importAutomations.ts) is outside src/, so this
+ * scan does not see it; its header says it must never be imported from here.
+ */
+await test('the automations boundary holds', async (t) => {
+  const AUTOMATIONS_DIR = join(SRC, 'automations')
+  const automationFiles = files.filter((file) => file.startsWith(AUTOMATIONS_DIR))
+
+  await t.test('the scan found the automations module', () => {
+    assert.ok(automationFiles.length >= 6, `expected automations/, found ${automationFiles.length} files`)
+  })
+
+  await t.test('nothing outside automations/ names its data directory', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(AUTOMATIONS_DIR))
+      .filter((file) => /automations[\/]data/.test(readFileSync(file, 'utf8')))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'only src/automations/ may know where the automations live')
+  })
+
+  await t.test('only the JSON adapter touches the filesystem, even inside automations/', () => {
+    const offenders = automationFiles
+      .filter((file) => !file.endsWith('json.ts'))
+      .filter((file) => /from 'node:fs'|from 'fs'/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the directory read belongs in automations/json.ts alone')
+  })
+
+  await t.test('automations never import the catalogue or retrieval', () => {
+    const offenders = automationFiles
+      .filter((file) => /from '\.\.\/(catalogue|retrieval)\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'an automation embeds its tools; vocabulary comes via domain/types.ts')
+  })
+
+  await t.test('the catalogue and retrieval never import automations', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(CATALOGUE_DIR) || file.startsWith(join(SRC, 'retrieval')))
+      .filter((file) => /from '\.\.\/automations\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('automations never import express or the HTTP layer', () => {
+    const offenders = automationFiles
+      .filter((file) => /from 'express'|from '\.\.\/http\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('routes never import the JSON automations adapter', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(join(SRC, 'http')))
+      .filter((file) => /createJsonAutomations|automations\/json/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'routes receive a repository from the container')
+  })
+
+  await t.test('container.ts is the only module constructing the adapter', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(AUTOMATIONS_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => codeOf(file).includes('createJsonAutomations('))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('no src/ module imports the importer', () => {
+    const offenders = files
+      .filter((file) => /scripts\/importAutomations|importAutomations\.ts/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the importer and SheetJS stay out of the server')
+  })
+})

@@ -11,6 +11,8 @@
 import type { AddressInfo } from 'node:net'
 import type { Express } from 'express'
 import { createApp } from '../src/app.ts'
+import { createJsonAutomations } from '../src/automations/json.ts'
+import type { AutomationRepository } from '../src/automations/repository.ts'
 import type { Automation } from '../src/automations/types.ts'
 import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
@@ -92,6 +94,7 @@ export function testContainer(
   stories?: UsageStoryRepository,
   savings?: WorkSavingsRepository,
   submissionStore?: SubmissionStore,
+  automations?: AutomationRepository,
 ): Container {
   return createContainer({
     env,
@@ -101,6 +104,7 @@ export function testContainer(
     ...(stories ? { stories } : {}),
     ...(savings ? { savings } : {}),
     ...(submissionStore ? { submissionStore } : {}),
+    ...(automations ? { automations } : {}),
   })
 }
 
@@ -190,6 +194,11 @@ export function makeAutomation(overrides: Partial<Automation> = {}): Automation 
     status: 'active',
     ...overrides,
   }
+}
+
+/** An automations repository over fixture records — never the imported data. */
+export function fixtureAutomations(automations: Automation[]): AutomationRepository {
+  return createJsonAutomations({ records: automations })
 }
 
 /* ─── Usage-story fixtures ─────────────────────────────────────────────────── */

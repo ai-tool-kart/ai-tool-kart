@@ -153,8 +153,12 @@ export function parseAutomations(records: unknown, source: ValidationSource): Au
     }
   })
 
-  problems.push(...findDuplicates(automations, 'id'))
-  problems.push(...findDuplicates(automations, 'slug'))
+  problems.push(...findDuplicates(automations, 'id', (a) => a.id))
+  // Slugs are unique within a niche only — the importer assigns them per
+  // niche, and two niches can share one.
+  problems.push(
+    ...findDuplicates(automations, 'slug', (a) => `${a.niche}\u0000${a.slug}`, (a) => `${a.niche}/${a.slug}`),
+  )
 
   if (problems.length > 0) {
     throw configError(
@@ -181,18 +185,23 @@ function describeRecord(record: unknown, index: number): string {
   return `[${index}] (no id or title)`
 }
 
-function findDuplicates(automations: Automation[], field: 'id' | 'slug'): string[] {
+function findDuplicates(
+  automations: Automation[],
+  field: 'id' | 'slug',
+  keyOf: (automation: Automation) => string,
+  labelOf: (automation: Automation) => string = keyOf,
+): string[] {
   const seen = new Map<string, number>()
   const problems: string[] = []
   automations.forEach((automation, index) => {
-    const value = automation[field]
-    const first = seen.get(value)
+    const key = keyOf(automation)
+    const first = seen.get(key)
     if (first === undefined) {
-      seen.set(value, index)
+      seen.set(key, index)
       return
     }
     problems.push(
-      `  [${index}] ${field}="${value}": duplicate — already used by record [${first}]`,
+      `  [${index}] ${field}="${labelOf(automation)}": duplicate — already used by record [${first}]`,
     )
   })
   return problems

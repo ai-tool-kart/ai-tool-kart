@@ -10,9 +10,9 @@
  * (SPEC-automations.md §1, "Why tools are embedded").
  *
  * That is also why this file, and everything under automations/, never
- * imports catalogue/ or retrieval/ (SPEC-automations.md §2) — enforced by a
- * boundary.test.ts block added in a later slice, the same way stories/ and
- * savings/ are. The one exception is vocabulary: `PricingTier`, `NicheName`
+ * imports catalogue/ or retrieval/ (SPEC-automations.md §2) — enforced by
+ * boundary.test.ts's automations block, the same way stories/ and savings/
+ * are. The one exception is vocabulary: `PricingTier`, `NicheName`
  * and `CatalogueKind` are still catalogue/taxonomy.ts's closed lists (§5.3 — one
  * definition per vocabulary), reached here through domain/types.ts's value
  * and type re-exports rather than an import of catalogue/ itself.
@@ -46,7 +46,7 @@ export interface AutomationTool {
 /**
  * One authored step of a plan. Optional at the record level — most
  * automations have none yet, and a reader gets three DERIVED steps instead
- * (SPEC-automations.md §5, `deriveSteps` — a later slice). This type exists
+ * (SPEC-automations.md §5, deriveSteps.ts). This type exists
  * now so the schema can accept authored content the day it arrives without a
  * later shape change.
  */

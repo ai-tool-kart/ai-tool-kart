@@ -38,6 +38,8 @@
  */
 
 import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
+import { createJsonAutomations } from './automations/json.ts'
+import type { AutomationRepository } from './automations/repository.ts'
 import { createJsonToolCatalogue } from './catalogue/json.ts'
 import type { ToolCatalogueRepository } from './catalogue/repository.ts'
 import type { ServerEnv } from './config/env.ts'
@@ -64,6 +66,8 @@ export interface Container {
   readonly stories: UsageStoryRepository
   /** Editorial work-savings estimates. Keyed on a kind of work, not on a tool. */
   readonly savings: WorkSavingsRepository
+  /** Imported task recipes (SPEC-automations.md). Never imports the catalogue. */
+  readonly automations: AutomationRepository
   /** One client, one budget, one unit of work. Never share the result. */
   readonly createLLMClientForTurn: () => LLMClient
   readonly assistant: AssistantEngine
@@ -93,6 +97,8 @@ export interface CreateContainerOptions {
   stories?: UsageStoryRepository
   /** Test seam for the work-savings estimates. Same purpose as `stories`. */
   savings?: WorkSavingsRepository
+  /** Test seam for the automations. Same purpose as `stories`. */
+  automations?: AutomationRepository
   /**
    * Test seam for the submission store.
    *
@@ -118,6 +124,7 @@ export function createContainer({
   catalogue: injected,
   stories: injectedStories,
   savings: injectedSavings,
+  automations: injectedAutomations,
   submissionStore: injectedSubmissionStore,
   mock,
 }: CreateContainerOptions): Container {
@@ -132,6 +139,11 @@ export function createContainer({
 
   // ...and the only line naming a concrete savings implementation.
   const savings = injectedSavings ?? createJsonWorkSavingsRepository({ logger })
+
+  // ...and the only line naming a concrete automations implementation. The
+  // catalogue is not passed in: an automation embeds its tools and references
+  // the catalogue only by slug (SPEC-automations.md §1).
+  const automations = injectedAutomations ?? createJsonAutomations({ logger })
 
   // createSubmissionStore() (submissions/store.ts) is itself the switch point
   // for a future Postgres implementation, so this line never has to name
@@ -168,6 +180,7 @@ export function createContainer({
     retrieval,
     stories,
     savings,
+    automations,
     createLLMClientForTurn,
     assistant,
     submissions,
