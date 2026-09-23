@@ -190,6 +190,7 @@ await test('GET /api/automations/:niche/:slug', async (t) => {
       assert.equal(automation.id, 's-plan')
       assert.equal(automation.samplePrompt.length > 0, true, 'the detail view carries the full record')
       assert.deepEqual(automation.steps.map((s) => s.title), ['Open the tool', 'Use this prompt', 'How it works'])
+      assert.equal(automation.steps[1]?.body, 'Use this prompt.')
       assert.equal(automation.steps[0]?.toolName, 'Motion')
       assert.equal('status' in automation, false)
     })

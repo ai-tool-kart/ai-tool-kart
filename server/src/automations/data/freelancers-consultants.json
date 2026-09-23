@@ -19,7 +19,7 @@
       }
     ],
     "workflowSummary": "Paste in the job posting; the AI reads both the posting and your freelancer profile, then generates a customized, professional proposal in about 10 seconds - built specifically for marketplace bidding rather than generic business proposals, so the tone and structure match what wins jobs on platforms like Upwork or Freelancer.com.",
-    "samplePrompt": "\"Here's a job posting: [paste job description]. Write a proposal for this using my profile background in [skill/experience].\"",
+    "samplePrompt": "Here's a job posting: [paste job description]. Write a proposal for this using my profile background in [skill/experience].",
     "beginnerFriendly": "yes",
     "beginnerNote": "paste and generate, no proposal-writing experience needed",
     "trustScore": 3,
@@ -53,7 +53,7 @@
       }
     ],
     "workflowSummary": "Generate a branded proposal from a template; once the client accepts it, the details auto-populate into a matching contract, so nothing has to be retyped between the two documents - built specifically so a solo freelancer's paperwork looks and flows like a larger agency's.",
-    "samplePrompt": "\"Create a proposal for [project] with [client name], covering scope, timeline, and a price of [amount], and prepare it to convert into a contract once accepted.\"",
+    "samplePrompt": "Create a proposal for [project] with [client name], covering scope, timeline, and a price of [amount], and prepare it to convert into a contract once accepted.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided templates connect each step automatically",
     "trustScore": 4,
@@ -87,7 +87,7 @@
       }
     ],
     "workflowSummary": "Choose from a library of contract templates vetted by attorneys, fill in the client and project specifics (many pre-populated from an accepted proposal), and send for a legally-binding e-signature - protecting the freelancer without the time or cost of drafting an agreement from scratch each time.",
-    "samplePrompt": "\"Generate a freelance service contract for [project] with [client], including a 50% upfront payment and a 2-round revision limit.\"",
+    "samplePrompt": "Generate a freelance service contract for [project] with [client], including a 50% upfront payment and a 2-round revision limit.",
     "beginnerFriendly": "yes",
     "beginnerNote": "template-based, no legal background needed",
     "trustScore": 4,
@@ -121,7 +121,7 @@
       }
     ],
     "workflowSummary": "Log hours with a one-click timer against a specific client or task; those logged hours flow directly into an invoice with no manual entry, and recurring or one-time invoices can include attached expenses with automated late-payment reminders handling the awkward follow-up conversation.",
-    "samplePrompt": "\"Create an invoice for [client] based on the hours I've logged this month, and set an automatic reminder if it's not paid within 14 days.\"",
+    "samplePrompt": "Create an invoice for [client] based on the hours I've logged this month, and set an automatic reminder if it's not paid within 14 days.",
     "beginnerFriendly": "yes",
     "beginnerNote": "one-click timer, invoice builds itself from logged time",
     "trustScore": 4,
@@ -155,7 +155,7 @@
       }
     ],
     "workflowSummary": "Clients get a single branded space (under the freelancer's own name, not Bonsai's) where they can view proposals, sign contracts, check project progress, and pay invoices - giving a one-person operation the polished, organized feel of a larger agency without extra client-facing tools.",
-    "samplePrompt": "\"Set up a client portal for [client] where they can see the project timeline, access shared files, and pay their invoice.\"",
+    "samplePrompt": "Set up a client portal for [client] where they can see the project timeline, access shared files, and pay their invoice.",
     "beginnerFriendly": "yes",
     "beginnerNote": "portal is generated automatically once a project is set up",
     "trustScore": 3,
@@ -189,7 +189,7 @@
       }
     ],
     "workflowSummary": "Paste in a resume, GitHub profile, or project links; the AI produces the layout, section structure, and a first draft of the copy, which the freelancer then edits and reorders - and because it lives inside a broader freelance workspace, the finished portfolio connects directly to the same tool's CRM, proposals, and invoicing.",
-    "samplePrompt": "\"Turn this resume into a 3-project portfolio site focused on my consulting work in [industry], with a case-study style layout.\"",
+    "samplePrompt": "Turn this resume into a 3-project portfolio site focused on my consulting work in [industry], with a case-study style layout.",
     "beginnerFriendly": "yes",
     "beginnerNote": "paste content in, get a live site out in about a minute",
     "trustScore": 3,
@@ -223,7 +223,7 @@
       }
     ],
     "workflowSummary": "Describe the portfolio in a single prompt (e.g. \"a clean, single-page portfolio for a consultant, with case studies and a contact form\"); the AI generates a complete, responsive site from that description, which can then be refined visually - aimed at freelancers who want their site to feel distinct rather than like a generic AI template.",
-    "samplePrompt": "\"Generate a portfolio website for a [type of freelancer/consultant], with 3 case study sections and a contact form, in a clean modern style.\"",
+    "samplePrompt": "Generate a portfolio website for a [type of freelancer/consultant], with 3 case study sections and a contact form, in a clean modern style.",
     "beginnerFriendly": "yes",
     "beginnerNote": "single prompt to start, visual refinement afterward",
     "trustScore": 3,
@@ -257,7 +257,7 @@
       }
     ],
     "workflowSummary": "Search a database of hundreds of millions of leads with filters for the kind of client who needs your specific service; the AI personalizes outreach messages per prospect, automates follow-ups, and manages replies in one inbox, handling deliverability setup (like sending-domain warmup) that would otherwise land freelancer emails in spam.",
-    "samplePrompt": "\"Find 50 potential clients who need [your service] in [industry/location], and draft a personalized first outreach email for each.\"",
+    "samplePrompt": "Find 50 potential clients who need [your service] in [industry/location], and draft a personalized first outreach email for each.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "powerful once set up, but initial domain/deliverability setup takes some effort",
     "trustScore": 3,
@@ -291,7 +291,7 @@
       }
     ],
     "workflowSummary": "The AI suggests an Ideal Customer Profile based on the freelancer's own services, then searches for matching people, companies, or intent signals; before reaching out, it pulls a quick research brief on each prospect (company overview, recent news, likely pain points) so outreach starts from real context instead of a guess.",
-    "samplePrompt": "\"Based on my services in [field], suggest an ideal customer profile, then find 20 matching companies and summarize each one's likely pain points.\"",
+    "samplePrompt": "Based on my services in [field], suggest an ideal customer profile, then find 20 matching companies and summarize each one's likely pain points.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most valuable once you know roughly who you're targeting",
     "trustScore": 3,
@@ -325,7 +325,7 @@
       }
     ],
     "workflowSummary": "Outline the engagement's goals, scope, and value proposition; the AI drafts a persuasive proposal aimed at securing new clients or partnerships, structured to highlight expertise and expected outcomes rather than just listing deliverables - suited to consultants pitching higher-stakes engagements, not just routine project quotes.",
-    "samplePrompt": "\"Write a consulting proposal for a 3-month engagement helping [client] with [problem], emphasizing expected outcomes and my relevant experience.\"",
+    "samplePrompt": "Write a consulting proposal for a 3-month engagement helping [client] with [problem], emphasizing expected outcomes and my relevant experience.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided prompt-based drafting, no proposal-writing background needed",
     "trustScore": 3,
@@ -359,7 +359,7 @@
       }
     ],
     "workflowSummary": "Enter your desired take-home income, real business expenses, and non-billable time; the calculator builds a defensible rate from those actual numbers rather than a guess, benchmarks it against real wage data across hundreds of metro areas, and even factors in how much AI tools you use (like Claude or ChatGPT) effectively lower your real cost per billed hour.",
-    "samplePrompt": "\"Calculate my ideal hourly and project rate as a [profession] wanting to take home $[amount]/year, with expenses of $[amount]/year and using AI tools for about [percentage] of my work.\"",
+    "samplePrompt": "Calculate my ideal hourly and project rate as a [profession] wanting to take home $[amount]/year, with expenses of $[amount]/year and using AI tools for about [percentage] of my work.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided inputs, no financial background needed",
     "trustScore": 4,
@@ -393,7 +393,7 @@
       }
     ],
     "workflowSummary": "Select your skill (from over 20 including development, design, and data science) and location; the tool returns a data-driven rate benchmark pulled from thousands of real freelancer contracts and job postings, adjusted for cost of living and current market demand, updated monthly rather than based on outdated survey data.",
-    "samplePrompt": "\"Show me the current market rate benchmark for a [skill] freelancer with [years] of experience in [location/remote].\"",
+    "samplePrompt": "Show me the current market rate benchmark for a [skill] freelancer with [years] of experience in [location/remote].",
     "beginnerFriendly": "yes",
     "beginnerNote": "select skill and location, get a benchmark instantly",
     "trustScore": 3,
@@ -427,7 +427,7 @@
       }
     ],
     "workflowSummary": "Share a simple branded link with a client (no login required on their end); they can submit a text, video, or audio testimonial in minutes, which then displays automatically on a website widget - a Chrome extension also lets the freelancer capture praise clients already left on LinkedIn without manual copy-pasting.",
-    "samplePrompt": "\"Set up a testimonial collection page for [client] to leave feedback on our recent project, and add it to my website's testimonial widget once submitted.\"",
+    "samplePrompt": "Set up a testimonial collection page for [client] to leave feedback on our recent project, and add it to my website's testimonial widget once submitted.",
     "beginnerFriendly": "yes",
     "beginnerNote": "shareable link does the work, no developer needed",
     "trustScore": 3,
@@ -461,7 +461,7 @@
       }
     ],
     "workflowSummary": "Feed in a client testimonial or project outcome; the AI turns it into a structured case study ready to use on a website, in a blog post, or in social media, and can also generate standalone short testimonial snippets with animation effects from the same source material - free with no email required to try.",
-    "samplePrompt": "\"Turn this client testimonial into a full case study covering the problem, my approach, and the result: [paste testimonial/notes].\"",
+    "samplePrompt": "Turn this client testimonial into a full case study covering the problem, my approach, and the result: [paste testimonial/notes].",
     "beginnerFriendly": "yes",
     "beginnerNote": "free, no signup needed to generate a first case study",
     "trustScore": 3,
@@ -495,7 +495,7 @@
       }
     ],
     "workflowSummary": "Describe your role, who you help, and your experience in a sentence or two; the AI returns a positioning statement, a spoken elevator pitch, and a LinkedIn headline built from the same core positioning - aimed at replacing a vague job title with a specific claim about who you help and what makes your approach different.",
-    "samplePrompt": "\"I'm a [type of consultant] who helps [specific audience] achieve [specific outcome], with [years] of experience and a [approach/differentiator]. Write a positioning statement, elevator pitch, and LinkedIn headline from this.\"",
+    "samplePrompt": "I'm a [type of consultant] who helps [specific audience] achieve [specific outcome], with [years] of experience and a [approach/differentiator]. Write a positioning statement, elevator pitch, and LinkedIn headline from this.",
     "beginnerFriendly": "yes",
     "beginnerNote": "describe yourself in plain language, get several formats back",
     "trustScore": 3,
@@ -529,7 +529,7 @@
       }
     ],
     "workflowSummary": "Connects to your income and expenses (via receipt scanning, bank statement analysis, or manual entry) to automatically categorize transactions, then calculates real-time quarterly tax estimates including self-employment tax and a weekly set-aside amount - built in plain language for people with no accounting background, with an option to loop in a real CPA for anything that needs professional review.",
-    "samplePrompt": "\"Based on my income and expenses so far this year, calculate my estimated quarterly tax payment and how much I should set aside weekly.\"",
+    "samplePrompt": "Based on my income and expenses so far this year, calculate my estimated quarterly tax payment and how much I should set aside weekly.",
     "beginnerFriendly": "yes",
     "beginnerNote": "built for non-accountants, plain-language guidance throughout",
     "trustScore": 3,
@@ -563,7 +563,7 @@
       }
     ],
     "workflowSummary": "Enter the client name, invoice number, and amount; the AI generates a polished follow-up email in the right register - friendly reminder, firmer follow-up, or final notice - so the freelancer doesn't have to find the words themselves each time a payment goes overdue, and can even generate reminders in advance for invoices not yet due.",
-    "samplePrompt": "\"Write a firm but polite follow-up email for an invoice to [client] for $[amount] that's now 10 days overdue.\"",
+    "samplePrompt": "Write a firm but polite follow-up email for an invoice to [client] for $[amount] that's now 10 days overdue.",
     "beginnerFriendly": "yes",
     "beginnerNote": "fill in a few details, get a ready-to-send email",
     "trustScore": 3,
@@ -597,7 +597,7 @@
       }
     ],
     "workflowSummary": "Rather than producing plain text like a general chatbot, the AI builds recognized consulting frameworks (SWOT, PESTLE, Business Model Canvas, Porter's Five Forces) directly as visual canvases, can turn an uploaded spreadsheet into charts and insights, and supports running a live workshop or brainstorm with the client inside the same tool before exporting a client-ready presentation.",
-    "samplePrompt": "\"Build a SWOT analysis canvas for [client]'s business based on this data: [paste details], and turn it into a client-ready slide.\"",
+    "samplePrompt": "Build a SWOT analysis canvas for [client]'s business based on this data: [paste details], and turn it into a client-ready slide.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "powerful for structured frameworks, but most valuable to someone who already thinks in consulting frameworks",
     "trustScore": 3,
@@ -631,7 +631,7 @@
       }
     ],
     "workflowSummary": "Joins and records client calls automatically, transcribes and summarizes the conversation, and pulls out key points and action items - built with consultants and agencies specifically in mind, so the freelancer can focus on running a high-quality session while the tool captures everything, plus tailored tips on where their meetings could improve over time.",
-    "samplePrompt": "\"Summarize this client call, list the key decisions and action items, and give me one tip on how I could have run it more effectively.\"",
+    "samplePrompt": "Summarize this client call, list the key decisions and action items, and give me one tip on how I could have run it more effectively.",
     "beginnerFriendly": "yes",
     "beginnerNote": "joins the call and works automatically, no manual note-taking needed",
     "trustScore": 3,
@@ -665,7 +665,7 @@
       }
     ],
     "workflowSummary": "Upload existing long-form material - a book, talk transcripts, past posts - into a knowledge base; a built-in \"Story Miner\" workflow then asks questions off that material to surface specific stories and beliefs, saving them back into the knowledge base so future posts pull from a consultant's actual arguments and experience rather than generic AI-sounding advice.",
-    "samplePrompt": "\"Using my uploaded talks and book chapters on [topic], mine 3 specific stories or arguments I could turn into LinkedIn posts this week.\"",
+    "samplePrompt": "Using my uploaded talks and book chapters on [topic], mine 3 specific stories or arguments I could turn into LinkedIn posts this week.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most valuable once you've invested time uploading your existing material",
     "trustScore": 3,
@@ -699,7 +699,7 @@
       }
     ],
     "workflowSummary": "Paste 3-5 posts you've already written so the AI learns your specific voice, then describe your goals (e.g. attracting consulting clients in a particular field); it drafts posts aimed at that goal in your voice rather than generic advice, and keeps improving as you edit drafts - most users edit roughly 20-30% of what's generated rather than starting from scratch.",
-    "samplePrompt": "\"Here are 4 posts I've written before: [paste]. Write a new post in my voice about [topic], aimed at getting [type of client] to want to work with me.\"",
+    "samplePrompt": "Here are 4 posts I've written before: [paste]. Write a new post in my voice about [topic], aimed at getting [type of client] to want to work with me.",
     "beginnerFriendly": "yes",
     "beginnerNote": "paste past posts and a topic, review and lightly edit the draft",
     "trustScore": 3,
@@ -733,7 +733,7 @@
       }
     ],
     "workflowSummary": "Generates complete thread drafts from a topic or URL for you to edit and schedule, auto-reposts your best-performing content on a cooldown so it keeps working over time, and can auto-share real milestones (a new client, a product launch, a revenue update) - aimed at freelancers who want to \"build in public\" without manually writing something every single day.",
-    "samplePrompt": "\"Draft a thread about [milestone or lesson from my freelance business this month], and add it to my evergreen recycling queue if it performs well.\"",
+    "samplePrompt": "Draft a thread about [milestone or lesson from my freelance business this month], and add it to my evergreen recycling queue if it performs well.",
     "beginnerFriendly": "yes",
     "beginnerNote": "AI drafts, you edit and approve before it posts",
     "trustScore": 3,

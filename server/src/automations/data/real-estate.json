@@ -25,7 +25,7 @@
       }
     ],
     "workflowSummary": "Enter the property address, bed/bath count, and key features; the AI researches the neighborhood and drafts a polished, MLS-ready description in seconds, with a few variations to choose from and light Fair Housing wording checks built in.",
-    "samplePrompt": "\"Write an MLS listing description for a 3 bed 2 bath home at [address], featuring [key features], warm and confident tone, under 200 words.\"",
+    "samplePrompt": "Write an MLS listing description for a 3 bed 2 bath home at [address], featuring [key features], warm and confident tone, under 200 words.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided fields, no writing skill needed",
     "trustScore": 4,
@@ -59,7 +59,7 @@
       }
     ],
     "workflowSummary": "After generating the base description, the same tool auto-produces matching social captions sized for each major platform, plus versions ready to share by email or text - so one listing entry becomes a full content set without retyping anything.",
-    "samplePrompt": "\"Take this listing description and generate an Instagram caption, a Facebook post, and a short text message version.\"",
+    "samplePrompt": "Take this listing description and generate an Instagram caption, a Facebook post, and a short text message version.",
     "beginnerFriendly": "yes",
     "beginnerNote": "one click from the same tool used for the description",
     "trustScore": 4,
@@ -99,7 +99,7 @@
       }
     ],
     "workflowSummary": "Upload a photo of an empty or cluttered room and pick a design style (modern, farmhouse, Scandinavian, etc); the AI fills the space with realistic furniture and decor in seconds, giving buyers a sense of how the room could look furnished, ready to attach to the listing with a standard staging disclosure.",
-    "samplePrompt": "\"Virtually stage this empty living room photo in a modern style, keep the windows and flooring unchanged, output a listing-ready image.\"",
+    "samplePrompt": "Virtually stage this empty living room photo in a modern style, keep the windows and flooring unchanged, output a listing-ready image.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload and pick a style, no design skill needed",
     "trustScore": 4,
@@ -133,7 +133,7 @@
       }
     ],
     "workflowSummary": "From a phone, select a listing photo and a design style or mood board; the app furnishes the room, lets the agent swap or remove items, and even links to shoppable furniture - useful for staging directly after a listing photo shoot without opening a desktop tool.",
-    "samplePrompt": "\"Stage this bedroom photo in a minimalist style and swap the bed for something more neutral.\"",
+    "samplePrompt": "Stage this bedroom photo in a minimalist style and swap the bed for something more neutral.",
     "beginnerFriendly": "yes",
     "beginnerNote": "phone app, guided style picker",
     "trustScore": 3,
@@ -168,7 +168,7 @@
       }
     ],
     "workflowSummary": "Upload existing listing photos; the AI removes unwanted objects, declutters rooms, swaps overcast skies for blue ones, and can convert daytime exteriors into warm dusk shots - all without a reshoot or manual Photoshop work.",
-    "samplePrompt": "\"Remove the parked cars and trash bins from this exterior photo, then convert it to a dusk-lit version with warm interior glow.\"",
+    "samplePrompt": "Remove the parked cars and trash bins from this exterior photo, then convert it to a dusk-lit version with warm interior glow.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload and select the edit, no editing software needed",
     "trustScore": 4,
@@ -208,7 +208,7 @@
       }
     ],
     "workflowSummary": "Upload the listing's existing photos in room order; the AI adds camera movement, transitions, captions, and music to turn a static photo set into a smooth walkthrough-style video, exported ready for MLS, a listing site, or social - no filming or editing software required.",
-    "samplePrompt": "\"Turn these 12 listing photos into a 45-second walkthrough video with cinematic camera movement and light background music.\"",
+    "samplePrompt": "Turn these 12 listing photos into a 45-second walkthrough video with cinematic camera movement and light background music.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload photos and pick a template",
     "trustScore": 4,
@@ -242,7 +242,7 @@
       }
     ],
     "workflowSummary": "Choose a listing's photos and a cinematic template; the AI renders a short, vertical-ready video with licensed music, sized correctly for Instagram Reels, TikTok, and YouTube Shorts at once, alongside a horizontal version for the MLS/website.",
-    "samplePrompt": "\"Create a 20-second vertical Reel from these listing photos, upbeat music, with our brokerage logo watermark.\"",
+    "samplePrompt": "Create a 20-second vertical Reel from these listing photos, upbeat music, with our brokerage logo watermark.",
     "beginnerFriendly": "yes",
     "beginnerNote": "template-driven, no editing skill required",
     "trustScore": 3,
@@ -282,7 +282,7 @@
       }
     ],
     "workflowSummary": "Connect the chatbot to your listings, hours, and booking calendar; it answers common buyer/seller questions on the website 24/7, collects contact details, and lets visitors pick a showing time - handing off to the agent only once a lead is qualified.",
-    "samplePrompt": "\"Set up a website chatbot that answers questions about our current listings, collects name/phone/email, and offers to book a showing time.\"",
+    "samplePrompt": "Set up a website chatbot that answers questions about our current listings, collects name/phone/email, and offers to book a showing time.",
     "beginnerFriendly": "yes",
     "beginnerNote": "mostly no-code setup with a guided flow builder",
     "trustScore": 4,
@@ -316,7 +316,7 @@
       }
     ],
     "workflowSummary": "Link your business phone number to the voice agent; it answers every call in natural speech, asks qualifying questions (budget, timeline, area), books property tours directly into your calendar, and routes high-intent callers straight to an agent - even outside office hours.",
-    "samplePrompt": "\"Configure a voice agent that answers calls, asks about buying timeline and preferred area, and books a tour if the caller is ready to move within 3 months.\"",
+    "samplePrompt": "Configure a voice agent that answers calls, asks about buying timeline and preferred area, and books a tour if the caller is ready to move within 3 months.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "initial setup needs the agent to define scripts/rules once",
     "trustScore": 3,
@@ -356,7 +356,7 @@
       }
     ],
     "workflowSummary": "Upload 6-8 clear selfies; the AI generates dozens of polished, studio-style headshots in a range of professional outfits and backgrounds within about 30 minutes, ready for MLS profiles, brokerage sites, business cards, and LinkedIn.",
-    "samplePrompt": "\"Generate professional real estate headshots from these photos, business attire, neutral office background, natural lighting.\"",
+    "samplePrompt": "Generate professional real estate headshots from these photos, business attire, neutral office background, natural lighting.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload selfies and wait for results, no photography skill needed",
     "trustScore": 4,
@@ -396,7 +396,7 @@
       }
     ],
     "workflowSummary": "Describe the layout in plain language (e.g. \"two-bedroom apartment with a central kitchen and balcony\") or set room counts and dimensions; the AI generates a clean 2D or 3D floor plan in seconds, downloadable for listing sites, brochures, or client presentations.",
-    "samplePrompt": "\"Generate a 2D floor plan for a 3-bedroom, 2-bathroom single-story home with an open kitchen and a two-car garage.\"",
+    "samplePrompt": "Generate a 2D floor plan for a 3-bedroom, 2-bathroom single-story home with an open kitchen and a two-car garage.",
     "beginnerFriendly": "yes",
     "beginnerNote": "text or form based input, no CAD skill needed",
     "trustScore": 3,
@@ -436,7 +436,7 @@
       }
     ],
     "workflowSummary": "Enter the subject property's address; the AI pulls comparable sold, active, and pending listings, applies dollar-value adjustments for differences like square footage and condition, scores each comp for similarity, and lays out pricing scenarios the agent can walk into a listing appointment with.",
-    "samplePrompt": "\"Pull the top 6 comparable sales within 1 mile of [address] from the last 6 months and show adjusted price estimates.\"",
+    "samplePrompt": "Pull the top 6 comparable sales within 1 mile of [address] from the last 6 months and show adjusted price estimates.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "fast, but agent should sanity check comps and adjustments before presenting",
     "trustScore": 4,
@@ -473,7 +473,7 @@
       }
     ],
     "workflowSummary": "After pulling comps, the tool formats them into a clean, branded report with charts and a suggested price range that's ready to print or send to a seller directly - turning raw data into a presentation instead of a spreadsheet.",
-    "samplePrompt": "\"Generate a client-ready CMA report for [address] with a suggested list price range and 3 comparable sales.\"",
+    "samplePrompt": "Generate a client-ready CMA report for [address] with a suggested list price range and 3 comparable sales.",
     "beginnerFriendly": "yes",
     "beginnerNote": "mostly automated after entering the address",
     "trustScore": 3,
@@ -507,7 +507,7 @@
       }
     ],
     "workflowSummary": "Upload a photo of the room as it currently looks, then type plain-language edit requests like swapping a sofa or repainting a wall; the AI updates the image instantly, letting the agent show a seller a realistic \"after\" without any actual renovation work being done yet.",
-    "samplePrompt": "\"Replace the sofa with a modern beige one and repaint the walls a warm neutral tone in this living room photo.\"",
+    "samplePrompt": "Replace the sofa with a modern beige one and repaint the walls a warm neutral tone in this living room photo.",
     "beginnerFriendly": "yes",
     "beginnerNote": "conversational editing, no design software needed",
     "trustScore": 3,
@@ -541,7 +541,7 @@
       }
     ],
     "workflowSummary": "From the same listing entry used to generate the description, the tool builds a simple, shareable single-property website with photos, the description, and a contact/inquiry form - useful for print QR codes, social bio links, or paid ad landing pages.",
-    "samplePrompt": "\"Create a single-property website for this listing using the description and photos I already generated.\"",
+    "samplePrompt": "Create a single-property website for this listing using the description and photos I already generated.",
     "beginnerFriendly": "yes",
     "beginnerNote": "generated from data already entered for the listing",
     "trustScore": 3,
@@ -575,7 +575,7 @@
       }
     ],
     "workflowSummary": "New website leads are automatically enrolled in an AI-driven conversation that asks about timeline, budget, and preferred neighborhoods over several touches; the AI keeps engaging cold or early-stage leads over days or weeks and flags the agent only once a lead shows real buying or selling intent.",
-    "samplePrompt": "\"Set up automated follow-up for new website leads that asks about purchase timeline and mortgage pre-approval, and flags me once a lead is ready to talk.\"",
+    "samplePrompt": "Set up automated follow-up for new website leads that asks about purchase timeline and mortgage pre-approval, and flags me once a lead is ready to talk.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "works out of the box but benefits from tuning the qualifying questions",
     "trustScore": 4,
@@ -609,7 +609,7 @@
       }
     ],
     "workflowSummary": "The chatbot connects directly to your MLS feed, so when a website visitor asks about a property or price range, it answers from your real, current listings rather than generic scripted replies, suggests similar homes, and captures the visitor's intent for follow-up.",
-    "samplePrompt": "\"Answer visitor questions about our current listings under $500k in [area], and suggest 2-3 similar active listings if the one they ask about is sold.\"",
+    "samplePrompt": "Answer visitor questions about our current listings under $500k in [area], and suggest 2-3 similar active listings if the one they ask about is sold.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "needs an MLS feed connection set up once",
     "trustScore": 3,
@@ -646,7 +646,7 @@
       }
     ],
     "workflowSummary": "Enter your name, years of experience, specialties, and a couple of achievements; the AI drafts a polished bio in a chosen tone (professional, warm, results-driven), which the agent then edits to sound like themselves rather than a template.",
-    "samplePrompt": "\"Write a 150-word real estate agent bio for someone with 5 years experience specializing in first-time buyers in [area], warm and approachable tone, end with a call to action.\"",
+    "samplePrompt": "Write a 150-word real estate agent bio for someone with 5 years experience specializing in first-time buyers in [area], warm and approachable tone, end with a call to action.",
     "beginnerFriendly": "yes",
     "beginnerNote": "fill in a short form, no writing skill required",
     "trustScore": 3,
@@ -680,7 +680,7 @@
       }
     ],
     "workflowSummary": "Instead of filling out a form, the agent answers a short back-and-forth set of questions the chatbot asks (background, specialties, personal touches); the AI then assembles the answers into a client-ready bio the agent can paste straight into their MLS, HAR, or website profile.",
-    "samplePrompt": "\"Interview me about my real estate background, specialties, and personal story, then write my bio in a warm, first-person voice.\"",
+    "samplePrompt": "Interview me about my real estate background, specialties, and personal story, then write my bio in a warm, first-person voice.",
     "beginnerFriendly": "yes",
     "beginnerNote": "conversational, no writing needed beyond answering questions",
     "trustScore": 3,
@@ -714,7 +714,7 @@
       }
     ],
     "workflowSummary": "Upload all the offer PDFs for a listing, even messy ones with separate addenda and financing attachments; the AI extracts and standardizes the key terms from each, calculates seller net proceeds per offer, and produces a clean side-by-side comparison report to walk the seller through.",
-    "samplePrompt": "\"Compare these 4 purchase offers on my listing, extract price, contingencies, and closing dates, and calculate estimated seller net proceeds for each.\"",
+    "samplePrompt": "Compare these 4 purchase offers on my listing, extract price, contingencies, and closing dates, and calculate estimated seller net proceeds for each.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload PDFs and get a report, no manual data entry needed",
     "trustScore": 4,
@@ -748,7 +748,7 @@
       }
     ],
     "workflowSummary": "Upload a purchase agreement as a PDF, JPEG, or PNG; the AI reads it and extracts the parties, sale price, contingencies, and every deadline, then builds a timeline and task checklist so nothing gets missed between contract and closing.",
-    "samplePrompt": "\"Extract all parties, dates, and contingencies from this purchase agreement and build a deadline checklist through closing.\"",
+    "samplePrompt": "Extract all parties, dates, and contingencies from this purchase agreement and build a deadline checklist through closing.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload and receive a checklist, no manual re-typing",
     "trustScore": 4,
@@ -782,7 +782,7 @@
       }
     ],
     "workflowSummary": "Upload the full transaction file at once, purchase agreement, addenda, financing records, title commitment, and disclosures; the AI cross-references all of them and produces one structured executive summary covering financial terms, dates, contingencies, and risk items, so nobody has to flip between a dozen documents to understand the deal.",
-    "samplePrompt": "\"Summarize this full transaction file into one executive summary covering financial terms, key dates, contingencies, and any risk flags.\"",
+    "samplePrompt": "Summarize this full transaction file into one executive summary covering financial terms, key dates, contingencies, and any risk flags.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "upload is simple, but reviewing legal detail benefits from an experienced eye",
     "trustScore": 4,
@@ -819,7 +819,7 @@
       }
     ],
     "workflowSummary": "Pick a template and plug in local market data (or let the tool pull it); the AI drafts a friendly, easy-to-read newsletter covering pricing trends, inventory, and local news, ready to send to your client and past-client list on a monthly rhythm.",
-    "samplePrompt": "\"Write this month's client newsletter for [city], covering price trends, days on market, and one local event, friendly and conversational tone.\"",
+    "samplePrompt": "Write this month's client newsletter for [city], covering price trends, days on market, and one local event, friendly and conversational tone.",
     "beginnerFriendly": "yes",
     "beginnerNote": "template plus data in, newsletter out",
     "trustScore": 3,
@@ -853,7 +853,7 @@
       }
     ],
     "workflowSummary": "Pick an email category (follow-up, introduction, nurture, invite), choose a tone, and the AI drafts a ready-to-send email in one click; built specifically for real estate language rather than generic marketing copy, so it doesn't need heavy editing before sending.",
-    "samplePrompt": "\"Write a follow-up email to a buyer lead who toured a home last week but hasn't responded since, friendly and low-pressure tone.\"",
+    "samplePrompt": "Write a follow-up email to a buyer lead who toured a home last week but hasn't responded since, friendly and low-pressure tone.",
     "beginnerFriendly": "yes",
     "beginnerNote": "pick category and tone, no drafting from scratch",
     "trustScore": 3,
@@ -887,7 +887,7 @@
       }
     ],
     "workflowSummary": "Paste in a listing URL or MLS ID; the tool pulls the property details and photos and drops them into pre-designed, on-brand templates for flyers, open house signs, email blasts, and direct mail postcards, ready to print or send without opening a design program.",
-    "samplePrompt": "\"Generate a just-listed flyer and an open house sign for this listing using our brokerage's brand colors and logo.\"",
+    "samplePrompt": "Generate a just-listed flyer and an open house sign for this listing using our brokerage's brand colors and logo.",
     "beginnerFriendly": "yes",
     "beginnerNote": "paste a link, pick a template, no design skill needed",
     "trustScore": 3,
@@ -921,7 +921,7 @@
       }
     ],
     "workflowSummary": "Search a target area with filters like ownership length, equity, or distress signals; the AI surfaces on- and off-market properties that match investment criteria and pulls comparable data to help evaluate a deal's potential, cutting down the manual list-building investors used to do by hand.",
-    "samplePrompt": "\"Find off-market properties in [zip code] with high owner equity and no mortgage, and pull comparable sold prices nearby.\"",
+    "samplePrompt": "Find off-market properties in [zip code] with high owner equity and no mortgage, and pull comparable sold prices nearby.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "powerful filtering, but benefits from investment analysis experience to judge results",
     "trustScore": 3,
@@ -956,7 +956,7 @@
       }
     ],
     "workflowSummary": "Before drafting the newsletter itself, the agent asks a research-focused AI tool to pull current, cited local market numbers (pricing trends, days on market, inventory), then feeds that research into the newsletter-writing step so the content is grounded in real, current data instead of guesses.",
-    "samplePrompt": "\"Using the most current data available, summarize real estate market trends for [city], including pricing trends, days on market, and inventory shifts, with sources.\"",
+    "samplePrompt": "Using the most current data available, summarize real estate market trends for [city], including pricing trends, days on market, and inventory shifts, with sources.",
     "beginnerFriendly": "yes",
     "beginnerNote": "one research prompt before writing",
     "trustScore": 3,
@@ -990,7 +990,7 @@
       }
     ],
     "workflowSummary": "Upload the draft contract or offer; the AI reviews it for compliance issues and confusing or ambiguous wording, flagging sections worth a second look before the document goes to a client or the other side of a deal - a check step, not a replacement for legal advice.",
-    "samplePrompt": "\"Review this purchase offer for unclear language or compliance concerns and flag anything I should double-check with my broker.\"",
+    "samplePrompt": "Review this purchase offer for unclear language or compliance concerns and flag anything I should double-check with my broker.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "flags issues, but a broker/attorney should still weigh in on anything flagged",
     "trustScore": 3,

@@ -128,6 +128,59 @@ export function mapHeader(header: readonly string[]): HeaderMapping {
 
 /* ═══ Field parsers ═════════════════════════════════════════════════════════ */
 
+/** Opening quote → its closing quote. Straight quotes close themselves. */
+const QUOTE_PAIRS: Record<string, string> = {
+  '"': '"',
+  "'": "'",
+  '\u201C': '\u201D', // “ ”
+  '\u2018': '\u2019', // ‘ ’
+}
+
+export type UnwrapResult = { text: string; unwrapped: boolean; skipped: boolean }
+
+/**
+ * Strips ONE pair of quotes wrapping the whole cell — some sheets store the
+ * sample prompt as `"Write an MLS listing…"`, and the quotes would land in the
+ * reader's clipboard.
+ *
+ * Only when the pair truly encloses everything. `"A" then "B"` starts and ends
+ * with a quote but is two quoted phrases, and stripping it would leave
+ * `A" then "B`. So a straight quote is stripped only when the same character
+ * appears nowhere inside, and a curly pair only when the opening quote's match
+ * is the last character (nested curly pairs are fine). Anything that starts and
+ * ends with a quote but fails that is left alone and reported as `skipped`.
+ */
+export function unwrapQuotes(cell: string): UnwrapResult {
+  const text = cell.trim()
+  const open = text[0]
+  const close = open === undefined ? undefined : QUOTE_PAIRS[open]
+  if (text.length < 2 || close === undefined || !text.endsWith(close)) {
+    return { text, unwrapped: false, skipped: false }
+  }
+
+  const inner = text.slice(1, -1)
+  let encloses: boolean
+  if (open === close) {
+    encloses = !inner.includes(open)
+  } else {
+    let depth = 1
+    encloses = true
+    for (const char of inner) {
+      if (char === open) depth += 1
+      else if (char === close) depth -= 1
+      if (depth === 0) {
+        encloses = false
+        break
+      }
+    }
+    encloses = encloses && depth === 1
+  }
+
+  const stripped = inner.trim()
+  if (!encloses || stripped.length === 0) return { text, unwrapped: false, skipped: true }
+  return { text: stripped, unwrapped: true, skipped: false }
+}
+
 /** Split on ';' when the cell has one, otherwise on ','. Trimmed, no empties. */
 export function splitIntentLabels(cell: string): string[] {
   const separator = cell.includes(';') ? ';' : ','
@@ -339,6 +392,10 @@ export interface MappedRow {
   /** Fields that could not be parsed at all, as "field: reason". */
   errors: string[]
   pricingRule?: PricingRule
+  /** The sample prompt lost a wrapping pair of quotes. */
+  promptUnwrapped: boolean
+  /** The sample prompt starts and ends with a quote but is not one wrapped string. */
+  promptQuoteSkipped: boolean
   matchedTools: number
   /** Later tools over the name cap, dropped (see buildTools). */
   droppedTools: string[]
@@ -353,6 +410,7 @@ const cellOf = (row: SheetRow, field: SheetField): string => (row[field] ?? '').
  */
 export function rowToDraft(row: SheetRow, source: RowSource, matcher: CatalogueMatcher): MappedRow {
   const errors: string[] = []
+  const prompt = unwrapQuotes(cellOf(row, 'samplePrompt'))
   const draft: Record<string, unknown> = {
     kind: 'workflow',
     niche: source.niche,
@@ -360,7 +418,7 @@ export function rowToDraft(row: SheetRow, source: RowSource, matcher: CatalogueM
     title: cellOf(row, 'title'),
     intentLabels: splitIntentLabels(cellOf(row, 'intentLabels')),
     workflowSummary: cellOf(row, 'workflowSummary'),
-    samplePrompt: cellOf(row, 'samplePrompt'),
+    samplePrompt: prompt.text,
     pricingNote: cellOf(row, 'pricingNote'),
     sourceUrl: cellOf(row, 'sourceUrl'),
     sourceType: cellOf(row, 'sourceType'),
@@ -397,6 +455,8 @@ export function rowToDraft(row: SheetRow, source: RowSource, matcher: CatalogueM
     draft,
     errors,
     pricingRule: pricing.rule,
+    promptUnwrapped: prompt.unwrapped,
+    promptQuoteSkipped: prompt.skipped,
     matchedTools: built.matched,
     droppedTools: built.dropped,
   }
@@ -636,6 +696,8 @@ async function main(argv: readonly string[]): Promise<number> {
   const pricingRules = new Map<PricingRule, number>()
   const valid = new Map<string, Automation[]>()
   let keptToolCount = 0
+  let promptsUnwrapped = 0
+  const promptsSkipped: string[] = []
   const droppedTools: Array<{ where: string; name: string }> = []
   let matchedToolCount = 0
   let multiToolRows = 0
@@ -653,6 +715,10 @@ async function main(argv: readonly string[]): Promise<number> {
       const mapped = rowToDraft(row.cells, { niche, batch: batchName(row.file.name) }, matcher)
       if (mapped.pricingRule) pricingRules.set(mapped.pricingRule, (pricingRules.get(mapped.pricingRule) ?? 0) + 1)
       keptToolCount += (mapped.draft.tools as AutomationTool[]).length
+      if (mapped.promptUnwrapped) promptsUnwrapped += 1
+      if (mapped.promptQuoteSkipped) {
+        promptsSkipped.push(`${row.file.niche}/${row.file.name} row ${row.rowNumber}`)
+      }
       matchedToolCount += mapped.matchedTools
       for (const name of mapped.droppedTools) {
         droppedTools.push({ where: `${row.file.niche}/${row.file.name} row ${row.rowNumber}`, name })
@@ -722,6 +788,12 @@ async function main(argv: readonly string[]): Promise<number> {
   say()
 
   /* ── Tools ──────────────────────────────────────────────────────────── */
+  say('== Sample prompts ==')
+  say(`  Wrapping quotes stripped: ${promptsUnwrapped}`)
+  say(`  Start and end with a quote but not one wrapped string (left as-is): ${promptsSkipped.length}`)
+  for (const where of promptsSkipped) say(`    ${where}`)
+  say()
+
   say('== Tools ==')
   say(`  Rows naming more than one tool: ${multiToolRows}`)
   say(`  Tools kept (rows kept after dedupe): ${keptToolCount}`)

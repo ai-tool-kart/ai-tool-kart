@@ -51,7 +51,9 @@ export function deriveSteps(automation: Automation): AutomationStep[] {
     },
     {
       title: DERIVED_STEP_TITLES.usePrompt,
-      body: `Paste this prompt into ${tool.name}.`,
+      // Not "paste into {tool}": for a call recorder or a CRM there is nowhere
+      // to paste, and the sheet does not say where the prompt goes.
+      body: 'Use this prompt.',
       prompt: automation.samplePrompt,
     },
     {

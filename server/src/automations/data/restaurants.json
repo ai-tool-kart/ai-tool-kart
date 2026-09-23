@@ -26,7 +26,7 @@
       }
     ],
     "workflowSummary": "Describe your cuisine, dish list, and prices in plain text; the tool lays out a print- and screen-ready menu with matched fonts, photos, and pricing columns. Refine by asking for color, layout, or item changes in follow-up chat turns instead of manual editing.",
-    "samplePrompt": "\"Create a two-page dinner menu for a casual Italian restaurant, warm rustic style, with starters, mains, and desserts, prices in INR.\"",
+    "samplePrompt": "Create a two-page dinner menu for a casual Italian restaurant, warm rustic style, with starters, mains, and desserts, prices in INR.",
     "beginnerFriendly": "yes",
     "beginnerNote": "no design software needed, works from a text description",
     "trustScore": 4,
@@ -67,7 +67,7 @@
       }
     ],
     "workflowSummary": "Type the business name and a short description of its vibe (e.g. \"cozy neighborhood bakery\"); the AI generates logo options, then expands the chosen logo into a full kit - color palette, fonts, business cards, social covers, letterhead.",
-    "samplePrompt": "\"Design a warm, modern logo for a neighborhood coffee shop called 'Brew & Co,' then build a full brand kit with business cards and Instagram covers.\"",
+    "samplePrompt": "Design a warm, modern logo for a neighborhood coffee shop called 'Brew & Co,' then build a full brand kit with business cards and Instagram covers.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided prompts, no designer needed",
     "trustScore": 4,
@@ -108,7 +108,7 @@
       }
     ],
     "workflowSummary": "Connect the bot to your menu, hours, and booking rules; it answers reservation and menu questions over website chat, WhatsApp, or phone, checks availability, confirms bookings, and can take takeout orders 24/7 without staff involvement.",
-    "samplePrompt": "\"Set up a booking assistant on WhatsApp that takes table reservations, confirms party size/date/time, and answers menu allergen questions from my uploaded menu.\"",
+    "samplePrompt": "Set up a booking assistant on WhatsApp that takes table reservations, confirms party size/date/time, and answers menu allergen questions from my uploaded menu.",
     "beginnerFriendly": "yes",
     "beginnerNote": "most are no-code, point-and-configure",
     "trustScore": 4,
@@ -149,7 +149,7 @@
       }
     ],
     "workflowSummary": "Connect your Google Business Profile and Yelp account; the AI reads each incoming review, drafts a reply matched to your brand tone (thanking 5-star reviews, apologizing professionally on complaints), and can auto-post based on rules you set, or wait for your approval.",
-    "samplePrompt": "\"Draft a warm, professional reply to this 2-star review about slow service, acknowledge the wait and invite the guest back, keep it under 60 words.\"",
+    "samplePrompt": "Draft a warm, professional reply to this 2-star review about slow service, acknowledge the wait and invite the guest back, keep it under 60 words.",
     "beginnerFriendly": "yes",
     "beginnerNote": "select tone and industry, no prompt-writing needed",
     "trustScore": 4,
@@ -190,7 +190,7 @@
       }
     ],
     "workflowSummary": "Upload a phone photo of a dish (or describe it from scratch), pick a style/lighting/background, and the AI outputs a polished, menu- or social-ready image in seconds - no studio, stylist, or reshoot needed.",
-    "samplePrompt": "\"Turn this phone photo of my butter chicken into a professional food photo with warm studio lighting and a dark rustic table background, square format for Instagram.\"",
+    "samplePrompt": "Turn this phone photo of my butter chicken into a professional food photo with warm studio lighting and a dark rustic table background, square format for Instagram.",
     "beginnerFriendly": "yes",
     "beginnerNote": "upload-and-pick-style workflow, no editing skill required",
     "trustScore": 4,
@@ -231,7 +231,7 @@
       }
     ],
     "workflowSummary": "The AI audits your existing Google Business Profile against local competitors, flags missing fields/photos/categories, then auto-writes and schedules keyword-rich posts, fixes profile attributes, and helps with review replies - aimed at ranking in the Google Maps \"map pack\" without hiring an SEO agency.",
-    "samplePrompt": "\"Audit my restaurant's Google Business Profile, tell me what's missing compared to top-ranked competitors nearby, and write 4 weekly posts highlighting our lunch specials.\"",
+    "samplePrompt": "Audit my restaurant's Google Business Profile, tell me what's missing compared to top-ranked competitors nearby, and write 4 weekly posts highlighting our lunch specials.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "mostly automated, but benefits from basic GBP familiarity",
     "trustScore": 4,
@@ -272,7 +272,7 @@
       }
     ],
     "workflowSummary": "Start from a food photo or a text description of the dish; the AI animates it into a short video (steam, sauce drizzle, camera push-in), adds music/captions/offer text, and exports it sized for Reels, TikTok, or Shorts - no filming or editing software needed.",
-    "samplePrompt": "\"Turn this photo of our new pizza into a 15-second Instagram Reel with a slow zoom, sizzling sound, and a 'Try it this weekend' caption.\"",
+    "samplePrompt": "Turn this photo of our new pizza into a 15-second Instagram Reel with a slow zoom, sizzling sound, and a 'Try it this weekend' caption.",
     "beginnerFriendly": "yes",
     "beginnerNote": "text-prompt driven, templated outputs",
     "trustScore": 3,
@@ -316,7 +316,7 @@
       }
     ],
     "workflowSummary": "Customers enroll with just a phone number at checkout; the system tracks visits and spend through your POS, automatically segments guests (VIP, at-risk, first-timer), and triggers birthday offers, win-back emails, and reward reminders without you writing each campaign by hand.",
-    "samplePrompt": "\"Set up an automated 'we miss you' email that goes out to any customer who hasn't visited in 30 days, offering 10% off their next order.\"",
+    "samplePrompt": "Set up an automated 'we miss you' email that goes out to any customer who hasn't visited in 30 days, offering 10% off their next order.",
     "beginnerFriendly": "yes",
     "beginnerNote": "most are POS-connected with prebuilt automation templates",
     "trustScore": 4,
@@ -357,7 +357,7 @@
       }
     ],
     "workflowSummary": "The AI answers the restaurant phone line like a host would, understands natural speech (\"table for 4 this Friday at 7\"), checks availability, confirms details by text, and can also take basic takeout orders - freeing staff from constant phone interruptions during rush.",
-    "samplePrompt": "\"Configure a voice agent that answers calls, books tables, and texts a confirmation, escalating to a human only for large parties over 8.\"",
+    "samplePrompt": "Configure a voice agent that answers calls, books tables, and texts a confirmation, escalating to a human only for large parties over 8.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "setup needs someone to define menu/booking rules once",
     "trustScore": 3,
@@ -397,7 +397,7 @@
       }
     ],
     "workflowSummary": "The AI pulls your brand colors, logo, and menu items, then generates a batch of on-brand posts (photos, captions, hashtags) and schedules them across Instagram/Facebook/TikTok on a calendar you approve, cutting the need for a dedicated social media hire.",
-    "samplePrompt": "\"Plan two weeks of Instagram posts for my cafe: one daily-special photo post and one behind-the-scenes reel per week, in our brand colors, with local hashtags.\"",
+    "samplePrompt": "Plan two weeks of Instagram posts for my cafe: one daily-special photo post and one behind-the-scenes reel per week, in our brand colors, with local hashtags.",
     "beginnerFriendly": "yes",
     "beginnerNote": "guided setup from existing brand assets",
     "trustScore": 3,

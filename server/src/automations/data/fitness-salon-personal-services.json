@@ -29,7 +29,7 @@
       }
     ],
     "workflowSummary": "Forward your business line to an AI voice agent that answers 24/7, quotes services/hours/pricing, books or reschedules appointments directly into your calendar, and texts a confirmation — so calls during a haircut or massage don't go to voicemail.",
-    "samplePrompt": "\"Set up an AI receptionist for my hair salon that answers calls when we're busy, quotes our price list, and books appointments into our existing calendar. It should text a confirmation after booking.\"",
+    "samplePrompt": "Set up an AI receptionist for my hair salon that answers calls when we're busy, quotes our price list, and books appointments into our existing calendar. It should text a confirmation after booking.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "setup takes configuring hours/services/greeting, but daily use is hands-off",
     "trustScore": 4,
@@ -69,7 +69,7 @@
       }
     ],
     "workflowSummary": "An AI phone-answering layer sits on top of your existing gym software (Vagaro, Zen Planner, PushPress) and picks up calls about class times, membership pricing, and trial bookings around the clock, logging everything into your existing system.",
-    "samplePrompt": "\"I run a small gym on Vagaro. Recommend an AI phone answering add-on that connects to Vagaro, and explain roughly what it costs and how setup works.\"",
+    "samplePrompt": "I run a small gym on Vagaro. Recommend an AI phone answering add-on that connects to Vagaro, and explain roughly what it costs and how setup works.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "From ~$109/mo commonly cited for salon/gym AI answering add-ons — verify before publishing",
@@ -114,7 +114,7 @@
       }
     ],
     "workflowSummary": "Replace phone-tag booking with a client-facing online booking page/app that lets clients pick a stylist, service, and time slot themselves; several platforms layer AI on top to auto-optimize the schedule, fill cancellations, and send automated reminders.",
-    "samplePrompt": "\"Compare Vagaro, Fresha, and Mangomint for a 3-chair hair salon and tell me which has the easiest online booking page for clients plus automated reminder texts.\"",
+    "samplePrompt": "Compare Vagaro, Fresha, and Mangomint for a 3-chair hair salon and tell me which has the easiest online booking page for clients plus automated reminder texts.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Vagaro from ~$30/mo + $10/staff; Fresha has a free tier with booth-fee model; Mangomint from ~$99/mo — verify before publishing",
@@ -153,7 +153,7 @@
       }
     ],
     "workflowSummary": "Use an AI-assisted coaching platform to auto-generate a client's workout program from their goals, equipment, and history, then assign it, track their logged sets/reps, and adjust automatically as they progress — without building every program by hand.",
-    "samplePrompt": "\"Build me a 4-week strength program for a beginner client with access to dumbbells only, 3 days a week, goal is fat loss. Format it so I can assign it in my coaching app.\"",
+    "samplePrompt": "Build me a 4-week strength program for a beginner client with access to dumbbells only, 3 days a week, goal is fat loss. Format it so I can assign it in my coaching app.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Coach Catalyst / Trainerize typically ~$5-$10 per active client per month — verify before publishing",
@@ -192,7 +192,7 @@
       }
     ],
     "workflowSummary": "Answer a short intake (goals, experience level, available equipment) inside a free app and the AI immediately generates a structured workout plan with videos for each exercise, then adjusts sets/weights as you log your sessions.",
-    "samplePrompt": "\"I'm a beginner with access to a home gym with dumbbells and a bench. Build me a free 3-day-a-week workout plan focused on building muscle.\"",
+    "samplePrompt": "I'm a beginner with access to a home gym with dumbbells and a bench. Build me a free 3-day-a-week workout plan focused on building muscle.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free tier available on Load Muscle and Planfit; premium tiers ~$5-$16/mo on comparable apps — verify before publishing",
@@ -231,7 +231,7 @@
       }
     ],
     "workflowSummary": "A combined AI app that builds a workout plan and also lets you log meals by photo, estimating calories/macros automatically, so you don't need two separate apps for training and diet.",
-    "samplePrompt": "\"Set me up with a plan that includes a beginner workout program plus a simple way to track my meals by taking photos of my food.\"",
+    "samplePrompt": "Set me up with a plan that includes a beginner workout program plus a simple way to track my meals by taking photos of my food.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free tier common (no card needed on some); paid tiers for advanced coaching features vary by app — verify before publishing",
@@ -270,7 +270,7 @@
       }
     ],
     "workflowSummary": "Paste a client's Google or Yelp review into an AI tool, select the star rating and tone, and get a ready-to-post, personalized reply in seconds that references the specific service mentioned — instead of writing every reply from scratch.",
-    "samplePrompt": "\"Here's a 2-star review about a color appointment that ran long and didn't match what the client asked for. Write a professional, empathetic reply from our salon that doesn't admit fault or promise a refund.\"",
+    "samplePrompt": "Here's a 2-star review about a color appointment that ran long and didn't match what the client asked for. Write a professional, empathetic reply from our salon that doesn't admit fault or promise a refund.",
     "beginnerFriendly": "yes",
     "trustScore": 5,
     "pricingNote": "Several tools offer a free tier or trial (e.g., Localo free tool, Reply Champion ~$10/mo) — verify before publishing",
@@ -309,7 +309,7 @@
       }
     ],
     "workflowSummary": "Describe a post topic (a balayage transformation, a new service, a seasonal promo) and the AI drafts a complete caption with relevant hashtags in your brand's tone, which you can then schedule across Instagram, TikTok, and Facebook from the same tool.",
-    "samplePrompt": "\"Write an Instagram caption for a before/after balayage transformation photo, warm and friendly tone, include 4 relevant beauty hashtags, under 150 characters.\"",
+    "samplePrompt": "Write an Instagram caption for a before/after balayage transformation photo, warm and friendly tone, include 4 relevant beauty hashtags, under 150 characters.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Canva's caption generator is free within Canva; dedicated salon marketing add-ons often bundled into booking software pricing — verify before publishing",
@@ -348,7 +348,7 @@
       }
     ],
     "workflowSummary": "Point the tool at your gym's website (class schedule, trainer bios, membership info); it learns your brand voice and auto-drafts a week's worth of captions and post ideas built around real class content you upload, then schedules them across platforms for a quick weekly review.",
-    "samplePrompt": "\"Using our class schedule and trainer bios, draft 5 Instagram/Facebook posts for this week promoting our 6am bootcamp class, in an energetic, motivating tone.\"",
+    "samplePrompt": "Using our class schedule and trainer bios, draft 5 Instagram/Facebook posts for this week promoting our 6am bootcamp class, in an energetic, motivating tone.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "works best once you feed it real business info to avoid generic output",
     "trustScore": 3,
@@ -388,7 +388,7 @@
       }
     ],
     "workflowSummary": "Upload a clear front-facing selfie into a virtual try-on app, browse or describe a cut/color, and the AI generates a realistic preview blended to your face shape and hair texture — useful for a stylist consultation or for a client deciding before they book.",
-    "samplePrompt": "\"Show me what I'd look like with a shoulder-length layered bob in a warm caramel balayage, using this photo of me.\"",
+    "samplePrompt": "Show me what I'd look like with a shoulder-length layered bob in a warm caramel balayage, using this photo of me.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free tier with limited previews common; HD/unlimited previews often paid — verify before publishing",
@@ -428,7 +428,7 @@
       }
     ],
     "workflowSummary": "Enter your business name (or use a name generator first) plus a few style keywords, and the AI proposes several logo directions and a full brand kit (colors, fonts) you can customize and download — no designer needed for a first version.",
-    "samplePrompt": "\"Generate logo concepts for a boutique Pilates studio called 'Rise Pilates,' modern and minimal style, in blush pink and charcoal.\"",
+    "samplePrompt": "Generate logo concepts for a boutique Pilates studio called 'Rise Pilates,' modern and minimal style, in blush pink and charcoal.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Looka logo design free to start, downloads/brand kits from ~$20-$80; Canva's logo tool free within Canva — verify before publishing",
@@ -467,7 +467,7 @@
       }
     ],
     "workflowSummary": "Answer a short questionnaire about your business (services, location, target client) and the AI drafts a complete site — homepage, booking CTA, trainer bio, before/after gallery — which you then edit and connect to your existing booking calendar.",
-    "samplePrompt": "\"Build me a one-page website for a personal trainer offering 1-on-1 and small-group sessions, with a 'Book a free consult' button, a bio section, and a pricing table.\"",
+    "samplePrompt": "Build me a one-page website for a personal trainer offering 1-on-1 and small-group sessions, with a 'Book a free consult' button, a bio section, and a pricing table.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Webador free plan available (limited features); Leadpages from ~$37/mo — verify before publishing",
@@ -506,7 +506,7 @@
       }
     ],
     "workflowSummary": "Automated SMS reminders and confirmations go out ahead of each appointment, clients can reply directly to confirm/reschedule, and last-minute cancellations trigger an automatic text blast to your waitlist to refill the slot — cutting empty chair time.",
-    "samplePrompt": "\"Set up automated text reminders that go out 24 hours and 2 hours before each appointment, and let clients reply 'C' to confirm or 'R' to reschedule.\"",
+    "samplePrompt": "Set up automated text reminders that go out 24 hours and 2 hours before each appointment, and let clients reply 'C' to confirm or 'R' to reschedule.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Often bundled into salon/spa software subscriptions (e.g., Vagaro, Zenoti); standalone SMS tools like EZ Texting have separate monthly plans — verify before publishing",
@@ -545,7 +545,7 @@
       }
     ],
     "workflowSummary": "Ask the AI to draft a promotional email or text (e.g., a slow-Tuesday discount, a rebooking nudge, a birthday offer), personalized with your business name and tone, then send it through your existing booking platform's marketing tool to your client list.",
-    "samplePrompt": "\"Write a friendly text message offering 15% off any color service booked for a Tuesday or Wednesday this month, to send to clients who haven't booked in 60+ days.\"",
+    "samplePrompt": "Write a friendly text message offering 15% off any color service booked for a Tuesday or Wednesday this month, to send to clients who haven't booked in 60+ days.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Frequently bundled into higher-tier plans of booking platforms already in use (e.g., Vagaro Ultimate ~$499/mo tier) — verify before publishing",
@@ -585,7 +585,7 @@
       }
     ],
     "workflowSummary": "Upload raw phone footage of a workout demo or client testimonial; the AI auto-edits it into a short, captioned, platform-optimized clip (rep counters, on-screen text, trending audio) ready to post — no editing software required.",
-    "samplePrompt": "\"Turn this 3-minute workout demo video into a 45-second Instagram Reel with on-screen rep counts, captions, and upbeat music.\"",
+    "samplePrompt": "Turn this 3-minute workout demo video into a 45-second Instagram Reel with on-screen rep counts, captions, and upbeat music.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free tiers with watermarks/limits common; paid plans typically ~$15-$30/mo — verify before publishing",
@@ -624,7 +624,7 @@
       }
     ],
     "workflowSummary": "Configure a chatbot/voice AI with your services, hours, cancellation policy, and pricing; it answers common client questions by phone, text, or web chat around the clock, escalating anything unusual (complaints, medical questions) to you directly.",
-    "samplePrompt": "\"Set up an AI assistant that can answer client questions about our cancellation policy, session pricing, and parking, and forward anything else to my cell phone.\"",
+    "samplePrompt": "Set up an AI assistant that can answer client questions about our cancellation policy, session pricing, and parking, and forward anything else to my cell phone.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "initial setup requires listing your policies accurately",
     "trustScore": 3,
@@ -664,7 +664,7 @@
       }
     ],
     "workflowSummary": "An AI voice agent trained on barbershop/nail-salon terminology (services, chair-time lengths, walk-in policy) answers calls, quotes services, and books into your existing scheduling software, covering the gaps when your hands are busy with a client.",
-    "samplePrompt": "\"Set up an AI phone assistant for my barbershop that knows our haircut and beard trim pricing, can quote wait times for walk-ins, and books appointments into our calendar.\"",
+    "samplePrompt": "Set up an AI phone assistant for my barbershop that knows our haircut and beard trim pricing, can quote wait times for walk-ins, and books appointments into our calendar.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "From ~$109/mo cited for salon-focused phone AI add-ons — verify before publishing",
@@ -700,7 +700,7 @@
       }
     ],
     "workflowSummary": "Enter a few keywords about your fitness business, and the AI generates a list of short, brandable name candidates along with a matching logo concept and live domain/social-handle availability shown alongside each suggestion.",
-    "samplePrompt": "\"Suggest 10 brandable business names for a women's strength-training studio, and show which .com domains are available.\"",
+    "samplePrompt": "Suggest 10 brandable business names for a women's strength-training studio, and show which .com domains are available.",
     "beginnerFriendly": "yes",
     "trustScore": 5,
     "pricingNote": "Both tools offer a free name-generation entry point; paid tiers apply for logo downloads/domain purchase — verify before publishing",
@@ -739,7 +739,7 @@
       }
     ],
     "workflowSummary": "Enter each employee's availability, role, and labor budget once; the AI auto-generates a conflict-free weekly shift schedule, flags overlaps or compliance issues, and lets staff swap shifts through the app instead of texting the manager.",
-    "samplePrompt": "\"Build next week's front-desk and stylist schedule from our team's availability, keep total weekly hours under budget, and flag any double-bookings.\"",
+    "samplePrompt": "Build next week's front-desk and stylist schedule from our team's availability, keep total weekly hours under budget, and flag any double-bookings.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Homebase free plan for single location; paid tiers with payroll typically ~$20-$80/mo per location — verify before publishing",
@@ -778,7 +778,7 @@
       }
     ],
     "workflowSummary": "A salon-specific scheduling tool (separate from client appointment booking) manages which stylists/estheticians/front-desk staff work which shifts, respects role licensing requirements, and lets an AI copilot auto-generate or adjust the roster when someone calls in sick.",
-    "samplePrompt": "\"Generate this week's stylist shift schedule for our salon, making sure only licensed colorists are scheduled for color-service days, and flag any missing coverage.\"",
+    "samplePrompt": "Generate this week's stylist shift schedule for our salon, making sure only licensed colorists are scheduled for color-service days, and flag any missing coverage.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "initial setup of roles/licenses takes some configuration",
     "trustScore": 3,
@@ -818,7 +818,7 @@
       }
     ],
     "workflowSummary": "Upload receipts, invoices, or a bank statement; the AI extracts vendor, amount, date, and category automatically, separates client payments from business expenses, and produces an export-ready report for your accountant or tax filing — no manual spreadsheet entry.",
-    "samplePrompt": "\"Upload my last month of bank statement transactions and separate client payments from business expenses like gym rent, travel, and marketing. Export a clean report for my accountant.\"",
+    "samplePrompt": "Upload my last month of bank statement transactions and separate client payments from business expenses like gym rent, travel, and marketing. Export a clean report for my accountant.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Tabby free up to $15K/yr tracked expenses, paid from ~$19/mo; ReceiptsAI offers free starter credits — verify before publishing",
@@ -857,7 +857,7 @@
       }
     ],
     "workflowSummary": "An AI-assisted bookkeeping platform built for solopreneurs consolidates income from retainers, group program sales, digital product sales, and affiliate commissions into one real-time profit view, instead of manually reconciling multiple payment platforms.",
-    "samplePrompt": "\"Pull together this month's income from client retainers, my group coaching program, and digital meal plan sales, and show me my actual profit after expenses.\"",
+    "samplePrompt": "Pull together this month's income from client retainers, my group coaching program, and digital meal plan sales, and show me my actual profit after expenses.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Wave offers free basic accounting; Cashflowy and similar coach-focused tools are typically paid subscriptions — verify before publishing",
@@ -896,7 +896,7 @@
       }
     ],
     "workflowSummary": "Connect your point-of-sale to an inventory module that deducts stock automatically at checkout, tracks separate retail vs. backbar (service-use) product levels, and sends an alert — or auto-builds a purchase order — when a product drops below the reorder threshold you set.",
-    "samplePrompt": "\"Show me which retail products are below their reorder point this week and draft a purchase order to our usual supplier for those items.\"",
+    "samplePrompt": "Show me which retail products are below their reorder point this week and draft a purchase order to our usual supplier for those items.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Often bundled into existing salon software subscription (e.g., Vagaro from ~$30/mo); standalone inventory add-ons vary — verify before publishing",
@@ -935,7 +935,7 @@
       }
     ],
     "workflowSummary": "Compare a shortlist of inventory-capable salon platforms on barcode scanning, automated reorder alerts, and separate retail-vs-backbar tracking, then pick the one that matches your salon's size and existing POS/booking setup rather than adding a disconnected extra tool.",
-    "samplePrompt": "\"Compare Square for Retail, Booksy, and Phorest for a 2-location salon that wants barcode scanning and automatic low-stock alerts. Which fits a small team best?\"",
+    "samplePrompt": "Compare Square for Retail, Booksy, and Phorest for a 2-location salon that wants barcode scanning and automatic low-stock alerts. Which fits a small team best?",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Feature tiers and per-location pricing vary widely — verify before publishing",
@@ -974,7 +974,7 @@
       }
     ],
     "workflowSummary": "Describe your activity type (CrossFit, yoga, boxing, personal training) and jurisdiction; the AI drafts a complete waiver with appropriate risk disclosures and a digital signature field, ready to send as a link or display on a front-desk kiosk/QR code for new members to sign on their phone.",
-    "samplePrompt": "\"Generate a liability waiver for a CrossFit box in Texas, including risk disclosures for barbell training and cardiac exertion, with a digital signature field.\"",
+    "samplePrompt": "Generate a liability waiver for a CrossFit box in Texas, including risk disclosures for barbell training and cardiac exertion, with a digital signature field.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Jotform AI Waiver Generator free to start; Happy Waiver free for first 100 signatures then ~$0.01/signature — verify before publishing",
@@ -1013,7 +1013,7 @@
       }
     ],
     "workflowSummary": "An AI-driven intake assistant walks a new member through a conversational form — name, contact info, health history, class type, waiver acknowledgment — on a tablet or their phone, capturing a signature and syncing the data directly into your member records without manual re-entry.",
-    "samplePrompt": "\"Set up a conversational check-in form for new gym members that collects contact info, injury history, and a signed waiver, and saves it to their member profile automatically.\"",
+    "samplePrompt": "Set up a conversational check-in form for new gym members that collects contact info, injury history, and a signed waiver, and saves it to their member profile automatically.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "branching health-history logic may need review/customization",
     "trustScore": 3,
@@ -1053,7 +1053,7 @@
       }
     ],
     "workflowSummary": "Payroll software pulls service and retail sales by stylist directly from your booking system, applies each person's commission rate or tier automatically, adds in pooled or individual tips, and generates a pay stub showing the full breakdown — no manual re-keying of numbers each pay period.",
-    "samplePrompt": "\"Run this week's payroll: apply each stylist's commission tier to their service and retail sales, add their share of pooled tips, and show a clear breakdown on each pay stub.\"",
+    "samplePrompt": "Run this week's payroll: apply each stylist's commission tier to their service and retail sales, add their share of pooled tips, and show a clear breakdown on each pay stub.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "commission-rule setup takes some upfront configuration",
     "trustScore": 4,
@@ -1093,7 +1093,7 @@
       }
     ],
     "workflowSummary": "Set a tip-splitting rule once (equal split, percentage-based, or role-based between stylist/assistant), and every card or digital tip collected at checkout is automatically divided according to that rule and logged per employee, eliminating manual math and reducing pay disputes.",
-    "samplePrompt": "\"Set up a tip-splitting rule where the primary stylist keeps 80% of the tip and the assistant gets 20%, and apply it automatically at checkout going forward.\"",
+    "samplePrompt": "Set up a tip-splitting rule where the primary stylist keeps 80% of the tip and the assistant gets 20%, and apply it automatically at checkout going forward.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Often included with POS/payroll subscription; standalone tip-distribution tools may charge separately — verify before publishing",
@@ -1132,7 +1132,7 @@
       }
     ],
     "workflowSummary": "An integrated POS ties payment processing directly to your booking software, so every checkout automatically attributes the sale (and any tip) to the stylist who performed the service, updates inventory, and feeds clean data straight into payroll — instead of manually reconciling receipts at the end of the week.",
-    "samplePrompt": "\"Recommend a salon POS system that automatically tracks which stylist gets credit for each sale and tip, and tell me roughly what the card-processing fees look like.\"",
+    "samplePrompt": "Recommend a salon POS system that automatically tracks which stylist gets credit for each sale and tip, and tell me roughly what the card-processing fees look like.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "comparing processing fees and contract terms takes some research",
     "trustScore": 3,
@@ -1172,7 +1172,7 @@
       }
     ],
     "workflowSummary": "Membership software handles the full billing lifecycle automatically — recurring charges, retrying failed payments, letting members self-serve a freeze or cancellation within your rules, and triggering renewal reminders — so staff aren't manually processing every membership change.",
-    "samplePrompt": "\"Set up automatic monthly billing for our membership tiers, allow members to request a freeze of up to 60 days through a self-service link, and auto-retry any failed payments twice before flagging it to me.\"",
+    "samplePrompt": "Set up automatic monthly billing for our membership tiers, allow members to request a freeze of up to 60 days through a self-service link, and auto-retry any failed payments twice before flagging it to me.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "setting billing/freeze rules requires some upfront decisions",
     "trustScore": 4,
@@ -1212,7 +1212,7 @@
       }
     ],
     "workflowSummary": "AI monitors attendance frequency, missed classes, and engagement signals (like unopened emails) already sitting in your gym software, flags members showing early warning signs of canceling, and suggests a personalized intervention — a win-back message or a free session offer — before they actually leave.",
-    "samplePrompt": "\"Show me which members have had a big drop in check-in frequency over the last month, and draft a personalized win-back text for the top 10 at-risk members.\"",
+    "samplePrompt": "Show me which members have had a big drop in check-in frequency over the last month, and draft a personalized win-back text for the top 10 at-risk members.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most useful once you already have a gym management platform generating the underlying attendance data",
     "trustScore": 3,
@@ -1252,7 +1252,7 @@
       }
     ],
     "workflowSummary": "An AI communication layer answers repetitive member questions (hours, pricing, parking, freeze/cancellation policy) across phone, text, email, and web chat using your actual policies, and can process simple account actions like a freeze request directly — freeing front-desk staff for in-person interactions.",
-    "samplePrompt": "\"Set up an AI assistant that can answer member questions about hours, membership pricing, and our freeze policy, and let members request a freeze directly through it.\"",
+    "samplePrompt": "Set up an AI assistant that can answer member questions about hours, membership pricing, and our freeze policy, and let members request a freeze directly through it.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Often tiered by message/call volume; typically a separate subscription from your core gym software — verify before publishing",
@@ -1291,7 +1291,7 @@
       }
     ],
     "workflowSummary": "Rather than buying one all-in-one AI platform, match each specific back-office pain point to a purpose-built tool — a messaging AI for lost inquiries and win-backs, your existing gym software's AI features for scheduling/billing, and a general AI assistant for drafting policies, class descriptions, or staff communications.",
-    "samplePrompt": "\"We're losing membership inquiries to slow replies and members are quietly stopping their visits. Which AI tools should we start with first, and what should we hold off on?\"",
+    "samplePrompt": "We're losing membership inquiries to slow replies and members are quietly stopping their visits. Which AI tools should we start with first, and what should we hold off on?",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Mix of free (general AI drafting) and paid per-tool subscriptions depending on which gaps you address — verify before publishing",
@@ -1330,7 +1330,7 @@
       }
     ],
     "workflowSummary": "Configure your AI phone/chat assistant to detect and respond in the client's language automatically — handling booking, rescheduling, and FAQs in Spanish, Hindi, or other locally common languages — instead of requiring a bilingual staff member to be present for every call.",
-    "samplePrompt": "\"Set up our AI receptionist to handle incoming calls in both English and Spanish, and confirm which of these languages it currently supports before we go live.\"",
+    "samplePrompt": "Set up our AI receptionist to handle incoming calls in both English and Spanish, and confirm which of these languages it currently supports before we go live.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "verify actual supported languages and quality per vendor before committing",
     "trustScore": 3,
@@ -1370,7 +1370,7 @@
       }
     ],
     "workflowSummary": "AI-driven analytics tools digest your booking, billing, and attendance data automatically and surface plain-language weekly summaries — net member movement, top-selling services, staffing utilization, cancellation patterns — instead of you manually pulling and interpreting separate reports.",
-    "samplePrompt": "\"Give me a plain-language summary of this week's performance: new members, cancellations, top-selling classes, and any staffing gaps I should know about.\"",
+    "samplePrompt": "Give me a plain-language summary of this week's performance: new members, cancellations, top-selling classes, and any staffing gaps I should know about.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most useful once fed several weeks of clean data from your existing booking/billing system",
     "trustScore": 3,
@@ -1410,7 +1410,7 @@
       }
     ],
     "workflowSummary": "A mobile-first bookkeeping app built for 1099 workers lets you send a professional invoice in seconds, categorizes incoming payments and expenses automatically from linked bank accounts, and estimates how much to set aside for quarterly taxes based on year-to-date income.",
-    "samplePrompt": "\"Send an invoice to my studio for this month's booth rent split, and tell me roughly how much I should be setting aside for taxes based on what I've earned so far this year.\"",
+    "samplePrompt": "Send an invoice to my studio for this month's booth rent split, and tell me roughly how much I should be setting aside for taxes based on what I've earned so far this year.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Tabby free up to $15K/yr in tracked expenses; Wave's core invoicing/accounting is free — verify before publishing",
@@ -1449,7 +1449,7 @@
       }
     ],
     "workflowSummary": "An AI tool audits your Google Business Profile for missing or weak fields, suggests keyword-relevant categories and descriptions, drafts regular Google Posts automatically, and tracks how you rank in local Maps results — instead of you guessing what to update.",
-    "samplePrompt": "\"Audit our salon's Google Business Profile, tell me what's missing or weak, and draft 2 Google Posts for this week using our current promotion.\"",
+    "samplePrompt": "Audit our salon's Google Business Profile, tell me what's missing or weak, and draft 2 Google Posts for this week using our current promotion.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "worth a human review before auto-publishing to a live profile",
     "trustScore": 3,
@@ -1491,7 +1491,7 @@
       }
     ],
     "workflowSummary": "Describe your offer (a free trial week, a seasonal membership discount) and target area; the AI generates multiple ad image/video variants sized correctly for each Meta placement along with several headline and copy options, which you can then launch or hand to Ads Manager.",
-    "samplePrompt": "\"Create 3 Facebook/Instagram ad variations promoting a free trial week at our gym, targeting people within 5 miles, with a clear 'Book your free class' call to action.\"",
+    "samplePrompt": "Create 3 Facebook/Instagram ad variations promoting a free trial week at our gym, targeting people within 5 miles, with a clear 'Book your free class' call to action.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "still requires basic familiarity with Meta Ads Manager to actually launch",
     "trustScore": 3,
@@ -1528,7 +1528,7 @@
       }
     ],
     "workflowSummary": "Point the tool at your business website; it identifies your service area and typical customer, then builds and launches geo-targeted Facebook/Instagram campaigns automatically, writing the copy and creative itself and pausing spend automatically if performance drops below a threshold you set.",
-    "samplePrompt": "\"Set up a geo-targeted Facebook ad campaign for our personal training studio within a 10-mile radius, with a $20/day budget, and automatically pause it if cost-per-lead goes above $25.\"",
+    "samplePrompt": "Set up a geo-targeted Facebook ad campaign for our personal training studio within a 10-mile radius, with a $20/day budget, and automatically pause it if cost-per-lead goes above $25.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Typically a monthly platform fee plus your own ad spend budget — verify before publishing",
@@ -1567,7 +1567,7 @@
       }
     ],
     "workflowSummary": "Choose a loyalty structure (points, tiers, or a referral bonus) and the platform tracks client visits, purchases, and referrals automatically, awarding points or discounts without you manually keeping score, and prompts clients about their rewards status at checkout or by text.",
-    "samplePrompt": "\"Set up a simple points-based loyalty program for our salon where clients earn 1 point per dollar spent and get a referral bonus when they bring in a new client. Explain how to launch it with our front desk.\"",
+    "samplePrompt": "Set up a simple points-based loyalty program for our salon where clients earn 1 point per dollar spent and get a referral bonus when they bring in a new client. Explain how to launch it with our front desk.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Varies by platform; some (Loyal-n-Save) are quote-based, others integrate into existing POS at added monthly cost — verify before publishing",
@@ -1606,7 +1606,7 @@
       }
     ],
     "workflowSummary": "Referral-tracking software captures which existing member referred a new sign-up, automatically applies a reward (discount, free session) to both parties once the referral converts, and reports referral volume so you know which members are your best promoters.",
-    "samplePrompt": "\"Set up a referral tracking system so that when a current member refers a friend who signs up, both get a free personal training session automatically applied to their account.\"",
+    "samplePrompt": "Set up a referral tracking system so that when a current member refers a friend who signs up, both get a free personal training session automatically applied to their account.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "some platforms track referrals at a basic lead-field level rather than a full rewards workflow — check before committing",
     "trustScore": 3,
@@ -1646,7 +1646,7 @@
       }
     ],
     "workflowSummary": "Describe the month's theme (a seasonal color trend, a new service, a product spotlight) and the AI drafts a complete newsletter — subject line, body copy, and a call to action — formatted for your existing email platform, ready for you to add photos and send.",
-    "samplePrompt": "\"Write our salon's monthly newsletter for October: one seasonal hair color trend, one product recommendation, and a reminder about holiday gift card sales.\"",
+    "samplePrompt": "Write our salon's monthly newsletter for October: one seasonal hair color trend, one product recommendation, and a reminder about holiday gift card sales.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Mailchimp and Klaviyo both offer free tiers for smaller lists; pricing scales with subscriber count — verify before publishing",
@@ -1685,7 +1685,7 @@
       }
     ],
     "workflowSummary": "Set a rule (e.g., \"no visit in 60+ days\") once, and the platform automatically sends a personalized win-back email or text using the client's actual service history and last visit date — no manual list-building or one-off email blasts required.",
-    "samplePrompt": "\"Set up an automatic win-back email that goes out to any client who hasn't booked in 60 days, referencing their last service and offering a small incentive to rebook.\"",
+    "samplePrompt": "Set up an automatic win-back email that goes out to any client who hasn't booked in 60 days, referencing their last service and offering a small incentive to rebook.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Often bundled into existing booking-platform marketing tiers; standalone email tools priced separately by list size — verify before publishing",
@@ -1724,7 +1724,7 @@
       }
     ],
     "workflowSummary": "Add a chat widget to your gym's website that answers visitor questions about pricing, class types, and trial offers in real time, captures their contact details as part of the conversation, and books a trial class directly into your calendar — even outside staffed hours.",
-    "samplePrompt": "\"Set up a website chatbot for our gym that answers questions about membership pricing and class types, and books a free trial class directly for anyone who wants one.\"",
+    "samplePrompt": "Set up a website chatbot for our gym that answers questions about membership pricing and class types, and books a free trial class directly for anyone who wants one.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best results require connecting it to your real pricing/class data first",
     "trustScore": 4,
@@ -1758,7 +1758,7 @@
       }
     ],
     "workflowSummary": "An AI recommendation engine analyzes the service a client just booked or received (e.g., a color treatment) and automatically suggests a relevant retail product or add-on service for staff to mention at checkout or during online booking, based on what similar clients have purchased.",
-    "samplePrompt": "\"After a color service is booked, suggest a relevant retail product or add-on treatment our front desk can offer at checkout to increase the average ticket.\"",
+    "samplePrompt": "After a color service is booked, suggest a relevant retail product or add-on treatment our front desk can offer at checkout to increase the average ticket.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most useful once already using a platform that has this feature built in",
     "trustScore": 3,
@@ -1792,7 +1792,7 @@
       }
     ],
     "workflowSummary": "Add an AI-driven upsell app to your salon's online store so that when a client buys a retail product (like shampoo), the app automatically suggests a complementary product (like a matching conditioner) as a bundle or add-on before checkout, increasing average order value without extra staff effort.",
-    "samplePrompt": "\"Set up product bundle suggestions on our online store so anyone buying shampoo also sees a matching conditioner offered as an add-on before checkout.\"",
+    "samplePrompt": "Set up product bundle suggestions on our online store so anyone buying shampoo also sees a matching conditioner offered as an add-on before checkout.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "requires an existing Shopify or similar e-commerce storefront first",
     "trustScore": 3,
@@ -1829,7 +1829,7 @@
       }
     ],
     "workflowSummary": "Describe your business and location, and the AI generates a list of blog post topics tied to real search demand in your area (e.g., \"best hair color trends for [city] winters\"), which you can turn into short blog posts to support your website's local search visibility.",
-    "samplePrompt": "\"Give me 10 blog post ideas for a hair salon in a mid-size city, focused on topics our local clients are actually searching for.\"",
+    "samplePrompt": "Give me 10 blog post ideas for a hair salon in a mid-size city, focused on topics our local clients are actually searching for.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "HubSpot and Enji both offer free tiers for basic idea generation; full drafting/publishing tools are typically paid — verify before publishing",
@@ -1865,7 +1865,7 @@
       }
     ],
     "workflowSummary": "Use an AI-assisted planning guide to map recurring seasonal promotions (spring color trends, summer sun-protection tips, holiday gift card pushes) onto a content and email calendar in advance, so your marketing isn't created last-minute each month.",
-    "samplePrompt": "\"Build me a quarter-by-quarter promotion and content calendar for our salon covering spring, summer, fall, and winter service and retail pushes.\"",
+    "samplePrompt": "Build me a quarter-by-quarter promotion and content calendar for our salon covering spring, summer, fall, and winter service and retail pushes.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Planning guidance is often free content; execution tools (email platform, social scheduler) carry their own separate subscription cost — verify before publishing",
@@ -1901,7 +1901,7 @@
       }
     ],
     "workflowSummary": "After someone attends a free trial class or tour, an AI communication tool automatically follows up by text or email over the next several days with personalized nudges (addressing common hesitations, offering a limited-time join incentive) instead of relying on staff to remember to call.",
-    "samplePrompt": "\"Set up an automatic 5-day follow-up sequence for anyone who attends a free trial class but doesn't sign up, including one message addressing cost concerns and one limited-time join offer.\"",
+    "samplePrompt": "Set up an automatic 5-day follow-up sequence for anyone who attends a free trial class but doesn't sign up, including one message addressing cost concerns and one limited-time join offer.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Typically a separate monthly subscription layered on top of your core gym management software — verify before publishing",
@@ -1940,7 +1940,7 @@
       }
     ],
     "workflowSummary": "Set up digital gift cards through your existing booking/e-commerce platform so clients can buy and send them online; gift card recipients statistically spend more than the card's face value when they redeem it, making this a low-effort way to bring in new revenue and new clients.",
-    "samplePrompt": "\"Set up digital gift cards on our website that clients can buy and email directly to a friend, and suggest a small holiday promotion to boost gift card sales.\"",
+    "samplePrompt": "Set up digital gift cards on our website that clients can buy and email directly to a friend, and suggest a small holiday promotion to boost gift card sales.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Gift card features are usually included free with an existing booking/e-commerce plan — verify before publishing",
@@ -1976,7 +1976,7 @@
       }
     ],
     "workflowSummary": "Use a local SEO / competitive intelligence tool to pull publicly available data on nearby competitors — their reviews, posted pricing where available, and search visibility — to see how your salon or gym's online presence and offers compare in your immediate area.",
-    "samplePrompt": "\"Show me how our gym's Google review rating and posting activity compares to the 3 closest competing gyms in our area.\"",
+    "samplePrompt": "Show me how our gym's Google review rating and posting activity compares to the 3 closest competing gyms in our area.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best suited to owners already comfortable with basic local SEO concepts",
     "trustScore": 3,
@@ -2010,7 +2010,7 @@
       }
     ],
     "workflowSummary": "Describe the promotion (a holiday gift card sale, a new-client discount) and Canva's AI generates a set of branded graphic options sized for your website, Google Business Profile, and social posts, which you can customize with your own colors and logo before publishing.",
-    "samplePrompt": "\"Design a promotional banner announcing 20% off gift cards for the holidays, using our salon's pink and gold brand colors, sized for both our website and Instagram.\"",
+    "samplePrompt": "Design a promotional banner announcing 20% off gift cards for the holidays, using our salon's pink and gold brand colors, sized for both our website and Instagram.",
     "beginnerFriendly": "yes",
     "trustScore": 5,
     "pricingNote": "Canva's AI design tools are largely free within the platform; Canva Pro unlocks additional templates/assets — verify before publishing",
@@ -2049,7 +2049,7 @@
       }
     ],
     "workflowSummary": "Rather than buying every AI marketing tool at once, match the tool to your biggest specific leak — a lead-capture/communication AI if you're losing inquiries, a churn-prediction tool if members are quietly canceling, or a recommendation engine if average ticket size is low — and expand from there.",
-    "samplePrompt": "\"We're a small gym losing membership inquiries because nobody replies fast enough after hours. What's the single AI tool we should start with, and what should we hold off on until later?\"",
+    "samplePrompt": "We're a small gym losing membership inquiries because nobody replies fast enough after hours. What's the single AI tool we should start with, and what should we hold off on until later?",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Mix of free general-purpose AI drafting and paid, purpose-built tools depending on the gap being addressed — verify before publishing",
@@ -2085,7 +2085,7 @@
       }
     ],
     "workflowSummary": "Describe your service or offer and the AI generates a short, platform-ready promotional video (with voiceover, captions, and background footage or your own uploaded clips) suited for Instagram Reels or TikTok ads, without hiring a videographer or editor.",
-    "samplePrompt": "\"Create a 30-second promotional video ad for a spring facial special at our spa, using an upbeat tone with captions, ready to post as an Instagram Reel ad.\"",
+    "samplePrompt": "Create a 30-second promotional video ad for a spring facial special at our spa, using an upbeat tone with captions, ready to post as an Instagram Reel ad.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Free tiers commonly limited to 1 video/month; paid plans needed for regular use — verify before publishing",
@@ -2121,7 +2121,7 @@
       }
     ],
     "workflowSummary": "Select your service category, location, and budget; the AI builds a geo-targeted Google Search/Local Services campaign, writes the ad copy, and continuously adjusts bids and pauses underperforming keywords — without paying an agency's monthly management fee on top of ad spend.",
-    "samplePrompt": "\"Set up a Google Search ad campaign for our personal training studio, targeting people within 8 miles searching for 'personal trainer near me,' with a $15/day budget.\"",
+    "samplePrompt": "Set up a Google Search ad campaign for our personal training studio, targeting people within 8 miles searching for 'personal trainer near me,' with a $15/day budget.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "still requires reviewing the campaign before/after launch",
     "trustScore": 3,
@@ -2161,7 +2161,7 @@
       }
     ],
     "workflowSummary": "A client's face is scanned for 60-90 seconds using an iPad or phone camera; the AI analyzes dozens of skin metrics (texture, tone, hydration, visible conditions) and generates a report matched to your treatment menu, giving both provider and client an objective basis for the recommendation instead of a purely visual guess.",
-    "samplePrompt": "\"Scan this client's skin and generate a report on hydration, texture, and pigmentation, then match the top 3 concerns to services we currently offer.\"",
+    "samplePrompt": "Scan this client's skin and generate a report on hydration, texture, and pigmentation, then match the top 3 concerns to services we currently offer.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best suited to spas with an established treatment menu to match results against",
     "trustScore": 4,
@@ -2195,7 +2195,7 @@
       }
     ],
     "workflowSummary": "Set pricing rules once (e.g., a premium rate for Friday evening classes, a discount for weekday mornings), and the system automatically applies the correct price everywhere a client can book — app, website, kiosk, or front desk — without you or your staff manually updating prices for each time slot.",
-    "samplePrompt": "\"Set up a 15% premium price for Saturday morning color appointments and a 10% discount for Tuesday/Wednesday morning slots, applied automatically across our booking channels.\"",
+    "samplePrompt": "Set up a 15% premium price for Saturday morning color appointments and a 10% discount for Tuesday/Wednesday morning slots, applied automatically across our booking channels.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "requires careful rollout — clients can react negatively to price changes if not framed as clear off-peak savings",
     "trustScore": 3,
@@ -2232,7 +2232,7 @@
       }
     ],
     "workflowSummary": "An AI content-governance platform manages each location's Google Business Profile, social posts, and local listings within corporate-approved brand guidelines, letting individual locations still post locally-relevant content without the risk of off-brand messaging or inconsistent business information across dozens of profiles.",
-    "samplePrompt": "\"Set up brand-approved social post templates that each of our 6 gym locations can localize with their own class times and staff, without changing our core brand voice or logo usage.\"",
+    "samplePrompt": "Set up brand-approved social post templates that each of our 6 gym locations can localize with their own class times and staff, without changing our core brand voice or logo usage.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best suited to operators with 5+ locations; overkill for a single site",
     "trustScore": 3,
@@ -2266,7 +2266,7 @@
       }
     ],
     "workflowSummary": "Centralized listings-management software pushes accurate business information (name, address, phone, hours, photos) out to Google Business Profile, Apple Business Connect, Bing, Yelp, and other directories for every location at once, and flags inconsistencies automatically instead of requiring manual updates location-by-location.",
-    "samplePrompt": "\"Check that our business hours and address are accurate and consistent across Google, Apple Maps, Yelp, and Bing for all 4 of our salon locations, and flag anything that doesn't match.\"",
+    "samplePrompt": "Check that our business hours and address are accurate and consistent across Google, Apple Maps, Yelp, and Bing for all 4 of our salon locations, and flag anything that doesn't match.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Multi-location listings tools are typically subscription-based, priced per location — verify before publishing",
@@ -2302,7 +2302,7 @@
       }
     ],
     "workflowSummary": "Browse or search a marketplace of vetted content creators filtered by location and niche, describe the video you want (a client testimonial, a behind-the-scenes class clip), and book a creator directly — paying per piece of content instead of negotiating a long-term influencer contract.",
-    "samplePrompt": "\"Find 3 local content creators near our gym who could film a short authentic testimonial-style video about trying our first class, and estimate typical cost per video.\"",
+    "samplePrompt": "Find 3 local content creators near our gym who could film a short authentic testimonial-style video about trying our first class, and estimate typical cost per video.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Marketplace platforms often charge no platform fee to browse; creator rates vary by follower count/niche and are set per project — verify before publishing",
@@ -2338,7 +2338,7 @@
       }
     ],
     "workflowSummary": "AI reviews each transaction and the customer's history in real time to estimate the likelihood it will be disputed, flags high-risk charges for extra verification before they're approved, and — when a chargeback is filed anyway — automatically compiles supporting evidence (booking records, service history) to help you contest it.",
-    "samplePrompt": "\"Review our last month of card transactions and flag any that look unusually high-risk for a future chargeback, and explain what evidence I should gather to contest any disputes that come in.\"",
+    "samplePrompt": "Review our last month of card transactions and flag any that look unusually high-risk for a future chargeback, and explain what evidence I should gather to contest any disputes that come in.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "thresholds need tuning — too aggressive a setting can decline legitimate customers",
     "trustScore": 3,
@@ -2375,7 +2375,7 @@
       }
     ],
     "workflowSummary": "Rather than each location handling lead follow-up its own way, an AI platform applies the same proven follow-up sequence (speed-to-lead response, trial nurture, objection handling) automatically at every location, while still rolling up performance reporting so corporate can see which locations convert well and which need coaching.",
-    "samplePrompt": "\"Set up the same automatic lead follow-up sequence — instant reply, trial offer, 3-day nurture — across all 5 of our gym locations, and show me a report comparing conversion rates by location.\"",
+    "samplePrompt": "Set up the same automatic lead follow-up sequence — instant reply, trial offer, 3-day nurture — across all 5 of our gym locations, and show me a report comparing conversion rates by location.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best suited to multi-location operators; a single gym doesn't need the roll-up reporting layer",
     "trustScore": 3,
@@ -2412,7 +2412,7 @@
       }
     ],
     "workflowSummary": "An AI-driven quoting widget on your website asks a client a few questions (service type, hair length, add-ons) and instantly displays an accurate price range based on your actual price list and stylist experience tiers, cutting down on the back-and-forth pricing calls that eat into front-desk time.",
-    "samplePrompt": "\"Set up a price quote tool on our website that asks about hair length and desired service, then shows an accurate price range for a balayage before the client calls.\"",
+    "samplePrompt": "Set up a price quote tool on our website that asks about hair length and desired service, then shows an accurate price range for a balayage before the client calls.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "requires your price list to be fully and accurately entered first",
     "trustScore": 3,
@@ -2449,7 +2449,7 @@
       }
     ],
     "workflowSummary": "When a client disputes a charge for a service they actually received, gather objective evidence — the signed waiver/intake form, appointment confirmation, and any session notes — and use your payment processor's dispute-response tool (many now AI-assisted) to submit that evidence in the standard format card networks expect, improving your odds of winning the dispute.",
-    "samplePrompt": "\"Walk me through what evidence I should submit to fight a chargeback from a client who attended their massage session but is now disputing the charge as 'unauthorized.'\"",
+    "samplePrompt": "Walk me through what evidence I should submit to fight a chargeback from a client who attended their massage session but is now disputing the charge as 'unauthorized.'",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Dispute-response tools are typically included with your existing payment processor at no separate cost — verify before publishing",
@@ -2485,7 +2485,7 @@
       }
     ],
     "workflowSummary": "Describe the role and the tasks a new hire needs to learn (front-desk check-in procedure, class safety protocols, product knowledge); the AI drafts a structured onboarding document or checklist you can review, edit for accuracy, and hand to new staff instead of writing training materials from a blank page each time.",
-    "samplePrompt": "\"Draft a first-week onboarding checklist for a new front-desk hire at our gym, covering check-in procedure, answering common member questions, and basic emergency protocols.\"",
+    "samplePrompt": "Draft a first-week onboarding checklist for a new front-desk hire at our gym, covering check-in procedure, answering common member questions, and basic emergency protocols.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "General-purpose AI writing tools are often free or low-cost for this kind of drafting; formatting into interactive checklists may need a separate form tool — verify before publishing",
@@ -2518,7 +2518,7 @@
       }
     ],
     "workflowSummary": "Before deploying any AI chatbot or voice agent that talks directly with clients, make sure it clearly discloses that the client is interacting with AI (required under rules like the EU AI Act's Article 50 for businesses serving EU clients, and increasingly expected by consumers generally), rather than letting the bot pass itself off as a human staff member.",
-    "samplePrompt": "\"Review our chatbot's greeting script and tell me whether it clearly discloses to clients that they're talking to an AI, not a staff member.\"",
+    "samplePrompt": "Review our chatbot's greeting script and tell me whether it clearly discloses to clients that they're talking to an AI, not a staff member.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "No tool cost — this is a compliance review task, applicable regardless of which chatbot platform is used",
@@ -2557,7 +2557,7 @@
       }
     ],
     "workflowSummary": "Rather than storing before/after photos loosely on a personal phone, use a practice-management or waiver platform's photo consent feature to capture explicit client permission for how photos may be used (internal records only, vs. marketing/social media), storing both the photo and the signed consent together for each client.",
-    "samplePrompt": "\"Set up a consent form that clients sign before we take before/after photos, with a clear option for 'internal use only' vs. 'okay to use in marketing,' and store both together per client.\"",
+    "samplePrompt": "Set up a consent form that clients sign before we take before/after photos, with a clear option for 'internal use only' vs. 'okay to use in marketing,' and store both together per client.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Photo consent add-ons are typically bundled with an existing waiver or practice-management platform subscription — verify before publishing",
@@ -2596,7 +2596,7 @@
       }
     ],
     "workflowSummary": "Record or upload a short clip of a lift; the AI analyzes range of motion, alignment, tempo, and stability, then returns a score and specific, frame-by-frame feedback on what to fix — useful between trainer sessions or for clients training on their own.",
-    "samplePrompt": "\"Analyze this video of my squat and tell me if my depth, knee tracking, and back position look safe, plus one thing to fix on my next set.\"",
+    "samplePrompt": "Analyze this video of my squat and tell me if my depth, knee tracking, and back position look safe, plus one thing to fix on my next set.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Many form-check apps offer a free tier with limited scans/month; full access typically runs a modest monthly subscription — verify before publishing",
@@ -2635,7 +2635,7 @@
       }
     ],
     "workflowSummary": "Clients record their lifts and upload through the app; the AI pre-screens the video for common form issues (range of motion, alignment, tempo) and surfaces a summary, so the trainer's own review time focuses on borderline calls and coaching cues rather than watching every rep from scratch.",
-    "samplePrompt": "\"Set up a workflow where my online coaching clients upload workout videos, get an automatic AI form score first, and I only need to add follow-up notes for anything flagged as a concern.\"",
+    "samplePrompt": "Set up a workflow where my online coaching clients upload workout videos, get an automatic AI form score first, and I only need to add follow-up notes for anything flagged as a concern.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "best paired with, not substituted for, a trainer's own review",
     "trustScore": 3,
@@ -2675,7 +2675,7 @@
       }
     ],
     "workflowSummary": "Clients step onto or in front of a scanning device for under a minute; the system generates a 3D avatar plus detailed body composition and circumference measurements, letting trainers program more precisely and clients see visual, motivating progress beyond what the bathroom scale shows.",
-    "samplePrompt": "\"Explain how a Styku or ShapeScale 3D body scan could work as a free onboarding perk for new gym members, and what ongoing costs I should expect.\"",
+    "samplePrompt": "Explain how a Styku or ShapeScale 3D body scan could work as a free onboarding perk for new gym members, and what ongoing costs I should expect.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "a hardware purchase/lease decision, not just a software signup",
     "trustScore": 3,
@@ -2715,7 +2715,7 @@
       }
     ],
     "workflowSummary": "Take two or four smartphone photos (front and side) in the app; it builds a 3D avatar and estimates dozens of body measurements and body fat percentage, letting individual clients or trainers track shape change over time without any special equipment.",
-    "samplePrompt": "\"Walk me through taking my first body scan with a smartphone-based app, and explain what measurements it can track over time compared to just weighing myself.\"",
+    "samplePrompt": "Walk me through taking my first body scan with a smartphone-based app, and explain what measurements it can track over time compared to just weighing myself.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "App-based scanners are typically free to start or low-cost (roughly $5-$15/month range across comparable apps) — verify before publishing",
@@ -2751,7 +2751,7 @@
       }
     ],
     "workflowSummary": "After a session, dictate a plain-language summary of what you observed and did (presenting complaint, techniques used, client response); the AI formats it into a properly structured, compliant SOAP note in seconds, which you review and sign — instead of typing the full note from scratch.",
-    "samplePrompt": "\"Turn this into a SOAP note: client had tight left shoulder and reduced range of motion, I did 60 minutes of deep tissue on the shoulder and upper back, pain went from 6/10 to 2/10 by the end, plan is weekly sessions for a month.\"",
+    "samplePrompt": "Turn this into a SOAP note: client had tight left shoulder and reduced range of motion, I did 60 minutes of deep tissue on the shoulder and upper back, pain went from 6/10 to 2/10 by the end, plan is weekly sessions for a month.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "PatientNotes offers a free 14-day trial; general-purpose AI assistants used for this are often free or low-cost — verify before publishing",
@@ -2787,7 +2787,7 @@
       }
     ],
     "workflowSummary": "Build (or let the AI help build) a flexible note template once per session type — mental health, physical therapy, massage — and the system locks it after first use to keep documentation consistent; AI-generated summaries can also condense long intake forms into key points automatically.",
-    "samplePrompt": "\"Set up separate note templates for my physical therapy sessions and my massage sessions, and have the AI summarize new client intake forms into a short list of key points before my first appointment with them.\"",
+    "samplePrompt": "Set up separate note templates for my physical therapy sessions and my massage sessions, and have the AI summarize new client intake forms into a short list of key points before my first appointment with them.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "initial template setup takes some configuration",
     "trustScore": 3,
@@ -2824,7 +2824,7 @@
       }
     ],
     "workflowSummary": "Clients connect their existing wearable (Whoop, Oura, Garmin, Apple Watch, Fitbit) to your coaching platform; their sleep, HRV, and recovery data appears alongside their workout log, letting you make an informed call — like swapping a heavy session for a lighter one — instead of relying only on what the client tells you.",
-    "samplePrompt": "\"My client's Whoop shows their HRV dropped 15% and they only slept 5 hours last night. Should I adjust today's scheduled heavy squat session, and how would I explain that to them?\"",
+    "samplePrompt": "My client's Whoop shows their HRV dropped 15% and they only slept 5 hours last night. Should I adjust today's scheduled heavy squat session, and how would I explain that to them?",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "useful once a critical mass of clients actually wear a compatible device",
     "trustScore": 3,
@@ -2861,7 +2861,7 @@
       }
     ],
     "workflowSummary": "Connect several wearables and training platforms (Garmin, WHOOP, Oura, Strava, TrainingPeaks) to one AI coaching layer that synthesizes sleep, recovery, and training load across all of them into a single daily recommendation, instead of a client or trainer manually cross-referencing four separate apps each morning.",
-    "samplePrompt": "\"Connect my Garmin, WHOOP, and Strava data and tell me each morning whether I should stick to my planned workout or adjust based on my recovery.\"",
+    "samplePrompt": "Connect my Garmin, WHOOP, and Strava data and tell me each morning whether I should stick to my planned workout or adjust based on my recovery.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "most valuable for clients already using 2+ wearables/platforms; unnecessary for a single-device user",
     "trustScore": 3,
@@ -2898,7 +2898,7 @@
       }
     ],
     "workflowSummary": "The platform compiles a client's weekly check-in data, workout compliance, body stats trends, and milestone achievements (like a new personal record) into a formatted, easy-to-read monthly report automatically — so trainers aren't manually pulling numbers from a spreadsheet to write updates for every client each month.",
-    "samplePrompt": "\"Generate this month's progress report for my client, pulling together their workout compliance, any new personal records, and their body measurement trend, in a format I can send them directly.\"",
+    "samplePrompt": "Generate this month's progress report for my client, pulling together their workout compliance, any new personal records, and their body measurement trend, in a format I can send them directly.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Included as a feature within most all-in-one personal training platform subscriptions rather than sold separately — verify before publishing",
@@ -2937,7 +2937,7 @@
       }
     ],
     "workflowSummary": "AI watches per-client behavioral signals — missed check-ins, declining session frequency, slower message replies, stalled progress — and flags an individual client as at-risk before they cancel, which is a different (more granular) signal than gym-wide churn-prediction tools built for membership-level retention.",
-    "samplePrompt": "\"Flag which of my current 1:1 training clients have missed check-ins or shown declining workout compliance over the last 2 weeks, so I can reach out personally before they consider quitting.\"",
+    "samplePrompt": "Flag which of my current 1:1 training clients have missed check-ins or shown declining workout compliance over the last 2 weeks, so I can reach out personally before they consider quitting.",
     "beginnerFriendly": "somewhat",
     "trustScore": 3,
     "pricingNote": "Typically included within an all-in-one personal training platform subscription — verify before publishing",
@@ -2973,7 +2973,7 @@
       }
     ],
     "workflowSummary": "Raw logged data (weights lifted, measurements, progress photos) is automatically organized into visual charts, before-and-after photo comparisons, and milestone callouts, so a client sees a compelling picture of their progress rather than a plain number that's easy to overlook during a plateau.",
-    "samplePrompt": "\"Turn my client's last 3 months of workout logs and progress photos into a simple visual summary showing their strength gains and body changes, formatted to send them directly.\"",
+    "samplePrompt": "Turn my client's last 3 months of workout logs and progress photos into a simple visual summary showing their strength gains and body changes, formatted to send them directly.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Typically bundled into an existing personal training software subscription — verify before publishing",
@@ -3012,7 +3012,7 @@
       }
     ],
     "workflowSummary": "An all-in-one coaching platform combines AI workout generation, automated client communication, progress tracking, and payment collection into a single system, so a trainer scaling beyond a handful of in-person clients doesn't need to stitch together five separate tools to run an online coaching business.",
-    "samplePrompt": "\"Recommend an all-in-one coaching platform for a solo trainer with 20 online clients that handles workout delivery, progress tracking, automated check-in messages, and payments in one place.\"",
+    "samplePrompt": "Recommend an all-in-one coaching platform for a solo trainer with 20 online clients that handles workout delivery, progress tracking, automated check-in messages, and payments in one place.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Pricing for these platforms typically scales with active client count, often in the $5-$20/client/month range — verify before publishing",
@@ -3047,7 +3047,7 @@
       }
     ],
     "workflowSummary": "Describe your specific modality and typical client population (sports massage, prenatal, deep tissue) and the AI drafts a tailored intake questionnaire covering the health history and precautions relevant to that specialty, rather than using a generic one-size-fits-all form.",
-    "samplePrompt": "\"Create an intake questionnaire specifically for a prenatal massage practice, covering pregnancy stage, any complications, and positioning preferences.\"",
+    "samplePrompt": "Create an intake questionnaire specifically for a prenatal massage practice, covering pregnancy stage, any complications, and positioning preferences.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Drafting via a general-purpose AI assistant is typically free; dedicated practice-management platforms with built-in forms are separately priced — verify before publishing",
@@ -3083,7 +3083,7 @@
       }
     ],
     "workflowSummary": "Set up a challenge (a step count goal, a workout-frequency streak, a strength milestone) once inside your coaching platform; client progress is tracked automatically from their logged workouts or connected wearable, and a leaderboard updates without you manually tallying results each week.",
-    "samplePrompt": "\"Set up a 30-day workout consistency challenge for my group coaching clients with an automatic leaderboard based on sessions logged per week.\"",
+    "samplePrompt": "Set up a 30-day workout consistency challenge for my group coaching clients with an automatic leaderboard based on sessions logged per week.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Typically included as a feature within an existing coaching platform's group/community tier — verify before publishing",
@@ -3119,7 +3119,7 @@
       }
     ],
     "workflowSummary": "Instead of opening multiple dashboards, a trainer or athlete can message an AI coaching assistant directly through Telegram or WhatsApp with a plain question about recent training or recovery data, and get a synthesized answer or recommendation back in the same conversation.",
-    "samplePrompt": "\"Ask my AI coaching assistant why my recovery score dropped this week and whether I should scale back tomorrow's planned workout.\"",
+    "samplePrompt": "Ask my AI coaching assistant why my recovery score dropped this week and whether I should scale back tomorrow's planned workout.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Typically a monthly subscription on top of the connected wearable/training platforms — verify before publishing",

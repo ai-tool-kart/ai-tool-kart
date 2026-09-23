@@ -36,6 +36,8 @@ await test('deriveSteps', async (t) => {
     assert.equal(open?.tip, '7-day trial requires a card upfront')
 
     assert.equal(prompt?.title, DERIVED_STEP_TITLES.usePrompt)
+    assert.equal(prompt?.body, 'Use this prompt.', 'no claim about where the prompt goes')
+    assert.equal(prompt && 'toolName' in prompt, false)
     assert.equal(prompt?.prompt, 'Plan my week around three exams and a part-time job.')
 
     assert.equal(result?.title, DERIVED_STEP_TITLES.howItWorks)

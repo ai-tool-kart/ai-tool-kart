@@ -1711,7 +1711,7 @@
       }
     ],
     "workflowSummary": "Recruiter uploads a batch of resumes plus the job description; the tool parses each resume, semantically matches it to the role's requirements, and returns a ranked shortlist with visible reasoning so the recruiter can sanity-check the top matches instead of reading every resume manually.",
-    "samplePrompt": "\"Here's the job description for [role]. Score and rank the attached resumes against the must-have requirements: [list them], and flag any candidate missing a hard requirement.\"",
+    "samplePrompt": "Here's the job description for [role]. Score and rank the attached resumes against the must-have requirements: [list them], and flag any candidate missing a hard requirement.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "easy to use once resumes are uploaded, but a recruiter should learn how the ranking logic works before trusting it fully",
     "trustScore": 4,
@@ -1749,7 +1749,7 @@
       }
     ],
     "workflowSummary": "HR types in the role, seniority, and a few responsibilities; the tool drafts a structured JD (summary, responsibilities, qualifications) and can score or rewrite it to remove exclusionary language before it's posted to job boards.",
-    "samplePrompt": "\"Write a job description for a [seniority] [role title] at a [industry] company. Keep the tone friendly and jargon-free, and flag any language that might discourage diverse applicants.\"",
+    "samplePrompt": "Write a job description for a [seniority] [role title] at a [industry] company. Keep the tone friendly and jargon-free, and flag any language that might discourage diverse applicants.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Workable free JD tool; Textio paid plans on request — verify before publishing",
@@ -1786,7 +1786,7 @@
       }
     ],
     "workflowSummary": "Instead of emailing back and forth to find a time, the tool checks everyone's calendar, proposes times a candidate can self-book, and automatically rebalances or reschedules when an interviewer declines.",
-    "samplePrompt": "\"Find a 45-minute slot next week where [candidate name], [interviewer names], and I are all free, and send the candidate a self-scheduling link.\"",
+    "samplePrompt": "Find a 45-minute slot next week where [candidate name], [interviewer names], and I are all free, and send the candidate a self-scheduling link.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Calendly from $10/seat/mo; GoodTime pricing on request — verify before publishing",
@@ -1823,7 +1823,7 @@
       }
     ],
     "workflowSummary": "Recruiter describes the role in plain language; the tool searches hundreds of millions of profiles across LinkedIn, GitHub, and other sites, ranks candidates by fit, and can kick off outreach sequences to the ones who look like a match.",
-    "samplePrompt": "\"Find 20 candidates with 5+ years of [skill] experience in [location] who aren't actively job-hunting, and prioritize ones who've changed roles in the last 2 years.\"",
+    "samplePrompt": "Find 20 candidates with 5+ years of [skill] experience in [location] who aren't actively job-hunting, and prioritize ones who've changed roles in the last 2 years.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "the search works out of the box, but getting good outreach reply rates takes some trial and error",
     "trustScore": 4,
@@ -1861,7 +1861,7 @@
       }
     ],
     "workflowSummary": "Paste in a job title (or full job description) and seniority level; the tool returns a tailored mix of behavioral, situational, and skills-based questions, often with what to listen for in a strong answer.",
-    "samplePrompt": "\"Generate 8 interview questions for a [seniority] [role title], mixing behavioral and situational questions, and tell me what a strong answer to each one looks like.\"",
+    "samplePrompt": "Generate 8 interview questions for a [seniority] [role title], mixing behavioral and situational questions, and tell me what a strong answer to each one looks like.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free",
@@ -1895,7 +1895,7 @@
       }
     ],
     "workflowSummary": "HR fills in role, salary, start date, and benefits; the tool formats a complete offer letter and flags common compliance gaps (missing at-will language, missing contingencies) before it's sent to the candidate.",
-    "samplePrompt": "\"Draft an offer letter for [candidate name] for the role of [title], starting [date], salary [amount], with a 5 business day response deadline and a background-check contingency.\"",
+    "samplePrompt": "Draft an offer letter for [candidate name] for the role of [title], starting [date], salary [amount], with a 5 business day response deadline and a background-check contingency.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free, no sign-up required — verify before publishing",
@@ -1932,7 +1932,7 @@
       }
     ],
     "workflowSummary": "HR enters the role and start date; the tool generates a phase-by-phase checklist (pre-boarding, day one, first week, first 30-60-90 days) covering IT setup, paperwork, training, and manager check-ins, and can assign tasks automatically.",
-    "samplePrompt": "\"Create a 30-60-90 day onboarding checklist for a new [role title] joining a [team size]-person team, organized by Day 1, Week 1, Week 2, and Weeks 3-4.\"",
+    "samplePrompt": "Create a 30-60-90 day onboarding checklist for a new [role title] joining a [team size]-person team, organized by Day 1, Week 1, Week 2, and Weeks 3-4.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Rippling ~$8-15/user/month per module; BambooHR pricing on request — verify before publishing",
@@ -1969,7 +1969,7 @@
       }
     ],
     "workflowSummary": "Manager types in a few bullet points about an employee's achievements and growth areas; the tool turns them into a clear, professional review draft the manager then edits for accuracy and tone before sharing.",
-    "samplePrompt": "\"Turn these notes into a performance review for [employee name], [role]: [bullet list of achievements and growth areas]. Keep the tone constructive and specific, not generic.\"",
+    "samplePrompt": "Turn these notes into a performance review for [employee name], [role]: [bullet list of achievements and growth areas]. Keep the tone constructive and specific, not generic.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Easy-Peasy.AI has a free generator; ClickUp Brain requires a paid plan — verify before publishing",
@@ -2006,7 +2006,7 @@
       }
     ],
     "workflowSummary": "Departing employees complete a structured survey; the tool uses AI text analysis to surface recurring themes (pay, management, growth) across many exit interviews so HR can spot patterns instead of reading each response in isolation.",
-    "samplePrompt": "\"Summarize the top 3 recurring themes from this quarter's exit interview responses, and flag any comments related to management or compensation.\"",
+    "samplePrompt": "Summarize the top 3 recurring themes from this quarter's exit interview responses, and flag any comments related to management or compensation.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "survey setup is simple, but interpreting the AI-surfaced themes benefits from HR judgment",
     "trustScore": 3,
@@ -2044,7 +2044,7 @@
       }
     ],
     "workflowSummary": "The chatbot is trained on the company's own handbook, benefits guide, and policy documents; employees ask questions in plain language in Slack or Teams and get an instant, sourced answer instead of emailing HR.",
-    "samplePrompt": "\"Set this chatbot up to answer employee questions using our employee handbook and benefits guide, and have it hand off to a real HR person for anything about an individual's pay or performance.\"",
+    "samplePrompt": "Set this chatbot up to answer employee questions using our employee handbook and benefits guide, and have it hand off to a real HR person for anything about an individual's pay or performance.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "needs an initial setup/training step on company documents before it's reliable",
     "trustScore": 4,
@@ -2081,7 +2081,7 @@
       }
     ],
     "workflowSummary": "Recruiter enters the candidate and referee contact info; the tool sends referees a short survey they can complete on their phone, then summarizes and scores the responses so the recruiter isn't stuck playing phone tag.",
-    "samplePrompt": "\"Send a reference check survey to [referee name] for [candidate name]'s application to [role], and summarize the responses with a score once all references are in.\"",
+    "samplePrompt": "Send a reference check survey to [referee name] for [candidate name]'s application to [role], and summarize the responses with a score once all references are in.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Pricing on request for both — verify before publishing",
@@ -2115,7 +2115,7 @@
       }
     ],
     "workflowSummary": "The tool joins or records the interview call, transcribes it, and turns the conversation into a structured candidate report mapped to the interview rubric — so the recruiter isn't typing notes while also trying to run the conversation.",
-    "samplePrompt": "\"Summarize this interview against our scorecard for [role]: strengths, concerns, and a recommended next step, using only what the candidate actually said.\"",
+    "samplePrompt": "Summarize this interview against our scorecard for [role]: strengths, concerns, and a recommended next step, using only what the candidate actually said.",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Free to sign up with a work email — verify before publishing",
@@ -2148,7 +2148,7 @@
       }
     ],
     "workflowSummary": "HR pastes in a drafted job post; the tool scores it and highlights specific words or phrases statistically linked to lower application rates or reduced diversity, with suggested rewrites.",
-    "samplePrompt": "\"Score this job posting for biased or exclusionary language and suggest specific rewrites for anything that could discourage diverse applicants: [paste job post].\"",
+    "samplePrompt": "Score this job posting for biased or exclusionary language and suggest specific rewrites for anything that could discourage diverse applicants: [paste job post].",
     "beginnerFriendly": "yes",
     "trustScore": 4,
     "pricingNote": "Paid plans on request; limited free trial — verify before publishing",
@@ -2185,7 +2185,7 @@
       }
     ],
     "workflowSummary": "Recruiter pastes in a candidate's background and the open role; the tool drafts a short, specific outreach email or InMail (with subject line) that references the candidate's actual experience instead of reading like a mass template.",
-    "samplePrompt": "\"Write a short cold outreach email to a [role] candidate with a background in [specific skill/experience], inviting them to a 15-minute call about [role] at [company]. Keep it under 150 words.\"",
+    "samplePrompt": "Write a short cold outreach email to a [role] candidate with a background in [specific skill/experience], inviting them to a 15-minute call about [role] at [company]. Keep it under 150 words.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Free — verify before publishing",
@@ -2222,7 +2222,7 @@
       }
     ],
     "workflowSummary": "Recruiter picks or builds a short assessment matched to the role (cognitive, technical, or a realistic work sample); candidates complete it online, and the tool auto-scores results so recruiters can compare candidates on demonstrated ability rather than resume claims.",
-    "samplePrompt": "\"Build a 30-minute assessment for a [role title] candidate that tests [specific skill], including one realistic work-sample task, and auto-score the results.\"",
+    "samplePrompt": "Build a 30-minute assessment for a [role title] candidate that tests [specific skill], including one realistic work-sample task, and auto-score the results.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "building a good assessment takes a bit of setup the first time",
     "trustScore": 4,
@@ -2256,7 +2256,7 @@
       }
     ],
     "workflowSummary": "Applicants text or chat with a conversational assistant that asks qualifying questions, answers their questions about the role, and books a next step for anyone who qualifies — built for roles where speed matters more than deep, individualized screening.",
-    "samplePrompt": "\"Set up a chat screener for [frontline role] that asks about availability, required certifications, and location, and automatically books a video interview for anyone who qualifies.\"",
+    "samplePrompt": "Set up a chat screener for [frontline role] that asks about availability, required certifications, and location, and automatically books a video interview for anyone who qualifies.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "powerful but built for enterprise-scale hiring, so setup involves more configuration",
     "trustScore": 3,
@@ -2293,7 +2293,7 @@
       }
     ],
     "workflowSummary": "Candidates record themselves answering a set list of questions on their own time; recruiters and hiring managers then review and shortlist the recorded responses in bulk instead of scheduling a live call for every applicant.",
-    "samplePrompt": "\"Set up a one-way video interview for [role] with these 4 questions: [list], and let me review and shortlist responses afterward.\"",
+    "samplePrompt": "Set up a one-way video interview for [role] with these 4 questions: [list], and let me review and shortlist responses afterward.",
     "beginnerFriendly": "somewhat",
     "beginnerNote": "easy for recruiters, but some candidates find async video less comfortable than a live call",
     "trustScore": 3,
@@ -2328,7 +2328,7 @@
       }
     ],
     "workflowSummary": "HR describes the policy area and a few company-specific details; the tool drafts a structured policy document (purpose, scope, rules, examples) that HR then reviews and customizes to match local labor law and company practice before publishing it in the handbook.",
-    "samplePrompt": "\"Draft a remote work policy for a [company size] company, covering eligibility, expected availability hours, and equipment reimbursement. Keep the tone clear and non-legalistic.\"",
+    "samplePrompt": "Draft a remote work policy for a [company size] company, covering eligibility, expected availability hours, and equipment reimbursement. Keep the tone clear and non-legalistic.",
     "beginnerFriendly": "yes",
     "trustScore": 3,
     "pricingNote": "Free tier available — verify before publishing",

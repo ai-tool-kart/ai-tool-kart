@@ -21,6 +21,7 @@ import {
   parseBeginnerFriendly,
   parseTrustScore,
   rowToDraft,
+  unwrapQuotes,
   splitIntentLabels,
   splitToolNames,
   type SheetField,
@@ -477,3 +478,51 @@ await test('dedupe keeps the first occurrence', async (t) => {
     assert.equal(untitled.length, 2)
   })
 })
+
+/* ═══ Sample prompt quotes ═════════════════════════════════════════════════ */
+
+await test('sample prompts lose one wrapping pair of quotes', async (t) => {
+  const cases: Array<[string, string, string]> = [
+    ['"Write an MLS listing"', 'Write an MLS listing', 'straight double'],
+    ["'Write an MLS listing'", 'Write an MLS listing', 'straight single'],
+    ['\u201CWrite an MLS listing\u201D', 'Write an MLS listing', 'curly double'],
+    ['\u2018Write an MLS listing\u2019', 'Write an MLS listing', 'curly single'],
+    ['  "Padded prompt"  ', 'Padded prompt', 'surrounding whitespace'],
+    ['\u201CSay \u201Chi\u201D to the client\u201D', 'Say \u201Chi\u201D to the client', 'nested curly pair kept inside'],
+  ]
+  for (const [cell, expected, name] of cases) {
+    await t.test(name, () => {
+      assert.deepEqual(unwrapQuotes(cell), { text: expected, unwrapped: true, skipped: false })
+    })
+  }
+
+  await t.test('only one pair comes off', () => {
+    assert.equal(unwrapQuotes('\u201C\u2018Twice wrapped\u2019\u201D').text, '\u2018Twice wrapped\u2019')
+  })
+
+  await t.test('ends that do not match are left alone', () => {
+    for (const cell of ['"Open but not closed', 'Closed but not open"', '"Mismatched\u201D', "\"Mixed'"]) {
+      assert.deepEqual(unwrapQuotes(cell), { text: cell, unwrapped: false, skipped: false }, cell)
+    }
+  })
+
+  await t.test('two quoted phrases are not one wrapped string', () => {
+    assert.deepEqual(unwrapQuotes('"Draft" then "polish"'), {
+      text: '"Draft" then "polish"',
+      unwrapped: false,
+      skipped: true,
+    })
+    assert.equal(unwrapQuotes('\u201CDraft\u201D then \u201Cpolish\u201D').unwrapped, false)
+  })
+
+  await t.test('an unquoted prompt is untouched', () => {
+    assert.deepEqual(unwrapQuotes('Plan my week.'), { text: 'Plan my week.', unwrapped: false, skipped: false })
+  })
+
+  await t.test('rowToDraft stores the unwrapped prompt', () => {
+    const { record, mapped } = recordFrom(rowFor(SHAPE_A, { samplePrompt: '"Plan my week around three exams."' }))
+    assert.equal(record.samplePrompt, 'Plan my week around three exams.')
+    assert.equal(mapped.promptUnwrapped, true)
+  })
+})
+
