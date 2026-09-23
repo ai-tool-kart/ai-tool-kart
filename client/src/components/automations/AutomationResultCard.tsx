@@ -44,12 +44,20 @@ export default function AutomationResultCard({ automation }: { automation: Autom
         {automation.persona}
       </p>
 
-      <div className="relative flex flex-wrap gap-[6px]" aria-label="Tools">
+      {/* A labelled list, not a labelled div: aria-label is not allowed on a
+          generic element, and "Tools, list, 2 items" is what a reader needs. */}
+      <ul aria-label="Tools" className="relative flex list-none flex-wrap gap-[6px] p-0">
         {automation.tools.slice(0, TOOLS_SHOWN).map((name) => (
-          <Chip key={name}>{name}</Chip>
+          <li key={name}>
+            <Chip>{name}</Chip>
+          </li>
         ))}
-        {extra > 0 && <Chip>+{extra} more</Chip>}
-      </div>
+        {extra > 0 && (
+          <li>
+            <Chip>+{extra} more</Chip>
+          </li>
+        )}
+      </ul>
 
       <div className="relative mt-auto flex flex-wrap items-center gap-2 border-t border-white/[0.06] pt-[14px]">
         <span className={META_PILL}>{beginnerLabel(automation.beginnerFriendly)}</span>

@@ -122,6 +122,8 @@ export default function AutomationsPage() {
       <NicheChipRow selected={filters.niche} onSelect={(niche?: NicheName) => update({ niche })} />
 
       <div className="relative mt-[22px]">
+        {/* The cards' titles are h3s; this keeps the outline h1 → h2 → h3. */}
+        <h2 className="sr-only">Results</h2>
         <div className="mb-[18px] flex items-baseline justify-between gap-4">
           <p className="text-[14px] text-muted-dim" aria-live="polite">
             {results.isLoading && 'Loading automations…'}
