@@ -268,6 +268,16 @@ export type ToolStatus = (typeof TOOL_STATUSES)[number]
 /** Only this status is ever recommended or listed by default. */
 export const DEFAULT_STATUS: ToolStatus = 'active'
 
+/* ─── Catalogue kind ───────────────────────────────────────────────────────── */
+
+/**
+ * Which directory a request is browsing: the workflow catalogue (Home) or the
+ * MCP server directory (/mcp-servers). There is no 'all' value — an absent
+ * kind means no filter, so every existing caller keeps its behaviour.
+ */
+export const CATALOGUE_KINDS = ['workflow', 'mcp'] as const
+export type CatalogueKind = (typeof CATALOGUE_KINDS)[number]
+
 /* ─── Roles ────────────────────────────────────────────────────────────────── */
 
 /**

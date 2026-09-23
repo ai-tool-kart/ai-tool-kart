@@ -6,20 +6,21 @@
  * the API representation, and the JSON adapter owns the on-disk representation.
  *
  * The vocabulary types (ToolCategoryName, PricingTier, WorkflowStage, RoleName,
- * SortOption, NicheName) are re-exported from catalogue/taxonomy.ts, which is
+ * SortOption, NicheName, CatalogueKind) are re-exported from catalogue/taxonomy.ts, which is
  * the single source of truth for every closed list (ASSISTANT_ARCHITECTURE_PLAN.md
  * §5.3). That import direction is deliberate: vocabulary is configuration, not
  * storage, so it does not cross the boundary §6.1 protects.
  *
- * `PRICING_TIERS` and `NICHES` are re-exported as VALUES, not just types, for
- * the same reason: SPEC-automations.md §2 forbids automations/ from importing
- * catalogue/ at all (an automation's tools are embedded, never catalogue
- * records), but its `pricingTier`/`niche` fields still validate against the
- * one vocabulary taxonomy.ts owns for each. This is the one supported way to
- * reach either without that import.
+ * `PRICING_TIERS`, `NICHES` and `CATALOGUE_KINDS` are re-exported as VALUES,
+ * not just types, for the same reason: SPEC-automations.md §2 forbids
+ * automations/ from importing catalogue/ at all (an automation's tools are
+ * embedded, never catalogue records), but its `pricingTier`/`niche`/`kind`
+ * fields still validate against the one vocabulary taxonomy.ts owns for each.
+ * This is the one supported way to reach any of them without that import.
  */
 
 import type {
+  CatalogueKind,
   NicheName,
   PricingModel,
   PricingTier,
@@ -30,9 +31,10 @@ import type {
   ToolStatus,
   WorkflowStage,
 } from '../catalogue/taxonomy.ts'
-import { NICHES, PRICING_TIERS } from '../catalogue/taxonomy.ts'
+import { CATALOGUE_KINDS, NICHES, PRICING_TIERS } from '../catalogue/taxonomy.ts'
 
 export type {
+  CatalogueKind,
   NicheName,
   PricingModel,
   PricingTier,
@@ -43,7 +45,7 @@ export type {
   ToolStatus,
   WorkflowStage,
 }
-export { NICHES, PRICING_TIERS }
+export { CATALOGUE_KINDS, NICHES, PRICING_TIERS }
 
 /**
  * A catalogue record.

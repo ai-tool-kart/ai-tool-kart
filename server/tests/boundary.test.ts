@@ -135,7 +135,7 @@ await test('the catalogue storage boundary holds', async (t) => {
     const offenders = files
       .filter((file) => file !== join(CATALOGUE_DIR, 'taxonomy.ts'))
       .filter((file) =>
-        /(const|let)\s+(TOOL_CATEGORIES|WORKFLOW_STAGES|PRICING_TIERS|ROLES)\s*=/.test(
+        /(const|let)\s+(TOOL_CATEGORIES|WORKFLOW_STAGES|PRICING_TIERS|ROLES|NICHES|CATALOGUE_KINDS)\s*=/.test(
           codeOf(file),
         ),
       )
