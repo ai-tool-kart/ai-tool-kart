@@ -162,6 +162,7 @@ await test('row-to-record mapping', async (t) => {
     assert.equal(record.beginnerNote, 'guided setup, no jargon')
     assert.equal(record.trustScore, 4)
     assert.equal(record.pricingNote, CELLS.pricingNote, 'the full cell, never rewritten')
+    assert.equal(record.pricingTierSource, 'matched')
     assert.deepEqual(record.intentLabels, [
       'AI calendar planner',
       'auto-schedule my study time',
@@ -170,6 +171,12 @@ await test('row-to-record mapping', async (t) => {
     assert.equal(record.status, 'active')
     assert.equal('steps' in record, false, 'steps is omitted, not an empty array')
     assert.notEqual(record.id, '17', "the sheet's ID column is not the record id")
+  })
+
+  await t.test('a pricing note no rule recognises is marked as a defaulted tier', () => {
+    const { record } = recordFrom(rowFor(SHAPE_A, { pricingNote: 'Included with Microsoft 365' }))
+    assert.equal(record.pricingTier, 'paid')
+    assert.equal(record.pricingTierSource, 'default')
   })
 
   await t.test('sector differing from the folder is kept as-is', () => {

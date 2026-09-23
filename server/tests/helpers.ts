@@ -187,6 +187,7 @@ export function makeAutomation(overrides: Partial<Automation> = {}): Automation 
     trustScore: 3,
     pricingNote: 'Free tier available as of the fixture date.',
     pricingTier: 'freemium',
+    pricingTierSource: 'matched',
     sourceUrl: 'https://example.com/source',
     sourceType: 'Vendor site',
     freshness: 'Retrieved for the fixture suite',

@@ -388,6 +388,7 @@ export function rowToDraft(row: SheetRow, source: RowSource, matcher: CatalogueM
 
   const pricing = derivePricingTier(cellOf(row, 'pricingNote'))
   draft.pricingTier = pricing.tier
+  draft.pricingTierSource = pricing.rule === 'default' ? 'default' : 'matched'
 
   const built = buildTools(cellOf(row, 'tools'), cellOf(row, 'sourceUrl'), matcher)
   draft.tools = built.tools

@@ -505,3 +505,13 @@ export const AUTOMATION_MATCH = {
   idfSmoothing: 1,
   idfBase: 1,
 } as const
+
+/** GET /api/automations — SPEC-automations.md §9. */
+export const AUTOMATIONS_API = {
+  path: '/automations',
+  defaultLimit: AUTOMATION_MATCH.defaultLimit,
+  /** The matcher's own ceiling, so a search and a listing cap alike. */
+  maxLimit: AUTOMATION_MATCH.maxLimit,
+  /** Longer queries are rejected rather than truncated, so the caller knows. */
+  maxQueryLength: 200,
+} as const

@@ -155,6 +155,7 @@ interface Automation {
   trustScore: 1 | 2 | 3 | 4 | 5    // stored, not rendered
   pricingNote: string              // stored, NOT rendered — see §6
   pricingTier: PricingTier         // derived at import, rendered
+  pricingTierSource: 'matched' | 'default' // did a rule fire? §6
   sourceUrl: string
   sourceType: string
   freshness: string                // "Retrieved Sep 2026"
@@ -216,11 +217,13 @@ steps ?? deriveSteps(automation)
 1. **Open the tool** — `tools[0].name`, linked to `url`. Shows
    `accessNote` when present.
 2. **Use this prompt** — `samplePrompt`, with a copy button.
-3. **What you'll get** — `workflowSummary`.
+3. **How it works** — `workflowSummary`.
 
-Step 3 is the weak one: `workflowSummary` describes the process more than
-the outcome. That's exactly what an authored `steps` array replaces, so
-don't paper over it.
+Step 3 is the weak one: `workflowSummary` describes the procedure, not
+the outcome, and often opens with setup that comes before the prompt. It
+was first titled "What you'll get", which promised an outcome the text
+does not describe; "How it works" says what it is. An authored `steps`
+array is still the real fix, so don't paper over it further.
 
 Derivation lives in one pure function, unit-tested, used by the server
 when serving detail and by nothing else.
@@ -235,6 +238,11 @@ README says prices change monthly. So:
 - `pricingNote` is stored and **never rendered**.
 - The importer derives `pricingTier` (`free` | `freemium` | `paid`) and
   the UI shows "Free" / "Free plan" / "Paid".
+- `pricingTierSource` records whether a keyword rule recognised the note
+  (`matched`) or nothing did and the importer fell back to `paid`
+  (`default`). The API **omits `pricingTier` when the source is
+  `default`**: a missing badge is better than a guessed one. On the first
+  import that is 295 of 1,560 records.
 - Every price claim links to `sourceUrl`, the vendor's own page.
 
 If the client later wants real prices, that's one render change plus a
@@ -347,14 +355,37 @@ model: nothing reaches the site without passing through a commit.
 ## 9. Routes and pages
 
 ```
-GET /api/automations?q=&niche=&limit=     ranked list
-GET /api/automations/:slug                one, with derived steps
+GET /api/automations?q=&niche=&kind=&limit=   list, or ranked when q is set
+GET /api/automations/:niche/:slug             one, with steps
 ```
 
+**List.** Without `q`, the repository's active automations in import
+order, filtered by `niche` and `kind`. With `q`, ranked by `match.ts`
+(§7) under the same filters. Both return the same card projection —
+`slug, niche, title, persona, tools` (names only)`, beginnerFriendly,
+pricingTier` — so a client cannot tell which path ran. `limit` defaults
+to 10 and is capped at 50 (`AUTOMATIONS_API`); beyond the cap is a 400.
+
+**Detail.** Slugs are unique within a niche only (one real slug is shared
+by two niches), so the path carries both, URL-encoded
+(`/api/automations/Recruiters%20%26%20HR/<slug>`). Returns the full
+record with `steps = steps ?? deriveSteps(record)`. A draft or unknown
+slug is a 404 through the normal `ApiError` path.
+
+**Never on the wire:** `pricingNote` (§6), `status`, and
+`pricingTierSource`; `pricingTier` is omitted when it was only a default.
+
+**Validation.** `niche` must be in `NICHES` and `kind` in
+`CATALOGUE_KINDS` — a bad value is a 400, never an empty list. The
+message is one line ("niche: is not a known niche"); the accepted values
+travel in `details.fields[].allowed`. Unknown parameters are a 400.
+
+Pages (client, a later slice):
+
 - `/automations` — search box, niche filter, result cards (title,
-  persona, tool names, beginner badge, price tier).
-- `/automations/:slug` — title, persona, the three steps, the tool
-  panel, source and freshness line.
+  persona, tool names, beginner badge, price tier when known).
+- `/automations/:niche/:slug` — title, persona, the three steps, the
+  tool panel, source and freshness line.
 
 The search box is the product's front door: the user types a task and
 gets automations, not tools. Keep it plain — no stage vocabulary, no

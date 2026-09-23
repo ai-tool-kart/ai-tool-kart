@@ -103,6 +103,7 @@ export const AutomationSchema = z
     trustScore: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
     pricingNote: nonEmpty(AUTOMATIONS.pricingNoteMaxChars),
     pricingTier: z.enum(PRICING_TIERS),
+    pricingTierSource: z.enum(['matched', 'default']),
     sourceUrl: httpUrl,
     sourceType: nonEmpty(AUTOMATIONS.sourceTypeMaxChars),
     freshness: nonEmpty(AUTOMATIONS.freshnessMaxChars),

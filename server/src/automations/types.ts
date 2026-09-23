@@ -104,6 +104,12 @@ export interface Automation {
   pricingNote: string
   /** Derived at import from `pricingNote`, and what the UI actually shows. */
   pricingTier: PricingTier
+  /**
+   * Whether a pricing rule recognised the note ('matched') or nothing did and
+   * the importer fell back to 'paid' ('default'). The API omits a defaulted
+   * tier: a missing badge is better than a guessed one.
+   */
+  pricingTierSource: 'matched' | 'default'
   /** The vendor/source page every price or capability claim links back to. */
   sourceUrl: string
   sourceType: string

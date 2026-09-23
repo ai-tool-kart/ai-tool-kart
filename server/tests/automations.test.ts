@@ -47,6 +47,7 @@ await test('AutomationSchema', async (t) => {
     'trustScore',
     'pricingNote',
     'pricingTier',
+    'pricingTierSource',
     'sourceUrl',
     'sourceType',
     'freshness',
@@ -80,6 +81,11 @@ await test('AutomationSchema', async (t) => {
       ...makeAutomation(),
       steps: [{ title: 'X', body: 'Y', webhook: 'https://evil.example' }],
     }
+    assert.equal(AutomationSchema.safeParse(record).success, false)
+  })
+
+  await t.test('a pricingTierSource outside matched/default fails', () => {
+    const record: unknown = { ...makeAutomation(), pricingTierSource: 'guessed' }
     assert.equal(AutomationSchema.safeParse(record).success, false)
   })
 

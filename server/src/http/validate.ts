@@ -41,6 +41,9 @@ export function parseOrThrow<T extends z.ZodType>(
   const fields = parsed.error.issues.map((issue) => ({
     path: issue.path.length > 0 ? issue.path.join('.') : source,
     message: issue.message,
+    // An enum failure carries the accepted values, so a short message can
+    // stay short without the client losing the list.
+    ...(issue.code === 'invalid_value' ? { allowed: issue.values } : {}),
   }))
 
   const summary = fields.map((field) => `${field.path}: ${field.message}`).join('; ')

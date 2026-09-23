@@ -38,14 +38,14 @@ await test('deriveSteps', async (t) => {
     assert.equal(prompt?.title, DERIVED_STEP_TITLES.usePrompt)
     assert.equal(prompt?.prompt, 'Plan my week around three exams and a part-time job.')
 
-    assert.equal(result?.title, DERIVED_STEP_TITLES.result)
+    assert.equal(result?.title, DERIVED_STEP_TITLES.howItWorks)
     assert.equal(result?.body, 'Motion schedules tasks around your fixed commitments.')
   })
 
   await t.test('the titles are the ones §5 names', () => {
     assert.deepEqual(
       deriveSteps(AUTOMATION).map((step) => step.title),
-      ['Open the tool', 'Use this prompt', "What you'll get"],
+      ['Open the tool', 'Use this prompt', 'How it works'],
     )
   })
 

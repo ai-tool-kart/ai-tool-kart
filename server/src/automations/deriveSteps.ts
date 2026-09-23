@@ -17,8 +17,12 @@
  *
  * ── Step 3 ────────────────────────────────────────────────────────────────────
  *
- * `workflowSummary` describes the process more than the outcome. §5 says not
- * to paper over that: an authored `steps` array is the fix, not a rewrite here.
+ * Titled "How it works", not "What you'll get": across niches
+ * `workflowSummary` describes the procedure, not the outcome, and often opens
+ * with setup that comes BEFORE the prompt ("Upload your lecture slides…",
+ * "Record or connect your call platform…"). An outcome label promised
+ * something the text does not say. An authored `steps` array remains the real
+ * fix (§5); this label just stops the derived one from misleading.
  */
 
 import type { Automation, AutomationStep } from './types.ts'
@@ -27,7 +31,7 @@ import type { Automation, AutomationStep } from './types.ts'
 export const DERIVED_STEP_TITLES = {
   openTool: 'Open the tool',
   usePrompt: 'Use this prompt',
-  result: "What you'll get",
+  howItWorks: 'How it works',
 } as const
 
 export function deriveSteps(automation: Automation): AutomationStep[] {
@@ -51,7 +55,7 @@ export function deriveSteps(automation: Automation): AutomationStep[] {
       prompt: automation.samplePrompt,
     },
     {
-      title: DERIVED_STEP_TITLES.result,
+      title: DERIVED_STEP_TITLES.howItWorks,
       body: automation.workflowSummary,
     },
   ]
