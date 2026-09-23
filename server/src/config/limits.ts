@@ -456,3 +456,40 @@ export const AUTOMATIONS = {
   stepTipMaxChars: 300,
   maxSteps: 6,
 } as const
+
+/**
+ * Automation search weights — SPEC-automations.md §7.
+ *
+ * Here and not in automations/match.ts for the reason SCORE_WEIGHTS is not in
+ * retrieval/score.ts: tuning relevance must not mean editing scoring logic,
+ * and boundary.test.ts holds match.ts to that.
+ *
+ * Every signal but the phrase hit is normalised to 0–1 before weighting — an
+ * overlap is the SHARE of query terms the field contains, not a count — so a
+ * weight reads directly against every other. The client wrote Task Title and
+ * Intent Labels as the phrases a user would type, which is why they dominate.
+ */
+export const AUTOMATION_MATCH_WEIGHTS = {
+  /** The whole query appears in the title, word for word. */
+  titlePhrase: 3.0,
+  /** Share of query terms found in the title. */
+  titleTerms: 1.5,
+  /** Share of query terms found across the intent labels. */
+  intentTerms: 1.2,
+  /** Share of query terms found in the persona. */
+  personaTerms: 0.6,
+  /** Share of query terms found in the tool names. */
+  toolTerms: 0.5,
+  /** trustScore / 5. A tiebreak: never enough to lift a weaker text match. */
+  trust: 0.1,
+} as const
+
+/** Automation search limits. */
+export const AUTOMATION_MATCH = {
+  /** Results when the caller names no limit. */
+  defaultLimit: 10,
+  /** Hard ceiling on results, whatever the caller asks for. */
+  maxLimit: 50,
+  /** Shorter query terms are dropped as noise — same floor as RETRIEVAL. */
+  minTermLength: 3,
+} as const

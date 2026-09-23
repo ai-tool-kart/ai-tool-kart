@@ -590,11 +590,42 @@ await test('the automations boundary holds', async (t) => {
   })
 
   await t.test('automations never import the catalogue or retrieval', () => {
+    // One sanctioned exception (SPEC-automations.md §7): match.ts borrows the
+    // word-level vocabulary — `stem` and `STOPWORDS` — from retrieval/normalize.ts,
+    // so both searches tokenise alike. It is stripped out before the check, so
+    // any OTHER name from normalize.ts (INTENT_MAP above all), any other
+    // retrieval/ module, or the same import in any other file still fails.
+    const SANCTIONED = /import \{ STOPWORDS, stem \} from '\.\.\/retrieval\/normalize\.ts'/
     const offenders = automationFiles
-      .filter((file) => /from '\.\.\/(catalogue|retrieval)\//.test(codeOf(file)))
+      .filter((file) => {
+        const code = codeOf(file)
+        const checked = file === join(AUTOMATIONS_DIR, 'match.ts') ? code.replace(SANCTIONED, '') : code
+        return /from '\.\.\/(catalogue|retrieval)\//.test(checked)
+      })
       .map((file) => relative(SRC, file))
 
     assert.deepEqual(offenders, [], 'an automation embeds its tools; vocabulary comes via domain/types.ts')
+  })
+
+  await t.test('match.ts never uses INTENT_MAP', () => {
+    assert.equal(codeOf(join(AUTOMATIONS_DIR, 'match.ts')).includes('INTENT_MAP'), false)
+  })
+
+  await t.test('match weights live in config, not in the matcher', () => {
+    // The same rule retrieval/score.ts is held to above.
+    const body = codeOf(join(AUTOMATIONS_DIR, 'match.ts'))
+    assert.ok(body.includes('AUTOMATION_MATCH_WEIGHTS.'), 'weights are read from config/limits.ts')
+    assert.equal(
+      /AUTOMATION_MATCH_WEIGHTS\.\w+\s*\*\s*\d/.test(body),
+      false,
+      'a weight must never be multiplied by a literal in the matcher',
+    )
+    assert.equal(/\b\d+\.\d+\b/.test(body), false, 'no decimal literal may stand in for a weight')
+  })
+
+  await t.test('match.ts does no IO, so a ranking is reproducible', () => {
+    const body = codeOf(join(AUTOMATIONS_DIR, 'match.ts'))
+    assert.equal(/await |async |from 'node:/.test(body), false)
   })
 
   await t.test('the catalogue and retrieval never import automations', () => {
