@@ -11,6 +11,27 @@
  * Weights are AUTOMATION_MATCH_WEIGHTS in config/limits.ts, never literals
  * here (boundary.test.ts enforces it).
  *
+ * ── A share is weighted by term rarity ───────────────────────────────────────
+ *
+ * Each query term counts by its IDF across the automations the matcher was
+ * built over, so a share is (rarity of the query terms the field has) ÷
+ * (rarity of all query terms). It stays 0–1, so the field weights above mean
+ * what they meant; what changes is which TERMS carry a query. In "follow up
+ * with clients automatically", "client" and "automatically" appear in dozens
+ * of automations and "follow" in few, so a title with "follow" now beats one
+ * with the two common words.
+ *
+ * ── Phrase ties go to the shorter title ──────────────────────────────────────
+ *
+ * When two records both contain the whole query in their title, the one with
+ * fewer title words ranks first; score decides only between equal lengths.
+ * A shorter title that holds the whole query is the closer match — "review a
+ * contract before I sign it" is that automation's title, not a fragment of a
+ * longer one. This is an ordering, not a weight, and it never moves a record
+ * across the phrase line: a phrase hit contains every query term in its title,
+ * so it already scores at least titlePhrase + titleTerms, more than every
+ * other signal combined can give a record without one.
+ *
  * ── Why not retrieval/ ───────────────────────────────────────────────────────
  *
  * retrieval/score.ts is typed to Tool and infers category and stage from the
@@ -64,6 +85,8 @@ interface Indexed {
   automation: Automation
   /** Lowercased, punctuation collapsed to single spaces, padded for whole-word search. */
   phrase: string
+  /** Title length in words — the phrase-tie order. */
+  titleWords: number
   title: ReadonlySet<string>
   intent: ReadonlySet<string>
   persona: ReadonlySet<string>
@@ -85,12 +108,18 @@ export function termsOf(text: string): string[] {
   return [...seen]
 }
 
-/** Share of the query's terms that the field contains, 0–1. */
-function share(query: readonly string[], field: ReadonlySet<string>): number {
-  if (query.length === 0) return 0
+/** A query term and its rarity weight. */
+interface WeightedTerm {
+  term: string
+  idf: number
+}
+
+/** IDF-weighted share of the query that the field contains, 0–1. */
+function share(query: readonly WeightedTerm[], total: number, field: ReadonlySet<string>): number {
+  if (total === 0) return 0
   let hits = 0
-  for (const term of query) if (field.has(term)) hits += 1
-  return hits / query.length
+  for (const { term, idf } of query) if (field.has(term)) hits += idf
+  return hits / total
 }
 
 /**
@@ -101,18 +130,33 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
   const indexed: Indexed[] = automations.map((automation) => ({
     automation,
     phrase: ` ${phraseOf(automation.title)} `,
+    titleWords: phraseOf(automation.title).split(' ').length,
     title: new Set(termsOf(automation.title)),
     intent: new Set(termsOf(automation.intentLabels.join(' '))),
     persona: new Set(termsOf(automation.persona)),
     tools: new Set(termsOf(automation.tools.map((tool) => tool.name).join(' '))),
   }))
 
+  // Document frequency: in how many automations each term appears, in any
+  // scored field. Built over the whole set given, not per niche, so a term's
+  // weight does not change with the filter.
+  const documentFrequency = new Map<string, number>()
+  for (const entry of indexed) {
+    const seen = new Set([...entry.title, ...entry.intent, ...entry.persona, ...entry.tools])
+    for (const term of seen) documentFrequency.set(term, (documentFrequency.get(term) ?? 0) + 1)
+  }
+  const { idfSmoothing, idfBase } = AUTOMATION_MATCH
+  const idfOf = (term: string): number =>
+    Math.log((indexed.length + idfSmoothing) / ((documentFrequency.get(term) ?? 0) + idfSmoothing)) +
+    idfBase
+
   return {
     match(query, options = {}) {
-      const terms = termsOf(query)
+      const terms = termsOf(query).map((term) => ({ term, idf: idfOf(term) }))
       // A query of nothing but stopwords has no signal; matching on trust
       // alone would return the whole set in trust order.
       if (terms.length === 0) return []
+      const total = terms.reduce((sum, { idf }) => sum + idf, 0)
       const phrase = ` ${phraseOf(query)} `
 
       const limit = Math.min(
@@ -120,6 +164,7 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
         AUTOMATION_MATCH.maxLimit,
       )
       const results: AutomationMatch[] = []
+      const titleWords = new Map<AutomationMatch, number>()
 
       for (const entry of indexed) {
         const { automation } = entry
@@ -128,10 +173,10 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
 
         const signals: AutomationMatchSignals = {
           titlePhrase: entry.phrase.includes(phrase) ? AUTOMATION_MATCH_WEIGHTS.titlePhrase : 0,
-          titleTerms: AUTOMATION_MATCH_WEIGHTS.titleTerms * share(terms, entry.title),
-          intentTerms: AUTOMATION_MATCH_WEIGHTS.intentTerms * share(terms, entry.intent),
-          personaTerms: AUTOMATION_MATCH_WEIGHTS.personaTerms * share(terms, entry.persona),
-          toolTerms: AUTOMATION_MATCH_WEIGHTS.toolTerms * share(terms, entry.tools),
+          titleTerms: AUTOMATION_MATCH_WEIGHTS.titleTerms * share(terms, total, entry.title),
+          intentTerms: AUTOMATION_MATCH_WEIGHTS.intentTerms * share(terms, total, entry.intent),
+          personaTerms: AUTOMATION_MATCH_WEIGHTS.personaTerms * share(terms, total, entry.persona),
+          toolTerms: AUTOMATION_MATCH_WEIGHTS.toolTerms * share(terms, total, entry.tools),
           trust: 0,
         }
         const text =
@@ -143,11 +188,24 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
         // Trust breaks ties between text matches; it never makes one.
         if (text === 0) continue
         signals.trust = AUTOMATION_MATCH_WEIGHTS.trust * (automation.trustScore / 5)
-        results.push({ automation, score: text + signals.trust, signals })
+        const result = { automation, score: text + signals.trust, signals }
+        titleWords.set(result, entry.titleWords)
+        results.push(result)
       }
 
-      // Stable: equal scores keep the caller's order.
-      results.sort((a, b) => b.score - a.score)
+      // Phrase hits first (they outscore everything else anyway — see the
+      // header), shorter title first among them, then score. Stable: a full
+      // tie keeps the caller's order.
+      results.sort((a, b) => {
+        const aPhrase = a.signals.titlePhrase > 0
+        const bPhrase = b.signals.titlePhrase > 0
+        if (aPhrase !== bPhrase) return aPhrase ? -1 : 1
+        if (aPhrase) {
+          const byLength = (titleWords.get(a) ?? 0) - (titleWords.get(b) ?? 0)
+          if (byLength !== 0) return byLength
+        }
+        return b.score - a.score
+      })
       return results.slice(0, limit)
     },
   }

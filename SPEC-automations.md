@@ -256,14 +256,47 @@ score = 3.0 * exact phrase hit on title
 ```
 
 Weights in `config/limits.ts` as `AUTOMATION_MATCH_WEIGHTS` — never
-literals in `match.ts` (`boundary.test.ts:147-158` enforces this shape
-for scoring modules).
+literals in `match.ts` (`boundary.test.ts` holds `match.ts` to this, as
+it does `retrieval/score.ts`).
 
-Reuse `stem()` and `STOPWORDS` from `retrieval/normalize.ts`. Do not
-reuse `INTENT_MAP`: it maps whole queries onto catalogue stage/category
-words, which is the behaviour that broke "automate client follow-ups".
+**Term overlap is IDF-weighted.** Each query term counts by its rarity
+across the automations the matcher was built over:
 
-Filter by `niche` when given. Return ranked automations, capped.
+```
+idf(t)  = ln((N + idfSmoothing) / (df(t) + idfSmoothing)) + idfBase
+overlap = Σ idf of query terms the field contains / Σ idf of all query terms
+```
+
+N is the number of automations, df(t) how many contain t in any scored
+field; `idfSmoothing` and `idfBase` (both 1) live in `AUTOMATION_MATCH`.
+An overlap stays 0–1, so the field weights above keep their meaning;
+what changes is which *terms* carry a query. In "follow up with clients
+automatically", "follow" is rare and "client"/"automatically" are
+common, so follow-up automations now rank first instead of any record
+mentioning clients.
+
+**Phrase ties go to the shorter title.** When two records both contain
+the whole query in their title, the one with fewer title words ranks
+first; score decides only between equal lengths. It is an ordering, not
+a weight, and it cannot move a record across the phrase line: a phrase
+hit has every query term in its title, so it scores at least 3.0 + 1.5,
+more than all other signals give a record without one (3.9).
+
+Trust is a near-tiebreak. It spans at most 0.08, so it decides only
+between text matches that close, and a record with no text signal is
+never returned on trust alone.
+
+Reuse `stem()` and `STOPWORDS` from `retrieval/normalize.ts` — the one
+import from `retrieval/` that `automations/` is allowed, and only in
+`match.ts`. Do not reuse `INTENT_MAP`: it maps whole queries onto
+catalogue stage/category words, which is the behaviour that broke
+"automate client follow-ups".
+
+Filter by `niche` and `kind` when given. Return ranked automations,
+capped (`AUTOMATION_MATCH.defaultLimit` 10, `maxLimit` 50).
+
+**Verification** (slice 5): every one of the 1,560 imported titles, run
+as a query against the full set, ranks its own automation first.
 
 ---
 

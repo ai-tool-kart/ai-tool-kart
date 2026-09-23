@@ -480,7 +480,10 @@ export const AUTOMATION_MATCH_WEIGHTS = {
   personaTerms: 0.6,
   /** Share of query terms found in the tool names. */
   toolTerms: 0.5,
-  /** trustScore / 5. A tiebreak: never enough to lift a weaker text match. */
+  /**
+   * trustScore / 5. A near-tiebreak: the most and least trusted records differ
+   * by at most 0.08, so it decides only between text matches that close.
+   */
   trust: 0.1,
 } as const
 
@@ -492,4 +495,13 @@ export const AUTOMATION_MATCH = {
   maxLimit: 50,
   /** Shorter query terms are dropped as noise — same floor as RETRIEVAL. */
   minTermLength: 3,
+  /**
+   * Term rarity (IDF): idf = ln((N + idfSmoothing) / (df + idfSmoothing)) + idfBase,
+   * where N is the automations the matcher was built over and df how many of
+   * them contain the term in any scored field. Smoothing keeps an unseen term
+   * finite; the base keeps the most common term above zero, so it still counts
+   * a little rather than vanishing.
+   */
+  idfSmoothing: 1,
+  idfBase: 1,
 } as const

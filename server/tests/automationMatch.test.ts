@@ -48,6 +48,27 @@ await test('scoring signals', async (t) => {
     assert.equal(second?.signals.titlePhrase, 0)
   })
 
+  await t.test('between two phrase hits, the shorter title wins even on a lower score', () => {
+    const m = createAutomationMatcher([
+      bare('long', {
+        title: 'review a contract before I sign it and flag anything risky',
+        intentLabels: ['review contract', 'sign contract'],
+        trustScore: 5,
+      }),
+      bare('short', { title: 'review a contract before I sign it', trustScore: 1 }),
+    ])
+    const [first, second] = m.match('review a contract before I sign it')
+    assert.equal(first?.automation.id, 'short')
+    assert.ok((second?.score ?? 0) > (first?.score ?? 0), 'the order is not the score order here')
+  })
+
+  await t.test('phrase hits cannot be outranked, which is what keeps the tiebreak an ordering', () => {
+    // A phrase hit has every query term in its title, so it scores at least
+    // titlePhrase + titleTerms. That must exceed everything else combined.
+    const W = AUTOMATION_MATCH_WEIGHTS
+    assert.ok(W.titlePhrase + W.titleTerms > W.titleTerms + W.intentTerms + W.personaTerms + W.toolTerms + W.trust)
+  })
+
   await t.test('the phrase hit is whole-word: "plan" is not found inside "planner"', () => {
     const m = createAutomationMatcher([bare('a', { title: 'meal planner app' })])
     assert.equal(m.match('plan')[0]?.signals.titlePhrase ?? 0, 0)
@@ -66,10 +87,36 @@ await test('scoring signals', async (t) => {
     )
   })
 
-  await t.test('an overlap is a share of query terms, not a count', () => {
-    const m = createAutomationMatcher([bare('half', { title: 'invoice' })])
-    const [hit] = m.match('invoice clients')
-    assert.equal(hit?.signals.titleTerms, AUTOMATION_MATCH_WEIGHTS.titleTerms / 2)
+  await t.test('an overlap is a share of the query: all its terms beat some of them', () => {
+    const m = createAutomationMatcher([
+      bare('half', { title: 'invoice' }),
+      bare('full', { title: 'invoice clients' }),
+    ])
+    const [first, second] = m.match('invoice clients')
+    assert.equal(first?.automation.id, 'full')
+    assert.equal(first?.signals.titleTerms, AUTOMATION_MATCH_WEIGHTS.titleTerms, 'every term present is the full weight')
+    assert.ok((second?.signals.titleTerms ?? 0) > 0)
+    assert.ok((second?.signals.titleTerms ?? 0) < AUTOMATION_MATCH_WEIGHTS.titleTerms)
+  })
+
+  await t.test('a rare query term outweighs a common one (IDF)', () => {
+    // "client" is in every record; "follow" in one other. A title with the
+    // rare term must beat a title with the common term, all else equal.
+    const m = createAutomationMatcher([
+      bare('common', { title: 'email clients' }),
+      bare('rare', { title: 'follow up promptly' }),
+      bare('filler-1', { persona: 'client services' }),
+      bare('filler-2', { persona: 'client managers' }),
+      bare('filler-3', { persona: 'client teams' }),
+    ])
+    const ranked = m.match('follow up with clients').map((r) => r.automation.id)
+    assert.ok(ranked.indexOf('rare') < ranked.indexOf('common'), ranked.join(', '))
+  })
+
+  await t.test('a term no record has still counts against every share', () => {
+    const m = createAutomationMatcher([bare('a', { title: 'invoice' })])
+    const [hit] = m.match('invoice zzzqqq')
+    assert.ok((hit?.signals.titleTerms ?? 0) < AUTOMATION_MATCH_WEIGHTS.titleTerms)
   })
 
   await t.test('stemming meets both ways: "editing videos" finds "edit video"', () => {
@@ -87,11 +134,18 @@ await test('scoring signals', async (t) => {
     assert.deepEqual(ids, ['high', 'low'], 'the trusted one wins the tie; the unrelated one is absent')
   })
 
-  await t.test('trust cannot lift a weaker text match over a stronger one', () => {
-    // The largest trust gap (1 vs 5) against the smallest text gap the
-    // weights allow: one tool term out of two.
-    const gap = AUTOMATION_MATCH_WEIGHTS.trust * (5 - 1) / 5
-    assert.ok(gap < AUTOMATION_MATCH_WEIGHTS.toolTerms / 2)
+  await t.test('trust only decides between near-equal text matches', () => {
+    // With IDF a share is continuous, so trust CAN separate two text matches —
+    // but only ones closer than the whole trust range, which is a small
+    // fraction of the lightest field weight.
+    const range = AUTOMATION_MATCH_WEIGHTS.trust * (5 - 1) / 5
+    assert.ok(range < AUTOMATION_MATCH_WEIGHTS.toolTerms / 5)
+
+    const m = createAutomationMatcher([
+      bare('trusted-weaker', { title: 'invoice', trustScore: 5 }),
+      bare('stronger', { title: 'invoice clients', trustScore: 1 }),
+    ])
+    assert.equal(m.match('invoice clients')[0]?.automation.id, 'stronger')
   })
 
   await t.test('nothing matches a stopword-only query', () => {
@@ -137,19 +191,15 @@ await test('filters and caps', async (t) => {
 
 await test('the imported automations: every title retrieves its own automation', async (t) => {
   // SPEC-automations.md §10: "if a row's own title doesn't retrieve it, the
-  // matcher is wrong." Rank 1 is not always possible — one Startup Founders
-  // title is a word-for-word prefix of a Retail title — so the floor is top 3.
+  // matcher is wrong." Measured at 1,560 of 1,560 with IDF and the phrase-
+  // length tiebreak, so the floor is every title, at rank 1.
   const all = await createJsonAutomations().list()
   const m = createAutomationMatcher(all)
-  const ranks = all.map((a) => m.match(a.title, { limit: 10 }).findIndex((r) => r.automation.id === a.id) + 1)
 
-  await t.test('every automation is in the top 3 for its own title', () => {
-    const outside = all.filter((_, i) => !(ranks[i]! >= 1 && ranks[i]! <= 3)).map((a) => a.title)
-    assert.deepEqual(outside, [])
-  })
-
-  await t.test('at least 99.9% rank first', () => {
-    const first = ranks.filter((rank) => rank === 1).length
-    assert.ok(first / all.length >= 0.999, `${first}/${all.length} rank first`)
+  await t.test('every automation ranks first for its own title', () => {
+    const notFirst = all
+      .filter((a) => m.match(a.title, { limit: 1 })[0]?.automation.id !== a.id)
+      .map((a) => `${a.niche}: ${a.title}`)
+    assert.deepEqual(notFirst, [])
   })
 })
