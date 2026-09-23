@@ -20,7 +20,7 @@
 import { z } from 'zod'
 import { AUTOMATIONS } from '../config/limits.ts'
 import { configError } from '../domain/errors.ts'
-import { NICHES, PRICING_TIERS } from '../domain/types.ts'
+import { CATALOGUE_KINDS, NICHES, PRICING_TIERS } from '../domain/types.ts'
 import type { Automation } from './types.ts'
 
 const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
@@ -82,6 +82,7 @@ export const AutomationSchema = z
   .object({
     id: nonEmpty(AUTOMATIONS.idMaxChars),
     slug,
+    kind: z.enum(CATALOGUE_KINDS),
     niche: z.enum(NICHES),
     persona: nonEmpty(AUTOMATIONS.personaMaxChars),
     title: nonEmpty(AUTOMATIONS.titleMaxChars),

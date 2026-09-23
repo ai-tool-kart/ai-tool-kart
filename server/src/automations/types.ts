@@ -12,13 +12,13 @@
  * That is also why this file, and everything under automations/, never
  * imports catalogue/ or retrieval/ (SPEC-automations.md §2) — enforced by a
  * boundary.test.ts block added in a later slice, the same way stories/ and
- * savings/ are. The one exception is vocabulary: `PricingTier` and
- * `NicheName` are still catalogue/taxonomy.ts's closed lists (§5.3 — one
+ * savings/ are. The one exception is vocabulary: `PricingTier`, `NicheName`
+ * and `CatalogueKind` are still catalogue/taxonomy.ts's closed lists (§5.3 — one
  * definition per vocabulary), reached here through domain/types.ts's value
  * and type re-exports rather than an import of catalogue/ itself.
  */
 
-import type { NicheName, PricingTier } from '../domain/types.ts'
+import type { CatalogueKind, NicheName, PricingTier } from '../domain/types.ts'
 
 /**
  * One tool an automation names, as the client's spreadsheet describes it —
@@ -70,6 +70,8 @@ export interface Automation {
   id: string
   /** From `title`, lowercase-hyphenated — see AUTOMATION_SLUG_PATTERN in schema.ts. */
   slug: string
+  /** Which directory lists it: the workflow catalogue or the MCP servers page. */
+  kind: CatalogueKind
   niche: NicheName
   /** Free text, from the sheet's Audience/Persona column — see SPEC §4 for
    *  why this is not itself a closed vocabulary. */

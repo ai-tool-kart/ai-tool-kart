@@ -171,6 +171,7 @@ export function makeAutomation(overrides: Partial<Automation> = {}): Automation 
   return {
     id,
     slug: id,
+    kind: 'workflow',
     niche: 'Students',
     persona: 'A fixture persona used by the server test-suite.',
     title: 'Fixture automation task',

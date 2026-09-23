@@ -35,6 +35,7 @@ await test('AutomationSchema', async (t) => {
   const REQUIRED_FIELDS: Array<keyof ReturnType<typeof makeAutomation>> = [
     'id',
     'slug',
+    'kind',
     'niche',
     'persona',
     'title',
@@ -80,6 +81,19 @@ await test('AutomationSchema', async (t) => {
       steps: [{ title: 'X', body: 'Y', webhook: 'https://evil.example' }],
     }
     assert.equal(AutomationSchema.safeParse(record).success, false)
+  })
+
+  await t.test('a kind outside CATALOGUE_KINDS fails', () => {
+    for (const kind of ['all', 'MCP', '', 'automation']) {
+      const record: unknown = { ...makeAutomation(), kind }
+      assert.equal(AutomationSchema.safeParse(record).success, false, kind)
+    }
+  })
+
+  await t.test('both kinds are legal', () => {
+    for (const kind of ['workflow', 'mcp'] as const) {
+      assert.equal(AutomationSchema.safeParse(makeAutomation({ kind })).success, true, kind)
+    }
   })
 
   await t.test('a niche outside the taxonomy fails', () => {
