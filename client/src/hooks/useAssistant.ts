@@ -7,6 +7,7 @@ import type {
   AssistantPlan,
   AssistantStatus,
   AssistantUnderstood,
+  CatalogueKind,
   ChatTurn,
   ConversationContext,
   ConversationMessage,
@@ -82,6 +83,14 @@ export interface AssistantSession {
   reset: () => void
 }
 
+export interface UseAssistantOptions {
+  /**
+   * The directory this conversation belongs to, sent with every turn. Fixed for
+   * the life of the page, so it is not part of the server's context.
+   */
+  kind?: CatalogueKind
+}
+
 function messageFor(error: unknown): { message: string; retryable: boolean } {
   if (error instanceof ApiRequestError) {
     return { message: error.message, retryable: error.isRetryable }
@@ -95,7 +104,7 @@ function toHistory(turns: ChatTurn[]): ConversationMessage[] {
   return turns.map((turn) => ({ role: turn.role, text: turn.text }))
 }
 
-export function useAssistant(): AssistantSession {
+export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSession {
   const [turns, setTurns] = useState<ChatTurn[]>([])
   /* The transcript as `send` reads it — see the header note on purity. */
   const turnsRef = useRef<ChatTurn[]>([])
@@ -204,9 +213,10 @@ export function useAssistant(): AssistantSession {
         message,
         messages: history,
         ...(contextRef.current ? { context: contextRef.current } : {}),
+        ...(kind ? { kind } : {}),
       })
     },
-    [run],
+    [run, kind],
   )
 
   const retry = useCallback(() => {

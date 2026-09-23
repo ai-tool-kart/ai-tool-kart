@@ -114,10 +114,18 @@ export interface AssistantChatResponse {
   meta: AssistantMeta
 }
 
+/**
+ * Which directory the conversation happens in — mirrors the server's
+ * CATALOGUE_KINDS. 'mcp' confines recommendations to MCP servers; 'workflow'
+ * and absent both mean the whole catalogue, so Home sends nothing.
+ */
+export type CatalogueKind = 'workflow' | 'mcp'
+
 export interface AssistantChatRequest {
   message: string
   messages?: ConversationMessage[]
   context?: ConversationContext
+  kind?: CatalogueKind
 }
 
 /*

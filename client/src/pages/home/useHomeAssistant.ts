@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useAssistant, type AssistantSession } from '@/hooks/useAssistant'
+import {
+  useAssistant,
+  type AssistantSession,
+  type UseAssistantOptions,
+} from '@/hooks/useAssistant'
 
 /*
  * The homepage's single assistant conversation, and the stage it is drawn in.
@@ -63,8 +67,8 @@ interface AssistantHandoff {
   assistantMessage?: unknown
 }
 
-export function useHomeAssistant(): HomeAssistant {
-  const session = useAssistant()
+export function useHomeAssistant(options: UseAssistantOptions = {}): HomeAssistant {
+  const session = useAssistant(options)
   const stageRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
   const navigate = useNavigate()

@@ -39,6 +39,7 @@ export async function sendAssistantMessage(
   // empty history is not the same statement as no history.
   if (request.messages && request.messages.length > 0) body.messages = request.messages
   if (request.context) body.context = request.context
+  if (request.kind) body.kind = request.kind
 
   return apiRequest<AssistantChatResponse>(CHAT_PATH, { body, signal })
 }

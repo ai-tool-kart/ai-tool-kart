@@ -56,7 +56,7 @@ const SECTION_COUNT = 6
 
 export default function McpServersPage() {
   const navigate = useNavigate()
-  const assistant = useHomeAssistant()
+  const assistant = useHomeAssistant({ kind: 'mcp' })
   const { index, isLoading, failed, retry } = useToolIndex()
 
   const servers = useMemo(() => {
