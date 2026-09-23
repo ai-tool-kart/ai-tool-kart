@@ -774,6 +774,37 @@ export function isWorkflowStage(value: string): value is WorkflowStage {
  * It is deliberately NOT part of `Taxonomy`/`buildTaxonomy()` above: that
  * shape backs the catalogue's public GET /api/taxonomy, and automations have
  * no route yet to serve it through.
+ *
+ * The values are the source folder names under server/scripts/data/,
+ * verbatim, for the 25 folders that contain data (docs/BATCH-SURVEY.md). The
+ * importer takes an automation's niche from its folder, so a folder rename
+ * is a vocabulary change here too. Six folders are empty and are not listed.
  */
-export const NICHES = ['Students', 'Customer Support Teams'] as const
+export const NICHES = [
+  'Accountants & Bookkeepers',
+  'Coaches',
+  'Content Creators-Writers',
+  'Contractors & Home Services',
+  'Customer Support Teams',
+  'Event Planners',
+  'Fitness-Salon-Personal Services',
+  'Freelancers-Consultants',
+  'Hotels & Hospitality',
+  'Job Seekers-Career Changers',
+  'Marketing Agencies',
+  'Office & Operations Managers',
+  'Photographers & Videographers',
+  'Property Managers',
+  'Real Estate',
+  'Recruiters & HR',
+  'Restaurants',
+  'Retail-E-commerce Small Biz',
+  'Sales Teams',
+  'Small Businesses',
+  'Startup Founders',
+  'Students',
+  'Teachers & Educators',
+  'Travel Agencies',
+  'Virtual Assistants',
+] as const
 export type NicheName = (typeof NICHES)[number]

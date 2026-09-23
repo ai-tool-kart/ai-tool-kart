@@ -1,0 +1,2572 @@
+[
+  {
+    "id": "students-3af11e4e60",
+    "slug": "summarize-my-textbook-chapter-and-let-me-ask-questions-about-it",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "College/university students studying from PDFs, textbooks, and lecture slides",
+    "title": "summarize my textbook chapter and let me ask questions about it",
+    "intentLabels": [
+      "summarize PDF",
+      "chat with my notes",
+      "study guide from readings",
+      "ask questions about lecture slides",
+      "AI notebook"
+    ],
+    "tools": [
+      {
+        "name": "Google NotebookLM (Gemini Notebook)",
+        "url": "https://notebooklm.google.com/"
+      }
+    ],
+    "workflowSummary": "Upload your lecture slides, textbook PDF, or class readings as \"sources.\" NotebookLM reads only that material and answers your questions with inline citations pointing back to the exact page or section, and can auto-generate a study guide, FAQ, or timeline.",
+    "samplePrompt": "Using only the sources I uploaded, create a study guide with the 10 most important concepts, then quiz me on them one at a time.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no cost to start, drag-and-drop upload, plain-language interface",
+    "trustScore": 5,
+    "pricingNote": "Free tier available with a Google account; higher limits/extra features via Google One AI Premium - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://notebooklm.google.com/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026 (page dated Jul 16, 2026)",
+    "accessNotes": "Public product page; free Google account required to use the tool; no login needed to view the marketing page",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-de02249be8",
+    "slug": "turn-my-class-notes-into-flashcards-to-study-for-a-test",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "High school/college students preparing for a test",
+    "title": "turn my class notes into flashcards to study for a test",
+    "intentLabels": [
+      "make flashcards from notes",
+      "flashcard generator",
+      "study cards from PDF",
+      "Quizlet AI"
+    ],
+    "tools": [
+      {
+        "name": "Quizlet (AI Flashcard Generator)",
+        "url": "https://quizlet.com/features/ai-flashcard-generator"
+      }
+    ],
+    "workflowSummary": "Paste typed notes, upload a photo/PDF of handwritten notes, or type a topic, and Quizlet's AI builds a full flashcard set automatically. The same material can also become a study guide or practice test.",
+    "samplePrompt": "Turn these lecture notes into a 20-card flashcard set, with the term on the front and a short plain-English definition on the back.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple upload/paste flow, most students already know the app",
+    "trustScore": 4,
+    "pricingNote": "Free to start; full AI study tools require a Quizlet Plus subscription - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://quizlet.com/features/ai-flashcard-generator",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public feature page, no login required to view",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-87e0016d7f",
+    "slug": "make-a-practice-test-from-my-notes-before-the-exam",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "High school/college students in exam-prep mode",
+    "title": "make a practice test from my notes before the exam",
+    "intentLabels": [
+      "practice test generator",
+      "exam prep AI",
+      "quiz me on my notes",
+      "adaptive study mode"
+    ],
+    "tools": [
+      {
+        "name": "Quizlet AI Study Tools (practice tests, AI study guides)",
+        "url": "https://quizlet.com/features/ai-study-tools"
+      }
+    ],
+    "workflowSummary": "Upload notes, slides, or readings and Quizlet's AI turns them into a graded practice test. Its Learn mode uses spaced repetition, repeating the questions you get wrong more often until you master them.",
+    "samplePrompt": "Generate a 15-question practice test from these notes, mixing multiple choice and short answer, and explain the correct answer after I submit.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Some AI features free; advanced practice-test generation and homework help require Quizlet Plus - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://quizlet.com/features/ai-study-tools",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public feature page, no login required to view",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-19ad7067f0",
+    "slug": "check-my-math-homework-and-show-me-the-steps",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Middle/high school and early-college students doing math homework",
+    "title": "check my math homework and show me the steps",
+    "intentLabels": [
+      "solve math problem step by step",
+      "math homework helper",
+      "scan math problem",
+      "homework checker"
+    ],
+    "tools": [
+      {
+        "name": "Photomath",
+        "url": "https://play.google.com/store/apps/details/Photomath?id=com.microblink.photomath"
+      }
+    ],
+    "workflowSummary": "Point your phone camera at a printed or handwritten math problem (or type it in). Photomath solves it and shows every step, with an option to compare more than one solution method. The core step-by-step solver is free; animated video tutorials are a paid add-on.",
+    "samplePrompt": "Scan the problem, then tap \"show steps\" and \"alternate method\" to compare two ways of solving it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "camera-based, no typing needed, built for K-12/early college math",
+    "trustScore": 4,
+    "pricingNote": "Free core solver; Photomath Plus roughly $9.99/mo or $69.99/yr for animated tutorials - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://play.google.com/store/apps/details/Photomath?id=com.microblink.photomath",
+    "sourceType": "Directory / app store listing",
+    "freshness": "Retrieved Sep 2026 (listing updated Jul 29, 2026)",
+    "accessNotes": "Public app store listing, no login required to view",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-61666108b6",
+    "slug": "fix-the-grammar-and-make-my-essay-sound-clearer",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students writing essays and papers for class",
+    "title": "fix the grammar and make my essay sound clearer",
+    "intentLabels": [
+      "grammar checker",
+      "essay proofreader",
+      "improve my writing",
+      "AI editor"
+    ],
+    "tools": [
+      {
+        "name": "Grammarly",
+        "url": "https://www.grammarly.com/",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Install the browser extension, desktop app, or paste text into the web editor. Grammarly underlines grammar, spelling, and clarity issues in real time and suggests full-sentence rewrites. The free plan covers the basics; Pro adds full rewrites and a plagiarism/AI-writing checker.",
+    "samplePrompt": "Use the \"Improve it\" rewrite suggestion on each flagged sentence, then run the full-document clarity check before I submit.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works passively as you type, minimal setup",
+    "trustScore": 5,
+    "pricingNote": "Free plan (about 100 AI prompts/month); Pro roughly $12/mo billed annually ($30/mo billed monthly) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.grammarly.com/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public homepage; free account required to use the editor",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-9d8be15553",
+    "slug": "record-my-lecture-and-get-a-text-summary-afterward",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who miss details taking notes live in class",
+    "title": "record my lecture and get a text summary afterward",
+    "intentLabels": [
+      "transcribe lecture",
+      "lecture notes AI",
+      "class recording transcription",
+      "record and summarize class"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://otter.ai/pricing",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Open the Otter app or extension before class and hit record (or import an audio file afterward). Otter live-transcribes the lecture, identifies speakers, and generates an automatic summary and topic outline you can search later.",
+    "samplePrompt": "Summarize this lecture into 5 key takeaways and list any dates or assignments the professor mentioned.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy to record, but the free plan's 30-minute-per-recording cap cuts off most full-length lectures",
+    "trustScore": 4,
+    "pricingNote": "Free Basic plan (300 min/month, 30-min cap per recording); Pro $16.99/mo ($8.49/mo billed annually) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://otter.ai/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required to record",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-844599c852",
+    "slug": "find-real-research-papers-that-support-my-essay-s-argument",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students writing research papers or essays that need cited evidence",
+    "title": "find real research papers that support my essay's argument",
+    "intentLabels": [
+      "find sources for my paper",
+      "academic search engine",
+      "research paper finder",
+      "AI research assistant"
+    ],
+    "tools": [
+      {
+        "name": "Consensus",
+        "url": "https://consensus.app/",
+        "catalogueSlug": "consensus"
+      }
+    ],
+    "workflowSummary": "Type your research question in plain English, not keywords. Consensus searches 200M+ peer-reviewed papers and shows a \"Consensus Meter\" indicating whether the science leans yes, no, or mixed, with every claim linked back to its source paper.",
+    "samplePrompt": "Does spaced repetition improve long-term memory retention compared to massed practice? Show me the top 5 most-cited studies.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the natural-language search is easy, but interpreting the Consensus Meter and picking credible studies takes some guidance",
+    "trustScore": 4,
+    "pricingNote": "Free tier (roughly 20 AI searches/month); Premium/Pro from about $9-15/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://consensus.app/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free account needed to save searches",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-a6d36c775b",
+    "slug": "generate-the-citation-for-a-website-or-book-i-used",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students formatting a bibliography or works-cited page",
+    "title": "generate the citation for a website or book I used",
+    "intentLabels": [
+      "citation generator",
+      "APA MLA citation maker",
+      "bibliography generator",
+      "works cited generator"
+    ],
+    "tools": [
+      {
+        "name": "Scribbr Citation Generator",
+        "url": "https://www.scribbr.com/citation/generator/"
+      }
+    ],
+    "workflowSummary": "Paste in a URL, DOI, ISBN, or title, choose your citation style (APA, MLA, Chicago, Harvard), and Scribbr auto-fills and formats the reference entry and in-text citation, exportable straight into a Word document.",
+    "samplePrompt": "Paste the article URL, select APA 7th edition, and export the finished reference list to Word.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no account required for basic citations, plain form-based interface",
+    "trustScore": 5,
+    "pricingNote": "100% free for the citation generator itself; Scribbr's proofreading/plagiarism add-ons are paid - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.scribbr.com/citation/generator/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026 (page dated Feb 2025, confirmed current)",
+    "accessNotes": "Public tool, no login required",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-a6baf863d3",
+    "slug": "check-if-my-essay-might-get-flagged-as-ai-written-before-i",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students worried their writing will get flagged by a school's AI checker",
+    "title": "check if my essay might get flagged as AI-written before I submit it",
+    "intentLabels": [
+      "AI detector",
+      "will my essay get flagged",
+      "AI writing checker",
+      "academic integrity check"
+    ],
+    "tools": [
+      {
+        "name": "Scribbr AI Detector",
+        "url": "https://www.scribbr.com/citation/generator/"
+      }
+    ],
+    "workflowSummary": "Paste your finished draft into the checker. It scans the text for patterns associated with AI-generated writing and gives a likelihood estimate, so you can revise sections that read as too uniform or generic before turning the assignment in.",
+    "samplePrompt": "Paste in my final draft and flag any paragraph that reads as likely AI-written so I can revise it in my own words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple paste-and-check flow",
+    "trustScore": 3,
+    "pricingNote": "Free to use - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.scribbr.com/citation/generator/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public tool suite page listing the AI Detector feature, no login required to view; NOTE - AI detectors (this one included) have known false-positive rates, especially for non-native English writers, so treat results as a signal, not a verdict",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-17230bfc7d",
+    "slug": "get-step-by-step-help-solving-a-calculus-or-physics-problem",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "STEM students (algebra through calculus, chemistry, stats, physics)",
+    "title": "get step-by-step help solving a calculus or physics problem",
+    "intentLabels": [
+      "math solver",
+      "physics homework help",
+      "step by step solutions",
+      "computational engine"
+    ],
+    "tools": [
+      {
+        "name": "Wolfram|Alpha Pro for Students",
+        "url": "https://www.wolframalpha.com/pro-for-students"
+      }
+    ],
+    "workflowSummary": "Type or photograph a math or science problem into Wolfram|Alpha. The free tool gives the answer; the Pro for Students plan unlocks the full step-by-step solution with hints, covering algebra through calculus, physics, chemistry, and statistics.",
+    "samplePrompt": "integrate x^2 * sin(x) dx, show step by step",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the answer engine is simple, but full step-by-step help requires the paid Pro tier",
+    "trustScore": 4,
+    "pricingNote": "Free basic answers; Pro for Students roughly $5-9.99/month or up to about $59.99/year - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.wolframalpha.com/pro-for-students",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public product page; free account for basic use, subscription required for Pro features",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-b5bb4b7937",
+    "slug": "practice-speaking-the-language-i-m-taking-for-class",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students taking a foreign-language class who want speaking practice",
+    "title": "practice speaking the language I'm taking for class",
+    "intentLabels": [
+      "language practice AI",
+      "speaking practice",
+      "AI conversation partner",
+      "roleplay a conversation"
+    ],
+    "tools": [
+      {
+        "name": "Duolingo Max",
+        "url": "https://blog.duolingo.com/duolingo-max"
+      }
+    ],
+    "workflowSummary": "On top of the free Duolingo lessons, Max adds two AI features: Roleplay, where you act out a real scenario (ordering food, asking directions) with an AI character and get feedback on grammar and vocabulary, and Video Call, an open-ended spoken conversation with an AI character.",
+    "samplePrompt": "Start a Roleplay scenario: ordering coffee in the language I'm learning, and give me feedback afterward on grammar and vocabulary variety.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "gamified interface most students already know",
+    "trustScore": 3,
+    "pricingNote": "Core app free; Max roughly $29.99/month or about $168/year - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://blog.duolingo.com/duolingo-max",
+    "sourceType": "Product page / company blog",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public blog post; free account for the base app; NOTE - Max's AI conversation features currently cover only 7 languages",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-d383e67add",
+    "slug": "get-a-patient-ai-tutor-to-explain-something-i-don-t-understand",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "K-12 and early-college students who want a tutor, not just an answer",
+    "title": "get a patient AI tutor to explain something I don't understand",
+    "intentLabels": [
+      "AI tutor",
+      "homework help chatbot",
+      "explain this concept",
+      "personalized tutoring"
+    ],
+    "tools": [
+      {
+        "name": "Khanmigo (Khan Academy)",
+        "url": "https://www.khanmigo.ai/pricing"
+      }
+    ],
+    "workflowSummary": "Chat with Khanmigo inside Khan Academy about any lesson. Instead of giving the answer outright, it asks guiding questions to walk you through your own reasoning, tied to Khan Academy's free lesson library.",
+    "samplePrompt": "I don't understand why we multiply exponents when raising a power to a power - can you walk me through it without just giving me the answer?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for students, low monthly cost",
+    "trustScore": 4,
+    "pricingNote": "Khan Academy core content always free; Khanmigo for learners about $4/month or $44/year - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.khanmigo.ai/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free Khan Academy account required",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-668bfd2ca2",
+    "slug": "build-a-resume-for-my-first-internship-application",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students/recent grads applying for their first internship or job",
+    "title": "build a resume for my first internship application",
+    "intentLabels": [
+      "resume builder",
+      "AI resume writer",
+      "internship resume",
+      "cover letter generator"
+    ],
+    "tools": [
+      {
+        "name": "Kickresume",
+        "url": "https://www.kickresume.com/en/students/"
+      }
+    ],
+    "workflowSummary": "Pick a template, enter your target job title or paste the job ad, and Kickresume's AI drafts resume bullet points and a matching cover letter, plus an ATS checker that flags formatting issues before you apply.",
+    "samplePrompt": "Here's the internship job ad: [paste]. Write 3 resume bullet points for my retail job that highlight transferable skills for this role.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided, template-based flow",
+    "trustScore": 3,
+    "pricingNote": "Free plan available; verified students get 6 months of Premium free via ISIC/ITIC/UNiDAYS; Premium otherwise roughly $7-19/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.kickresume.com/en/students/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; student ID verification required to claim free Premium; NOTE - reviewers note AI-generated bullet points often need manual editing",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-8685d87fa0",
+    "slug": "turn-my-class-notes-into-slides-for-a-group-presentation",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students assigned a group or individual class presentation",
+    "title": "turn my class notes into slides for a group presentation",
+    "intentLabels": [
+      "AI presentation maker",
+      "notes to slides",
+      "generate a slide deck",
+      "presentation generator"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Design for Presentations)",
+        "url": "https://www.canva.com/create/ai-presentations/",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Type a short description of your presentation topic (or paste your notes), and Magic Design generates several complete slide-deck drafts with layouts, colors, and placeholder content, which you then edit and fill in with your own material.",
+    "samplePrompt": "Create a presentation outline about the causes of the French Revolution for a 10-minute class presentation, with one slide per major cause.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-based generation, familiar drag-and-drop editor",
+    "trustScore": 4,
+    "pricingNote": "Free plan (Magic Design usable up to 10 times free across versions); Pro roughly $12-15/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.canva.com/create/ai-presentations/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account required to generate; NOTE - PowerPoint exports can shift layout",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-fab818a645",
+    "slug": "listen-to-my-textbook-chapter-instead-of-reading-it",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who read better/faster by listening, including those with dyslexia or ADHD accommodations",
+    "title": "listen to my textbook chapter instead of reading it",
+    "intentLabels": [
+      "text to speech app",
+      "read my PDF aloud",
+      "audiobook my textbook",
+      "listen to notes"
+    ],
+    "tools": [
+      {
+        "name": "Speechify",
+        "url": "https://speechify.com/pricing/"
+      }
+    ],
+    "workflowSummary": "Upload or scan a textbook page or PDF, or paste in an article, and Speechify reads it back in a natural-sounding voice at an adjustable speed, so you can listen while commuting, working out, or to reduce eye strain from screen reading.",
+    "samplePrompt": "Import this PDF chapter and read it aloud at 1.5x speed with text highlighting turned on so I can follow along.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple import-and-play flow",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; Premium roughly $29/month or $139/year (student discounts sometimes offered) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://speechify.com/pricing/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required",
+    "batch": "Students AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "students-497b77eb94",
+    "slug": "make-a-study-schedule-that-actually-fits-around-my-classes-and",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "College students juggling classes, clubs, and a part-time job",
+    "title": "make a study schedule that actually fits around my classes and deadlines",
+    "intentLabels": [
+      "AI calendar planner",
+      "auto-schedule my study time",
+      "time blocking app",
+      "smart daily planner"
+    ],
+    "tools": [
+      {
+        "name": "Motion",
+        "url": "https://www.usemotion.com/pricing"
+      }
+    ],
+    "workflowSummary": "Connect your class schedule, part-time job shifts, and assignment deadlines. Motion's AI automatically slots study blocks into your open time and reshuffles everything the moment something changes, like a canceled class or a late meeting.",
+    "samplePrompt": "Add \"Study for chemistry midterm\" as a task due Friday at 9am, needing 6 hours total, and find the open blocks in my week to schedule it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the auto-scheduling concept takes a few days to trust, and there's no permanent free plan",
+    "trustScore": 3,
+    "pricingNote": "No free plan; Pro AI $19/seat/mo billed annually ($29/mo billed monthly) - verify before publishing (a 25% student discount is cited by one third-party review but not confirmed on Motion's own pricing page)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.usemotion.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; 7-day trial requires a payment card upfront",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-b7cf60e857",
+    "slug": "find-scholarships-i-actually-qualify-for",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "High school and college students looking for money for school",
+    "title": "find scholarships I actually qualify for",
+    "intentLabels": [
+      "scholarship finder",
+      "scholarship matching",
+      "money for college",
+      "no-essay scholarships"
+    ],
+    "tools": [
+      {
+        "name": "Bold.org",
+        "url": "https://bold.org/"
+      }
+    ],
+    "workflowSummary": "Create a free profile describing your background, major, and interests. Bold.org's matching system surfaces scholarships - including quick \"no-essay\" ones - that fit your profile, and it manages the full application and payout process itself rather than linking out to other sites.",
+    "samplePrompt": "Fill out my profile with my major, state, GPA, and background, then show me every no-essay scholarship I qualify for.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided profile setup, no essay required for some listings",
+    "trustScore": 4,
+    "pricingNote": "Completely free for students - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://bold.org/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free profile required to get matches and apply; NOTE - only matches within Bold.org's own scholarship pool, not the wider scholarship universe, so pair with other sources",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-914c34672f",
+    "slug": "turn-my-handwritten-notes-into-typed-searchable-text",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who take handwritten notes on an iPad during lectures",
+    "title": "turn my handwritten notes into typed, searchable text",
+    "intentLabels": [
+      "handwriting to text",
+      "digitize my notes",
+      "searchable handwritten notes",
+      "iPad note app"
+    ],
+    "tools": [
+      {
+        "name": "Notability",
+        "url": "https://notability.com/pricing"
+      }
+    ],
+    "workflowSummary": "Write notes by hand in Notability during class (optionally recording the audio at the same time). Its AI-powered handwriting recognition converts your writing into searchable text and can convert handwritten math into typed equations, so you can find any note later by keyword.",
+    "samplePrompt": "Convert this handwritten page to text, then search my whole notebook for the keyword \"mitosis.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for handwritten note-taking on iPad, iPhone, and Mac",
+    "trustScore": 4,
+    "pricingNote": "Free Starter tier with usage limits; Plus about $19.99/year; Pro/AI-heavy tier about $99.99/year; some schools provide it free through Apple School Manager - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://notability.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free tier available; Apple devices only",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-9b9b56f578",
+    "slug": "write-a-professional-email-to-my-professor",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who need to email professors, TAs, or academic advisors",
+    "title": "write a professional email to my professor",
+    "intentLabels": [
+      "email my professor",
+      "write a formal email",
+      "AI email drafting",
+      "polish my email"
+    ],
+    "tools": [
+      {
+        "name": "Gmail \"Help Me Write\" (Gemini in Gmail)",
+        "url": "https://blog.google/products-and-platforms/products/gmail/gmail-is-entering-the-gemini-era/"
+      }
+    ],
+    "workflowSummary": "In Gmail, click \"Help me write\" and type a one-line description of what you need. Gemini drafts a full, appropriately formal email you can shorten, elaborate, or \"formalize\" before sending.",
+    "samplePrompt": "Ask my professor politely for a 2-day extension on my essay because I'm sick, and offer to send a doctor's note.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one click inside an app most students already use daily",
+    "trustScore": 4,
+    "pricingNote": "Free for all Gmail users as of the February 2026 rollout; some other Gmail AI features still require Google AI Pro/Ultra - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/gmail/gmail-is-entering-the-gemini-era/",
+    "sourceType": "Product page / company blog",
+    "freshness": "Retrieved Sep 2026 (announcement dated Feb 12, 2026)",
+    "accessNotes": "Public blog post; feature appears directly inside Gmail; rollout is US-first and English-first",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-972003f36a",
+    "slug": "help-me-budget-my-money-as-a-college-student",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "College students managing a tight or irregular budget",
+    "title": "help me budget my money as a college student",
+    "intentLabels": [
+      "budgeting app",
+      "AI money coach",
+      "track my spending",
+      "student finance app"
+    ],
+    "tools": [
+      {
+        "name": "Cleo (Cleo AI)",
+        "url": "https://web.meetcleo.com/pricing"
+      }
+    ],
+    "workflowSummary": "Connect your bank account and chat with Cleo like a texting friend. It categorizes your spending, calculates what's left after bills, and can send a blunt \"Roast Mode\" reality check or an encouraging \"Hype Mode\" nudge, depending on which tone motivates you.",
+    "samplePrompt": "How much did I spend on food delivery last month, and can I afford a $60 concert ticket this weekend?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational chat interface, no spreadsheet setup",
+    "trustScore": 3,
+    "pricingNote": "Core budgeting/chat free; Plus $5.99/mo, Pro $8.99/mo, Builder $14.99/mo for cash advances, savings, and credit-building - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://web.meetcleo.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026 (Terms last updated Aug 11, 2026)",
+    "accessNotes": "Public site; requires full read-only bank account access via Plaid and is only available to US residents 18+ - a real privacy trade-off worth flagging",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-b085aaee80",
+    "slug": "autofill-internship-and-job-applications-instead-of-typing",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students applying to many internships at once",
+    "title": "autofill internship and job applications instead of typing everything by hand",
+    "intentLabels": [
+      "application autofill",
+      "internship application helper",
+      "job application copilot",
+      "stop retyping my resume"
+    ],
+    "tools": [
+      {
+        "name": "Simplify (Simplify Jobs)",
+        "url": "https://simplify.jobs/"
+      }
+    ],
+    "workflowSummary": "Build one profile with your resume and details, then install the Copilot browser extension. When you open an internship application on a company's site, Copilot auto-fills the form fields from your saved profile, cutting the retyping out of applying to each role.",
+    "samplePrompt": "Open this internship application and autofill my name, school, resume, and work history from my saved profile.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "install once, works automatically on supported sites",
+    "trustScore": 4,
+    "pricingNote": "Free forever for autofill, matching, and the tracker; paid Simplify+ adds AI resume/cover-letter tailoring - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://simplify.jobs/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free account and browser extension required; NOTE - autofill accuracy is more variable on complex systems like Workday per independent reviewers",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-62f87cd442",
+    "slug": "keep-track-of-all-my-assignments-and-due-dates-in-one-place",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students juggling assignments across several classes",
+    "title": "keep track of all my assignments and due dates in one place",
+    "intentLabels": [
+      "assignment tracker",
+      "to-do list app",
+      "deadline reminders",
+      "homework planner"
+    ],
+    "tools": [
+      {
+        "name": "Todoist (AI Assist / Task Assist)",
+        "url": "https://www.todoist.com/help/todoist/billing/todoist-plans-pricing-and-billing-faq-Vq2z0HWL6"
+      }
+    ],
+    "workflowSummary": "Type an assignment in plain language and Todoist's natural-language parser sets the date and time automatically. The AI Task Assist feature (on paid plans) can break a big assignment into smaller subtasks and suggest a schedule.",
+    "samplePrompt": "Read chapters 4-6 for Bio, due Thursday 9am, high priority - break this into subtasks I can finish each night this week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "natural-language task entry, familiar to-do-list format",
+    "trustScore": 4,
+    "pricingNote": "Free Beginner plan (5 projects, basic reminders); Pro about $5/mo billed annually ($7/mo billed monthly) for AI Task Assist and more projects - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.todoist.com/help/todoist/billing/todoist-plans-pricing-and-billing-faq-Vq2z0HWL6",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help center page; free account to use the app; NOTE - Todoist's education discount program was retired in 2021 and hasn't returned",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-92938afb51",
+    "slug": "turn-a-recorded-lecture-or-class-video-into-notes-i-can-study",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who miss a lecture or want to review a recorded class video",
+    "title": "turn a recorded lecture or class video into notes I can study from",
+    "intentLabels": [
+      "video to notes",
+      "transcribe a recorded lecture",
+      "YouTube lecture summary",
+      "convert video to text"
+    ],
+    "tools": [
+      {
+        "name": "Notta",
+        "url": "https://www.notta.ai/en/pricing"
+      }
+    ],
+    "workflowSummary": "Paste a YouTube link or upload a recorded lecture file, and Notta transcribes it, generates an AI summary of the key points, and lets you \"chat\" with the transcript afterward to ask questions about the content.",
+    "samplePrompt": "Summarize this recorded lecture into 5 main topics and list anything the professor said would be on the exam.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload or paste a link and go, no technical setup",
+    "trustScore": 4,
+    "pricingNote": "Free plan (120 transcription minutes/month); Pro from about $8.17/mo billed annually; student/educator discount available with a school email - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.notta.ai/en/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required; student discount requires an edu email",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-028723ed92",
+    "slug": "keep-my-notes-and-documents-organized-across-all-my-classes-in",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students taking multiple classes who want one place for everything",
+    "title": "keep my notes and documents organized across all my classes in one place",
+    "intentLabels": [
+      "class notes organizer",
+      "digital binder",
+      "note-taking workspace",
+      "organize my coursework"
+    ],
+    "tools": [
+      {
+        "name": "Notion (with Notion AI)",
+        "url": "https://www.notion.com/product/ai"
+      }
+    ],
+    "workflowSummary": "Set up one workspace with a page per class, and use Notion's databases to track notes, readings, and assignments side by side. The free/Plus plans give unlimited notes and organization; the full AI layer (asking questions across all your notes, auto-summaries) requires the pricier Business plan.",
+    "samplePrompt": "Summarize everything across my Biology and Chemistry pages that's related to cellular respiration.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "very flexible, but that flexibility means some setup time before it feels organized",
+    "trustScore": 3,
+    "pricingNote": "Free for individuals (unlimited pages, limited AI trial); full Notion AI requires Business at about $20/member/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.notion.com/product/ai",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026 (checked Jul 31, 2026 per third-party sources)",
+    "accessNotes": "Public page; free account for core organization features; NOTE - full AI search/summarization moved behind the paid Business plan in 2025",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-f2b95db7e8",
+    "slug": "split-up-tasks-and-see-who-s-doing-what-for-a-group-project",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students assigned a group project with classmates",
+    "title": "split up tasks and see who's doing what for a group project",
+    "intentLabels": [
+      "group project tracker",
+      "shared task board",
+      "who's doing what",
+      "team kanban for school"
+    ],
+    "tools": [
+      {
+        "name": "Notion",
+        "url": "https://www.notion.com/pricing"
+      }
+    ],
+    "workflowSummary": "Build a shared project page with a kanban board or table listing each task, who it's assigned to, and its due date. Every group member edits the same live page, so nobody needs a separate spreadsheet or group chat to know what's left to do.",
+    "samplePrompt": "Create a board with columns To Do / In Progress / Done, and add one card per task with an assignee and due date for our group presentation.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy once set up, but building the first board takes some tinkering",
+    "trustScore": 4,
+    "pricingNote": "Free for individuals and small collaborative groups; team-wide admin features require paid plans - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.notion.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required, and each group member needs their own free Notion account to edit",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-c521bdfc9b",
+    "slug": "find-alumni-or-professionals-i-could-reach-out-to-for-an",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students trying to find an internship through alumni or professional connections",
+    "title": "find alumni or professionals I could reach out to for an internship",
+    "intentLabels": [
+      "find alumni contacts",
+      "networking for internships",
+      "who can refer me",
+      "informational interview finder"
+    ],
+    "tools": [
+      {
+        "name": "Simplify (Network Copilot)",
+        "url": "https://simplify.jobs/"
+      }
+    ],
+    "workflowSummary": "Simplify's Network Copilot searches your existing connections and its broader network against a job posting you're interested in and surfaces people - like alumni from your school - who might be willing to refer you or answer questions about the role.",
+    "samplePrompt": "Show me people connected to this company who went to my school or studied my major.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once you have a specific job posting in mind, less useful for open-ended browsing",
+    "trustScore": 3,
+    "pricingNote": "Included free with a Simplify account - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://simplify.jobs/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free account required; NOTE - newer, less-reviewed feature compared to Simplify's well-established autofill tool",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-f026540e12",
+    "slug": "practice-for-a-job-or-internship-interview-out-loud",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students preparing for an internship or job interview",
+    "title": "practice for a job or internship interview out loud",
+    "intentLabels": [
+      "mock interview AI",
+      "interview practice",
+      "behavioral interview prep",
+      "practice answering interview questions"
+    ],
+    "tools": [
+      {
+        "name": "Yoodli",
+        "url": "https://yoodli.ai/use-cases/interview-preparation"
+      }
+    ],
+    "workflowSummary": "Do a spoken mock interview with an AI interviewer that asks real follow-up questions based on your answers. Afterward, Yoodli gives you a report on filler words, pacing, and clarity, so you can see concretely what to fix before the real interview.",
+    "samplePrompt": "Start a behavioral interview roleplay for a marketing internship, and give me a report on filler words and pacing when I'm done.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just talk to it, no setup beyond picking a scenario",
+    "trustScore": 3,
+    "pricingNote": "Free (5 lifetime practice sessions total); Pro about $8/mo billed annually (10 sessions/week); Advanced about $20/mo (unlimited) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://yoodli.ai/use-cases/interview-preparation",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account to start; some schools provide free access via a student tech fee; NOTE - coaches delivery, not content quality",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-fb1c8763c0",
+    "slug": "translate-a-reading-assignment-that-s-not-in-english",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students in a language class or reading assignments in a non-native language",
+    "title": "translate a reading assignment that's not in English",
+    "intentLabels": [
+      "translate my homework",
+      "AI translator",
+      "translate a PDF",
+      "foreign language reading help"
+    ],
+    "tools": [
+      {
+        "name": "DeepL",
+        "url": "https://support.deepl.com/hc/en-us/articles/360019924499-About-DeepL-plans"
+      }
+    ],
+    "workflowSummary": "Paste text or upload a document (PDF, Word) into DeepL, and it translates it using neural machine translation that's widely reported to outperform Google Translate on European language pairs, preserving formatting on document uploads.",
+    "samplePrompt": "Translate this assigned reading from French to English, keeping the paragraph breaks intact.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste-and-translate interface, no account needed for basic text",
+    "trustScore": 4,
+    "pricingNote": "Free (50,000 characters/month, 1 document translation/month); Individual plan about $8.74/mo billed annually for unlimited text and more documents - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://support.deepl.com/hc/en-us/articles/360019924499-About-DeepL-plans",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help center page; no account required for basic text translation",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-df5b724c1c",
+    "slug": "practice-giving-my-class-presentation-out-loud-before-i-present",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who get nervous giving in-class presentations",
+    "title": "practice giving my class presentation out loud before I present it for real",
+    "intentLabels": [
+      "practice a presentation",
+      "public speaking practice",
+      "rehearse my presentation",
+      "reduce filler words"
+    ],
+    "tools": [
+      {
+        "name": "Yoodli",
+        "url": "https://yoodli.ai/use-cases/interview-preparation"
+      }
+    ],
+    "workflowSummary": "Rehearse your presentation out loud in front of Yoodli instead of a mirror. It transcribes what you say in real time and scores your pacing, filler-word use, and eye contact (via webcam), so you can run it again and watch the numbers improve before the real thing.",
+    "samplePrompt": "Start a presentation practice session, time it to 5 minutes, and flag every time I say \"um\" or \"like.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same simple record-and-review flow as the interview mode",
+    "trustScore": 3,
+    "pricingNote": "Free (5 lifetime sessions, shared across all Yoodli use cases); Pro about $8/mo billed annually - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://yoodli.ai/use-cases/interview-preparation",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account to start; NOTE - same 5-lifetime-session cap as the interview-prep row, shared across uses",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-0e7d117bd8",
+    "slug": "find-internships-or-part-time-jobs-that-match-my-major-and",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who don't know where to start looking for an internship",
+    "title": "find internships or part-time jobs that match my major and interests",
+    "intentLabels": [
+      "internship finder",
+      "job matching",
+      "find internships by major",
+      "personalized job search"
+    ],
+    "tools": [
+      {
+        "name": "Simplify (Simplify Jobs)",
+        "url": "https://simplify.jobs/internships"
+      }
+    ],
+    "workflowSummary": "Build your profile once with your major, skills, and interests, and Simplify's AI matches it against a database of live job and internship postings, showing you roles ranked by fit rather than making you scroll a generic job board.",
+    "samplePrompt": "Filter my matched internships to marketing roles for summer 2027 that are open to sophomores.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "profile-based matching, minimal manual searching",
+    "trustScore": 4,
+    "pricingNote": "Free for job seekers, matches included - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://simplify.jobs/internships",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account required to save matches",
+    "batch": "Students AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "students-cd4ecc357d",
+    "slug": "build-a-simple-portfolio-website-to-show-off-my-projects",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who want to showcase projects, design work, or a portfolio online",
+    "title": "build a simple portfolio website to show off my projects",
+    "intentLabels": [
+      "AI website builder",
+      "make a portfolio site",
+      "generate a website from a prompt",
+      "personal website builder"
+    ],
+    "tools": [
+      {
+        "name": "Framer",
+        "url": "https://www.framer.com/solutions/ai-website-builder/",
+        "catalogueSlug": "framer"
+      }
+    ],
+    "workflowSummary": "Describe your portfolio in a short prompt, and Framer's AI generates a complete, responsive site with sections and draft copy that you then refine visually on its canvas before publishing.",
+    "samplePrompt": "Create a portfolio website for a design student, with sections for About, 4 projects, and a contact form.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to start, no code required, AI does the first draft",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; Mini $5/site/month, Basic $15/site/month for a custom domain and more pages - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.framer.com/solutions/ai-website-builder/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account to start building; NOTE - reviewers note the AI output is a starting point that needs manual refinement, not a finished product",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-bc7962988d",
+    "slug": "write-a-stronger-linkedin-headline-and-about-section",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students building a LinkedIn profile for internship or job searching",
+    "title": "write a stronger LinkedIn headline and About section",
+    "intentLabels": [
+      "LinkedIn profile writer",
+      "improve my LinkedIn headline",
+      "LinkedIn About section AI",
+      "optimize my LinkedIn profile"
+    ],
+    "tools": [
+      {
+        "name": "LinkedIn's AI-powered writing assistant",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1444194"
+      }
+    ],
+    "workflowSummary": "From the Headline or About section of your own profile, LinkedIn's built-in AI writing assistant reads your existing profile and generates personalized suggestions you can accept, edit, or skip.",
+    "samplePrompt": "Open the Headline field on my profile and use the AI writing assistant to see suggested rewrites.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one button inside LinkedIn's own editing flow",
+    "trustScore": 3,
+    "pricingNote": "Requires an active LinkedIn Premium subscription (paid) - verify current price and plan requirement before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.linkedin.com/help/linkedin/answer/a1444194",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help page; feature requires a paid LinkedIn Premium account to access; NOTE - reviewers say suggestions can feel generic and still benefit from a personal rewrite",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-fb77c9627f",
+    "slug": "design-a-flyer-for-my-club-s-event",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students promoting a club event, fundraiser, or meeting",
+    "title": "design a flyer for my club's event",
+    "intentLabels": [
+      "AI flyer maker",
+      "event poster design",
+      "club event flyer",
+      "promote my event"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Express",
+        "url": "https://www.adobe.com/express/create/ai/poster"
+      }
+    ],
+    "workflowSummary": "Type a description of the event, and Adobe Express generates several fully editable flyer templates you can customize with your own text, photos, and club colors.",
+    "samplePrompt": "Generate a poster for a campus club bake sale fundraiser happening Saturday at noon in the quad.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-to-template flow, no design experience required",
+    "trustScore": 4,
+    "pricingNote": "Free plan with limited generative AI credits; Premium about $9.99/month for more credits and features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.adobe.com/express/create/ai/poster",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free Adobe account required to generate and download",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-49f0040764",
+    "slug": "design-business-cards-for-networking-events",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students networking at career fairs or club recruitment events",
+    "title": "design business cards for networking events",
+    "intentLabels": [
+      "business card maker",
+      "digital business card",
+      "networking card design",
+      "personal branding card"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Express",
+        "url": "https://www.adobe.com/express/"
+      }
+    ],
+    "workflowSummary": "Use Adobe Express's template generator to describe the business card you want, and it produces editable card designs you can customize with your own branding before printing or sharing digitally.",
+    "samplePrompt": "Generate a simple, modern business card template for a marketing student with my name, phone number, and LinkedIn QR code.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same prompt-to-template flow as the flyer feature",
+    "trustScore": 4,
+    "pricingNote": "Free plan with limited generative AI credits; Premium about $9.99/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.adobe.com/express/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free Adobe account required",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-a54370cc6a",
+    "slug": "turn-a-video-clip-into-a-short-promotional-reel-for-my-club-s",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who run a club's or org's Instagram/TikTok",
+    "title": "turn a video clip into a short promotional reel for my club's social media",
+    "intentLabels": [
+      "make a promo video",
+      "Instagram reel editor",
+      "TikTok video maker",
+      "AI video editing app"
+    ],
+    "tools": [
+      {
+        "name": "CapCut",
+        "url": "https://www.capcut.com/resource/is-capcut-pc-free-for-ai-video-editing",
+        "catalogueSlug": "capcut"
+      }
+    ],
+    "workflowSummary": "Upload raw video clips into CapCut, and its AI tools auto-generate captions, suggest cuts and transitions, and can extend or remove backgrounds - the free version covers the full basic editing toolkit needed for a polished short-form reel.",
+    "samplePrompt": "Auto-generate captions for this clip, trim it to 30 seconds, and add a trending transition between the two scenes.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one of the most widely used short-form editing apps among students already",
+    "trustScore": 4,
+    "pricingNote": "Free to download and edit; Standard about $9.99/month (removes watermarks); Pro about $19.99/month for 4K export and the full AI toolkit - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.capcut.com/resource/is-capcut-pc-free-for-ai-video-editing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free download, no account required for basic editing; NOTE - some templates/effects are marked Pro and add a watermark unless subscribed",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-7803c3dece",
+    "slug": "make-a-short-intro-video-about-myself-for-a-scholarship-or",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students applying for a scholarship, internship, or program that accepts video submissions",
+    "title": "make a short intro video about myself for a scholarship or internship application",
+    "intentLabels": [
+      "video resume",
+      "personal intro video",
+      "application video",
+      "record and edit myself"
+    ],
+    "tools": [
+      {
+        "name": "CapCut",
+        "url": "https://www.capcut.com/resource/is-capcut-pc-free-for-ai-video-editing",
+        "catalogueSlug": "capcut"
+      }
+    ],
+    "workflowSummary": "Record yourself talking to your phone camera, then use CapCut's AI auto-captions, background noise reduction, and simple cut tools to trim it into a clean, polished 60-90 second intro without professional editing skills.",
+    "samplePrompt": "Add auto-captions to this recording, trim out the pauses, and clean up the background audio.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same simple mobile-editing flow as the reel row",
+    "trustScore": 4,
+    "pricingNote": "Free to download and edit; paid tiers remove watermarks and unlock 4K/full AI toolkit - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.capcut.com/resource/is-capcut-pc-free-for-ai-video-editing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free download, no account required for basic editing",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-07d05cc3fe",
+    "slug": "create-a-logo-for-my-club-or-small-side-hustle",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students starting a club, small side hustle, or personal brand that needs a logo",
+    "title": "create a logo for my club or small side hustle",
+    "intentLabels": [
+      "AI logo maker",
+      "design a logo",
+      "brand identity generator",
+      "logo for my business"
+    ],
+    "tools": [
+      {
+        "name": "Looka",
+        "url": "https://checkthat.ai/brands/looka/pricing",
+        "catalogueSlug": "looka"
+      }
+    ],
+    "workflowSummary": "Enter your organization's name and pick style preferences, and Looka's AI generates dozens of logo concepts to choose from and customize. Designing is free; you pay only when you're ready to download the final files.",
+    "samplePrompt": "Generate logo concepts for \"Campus Coffee Collective,\" a student-run coffee cart, using warm colors and a modern sans-serif font.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided style-picker flow, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Free to design; Basic Logo Package $20 one-time (PNG only); Premium Logo Package $65 one-time (vector files, full ownership) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://checkthat.ai/brands/looka/pricing",
+    "sourceType": "Directory / review page (no official looka.com pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked Mar 30, 2026)",
+    "accessNotes": "Public review page; official product at looka.com; free account to design, payment required to download - NOTE - there is no free download option at all",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-cf539b9572",
+    "slug": "know-what-to-post-on-linkedin-to-grow-my-personal-brand",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students trying to build a LinkedIn presence before graduating",
+    "title": "know what to post on LinkedIn to grow my personal brand",
+    "intentLabels": [
+      "LinkedIn content ideas",
+      "grow my LinkedIn",
+      "personal branding content",
+      "what should I post"
+    ],
+    "tools": [
+      {
+        "name": "Taplio",
+        "url": "https://taplio.com/pricing"
+      }
+    ],
+    "workflowSummary": "Taplio's AI drafts LinkedIn posts from a topic or draws on a searchable library of millions of high-performing posts for inspiration, then schedules them, so you can post consistently without staring at a blank page each week.",
+    "samplePrompt": "Generate a LinkedIn post about what I learned from my summer internship, in a reflective, first-person tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the writing tools are simple, but there's real cost and risk to weigh before committing",
+    "trustScore": 2,
+    "pricingNote": "No free plan; Starter about $39/mo (ships with zero AI credits); Growth about $65-69/mo (250 AI credits/month) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://taplio.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; 7-day free trial with full access; requires a LinkedIn account and browser extension; NOTE - connects via a browser extension rather than LinkedIn's official API, which is the kind of automation LinkedIn has enforced against before (a real account-safety consideration)",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-04fdc01f14",
+    "slug": "build-a-link-in-bio-page-for-my-instagram-or-tiktok",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students building a personal brand or small content-creation side project on Instagram/TikTok",
+    "title": "build a link-in-bio page for my Instagram or TikTok",
+    "intentLabels": [
+      "link in bio page",
+      "bio link website",
+      "creator landing page",
+      "consolidate my social links"
+    ],
+    "tools": [
+      {
+        "name": "Beacons",
+        "url": "https://beacons.ai/i/pricing"
+      }
+    ],
+    "workflowSummary": "Beacons builds a single mobile-friendly page with all your links, social profiles, and any products you sell, and its AI teammate \"Beam\" can design the page layout for you from a text prompt with one click.",
+    "samplePrompt": "Design my link-in-bio page with a clean, minimal look in blue and white, and add sections for my portfolio, Instagram, and email list.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided setup, genuinely free to start",
+    "trustScore": 4,
+    "pricingNote": "Free forever plan; Creator $10/mo, Creator Plus $30/mo, Creator Max $90/mo for more email sends and 0% seller fees - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://beacons.ai/i/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required; NOTE - selling anything through the free/Creator plans carries a 9% transaction fee",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-9bdc2291fe",
+    "slug": "write-and-send-a-newsletter-for-my-student-organization",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students running a club or organization that sends regular updates to members",
+    "title": "write and send a newsletter for my student organization",
+    "intentLabels": [
+      "club newsletter",
+      "email newsletter tool",
+      "AI email writer",
+      "send an update to members"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp",
+        "url": "https://mailchimp.com/newsroom/announcing-email-content-generator/"
+      }
+    ],
+    "workflowSummary": "Describe your newsletter's topic and tone to Mailchimp's AI content generator, and it drafts the subject line and body copy for you, which you then drop into a template and send to your member list.",
+    "samplePrompt": "Draft a newsletter announcing our club's spring fundraiser, in a friendly and upbeat tone, with a call to action to RSVP.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the free plan works for a small member list, but the AI writing tools specifically require a paid upgrade",
+    "trustScore": 3,
+    "pricingNote": "Free plan (500 contacts, 1,000 sends/month, no automation); Essentials $13/mo (adds automation, no AI); Standard $20/mo (unlocks AI content generation) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://mailchimp.com/newsroom/announcing-email-content-generator/",
+    "sourceType": "Product page / company announcement",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account for the base plan; AI content features require the paid Standard plan",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-ba7095f740",
+    "slug": "write-catchy-social-media-captions-to-promote-an-event",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students promoting a club event or personal project on social media",
+    "title": "write catchy social media captions to promote an event",
+    "intentLabels": [
+      "social media caption generator",
+      "write my Instagram caption",
+      "promote my event online",
+      "AI copywriting"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://socialrails.com/blog/copy-ai-pricing",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Describe the event and the platform you're posting to, and Copy.ai generates several caption options in different tones, plus relevant hashtag ideas, that you can mix, edit, and post directly or schedule.",
+    "samplePrompt": "Write 3 Instagram captions promoting our club's charity 5K this Saturday - one playful, one motivational, one straightforward with event details.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple prompt-and-generate flow",
+    "trustScore": 4,
+    "pricingNote": "Free plan (2,000 words/month, 1 seat); Pro about $49/month for unlimited words and more seats - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://socialrails.com/blog/copy-ai-pricing",
+    "sourceType": "Directory / review page (no single official copy.ai pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked Apr 20, 2026)",
+    "accessNotes": "Public review page; official product at copy.ai; free account to start",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-b397d269d6",
+    "slug": "write-a-short-elevator-pitch-about-myself-for-networking-events",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students preparing to introduce themselves at a career fair or networking event",
+    "title": "write a short elevator pitch about myself for networking events",
+    "intentLabels": [
+      "elevator pitch generator",
+      "introduce myself professionally",
+      "networking pitch",
+      "30-second intro"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://socialrails.com/blog/copy-ai-pricing",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Give Copy.ai your major, experience, and what you're looking for, and it drafts a short, natural-sounding self-introduction you can memorize and adapt on the spot for different conversations.",
+    "samplePrompt": "Write a 30-second elevator pitch for a junior majoring in computer science looking for a summer software internship, in a confident but not overly formal tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same simple prompt-and-generate flow as the caption row",
+    "trustScore": 4,
+    "pricingNote": "Free plan (2,000 words/month); Pro about $49/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://socialrails.com/blog/copy-ai-pricing",
+    "sourceType": "Directory / review page",
+    "freshness": "Retrieved Sep 2026 (checked Apr 20, 2026)",
+    "accessNotes": "Public review page; official product at copy.ai; free account to start; NOTE - a generated pitch still needs to be practiced out loud to sound natural rather than memorized",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-8b55ceeaed",
+    "slug": "turn-my-resume-into-a-personal-one-page-website-i-can-link-on",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who want a more memorable alternative to a plain PDF resume",
+    "title": "turn my resume into a personal one-page website I can link on LinkedIn",
+    "intentLabels": [
+      "resume website",
+      "online resume",
+      "personal landing page",
+      "resume as a webpage"
+    ],
+    "tools": [
+      {
+        "name": "Framer",
+        "url": "https://www.framer.com/solutions/ai-website-builder/",
+        "catalogueSlug": "framer"
+      }
+    ],
+    "workflowSummary": "Prompt Framer with your background and the sections you want, and it generates a complete one-page site from your resume content that you can refine and publish to a free Framer subdomain or a custom domain.",
+    "samplePrompt": "Turn my resume into a clean, one-page personal website with sections for About, Experience, Projects, and a way to download my PDF resume.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI draft is fast, but getting it to feel personal rather than template-y takes some editing",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; Mini $5/site/month for a custom domain - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.framer.com/solutions/ai-website-builder/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free account to start building",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-42390c67a3",
+    "slug": "build-a-pitch-deck-to-present-my-club-s-fundraiser-idea",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students pitching a club fundraiser, startup idea, or class project to a panel",
+    "title": "build a pitch deck to present my club's fundraiser idea",
+    "intentLabels": [
+      "pitch deck maker",
+      "investor deck",
+      "fundraiser presentation",
+      "AI slide design"
+    ],
+    "tools": [
+      {
+        "name": "Beautiful.ai",
+        "url": "https://www.beautiful.ai/pitch-decks",
+        "catalogueSlug": "beautiful-ai"
+      }
+    ],
+    "workflowSummary": "Start from a pitch deck template and add your content - Beautiful.ai's \"Smart Slides\" automatically rearrange text, images, and charts to stay aligned and on-brand as you edit, so you don't have to manually fix spacing and layout.",
+    "samplePrompt": "Start from the Startup Pitch Deck template and fill in slides for Problem, Solution, Market, and Funding Ask for our club's campus delivery fundraiser.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the auto-layout removes most manual design work",
+    "trustScore": 3,
+    "pricingNote": "No free plan; 14-day free trial; Pro about $12/month billed annually - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.beautiful.ai/pitch-decks",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; free trial requires signup and may require a payment method - confirm before recommending to a budget-conscious student",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-ed52ce97d3",
+    "slug": "put-together-a-media-kit-to-pitch-sponsors-for-my-club-or",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students trying to land sponsorships or brand partnerships for a club or personal content",
+    "title": "put together a media kit to pitch sponsors for my club or personal brand",
+    "intentLabels": [
+      "media kit builder",
+      "pitch a sponsor",
+      "brand deal proposal",
+      "creator media kit"
+    ],
+    "tools": [
+      {
+        "name": "Beacons",
+        "url": "https://help.beacons.ai/en/articles/4695681"
+      }
+    ],
+    "workflowSummary": "Beacons automatically builds a shareable media kit from your connected social accounts - pulling follower counts, engagement stats, and past content - so you have a professional-looking one-pager to send when pitching a sponsor instead of building one manually in a slide deck.",
+    "samplePrompt": "Update my media kit with my latest Instagram and TikTok stats, and generate a one-page PDF I can email to potential sponsors.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "largely automatic once your social accounts are connected",
+    "trustScore": 3,
+    "pricingNote": "Included on the free plan (weekly updates); daily media kit updates require a paid Creator Plus plan - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://help.beacons.ai/en/articles/4695681",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help center page; free account required, social accounts must be connected",
+    "batch": "Students AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "students-b6fc598210",
+    "slug": "get-help-writing-and-debugging-code-for-my-cs-homework",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "CS/engineering students working on coding assignments",
+    "title": "get help writing and debugging code for my CS homework",
+    "intentLabels": [
+      "AI coding assistant",
+      "code autocomplete",
+      "homework coding help",
+      "pair programmer"
+    ],
+    "tools": [
+      {
+        "name": "GitHub Copilot",
+        "url": "https://github.com/orgs/community/discussions/191177",
+        "catalogueSlug": "github-copilot"
+      }
+    ],
+    "workflowSummary": "Verified students get GitHub Copilot free through the GitHub Student Developer Pack. Inside your code editor (VS Code, JetBrains, etc.), Copilot suggests code completions as you type, and Copilot Chat can explain, debug, or refactor a function on request.",
+    "samplePrompt": "Explain why this function is throwing an IndexError, and suggest a fix.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "genuinely useful once installed, but requires setting up a code editor and verifying student status",
+    "trustScore": 4,
+    "pricingNote": "Free for verified students via GitHub Student Developer Pack (normally $10/month) - verify current terms before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://github.com/orgs/community/discussions/191177",
+    "sourceType": "Product page (official discussion thread on github.com)",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; requires GitHub Education student verification; NOTE - the newer Copilot Student plan caps AI chat/agent use at 200 credits/month even though code completions stay unlimited",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-e7171d9eea",
+    "slug": "get-an-ai-explanation-of-a-confusing-error-message-in-my-code",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "CS/engineering students working on coding assignments",
+    "title": "get an AI explanation of a confusing error message in my code",
+    "intentLabels": [
+      "explain this error",
+      "debug my code",
+      "what does this error mean",
+      "code error helper"
+    ],
+    "tools": [
+      {
+        "name": "GitHub Copilot",
+        "url": "https://github.com/orgs/community/discussions/191177",
+        "catalogueSlug": "github-copilot"
+      }
+    ],
+    "workflowSummary": "Paste or highlight the error message and the code that produced it into Copilot Chat, and it explains what's going wrong in plain language and suggests a fix, without leaving your editor.",
+    "samplePrompt": "Here's the error I'm getting: [paste]. Explain what's causing it and how to fix it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "same setup as the row above",
+    "trustScore": 4,
+    "pricingNote": "Free for verified students via GitHub Student Developer Pack - verify current terms before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://github.com/orgs/community/discussions/191177",
+    "sourceType": "Product page (official discussion thread on github.com)",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public page; requires GitHub Education student verification",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-9ca3824db3",
+    "slug": "convert-a-photo-of-my-handwritten-math-homework-into-typed",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "STEM students who write math and physics work by hand",
+    "title": "convert a photo of my handwritten math homework into typed equations",
+    "intentLabels": [
+      "handwriting to LaTeX",
+      "math OCR",
+      "digitize equations",
+      "photo to LaTeX"
+    ],
+    "tools": [
+      {
+        "name": "Mathpix (Snip)",
+        "url": "https://mathpix.com/pricing/all"
+      }
+    ],
+    "workflowSummary": "Take a photo or screenshot of handwritten math, and Mathpix Snip recognizes the handwriting and returns clean LaTeX, Word, or Markdown you can paste directly into a report or problem set.",
+    "samplePrompt": "Snip this photo of my handwritten integral and copy the LaTeX to my clipboard.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "point, snip, and paste workflow",
+    "trustScore": 4,
+    "pricingNote": "Free Snip tier (limited monthly snips); free PDF processing up to 20 pages/month; Snip Pro about $4.99/month for higher limits - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://mathpix.com/pricing/all",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account to use Snip",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-3434e74d37",
+    "slug": "turn-a-scanned-pdf-of-lecture-notes-with-equations-into-an",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "STEM students digitizing lecture notes or textbook pages",
+    "title": "turn a scanned PDF of lecture notes with equations into an editable document",
+    "intentLabels": [
+      "PDF to LaTeX",
+      "convert scanned notes",
+      "digitize a document with math",
+      "OCR a PDF"
+    ],
+    "tools": [
+      {
+        "name": "Mathpix",
+        "url": "https://mathpix.com/pricing/all"
+      }
+    ],
+    "workflowSummary": "Upload a full PDF (not just one equation), and Mathpix converts the entire document - text, tables, and equations - into LaTeX, DOCX, or Markdown you can edit and reformat.",
+    "samplePrompt": "Convert this 10-page scanned PDF of lecture notes into a Word document, keeping all equations intact.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and convert, no manual retyping",
+    "trustScore": 4,
+    "pricingNote": "Free tier covers up to 20 PDF pages/month; higher volume requires a paid plan - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://mathpix.com/pricing/all",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-e71a1bf26f",
+    "slug": "analyze-a-spreadsheet-of-survey-data-for-my-research-methods",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students taking a research methods, psychology, or social science stats class",
+    "title": "analyze a spreadsheet of survey data for my research methods class",
+    "intentLabels": [
+      "data analysis AI",
+      "analyze my spreadsheet",
+      "stats without coding",
+      "chat with my data"
+    ],
+    "tools": [
+      {
+        "name": "Julius AI",
+        "url": "https://coefficient.io/julius-ai-pricing",
+        "catalogueSlug": "julius-ai"
+      }
+    ],
+    "workflowSummary": "Upload a CSV or Excel file of survey responses and ask questions in plain English - Julius runs the statistical analysis behind the scenes and returns charts, summary statistics, and plain-language explanations without you writing any code.",
+    "samplePrompt": "Run a correlation between hours of sleep and self-reported stress level in this dataset, and make a scatter plot.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no coding required, conversational interface",
+    "trustScore": 3,
+    "pricingNote": "Free tier (15 messages/month); Plus around $20-35/month, Pro around $37-45/month; students and educators get 50% off all paid plans - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://coefficient.io/julius-ai-pricing",
+    "sourceType": "Directory / review page (sourced from julius.ai/pricing; no julius.ai URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (verified Apr 2026)",
+    "accessNotes": "Public review page; official product at julius.ai; free account required; email Julius directly to redeem the student discount",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-4fbc6efa70",
+    "slug": "get-help-understanding-what-a-p-value-or-stats-result-actually",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who ran an analysis but don't know how to interpret the results",
+    "title": "get help understanding what a p-value or stats result actually means",
+    "intentLabels": [
+      "interpret my stats results",
+      "what does p-value mean",
+      "explain my analysis",
+      "statistics help"
+    ],
+    "tools": [
+      {
+        "name": "Julius AI",
+        "url": "https://coefficient.io/julius-ai-pricing",
+        "catalogueSlug": "julius-ai"
+      }
+    ],
+    "workflowSummary": "After running an analysis (or pasting in results from a stats package you already used), ask Julius to explain what the output means in plain language - it walks through what a p-value, confidence interval, or effect size is telling you about your specific data.",
+    "samplePrompt": "My t-test gave p = 0.03. What does that actually mean for my hypothesis, in plain English?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same conversational interface as the row above",
+    "trustScore": 3,
+    "pricingNote": "Free tier (15 messages/month); paid plans from about $20/month with a 50% student discount - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://coefficient.io/julius-ai-pricing",
+    "sourceType": "Directory / review page",
+    "freshness": "Retrieved Sep 2026 (verified Apr 2026)",
+    "accessNotes": "Public review page; official product at julius.ai; free account required",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-25880f6052",
+    "slug": "check-if-my-resume-matches-the-keywords-in-a-specific",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students actively applying to internships and wanting to pass automated resume screening",
+    "title": "check if my resume matches the keywords in a specific internship posting",
+    "intentLabels": [
+      "ATS resume checker",
+      "keyword match score",
+      "will my resume get filtered out",
+      "resume vs job description"
+    ],
+    "tools": [
+      {
+        "name": "Jobscan",
+        "url": "https://makerstack.co/reviews/jobscan-review/"
+      }
+    ],
+    "workflowSummary": "Paste your resume and the internship's job description side by side, and Jobscan returns a match-rate score plus the specific missing keywords and skills you should consider adding before you apply.",
+    "samplePrompt": "Paste in my resume and this internship's job description, and show me which keywords are missing.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple paste-and-compare interface",
+    "trustScore": 3,
+    "pricingNote": "Free (5 scans/month); Premium $49.95/month or $89.95/quarter (about $29.98/month) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://makerstack.co/reviews/jobscan-review/",
+    "sourceType": "Directory / review page (no official jobscan.com pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (updated Jul 20, 2026)",
+    "accessNotes": "Public review page; official product at jobscan.com; free account to scan; NOTE - the match score is Jobscan's own proprietary metric, not an actual ATS simulation",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-122439607d",
+    "slug": "make-a-pdf-or-webpage-easier-to-read-for-dyslexia-or-adhd",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students with dyslexia, ADHD, low vision, or learning in a second language",
+    "title": "make a PDF or webpage easier to read for dyslexia or ADHD",
+    "intentLabels": [
+      "dyslexia-friendly reading",
+      "read aloud tool",
+      "accessible reading mode",
+      "text to speech for accessibility"
+    ],
+    "tools": [
+      {
+        "name": "Microsoft Immersive Reader",
+        "url": "https://support.microsoft.com/en-us/education/learning-accelerators/use-immersive-reader-in-microsoft-edge-1"
+      }
+    ],
+    "workflowSummary": "Open Immersive Reader inside Word, OneNote, Outlook, Teams, Forms, or the Edge browser (and many school platforms like Canvas), and it reads the text aloud with synchronized highlighting, breaks words into syllables, adjusts spacing and a dyslexia-friendly font, and can translate the text.",
+    "samplePrompt": "Open this assignment page in Immersive Reader, turn on Read Aloud, and switch to the dyslexia-friendly font.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built into tools students already use, one click to activate",
+    "trustScore": 5,
+    "pricingNote": "Completely free - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://support.microsoft.com/en-us/education/learning-accelerators/use-immersive-reader-in-microsoft-edge-1",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public support page; built into Microsoft Edge and Office apps at no cost; some school platforms enable it automatically",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-4f575199d0",
+    "slug": "write-and-format-a-lab-report-or-research-paper-in-latex",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "STEM students writing a lab report, thesis, or research paper with heavy math notation",
+    "title": "write and format a lab report or research paper in LaTeX",
+    "intentLabels": [
+      "LaTeX editor",
+      "format a research paper",
+      "write a lab report",
+      "scientific document formatting"
+    ],
+    "tools": [
+      {
+        "name": "Overleaf",
+        "url": "https://www.overleaf.com/user/subscription/plans"
+      }
+    ],
+    "workflowSummary": "Start from a lab report or thesis template in Overleaf's gallery and write your content directly in the browser - it compiles to a formatted PDF in real time, and a built-in AI Assistant helps write or debug LaTeX syntax when you get stuck.",
+    "samplePrompt": "Why isn't this table rendering correctly, and how do I fix the column alignment?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "LaTeX itself has a learning curve, though templates and the AI Assistant help",
+    "trustScore": 4,
+    "pricingNote": "Free plan (unlimited projects, 1 collaborator, basic AI allowance); Standard about $21/month (10 collaborators, more AI uses); Professional about $42/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.overleaf.com/user/subscription/plans",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-a8af8be40c",
+    "slug": "collaborate-with-a-lab-partner-on-a-shared-latex-report-in-real",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students working on a shared lab report or group research paper",
+    "title": "collaborate with a lab partner on a shared LaTeX report in real time",
+    "intentLabels": [
+      "real-time LaTeX collaboration",
+      "shared document editing",
+      "group lab report",
+      "co-write in LaTeX"
+    ],
+    "tools": [
+      {
+        "name": "Overleaf",
+        "url": "https://www.overleaf.com/user/subscription/plans"
+      }
+    ],
+    "workflowSummary": "Invite your lab partner or group members to your Overleaf project, and everyone can edit the same document simultaneously with changes syncing live, plus a full version history so you can see who changed what.",
+    "samplePrompt": "Invite my lab partner as an editor on this project so we can both work on the results section at the same time.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "invite-and-edit flow, no setup beyond an account",
+    "trustScore": 3,
+    "pricingNote": "Free plan limited to 1 collaborator per project; Standard about $21/month unlocks 10 collaborators - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.overleaf.com/user/subscription/plans",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account required; NOTE - a group of 3+ needs someone to pay for Standard since the free plan caps at 1 collaborator",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-f007fa2c22",
+    "slug": "get-instant-feedback-while-building-a-small-coding-project-for",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students building a small coding project for a class assignment",
+    "title": "get instant feedback while building a small coding project for class",
+    "intentLabels": [
+      "AI coding agent",
+      "build a project with AI",
+      "browser-based coding",
+      "describe an app and build it"
+    ],
+    "tools": [
+      {
+        "name": "Replit",
+        "url": "https://docs.replit.com/billing/ai-billing",
+        "catalogueSlug": "replit"
+      }
+    ],
+    "workflowSummary": "Describe what you want to build in plain language inside Replit's browser-based environment, and its AI Agent sets up the project, writes starter code, and can run and debug it - all without installing anything locally.",
+    "samplePrompt": "Build a simple to-do list web app in Python with Flask, and explain each file as you create it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "zero local setup, works entirely in the browser",
+    "trustScore": 3,
+    "pricingNote": "Free Starter plan (limited daily Agent credits, 1 published app); Core about $20-25/month ($20 in usage credits) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://docs.replit.com/billing/ai-billing",
+    "sourceType": "Product page / documentation",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public docs page; free account to start; NOTE - reviewers describe the free tier's AI credits as a trial rather than sustainable ongoing use",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-312fa3d44a",
+    "slug": "learn-a-new-programming-language-with-ai-guided-lessons",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students learning to code for the first time, on their own or alongside a class",
+    "title": "learn a new programming language with AI-guided lessons",
+    "intentLabels": [
+      "learn to code online",
+      "AI coding tutor",
+      "interactive programming course",
+      "learn Python or JavaScript"
+    ],
+    "tools": [
+      {
+        "name": "Codecademy",
+        "url": "https://www.codecademy.com/pricing"
+      }
+    ],
+    "workflowSummary": "Work through interactive, in-browser coding lessons, and use the built-in AI Learning Assistant to get a concept explained, check a solution, or get an error explained without leaving the page.",
+    "samplePrompt": "Highlight this line of code and explain what it does and why my output is wrong.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for people learning to code from scratch",
+    "trustScore": 4,
+    "pricingNote": "Free Basic plan (intro courses, 5 AI prompts/day); Plus/Pro from about $14.99/month billed annually for full courses, projects, and unlimited AI - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.codecademy.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account to start; student plan available",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-eac726f266",
+    "slug": "practice-coding-interview-problems-before-a-tech-internship",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "CS students preparing for technical interviews for internships",
+    "title": "practice coding interview problems before a tech internship interview",
+    "intentLabels": [
+      "coding interview practice",
+      "technical interview prep",
+      "algorithm practice",
+      "LeetCode problems"
+    ],
+    "tools": [
+      {
+        "name": "LeetCode",
+        "url": "https://www.lodely.com/blog/leetcode-premium-cost"
+      }
+    ],
+    "workflowSummary": "Work through thousands of free coding problems organized by topic and difficulty, and use the built-in AI coding assistant to get hints, debug your solution, or generate test cases without giving away the full answer outright.",
+    "samplePrompt": "Give me a hint for this problem without revealing the full solution, and check whether my current approach would be efficient enough.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the free tier alone covers most needs, but AI-powered extras sit behind Premium",
+    "trustScore": 3,
+    "pricingNote": "Free (thousands of problems, contests, forums); Premium $35/month or $159/year (company-specific questions, official solutions, AI features) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.lodely.com/blog/leetcode-premium-cost",
+    "sourceType": "Directory / review page (no official leetcode.com pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked Mar 2, 2026)",
+    "accessNotes": "Public review page; official product at leetcode.com; free account to start; NOTE - reviewers say Premium's mock-interview feature is its weakest part",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-681e63c632",
+    "slug": "practice-an-instrument-with-real-time-ai-feedback",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who want to keep practicing an instrument or learn one alongside their studies",
+    "title": "practice an instrument with real-time AI feedback",
+    "intentLabels": [
+      "learn guitar or piano with AI",
+      "instrument practice app",
+      "real-time pitch feedback",
+      "music practice tool"
+    ],
+    "tools": [
+      {
+        "name": "Yousician",
+        "url": "https://tooldirectory.ai/tools/yousician"
+      }
+    ],
+    "workflowSummary": "Play your real instrument (or sing) into your device's microphone, and Yousician listens and scores your pitch and timing note-by-note in real time as you work through leveled, gamified lessons.",
+    "samplePrompt": "Start today's guitar lesson and give me feedback on my timing as I play through the exercise.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided, gamified lessons designed for complete beginners",
+    "trustScore": 4,
+    "pricingNote": "Free tier (limited daily practice time); Premium (one instrument) about $19.99/month or $119.99/year; Premium+ (all instruments) similar range - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://tooldirectory.ai/tools/yousician",
+    "sourceType": "Directory / review page (no official yousician.com pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked Jul 25, 2026)",
+    "accessNotes": "Public review page; official product at yousician.com; free account required, microphone access needed for feedback",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-7867080602",
+    "slug": "plan-cheap-meals-on-a-tight-student-budget",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students trying to eat well on a tight, unpredictable budget",
+    "title": "plan cheap meals on a tight student budget",
+    "intentLabels": [
+      "budget meal planning",
+      "cheap student recipes",
+      "what to cook with little money",
+      "grocery list on a budget"
+    ],
+    "tools": [
+      {
+        "name": "Bussin (Recipes for Students)",
+        "url": "https://apps.apple.com/us/app/-/id6758948426"
+      }
+    ],
+    "workflowSummary": "Browse recipes specifically designed for tiny dorm kitchens and tight budgets - all priced under $2 per serving - and chat with \"Brokie,\" the app's AI cooking assistant, for substitutions or help with what to make from what you already have.",
+    "samplePrompt": "I have rice, eggs, and frozen vegetables - what can Brokie suggest I make for under $2?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for students with minimal cooking experience and equipment",
+    "trustScore": 3,
+    "pricingNote": "Free - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://apps.apple.com/us/app/-/id6758948426",
+    "sourceType": "Directory / app store listing",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public app store listing; iPhone only as of this listing, no additional login details specified; NOTE - a longtime popular alternative, Mealime, announced it is shutting down October 21, 2026, which is why it isn't recommended here",
+    "batch": "Students AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "students-df2c5c9769",
+    "slug": "get-instant-cited-answers-while-researching-a-paper-topic",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students researching a paper topic who want quick, cited answers across the open web",
+    "title": "get instant, cited answers while researching a paper topic across the whole web",
+    "intentLabels": [
+      "AI search engine",
+      "research with citations",
+      "ask a question and get sources",
+      "web research assistant"
+    ],
+    "tools": [
+      {
+        "name": "Perplexity",
+        "url": "https://geotoolbox.ai/blog/perplexity-pricing",
+        "catalogueSlug": "perplexity"
+      }
+    ],
+    "workflowSummary": "Type a research question in plain English, and Perplexity searches the web in real time and returns a synthesized answer with numbered citations linking back to each source, so you can verify anything before using it in a paper.",
+    "samplePrompt": "What are the main arguments for and against universal basic income, and cite the sources?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works like a search engine, citations are one click away",
+    "trustScore": 4,
+    "pricingNote": "Free tier (limited Pro searches/day); Education Pro about $10/month for verified students (50% off the $20 standard Pro price) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://geotoolbox.ai/blog/perplexity-pricing",
+    "sourceType": "Directory / review page (no single official perplexity.ai pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked 5 days prior per source)",
+    "accessNotes": "Public review page; official product at perplexity.ai; free account to start; student verification via SheerID for the discount",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-7b4b27bfa2",
+    "slug": "fact-check-and-compare-conflicting-information-from-multiple",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who need to weigh conflicting claims across sources for an essay",
+    "title": "fact-check and compare conflicting information from multiple sources for an essay",
+    "intentLabels": [
+      "compare sources",
+      "fact-check a claim",
+      "conflicting information",
+      "verify a statistic"
+    ],
+    "tools": [
+      {
+        "name": "Perplexity",
+        "url": "https://geotoolbox.ai/blog/perplexity-pricing",
+        "catalogueSlug": "perplexity"
+      }
+    ],
+    "workflowSummary": "Ask Perplexity to specifically compare what different sources say about a claim, and it pulls current results from multiple outlets side by side with citations, flagging where sources disagree rather than presenting one blended answer.",
+    "samplePrompt": "Different sources give different figures for global plastic waste output - compare 3 recent sources and show me where they disagree.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same interface as the row above",
+    "trustScore": 4,
+    "pricingNote": "Free tier (limited Pro searches/day); Education Pro about $10/month for verified students - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://geotoolbox.ai/blog/perplexity-pricing",
+    "sourceType": "Directory / review page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public review page; official product at perplexity.ai; free account to start",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-6152f9e4bc",
+    "slug": "get-instant-step-by-step-help-with-a-tricky-homework-question",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Middle school, high school, and early college students stuck on a specific homework question",
+    "title": "get instant step-by-step help with a tricky homework question by taking a photo, in any subject",
+    "intentLabels": [
+      "homework help app",
+      "scan and solve",
+      "AI tutor for any subject",
+      "photo homework helper"
+    ],
+    "tools": [
+      {
+        "name": "Brainly",
+        "url": "https://apps.apple.com/in/app/brainly-ai-homework-helper/id745089947"
+      }
+    ],
+    "workflowSummary": "Snap a photo of a homework question (math, science, or many other subjects) or type it in, and Brainly's AI tutor returns a step-by-step explanation instantly, backed by a community answer archive of 350M+ students if the AI's answer needs a second check.",
+    "samplePrompt": "Scan this word problem and give me a step-by-step explanation, not just the final answer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "point, scan, and get an explanation, across far more subjects than a math-only tool",
+    "trustScore": 3,
+    "pricingNote": "Free with ads; Brainly Plus (ad-free, unlimited verified answers) and Brainly Tutor (adds live expert support), both with a 7-day free trial, paid pricing around $3.25/month effective on annual billing - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://apps.apple.com/in/app/brainly-ai-homework-helper/id745089947",
+    "sourceType": "Product page / app store listing",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public app store listing; free account to start; parent-child account pairing available for younger students; NOTE - reviewers say it's less reliable for advanced or college-level work",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-ea1c60bd16",
+    "slug": "ask-a-live-subject-matter-tutor-when-the-ai-s-answer-isn-t",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who need more than an AI answer can give",
+    "title": "ask a live subject-matter tutor when the AI's answer isn't enough",
+    "intentLabels": [
+      "live tutor chat",
+      "talk to a real tutor",
+      "escalate to a human",
+      "expert homework help"
+    ],
+    "tools": [
+      {
+        "name": "Brainly",
+        "url": "https://apps.apple.com/in/app/brainly-ai-homework-helper/id745089947"
+      }
+    ],
+    "workflowSummary": "When the AI Tutor's explanation still leaves you confused, escalate to Brainly's live human Expert support (included on the paid Tutor tier) for real-time back-and-forth help on the same question.",
+    "samplePrompt": "Escalate this question to a live tutor - I still don't understand why this step works.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one tap to escalate from AI to a human",
+    "trustScore": 3,
+    "pricingNote": "Requires Brainly Tutor subscription (7-day free trial available) - verify current price before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.apple.com/in/app/brainly-ai-homework-helper/id745089947",
+    "sourceType": "Product page / app store listing",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public app store listing; requires paid Brainly Tutor tier",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-149486e69f",
+    "slug": "check-my-work-against-a-specific-textbook-s-step-by-step",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "College students working through assigned textbook problem sets",
+    "title": "check my work against a specific textbook's step-by-step solution",
+    "intentLabels": [
+      "textbook solutions",
+      "check my homework answer",
+      "step-by-step textbook help",
+      "CheggMate"
+    ],
+    "tools": [
+      {
+        "name": "Chegg (Study / CheggMate)",
+        "url": "https://tooldirectory.ai/tools/chegg"
+      }
+    ],
+    "workflowSummary": "Look up your exact textbook and problem number in Chegg's solution library (100M+ expert-written solutions) or ask CheggMate, Chegg's AI layer, to walk through a similar problem step by step so you can check your method, not just copy a final answer.",
+    "samplePrompt": "Find the textbook solution for Chapter 5, Problem 12, and compare it to my approach.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "search by textbook title and problem number",
+    "trustScore": 2,
+    "pricingNote": "Chegg Study $15.95/month; Chegg Study Pack (adds Math Solver, citations, plagiarism/grammar checks) $19.95/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://tooldirectory.ai/tools/chegg",
+    "sourceType": "Directory / review page (no official chegg.com pricing URL surfaced directly in search)",
+    "freshness": "Retrieved Sep 2026 (checked Jul 25, 2026)",
+    "accessNotes": "Public review page; official product at chegg.com; free account to browse, subscription required for full solutions; NOTE - Chegg has a well-documented reputation for enabling copy-paste cheating - check your school's academic integrity policy before using solution libraries on graded work, and use it to understand a method, not copy a final answer",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-9bf6069f3e",
+    "slug": "get-citations-automatically-formatted-while-writing-my-paper",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students writing a paper who already use Chegg for homework help",
+    "title": "get citations automatically formatted while writing my paper",
+    "intentLabels": [
+      "citation generator",
+      "format my references",
+      "APA MLA citation tool",
+      "bundled writing tools"
+    ],
+    "tools": [
+      {
+        "name": "Chegg (Study Pack)",
+        "url": "https://gauravtiwari.org/chegg-study-review/"
+      }
+    ],
+    "workflowSummary": "Chegg's Study Pack bundles a citation generator (built on its EasyBib acquisition) alongside the textbook solutions, so you can generate properly formatted APA/MLA citations without leaving the same subscription you're already using for homework help.",
+    "samplePrompt": "Generate an APA citation for this journal article and add it to my works cited list.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "same account, straightforward citation form",
+    "trustScore": 3,
+    "pricingNote": "Included in Chegg Study Pack at $19.95/month; not available as a standalone free tool - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://gauravtiwari.org/chegg-study-review/",
+    "sourceType": "Directory / review page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public review page; official product at chegg.com; requires Study Pack subscription; NOTE - a student who only wants citations may prefer a fully free standalone citation tool instead",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-238c10a555",
+    "slug": "find-and-read-a-specific-textbook-chapter-without-buying-the",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who need one chapter from an expensive textbook, not the whole book",
+    "title": "find and read a specific textbook chapter without buying the whole book",
+    "intentLabels": [
+      "textbook subscription",
+      "read academic books online",
+      "ebook library for students",
+      "access a textbook chapter"
+    ],
+    "tools": [
+      {
+        "name": "Perlego",
+        "url": "https://www.perlego.com/pricing"
+      }
+    ],
+    "workflowSummary": "Search Perlego's library of 1M+ academic and non-fiction titles, and read any book (or just the chapter you need) directly in the browser or app - no per-title purchase, since access is included in your subscription.",
+    "samplePrompt": "Search for a book on cognitive behavioral therapy and open it to the chapter on exposure therapy.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "search-and-read flow, no individual book purchases",
+    "trustScore": 4,
+    "pricingNote": "No free plan; Essential $15/month (800K+ titles); Complete $27/month (1.5M+ titles plus Research Assistant) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.perlego.com/pricing",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public pricing page; free account to browse, subscription required to read; NOTE - the catalog can shift when publisher licenses change, so a specific title isn't guaranteed to stay available",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-5722f9ab44",
+    "slug": "search-across-an-entire-textbook-library-to-find-the-passage",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who need to search across many academic sources at once for a research question",
+    "title": "search across an entire textbook library to find the passage that answers a research question",
+    "intentLabels": [
+      "AI research assistant",
+      "search academic books",
+      "find a passage on a topic",
+      "academic Q&A"
+    ],
+    "tools": [
+      {
+        "name": "Perlego (Research Assistant)",
+        "url": "https://help.perlego.com/en/articles/9912556-research-assistant"
+      }
+    ],
+    "workflowSummary": "Ask Perlego's Research Assistant a research question in plain English, and it searches across the full academic library - not just one book - to surface the most relevant books and specific passages that address it, with sources you can open directly.",
+    "samplePrompt": "What do academic sources say about the long-term effects of sleep deprivation on memory consolidation?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the search is simple, but works best once you already have a fairly specific question",
+    "trustScore": 3,
+    "pricingNote": "Requires Perlego Complete plan ($27/month) or grandfathered legacy access; a limited free trial of Research Assistant is available before subscribing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://help.perlego.com/en/articles/9912556-research-assistant",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help center page; gated behind the pricier Complete plan; NOTE - currently searches English-language academic books only, not journal articles",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-0c5cf50ac0",
+    "slug": "record-and-get-an-ai-summary-of-a-group-project-video-call",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students recording a group project meeting so nobody has to take notes by hand",
+    "title": "record and get an AI summary of a group project video call",
+    "intentLabels": [
+      "meeting transcription",
+      "group call summary",
+      "record a Zoom call",
+      "AI notetaker for group projects"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you"
+      }
+    ],
+    "workflowSummary": "Invite the Fireflies bot into your Zoom, Google Meet, or Teams call (or record a Huddle), and it transcribes the whole conversation and generates an AI summary with the key discussion points, so no one has to be the designated note-taker.",
+    "samplePrompt": "Summarize this call's transcript into key discussion points and decisions made.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "invite the bot and it works automatically in the background",
+    "trustScore": 4,
+    "pricingNote": "Free plan (400 minutes storage, unlimited transcription/summaries, limited AI credits); Pro about $10/user/month billed annually for more storage and features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you",
+    "sourceType": "Product page / company blog",
+    "freshness": "Retrieved Sep 2026 (checked Jul 10, 2026)",
+    "accessNotes": "Public blog page; free account required; needs permission to join the call as a recording bot; NOTE - Fireflies names students as an explicit free-plan use case on its own site",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-4fb372061e",
+    "slug": "get-an-action-item-list-automatically-after-a-group-planning",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who want a written to-do list after a group planning call",
+    "title": "get an action-item list automatically after a group planning call",
+    "intentLabels": [
+      "action items from a meeting",
+      "who's doing what",
+      "meeting follow-up list",
+      "extract tasks from a call"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you"
+      }
+    ],
+    "workflowSummary": "After the call ends, Fireflies pulls out the specific action items and who they were assigned to directly from the transcript, so your group has a written to-do list without anyone manually re-listening to the recording.",
+    "samplePrompt": "Pull out all action items from this call and who each one was assigned to.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "automatic, no extra setup beyond having recorded the call",
+    "trustScore": 4,
+    "pricingNote": "Included in the Free plan's AI summary features; deeper automation (auto-push to task tools) requires Pro - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you",
+    "sourceType": "Product page / company blog",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public blog page; free account required",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-d7ee49eb71",
+    "slug": "catch-up-on-everything-i-missed-in-my-class-or-club-s-slack",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students in a class or club that coordinates over Slack",
+    "title": "catch up on everything I missed in my class or club's Slack channel",
+    "intentLabels": [
+      "Slack channel summary",
+      "catch up on messages",
+      "thread recap",
+      "Slack AI"
+    ],
+    "tools": [
+      {
+        "name": "Slack (Slack AI)",
+        "url": "https://slack.com/help/articles/39264531104275-Updates-to-feature-availability-and-pricing-for-Slack-plans",
+        "catalogueSlug": "slack"
+      }
+    ],
+    "workflowSummary": "Open a busy channel or long thread and use Slack AI's built-in Summarize feature to get the key points and decisions instead of scrolling through every message.",
+    "samplePrompt": "Summarize everything posted in this channel since I was last active.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one button inside a tool many student clubs already use",
+    "trustScore": 3,
+    "pricingNote": "Not available on the Free plan; basic summaries included on paid plans; Daily Recaps and AI search require Business+ (about $15/user/month) or an add-on - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://slack.com/help/articles/39264531104275-Updates-to-feature-availability-and-pricing-for-Slack-plans",
+    "sourceType": "Product page / help center",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public help page; requires the workspace to be on a paid Slack plan with AI enabled by an admin; NOTE - a club running on free Slack won't have access to this at all",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-1e33b78457",
+    "slug": "check-my-paper-for-accidental-plagiarism-and-citation-errors",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students at a school that uses Turnitin, wanting to self-check a paper before submitting",
+    "title": "check my paper for accidental plagiarism and citation errors before I submit it",
+    "intentLabels": [
+      "check for plagiarism before submitting",
+      "citation checker",
+      "similarity check",
+      "Turnitin for students"
+    ],
+    "tools": [
+      {
+        "name": "Turnitin Draft Coach",
+        "url": "https://turnitindraftcoach.com/"
+      }
+    ],
+    "workflowSummary": "While writing in Google Docs or Word for the web, run Draft Coach's similarity check (up to 3 per document) to see matched passages against Turnitin's database, get flagged citation issues, and get grammar suggestions with plain-language explanations - all before submitting the final version through your school's Turnitin-connected assignment.",
+    "samplePrompt": "Run a similarity check on this draft and show me any passages that need better paraphrasing or a citation.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built directly into the document you're already writing in",
+    "trustScore": 3,
+    "pricingNote": "Free for students, but only if your institution holds an active Turnitin license that includes Draft Coach - no individual purchase option - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://turnitindraftcoach.com/",
+    "sourceType": "Directory / informational page (official confirmation also on turnitin.com/products/features/draft-coach)",
+    "freshness": "Retrieved Sep 2026 (checked 1 month prior)",
+    "accessNotes": "Requires an active institutional Turnitin license enabled by your school; not available to students whose school doesn't offer it",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-f103cd1041",
+    "slug": "join-a-virtual-study-room-to-stay-focused-and-accountable",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who study better with quiet, camera-on accountability rather than alone",
+    "title": "join a virtual study room to stay focused and accountable",
+    "intentLabels": [
+      "virtual study room",
+      "study with me online",
+      "focus room",
+      "accountability study session"
+    ],
+    "tools": [
+      {
+        "name": "StudyStream",
+        "url": "https://www.studystream.live/"
+      }
+    ],
+    "workflowSummary": "Join a live, camera-on study room with other students worldwide (or a Pomodoro-timed Focus Room), and the shared presence - everyone quietly working with their camera on - helps you stay off your phone and on task, the same way studying in a library does.",
+    "samplePrompt": "Join a Focus Room, start a 50-minute Pomodoro timer, and set today's study goal.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "join and go, no setup beyond a camera",
+    "trustScore": 3,
+    "pricingNote": "Free study app with premium features available (private rooms, extended history) - verify exact paid tier pricing before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.studystream.live/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free account required, camera recommended for full experience; NOTE - reviewers say free users get fewer subject-specific and private rooms with more wait time during off-peak hours",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-201e2c85c2",
+    "slug": "find-a-study-buddy-or-accountability-partner-to-co-work-with",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students who want a specific person to co-work with, not just an open room",
+    "title": "find a study buddy or accountability partner to co-work with online",
+    "intentLabels": [
+      "find a study partner",
+      "accountability buddy",
+      "co-working session",
+      "FocusBuddies"
+    ],
+    "tools": [
+      {
+        "name": "StudyStream",
+        "url": "https://www.studystream.live/"
+      }
+    ],
+    "workflowSummary": "Use StudyStream's FocusBuddies and social feed features to connect directly with other students in your field, message them, and set up recurring co-working sessions instead of joining a large open room each time.",
+    "samplePrompt": "Find other students studying the same subject as me and send a message to set up a recurring co-working session.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browse and message, similar to any social app",
+    "trustScore": 3,
+    "pricingNote": "Free study app with premium features available - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.studystream.live/",
+    "sourceType": "Product page",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public site; free account required; NOTE - as with any platform connecting students with strangers, use normal judgment about what personal information to share",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "students-ca2eee8bd1",
+    "slug": "have-a-real-time-translated-conversation-with-an-international",
+    "kind": "workflow",
+    "niche": "Students",
+    "sector": "Students",
+    "persona": "Students communicating with an international classmate, roommate, or exchange student",
+    "title": "have a real-time translated conversation with an international classmate",
+    "intentLabels": [
+      "real-time translation",
+      "speak to someone in another language",
+      "conversation mode translator",
+      "live speech translation"
+    ],
+    "tools": [
+      {
+        "name": "Google Translate (Live Translate)",
+        "url": "https://blog.google/products-and-platforms/products/translate/language-learning-live-translate/"
+      }
+    ],
+    "workflowSummary": "Open Live Translate in the Google Translate app, select both languages, and take turns speaking - the app automatically detects which language is being spoken and plays back (or displays) the translation, handling natural pauses and accents.",
+    "samplePrompt": "Start Live Translate between English and Korean, and let each of us take turns speaking.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "open the app, pick languages, and start talking",
+    "trustScore": 4,
+    "pricingNote": "Completely free - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/translate/language-learning-live-translate/",
+    "sourceType": "Product page / company blog",
+    "freshness": "Retrieved Sep 2026",
+    "accessNotes": "Public blog post; free Google Translate app (iOS/Android); some features (offline mode) limited to specific Pixel phones",
+    "batch": "Students AI Workflows Batch5",
+    "status": "active"
+  }
+]

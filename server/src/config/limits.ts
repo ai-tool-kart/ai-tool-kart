@@ -437,12 +437,16 @@ export const AUTOMATIONS = {
   toolNameMaxChars: 80,
   toolAccessNoteMaxChars: 200,
   maxTools: 6,
-  workflowSummaryMaxChars: 600,
+  workflowSummaryMaxChars: 1000,
   samplePromptMaxChars: 4000,
-  pricingNoteMaxChars: 300,
-  sourceTypeMaxChars: 60,
-  freshnessMaxChars: 60,
-  accessNotesMaxChars: 400,
+  pricingNoteMaxChars: 500,
+  /** The sheet's Niche/Industry cell; the longest surveyed is 97. */
+  sectorMaxChars: 160,
+  /** Beginner-Friendly after its leading word; the longest surveyed cell is 217. */
+  beginnerNoteMaxChars: 300,
+  sourceTypeMaxChars: 120,
+  freshnessMaxChars: 100,
+  accessNotesMaxChars: 800,
   batchMaxChars: 80,
   /** `AutomationStep` fields — one authored step, not the derived default. */
   stepTitleMaxChars: 80,

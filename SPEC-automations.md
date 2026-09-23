@@ -125,7 +125,7 @@ imports `catalogue/` or `retrieval/`.
 ```ts
 interface AutomationTool {
   name: string            // "Motion"
-  url: string             // first tool: Source URL; others: catalogue url
+  url?: string            // first tool only: the row's Source URL
   catalogueSlug?: string  // set only if a real catalogue record matches
   accessNote?: string     // "7-day trial requires a card upfront"
 }
@@ -174,9 +174,12 @@ from the folder ("Small Business Owners (generic)", "Pest control").
 The folder is the reliable niche.
 
 `Recommended Tools` often names several tools. The importer splits on
-`;` if present, else on `,` outside parentheses, then on ` / `. The row
-has one Source URL, and it belongs to the first tool; a later tool is
-kept only when it matches a catalogue record, whose url it takes.
+`;` if present, else on `,` outside parentheses, then on ` / `, and
+keeps every name. The row has one Source URL and it belongs to the first
+tool, so only `tools[0]` has a `url`; later tools are a name (plus
+`catalogueSlug` on a confident match) with no link. A later "tool" over
+the name cap is dropped — in the data these are prose alternatives, not
+names — while an over-long first tool fails the row.
 
 ---
 
@@ -286,6 +289,9 @@ Source is `.xlsx`, ~120 files in per-niche folders under
   earlier ones.
 - Output is one file per niche: `server/src/automations/data/<niche
   slug>.json`.
+- `id` is a hash of niche + normalized title. The sheets carry no stable
+  row identity, so editing a title in a source sheet creates a new
+  record on the next import rather than updating the old one.
 
 Behaviour:
 - Parse rows, validate each against the schema.

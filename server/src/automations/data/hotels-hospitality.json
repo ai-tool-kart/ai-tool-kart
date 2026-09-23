@@ -1,0 +1,2039 @@
+[
+  {
+    "id": "hotels-hospitality-9bacfcea2a",
+    "slug": "reply-to-my-hotel-s-guest-reviews-automatically-with-ai",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Independent hotel / B&B owner handling reputation",
+    "title": "reply to my hotel's guest reviews automatically with AI",
+    "intentLabels": [
+      "AI review response generator",
+      "auto-reply to reviews",
+      "hotel reputation management AI"
+    ],
+    "tools": [
+      {
+        "name": "MARA AI (Solutions)",
+        "url": "https://www.mara-solutions.com/"
+      },
+      {
+        "name": "TrustYou ResponseAI"
+      }
+    ],
+    "workflowSummary": "Connect your Google, Booking.com, and TripAdvisor listings to a review-management tool. The AI reads each incoming review, drafts a personalized reply in your brand voice, and either auto-sends simple positive reviews or queues drafts for your approval on trickier ones.",
+    "samplePrompt": "\"Draft a warm, professional reply to this 4-star hotel review, thanking the guest for mentioning our breakfast and gently addressing their comment about slow check-in. Keep it under 80 words.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly point-and-click setup with OTA login, no technical skill needed",
+    "trustScore": 4,
+    "pricingNote": "Paid SaaS, typically tiered by number of rooms/reviews per month; MARA advertises a free trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mara-solutions.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; do not scrape pricing tables verbatim, summarize only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-80c6bcd308",
+    "slug": "add-an-ai-chatbot-to-my-hotel-website-to-answer-guest-questions",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Front office / marketing manager wanting fewer missed guest questions",
+    "title": "add an AI chatbot to my hotel website to answer guest questions",
+    "intentLabels": [
+      "hotel website chatbot",
+      "AI guest messaging",
+      "24/7 guest chat assistant"
+    ],
+    "tools": [
+      {
+        "name": "Canary AI Webchat (Canary Technologies)",
+        "url": "https://www.canarytechnologies.com/products/hotel-ai-chatbot"
+      },
+      {
+        "name": "HiJiffy"
+      }
+    ],
+    "workflowSummary": "Embed a chat widget on the hotel's website and connect it to WhatsApp and social channels. The AI answers FAQs about amenities, check-in times, and local info instantly, captures guest contact details, and routes complex requests to staff with full context.",
+    "samplePrompt": "\"Set up a hotel FAQ chatbot that can answer questions about check-in time, parking, pet policy, and breakfast hours, and hand off to a staff member if a guest asks about a billing dispute.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup and PMS integration usually needs vendor onboarding help",
+    "trustScore": 4,
+    "pricingNote": "Paid, typically subscription per property; check for a trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.canarytechnologies.com/products/hotel-ai-chatbot",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only, no verbatim reproduction",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-1eb24a62dc",
+    "slug": "automatically-adjust-my-hotel-s-room-rates-based-on-demand",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Owner/GM of a small or independent hotel managing room rates",
+    "title": "automatically adjust my hotel's room rates based on demand",
+    "intentLabels": [
+      "AI dynamic pricing hotel",
+      "automated revenue management",
+      "hotel rate optimization software"
+    ],
+    "tools": [
+      {
+        "name": "PriceLabs",
+        "url": "https://hotels.pricelabs.co/blog/the-definitive-guide-to-dynamic-pricing-for-small-hotel-groups/"
+      },
+      {
+        "name": "IDeaS"
+      }
+    ],
+    "workflowSummary": "Connect the pricing tool to your PMS/channel manager. It continuously analyzes local events, competitor rates, seasonality, and booking pace, then automatically raises or lowers your published room rates within limits you set, so you don't have to manually reprice every day.",
+    "samplePrompt": "\"Recommend a dynamic pricing strategy for a 20-room boutique hotel during a slow midweek period with a local festival happening in 10 days.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires connecting a PMS/channel manager, more setup than a plug-and-play app",
+    "trustScore": 4,
+    "pricingNote": "Paid, usually monthly per-room fee; some offer free trials - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://hotels.pricelabs.co/blog/the-definitive-guide-to-dynamic-pricing-for-small-hotel-groups/",
+    "sourceType": "Product/blog page",
+    "freshness": "April 2026",
+    "accessNotes": "Public blog content; paraphrase, do not copy pricing claims verbatim",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-53a9fccde7",
+    "slug": "create-social-media-posts-for-my-hotel-s-instagram-and-facebook",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel marketing coordinator without a design team",
+    "title": "create social media posts for my hotel's Instagram and Facebook",
+    "intentLabels": [
+      "AI social media post generator hotel",
+      "hospitality content creation AI",
+      "automated hotel marketing posts"
+    ],
+    "tools": [
+      {
+        "name": "CapCut AI Hotel & Resort Social Post Generator",
+        "url": "https://www.capcut.com/ideas/ai-poster-generator/ai-hotel-resort-social-post-generator"
+      },
+      {
+        "name": "Canva Magic Studio"
+      }
+    ],
+    "workflowSummary": "Upload a few approved property photos and your brand colors/fonts once. Then describe the goal (e.g. \"fill midweek rooms\"), audience, and offer in a short brief, and the tool generates on-brand captions and layouts sized for Instagram, Facebook, and TikTok.",
+    "samplePrompt": "\"Create 3 Instagram post ideas (caption + visual layout) promoting a midweek couples spa package at our boutique hotel, playful and welcoming tone, with a 'Book direct and save' call to action.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, designed for non-designers",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for light use; paid plans for higher volume/exports - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.capcut.com/ideas/ai-poster-generator/ai-hotel-resort-social-post-generator",
+    "sourceType": "Product page",
+    "freshness": "March 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-db2c8bb938",
+    "slug": "turn-my-existing-hotel-room-photos-into-seasonal-marketing",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel marketing manager refreshing property photos for campaigns",
+    "title": "turn my existing hotel room photos into seasonal marketing images",
+    "intentLabels": [
+      "AI hotel photo generator",
+      "seasonal hotel visuals AI",
+      "hotel room image enhancement"
+    ],
+    "tools": [
+      {
+        "name": "Photomatic AI (Hotel Room Visual Maker, via FlowHunt)",
+        "url": "https://www.photomaticai.com/ai-image-generator/hotel-room/"
+      }
+    ],
+    "workflowSummary": "Upload an existing photo of a hotel room or lobby, choose a style like \"Hotel Room Visual Maker,\" and describe the seasonal theme (e.g. festive, summer poolside). The AI generates new on-brand variations for social posts, emails, and ads without a new photoshoot.",
+    "samplePrompt": "\"Generate 3 variations of this hotel suite photo styled for a winter holiday promotion, warm lighting, festive but tasteful decor, keep the room layout accurate.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe what you want in plain language, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Freemium with generation credits; paid plans for higher volume - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.photomaticai.com/ai-image-generator/hotel-room/",
+    "sourceType": "Product page",
+    "freshness": "May 2025",
+    "accessNotes": "Public marketing page; generated images are AI-created variations of the uploaded photo, confirm usage rights with vendor before publishing",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-9f7a569e19",
+    "slug": "send-personalized-upgrade-and-add-on-offers-to-guests-before",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Revenue/front-desk manager wanting more ancillary revenue without extra staff",
+    "title": "send personalized upgrade and add-on offers to guests before they arrive",
+    "intentLabels": [
+      "hotel pre-arrival upsell AI",
+      "automated room upgrade offers",
+      "ancillary revenue automation"
+    ],
+    "tools": [
+      {
+        "name": "Oaky",
+        "url": "https://www.cloudbeds.com/hotel-guest/upsell/"
+      },
+      {
+        "name": "Canary Technologies upsell module"
+      }
+    ],
+    "workflowSummary": "Connect the upsell tool to your PMS. Before arrival, it automatically emails or texts each guest a personalized offer (room upgrade, late checkout, spa package) based on their reservation and past stay data, with pricing tied to real-time inventory.",
+    "samplePrompt": "\"Draft a pre-arrival upsell message offering a room upgrade and a late checkout add-on to a returning guest arriving for a 2-night anniversary stay.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs PMS integration to price and confirm offers automatically",
+    "trustScore": 4,
+    "pricingNote": "Commission-free subscription model common in this category; confirm exact pricing with vendor - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.cloudbeds.com/hotel-guest/upsell/",
+    "sourceType": "Product/directory page",
+    "freshness": "June 2026",
+    "accessNotes": "Public marketing page; paraphrase only, no verbatim reproduction of vendor copy",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-a413ed2063",
+    "slug": "automate-housekeeping-room-assignments-and-cleaning-schedules",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Housekeeping manager at a mid-size hotel or resort",
+    "title": "automate housekeeping room assignments and cleaning schedules",
+    "intentLabels": [
+      "AI housekeeping scheduling software",
+      "automated room turnover management",
+      "hotel task management AI"
+    ],
+    "tools": [
+      {
+        "name": "HelloShift",
+        "url": "https://www.helloshift.com/housekeeping-management"
+      },
+      {
+        "name": "Optii"
+      }
+    ],
+    "workflowSummary": "The tool connects to your PMS and automatically assigns rooms to housekeepers based on checkout times, zones, and staff availability, pushes mobile task lists to each housekeeper's phone, and updates room status live so front desk knows the moment a room is ready.",
+    "samplePrompt": "\"Build a fair housekeeping assignment plan for 8 housekeepers and 60 checkout rooms today, grouped by floor to minimize walking distance.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "benefits most from PMS integration, though basic task lists can start manually",
+    "trustScore": 4,
+    "pricingNote": "Paid, typically per-room or per-property subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.helloshift.com/housekeeping-management",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-d813cca997",
+    "slug": "write-appetizing-descriptions-for-my-hotel-restaurant-s-menu",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Restaurant/F&B manager at a hotel updating the dining menu",
+    "title": "write appetizing descriptions for my hotel restaurant's menu items",
+    "intentLabels": [
+      "AI menu description generator",
+      "food copywriting AI",
+      "restaurant menu writer"
+    ],
+    "tools": [
+      {
+        "name": "Hypotenuse AI (Food Description Generator)",
+        "url": "https://www.hypotenuse.ai/tools/food-description-generator"
+      }
+    ],
+    "workflowSummary": "List the dish name and key ingredients for each menu item. The AI writes a polished, appetizing description in the tone you choose (casual bistro, fine dining, etc.), which you review, tweak, and drop straight into your printed or digital menu.",
+    "samplePrompt": "\"Write an appetizing 2-sentence menu description for a grilled salmon dish with lemon-herb butter, roasted asparagus, and wild rice, fine-dining tone.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a simple form, no technical skill needed",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited generations; paid plans for bulk use - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hypotenuse.ai/tools/food-description-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-22a9222913",
+    "slug": "give-guests-an-ai-concierge-that-recommends-local-restaurants",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Boutique/independent hotel owner improving guest experience",
+    "title": "give guests an AI concierge that recommends local restaurants and attractions",
+    "intentLabels": [
+      "AI hotel concierge",
+      "local recommendations chatbot",
+      "digital concierge for guests"
+    ],
+    "tools": [
+      {
+        "name": "Myma AI",
+        "url": "https://www.myma.ai/"
+      }
+    ],
+    "workflowSummary": "Set up the AI concierge with your property's local guidebook, PMS connection, and preferred partners (restaurants, tours). Guests chat with it via the hotel app, website, or WhatsApp to get personalized local recommendations, book activities, and ask stay-related questions 24/7.",
+    "samplePrompt": "\"Suggest 3 romantic dinner spots within a 10-minute walk of the hotel for a couple staying for their anniversary, and a beginner-friendly local hike for the next morning.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup with your local knowledge base and PMS takes some configuration",
+    "trustScore": 4,
+    "pricingNote": "Paid subscription, typically per property - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.myma.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-8e0428dd03",
+    "slug": "post-job-openings-and-screen-applicants-for-hotel-front-desk",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel HR/ops manager hiring hourly front-desk and housekeeping staff",
+    "title": "post job openings and screen applicants for hotel front desk and housekeeping roles",
+    "intentLabels": [
+      "AI hotel hiring software",
+      "hourly staff recruiting AI",
+      "applicant screening for hospitality"
+    ],
+    "tools": [
+      {
+        "name": "StaffedUp",
+        "url": "https://www.workstream.us/blog/hourly-hiring-software-hotels"
+      },
+      {
+        "name": "Paradox"
+      }
+    ],
+    "workflowSummary": "Post one job listing that gets distributed to multiple job boards automatically. As applications come in, the AI ranks and scores candidates, answers applicant FAQs by text, and helps schedule interviews, so a manager without an HR team can hire faster.",
+    "samplePrompt": "\"Write a friendly, concise job posting for a full-time hotel front desk agent, no experience required, with weekend availability needed.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for independent operators without dedicated HR staff",
+    "trustScore": 3,
+    "pricingNote": "Free manual job posting tier common in this category; AI screening/scheduling usually paid - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.workstream.us/blog/hourly-hiring-software-hotels",
+    "sourceType": "Blog/guide page",
+    "freshness": "July 2026",
+    "accessNotes": "Public blog content summarizing vendor features; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-da8f9a99b3",
+    "slug": "keep-track-of-what-nearby-competitor-hotels-are-charging-for",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Revenue manager or GM tracking the competitive set",
+    "title": "keep track of what nearby competitor hotels are charging for rooms",
+    "intentLabels": [
+      "hotel competitor rate shopping",
+      "rate shopper tool",
+      "competitor price monitoring AI"
+    ],
+    "tools": [
+      {
+        "name": "RateGain (Navigator)",
+        "url": "https://rategain.com/blog/how-hotel-competitor-rate-shopping-software-works-2027-buying-guide/"
+      },
+      {
+        "name": "Browse AI hotel pricing intelligence"
+      }
+    ],
+    "workflowSummary": "Add your comp set (nearby competitor hotels) to the rate-shopping tool. It automatically checks their published rates across OTAs daily, flags when a competitor undercuts or raises prices, and sends alerts so you can adjust your own rates in response.",
+    "samplePrompt": "\"Summarize how my 4 competitor hotels have priced their standard rooms for next weekend compared to my hotel, and flag any big rate gaps.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful out of the box, but reading the data well benefits from basic revenue-management knowledge",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically enterprise-style pricing by property count; confirm with vendor - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://rategain.com/blog/how-hotel-competitor-rate-shopping-software-works-2027-buying-guide/",
+    "sourceType": "Blog/guide page",
+    "freshness": "2026 (evidence gathered Sep 2026)",
+    "accessNotes": "Public blog content; paraphrase only, do not reproduce vendor claims verbatim",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-754274fbb3",
+    "slug": "quickly-send-a-proposal-and-quote-for-a-wedding-or-event-at-my",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel sales/events coordinator handling wedding and event inquiries",
+    "title": "quickly send a proposal and quote for a wedding or event at my hotel",
+    "intentLabels": [
+      "AI event proposal generator",
+      "wedding venue quote automation",
+      "hotel banquet sales AI"
+    ],
+    "tools": [
+      {
+        "name": "VenueQuoter",
+        "url": "https://venuequoter.com/blog/the-professional-way-to-personalize-event-proposals-with-ai"
+      }
+    ],
+    "workflowSummary": "When a wedding or event inquiry comes in, enter the event type, guest count, and budget range. The AI suggests the right event space and package, pre-fills a priced, branded proposal with your rates, and lets you personalize the narrative before sending it to the client.",
+    "samplePrompt": "\"Draft a wedding venue proposal for 90 guests on a Saturday in June, recommending our Garden Terrace space and a mid-tier catering package, with a warm and celebratory tone.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once your packages, pricing, and spaces are set up in the system",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-venue subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://venuequoter.com/blog/the-professional-way-to-personalize-event-proposals-with-ai",
+    "sourceType": "Blog/guide page",
+    "freshness": "April 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-82eb20640e",
+    "slug": "communicate-with-guests-at-the-front-desk-who-don-t-speak-my",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Front desk manager at a hotel with many international guests",
+    "title": "communicate with guests at the front desk who don't speak my language",
+    "intentLabels": [
+      "AI real-time translation device hotel",
+      "front desk translator",
+      "multilingual guest communication AI"
+    ],
+    "tools": [
+      {
+        "name": "Aiello Voice Translator (AVT)",
+        "url": "https://aiello.ai/products/voice-translator"
+      }
+    ],
+    "workflowSummary": "Keep a small translator device or app at the front desk. Staff press-to-talk in their language, the AI translates it aloud (and on-screen) into the guest's language in real time, and vice versa, covering check-in, billing questions, and special requests.",
+    "samplePrompt": "\"Translate this check-in explanation into Japanese for a guest at the front desk: 'Check-out is at 11am, and breakfast is served in the lobby restaurant from 7 to 10.'\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "push-to-talk device design, minimal training needed for staff",
+    "trustScore": 3,
+    "pricingNote": "Hardware + subscription model typical for this category; confirm current pricing with vendor - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aiello.ai/products/voice-translator",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-a74eb9ece2",
+    "slug": "see-all-my-hotel-s-reviews-from-every-booking-site-in-one",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Reputation/marketing manager overseeing reviews across many booking sites",
+    "title": "see all my hotel's reviews from every booking site in one dashboard",
+    "intentLabels": [
+      "hotel review aggregation software",
+      "review tracking across OTAs",
+      "guest sentiment analysis AI"
+    ],
+    "tools": [
+      {
+        "name": "GuestTouch",
+        "url": "https://www.guesttouch.com/review-response-ai"
+      },
+      {
+        "name": "Revyoos"
+      }
+    ],
+    "workflowSummary": "Connect your listings on Google, Booking.com, TripAdvisor, Expedia, and others. The dashboard pulls every new review into one feed, uses AI to flag sentiment and recurring themes (e.g. cleanliness, noise), and lets your team respond from a single place instead of checking each site separately.",
+    "samplePrompt": "\"Summarize the top 3 recurring complaints and top 3 recurring compliments from our hotel's reviews across all platforms in the last 90 days.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "dashboard-style setup, no coding or PMS integration strictly required",
+    "trustScore": 4,
+    "pricingNote": "Paid, tiered subscription; some vendors offer a free trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guesttouch.com/review-response-ai",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-dedc747be0",
+    "slug": "get-more-happy-guests-to-leave-5-star-reviews-after-they-check",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Owner of a small independent hotel with no dedicated marketing budget",
+    "title": "get more happy guests to leave 5-star reviews after they check out",
+    "intentLabels": [
+      "AI review generation software",
+      "post-stay review request automation",
+      "guest text messaging for reviews"
+    ],
+    "tools": [
+      {
+        "name": "HotelHero.ai",
+        "url": "https://www.g2.com/products/hotelhero/discuss"
+      }
+    ],
+    "workflowSummary": "The tool automatically texts guests shortly after checkout, thanking them and inviting them to leave a review, which tends to get higher response rates than email. It also flags unhappy guests from their replies and routes those as internal tasks for staff to resolve before a bad review is posted.",
+    "samplePrompt": "\"Write a short, friendly post-stay text message asking a guest who just checked out to leave a Google review, mentioning we hope they enjoyed the rooftop pool.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly automated once connected to your guest contact list",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.g2.com/products/hotelhero/discuss",
+    "sourceType": "Directory/review-aggregator page",
+    "freshness": "2026 (evidence gathered Sep 2026)",
+    "accessNotes": "Third-party review directory (G2); summarized only, do not reproduce reviewer quotes verbatim",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-ce5051cb2f",
+    "slug": "build-a-simple-app-to-track-room-status-and-maintenance",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel operations manager without an in-house developer",
+    "title": "build a simple app to track room status and maintenance requests without hiring a developer",
+    "intentLabels": [
+      "no-code hotel operations app",
+      "AI app builder for hotel management",
+      "custom housekeeping/maintenance app"
+    ],
+    "tools": [
+      {
+        "name": "Glide",
+        "url": "https://www.glideapps.com/industry/hospitality"
+      }
+    ],
+    "workflowSummary": "Describe the workflow you want (e.g. track room status, log maintenance issues, assign staff) in plain language inside the no-code builder, which connects to a simple spreadsheet or database. The platform generates a working mobile-friendly app your team can use immediately, no coding required.",
+    "samplePrompt": "\"Help me plan a simple app for my hotel that lets housekeeping mark rooms as clean or dirty and lets any staff member log a maintenance issue with a photo.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for non-technical small business owners",
+    "trustScore": 3,
+    "pricingNote": "Free tier for small/simple apps; paid plans for larger teams - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.glideapps.com/industry/hospitality",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-0235251a1d",
+    "slug": "let-guests-check-in-to-my-hotel-online-before-they-arrive",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Front office manager wanting a faster, paperless arrival",
+    "title": "let guests check in to my hotel online before they arrive",
+    "intentLabels": [
+      "AI contactless check-in",
+      "online guest registration",
+      "ID verification for hotels"
+    ],
+    "tools": [
+      {
+        "name": "Canary Technologies Contactless Check-In",
+        "url": "https://www.canarytechnologies.com/"
+      },
+      {
+        "name": "HelloShift"
+      }
+    ],
+    "workflowSummary": "Guests get a branded link 24-48 hours before arrival to upload ID, sign the registration card, and pay a deposit. The AI verifies the ID against the booking and flags anything unusual, so front desk staff just hand over a key when the guest walks in.",
+    "samplePrompt": "\"Draft the text message we send guests 24 hours before arrival, inviting them to complete online check-in, upload ID, and add a late-checkout add-on if they want one.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a PMS connection to sync reservations and payment, but the guest-facing flow itself is simple",
+    "trustScore": 4,
+    "pricingNote": "Paid subscription per property, typically tiered by room count - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.canarytechnologies.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-fa02f03c20",
+    "slug": "predict-how-busy-my-hotel-will-be-over-the-next-few-months",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "GM or revenue manager planning ahead for staffing and rates",
+    "title": "predict how busy my hotel will be over the next few months",
+    "intentLabels": [
+      "AI occupancy forecasting",
+      "hotel demand prediction software",
+      "booking pace forecasting"
+    ],
+    "tools": [
+      {
+        "name": "Pricepoint ForecastIQ",
+        "url": "https://pricepoint.co/forecastiq"
+      },
+      {
+        "name": "IDeaS"
+      }
+    ],
+    "workflowSummary": "Connect the forecasting tool to your PMS booking data. It continuously analyzes booking pace, seasonality, and market signals to project occupancy, revenue, and the likelihood of hitting your targets weeks or months out, which feeds into staffing and pricing decisions.",
+    "samplePrompt": "\"Based on our current booking pace, forecast occupancy for the next 8 weeks and flag any weeks that look likely to fall short of last year's occupancy.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once connected to live PMS/booking data, though reports are easy to read",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically bundled with a revenue management subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pricepoint.co/forecastiq",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-e4029299fc",
+    "slug": "reduce-my-hotel-s-energy-bills-without-guests-noticing-a",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Facilities/GM focused on utility costs",
+    "title": "reduce my hotel's energy bills without guests noticing a difference",
+    "intentLabels": [
+      "AI HVAC energy management",
+      "smart hotel thermostats",
+      "automated room temperature control"
+    ],
+    "tools": [
+      {
+        "name": "Verdant Thermostat Manager",
+        "url": "https://verdant.copeland.com/hospitality"
+      }
+    ],
+    "workflowSummary": "Smart thermostats replace standard ones in guest rooms and connect to a central dashboard. The AI learns occupancy patterns and lets unoccupied rooms drift within a safe range, while always restoring the guest's preferred temperature the moment they're back, cutting HVAC runtime without guests noticing.",
+    "samplePrompt": "\"Summarize this month's HVAC runtime and energy savings across the property, and flag any rooms or floors that aren't seeing the expected savings.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "hardware install needed, but day-to-day monitoring is a simple dashboard",
+    "trustScore": 4,
+    "pricingNote": "Hardware purchase plus a management software subscription; installed in 6,000+ properties per vendor - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://verdant.copeland.com/hospitality",
+    "sourceType": "Product page",
+    "freshness": "March 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-3842abf025",
+    "slug": "get-warned-before-hotel-equipment-like-hvac-or-elevators-breaks",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Chief engineer/maintenance manager trying to avoid emergency repairs",
+    "title": "get warned before hotel equipment like HVAC or elevators breaks down",
+    "intentLabels": [
+      "AI predictive maintenance hotel",
+      "equipment failure prediction",
+      "automated work order generation"
+    ],
+    "tools": [
+      {
+        "name": "Oxmaint",
+        "url": "https://oxmaint.com/article/hotel-maintenance-software-ai-cmms"
+      }
+    ],
+    "workflowSummary": "Sensors on key equipment (HVAC, boilers, elevators, kitchen gear) feed usage and performance data to the platform. The AI compares readings to each asset's normal baseline, flags developing problems weeks before failure, and automatically creates a prioritized work order scheduled for a low-occupancy window.",
+    "samplePrompt": "\"Our chiller's power draw is trending 8% above its normal baseline over the past 2 weeks. Draft a work order summary for the maintenance team explaining the issue and recommended urgency.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sensor installation and a 2-4 week learning period are needed before predictions are reliable",
+    "trustScore": 4,
+    "pricingNote": "Paid, pricing varies by property size and number of assets monitored - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://oxmaint.com/article/hotel-maintenance-software-ai-cmms",
+    "sourceType": "Product page",
+    "freshness": "March 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-b19f59da9c",
+    "slug": "automatically-reorder-food-and-beverage-supplies-before-we-run",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "F&B manager or purchasing manager restocking hotel kitchens and bars",
+    "title": "automatically reorder food and beverage supplies before we run out",
+    "intentLabels": [
+      "AI restaurant/hotel inventory management",
+      "automated purchase orders",
+      "F&B procurement software"
+    ],
+    "tools": [
+      {
+        "name": "MarketMan",
+        "url": "https://www.wisk.ai/blog/hotel-food-beverage-inventory-made-simple-with-wisk"
+      },
+      {
+        "name": "WISK"
+      }
+    ],
+    "workflowSummary": "The system tracks stock levels against recipes and sales data across your outlets. When an ingredient is projected to run low, it automatically generates a purchase order sized to your par levels and demand forecast, and routes it to the right supplier for approval.",
+    "samplePrompt": "\"Based on this week's banquet and restaurant covers, tell me which ingredients are likely to run low by Friday and draft a purchase order to our produce supplier.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires entering recipes, par levels, and supplier info before automation kicks in",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-location subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.wisk.ai/blog/hotel-food-beverage-inventory-made-simple-with-wisk",
+    "sourceType": "Product/blog page",
+    "freshness": "November 2025",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-f2239811af",
+    "slug": "build-a-staff-schedule-that-matches-expected-occupancy-without",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel manager scheduling hourly front desk, housekeeping, and F&B staff",
+    "title": "build a staff schedule that matches expected occupancy without overspending on labor",
+    "intentLabels": [
+      "AI shift scheduling software",
+      "labor cost forecasting",
+      "hourly employee scheduling app"
+    ],
+    "tools": [
+      {
+        "name": "Homebase",
+        "url": "https://www.joinhomebase.com/employee-scheduling"
+      },
+      {
+        "name": "Deputy"
+      }
+    ],
+    "workflowSummary": "Enter your team's availability once. The AI builds a draft weekly schedule based on expected demand (bookings, past sales), flags overtime and compliance issues before you publish it, and lets staff swap shifts from their phone with manager approval.",
+    "samplePrompt": "\"Build a draft schedule for 10 front desk and housekeeping staff for next week, keeping labor cost under $4,200 and covering our two busiest check-in windows with extra staff.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for hourly, non-technical teams with a mobile-first interface",
+    "trustScore": 4,
+    "pricingNote": "Free tier for basic scheduling; paid tiers add AI forecasting and payroll - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.joinhomebase.com/employee-scheduling",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-b97363adae",
+    "slug": "process-supplier-invoices-for-my-hotel-without-manually",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel finance/back-office manager handling vendor bills",
+    "title": "process supplier invoices for my hotel without manually entering each one",
+    "intentLabels": [
+      "AI accounts payable automation",
+      "invoice OCR/data extraction",
+      "hotel AP software"
+    ],
+    "tools": [
+      {
+        "name": "Factura.ai",
+        "url": "https://factura.ai/accounts-payable-software-hospitality-groups/"
+      },
+      {
+        "name": "BirchStreet"
+      }
+    ],
+    "workflowSummary": "Vendors email invoices to a dedicated inbox, or they're uploaded as PDFs. The AI reads and codes each invoice to the right property, department, and account, routes it for approval, and flags anything that doesn't match a purchase order before it's paid.",
+    "samplePrompt": "\"Summarize this month's invoices from our linen supplier, flag any that are priced higher than the last 3 months, and list which are still awaiting approval.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "benefits from a defined chart of accounts and approval structure before go-live",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-property or per-invoice-volume pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://factura.ai/accounts-payable-software-hospitality-groups/",
+    "sourceType": "Blog/guide page",
+    "freshness": "May 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-52fe536a3f",
+    "slug": "stop-missing-phone-calls-from-guests-trying-to-book-a-room",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Independent hotel owner worried about missed reservation calls",
+    "title": "stop missing phone calls from guests trying to book a room",
+    "intentLabels": [
+      "AI phone answering service",
+      "voice AI for hotels",
+      "automated reservation call handling"
+    ],
+    "tools": [
+      {
+        "name": "Canary AI Voice",
+        "url": "https://www.canarytechnologies.com/products/ai-voice-hotels"
+      },
+      {
+        "name": "SendSquared"
+      }
+    ],
+    "workflowSummary": "The AI answers every incoming call with full access to your PMS, so it can quote real rates and availability, take a booking, or answer common questions in natural conversation, then warm-transfers to a staff member for anything complex, day or night.",
+    "samplePrompt": "\"Handle this incoming call: a guest wants to know if a king room is available this weekend and how much it costs, then book it if they say yes.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once connected to live PMS rates and availability",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-minute or per-property subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.canarytechnologies.com/products/ai-voice-hotels",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-d0430091ea",
+    "slug": "keep-track-of-lost-and-found-items-and-match-them-to-the-guest",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Front desk / guest services team handling items guests leave behind",
+    "title": "keep track of lost and found items and match them to the guest who lost them",
+    "intentLabels": [
+      "AI lost and found tracking",
+      "photo-based item logging",
+      "guest item matching software"
+    ],
+    "tools": [
+      {
+        "name": "Bounte",
+        "url": "https://bounte.net/"
+      },
+      {
+        "name": "Loggit"
+      }
+    ],
+    "workflowSummary": "Staff snap a photo of a found item, and the AI auto-tags it by category, color, and brand, then logs the room and date. When a guest reports something missing, the system compares their description against every logged item to suggest the most likely match and can auto-generate a return shipping label.",
+    "samplePrompt": "\"A guest says they left a black phone charger and a paperback book in room 214 two nights ago. Check the lost and found log for possible matches.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "photo-first logging designed for any staff member to use with minimal training",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, typically per venue per month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bounte.net/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-3f7b88ecbd",
+    "slug": "track-and-report-my-hotel-s-water-energy-and-carbon-footprint",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Ownership/GM tracking environmental and ESG performance",
+    "title": "track and report my hotel's water, energy, and carbon footprint for sustainability certification",
+    "intentLabels": [
+      "AI ESG reporting for hotels",
+      "carbon footprint tracking",
+      "sustainability certification software"
+    ],
+    "tools": [
+      {
+        "name": "Ecostars",
+        "url": "https://ecostars.ai/"
+      }
+    ],
+    "workflowSummary": "Connect utility bills and meters (or enter them manually) and the platform automatically calculates energy, water, and carbon metrics, benchmarks them against similar properties, and generates audit-ready reports for certifications or corporate ESG requests.",
+    "samplePrompt": "\"Put together a summary of our hotel's energy and water usage trends over the last 12 months, in a format we can submit for a sustainability certification.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most efficient once utility data is connected, though manual entry works too",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ecostars.ai/",
+    "sourceType": "Product page",
+    "freshness": "April 2025",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-d74cd3b098",
+    "slug": "get-an-alert-the-moment-there-s-a-water-leak-somewhere-in-the",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Chief engineer trying to prevent flood/water damage claims",
+    "title": "get an alert the moment there's a water leak somewhere in the hotel",
+    "intentLabels": [
+      "AI water leak detection",
+      "IoT moisture sensors",
+      "hotel property damage prevention"
+    ],
+    "tools": [
+      {
+        "name": "Alert Labs",
+        "url": "https://www.alertlabs.com/solutions/by-industry/hospitality"
+      },
+      {
+        "name": "Connected Sensors"
+      }
+    ],
+    "workflowSummary": "Wireless sensors are placed near pipes, water heaters, and bathrooms throughout the property. The moment a sensor detects moisture or abnormal flow, the system sends an instant alert to the engineering team (and can trigger an automatic shutoff valve), stopping a small leak before it becomes a flooded room.",
+    "samplePrompt": "\"Summarize this month's water sensor alerts, which rooms or areas triggered them, and how quickly each one was resolved.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sensor placement benefits from an initial walkthrough with the vendor, but day-to-day use is just alerts",
+    "trustScore": 3,
+    "pricingNote": "Hardware plus a monitoring subscription; pricing varies by number of sensors - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.alertlabs.com/solutions/by-industry/hospitality",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-94aded8e9b",
+    "slug": "manage-room-blocks-and-event-space-bookings-for-a-wedding-or",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Sales coordinator managing weddings, conferences, and group room blocks",
+    "title": "manage room blocks and event space bookings for a wedding or conference at my hotel",
+    "intentLabels": [
+      "AI event/BEO software",
+      "hotel room block management",
+      "group sales automation"
+    ],
+    "tools": [
+      {
+        "name": "Knack",
+        "url": "https://www.knack.com/blog/event-software-for-hotels/"
+      },
+      {
+        "name": "roommaster group booking"
+      }
+    ],
+    "workflowSummary": "When a group or event inquiry comes in, staff create a room block and event space hold in the system with a cutoff date. The AI flags upcoming release dates, tracks pickup against the block in real time, and alerts the sales team if a hold is about to expire or a competing inquiry comes in for the same dates.",
+    "samplePrompt": "\"Set up a room block summary for a 40-room wedding block with a cutoff date 30 days before arrival, and remind me a week before the cutoff if fewer than half the rooms are picked up.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once your room and event space inventory is set up in the system",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-property subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.knack.com/blog/event-software-for-hotels/",
+    "sourceType": "Blog/guide page",
+    "freshness": "February 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-a7e7fe50da",
+    "slug": "automatically-bill-guests-for-what-they-take-from-the-minibar",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Front office/finance staff reconciling minibar charges",
+    "title": "automatically bill guests for what they take from the minibar",
+    "intentLabels": [
+      "AI/smart minibar tracking",
+      "automated minibar billing",
+      "honor bar inventory sensors"
+    ],
+    "tools": [
+      {
+        "name": "Bartech (via Protel)",
+        "url": "https://www.protel.com.tr/en/hotel-management-solutions/hotel-minibar-tracking/"
+      },
+      {
+        "name": "WISK minibar module"
+      }
+    ],
+    "workflowSummary": "Sensors in the minibar detect the moment an item is removed and post the charge straight to the guest's folio in the PMS. It also flags low stock so housekeeping restocks only what was actually used, instead of doing a full manual count in every room.",
+    "samplePrompt": "\"Summarize this week's minibar revenue and flag any rooms with unusually high or unusually low consumption compared to the property average.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires compatible minibar hardware or sensor retrofit, not just software",
+    "trustScore": 3,
+    "pricingNote": "Hardware plus a per-room software fee; increases minibar revenue by ~30% per vendor claims - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.protel.com.tr/en/hotel-management-solutions/hotel-minibar-tracking/",
+    "sourceType": "Product page",
+    "freshness": "August 2025",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-5582985191",
+    "slug": "clean-up-duplicate-guest-profiles-scattered-across-our-pms-crm",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Marketing/CRM manager working with messy guest data across systems",
+    "title": "clean up duplicate guest profiles scattered across our PMS, CRM, and OTA bookings",
+    "intentLabels": [
+      "AI guest data deduplication",
+      "customer data platform (CDP) for hotels",
+      "guest profile unification"
+    ],
+    "tools": [
+      {
+        "name": "Revinate Core (CDP)",
+        "url": "https://www.revinate.com/hotel-software/cdp/"
+      }
+    ],
+    "workflowSummary": "The platform pulls guest data from your PMS, booking engine, and outlets (spa, restaurant, etc.), then uses machine learning to spot the same guest appearing under slightly different names, emails, or masked OTA addresses, and merges them into one clean profile automatically.",
+    "samplePrompt": "\"We think 'J. Smith' who booked through Expedia last month is the same guest as 'John Smith' who stayed with us twice before under a Gmail address. Check for a likely duplicate and suggest whether to merge.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial cleanup and PMS/CRM connection setup takes some coordination",
+    "trustScore": 4,
+    "pricingNote": "Paid, typically bundled with a broader CRM/marketing subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.revinate.com/hotel-software/cdp/",
+    "sourceType": "Product page",
+    "freshness": "3 weeks old (evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-0fbb44facd",
+    "slug": "see-occupancy-revenue-and-performance-across-all-my-hotels-in",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "GM or ownership group overseeing performance across multiple properties",
+    "title": "see occupancy, revenue, and performance across all my hotels in one dashboard",
+    "intentLabels": [
+      "AI hotel analytics dashboard",
+      "multi-property performance reporting",
+      "portfolio revenue reporting software"
+    ],
+    "tools": [
+      {
+        "name": "MettaStay",
+        "url": "https://mettastay.com/ai-analytics/"
+      }
+    ],
+    "workflowSummary": "Connect each property's PMS to the platform, and it pulls bookings, revenue, and occupancy into one live dashboard. The AI highlights properties trending off pace, generates plain-language performance summaries, and lets ownership compare properties side by side without exporting spreadsheets from each PMS separately.",
+    "samplePrompt": "\"Compare this month's occupancy and RevPAR across our 4 properties, and write a short summary flagging which property is underperforming and by how much.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires connecting each property's PMS, but the dashboard itself is built for non-technical owners",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-property subscription for portfolio operators - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://mettastay.com/ai-analytics/",
+    "sourceType": "Product page",
+    "freshness": "April 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-a9c0d6fb18",
+    "slug": "turn-past-guests-who-booked-through-booking-com-or-expedia-into",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Marketing manager tired of paying OTA commission on repeat guests",
+    "title": "turn past guests who booked through Booking.com or Expedia into direct bookers next time",
+    "intentLabels": [
+      "AI win-back marketing for hotels",
+      "OTA guest conversion",
+      "lapsed guest re-engagement"
+    ],
+    "tools": [
+      {
+        "name": "Directful",
+        "url": "https://directful.com/blog/hotels-use-ai-to-increase-direct-bookings/"
+      }
+    ],
+    "workflowSummary": "The platform enriches and unmasks OTA guest profiles where possible, predicts when a past guest is likely to travel again, and automatically sends a personalized SMS or email at that moment, linking straight to the hotel's own booking engine instead of the OTA.",
+    "samplePrompt": "\"Draft a short SMS to a guest who stayed with us twice via Expedia in the last year, inviting them to book directly next time with a 10% direct-booking rate.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most effective once connected to PMS guest history, though campaigns run automatically after setup",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, typically based on guest database size - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://directful.com/blog/hotels-use-ai-to-increase-direct-bookings/",
+    "sourceType": "Blog/guide page",
+    "freshness": "June 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-498ee7e276",
+    "slug": "follow-up-with-website-visitors-who-started-booking-a-room-but",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Digital marketing manager losing bookings mid-checkout",
+    "title": "follow up with website visitors who started booking a room but didn't finish",
+    "intentLabels": [
+      "AI abandoned booking recovery",
+      "cart abandonment email for hotels",
+      "deep-linked booking follow-up"
+    ],
+    "tools": [
+      {
+        "name": "Guestwise Engage",
+        "url": "https://guestwise.tech/engage/"
+      }
+    ],
+    "workflowSummary": "The tool tracks when a visitor starts the booking flow on the hotel's website but leaves before paying, then automatically sends a follow-up email or SMS that deep-links back to the same dates, room, and rate they were looking at, instead of a generic homepage link.",
+    "samplePrompt": "\"Write a friendly follow-up email for someone who started booking a deluxe room for next weekend on our site but didn't complete the booking, with a link back to finish where they left off.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires a tracking pixel/integration with the booking engine to work",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://guestwise.tech/engage/",
+    "sourceType": "Product page",
+    "freshness": "December 2025",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-4a30379713",
+    "slug": "improve-how-my-hotel-ranks-and-looks-on-booking-com-and-expedia",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Independent hotel owner or revenue manager managing OTA visibility",
+    "title": "improve how my hotel ranks and looks on Booking.com and Expedia",
+    "intentLabels": [
+      "OTA ranking optimization",
+      "hotel listing content score",
+      "Booking.com/Expedia visibility management"
+    ],
+    "tools": [
+      {
+        "name": "Otamiser",
+        "url": "https://www.otamiser.com/hotel/ota-optimization"
+      }
+    ],
+    "workflowSummary": "The service connects to your PMS and OTA extranets, then actively manages every ranking signal those channels use: content completeness, photos, room descriptions, rate plans, promotions, and program enrollment (like Booking.com Genius), reporting monthly on visibility and revenue impact.",
+    "samplePrompt": "\"Review our Expedia listing for missing content fields (amenities, policies, bed types) that could be hurting our ranking, and suggest what to add first.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most hotels use this as a managed service rather than self-serve software",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically a managed-service subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.otamiser.com/hotel/ota-optimization",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-2966964949",
+    "slug": "manage-my-hotel-s-bidding-on-google-hotel-ads-and-other",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Revenue/marketing manager running paid visibility on Google",
+    "title": "manage my hotel's bidding on Google Hotel Ads and other metasearch sites",
+    "intentLabels": [
+      "AI metasearch bid management",
+      "Google Hotel Ads automation",
+      "hotel advertising on Trivago/TripAdvisor"
+    ],
+    "tools": [
+      {
+        "name": "SiteMinder Demand Plus",
+        "url": "https://www.siteminder.com/r/google-ai-mode-hotels/"
+      }
+    ],
+    "workflowSummary": "The tool connects your live rates and availability to Google Hotel Ads and other metasearch sites, then automatically adjusts bids based on demand and competition to win the 'official site' placement, while tracking exactly which bookings came from paid versus free listings.",
+    "samplePrompt": "\"Summarize this month's Google Hotel Ads spend, bookings generated, and cost per booking, and flag if we're overspending relative to direct revenue.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "technical setup (live rate feed, Hotel Center) usually needs vendor support",
+    "trustScore": 4,
+    "pricingNote": "Paid, typically commission or CPC-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.siteminder.com/r/google-ai-mode-hotels/",
+    "sourceType": "Product page",
+    "freshness": "May 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-739c0f127c",
+    "slug": "reward-repeat-guests-without-setting-up-a-full-loyalty-points",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Independent hotel owner without budget for a traditional points program",
+    "title": "reward repeat guests without setting up a full loyalty points program",
+    "intentLabels": [
+      "AI guest loyalty without points",
+      "personalized repeat-guest offers",
+      "digital loyalty for hotels"
+    ],
+    "tools": [
+      {
+        "name": "SendSquared",
+        "url": "https://sendsquared.com/blog/digital-hotel-guest-loyalty-with-ai/"
+      }
+    ],
+    "workflowSummary": "Instead of a points-and-tiers program, the platform tracks each guest's lifetime value and stay history, then automatically sends a personalized offer (a rate, a room upgrade, a perk) timed to when that guest is statistically likely to be ready to book again.",
+    "samplePrompt": "\"This guest has stayed with us 3 times in 18 months, always on weekends. Draft a personalized offer to send now, timed for a return visit in about 6 weeks.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once connected to guest stay history in the PMS/CRM",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://sendsquared.com/blog/digital-hotel-guest-loyalty-with-ai/",
+    "sourceType": "Blog/guide page",
+    "freshness": "May 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-a8e40efc18",
+    "slug": "set-up-a-tiered-rewards-or-points-program-for-our-hotel-s",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel owner wanting a structured points/tier rewards program instead",
+    "title": "set up a tiered rewards or points program for our hotel's repeat guests",
+    "intentLabels": [
+      "hotel loyalty program software",
+      "points and tiers rewards",
+      "multi-outlet loyalty (rooms, F&B, spa)"
+    ],
+    "tools": [
+      {
+        "name": "Agilysys Loyalty & Promotions",
+        "url": "https://www.agilysys.com/en/products/loyalty-and-promotions/"
+      }
+    ],
+    "workflowSummary": "The platform connects to your PMS and POS so guests earn points not just on rooms but also on dining, spa, and other outlets, with AI-driven segmentation used to decide which personalized promotion to surface to each guest tier in real time.",
+    "samplePrompt": "\"Design a simple 3-tier loyalty structure (points per stay, a mid-tier perk, and a top-tier perk) for an independent hotel with a restaurant and spa.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to properties with multiple revenue outlets (rooms, F&B, spa) to make points meaningful",
+    "trustScore": 3,
+    "pricingNote": "Paid, enterprise-style pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.agilysys.com/en/products/loyalty-and-promotions/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-c6754838c8",
+    "slug": "quickly-score-and-respond-to-group-booking-inquiries-rfps-so-we",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Director of Sales handling incoming meeting/wedding/corporate RFPs",
+    "title": "quickly score and respond to group booking inquiries (RFPs) so we don't lose them to a faster competitor",
+    "intentLabels": [
+      "AI RFP lead scoring",
+      "automated proposal response",
+      "group sales inquiry prioritization"
+    ],
+    "tools": [
+      {
+        "name": "Cvent Response Automation",
+        "url": "https://www.cvent.com/en/blog/hospitality/rfp-response-automation"
+      }
+    ],
+    "workflowSummary": "Every inquiry from Cvent, email, or a web form is automatically scored (A+ to F) based on room nights, revenue potential, and fit with your historical group business, so the sales team can instantly see which RFPs deserve a same-day response instead of digging through a shared inbox.",
+    "samplePrompt": "\"We just received a 60-room, 2-night corporate RFP for next spring. Based on typical scoring criteria, is this a strong lead, and what should our response prioritize?\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "scoring accuracy improves once historical group data is connected",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically bundled with a broader Cvent Supplier Network subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cvent.com/en/blog/hospitality/rfp-response-automation",
+    "sourceType": "Blog/guide page",
+    "freshness": "June 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-2b3b212a96",
+    "slug": "make-sure-otas-aren-t-quietly-undercutting-the-price-on-our-own",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Revenue manager protecting the hotel's direct booking price advantage",
+    "title": "make sure OTAs aren't quietly undercutting the price on our own website",
+    "intentLabels": [
+      "AI rate parity monitoring",
+      "OTA price undercutting alerts",
+      "direct booking price protection"
+    ],
+    "tools": [
+      {
+        "name": "Rateparities.com",
+        "url": "https://rateparities.com/"
+      }
+    ],
+    "workflowSummary": "The tool checks your hotel's price on your direct site against Booking.com, Expedia, and Hotels.com every 24 hours. The moment an OTA shows a lower rate than your website for the same dates and room type, it emails an alert so you can contact the OTA and get it corrected before it costs you bookings.",
+    "samplePrompt": "\"Summarize this week's rate parity alerts: which OTA undercut us, on which dates, and by how much.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for small/independent hotels without a dedicated revenue manager, 5-minute setup",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription with a 14-day free trial - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://rateparities.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-240c8789cf",
+    "slug": "make-sure-our-hotel-shows-up-when-people-search-hotels-near-me",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Owner/marketing lead managing the hotel's Google presence",
+    "title": "make sure our hotel shows up when people search 'hotels near me' on Google",
+    "intentLabels": [
+      "AI Google Business Profile optimization",
+      "local SEO for hotels",
+      "Google Maps ranking"
+    ],
+    "tools": [
+      {
+        "name": "Cattix",
+        "url": "https://cattix.com/blog/ai-google-business-profile-optimization-local-seo/"
+      }
+    ],
+    "workflowSummary": "The tool audits your Google Business Profile against local competitors, flags missing or weak fields (categories, attributes, photos, Q&A), drafts Google posts and review replies, and tracks how those changes move your ranking in the local map results over time.",
+    "samplePrompt": "\"Review our Google Business Profile and tell me the top 3 things missing or weak compared to the 3 closest competing hotels.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed as a guided audit-and-fix tool for non-technical owners",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://cattix.com/blog/ai-google-business-profile-optimization-local-seo/",
+    "sourceType": "Blog/guide page",
+    "freshness": "February 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-4f3c612230",
+    "slug": "write-blog-posts-about-local-attractions-to-help-our-hotel",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Small hotel marketing team without time to write blog content",
+    "title": "write blog posts about local attractions to help our hotel website rank on Google",
+    "intentLabels": [
+      "AI SEO blog writer for hotels",
+      "local content generator",
+      "hotel website blog automation"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI blog writer",
+        "url": "https://www.eesel.ai/blog/seo-for-hotels"
+      }
+    ],
+    "workflowSummary": "Type in a keyword a traveler might search, like 'family-friendly activities near [city]', and the AI researches and drafts a complete, publish-ready blog post structured to rank in search, which you review and post to your hotel's website.",
+    "samplePrompt": "\"Write a blog post outline (with an SEO-friendly title) about 'best rainy day activities near our hotel' for a family audience.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter a keyword and get a draft, minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Free trial with paid plans for ongoing use - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/seo-for-hotels",
+    "sourceType": "Blog/guide page",
+    "freshness": "January 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-4d762fc511",
+    "slug": "run-google-and-facebook-instagram-ads-that-actually-drive",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Marketing manager running Google and Meta ads on a limited budget",
+    "title": "run Google and Facebook/Instagram ads that actually drive direct bookings, not just clicks",
+    "intentLabels": [
+      "AI hotel ad campaign management",
+      "Google/Meta advertising automation",
+      "direct booking ad optimization"
+    ],
+    "tools": [
+      {
+        "name": "Userguest AdsPlus",
+        "url": "https://www.hospitalitynet.org/opinion/4129393.html"
+      }
+    ],
+    "workflowSummary": "The platform builds and continuously optimizes ad campaigns across Google and Meta specifically for hotel booking behavior (seasonality, booking windows, rate parity rules), tying spend directly to actual bookings rather than generic clicks, with performance reporting linked to real revenue.",
+    "samplePrompt": "\"Suggest an ad budget split between Google and Meta for a boutique hotel trying to fill midweek rooms next month, and what audience signals to prioritize.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "typically run as a managed service rather than fully self-serve",
+    "trustScore": 3,
+    "pricingNote": "Paid, hands-off managed service model - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hospitalitynet.org/opinion/4129393.html",
+    "sourceType": "Blog/guide page",
+    "freshness": "October 2025",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-bdccece107",
+    "slug": "find-out-what-s-missing-or-weak-on-my-hotel-s-website-that-s",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hotel marketing manager unsure why the website isn't converting",
+    "title": "find out what's missing or weak on my hotel's website that's costing us direct bookings",
+    "intentLabels": [
+      "AI website content audit for hotels",
+      "website quality scoring",
+      "direct booking conversion audit"
+    ],
+    "tools": [
+      {
+        "name": "Exely AI Website Quality Scoring",
+        "url": "https://www.hospitalitynet.org/opinion/4132488/how-hotels-can-use-ai-to-turn-website-content-into-direct-bookings"
+      }
+    ],
+    "workflowSummary": "The tool analyzes your hotel website's content against what guests and search/AI tools expect (room details, policies, amenities, FAQs) and produces a scored report showing what's well covered and what's missing, so you know exactly what to fix first to convert more visitors.",
+    "samplePrompt": "\"Based on a website quality audit, our room policy and cancellation info sections are incomplete. Draft clear, guest-friendly copy for both sections.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the audit itself is a simple scored report anyone can act on",
+    "trustScore": 3,
+    "pricingNote": "Free audit offered by vendor; ongoing tool pricing not publicly listed - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.hospitalitynet.org/opinion/4132488/how-hotels-can-use-ai-to-turn-website-content-into-direct-bookings",
+    "sourceType": "Blog/guide page",
+    "freshness": "May 2026",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-6f898f5571",
+    "slug": "send-an-eye-catching-video-proposal-to-a-wedding-or-meeting",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Sales manager trying to win a wedding or corporate group booking against competing venues",
+    "title": "send an eye-catching video proposal to a wedding or meeting planner instead of a plain PDF",
+    "intentLabels": [
+      "AI video sales proposal for hotels",
+      "personalized video pitch",
+      "interactive deal room for group sales"
+    ],
+    "tools": [
+      {
+        "name": "Hippo Video (Active Deal Room)",
+        "url": "https://www.hippovideo.io/hospitality.html"
+      }
+    ],
+    "workflowSummary": "Once a group lead comes in, the AI pre-fills a branded 'deal room' with a short personalized video, a virtual tour of the relevant meeting space or ballroom, and an interactive assistant that can answer the planner's follow-up questions, instead of sending a static PDF proposal.",
+    "samplePrompt": "\"Draft the talking points for a 60-second personalized video proposal to a wedding planner asking about our Garden Terrace for a 90-guest wedding next June.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best results come from training the AI on your property's own historical proposals and content",
+    "trustScore": 3,
+    "pricingNote": "Paid, bundled as part of a broader sales automation suite - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hippovideo.io/hospitality.html",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-90e477dfd5",
+    "slug": "manage-bookings-for-resort-activities-like-excursions-water",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Resort activities/recreation manager scheduling excursions and classes",
+    "title": "manage bookings for resort activities like excursions, water sports, and classes so we don't overbook capacity",
+    "intentLabels": [
+      "AI resort activity scheduling",
+      "excursion booking software",
+      "guest experience/activity management"
+    ],
+    "tools": [
+      {
+        "name": "ResortConcierge AI",
+        "url": "https://resortconcierge.ai/"
+      }
+    ],
+    "workflowSummary": "Guests browse and book activities (diving excursions, cooking classes, kids' club sessions) through the platform. The AI tracks capacity limits, staff/equipment availability, and guest preferences in real time, and can send reminders or suggest alternatives if weather or capacity forces a change.",
+    "samplePrompt": "\"We have 12 spots left on tomorrow's snorkeling excursion and a storm forecast for the afternoon slot. Suggest how to reallocate guests between the morning and afternoon departures.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once your full activity catalog and capacity rules are set up in the system",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://resortconcierge.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-6346314caa",
+    "slug": "schedule-spa-treatments-so-therapists-and-treatment-rooms-are",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Spa director at a hotel or resort spa",
+    "title": "schedule spa treatments so therapists and treatment rooms are booked efficiently without double-booking",
+    "intentLabels": [
+      "AI spa scheduling software",
+      "therapist and room allocation",
+      "spa appointment optimization"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti",
+        "url": "https://www.zenoti.com/spa-management-software"
+      }
+    ],
+    "workflowSummary": "When a guest books a treatment, the system automatically assigns a qualified therapist and an available treatment room in the same step, preventing double-booking of either. AI also dynamically fills schedule gaps by offering open slots to guests on a waitlist.",
+    "samplePrompt": "\"We have a last-minute cancellation for a 2pm deep tissue massage. Check the waitlist and suggest who to offer the slot to first.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "configuring services, therapist skills, and room types takes initial setup",
+    "trustScore": 4,
+    "pricingNote": "Paid, typically per-location subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zenoti.com/spa-management-software",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-d9f4f949d7",
+    "slug": "encourage-long-stay-guests-to-extend-or-renew-their-reservation",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "GM or guest relations manager at an extended-stay or aparthotel property",
+    "title": "encourage long-stay guests to extend or renew their reservation instead of checking out",
+    "intentLabels": [
+      "AI stay extension software",
+      "long-stay guest retention",
+      "extended-stay upsell automation"
+    ],
+    "tools": [
+      {
+        "name": "ExtendIQ",
+        "url": "https://extendiq.io/stay-extension-software"
+      }
+    ],
+    "workflowSummary": "The tool watches for signals that a current long-stay guest might want to extend (approaching checkout with no clear next step, similar past extension patterns) and prompts staff or sends the guest a personalized extension offer, syncing any accepted extension back to the PMS folio automatically.",
+    "samplePrompt": "\"This guest has been here 3 weeks on a corporate rate with checkout in 4 days and no forwarding booking. Draft a short message offering to extend their stay.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "runs alongside your existing PMS rather than replacing it, but needs that connection first",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://extendiq.io/stay-extension-software",
+    "sourceType": "Product page",
+    "freshness": "July 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-c90f03bc20",
+    "slug": "communicate-with-long-stay-apartment-guests-and-handle-their",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Owner/operator of an aparthotel or serviced-apartment building",
+    "title": "communicate with long-stay apartment guests and handle their billing (weekly/monthly rates, mid-stay changes) without a front desk",
+    "intentLabels": [
+      "AI aparthotel guest communication",
+      "long-stay billing automation",
+      "serviced apartment guest messaging"
+    ],
+    "tools": [
+      {
+        "name": "Boom AI",
+        "url": "https://www.boomnow.com/aparthotel-management-software"
+      }
+    ],
+    "workflowSummary": "The platform sends tailored messaging across a guest's multi-week or multi-month stay (welcome notes, mid-stay check-ins, follow-ups) through a dedicated guest portal, while automatically handling flexible pricing and billing for weekly or monthly rates, since standard nightly-rate billing doesn't fit long stays well.",
+    "samplePrompt": "\"Draft a mid-stay check-in message for a guest who's 2 weeks into a 6-week corporate stay, checking if they need anything and mentioning our weekly housekeeping schedule.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to properties already renting by the week or month, not typical one-night stays",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.boomnow.com/aparthotel-management-software",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-3f1f0cdc0f",
+    "slug": "sell-individual-dorm-beds-across-hostelworld-booking-com-and",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Hostel owner/manager selling both dorm beds and private rooms",
+    "title": "sell individual dorm beds across Hostelworld, Booking.com, and our own website without double-booking a bed",
+    "intentLabels": [
+      "hostel bed-level inventory management",
+      "dorm channel manager",
+      "hostel PMS for bunks"
+    ],
+    "tools": [
+      {
+        "name": "HostelMate",
+        "url": "https://hostelmate.co/pages/about/hostel-management-system"
+      }
+    ],
+    "workflowSummary": "Unlike hotel software that only tracks whole rooms, this PMS tracks each individual bed inside a shared dorm. When one bed in a 6-bed dorm sells on any channel, it's instantly removed from availability everywhere else, so mixed dorms, single-gender dorms, and private rooms can all be sold from one pooled inventory without overbooking.",
+    "samplePrompt": "\"We have a 6-bed female dorm with 2 beds already booked via Hostelworld. Show what's left to sell on our direct website and Booking.com.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "purpose-built for hostels, so bed-level setup is the default rather than a workaround",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically per-bed or per-property subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://hostelmate.co/pages/about/hostel-management-system",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-02a2b292d5",
+    "slug": "let-guests-unlock-the-door-and-check-in-themselves-without-any",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Operator of an unstaffed hostel, aparthotel, or boutique property",
+    "title": "let guests unlock the door and check in themselves without any staff present",
+    "intentLabels": [
+      "AI remote self-check-in",
+      "smart lock keyless entry",
+      "unstaffed property access control"
+    ],
+    "tools": [
+      {
+        "name": "Chekin (Remote Access)",
+        "url": "https://chekin.com/en/self-check-in/"
+      }
+    ],
+    "workflowSummary": "Once a guest completes online check-in and ID verification, the platform automatically generates a time-limited access code or digital key for the property's smart lock and sends it to the guest, with the code expiring automatically at checkout so no manual key handoff or re-coding is needed.",
+    "samplePrompt": "\"A guest checking in tomorrow at 3pm needs remote access instructions. Draft the message explaining how to use the smart lock, including what to do if the code doesn't work.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires compatible smart lock hardware already installed on the property",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://chekin.com/en/self-check-in/",
+    "sourceType": "Product page",
+    "freshness": "January 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-c0ecbc582c",
+    "slug": "create-the-banquet-event-order-beo-with-menu-costing-and-setup",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Catering/banquet manager producing event documents for the kitchen and floor staff",
+    "title": "create the banquet event order (BEO) with menu, costing, and setup details for an upcoming event",
+    "intentLabels": [
+      "AI/automated BEO generation",
+      "banquet event order software",
+      "catering menu costing"
+    ],
+    "tools": [
+      {
+        "name": "Planning Pod",
+        "url": "https://planningpod.com/banquet-event-orders"
+      }
+    ],
+    "workflowSummary": "Once an event's details (date, headcount, room, food & beverage package) are entered, the system automatically generates a formatted BEO, pulling in menu items with descriptions, pricing, and portions from your catering database, and produces separate versions for the client, kitchen, and front-of-house so nothing has to be retyped.",
+    "samplePrompt": "\"Generate a kitchen-facing BEO for a 120-guest plated dinner this Saturday at 7pm, including our herb-crusted salmon package and standard bar service.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once your menu items, packages, and pricing are set up as reusable building blocks",
+    "trustScore": 3,
+    "pricingNote": "Paid, bundled with a broader event management subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://planningpod.com/banquet-event-orders",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-5b3e599aa9",
+    "slug": "let-guests-pay-for-drinks-food-and-activities-on-property",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Operations manager at an all-inclusive resort",
+    "title": "let guests pay for drinks, food, and activities on property without carrying cash or a room key",
+    "intentLabels": [
+      "AI cashless RFID wristband payments",
+      "resort wearable payment system",
+      "all-inclusive spend tracking"
+    ],
+    "tools": [
+      {
+        "name": "Oveit",
+        "url": "https://oveit.com/markets/hospitality/"
+      }
+    ],
+    "workflowSummary": "Each guest gets an RFID wristband linked to their account at check-in, usable to tap and pay at any restaurant, bar, or activity kiosk on property. The platform tracks spend and access in real time, so operators can see guest spending patterns and manage tiered access (like premium lounges) from one dashboard.",
+    "samplePrompt": "\"Summarize this week's wristband spend by outlet (bars, restaurants, activities) and flag which locations are seeing the highest per-guest spend.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires wristband hardware and point-of-sale integration across every outlet on property",
+    "trustScore": 3,
+    "pricingNote": "Paid, hardware plus a transaction-based or subscription fee - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://oveit.com/markets/hospitality/",
+    "sourceType": "Product page",
+    "freshness": "January 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-edaea67f86",
+    "slug": "screen-incoming-guests-and-manage-security-deposits-to-prevent",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Owner/operator of short-term rental units or an aparthotel building",
+    "title": "screen incoming guests and manage security deposits to prevent parties, fraud, or property damage",
+    "intentLabels": [
+      "AI guest screening for short-term rentals",
+      "automated damage deposit collection",
+      "party/fraud prevention"
+    ],
+    "tools": [
+      {
+        "name": "Autohost",
+        "url": "https://www.autohost.ai/solutions/short-term-rentals"
+      }
+    ],
+    "workflowSummary": "Before a booking is confirmed, the AI screens the guest against risk signals (ID mismatch, booking patterns associated with parties or fraud, network intelligence across properties) and flags anything suspicious. It also automates collecting and releasing a security deposit or damage waiver tied to the reservation, without manual back-and-forth.",
+    "samplePrompt": "\"This guest just booked a 2-night stay for 8 people with a same-day check-in and no prior reviews. Should this booking be flagged for manual review before confirming?\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable at higher booking volume, where manual screening isn't practical",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.autohost.ai/solutions/short-term-rentals",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-ca76b1430f",
+    "slug": "manage-table-reservations-and-the-walk-in-waitlist-for-our",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Restaurant manager at a hotel's on-site restaurant",
+    "title": "manage table reservations and the walk-in waitlist for our hotel restaurant without double-booking",
+    "intentLabels": [
+      "AI restaurant reservation system",
+      "waitlist management",
+      "hotel restaurant table booking"
+    ],
+    "tools": [
+      {
+        "name": "SevenRooms",
+        "url": "https://sevenrooms.com/platform/reservations-waitlist/"
+      }
+    ],
+    "workflowSummary": "Guests book directly through your website, Google, or social channels instead of a marketplace that charges a fee per cover. The system manages seating and waitlist in real time, sends automated confirmations and reminders to cut no-shows, and builds a guest profile from dining history for repeat visits.",
+    "samplePrompt": "\"We have a 90-minute wait for a table of 4 tonight. Draft the waitlist text message we send guests, including the estimated wait and a way to hold their spot.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of your floor plan, table types, and booking rules takes some configuration",
+    "trustScore": 3,
+    "pricingNote": "Paid, tiered pricing without a per-cover fee on direct bookings - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://sevenrooms.com/platform/reservations-waitlist/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-8e39e29fa7",
+    "slug": "let-guests-order-room-service-from-their-phone-instead-of",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "F&B manager handling in-room dining orders",
+    "title": "let guests order room service from their phone instead of calling the front desk",
+    "intentLabels": [
+      "AI in-room dining ordering",
+      "QR code room service menu",
+      "mobile F&B ordering for hotels"
+    ],
+    "tools": [
+      {
+        "name": "Pxier (In-Room Dining)",
+        "url": "https://www.pxier.com/en/in-room-dining-software"
+      }
+    ],
+    "workflowSummary": "Guests scan a QR code in their room to browse a digital, daypart-specific menu and place an order, which routes straight to the right kitchen station (hot, cold, bar) and posts the charge to their room folio automatically, cutting down on phone-order errors and front desk call volume.",
+    "samplePrompt": "\"Write a short in-room card message inviting guests to scan a QR code to order breakfast delivered by 8am, with a note that orders can be charged to the room.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "QR-code ordering is simple for guests; kitchen routing setup is the main configuration step",
+    "trustScore": 3,
+    "pricingNote": "From about $20/month plus a small per-order fee, per vendor's published pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pxier.com/en/in-room-dining-software",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-d397516a4a",
+    "slug": "manage-sign-ups-age-appropriate-scheduling-and-check-in-check",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Family resort or all-inclusive activities manager running a kids' club",
+    "title": "manage sign-ups, age-appropriate scheduling, and check-in/check-out for our resort's kids' club",
+    "intentLabels": [
+      "AI kids' club management software",
+      "children's activity scheduling",
+      "family program check-in"
+    ],
+    "tools": [
+      {
+        "name": "Sawyer",
+        "url": "https://www.getomnify.com/blog/8-best-childrens-activity-management-software-to-drive-growth-in-2026"
+      }
+    ],
+    "workflowSummary": "Parents register children and browse age-appropriate sessions through a parent app, staff check kids in and out digitally (with allergy/emergency contact info attached to each child's profile), and the system tracks capacity per age group so sessions don't get overcrowded.",
+    "samplePrompt": "\"We have 3 open spots in tomorrow's 8-10 year old craft session and a waitlist of 5 families. Draft a message to the first family on the waitlist offering the spot.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once your program schedule, age groups, and staff ratios are set up",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact hospitality pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getomnify.com/blog/8-best-childrens-activity-management-software-to-drive-growth-in-2026",
+    "sourceType": "Blog/guide page",
+    "freshness": "September 2025",
+    "accessNotes": "Public blog content; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-92b6c6d8bc",
+    "slug": "give-timeshare-or-fractional-owners-a-self-service-portal-to",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "General manager or owner-relations manager at a condo hotel, fractional, or timeshare resort",
+    "title": "give timeshare or fractional owners a self-service portal to see their statements and book their weeks",
+    "intentLabels": [
+      "AI/automated owner portal software",
+      "timeshare owner communication",
+      "fractional ownership accounting"
+    ],
+    "tools": [
+      {
+        "name": "Owner Relations",
+        "url": "https://www.ownerrelations.com/"
+      }
+    ],
+    "workflowSummary": "Each owner gets a branded, secure portal to view real-time account statements, submit reservation requests for their contracted weeks or points, and access documents, cutting down on the phone calls and emails owner-relations staff would otherwise handle manually.",
+    "samplePrompt": "\"Draft the welcome email we send a new fractional owner explaining how to log into their owner portal and submit their first reservation request.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of ownership contracts, fee schedules, and statement templates takes time",
+    "trustScore": 3,
+    "pricingNote": "Paid, enterprise-style pricing for resort/HOA operators - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.ownerrelations.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-c1fa291d65",
+    "slug": "let-guests-reserve-a-specific-cabana-lounger-or-daybed-in",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Pool/beach operations manager at a resort",
+    "title": "let guests reserve a specific cabana, lounger, or daybed in advance instead of a first-come-first-served scramble",
+    "intentLabels": [
+      "AI pool/beach reservation software",
+      "cabana booking system",
+      "poolside amenity reservations"
+    ],
+    "tools": [
+      {
+        "name": "RealTime Reservation (Pool & Beach)",
+        "url": "https://www.realtimereservation.com/pool-beach/"
+      }
+    ],
+    "workflowSummary": "Guests view an interactive map of the pool and beach layout and reserve a specific chair, daybed, or cabana for a chosen date and time slot, with real-time availability so two guests can't be assigned the same spot, and staff can see exactly where each guest is seated for service.",
+    "samplePrompt": "\"Summarize tomorrow's cabana bookings by time slot and flag any gaps where we could offer walk-up guests an available spot.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires an initial custom map of your pool/beach layout to be built by the vendor",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.realtimereservation.com/pool-beach/",
+    "sourceType": "Product page",
+    "freshness": "June 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-48f2a1e3b0",
+    "slug": "track-allergens-across-our-menu-so-kitchen-staff-don-t",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "Executive chef or kitchen manager responsible for guest food safety",
+    "title": "track allergens across our menu so kitchen staff don't accidentally serve someone something they're allergic to",
+    "intentLabels": [
+      "AI allergen management for restaurants",
+      "ingredient-level allergen tracking",
+      "cross-contamination alerts"
+    ],
+    "tools": [
+      {
+        "name": "Lavu (Marty AI)",
+        "url": "https://lavu.com/ai-allergen-management-restaurants/"
+      }
+    ],
+    "workflowSummary": "The AI logs every ingredient as it enters the kitchen and keeps allergen tags current across every menu item, even when a recipe or supplier changes. When an order comes in with a flagged allergy, it can alert staff about shared prep surfaces or equipment that could cause cross-contamination.",
+    "samplePrompt": "\"A guest ordered the Caesar salad and noted a shellfish allergy. Check whether any ingredient in this dish or its prep process could pose a cross-contamination risk.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "value depends on keeping your recipe and ingredient data current in the system",
+    "trustScore": 3,
+    "pricingNote": "Paid, typically bundled with a broader restaurant POS subscription - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://lavu.com/ai-allergen-management-restaurants/",
+    "sourceType": "Product page",
+    "freshness": "March 2026",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "hotels-hospitality-37fc333e28",
+    "slug": "let-guests-filter-our-restaurant-s-menu-by-their-own-allergies",
+    "kind": "workflow",
+    "niche": "Hotels & Hospitality",
+    "sector": "Hotels & Hospitality",
+    "persona": "F&B manager wanting to make dining feel safe and personal for guests with dietary needs",
+    "title": "let guests filter our restaurant's menu by their own allergies and dietary preferences before they order",
+    "intentLabels": [
+      "AI personalized digital menu",
+      "guest-facing allergen filtering",
+      "nutrition transparency for restaurants"
+    ],
+    "tools": [
+      {
+        "name": "BigZpoon",
+        "url": "https://bigzpoon.com/"
+      }
+    ],
+    "workflowSummary": "Guests select their allergies and dietary preferences (vegan, gluten-free, kosher, etc.) on a digital menu, and the AI automatically filters out any items containing a flagged allergen or that don't match their preferences, so guests browse a menu that's already been narrowed down to what's safe and suitable for them.",
+    "samplePrompt": "\"Set up filter categories for our menu covering the 9 major allergens plus vegan, vegetarian, and gluten-free, so guests can self-filter before ordering.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires your menu's full ingredient data to be entered accurately for the filtering to be trustworthy",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription, exact pricing not publicly listed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bigzpoon.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (site content, evidence gathered Sep 2026)",
+    "accessNotes": "Public marketing page; paraphrase only",
+    "batch": "Hotels AI Workflows Batch5",
+    "status": "active"
+  }
+]

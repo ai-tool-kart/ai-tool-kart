@@ -1,0 +1,979 @@
+[
+  {
+    "id": "accountants-bookkeepers-35e43d4c1d",
+    "slug": "how-do-i-get-my-bank-transactions-categorized-automatically",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers managing multiple clients' books",
+    "title": "How do I get my bank transactions categorized automatically instead of doing it by hand every week?",
+    "intentLabels": [
+      "auto-categorize transactions",
+      "AI transaction categorization",
+      "bank feed automation"
+    ],
+    "tools": [
+      {
+        "name": "Booke AI",
+        "url": "https://booke.ai/"
+      }
+    ],
+    "workflowSummary": "Connect the client's bank feed (via QuickBooks Online or Xero) to Booke AI. The AI categorizes transactions automatically, learns from client comments on past transactions, and only surfaces low-confidence items for the bookkeeper to review.",
+    "samplePrompt": "Connect my QuickBooks Online bank feed to Booke AI and auto-categorize the last 3 months of transactions, flagging anything it's not confident about for my review.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires an existing QuickBooks or Xero account to connect to",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; exact pricing not public - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://booke.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-1230713ff5",
+    "slug": "is-there-a-tool-that-reconciles-my-client-s-bank-statement-for",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers doing monthly bank reconciliation for clients",
+    "title": "Is there a tool that reconciles my client's bank statement for me instead of matching every line by hand?",
+    "intentLabels": [
+      "bank reconciliation",
+      "auto-reconcile",
+      "AI reconciliation"
+    ],
+    "tools": [
+      {
+        "name": "HelloBooks.ai",
+        "url": "https://hellobooks.ai/ai-bookkeeping-software"
+      }
+    ],
+    "workflowSummary": "HelloBooks connects to 11,000+ US banks via Plaid, pulls transactions as they clear, and proposes a category and match with a confidence score. Anything above 95% confidence auto-posts; everything else sits in a one-screen review queue with the AI's reasoning.",
+    "samplePrompt": "Set up HelloBooks on my client's QuickBooks file and reconcile this month's bank feed, only flagging transactions below 95% confidence for me to check.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a live QuickBooks or Xero ledger to connect to",
+    "trustScore": 4,
+    "pricingNote": "Advertises a free plan, no credit card required - verify current terms before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://hellobooks.ai/ai-bookkeeping-software",
+    "sourceType": "Product page",
+    "freshness": "June 2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-e14385adc3",
+    "slug": "how-can-i-stop-manually-typing-in-data-from-every-receipt-and",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants collecting client receipts",
+    "title": "How can I stop manually typing in data from every receipt and invoice my client sends me?",
+    "intentLabels": [
+      "receipt OCR",
+      "invoice data extraction",
+      "automated data entry"
+    ],
+    "tools": [
+      {
+        "name": "Dext (Dext Prepare)",
+        "url": "https://www.capterra.com/p/160189/Dext/"
+      }
+    ],
+    "workflowSummary": "The client forwards receipts by email, photo, or upload. Dext's OCR and AI extract vendor, amount, date, and line items, suggest a category, and sync the finished record straight into Xero, QuickBooks, or Sage.",
+    "samplePrompt": "Forward this batch of client receipts to my Dext inbox, have it extract the vendor, amount, and date for each one, and sync the approved ones to Xero.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mobile app and email forwarding make capture simple for clients",
+    "trustScore": 5,
+    "pricingNote": "From $31.50/month (Business plan, 5 users / 250 documents) - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.capterra.com/p/160189/Dext/",
+    "sourceType": "Directory / review page",
+    "freshness": "3 weeks ago (~Aug 2026)",
+    "accessNotes": "Publicly listed software directory profile",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-acaf73ae68",
+    "slug": "i-want-an-ai-that-basically-does-my-monthly-bookkeeping-for-me",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Small business owners and outsourced bookkeepers",
+    "title": "I want an AI that basically does my monthly bookkeeping for me and can answer questions about it.",
+    "intentLabels": [
+      "AI bookkeeping assistant",
+      "AI bookkeeper chatbot",
+      "automated monthly books"
+    ],
+    "tools": [
+      {
+        "name": "Zeni.ai",
+        "url": "https://www.zeni.ai/"
+      }
+    ],
+    "workflowSummary": "Zeni connects to bank accounts, cards, and payment platforms, then uses AI (with human review) to categorize transactions, reconcile accounts, and generate monthly financial reports, flagging anomalies as it goes.",
+    "samplePrompt": "Give me a summary of last month's spending by category from Zeni, and flag any transactions that look unusual.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for non-technical small business owners",
+    "trustScore": 4,
+    "pricingNote": "Subscription, tiered by business size - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zeni.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-8505434b24",
+    "slug": "how-do-i-stop-manually-emailing-clients-customers-about-overdue",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants managing accounts receivable for clients",
+    "title": "How do I stop manually emailing clients' customers about overdue invoices every week?",
+    "intentLabels": [
+      "invoice chasing",
+      "AR follow-up",
+      "automated payment reminders",
+      "collections automation"
+    ],
+    "tools": [
+      {
+        "name": "Chaser",
+        "url": "https://www.chaserhq.com/blog/ai-and-automation-in-receivables-a-game-changer-for-finance-teams"
+      }
+    ],
+    "workflowSummary": "Chaser pulls the aging invoice list from the client's accounting system, predicts which customers are likely to pay late, and runs an automated, escalating reminder sequence by email, letter, or phone - logging every communication in one place.",
+    "samplePrompt": "Pull all invoices over 30 days overdue from Xero and start Chaser's standard reminder sequence, but flag any high-risk-rated customer for me to call personally.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best set up alongside an existing Xero or QuickBooks account",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; exact pricing not shown in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.chaserhq.com/blog/ai-and-automation-in-receivables-a-game-changer-for-finance-teams",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 8, 2026",
+    "accessNotes": "Publicly accessible company blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-75caaa5383",
+    "slug": "how-do-i-build-a-financial-report-for-my-client-that-they-ll",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting and bookkeeping firm staff serving multiple clients",
+    "title": "How do I build a financial report for my client that they'll actually understand, without spending hours in Excel?",
+    "intentLabels": [
+      "client financial reports",
+      "KPI dashboard",
+      "financial reporting automation",
+      "management reports"
+    ],
+    "tools": [
+      {
+        "name": "Fathom",
+        "url": "https://ustechautomations.com/resources/blog/best-reporting-analytics-software-accounting-firms-2026",
+        "catalogueSlug": "fathom"
+      }
+    ],
+    "workflowSummary": "Fathom connects to Xero, QuickBooks, or MYOB and pulls the client's data automatically. It generates visual KPI dashboards and P&L/balance sheet reports, and its AI Commentary Writer drafts a plain-language narrative explaining the numbers, which can be white-labeled with the firm's branding.",
+    "samplePrompt": "Build this month's client dashboard in Fathom showing revenue, gross margin, and cash position trends, and draft a short commentary explaining the numbers in plain language.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once the firm already has clients connected via Xero/QuickBooks",
+    "trustScore": 5,
+    "pricingNote": "$39-$349/month depending on number of connected entities - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ustechautomations.com/resources/blog/best-reporting-analytics-software-accounting-firms-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 30, 2026",
+    "accessNotes": "Publicly accessible blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-bb65f4fdc6",
+    "slug": "my-client-keeps-asking-if-they-ll-have-enough-cash-next-month",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants offering cash flow advisory",
+    "title": "My client keeps asking if they'll have enough cash next month - how do I forecast that without a spreadsheet nightmare?",
+    "intentLabels": [
+      "cash flow forecasting",
+      "13-week forecast",
+      "cash runway projection"
+    ],
+    "tools": [
+      {
+        "name": "Float",
+        "url": "https://www.drivetrain.ai/solutions/cash-flow-forecasting-software"
+      }
+    ],
+    "workflowSummary": "Float automatically imports unpaid invoices and bills from Xero or QuickBooks and builds a rolling 13-week cash flow forecast, with basic what-if scenario modeling so the bookkeeper can show a client the impact of a late payment or a new hire.",
+    "samplePrompt": "Import my client's unpaid invoices and bills from Xero into Float and show me their projected bank balance for the next 13 weeks.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "forecasts are only as good as the connected accounting data",
+    "trustScore": 4,
+    "pricingNote": "Paid, tiered by number of connected companies - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.drivetrain.ai/solutions/cash-flow-forecasting-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "February 24, 2025",
+    "accessNotes": "Publicly accessible comparison/review article",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-df5b888a13",
+    "slug": "is-there-an-ai-that-double-checks-a-client-s-prepared-tax",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accountants and tax preparers reviewing client returns",
+    "title": "Is there an AI that double-checks a client's prepared tax return for missed deductions or red flags before I file it?",
+    "intentLabels": [
+      "tax deduction finder",
+      "missed deductions",
+      "tax return review",
+      "audit risk check"
+    ],
+    "tools": [
+      {
+        "name": "TaxGPT (Agent Andrew)",
+        "url": "https://www.taxgpt.com/"
+      }
+    ],
+    "workflowSummary": "Agent Andrew analyzes a prepared return (1040, 1065, 1120, 1120-S, and more), reconciling it against source documents. It produces a downloadable, color-coded report: red flags for errors that raise audit risk, and green flags for likely missed savings such as home office deductions, retirement contributions, or depreciation elections.",
+    "samplePrompt": "Run this client's prepared 1120-S through Agent Andrew and give me a report of any missed deductions or audit-risk flags before I file.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "built for tax professionals reviewing prepared returns, not first-time DIY filers",
+    "trustScore": 4,
+    "pricingNote": "Subscription-based - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.taxgpt.com/",
+    "sourceType": "Product page",
+    "freshness": "June 26, 2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-6f67d4c457",
+    "slug": "how-do-i-make-sure-vendor-bills-get-paid-on-time-and-coded",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants managing accounts payable for clients",
+    "title": "How do I make sure vendor bills get paid on time and coded correctly without doing it all by hand?",
+    "intentLabels": [
+      "accounts payable automation",
+      "bill pay",
+      "AP automation",
+      "vendor invoice processing"
+    ],
+    "tools": [
+      {
+        "name": "BILL (Bill.com)",
+        "url": "https://www.bill.com/product/accounts-payable"
+      }
+    ],
+    "workflowSummary": "BILL captures each vendor invoice with OCR (claimed 99% field accuracy), auto-codes multi-line bills, runs 2- and 3-way matching against purchase orders and receipts, routes the bill through the firm's approval rules, and schedules payment by ACH, card, check, or wire once approved.",
+    "samplePrompt": "Upload this batch of vendor invoices to BILL, have it auto-code the line items, and route anything over $500 to the owner for approval before paying.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for small business owners as well as bookkeepers",
+    "trustScore": 5,
+    "pricingNote": "Paid plans; exact pricing not public in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.bill.com/product/accounts-payable",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-5e70ea59f6",
+    "slug": "how-do-i-collect-everything-a-new-client-needs-to-send-me",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting and bookkeeping firm admin staff",
+    "title": "How do I collect everything a new client needs to send me without a dozen back-and-forth emails?",
+    "intentLabels": [
+      "client onboarding",
+      "document collection",
+      "client portal",
+      "tax document checklist"
+    ],
+    "tools": [
+      {
+        "name": "SmartVault",
+        "url": "https://www.smartvault.com/solutions/workflows/client-onboarding/"
+      }
+    ],
+    "workflowSummary": "SmartVault gives each new client a branded portal with a visible checklist of required documents (prior-year returns, bank statements, payroll records). Its AI-powered document requests ask follow-up questions when something's missing, and clients can upload files and e-sign directly, with automatic reminders for anything outstanding.",
+    "samplePrompt": "Set up a SmartVault onboarding request for this new client covering their prior-year return, bank statements, and payroll records, and send automatic reminders until everything's uploaded.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for clients with no accounting background to self-serve",
+    "trustScore": 4,
+    "pricingNote": "Paid, quote-based pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.smartvault.com/solutions/workflows/client-onboarding/",
+    "sourceType": "Product page",
+    "freshness": "September 2025",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-429c0a7f3b",
+    "slug": "is-there-a-way-to-run-payroll-without-spending-an-afternoon-on",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers running payroll for small business clients",
+    "title": "Is there a way to run payroll without spending an afternoon on it every pay period?",
+    "intentLabels": [
+      "payroll automation",
+      "AI payroll assistant",
+      "automated payroll processing"
+    ],
+    "tools": [
+      {
+        "name": "Gusto (Gus AI assistant / Cofounder)",
+        "url": "https://itirupati.com/gusto/"
+      }
+    ],
+    "workflowSummary": "The bookkeeper reviews hours and any pay adjustments, then Gusto calculates tax withholdings, processes direct deposit, and files the required payroll tax forms automatically. Gus, Gusto's AI assistant, answers payroll and HR questions on demand, and Cofounder can run payroll and pull reports with the owner's approval.",
+    "samplePrompt": "Ask Gus to confirm this week's timesheets are approved, then run payroll and text me a summary of the total payroll cost.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for small business owners with minimal payroll experience",
+    "trustScore": 5,
+    "pricingNote": "Simple plan from $49/month + $6/person - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://itirupati.com/gusto/",
+    "sourceType": "Blog/Guide",
+    "freshness": "~3 days ago (Sept 2026)",
+    "accessNotes": "Publicly accessible product summary page",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-176e403ce0",
+    "slug": "how-do-i-make-sure-my-client-s-sales-tax-is-calculated-and",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants handling multi-state sales tax clients",
+    "title": "How do I make sure my client's sales tax is calculated and filed correctly in every state they sell in?",
+    "intentLabels": [
+      "sales tax automation",
+      "VAT compliance",
+      "multi-state tax filing",
+      "nexus tracking"
+    ],
+    "tools": [
+      {
+        "name": "Avalara (AvaTax)",
+        "url": "https://www.avalara.com/us/en/products/small-business.html"
+      }
+    ],
+    "workflowSummary": "Avalara connects to the client's POS, ecommerce, or accounting platform and calculates real-time sales tax rates across 12,000+ US jurisdictions. It prepares signature-ready returns for filing and can digitize and track exemption certificates so nothing expires unnoticed.",
+    "samplePrompt": "Connect Avalara to my client's Shopify and QuickBooks accounts, calculate this quarter's sales tax liability by state, and prepare the returns for my review before filing.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once a client sells in more than one state",
+    "trustScore": 4,
+    "pricingNote": "Quote-based, varies by transaction volume and number of states - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.avalara.com/us/en/products/small-business.html",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-e77a59451e",
+    "slug": "how-do-i-manage-employee-expense-reports-without-chasing-people",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants managing client employee spend",
+    "title": "How do I manage employee expense reports without chasing people for receipts every month?",
+    "intentLabels": [
+      "expense report automation",
+      "employee spend management",
+      "receipt matching"
+    ],
+    "tools": [
+      {
+        "name": "Ramp",
+        "url": "https://ramp.com/blog/best-expense-management-software"
+      }
+    ],
+    "workflowSummary": "Employees submit receipts via SMS, the mobile app, or email forwarding. Ramp automatically matches receipts to card transactions, codes and syncs them to the client's accounting software, and its AI flags out-of-policy spend and things like duplicate subscriptions for review.",
+    "samplePrompt": "Show me this month's out-of-policy expenses in Ramp and draft a short note to each employee asking for the missing receipt.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for non-finance employees to submit expenses easily",
+    "trustScore": 4,
+    "pricingNote": "Free core plan; Ramp Plus adds features at $15/user/month - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://ramp.com/blog/best-expense-management-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "~1 month ago (Aug 2026)",
+    "accessNotes": "Publicly accessible company blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-8301585d1f",
+    "slug": "how-do-i-catch-a-duplicate-or-suspicious-vendor-invoice-before",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants processing high volumes of vendor invoices",
+    "title": "How do I catch a duplicate or suspicious vendor invoice before it accidentally gets paid?",
+    "intentLabels": [
+      "AP fraud detection",
+      "invoice anomaly detection",
+      "duplicate payment prevention"
+    ],
+    "tools": [
+      {
+        "name": "Ottimate",
+        "url": "https://ottimate.com/"
+      }
+    ],
+    "workflowSummary": "Ottimate scans invoices in any format, including handwritten ones, and matches them against purchase orders and receipts to catch cost discrepancies before payment. It also analyzes ongoing spending patterns to flag outliers, helping catch duplicate or suspicious invoices before they're paid.",
+    "samplePrompt": "Run this month's vendor invoices through Ottimate and flag any that don't match the original purchase order amount before they go to payment.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful for firms already processing a meaningful volume of vendor bills",
+    "trustScore": 4,
+    "pricingNote": "Quote-based pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ottimate.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-1246f205a0",
+    "slug": "my-new-client-just-handed-me-six-months-of-bank-statement-pdfs",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers doing catch-up or cleanup work for new clients",
+    "title": "My new client just handed me six months of bank statement PDFs - how do I turn that into clean, categorized data fast?",
+    "intentLabels": [
+      "bank statement conversion",
+      "statement categorization",
+      "bookkeeping cleanup",
+      "catch-up bookkeeping"
+    ],
+    "tools": [
+      {
+        "name": "ReceiptsAI (Bank Statement Categorizer)",
+        "url": "https://receiptsai.com/tools/bank-statement-categorizer"
+      }
+    ],
+    "workflowSummary": "Upload PDF, scanned, or screenshotted bank statements from any major bank. The AI applies categories (expense, income, transfer, fee, subscription), lets the bookkeeper create merchant rules to match the client's chart of accounts, and exports the result as bookkeeping-ready data.",
+    "samplePrompt": "Upload these six months of client bank statement PDFs to ReceiptsAI, categorize the transactions, and export a spreadsheet I can drop into the cleanup workpaper.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built as a simple upload-and-review tool",
+    "trustScore": 3,
+    "pricingNote": "Not specified in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://receiptsai.com/tools/bank-statement-categorizer",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-42b6f077a3",
+    "slug": "how-do-i-get-one-place-that-shows-every-deadline-across-all-my",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Firm owners and managers juggling many client deadlines",
+    "title": "How do I get one place that shows every deadline across all my clients and who's falling behind, instead of tracking it in my head?",
+    "intentLabels": [
+      "practice management",
+      "workload visibility",
+      "team task tracking",
+      "accounting workflow software"
+    ],
+    "tools": [
+      {
+        "name": "Karbon",
+        "url": "https://www.layer3labs.io/comparisons/best-accounting-practice-management-software"
+      }
+    ],
+    "workflowSummary": "Karbon centralizes client work, email, and internal team communication in one hub. Every task is tied to a client, a deadline, and an owner, so a manager can see at a glance what's on track, what's overdue, and who has too much on their plate.",
+    "samplePrompt": "Show me every task across my firm that's due this week, grouped by staff member, and flag anything already overdue.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once a firm has several staff and a real caseload to manage",
+    "trustScore": 4,
+    "pricingNote": "$59-$89/user/month - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.layer3labs.io/comparisons/best-accounting-practice-management-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "July 16, 2026",
+    "accessNotes": "Publicly accessible comparison article",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-14cbbed297",
+    "slug": "how-do-i-track-staff-time-and-bill-clients-without-juggling-a",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and small firm owners billing clients for their time",
+    "title": "How do I track staff time and bill clients without juggling a separate spreadsheet?",
+    "intentLabels": [
+      "time tracking",
+      "client billing",
+      "practice management",
+      "invoicing for accounting firms"
+    ],
+    "tools": [
+      {
+        "name": "Financial Cents",
+        "url": "https://financial-cents.com/"
+      }
+    ],
+    "workflowSummary": "Financial Cents combines workflow templates, built-in time tracking, and billing in one dashboard, so a task, the hours logged against it, and the resulting client invoice all live in the same place instead of three different tools.",
+    "samplePrompt": "Pull this month's logged hours by client from Financial Cents and generate draft invoices for anyone over their retainer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built to be adopted quickly by small teams with no dedicated ops staff",
+    "trustScore": 4,
+    "pricingNote": "$19-$69/user/month - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://financial-cents.com/",
+    "sourceType": "Product page",
+    "freshness": "April 25, 2025",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-afe7addfe5",
+    "slug": "how-do-i-stop-rewriting-engagement-letters-from-scratch-and",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting and bookkeeping firm owners onboarding or renewing clients",
+    "title": "How do I stop rewriting engagement letters from scratch and chasing signatures every renewal?",
+    "intentLabels": [
+      "engagement letters",
+      "proposal automation",
+      "e-signature",
+      "client agreements"
+    ],
+    "tools": [
+      {
+        "name": "Ignition",
+        "url": "https://agiled.app/blog/best-contract-software-for-accountants"
+      }
+    ],
+    "workflowSummary": "Ignition generates a branded proposal with the engagement letter terms built in, collects payment details at the same time the client signs, and can bulk-renew agreements with updated pricing across the client base each year instead of redoing each one by hand.",
+    "samplePrompt": "Set up a bulk renewal in Ignition for all my monthly bookkeeping clients with a 5% price increase, and send each one out for e-signature.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided proposal templates make this approachable for a solo bookkeeper or small firm",
+    "trustScore": 4,
+    "pricingNote": "From ~$39/month - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-contract-software-for-accountants",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 13, 2026",
+    "accessNotes": "Publicly accessible blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-5cb5ea9c77",
+    "slug": "how-do-i-file-1099s-for-all-my-clients-contractors-at-year-end",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants filing contractor forms for clients",
+    "title": "How do I file 1099s for all my clients' contractors at year-end without doing it form by form?",
+    "intentLabels": [
+      "1099 filing",
+      "contractor tax forms",
+      "year-end filing automation",
+      "TIN matching"
+    ],
+    "tools": [
+      {
+        "name": "Tax1099",
+        "url": "https://www.tax1099.com/"
+      }
+    ],
+    "workflowSummary": "Tax1099 pulls vendor and payment data in bulk via CSV, Excel, or direct integration, automatically checks each TIN and name against IRS records to catch mismatches before filing, then e-files with the IRS and states and delivers recipient copies electronically.",
+    "samplePrompt": "Import this client's vendor payment list into Tax1099, run TIN matching on all of them, and e-file the 1099-NECs once I approve the batch.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for firms filing on behalf of many clients at once",
+    "trustScore": 4,
+    "pricingNote": "Pay-per-use, from about $0.68-$3.10 per form depending on volume - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tax1099.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-66a47d6aea",
+    "slug": "how-do-i-manage-the-list-of-documents-i-need-from-a-client-for",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting firm staff preparing for a client audit or review engagement",
+    "title": "How do I manage the list of documents I need from a client for an audit, and keep the workpapers organized as they come in?",
+    "intentLabels": [
+      "audit request list",
+      "PBC list",
+      "workpaper automation",
+      "client document requests for audits"
+    ],
+    "tools": [
+      {
+        "name": "Suralink",
+        "url": "https://softwarefinder.com/accounting-software/suralink"
+      }
+    ],
+    "workflowSummary": "Suralink turns a spreadsheet-based document request list into a live, trackable checklist the client uploads directly to. Every upload, comment, and status change is logged with a full audit trail, and approved files link straight into Excel-based workpapers through the platform's add-in.",
+    "samplePrompt": "Build a PBC request list in Suralink from last year's audit template, send it to this client, and notify me the moment every item is uploaded.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "designed for firms already running structured audit or review engagements",
+    "trustScore": 4,
+    "pricingNote": "Paid; exact pricing not public in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://softwarefinder.com/accounting-software/suralink",
+    "sourceType": "Directory / review page",
+    "freshness": "July 30, 2026",
+    "accessNotes": "Publicly listed software directory profile",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-c7aff7f427",
+    "slug": "how-do-i-do-the-books-for-a-nonprofit-or-church-client-that",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers serving nonprofit and church clients",
+    "title": "How do I do the books for a nonprofit or church client that needs to track restricted and unrestricted funds separately?",
+    "intentLabels": [
+      "fund accounting",
+      "nonprofit bookkeeping",
+      "restricted funds",
+      "church accounting"
+    ],
+    "tools": [
+      {
+        "name": "Aplos",
+        "url": "https://www.getalignmint.org/blog/aplos-accounting-software"
+      }
+    ],
+    "workflowSummary": "Aplos is built around fund accounting rather than a single chart of accounts, so every transaction is tied to the correct fund from the start. It generates fund-specific reports like an Income Statement by Fund, keeps the books FASB-compliant, and can prepare Form 990-N/990-EZ.",
+    "samplePrompt": "Set up a new restricted fund in Aplos for this grant, record the incoming donation against it, and show me an Income Statement by Fund for the quarter.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to be usable by non-accountant volunteer treasurers as well as bookkeepers",
+    "trustScore": 4,
+    "pricingNote": "Tiered monthly plans (Lite/Core/Advanced); promotional first-month pricing shown separately - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getalignmint.org/blog/aplos-accounting-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 24, 2026",
+    "accessNotes": "Publicly accessible review article",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-0eda4d5df8",
+    "slug": "how-do-i-do-job-costing-for-a-construction-or-trade-client-so",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers serving construction and trade contractor clients",
+    "title": "How do I do job costing for a construction or trade client so they actually know which jobs made money?",
+    "intentLabels": [
+      "job costing",
+      "construction bookkeeping",
+      "trade contractor accounting",
+      "budget vs actual by project"
+    ],
+    "tools": [
+      {
+        "name": "Knowify",
+        "url": "https://www.redhammer.io/blog/best-construction-accounting-software-for-contractors"
+      }
+    ],
+    "workflowSummary": "Knowify captures material, equipment, subcontractor, and labor costs at the project and phase level, syncing two-way with QuickBooks Online so the bookkeeper isn't double-entering data. It compares actual costs to the original budget so the client can see which phases are eating into profit before the job is finished.",
+    "samplePrompt": "Set up this client's new remodel job in Knowify with the budget by phase, and let me know as soon as actual costs pass 90% of any phase's budget.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once the bookkeeper is already running the client's books through QuickBooks Online",
+    "trustScore": 4,
+    "pricingNote": "From $99/month - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.redhammer.io/blog/best-construction-accounting-software-for-contractors",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 5, 2026",
+    "accessNotes": "Publicly accessible blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-bcfb994d25",
+    "slug": "my-client-wants-to-switch-from-quickbooks-to-xero-how-do-i",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers switching a client's books to a new accounting platform",
+    "title": "My client wants to switch from QuickBooks to Xero - how do I migrate their books without errors slipping through?",
+    "intentLabels": [
+      "QuickBooks to Xero migration",
+      "accounting data conversion",
+      "software switch for bookkeeping clients"
+    ],
+    "tools": [
+      {
+        "name": "WOW BookSwitch",
+        "url": "https://wowbookswitch.com/blog/what-a-quickbooks-to-xero-migration-actually-covers-and-what-it-doesnt"
+      }
+    ],
+    "workflowSummary": "WOW BookSwitch extracts the client's historical QuickBooks data, converts it to Xero, and runs an AI validation pass that compares the converted trial balance, balance sheet, and profit & loss against the original source year by year, flagging discrepancies for a trained accountant to correct before the file is delivered.",
+    "samplePrompt": "Migrate this client's QuickBooks Desktop file to Xero with WOW BookSwitch, including the last 3 fiscal years, and send me the validation report before it goes live.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the underlying migration logic is complex, though the process itself is handled for the bookkeeper",
+    "trustScore": 4,
+    "pricingNote": "$399 per conversion (current fiscal year + 3 prior years); $100 per additional year - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://wowbookswitch.com/blog/what-a-quickbooks-to-xero-migration-actually-covers-and-what-it-doesnt",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 15, 2026",
+    "accessNotes": "Publicly accessible company blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-66186280ee",
+    "slug": "how-do-i-give-tax-clients-one-secure-place-to-message-me-and",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Tax-focused accounting and bookkeeping firms communicating with clients",
+    "title": "How do I give tax clients one secure place to message me and check their return status, instead of a messy email inbox?",
+    "intentLabels": [
+      "secure client portal",
+      "client communication",
+      "tax practice management",
+      "document exchange"
+    ],
+    "tools": [
+      {
+        "name": "TaxDome",
+        "url": "https://agiled.app/blog/best-contract-software-for-accountants"
+      }
+    ],
+    "workflowSummary": "TaxDome gives each client a branded portal for secure messaging, document upload and e-signature, and visibility into where their return or engagement stands, replacing scattered email threads with one trackable, secure channel per client.",
+    "samplePrompt": "Send this client a secure message through TaxDome asking for their missing W-2, and show me their document upload status.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for clients with no technical background to log in and use",
+    "trustScore": 4,
+    "pricingNote": "~$58-66/user/month (annual billing) - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-contract-software-for-accountants",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 13, 2026",
+    "accessNotes": "Publicly accessible blog post",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-ae543825ee",
+    "slug": "how-do-i-keep-every-client-s-tax-filing-deadline-on-one",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting firm staff tracking compliance obligations across a full client list",
+    "title": "How do I keep every client's tax filing deadline on one compliance calendar so nothing slips through the cracks?",
+    "intentLabels": [
+      "compliance deadline tracking",
+      "tax deadline calendar",
+      "filing due dates",
+      "practice management for tax firms"
+    ],
+    "tools": [
+      {
+        "name": "Canopy",
+        "url": "https://acculinkcpa.com/blog/accounting-practice-management-software"
+      }
+    ],
+    "workflowSummary": "Canopy's practice management workflow tracks tax-specific deadlines and engagement stages across the whole client list, with built-in AI assistance, so a firm can see upcoming due dates firm-wide rather than checking each client file individually.",
+    "samplePrompt": "Show me every client in Canopy with a filing deadline in the next 14 days who hasn't submitted their documents yet.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful for firms with an existing tax-heavy client base",
+    "trustScore": 4,
+    "pricingNote": "From ~$45/user/month, modular pricing - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://acculinkcpa.com/blog/accounting-practice-management-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "August 8, 2026",
+    "accessNotes": "Publicly accessible comparison article",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-d8c47a6755",
+    "slug": "does-my-client-still-need-to-file-a-beneficial-ownership-boi",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Bookkeepers and accountants fielding client questions about beneficial ownership filing",
+    "title": "Does my client still need to file a beneficial ownership (BOI) report, or did that requirement change?",
+    "intentLabels": [
+      "beneficial ownership information",
+      "BOI report",
+      "Corporate Transparency Act compliance"
+    ],
+    "tools": [
+      {
+        "name": "FinCEN BOI E-Filing System",
+        "url": "https://www.fincen.gov/boi"
+      }
+    ],
+    "workflowSummary": "As of FinCEN's March 2025 interim final rule, most U.S. companies and U.S. persons are exempt from BOI reporting under the Corporate Transparency Act. The requirement now mainly applies to certain foreign entities registered to do business in the U.S., which must still file through FinCEN's official e-filing system within set deadlines after registration. There is no fee to file directly with FinCEN.",
+    "samplePrompt": "Check whether this client's entity is a domestic or foreign reporting company, and tell me whether they still have a BOI filing obligation under the current rule.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the official filing portal is free and walks the filer through each step",
+    "trustScore": 5,
+    "pricingNote": "Free to file directly with FinCEN; no cost - this is a regulatory change worth double-checking before advising any client",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.fincen.gov/boi",
+    "sourceType": "Government site",
+    "freshness": "2026 (rule change effective March 21, 2025)",
+    "accessNotes": "Official U.S. government resource, public and free to use",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-99f08553b4",
+    "slug": "how-do-i-catch-bookkeeping-errors-across-all-my-client-files",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Firms managing bookkeeping quality across many client files",
+    "title": "How do I catch bookkeeping errors across all my client files before a client notices them, instead of finding out during a review?",
+    "intentLabels": [
+      "bookkeeping quality control",
+      "error checking",
+      "data health monitoring",
+      "review automation"
+    ],
+    "tools": [
+      {
+        "name": "XBert",
+        "url": "https://www.xbert.io/ai-data-quality-automation"
+      }
+    ],
+    "workflowSummary": "XBert runs over 150 automated checks across every connected client file daily - things like unreconciled accounts, duplicate payments, and mismatched GST/VAT claims - and gives each client file a data health score so a manager can see which files need attention before the client does.",
+    "samplePrompt": "Run XBert's daily checks across all my Xero clients and show me which files have a data health score below 80% this week.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful for firms already managing a portfolio of client files day to day",
+    "trustScore": 4,
+    "pricingNote": "Paid, per-client pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.xbert.io/ai-data-quality-automation",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-3c3c19d21d",
+    "slug": "how-do-i-keep-track-of-new-leads-and-referrals-for-my-firm",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting and bookkeeping firms trying to grow their client base",
+    "title": "How do I keep track of new leads and referrals for my firm instead of losing them in my inbox?",
+    "intentLabels": [
+      "CRM for accountants",
+      "lead tracking",
+      "referral tracking",
+      "client acquisition pipeline"
+    ],
+    "tools": [
+      {
+        "name": "Freshsales",
+        "url": "https://monday.com/blog/crm-and-sales/crm-for-accountants/"
+      }
+    ],
+    "workflowSummary": "Freshsales uses its Freddy AI assistant to score and prioritize incoming leads, tracks every touchpoint with a prospect from first inquiry through onboarding, and gives partners a visual pipeline so no referral or inquiry falls through the cracks.",
+    "samplePrompt": "Show me every lead in Freshsales that came in this month from a referral, sorted by AI lead score, and draft a follow-up email for the top 3.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built with a simple interface aimed at non-technical sales users",
+    "trustScore": 3,
+    "pricingNote": "Tiered pricing, part of the Freshworks suite - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://monday.com/blog/crm-and-sales/crm-for-accountants/",
+    "sourceType": "Blog/Guide",
+    "freshness": "March 10, 2026",
+    "accessNotes": "Publicly accessible comparison article",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "accountants-bookkeepers-79bd6967fd",
+    "slug": "how-do-i-screen-seasonal-tax-season-hires-without-reading",
+    "kind": "workflow",
+    "niche": "Accountants & Bookkeepers",
+    "sector": "Accountants & Bookkeepers",
+    "persona": "Accounting firm owners staffing up for tax season",
+    "title": "How do I screen seasonal tax season hires without reading through hundreds of resumes myself?",
+    "intentLabels": [
+      "seasonal staffing",
+      "resume screening",
+      "busy season hiring",
+      "recruiting automation for accounting firms"
+    ],
+    "tools": [
+      {
+        "name": "Brothers Automate (AI recruiting automation)",
+        "url": "https://brothersautomate.com/for/accounting"
+      }
+    ],
+    "workflowSummary": "The firm posts a role once, and an AI system screens every application, scoring candidates on relevant experience, availability, and software proficiency, then ranks them so the owner only interviews the top handful instead of reading every resume.",
+    "samplePrompt": "Post this seasonal tax preparer opening and have the AI screen and rank applicants by QuickBooks and Lacerte experience, availability through April, and years of tax prep experience.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a custom-built automation rather than an off-the-shelf signup product",
+    "trustScore": 3,
+    "pricingNote": "Custom-built engagement; pricing not public - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://brothersautomate.com/for/accounting",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page, standard ToS apply",
+    "batch": "Accountants Bookkeepers AI Workflows Batch1 Session2",
+    "status": "active"
+  }
+]

@@ -1,0 +1,3030 @@
+[
+  {
+    "id": "sales-teams-66a6b45b10",
+    "slug": "i-want-to-automatically-log-my-sales-calls-and-notes-into-my-crm",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Manager",
+    "title": "I want to automatically log my sales calls and notes into my CRM",
+    "intentLabels": [
+      "auto log calls to CRM",
+      "call summaries",
+      "conversation intelligence",
+      "stop taking manual notes"
+    ],
+    "tools": [
+      {
+        "name": "Gong",
+        "url": "https://www.cirrusinsight.com/blog/ai-sales-calls"
+      },
+      {
+        "name": "Chorus by ZoomInfo"
+      },
+      {
+        "name": "Cirrus Insight"
+      }
+    ],
+    "workflowSummary": "Record or connect your call platform (Zoom/Teams/phone) to a conversation-intelligence tool. It transcribes the call, writes a plain-language summary with action items, and pushes that summary straight into the matching CRM record (Salesforce/HubSpot) so reps stop typing call notes by hand.",
+    "samplePrompt": "I just finished a discovery call with [Prospect Company]. Summarize the key pain points, budget/timeline signals, objections raised, and next steps in under 150 words, formatted for a CRM opportunity note.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI logging itself is automatic, but connecting the tool to your specific CRM fields usually needs a manager or admin to set up once.",
+    "trustScore": 4,
+    "pricingNote": "Team/enterprise pricing, typically quote-based (~$100+/user/month); Cirrus Insight and some entry tools have lower per-user plans — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cirrusinsight.com/blog/ai-sales-calls",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public blog article, no login needed to read; tool itself requires a paid account and CRM admin access to connect",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-1509b2b1b2",
+    "slug": "i-want-ai-to-help-me-write-personalized-cold-sales-emails-that",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Account Executive",
+    "title": "I want AI to help me write personalized cold sales emails that don't sound robotic",
+    "intentLabels": [
+      "personalized cold email",
+      "email copywriting",
+      "outreach email generator",
+      "AI email coach"
+    ],
+    "tools": [
+      {
+        "name": "Lavender",
+        "url": "https://www.emailvendorselection.com/best-ai-email-writer/"
+      },
+      {
+        "name": "Clay",
+        "catalogueSlug": "clay"
+      },
+      {
+        "name": "Copy.ai",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Paste a prospect's LinkedIn URL or a few notes about them into the tool. It researches the person, drafts a short, human-sounding cold email, and scores the draft (tone, length, personalization) with suggestions to improve reply rates before you hit send.",
+    "samplePrompt": "Write a 3-sentence cold email to a [Job Title] at a [Industry] company. Reference that they recently [trigger event, e.g. 'posted about hiring for a new sales team']. Keep it under 75 words, no jargon, end with a soft call-to-action.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Lavender's Chrome/Gmail extension gives instant feedback right in your inbox with no setup beyond installing it.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans commonly start around $29/month per user — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.emailvendorselection.com/best-ai-email-writer/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 weeks ago (article accessed Sept 2026)",
+    "accessNotes": "Public blog article; free to read, tool signup requires an email/work account",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-5d96692e06",
+    "slug": "i-want-to-send-personalized-linkedin-connection-and-outreach",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Business Development Rep",
+    "title": "I want to send personalized LinkedIn connection and outreach messages at scale",
+    "intentLabels": [
+      "LinkedIn outreach automation",
+      "personalized connection requests",
+      "LinkedIn prospecting AI",
+      "InMail personalization"
+    ],
+    "tools": [
+      {
+        "name": "Waalaxy",
+        "url": "https://www.dux-soup.com/blog/the-best-linkedin-automation-tools-tried-and-tested"
+      },
+      {
+        "name": "Dux-Soup"
+      },
+      {
+        "name": "Expandi"
+      }
+    ],
+    "workflowSummary": "Build a list of prospects (by role/industry/company size) inside the tool or Sales Navigator, then let the AI draft a unique opening line per prospect using their profile and recent posts. The tool sends connection requests and follow-ups on a schedule so it looks like natural, one-at-a-time outreach.",
+    "samplePrompt": "Here is a LinkedIn prospect's headline and last 2 posts: [paste]. Write a 2-sentence, non-salesy connection note referencing something specific from their posts, and a short follow-up message to send if they accept.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sending messages is simple, but new users need to learn LinkedIn's daily-limit and account-safety rules to avoid getting flagged.",
+    "trustScore": 3,
+    "pricingNote": "Entry plans often start around $15-$50/month per seat depending on volume/features — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.dux-soup.com/blog/the-best-linkedin-automation-tools-tried-and-tested",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-08-04",
+    "accessNotes": "Public blog article; using any LinkedIn automation tool must comply with LinkedIn's terms of service — flag this for legal/compliance review before rollout",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-b0fa951c30",
+    "slug": "i-want-to-practice-sales-calls-with-an-ai-before-i-get-on-the",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "New Sales Rep / Sales Manager (training)",
+    "title": "I want to practice sales calls with an AI before I get on the phone with a real prospect",
+    "intentLabels": [
+      "sales roleplay AI",
+      "call practice simulator",
+      "objection handling practice",
+      "AI buyer persona"
+    ],
+    "tools": [
+      {
+        "name": "Hyperbound",
+        "url": "https://aircall.io/blog/sales-coaching-ai-tools/"
+      },
+      {
+        "name": "Second Nature"
+      }
+    ],
+    "workflowSummary": "Pick or build a buyer persona (job title, industry, personality, common objections). The AI 'answers the phone' as that buyer, has a realistic conversation with the rep, then grades the call afterward on talk ratio, objection handling, and messaging so reps can practice before live calls.",
+    "samplePrompt": "Act as a skeptical [Job Title] at a mid-size [Industry] company who is happy with their current vendor. I'm a rep cold-calling to introduce [Product]. Play the buyer role, raise at least 2 realistic objections, and after the call give me feedback on how I handled them.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most tools let a rep start a practice call in a browser within minutes, no admin setup required to try it.",
+    "trustScore": 4,
+    "pricingNote": "Often sold per-seat to sales teams; free trials common, paid plans typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aircall.io/blog/sales-coaching-ai-tools/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-26",
+    "accessNotes": "Public blog article; tool access requires a company/team account",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-09fe5b2575",
+    "slug": "i-want-real-time-coaching-and-talking-points-while-i-m-live-on",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive",
+    "title": "I want real-time coaching and talking points while I'm live on a sales call",
+    "intentLabels": [
+      "live call coaching",
+      "real-time sales assistant",
+      "in-call prompts",
+      "whisper coaching"
+    ],
+    "tools": [
+      {
+        "name": "Cirrus Insight (Live Meeting Coach)",
+        "url": "https://www.cirrusinsight.com/blog/ai-sales-calls"
+      },
+      {
+        "name": "Gong"
+      }
+    ],
+    "workflowSummary": "The tool listens in on a live call (via a bot or softphone integration) and privately surfaces suggested questions, objection-handling talk tracks, and competitor battlecard snippets to the rep's screen in real time, without the prospect seeing anything.",
+    "samplePrompt": "During this call the prospect just said: '[objection, e.g. we're already using a competitor]'. Give me a short, non-pushy response I can say out loud right now, plus one clarifying question to ask next.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful once connected to your call platform, but real-time coaching setups usually need IT/admin configuration first.",
+    "trustScore": 4,
+    "pricingNote": "Bundled into mid-market/enterprise conversation-intelligence plans, typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cirrusinsight.com/blog/ai-sales-calls",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public blog article; live coaching features require a paid seat and call-platform integration",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-aaa7052184",
+    "slug": "i-want-to-generate-a-sales-proposal-or-quote-for-a-client",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Ops",
+    "title": "I want to generate a sales proposal or quote for a client automatically",
+    "intentLabels": [
+      "AI proposal generator",
+      "automated quoting",
+      "CPQ",
+      "sales quote automation"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://heyiris.ai/blog/automated-proposal-creation-tools"
+      },
+      {
+        "name": "Proposify"
+      }
+    ],
+    "workflowSummary": "Pick a proposal template, and the tool pulls in the prospect's name, deal details, and pricing from your CRM to auto-fill a branded proposal or quote. Reps review, adjust pricing/line items if needed, and send it out for e-signature — no manual formatting in Word or Excel.",
+    "samplePrompt": "Using our standard proposal template, draft the intro and 'why us' section for a proposal to [Company Name], a [Industry] company with [pain point]. Keep it to 3 short paragraphs and reference our [product/plan] pricing tier.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most proposal tools have drag-and-drop template editors designed for non-technical sales reps.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans commonly start around $19-$49/month per user for basic tiers; CPQ/enterprise tiers cost more — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://heyiris.ai/blog/automated-proposal-creation-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; e-signature and payment features require a paid subscription",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-372e5f435e",
+    "slug": "i-want-an-ai-powered-forecast-of-which-deals-are-likely-to",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / VP of Sales",
+    "title": "I want an AI-powered forecast of which deals are likely to close this quarter",
+    "intentLabels": [
+      "sales forecasting AI",
+      "pipeline prediction",
+      "deal probability scoring",
+      "revenue forecast"
+    ],
+    "tools": [
+      {
+        "name": "Clari",
+        "url": "https://getfairview.com/blog/best-ai-tools-sales-forecasting"
+      },
+      {
+        "name": "Salesforce Einstein Forecasting"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your CRM, email, and calendar. It scores every open deal on hundreds of signals (stage velocity, engagement, rep commit history) to predict a close probability, rolls those predictions up by rep/team, and flags where the pipeline coverage is thin versus the quota target.",
+    "samplePrompt": "Given these open deals with their stage, days in stage, and last activity date [paste table], which ones look highest-risk of slipping this quarter, and what one question should I ask each rep about them in our forecast call?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "forecasting tools are built for sales managers/RevOps, and setup (defining stages, connecting CRM data) typically needs admin involvement.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise/quote-based pricing for most dedicated forecasting platforms; Salesforce Einstein is bundled into higher Salesforce editions — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getfairview.com/blog/best-ai-tools-sales-forecasting",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-31",
+    "accessNotes": "Public blog article; forecasting tools require an existing CRM with historical deal data",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-27f1a2444b",
+    "slug": "i-want-to-get-flagged-automatically-when-a-deal-looks-at-risk",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager",
+    "title": "I want to get flagged automatically when a deal looks at risk of falling through",
+    "intentLabels": [
+      "deal risk alerts",
+      "at-risk pipeline flagging",
+      "sentiment drop detection",
+      "stalled deal alerts"
+    ],
+    "tools": [
+      {
+        "name": "Gong",
+        "url": "https://pipeline.zoominfo.com/sales/ai-note-taking-call-analysis-sales"
+      },
+      {
+        "name": "Chorus by ZoomInfo"
+      }
+    ],
+    "workflowSummary": "The tool continuously watches each deal's call sentiment, email response times, and stakeholder engagement. When it detects warning signs (sentiment drop, key contact has gone quiet, a competitor is mentioned), it automatically flags the deal and notifies the rep or manager so they can intervene before it's too late.",
+    "samplePrompt": "Here's the recent activity history for a deal: [paste emails/call dates/notes]. Based on this, does the deal show any red flags (silence, sentiment change, new decision-maker, competitor mention)? List them and suggest one action to re-engage.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the alerts themselves are automatic, but reps need a short walkthrough to understand what triggers a 'risk' flag and how to act on it.",
+    "trustScore": 4,
+    "pricingNote": "Bundled into conversation-intelligence platform pricing, typically quote-based per seat — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/ai-note-taking-call-analysis-sales",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-14",
+    "accessNotes": "Public blog article; deal-risk features require the paid conversation-intelligence platform connected to your CRM",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-3c14b0e2db",
+    "slug": "i-want-to-build-and-keep-competitor-battlecards-up-to-date-for",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Enablement / Product Marketing / Account Executive",
+    "title": "I want to build and keep competitor battlecards up to date for my sales team",
+    "intentLabels": [
+      "competitor battlecards",
+      "competitive intelligence",
+      "sales enablement content",
+      "objection handling by competitor"
+    ],
+    "tools": [
+      {
+        "name": "Klue",
+        "url": "https://www.autobound.ai/blog/ai-competitor-analysis-tools-for-sales-teams"
+      },
+      {
+        "name": "Crayon"
+      }
+    ],
+    "workflowSummary": "The tool monitors competitors' websites, pricing pages, reviews, and job postings automatically, then uses AI to draft an updated 'battlecard' (positioning, strengths/weaknesses, objection responses) for each one. Reps can pull up the right battlecard section inside their CRM or call tool the moment a competitor is mentioned on a call.",
+    "samplePrompt": "Draft a one-page battlecard for competing against [Competitor Name] in [Industry]. Include: their likely pitch to prospects, 2 weaknesses of theirs we can highlight, and a short talk track for when a prospect says 'we're already talking to [Competitor Name]'.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a finished battlecard is simple for any rep, but setting up automated competitor monitoring is usually owned by a product marketing or enablement lead.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise-focused pricing, commonly cited around $15,000-$16,000+/year — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.autobound.ai/blog/ai-competitor-analysis-tools-for-sales-teams",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-02-20",
+    "accessNotes": "Public blog article; dedicated battlecard platforms are priced for team/enterprise use, not individual self-serve signup",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ec75927d30",
+    "slug": "i-want-prospects-to-be-able-to-book-a-demo-on-my-calendar",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Account Executive",
+    "title": "I want prospects to be able to book a demo on my calendar without a back-and-forth email chain",
+    "intentLabels": [
+      "AI meeting scheduler",
+      "demo booking link",
+      "calendar automation",
+      "round-robin scheduling"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://viasocket.com/discovery/blog/46c4q5/scheduling-software/7-best-ai-scheduling-tools-to-end-ping-pong"
+      },
+      {
+        "name": "Reclaim"
+      }
+    ],
+    "workflowSummary": "Share a booking link (in email signatures, outreach emails, or your website). The tool shows only your real open slots, handles time-zone conversion automatically, sends reminders to cut no-shows, and — for teams — can route the booking to the right rep by territory or round-robin.",
+    "samplePrompt": "Write a 2-sentence line I can add to the end of a cold email inviting the prospect to grab 15 minutes on my calendar, including a placeholder for my scheduling link, that doesn't sound pushy.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "creating a booking link and sharing it takes a few minutes with no technical setup for an individual rep.",
+    "trustScore": 5,
+    "pricingNote": "Free plan available for individuals; team plans with routing typically start around $10-$16/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://viasocket.com/discovery/blog/46c4q5/scheduling-software/7-best-ai-scheduling-tools-to-end-ping-pong",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-12",
+    "accessNotes": "Public blog article; free to read and free individual tier available without a company account",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-34b953f164",
+    "slug": "i-want-to-know-which-of-my-leads-to-call-first-instead-of",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Sales Manager",
+    "title": "I want to know which of my leads to call first instead of guessing",
+    "intentLabels": [
+      "lead scoring",
+      "lead prioritization",
+      "which leads to call first",
+      "predictive lead scoring"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot (predictive lead scoring)",
+        "url": "https://www.flowhunt.io/blog/lead-scoring-tools/"
+      },
+      {
+        "name": "MadKudu"
+      }
+    ],
+    "workflowSummary": "The tool looks at firmographic fit (company size, industry) and behavior (website visits, email opens, form fills) plus, in mature setups, outcomes from past closed-won/closed-lost deals. It ranks every lead in your CRM by likelihood to convert so the rep's call list is sorted highest-priority first, instead of oldest-first.",
+    "samplePrompt": "Here's a list of leads with company size, industry, and recent activity (site visits, email opens, form filled) [paste]. Rank these from most to least likely to convert, and explain the top reason for each of the top 3.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "viewing a lead's score is simple, but building or tuning the scoring model itself is usually a marketing ops/RevOps task.",
+    "trustScore": 4,
+    "pricingNote": "Native HubSpot predictive scoring requires Professional/Enterprise tier; standalone tools often start free or low-cost for small lists — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.flowhunt.io/blog/lead-scoring-tools/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-18",
+    "accessNotes": "Public blog article; predictive scoring features typically require a paid CRM tier with enough historical deal data to train on",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-4ba43c9328",
+    "slug": "i-want-to-quickly-research-a-prospect-s-company-before-i-call",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / SDR",
+    "title": "I want to quickly research a prospect's company before I call or email them",
+    "intentLabels": [
+      "prospect research",
+      "account research AI",
+      "company research before sales call",
+      "pre-call intelligence"
+    ],
+    "tools": [
+      {
+        "name": "Clay",
+        "url": "https://spotio.com/blog/ai-sales-tools/",
+        "catalogueSlug": "clay"
+      },
+      {
+        "name": "ZoomInfo"
+      }
+    ],
+    "workflowSummary": "Enter a company name or domain. The tool pulls together firmographics, recent news, funding/hiring signals, tech stack, and key contacts into one summary, so a rep can walk into a call already knowing the prospect's size, recent events, and likely priorities — instead of manually googling for 20 minutes.",
+    "samplePrompt": "Summarize [Company Name] for a first sales call: what they do, company size, any recent news or funding, and one likely business priority I could tie our product to. Keep it to 5 bullet points.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "running a quick lookup is beginner-friendly, but building automated enrichment workflows takes more setup time.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available on some tools (e.g. Clay); paid plans scale with data credits/seats — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://spotio.com/blog/ai-sales-tools/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "4 weeks ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; deeper enrichment data (direct dials, verified emails) usually requires a paid data plan",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-eb203c332e",
+    "slug": "i-want-a-sales-dashboard-that-shows-my-team-s-numbers-without",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / RevOps",
+    "title": "I want a sales dashboard that shows my team's numbers without hiring a data analyst",
+    "intentLabels": [
+      "sales dashboard builder",
+      "no-code reporting",
+      "automated sales reports",
+      "self-serve analytics"
+    ],
+    "tools": [
+      {
+        "name": "Databox",
+        "url": "https://databox.com/best-ai-tools-for-data-analysis"
+      },
+      {
+        "name": "HubSpot native reporting"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your CRM (and other sales data sources). Choose from pre-built sales dashboard templates or describe what you want in plain English, and the dashboard builds itself and refreshes automatically, so a sales manager can see pipeline, win rate, and rep activity without asking a data analyst for a custom report.",
+    "samplePrompt": "I want a weekly sales dashboard with: total pipeline value, deals closed-won this month, win rate, and top 3 reps by revenue. List these as dashboard 'widgets' with a one-line description of what data source each should pull from.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most no-code dashboard tools are built specifically so a non-technical sales manager can set one up without IT help.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available for basic use; paid plans commonly start around $59-$135/month depending on data sources — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://databox.com/best-ai-tools-for-data-analysis",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public blog article; connecting a CRM data source typically requires an admin-level login to that CRM",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-f93809b234",
+    "slug": "i-want-to-build-a-personalized-pitch-deck-for-one-specific",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive",
+    "title": "I want to build a personalized pitch deck for one specific prospect quickly",
+    "intentLabels": [
+      "personalized pitch deck",
+      "AI presentation generator",
+      "sales deck customization",
+      "prompt-to-deck"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://blog.pi.inc/blog/best-ai-presentation-tools-for-sales-teams-in-2026-8-tools-ranked-for-closing-deals-faster",
+        "catalogueSlug": "gamma"
+      },
+      {
+        "name": "Pitch"
+      },
+      {
+        "name": "Pi (Presentation Intelligence)"
+      }
+    ],
+    "workflowSummary": "Type a short prompt describing the prospect (industry, pain point, deal stage) or pull in existing deal notes. The AI generates a structured slide deck (problem, solution, proof, pricing) with design applied automatically, which the rep then lightly edits instead of building slides from scratch.",
+    "samplePrompt": "Create an outline for a 6-slide sales deck for [Prospect Company], a [Industry] company. Slide topics: their problem, cost of not solving it, our solution, proof/case study, pricing option, and a clear next step. One sentence per slide.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-to-deck tools are designed for anyone to generate a first draft in minutes with no design skill needed.",
+    "trustScore": 3,
+    "pricingNote": "Free tier common on general tools like Gamma/Pitch; sales-specific tools (e.g. Pi) are usually paid/quote-based — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://blog.pi.inc/blog/best-ai-presentation-tools-for-sales-teams-in-2026-8-tools-ranked-for-closing-deals-faster",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-03-20",
+    "accessNotes": "Public blog article; free tiers exist on general-purpose deck tools, sales-specific analytics features are usually paid",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8eb86b4b68",
+    "slug": "i-want-to-set-up-a-multi-step-outbound-sequence-across-email",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Sales Manager",
+    "title": "I want to set up a multi-step outbound sequence across email, LinkedIn, and phone calls",
+    "intentLabels": [
+      "sales sequence",
+      "cadence builder",
+      "multichannel outbound",
+      "sales engagement platform"
+    ],
+    "tools": [
+      {
+        "name": "Outreach",
+        "url": "https://thegro.ai/explore/en/list/ai-writing-tools-personalized-sales-emails"
+      },
+      {
+        "name": "Salesloft"
+      }
+    ],
+    "workflowSummary": "Build a 'cadence' of touchpoints (e.g. email, then LinkedIn view, then call, then follow-up email) spaced over several days. Once a prospect list is loaded in, the platform automates sending/reminding reps for each step and pauses or adjusts the sequence automatically if the prospect replies.",
+    "samplePrompt": "Design a 5-touch, 10-day outbound sequence for a cold [Job Title] prospect that mixes email, a LinkedIn view/connection, and one phone call. For each step give the day number, channel, and a one-line goal for that touch.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sending a single email is easy, but building a full multi-channel cadence usually benefits from a quick walkthrough from a sales ops person.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise/quote-based pricing is common for full sales engagement platforms — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://thegro.ai/explore/en/list/ai-writing-tools-personalized-sales-emails",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; full sequencing platforms require a paid team account and CRM integration",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-61c7dcdd25",
+    "slug": "i-want-to-turn-a-sales-call-recording-into-a-short-highlight",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / Account Executive",
+    "title": "I want to turn a sales call recording into a short highlight clip to share with my manager or team",
+    "intentLabels": [
+      "call highlight clips",
+      "share call moments",
+      "coaching clip library",
+      "conversation intelligence clipping"
+    ],
+    "tools": [
+      {
+        "name": "Jiminny",
+        "url": "https://www.outreach.ai/resources/blog/best-sales-call-recording-software"
+      },
+      {
+        "name": "Gong"
+      }
+    ],
+    "workflowSummary": "After a call is recorded and transcribed, the rep or manager selects the relevant moment (e.g. a strong objection response, or a tricky pricing conversation) and the tool cuts it into a short clip with the transcript attached, which can then be shared in Slack or email for coaching or deal review — without re-listening to the whole call.",
+    "samplePrompt": "Here's a call transcript [paste]. Identify the single most useful 60-90 second segment to clip for coaching purposes — either a strong moment or a mishandled objection — and explain in one sentence why it's worth sharing with the team.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "clipping a moment from an already-recorded call is typically a one-click action inside these tools.",
+    "trustScore": 3,
+    "pricingNote": "Bundled into mid-market conversation-intelligence platform pricing, typically quote-based per seat — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.outreach.ai/resources/blog/best-sales-call-recording-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-09",
+    "accessNotes": "Public blog article; clip-sharing requires the paid conversation-intelligence platform with call recording enabled",
+    "batch": "Sales Teams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-7560c87e2f",
+    "slug": "i-want-to-clean-up-duplicate-contacts-and-companies-in-our-crm",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "RevOps / Sales Operations Manager",
+    "title": "I want to clean up duplicate contacts and companies in our CRM automatically",
+    "intentLabels": [
+      "CRM deduplication",
+      "data hygiene",
+      "duplicate contact merge",
+      "fuzzy matching"
+    ],
+    "tools": [
+      {
+        "name": "DemandTools",
+        "url": "https://datamadeeazy.com/blog/best-crm-deduplication-tool/"
+      },
+      {
+        "name": "Insycle"
+      },
+      {
+        "name": "RingLead"
+      }
+    ],
+    "workflowSummary": "Point the tool at your CRM (Salesforce, HubSpot, etc.). It scans contact and company records using fuzzy matching (catching near-duplicates like 'IBM' vs 'International Business Machines'), proposes which record should be the 'master,' and merges or flags duplicates for review instead of a rep manually searching and merging one by one.",
+    "samplePrompt": "Here are two CRM company records with slightly different names and addresses [paste both]. Are these likely the same company? If so, which fields should the merged 'master' record keep, and which are conflicting and need a human decision?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "deduplication tools are admin-facing; a RevOps or Salesforce admin typically owns setup, match rules, and approval of merges.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise/Salesforce-focused tools are often quote-based; some lighter tools start lower for small databases — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://datamadeeazy.com/blog/best-crm-deduplication-tool/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-07",
+    "accessNotes": "Public blog article; merging CRM records is a destructive action and typically requires CRM admin permissions and a backup/rollback plan",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ce98aebf8b",
+    "slug": "i-want-to-generate-structured-onboarding-and-ramp-training",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Enablement Manager / Sales Manager",
+    "title": "I want to generate structured onboarding and ramp training content for new sales hires",
+    "intentLabels": [
+      "new hire onboarding",
+      "sales ramp training",
+      "learning paths",
+      "sales academy content"
+    ],
+    "tools": [
+      {
+        "name": "Mindtickle",
+        "url": "https://www.revenue.io/blog/best-ai-tools-for-ramping-new-sales-reps-faster"
+      },
+      {
+        "name": "WorkRamp"
+      },
+      {
+        "name": "Spekit"
+      }
+    ],
+    "workflowSummary": "Upload your existing playbooks, call recordings, and product docs. The platform organizes them into a structured, role-specific learning path (e.g. a separate track for BDRs vs. AEs) with modules, quizzes, and certifications, so a new hire has a guided ramp plan instead of a folder of scattered documents.",
+    "samplePrompt": "I'm building a 30-day onboarding plan for a new SDR. Organize this list of topics [paste: product basics, ICP, objection handling, tools/CRM, first call shadowing] into a week-by-week learning path with one short goal for each week.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "new reps consume the finished training easily, but building the learning paths and uploading content is an enablement/manager task.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise platforms (Mindtickle, WorkRamp) are typically quote-based; lighter tools like Spekit/Trainual often start around $20-$50/user/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.revenue.io/blog/best-ai-tools-for-ramping-new-sales-reps-faster",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-02",
+    "accessNotes": "Public blog article; full platform access requires a company/team subscription",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-17dd5446bc",
+    "slug": "i-want-to-divide-up-accounts-and-territories-fairly-across-my",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "RevOps / Sales Manager",
+    "title": "I want to divide up accounts and territories fairly across my sales reps",
+    "intentLabels": [
+      "territory planning",
+      "account mapping",
+      "territory carving",
+      "capacity planning"
+    ],
+    "tools": [
+      {
+        "name": "CaptivateIQ (Rev Planning)",
+        "url": "https://www.guideflow.com/blog/best-sales-planning-software"
+      },
+      {
+        "name": "Lative"
+      },
+      {
+        "name": "Fullcast"
+      }
+    ],
+    "workflowSummary": "Feed the tool your full account list plus data on each account's potential (size, industry, past revenue) and each rep's current capacity. It proposes a balanced territory split — an even distribution of opportunity and workload — and lets you run 'what-if' scenarios before publishing changes to the CRM.",
+    "samplePrompt": "Here are 40 accounts with revenue potential and industry [paste or describe]. I have 4 reps with equal capacity. Propose a balanced 4-way territory split so each rep gets roughly equal total potential, and explain your grouping logic.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "territory design is a strategic RevOps/sales-leadership task; reps are typically informed of the outcome, not involved in building the model.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise/quote-based pricing is typical for dedicated territory-planning platforms — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/best-sales-planning-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-16",
+    "accessNotes": "Public blog article; tools require CRM admin access and clean account data to produce a usable split",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-add544c4f0",
+    "slug": "i-want-to-automate-calculating-my-sales-team-s-commission",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Operations / Finance (Comp Admin) / Sales Manager",
+    "title": "I want to automate calculating my sales team's commission payouts",
+    "intentLabels": [
+      "commission calculation",
+      "incentive compensation",
+      "comp plan automation",
+      "payout automation"
+    ],
+    "tools": [
+      {
+        "name": "CaptivateIQ",
+        "url": "https://www.qobra.co/blog/best-ai-sales-commission-management-tools-2026"
+      },
+      {
+        "name": "QuotaPath"
+      },
+      {
+        "name": "Everstage"
+      }
+    ],
+    "workflowSummary": "Load your compensation plan rules and connect the tool to your CRM's closed-deal data. It calculates each rep's commission automatically as deals close, gives reps a real-time dashboard showing what they've earned and what's pending, and flags calculation anomalies before payroll instead of a spreadsheet built by hand each month.",
+    "samplePrompt": "Explain this commission plan rule in plain English for a new rep: '[paste rule, e.g. 8% on net-new ARR up to quota, 12% on ARR above quota, kicker for multi-year deals]'. Keep it to 4 sentences a non-finance person would understand.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reps view their own real-time earnings easily, but setting up the underlying compensation plan and rules is a finance/RevOps task.",
+    "trustScore": 4,
+    "pricingNote": "Plans commonly start around $25/user/month for mid-market tools; enterprise platforms are quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.qobra.co/blog/best-ai-sales-commission-management-tools-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-02-11",
+    "accessNotes": "Public blog article; connecting live payout calculations to payroll should be reviewed by finance before go-live",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-009e6a3eb4",
+    "slug": "i-want-ai-help-reviewing-and-redlining-a-sales-contract-before",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Ops / Legal-adjacent",
+    "title": "I want AI help reviewing and redlining a sales contract before I send it to a client",
+    "intentLabels": [
+      "contract redlining",
+      "contract review",
+      "AI markup",
+      "risk flagging in contracts"
+    ],
+    "tools": [
+      {
+        "name": "Ironclad",
+        "url": "https://spellbook.com/learn/best-ai-contract-redlining-tools"
+      },
+      {
+        "name": "Spellbook"
+      },
+      {
+        "name": "LegalSifter"
+      }
+    ],
+    "workflowSummary": "Upload the contract (often right inside Microsoft Word). The tool compares it against your company's standard playbook, flags clauses that deviate from your preferred terms or carry risk, and suggests specific redline language with a short explanation for each suggested change, so a rep or ops person can triage before looping in legal.",
+    "samplePrompt": "Here is a clause from a customer's redlined contract: '[paste clause]'. Compared to our standard terms (net-30 payment, 12-month term, standard liability cap), does this deviate in a way that's risky? Suggest a counter-proposal in plain language.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading AI-suggested redlines is easy, but final sign-off on contract language should stay with legal or an authorized approver.",
+    "trustScore": 4,
+    "pricingNote": "Word-native tools often start in the low hundreds/month per seat; full CLM platforms like Ironclad are quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://spellbook.com/learn/best-ai-contract-redlining-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog article; AI-suggested redlines should be reviewed by a qualified legal reviewer before a contract is sent externally",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-2b9ea8e201",
+    "slug": "i-want-to-respond-to-a-customer-s-rfp-faster-without-starting",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Bid Manager / Account Executive (enterprise deals)",
+    "title": "I want to respond to a customer's RFP faster without starting from a blank document",
+    "intentLabels": [
+      "RFP response automation",
+      "RFI response",
+      "proposal drafting from questionnaire",
+      "bid management"
+    ],
+    "tools": [
+      {
+        "name": "Loopio",
+        "url": "https://loopio.com/blog/best-ai-software-rfp-responses/"
+      },
+      {
+        "name": "Arphie"
+      },
+      {
+        "name": "AutoRFP.ai"
+      }
+    ],
+    "workflowSummary": "Upload the incoming RFP document. The tool 'shreds' it into individual questions, matches each one against your company's existing library of approved past answers, and drafts a first-pass response for the whole document in minutes, which your team then reviews and personalizes instead of writing every answer from scratch.",
+    "samplePrompt": "Here's an RFP question: '[paste question]'. Using our standard answer below as a base [paste past answer], adapt it to reference this specific prospect's industry and the stated evaluation criteria. Keep it under 150 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "running a first-pass response is quick, but building and maintaining the answer library is usually a bid-manager or enablement task.",
+    "trustScore": 4,
+    "pricingNote": "Plans vary widely by RFP volume; several vendors are quote-based, some newer entrants publish lower self-serve tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://loopio.com/blog/best-ai-software-rfp-responses/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-01-13",
+    "accessNotes": "Public blog article; AI-drafted answers should be fact-checked against the current RFP before submission, especially for compliance/legal questions",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-7c1a0f3427",
+    "slug": "i-want-to-understand-why-we-re-winning-or-losing-deals-so-i-can",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / Product Marketing / RevOps",
+    "title": "I want to understand why we're winning or losing deals so I can improve our process",
+    "intentLabels": [
+      "win-loss analysis",
+      "deal post-mortem",
+      "closed-lost interviews",
+      "competitive win rate insights"
+    ],
+    "tools": [
+      {
+        "name": "Clozd",
+        "url": "https://www.cirrusinsight.com/blog/win-loss-analysis-software"
+      },
+      {
+        "name": "Perspective AI"
+      },
+      {
+        "name": "Klue"
+      }
+    ],
+    "workflowSummary": "After a deal closes (won or lost), the tool either runs an AI-moderated interview with the buyer or mines the CRM/call data for patterns (objections, competitor mentions, pricing pushback). It rolls findings up across many deals into themes — e.g. 'we lose 40% of deals citing implementation time' — so leadership can fix the actual cause instead of guessing from a handful of anecdotes.",
+    "samplePrompt": "Here are loss reasons logged for our last 15 closed-lost deals [paste list/CRM dropdown values]. Group these into 3-4 themes, note which theme appears most often, and suggest one process change that could address the top theme.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "win-loss analysis is a structured RevOps/product-marketing exercise, not a self-serve rep tool.",
+    "trustScore": 3,
+    "pricingNote": "Interview-based platforms often run per-interview or subscription pricing (roughly $20-$500+ per conversation depending on depth); CRM-native options may be bundled into existing tools — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cirrusinsight.com/blog/win-loss-analysis-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-04",
+    "accessNotes": "Public blog article; buyer interviews should follow your company's data-privacy and customer-consent policies",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8fce4a07ae",
+    "slug": "i-want-to-automate-expense-reports-and-travel-booking-for",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Manager (travel-heavy roles)",
+    "title": "I want to automate expense reports and travel booking for client visits and events",
+    "intentLabels": [
+      "expense report automation",
+      "travel booking",
+      "receipt scanning",
+      "T&E management"
+    ],
+    "tools": [
+      {
+        "name": "Navan",
+        "url": "https://navan.com/blog/ai-tools-travel-expense-management"
+      },
+      {
+        "name": "Ramp"
+      },
+      {
+        "name": "Expensify"
+      }
+    ],
+    "workflowSummary": "Book travel through the platform (or forward a receipt/email confirmation). The tool reads receipts automatically, matches them to the right trip and expense category, checks the spend against company policy in real time, and submits a ready-to-approve expense report — instead of a rep manually itemizing receipts after a trip.",
+    "samplePrompt": "I have these 5 receipts from a client trip [describe: flight, hotel, 2 meals, rideshare]. Group them into a single expense report with categories, flag anything that looks like it might be outside a typical $75/meal policy, and note what I should double check before submitting.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "snapping a photo of a receipt or forwarding a booking confirmation is designed for any employee to do without training.",
+    "trustScore": 4,
+    "pricingNote": "Often bundled with a corporate card program at no extra software fee; standalone plans vary by vendor — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://navan.com/blog/ai-tools-travel-expense-management",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-20",
+    "accessNotes": "Public blog article; company card/travel-booking access requires finance/IT provisioning, not self-signup",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-2024b03bae",
+    "slug": "i-want-my-inbox-automatically-sorted-so-i-know-which-prospect",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / SDR (high email volume)",
+    "title": "I want my inbox automatically sorted so I know which prospect replies need my attention first",
+    "intentLabels": [
+      "inbox triage",
+      "email prioritization",
+      "reply sorting",
+      "AI email assistant"
+    ],
+    "tools": [
+      {
+        "name": "Superhuman",
+        "url": "https://www.read.ai/articles/the-7-best-ai-email-tools-in-2026"
+      },
+      {
+        "name": "Fyxer"
+      },
+      {
+        "name": "Saleshandy (unified inbox)"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your email inbox. It reads incoming messages, labels prospect replies by intent (interested, not interested, out of office, do-not-contact), and surfaces the ones that need a same-day reply at the top, so a rep isn't scrolling through a mixed inbox of internal emails, newsletters, and hot leads in the order they arrived.",
+    "samplePrompt": "Here are 5 email subject lines and first lines from my inbox this morning [paste]. Rank them by how urgently I likely need to respond today, and say in one line why each ranks where it does.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most inbox tools work immediately after connecting your email account, with no admin setup required for an individual user.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans commonly range from about $18-$30/month per user; some tools have limited free tiers — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.read.ai/articles/the-7-best-ai-email-tools-in-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; connecting a work inbox to a third-party tool should be checked against company data-security policy first",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-7b8124038b",
+    "slug": "i-want-to-see-which-sales-software-licenses-my-team-is-actually",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "RevOps / IT / Sales Ops Manager",
+    "title": "I want to see which sales software licenses my team is actually using so we stop paying for unused seats",
+    "intentLabels": [
+      "software license audit",
+      "SaaS spend management",
+      "seat utilization",
+      "tech stack audit"
+    ],
+    "tools": [
+      {
+        "name": "Zylo",
+        "url": "https://zylo.com/blog/ai-spend-management-software"
+      },
+      {
+        "name": "CloudNuro"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your finance/procurement systems and SSO logs. It cross-references which sales tools you're paying for against who is actually logging in and using them, flags inactive or duplicate licenses (e.g. two overlapping LinkedIn automation tools), and estimates the savings if you right-size or cancel unused seats.",
+    "samplePrompt": "Here's a list of our sales tools with monthly cost and last-login data for each licensed user [paste/describe]. Identify which licenses look unused or underused, and estimate the monthly savings if we cancelled or downgraded those seats.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a RevOps/IT finance exercise that needs procurement and usage data access, not a rep-facing tool.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise SaaS-management platforms are typically quote-based, often priced on total managed software spend — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://zylo.com/blog/ai-spend-management-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 weeks ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; requires admin/procurement-level access to billing and SSO data, not appropriate for an individual rep to set up",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-65cb3f2a30",
+    "slug": "i-want-a-clean-handoff-from-sales-to-customer-success-when-a",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Customer Success Manager",
+    "title": "I want a clean handoff from sales to customer success when a deal closes, without losing context",
+    "intentLabels": [
+      "sales-to-CS handoff",
+      "closed-won handoff",
+      "customer onboarding kickoff",
+      "account transition"
+    ],
+    "tools": [
+      {
+        "name": "Gainsight",
+        "url": "https://www.velaris.io/articles/top-10-ai-customer-success-tools"
+      },
+      {
+        "name": "Catalyst"
+      }
+    ],
+    "workflowSummary": "When a deal is marked closed-won in the CRM, the tool automatically triggers a handoff workflow: it pulls the deal notes, key stakeholder names, and any commitments made during the sales cycle into a structured account brief for the new customer success manager, instead of the AE writing a one-off handoff email or the CSM starting from zero.",
+    "samplePrompt": "Summarize this closed-won deal for a customer success handoff: [paste deal notes/call summary]. Include: the customer's main goal, any promises made during the sales process, key stakeholders and their roles, and one risk the CSM should watch for early.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a finished handoff brief is simple for a CSM, but setting up the automated trigger and template is a RevOps/CS-ops task.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise CS platform pricing is typically quote-based per managed account or seat — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.velaris.io/articles/top-10-ai-customer-success-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-02-27",
+    "accessNotes": "Public blog article; handoff automation requires both sales and CS teams' CRM/tooling to be connected",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-367416fc9f",
+    "slug": "i-want-to-get-an-early-warning-when-a-customer-contract-is",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Customer Success / Sales Manager",
+    "title": "I want to get an early warning when a customer contract is coming up for renewal or at risk of not renewing",
+    "intentLabels": [
+      "renewal tracking",
+      "contract expiration alerts",
+      "churn risk",
+      "renewal forecasting"
+    ],
+    "tools": [
+      {
+        "name": "Gainsight",
+        "url": "https://otter.ai/blog/customer-success-tools"
+      },
+      {
+        "name": "ChurnZero"
+      },
+      {
+        "name": "Catalyst"
+      }
+    ],
+    "workflowSummary": "The tool tracks every contract's end date alongside usage and engagement signals (declining product usage, unanswered emails, a champion who left the company). As a renewal date approaches, it automatically flags at-risk accounts and notifies the owning rep or CSM with enough lead time to intervene, instead of someone discovering the renewal is at risk the week the contract expires.",
+    "samplePrompt": "This account renews in 60 days. Usage has dropped 30% over the last quarter and our main contact hasn't replied to the last 2 emails [add any other detail]. Draft a short, low-pressure check-in email to re-engage them before the renewal conversation.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a renewal-risk alert is simple, but configuring what counts as 'at risk' is a CS-ops/RevOps setup task.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise CS platform pricing is typically quote-based per managed account — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://otter.ai/blog/customer-success-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-28",
+    "accessNotes": "Public blog article; renewal-risk automation requires the CRM/CS platform to have accurate contract end-date and usage data",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a58c113c89",
+    "slug": "i-want-to-set-fair-realistic-sales-quotas-for-each-rep-based-on",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Leadership / RevOps",
+    "title": "I want to set fair, realistic sales quotas for each rep based on their capacity and territory",
+    "intentLabels": [
+      "quota planning",
+      "capacity planning",
+      "quota setting",
+      "sales target allocation"
+    ],
+    "tools": [
+      {
+        "name": "CaptivateIQ",
+        "url": "https://www.captivateiq.com/blog/sales-quota-management-software"
+      },
+      {
+        "name": "Anaplan"
+      },
+      {
+        "name": "Xactly"
+      }
+    ],
+    "workflowSummary": "Feed the tool historical rep performance, territory potential, and headcount plans. It models different quota scenarios (e.g. 'what if we hire 3 more reps next quarter') and flags territories where the proposed quota looks unrealistic given the rep's capacity or account list, so leadership sets targets reps can actually hit instead of an across-the-board percentage increase.",
+    "samplePrompt": "Given last year's quota attainment by rep [paste: rep name, quota, % attained], and a company target of 20% revenue growth next year, suggest a fair way to distribute the increase across reps that accounts for their historical performance, not just an even split.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "quota-setting is a sales-leadership and RevOps planning exercise, not something an individual rep runs themselves.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise planning platforms are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.captivateiq.com/blog/sales-quota-management-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-15",
+    "accessNotes": "Public blog article; quota modeling requires accurate historical CRM and headcount data to be meaningful",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-22352c1074",
+    "slug": "i-want-to-update-multiple-crm-records-quickly-without-clicking",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Manager",
+    "title": "I want to update multiple CRM records quickly without clicking into each one individually",
+    "intentLabels": [
+      "bulk CRM editing",
+      "spreadsheet-style CRM updates",
+      "fast pipeline updates",
+      "Salesforce data entry speed"
+    ],
+    "tools": [
+      {
+        "name": "Scratchpad",
+        "url": "https://www.capterra.com/p/228937/ScratchPad/"
+      }
+    ],
+    "workflowSummary": "Open your pipeline in a spreadsheet-like grid instead of Salesforce's native record-by-record view. Reps can edit deal stages, close dates, amounts, and notes inline across many records at once, and the changes sync back to Salesforce automatically — turning a task that used to mean opening 20 separate records into one fast pass through a grid.",
+    "samplePrompt": "I need to update 10 opportunities after a sales kickoff call: push close dates back 2 weeks and add the note 'reviewed in kickoff, still active' to each. Write the short note text I should apply consistently across all 10 records.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the spreadsheet-style grid is designed to feel familiar (like Excel/Google Sheets) to any rep already comfortable with a spreadsheet.",
+    "trustScore": 4,
+    "pricingNote": "Free plan for individuals; Team plan around $39/user/month and Business plan around $79/user/month billed annually — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.capterra.com/p/228937/ScratchPad/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-20",
+    "accessNotes": "Public blog article; requires the underlying Salesforce (or supported CRM) account to sync changes back to",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-47989f6ca3",
+    "slug": "i-want-to-send-a-short-weekly-sales-recap-to-leadership-without",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / VP of Sales",
+    "title": "I want to send a short weekly sales recap to leadership without building it by hand every Friday",
+    "intentLabels": [
+      "weekly sales recap",
+      "leadership summary report",
+      "automated status update",
+      "pipeline recap email"
+    ],
+    "tools": [
+      {
+        "name": "Databox",
+        "url": "https://databox.com/best-ai-tools-for-data-analysis"
+      },
+      {
+        "name": "HubSpot native reporting"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your CRM once. Each week it pulls the same core numbers (pipeline movement, deals closed, at-risk deals, rep highlights) and drafts a short written recap — not just a dashboard, but a plain-English summary — that a sales manager can skim, tweak, and send to leadership in a few minutes instead of building a deck from scratch every Friday.",
+    "samplePrompt": "Here are this week's numbers: pipeline value $X (up/down Y% from last week), Z deals closed-won totaling $A, top rep by revenue is [name]. Write a 4-sentence weekly recap email to leadership in a confident, no-fluff tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "once a dashboard/report template is set up, generating the weekly recap is a one-click or automatic action for a sales manager.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for basic use; paid plans commonly start around $59-$135/month depending on data sources — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://databox.com/best-ai-tools-for-data-analysis",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public blog article; connecting a CRM data source typically requires an admin-level login to that CRM",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-024fc3f1b1",
+    "slug": "i-want-to-build-a-coaching-plan-for-a-rep-who-is",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager",
+    "title": "I want to build a coaching plan for a rep who is underperforming, based on their actual call and deal data",
+    "intentLabels": [
+      "rep coaching plan",
+      "performance improvement plan",
+      "manager coaching workflow",
+      "skill-gap identification"
+    ],
+    "tools": [
+      {
+        "name": "Gong",
+        "url": "https://www.nooks.ai/blog-posts/7-best-ai-tools-for-sales-team-coaching-in-2026"
+      },
+      {
+        "name": "Mindtickle"
+      }
+    ],
+    "workflowSummary": "The tool analyzes a rep's recent calls and deal outcomes (talk ratio, objection handling, deal stall points) and surfaces specific, recurring skill gaps — e.g. 'this rep consistently under-discusses budget in discovery calls' — instead of a manager relying on general impressions. The manager then gets a starting point for a structured coaching plan tied to real behavior, not guesswork.",
+    "samplePrompt": "Here's a summary of a rep's last 5 calls: [paste key stats/notes — talk ratio, objections raised, outcome]. Identify the single biggest recurring skill gap, and draft 3 specific, practice-able coaching actions for our next 1:1.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a sales-manager tool; it surfaces data for the manager to interpret and coach with, not something a rep uses on themselves.",
+    "trustScore": 3,
+    "pricingNote": "Bundled into conversation-intelligence or sales-enablement platform pricing, typically quote-based per seat — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.nooks.ai/blog-posts/7-best-ai-tools-for-sales-team-coaching-in-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-03-30",
+    "accessNotes": "Public blog article; coaching-data features require the paid conversation-intelligence platform connected to call recordings",
+    "batch": "Sales Teams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-089d5766aa",
+    "slug": "i-want-to-build-a-list-of-target-accounts-that-actually-match",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / Marketing / RevOps",
+    "title": "I want to build a list of target accounts that actually match our best customers",
+    "intentLabels": [
+      "ABM target account list",
+      "ideal customer profile list",
+      "account prioritization",
+      "lookalike accounts"
+    ],
+    "tools": [
+      {
+        "name": "6sense",
+        "url": "https://www.unifygtm.com/explore/best-ai-tools-build-prioritize-target-account-list"
+      },
+      {
+        "name": "Demandbase"
+      },
+      {
+        "name": "Unify"
+      }
+    ],
+    "workflowSummary": "Feed the tool your closed-won customer list. It analyzes firmographics (industry, size), technographics (what software they use), and live buying-intent signals to find similar 'lookalike' companies, then ranks the resulting list by fit and how actively each one appears to be in-market, instead of a rep or marketer guessing which companies to target.",
+    "samplePrompt": "Here are 10 of our best closed-won customers with industry, size, and use case [paste/describe]. Based on the patterns you see, describe the 3-4 traits of our ideal customer profile in plain language I could use to brief a target-account list.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "building and prioritizing a target account list is a marketing/RevOps strategic task, not something an individual rep runs themselves.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise ABM platforms (6sense, Demandbase) are typically quote-based; some newer entrants publish lower self-serve tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.unifygtm.com/explore/best-ai-tools-build-prioritize-target-account-list",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-24",
+    "accessNotes": "Public blog article; full list-building and intent features require a paid data subscription",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8d9a6a3d59",
+    "slug": "i-want-inbound-leads-from-our-website-to-automatically-go-to",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / RevOps / Sales Manager",
+    "title": "I want inbound leads from our website to automatically go to the right sales rep",
+    "intentLabels": [
+      "lead routing",
+      "lead assignment",
+      "round-robin distribution",
+      "form-to-rep handoff"
+    ],
+    "tools": [
+      {
+        "name": "LeanData",
+        "url": "https://www.leaddistro.ai/blog/b2b-saas-lead-routing-software"
+      },
+      {
+        "name": "Chili Piper"
+      },
+      {
+        "name": "Distribution Engine"
+      }
+    ],
+    "workflowSummary": "When a lead fills out a form or requests a demo, the tool checks it against your routing rules (territory, account ownership, company size) and instantly assigns it to the correct rep — including matching it to an existing target account owner instead of dropping it into a generic round-robin — so the lead doesn't sit unassigned or go to the wrong person.",
+    "samplePrompt": "Here are our routing rules: leads from companies with 500+ employees go to enterprise AEs by region; everyone else goes into round robin. A lead just came in from a 600-person company in EMEA [add any other detail]. Who should this route to and why?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "routing logic is configured by RevOps/sales ops; reps simply receive leads that have already been routed to them.",
+    "trustScore": 4,
+    "pricingNote": "Salesforce-native tools like LeanData are typically quote-based; HubSpot-native routing may be bundled into higher CRM tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.leaddistro.ai/blog/b2b-saas-lead-routing-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-13",
+    "accessNotes": "Public blog article; routing tools require CRM admin access to configure rules",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-34b18fd00d",
+    "slug": "i-want-to-follow-up-with-everyone-who-attended-our-webinar-or",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Account Executive / Event Marketing",
+    "title": "I want to follow up with everyone who attended our webinar or booth without writing each email by hand",
+    "intentLabels": [
+      "webinar follow-up",
+      "event attendee outreach",
+      "post-event email sequence",
+      "conference lead nurture"
+    ],
+    "tools": [
+      {
+        "name": "Tofu",
+        "url": "https://www.tofuhq.com/post/best-ai-tools-for-post-event-follow-up"
+      },
+      {
+        "name": "Octave"
+      },
+      {
+        "name": "Autobound"
+      }
+    ],
+    "workflowSummary": "Upload or sync the list of attendees along with context (which session they attended, questions they asked, booth conversation notes). The tool drafts a personalized follow-up for each person referencing that specific context — not a generic 'great meeting you' template — and can launch the sequence within hours of the event ending instead of days later when interest has cooled.",
+    "samplePrompt": "This person attended our webinar on [topic] and asked a question about [topic detail]. Draft a 3-sentence follow-up email referencing that question, offering one relevant resource, and suggesting a quick call.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sending the follow-up sequence is simple once set up, but connecting attendee data and building the personalization workflow is a marketing-ops task.",
+    "trustScore": 4,
+    "pricingNote": "Pricing varies widely by platform and volume; several are quote-based, some publish lower self-serve tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tofuhq.com/post/best-ai-tools-for-post-event-follow-up",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; attendee data usage should follow the event's stated privacy/consent terms",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a449f555c8",
+    "slug": "i-want-to-build-a-personalized-landing-page-for-one-specific",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / ABM Marketer",
+    "title": "I want to build a personalized landing page for one specific target account before a big meeting",
+    "intentLabels": [
+      "ABM microsite",
+      "personalized landing page",
+      "account-specific web page",
+      "1:1 personalization"
+    ],
+    "tools": [
+      {
+        "name": "Mutiny",
+        "url": "https://www.mutinyhq.com/blog/best-tools-to-create-deal-rooms"
+      },
+      {
+        "name": "Tofu"
+      }
+    ],
+    "workflowSummary": "Give the tool the target account's name, industry, and key pain point. It generates a standalone web page with headlines, case studies, and calls-to-action tailored to that specific company (referencing their industry and likely priorities), which a rep can send ahead of a meeting instead of a generic company homepage.",
+    "samplePrompt": "Draft the headline and 3 supporting bullet points for a one-page microsite aimed at [Target Company], a [industry] company. Focus on [their likely priority, e.g. reducing onboarding time] and reference a relevant case study angle.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "using a template to generate a page is quick, but a marketer typically owns the design system and messaging framework behind it.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary by vendor; several ABM/personalization tools are quote-based for teams — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mutinyhq.com/blog/best-tools-to-create-deal-rooms",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; full personalization features typically require a paid team subscription",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-193b701d84",
+    "slug": "i-want-to-know-when-one-of-our-target-accounts-starts",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Manager / SDR / RevOps",
+    "title": "I want to know when one of our target accounts starts researching us or a competitor online",
+    "intentLabels": [
+      "intent data monitoring",
+      "buyer intent alerts",
+      "in-market account signals",
+      "competitive research tracking"
+    ],
+    "tools": [
+      {
+        "name": "6sense",
+        "url": "https://pipeline.zoominfo.com/sales/intent-data-platform"
+      },
+      {
+        "name": "Bombora"
+      },
+      {
+        "name": "G2 Buyer Intent"
+      }
+    ],
+    "workflowSummary": "The tool monitors third-party signals (content consumption across the web, review-site comparisons, technology changes) tied to your target accounts. When an account's research activity spikes on a relevant topic or they view a competitor's page, it automatically flags the account and alerts the owning rep, instead of the account quietly shopping around unnoticed until they reach out (or don't).",
+    "samplePrompt": "One of our target accounts just showed a spike in research activity around '[topic]' and viewed a competitor's comparison page. Draft a short, low-pressure outreach message that references relevant industry trends without revealing that we're tracking their specific research activity.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "intent monitoring is set up and interpreted by marketing/RevOps; reps typically just receive the resulting alert.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise intent platforms are typically quote-based; lighter tools like Leadfeeder start around $99/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/intent-data-platform",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-14",
+    "accessNotes": "Public blog article; intent data usage should be checked against applicable privacy regulations (e.g. GDPR) for the account's region",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-54a1a79b47",
+    "slug": "i-want-to-turn-a-happy-customer-s-feedback-into-a-case-study-or",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Customer Marketing / Sales Enablement",
+    "title": "I want to turn a happy customer's feedback into a case study or testimonial sales can use",
+    "intentLabels": [
+      "case study generation",
+      "customer testimonial creation",
+      "proof point content",
+      "social proof asset"
+    ],
+    "tools": [
+      {
+        "name": "StoryVoice",
+        "url": "https://storyvoice.io/blog/best-ai-case-study-generators-2026"
+      },
+      {
+        "name": "UserEvidence"
+      }
+    ],
+    "workflowSummary": "The tool interviews the customer directly (often via a short AI-moderated conversation) or analyzes an existing testimonial, call transcript, or review, then extracts the challenge, solution, and measurable result into a structured story following a proven case-study format — turning a scattered piece of feedback into a polished, shareable asset in minutes instead of a multi-week manual writing and approval process.",
+    "samplePrompt": "Here is a raw customer quote and some context: '[paste feedback/transcript excerpt]'. Turn this into a short case study following a Challenge / Solution / Result structure, in under 200 words, ready for a sales one-pager.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading and sharing a finished case study is easy, but running the customer interview and structuring the story is typically a customer-marketing task.",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies by vendor; some tools are subscription-based, others price per finished case study — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://storyvoice.io/blog/best-ai-case-study-generators-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog article; publishing a customer's story requires their explicit consent/approval before external use",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ba4a77b751",
+    "slug": "i-want-to-instantly-find-the-right-approved-case-study-or-one",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Enablement",
+    "title": "I want to instantly find the right approved case study or one-pager for a specific deal instead of digging through folders",
+    "intentLabels": [
+      "sales content search",
+      "content library",
+      "enablement content discovery",
+      "find the right asset"
+    ],
+    "tools": [
+      {
+        "name": "Highspot",
+        "url": "https://salesmotion.io/blog/best-sales-enablement-platforms"
+      },
+      {
+        "name": "Seismic"
+      }
+    ],
+    "workflowSummary": "All approved sales content (decks, case studies, battlecards, one-pagers) lives in one searchable library. A rep types what they need — a keyword, an industry, or a deal stage — and the tool's AI recommends the most relevant, current asset (and flags which one is out of date), instead of a rep digging through shared drives or using an old file saved on their desktop.",
+    "samplePrompt": "I need a case study for a mid-size healthcare company at the proposal stage. Based on our content library [describe available assets/tags], which asset would be most relevant, and what's the one-sentence pitch for why it fits this deal?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "searching an existing content library is designed to be a quick, self-serve action for any rep.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise platform pricing is typically quote-based, often cited around $91K+/year average spend — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://salesmotion.io/blog/best-sales-enablement-platforms",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-03-06",
+    "accessNotes": "Public blog article; full content library access requires a paid enablement platform subscription",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-eb9aa80324",
+    "slug": "i-want-to-draft-linkedin-posts-that-build-my-personal-brand-and",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Leader",
+    "title": "I want to draft LinkedIn posts that build my personal brand and support social selling",
+    "intentLabels": [
+      "social selling content",
+      "LinkedIn thought leadership posts",
+      "personal brand content",
+      "sales content creation"
+    ],
+    "tools": [
+      {
+        "name": "Taplio",
+        "url": "https://www.simular.ai/alternatives/linkedin-automation-tools"
+      },
+      {
+        "name": "AuthoredUp"
+      }
+    ],
+    "workflowSummary": "Give the tool a topic, a past high-performing post, or a rough idea. It drafts a LinkedIn post in a similar voice/format, suggests a posting schedule based on when your audience is most active, and tracks which posts drive profile views or connection requests — turning occasional posting into a consistent habit instead of a blank-page problem each time.",
+    "samplePrompt": "Draft a LinkedIn post sharing one practical lesson I learned closing a recent deal in [industry]. Keep it under 150 words, conversational tone, no corporate jargon, and end with a genuine question to invite comments.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drafting and scheduling a single post is designed to be quick and self-serve for an individual rep.",
+    "trustScore": 3,
+    "pricingNote": "Plans commonly start around $20-$40/month per user — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.simular.ai/alternatives/linkedin-automation-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-28",
+    "accessNotes": "Public blog article; posting under your own name/likeness should follow your company's social media policy",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-27b5c535a2",
+    "slug": "i-want-to-translate-our-sales-materials-into-another-language",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Enablement (international deals)",
+    "title": "I want to translate our sales materials into another language for an international deal",
+    "intentLabels": [
+      "sales collateral localization",
+      "translate pitch deck",
+      "multilingual sales materials",
+      "international deal support"
+    ],
+    "tools": [
+      {
+        "name": "Smartling",
+        "url": "https://databar.ai/blog/article/intent-data-providers-2026-compare-15-vendors-and-choose-the-right-one"
+      },
+      {
+        "name": "Lokalise"
+      }
+    ],
+    "workflowSummary": "Upload the deck, proposal, or one-pager. The tool translates the text while preserving formatting and brand terminology (via a maintained glossary, so product names and industry terms stay consistent), and routes it for a native-speaker review pass — instead of a rep using a generic translation tool that risks mistranslating product or legal terms.",
+    "samplePrompt": "Translate this product tagline into [target language], keeping the tone confident but not overly formal: '[paste tagline]'. Flag if any phrase doesn't translate well culturally and suggest an alternative.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "using the tool to translate a document is simple, but maintaining a consistent terminology glossary is usually an enablement/marketing task.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise localization platforms are typically quote-based per volume of content — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://databar.ai/blog/article/intent-data-providers-2026-compare-15-vendors-and-choose-the-right-one",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; a native-speaker review pass is recommended before sending translated legal or contractual language externally",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-d4a2d782ee",
+    "slug": "i-want-to-build-a-shared-online-space-where-a-prospect-can-find",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive",
+    "title": "I want to build a shared online space where a prospect can find everything about our deal in one place",
+    "intentLabels": [
+      "digital sales room",
+      "deal room",
+      "buyer workspace",
+      "shared deal materials"
+    ],
+    "tools": [
+      {
+        "name": "Dock",
+        "url": "https://www.mutinyhq.com/blog/best-tools-to-create-deal-rooms"
+      },
+      {
+        "name": "GetAccept"
+      },
+      {
+        "name": "Aligned"
+      }
+    ],
+    "workflowSummary": "Create a private, branded web page for a specific deal that holds the proposal, pricing, case studies, a mutual action plan, and next steps — all in one link the prospect and their internal stakeholders can revisit anytime. The tool shows the rep exactly which sections the buyer viewed and for how long, so the rep knows what to follow up on instead of guessing.",
+    "samplePrompt": "List the sections I should include in a digital sales room for a mid-stage enterprise deal: [describe deal, e.g. security review pending, 3 stakeholders involved]. For each section, give a one-line description of what goes there.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "building a deal room from a template is designed to be quick for an individual rep to set up per deal.",
+    "trustScore": 4,
+    "pricingNote": "Plans commonly range from roughly $30-$100+/user/month depending on features — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mutinyhq.com/blog/best-tools-to-create-deal-rooms",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; sharing a deal room externally should follow your company's data-sharing and branding guidelines",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-cf17d41932",
+    "slug": "i-want-to-see-which-marketing-campaigns-are-actually-turning",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Leadership / Marketing / RevOps",
+    "title": "I want to see which marketing campaigns are actually turning into closed-won revenue, not just leads",
+    "intentLabels": [
+      "campaign attribution",
+      "revenue attribution",
+      "marketing ROI",
+      "pipeline source tracking"
+    ],
+    "tools": [
+      {
+        "name": "Dreamdata",
+        "url": "https://www.cometly.com/post/ai-marketing-attribution-platform"
+      },
+      {
+        "name": "HockeyStack"
+      }
+    ],
+    "workflowSummary": "The tool connects your CRM, ad platforms, and website analytics into one model, then maps every touchpoint an account had (ads clicked, content downloaded, emails opened) across the entire buying journey to the deal that eventually closed — showing which campaigns and channels genuinely drove revenue instead of just counting form-fill leads.",
+    "samplePrompt": "Here's a summary of this quarter's marketing campaigns and how many closed-won deals mention each as an early touchpoint [paste/describe]. Which campaign looks like it's punching above its weight relative to its spend, and which looks like it's just generating unqualified leads?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a marketing/RevOps analytics tool; individual sales reps typically view the resulting reports rather than configuring attribution models.",
+    "trustScore": 3,
+    "pricingNote": "Plans often start around $999/month for B2B-focused platforms; enterprise tiers are quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cometly.com/post/ai-marketing-attribution-platform",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-02",
+    "accessNotes": "Public blog article; attribution accuracy depends on clean CRM and ad-platform data being connected",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-89031992ab",
+    "slug": "i-want-to-capture-and-follow-up-with-leads-from-a-trade-show",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / Field Sales / Event Marketing",
+    "title": "I want to capture and follow up with leads from a trade show booth without losing business cards",
+    "intentLabels": [
+      "trade show lead capture",
+      "badge scanning",
+      "conference lead retrieval",
+      "booth follow-up"
+    ],
+    "tools": [
+      {
+        "name": "Wave Connect",
+        "url": "https://wavecnct.com/blogs/best-tools-lead-capture-trade-shows"
+      },
+      {
+        "name": "Blinq"
+      }
+    ],
+    "workflowSummary": "Scan a badge or QR code with a phone app instead of collecting paper cards. The tool enriches the contact with verified email, title, and company data, can capture a quick voice note about the conversation, and syncs the enriched record straight into the CRM — so leads reach a rep's follow-up list the same day instead of getting lost in a bag of cards after the show.",
+    "samplePrompt": "Here's a voice note I recorded after a booth conversation: '[paste/describe: prospect name, company, what they were interested in, any objection]'. Turn this into a 3-sentence follow-up email to send within 24 hours of the show.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "scanning a badge with a phone app is designed to be simple for any booth staffer with no training.",
+    "trustScore": 4,
+    "pricingNote": "Some tools are pay-per-lead (e.g. roughly $7-$10/lead); others are flat monthly/annual subscriptions — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://wavecnct.com/blogs/best-tools-lead-capture-trade-shows",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-30",
+    "accessNotes": "Public blog article; scanning attendee badges must comply with the event's own data-collection and consent rules",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-6e16256634",
+    "slug": "i-want-to-run-a-referral-program-that-turns-happy-customers",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Customer Marketing / Sales Manager",
+    "title": "I want to run a referral program that turns happy customers into new business",
+    "intentLabels": [
+      "customer referral program",
+      "referral marketing",
+      "advocate program",
+      "word-of-mouth growth"
+    ],
+    "tools": [
+      {
+        "name": "Referral Rock",
+        "url": "https://marketingexpertshub.com/marketing/best-customer-referral-software/"
+      },
+      {
+        "name": "Viral Loops"
+      }
+    ],
+    "workflowSummary": "Set up a referral program with a simple reward structure (e.g. a discount or account credit for both parties). The tool gives customers a shareable referral link, automatically tracks who was referred by whom through to a closed deal, and handles reward payout — so referrals get tracked and rewarded systematically instead of relying on word-of-mouth that never gets attributed or followed up on.",
+    "samplePrompt": "Draft a short email to our happy customers inviting them to refer a colleague to us, in exchange for [reward, e.g. a $200 account credit for each referral that becomes a customer]. Keep it under 100 words and make the ask feel like a favor, not a transaction.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sharing a referral link is simple for a customer, but setting up the reward structure and tracking is a marketing/CS-ops task.",
+    "trustScore": 3,
+    "pricingNote": "Plans commonly start around $50-$200/month depending on program complexity; some tools have free tiers for small programs — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://marketingexpertshub.com/marketing/best-customer-referral-software/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-20",
+    "accessNotes": "Public blog article; reward payouts and referral terms should be reviewed against local tax/compliance rules where relevant",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-5f09cc3726",
+    "slug": "i-want-to-give-our-reseller-and-channel-partners-co-branded",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Channel / Partner Manager",
+    "title": "I want to give our reseller and channel partners co-branded content they can use to sell our product",
+    "intentLabels": [
+      "channel partner enablement",
+      "co-branded content",
+      "reseller sales materials",
+      "partner portal content"
+    ],
+    "tools": [
+      {
+        "name": "Impartner",
+        "url": "https://www.guideflow.com/blog/channel-enablement-tools"
+      },
+      {
+        "name": "Highspot (partner enablement)"
+      }
+    ],
+    "workflowSummary": "Partners log into a branded portal where approved sales content (decks, case studies, one-pagers) is pre-formatted so their logo and contact details can be swapped in automatically. The tool tracks which partners are actually using the content and which deals it's tied to, so a partner manager can see engagement instead of just mailing out a folder of files once a year.",
+    "samplePrompt": "Draft a short partner-facing email announcing a new co-branded case study is now available in the partner portal, telling them how to add their logo and where to find it. Keep it under 80 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a partner downloading co-branded content is simple, but setting up the portal and co-branding templates is a channel/partner-ops task.",
+    "trustScore": 3,
+    "pricingNote": "Full-lifecycle PRM platforms are typically quote-based, often priced by number of partners — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/channel-enablement-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-28",
+    "accessNotes": "Public blog article; partner-facing content and portals require setup by a partner/channel-ops owner",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-bae9f733f6",
+    "slug": "i-want-to-reach-out-to-prospects-at-scale-but-only-when-they-re",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "SDR / RevOps / Demand Gen",
+    "title": "I want to reach out to prospects at scale, but only when they're showing signs they're actually in-market right now",
+    "intentLabels": [
+      "signal-based outbound",
+      "intent-triggered outreach",
+      "buying-signal personalization",
+      "real-time trigger outreach"
+    ],
+    "tools": [
+      {
+        "name": "6sense (orchestration)",
+        "url": "https://pipeline.zoominfo.com/sales/intent-data-platform"
+      },
+      {
+        "name": "Clay",
+        "catalogueSlug": "clay"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your intent/signal sources (website visits, funding news, job changes, technology adoption). When a target account crosses a signal threshold — e.g. a competitor's tool gets uninstalled, or several people from one account visit your pricing page — it automatically triggers a personalized outbound sequence referencing that specific trigger, instead of a rep sending the same generic email to everyone on a list regardless of timing.",
+    "samplePrompt": "This account just showed this signal: '[e.g. dropped a competitor tool from their tech stack]'. Draft a short outbound email that references relevant industry context (not the specific tracked signal directly) and offers a reason to talk now.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "signal-based outbound triggers and thresholds are configured by RevOps/demand gen; reps typically review and send the resulting drafts.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise orchestration platforms are typically quote-based; Clay's data-credit pricing scales with usage — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/intent-data-platform",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-14",
+    "accessNotes": "Public blog article; signal-based targeting should be checked against applicable privacy regulations for the account's region",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-fc47d9f3fe",
+    "slug": "i-want-to-run-advertising-that-specifically-targets-the",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Marketing / RevOps / Sales Leadership",
+    "title": "I want to run advertising that specifically targets the companies on our target account list",
+    "intentLabels": [
+      "account-based advertising",
+      "ABM display ads",
+      "named-account targeting",
+      "LinkedIn company targeting"
+    ],
+    "tools": [
+      {
+        "name": "RollWorks",
+        "url": "https://oneaway.io/blog/best-abm-platforms-in-2026-ranked-by-ai-features"
+      },
+      {
+        "name": "Demandbase"
+      },
+      {
+        "name": "Terminus"
+      }
+    ],
+    "workflowSummary": "Upload your target account list (company names or domains). The platform serves display, LinkedIn, and other digital ads specifically to people at those named companies — rather than a broad demographic audience — and reports back on which accounts saw and engaged with the ads, so marketing spend concentrates on the accounts sales actually wants to land instead of a wide, unfocused audience.",
+    "samplePrompt": "We're running account-based ads to this list of 20 target companies [describe/paste]. Draft 3 short ad headline variations (under 8 words each) for a LinkedIn campaign aimed at IT decision-makers at these companies, focused on [value proposition].",
+    "beginnerFriendly": "no",
+    "beginnerNote": "setting up and managing account-based ad campaigns is a marketing/demand-gen task, not something an individual sales rep runs.",
+    "trustScore": 3,
+    "pricingNote": "Mid-market platforms (RollWorks) are more accessible; enterprise platforms (Demandbase, Terminus) often run $25,000-$40,000+/year plus ad spend — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://oneaway.io/blog/best-abm-platforms-in-2026-ranked-by-ai-features",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-08",
+    "accessNotes": "Public blog article; ad spend and targeting setup require a marketing-owned advertising budget and platform accounts",
+    "batch": "Sales Teams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a380ded4e0",
+    "slug": "i-want-to-generate-a-quote-and-invoice-in-the-customer-s-local",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Deal Desk / Sales Ops (international deals)",
+    "title": "I want to generate a quote and invoice in the customer's local currency for an international deal",
+    "intentLabels": [
+      "multi-currency quoting",
+      "international invoicing",
+      "FX rate lock",
+      "cross-border billing"
+    ],
+    "tools": [
+      {
+        "name": "Quotable AI",
+        "url": "https://getquotable.ai/blog/quote-to-cash-software"
+      },
+      {
+        "name": "Salesforce/Oracle CPQ"
+      }
+    ],
+    "workflowSummary": "Build the quote in the tool with the customer's currency selected. It pulls the live or locked exchange rate, calculates line items in that currency, and generates a matching invoice later that reflects the same locked rate — so the customer sees consistent pricing in their own currency instead of a rep manually converting numbers in a spreadsheet.",
+    "samplePrompt": "I'm quoting a deal for a customer in [country/currency]. Given a US-dollar list price of $[amount], draft the wording for a quote note explaining that pricing is locked in [currency] at today's rate for 30 days.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "filling in a quote is simple for a rep, but setting up multi-currency price books and FX-lock rules is a deal-desk/finance task.",
+    "trustScore": 3,
+    "pricingNote": "SMB-focused Q2C tools start around $30-$100/month; enterprise CPQ (Salesforce, Oracle) is typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getquotable.ai/blog/quote-to-cash-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2 weeks ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; multi-currency price books require finance/deal-desk setup before a rep can self-serve a quote",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ffb6b64bd0",
+    "slug": "i-want-to-answer-a-customer-s-security-questionnaire-without-it",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Security / Sales Ops",
+    "title": "I want to answer a customer's security questionnaire without it stalling the deal for weeks",
+    "intentLabels": [
+      "security questionnaire response",
+      "SIG/DDQ automation",
+      "vendor security assessment",
+      "VSA response"
+    ],
+    "tools": [
+      {
+        "name": "Conveyor",
+        "url": "https://www.sifthub.io/blog/best-ai-tools-security-questionnaire-management"
+      },
+      {
+        "name": "Vanta"
+      }
+    ],
+    "workflowSummary": "Upload the incoming questionnaire (Excel, Word, or a vendor portal). The tool matches each question to your company's existing security documentation and past answers, drafts a response with a confidence score per answer, and routes anything it's unsure about to a human reviewer — so a 200-question form that used to take a week gets a reviewable first draft in hours.",
+    "samplePrompt": "Here's a security questionnaire question: '[paste question]'. Based on our SOC 2 report and data-handling policy [describe/paste relevant excerpt], draft a concise, accurate answer, and flag if this needs a security team review before it's sent.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reviewing and sending a drafted answer is quick, but building and maintaining the underlying documentation/knowledge base is a security/compliance task.",
+    "trustScore": 4,
+    "pricingNote": "Pricing varies by vendor; several tools are quote-based, a few publish lower self-serve tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sifthub.io/blog/best-ai-tools-security-questionnaire-management",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-13",
+    "accessNotes": "Public blog article; final answers to security questionnaires should be reviewed by security/compliance before submission — these are often legally binding representations",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-32afd30c63",
+    "slug": "i-want-to-register-a-deal-with-a-channel-partner-and-track-its",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Channel/Partner Manager / Account Executive",
+    "title": "I want to register a deal with a channel partner and track its status without emailing back and forth",
+    "intentLabels": [
+      "deal registration",
+      "co-sell tracking",
+      "channel conflict protection",
+      "partner deal status"
+    ],
+    "tools": [
+      {
+        "name": "Impartner",
+        "url": "https://www.zinfi.com/blog/best-prm-deal-registration-automation-2026/"
+      },
+      {
+        "name": "Channeltivity"
+      },
+      {
+        "name": "ZINFI"
+      }
+    ],
+    "workflowSummary": "A partner submits deal details (customer name, opportunity size, expected close) through a portal. The tool checks for conflicts with other partners or direct sales already working the same account, approves or flags the registration automatically based on your rules, and gives both the partner and your team live visibility into the deal's status — instead of a spreadsheet or inbox thread that goes stale.",
+    "samplePrompt": "Draft a short partner-facing message explaining our deal registration policy: registrations are protected for 90 days, must include a named contact and estimated close date, and conflicts are resolved on a first-registered basis. Keep it under 100 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "submitting a deal registration is simple for a partner, but setting the approval rules and conflict logic is a channel-ops task.",
+    "trustScore": 3,
+    "pricingNote": "Mid-market PRM platforms often run around $1,900-$2,200/month; enterprise platforms are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zinfi.com/blog/best-prm-deal-registration-automation-2026/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-06",
+    "accessNotes": "Public blog article; deal registration and conflict-resolution rules should be reviewed by channel leadership before rollout",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-7918543963",
+    "slug": "i-want-a-non-standard-discount-or-contract-term-to-get-approved",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Deal Desk / Sales Manager",
+    "title": "I want a non-standard discount or contract term to get approved without chasing people over email or Slack",
+    "intentLabels": [
+      "deal desk approval",
+      "discount approval routing",
+      "non-standard terms escalation",
+      "quote exception workflow"
+    ],
+    "tools": [
+      {
+        "name": "DealHub",
+        "url": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue"
+      },
+      {
+        "name": "Conga"
+      }
+    ],
+    "workflowSummary": "A rep submits a deal that falls outside standard pricing or terms (e.g. a discount above policy, a custom SLA). The tool automatically routes it to the right approver based on deal size and how far it deviates from policy — a small discount might only need a manager, a large one escalates to a VP — showing margin impact and similar past deals alongside the request, instead of a rep guessing who to email.",
+    "samplePrompt": "This deal needs a 22% discount on a $180K ACV deal, above our standard 15% threshold, because the customer is matching a competitor's price [add other context]. Draft a short justification for the approver explaining why this exception makes sense.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "submitting an approval request is simple for a rep, but setting the approval-routing rules is a deal-desk/RevOps task.",
+    "trustScore": 4,
+    "pricingNote": "Deal desk/CPQ platforms are typically quote-based for team licenses — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2025-12-29",
+    "accessNotes": "Public blog article; approval-routing thresholds should be set and periodically reviewed by finance/deal-desk leadership",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-f51805fbc5",
+    "slug": "i-want-to-know-what-sales-tax-or-vat-applies-before-we-invoice",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Deal Desk / Finance / Sales Ops",
+    "title": "I want to know what sales tax or VAT applies before we invoice an international customer",
+    "intentLabels": [
+      "sales tax determination",
+      "VAT calculation",
+      "cross-border tax compliance",
+      "nexus determination"
+    ],
+    "tools": [
+      {
+        "name": "Avalara",
+        "url": "https://determinedai.co/vat-automation-software"
+      },
+      {
+        "name": "Stripe Tax"
+      }
+    ],
+    "workflowSummary": "The tool checks the customer's location and your company's registration status in that jurisdiction, then calculates the correct sales tax, VAT, or GST rate for the transaction (including whether a B2B reverse-charge applies) and applies it to the invoice automatically — instead of a finance person manually researching each country's rules deal by deal.",
+    "samplePrompt": "We're invoicing a business customer in [country]. In plain terms, explain whether VAT/GST typically applies to a B2B software sale there, and whether a reverse-charge mechanism might apply, so I can flag anything unusual to finance before sending the invoice.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "tax determination logic is configured and owned by finance; a sales rep would only see the resulting tax line on an invoice, not set the rules.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise platforms (Avalara, Vertex) are typically quote-based; some newer entrants publish lower self-serve tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://determinedai.co/vat-automation-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-01",
+    "accessNotes": "Public blog article; tax calculations should be reviewed by a qualified tax professional, especially for new jurisdictions",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a7f2c7692c",
+    "slug": "i-want-to-send-a-standard-nda-quickly-before-a-deeper-sales",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Sales Ops",
+    "title": "I want to send a standard NDA quickly before a deeper sales conversation, without waiting on legal",
+    "intentLabels": [
+      "NDA generation",
+      "self-serve NDA",
+      "mutual non-disclosure agreement",
+      "pre-deal legal document"
+    ],
+    "tools": [
+      {
+        "name": "Juro",
+        "url": "https://bindlegal.com/resources/best-software/nda-management-software/"
+      },
+      {
+        "name": "PandaDoc"
+      }
+    ],
+    "workflowSummary": "Pick a pre-approved NDA template, fill in the counterparty's name and a couple of deal-specific details, and send it for e-signature directly from the tool — instead of emailing legal and waiting days for a document that's usually the same standard terms every time. The tool flags if the counterparty tries to redline it, routing only those exceptions to legal.",
+    "samplePrompt": "Draft a short email to send along with our standard mutual NDA to a prospect ahead of a discovery call, explaining briefly why we use one and that it should take just a couple of minutes to sign. Keep it under 60 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "sending a standard NDA from a pre-approved template is designed to be a fast, self-serve action for any rep.",
+    "trustScore": 4,
+    "pricingNote": "Plans commonly start around $19-$49/user/month for document tools with NDA templates built in — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bindlegal.com/resources/best-software/nda-management-software/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 weeks ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; any NDA that gets redlined by the counterparty should be routed to legal, not signed by a rep unilaterally",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-848eaae5a8",
+    "slug": "i-want-to-see-who-all-the-decision-makers-and-influencers-are",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Enterprise Sales",
+    "title": "I want to see who all the decision-makers and influencers are on a complex enterprise deal",
+    "intentLabels": [
+      "buying committee mapping",
+      "stakeholder mapping",
+      "org chart for a deal",
+      "multi-threading"
+    ],
+    "tools": [
+      {
+        "name": "DemandFarm",
+        "url": "https://alignedup.com/guides/top-stakeholder-mapping-software/"
+      },
+      {
+        "name": "ARPEDIO"
+      },
+      {
+        "name": "Aligned"
+      }
+    ],
+    "workflowSummary": "The tool builds a visual map of everyone involved in the deal — economic buyer, technical evaluator, security/legal reviewers, end users — pulling from CRM contact and email data to suggest roles it thinks are missing, and flags stakeholders the rep hasn't engaged yet, instead of a rep relying on memory or a single champion relationship that can disappear mid-deal.",
+    "samplePrompt": "Here's who we've talked to so far on this deal: [list names/titles]. For a deal this size in [industry], what roles are typically involved that we might be missing (e.g. security, legal, procurement, end-user champion)? List them with a one-line reason each matters.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "viewing a stakeholder map is easy for a rep, but building the full org-chart view from CRM/email data typically needs the tool set up by RevOps first.",
+    "trustScore": 4,
+    "pricingNote": "Plans vary; Salesforce-native tools are typically quote-based, some deal-room-style tools price per user/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://alignedup.com/guides/top-stakeholder-mapping-software/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-11",
+    "accessNotes": "Public blog article; stakeholder mapping relies on CRM/email data quality and access permissions",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a0e1365e9f",
+    "slug": "i-want-to-collect-payment-from-an-international-enterprise",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Deal Desk / Sales Ops / Finance",
+    "title": "I want to collect payment from an international enterprise customer without setting up a local bank account",
+    "intentLabels": [
+      "cross-border payment collection",
+      "global invoicing",
+      "international payment processing",
+      "merchant of record"
+    ],
+    "tools": [
+      {
+        "name": "Stripe",
+        "url": "https://trykintsugi.com/blog/best-cross-border-vat-compliance-software"
+      },
+      {
+        "name": "Paddle"
+      }
+    ],
+    "workflowSummary": "The tool acts as the payment processor (and in some models, the merchant of record) for the transaction, accepting the customer's preferred local payment method and currency, handling currency conversion, and reconciling the payment back to the original invoice — so the deal doesn't stall waiting on wire-transfer paperwork or a bank account your company doesn't have in that country.",
+    "samplePrompt": "Draft a short note to include with an invoice to an international customer explaining their payment options (card, local bank transfer, or wire) and roughly how long each method typically takes to clear, so they know what to expect.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "setting up cross-border payment collection and merchant-of-record arrangements is a finance/deal-desk task, not something a rep configures.",
+    "trustScore": 3,
+    "pricingNote": "Processing fees typically apply per transaction (often a percentage plus a fixed fee); merchant-of-record models may charge higher fees for tax/compliance handling — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://trykintsugi.com/blog/best-cross-border-vat-compliance-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; payment processing and merchant-of-record setup require finance/legal review of the applicable terms",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-f47c315a1a",
+    "slug": "i-want-prospects-to-be-able-to-review-our-security-and",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Security / Sales Ops",
+    "title": "I want prospects to be able to review our security and compliance posture themselves before sending a formal questionnaire",
+    "intentLabels": [
+      "self-serve security trust center",
+      "compliance documentation portal",
+      "SOC 2 disclosure",
+      "security due diligence"
+    ],
+    "tools": [
+      {
+        "name": "SafeBase",
+        "url": "https://www.conveyor.com/blog/best-trust-center-software"
+      },
+      {
+        "name": "Vanta Trust Center"
+      }
+    ],
+    "workflowSummary": "Publish your SOC 2 report, certifications, and security policies to a branded, shareable portal. Prospects can browse or ask an AI chatbot questions (answered only from your approved documentation) and request access to gated documents like a penetration-test report — deflecting a portion of formal security questionnaires before they ever reach your team, and giving reps one link to send instead of chasing documents.",
+    "samplePrompt": "Draft a short line I can add to a sales email offering a prospect early access to our security trust center, so their security team can start reviewing our posture before we even get to a formal questionnaire.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "sending a rep a trust-center link to share is simple; setting up and publishing the portal's content is a security/compliance task.",
+    "trustScore": 4,
+    "pricingNote": "Basic trust center features are often included with compliance platforms (e.g. Vanta); dedicated platforms (SafeBase) are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.conveyor.com/blog/best-trust-center-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-18",
+    "accessNotes": "Public blog article; gated documents like SOC 2 reports or pen-test results should be reviewed for what can be shared publicly vs. under NDA",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-d17db90253",
+    "slug": "i-want-to-configure-accurate-pricing-for-a-deal-that-bundles",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Deal Desk / Sales Ops / CPQ Admin",
+    "title": "I want to configure accurate pricing for a deal that bundles many different products together",
+    "intentLabels": [
+      "CPQ configuration",
+      "multi-product bundle pricing",
+      "complex quote configuration",
+      "configure-price-quote"
+    ],
+    "tools": [
+      {
+        "name": "Salesforce CPQ",
+        "url": "https://oneflow.com/blog/ai-quoting-software/"
+      },
+      {
+        "name": "Oracle CPQ"
+      }
+    ],
+    "workflowSummary": "Select the products and quantities a customer wants. The tool applies your configured pricing rules, bundle discounts, and any dependency logic (e.g. product A requires product B) automatically, catching pricing errors before a quote goes out — instead of a rep manually calculating a complex multi-line quote in a spreadsheet and risking mistakes on a big deal.",
+    "samplePrompt": "Here's a bundle: [list products/quantities]. Given a bundle discount of X% when 3+ products are combined, walk me through how the final quoted price should be calculated so I can sanity-check the CPQ output before sending it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "filling in a CPQ quote is designed for reps to self-serve, but the underlying pricing rules and bundle logic are set up by deal-desk/RevOps.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise CPQ platforms are typically quote-based, often bundled into broader CRM licensing costs — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://oneflow.com/blog/ai-quoting-software/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-20",
+    "accessNotes": "Public blog article; CPQ pricing rules require ongoing maintenance by a deal-desk or sales-ops owner as the product catalog changes",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-d3ff583308",
+    "slug": "i-want-to-draft-a-contract-amendment-for-an-existing-customer",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Customer Success / Legal-adjacent",
+    "title": "I want to draft a contract amendment for an existing customer who's expanding or upgrading mid-term",
+    "intentLabels": [
+      "contract amendment",
+      "mid-term upsell contract",
+      "expansion agreement",
+      "order form addendum"
+    ],
+    "tools": [
+      {
+        "name": "Ironclad",
+        "url": "https://spellbook.com/learn/best-ai-contract-redlining-tools"
+      },
+      {
+        "name": "PandaDoc"
+      }
+    ],
+    "workflowSummary": "Pull up the customer's existing signed contract inside the tool. It generates an amendment document that references the original agreement and adds only the new terms (additional seats, a new product, updated pricing) rather than rewriting the whole contract, and routes it for e-signature — so an expansion deal doesn't require starting the legal process from scratch.",
+    "samplePrompt": "This customer is adding 50 more seats to their existing annual contract at the same per-seat rate. Draft the key terms that should go in a one-page amendment: what's changing, what stays the same, and the new effective date.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "filling in the specifics of an amendment is quick for a rep, but the amendment template itself is set up by legal/contract-ops.",
+    "trustScore": 3,
+    "pricingNote": "Document/CLM platform pricing is typically quote-based for teams, or per-user for lighter tools like PandaDoc — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://spellbook.com/learn/best-ai-contract-redlining-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog article; contract amendments should follow the same legal review standard as new contracts, especially for pricing or liability changes",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-3286f7c513",
+    "slug": "i-want-to-generate-a-data-processing-agreement-or-security",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Legal-adjacent / Security",
+    "title": "I want to generate a Data Processing Agreement or security addendum for a regulated customer quickly",
+    "intentLabels": [
+      "DPA generation",
+      "data processing agreement",
+      "security addendum",
+      "GDPR/regulated-customer paperwork"
+    ],
+    "tools": [
+      {
+        "name": "Ironclad",
+        "url": "https://spellbook.com/learn/best-ai-contract-redlining-tools"
+      },
+      {
+        "name": "LegalSifter"
+      }
+    ],
+    "workflowSummary": "Pull a pre-approved DPA or security-addendum template, fill in the customer's name and any deal-specific data-handling details, and route it for review — the tool flags if the customer's own DPA template deviates meaningfully from your standard terms (e.g. data residency or sub-processor requirements), so a rep isn't the one deciding whether a legal deviation is acceptable.",
+    "samplePrompt": "A customer in a regulated industry has asked for our standard DPA. Draft a short note to send along with it explaining what a DPA covers in plain language, so their procurement team knows what to expect when reviewing it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sending a standard DPA is quick for a rep, but any deviation from the standard template needs legal/security review before it's signed.",
+    "trustScore": 3,
+    "pricingNote": "Often included as part of a broader contract-lifecycle or redlining platform subscription — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://spellbook.com/learn/best-ai-contract-redlining-tools",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog article; DPAs and security addenda involve real legal and compliance obligations and should always get a legal review, not just an AI first draft",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-2ac5afd30b",
+    "slug": "i-want-visibility-into-every-deal-that-s-stuck-waiting-on-legal",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Deal Desk / Sales Manager / RevOps",
+    "title": "I want visibility into every deal that's stuck waiting on legal or procurement review",
+    "intentLabels": [
+      "deal desk pipeline visibility",
+      "legal/procurement bottleneck tracking",
+      "contract stage tracking",
+      "deal stall alerts"
+    ],
+    "tools": [
+      {
+        "name": "DealHub",
+        "url": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue"
+      },
+      {
+        "name": "Ironclad (workflow analytics)"
+      }
+    ],
+    "workflowSummary": "The tool tracks every deal that's moved into contract or legal review as a distinct stage, showing how long each one has been sitting and with whom (legal, security, procurement), and flags deals that have stalled past a normal turnaround time — so a sales manager can see and unblock a bottleneck instead of only hearing about it when a rep complains a deal is 'stuck with legal.'",
+    "samplePrompt": "Here are 5 deals currently in legal/procurement review with the number of days in that stage [paste/describe]. Which ones look like they need managerial attention based on how long they've been stuck, and what's a reasonable next step for each?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a pipeline-visibility dashboard for managers/deal-desk, not a task an individual rep sets up themselves.",
+    "trustScore": 3,
+    "pricingNote": "Often bundled into deal-desk or CLM platform pricing, typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2025-12-29",
+    "accessNotes": "Public blog article; accurate stage tracking depends on legal/procurement teams updating deal status consistently in the connected tool",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-52eebb3ce2",
+    "slug": "i-want-to-sell-our-product-through-a-customer-s-aws-azure-or",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Leadership / Partnerships / Cloud Alliances",
+    "title": "I want to sell our product through a customer's AWS, Azure, or Google Cloud committed spend instead of a separate invoice",
+    "intentLabels": [
+      "cloud marketplace co-sell",
+      "hyperscaler marketplace listing",
+      "committed cloud spend deals",
+      "AWS/Azure/GCP transact"
+    ],
+    "tools": [
+      {
+        "name": "Tackle.io",
+        "url": "https://www.automatum.io/blog-posts/best-cloud-marketplace-platforms-2026"
+      },
+      {
+        "name": "Suger"
+      }
+    ],
+    "workflowSummary": "List your product on the relevant cloud marketplace(s) and connect the tool to your CRM. When a deal is eligible, the tool generates a private offer the customer can accept and pay for using their existing AWS/Azure/GCP committed spend, then syncs the resulting co-sell activity and revenue back into your CRM — letting a large customer buy through a budget they've already committed instead of opening a new PO process.",
+    "samplePrompt": "This enterprise customer mentioned they have unused AWS committed spend this year. Draft a short message explaining that we can be purchased through the AWS Marketplace so their unused commitment can go toward our contract, and ask who on their side handles that process.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "listing a product on a cloud marketplace and structuring a private offer is a partnerships/sales-leadership task, not something an individual rep sets up.",
+    "trustScore": 3,
+    "pricingNote": "Marketplace platforms often price on revenue share or a flat subscription (some publish free entry-level tiers) — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.automatum.io/blog-posts/best-cloud-marketplace-platforms-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-08",
+    "accessNotes": "Public blog article; marketplace listing setup and private-offer structuring require coordination with finance and the cloud provider's partner team",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-2375e47978",
+    "slug": "i-want-to-check-a-prospective-customer-s-creditworthiness",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Deal Desk / Finance / Sales Manager",
+    "title": "I want to check a prospective customer's creditworthiness before we agree to extended payment terms",
+    "intentLabels": [
+      "B2B credit check",
+      "creditworthiness verification",
+      "credit risk assessment",
+      "payment terms approval"
+    ],
+    "tools": [
+      {
+        "name": "Dun & Bradstreet",
+        "url": "https://www.agentcollect.com/blog/b2b-credit-risk-management"
+      },
+      {
+        "name": "HighRadius"
+      }
+    ],
+    "workflowSummary": "Enter the customer's business details. The tool pulls a commercial credit score and risk profile from credit-bureau data (and, for existing customers, your own payment history with them), then recommends a credit limit and suggested payment terms — so a deal desk can approve or flag extended payment terms based on data instead of a rep's gut feel about a new logo.",
+    "samplePrompt": "This prospect wants Net-60 payment terms instead of our standard Net-30 on a $[amount] annual contract. What factors should a deal desk typically weigh before approving extended terms for a new customer, and what data would help make that call?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "credit checks and payment-terms approval are a finance/deal-desk decision; reps typically just learn the outcome.",
+    "trustScore": 3,
+    "pricingNote": "Commercial credit bureau reports/subscriptions vary widely by provider and volume; enterprise credit-risk platforms are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.agentcollect.com/blog/b2b-credit-risk-management",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-03-25",
+    "accessNotes": "Public blog article; credit decisions should be made by finance/deal-desk, not a sales rep, to avoid bias toward closing the deal",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ecd6176dd1",
+    "slug": "i-want-to-track-co-sell-credit-and-progress-with-a-hyperscaler",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Executive / Channel Manager (marketplace + co-sell)",
+    "title": "I want to track co-sell credit and progress with a hyperscaler (AWS/Azure/GCP) partner rep on a joint deal",
+    "intentLabels": [
+      "cloud co-sell tracking",
+      "hyperscaler partner alignment",
+      "marketplace deal sync",
+      "co-sell credit"
+    ],
+    "tools": [
+      {
+        "name": "Tackle.io",
+        "url": "https://www.suger.io/resources/guides/cloud-marketplaces/"
+      },
+      {
+        "name": "Suger"
+      }
+    ],
+    "workflowSummary": "Register the deal for co-sell with the relevant cloud provider's partner program. The tool keeps the deal status synced between your CRM and the provider's partner system, tracks which co-sell incentives or credits apply, and flags when the cloud provider's rep needs an update — so joint deals don't fall through the cracks between two separate systems that don't naturally talk to each other.",
+    "samplePrompt": "Draft a short update to send our AWS partner rep on a co-sell deal: current stage, expected close date, and one thing we'd like their help with (e.g. an executive intro or funding support). Keep it under 80 words.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "co-sell registration and cloud-provider partner alignment is typically owned by a partnerships/alliances team, not an individual rep.",
+    "trustScore": 3,
+    "pricingNote": "Marketplace/co-sell platforms often price on revenue share or flat subscription — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.suger.io/resources/guides/cloud-marketplaces/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog article; co-sell programs and incentive structures vary by cloud provider and require partnerships-team setup",
+    "batch": "Sales Teams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-9308fdecf5",
+    "slug": "i-want-to-know-which-of-my-existing-customers-are-ready-for-an",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want to know which of my existing customers are ready for an upsell based on how they're actually using the product",
+    "intentLabels": [
+      "expansion signal detection",
+      "upsell readiness scoring",
+      "product usage-based expansion",
+      "feature adoption gaps"
+    ],
+    "tools": [
+      {
+        "name": "Gainsight (PX)",
+        "url": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell"
+      },
+      {
+        "name": "Pendo"
+      }
+    ],
+    "workflowSummary": "The tool tracks in-app usage across your customer base — which features are used heavily, which paid-for features sit unused, and when usage exceeds plan limits — and combines that with support ticket volume and engagement data into a single expansion-readiness signal, so an account manager knows which accounts to approach instead of guessing from a renewal date alone.",
+    "samplePrompt": "Here's this account's usage data: they're at 95% of their seat limit and use [feature X] heavily but have never turned on [feature Y] [add detail]. Draft 2 sentences summarizing why this account looks upsell-ready and what the natural next offer would be.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a usage-based expansion signal is easy for an account manager, but setting up the underlying product-analytics tracking is a CS-ops/product task.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise CS platform pricing is typically quote-based; Pendo has a free tier for small teams — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-14",
+    "accessNotes": "Public blog article; usage-based tracking requires the product analytics tool to already be instrumented in the product",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8e2c9ddf8a",
+    "slug": "i-want-to-draft-a-personalized-upsell-pitch-for-an-existing",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want to draft a personalized upsell pitch for an existing customer instead of sending a generic 'upgrade now' email",
+    "intentLabels": [
+      "expansion pitch",
+      "upsell messaging",
+      "personalized growth offer",
+      "account expansion email"
+    ],
+    "tools": [
+      {
+        "name": "Octave",
+        "url": "https://www.octavehq.com/post/best-ai-tools-for-expansion-and-upsell-messaging-in-2026"
+      },
+      {
+        "name": "Gong"
+      }
+    ],
+    "workflowSummary": "Feed the tool context about the specific account (usage patterns, recent conversations, stated goals). It drafts an expansion message that ties the upsell directly to something the customer has already said they care about or is already doing in-product, rather than a generic 'you're eligible for an upgrade' template that ignores their actual situation.",
+    "samplePrompt": "This customer mentioned on a recent call that they're expanding into a new region next quarter. Draft a short expansion pitch connecting that plan to adding [additional seats/product], referencing their stated goal specifically.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drafting a single personalized message from account context is designed to be quick and self-serve for an account manager.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary; several tools in this category are quote-based for teams — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.octavehq.com/post/best-ai-tools-for-expansion-and-upsell-messaging-in-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026 (accessed Sept 2026)",
+    "accessNotes": "Public blog article; tool access typically requires a paid team subscription",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-6a76529f5a",
+    "slug": "i-want-the-system-to-tell-me-the-single-best-next-action-to",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Sales Manager",
+    "title": "I want the system to tell me the single best next action to take on an account instead of me guessing",
+    "intentLabels": [
+      "next best action",
+      "AI-recommended next step",
+      "account prioritization action",
+      "guided selling recommendation"
+    ],
+    "tools": [
+      {
+        "name": "Salesforce Einstein (Next Best Action)",
+        "url": "https://www.demandbase.com/blog/best-ai-tools-b2b-marketing/"
+      }
+    ],
+    "workflowSummary": "The tool analyzes an account's CRM history, engagement patterns, and outcomes from similar past accounts, then surfaces one recommended next step (e.g. 'offer a demo of Product B' or 'schedule a check-in — engagement has dropped') directly inside the CRM record, with a confidence score and the reasoning behind it, instead of a rep reviewing the whole account history to decide what to do next.",
+    "samplePrompt": "Here's a summary of this account's recent activity: [paste/describe usage, support tickets, last contact date]. Based on this, what's the single most useful next action I should take this week, and why?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "viewing a recommended next action inside the CRM is designed to be a quick, self-serve read for any account owner.",
+    "trustScore": 3,
+    "pricingNote": "Bundled into higher Salesforce CRM editions; not sold as a standalone add-on for lower tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.demandbase.com/blog/best-ai-tools-b2b-marketing/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "1 month ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; feature availability depends on Salesforce edition and requires sufficient historical CRM data to train on",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-593120fbbe",
+    "slug": "i-want-to-find-other-departments-or-business-units-at-an",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want to find other departments or business units at an existing customer that aren't using us yet",
+    "intentLabels": [
+      "whitespace analysis",
+      "cross-sell opportunity mapping",
+      "untapped business units",
+      "account expansion targeting"
+    ],
+    "tools": [
+      {
+        "name": "Altify (Upland)",
+        "url": "https://www.guideflow.com/blog/account-planning-software"
+      },
+      {
+        "name": "DemandFarm"
+      }
+    ],
+    "workflowSummary": "The tool maps everything you know about a customer's full organization — divisions, subsidiaries, regions — against what's actually been sold, and visually highlights the gaps ('whitespace') where no product or relationship exists yet, so an account team can target a specific unsold division instead of only ever talking to the same buying group that signed the original deal.",
+    "samplePrompt": "Here's what we know about [Customer]'s org structure: [list known divisions/regions] and which ones currently use our product [list]. Which unsold divisions look like the most promising next target, and why?",
+    "beginnerFriendly": "no",
+    "beginnerNote": "whitespace mapping requires a fuller org-chart view than most account managers build alone; it's typically set up with input from account planning/RevOps.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary; most whitespace/account-planning tools are quote-based for enterprise teams — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/account-planning-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog article; whitespace accuracy depends on how completely the customer's org structure is captured in the tool",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ccf09795b3",
+    "slug": "i-want-to-build-a-quarterly-business-review-deck-for-a-key",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want to build a Quarterly Business Review deck for a key account without starting from a blank slide every time",
+    "intentLabels": [
+      "QBR deck generation",
+      "quarterly business review automation",
+      "account review presentation",
+      "customer success deck"
+    ],
+    "tools": [
+      {
+        "name": "DemandFarm",
+        "url": "https://tosea.ai/blog/qbr-deck-complete-guide-2026"
+      },
+      {
+        "name": "Tosea.ai"
+      }
+    ],
+    "workflowSummary": "Upload or connect your CRM data, product usage export, and support history for the account. The tool maps that data into a standard QBR structure (value delivered, adoption, risks, expansion opportunity, next-quarter goals) and drafts a presentation-ready deck with charts already populated, instead of an account manager spending hours pulling numbers into slides from scratch each quarter.",
+    "samplePrompt": "Here's this account's key numbers this quarter: usage change, support tickets opened/closed, and one expansion idea [paste/describe]. Draft the bullet points for a 'value delivered' slide and a 'what's next' slide for their QBR.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "filling in account-specific numbers is quick, but connecting the CRM/usage data source to auto-populate the deck is a one-time setup task.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary by vendor; some presentation-generation tools have free tiers, dedicated QBR platforms are typically quote-based — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://tosea.ai/blog/qbr-deck-complete-guide-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-13",
+    "accessNotes": "Public blog article; source data (CRM, usage exports) should be reviewed for accuracy before a QBR deck goes to the customer",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8a83b3dc8d",
+    "slug": "i-want-to-build-a-structured-growth-plan-for-one-of-our-most",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Key Account Manager",
+    "title": "I want to build a structured growth plan for one of our most important accounts",
+    "intentLabels": [
+      "strategic account plan",
+      "key account growth plan",
+      "account strategy document",
+      "KAM planning"
+    ],
+    "tools": [
+      {
+        "name": "Altify (Upland)",
+        "url": "https://www.guideflow.com/blog/account-planning-software"
+      },
+      {
+        "name": "Kapta"
+      }
+    ],
+    "workflowSummary": "Build out a structured plan for the account covering goals, key stakeholders, current relationship health, and specific growth initiatives for the next 12 months. The tool keeps this plan tied to live CRM data and opportunities (instead of a static slide deck that goes stale) and prompts the account team to revisit it on a regular cadence, so the strategy actually gets executed rather than filed away after being written once.",
+    "samplePrompt": "Draft the opening 'account vision' section of a strategic account plan for [Customer]: one sentence on where the relationship stands today, and one sentence on where we want it to be in 12 months.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading and updating an existing account plan is straightforward, but building the initial structured plan takes real account-manager time and input.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary widely; enterprise account-planning platforms are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/account-planning-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog article; a useful account plan depends on the account team keeping it updated as the relationship changes",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-f70c9daa0e",
+    "slug": "i-want-to-know-if-a-champion-at-one-of-my-accounts-has-left-or",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Sales Rep",
+    "title": "I want to know if a champion at one of my accounts has left or changed roles before it's too late",
+    "intentLabels": [
+      "champion job change alert",
+      "stakeholder turnover tracking",
+      "contact departure alert",
+      "relationship risk from turnover"
+    ],
+    "tools": [
+      {
+        "name": "UserGems",
+        "url": "https://www.findymail.com/blog/job-change-tracking/"
+      },
+      {
+        "name": "Champify"
+      }
+    ],
+    "workflowSummary": "The tool continuously monitors your tracked contacts (customers and past champions) for job changes, and the moment one is detected, alerts the account owner with the person's new company and role — so a rep can re-engage a departed champion at their new company, or flag that an existing account just lost its internal advocate, instead of finding out months later when an email bounces.",
+    "samplePrompt": "A champion at [Account] just left for [New Company]. Draft a short, warm reconnect message referencing what we worked on together, without being pushy about pitching anything yet.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "receiving and acting on a job-change alert is designed to be a quick, self-serve action for the account owner.",
+    "trustScore": 4,
+    "pricingNote": "Plans typically price by number of tracked contacts, often in the low hundreds of dollars per month for smaller teams — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.findymail.com/blog/job-change-tracking/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-05-25",
+    "accessNotes": "Public blog article; job-change tracking should comply with applicable data-privacy rules for contact monitoring",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-d609aac46d",
+    "slug": "i-want-a-clear-report-showing-a-customer-the-actual-return-on",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want a clear report showing a customer the actual return on investment they've gotten from us",
+    "intentLabels": [
+      "ROI report",
+      "value realization report",
+      "customer impact summary",
+      "business case for renewal/expansion"
+    ],
+    "tools": [
+      {
+        "name": "SmartKarrot",
+        "url": "https://blog.buildbetter.ai/best-customer-success-platforms-ai-insights-2026/"
+      },
+      {
+        "name": "Gainsight"
+      }
+    ],
+    "workflowSummary": "The tool pulls usage, outcome, and (where available) cost-savings or efficiency data tied to the account, and generates a plain-language progress report translating that into business impact — time saved, cost avoided, adoption growth — so an account manager has a concrete, data-backed story to bring into a renewal or expansion conversation instead of a vague 'things are going well.'",
+    "samplePrompt": "Here's what changed for this account over the past year: [paste usage growth, efficiency metrics, or outcomes]. Turn this into a 3-bullet 'value delivered' summary I can put at the top of a customer-facing report.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a generated value report is easy, but connecting the right usage/outcome data sources is a CS-ops setup task.",
+    "trustScore": 3,
+    "pricingNote": "Mid-market CS platform pricing is typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://blog.buildbetter.ai/best-customer-success-platforms-ai-insights-2026/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 days ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; any customer-facing ROI figures should be validated against real account data before sharing externally",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-8eb9465ba6",
+    "slug": "i-want-to-track-upsell-and-cross-sell-revenue-as-its-own",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Leadership / RevOps / Finance",
+    "title": "I want to track upsell and cross-sell revenue as its own pipeline, separate from new-business deals",
+    "intentLabels": [
+      "expansion pipeline tracking",
+      "upsell/cross-sell revenue reporting",
+      "existing-customer pipeline",
+      "expansion MRR tracking"
+    ],
+    "tools": [
+      {
+        "name": "Maxio",
+        "url": "https://www.guideflow.com/blog/expansion-revenue-software"
+      },
+      {
+        "name": "Clari"
+      }
+    ],
+    "workflowSummary": "The tool tags and tracks expansion opportunities (upsells, cross-sells, seat additions) as a distinct pipeline from new-logo deals, rolling up expansion MRR/ARR separately in reporting — so leadership can see how much growth is coming from existing customers versus new ones, instead of both blending together in one generic pipeline number.",
+    "samplePrompt": "Here's this month's pipeline broken into new-business and expansion deals [paste/describe]. Summarize in 3 sentences what share of pipeline is coming from existing customers versus new logos, and whether that mix looks healthy.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "separating and reporting on expansion pipeline is a RevOps/finance reporting task, not something an individual rep configures.",
+    "trustScore": 3,
+    "pricingNote": "Billing/subscription analytics platforms like Maxio are typically quote-based for team plans — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/expansion-revenue-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-29",
+    "accessNotes": "Public blog article; accurate expansion-vs-new-business splits depend on consistent deal-type tagging in the CRM",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-e7140b0075",
+    "slug": "i-want-a-single-view-of-an-account-s-overall-health-combining",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Customer Success Manager / Account Manager",
+    "title": "I want a single view of an account's overall health combining usage, support, and sentiment signals",
+    "intentLabels": [
+      "account health review",
+      "customer health score",
+      "combined usage/support/sentiment view",
+      "holistic account check"
+    ],
+    "tools": [
+      {
+        "name": "ChurnZero",
+        "url": "https://getperspective.ai/blog/best-ai-tools-for-customer-success-managers-in-2026-by-workflow-stage"
+      },
+      {
+        "name": "Vitally"
+      }
+    ],
+    "workflowSummary": "The tool pulls product usage trends, open/resolved support tickets, and sentiment from recent calls or surveys into a single account health score, updated continuously rather than reviewed once a quarter — so a CSM can spot a quietly declining account (usage down, tickets up, sentiment cooling) before it shows up as a churn or expansion problem later.",
+    "samplePrompt": "Here's an account's recent signals: usage down 15% this month, 3 open support tickets, and their last call felt lukewarm [add detail]. In plain terms, how would you characterize this account's health, and what's the one thing to check first?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "checking a health score is a quick daily habit for a CSM, but setting up the combined scoring model is a CS-ops task.",
+    "trustScore": 4,
+    "pricingNote": "Mid-market CS platform pricing is typically quote-based per managed account — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getperspective.ai/blog/best-ai-tools-for-customer-success-managers-in-2026-by-workflow-stage",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-06-15",
+    "accessNotes": "Public blog article; health-score accuracy depends on the underlying usage, support, and sentiment data being connected and current",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-1bb71089d5",
+    "slug": "i-want-to-run-a-customer-advisory-board-with-our-most-strategic",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Customer Marketing / Sales Leadership",
+    "title": "I want to run a customer advisory board with our most strategic accounts to guide our roadmap and messaging",
+    "intentLabels": [
+      "customer advisory board",
+      "CAB management",
+      "strategic customer program",
+      "VIP customer engagement"
+    ],
+    "tools": [
+      {
+        "name": "Influitive",
+        "url": "https://www.koji.so/blog/best-customer-advisory-board-software-2026"
+      },
+      {
+        "name": "Koji"
+      }
+    ],
+    "workflowSummary": "Invite your 12-20 most strategic customers into a structured program. The tool runs (or helps schedule) regular touchpoints — a live quarterly session plus shorter async check-ins — and captures what these customers say about your product, pricing, and roadmap, structuring their feedback into themes leadership can act on, instead of one unstructured meeting a quarter that produces a deck nobody revisits.",
+    "samplePrompt": "Draft a short invitation email inviting a top customer to join our customer advisory board, explaining what it involves (roughly quarterly, ~1 hour, direct input into our roadmap) and why we specifically want their perspective.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "running a customer advisory board is a customer-marketing/leadership program, not something an individual account manager sets up alone.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary widely; some AI-interview-based tools price per interview (a few euros/dollars each), full community platforms are typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.koji.so/blog/best-customer-advisory-board-software-2026",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 weeks ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; participation should be voluntary and customers should be told clearly how their feedback will be used",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-edb75b87c2",
+    "slug": "i-want-customer-success-to-flag-an-account-to-sales-the-moment",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Customer Success Manager / Sales Manager",
+    "title": "I want customer success to flag an account to sales the moment it looks ready for expansion, without it falling through the cracks",
+    "intentLabels": [
+      "CS-to-sales expansion handoff",
+      "expansion readiness alert",
+      "account handback",
+      "growth opportunity routing"
+    ],
+    "tools": [
+      {
+        "name": "Catalyst (Totango)",
+        "url": "https://blog.buildbetter.ai/best-customer-success-platforms-ai-insights-2026/"
+      },
+      {
+        "name": "Gainsight"
+      }
+    ],
+    "workflowSummary": "The tool scores every account for expansion propensity based on historical patterns (usage growth, engagement, similar accounts that expanded before), and automatically routes accounts crossing a threshold from the CSM's queue into the sales/AM team's pipeline with the relevant context attached — so an expansion-ready account gets a timely sales conversation instead of sitting in a CSM's book of business until the next scheduled check-in.",
+    "samplePrompt": "This account just crossed our expansion-readiness threshold: [paste the signals, e.g. usage growth, upcoming renewal, recent positive feedback]. Draft a short handoff note from the CSM to the account manager summarizing why now is a good time to have the expansion conversation.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "expansion-readiness scoring and handoff routing is configured by CS-ops/RevOps; individual CSMs and AMs just receive the resulting handoff.",
+    "trustScore": 3,
+    "pricingNote": "Mid-market CS platform pricing is typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://blog.buildbetter.ai/best-customer-success-platforms-ai-insights-2026/",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "3 days ago (accessed Sept 2026)",
+    "accessNotes": "Public blog article; handoff routing thresholds should be reviewed periodically so accounts aren't handed off too early or too late",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-a32c58a16d",
+    "slug": "i-want-to-build-the-case-for-a-mid-contract-price-increase-tied",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Deal Desk",
+    "title": "I want to build the case for a mid-contract price increase tied to an expansion, not at renewal time",
+    "intentLabels": [
+      "mid-term price increase justification",
+      "expansion pricing business case",
+      "value-based repricing",
+      "non-renewal pricing change"
+    ],
+    "tools": [
+      {
+        "name": "DealHub",
+        "url": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue"
+      },
+      {
+        "name": "Gainsight (value data)"
+      }
+    ],
+    "workflowSummary": "Pull together the account's usage growth and value-realization data alongside the proposed new pricing. The tool helps structure a business case that ties the price change to concrete value delivered or consumed (more seats, higher usage tier, new features adopted) rather than a flat increase with no justification, and routes it through the same approval workflow as other non-standard pricing changes.",
+    "samplePrompt": "This account has grown usage by 40% since signing but is still on their original pricing tier. Draft a short, value-based justification for proposing a tier increase at their next check-in, framed around what they're getting rather than just the new price.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "proposing a mid-term price change is a deal-desk/account-management decision that typically needs manager or finance sign-off before it's raised with the customer.",
+    "trustScore": 3,
+    "pricingNote": "Deal desk/CPQ platform pricing is typically quote-based for team licenses — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.heyiris.ai/blog/top-9-deal-desk-software-solutions-to-boost-revenue",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2025-12-29",
+    "accessNotes": "Public blog article; any price change proposal should be reviewed against the existing contract terms before being raised with the customer",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-434ae44ed7",
+    "slug": "i-want-to-report-our-net-revenue-retention-and-expansion",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Sales Leadership / Finance / RevOps",
+    "title": "I want to report our net revenue retention and expansion metrics clearly to leadership",
+    "intentLabels": [
+      "net revenue retention reporting",
+      "NRR/GRR metrics",
+      "expansion vs. churn reporting",
+      "board-ready retention metrics"
+    ],
+    "tools": [
+      {
+        "name": "ChartMogul",
+        "url": "https://www.guideflow.com/blog/expansion-revenue-software"
+      },
+      {
+        "name": "Baremetrics"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your billing/subscription data. It automatically calculates net revenue retention (expansion minus churn and contraction, as a percentage of starting revenue) and breaks the number down into its components, presenting it as a clean, board-ready chart — instead of finance manually reconciling billing exports in a spreadsheet each quarter to answer 'is our existing customer base growing or shrinking?'",
+    "samplePrompt": "Our NRR this quarter came out to [X]%, made up of [Y]% expansion and [Z]% churn/contraction. Draft 2 sentences explaining what this number means for a board slide, in plain, non-jargon language.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "NRR reporting is a finance/RevOps function; individual sales reps don't typically configure or read this dashboard directly.",
+    "trustScore": 4,
+    "pricingNote": "Subscription analytics tools often have plans starting around free-$100+/month depending on revenue scale — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.guideflow.com/blog/expansion-revenue-software",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-07-29",
+    "accessNotes": "Public blog article; NRR calculations depend on clean, consistent billing data connected to the tool",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-cc82a834d3",
+    "slug": "i-want-to-build-a-plan-to-grow-our-footprint-inside-an-account",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Sales Manager",
+    "title": "I want to build a plan to grow our footprint inside an account where a competitor is also being used",
+    "intentLabels": [
+      "competitive displacement plan",
+      "multi-vendor account growth",
+      "share-of-wallet expansion",
+      "competitor-in-account strategy"
+    ],
+    "tools": [
+      {
+        "name": "Gong",
+        "url": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell"
+      },
+      {
+        "name": "Klue"
+      }
+    ],
+    "workflowSummary": "The tool flags when a competitor is mentioned in customer calls or support conversations tied to an account, and surfaces the relevant competitive battlecard content (differentiators, objection responses) so the account team can build a specific plan to expand into the parts of the account still served by the competitor, instead of reacting one conversation at a time without a coordinated strategy.",
+    "samplePrompt": "This account uses us for [use case] but still uses [Competitor] for [other use case]. Draft a short internal talking-points list for why we could take over that second use case too, based on our known differentiators.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a competitor-mention alert is easy, but building the full displacement strategy is an account-manager/sales-leadership task.",
+    "trustScore": 3,
+    "pricingNote": "Bundled into conversation-intelligence and competitive-intelligence platform pricing, typically quote-based per seat — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-14",
+    "accessNotes": "Public blog article; competitive displacement plans should be reviewed against the specific contract terms already in place with the account",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "sales-teams-ef28f3d3b9",
+    "slug": "i-want-to-benchmark-a-customer-s-usage-against-similar",
+    "kind": "workflow",
+    "niche": "Sales Teams",
+    "sector": "Sales Teams",
+    "persona": "Account Manager / Customer Success Manager",
+    "title": "I want to benchmark a customer's usage against similar customers to make the case for an upgrade",
+    "intentLabels": [
+      "usage benchmarking",
+      "peer comparison for expansion",
+      "similar-customer data",
+      "benchmark-based upsell case"
+    ],
+    "tools": [
+      {
+        "name": "Gainsight (PX)",
+        "url": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell"
+      },
+      {
+        "name": "Pendo"
+      }
+    ],
+    "workflowSummary": "The tool compares one account's product usage and adoption against a peer group of similar customers (by size, industry, or plan tier), highlighting where the account is behind or ahead of typical usage for their segment — giving an account manager a data point like 'similar customers your size use X feature 3x more often' to make an upgrade conversation concrete instead of a vague 'you should use more of the product.'",
+    "samplePrompt": "This customer's usage of [feature] is roughly half of what similar-sized customers in [industry] typically show. Draft 2 sentences I could say on a call to introduce this comparison without sounding like I'm pressuring them.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading a benchmark comparison is easy for an account manager, but building the peer-group benchmarking model is a product-analytics/CS-ops task.",
+    "trustScore": 3,
+    "pricingNote": "Product analytics platform pricing varies; Pendo has a free tier for small teams, enterprise tiers are quote-based — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.tofuhq.com/post/best-ai-tools-for-customer-expansion-and-upsell",
+    "sourceType": "Directory / product roundup page",
+    "freshness": "2026-04-14",
+    "accessNotes": "Public blog article; peer benchmarking depends on having enough comparable accounts in the same segment to make a meaningful comparison",
+    "batch": "Sales Teams AI Workflows Batch5",
+    "status": "active"
+  }
+]

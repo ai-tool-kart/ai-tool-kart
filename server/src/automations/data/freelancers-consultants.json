@@ -1,0 +1,728 @@
+[
+  {
+    "id": "freelancers-consultants-8610ee9c6f",
+    "slug": "i-want-ai-to-write-a-winning-proposal-for-a-job-i-found-on",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer bidding on jobs through Upwork or similar marketplaces",
+    "title": "I want AI to write a winning proposal for a job I found on Upwork",
+    "intentLabels": [
+      "AI Upwork proposal generator",
+      "freelance marketplace bid writer",
+      "job application proposal AI"
+    ],
+    "tools": [
+      {
+        "name": "Proposal Genie",
+        "url": "https://www.proposalgenie.ai/"
+      }
+    ],
+    "workflowSummary": "Paste in the job posting; the AI reads both the posting and your freelancer profile, then generates a customized, professional proposal in about 10 seconds - built specifically for marketplace bidding rather than generic business proposals, so the tone and structure match what wins jobs on platforms like Upwork or Freelancer.com.",
+    "samplePrompt": "\"Here's a job posting: [paste job description]. Write a proposal for this using my profile background in [skill/experience].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste and generate, no proposal-writing experience needed",
+    "trustScore": 3,
+    "pricingNote": "7-day free trial per the page; subscription pricing after that",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.proposalgenie.ai/",
+    "sourceType": "Product page",
+    "freshness": "2024-03-15",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-1492a97b47",
+    "slug": "i-want-to-send-a-client-a-professional-proposal-that-flows",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant or freelancer sending a formal proposal directly to a client (not through a marketplace)",
+    "title": "I want to send a client a professional proposal that flows straight into a contract and invoice",
+    "intentLabels": [
+      "AI end-to-end freelance workflow",
+      "proposal-to-contract-to-invoice automation",
+      "client business management"
+    ],
+    "tools": [
+      {
+        "name": "Bonsai (by Zoom)",
+        "url": "https://saasrat.com/products/bonsai"
+      }
+    ],
+    "workflowSummary": "Generate a branded proposal from a template; once the client accepts it, the details auto-populate into a matching contract, so nothing has to be retyped between the two documents - built specifically so a solo freelancer's paperwork looks and flows like a larger agency's.",
+    "samplePrompt": "\"Create a proposal for [project] with [client name], covering scope, timeline, and a price of [amount], and prepare it to convert into a contract once accepted.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided templates connect each step automatically",
+    "trustScore": 4,
+    "pricingNote": "Tiered annual pricing starting around $9/user/month for the basic plan",
+    "pricingTier": "paid",
+    "sourceUrl": "https://saasrat.com/products/bonsai",
+    "sourceType": "Blog / product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-7c3137fbb1",
+    "slug": "i-want-a-solid-legally-vetted-contract-for-a-new-client-without",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer who has been burned by vague contracts or scope creep before",
+    "title": "I want a solid, legally-vetted contract for a new client without hiring a lawyer",
+    "intentLabels": [
+      "AI freelance contract generator",
+      "attorney-reviewed templates",
+      "e-signature"
+    ],
+    "tools": [
+      {
+        "name": "Bonsai (by Zoom)",
+        "url": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/"
+      }
+    ],
+    "workflowSummary": "Choose from a library of contract templates vetted by attorneys, fill in the client and project specifics (many pre-populated from an accepted proposal), and send for a legally-binding e-signature - protecting the freelancer without the time or cost of drafting an agreement from scratch each time.",
+    "samplePrompt": "\"Generate a freelance service contract for [project] with [client], including a 50% upfront payment and a 2-round revision limit.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based, no legal background needed",
+    "trustScore": 4,
+    "pricingNote": "Included in Bonsai's paid plans; free trial available",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-18b98d779d",
+    "slug": "i-want-my-tracked-hours-to-turn-into-an-invoice-automatically",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer who bills by the hour and dreads manually building invoices from timesheets",
+    "title": "I want my tracked hours to turn into an invoice automatically without retyping anything",
+    "intentLabels": [
+      "AI time tracking",
+      "auto-invoicing from timesheets",
+      "billable hours automation"
+    ],
+    "tools": [
+      {
+        "name": "Bonsai (by Zoom)",
+        "url": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/"
+      }
+    ],
+    "workflowSummary": "Log hours with a one-click timer against a specific client or task; those logged hours flow directly into an invoice with no manual entry, and recurring or one-time invoices can include attached expenses with automated late-payment reminders handling the awkward follow-up conversation.",
+    "samplePrompt": "\"Create an invoice for [client] based on the hours I've logged this month, and set an automatic reminder if it's not paid within 14 days.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click timer, invoice builds itself from logged time",
+    "trustScore": 4,
+    "pricingNote": "Included in Bonsai's paid plans",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-2df3323c6e",
+    "slug": "i-want-my-clients-to-have-their-own-portal-to-see-project",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Solo freelancer or small consulting shop who wants to look more established to clients",
+    "title": "I want my clients to have their own portal to see project updates, files, and pay invoices",
+    "intentLabels": [
+      "Branded client portal",
+      "freelancer-client communication hub",
+      "project transparency tool"
+    ],
+    "tools": [
+      {
+        "name": "Bonsai (by Zoom)",
+        "url": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/"
+      }
+    ],
+    "workflowSummary": "Clients get a single branded space (under the freelancer's own name, not Bonsai's) where they can view proposals, sign contracts, check project progress, and pay invoices - giving a one-person operation the polished, organized feel of a larger agency without extra client-facing tools.",
+    "samplePrompt": "\"Set up a client portal for [client] where they can see the project timeline, access shared files, and pay their invoice.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "portal is generated automatically once a project is set up",
+    "trustScore": 3,
+    "pricingNote": "Included in Bonsai's paid plans",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.zoom.com/en/blog/how-bonsai-replaces-the-freelancer-tech-stack/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-ddc85c0f14",
+    "slug": "i-want-to-turn-my-resume-and-past-projects-into-a-portfolio",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer with plenty of past work but no portfolio site to show it off",
+    "title": "I want to turn my resume and past projects into a portfolio website without hiring a designer",
+    "intentLabels": [
+      "AI portfolio generator",
+      "resume-to-portfolio converter",
+      "freelance business hub"
+    ],
+    "tools": [
+      {
+        "name": "Taskade",
+        "url": "https://www.taskade.com/generate/freelancing/portfolio-builder"
+      }
+    ],
+    "workflowSummary": "Paste in a resume, GitHub profile, or project links; the AI produces the layout, section structure, and a first draft of the copy, which the freelancer then edits and reorders - and because it lives inside a broader freelance workspace, the finished portfolio connects directly to the same tool's CRM, proposals, and invoicing.",
+    "samplePrompt": "\"Turn this resume into a 3-project portfolio site focused on my consulting work in [industry], with a case-study style layout.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste content in, get a live site out in about a minute",
+    "trustScore": 3,
+    "pricingNote": "Free to generate a basic portfolio per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.taskade.com/generate/freelancing/portfolio-builder",
+    "sourceType": "Product page",
+    "freshness": "2026-07-01",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-7d309f56fc",
+    "slug": "i-want-a-portfolio-website-that-looks-different-from-every",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer wanting a more visually distinctive portfolio than a resume-style template",
+    "title": "I want a portfolio website that looks different from every other templated freelancer site",
+    "intentLabels": [
+      "AI website generator from prompt",
+      "differentiated portfolio design",
+      "freelance case study site"
+    ],
+    "tools": [
+      {
+        "name": "Readdy",
+        "url": "https://info.readdy.ai/blog/recommended/what-are-the-best-website-builders-for-freelancers-who-want-to-showcase-their-own-work-in-a-portfoli-cf81aa"
+      }
+    ],
+    "workflowSummary": "Describe the portfolio in a single prompt (e.g. \"a clean, single-page portfolio for a consultant, with case studies and a contact form\"); the AI generates a complete, responsive site from that description, which can then be refined visually - aimed at freelancers who want their site to feel distinct rather than like a generic AI template.",
+    "samplePrompt": "\"Generate a portfolio website for a [type of freelancer/consultant], with 3 case study sections and a contact form, in a clean modern style.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "single prompt to start, visual refinement afterward",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://info.readdy.ai/blog/recommended/what-are-the-best-website-builders-for-freelancers-who-want-to-showcase-their-own-work-in-a-portfoli-cf81aa",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-ff07ce70b3",
+    "slug": "i-want-ai-to-send-cold-outreach-emails-to-find-new-clients-for",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer whose client pipeline runs dry between projects because they rely only on referrals",
+    "title": "I want AI to send cold outreach emails to find new clients for my freelance business",
+    "intentLabels": [
+      "AI cold email outreach",
+      "freelancer lead generation",
+      "automated prospecting"
+    ],
+    "tools": [
+      {
+        "name": "Instantly",
+        "url": "https://instantly.ai/freelancers"
+      }
+    ],
+    "workflowSummary": "Search a database of hundreds of millions of leads with filters for the kind of client who needs your specific service; the AI personalizes outreach messages per prospect, automates follow-ups, and manages replies in one inbox, handling deliverability setup (like sending-domain warmup) that would otherwise land freelancer emails in spam.",
+    "samplePrompt": "\"Find 50 potential clients who need [your service] in [industry/location], and draft a personalized first outreach email for each.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful once set up, but initial domain/deliverability setup takes some effort",
+    "trustScore": 3,
+    "pricingNote": "No credit card required to start per the page; paid plans for volume",
+    "pricingTier": "paid",
+    "sourceUrl": "https://instantly.ai/freelancers",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-3677e107ef",
+    "slug": "i-want-ai-to-research-my-ideal-client-profile-and-tell-me-who",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer who wants to reach out to only genuinely well-matched prospects, not just a big list",
+    "title": "I want AI to research my ideal client profile and tell me who to reach out to, not just find contacts",
+    "intentLabels": [
+      "AI ideal customer profile research",
+      "prospect intelligence",
+      "qualified lead discovery"
+    ],
+    "tools": [
+      {
+        "name": "Freelancer Hub",
+        "url": "https://freelancerhub.io/"
+      }
+    ],
+    "workflowSummary": "The AI suggests an Ideal Customer Profile based on the freelancer's own services, then searches for matching people, companies, or intent signals; before reaching out, it pulls a quick research brief on each prospect (company overview, recent news, likely pain points) so outreach starts from real context instead of a guess.",
+    "samplePrompt": "\"Based on my services in [field], suggest an ideal customer profile, then find 20 matching companies and summarize each one's likely pain points.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once you know roughly who you're targeting",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://freelancerhub.io/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-e566b6e4a9",
+    "slug": "i-want-ai-to-help-me-write-a-persuasive-proposal-for-a-bigger",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant pitching a larger engagement or partnership rather than a routine project",
+    "title": "I want AI to help me write a persuasive proposal for a bigger consulting engagement or partnership",
+    "intentLabels": [
+      "AI business proposal writer",
+      "partnership pitch generator",
+      "consulting engagement proposal"
+    ],
+    "tools": [
+      {
+        "name": "HyperWrite Proposal Generator",
+        "url": "https://www.hyperwriteai.com/aitools/proposal-generator"
+      }
+    ],
+    "workflowSummary": "Outline the engagement's goals, scope, and value proposition; the AI drafts a persuasive proposal aimed at securing new clients or partnerships, structured to highlight expertise and expected outcomes rather than just listing deliverables - suited to consultants pitching higher-stakes engagements, not just routine project quotes.",
+    "samplePrompt": "\"Write a consulting proposal for a 3-month engagement helping [client] with [problem], emphasizing expected outcomes and my relevant experience.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompt-based drafting, no proposal-writing background needed",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hyperwriteai.com/aitools/proposal-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session1",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-b1c1c4fda1",
+    "slug": "i-want-ai-to-tell-me-what-i-should-actually-be-charging-as-a",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer who picked a number out of thin air and isn't sure if they're leaving money on the table",
+    "title": "I want AI to tell me what I should actually be charging as a freelancer",
+    "intentLabels": [
+      "AI freelance rate calculator",
+      "hourly rate builder",
+      "income-goal-based pricing"
+    ],
+    "tools": [
+      {
+        "name": "WhatShouldICharge",
+        "url": "https://whatshouldicharge.io/"
+      }
+    ],
+    "workflowSummary": "Enter your desired take-home income, real business expenses, and non-billable time; the calculator builds a defensible rate from those actual numbers rather than a guess, benchmarks it against real wage data across hundreds of metro areas, and even factors in how much AI tools you use (like Claude or ChatGPT) effectively lower your real cost per billed hour.",
+    "samplePrompt": "\"Calculate my ideal hourly and project rate as a [profession] wanting to take home $[amount]/year, with expenses of $[amount]/year and using AI tools for about [percentage] of my work.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided inputs, no financial background needed",
+    "trustScore": 4,
+    "pricingNote": "Free per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://whatshouldicharge.io/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session2",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-117dd4cd59",
+    "slug": "i-want-to-know-what-other-freelancers-with-my-skills-and",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer unsure how their rate compares to others doing similar work",
+    "title": "I want to know what other freelancers with my skills and experience actually charge",
+    "intentLabels": [
+      "AI rate benchmarking",
+      "market-rate data by skill and location",
+      "competitive pricing research"
+    ],
+    "tools": [
+      {
+        "name": "SalarySavvy",
+        "url": "https://salarysavvy.ai/tool"
+      }
+    ],
+    "workflowSummary": "Select your skill (from over 20 including development, design, and data science) and location; the tool returns a data-driven rate benchmark pulled from thousands of real freelancer contracts and job postings, adjusted for cost of living and current market demand, updated monthly rather than based on outdated survey data.",
+    "samplePrompt": "\"Show me the current market rate benchmark for a [skill] freelancer with [years] of experience in [location/remote].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "select skill and location, get a benchmark instantly",
+    "trustScore": 3,
+    "pricingNote": "Free per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://salarysavvy.ai/tool",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session2",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-4c3ee9f4a7",
+    "slug": "i-want-ai-to-make-it-easy-to-collect-and-display-testimonials",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer with happy clients who never gets around to formally asking for a testimonial",
+    "title": "I want AI to make it easy to collect and display testimonials from my clients",
+    "intentLabels": [
+      "AI testimonial collection",
+      "social proof widget",
+      "video/text testimonial capture"
+    ],
+    "tools": [
+      {
+        "name": "Testimonial.to",
+        "url": "https://help.testimonial.to/en/articles/8570034-ai-case-study-generator"
+      }
+    ],
+    "workflowSummary": "Share a simple branded link with a client (no login required on their end); they can submit a text, video, or audio testimonial in minutes, which then displays automatically on a website widget - a Chrome extension also lets the freelancer capture praise clients already left on LinkedIn without manual copy-pasting.",
+    "samplePrompt": "\"Set up a testimonial collection page for [client] to leave feedback on our recent project, and add it to my website's testimonial widget once submitted.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "shareable link does the work, no developer needed",
+    "trustScore": 3,
+    "pricingNote": "Free trial available; paid plans for more submissions/features",
+    "pricingTier": "paid",
+    "sourceUrl": "https://help.testimonial.to/en/articles/8570034-ai-case-study-generator",
+    "sourceType": "Blog / product page",
+    "freshness": "2026-05-22",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session2",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-2c4a9038f6",
+    "slug": "i-want-ai-to-turn-a-client-testimonial-or-project-result-into-a",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant with a great result for a client but no time to write it up as a case study",
+    "title": "I want AI to turn a client testimonial or project result into a polished case study",
+    "intentLabels": [
+      "AI case study generator",
+      "testimonial-to-case-study conversion",
+      "client success story writer"
+    ],
+    "tools": [
+      {
+        "name": "Famewall",
+        "url": "https://famewall.io/tools/ai-case-study-generator/"
+      }
+    ],
+    "workflowSummary": "Feed in a client testimonial or project outcome; the AI turns it into a structured case study ready to use on a website, in a blog post, or in social media, and can also generate standalone short testimonial snippets with animation effects from the same source material - free with no email required to try.",
+    "samplePrompt": "\"Turn this client testimonial into a full case study covering the problem, my approach, and the result: [paste testimonial/notes].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no signup needed to generate a first case study",
+    "trustScore": 3,
+    "pricingNote": "Free to use per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://famewall.io/tools/ai-case-study-generator/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session2",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-9bdffcf20c",
+    "slug": "i-want-ai-to-help-me-write-a-clear-positioning-statement-for",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant whose LinkedIn headline and bio still just say their job title with no clear positioning",
+    "title": "I want AI to help me write a clear positioning statement for who I help and how",
+    "intentLabels": [
+      "AI personal brand statement generator",
+      "consultant positioning",
+      "LinkedIn headline and elevator pitch writer"
+    ],
+    "tools": [
+      {
+        "name": "Felo Agent (Personal Brand Statement Generator)",
+        "url": "https://felo.ai/en/agents/free-personal-brand-statement-CYfCByjUTirWDM6PbsyWub"
+      }
+    ],
+    "workflowSummary": "Describe your role, who you help, and your experience in a sentence or two; the AI returns a positioning statement, a spoken elevator pitch, and a LinkedIn headline built from the same core positioning - aimed at replacing a vague job title with a specific claim about who you help and what makes your approach different.",
+    "samplePrompt": "\"I'm a [type of consultant] who helps [specific audience] achieve [specific outcome], with [years] of experience and a [approach/differentiator]. Write a positioning statement, elevator pitch, and LinkedIn headline from this.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe yourself in plain language, get several formats back",
+    "trustScore": 3,
+    "pricingNote": "Free per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://felo.ai/en/agents/free-personal-brand-statement-CYfCByjUTirWDM6PbsyWub",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session2",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-6c98d61300",
+    "slug": "i-want-ai-to-tell-me-how-much-to-set-aside-for-taxes-and",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Newly self-employed freelancer who has never had to set aside their own taxes before",
+    "title": "I want AI to tell me how much to set aside for taxes and estimate my quarterly payments",
+    "intentLabels": [
+      "AI tax assistant for freelancers",
+      "quarterly estimated tax calculator",
+      "self-employment tax tracker"
+    ],
+    "tools": [
+      {
+        "name": "TaxApp (AI Tax Assistant)",
+        "url": "https://apps.apple.com/us/app/-/id6613123841"
+      }
+    ],
+    "workflowSummary": "Connects to your income and expenses (via receipt scanning, bank statement analysis, or manual entry) to automatically categorize transactions, then calculates real-time quarterly tax estimates including self-employment tax and a weekly set-aside amount - built in plain language for people with no accounting background, with an option to loop in a real CPA for anything that needs professional review.",
+    "samplePrompt": "\"Based on my income and expenses so far this year, calculate my estimated quarterly tax payment and how much I should set aside weekly.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for non-accountants, plain-language guidance throughout",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source; educational tool, not a substitute for licensed tax advice",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.apple.com/us/app/-/id6613123841",
+    "sourceType": "Product page (app store listing)",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-074e5aaa2b",
+    "slug": "i-want-ai-to-write-my-payment-follow-up-emails-so-i-don-t-have",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer who dreads the awkward 'just checking in about my invoice' conversation",
+    "title": "I want AI to write my payment follow-up emails so I don't have to have the awkward money conversation myself",
+    "intentLabels": [
+      "AI payment reminder generator",
+      "overdue invoice follow-up",
+      "professional collections email writer"
+    ],
+    "tools": [
+      {
+        "name": "Invoice Chase",
+        "url": "https://apps.apple.com/mx/app/invoice-chase/id6670696172"
+      }
+    ],
+    "workflowSummary": "Enter the client name, invoice number, and amount; the AI generates a polished follow-up email in the right register - friendly reminder, firmer follow-up, or final notice - so the freelancer doesn't have to find the words themselves each time a payment goes overdue, and can even generate reminders in advance for invoices not yet due.",
+    "samplePrompt": "\"Write a firm but polite follow-up email for an invoice to [client] for $[amount] that's now 10 days overdue.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a few details, get a ready-to-send email",
+    "trustScore": 3,
+    "pricingNote": "Reported around $179 one-time per the app listing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.apple.com/mx/app/invoice-chase/id6670696172",
+    "sourceType": "Product page (app store listing)",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-5967f8b6a6",
+    "slug": "i-want-ai-to-help-me-build-consulting-frameworks-like-a-swot-or",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Strategy or management consultant who needs client-ready frameworks and visuals, not just written text",
+    "title": "I want AI to help me build consulting frameworks like a SWOT or business model canvas for a client",
+    "intentLabels": [
+      "AI consulting framework generator",
+      "strategy visualization",
+      "client workshop tool"
+    ],
+    "tools": [
+      {
+        "name": "Jeda.ai",
+        "url": "https://dev.to/ishmam_jahan_4269b6f13ba5/11-powerful-ai-alternatives-to-chatgpt-for-consultants-4h1"
+      }
+    ],
+    "workflowSummary": "Rather than producing plain text like a general chatbot, the AI builds recognized consulting frameworks (SWOT, PESTLE, Business Model Canvas, Porter's Five Forces) directly as visual canvases, can turn an uploaded spreadsheet into charts and insights, and supports running a live workshop or brainstorm with the client inside the same tool before exporting a client-ready presentation.",
+    "samplePrompt": "\"Build a SWOT analysis canvas for [client]'s business based on this data: [paste details], and turn it into a client-ready slide.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful for structured frameworks, but most valuable to someone who already thinks in consulting frameworks",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dev.to/ishmam_jahan_4269b6f13ba5/11-powerful-ai-alternatives-to-chatgpt-for-consultants-4h1",
+    "sourceType": "Blog / guide",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-38bd57c077",
+    "slug": "i-want-ai-to-sit-in-on-my-client-calls-and-give-me-notes",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant juggling many client calls a week who can't take detailed notes and stay present in the conversation",
+    "title": "I want AI to sit in on my client calls and give me notes, insights, and coaching tips afterward",
+    "intentLabels": [
+      "AI meeting assistant for consultants",
+      "call transcription and analytics",
+      "conversation coaching"
+    ],
+    "tools": [
+      {
+        "name": "MeetGeek",
+        "url": "https://www.g2.com/products/meetgeek/discuss"
+      }
+    ],
+    "workflowSummary": "Joins and records client calls automatically, transcribes and summarizes the conversation, and pulls out key points and action items - built with consultants and agencies specifically in mind, so the freelancer can focus on running a high-quality session while the tool captures everything, plus tailored tips on where their meetings could improve over time.",
+    "samplePrompt": "\"Summarize this client call, list the key decisions and action items, and give me one tip on how I could have run it more effectively.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "joins the call and works automatically, no manual note-taking needed",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.g2.com/products/meetgeek/discuss",
+    "sourceType": "Product directory",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-094270ee60",
+    "slug": "i-want-ai-to-turn-my-existing-talks-book-or-frameworks-into",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Experienced consultant with a book, talks, or a signature framework that never makes it into their LinkedIn content",
+    "title": "I want AI to turn my existing talks, book, or frameworks into LinkedIn posts that actually sound like my expertise",
+    "intentLabels": [
+      "AI LinkedIn content from deep expertise",
+      "long-form IP to posts",
+      "consultant knowledge base"
+    ],
+    "tools": [
+      {
+        "name": "Oiti",
+        "url": "https://www.ghostwriting-ai.com/comparisons/best-linkedin-ai-tools-for-consultants"
+      }
+    ],
+    "workflowSummary": "Upload existing long-form material - a book, talk transcripts, past posts - into a knowledge base; a built-in \"Story Miner\" workflow then asks questions off that material to surface specific stories and beliefs, saving them back into the knowledge base so future posts pull from a consultant's actual arguments and experience rather than generic AI-sounding advice.",
+    "samplePrompt": "\"Using my uploaded talks and book chapters on [topic], mine 3 specific stories or arguments I could turn into LinkedIn posts this week.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once you've invested time uploading your existing material",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.ghostwriting-ai.com/comparisons/best-linkedin-ai-tools-for-consultants",
+    "sourceType": "Blog / guide",
+    "freshness": "1 month ago (current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-bd4bc0b418",
+    "slug": "i-want-ai-written-linkedin-posts-that-sound-like-me",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Consultant who has tried generic AI writing tools and gotten LinkedIn posts that don't sound like them",
+    "title": "I want AI-written LinkedIn posts that sound like me specifically, not generic advice",
+    "intentLabels": [
+      "AI voice-matched LinkedIn writer",
+      "personal brand post generator",
+      "client-acquisition-focused content"
+    ],
+    "tools": [
+      {
+        "name": "Thought Leadership App",
+        "url": "https://thoughtleadership.app/"
+      }
+    ],
+    "workflowSummary": "Paste 3-5 posts you've already written so the AI learns your specific voice, then describe your goals (e.g. attracting consulting clients in a particular field); it drafts posts aimed at that goal in your voice rather than generic advice, and keeps improving as you edit drafts - most users edit roughly 20-30% of what's generated rather than starting from scratch.",
+    "samplePrompt": "\"Here are 4 posts I've written before: [paste]. Write a new post in my voice about [topic], aimed at getting [type of client] to want to work with me.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste past posts and a topic, review and lightly edit the draft",
+    "trustScore": 3,
+    "pricingNote": "6 free posts to start; paid plan for unlimited posts",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thoughtleadership.app/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  },
+  {
+    "id": "freelancers-consultants-8737c7b3b1",
+    "slug": "i-want-ai-to-help-me-post-consistently-on-x-about-building-my",
+    "kind": "workflow",
+    "niche": "Freelancers-Consultants",
+    "sector": "Freelancers / Consultants",
+    "persona": "Freelancer or indie consultant trying to build an audience on X by sharing their work openly",
+    "title": "I want AI to help me post consistently on X about building my freelance business, without spending my whole day on it",
+    "intentLabels": [
+      "AI X/Twitter content generator",
+      "build-in-public automation",
+      "thread writing and recycling"
+    ],
+    "tools": [
+      {
+        "name": "OpenTweet",
+        "url": "https://opentweet.io/twitter-growth-tool"
+      }
+    ],
+    "workflowSummary": "Generates complete thread drafts from a topic or URL for you to edit and schedule, auto-reposts your best-performing content on a cooldown so it keeps working over time, and can auto-share real milestones (a new client, a product launch, a revenue update) - aimed at freelancers who want to \"build in public\" without manually writing something every single day.",
+    "samplePrompt": "\"Draft a thread about [milestone or lesson from my freelance business this month], and add it to my evergreen recycling queue if it performs well.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI drafts, you edit and approve before it posts",
+    "trustScore": 3,
+    "pricingNote": "Plans starting around $11.99/month per the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://opentweet.io/twitter-growth-tool",
+    "sourceType": "Product page",
+    "freshness": "2026-04 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "Freelancers AI Workflows Session3",
+    "status": "active"
+  }
+]

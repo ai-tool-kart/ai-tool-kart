@@ -1,0 +1,1536 @@
+[
+  {
+    "id": "retail-e-commerce-small-biz-a218d74853",
+    "slug": "write-product-descriptions-for-my-online-store-automatically",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Solo Shopify/small store owner with a small catalog (under 100 SKUs) who writes their own listings",
+    "title": "Write product descriptions for my online store automatically",
+    "intentLabels": [
+      "product description generator",
+      "AI product copywriter",
+      "auto-write listing copy",
+      "generate product text"
+    ],
+    "tools": [
+      {
+        "name": "Shopify Magic (Autowrite)",
+        "url": "https://apps.shopify.com/built-in-features/magic-product-descriptions"
+      }
+    ],
+    "workflowSummary": "Open the product you're editing in your Shopify admin, click the 'Generate description' icon above the description box, type a few keywords about the product and pick a tone (e.g. Friendly, Expert), and Shopify's built-in AI drafts a description you can edit before publishing. No extra app, login, or cost required.",
+    "samplePrompt": "Write a friendly, benefit-focused product description for a [product name], made of [material], used for [purpose]. Keep it under 100 words and mention [key feature].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "it's a button inside the Shopify admin you already use; no separate account or setup.",
+    "trustScore": 4,
+    "pricingNote": "Free, included with every Shopify plan (verify current plan inclusions before publishing).",
+    "pricingTier": "free",
+    "sourceUrl": "https://apps.shopify.com/built-in-features/magic-product-descriptions",
+    "sourceType": "Product Page (Official)",
+    "freshness": "Live product page, checked September 2026",
+    "accessNotes": "Built into your existing Shopify account; no new data-sharing agreement. You're responsible for reviewing generated text for accuracy before publishing, per Shopify's Terms of Service.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-24d65125c1",
+    "slug": "remove-the-background-from-my-product-photos",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who photographs products at home or with a phone and needs clean, professional-looking listing photos",
+    "title": "Remove the background from my product photos",
+    "intentLabels": [
+      "background remover",
+      "product photo editor",
+      "clean up product images",
+      "studio-style product photos"
+    ],
+    "tools": [
+      {
+        "name": "Photoroom",
+        "url": "https://www.photoroom.com/ai-product-photography/e-commerce",
+        "catalogueSlug": "photoroom"
+      }
+    ],
+    "workflowSummary": "Open Photoroom (web, iPhone, or Android), upload a product photo, and tap 'Remove Background' — the AI isolates the product in seconds. You can then drop it onto a plain white or colored background, or batch-process a whole folder of product shots at once for a consistent catalog look.",
+    "samplePrompt": "Remove the background from this product photo and place it on a clean white background, keeping the shadow natural so it looks like a studio photo.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-tap tool with a free tier, works on phone or desktop, no design skills needed.",
+    "trustScore": 5,
+    "pricingNote": "Free tier available; Pro plan around $9.99/month for bulk workflows, AI backgrounds, and commercial use (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.photoroom.com/ai-product-photography/e-commerce",
+    "sourceType": "Product Page (Official)",
+    "freshness": "Live product page, checked September 2026",
+    "accessNotes": "Photos are uploaded to Photoroom's servers for processing; check their privacy policy if using photos containing people. Free-tier exports may include a watermark or usage limits.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-63110b4007",
+    "slug": "set-up-an-ai-chatbot-to-answer-customer-questions-on-my-store",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who can't staff live chat all day and gets repetitive questions about orders, sizing, and shipping",
+    "title": "Set up an AI chatbot to answer customer questions on my store",
+    "intentLabels": [
+      "AI customer service chatbot",
+      "live chat automation",
+      "auto-answer FAQs",
+      "24/7 support bot"
+    ],
+    "tools": [
+      {
+        "name": "Tidio (Lyro AI Agent)",
+        "url": "https://theaiagentindex.com/agents/tidio"
+      }
+    ],
+    "workflowSummary": "Install Tidio on your storefront (native Shopify integration), connect it to your product catalog and shipping/FAQ info, and turn on the Lyro AI Agent. It automatically answers common questions (order status, sizing, returns) and hands off to you only when a customer needs a human.",
+    "samplePrompt": "Using our store's FAQ and shipping policy, draft 5 short chatbot replies for the most common questions: where's my order, do you ship internationally, what's your return window, do you have this in another size, and is this true to size.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup is guided and no-code, but you'll need 20-30 minutes to connect your catalog and write a few starter answers.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available (limited conversations); Lyro AI add-on starts around $29-39/month on top of a paid plan (verify before publishing — Tidio's pricing has multiple add-on tiers).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://theaiagentindex.com/agents/tidio",
+    "sourceType": "Review / Vendor Directory",
+    "freshness": "Independently verified July 23, 2026",
+    "accessNotes": "Chatbot needs access to order and catalog data via your store's integration; review Tidio's data-processing terms if you handle EU customer data (GDPR).",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-e68d8c0ca9",
+    "slug": "automatically-email-customers-who-leave-items-in-their-cart",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner losing sales to shoppers who add items to cart but never check out",
+    "title": "Automatically email customers who leave items in their cart",
+    "intentLabels": [
+      "abandoned cart recovery",
+      "cart abandonment email",
+      "win back lost sales",
+      "automated follow-up email"
+    ],
+    "tools": [
+      {
+        "name": "Klaviyo",
+        "url": "https://techsifted.com/reviews/klaviyo-review-2026/"
+      }
+    ],
+    "workflowSummary": "Connect Klaviyo to your store, turn on the pre-built 'Abandoned Cart' flow template, and set the timing (e.g. an email 30 minutes after they leave, a reminder the next day). Klaviyo's AI can also suggest subject lines and automatically pull in the exact product(s) the customer left behind.",
+    "samplePrompt": "Write a 3-email abandoned cart series: a friendly reminder 30 minutes after checkout is abandoned, a reminder with a customer review 24 hours later, and a final nudge with a small discount 48 hours later.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the flow templates are pre-built, but connecting your store and testing timing takes a bit of setup.",
+    "trustScore": 5,
+    "pricingNote": "Free up to 250 contacts; paid Email plans start around $20/month and scale with your contact list size (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://techsifted.com/reviews/klaviyo-review-2026/",
+    "sourceType": "Review Site",
+    "freshness": "Reviewed September 2026",
+    "accessNotes": "Requires connecting your store's customer and order data to Klaviyo; SMS features carry separate per-message charges.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-d9ed56c847",
+    "slug": "create-social-media-posts-to-promote-my-products",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who needs regular Instagram/Facebook posts to promote products but has no design background",
+    "title": "Create social media posts to promote my products",
+    "intentLabels": [
+      "social media post generator",
+      "AI graphic design",
+      "Instagram post maker",
+      "product promo graphics"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Studio / Magic Design)",
+        "url": "https://www.aiworthit.com/blog/canva-ai-review/",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "In Canva, upload a product photo and type a one-line prompt like 'Instagram post announcing a 20% discount.' Magic Design generates several ready-to-edit layouts using your brand colors; Magic Write can draft the caption. Pick one, tweak the text, and post or schedule it.",
+    "samplePrompt": "Create an Instagram post announcing a weekend sale on [product], using this product photo, in a bright and friendly style, with space for a 20% off badge.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "type-a-prompt-and-edit workflow, no design experience required.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available with limited AI credits; Canva Pro (with full Magic Studio access) around $12-15/month (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.aiworthit.com/blog/canva-ai-review/",
+    "sourceType": "Review Site",
+    "freshness": "Verified July 31, 2026",
+    "accessNotes": "Uploaded product photos/brand assets are processed by Canva's AI; commercially-licensed AI image generations are included on paid plans.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-23999ecd28",
+    "slug": "find-out-which-keywords-will-help-my-etsy-listings-rank-better",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Etsy seller who wants their listings to show up higher in Etsy search results",
+    "title": "Find out which keywords will help my Etsy listings rank better",
+    "intentLabels": [
+      "Etsy SEO tool",
+      "Etsy keyword research",
+      "improve Etsy search ranking",
+      "Etsy listing optimization"
+    ],
+    "tools": [
+      {
+        "name": "eRank",
+        "url": "https://craftybase.com/blog/best-etsy-seo-tools"
+      }
+    ],
+    "workflowSummary": "Connect your Etsy shop to eRank (read-only access), then use the Keyword Explorer to see real search volume and competition for words shoppers use, and run the Listing Audit to get a score and specific fixes for your titles, tags, and descriptions.",
+    "samplePrompt": "Here are the search volume and competition numbers eRank gave me for [keyword]. Suggest 5 similar long-tail keywords with lower competition I could use in my Etsy title and tags for a [product type] listing.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan is genuinely usable, and the dashboard explains each score in plain language.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; paid tiers roughly $5.99-$29.99/month depending on features (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://craftybase.com/blog/best-etsy-seo-tools",
+    "sourceType": "Blog / Guide",
+    "freshness": "Published May 15, 2026",
+    "accessNotes": "eRank only reads shop and sales history to power its reports; it cannot modify listings or your Etsy account, and access can be revoked anytime from Etsy settings.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-0da3316637",
+    "slug": "respond-to-my-customer-reviews-automatically",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who gets Google/Yelp reviews but doesn't have time to reply to each one",
+    "title": "Respond to my customer reviews automatically",
+    "intentLabels": [
+      "AI review response generator",
+      "reputation management",
+      "auto-reply to reviews",
+      "review management tool"
+    ],
+    "tools": [
+      {
+        "name": "Birdeye",
+        "url": "https://wiserreview.com/blog/birdeye-pricing/"
+      }
+    ],
+    "workflowSummary": "Connect Birdeye to your Google Business Profile and other review sites, and it generates a personalized draft reply to each new review (positive or negative) that matches your brand's tone. You can approve, tweak, or auto-publish replies from one dashboard instead of visiting each review site separately.",
+    "samplePrompt": "Draft a warm, brand-appropriate reply to this 5-star review thanking the customer and mentioning we'd love to see them again, and a separate professional, apologetic reply to this 2-star review about a shipping delay, offering to make it right.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting review sources takes initial setup, but day-to-day reply drafting is one click.",
+    "trustScore": 3,
+    "pricingNote": "Custom/quote-based pricing, commonly cited around $299-399+/month for single-location small businesses (verify before publishing — pricing is not published and can be steep for very small shops).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://wiserreview.com/blog/birdeye-pricing/",
+    "sourceType": "Review Site / Pricing Analysis",
+    "freshness": "Published July 9, 2026",
+    "accessNotes": "Requires connecting business listing and review-site accounts (Google, Yelp, etc.); contract terms and cancellation fees vary — read the agreement before signing.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-1aa3dca8d8",
+    "slug": "track-my-competitors-prices-automatically",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small online retailer who wants to price competitively without manually checking rival sites every day",
+    "title": "Track my competitors' prices automatically",
+    "intentLabels": [
+      "competitor price tracking",
+      "price monitoring tool",
+      "dynamic pricing",
+      "automated repricing"
+    ],
+    "tools": [
+      {
+        "name": "Prisync",
+        "url": "https://apps.shopify.com/prisync-for-shopify?utm_id=pdf"
+      }
+    ],
+    "workflowSummary": "Add your product URLs and your competitors' matching product URLs to Prisync, and it checks prices daily, sending you an alert (email/Slack) whenever a competitor changes price. Optional dynamic pricing rules can auto-adjust your own prices within limits you set.",
+    "samplePrompt": "Given these current prices for my product versus 3 competitors, suggest whether I should adjust my price, and draft a short internal note explaining the reasoning.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "matching your products to competitor URLs takes some initial setup time, but daily use is passive (you just review alerts).",
+    "trustScore": 4,
+    "pricingNote": "Plans start around $99/month for up to 100 tracked products (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.shopify.com/prisync-for-shopify?utm_id=pdf",
+    "sourceType": "Product Page (Official, Shopify App Store)",
+    "freshness": "Live app listing, checked September 2026",
+    "accessNotes": "Requires providing your own and competitors' public product URLs; Prisync only reads publicly available pricing pages, it does not access competitor accounts.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-2142d42461",
+    "slug": "generate-ad-creatives-images-for-my-facebook-and-instagram-ads",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner running Facebook/Instagram ads who needs new ad graphics regularly but has no designer",
+    "title": "Generate ad creatives/images for my Facebook and Instagram ads",
+    "intentLabels": [
+      "AI ad creative generator",
+      "ad image maker",
+      "Facebook ad graphics",
+      "ad design automation"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://aiblogfirst.com/adcreative-ai-pricing/",
+        "catalogueSlug": "adcreative-ai"
+      }
+    ],
+    "workflowSummary": "Connect your brand (logo, colors, product images) and your ad accounts, describe the offer (e.g. '20% off summer sale'), and AdCreative.ai generates multiple ready-to-download ad image variations sized for Meta/Google, each with a predicted performance score you can use to pick the strongest one to run.",
+    "samplePrompt": "Generate 5 ad creative concepts for a 20% off summer sale on [product], using our brand colors and this product photo, in a bright and energetic style, sized for Instagram feed and stories.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based generator with credit system, no design skill needed, though outputs can look templated without edits.",
+    "trustScore": 3,
+    "pricingNote": "Starter plan roughly $20-39/month depending on billing cycle (10 downloadable creatives/month); higher tiers scale up for more brands/credits (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aiblogfirst.com/adcreative-ai-pricing/",
+    "sourceType": "Blog / Pricing Guide",
+    "freshness": "Published May 24, 2026",
+    "accessNotes": "Requires connecting Meta/Google ad accounts for performance scoring and competitor insights; review what ad-account data is shared before connecting.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-9c40b9a086",
+    "slug": "turn-my-product-photos-into-a-video-ad",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who has product photos but no budget or time for a video shoot, and wants a short ad-style video",
+    "title": "Turn my product photos into a video ad",
+    "intentLabels": [
+      "photo to video ad",
+      "AI product video generator",
+      "UGC-style video ad",
+      "turn images into video"
+    ],
+    "tools": [
+      {
+        "name": "Creatify",
+        "url": "https://www.heygen.com/blog/best-ai-video-tools-ecommerce-product-videos"
+      }
+    ],
+    "workflowSummary": "Paste your product's URL (or upload photos) into Creatify, choose a UGC-style avatar or a photo-animation style, and it generates a short vertical video ad with a script, voiceover, and captions — ready to download and run on TikTok, Instagram Reels, or Facebook.",
+    "samplePrompt": "Using this product page/photos, write a 15-second UGC-style video ad script that highlights [key benefit] and ends with a clear call to action to shop now.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the workflow is simple (paste a link, pick a style), but reviewing and regenerating clips for quality takes a few tries.",
+    "trustScore": 3,
+    "pricingNote": "Paid plans typically start in the range of roughly $10-30/month for lower volumes; exact tiers vary and should be checked on the vendor site (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.heygen.com/blog/best-ai-video-tools-ecommerce-product-videos",
+    "sourceType": "Blog / Guide (comparative review)",
+    "freshness": "Published June 18, 2026",
+    "accessNotes": "Requires uploading product images/URLs; AI-generated 'avatars' are synthetic, not real people — check platform ad policies (Meta/TikTok) for AI-generated content disclosure rules.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-6ec0447507",
+    "slug": "add-product-recommendations-to-increase-my-average-order-value",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner with a growing catalog who wants to show shoppers 'you may also like' or 'frequently bought together' suggestions",
+    "title": "Add product recommendations to increase my average order value",
+    "intentLabels": [
+      "upsell app",
+      "cross-sell recommendations",
+      "AI personalization",
+      "frequently bought together widget"
+    ],
+    "tools": [
+      {
+        "name": "LimeSpot (Personalizer)",
+        "url": "https://www.commercepundit.com/blog/best-ai-tools-for-shopify/"
+      }
+    ],
+    "workflowSummary": "Install LimeSpot on your Shopify store, and its AI analyzes browsing and purchase behavior to automatically populate 'You May Also Like,' 'Frequently Bought Together,' and 'Recently Viewed' widgets on your product and cart pages — no manual rule-setting required, and it improves as it collects more data.",
+    "samplePrompt": "Suggest 3 natural 'frequently bought together' product pairings for a [product type] store, and a one-line reason a customer would want to buy them together.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "install-and-go widgets with a free tier for small order volumes, minimal ongoing setup.",
+    "trustScore": 4,
+    "pricingNote": "Free for stores with up to 10 orders/month; paid tiers start around $9.99/month and scale with order volume (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.commercepundit.com/blog/best-ai-tools-for-shopify/",
+    "sourceType": "Blog / Guide",
+    "freshness": "Published June 15, 2026",
+    "accessNotes": "Requires access to your store's browsing and order history to power recommendations; check that widget styling matches your theme after installing.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-0ec08c423e",
+    "slug": "predict-how-much-inventory-i-need-to-reorder",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who keeps running out of popular items or over-ordering slow sellers",
+    "title": "Predict how much inventory I need to reorder",
+    "intentLabels": [
+      "inventory forecasting",
+      "demand planning",
+      "automated reorder suggestions",
+      "stock replenishment tool"
+    ],
+    "tools": [
+      {
+        "name": "Inventory Planner (by Sage) — Essentials plan",
+        "url": "https://apps.shopify.com/inventory-planner-essentials"
+      }
+    ],
+    "workflowSummary": "Connect Inventory Planner Essentials to your Shopify store, and it analyzes your sales history to forecast demand per product, then tells you exactly how much to reorder and when, factoring in supplier lead times, to help avoid both stockouts and overstock.",
+    "samplePrompt": "Given last quarter's sales for [product], and a 2-week supplier lead time, how much extra safety stock would you suggest I add to my next reorder to avoid running out over the holidays?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dashboard is simplified for small single-warehouse merchants, but you'll want to review your first forecast against your own judgment before trusting reorder amounts.",
+    "trustScore": 4,
+    "pricingNote": "Essentials plan is $119.99/month for single-warehouse small Shopify merchants (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.shopify.com/inventory-planner-essentials",
+    "sourceType": "Product Page (Official, Shopify App Store)",
+    "freshness": "Live app listing, checked September 2026",
+    "accessNotes": "Requires syncing your store's full sales and inventory history; built specifically for single-warehouse small merchants, so multi-location sellers may need a higher tier.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-61446cb3ee",
+    "slug": "build-a-simple-website-for-my-small-retail-business-with-the",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Brand-new small business owner who needs an online storefront and copy fast but has no website or writing experience",
+    "title": "Build a simple website for my small retail business with the copy already written",
+    "intentLabels": [
+      "AI website builder",
+      "auto-generate business website",
+      "instant website with copy",
+      "small business site builder"
+    ],
+    "tools": [
+      {
+        "name": "Durable",
+        "url": "https://max-productive.ai/ai-tools/durable/"
+      }
+    ],
+    "workflowSummary": "Answer 3 quick questions (business type, name, location) and Durable's AI generates a complete, mobile-ready website in about 30 seconds, including homepage copy, images, and a contact form. You then edit the AI-written text and swap in your own product photos before publishing.",
+    "samplePrompt": "Write short, friendly homepage copy for a small [business type] store in [city], introducing the business, listing 3 things that make it special, and ending with a call to action to shop or visit.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as an 'answer 3 questions, get a site' workflow, aimed squarely at non-technical small business owners.",
+    "trustScore": 4,
+    "pricingNote": "Free tier to build/preview; paid plans needed to publish with a custom domain, roughly starting in the low double digits per month (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://max-productive.ai/ai-tools/durable/",
+    "sourceType": "Review Site",
+    "freshness": "Reviewed August 2026",
+    "accessNotes": "AI-generated copy can be generic and should be personalized before publishing; site is hosted on Durable's platform, so check export/ownership terms if you might switch platforms later.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-a63b66dd9b",
+    "slug": "let-customers-try-on-clothes-virtually-or-get-a-size",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small clothing/apparel store owner dealing with high return rates because online shoppers guess their size wrong",
+    "title": "Let customers try on clothes virtually or get a size recommendation before buying",
+    "intentLabels": [
+      "virtual try-on",
+      "AI fitting room",
+      "size recommendation tool",
+      "reduce clothing returns"
+    ],
+    "tools": [
+      {
+        "name": "Genlook",
+        "url": "https://genlook.app/blog/best-virtual-try-on-apps-shopify-2026"
+      }
+    ],
+    "workflowSummary": "Install Genlook on your Shopify store; shoppers upload or take a photo of themselves, and the AI generates an image showing how the garment would look on them, plus a size suggestion based on the product's cut — helping shoppers buy the right size the first time and cutting return-related refunds.",
+    "samplePrompt": "Write 2-3 short lines of on-page copy inviting shoppers to 'try on' this [garment] virtually before buying, reassuring them their photo stays private.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "installing the app is simple, but you'll want to test the try-on experience yourself on a few products before launching it to customers.",
+    "trustScore": 3,
+    "pricingNote": "Free plan available; paid tiers scale with usage (verify before publishing — pricing for AI virtual try-on apps changes frequently as the category is new).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://genlook.app/blog/best-virtual-try-on-apps-shopify-2026",
+    "sourceType": "Vendor Blog / Comparison",
+    "freshness": "Published July 17, 2026",
+    "accessNotes": "Customers upload personal photos for try-on; confirm and clearly disclose how customer photos are stored/used, and check compliance with biometric/privacy rules in your customers' regions.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-1805f21e90",
+    "slug": "automate-my-returns-and-exchanges-process",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who dreads handling return requests and wants to encourage exchanges instead of refunds",
+    "title": "Automate my returns and exchanges process",
+    "intentLabels": [
+      "automated returns",
+      "self-service return portal",
+      "exchange instead of refund",
+      "return management app"
+    ],
+    "tools": [
+      {
+        "name": "ReturnGO",
+        "url": "https://wiserreview.com/blog/loop-returns-alternatives/"
+      }
+    ],
+    "workflowSummary": "Install ReturnGO and set simple rules (e.g. store credit gets a bonus, certain categories are final sale). Customers start their own return or exchange through a branded self-service portal, and the AI-assisted workflow routes each request automatically based on the reason and product — cutting down on manual back-and-forth emails.",
+    "samplePrompt": "Write 3 short return-policy rule descriptions in plain language for customers: one for standard 30-day returns, one for exchanges getting free return shipping, and one for final-sale items.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "customer-facing portal is self-service, and store owner setup is guided with pre-built rule templates.",
+    "trustScore": 3,
+    "pricingNote": "Growth-tier plans commonly cited around $113/month for moderate return volumes; lower tiers may exist (verify current pricing before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://wiserreview.com/blog/loop-returns-alternatives/",
+    "sourceType": "Blog / Comparison",
+    "freshness": "Published July 17, 2026",
+    "accessNotes": "Handles customer order and return data; check whether return-shipping costs and store-credit bonuses are configured the way you expect before going live.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-6f53395555",
+    "slug": "write-ad-copy-for-my-google-and-facebook-ads",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who needs to write Google Shopping/Meta ad copy regularly but isn't a copywriter",
+    "title": "Write ad copy for my Google and Facebook ads",
+    "intentLabels": [
+      "AI ad copywriter",
+      "Google Ads copy generator",
+      "Facebook ad text",
+      "short-form ad copy tool"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://startupowl.com/grow/ai-marketing-tools",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "In Copy.ai, choose the Google Ads or Facebook Ad Copy template, describe your product and offer in a sentence or two, and it generates several short headline/description variations you can test against each other in your ad account.",
+    "samplePrompt": "Write 5 Google Ads headlines (30 characters or less) and 3 descriptions (90 characters or less) for a [product] sale, emphasizing [discount/benefit], in a friendly and urgent tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier available, template-driven with no prior copywriting experience needed.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available (limited monthly words); paid plans start around $36/month for unlimited output (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://startupowl.com/grow/ai-marketing-tools",
+    "sourceType": "Blog / Guide",
+    "freshness": "Published March 2, 2026",
+    "accessNotes": "No special data access required beyond what you type in; always double-check ad copy against each platform's ad policy before submitting for review.",
+    "batch": "RetailEcommerce AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-044b6a9189",
+    "slug": "keep-my-inventory-in-sync-across-shopify-amazon-and-etsy-so-i",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner selling the same products on Shopify, Amazon, and Etsy who keeps overselling items because stock counts don't match across platforms",
+    "title": "Keep my inventory in sync across Shopify, Amazon, and Etsy so I stop overselling",
+    "intentLabels": [
+      "multichannel inventory sync",
+      "stop overselling",
+      "sync stock across marketplaces",
+      "central inventory dashboard"
+    ],
+    "tools": [
+      {
+        "name": "Sumtracker",
+        "url": "https://www.sumtracker.com/blog/top-8-inventory-management-software-that-sync-shopify-and-amazon"
+      }
+    ],
+    "workflowSummary": "Connect your Shopify, Amazon, Etsy (and other) stores to Sumtracker from one dashboard. When an item sells on any channel, Sumtracker automatically updates the stock count everywhere else within seconds, and it handles bundles/kits so a sale of a bundled product correctly deducts each component.",
+    "samplePrompt": "Given these current stock counts across my Shopify, Amazon, and Etsy listings for [product], flag any mismatches and tell me which platform's count I should trust as correct.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting each store takes some initial setup, but day-to-day it runs in the background with no manual work.",
+    "trustScore": 4,
+    "pricingNote": "Plans start around $49/month for up to 200 orders/month, $99/month for 1,000 orders, and $199/month for 5,000 orders (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sumtracker.com/blog/top-8-inventory-management-software-that-sync-shopify-and-amazon",
+    "sourceType": "Blog / Guide",
+    "freshness": "Published July 29, 2026",
+    "accessNotes": "Requires connecting store credentials for each sales channel; review has noted pricing can feel steep for very small shops as order volume grows.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-1bf2b36e53",
+    "slug": "automatically-categorize-my-business-expenses-and-keep-my-books",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who dreads doing the books and currently dumps receipts in a shoebox until tax time",
+    "title": "Automatically categorize my business expenses and keep my books organized",
+    "intentLabels": [
+      "AI bookkeeping",
+      "automatic expense categorization",
+      "small business accounting software",
+      "auto-sort transactions"
+    ],
+    "tools": [
+      {
+        "name": "QuickBooks Online",
+        "url": "https://comparedge.com/tools/quickbooks/pricing"
+      }
+    ],
+    "workflowSummary": "Connect your business bank and credit card accounts to QuickBooks Online. Its built-in AI reads each transaction and automatically sorts it into the right expense category (e.g. Shipping, Supplies, Advertising), learning from any corrections you make so it gets more accurate over time.",
+    "samplePrompt": "Here are 10 recent transactions from my business bank feed with vendor names and amounts. Suggest which QuickBooks expense category each one likely belongs to, and flag any that look like they could be tax-deductible.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting accounts and picking your Chart of Accounts categories takes a bit of setup, but day-to-day categorization runs automatically.",
+    "trustScore": 4,
+    "pricingNote": "Solopreneur plan around $20/month; Simple Start around $38/month for a single-user small business (verify before publishing — QuickBooks pricing has increased multiple times in 2025-2026).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://comparedge.com/tools/quickbooks/pricing",
+    "sourceType": "Review / Pricing Comparison Site",
+    "freshness": "Published July 8, 2026",
+    "accessNotes": "Requires connecting live bank and credit card feeds; review generated categorizations before filing taxes, and budget separately for payroll or payment-processing add-ons if needed.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-63bf2983d5",
+    "slug": "automatically-find-the-cheapest-shipping-option-and-print",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner shipping orders daily who overpays for shipping because they don't compare carrier rates each time",
+    "title": "Automatically find the cheapest shipping option and print labels for my orders",
+    "intentLabels": [
+      "shipping label automation",
+      "rate shopping",
+      "cheapest carrier",
+      "batch print shipping labels"
+    ],
+    "tools": [
+      {
+        "name": "ShipStation (ShipStation Intelligence)",
+        "url": "https://www.shipstation.com/pricing/"
+      }
+    ],
+    "workflowSummary": "Connect your store(s) and carrier accounts to ShipStation. Its AI layer, ShipStation Intelligence, lets you describe a rule in plain language (e.g. 'always use the cheapest option under 5 lbs'), and it automatically compares rates across UPS, USPS, FedEx and others, then batch-prints labels for the winning option.",
+    "samplePrompt": "Set up a shipping rule: for all orders under 2 lbs going within the US, always choose the cheapest carrier option that arrives within 5 business days. Write this as a plain-language automation rule I can enter into ShipStation.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial carrier and rule setup takes some time, but daily label printing becomes a one-click batch process.",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $14.99-29.99/month for 50 shipments, scaling up with volume; higher tiers needed for bringing your own carrier accounts and unlimited automation (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.shipstation.com/pricing/",
+    "sourceType": "Product Page (Official)",
+    "freshness": "Live product page, checked September 2026",
+    "accessNotes": "Requires connecting carrier and store accounts; review which plan tier you need, since automation rules and API access are gated above the entry tier.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-b8e59b2235",
+    "slug": "organize-and-speed-up-how-i-handle-customer-support-emails-and",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner getting flooded with repetitive support emails (where's my order, sizing, returns) across multiple inboxes",
+    "title": "Organize and speed up how I handle customer support emails and tickets",
+    "intentLabels": [
+      "helpdesk automation",
+      "support ticket triage",
+      "centralize customer emails",
+      "AI support inbox"
+    ],
+    "tools": [
+      {
+        "name": "Gorgias",
+        "url": "https://www.getmacha.com/blog/gorgias-pricing-explained"
+      }
+    ],
+    "workflowSummary": "Connect your email, live chat, and social channels to Gorgias so every message lands in one shared inbox. Its automation rules and AI agent can auto-tag tickets by topic (shipping, returns, sizing), pull up the customer's order details automatically, and draft or send replies for common, repetitive questions.",
+    "samplePrompt": "Here are 5 incoming support messages. Categorize each as Order Status, Return Request, Sizing Question, or Other, and draft a short reply for the 2 that are Order Status questions using this order data: [paste order details].",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting channels and setting automation rules takes initial setup time, but it centralizes messages that were previously scattered.",
+    "trustScore": 4,
+    "pricingNote": "Ticket-based pricing from $10/month (Starter, 50 tickets) up to $900/month (Advanced, 5,000 tickets); the AI Agent is billed separately per resolved conversation, roughly $0.90-$1.00 each (verify before publishing — pricing has several moving parts).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getmacha.com/blog/gorgias-pricing-explained",
+    "sourceType": "Blog / Pricing Guide",
+    "freshness": "Published July 6, 2026",
+    "accessNotes": "Requires connecting customer order and messaging data; note the AI Agent can be billed both as a resolution fee and as a counted ticket, so budget for both when estimating cost.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-8826a54a82",
+    "slug": "automatically-generate-purchase-orders-when-i-need-to-reorder",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who manually checks stock levels and emails suppliers to reorder, which eats up hours every week",
+    "title": "Automatically generate purchase orders when I need to reorder stock from my suppliers",
+    "intentLabels": [
+      "automated purchase orders",
+      "auto-reorder from suppliers",
+      "PO generation",
+      "supply planning tool"
+    ],
+    "tools": [
+      {
+        "name": "Prediko",
+        "url": "https://ai-cmo.net/tools/prediko"
+      }
+    ],
+    "workflowSummary": "Connect Prediko to your Shopify store; it pulls your product catalog, supplier details (lead times, minimum order quantities), and sales history into one buying table. Its AI flags which products need reordering and how much, and you can generate a ready-to-send purchase order in a couple of clicks instead of building one from scratch.",
+    "samplePrompt": "Given these sales numbers for [product] over the last 30 days, this supplier's 14-day lead time, and a minimum order quantity of 100 units, draft a short purchase order email to the supplier with the recommended reorder quantity.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "you'll need to enter accurate supplier data (lead times, MOQs) up front for recommendations to be trustworthy, but ongoing use is largely one-click.",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $49/month, priced by store revenue/GMV band; a raw materials/BOM add-on is roughly $20/month extra (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ai-cmo.net/tools/prediko",
+    "sourceType": "Review Site",
+    "freshness": "Reviewed 2026",
+    "accessNotes": "Requires syncing your Shopify sales and inventory history plus entering supplier contact and terms data; double-check AI-suggested reorder quantities against your own judgment, especially for seasonal products.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-93054465c3",
+    "slug": "automatically-screen-my-orders-for-fraud-before-i-ship-them",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who has been hit by chargebacks from fraudulent orders and wants to catch them before shipping",
+    "title": "Automatically screen my orders for fraud before I ship them",
+    "intentLabels": [
+      "order fraud detection",
+      "chargeback protection",
+      "fraud screening",
+      "prevent fraudulent orders"
+    ],
+    "tools": [
+      {
+        "name": "NoFraud",
+        "url": "https://www.guideflow.com/blog/ecommerce-fraud-protection-software"
+      }
+    ],
+    "workflowSummary": "Install NoFraud on your store; every incoming order is automatically screened in real time using AI risk scoring plus human analyst review for borderline cases, and you get a clear pass/fail recommendation before you ship, backed by a chargeback guarantee on approved orders.",
+    "samplePrompt": "Given this order's details (shipping address doesn't match billing, first-time customer, rush shipping selected, high-value item), would this typically be flagged as higher fraud risk, and what should I check manually before fulfilling it?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "screening runs automatically in the background once installed; no manual rule-building required for the free tier.",
+    "trustScore": 4,
+    "pricingNote": "Free 'Lite' tier covers up to 100 screened orders/month; paid tiers commonly start around a $250/month minimum (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.guideflow.com/blog/ecommerce-fraud-protection-software",
+    "sourceType": "Blog / Comparison",
+    "freshness": "Published July 14, 2026",
+    "accessNotes": "Requires access to order, payment, and customer data to score fraud risk; the chargeback guarantee typically covers fraud-related disputes only, not all dispute types — check the terms.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-6c2b471ead",
+    "slug": "automatically-calculate-and-file-the-right-sales-tax-for-orders",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who just started shipping to customers in several states and is confused about how much sales tax to charge",
+    "title": "Automatically calculate and file the right sales tax for orders in different states",
+    "intentLabels": [
+      "sales tax automation",
+      "nexus tracking",
+      "auto-calculate sales tax",
+      "multi-state tax compliance"
+    ],
+    "tools": [
+      {
+        "name": "TaxJar",
+        "url": "https://beancount.io/blog/2026/07/27/avalara-vs-taxjar-sales-tax-automation-guide"
+      }
+    ],
+    "workflowSummary": "Connect TaxJar to your store and payment platforms; it automatically calculates the correct sales tax rate for each order based on the shipping address and your registered nexus states, and its AutoFile feature can file and remit returns to state tax authorities on your behalf.",
+    "samplePrompt": "I have sales tax nexus in California and Texas. Explain in plain language what that means for how I should be charging tax on orders shipped to customers in other states.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "you (or your accountant) need to correctly set up which states you have nexus in first; calculation then runs automatically per order.",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $39/month; AutoFile filing fees run roughly $50-55 per filing on top (verify before publishing — TaxJar raised prices significantly in 2026).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://beancount.io/blog/2026/07/27/avalara-vs-taxjar-sales-tax-automation-guide",
+    "sourceType": "Blog / Comparison",
+    "freshness": "Published August 2026",
+    "accessNotes": "Requires connecting store and payment data; sales tax nexus rules are legally complex and vary by state — this is informational, not a substitute for advice from an accountant or tax professional.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-52c48a24aa",
+    "slug": "automatically-build-my-staff-schedule-and-handle-shift-swap",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small retail shop owner who spends hours each week building the staff schedule by hand and dealing with shift-swap requests",
+    "title": "Automatically build my staff schedule and handle shift swap requests",
+    "intentLabels": [
+      "AI employee scheduling",
+      "staff shift scheduling app",
+      "automate shift swaps",
+      "retail workforce management"
+    ],
+    "tools": [
+      {
+        "name": "Homebase",
+        "url": "https://www.joinhomebase.com/compare/homebase-vs-square"
+      }
+    ],
+    "workflowSummary": "Set up your team, their availability, and labor budget in Homebase, then use its AI-assisted scheduling (Plus plan) to auto-generate a draft schedule that fits your labor budget and everyone's availability. Employees can request shift swaps or time off through the app, and you approve them with one tap instead of a group text chain.",
+    "samplePrompt": "Given these 4 employees' weekly availability and a labor budget of $1,200 for the week, suggest a draft shift schedule for a retail store open 10am-8pm daily that covers all shifts without exceeding budget.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier covers basic scheduling for one location with up to 10 employees, drag-and-drop interface, no HR background needed.",
+    "trustScore": 4,
+    "pricingNote": "Free Basic plan (1 location, up to 10 employees); Plus plan (with AI scheduling) around $70/month per location, or $56/month billed annually (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.joinhomebase.com/compare/homebase-vs-square",
+    "sourceType": "Product / Vendor Comparison Page",
+    "freshness": "Pricing verified May 2026",
+    "accessNotes": "Employee availability and pay-rate data is stored in Homebase; the AI scheduling assistant is gated to the paid Plus tier and above, not included in the free plan.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-344e2faa75",
+    "slug": "get-a-quick-daily-or-weekly-summary-of-how-my-store-is",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who starts each day not knowing how yesterday went without manually pulling several reports",
+    "title": "Get a quick daily or weekly summary of how my store is performing",
+    "intentLabels": [
+      "sales performance summary",
+      "daily business digest",
+      "ask questions about my store data",
+      "AI store insights"
+    ],
+    "tools": [
+      {
+        "name": "Shopify Sidekick",
+        "url": "https://www.shopify.com/sidekick"
+      }
+    ],
+    "workflowSummary": "Open Sidekick (the chat icon in your Shopify admin) and ask a plain-language question like 'Summarize yesterday's performance: revenue, conversion, top channels, and any anomalies.' Sidekick reads your live store data and answers directly, so you get a same-morning summary instead of digging through separate reports.",
+    "samplePrompt": "Act as my Shopify operator. Create a weekly business digest for last week. Summarize what changed, what likely drove the change, and give me the first three actions to take.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "it's a chat box already built into the Shopify admin you use daily; just type a question in plain English.",
+    "trustScore": 4,
+    "pricingNote": "Free, included with every Shopify plan (verify before publishing — some advanced usage may be limited by plan tier as Shopify continues rolling out features).",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.shopify.com/sidekick",
+    "sourceType": "Product Page (Official)",
+    "freshness": "Live product page, checked September 2026",
+    "accessNotes": "Sidekick has direct access to your store's sales, product, and customer data and respects staff permission levels; treat its output as a helpful draft, not a final decision, for anything touching pricing or policy.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-d80d061aaa",
+    "slug": "find-out-which-products-aren-t-selling-so-i-know-what-to-mark",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small brick-and-mortar-plus-online retailer whose cash is tied up in inventory that stopped selling months ago",
+    "title": "Find out which products aren't selling so I know what to mark down or stop reordering",
+    "intentLabels": [
+      "dead stock detection",
+      "slow-moving inventory report",
+      "markdown recommendations",
+      "identify unsold products"
+    ],
+    "tools": [
+      {
+        "name": "Lightspeed AI (within Lightspeed Retail POS)",
+        "url": "https://www.toolsforhumans.ai/ai-tools/lightspeed-retail"
+      }
+    ],
+    "workflowSummary": "If you use Lightspeed Retail POS, open Lightspeed AI and ask a plain-language question like 'What hasn't sold in the last 90 days?' It reads your connected sales and inventory data and surfaces slow-moving or dead stock ranked by dollar value, so you can decide what to mark down, bundle, or stop reordering.",
+    "samplePrompt": "Here's a list of products that haven't sold in 90+ days, with quantity on hand and original cost. Suggest which ones are the best candidates for an immediate markdown versus a bundle-and-clear promotion.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "it's a built-in chat feature inside the POS you already use daily, no separate tool or setup needed if you're already on Lightspeed.",
+    "trustScore": 3,
+    "pricingNote": "Lightspeed Retail plans start around $89/month (annual billing); Lightspeed AI is included as a feature within the platform (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.toolsforhumans.ai/ai-tools/lightspeed-retail",
+    "sourceType": "Review Site",
+    "freshness": "Reviewed March 24, 2026",
+    "accessNotes": "Requires being on the Lightspeed Retail POS platform, since the AI assistant reads Lightspeed's own sales and inventory data; not usable as a standalone tool for other POS/store platforms.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-8879ba38f4",
+    "slug": "set-up-something-to-answer-my-business-phone-calls",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who misses calls while helping in-store customers or during off-hours and loses potential sales or frustrates people asking about order status",
+    "title": "Set up something to answer my business phone calls automatically when I can't pick up",
+    "intentLabels": [
+      "AI phone receptionist",
+      "automated call answering",
+      "virtual receptionist",
+      "24/7 phone answering service"
+    ],
+    "tools": [
+      {
+        "name": "Goodcall",
+        "url": "https://www.cloudtalk.io/blog/goodcall-pricing/"
+      }
+    ],
+    "workflowSummary": "Set up Goodcall with your business hours, FAQs, and order-status process, and give it your business phone number (or forward calls to it). It answers calls 24/7, handles common questions using your business info, takes messages or books callbacks, and can text you a summary — so no call goes to a generic voicemail.",
+    "samplePrompt": "Write 5 short scripted answers for an AI phone receptionist to give small retail customers who call asking about: store hours, how to check an order's status, the return policy, whether an item is in stock, and how to reach a manager.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as a guided 'set up your AI receptionist' flow with no technical background needed.",
+    "trustScore": 3,
+    "pricingNote": "Starter plan around $79/month for 100 unique monthly callers, with a per-caller overage fee beyond that (verify before publishing — several competing tools price differently, e.g. per-minute vs. per-caller).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.cloudtalk.io/blog/goodcall-pricing/",
+    "sourceType": "Blog / Pricing Guide",
+    "freshness": "Published July 16, 2026",
+    "accessNotes": "Calls may be recorded/transcribed to power the AI; disclose automated call handling to callers where required, and check state/local rules on call recording disclosure.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-66ebb91e9c",
+    "slug": "automate-sending-invoices-to-my-wholesale-customers-and-remind",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small retailer with wholesale or B2B customers who spends time each month manually chasing unpaid invoices",
+    "title": "Automate sending invoices to my wholesale customers and remind them when payment is late",
+    "intentLabels": [
+      "automated invoicing",
+      "accounts receivable automation",
+      "payment reminder automation",
+      "B2B invoicing tool"
+    ],
+    "tools": [
+      {
+        "name": "BILL (Bill.com)",
+        "url": "https://www.layer3labs.io/guides/bill-com-pricing-guide"
+      }
+    ],
+    "workflowSummary": "Set up your wholesale/B2B customers in BILL and create invoice templates; BILL can send invoices automatically on a schedule, accept online payment (ACH, card), and automatically send polite reminder emails as a due date approaches or passes, so you're not manually tracking who still owes you money in a spreadsheet.",
+    "samplePrompt": "Draft a friendly but firm payment reminder email for a wholesale customer whose invoice is now 15 days overdue, referencing the invoice number and amount, and offering to help if there's an issue with the payment.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setting up customers, templates, and reminder schedules takes initial time, but ongoing sending/reminders run automatically.",
+    "trustScore": 4,
+    "pricingNote": "AP & AR plans start at $49/user/month (Essentials); accounts receivable/invoicing automation may be an add-on module priced separately from core AP (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.layer3labs.io/guides/bill-com-pricing-guide",
+    "sourceType": "Blog / Pricing Guide",
+    "freshness": "Published August 4, 2026",
+    "accessNotes": "Handles sensitive financial and banking data for both your business and your customers; review per-user and per-transaction fees (ACH, card, wire) carefully since they add to the base subscription cost.",
+    "batch": "RetailEcommerce AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-a6a4941a29",
+    "slug": "start-sending-text-message-marketing-campaigns-to-my-customers",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who wants a higher-converting marketing channel than email but has never run SMS campaigns before",
+    "title": "Start sending text message marketing campaigns to my customers",
+    "intentLabels": [
+      "SMS marketing",
+      "text message campaigns",
+      "AI SMS copywriting",
+      "abandoned cart texts"
+    ],
+    "tools": [
+      {
+        "name": "Postscript",
+        "url": "https://www.hellyeahai.com/blog/attentive-vs-postscript"
+      }
+    ],
+    "workflowSummary": "Install Postscript on your Shopify store, set up compliant opt-in collection (checkout checkbox, keyword, or pop-up), and use its templates and AI-assisted copy to launch your first automations (welcome text, abandoned cart text) before moving to one-off campaign blasts.",
+    "samplePrompt": "Write 3 short SMS messages (under 160 characters each) for an abandoned cart series: an immediate reminder, a 24-hour follow-up with social proof, and a 48-hour message with a small discount, in a casual and friendly tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "compliance setup (opt-in language, quiet hours) takes some care upfront, but sending campaigns after that is straightforward.",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $25/month; Growth around $100/month; Pro around $500/month, plus per-message costs of roughly $0.007 each (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hellyeahai.com/blog/attentive-vs-postscript",
+    "sourceType": "Blog / Comparison",
+    "freshness": "Published July 9, 2026",
+    "accessNotes": "Requires collecting and storing customer phone numbers and consent records; SMS marketing is subject to TCPA and carrier compliance rules — get consent language right before sending.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-7c804a72b0",
+    "slug": "set-up-a-referral-program-so-my-customers-can-earn-rewards-for",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who wants happy customers to bring in new customers but has no system for tracking or rewarding referrals",
+    "title": "Set up a referral program so my customers can earn rewards for referring friends",
+    "intentLabels": [
+      "referral program automation",
+      "customer refer-a-friend",
+      "word-of-mouth marketing",
+      "automated referral rewards"
+    ],
+    "tools": [
+      {
+        "name": "ReferralCandy",
+        "url": "https://www.rivo.io/blog/referralcandy-review"
+      }
+    ],
+    "workflowSummary": "Install ReferralCandy on your store and set a reward (discount, cash, or free gift) for both the referrer and the friend they refer. It automatically generates unique referral links, emails customers to activate the program after purchase, detects suspicious activity, and pays out rewards once a referred purchase is confirmed.",
+    "samplePrompt": "Write a short post-purchase email inviting a customer to refer a friend, offering both people 15% off, in a warm and appreciative tone that doesn't feel pushy.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as launching within minutes with pre-built templates; no technical setup required.",
+    "trustScore": 3,
+    "pricingNote": "Basic plan $39/month plus a 10.5% success fee on referred sales (first 3 orders per referred customer); higher tiers reduce the success fee to as low as 0.25% (verify before publishing — the success fee can add up quickly as referrals grow).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.rivo.io/blog/referralcandy-review",
+    "sourceType": "Review Site",
+    "freshness": "Published May 26, 2026",
+    "accessNotes": "Requires connecting store and order data to verify referred purchases; read the success-fee structure closely, since the advertised monthly price is not the full cost once referrals convert.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-47e18f09d3",
+    "slug": "find-and-hire-social-media-influencers-to-promote-my-products",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who wants to try influencer marketing but can't afford enterprise platforms or annual contracts",
+    "title": "Find and hire social media influencers to promote my products without a big budget",
+    "intentLabels": [
+      "influencer marketplace",
+      "hire micro-influencers",
+      "affordable influencer marketing",
+      "UGC creator marketplace"
+    ],
+    "tools": [
+      {
+        "name": "Collabstr",
+        "url": "https://collabstr.com/blog/influencer-marketplaces-for-small-brands"
+      }
+    ],
+    "workflowSummary": "Browse Collabstr's marketplace of creators with pre-set, transparent prices, filter by platform (Instagram, TikTok) and niche, and book a creator directly to post about your product or send you reusable content (UGC) — no monthly subscription or long-term contract required.",
+    "samplePrompt": "Write a short, friendly outreach message to a micro-influencer on Collabstr proposing a product-for-post collaboration for [product], explaining what you'd like them to highlight and by when.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "self-serve marketplace with pre-priced packages and no contracts, aimed at small brands testing influencer marketing for the first time.",
+    "trustScore": 4,
+    "pricingNote": "Free Basic plan with a 10% marketplace fee per transaction; most collaborations cost under $300 (average micro-influencer post around $198) (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://collabstr.com/blog/influencer-marketplaces-for-small-brands",
+    "sourceType": "Vendor Blog / Guide",
+    "freshness": "Published December 12, 2025",
+    "accessNotes": "Payments and content licensing happen directly through the platform; confirm what usage rights (ads, website, how long) you're getting for the content before booking.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-d7df4a8b66",
+    "slug": "reduce-how-many-subscribers-cancel-my-subscription-box-or",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner selling a subscription box or replenishment product who keeps losing subscribers and doesn't know why",
+    "title": "Reduce how many subscribers cancel my subscription box or replenishment product",
+    "intentLabels": [
+      "subscription churn prevention",
+      "reduce cancellations",
+      "retention flows",
+      "failed payment recovery"
+    ],
+    "tools": [
+      {
+        "name": "Recharge",
+        "url": "https://getrecharge.com/subscriptions/churn-prevention/"
+      }
+    ],
+    "workflowSummary": "Set up Recharge's Smart Cancellation Prevention flow, which offers subscribers a personalized reason to stay (pause, discount, swap product) instead of canceling outright, and turn on AI-powered payment retries so failed card payments don't silently end a subscription.",
+    "samplePrompt": "A subscriber is trying to cancel their monthly subscription box. Suggest 3 alternative offers to show them before the cancellation completes (e.g. pause, discount, swap frequency), each with a short, non-pushy line of copy.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "building out a full cancellation flow takes some setup, but Recharge provides templates to start from.",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $99/month plus roughly 1.49% + $0.19 per transaction; a limited $25/month tier exists for new merchants with under 50 subscribers (verify before publishing — fees scale with subscription order volume).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getrecharge.com/subscriptions/churn-prevention/",
+    "sourceType": "Product Page (Official)",
+    "freshness": "Live product page, checked February 6, 2026",
+    "accessNotes": "Requires access to subscriber billing and cancellation data; Plus-tier contracts run on 12-month terms, so review commitment length before committing at higher volume.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-019594fd8b",
+    "slug": "build-a-quiz-that-helps-customers-find-the-right-gift-or",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner with a catalog that's confusing for shoppers, especially around the holidays when people are buying gifts for someone else",
+    "title": "Build a quiz that helps customers find the right gift or product for them",
+    "intentLabels": [
+      "product recommendation quiz",
+      "gift finder quiz",
+      "interactive product finder",
+      "personalization quiz"
+    ],
+    "tools": [
+      {
+        "name": "Octane AI",
+        "url": "https://apps.shopify.com/octane-ai-messenger-marketing"
+      }
+    ],
+    "workflowSummary": "Build a short quiz in Octane AI (no coding) that asks a shopper about the recipient, occasion, and budget, then use its AI-powered product matching to recommend a specific product or curated set from your catalog, with results synced to your email/SMS tools for follow-up.",
+    "samplePrompt": "Write 5 short quiz questions to help a shopper find the right gift, covering recipient (who it's for), occasion, budget, and style preference, with answer options that map cleanly to different product categories.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code quiz builder aimed at Shopify merchants without a developer.",
+    "trustScore": 4,
+    "pricingNote": "Plans start around $50/month (Basic); AI features are included on all plans but use additional usage credits per interaction (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.shopify.com/octane-ai-messenger-marketing",
+    "sourceType": "Product Page (Official, Shopify App Store)",
+    "freshness": "Live app listing, checked September 2026",
+    "accessNotes": "Quiz answers count as zero-party customer data (preferences, occasions) synced to your marketing tools — disclose this data use in your privacy policy if you plan to use it for future marketing.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-00b2fb68a5",
+    "slug": "improve-how-my-store-shows-up-in-google-search-and-google-maps",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small brick-and-mortar-plus-online retailer who isn't showing up when people search for stores 'near me' on Google",
+    "title": "Improve how my store shows up in Google search and Google Maps for local customers",
+    "intentLabels": [
+      "Google Business Profile optimization",
+      "local SEO",
+      "show up on Google Maps",
+      "local search visibility"
+    ],
+    "tools": [
+      {
+        "name": "Localo",
+        "url": "https://searchatlas.com/blog/localo-review/"
+      }
+    ],
+    "workflowSummary": "Connect your Google Business Profile to Localo; its AI agent audits your listing, flags missing or weak details, and turns gaps into a simple task list (e.g. add photos, fill in services, post updates). It also tracks how your map ranking looks from different nearby locations and can draft AI-generated Google posts to keep your profile active.",
+    "samplePrompt": "Write a short Google Business Profile post announcing a weekend sale at our store, including a call-to-action and 2-3 relevant local keywords, kept under 1,500 characters.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for non-SEO small business owners, with guided step-by-step tasks rather than raw data.",
+    "trustScore": 3,
+    "pricingNote": "Single Business plan around $39-49/month; Pro plan for agencies managing multiple profiles around $149-169/month (verify before publishing).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://searchatlas.com/blog/localo-review/",
+    "sourceType": "Review Site",
+    "freshness": "Published May 17, 2026",
+    "accessNotes": "Requires connecting your actual Google Business Profile account; AI-drafted posts and review replies should be checked for accuracy and local relevance before publishing, per reviewer notes.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-e22c102652",
+    "slug": "figure-out-which-of-my-ads-and-marketing-channels-are-actually",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner running ads on Meta, Google, and TikTok who can't tell which channel is actually driving sales",
+    "title": "Figure out which of my ads and marketing channels are actually driving sales",
+    "intentLabels": [
+      "marketing attribution",
+      "ad spend analytics",
+      "which ads are working",
+      "multi-channel ROAS tracking"
+    ],
+    "tools": [
+      {
+        "name": "Triple Whale",
+        "url": "https://dawidgac.com/en/blog/triple-whale-reviews"
+      }
+    ],
+    "workflowSummary": "Install Triple Whale's free Founders Dashboard to connect your store and ad accounts in one place. Its AI layer (Moby) can answer plain-language questions about performance, and its attribution tracking shows which channel, campaign, or even specific ad creative is actually driving purchases, versus what a platform's own dashboard claims credit for.",
+    "samplePrompt": "Given this week's ad spend and orders by channel (Meta, Google, TikTok, email), tell me which channel has the best return relative to spend, and flag any channel that looks like it's underperforming.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the free tier gives a real dashboard out of the box, but getting full value from attribution features takes some setup and regular review.",
+    "trustScore": 3,
+    "pricingNote": "Free Founders Dashboard plan; paid Foundation plan starts around $219/month, with an Automate plan around $749/month for deeper planning features (verify before publishing — pricing scales with ad spend/GMV).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://dawidgac.com/en/blog/triple-whale-reviews",
+    "sourceType": "Review Site",
+    "freshness": "Checked July 9, 2026",
+    "accessNotes": "Requires connecting ad account and store sales data across multiple platforms; review has noted the paid tiers are best justified once meaningful ad spend is already in place, not for very early-stage stores.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-a850290e1a",
+    "slug": "get-help-managing-my-tiktok-shop-and-understand-how-to-sell",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who just started selling on TikTok Shop and doesn't understand the platform's tools, live selling, or policies",
+    "title": "Get help managing my TikTok Shop and understand how to sell better on it",
+    "intentLabels": [
+      "TikTok Shop seller help",
+      "TikTok Shop AI assistant",
+      "live selling on TikTok",
+      "TikTok Shop seller tools"
+    ],
+    "tools": [
+      {
+        "name": "TikTok Shop Seller Assistant",
+        "url": "https://www.socialmediatoday.com/news/tiktok-shop-rolls-out-new-tools-including-expanded-chatbot-access/812401/"
+      }
+    ],
+    "workflowSummary": "Inside TikTok Shop's Seller Center, tap the sparkle icon to open Seller Assistant, TikTok's built-in AI advisor. Ask it questions about your listings, payouts, or policies in plain language, and it pulls answers from TikTok's own Seller Academy, Help Center, and your shop's live data instead of you searching help articles manually.",
+    "samplePrompt": "I'm new to TikTok Shop. Explain in plain language what I need to do before my first live selling session, including product setup, sample requests, and anything about disclosure rules for promotions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "it's a free, built-in chat assistant inside the Seller Center you already use, with contextual suggestions based on the page you're on.",
+    "trustScore": 3,
+    "pricingNote": "Free, included within TikTok Shop's Seller Center (verify before publishing — availability may vary by region).",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.socialmediatoday.com/news/tiktok-shop-rolls-out-new-tools-including-expanded-chatbot-access/812401/",
+    "sourceType": "News / Trade Publication",
+    "freshness": "Published February 17, 2026",
+    "accessNotes": "Seller Assistant reads your shop's live data (listings, payouts) to answer questions; treat its policy guidance as a starting point and confirm anything compliance-related directly with TikTok Shop's official policy pages.",
+    "batch": "RetailEcommerce AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-42dc8ca485",
+    "slug": "show-customers-the-real-total-cost-including-customs-duties-and",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner starting to ship internationally who keeps getting complaints about surprise customs fees at delivery",
+    "title": "Show customers the real total cost including customs duties and taxes before they check out internationally",
+    "intentLabels": [
+      "landed cost calculator",
+      "customs duty calculator",
+      "international shipping fees",
+      "avoid surprise import charges"
+    ],
+    "tools": [
+      {
+        "name": "Zonos (Landed Cost / Item Quoter)",
+        "url": "https://zonos.com/docs/postal/tools-for-shippers/dashboard-lite/item-quoter"
+      }
+    ],
+    "workflowSummary": "Add Zonos to your store's checkout so international customers see the full landed cost (product + shipping + duties + taxes) upfront, no surprises at delivery. Its AI-powered Item Quoter can also read a product description or photo and suggest the correct HS/tariff classification code, which determines the duty rate, instead of you researching codes manually.",
+    "samplePrompt": "Given this product description [paste description], suggest the likely HS/tariff classification code and explain in plain language what typically drives the duty rate for this type of product.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "checkout integration is guided, but understanding HS codes and duty logic has a real learning curve even with AI help.",
+    "trustScore": 3,
+    "pricingNote": "Per-order landed cost fee of roughly $2 plus 10% of the calculated duties/taxes/fees, typically passed to the customer at checkout (verify before publishing — fee structure has several components).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://zonos.com/docs/postal/tools-for-shippers/dashboard-lite/item-quoter",
+    "sourceType": "Product Documentation (Official)",
+    "freshness": "Live documentation, checked September 2026",
+    "accessNotes": "Requires product and shipment data to calculate duties; Zonos offers a guarantee to cover the difference if its calculation is wrong, which shifts some financial risk off the merchant — confirm guarantee terms before relying on it.",
+    "batch": "RetailEcommerce AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-bf2e562773",
+    "slug": "get-smart-insights-and-recommendations-from-my-in-store-point",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small brick-and-mortar-plus-online retailer who wants to understand what's selling well in-store without digging through spreadsheets",
+    "title": "Get smart insights and recommendations from my in-store point-of-sale sales data",
+    "intentLabels": [
+      "POS analytics",
+      "in-store sales insights",
+      "retail dashboard recommendations",
+      "point of sale trends"
+    ],
+    "tools": [
+      {
+        "name": "Square (Square for Retail)",
+        "url": "https://fitsmallbusiness.com/square-pos-review/"
+      }
+    ],
+    "workflowSummary": "If you use Square for Retail as your point-of-sale, open the Square dashboard or app and review its analytics and recommendations panel, which surfaces trends (best/worst sellers, slow periods, restock suggestions) directly from your in-store transaction data without you building a report manually.",
+    "samplePrompt": "Given these in-store sales totals by product category for the last 4 weeks, point out which categories are trending up or down and suggest one action I could take this week based on the pattern.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "insights and recommendations appear directly in the dashboard you already use to ring up sales, no separate setup.",
+    "trustScore": 3,
+    "pricingNote": "Free plan with no monthly fee (pay-per-transaction processing only); paid plans start around $29/month for additional features (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://fitsmallbusiness.com/square-pos-review/",
+    "sourceType": "Review Site",
+    "freshness": "Published April 16, 2026",
+    "accessNotes": "Requires using Square as your POS system for the insights to have live sales data to work from; some advanced reporting and inventory features are limited on the free plan as your store grows.",
+    "batch": "RetailEcommerce AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-a5ddc64632",
+    "slug": "list-and-sell-my-secondhand-or-excess-inventory-across-ebay",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small reseller or retailer with excess, returned, or secondhand inventory who wants to sell it across multiple resale marketplaces without manually listing everywhere",
+    "title": "List and sell my secondhand or excess inventory across eBay, Poshmark, Mercari, and other resale marketplaces automatically",
+    "intentLabels": [
+      "crosslisting tool",
+      "resale marketplace automation",
+      "sell secondhand inventory",
+      "multi-marketplace reseller tool"
+    ],
+    "tools": [
+      {
+        "name": "Closo",
+        "url": "https://www.resaleos.co/blog/comparing-the-20-best-cross-listing-software-for-resellers-in-2026-the-complete-buyer-s-guide"
+      }
+    ],
+    "workflowSummary": "Import your inventory into Closo (photos plus basic details), and its AI agents generate platform-specific listing descriptions (e.g. more detail-oriented for eBay, trend-driven language for Depop) and suggest a price for each marketplace that accounts for each platform's fee structure, then publish to eBay, Poshmark, Mercari, Depop, Vinted, and Shopify from one place with real-time sync to prevent overselling.",
+    "samplePrompt": "Using this product photo and basic description [details], write a marketplace-specific listing: a detailed, spec-focused version for eBay and a shorter, trend-focused version for Depop.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan with no credit card required, built specifically for resellers who aren't technical.",
+    "trustScore": 3,
+    "pricingNote": "Free plan (crosslisting, bulk listing, basic analytics); Pro plan around $99/year for AI agents, curated wholesale inventory, and personalized AI recommendations (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.resaleos.co/blog/comparing-the-20-best-cross-listing-software-for-resellers-in-2026-the-complete-buyer-s-guide",
+    "sourceType": "Blog / Comparison",
+    "freshness": "Published May 12, 2026",
+    "accessNotes": "Requires connecting seller accounts on each marketplace you crosslist to; review each marketplace's own policies on cross-posted/automated listings before relying on it at scale.",
+    "batch": "RetailEcommerce AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-80bafea407",
+    "slug": "design-and-preview-my-product-packaging-in-3d-before-i-pay-for",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small maker or product-based business owner who wants professional-looking packaging mockups before committing to a print run",
+    "title": "Design and preview my product packaging in 3D before I pay for a print run",
+    "intentLabels": [
+      "packaging design tool",
+      "3D packaging mockup",
+      "dieline template",
+      "box design software"
+    ],
+    "tools": [
+      {
+        "name": "Pacdora",
+        "url": "https://www.sellerstacked.co/blog/pacdora-review"
+      }
+    ],
+    "workflowSummary": "In Pacdora's browser-based tool, pick a packaging structure (box, pouch, bottle, etc.), customize the dimensions and material, then use its AI-assisted design tools to generate mockup backgrounds and preview your artwork in realistic 3D before sending anything to a printer. Export a production-ready dieline template to send your supplier once you're happy with the design.",
+    "samplePrompt": "I'm designing packaging for a [product type] in a [box/pouch] format. Suggest 3 dimension options that would minimize wasted material while still fitting the product comfortably, and note what to check before sending the dieline to a printer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan available with a browser-based, no-install workflow aimed at small brands and solo sellers, not professional packaging engineers.",
+    "trustScore": 3,
+    "pricingNote": "Free plan (watermarked exports); Lite plan around $9-14/month; Pro around $17/seat/month; Business around $59/seat/month (verify before publishing).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.sellerstacked.co/blog/pacdora-review",
+    "sourceType": "Review Site",
+    "freshness": "Published 1 month ago (~August 2026)",
+    "accessNotes": "Realistic 3D mockups are a design preview, not a substitute for a physical production sample or prepress inspection before a full print run, per reviewer notes.",
+    "batch": "RetailEcommerce AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-138ddf6ebd",
+    "slug": "compare-freight-shipping-quotes-from-different-carriers-before",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small retailer who imports pallets of stock from overseas suppliers and gets wildly different freight quotes depending on who they call",
+    "title": "Compare freight shipping quotes from different carriers before I book a shipment",
+    "intentLabels": [
+      "freight quote comparison",
+      "LTL shipping rates",
+      "import shipping cost",
+      "compare carrier rates"
+    ],
+    "tools": [
+      {
+        "name": "Freightos",
+        "url": "https://www.capterra.com/p/155657/Freightos/"
+      }
+    ],
+    "workflowSummary": "Enter your shipment details (origin, destination, weight, mode) into Freightos, and it pulls instant quotes from multiple carriers and forwarders side by side for ocean, air, and trucking, with a transparent cost breakdown instead of the old wait-for-an-email-quote process. You can book directly through the platform once you pick the best option.",
+    "samplePrompt": "Given these 3 freight quotes for the same shipment (base rate, fuel surcharge, and any extra fees for each), explain in plain language which one is actually cheapest once all fees are included, and flag anything that looks like a hidden charge.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "getting an accurate quote requires knowing your shipment's weight, dimensions, and customs details, which takes a bit of learning for a first-time importer.",
+    "trustScore": 3,
+    "pricingNote": "Free to get quotes and compare; you pay the freight cost you book (verify before publishing — some reviewers report add-on fees from individual freight forwarders after booking, so read the full quote breakdown).",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.capterra.com/p/155657/Freightos/",
+    "sourceType": "Review Site",
+    "freshness": "Checked September 2026",
+    "accessNotes": "Requires sharing shipment and customs details with the platform and the forwarder you book; some reviewers report post-delivery charges from individual forwarders, so confirm what's included before booking.",
+    "batch": "RetailEcommerce AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-f40696cf7c",
+    "slug": "find-trending-dropshipping-products-before-they-become",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner running a dropshipping business who wants to know which products are about to trend before they peak",
+    "title": "Find trending dropshipping products before they become oversaturated",
+    "intentLabels": [
+      "trending product finder",
+      "dropship product research",
+      "demand forecasting for dropshipping",
+      "predictive product sourcing"
+    ],
+    "tools": [
+      {
+        "name": "Spocket",
+        "url": "https://firebearstudio.com/blog/spocket-review.html"
+      }
+    ],
+    "workflowSummary": "Browse Spocket's supplier catalog and use its 2026 AI features to see which products are trending upward and forecasted demand before they peak, instead of guessing from social media. Import a promising product to your store with one click, and Spocket automatically routes each order to the supplier and syncs inventory so you don't oversell.",
+    "samplePrompt": "Given this list of products with recent sales trend data, rank them by which look like they're still on the way up versus which may already be near their peak, and explain your reasoning for the top pick.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click product import and automatic order routing, aimed at sellers without a supply chain background.",
+    "trustScore": 3,
+    "pricingNote": "Plans start around $39.99/month (verify before publishing — reviewers note billing has continued after cancellation in some cases, so confirm cancellation steps before signing up).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://firebearstudio.com/blog/spocket-review.html",
+    "sourceType": "Review Site",
+    "freshness": "Published January 23, 2026",
+    "accessNotes": "Orders and customer shipping data are shared with the connected supplier to fulfill orders; read supplier vetting standards, since product quality varies by individual supplier even within a curated marketplace.",
+    "batch": "RetailEcommerce AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-c2fbbf40ab",
+    "slug": "automatically-file-and-track-claims-when-my-shipments-are-lost",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small store owner who eats the cost every time a package is lost or arrives damaged because filing a carrier claim takes hours",
+    "title": "Automatically file and track claims when my shipments are lost or damaged",
+    "intentLabels": [
+      "shipping insurance automation",
+      "lost package claims",
+      "damaged shipment refund",
+      "automated carrier claims"
+    ],
+    "tools": [
+      {
+        "name": "LateShipment.com (OneProtect)",
+        "url": "https://www.lateshipment.com/blog/shipping-protection-software/"
+      }
+    ],
+    "workflowSummary": "Turn on OneProtect so every eligible shipment is automatically insured at the point of label creation. If a package is lost, stolen, or damaged, submit a claim in a couple of clicks (or have support do it from your helpdesk) instead of gathering paperwork for a slow carrier claim, and get resolution typically within about 5 business days.",
+    "samplePrompt": "A customer says their package arrived damaged. Draft a short message asking them for a photo of the damaged item and box so I can file a shipping claim, in a friendly and apologetic tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to be a low-effort, mostly automated add-on to your existing shipping process rather than a new system to learn.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $0.69 per $100 of declared value insured (verify before publishing — some competitors price as a percentage of order value instead).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.lateshipment.com/blog/shipping-protection-software/",
+    "sourceType": "Vendor Blog / Comparison",
+    "freshness": "Published July 16, 2026",
+    "accessNotes": "Requires sharing shipment value and tracking data with the platform to process claims; confirm whether coverage is merchant-funded or passed to the customer at checkout before turning it on.",
+    "batch": "RetailEcommerce AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-a543ff6e92",
+    "slug": "do-a-physical-inventory-count-or-audit-faster-using-my-phone",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Small business with a stockroom or small warehouse who dreads doing a full physical inventory count by hand with a clipboard",
+    "title": "Do a physical inventory count or audit faster using my phone",
+    "intentLabels": [
+      "physical inventory count app",
+      "barcode inventory audit",
+      "cycle counting app",
+      "mobile stock take"
+    ],
+    "tools": [
+      {
+        "name": "Sortly",
+        "url": "https://www.business.org/finance/inventory-management/sortly-review/"
+      }
+    ],
+    "workflowSummary": "Use Sortly's mobile app to scan barcodes or QR codes on shelves and stockroom items, with photo-based item records so anyone on your team can visually confirm what they're counting. It flags discrepancies against your last recorded count and generates a low-stock report you can act on immediately, instead of reconciling a paper count sheet afterward.",
+    "samplePrompt": "Here's a list of items where the physical count didn't match our recorded stock levels. Suggest 3 likely explanations for the mismatch (e.g. miscount, theft, unrecorded sale) and what I should check first for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan available, photo-based and barcode-driven so counting doesn't require inventory software experience.",
+    "trustScore": 3,
+    "pricingNote": "Free plan available (item limit applies); paid plans start around $24-49/month for more items, users, and reporting (verify before publishing — pricing has multiple conflicting figures across sources, so check Sortly's own pricing page).",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.business.org/finance/inventory-management/sortly-review/",
+    "sourceType": "Review Site",
+    "freshness": "Published December 18, 2025",
+    "accessNotes": "Best suited to businesses tracking inventory in a physical stockroom or storefront; it does not natively connect to ecommerce sales channels, so online store sales won't automatically update Sortly's counts.",
+    "batch": "RetailEcommerce AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "retail-e-commerce-small-biz-717f08630f",
+    "slug": "outsource-my-order-warehousing-and-shipping-to-a-fulfillment",
+    "kind": "workflow",
+    "niche": "Retail-E-commerce Small Biz",
+    "sector": "Retail / E-commerce Small Business",
+    "persona": "Growing small business that has outgrown packing orders in the back room and wants to hand off warehousing and shipping to someone else",
+    "title": "Outsource my order warehousing and shipping to a fulfillment company instead of doing it myself",
+    "intentLabels": [
+      "third-party fulfillment",
+      "outsource order fulfillment",
+      "3PL for small business",
+      "distributed warehouse shipping"
+    ],
+    "tools": [
+      {
+        "name": "ShipBob",
+        "url": "https://www.simplfulfillment.com/breakdowns/shipbob-pricing"
+      }
+    ],
+    "workflowSummary": "Send your inventory to ShipBob's fulfillment centers, and its Inventory Placement Program automatically distributes your stock across multiple warehouse locations to shorten shipping distance to customers. When an order comes in from your store, ShipBob's team picks, packs, and ships it using the nearest location, and its dashboard shows you shipping analytics and delivery times across your channels.",
+    "samplePrompt": "I currently pack about [X] orders a week myself. Write a short list of questions I should ask a fulfillment company like ShipBob before switching, covering setup fees, storage costs, and how returns are handled.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "outsourcing fulfillment is a bigger operational change than installing an app, and getting an accurate cost requires a custom quote.",
+    "trustScore": 3,
+    "pricingNote": "Custom quote-based pricing; commonly cited figures include a roughly $275/month minimum and a one-time setup fee around $975, plus separate storage, pick, and postage costs (verify before publishing — pricing is not public and varies by volume).",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.simplfulfillment.com/breakdowns/shipbob-pricing",
+    "sourceType": "Blog / Pricing Breakdown (competitor-published)",
+    "freshness": "Published June 19, 2026",
+    "accessNotes": "Requires shipping your physical inventory to ShipBob's warehouses and integrating your sales channels; best suited to businesses with steady order volume, since minimums and setup costs make it a poor fit for very low-volume sellers.",
+    "batch": "RetailEcommerce AI Workflows Batch5",
+    "status": "active"
+  }
+]

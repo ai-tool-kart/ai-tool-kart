@@ -1,0 +1,2017 @@
+[
+  {
+    "id": "customer-support-teams-ce249325f2",
+    "slug": "best-ai-chatbot-for-customer-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support team lead / small business owner setting up live chat",
+    "title": "best AI chatbot for customer support",
+    "intentLabels": [
+      "AI live chat bot",
+      "customer service chatbot",
+      "support chatbot",
+      "help desk bot",
+      "automated chat agent"
+    ],
+    "tools": [
+      {
+        "name": "Intercom Fin",
+        "url": "https://learn.g2.com/best-ai-chatbots"
+      },
+      {
+        "name": "Zendesk AI Agents"
+      },
+      {
+        "name": "Tidio (Lyro AI)"
+      }
+    ],
+    "workflowSummary": "Add an AI-powered chat widget to your website or help center. It reads your existing help articles and past conversations, answers routine customer questions automatically, and hands the conversation to a human agent when it can't resolve the issue.",
+    "samplePrompt": "I want to add an AI chatbot to my website that answers customer questions using my help center articles and hands off to a live agent when it gets stuck. Suggest an easy-to-set-up option for a small support team and outline the setup steps.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "no coding needed, but connecting your knowledge base and tuning responses takes some setup time",
+    "trustScore": 4,
+    "pricingNote": "Tidio: paid plans from ~$29/mo, Lyro AI add-on from ~$39/mo. Zendesk/Intercom Fin: usage- or seat-based, custom pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://learn.g2.com/best-ai-chatbots",
+    "sourceType": "Directory (G2 review roundup)",
+    "freshness": "August 2026",
+    "accessNotes": "Publicly available comparison content; verify current pricing/features on each vendor's own site before quoting to a customer",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-cb3fd1b0db",
+    "slug": "ai-tool-to-automatically-sort-and-route-support-tickets",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops manager drowning in an unsorted ticket queue",
+    "title": "AI tool to automatically sort and route support tickets",
+    "intentLabels": [
+      "AI ticket triage",
+      "ticket routing automation",
+      "auto-categorize tickets",
+      "smart ticket assignment"
+    ],
+    "tools": [
+      {
+        "name": "Zendesk Intelligent Triage",
+        "url": "https://www.eesel.ai/blog/best-ai-for-support-ticket-triage"
+      },
+      {
+        "name": "Freshdesk Freddy AI"
+      },
+      {
+        "name": "Forethought"
+      }
+    ],
+    "workflowSummary": "The AI reads each incoming ticket's first message, detects intent, sentiment, and urgency, then automatically tags, prioritizes, and routes it to the right queue or agent - cutting out the manual sorting step every morning.",
+    "samplePrompt": "Every morning my team manually sorts a pile of support tickets by urgency and topic before anyone can start working. Is there an AI tool that can read incoming tickets and automatically tag, prioritize, and route them to the right person?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works out of the box on many helpdesks, but routing rules need to be configured to match your team's structure",
+    "trustScore": 4,
+    "pricingNote": "Native features (Zendesk, Freshdesk) are usually bundled into existing paid plans; standalone tools like Forethought are quote-based, often $1,500+/mo - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/best-ai-for-support-ticket-triage",
+    "sourceType": "Blog/guide (vendor-authored comparison)",
+    "freshness": "June 11, 2026",
+    "accessNotes": "Publicly available comparison content; confirm current vendor pricing and routing accuracy claims before relying on them",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-e04fe35e20",
+    "slug": "ai-tool-that-suggests-replies-for-my-support-agents-while-they",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Live-chat and email agent who has to write the same replies all day",
+    "title": "AI tool that suggests replies for my support agents while they chat with customers",
+    "intentLabels": [
+      "AI agent copilot",
+      "canned response suggestions",
+      "AI reply assist",
+      "agent assist software"
+    ],
+    "tools": [
+      {
+        "name": "Tidio Lyro Copilot",
+        "url": "https://www.tidio.com/blog/ai-copilot-for-customer-service/"
+      },
+      {
+        "name": "Assembled AI Copilot"
+      },
+      {
+        "name": "Zendesk AI Copilot"
+      }
+    ],
+    "workflowSummary": "An AI assistant sits inside the agent's chat or ticket view. As a conversation comes in, it drafts a suggested reply pulled from your help content and past tickets; the agent can accept, edit, or ignore it before sending - so nobody's typing the same answer from scratch every time.",
+    "samplePrompt": "My support agents keep retyping similar answers to common questions all day. Is there an AI copilot that can suggest a reply inside our chat tool that agents can quickly edit and send?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works inside your existing help desk, but response quality depends on how much of your content it's been trained on",
+    "trustScore": 3,
+    "pricingNote": "Varies by platform - often bundled into existing helpdesk seat pricing or sold as an add-on (e.g. Tidio Lyro from ~$39/mo) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tidio.com/blog/ai-copilot-for-customer-service/",
+    "sourceType": "Blog/guide (vendor's own site)",
+    "freshness": "November 2025",
+    "accessNotes": "Vendor-published content; treat feature claims as vendor-sourced and verify against the current product page before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-97b5e6b75f",
+    "slug": "ai-tool-to-help-manage-and-respond-to-a-busy-support-email-inbox",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support lead managing a shared email inbox that keeps piling up",
+    "title": "AI tool to help manage and respond to a busy support email inbox",
+    "intentLabels": [
+      "AI email support automation",
+      "shared inbox AI",
+      "email inbox assistant",
+      "auto-draft email replies"
+    ],
+    "tools": [
+      {
+        "name": "Help Scout (AI Drafts, AI Summarize)",
+        "url": "https://www.freshworks.com/customer-service/support/ai/"
+      },
+      {
+        "name": "Zowie"
+      },
+      {
+        "name": "Front"
+      }
+    ],
+    "workflowSummary": "The AI reads incoming support emails, drafts a reply based on your knowledge base and past tickets, tags and routes the email to the right teammate, and can summarize long threads so whoever picks it up next doesn't have to re-read everything.",
+    "samplePrompt": "Our team shares one support email inbox and it's constantly overflowing. I want an AI tool that can draft replies, tag emails by topic, and summarize long back-and-forth threads for whoever picks them up.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "shared-inbox tools like this are built for small teams and usually set up in under an hour",
+    "trustScore": 4,
+    "pricingNote": "Help Scout paid plans start around $25-55/user/month depending on tier; AI features often included or add-on - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.freshworks.com/customer-service/support/ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; confirm current plan names and AI feature availability before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-4343f5865c",
+    "slug": "ai-sentiment-analysis-tool-for-customer-support-tickets",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "CX manager who wants to know which tickets are from frustrated customers",
+    "title": "AI sentiment analysis tool for customer support tickets",
+    "intentLabels": [
+      "sentiment analysis for support",
+      "detect angry customers",
+      "ticket emotion detection",
+      "frustration scoring"
+    ],
+    "tools": [
+      {
+        "name": "SentiSum",
+        "url": "https://www.sentisum.com/library/ticket-analysis-tools"
+      },
+      {
+        "name": "Zendesk QA"
+      },
+      {
+        "name": "eDesk"
+      }
+    ],
+    "workflowSummary": "The tool reads the text of every ticket, chat, or email and automatically scores how the customer feels (frustrated, neutral, happy), then surfaces the angriest or most urgent conversations first so nothing upsetting sits in the queue too long.",
+    "samplePrompt": "I want to know which of my support tickets are from really frustrated or angry customers without reading every single one. Is there an AI tool that can score customer sentiment automatically and flag the worst ones?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dashboard is easy to read, but setup and connecting your ticket data usually needs an admin",
+    "trustScore": 4,
+    "pricingNote": "Varies by vendor and ticket volume; several tools (e.g. eDesk) start around $39/agent/month with sentiment included - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sentisum.com/library/ticket-analysis-tools",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor-published content; verify accuracy claims and current pricing before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-8811a7e0ac",
+    "slug": "ai-tool-to-write-help-center-articles-for-my-support-team",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support content writer tasked with growing a thin help center",
+    "title": "AI tool to write help center articles for my support team",
+    "intentLabels": [
+      "knowledge base article generator",
+      "AI help doc writer",
+      "FAQ generator",
+      "support article writer"
+    ],
+    "tools": [
+      {
+        "name": "Document360 AI Article Generator",
+        "url": "https://document360.com/writing-tools/knowledge-base-generator/"
+      },
+      {
+        "name": "Knowmax"
+      },
+      {
+        "name": "ClickUp Brain"
+      }
+    ],
+    "workflowSummary": "You give the AI a topic, a few bullet points, or a resolved support ticket, and it drafts a structured help-center article - title, steps, and formatting included. You then review, edit for accuracy, and publish it to your help center.",
+    "samplePrompt": "My help center has huge gaps and I don't have time to write every article from scratch. Is there an AI tool that can turn a topic or a resolved ticket into a draft help article I can edit and publish?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just describe the topic in plain language and the tool produces an editable first draft",
+    "trustScore": 4,
+    "pricingNote": "Document360 plans typically start in the low hundreds per month for small teams; free/trial tiers vary by vendor - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://document360.com/writing-tools/knowledge-base-generator/",
+    "sourceType": "Product page",
+    "freshness": "August 2025",
+    "accessNotes": "Vendor product page; confirm current pricing tiers and article-quality claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-a819ae53a7",
+    "slug": "ai-tool-to-transcribe-and-summarize-customer-support-phone-calls",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Contact center supervisor who can't listen to every call",
+    "title": "AI tool to transcribe and summarize customer support phone calls",
+    "intentLabels": [
+      "call transcription software",
+      "AI call summary",
+      "phone call summarizer",
+      "voice call notes AI"
+    ],
+    "tools": [
+      {
+        "name": "CloudTalk AI Conversation Intelligence",
+        "url": "https://www.cloudtalk.io/blog/ai-call-summary-solutions/"
+      },
+      {
+        "name": "RingCentral AI Assistant"
+      },
+      {
+        "name": "Dialpad AI"
+      }
+    ],
+    "workflowSummary": "The tool automatically records and transcribes every support call, then generates a short summary covering why the customer called, what was discussed, and what happens next - and can push that summary straight into your CRM or helpdesk so agents don't have to write call notes by hand.",
+    "samplePrompt": "My support agents spend a lot of time writing notes after every phone call. Is there an AI tool that automatically transcribes calls and writes a short summary I can review or push into our CRM?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most tools work automatically in the background once connected to your phone system, no special training needed",
+    "trustScore": 4,
+    "pricingNote": "CloudTalk plans start around $23-45/user/month depending on tier; a free plan is available for up to 2 agents - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.cloudtalk.io/blog/ai-call-summary-solutions/",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "June 12, 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and accuracy claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-c0af2b64c2",
+    "slug": "ai-tool-to-automatically-score-and-coach-support-agents-on",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "QA lead who can only manually review a tiny sample of conversations",
+    "title": "AI tool to automatically score and coach support agents on their conversations",
+    "intentLabels": [
+      "AI quality assurance",
+      "automated QA scoring",
+      "agent coaching software",
+      "conversation scoring AI"
+    ],
+    "tools": [
+      {
+        "name": "Zendesk QA",
+        "url": "https://kaizo.com/blog/ai-tools-for-quality-assurance/"
+      },
+      {
+        "name": "Klaus"
+      },
+      {
+        "name": "MaestroQA"
+      },
+      {
+        "name": "EvaluAgent"
+      }
+    ],
+    "workflowSummary": "Instead of a QA reviewer sampling a handful of tickets or calls per agent each week, the AI automatically scores every conversation against your quality rubric (tone, resolution, compliance), flags coaching opportunities, and organizes them into per-agent coaching sessions for managers.",
+    "samplePrompt": "My QA team can only manually review a small handful of support conversations per agent each week. Is there an AI tool that can score every conversation automatically and turn the results into coaching notes for managers?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the scoring runs automatically, but building your quality rubric/scorecard in the tool takes some upfront setup",
+    "trustScore": 4,
+    "pricingNote": "Pricing is usually quote-based per agent/seat, ranging roughly from the low hundreds to low thousands per month depending on volume - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://kaizo.com/blog/ai-tools-for-quality-assurance/",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "July 27, 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and coverage claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-9c94b21a0e",
+    "slug": "ai-tool-to-support-customers-in-multiple-languages-without",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support manager serving customers who don't speak English",
+    "title": "AI tool to support customers in multiple languages without hiring multilingual agents",
+    "intentLabels": [
+      "multilingual customer support AI",
+      "AI live chat translation",
+      "auto-translate support tickets",
+      "multilingual chatbot"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI",
+        "url": "https://www.eesel.ai/blog/best-ai-for-multilingual-support"
+      },
+      {
+        "name": "Zendesk AI"
+      },
+      {
+        "name": "Ada Support"
+      }
+    ],
+    "workflowSummary": "The AI automatically detects what language a customer is writing in, searches your (usually English) knowledge base for the answer, and replies to the customer in their own language - so agents can support a global customer base without needing to speak every language themselves.",
+    "samplePrompt": "We get support requests in several languages but my team only speaks English. Is there an AI tool that can detect the customer's language, find the right answer in our help center, and reply in their language automatically?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "auto-detection and replies work out of the box, but your knowledge base and reporting may need extra setup to be fully multilingual",
+    "trustScore": 3,
+    "pricingNote": "Varies widely by vendor and resolution volume - many are usage/resolution-based with custom quotes - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/best-ai-for-multilingual-support",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "June 22, 2026",
+    "accessNotes": "Vendor-published comparison content; language-accuracy claims vary by language - verify with your own test tickets before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-b3b53e5e3b",
+    "slug": "ai-tool-to-automatically-respond-to-google-and-yelp-customer",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Local business owner who can't keep up with replying to online reviews",
+    "title": "AI tool to automatically respond to Google and Yelp customer reviews",
+    "intentLabels": [
+      "AI review response generator",
+      "auto-reply to reviews",
+      "Google review AI assistant",
+      "Yelp review responder"
+    ],
+    "tools": [
+      {
+        "name": "Reply Champion",
+        "url": "https://www.replychampion.com/best-ai-review-response-tool"
+      },
+      {
+        "name": "ReplyRight"
+      },
+      {
+        "name": "RightResponse AI"
+      }
+    ],
+    "workflowSummary": "You connect your Google Business Profile (and sometimes Yelp), and the AI reads each new review's text, tone, and star rating, then drafts - or automatically posts - a personalized, on-brand reply, flagging anything sensitive (like a refund request or legal threat) for a human to handle first.",
+    "samplePrompt": "I don't have time to respond to every Google and Yelp review my business gets. Is there an AI tool that can draft or automatically post personalized replies, and flag any reviews I should handle myself?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most of these tools are built for non-technical small business owners and set up in minutes",
+    "trustScore": 3,
+    "pricingNote": "Small-business tools often start around $10-40/month; enterprise multi-location platforms (e.g. Birdeye) start at $300+/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.replychampion.com/best-ai-review-response-tool",
+    "sourceType": "Product page / blog (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and platform coverage (Google vs. Yelp vs. others) before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-6720deff7f",
+    "slug": "ai-tool-to-forecast-support-ticket-volume-and-schedule-agents",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support operations manager building next month's agent schedule",
+    "title": "AI tool to forecast support ticket volume and schedule agents automatically",
+    "intentLabels": [
+      "AI workforce management",
+      "support staffing forecast",
+      "agent scheduling software",
+      "contact center WFM"
+    ],
+    "tools": [
+      {
+        "name": "Assembled WFM",
+        "url": "https://nextelco.io/workforce-optimization-software/"
+      },
+      {
+        "name": "NICE IEX"
+      },
+      {
+        "name": "Deputy"
+      }
+    ],
+    "workflowSummary": "The tool looks at your historical ticket/call volume, seasonal patterns, and upcoming events, predicts how many agents you'll need hour-by-hour, and then builds a draft schedule that matches staffing to that demand - so you're not guessing how many people to put on the Monday morning shift.",
+    "samplePrompt": "I'm building next month's support schedule and I'm just guessing how many agents to staff on each shift. Is there an AI tool that can forecast our ticket volume and suggest a schedule based on that?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "forecasts are automatic, but connecting your historical ticket data and setting labor rules takes initial setup",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically quote-based per agent; small-team tools like Deputy start in the range of a few dollars per user/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://nextelco.io/workforce-optimization-software/",
+    "sourceType": "Product page",
+    "freshness": "August 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and forecast-accuracy claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-71e993a5a6",
+    "slug": "ai-tool-to-summarize-customer-satisfaction-survey-feedback",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "CX leader trying to understand why CSAT scores are dropping",
+    "title": "AI tool to summarize customer satisfaction survey feedback",
+    "intentLabels": [
+      "CSAT analysis AI",
+      "NPS feedback summarization",
+      "survey sentiment analysis",
+      "customer feedback themes AI"
+    ],
+    "tools": [
+      {
+        "name": "NiceReply",
+        "url": "https://www.crescendo.ai/blog/ai-tools-for-customer-support"
+      },
+      {
+        "name": "Zonka Feedback"
+      },
+      {
+        "name": "SurveySparrow"
+      }
+    ],
+    "workflowSummary": "After each support interaction, customers get a short CSAT or NPS survey. The AI reads all the open-text comments, groups them into themes (like 'slow response' or 'rude agent'), scores sentiment, and gives you a plain-language summary of what's driving your scores up or down - instead of you reading every comment by hand.",
+    "samplePrompt": "Our CSAT score dropped this month and I don't have time to read through hundreds of survey comments to find out why. Is there an AI tool that can summarize the comments into themes and tell me what's driving the drop?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "these tools are built for support managers, not analysts, and summaries are plain-language by default",
+    "trustScore": 3,
+    "pricingNote": "NiceReply plans start around $59/month; pricing scales with survey/response volume - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.crescendo.ai/blog/ai-tools-for-customer-support",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and feature availability before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-a9cef48342",
+    "slug": "ai-tool-to-let-customers-find-answers-themselves-before-opening",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support director trying to reduce incoming ticket volume",
+    "title": "AI tool to let customers find answers themselves before opening a support ticket",
+    "intentLabels": [
+      "self-service AI search",
+      "ticket deflection tool",
+      "AI answer bot",
+      "help center search AI"
+    ],
+    "tools": [
+      {
+        "name": "Zendesk Answer Bot",
+        "url": "https://www.eesel.ai/blog/zendesk-deflection-and-self-service"
+      },
+      {
+        "name": "AI Agents"
+      },
+      {
+        "name": "Fini"
+      },
+      {
+        "name": "Forethought"
+      }
+    ],
+    "workflowSummary": "The AI sits on top of your help center and answers customer questions directly in natural language - searching your articles and past resolved tickets instead of making the customer read through them - so simple, repetitive questions get resolved without ever becoming a ticket.",
+    "samplePrompt": "A lot of our support tickets are questions that are already answered in our help center - customers just don't find the article. Is there an AI tool that can answer those questions directly so fewer tickets get created in the first place?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI works once connected to your help center, but tuning it against your real ticket history takes some review",
+    "trustScore": 4,
+    "pricingNote": "Forethought and similar tools report deflection rates of roughly 30-60% and are typically quote-based, often starting around $1,500/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/zendesk-deflection-and-self-service",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "March 3, 2026",
+    "accessNotes": "Vendor-published comparison content; deflection-rate claims vary by vendor - verify against your own ticket data before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-a0666b9109",
+    "slug": "ai-tool-to-manage-and-respond-to-customer-support-messages-on",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Social media manager who also handles customer complaints on Instagram and X",
+    "title": "AI tool to manage and respond to customer support messages on social media",
+    "intentLabels": [
+      "social media customer service AI",
+      "social inbox automation",
+      "AI reply to DMs and comments",
+      "social listening for support"
+    ],
+    "tools": [
+      {
+        "name": "Sprout Social (Smart Inbox)",
+        "url": "https://sproutsocial.com/insights/social-media-ai-tools/"
+      },
+      {
+        "name": "Sprinklr"
+      },
+      {
+        "name": "BlueTweak"
+      }
+    ],
+    "workflowSummary": "The tool pulls all your incoming comments, DMs, and mentions from Instagram, X, Facebook, and other platforms into one shared inbox, uses AI to flag urgent or negative messages first, and drafts on-brand replies agents can review and send - so support complaints on social media don't get lost in the noise.",
+    "samplePrompt": "Customers sometimes complain to us on Instagram and X, but those messages get buried under regular social media activity. Is there an AI tool that can pull support-related messages into one place and help draft replies?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the unified inbox is easy to use day-to-day, but connecting all your social accounts and channels takes initial setup",
+    "trustScore": 3,
+    "pricingNote": "Sprout Social and similar platforms are typically priced per seat, often starting in the low hundreds per month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://sproutsocial.com/insights/social-media-ai-tools/",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "August 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and platform coverage before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-0c6343767b",
+    "slug": "ai-voice-agent-to-answer-customer-support-phone-calls",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Contact center manager whose phone lines are overwhelmed after hours",
+    "title": "AI voice agent to answer customer support phone calls automatically",
+    "intentLabels": [
+      "AI phone support agent",
+      "conversational IVR",
+      "AI call answering service",
+      "voice bot for customer service"
+    ],
+    "tools": [
+      {
+        "name": "Bland AI",
+        "url": "https://www.bland.ai/blog/ai-powered-ivr"
+      },
+      {
+        "name": "Fin Voice (Intercom)"
+      },
+      {
+        "name": "Retell AI"
+      }
+    ],
+    "workflowSummary": "Instead of a rigid press-1-for-billing phone menu, an AI voice agent has a real spoken conversation with the caller, understands open-ended requests, looks up account or order info, and either resolves the call (like a refund or order status check) or transfers to a human agent with full context - available around the clock.",
+    "samplePrompt": "Our support phone line gets overwhelmed and callers are stuck on hold, especially after hours. Is there an AI voice agent that can actually hold a conversation with callers and resolve simple requests instead of just being a phone menu?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "basic setups can go live quickly, but scripting the conversation flows and connecting backend systems (like order lookup) takes real configuration",
+    "trustScore": 3,
+    "pricingNote": "Usage-based, typically priced per call or per minute; reported ranges span roughly $0.30-$1.20+ per resolved call depending on the vendor - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.bland.ai/blog/ai-powered-ivr",
+    "sourceType": "Product page / blog (vendor's own site)",
+    "freshness": "May 21, 2026",
+    "accessNotes": "Vendor-published content; verify current per-call pricing and resolution-rate claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-30cf8eea36",
+    "slug": "ai-tool-to-flag-customers-at-risk-of-churning-based-on-their",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Customer success / support leader trying to catch unhappy customers before they cancel",
+    "title": "AI tool to flag customers at risk of churning based on their support conversations",
+    "intentLabels": [
+      "churn risk prediction",
+      "escalation risk flagging",
+      "AI customer health score",
+      "at-risk customer alerts"
+    ],
+    "tools": [
+      {
+        "name": "Zendesk QA (churn/escalation signals)",
+        "url": "https://crisp.chat/en/blog/ai-churn-prediction/"
+      },
+      {
+        "name": "Gainsight"
+      },
+      {
+        "name": "Crisp (Hugo AI routing rules)"
+      }
+    ],
+    "workflowSummary": "The AI continuously reads support tickets, chats, and emails for warning signs - rising ticket volume, declining sentiment, mentions of a competitor, or repeated unresolved issues - and calculates a risk score per customer or account, alerting the team early enough to reach out before that customer cancels or leaves a bad review.",
+    "samplePrompt": "I want to know which of our customers seem unhappy or at risk of canceling based on their support conversations, before they actually leave. Is there an AI tool that can flag that automatically from our ticket and chat history?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "alerts work once set up, but defining what counts as a 'risk signal' for your business takes some configuration",
+    "trustScore": 3,
+    "pricingNote": "Varies widely - some features are bundled into existing helpdesk plans (e.g. Zendesk QA), while dedicated tools like Gainsight are enterprise-priced and quote-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://crisp.chat/en/blog/ai-churn-prediction/",
+    "sourceType": "Product page / blog (vendor's own site)",
+    "freshness": "April 8, 2026",
+    "accessNotes": "Vendor-published content; churn-prediction accuracy claims vary by vendor - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-e97eddb57a",
+    "slug": "ai-tool-to-automatically-detect-and-merge-duplicate-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops manager whose queue keeps filling with duplicate tickets",
+    "title": "AI tool to automatically detect and merge duplicate support tickets",
+    "intentLabels": [
+      "duplicate ticket detection",
+      "ticket merge automation",
+      "cross-channel duplicate tickets",
+      "ticket dedupe AI"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI Triage",
+        "url": "https://www.eesel.ai/blog/zendesk-duplicate-tickets"
+      },
+      {
+        "name": "Swifteq Merge Duplicate Tickets"
+      },
+      {
+        "name": "Knots (Zendesk Marketplace)"
+      }
+    ],
+    "workflowSummary": "The AI compares each new incoming ticket against your open queue using the meaning of the message (not just keywords), flags likely duplicates from the same customer across channels, and either merges them automatically or suggests a merge for an agent to confirm - so nobody works the same issue twice.",
+    "samplePrompt": "My queue is full of duplicate tickets - the same customer emails, then opens a live chat, then fills out the contact form about the same issue. Is there an AI tool that can detect these duplicates automatically and merge them?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works alongside your existing helpdesk (Zendesk, Freshdesk), but setting matching rules/exclusions takes some initial configuration",
+    "trustScore": 4,
+    "pricingNote": "Swifteq starts at ~EUR59/month plus a one-time backlog-merge service (~EUR199); Knots offers a free tier - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.eesel.ai/blog/zendesk-duplicate-tickets",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "March 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and accuracy claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-a43e40d38a",
+    "slug": "ai-tool-to-automatically-redact-or-mask-customer-pii-in-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops/compliance lead worried about sensitive data sitting in tickets",
+    "title": "AI tool to automatically redact or mask customer PII in support tickets",
+    "intentLabels": [
+      "PII redaction software",
+      "data masking for tickets",
+      "GDPR/HIPAA ticket compliance",
+      "automatic data anonymization"
+    ],
+    "tools": [
+      {
+        "name": "Lorikeet",
+        "url": "https://www.lorikeetcx.ai/articles/best-ai-support-pii-redaction-data-masking-2026"
+      },
+      {
+        "name": "Strac"
+      },
+      {
+        "name": "OpenAI Privacy Filter (via integration)"
+      }
+    ],
+    "workflowSummary": "The tool scans ticket text, chat logs, and attachments for personal data - names, card numbers, government IDs, health details - and automatically masks or redacts it before the ticket is logged, displayed to an agent, or sent to an AI model, while keeping enough context for the issue to still be resolved.",
+    "samplePrompt": "We handle customer support tickets that sometimes include sensitive personal information, and I'm worried about compliance risk. Is there an AI tool that can automatically detect and redact that data before it's stored or shared?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "detection runs automatically, but choosing what counts as sensitive for your business and reviewing edge cases takes setup and ongoing oversight",
+    "trustScore": 4,
+    "pricingNote": "Pricing is typically enterprise/quote-based for regulated buyers - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.lorikeetcx.ai/articles/best-ai-support-pii-redaction-data-masking-2026",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "June 17, 2026",
+    "accessNotes": "Vendor-published comparison content; treat compliance and accuracy claims as vendor-sourced - verify with your own legal/compliance team before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-0bb0eba91b",
+    "slug": "ai-tool-to-train-new-support-agents-with-simulated-customer",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Team lead onboarding a batch of new support hires",
+    "title": "AI tool to train new support agents with simulated customer conversations",
+    "intentLabels": [
+      "AI roleplay training for agents",
+      "simulated customer conversations",
+      "support agent onboarding software",
+      "conversation practice AI"
+    ],
+    "tools": [
+      {
+        "name": "AgentTrainer (LiveChat)",
+        "url": "https://www.outdoo.ai/blog/ai-call-center-training"
+      },
+      {
+        "name": "Syntrix"
+      },
+      {
+        "name": "Outdoo AI"
+      }
+    ],
+    "workflowSummary": "You describe a problem, a procedure, and a customer persona (e.g. 'frustrated payer'), and the AI generates a realistic practice conversation for a new agent to handle. The system scores the response and gives feedback, so new hires can practice tricky or emotional conversations safely before they talk to a real customer.",
+    "samplePrompt": "I'm onboarding several new support agents and want them to practice handling difficult customer conversations before they go live. Is there an AI tool that can simulate realistic customer chats and give them feedback?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most of these tools are built specifically for non-technical trainers and team leads to set up scenarios in plain language",
+    "trustScore": 3,
+    "pricingNote": "Varies by vendor; typically per-seat/per-trainee pricing, often in the tens of dollars per user per month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.outdoo.ai/blog/ai-call-center-training",
+    "sourceType": "Product page / blog (vendor's own site)",
+    "freshness": "July 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and reported onboarding-time-savings claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-a9aa753c96",
+    "slug": "ai-tool-to-automatically-fill-in-crm-fields-from-support-ticket",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support manager tired of agents manually copying ticket details into the CRM",
+    "title": "AI tool to automatically fill in CRM fields from support ticket conversations",
+    "intentLabels": [
+      "CRM auto-fill from tickets",
+      "field prediction AI",
+      "auto-populate case fields",
+      "support-to-CRM automation"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot Service Hub (AI field predictions)",
+        "url": "https://www.freshworks.com/customer-service/support/ai/"
+      },
+      {
+        "name": "Pylon"
+      }
+    ],
+    "workflowSummary": "As a ticket comes in or gets resolved, the AI reads the conversation and automatically fills in structured fields - category, priority, issue type, owner - in your CRM or ticketing system, instead of an agent manually selecting dropdowns and typing notes after every interaction.",
+    "samplePrompt": "My agents spend extra time manually filling in ticket category, priority, and owner fields after every conversation. Is there an AI tool that can read the conversation and auto-fill those fields for them?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "field prediction typically runs automatically once connected, with no special agent training needed",
+    "trustScore": 3,
+    "pricingNote": "Often bundled into existing helpdesk/CRM plans (e.g. HubSpot Service Hub tiers); dedicated platforms are usually quote-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.freshworks.com/customer-service/support/ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; confirm current plan names and field-prediction accuracy before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-97bf42af63",
+    "slug": "ai-tool-to-monitor-support-tickets-and-alert-before-an-sla-is",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops manager who keeps finding out about SLA breaches after the fact",
+    "title": "AI tool to monitor support tickets and alert before an SLA is breached",
+    "intentLabels": [
+      "SLA breach prediction",
+      "SLA monitoring AI",
+      "response-time alert automation",
+      "service level agreement tracking tool"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI (SLA monitoring)",
+        "url": "https://irisagent.com/blog/predict-sla-breaches-with-ai-tools/"
+      },
+      {
+        "name": "IrisAgent SLA prediction"
+      },
+      {
+        "name": "StackOne SLA Breach Prediction Agent"
+      }
+    ],
+    "workflowSummary": "The tool continuously watches every open ticket's time-to-respond and time-to-resolve against your SLA targets, predicts which tickets are at risk of breaching before it happens (not just after), and automatically alerts the assigned agent, then a team lead, then a manager if nothing changes in time.",
+    "samplePrompt": "I keep finding out about SLA breaches after they've already happened. Is there an AI tool that can monitor tickets in real time and warn my team before a deadline is missed, not after?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "alerts work once connected to your helpdesk, but defining your SLA tiers and escalation steps takes initial setup",
+    "trustScore": 4,
+    "pricingNote": "Native helpdesk SLA features are usually included in existing plans; dedicated prediction tools are typically quote-based per agent - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://irisagent.com/blog/predict-sla-breaches-with-ai-tools/",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "December 2025 (updated July 2026)",
+    "accessNotes": "Vendor-published comparison content; accuracy claims (e.g. '90% accuracy') are vendor-reported - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-481a661369",
+    "slug": "ai-tool-to-find-gaps-in-our-help-center-based-on-support-ticket",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Content/support ops lead trying to figure out what the help center is missing",
+    "title": "AI tool to find gaps in our help center based on support ticket patterns",
+    "intentLabels": [
+      "knowledge base gap detection",
+      "content gap analysis AI",
+      "missing help articles finder",
+      "documentation gap tool"
+    ],
+    "tools": [
+      {
+        "name": "Forethought (Discover)",
+        "url": "https://forethought.ai/solutions/ai-powered-knowledge-base"
+      },
+      {
+        "name": "Fini"
+      },
+      {
+        "name": "Guru"
+      }
+    ],
+    "workflowSummary": "The AI reviews past tickets, chat transcripts, and help-center search queries to find questions that keep coming up without a matching article, then ranks those gaps by how many tickets they'd likely prevent - so your content team knows exactly what to write next instead of guessing.",
+    "samplePrompt": "I want to know what topics my help center is missing based on the questions customers keep asking our support team. Is there an AI tool that can find those content gaps automatically from our ticket history?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the gap report is easy to read, but connecting your ticket history and help center takes initial setup by an admin",
+    "trustScore": 4,
+    "pricingNote": "Forethought and similar tools are typically quote-based, often bundled with broader deflection/knowledge features - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://forethought.ai/solutions/ai-powered-knowledge-base",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; verify current pricing and gap-detection accuracy claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-784142aa9c",
+    "slug": "ai-tool-to-audit-support-conversations-for-gdpr-pci-or-hipaa",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Compliance/support director in a regulated industry (finance, healthcare, insurance)",
+    "title": "AI tool to audit support conversations for GDPR, PCI, or HIPAA compliance",
+    "intentLabels": [
+      "compliance monitoring AI",
+      "regulated conversation audit",
+      "GDPR/PCI/HIPAA conversation compliance",
+      "support compliance software"
+    ],
+    "tools": [
+      {
+        "name": "Isara",
+        "url": "https://www.isara.ai/compliance-audits/"
+      },
+      {
+        "name": "Feroot Security"
+      },
+      {
+        "name": "Comp AI"
+      }
+    ],
+    "workflowSummary": "The tool reads every support conversation - human or AI-handled - against the specific regulations you select (GDPR, PCI DSS, HIPAA, and others), flags issues like unredacted card numbers or missing required disclosures, rates each conversation's severity, and generates a scheduled report your compliance team or auditors can review.",
+    "samplePrompt": "We're in a regulated industry and need to make sure our support conversations follow GDPR and PCI rules. Is there an AI tool that can automatically audit our tickets and chats for compliance issues and generate a report for our compliance team?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reports generate automatically once set up, but choosing which regulations apply to your business needs input from legal/compliance",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically quote-based for regulated/enterprise buyers - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.isara.ai/compliance-audits/",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; this is not legal advice - verify regulatory coverage and current pricing with your own compliance/legal team before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-34031012a4",
+    "slug": "ai-tool-to-detect-fraudulent-or-abusive-refund-and-return",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support/trust & safety lead seeing a rise in suspicious refund requests",
+    "title": "AI tool to detect fraudulent or abusive refund and return requests",
+    "intentLabels": [
+      "refund fraud detection",
+      "return abuse AI",
+      "suspicious refund flagging",
+      "chargeback risk scoring"
+    ],
+    "tools": [
+      {
+        "name": "Ravelin",
+        "url": "https://www.ravelin.com/blog/ai-powered-refund-abuse-dispute-fraud"
+      },
+      {
+        "name": "Mastercard Digital Enablement (refund risk intelligence)"
+      },
+      {
+        "name": "FraudNet"
+      }
+    ],
+    "workflowSummary": "The AI looks at a customer's full history - not just a single request - across refund frequency, device, location, and account signals, and scores how much trust each refund or return request deserves. Legitimate repeat customers move through with no friction, while unusual patterns (like the same details reused across multiple accounts) get flagged for manual review before a refund goes out.",
+    "samplePrompt": "We're seeing a rise in refund requests that feel suspicious - same details reused across accounts, high-value items returned quickly. Is there an AI tool that can flag risky refund requests before we approve them?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "scoring runs automatically, but tuning risk thresholds and reviewing flagged cases needs a person on your team",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically usage/volume-based and quote-based for merchants - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.ravelin.com/blog/ai-powered-refund-abuse-dispute-fraud",
+    "sourceType": "Product page / blog (vendor's own site)",
+    "freshness": "February 5, 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and detection-accuracy claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-41ef29886c",
+    "slug": "ai-tool-to-build-an-internal-knowledge-base-of-macros-and",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support team lead frustrated that agents can't find internal policy answers fast",
+    "title": "AI tool to build an internal knowledge base of macros and policies for support agents",
+    "intentLabels": [
+      "internal knowledge management AI",
+      "agent-facing macro library",
+      "internal help desk knowledge tool",
+      "verified knowledge cards"
+    ],
+    "tools": [
+      {
+        "name": "Guru",
+        "url": "https://www.eesel.ai/blog/best-ai-tools-for-knowledge-base-management"
+      },
+      {
+        "name": "Document360 (internal KB mode)"
+      },
+      {
+        "name": "Confluence + AI search"
+      }
+    ],
+    "workflowSummary": "Agents and managers store policies, macros, and internal SOPs as short 'cards' inside the tool (or it pulls them from Slack, Google Drive, and other existing docs). Each card has an owner and a review date so it doesn't go stale, and agents can ask a question in plain language - inside Slack, Chrome, or their helpdesk - and get a verified, cited answer instead of digging through old docs.",
+    "samplePrompt": "My agents waste time hunting through outdated internal docs and Slack threads for policy answers and macros. Is there an AI tool that can centralize that internal knowledge and keep it verified and up to date?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "agents interact with it in plain language inside tools they already use; the main setup work falls on whoever organizes the initial content",
+    "trustScore": 4,
+    "pricingNote": "Guru plans start around $10-25/user/month depending on tier - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/best-ai-tools-for-knowledge-base-management",
+    "sourceType": "Blog/guide (vendor-authored comparison)",
+    "freshness": "August 11, 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and integration list before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-13b86eba03",
+    "slug": "ai-tool-to-automatically-generate-a-weekly-support-performance",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops manager who spends hours every Monday building a report for leadership",
+    "title": "AI tool to automatically generate a weekly support performance report for leadership",
+    "intentLabels": [
+      "automated support reporting AI",
+      "weekly performance summary",
+      "support metrics digest",
+      "executive support report generator"
+    ],
+    "tools": [
+      {
+        "name": "Zapier (AI weekly reporting automation)",
+        "url": "https://zapier.com/automations/customer-service-success/customer-support-operations/support-analytics-reporting/send-weekly-ai-triage-performance-report-to-support-and-qa",
+        "catalogueSlug": "zapier"
+      },
+      {
+        "name": "ClickUp Brain"
+      },
+      {
+        "name": "Domo Executive Report AI Agent"
+      }
+    ],
+    "workflowSummary": "On a schedule you set, the tool pulls metrics from your helpdesk (ticket volume, resolution time, CSAT, escalations), writes a plain-language summary of what changed and why, builds a simple chart, and posts or emails it to leadership - so nobody has to manually pull numbers and write commentary every week.",
+    "samplePrompt": "Every Monday I spend hours pulling ticket volume, resolution time, and CSAT numbers into a report for leadership. Is there an AI tool that can generate that weekly report automatically and just have me review it before sending?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "once the automation is set up, generating and reviewing the report takes minutes instead of hours",
+    "trustScore": 3,
+    "pricingNote": "Zapier's AI reporting automations are usage/task-based within existing Zapier plans (from ~$20-30/month); dedicated executive-report agents are typically quote-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://zapier.com/automations/customer-service-success/customer-support-operations/support-analytics-reporting/send-weekly-ai-triage-performance-report-to-support-and-qa",
+    "sourceType": "Product page (vendor's own automation template)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor-published automation template; verify current pricing and that the workflow matches your actual data sources before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-7ba9b73d5e",
+    "slug": "ai-tool-to-automatically-clean-up-and-close-stale-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support ops manager whose backlog reports are inflated by old, abandoned tickets",
+    "title": "AI tool to automatically clean up and close stale support tickets",
+    "intentLabels": [
+      "stale ticket cleanup",
+      "auto-close inactive tickets",
+      "ticket backlog automation",
+      "aging ticket reminders"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI (stale ticket automation)",
+        "url": "https://www.eesel.ai/blog/zendesk-automation-recipe-stale-close"
+      },
+      {
+        "name": "native Zendesk automations + AI triage"
+      }
+    ],
+    "workflowSummary": "The tool watches for tickets that have gone quiet - no customer reply for a set number of days - and runs a polite, multi-step sequence automatically: a friendly reminder, then a final warning, then an automatic close with an explanatory message, so your backlog and resolution-time metrics stay accurate without an agent manually hunting down old tickets.",
+    "samplePrompt": "My ticket backlog is full of old conversations customers never replied to, and it's skewing our resolution-time metrics. Is there an AI tool that can automatically remind customers and then close these stale tickets for me?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "this is one of the more beginner-friendly setups, often built from a template inside your existing helpdesk",
+    "trustScore": 4,
+    "pricingNote": "Native helpdesk automations are usually included in existing plans; AI-layer add-ons like eesel AI have their own subscription pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/zendesk-automation-recipe-stale-close",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "February 23, 2026",
+    "accessNotes": "Vendor-published how-to content; verify current automation steps and pricing before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-5b698386d3",
+    "slug": "ai-tool-to-verify-a-caller-s-identity-before-agents-discuss",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Contact center manager worried about fraudsters getting past phone verification",
+    "title": "AI tool to verify a caller's identity before agents discuss account details",
+    "intentLabels": [
+      "caller authentication AI",
+      "voice identity verification",
+      "call center fraud prevention",
+      "phone support security check"
+    ],
+    "tools": [
+      {
+        "name": "Fini (caller authentication)",
+        "url": "https://www.usefini.com/guides/ai-voice-support-tools-caller-authentication"
+      },
+      {
+        "name": "HYPR Identity Assurance"
+      },
+      {
+        "name": "Bland AI"
+      }
+    ],
+    "workflowSummary": "Instead of asking every caller slow, guessable security questions (date of birth, postcode), the AI cross-checks phone/account signals in the background - like a valid session ID from your app - and only triggers a fuller identity check when something doesn't match, so legitimate customers get through faster while suspicious callers get stopped before an agent shares account details.",
+    "samplePrompt": "We're worried about fraudsters calling in and talking their way past our phone verification questions. Is there an AI tool that can verify a caller's identity more reliably without adding a lot of extra time to the call?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the tool works automatically once integrated with your phone system and CRM, but the initial security setup should involve IT/security",
+    "trustScore": 3,
+    "pricingNote": "Usage-based, often per-minute or per-resolution; reported example: $0.69 per resolution with a monthly minimum - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.usefini.com/guides/ai-voice-support-tools-caller-authentication",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "August 2026",
+    "accessNotes": "Vendor-published comparison content; fraud-reduction and accuracy claims are vendor-reported - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-23d1dfd0ab",
+    "slug": "ai-tool-to-automatically-filter-spam-and-abusive-messages-out",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support lead whose shared inbox gets flooded with spam and abusive messages",
+    "title": "AI tool to automatically filter spam and abusive messages out of the support inbox",
+    "intentLabels": [
+      "spam filtering for support",
+      "abusive message detection",
+      "chat/email spam AI",
+      "inbox noise filtering"
+    ],
+    "tools": [
+      {
+        "name": "Re:amaze AI spam filtering",
+        "url": "https://www.reamaze.com/blog/ai-powered-spam-filtering/"
+      },
+      {
+        "name": "Inbox Agents"
+      }
+    ],
+    "workflowSummary": "The AI reads the first message of every new chat or email conversation and evaluates whether it looks like spam, a scam, or abusive content. Anything flagged gets labeled and moved out of the main queue (but stays accessible under a 'spam' filter so nothing is silently deleted), so agents only see genuine customer conversations by default.",
+    "samplePrompt": "Our shared support inbox gets flooded with spam and the occasional abusive message, and it's burying real customer questions. Is there an AI tool that can automatically filter that out without deleting anything permanently?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "this is typically a toggle inside your existing chat/email helpdesk settings, no separate tool needed for some platforms",
+    "trustScore": 3,
+    "pricingNote": "Often included in existing helpdesk plans as a built-in feature (e.g. Re:amaze); standalone tools vary in pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.reamaze.com/blog/ai-powered-spam-filtering/",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "November 2024 (feature still current per vendor site)",
+    "accessNotes": "Vendor-published content; confirm the feature is still active on your plan tier before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-6eaab4a486",
+    "slug": "ai-tool-to-write-handoff-notes-between-support-shifts",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support team lead managing agents across overlapping or 24/7 shifts",
+    "title": "AI tool to write handoff notes between support shifts automatically",
+    "intentLabels": [
+      "shift handoff summary AI",
+      "support shift handover notes",
+      "24/7 support continuity tool",
+      "shift transition briefing"
+    ],
+    "tools": [
+      {
+        "name": "AI prompt templates (M365 Copilot / ChatGPT / Claude) applied to helpdesk data",
+        "url": "https://www.supportbench.com/handoff-templates-global-support-teams-what-to-include/"
+      },
+      {
+        "name": "Supportbench handoff automation"
+      }
+    ],
+    "workflowSummary": "At the end of a shift, the tool pulls together active high-priority tickets, pending callbacks, known issues, and escalations in progress, and writes a short, structured brief for the incoming shift - so the next team doesn't have to reopen the same triage questions or dig through the ticket queue to figure out what's going on.",
+    "samplePrompt": "My support team works overlapping shifts and we keep losing context between them - the next shift has to re-read everything to catch up. Is there an AI tool that can write a short handoff summary automatically at the end of each shift?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "this can be as simple as a structured AI prompt applied to your existing ticket data, no new software required in many cases",
+    "trustScore": 3,
+    "pricingNote": "Varies - can be done for free using a prompt template with an existing AI assistant, or via helpdesk-integrated automation tools that carry their own subscription cost - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.supportbench.com/handoff-templates-global-support-teams-what-to-include/",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "April 5, 2026",
+    "accessNotes": "Vendor-published content; verify current claims about context-loss statistics before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-1547ff6a7b",
+    "slug": "ai-tool-to-spot-upsell-or-cross-sell-opportunities-during-a",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support-turned-revenue lead trying to catch upgrade signals agents currently miss",
+    "title": "AI tool to spot upsell or cross-sell opportunities during a support conversation",
+    "intentLabels": [
+      "upsell detection AI",
+      "cross-sell during support chat",
+      "expansion signal detection",
+      "support-to-revenue AI"
+    ],
+    "tools": [
+      {
+        "name": "Maven AGI (Upsell & Cross-Sell Agent)",
+        "url": "https://www.mavenagi.com/use-cases/upsell-cross-sell-agent"
+      },
+      {
+        "name": "Kommunicate"
+      }
+    ],
+    "workflowSummary": "The AI listens to (or reads) the support conversation alongside the customer's account context, and when it detects real interest in an upgrade, add-on, or bigger plan - not guessed, but stated or implied by the customer - it surfaces only pre-approved offers at that moment, either to the agent to mention or directly to the customer, without derailing the support issue being resolved.",
+    "samplePrompt": "My support team resolves issues all day but never mentions relevant upgrades or add-ons, even when a customer clearly needs them. Is there an AI tool that can spot those moments during a support conversation and suggest the right offer?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "detection runs automatically, but you need to pre-approve which offers the AI is allowed to present and in what tone",
+    "trustScore": 3,
+    "pricingNote": "Typically enterprise/quote-based pricing tied to account volume - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mavenagi.com/use-cases/upsell-cross-sell-agent",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "August 2026",
+    "accessNotes": "Vendor product page; verify current pricing and reported conversion claims before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-765a1cc19c",
+    "slug": "ai-tool-to-proactively-notify-customers-before-they-need-to",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support/CX leader who wants to reduce how many customers ever need to call in",
+    "title": "AI tool to proactively notify customers before they need to contact support",
+    "intentLabels": [
+      "proactive customer outreach",
+      "pre-emptive support notifications",
+      "proactive service messaging",
+      "outbound customer alerts"
+    ],
+    "tools": [
+      {
+        "name": "8x8 Proactive Outreach",
+        "url": "https://www.8x8.com/products/contact-center/proactive-outreach"
+      },
+      {
+        "name": "NiCE Proactive Customer Engagement"
+      },
+      {
+        "name": "Zapier proactive outreach automations"
+      }
+    ],
+    "workflowSummary": "The tool watches for known triggers - a shipping delay, a billing issue, a known bug affecting certain accounts - and automatically sends a personalized SMS, email, or app message to affected customers explaining the issue and what to do next, before they ever have to open a ticket or call in wondering what's wrong.",
+    "samplePrompt": "I want to reach out to customers proactively when we know something's gone wrong (like a shipping delay or a known bug) instead of waiting for them to contact support confused. Is there an AI tool that can automate that kind of proactive notification?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the messaging itself is straightforward, but connecting the tool to the systems that detect the triggering event (shipping, billing, monitoring) takes setup",
+    "trustScore": 3,
+    "pricingNote": "Contact-center platforms like 8x8 are typically quote-based/per-seat; Zapier-based automations run on existing Zapier plan pricing (from ~$20-30/month) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.8x8.com/products/contact-center/proactive-outreach",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; verify current pricing and channel coverage (SMS/email/app) before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-f4395835d9",
+    "slug": "ai-tool-to-automatically-ask-for-a-review-or-testimonial-after",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support/marketing lead who wants more reviews but doesn't want to nag customers",
+    "title": "AI tool to automatically ask for a review or testimonial after a great support interaction",
+    "intentLabels": [
+      "testimonial collection AI",
+      "post-support review request",
+      "automated testimonial engine",
+      "review request timing automation"
+    ],
+    "tools": [
+      {
+        "name": "TheySaid",
+        "url": "https://www.theysaid.io/use-cases/customer-testimonial-engine"
+      },
+      {
+        "name": "Praising.ai"
+      }
+    ],
+    "workflowSummary": "After a support conversation ends on a high note (resolved quickly, positive sentiment, a customer compliment), the AI waits for the right moment and sends a personalized, low-friction request - often a short conversational prompt rather than a generic 'leave us a review' link - then turns the customer's own words into a ready-to-use testimonial or review, with the customer's approval.",
+    "samplePrompt": "I want to ask happy customers for a testimonial right after a good support interaction, but I don't want it to feel like spam or bad timing. Is there an AI tool that can identify the right moment and send a personalized request automatically?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "these tools are built to be set up by non-technical marketing or support staff, typically via a CRM/helpdesk integration",
+    "trustScore": 3,
+    "pricingNote": "Praising.ai setup is described as quick (minutes) with a free trial; pricing for both tools is typically subscription-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.theysaid.io/use-cases/customer-testimonial-engine",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; verify current pricing and integration list before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-067ba406d1",
+    "slug": "ai-tool-to-personalize-renewal-reminders-based-on-a-customer-s",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Customer success/support lead responsible for renewal outcomes",
+    "title": "AI tool to personalize renewal reminders based on a customer's support and usage history",
+    "intentLabels": [
+      "AI renewal reminder personalization",
+      "usage-aware renewal messaging",
+      "subscription renewal AI",
+      "support-informed retention emails"
+    ],
+    "tools": [
+      {
+        "name": "Intercom Fin AI",
+        "url": "https://www.pedowitzgroup.com/personalized-renewal-reminders-with-ai"
+      },
+      {
+        "name": "Customer.io"
+      },
+      {
+        "name": "Braze AI"
+      }
+    ],
+    "workflowSummary": "Instead of sending every customer the same generic 'your subscription renews soon' email, the AI pulls in product usage trends, support sentiment, and recent value milestones for each account, then tailors the renewal message's tone, incentive, and timing - surfacing real value delivered for a happy, high-usage account, or addressing friction directly for one that's had a rough support experience.",
+    "samplePrompt": "I want our renewal reminders to actually reflect each customer's experience - not the same generic email to everyone. Is there an AI tool that can personalize renewal messaging based on a customer's usage and support history?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI drafts and personalizes messages automatically, but connecting your CRM, billing, and support data sources takes initial setup",
+    "trustScore": 3,
+    "pricingNote": "Varies by platform - typically subscription/seat-based marketing automation pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pedowitzgroup.com/personalized-renewal-reminders-with-ai",
+    "sourceType": "Blog/guide (marketing agency)",
+    "freshness": "October 2025",
+    "accessNotes": "Third-party marketing agency content citing multiple vendors; verify current pricing and specific tool capabilities directly with each vendor before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-adc88717da",
+    "slug": "ai-tool-to-run-win-back-campaigns-for-customers-who-went-quiet",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Retention/marketing manager trying to re-engage customers who quietly stopped buying or using the product",
+    "title": "AI tool to run win-back campaigns for customers who went quiet after a support interaction",
+    "intentLabels": [
+      "win-back campaign AI",
+      "customer reactivation automation",
+      "lapsed customer re-engagement",
+      "churned customer outreach"
+    ],
+    "tools": [
+      {
+        "name": "Frontdesk (AI winback)",
+        "url": "https://www.myaifrontdesk.com/ai-customer-winback-campaign"
+      },
+      {
+        "name": "Klaviyo win-back flows"
+      }
+    ],
+    "workflowSummary": "The AI scores your lapsed or quiet customers by how likely they are to come back, picks a per-customer offer (a discount, a feature update, or just a check-in - not always a discount), chooses the best channel and timing, and runs a multi-step outreach sequence automatically - stopping immediately if the customer responds, purchases, or contacts support again so nobody gets a stale, out-of-touch message.",
+    "samplePrompt": "We have a list of customers who went quiet after a support issue and never came back. Is there an AI tool that can run a win-back campaign for them automatically - picking the right offer and timing instead of a generic blast?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "campaigns run automatically once set up, but choosing offer types and exit rules (so people don't get messaged after they've already returned) needs review",
+    "trustScore": 3,
+    "pricingNote": "Frontdesk and similar tools are typically subscription-based with usage components; reported ROI figures (5-10x) are vendor-stated - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.myaifrontdesk.com/ai-customer-winback-campaign",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "June 2026",
+    "accessNotes": "Vendor-published content; ROI and reactivation-rate figures are vendor-reported - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-7542444696",
+    "slug": "ai-tool-to-communicate-proactively-with-customers-during-an",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support/ops lead trying to reduce the flood of 'is it down?' tickets during an outage",
+    "title": "AI tool to communicate proactively with customers during an outage or incident",
+    "intentLabels": [
+      "AI status page updates",
+      "incident communication automation",
+      "outage notification tool",
+      "AI-drafted status updates"
+    ],
+    "tools": [
+      {
+        "name": "Atlassian Statuspage",
+        "url": "https://www.atlassian.com/software/statuspage"
+      },
+      {
+        "name": "ilert"
+      },
+      {
+        "name": "UpReport"
+      }
+    ],
+    "workflowSummary": "When an incident starts, the tool automatically (or with one click) posts a status update to a branded page customers can subscribe to, notifies subscribers by email, SMS, or Slack as the situation changes, and - on the more AI-forward platforms - drafts the customer-facing update itself from engineering's internal notes, so your team spends its attention fixing the problem instead of writing and re-writing public messages.",
+    "samplePrompt": "During outages, our support inbox floods with 'is it down?' tickets because customers have no other way to know what's happening. Is there an AI tool that can post proactive status updates and notify customers automatically so they don't have to ask?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "setting up a branded status page and subscriber notifications is a common, well-documented, non-technical setup step",
+    "trustScore": 4,
+    "pricingNote": "Atlassian Statuspage free plan covers 100 subscribers; paid plans typically start in the tens of dollars per month and scale with subscriber count - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.atlassian.com/software/statuspage",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; verify current pricing tiers and subscriber limits before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-cce09236d6",
+    "slug": "ai-tool-to-send-personalized-loyalty-or-rewards-messages",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Loyalty/retention marketer whose program treats every member the same",
+    "title": "AI tool to send personalized loyalty or rewards messages triggered by customer behavior",
+    "intentLabels": [
+      "AI loyalty messaging",
+      "personalized rewards triggers",
+      "behavior-based loyalty automation",
+      "tier progress nudges"
+    ],
+    "tools": [
+      {
+        "name": "Klaviyo (loyalty-triggered flows)",
+        "url": "https://akohub.com/blogs/ai-loyalty-programs-how-ai-optimizes-rewards-retention-and-customer-engagement"
+      },
+      {
+        "name": "Mailsoftly"
+      }
+    ],
+    "workflowSummary": "Instead of blasting the same monthly loyalty newsletter to every member, the AI watches real-time triggers - a customer close to their next reward tier, points about to expire, a resolved support issue, a lapse in activity - and automatically sends a small, relevant, personalized message (not just a generic discount) at the moment it's most likely to matter to that specific customer.",
+    "samplePrompt": "Our loyalty program sends the same generic message to every member regardless of what they've actually done. Is there an AI tool that can trigger personalized rewards messages based on each customer's real behavior, like being close to a reward or having just had a support issue resolved?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most loyalty-messaging platforms are built for marketers to configure without engineering help, though initial data connections need setup",
+    "trustScore": 3,
+    "pricingNote": "Klaviyo pricing is usage/contact-based, starting with a free tier for small lists - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://akohub.com/blogs/ai-loyalty-programs-how-ai-optimizes-rewards-retention-and-customer-engagement",
+    "sourceType": "Blog/guide (vendor-adjacent)",
+    "freshness": "August 2026",
+    "accessNotes": "Blog content; verify current Klaviyo pricing and feature specifics on Klaviyo's own site before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-dfbda2bc0b",
+    "slug": "ai-tool-to-draft-a-service-recovery-offer-after-a-customer-has",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Support manager whose agents have no consistent way to make things right after a bad experience",
+    "title": "AI tool to draft a service-recovery offer after a customer has a bad support experience",
+    "intentLabels": [
+      "service recovery automation",
+      "retention offer AI",
+      "apology + discount drafting",
+      "policy-safe recovery offers"
+    ],
+    "tools": [
+      {
+        "name": "FeedbackRobot (Resolutions Engine)",
+        "url": "https://www.feedbackrobot.com/articles/generative-ai-customer-service-examples"
+      },
+      {
+        "name": "Gladly"
+      }
+    ],
+    "workflowSummary": "When a conversation or review shows a customer had a genuinely bad experience, the AI drafts an empathetic apology plus a specific, policy-safe recovery gesture (a discount code, a credit, a replacement) sized to the severity of the issue and the customer's value, and creates a task for a manager to review and send - so recovery gestures are consistent and on-brand instead of ad hoc and agent-dependent.",
+    "samplePrompt": "When a customer has a really bad support experience, I want our recovery response (the apology plus any discount or credit) to be consistent instead of left up to whichever agent handles it. Is there an AI tool that can draft that recovery offer automatically within our policy limits?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "drafting is automatic, but setting your offer rules (what counts as 'bad enough' for what level of gesture) needs input from a manager",
+    "trustScore": 3,
+    "pricingNote": "Pricing for dedicated 'resolutions engine' style tools is typically subscription-based; some capability may already exist inside your CX/feedback platform - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.feedbackrobot.com/articles/generative-ai-customer-service-examples",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "April 2026",
+    "accessNotes": "Vendor-published content; verify current pricing and whether this is a standalone product or a feature of a broader platform before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-78376ca890",
+    "slug": "ai-tool-to-segment-marketing-emails-based-on-customers-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams",
+    "persona": "Marketing manager who wants to stop emailing customers with open support cases the wrong offers",
+    "title": "AI tool to segment marketing emails based on customers' support interaction history",
+    "intentLabels": [
+      "AI email segmentation",
+      "support-aware marketing segments",
+      "behavioral email targeting",
+      "service-status-based campaigns"
+    ],
+    "tools": [
+      {
+        "name": "Klaviyo (behavior-based segmentation)",
+        "url": "https://www.klaviyo.com/products/email-marketing/segmentation"
+      },
+      {
+        "name": "Salesforce Marketing Cloud"
+      }
+    ],
+    "workflowSummary": "The AI builds customer segments using real interaction data - not just purchase history, but also things like 'no open service cases,' 'recently had a support issue,' or 'high support contact frequency' - so marketing can automatically exclude people with unresolved problems from promotional campaigns, or target recently-satisfied customers with a relevant offer instead of a one-size-fits-all blast.",
+    "samplePrompt": "I don't want marketing emails going out to customers who currently have an open, unresolved support case - it looks tone-deaf. Is there an AI tool that can automatically segment my email list based on support interaction status?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "segmentation logic is configurable by marketers, but it depends on your support and marketing platforms being connected first",
+    "trustScore": 3,
+    "pricingNote": "Klaviyo and Salesforce Marketing Cloud pricing is contact/usage-based and varies significantly by tier - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.klaviyo.com/products/email-marketing/segmentation",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "May 2025",
+    "accessNotes": "Vendor product page; verify current segmentation capabilities and pricing before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-df302dcf8e",
+    "slug": "ai-tool-to-automatically-answer-where-is-my-order-questions-in",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (E-commerce)",
+    "persona": "Ecommerce support lead drowning in 'where is my order' tickets",
+    "title": "AI tool to automatically answer 'where is my order' questions in ecommerce support",
+    "intentLabels": [
+      "WISMO automation",
+      "AI order tracking",
+      "order status chatbot",
+      "proactive shipping updates"
+    ],
+    "tools": [
+      {
+        "name": "eesel AI (e-commerce agent)",
+        "url": "https://www.eesel.ai/blog/ai-for-order-tracking-support"
+      },
+      {
+        "name": "Zowie"
+      },
+      {
+        "name": "Zipchat"
+      }
+    ],
+    "workflowSummary": "The AI connects directly to your store (Shopify, WooCommerce, BigCommerce) and the carrier's live tracking data, so when a customer asks where their order is, it answers in plain language - 'out for delivery today, expected by 6pm' - instead of a raw tracking link, and can proactively message customers about delays before they even ask.",
+    "samplePrompt": "My support queue is flooded with 'where is my order' questions. Is there an AI tool that can connect to my store and carrier tracking to answer these automatically instead of my agents copying tracking numbers into replies all day?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most of these tools are built to connect to Shopify/WooCommerce in under an hour, with no coding required",
+    "trustScore": 4,
+    "pricingNote": "Reported per-ticket cost after automation is often well under $1 (vs. $5-22/ticket manually); exact plan pricing is vendor-specific - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/ai-for-order-tracking-support",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "May 18, 2026",
+    "accessNotes": "Vendor-published content; cost-per-ticket figures are vendor-reported - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-61b483b556",
+    "slug": "ai-tool-to-automate-ecommerce-returns-and-exchanges-end-to-end",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (E-commerce)",
+    "persona": "Ecommerce support/ops manager processing returns by hand",
+    "title": "AI tool to automate ecommerce returns and exchanges end-to-end",
+    "intentLabels": [
+      "AI returns automation",
+      "exchange-over-refund AI",
+      "return eligibility checker",
+      "reverse logistics automation"
+    ],
+    "tools": [
+      {
+        "name": "Loop Returns",
+        "url": "https://gominimal.ai/blog/best-ai-returns-management-tools-ecommerce"
+      },
+      {
+        "name": "eesel AI (returns/refunds)"
+      },
+      {
+        "name": "Yuma AI"
+      }
+    ],
+    "workflowSummary": "When a customer wants to return an item, the AI checks their order against your return policy (eligibility window, condition, category exclusions), decides whether to offer a refund, store credit, or an exchange (nudging toward exchanges to retain revenue), generates the return label, and sends instructions - all without an agent logging into a separate returns portal.",
+    "samplePrompt": "My team spends hours every week checking return eligibility, generating labels, and processing refunds by hand. Is there an AI tool that can handle the whole returns and exchanges process automatically, including nudging customers toward an exchange instead of a refund?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "once your return policy rules are configured, the day-to-day process runs automatically",
+    "trustScore": 4,
+    "pricingNote": "Loop Returns and similar tools are typically usage/subscription-based, often from roughly EUR105/month for smaller plans - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://gominimal.ai/blog/best-ai-returns-management-tools-ecommerce",
+    "sourceType": "Blog/guide (vendor-authored comparison)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor-published comparison content; verify current pricing and platform-specific integration depth before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-9b76fb021e",
+    "slug": "ai-tool-to-handle-saas-billing-disputes-and-subscription",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (SaaS)",
+    "persona": "SaaS support lead handling billing complaints and downgrade requests",
+    "title": "AI tool to handle SaaS billing disputes and subscription downgrade requests",
+    "intentLabels": [
+      "AI billing dispute resolution",
+      "subscription downgrade automation",
+      "proration handling AI",
+      "SaaS refund automation"
+    ],
+    "tools": [
+      {
+        "name": "Fini",
+        "url": "https://www.usefini.com/guides/best-ai-agents-subscription-refunds-billing-disputes"
+      },
+      {
+        "name": "IrisAgent"
+      },
+      {
+        "name": "Kustomer IQ"
+      }
+    ],
+    "workflowSummary": "The AI reads the customer's actual subscription and billing record (in Stripe, Chargebee, or similar), calculates prorated credits or refunds according to your real policy, executes the downgrade or credit directly in the billing system, and only escalates to a human when the request falls outside pre-approved rules - logging the full decision trail for finance.",
+    "samplePrompt": "Customers frequently dispute charges or ask to downgrade their plan, and my agents have to manually check billing records and calculate prorated credits every time. Is there an AI tool that can handle this end-to-end and just flag the tricky cases for a human?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI executes automatically once connected to your billing system, but defining your proration and refund rules needs input from finance",
+    "trustScore": 4,
+    "pricingNote": "Pricing is usually per-resolution or seat-based and quote-dependent on volume; certifications like SOC 2/PCI-DSS should be confirmed for any tool touching payment data - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.usefini.com/guides/best-ai-agents-subscription-refunds-billing-disputes",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "April 15, 2026",
+    "accessNotes": "Vendor-published comparison content; compliance certifications and pricing should be verified directly with each vendor before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-e95ce22317",
+    "slug": "ai-tool-to-answer-policyholder-claim-status-questions",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Insurance)",
+    "persona": "Insurance customer service lead fielding repetitive claim-status calls",
+    "title": "AI tool to answer policyholder claim status questions automatically",
+    "intentLabels": [
+      "AI insurance claims chatbot",
+      "claim status automation",
+      "policyholder self-service",
+      "FNOL AI intake"
+    ],
+    "tools": [
+      {
+        "name": "Fini (insurance claims status)",
+        "url": "https://www.usefini.com/guides/best-ai-insurance-claims-status-support"
+      },
+      {
+        "name": "Chat Data insurance chatbot"
+      },
+      {
+        "name": "Floatbot.AI"
+      }
+    ],
+    "workflowSummary": "The AI connects to your claims management system so policyholders can ask 'what's the status of my claim' by chat, phone, or email and get a real, current answer - not a guess - covering what stage the claim is at, what's needed next, and an estimated timeline; it only escalates to a human adjuster for genuinely complex or contested claims.",
+    "samplePrompt": "My team fields the same 'what's the status of my claim' calls over and over. Is there an AI tool that can answer these automatically by pulling real data from our claims system, and only pass the complicated cases to a human adjuster?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "policyholder-facing responses work automatically, but connecting the AI to your claims system and defining escalation rules needs IT and compliance involvement",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies widely - simple insurance chatbots start around $50/month, while enterprise claims-integrated platforms are quote-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.usefini.com/guides/best-ai-insurance-claims-status-support",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "July 7, 2026",
+    "accessNotes": "Vendor-published content; this touches regulated insurance communications - verify accuracy, auditability, and compliance requirements with your legal/compliance team before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-44af876618",
+    "slug": "ai-tool-to-handle-flight-or-hotel-booking-changes-and",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Travel & Hospitality)",
+    "persona": "Airline/hotel/OTA support lead facing volume spikes during weather disruptions",
+    "title": "AI tool to handle flight or hotel booking changes and cancellations automatically",
+    "intentLabels": [
+      "AI travel disruption support",
+      "booking modification automation",
+      "airline/hotel rebooking AI",
+      "travel cancellation chatbot"
+    ],
+    "tools": [
+      {
+        "name": "Maven AGI (AI for Travel Support)",
+        "url": "https://www.mavenagi.com/glossary/ai-for-travel-support"
+      },
+      {
+        "name": "Robylon AI"
+      }
+    ],
+    "workflowSummary": "The AI verifies the customer's itinerary, evaluates alternatives when a flight or hotel booking is disrupted, and executes the rebooking, date change, or cancellation-and-refund directly in the reservation system - handling the volume spikes that come with weather events or mass cancellations far faster than a phone queue can.",
+    "samplePrompt": "When flights get cancelled or a storm hits, our support volume spikes overnight and customers wait forever to rebook or cancel. Is there an AI tool that can handle booking changes and cancellations automatically during these surges?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "routine changes are automated, but connecting the AI to your specific reservation/booking systems takes integration work",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically enterprise/quote-based for travel-specific platforms - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mavenagi.com/glossary/ai-for-travel-support",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; reported resolution rates (80-93%) are vendor-stated - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-c3b90f2d67",
+    "slug": "ai-tool-to-triage-tenant-maintenance-requests-and-dispatch",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Property Management)",
+    "persona": "Property manager fielding maintenance calls day and night",
+    "title": "AI tool to triage tenant maintenance requests and dispatch vendors automatically",
+    "intentLabels": [
+      "AI maintenance triage",
+      "24/7 tenant call answering",
+      "emergency maintenance dispatch",
+      "property management chatbot"
+    ],
+    "tools": [
+      {
+        "name": "EliseAI",
+        "url": "https://www.usehaven.ai/post/after-hours-maintenance-calls-ai-guide"
+      },
+      {
+        "name": "Haven AI"
+      },
+      {
+        "name": "Latchel"
+      }
+    ],
+    "workflowSummary": "When a tenant calls, texts, or emails about a maintenance issue at any hour, the AI asks clarifying questions to tell a routine repair from a genuine emergency (is water actively flowing, how much, where from), creates a work order in your property management software, dispatches an approved vendor automatically for emergencies, and keeps the tenant updated - so nobody has to be woken up for a dripping faucet, but a burst pipe gets handled immediately.",
+    "samplePrompt": "My team can't be reachable 24/7, but tenants call about maintenance issues at all hours and I need to know which ones are real emergencies. Is there an AI tool that can triage these calls, create work orders, and dispatch vendors for urgent issues automatically?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the phone/chat triage works automatically, but connecting the tool to your property management software and vendor list takes initial setup",
+    "trustScore": 4,
+    "pricingNote": "Plans vary by portfolio size - one property-AI reception tool lists tiers from ~$250/month to ~$415/month plus custom enterprise pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.usehaven.ai/post/after-hours-maintenance-calls-ai-guide",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "July 3, 2026",
+    "accessNotes": "Vendor-published content; verify current pricing tiers and integration list (PMS software) before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-49e0d5d435",
+    "slug": "ai-tool-to-resolve-mobile-or-internet-billing-and-connectivity",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Telecom)",
+    "persona": "Telecom/ISP support lead handling billing and connectivity complaints at scale",
+    "title": "AI tool to resolve mobile or internet billing and connectivity issues automatically",
+    "intentLabels": [
+      "AI telecom support",
+      "connectivity troubleshooting AI",
+      "billing dispute automation telecom",
+      "SIM/plan change chatbot"
+    ],
+    "tools": [
+      {
+        "name": "Lorikeet",
+        "url": "https://www.lorikeetcx.ai/articles/best-ai-customer-support-telco-isp-2026"
+      },
+      {
+        "name": "Ada"
+      },
+      {
+        "name": "Kore.ai (telecom templates)"
+      }
+    ],
+    "workflowSummary": "The AI authenticates the customer, runs line diagnostics or checks network/outage status, resolves common connectivity issues (like a remote modem reboot), and executes billing changes, plan swaps, or service credits directly in your billing and provisioning systems - reserving human agents for outage-scale surges and genuinely disputed charges.",
+    "samplePrompt": "Our support team is overwhelmed with billing disputes and connectivity complaints, especially during outages. Is there an AI tool built specifically for telecom that can run diagnostics, resolve basic connectivity issues, and handle plan/billing changes automatically?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "resolution is automatic within defined limits, but integrating with your specific billing/provisioning (BSS/OSS) systems is a real technical project",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically outcome/quote-based, with one report citing roughly $0.80-$2.00 per resolution as a market norm - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.lorikeetcx.ai/articles/best-ai-customer-support-telco-isp-2026",
+    "sourceType": "Blog/guide (vendor-authored)",
+    "freshness": "June 17, 2026",
+    "accessNotes": "Vendor-published comparison content; pricing and resolution-rate figures are vendor-reported - verify before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-1d135df381",
+    "slug": "ai-tool-to-automatically-resolve-missing-item-wrong-order-or",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Food Delivery/Marketplace)",
+    "persona": "Restaurant or delivery-platform support lead fielding missing/wrong order complaints",
+    "title": "AI tool to automatically resolve missing item, wrong order, or late delivery complaints",
+    "intentLabels": [
+      "food delivery support AI",
+      "order issue chatbot",
+      "missing item resolution automation",
+      "delivery complaint chatbot"
+    ],
+    "tools": [
+      {
+        "name": "DoorDash's Ask DoorDash chatbot (in-app example)",
+        "url": "https://qz.com/doordash-ask-ai-chatbot-ordering-reservations-061126"
+      },
+      {
+        "name": "ChatMaxima"
+      },
+      {
+        "name": "PixelCrayons food-ordering chatbots"
+      }
+    ],
+    "workflowSummary": "When a customer reports a wrong order, a missing item, or a late delivery, the AI collects the details (order number, what's missing or wrong), checks it against the order record, and either processes a refund/credit under your policy or escalates - so common complaints get resolved in the chat itself instead of a customer waiting on hold or emailing support.",
+    "samplePrompt": "Customers constantly message us about missing items, wrong orders, or late deliveries. Is there an AI tool that can collect the details, check the order, and process a refund or credit automatically for common cases?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most food-ordering chatbot platforms are built for restaurants/delivery businesses to set up without developers",
+    "trustScore": 3,
+    "pricingNote": "Varies widely by vendor - from no-code chatbot builders at modest monthly cost to enterprise in-app assistants built by large platforms - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://qz.com/doordash-ask-ai-chatbot-ordering-reservations-061126",
+    "sourceType": "News article (documenting a real deployed product)",
+    "freshness": "July 3, 2026",
+    "accessNotes": "News coverage of a specific company's feature; smaller businesses should look at no-code chatbot platforms (cited separately) rather than assuming DoorDash's exact tooling is available to them",
+    "batch": "CustomerSupportTeams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-ed809df312",
+    "slug": "ai-tool-to-handle-patient-scheduling-and-insurance-verification",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Healthcare - administrative only)",
+    "persona": "Medical practice front-desk/support manager overwhelmed with scheduling and insurance calls",
+    "title": "AI tool to handle patient scheduling and insurance verification questions (non-clinical)",
+    "intentLabels": [
+      "administrative healthcare chatbot",
+      "patient scheduling automation",
+      "insurance verification AI",
+      "front-desk AI assistant"
+    ],
+    "tools": [
+      {
+        "name": "Hyro",
+        "url": "https://www.happyfox.com/best-healthcare-chatbots-2026/"
+      },
+      {
+        "name": "HappyFox (administrative healthcare chatbot)"
+      },
+      {
+        "name": "Prosper AI (voice scheduling)"
+      }
+    ],
+    "workflowSummary": "The AI answers and routes patient calls or chats about booking, rescheduling, or cancelling appointments, and checking insurance eligibility - reading live data from your scheduling system and EHR so answers are accurate - while immediately escalating anything symptom-related or clinical to a human, since this category of tool is explicitly administrative, not diagnostic.",
+    "samplePrompt": "My front desk is overwhelmed with scheduling calls and insurance questions. Is there an AI tool that can handle appointment booking and insurance verification automatically, while making sure anything medical gets sent straight to a person?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "patient-facing scheduling works automatically once connected to your EHR, but setup requires a signed BAA and IT/compliance involvement given HIPAA requirements",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically quote-based per practice/health system size - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.happyfox.com/best-healthcare-chatbots-2026/",
+    "sourceType": "Blog/guide (vendor-authored, explicitly distinguishes clinical vs. administrative tools)",
+    "freshness": "May 12, 2026",
+    "accessNotes": "Vendor-published content; this is administrative-only tooling, not medical advice - confirm current HIPAA/BAA documentation directly with any vendor before publishing or deploying",
+    "batch": "CustomerSupportTeams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-972d061c9a",
+    "slug": "ai-tool-to-handle-payment-disputes-and-chargebacks-in-support",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Banking/Fintech)",
+    "persona": "Fintech/neobank support lead handling a growing volume of payment disputes",
+    "title": "AI tool to handle payment disputes and chargebacks in support conversations",
+    "intentLabels": [
+      "AI chargeback automation",
+      "payment dispute AI",
+      "Reg E dispute workflow",
+      "fraud dispute support automation"
+    ],
+    "tools": [
+      {
+        "name": "Lorikeet",
+        "url": "https://www.lorikeetcx.ai/articles/best-ai-payment-dispute-chargeback-automation-2026"
+      },
+      {
+        "name": "Fini"
+      },
+      {
+        "name": "Ada (fintech dispute handling)"
+      }
+    ],
+    "workflowSummary": "When a customer disputes a charge, the AI gathers the required details, enforces the regulatory deadlines and evidence requirements (like Reg E timelines), issues provisional credit where required, contacts the merchant for evidence when needed, and keeps a complete audit trail - only escalating to a human compliance-trained agent for genuinely complex or high-risk cases.",
+    "samplePrompt": "Our support team handles a growing number of payment disputes and chargebacks, and manually tracking regulatory deadlines and evidence is a lot of work. Is there an AI tool built for this that can manage the dispute process while keeping us compliant?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI manages the workflow automatically, but setup requires compliance sign-off given the regulatory stakes (Reg E, card network rules)",
+    "trustScore": 4,
+    "pricingNote": "Reported example pricing: roughly $0.80 per chat/email/SMS resolution and ~$1.00 per voice resolution, with escalations not charged - other platforms are enterprise/quote-based (six figures typical) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.lorikeetcx.ai/articles/best-ai-payment-dispute-chargeback-automation-2026",
+    "sourceType": "Blog/guide (vendor-authored comparison)",
+    "freshness": "August 6, 2026",
+    "accessNotes": "Vendor-published comparison content; this touches regulated financial disputes - verify compliance certifications, pricing, and regulatory accuracy with your legal/compliance team before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-2d4208545f",
+    "slug": "ai-tool-to-schedule-service-appointments-and-answer-warranty",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Automotive/Dealership)",
+    "persona": "Dealership service manager fielding scheduling and warranty calls",
+    "title": "AI tool to schedule service appointments and answer warranty questions for a car dealership",
+    "intentLabels": [
+      "automotive service scheduling AI",
+      "dealership chatbot",
+      "warranty support automation",
+      "DMS-integrated AI assistant"
+    ],
+    "tools": [
+      {
+        "name": "DealerPulse",
+        "url": "https://www.spyne.ai/blogs/best-automotive-chatbot-for-dealership-website"
+      },
+      {
+        "name": "Fullpath"
+      },
+      {
+        "name": "Spyne Vini AI"
+      }
+    ],
+    "workflowSummary": "The AI answers dealership website chat, SMS, or phone calls about service scheduling, oil changes, and warranty coverage, checks live availability in the dealership's scheduling system (DMS), books confirmed appointments directly (not just a callback request), and can proactively remind customers when they're due for service - all without a service advisor picking up the phone for routine bookings.",
+    "samplePrompt": "My service department gets flooded with calls to schedule appointments and answer basic warranty questions. Is there an AI tool built for dealerships that can book confirmed appointments directly into our scheduling system instead of just taking a message?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "day-to-day booking is automatic, but connecting the AI to your specific DMS (CDK, Reynolds, Dealertrack, Tekion, etc.) requires a technical integration",
+    "trustScore": 3,
+    "pricingNote": "Pricing is typically per-dealership subscription, quote-based and varies by feature set (chat, SMS, voice) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.spyne.ai/blogs/best-automotive-chatbot-for-dealership-website",
+    "sourceType": "Blog/guide (vendor-authored comparison)",
+    "freshness": "May 18, 2026",
+    "accessNotes": "Vendor-published comparison content; verify current DMS integration coverage and pricing before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "customer-support-teams-dfac71ec87",
+    "slug": "ai-tool-to-handle-outage-reports-and-billing-questions-for-a",
+    "kind": "workflow",
+    "niche": "Customer Support Teams",
+    "sector": "Customer Support Teams (Utilities/Energy)",
+    "persona": "Utility company support lead managing outage reports and billing questions",
+    "title": "AI tool to handle outage reports and billing questions for a utility company",
+    "intentLabels": [
+      "utility chatbot AI",
+      "outage reporting automation",
+      "billing explanation AI",
+      "meter reading submission chatbot"
+    ],
+    "tools": [
+      {
+        "name": "LoyJoy",
+        "url": "https://www.loyjoy.com/en/industries/utilities/"
+      },
+      {
+        "name": "Syntalith"
+      },
+      {
+        "name": "Conferbot (energy/utility chatbots)"
+      }
+    ],
+    "workflowSummary": "Customers can report an outage, submit a meter reading (with photo verification), ask why their bill is higher than usual, or request a tariff/payment plan change through chat or WhatsApp - the AI pulls live account and outage data to answer accurately, and is built to absorb the huge spikes in contact volume that come with storms or widespread outages without crashing the phone lines.",
+    "samplePrompt": "During storms, our phone lines get overwhelmed with outage reports and billing questions. Is there an AI tool built for utilities that can handle outage reporting and explain billing charges automatically, even during a major spike in volume?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "customer-facing chat works automatically once deployed, but integrating with your billing/outage management systems (CIS, GIS, SCADA) is a real technical project",
+    "trustScore": 3,
+    "pricingNote": "Reported deployment timelines run roughly 2-4 weeks with per-tier pricing; exact costs are vendor-specific and quote-based - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.loyjoy.com/en/industries/utilities/",
+    "sourceType": "Product page (vendor's own site)",
+    "freshness": "September 2026",
+    "accessNotes": "Vendor product page; verify current pricing, regional coverage, and integration list (billing/outage systems) before publishing",
+    "batch": "CustomerSupportTeams AI Workflows Batch5",
+    "status": "active"
+  }
+]

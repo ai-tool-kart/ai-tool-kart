@@ -1,0 +1,2939 @@
+[
+  {
+    "id": "photographers-videographers-3528223aaf",
+    "slug": "cull-my-wedding-photos-faster",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding & event photographers handling large shoots",
+    "title": "cull my wedding photos faster",
+    "intentLabels": [
+      "photo culling",
+      "sort photos AI",
+      "pick best photos",
+      "cull wedding photos",
+      "remove duplicates and blinks"
+    ],
+    "tools": [
+      {
+        "name": "Aftershoot",
+        "url": "https://aftershoot.com/"
+      },
+      {
+        "name": "Imagen AI"
+      },
+      {
+        "name": "FilterPixel"
+      },
+      {
+        "name": "Narrative Select"
+      }
+    ],
+    "workflowSummary": "Upload your RAW files into the culling app; it flags blurry shots, closed eyes, and duplicates, and shortlists your best frames so you only edit the keepers.",
+    "samplePrompt": "Cull this 2,000-photo wedding gallery and give me my top picks sorted by moment (ceremony, reception, portraits).",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "desktop install and RAW file handling take a short learning curve, but presets make first use easy.",
+    "trustScore": 4,
+    "pricingNote": "Free trials common; paid plans roughly $10-$40+/month depending on volume — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aftershoot.com/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public marketing page; tool pricing and features change often, verify current terms before quoting a client.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-2452acb9c3",
+    "slug": "remove-or-change-the-background-on-product-or-portrait-photos",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers doing product, headshot, or portrait sessions",
+    "title": "remove or change the background on product or portrait photos",
+    "intentLabels": [
+      "background removal",
+      "background eraser",
+      "transparent background",
+      "change photo background"
+    ],
+    "tools": [
+      {
+        "name": "Photoroom",
+        "url": "https://www.photoroom.com/tools/background-remover",
+        "catalogueSlug": "photoroom"
+      },
+      {
+        "name": "Evoto AI"
+      }
+    ],
+    "workflowSummary": "Upload a photo and let the AI detect the subject and cut out the background automatically, then swap in a solid color, studio backdrop, or branded scene.",
+    "samplePrompt": "Remove the background from these product photos and replace it with a clean white backdrop.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop web tool, no editing skill needed.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans roughly $10-$20/month for batch or API use — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.photoroom.com/tools/background-remover",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; confirm commercial usage rights and image-retention policy before uploading client photos.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-a3f8cca8e1",
+    "slug": "smooth-skin-and-retouch-portraits-without-hours-in-photoshop",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Portrait, headshot, and wedding photographers",
+    "title": "smooth skin and retouch portraits without hours in Photoshop",
+    "intentLabels": [
+      "skin retouching",
+      "portrait retouching",
+      "blemish removal",
+      "batch retouch"
+    ],
+    "tools": [
+      {
+        "name": "PortraitPro (ON1 Portrait AI)",
+        "url": "https://www.on1.com/products/portrait-ai/"
+      },
+      {
+        "name": "Aftershoot Retouch"
+      },
+      {
+        "name": "Evoto"
+      }
+    ],
+    "workflowSummary": "Import a batch of portraits; the AI detects each face and applies natural skin smoothing, blemish removal, and eye/teeth brightening consistently across the whole set.",
+    "samplePrompt": "Retouch these 50 portrait photos with natural skin smoothing and blemish removal, keeping the look realistic.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sliders are intuitive, but getting a natural (not plastic) look takes some taste and practice.",
+    "trustScore": 4,
+    "pricingNote": "PortraitPro roughly $40-$90 one-time or subscription; Aftershoot Retouch bundled with its plan — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.on1.com/products/portrait-ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; verify current licensing model (subscription vs. perpetual) before quoting price to clients.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-618b14edfd",
+    "slug": "turn-hours-of-wedding-footage-into-a-highlight-reel-without",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding videographers, especially solo shooters and small studios",
+    "title": "turn hours of wedding footage into a highlight reel without editing it all myself",
+    "intentLabels": [
+      "wedding highlight reel",
+      "auto video editor",
+      "same-day edit",
+      "AI wedding video"
+    ],
+    "tools": [
+      {
+        "name": "WeddingEditor.ai",
+        "url": "https://www.weddingeditor.ai/"
+      },
+      {
+        "name": "Wondershare Filmora"
+      },
+      {
+        "name": "FlexClip"
+      }
+    ],
+    "workflowSummary": "Upload your raw ceremony and reception footage; the AI transcribes it, detects key emotional moments (vows, first dance, cake cutting), and assembles a rough highlight-reel cut you finish polishing in your usual editor.",
+    "samplePrompt": "Build a 3-minute highlight reel from this wedding footage, prioritizing the vows, first dance, and speeches.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI rough cut is easy, but you'll still want basic video-editing skills to polish the final export.",
+    "trustScore": 3,
+    "pricingNote": "Pay-per-wedding or per-project pricing, varies by vendor — verify before publishing (newer/smaller vendor)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.weddingeditor.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Newer/independent vendor; verify data-privacy and footage-storage terms before uploading client wedding footage.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-7439a9189b",
+    "slug": "upscale-my-photos-for-large-prints-without-losing-quality",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers fulfilling print, canvas, or album orders",
+    "title": "upscale my photos for large prints without losing quality",
+    "intentLabels": [
+      "photo upscaler",
+      "enlarge image",
+      "increase resolution",
+      "print-ready photo"
+    ],
+    "tools": [
+      {
+        "name": "VanceAI",
+        "url": "https://vanceai.com/image-enlarger/"
+      },
+      {
+        "name": "Pixelcut Pro"
+      },
+      {
+        "name": "Topaz"
+      }
+    ],
+    "workflowSummary": "Upload a photo and choose 2x/4x/8x enlargement; the AI rebuilds edges and texture instead of just stretching pixels, giving you a sharper, print-ready file.",
+    "samplePrompt": "Upscale this portrait to 4x resolution so it's sharp enough for a 24x36 canvas print.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, pick a scale, download.",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limits; paid plans roughly $10-$30/month for batch/higher-res exports — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vanceai.com/image-enlarger/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool; confirm output resolution/format limits and commercial-use terms before selling prints made with it.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-3bde4dcef7",
+    "slug": "let-clients-pick-their-favorite-photos-online-instead-of",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers delivering wedding, portrait, or event galleries",
+    "title": "let clients pick their favorite photos online instead of emailing me",
+    "intentLabels": [
+      "client proofing gallery",
+      "online photo gallery",
+      "photo delivery",
+      "sell prints online"
+    ],
+    "tools": [
+      {
+        "name": "Pixieset",
+        "url": "https://pixieset.com/"
+      },
+      {
+        "name": "ShootProof"
+      },
+      {
+        "name": "Pic-Time"
+      }
+    ],
+    "workflowSummary": "Upload your edited gallery to a proofing platform; clients favorite or comment on photos from any device, and you get a clean list of selections plus an optional print/digital storefront.",
+    "samplePrompt": "Set up a proofing gallery for this wedding so the couple can favorite their top 100 photos and order prints directly.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most platforms are guided setup with ready-made templates.",
+    "trustScore": 4,
+    "pricingNote": "Free tiers with storage limits; paid plans roughly $8-$40/month, often commission-free on sales — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://pixieset.com/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current storage limits and any sales-commission terms before pricing a client package.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-196e867dff",
+    "slug": "auto-generate-captions-or-subtitles-for-my-video-content",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers producing social clips, wedding films, or event recaps",
+    "title": "auto-generate captions or subtitles for my video content",
+    "intentLabels": [
+      "auto captions",
+      "video transcription",
+      "add subtitles",
+      "burn in captions"
+    ],
+    "tools": [
+      {
+        "name": "VEED",
+        "url": "https://www.veed.io/tools/video-to-text",
+        "catalogueSlug": "veed"
+      },
+      {
+        "name": "Sonix"
+      },
+      {
+        "name": "Adobe Premiere Pro (Speech to Text)"
+      }
+    ],
+    "workflowSummary": "Upload your video; the AI transcribes the audio into a timed transcript, then lets you edit and burn the captions directly into the video or export as an SRT file.",
+    "samplePrompt": "Auto-generate and burn in captions for this 60-second wedding teaser so it's ready for Instagram Reels.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, review the auto-transcript, export.",
+    "trustScore": 4,
+    "pricingNote": "Free tiers with monthly minute limits; paid plans roughly $10-$30/month for more minutes/languages — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.veed.io/tools/video-to-text",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; verify current accuracy claims and file-privacy policy before uploading client footage with sensitive audio.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-fdab781545",
+    "slug": "fix-a-flat-overcast-or-boring-sky-in-my-outdoor-photos",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Landscape, wedding, real estate, and outdoor portrait photographers",
+    "title": "fix a flat, overcast, or boring sky in my outdoor photos",
+    "intentLabels": [
+      "sky replacement",
+      "change sky in photo",
+      "fix overcast photo"
+    ],
+    "tools": [
+      {
+        "name": "Luminar Neo (Sky AI)",
+        "url": "https://skylum.com/luminar/sky-ai"
+      },
+      {
+        "name": "Evoto AI"
+      },
+      {
+        "name": "Slazzer"
+      }
+    ],
+    "workflowSummary": "Open the photo in the sky-replacement tool; the AI detects the horizon (even around trees or buildings), swaps in a new sky, and automatically relights the rest of the scene to match.",
+    "samplePrompt": "Replace the flat white sky in this outdoor portrait with a warm sunset sky, and match the lighting on my subject.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly a one-click or two-click process with built-in sky libraries.",
+    "trustScore": 4,
+    "pricingNote": "Luminar Neo roughly $79-$150 one-time or subscription; some competitors free with credit limits — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://skylum.com/luminar/sky-ai",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current licensing model and whether included sky assets are cleared for commercial client work.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-4c566fbc99",
+    "slug": "build-a-photography-portfolio-website-without-hiring-a-developer",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Freelance and small-studio photographers",
+    "title": "build a photography portfolio website without hiring a developer",
+    "intentLabels": [
+      "photography website builder",
+      "online portfolio",
+      "photographer website AI"
+    ],
+    "tools": [
+      {
+        "name": "PhotoBiz",
+        "url": "https://www.photobiz.com/"
+      },
+      {
+        "name": "Framekit"
+      },
+      {
+        "name": "Wix (AI website builder)"
+      }
+    ],
+    "workflowSummary": "Answer a few questions or upload your photos, and the AI builder generates a themed portfolio site with galleries, bio, and contact/booking pages that you then customize.",
+    "samplePrompt": "Build me a minimalist portfolio website for my wedding photography business, with a gallery, About page, and contact form.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for non-technical users, though a custom domain purchase is a separate step.",
+    "trustScore": 3,
+    "pricingNote": "Free plans with subdomain; paid plans roughly $10-$30/month for custom domain and full features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.photobiz.com/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; verify current template licensing and export/ownership terms before committing a business's main site.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-6c7c5e2434",
+    "slug": "match-the-color-across-footage-shot-on-different-cameras",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers shooting multi-camera weddings, events, or real estate video",
+    "title": "match the color across footage shot on different cameras",
+    "intentLabels": [
+      "video color grading AI",
+      "color match footage",
+      "auto color correction video"
+    ],
+    "tools": [
+      {
+        "name": "Imagen Video",
+        "url": "https://imagen-ai.com/video/"
+      },
+      {
+        "name": "ColourLab AI"
+      },
+      {
+        "name": "DaVinci Resolve (Neural Engine)"
+      }
+    ],
+    "workflowSummary": "Export your rough-cut sequence, run it through the AI color tool, and it analyzes each clip to normalize exposure, white balance, and skin tones across every camera before you apply your creative look.",
+    "samplePrompt": "Color match this wedding video shot on two different cameras so the ceremony and reception footage look consistent.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "plug-in/cloud workflow requires exporting and re-importing footage, an extra step beyond basic editing.",
+    "trustScore": 4,
+    "pricingNote": "DaVinci Resolve free tier available; Imagen Video and ColourLab AI are paid, usage or subscription-based — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://imagen-ai.com/video/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm cloud-upload/data-retention terms before sending unreleased client footage through a third-party service.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-cf0bdea1c7",
+    "slug": "design-a-wedding-album-layout-without-spending-a-whole-weekend",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding and portrait photographers who deliver printed albums",
+    "title": "design a wedding album layout without spending a whole weekend on it",
+    "intentLabels": [
+      "album design software",
+      "auto album layout",
+      "wedding album AI"
+    ],
+    "tools": [
+      {
+        "name": "SmartAlbums (Pixellu)",
+        "url": "https://www.smartalbums.com/smartalbums/"
+      },
+      {
+        "name": "Fundy Designer"
+      }
+    ],
+    "workflowSummary": "Select your top images, and the AI arranges them into designed album spreads automatically, grouping by moment and balancing single/double-page layouts, which you can then fine-tune.",
+    "samplePrompt": "Auto-design a 20-spread wedding album from these 150 selected photos, grouped by ceremony, portraits, and reception.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "layout automation is fast, but exporting print-ready files for a specific album lab takes some setup.",
+    "trustScore": 4,
+    "pricingNote": "SmartAlbums roughly $149 one-time; Fundy Designer roughly $289/year — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.smartalbums.com/smartalbums/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current lab-integration list and export formats match your specific album printer before committing.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-0f01581ba3",
+    "slug": "write-instagram-captions-for-my-photography-posts-faster",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/videographers marketing their business on social media",
+    "title": "write Instagram captions for my photography posts faster",
+    "intentLabels": [
+      "caption generator",
+      "Instagram caption AI",
+      "social media copy for photographers"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Write / AI caption generator)",
+        "url": "https://www.canva.com/ai-caption-generator/",
+        "catalogueSlug": "canva"
+      },
+      {
+        "name": "Copy.ai",
+        "catalogueSlug": "copy-ai"
+      },
+      {
+        "name": "Hootsuite"
+      }
+    ],
+    "workflowSummary": "Describe the photo or paste a brief description and desired tone, and the AI generates several caption options with matching hashtag suggestions to choose from.",
+    "samplePrompt": "Write 3 Instagram captions for a golden-hour engagement photo, warm and romantic tone, with relevant hashtags.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the post, pick a caption, done.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with limited monthly generations; paid plans bundled into Canva Pro (~$13/month) or similar — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.canva.com/ai-caption-generator/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; captions are AI-generated text, not photos, so no image-rights concern — but review hashtags/claims before posting.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-4f270e9f89",
+    "slug": "clean-up-wind-chatter-or-hum-in-my-wedding-video-audio",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding and event videographers",
+    "title": "clean up wind, chatter, or hum in my wedding video audio",
+    "intentLabels": [
+      "audio noise reduction",
+      "clean video audio",
+      "remove background noise from video"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Premiere Pro (Enhance Speech)",
+        "url": "https://www.veed.io/tools/remove-background-noise-from-video"
+      },
+      {
+        "name": "DaVinci Resolve (Fairlight)"
+      },
+      {
+        "name": "VEED",
+        "catalogueSlug": "veed"
+      }
+    ],
+    "workflowSummary": "Import your clip's audio track, toggle the AI noise/voice-cleanup tool, and it isolates speech from wind, AC hum, or crowd chatter automatically.",
+    "samplePrompt": "Clean up the wind noise on this outdoor ceremony audio without making the vows sound robotic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "usually a single toggle inside your existing editor.",
+    "trustScore": 4,
+    "pricingNote": "DaVinci Resolve free version includes Fairlight tools; Premiere Pro requires a Creative Cloud subscription — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.veed.io/tools/remove-background-noise-from-video",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; confirm upload size/privacy terms before sending unreleased client ceremony audio to a cloud tool.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-30bfb826b7",
+    "slug": "rescue-grainy-or-low-light-footage-from-a-dim-reception-or",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding and event videographers shooting in low-light venues",
+    "title": "rescue grainy or low-light footage from a dim reception or church",
+    "intentLabels": [
+      "video denoise",
+      "low-light video enhancement",
+      "fix noisy footage"
+    ],
+    "tools": [
+      {
+        "name": "Topaz Video AI",
+        "url": "https://try.wideframe.com/blog/best-ai-tools-for-wedding-video-editing/"
+      }
+    ],
+    "workflowSummary": "Import the noisy or dark clip, apply the AI denoise/enhance model, and it reduces grain and lifts shadow detail while trying to preserve motion and sharpness.",
+    "samplePrompt": "Reduce the noise and grain in this dim reception dance-floor footage without losing sharpness.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a desktop app with real settings and presets to learn, though presets cover most cases.",
+    "trustScore": 4,
+    "pricingNote": "One-time purchase, roughly $300 — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://try.wideframe.com/blog/best-ai-tools-for-wedding-video-editing/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Sourced via a third-party comparison article, not the vendor's own page; confirm current Topaz pricing/specs on topazlabs.com before quoting.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-64435fbdc7",
+    "slug": "remove-a-photobomber-or-distracting-object-from-a-photo",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "All photographers cleaning up final images before delivery",
+    "title": "remove a photobomber or distracting object from a photo",
+    "intentLabels": [
+      "object removal",
+      "remove person from photo",
+      "magic eraser",
+      "clean up background"
+    ],
+    "tools": [
+      {
+        "name": "Magic Eraser (magiceraser.live)",
+        "url": "https://magiceraser.live/en/remove"
+      },
+      {
+        "name": "insMind"
+      }
+    ],
+    "workflowSummary": "Brush over the unwanted object, person, or power line in the photo, and the AI fills in the area by reconstructing the background behind it.",
+    "samplePrompt": "Remove the photobomber standing behind the couple in this ceremony photo and rebuild the background naturally.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "brush and click, no masking skills required.",
+    "trustScore": 3,
+    "pricingNote": "Free with limited resolution/credits; paid plans for higher-res, no-watermark exports — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://magiceraser.live/en/remove",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public free tool; verify file-retention and commercial-use terms before using on paid client work, as free-tier ownership language varies.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-c09532dc06",
+    "slug": "restore-and-colorize-an-old-damaged-photo-for-a-client",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers offering restoration add-on services (family portraits, heirloom photos)",
+    "title": "restore and colorize an old damaged photo for a client",
+    "intentLabels": [
+      "old photo restoration",
+      "colorize black and white photo",
+      "fix scratched photo"
+    ],
+    "tools": [
+      {
+        "name": "VanceAI",
+        "url": "https://vanceai.com/old-photo-restoration/"
+      },
+      {
+        "name": "ImageColorizer"
+      }
+    ],
+    "workflowSummary": "Upload the scanned old photo; the AI repairs scratches, tears, and fading, sharpens faces, and optionally adds realistic era-appropriate color.",
+    "samplePrompt": "Restore this scratched, faded black-and-white family photo and add natural color.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, click restore, download.",
+    "trustScore": 3,
+    "pricingNote": "Free previews/limited credits; paid plans roughly $10-$20/month for full-res downloads — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vanceai.com/old-photo-restoration/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; confirm image-retention/training-data policy before uploading a client's personal heirloom photo.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-82b229b957",
+    "slug": "quickly-find-a-specific-moment-across-hours-of-wedding-footage",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding videographers organizing multi-camera, full-day footage",
+    "title": "quickly find a specific moment across hours of wedding footage",
+    "intentLabels": [
+      "search video footage",
+      "find a moment in footage",
+      "semantic video search"
+    ],
+    "tools": [
+      {
+        "name": "Wideframe",
+        "url": "https://try.wideframe.com/blog/best-ai-tools-for-wedding-video-editing/"
+      }
+    ],
+    "workflowSummary": "Upload your full day's footage; the AI indexes it so you can search in plain language (e.g. 'the vow exchange' or 'the sparkler exit') and jump straight to the matching clips instead of scrubbing manually.",
+    "samplePrompt": "Find every clip where the bride is laughing across all camera angles from this wedding day.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a newer AI-search workflow that takes some setup time to upload and index footage.",
+    "trustScore": 3,
+    "pricingNote": "Subscription starting around $49/month with a free trial — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://try.wideframe.com/blog/best-ai-tools-for-wedding-video-editing/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Referenced via third-party guide, not vendor's own product page; visit wideframe.com directly to confirm current pricing/features.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-3efd125776",
+    "slug": "enhance-real-estate-or-property-photos-automatically-hdr-sky",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who shoot real estate/interior work alongside portrait or wedding work",
+    "title": "enhance real estate or property photos automatically (HDR, sky, twilight)",
+    "intentLabels": [
+      "real estate photo editing",
+      "HDR blending",
+      "virtual twilight",
+      "property photo enhancement"
+    ],
+    "tools": [
+      {
+        "name": "Autoenhance.ai",
+        "url": "https://autoenhance.ai/features/sky-replacement"
+      }
+    ],
+    "workflowSummary": "Upload bracketed or single real estate photos; the AI automatically applies HDR blending, sky replacement, and lighting correction tuned for property listings.",
+    "samplePrompt": "Enhance these interior listing photos with automatic HDR blending and a bright, neutral color balance.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed as a no-account, drag-and-drop workflow for quick turnaround.",
+    "trustScore": 3,
+    "pricingNote": "Free trial available; paid plans priced per-image or per-month for agencies — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://autoenhance.ai/features/sky-replacement",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current per-image pricing and MLS/listing-photo usage terms before offering as a paid add-on service.",
+    "batch": "Photographers Videographers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-c1a186561b",
+    "slug": "manage-all-my-leads-contracts-and-invoices-in-one-place",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Solo & small-studio photographers juggling leads, contracts, and invoices",
+    "title": "manage all my leads, contracts, and invoices in one place",
+    "intentLabels": [
+      "photography CRM",
+      "studio management software",
+      "booking system for photographers"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook",
+        "url": "https://agiled.app/blog/best-crm-for-photographers"
+      },
+      {
+        "name": "Táve"
+      },
+      {
+        "name": "Studio Ninja"
+      },
+      {
+        "name": "Sprout Studio"
+      }
+    ],
+    "workflowSummary": "Connect your inquiry form to a CRM built for photographers; it tracks leads through a pipeline, sends contracts and invoices, and keeps every client's files in one project record.",
+    "samplePrompt": "Set up a pipeline in my CRM that moves a lead from inquiry to booked once they sign the contract and pay the retainer.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup (templates, automations) takes an afternoon, but daily use is simple.",
+    "trustScore": 4,
+    "pricingNote": "Roughly $19-$40+/month depending on platform and feature tier — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-crm-for-photographers",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Third-party comparison article; confirm current pricing/features directly on each vendor's site (HoneyBook, Táve, Studio Ninja) before recommending.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-95a937c857",
+    "slug": "respond-to-new-client-inquiries-automatically-and-fast",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who lose bookings to slow response times",
+    "title": "respond to new client inquiries automatically and fast",
+    "intentLabels": [
+      "AI email response",
+      "auto-reply to leads",
+      "inquiry automation"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook AI (email drafts)",
+        "url": "https://www.honeybook.com/product/ai"
+      },
+      {
+        "name": "Ainora AI Receptionist"
+      }
+    ],
+    "workflowSummary": "When someone submits your contact form, the AI drafts (or an AI receptionist even answers by phone) a personalized reply based on your tone and past bookings, so you can send a professional response within minutes instead of hours.",
+    "samplePrompt": "Draft a warm, on-brand reply to this wedding inquiry that answers their date-availability question and invites them to book a call.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drafts appear automatically; you just review and send.",
+    "trustScore": 4,
+    "pricingNote": "Bundled into HoneyBook plans (roughly $36+/month); AI receptionist services typically separate, per-minute or monthly — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.honeybook.com/product/ai",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm which AI features require a specific plan tier before promising them to a client.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-22979eccbb",
+    "slug": "figure-out-which-new-inquiries-are-most-likely-to-actually-book",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/studios wanting to prioritize the best leads",
+    "title": "figure out which new inquiries are most likely to actually book",
+    "intentLabels": [
+      "lead scoring",
+      "predictive lead alerts",
+      "qualify photography leads"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook AI (predictive lead alerts)",
+        "url": "https://www.honeybook.com/blog/honeybook-ai-features"
+      }
+    ],
+    "workflowSummary": "The CRM's AI compares a new inquiry against your historical booking data and flags high-value or high-likelihood leads so you follow up with them first.",
+    "samplePrompt": "Alert me when a new inquiry looks like a high-value wedding lead based on my past bookings.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "runs automatically in the background once connected to your contact form.",
+    "trustScore": 3,
+    "pricingNote": "Included in HoneyBook's paid plans; requires a minimum inquiry volume (20+) to activate — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.honeybook.com/blog/honeybook-ai-features",
+    "sourceType": "Product page / blog",
+    "freshness": "July 2025",
+    "accessNotes": "Public vendor blog post; feature details and thresholds may have changed, verify current requirements on HoneyBook's site.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-2dc953bd0a",
+    "slug": "collect-all-the-wedding-day-details-from-my-client-without-a",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding photographers/videographers collecting event details",
+    "title": "collect all the wedding-day details from my client without a back-and-forth email chain",
+    "intentLabels": [
+      "client questionnaire",
+      "wedding day form",
+      "intake form automation"
+    ],
+    "tools": [
+      {
+        "name": "Jotform (Wedding Day Questionnaire AI Agent, Wedding Shot List AI Agent)",
+        "url": "https://www.jotform.com/agent-templates/category/wedding-ai-agents"
+      }
+    ],
+    "workflowSummary": "Send clients a conversational AI form instead of a static PDF; it asks follow-up questions naturally and organizes their answers (timeline, family shot list, special traditions) into a structured summary for you.",
+    "samplePrompt": "Create a conversational questionnaire that collects the wedding timeline, family group-shot list, and any special traditions I need to know about.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "pick a template, customize a few questions, share the link.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with response limits; paid plans roughly $34-$99/month for more responses/agents — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.jotform.com/agent-templates/category/wedding-ai-agents",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public template gallery; confirm current data-storage and privacy terms before collecting personal client details through it.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-dfd9eb37db",
+    "slug": "add-keywords-and-metadata-to-hundreds-of-photos-without-typing",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers building or updating a personal RAW photo/keyword archive, including stock contributors",
+    "title": "add keywords and metadata to hundreds of photos without typing them by hand",
+    "intentLabels": [
+      "AI photo tagging",
+      "IPTC metadata generator",
+      "stock photo keywording"
+    ],
+    "tools": [
+      {
+        "name": "PhotoTag.ai",
+        "url": "https://tagrly.com/blog/best-ai-photo-tagging-software"
+      },
+      {
+        "name": "ON1 Photo Keyword AI"
+      },
+      {
+        "name": "Excire Foto"
+      }
+    ],
+    "workflowSummary": "Point the tool at a folder of images; it analyzes each photo and writes titles, descriptions, and keyword lists directly into the file's metadata, ready for stock platforms or your own searchable archive.",
+    "samplePrompt": "Generate SEO-friendly titles, descriptions, and keywords for this batch of 200 travel photos, formatted for Adobe Stock.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "batch upload, review, export.",
+    "trustScore": 3,
+    "pricingNote": "Pay-per-image (roughly $1.50 per 1,000 photos) or one-time desktop license — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://tagrly.com/blog/best-ai-photo-tagging-software",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "September 2026",
+    "accessNotes": "Third-party comparison article; confirm current pricing and supported file formats directly with each vendor before committing a large archive to one tool.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-d2b523b8e2",
+    "slug": "back-up-my-raw-files-automatically-so-i-never-lose-a-shoot",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers worried about losing shoot files to hardware failure",
+    "title": "back up my RAW files automatically so I never lose a shoot",
+    "intentLabels": [
+      "cloud backup",
+      "RAW file storage",
+      "photo disaster recovery"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI (Cloud Backup)",
+        "url": "https://imagen-ai.com/ai-photo-editing-tools/backup-original-raw-files/"
+      },
+      {
+        "name": "Backblaze"
+      },
+      {
+        "name": "pCloud"
+      }
+    ],
+    "workflowSummary": "As you upload photos into your editing/culling platform, the tool silently backs up the original RAW files to the cloud in the background, with no separate manual backup step.",
+    "samplePrompt": "Back up all the RAW files from this wedding shoot automatically as I import them.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "backup runs automatically once set up; no ongoing action needed.",
+    "trustScore": 4,
+    "pricingNote": "Bundled into Imagen AI's per-photo pricing (from roughly $0.05-$0.08/photo); Backblaze/pCloud priced separately by storage tier — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://imagen-ai.com/ai-photo-editing-tools/backup-original-raw-files/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm encryption/retention policy and whether backup requires uploading through the vendor's own culling/editing pipeline.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-01314616c0",
+    "slug": "find-a-specific-old-photo-by-describing-it-instead-of-digging",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers with large archives spread across drives/cloud folders",
+    "title": "find a specific old photo by describing it instead of digging through folders",
+    "intentLabels": [
+      "AI photo search",
+      "content-based image search",
+      "visual search archive"
+    ],
+    "tools": [
+      {
+        "name": "Brault",
+        "url": "https://brault.app/blog/creative-asset-management/best-cloud-storage-for-photographers/"
+      },
+      {
+        "name": "ZeroDesk"
+      }
+    ],
+    "workflowSummary": "Upload or connect your photo archive; the AI reads the visual content (and any text or signage in the frame) so you can search in plain language, like 'bride laughing, golden hour,' instead of relying on filenames or folders.",
+    "samplePrompt": "Find every photo in my archive of a bride laughing during golden hour, across all my past weddings.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once your archive is fully indexed, which takes some upfront setup time.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $12/month for solo-tier plans, more for larger teams/archives — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://brault.app/blog/creative-asset-management/best-cloud-storage-for-photographers/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "September 2026",
+    "accessNotes": "Third-party comparison article; confirm current storage limits and indexing time directly on the vendor's own site before migrating a full archive.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-4332eac652",
+    "slug": "turn-my-client-s-mood-board-into-an-actual-shot-list-for-shoot",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers translating a client's inspiration into an executable plan",
+    "title": "turn my client's mood board into an actual shot list for shoot day",
+    "intentLabels": [
+      "AI shot list generator",
+      "mood board to shot list",
+      "shoot planning"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI (Photo Shot List Gen)",
+        "url": "https://imagen-ai.com/tools/photo-shot-list-gen/"
+      },
+      {
+        "name": "ProShoot.io"
+      },
+      {
+        "name": "Storyflow"
+      }
+    ],
+    "workflowSummary": "Describe the client's vision or upload their inspiration images, and the AI generates a structured, printable shot list broken out by moment, location, or priority.",
+    "samplePrompt": "Turn this client's mood board and 'golden hour, candid, editorial' brief into a shot list for a 2-hour engagement session.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, browser-based, no signup required for basic use.",
+    "trustScore": 3,
+    "pricingNote": "Free basic tools; more advanced planning canvases roughly $8-$14/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://imagen-ai.com/tools/photo-shot-list-gen/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public free tool; no client data risk since it's typically used with your own notes, but confirm export format matches what you need on set.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-9429e5fb03",
+    "slug": "build-a-shared-mood-board-and-shoot-plan-i-can-collaborate-on",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/videographers who plan the creative direction of a shoot with a client",
+    "title": "build a shared mood board and shoot plan I can collaborate on with my client",
+    "intentLabels": [
+      "mood board maker",
+      "shoot planning canvas",
+      "creative pre-production"
+    ],
+    "tools": [
+      {
+        "name": "VSCO Canvas",
+        "url": "https://www.vsco.co/features/canvas"
+      },
+      {
+        "name": "Storyflow"
+      },
+      {
+        "name": "Milanote"
+      }
+    ],
+    "workflowSummary": "Gather visual references, generate additional AI images to fill gaps in the concept, and organize lighting, wardrobe, and location notes on one shared canvas your client can comment on before the shoot.",
+    "samplePrompt": "Build a mood board for a moody, autumn-toned engagement shoot and generate a few AI reference images to fill out the color palette.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop canvas with templates to start from.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available; paid plans roughly $8-$60/month depending on features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.vsco.co/features/canvas",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm image-generation usage rights and collaborator limits on the free tier before sharing boards with clients.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-f61de96951",
+    "slug": "track-my-business-expenses-so-i-don-t-miss-tax-deductions",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Freelance/self-employed photographers filing their own taxes",
+    "title": "track my business expenses so I don't miss tax deductions",
+    "intentLabels": [
+      "expense tracker",
+      "tax deduction app",
+      "receipt scanning for freelancers"
+    ],
+    "tools": [
+      {
+        "name": "Keeper Tax",
+        "url": "https://www.keepertax.com/posts/best-app-to-track-receipts-for-taxes"
+      },
+      {
+        "name": "SparkReceipt"
+      },
+      {
+        "name": "Expensify"
+      }
+    ],
+    "workflowSummary": "Connect your bank/credit card or snap photos of receipts; the AI categorizes each purchase (gear, travel, software, mileage) and flags likely deductions, building a tax-ready report.",
+    "samplePrompt": "Review my last 3 months of business card transactions and flag anything that looks like a missed tax deduction.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly automatic once bank accounts are connected.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $15-$20/month — verify before publishing; confirm current terms and consult a tax professional for advice specific to your situation",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.keepertax.com/posts/best-app-to-track-receipts-for-taxes",
+    "sourceType": "Product page / blog",
+    "freshness": "February 2026",
+    "accessNotes": "Handles financial data — confirm its data security practices and that it fits your bookkeeping setup; not a substitute for professional tax advice.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-df3b7abc94",
+    "slug": "send-contracts-for-e-signature-and-collect-deposits-without",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who deliver custom albums, prints, or digital packages",
+    "title": "send contracts for e-signature and collect deposits without chasing clients",
+    "intentLabels": [
+      "e-signature",
+      "online contract",
+      "automated deposit collection"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook",
+        "url": "https://agiled.app/blog/best-crm-for-photographers"
+      },
+      {
+        "name": "Dubsado"
+      },
+      {
+        "name": "Agiled"
+      }
+    ],
+    "workflowSummary": "Send a bundled proposal-contract-invoice; the client reviews and e-signs in their browser, and the deposit charges automatically to their card as part of the same flow.",
+    "samplePrompt": "Send this couple a proposal that includes the contract and a 50% deposit due on signing, with the balance due one week before the wedding.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided proposal builder with pre-made templates.",
+    "trustScore": 4,
+    "pricingNote": "Roughly $19-$40+/month depending on platform — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-crm-for-photographers",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Third-party comparison; confirm current e-signature legal validity and payment-processor fees directly with the chosen vendor.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-7498db0308",
+    "slug": "send-professional-invoices-with-automatic-payment-reminders",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers managing multiple client payments and reminders",
+    "title": "send professional invoices with automatic payment reminders",
+    "intentLabels": [
+      "invoicing software",
+      "automated payment reminders",
+      "get paid online"
+    ],
+    "tools": [
+      {
+        "name": "Pixieset Studio Manager",
+        "url": "https://pixieset.com/studio-manager/"
+      },
+      {
+        "name": "VSCO Workspace"
+      }
+    ],
+    "workflowSummary": "Create a branded invoice from a template; the platform automatically emails the client reminders as the due date approaches and notifies you the moment they pay.",
+    "samplePrompt": "Create an invoice for this portrait session with a payment due in 14 days and automatic reminders 7 and 2 days before it's due.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "templated invoices with one-time setup of your branding/logo.",
+    "trustScore": 4,
+    "pricingNote": "Free forever tier available; paid plans add more automation/branding — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://pixieset.com/studio-manager/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current payment-processor fees (Stripe/Square/PayPal) before quoting a client's total cost.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-f0abd3d447",
+    "slug": "let-clients-book-an-open-session-slot-themselves-without",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who want clients to self-serve booking",
+    "title": "let clients book an open session slot themselves without emailing back and forth",
+    "intentLabels": [
+      "online booking calendar",
+      "self-serve scheduling",
+      "mini-session booking"
+    ],
+    "tools": [
+      {
+        "name": "Studio Ninja",
+        "url": "https://monday.com/blog/crm-and-sales/crm-for-photographers/"
+      },
+      {
+        "name": "Pixieset Studio Manager"
+      }
+    ],
+    "workflowSummary": "Set your available dates and session types once; clients pick an open slot from a public booking page, and the system confirms the date, sends the contract, and adds it to your calendar automatically.",
+    "samplePrompt": "Set up a booking page for my fall mini-sessions with 20-minute slots on the three Saturdays in October.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "pick dates, set slot length, publish the page.",
+    "trustScore": 4,
+    "pricingNote": "Studio Ninja roughly $21.90/month; Pixieset Studio Manager has a free tier — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://monday.com/blog/crm-and-sales/crm-for-photographers/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "July 2025",
+    "accessNotes": "Third-party comparison article; confirm current pricing and calendar-sync compatibility (Google/Outlook/iCal) on the vendor's own page.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-f42eb0a86d",
+    "slug": "get-notes-and-a-to-do-list-automatically-after-a-client-call",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/studio owners who take a lot of client calls",
+    "title": "get notes and a to-do list automatically after a client call",
+    "intentLabels": [
+      "AI meeting notes",
+      "call summary",
+      "automatic to-do extraction"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook AI (meeting notes & summaries)",
+        "url": "https://www.honeybook.com/product/ai"
+      }
+    ],
+    "workflowSummary": "The AI listens to (or reads a transcript of) your client call and automatically produces a summary of what was discussed plus a list of follow-up to-dos, saved to that client's project.",
+    "samplePrompt": "Summarize this consultation call and list any follow-up tasks I need to complete before sending the proposal.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "runs automatically as part of the CRM's AI features.",
+    "trustScore": 3,
+    "pricingNote": "Included with HoneyBook's paid AI-enabled plans — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.honeybook.com/product/ai",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; if calls are recorded/transcribed, confirm state/local call-recording consent laws before turning this on.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-468416be3e",
+    "slug": "automatically-ask-for-a-review-or-referral-after-i-deliver-a",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Studios wanting more 5-star reviews and referrals without manually asking",
+    "title": "automatically ask for a review or referral after I deliver a client's gallery",
+    "intentLabels": [
+      "review request automation",
+      "referral program automation",
+      "post-delivery follow-up"
+    ],
+    "tools": [
+      {
+        "name": "Agiled (workflow automation)",
+        "url": "https://agiled.app/blog/best-all-in-one-software-for-photographers"
+      },
+      {
+        "name": "HoneyBook automations"
+      }
+    ],
+    "workflowSummary": "Set a rule that fires automatically a set number of days after gallery delivery, sending a friendly review or referral request email so you don't have to remember to ask.",
+    "samplePrompt": "Automatically send a review request email 7 days after I mark a gallery as delivered, and a referral-discount offer 30 days after that.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the automation itself is simple, but building the trigger sequence takes a first-time setup pass.",
+    "trustScore": 3,
+    "pricingNote": "Included in most CRM platforms' paid tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-all-in-one-software-for-photographers",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Third-party comparison article; confirm the automation-trigger feature is included in your specific plan tier before relying on it.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-72438de666",
+    "slug": "draft-a-second-shooter-agreement-without-hiring-a-lawyer",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/studios coordinating second shooters, assistants, and vendors",
+    "title": "draft a second-shooter agreement without hiring a lawyer",
+    "intentLabels": [
+      "second shooter contract",
+      "freelance photographer agreement",
+      "contractor contract generator"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI (Second Shooter Contract generator)",
+        "url": "https://imagen-ai.com/tools/second-shooter-contract/"
+      }
+    ],
+    "workflowSummary": "Fill in the shoot details, payment terms, and usage rights in a guided form, and the tool generates a customizable, ready-to-send second-shooter agreement.",
+    "samplePrompt": "Generate a second-shooter agreement for a wedding on [date], covering payment, image usage rights, and a non-compete clause.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a form, download the document.",
+    "trustScore": 3,
+    "pricingNote": "Free tool tied to a broader platform's marketing page — verify before publishing whether it requires an account",
+    "pricingTier": "free",
+    "sourceUrl": "https://imagen-ai.com/tools/second-shooter-contract/",
+    "sourceType": "Product page",
+    "freshness": "May 2026",
+    "accessNotes": "Generated contracts are templates, not legal advice — have a lawyer review any contract before using it for real bookings, especially around liability and usage rights.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-2025caee36",
+    "slug": "make-sure-i-never-miss-a-phone-inquiry-during-a-busy-shoot-day",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photography businesses fielding many calls during peak season",
+    "title": "make sure I never miss a phone inquiry during a busy shoot day",
+    "intentLabels": [
+      "AI receptionist",
+      "missed call automation",
+      "phone answering service for photographers"
+    ],
+    "tools": [
+      {
+        "name": "Ainora AI Receptionist",
+        "url": "https://ainora.lt/blog/ai-receptionist-for-photographers-creative-studios"
+      }
+    ],
+    "workflowSummary": "An AI answers incoming calls in your voice/brand tone, checks your calendar in real time to place tentative holds on requested dates, and routes vendor or second-shooter calls differently from client inquiries.",
+    "samplePrompt": "If I miss a call while shooting, have the AI receptionist check my availability for the requested date and text the caller my portfolio link.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires initial setup of call-routing rules and approved pricing language.",
+    "trustScore": 3,
+    "pricingNote": "Typically a monthly subscription plus per-minute usage — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ainora.lt/blog/ai-receptionist-for-photographers-creative-studios",
+    "sourceType": "Product page",
+    "freshness": "April 2026",
+    "accessNotes": "Confirm the AI never quotes prices you haven't pre-approved, and check call-recording consent laws in your state before enabling call transcription.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-b8589dc45b",
+    "slug": "collect-a-signed-model-release-on-the-spot-during-a-shoot",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers needing signed model releases on location",
+    "title": "collect a signed model release on the spot during a shoot",
+    "intentLabels": [
+      "model release form",
+      "on-location e-signature",
+      "photography release AI agent"
+    ],
+    "tools": [
+      {
+        "name": "Jotform (Photography Model Release AI Agent)",
+        "url": "https://www.jotform.com/agent-templates/booking-ai-agents/photography-booking-ai-agents"
+      }
+    ],
+    "workflowSummary": "Pull up a conversational AI form on your phone or tablet; the subject answers a few guided questions and signs, and the completed release is saved to your client file automatically.",
+    "samplePrompt": "Set up a mobile-friendly model release form I can hand to a subject on location that saves their signature straight to this shoot's folder.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based, works on any phone/tablet browser.",
+    "trustScore": 3,
+    "pricingNote": "Included in Jotform's free tier with response limits; paid plans for higher volume — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.jotform.com/agent-templates/booking-ai-agents/photography-booking-ai-agents",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public template gallery; confirm the release's legal wording is appropriate for your jurisdiction and usage needs before relying on it in place of legal counsel.",
+    "batch": "Photographers Videographers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-39e9ef7bd9",
+    "slug": "write-seo-optimized-blog-posts-to-rank-for-photographer-my-city",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers wanting more organic search leads",
+    "title": "write SEO-optimized blog posts to rank for 'photographer + my city' searches",
+    "intentLabels": [
+      "photography SEO blog",
+      "local search content",
+      "blog post generator"
+    ],
+    "tools": [
+      {
+        "name": "PhotoBiz AI",
+        "url": "https://www.photobiz.com/photobiz-ai"
+      },
+      {
+        "name": "10Web AI Website Builder"
+      },
+      {
+        "name": "TWS Blog SEO tool"
+      }
+    ],
+    "workflowSummary": "Describe the shoot or topic, your location, and niche; the AI drafts a structured blog post with SEO-friendly titles, meta descriptions, image alt text, and local keywords built in.",
+    "samplePrompt": "Write a blog post about a recent downtown Miami engagement shoot, optimized for 'Miami engagement photographer.'",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided, step-by-step post builder with title suggestions.",
+    "trustScore": 3,
+    "pricingNote": "Free tools exist; paid website-builder AI plans roughly $10-$30/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.photobiz.com/photobiz-ai",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; AI-drafted SEO copy should be reviewed for accuracy and personal voice before publishing under your name.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-82d4805fbc",
+    "slug": "get-an-seo-audit-and-action-plan-for-my-photography-website",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers whose website isn't generating inquiries",
+    "title": "get an SEO audit and action plan for my photography website",
+    "intentLabels": [
+      "SEO audit",
+      "website ranking checkup",
+      "local SEO plan for photographers"
+    ],
+    "tools": [
+      {
+        "name": "Kamero Biz Lab guidance",
+        "url": "https://kamero.ai/biz-lab/seo-for-photographers-local-google-ranking"
+      },
+      {
+        "name": "Babylovegrowth"
+      }
+    ],
+    "workflowSummary": "Run your site through an SEO-focused tool or guided checklist; it flags missing alt text, thin content, and unclaimed local listings, then gives you a prioritized to-do list (this week, this month, ongoing).",
+    "samplePrompt": "Audit my photography website and give me a 30-day plan to start ranking for local wedding photographer searches.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the audit is easy to read, but implementing fixes (alt text, backlinks, content) takes ongoing time.",
+    "trustScore": 3,
+    "pricingNote": "Guidance is often free; paid content/SEO subscription services vary widely — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://kamero.ai/biz-lab/seo-for-photographers-local-google-ranking",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "February 2026",
+    "accessNotes": "Educational guide, not a single tool; treat specific SEO/traffic claims as marketing copy and verify independently.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-5eb874d524",
+    "slug": "optimize-my-google-business-profile-to-rank-in-local-map",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Local photographers competing for map-pack visibility",
+    "title": "optimize my Google Business Profile to rank in local map searches",
+    "intentLabels": [
+      "Google Business Profile optimization",
+      "local SEO",
+      "Google Maps ranking"
+    ],
+    "tools": [
+      {
+        "name": "Cattix (AI GBP optimization)",
+        "url": "https://cattix.com/blog/ai-google-business-profile-optimization-local-seo/"
+      },
+      {
+        "name": "PlotPath"
+      }
+    ],
+    "workflowSummary": "The AI audits your profile against local competitors, flags missing categories or attributes, and drafts optimized descriptions and posts so your profile stays active and ranks higher in the local map pack.",
+    "samplePrompt": "Audit my Google Business Profile and tell me what's missing compared to top-ranked wedding photographers in my city.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "most tools guide you field by field with plain-language recommendations.",
+    "trustScore": 3,
+    "pricingNote": "Varies by tool, from free guided prompts to paid audit subscriptions — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://cattix.com/blog/ai-google-business-profile-optimization-local-seo/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "February 2026",
+    "accessNotes": "Third-party guide; always make GBP edits through your own verified Google account, not a third party claiming to manage it without your login.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-31de2c41ad",
+    "slug": "show-up-when-someone-asks-an-ai-assistant-for-a-local",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers wanting visibility beyond traditional search",
+    "title": "show up when someone asks an AI assistant for a local photographer recommendation",
+    "intentLabels": [
+      "AI search visibility",
+      "generative engine optimization",
+      "GEO for local business"
+    ],
+    "tools": [
+      {
+        "name": "Structured Google Business Profile + website data (per GEO best practices)",
+        "url": "https://www.theadfirm.net/optimizing-google-business-profiles-for-geo-and-ai-search/"
+      }
+    ],
+    "workflowSummary": "Make sure your profile and website have clear, complete, and consistent descriptions of what you do, who you serve, and where — this is the same structured data that AI Overviews and chatbots pull from when answering 'find me a photographer near X.'",
+    "samplePrompt": "Rewrite my business description so an AI assistant answering 'best wedding photographer near me' could summarize my services accurately.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the concept is simple, but there's no single 'GEO button'; it's a set of good-data practices.",
+    "trustScore": 2,
+    "pricingNote": "No direct tool cost — this is a practice, not a paid product; verify any tool claiming to guarantee AI-search ranking",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.theadfirm.net/optimizing-google-business-profiles-for-geo-and-ai-search/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "August 2026",
+    "accessNotes": "Emerging, unproven area — be skeptical of vendors promising guaranteed placement in AI answers; this is best treated as good-data hygiene, not a purchasable ranking.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-4d257f9ebe",
+    "slug": "send-automated-email-newsletters-and-nurture-sequences-to-leads",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photography studios building repeat and referral business",
+    "title": "send automated email newsletters and nurture sequences to leads and past clients",
+    "intentLabels": [
+      "email marketing automation",
+      "drip campaign",
+      "photography newsletter"
+    ],
+    "tools": [
+      {
+        "name": "Sequenzy",
+        "url": "https://www.sequenzy.com/email-marketing-for/photographers"
+      },
+      {
+        "name": "Flodesk"
+      },
+      {
+        "name": "ActiveCampaign"
+      }
+    ],
+    "workflowSummary": "Set up a welcome sequence for new leads and a periodic newsletter for past clients; the AI drafts the email copy and the platform sends it automatically on your schedule or trigger.",
+    "samplePrompt": "Create a 3-email welcome sequence for new inquiries that introduces my style, shows recent work, and invites them to book a call.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "pre-built sequence templates for common photography scenarios (inquiry, session prep, gallery delivery).",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with contact/send limits; paid plans roughly $9-$40+/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.sequenzy.com/email-marketing-for/photographers",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm current sending limits and unsubscribe/compliance features (CAN-SPAM) before using for client marketing.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-d0a880b6b4",
+    "slug": "send-an-automatic-reminder-email-so-past-clients-book",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers wanting repeat bookings from past clients",
+    "title": "send an automatic reminder email so past clients book anniversary or repeat sessions",
+    "intentLabels": [
+      "anniversary email automation",
+      "repeat client reminders",
+      "lifecycle marketing"
+    ],
+    "tools": [
+      {
+        "name": "ActiveCampaign",
+        "url": "https://www.sequenzy.com/email-marketing-for/family-photographers"
+      },
+      {
+        "name": "Sequenzy"
+      }
+    ],
+    "workflowSummary": "Set a trigger tied to a client's session date (e.g., one year later); the platform automatically sends a personalized reminder email offering a follow-up session or print order.",
+    "samplePrompt": "Set up an automation that emails past wedding clients around their anniversary offering a family portrait session.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "building the trigger and timing takes a first-time setup pass.",
+    "trustScore": 3,
+    "pricingNote": "Included in most email marketing platforms' paid tiers, roughly $15-$40/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sequenzy.com/email-marketing-for/family-photographers",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party comparison article; confirm current automation-trigger features are included in your specific plan tier.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-10d21bdd46",
+    "slug": "turn-my-long-wedding-film-or-behind-the-scenes-footage-into",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding & event videographers building a social following",
+    "title": "turn my long wedding film or behind-the-scenes footage into short clips for Instagram/TikTok",
+    "intentLabels": [
+      "video repurposing",
+      "long to short video",
+      "clip generator",
+      "viral clips"
+    ],
+    "tools": [
+      {
+        "name": "Vizard",
+        "url": "https://vizard.ai/tools/ai-clips-generator"
+      },
+      {
+        "name": "Klap"
+      },
+      {
+        "name": "OpusClip"
+      }
+    ],
+    "workflowSummary": "Upload the full video or paste a link; the AI transcribes it, finds the most engaging moments, and outputs several vertical, captioned clips sized for TikTok, Reels, and Shorts.",
+    "samplePrompt": "Turn this 20-minute wedding highlight film into five vertical clips under 60 seconds each, with captions, for Instagram Reels.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, review the suggested clips, export.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with watermark; paid plans roughly $20-$40/month to remove watermark and unlock more exports — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vizard.ai/tools/ai-clips-generator",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public tool page; confirm upload privacy terms before processing unreleased client wedding footage through a third-party cloud tool.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-b7775e7080",
+    "slug": "quickly-generate-a-branded-price-quote-or-proposal-for-a-new",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers responding to new inquiries with pricing",
+    "title": "quickly generate a branded price quote or proposal for a new inquiry",
+    "intentLabels": [
+      "photography quote generator",
+      "proposal generator",
+      "pricing package builder"
+    ],
+    "tools": [
+      {
+        "name": "BidMaker",
+        "url": "https://bidmaker.app/templates/photography-proposal-template"
+      },
+      {
+        "name": "Jotquote"
+      },
+      {
+        "name": "Cobrief"
+      }
+    ],
+    "workflowSummary": "Describe the shoot type and package details (or fill in a guided form); the AI writes a polished, itemized, branded proposal with deliverables, timeline, and pricing ready to send as a PDF or link.",
+    "samplePrompt": "Generate a proposal for an 8-hour wedding package with a second shooter, a 6-week gallery turnaround, and a print release.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the job or fill a short form, get a finished draft.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with limited monthly proposals (often 1 AI-written); paid plans for more — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://bidmaker.app/templates/photography-proposal-template",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "AI-generated proposals are drafts — review pricing accuracy and deliverable feasibility before sending, since proposal commitments become contract commitments once signed.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-add8f58d3e",
+    "slug": "design-pinterest-pins-to-drive-traffic-to-my-portfolio-or-blog",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding/portrait photographers using Pinterest for lead generation",
+    "title": "design Pinterest pins to drive traffic to my portfolio or blog",
+    "intentLabels": [
+      "Pinterest pin generator",
+      "Pinterest marketing",
+      "pin design AI"
+    ],
+    "tools": [
+      {
+        "name": "Tailwind SmartPin",
+        "url": "https://www.tailwindapp.com/pinterest-marketing/course/ai-pin-generator"
+      },
+      {
+        "name": "Picmaker"
+      }
+    ],
+    "workflowSummary": "Feed in a photo or blog link and your brand style; the AI generates several pin design variations with keyword-rich titles and descriptions, ready to schedule.",
+    "samplePrompt": "Design 5 Pinterest pin variations for this engagement blog post, in my brand's blush-and-cream color palette.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "templated design flow, no graphic design skill needed.",
+    "trustScore": 3,
+    "pricingNote": "Often bundled into scheduling tool subscriptions, roughly $10-$40/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tailwindapp.com/pinterest-marketing/course/ai-pin-generator",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; review AI-generated pins for brand consistency before publishing, since automated designs can drift from your visual style.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-a059cd1f9a",
+    "slug": "batch-generate-pinterest-pins-automatically-from-my-existing",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers with an existing blog who want more Pinterest reach",
+    "title": "batch-generate Pinterest pins automatically from my existing blog posts",
+    "intentLabels": [
+      "blog to Pinterest pin",
+      "bulk pin creation",
+      "Pinterest automation"
+    ],
+    "tools": [
+      {
+        "name": "PinsMachine",
+        "url": "https://pinsmachine.com/blog/best-ai-pinterest-pin-generator"
+      }
+    ],
+    "workflowSummary": "Paste a batch of your blog post URLs; the AI reads each article, extracts the core theme, and builds pin designs and descriptions that match your brand kit, ready to schedule in bulk.",
+    "samplePrompt": "Turn my last 10 wedding blog posts into Pinterest pins using my saved brand colors and fonts.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste URLs, review generated pins, schedule.",
+    "trustScore": 3,
+    "pricingNote": "Credit-based pricing, roughly 1-3 credits per pin depending on style — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pinsmachine.com/blog/best-ai-pinterest-pin-generator",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "February 2026",
+    "accessNotes": "Third-party comparison article; confirm current credit pricing and platform compatibility (WordPress, Squarespace, etc.) on the vendor's own site.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-884ce7ab67",
+    "slug": "create-facebook-instagram-ad-creative-to-promote-a-mini-session",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers running paid social ads for bookings",
+    "title": "create Facebook/Instagram ad creative to promote a mini-session or seasonal offer",
+    "intentLabels": [
+      "AI ad creative generator",
+      "Facebook ads",
+      "Instagram ad design"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://www.adcreative.ai/",
+        "catalogueSlug": "adcreative-ai"
+      },
+      {
+        "name": "Meta Advantage+ Creative"
+      },
+      {
+        "name": "Predis.ai"
+      }
+    ],
+    "workflowSummary": "Describe your offer and audience (or link your page); the AI generates multiple ad image/video variations with headlines and calls-to-action, sized correctly for Meta's ad formats.",
+    "samplePrompt": "Create 3 ad variations promoting my fall mini-sessions, priced at $150, targeting local families.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "creative generation is simple, but running an effective ad campaign still requires basic Ads Manager knowledge.",
+    "trustScore": 3,
+    "pricingNote": "AdCreative.ai roughly $249+/month; Meta's built-in Advantage+ Creative is free within Ads Manager — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.adcreative.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; review AI-generated ad claims for accuracy (pricing, availability) before publishing, since ad platforms enforce truth-in-advertising policies.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-fa9b2cd4e9",
+    "slug": "schedule-and-auto-post-content-across-instagram-pinterest-and",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers managing multiple social platforms",
+    "title": "schedule and auto-post content across Instagram, Pinterest, and Facebook at the best times",
+    "intentLabels": [
+      "social media scheduler",
+      "AI posting times",
+      "multi-platform scheduling"
+    ],
+    "tools": [
+      {
+        "name": "SocialBee",
+        "url": "https://www.diyphotography.net/best-social-media-scheduling-tools-for-photographers-in-2026/"
+      },
+      {
+        "name": "Plann"
+      },
+      {
+        "name": "Buffer",
+        "catalogueSlug": "buffer"
+      }
+    ],
+    "workflowSummary": "Upload a batch of photos and captions once; the AI analyzes your audience's activity patterns and automatically times posts across each platform for maximum engagement.",
+    "samplePrompt": "Schedule this month's gallery highlights across Instagram and Pinterest at the times my audience is most active.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "visual calendar interface designed for photographers' image-heavy content.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with limited channels/posts; paid plans roughly $12-$40/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.diyphotography.net/best-social-media-scheduling-tools-for-photographers-in-2026/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "3 weeks old per site metadata, checked September 2026",
+    "accessNotes": "Third-party comparison article specific to photographers; confirm current pricing and platform support directly with each vendor before committing.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-c8ded23915",
+    "slug": "automatically-recycle-my-best-performing-content-instead-of",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who don't have time to create new content daily",
+    "title": "automatically recycle my best-performing content instead of starting from scratch every day",
+    "intentLabels": [
+      "content recycling",
+      "evergreen content queue",
+      "social media automation"
+    ],
+    "tools": [
+      {
+        "name": "SocialBee",
+        "url": "https://www.diyphotography.net/best-social-media-scheduling-tools-for-photographers-in-2026/"
+      }
+    ],
+    "workflowSummary": "Categorize your posts once (tips, past work, testimonials); the tool automatically re-queues and rotates them on a schedule, so proven content keeps working without you rebuilding a calendar each week.",
+    "samplePrompt": "Set up an evergreen queue that recycles my best photography tips and client testimonials once a month.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "categorize once, let the rotation run automatically.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $29-$99/month depending on account/channel count — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.diyphotography.net/best-social-media-scheduling-tools-for-photographers-in-2026/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "3 weeks old per site metadata, checked September 2026",
+    "accessNotes": "Third-party comparison article; confirm recycled content still reflects current pricing/availability before it re-posts automatically.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-6f6430001a",
+    "slug": "build-a-quiz-or-intake-funnel-that-qualifies-wedding-leads",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Wedding photographers/videographers wanting pre-qualified leads",
+    "title": "build a quiz or intake funnel that qualifies wedding leads before they contact me",
+    "intentLabels": [
+      "lead qualification quiz",
+      "AI quiz funnel",
+      "wedding style quiz"
+    ],
+    "tools": [
+      {
+        "name": "Dashform (AI Quiz Funnel)",
+        "url": "https://getaiform.com/blog/wedding-planner-ai-quiz-funnel-qualify-clients-2026"
+      }
+    ],
+    "workflowSummary": "Describe your services and ideal client; the AI builds an interactive style quiz with branching questions, then routes high-budget, near-term leads to a booking link and lower-fit leads to a nurture sequence.",
+    "samplePrompt": "Build a wedding photography style quiz that asks about budget, date, and aesthetic, and routes high-budget near-term leads to my booking calendar.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial quiz design takes some thought about your ideal client profile.",
+    "trustScore": 2,
+    "pricingNote": "Pricing not publicly listed in the sourced article — verify current plans directly on the vendor's site before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getaiform.com/blog/wedding-planner-ai-quiz-funnel-qualify-clients-2026",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party guide aimed at wedding planners but the same quiz-funnel approach applies to photographers; confirm current features and pricing before recommending.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-f830c435a9",
+    "slug": "write-persuasive-website-copy-for-my-about-page-and-service",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who need persuasive copy for their own site",
+    "title": "write persuasive website copy for my About page and service descriptions",
+    "intentLabels": [
+      "website copywriting AI",
+      "About page generator",
+      "service page copy"
+    ],
+    "tools": [
+      {
+        "name": "PhotoBiz AI",
+        "url": "https://www.photobiz.com/photobiz-ai"
+      }
+    ],
+    "workflowSummary": "Answer a few prompts about your background, style, and ideal client, and the AI drafts website copy — About page, service descriptions, and calls-to-action — that you then personalize and edit.",
+    "samplePrompt": "Write an About page for my wedding photography business that's warm, personal, and mentions my documentary shooting style.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts, no blank-page problem.",
+    "trustScore": 3,
+    "pricingNote": "Included in PhotoBiz website plans, roughly $10-$30/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.photobiz.com/photobiz-ai",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; always rewrite AI-drafted copy in your own voice — generic AI phrasing is a common tell that reduces trust with potential clients.",
+    "batch": "Photographers Videographers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-f781ff7d58",
+    "slug": "retouch-newborn-photos-naturally-without-an-over-edited-plastic",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Newborn photographers editing delicate skin and soft lighting",
+    "title": "retouch newborn photos naturally without an over-edited, plastic look",
+    "intentLabels": [
+      "newborn photo editing",
+      "baby skin retouching",
+      "gentle skin smoothing"
+    ],
+    "tools": [
+      {
+        "name": "Evoto AI",
+        "url": "https://www.evoto.ai/features/newborn-photography"
+      },
+      {
+        "name": "Aftershoot (baby-specific retouching)"
+      },
+      {
+        "name": "Luminar Neo"
+      }
+    ],
+    "workflowSummary": "The AI detects baby-specific skin (redness, peeling, blemishes) separately from adult skin in the same frame, applying gentle, non-destructive smoothing and color balance instead of one-size-fits-all retouching.",
+    "samplePrompt": "Gently reduce redness and peeling on this newborn's skin while keeping the texture natural, without touching the parents' skin in the same photo.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "baby-specific presets handle most of the work automatically.",
+    "trustScore": 3,
+    "pricingNote": "Evoto priced per photo/subscription; Aftershoot bundled with its plan — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.evoto.ai/features/newborn-photography",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; review AI results carefully since over-retouching a baby's features (not just skin) can look unnatural fast — natural imperfections are usually the right call.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-852abca8dc",
+    "slug": "remove-a-leash-harness-or-cluttered-background-from-a-pet-photo",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Pet photographers and photographers offering pet portrait add-ons",
+    "title": "remove a leash, harness, or cluttered background from a pet photo",
+    "intentLabels": [
+      "pet photo editing",
+      "remove leash AI",
+      "pet background cleanup"
+    ],
+    "tools": [
+      {
+        "name": "Magic Eraser",
+        "url": "https://magiceraser.live/en/blog/pet-photography-editing-tips"
+      },
+      {
+        "name": "Evoto (cutout/background tools)"
+      }
+    ],
+    "workflowSummary": "Brush over the leash, harness straps, or background clutter; the AI reconstructs the fur, grass, or background underneath, adapting to different fur textures and edge complexity (ears, tails, whiskers).",
+    "samplePrompt": "Remove the leash and harness from this dog portrait and clean up the grass background behind him.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "brush and click, no masking skill required.",
+    "trustScore": 3,
+    "pricingNote": "Free with limited resolution/credits; paid plans for higher-res, no-watermark exports — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://magiceraser.live/en/blog/pet-photography-editing-tips",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party guide; confirm the specific tool's file-retention and commercial-use terms before using on paid pet-portrait sessions.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-cf75e22e03",
+    "slug": "edit-hundreds-of-youth-sports-or-school-portraits-with",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers shooting high-volume youth sports and school picture days",
+    "title": "edit hundreds of youth sports or school portraits with consistent color, crop, and skin",
+    "intentLabels": [
+      "sports photo editing",
+      "school photo editing",
+      "volume photography AI"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI",
+        "url": "https://imagen-ai.com/sports-school-volume-photography/"
+      },
+      {
+        "name": "Evoto (sports photography)"
+      }
+    ],
+    "workflowSummary": "Upload the full day's shoot; the AI applies consistent color correction, auto-crops each portrait to a standard aspect ratio (e.g., 4x5 or 5x7), and lightly smooths skin across every athlete or student in the batch.",
+    "samplePrompt": "Auto-crop and color-correct these 300 team portraits to a consistent 5x7 ratio for the yearbook.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "batch settings apply to the whole shoot automatically, with the option to fine-tune individual shots.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $0.05-$0.08 per photo or per-photo subscription tiers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://imagen-ai.com/sports-school-volume-photography/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; since subjects are minors, confirm school/league image-consent and privacy policies before uploading student photos to any cloud platform.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-77a45dbdf7",
+    "slug": "auto-generate-a-highlight-reel-with-score-and-stat-overlays",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Sports photographers/videographers producing game-day content for parents and teams",
+    "title": "auto-generate a highlight reel with score and stat overlays from raw game footage",
+    "intentLabels": [
+      "sports highlight generator",
+      "AI stats overlay",
+      "game highlight video"
+    ],
+    "tools": [
+      {
+        "name": "Hooked (AI Sports Highlights Generator)",
+        "url": "https://www.hooked.so/tools/ai-sports-highlights-generator"
+      },
+      {
+        "name": "Trace"
+      }
+    ],
+    "workflowSummary": "Upload full-game footage; the AI identifies key plays (goals, big hits, celebrations), automatically overlays score and player-stat graphics, and assembles a highlight reel ready to share with families.",
+    "samplePrompt": "Build a 3-minute highlight reel from this youth soccer match with the score and each goal-scorer's name overlaid.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload footage, review the auto-generated reel, export.",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies by platform; some (like Trace) are camera+software bundles rather than pure software subscriptions — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hooked.so/tools/ai-sports-highlights-generator",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; if footage includes minors, confirm league/parent consent for video distribution before sharing highlight reels publicly.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-cbeae52b40",
+    "slug": "let-parents-and-athletes-find-only-their-own-photos-in-a-huge",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Sports/event photographers selling photos to large numbers of families",
+    "title": "let parents and athletes find only their own photos in a huge event gallery",
+    "intentLabels": [
+      "AI face search",
+      "photo gallery search by face",
+      "sports photo sales platform"
+    ],
+    "tools": [
+      {
+        "name": "(AI face-search feature within sports/event gallery platforms)",
+        "url": "https://www.lenzeit.com/blog/best-sports-photo-sales-software-youth-sports-photographers"
+      }
+    ],
+    "workflowSummary": "A parent or athlete uploads one approved reference photo (like a selfie); the AI matches faces across the entire event gallery so they only see and purchase photos of their own child, instead of scrolling through hundreds of images.",
+    "samplePrompt": "Set up face search on this weekend's tournament gallery so each family can find just their player's photos.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "gallery setup is straightforward, but a thoughtful consent/access process is essential given the subjects are minors.",
+    "trustScore": 3,
+    "pricingNote": "Typically bundled into event-gallery/sales platform pricing — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.lenzeit.com/blog/best-sports-photo-sales-software-youth-sports-photographers",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "July 2026",
+    "accessNotes": "Youth sports photos require deliberate access and consent decisions, not a public open gallery — confirm the platform's safeguarding features before enabling face search for a minors' event.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-801691c442",
+    "slug": "clean-up-sideline-clutter-and-fix-inconsistent-lighting-in",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Sports/event photographers cleaning up action shots taken from a distance",
+    "title": "clean up sideline clutter and fix inconsistent lighting in outdoor sports action photos",
+    "intentLabels": [
+      "sports photo editing",
+      "remove sideline clutter",
+      "sports lighting correction"
+    ],
+    "tools": [
+      {
+        "name": "Magic Eraser (AI Enhance)",
+        "url": "https://magiceraser.live/en/blog/sports-action-photo-editing-ai"
+      },
+      {
+        "name": "Evoto"
+      }
+    ],
+    "workflowSummary": "Brush out spectators, equipment, or advertising boards behind the athlete, then run AI lighting correction to normalize cloud shadows and stadium lighting shifts across the gallery.",
+    "samplePrompt": "Remove the crowd and equipment behind this diving-catch photo, and correct the uneven outdoor lighting.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "object removal is brush-and-click; lighting correction is largely automatic.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with limits; paid plans for batch processing and higher resolution — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://magiceraser.live/en/blog/sports-action-photo-editing-ai",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party guide; confirm commercial-use terms before using on photos intended for sale to sports families.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-b50debbb6d",
+    "slug": "stabilize-and-color-correct-shaky-drone-footage-for-a-listing",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers offering aerial/drone footage for real estate or event clients",
+    "title": "stabilize and color-correct shaky drone footage for a listing video",
+    "intentLabels": [
+      "drone video stabilization",
+      "aerial footage color correction",
+      "real estate drone editing"
+    ],
+    "tools": [
+      {
+        "name": "DaVinci Resolve",
+        "url": "https://imagen-ai.com/valuable-tips/top-ai-drone-video-editing-software-real-estate-2026/"
+      },
+      {
+        "name": "Rav.ai"
+      }
+    ],
+    "workflowSummary": "Import raw drone clips; the AI-assisted stabilizer smooths out wind-induced jitter and the 'jello effect,' while automatic color tools match the aerial shots to your ground/gimbal footage for a consistent look.",
+    "samplePrompt": "Stabilize this windy drone flyover of the property and match its color grade to my ground-level walkthrough footage.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "DaVinci Resolve's free tier is powerful but has a real learning curve; simpler automated tools trade control for ease.",
+    "trustScore": 3,
+    "pricingNote": "DaVinci Resolve free tier available (Studio version ~$295 one-time); Rav.ai priced separately — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://imagen-ai.com/valuable-tips/top-ai-drone-video-editing-software-real-estate-2026/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "2 weeks old per site metadata, checked September 2026",
+    "accessNotes": "Third-party comparison article; confirm current stabilization quality and pricing directly on each vendor's site before committing a client project to one tool.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-d0cb608564",
+    "slug": "automatically-add-captions-music-and-pick-the-best-angles-for-a",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers who want a fully automated drone edit with minimal input",
+    "title": "automatically add captions, music, and pick the best angles for a drone flyover video",
+    "intentLabels": [
+      "automated drone video editor",
+      "AI drone video maker",
+      "aerial footage automation"
+    ],
+    "tools": [
+      {
+        "name": "Rav.ai",
+        "url": "https://rav.ai/drone-video-maker/"
+      }
+    ],
+    "workflowSummary": "Drop in raw drone clips and give minimal instructions; the tool automatically selects the best views of the property, applies color grading and stabilization, and adds trending music and AR captions — no manual timeline editing.",
+    "samplePrompt": "Turn these raw drone clips of the property into a finished flyover video with music and on-screen text callouts for the pool and backyard.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no timeline or editing skill required, described as no-learning-curve by the vendor.",
+    "trustScore": 2,
+    "pricingNote": "Pricing not detailed in the sourced page — verify current plans directly on the vendor's site before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://rav.ai/drone-video-maker/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; verify music-licensing terms for any auto-added soundtrack before using the video in paid client marketing.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-8d4323c441",
+    "slug": "stitch-multiple-frames-into-a-distortion-free-architectural-or",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Architectural, interior, and real estate photographers",
+    "title": "stitch multiple frames into a distortion-free architectural or interior panorama",
+    "intentLabels": [
+      "panorama stitching",
+      "architectural photography AI",
+      "vertorama",
+      "interior pano"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI (Horizontal/Vertical Pano Stitcher)",
+        "url": "https://imagen-ai.com/tools/vertical-pano-stitcher/"
+      },
+      {
+        "name": "Luminar Neo"
+      }
+    ],
+    "workflowSummary": "Upload a set of overlapping frames shot from a level tripod position; the AI aligns and blends them, correcting exposure and lens vignetting differences, to produce one seamless, high-resolution panorama without converging verticals.",
+    "samplePrompt": "Stitch these 6 overlapping interior shots into one distortion-free vertical panorama of this two-story foyer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload overlapping images, let the AI align and blend them.",
+    "trustScore": 3,
+    "pricingNote": "Bundled into per-photo AI editing pricing or included in Luminar Neo's license — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://imagen-ai.com/tools/vertical-pano-stitcher/",
+    "sourceType": "Product page",
+    "freshness": "June 2026",
+    "accessNotes": "Public product page; confirm output resolution and file-format support meet your MLS/listing or print requirements before delivering to a client.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-0ae9a24fdd",
+    "slug": "turn-a-photo-of-a-furnished-occupied-room-into-a-clean-vacant",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Real estate photographers delivering vacant-look or staged listing photos",
+    "title": "turn a photo of a furnished, occupied room into a clean 'vacant' or virtually staged version",
+    "intentLabels": [
+      "virtual staging",
+      "occupied to vacant",
+      "real estate photo editing"
+    ],
+    "tools": [
+      {
+        "name": "Styldod",
+        "url": "https://www.styldod.com/blog/real-estate-drone-videography"
+      }
+    ],
+    "workflowSummary": "Upload the occupied room photo; the AI digitally removes furniture and personal items to create a 'vacant' version, or replaces them with virtually staged furniture in a style the agent chooses.",
+    "samplePrompt": "Remove all the furniture and personal items from this occupied living room photo so it looks vacant for the listing.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, select the service (vacant or staged), download.",
+    "trustScore": 3,
+    "pricingNote": "Typically priced per image, roughly $5-$30 per photo depending on service — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.styldod.com/blog/real-estate-drone-videography",
+    "sourceType": "Product page",
+    "freshness": "August 2024",
+    "accessNotes": "Public product page; confirm the agent/homeowner has authorized virtual staging or vacancy edits, since altered listing photos carry disclosure obligations in many real estate markets.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-450ca5af72",
+    "slug": "convert-a-daytime-exterior-listing-photo-into-a-twilight-dusk",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Real estate photographers wanting twilight-style exterior shots without a dusk shoot",
+    "title": "convert a daytime exterior listing photo into a twilight ('dusk') shot",
+    "intentLabels": [
+      "day to dusk conversion",
+      "twilight real estate photo",
+      "virtual twilight"
+    ],
+    "tools": [
+      {
+        "name": "Styldod",
+        "url": "https://www.styldod.com/blog/real-estate-drone-videography"
+      }
+    ],
+    "workflowSummary": "Upload a daytime exterior photo; the AI relights the sky, turns on interior/exterior lights, and adjusts color temperature to simulate a dusk shoot, without scheduling a separate evening session.",
+    "samplePrompt": "Convert this daytime exterior photo of the listing into a twilight shot with warm interior lighting glowing through the windows.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and select the day-to-dusk service.",
+    "trustScore": 3,
+    "pricingNote": "Typically priced per image, roughly $5-$15 per photo — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.styldod.com/blog/real-estate-drone-videography",
+    "sourceType": "Product page",
+    "freshness": "August 2024",
+    "accessNotes": "Public product page; confirm current per-image pricing and turnaround time directly with the vendor before promising a same-day twilight conversion to a client.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-827ad97b1b",
+    "slug": "remove-objects-cars-or-signs-cluttering-a-real-estate-exterior",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Real estate photographers cleaning up exterior listing photos",
+    "title": "remove objects, cars, or signs cluttering a real estate exterior photo",
+    "intentLabels": [
+      "real estate object removal",
+      "remove car from listing photo",
+      "clean up exterior photo"
+    ],
+    "tools": [
+      {
+        "name": "Styldod (Image Enhancement / Object Removal)",
+        "url": "https://www.styldod.com/blog/real-estate-drone-videography"
+      }
+    ],
+    "workflowSummary": "Brush over the parked car, trash bin, or for-sale sign in the exterior shot; the AI reconstructs the driveway, lawn, or street behind it for a cleaner listing photo.",
+    "samplePrompt": "Remove the neighbor's car parked in the driveway from this exterior listing photo.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "brush and click, similar to a general object-removal tool but tuned for real estate scenes.",
+    "trustScore": 3,
+    "pricingNote": "Typically priced per image, roughly $2-$10 per photo — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.styldod.com/blog/real-estate-drone-videography",
+    "sourceType": "Product page",
+    "freshness": "August 2024",
+    "accessNotes": "Public product page; confirm the edit doesn't misrepresent a material fact about the property (e.g., removing a visible defect), which can raise real estate disclosure concerns in some markets.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-a5183697ed",
+    "slug": "make-phone-shot-restaurant-food-photos-look-professional-for",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers who also shoot food/menu photography for restaurant clients",
+    "title": "make phone-shot restaurant food photos look professional for the menu",
+    "intentLabels": [
+      "AI food photography",
+      "menu photo enhancement",
+      "restaurant photo editor"
+    ],
+    "tools": [
+      {
+        "name": "MenuPhotoAI",
+        "url": "https://www.menuphotoai.com/guides/best-ai-food-photography-tools-2026"
+      },
+      {
+        "name": "FoodShot AI"
+      }
+    ],
+    "workflowSummary": "Upload a real photo of the dish; the AI improves lighting, background, color, and composition while keeping the actual food recognizable — unlike AI image generators, it enhances the real plate rather than inventing a fake one.",
+    "samplePrompt": "Enhance these smartphone photos of our new menu items for the delivery app, keeping the food looking exactly as served.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, pick a style (delivery app, menu, social), download.",
+    "trustScore": 3,
+    "pricingNote": "Roughly $5.99-$39/month depending on tool and volume — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.menuphotoai.com/guides/best-ai-food-photography-tools-2026",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party comparison article; delivery platforms require photos to accurately represent the item served, so avoid tools that generate synthetic (fake) food images for these use cases.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-8cf687bd26",
+    "slug": "fix-a-blink-or-a-bad-expression-by-merging-the-best-parts-of",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers delivering family, team, or event group photos",
+    "title": "fix a blink or a bad expression by merging the best parts of several near-identical group shots",
+    "intentLabels": [
+      "group photo merge",
+      "fix closed eyes group photo",
+      "best expression selector"
+    ],
+    "tools": [
+      {
+        "name": "GoStudio.ai",
+        "url": "https://www.gostudio.ai/group-photo"
+      },
+      {
+        "name": "SnapMerge"
+      }
+    ],
+    "workflowSummary": "Upload 2-10 near-identical shots taken in quick succession; the AI compares each person's expression across the frames and automatically builds one composite where everyone has their eyes open and a good expression.",
+    "samplePrompt": "Merge these 4 shots of the wedding party into one photo where everyone has their eyes open and is smiling.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload the burst of similar photos, review the merged result, download.",
+    "trustScore": 3,
+    "pricingNote": "Free with limited resolution/exports; paid plans for higher-res, no-watermark downloads — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.gostudio.ai/group-photo",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; the tool uses real pixels from your own photos (not AI-invented faces), which is worth confirming before use since it affects how 'authentic' the final image is.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-5b123d1ac8",
+    "slug": "add-a-missing-family-member-into-a-group-photo-from-a-different",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers delivering family portraits where a member couldn't attend",
+    "title": "add a missing family member into a group photo from a different picture",
+    "intentLabels": [
+      "AI photo merge",
+      "add person to group photo",
+      "combine separate photos"
+    ],
+    "tools": [
+      {
+        "name": "yce.perfectcorp AI Group Photo Generator",
+        "url": "https://yce.perfectcorp.com/features/ai-group-photoshoot-filter"
+      }
+    ],
+    "workflowSummary": "Upload the group photo and a separate photo of the missing person; the AI analyzes lighting, angle, and scale to blend them into one natural-looking combined group photo.",
+    "samplePrompt": "Add my son, who missed the shoot, into this family group photo using this other picture of him.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload both photos, let the AI handle blending and scale-matching.",
+    "trustScore": 2,
+    "pricingNote": "Free tiers with limited generations; paid plans for more/higher-res — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://yce.perfectcorp.com/features/ai-group-photoshoot-filter",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; set clear client expectations that this is a composite, not a real moment, especially for formal deliverables like wedding albums.",
+    "batch": "Photographers Videographers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-ff06ae36f0",
+    "slug": "translate-and-dub-a-wedding-or-event-video-into-another-language",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers serving destination weddings or multicultural/multilingual clients",
+    "title": "translate and dub a wedding or event video into another language",
+    "intentLabels": [
+      "AI video dubbing",
+      "video translation",
+      "multilingual voiceover"
+    ],
+    "tools": [
+      {
+        "name": "Synthesia",
+        "url": "https://www.synthesia.io/features/ai-dubbing",
+        "catalogueSlug": "synthesia"
+      },
+      {
+        "name": "Rask AI"
+      }
+    ],
+    "workflowSummary": "Upload the finished video; the AI transcribes the audio, translates it, and generates a dubbed voice track in the target language that preserves the original speaker's tone and timing, with auto-generated subtitles as a fallback.",
+    "samplePrompt": "Dub this wedding highlight film into Spanish for the groom's family, keeping the narrator's warm tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, pick a target language, download.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with watermark/limits; paid plans roughly $20-$90/month depending on minutes and languages — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.synthesia.io/features/ai-dubbing",
+    "sourceType": "Product page",
+    "freshness": "July 2026",
+    "accessNotes": "You must have rights/permission for all voices and content in the video before dubbing it — confirm this with clients whose likeness or voice appears in the footage.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-43659ab413",
+    "slug": "add-professional-voiceover-narration-to-a-promo-reel-or",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers who want polished narration without recording it themselves",
+    "title": "add professional voiceover narration to a promo reel or highlight video",
+    "intentLabels": [
+      "AI voiceover generator",
+      "text-to-speech narration",
+      "video narration AI"
+    ],
+    "tools": [
+      {
+        "name": "Descript",
+        "url": "https://www.descript.com/tools/voiceover-generator",
+        "catalogueSlug": "descript"
+      },
+      {
+        "name": "Flixier"
+      }
+    ],
+    "workflowSummary": "Write or paste your script; choose a stock AI voice or clone your own voice from a short recording, then sync the generated narration to your video timeline.",
+    "samplePrompt": "Generate a warm, professional voiceover for this studio promo reel from this script, and sync it to the video.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "type or paste a script, pick a voice, generate.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers with limited minutes; paid plans roughly $15-$30/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.descript.com/tools/voiceover-generator",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; if cloning your own voice, review how the vendor stores/uses your voice model before uploading a sample.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-b9257f55a1",
+    "slug": "generate-custom-b-roll-clips-instead-of-searching-stock-footage",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Videographers who need cutaway shots without a full second shoot",
+    "title": "generate custom B-roll clips instead of searching stock footage libraries",
+    "intentLabels": [
+      "AI B-roll generator",
+      "cutaway footage AI",
+      "stock footage alternative"
+    ],
+    "tools": [
+      {
+        "name": "VideoGen",
+        "url": "https://videogen.io/ai-b-roll-generator"
+      },
+      {
+        "name": "Kapwing"
+      },
+      {
+        "name": "Morphic"
+      }
+    ],
+    "workflowSummary": "Describe the exact shot you need (e.g., 'hands typing at a desk, soft window light'); the AI either pulls a matching clip from a large stock library or generates a custom clip so the cutaway fits your narration precisely.",
+    "samplePrompt": "Generate a b-roll clip of steam rising from a coffee cup on a wooden table, warm morning light, to use as a cutaway in this client testimonial video.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the shot, review options, drop into your timeline.",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available; paid plans roughly $20-$40/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://videogen.io/ai-b-roll-generator",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm commercial usage rights for any stock-sourced clips (vs. AI-generated ones) before using in paid client deliverables.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-0545fb78c3",
+    "slug": "check-whether-my-photos-have-been-used-online-without-permission",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers concerned about their work being used online without credit or payment",
+    "title": "check whether my photos have been used online without permission",
+    "intentLabels": [
+      "reverse image search",
+      "copyright infringement detection",
+      "find stolen photos"
+    ],
+    "tools": [
+      {
+        "name": "Lenso.ai",
+        "url": "https://lenso.ai/en/blog/guides/how-to-check-if-your-photos-are-being-used-without-permission-find-stolen-pictures-online"
+      },
+      {
+        "name": "Pixsy"
+      }
+    ],
+    "workflowSummary": "Upload your image; the AI compares it against a massive index of web images and returns exact or near-exact matches, showing where and when your photo has appeared, so you can pursue a takedown or licensing fee.",
+    "samplePrompt": "Search the web for unauthorized uses of this wedding portfolio image and show me where it's been published.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload the image, review the match list.",
+    "trustScore": 3,
+    "pricingNote": "Free basic searches; paid monitoring/alert plans and DMCA-assistance services vary — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://lenso.ai/en/blog/guides/how-to-check-if-your-photos-are-being-used-without-permission-find-stolen-pictures-online",
+    "sourceType": "Blog/guide (vendor)",
+    "freshness": "September 2025",
+    "accessNotes": "This is vendor content promoting their own tool; independently confirm pricing and DMCA-assistance terms, and consult a lawyer before pursuing legal action over infringement.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-878ddbe7b8",
+    "slug": "auto-design-a-travel-or-family-photo-book-from-a-big-batch-of",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/families wanting a keepsake book from a large batch of photos",
+    "title": "auto-design a travel or family photo book from a big batch of vacation photos",
+    "intentLabels": [
+      "AI photo book design",
+      "travel album maker",
+      "auto photo book layout"
+    ],
+    "tools": [
+      {
+        "name": "Mixbook (Story Mode)",
+        "url": "https://www.mixbook.com/travel-photo-books"
+      },
+      {
+        "name": "Shutterfly (AI-powered Autofill)"
+      }
+    ],
+    "workflowSummary": "Upload your photos; the AI selects the best shots, arranges them into a designed first draft with captions and chronological flow, and you then personalize layouts, text, and covers before ordering a printed book.",
+    "samplePrompt": "Design a travel photo book from these 400 vacation photos, organized by day, with a clean modern layout.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, review the AI-generated first draft, personalize, and order.",
+    "trustScore": 3,
+    "pricingNote": "Books start around $14.99-$40+ depending on size and cover — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mixbook.com/travel-photo-books",
+    "sourceType": "Product page",
+    "freshness": "July 2026",
+    "accessNotes": "Public product page; review the AI-selected photos and captions carefully before ordering, since misidentified locations or dates can end up printed in a keepsake book.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-c8e95766b7",
+    "slug": "create-a-walkable-3d-virtual-tour-from-real-estate-listing",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Real estate photographers/videographers offering 3D walkthrough tours",
+    "title": "create a walkable 3D virtual tour from real estate listing photos",
+    "intentLabels": [
+      "virtual tour software",
+      "3D walkthrough",
+      "Matterport alternative"
+    ],
+    "tools": [
+      {
+        "name": "Matterport",
+        "url": "https://matterport.com/blog/best-virtual-tour-software-for-real-estate"
+      },
+      {
+        "name": "CloudPano"
+      }
+    ],
+    "workflowSummary": "Capture the space with a 360° camera or compatible smartphone app; the platform stitches the images into a navigable, room-to-room tour with hotspots and (on some platforms) a floor plan, ready to embed on the listing.",
+    "samplePrompt": "Build a walkable 3D tour of this listing from my 360° camera photos, with hotspots linking each room.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "capture technique matters, but the software-side stitching and publishing is largely automated.",
+    "trustScore": 3,
+    "pricingNote": "Matterport roughly $12-$296+/month by tier; CloudPano priced separately by usage — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://matterport.com/blog/best-virtual-tour-software-for-real-estate",
+    "sourceType": "Product page/blog",
+    "freshness": "May 2026",
+    "accessNotes": "Public vendor page; confirm current MLS/listing-platform compatibility and hardware requirements before promising a tour turnaround time to an agent client.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-7cbd8a600b",
+    "slug": "turn-regular-2d-listing-photos-into-a-cinematic-fly-through",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Real estate videographers wanting a cinematic listing video without a 360 camera",
+    "title": "turn regular 2D listing photos into a cinematic fly-through video",
+    "intentLabels": [
+      "AI real estate video",
+      "2D to video",
+      "listing photo animation"
+    ],
+    "tools": [
+      {
+        "name": "Trolto",
+        "url": "https://www.housingwire.com/articles/virtual-tour-software/"
+      }
+    ],
+    "workflowSummary": "Upload your standard listing photos (no 360 camera needed); the AI generates a cinematic fly-through video that pans and transitions between rooms, suitable for social media and listing marketing, though it isn't an interactive, self-guided tour.",
+    "samplePrompt": "Turn these 20 listing photos into a cinematic fly-through video for this property's Instagram post.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload photos, let the AI generate the video, download.",
+    "trustScore": 2,
+    "pricingNote": "Pricing not detailed in the sourced comparison — verify current plans directly on the vendor's site before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.housingwire.com/articles/virtual-tour-software/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "March 2026",
+    "accessNotes": "Third-party comparison article; note this produces a video, not an interactive walkable tour — set client expectations accordingly, and confirm current pricing on Trolto's own site.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-8602498361",
+    "slug": "convert-scanned-film-negatives-into-accurate-color-positives",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers digitizing personal or client film archives",
+    "title": "convert scanned film negatives into accurate color positives",
+    "intentLabels": [
+      "film negative conversion",
+      "negative inversion AI",
+      "film scan color correction"
+    ],
+    "tools": [
+      {
+        "name": "Color.io",
+        "url": "https://www.color.io/edit-scanned-film-negatives"
+      },
+      {
+        "name": "FreeCCR"
+      }
+    ],
+    "workflowSummary": "Load your scanned or camera-captured negative (including RAW files); the AI inverts the image, removes the orange color mask from color negative film, and applies physics-based color correction so skin tones and neutrals look accurate.",
+    "samplePrompt": "Convert this roll of scanned color negatives into accurate, consistent positive images, correcting for the orange film mask.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "batch tools speed things up, but getting film colors 'right' still involves some taste and adjustment.",
+    "trustScore": 3,
+    "pricingNote": "Color.io free tier with presets; Pro plan for high-res export and custom LUTs; FreeCCR is free — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.color.io/edit-scanned-film-negatives",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; confirm output resolution and RAW format support match your scanning setup before committing a large archive to one tool.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-63d05af20d",
+    "slug": "digitize-a-roll-of-film-negatives-quickly-using-just-my-phone",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/hobbyists digitizing negatives quickly with just a phone",
+    "title": "digitize a roll of film negatives quickly using just my phone and a lightpad",
+    "intentLabels": [
+      "smartphone film scanning",
+      "mobile negative conversion",
+      "AI film inversion app"
+    ],
+    "tools": [
+      {
+        "name": "Posify",
+        "url": "https://posifyapp.com/blog/how-to-scan-film-negatives-at-home/"
+      }
+    ],
+    "workflowSummary": "Photograph each negative frame against a lightpad using your phone and a macro lens; the app automatically inverts and color-corrects the image in real time, producing shareable digital photos without a dedicated scanner.",
+    "samplePrompt": "Digitize this roll of 35mm negatives using my phone, with automatic color inversion for each frame.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed as a fast, phone-based, minimal-setup workflow.",
+    "trustScore": 2,
+    "pricingNote": "Free to start; output resolution is limited by phone sensor, best for digital sharing and prints up to roughly 5x7 — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://posifyapp.com/blog/how-to-scan-film-negatives-at-home/",
+    "sourceType": "Blog/guide (third-party)",
+    "freshness": "April 2026",
+    "accessNotes": "Third-party guide; for archival-quality or large-print results, pair this quick method with a proper flatbed scan, as the article itself recommends.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-0c647cdc2f",
+    "slug": "clean-up-dust-and-scratches-on-a-batch-of-old-scanned-slides-or",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers restoring old, dusty, or scratched film scans/slides",
+    "title": "clean up dust and scratches on a batch of old scanned slides or negatives",
+    "intentLabels": [
+      "film restoration AI",
+      "dust and scratch removal",
+      "slide scan cleanup"
+    ],
+    "tools": [
+      {
+        "name": "ON1 Photo RAW (Restore AI)",
+        "url": "https://www.on1.com/videos/digitize-restore-film-negatives-using-restore-ai/"
+      }
+    ],
+    "workflowSummary": "Import your batch of digitized film scans; Restore AI detects and removes dust, softness, noise, and aging artifacts across the set while preserving the authentic film look, rather than making them look digitally 'too clean.'",
+    "samplePrompt": "Clean up dust, scratches, and noise on this batch of digitized 1970s Kodachrome slides while keeping the film look.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "batch presets help, but reviewing each image for over-cleaning is worth the extra step.",
+    "trustScore": 3,
+    "pricingNote": "Included in ON1 Photo RAW MAX license — verify current pricing/tier before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.on1.com/videos/digitize-restore-film-negatives-using-restore-ai/",
+    "sourceType": "Product page/tutorial",
+    "freshness": "May 2026",
+    "accessNotes": "Public vendor tutorial; confirm the specific ON1 tier that includes Restore AI, since features vary between Photo RAW editions.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-a04ad243af",
+    "slug": "digitize-and-organize-an-entire-family-s-decades-of-old-film",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers offering a full family-archive digitization service",
+    "title": "digitize and organize an entire family's decades of old film negatives into a searchable digital archive",
+    "intentLabels": [
+      "negative digitization service",
+      "family archive digitizing",
+      "film-to-digital conversion service"
+    ],
+    "tools": [
+      {
+        "name": "Capture.com (negatives-to-digital service)",
+        "url": "https://www.capture.com/services/convert-negatives-to-digital-photos"
+      }
+    ],
+    "workflowSummary": "Ship the negatives to the service; they scan each frame at high resolution, invert and color-correct it, remove surface blemishes, and return organized digital files (optionally in chronological order) ready to upload and back up.",
+    "samplePrompt": "Have this box of 1980s family negatives professionally digitized, color-corrected, and organized by date.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a done-for-you mail-in service rather than software you operate yourself.",
+    "trustScore": 3,
+    "pricingNote": "Priced per negative/roll — verify current rates before quoting a client, since this is a paid service rather than free software",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.capture.com/services/convert-negatives-to-digital-photos",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public service page; confirm shipping insurance and turnaround time before entrusting irreplaceable family negatives to a mail-in service.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-d844f07806",
+    "slug": "get-instant-ai-recommended-camera-settings-for-a-specific-shoot",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/videographers wanting perfect exposure before they shoot",
+    "title": "get instant AI-recommended camera settings for a specific shoot scenario",
+    "intentLabels": [
+      "AI camera settings assistant",
+      "exposure calculator",
+      "ISO aperture shutter recommendation"
+    ],
+    "tools": [
+      {
+        "name": "ShootIQ",
+        "url": "https://shootiq.ai/"
+      }
+    ],
+    "workflowSummary": "Select your camera body and lens, describe what you're shooting (portrait, sports, astrophotography, etc.) and the lighting conditions, and the AI recommends ISO, shutter speed, aperture, and white balance tuned to that exact gear and scenario.",
+    "samplePrompt": "Recommend camera settings for an indoor reception dance floor shoot on my Sony A7R V with an 85mm f/1.4 lens, dim mixed lighting.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "select gear and scenario from dropdowns, get settings instantly.",
+    "trustScore": 3,
+    "pricingNote": "Described as free on the vendor's page — verify current pricing/limits before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://shootiq.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Public product page; treat recommendations as a fast starting point and confirm exposure on your camera's histogram, especially in fast-changing event lighting.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-0ad622048b",
+    "slug": "get-ai-suggested-lightroom-slider-values-for-a-specific-editing",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers wanting a starting point for a specific editing look",
+    "title": "get AI-suggested Lightroom slider values for a specific editing style",
+    "intentLabels": [
+      "AI Lightroom assistant",
+      "editing recommendation AI",
+      "slider value suggestions"
+    ],
+    "tools": [
+      {
+        "name": "Alex Seger's free AI photography tools (Lightroom Assistant)",
+        "url": "https://www.alexseger.com/agents"
+      }
+    ],
+    "workflowSummary": "Upload a photo and describe the mood you want (e.g., 'cinematic, moody, teal-and-orange'); the AI analyzes the image and returns specific Lightroom slider values and adjustment steps to achieve that look.",
+    "samplePrompt": "Suggest Lightroom slider values to give this portrait a warm, cinematic look with lifted shadows.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload, describe the vision, get a step-by-step slider list to follow.",
+    "trustScore": 2,
+    "pricingNote": "Described as free on the vendor's page — verify current availability and limits before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.alexseger.com/agents",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Smaller, independent tool rather than an established vendor; treat suggested values as a starting point and adjust to taste rather than following them exactly.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-3564dbf12f",
+    "slug": "compare-camera-lenses-side-by-side-and-get-a-recommendation-for",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photographers/videographers comparing lenses before a gear purchase",
+    "title": "compare camera lenses side-by-side and get a recommendation for my shooting style",
+    "intentLabels": [
+      "lens comparison tool",
+      "gear recommendation wizard",
+      "AI lens finder"
+    ],
+    "tools": [
+      {
+        "name": "GearXplorer",
+        "url": "https://gearxplorer.com/"
+      }
+    ],
+    "workflowSummary": "Filter by camera mount, brand, and focal length, or answer a short wizard about your shooting style and current camera; the AI compares specs, price history, and its own analysis to recommend a shortlist of lenses.",
+    "samplePrompt": "Recommend a lens for wedding reception photography on my Canon R6 II, prioritizing low-light performance and portability.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided wizard format, no technical lens knowledge required to start.",
+    "trustScore": 2,
+    "pricingNote": "Described as a free comparison tool — verify current pricing/limits before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://gearxplorer.com/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "Smaller/independent tool; cross-check any specific recommendation against a second source or hands-on review before a significant gear purchase.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "photographers-videographers-b97992be1f",
+    "slug": "identify-what-type-of-camera-lens-is-shown-in-a-photo",
+    "kind": "workflow",
+    "niche": "Photographers & Videographers",
+    "sector": "Photographers & Videographers",
+    "persona": "Photography gear retailers, educators, and photographers curious about unlabeled equipment",
+    "title": "identify what type of camera lens is shown in a photo",
+    "intentLabels": [
+      "AI lens identifier",
+      "camera gear classifier",
+      "lens type recognition"
+    ],
+    "tools": [
+      {
+        "name": "Nyckel (camera lens type classifier)",
+        "url": "https://www.nyckel.com/pretrained-classifiers/camera-lens-types/"
+      }
+    ],
+    "workflowSummary": "Feed in a photo of a lens (or integrate the classifier into a chatbot/app); the AI identifies the lens category, such as wide-angle, telephoto, or macro, useful for cataloging inventory or answering customer questions.",
+    "samplePrompt": "Identify the lens type shown in this photo and suggest what kind of photography it's best suited for.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the classifier itself is simple, but it's aimed more at developers building it into an app or chatbot than a one-off consumer tool.",
+    "trustScore": 2,
+    "pricingNote": "Pricing model is developer/API-based — verify current terms before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.nyckel.com/pretrained-classifiers/camera-lens-types/",
+    "sourceType": "Product page",
+    "freshness": "September 2026",
+    "accessNotes": "This is a developer-facing classifier/API rather than a plug-and-play consumer app; a non-technical photographer would need a developer or a pre-built integration to use it directly.",
+    "batch": "Photographers Videographers AI Workflows Batch5",
+    "status": "active"
+  }
+]

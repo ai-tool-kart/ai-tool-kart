@@ -14,6 +14,8 @@ logs/
 dist/
 coverage/
 
+scripts/data/
+
 # Submissions store (JSON-file backend, SPEC-submit-backend.md §3) — the
 # real data file is not tracked. data/submissions.example.json ships
 # instead, so a fresh clone still works.

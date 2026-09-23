@@ -1,0 +1,2849 @@
+[
+  {
+    "id": "content-creators-writers-1c27f4895c",
+    "slug": "i-want-to-write-a-blog-post-from-a-topic-or-outline",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger with a topic but no draft yet",
+    "title": "I want to write a blog post from a topic or outline",
+    "intentLabels": [
+      "AI blog writer",
+      "article generator",
+      "write a blog post",
+      "blog post from outline"
+    ],
+    "tools": [
+      {
+        "name": "Jasper",
+        "url": "https://www.ryrob.com/ai-content-writing-tools/",
+        "catalogueSlug": "jasper"
+      },
+      {
+        "name": "Rytr"
+      }
+    ],
+    "workflowSummary": "Give the tool your topic, target keyword, and a rough outline (or let it generate one). It drafts a full article with headings, intro, and conclusion, which you then fact-check, add your own examples to, and edit for voice before publishing.",
+    "samplePrompt": "Write a 900-word blog post on '5 morning habits for freelancers,' using this outline, in a friendly, conversational tone with a short intro and a clear takeaway in each section.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided templates and outlines, no coding",
+    "trustScore": 3,
+    "pricingNote": "Jasper: from ~$69/mo (approx). Rytr: from ~$9/mo (approx), free tier available. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.ryrob.com/ai-content-writing-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (1 month old at time of research)",
+    "accessNotes": "Independent guide; confirm current pricing on jasper.ai and rytr.me. AI-assisted drafts should be fact-checked and edited to reflect genuine expertise before publishing, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-20bee7e837",
+    "slug": "i-want-to-write-a-youtube-video-script-from-a-topic",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "YouTuber who dreads scripting every video",
+    "title": "I want to write a YouTube video script from a topic",
+    "intentLabels": [
+      "YouTube script generator",
+      "video script writer",
+      "script from topic",
+      "hook and structure writer"
+    ],
+    "tools": [
+      {
+        "name": "ytZolo",
+        "url": "https://ytzolo.com/blog/best-ai-tools-for-writing-youtube-video-scripts/"
+      }
+    ],
+    "workflowSummary": "Type in your video topic and select your niche and video type (educational, listicle, personal story). The AI generates a fully structured script with a hook, body sections, pattern interrupts, and a closing call-to-action, which you then read through and add your own personality to before filming.",
+    "samplePrompt": "Write a YouTube script for '5 beginner investing mistakes to avoid,' aimed at complete beginners, with a strong hook in the first 5 seconds and a clear call-to-action to subscribe at the end.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter a topic and generate, no technical skill needed",
+    "trustScore": 3,
+    "pricingNote": "ytZolo: free account to start, exact paid-tier pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://ytzolo.com/blog/best-ai-tools-for-writing-youtube-video-scripts/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-13",
+    "accessNotes": "Vendor blog (ytZolo); confirm current pricing on ytzolo.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-e0eaf6d2f3",
+    "slug": "i-want-to-write-captions-for-my-social-media-posts",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator posting across multiple social platforms",
+    "title": "I want to write captions for my social media posts",
+    "intentLabels": [
+      "AI caption generator",
+      "Instagram caption writer",
+      "social media caption tool",
+      "caption ideas"
+    ],
+    "tools": [
+      {
+        "name": "Rytr",
+        "url": "https://nimply.io/blog/ai-instagram-caption-generator"
+      },
+      {
+        "name": "Canva (free caption tool)",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Describe your post (a photo, a product, an announcement) and pick a tone. The tool generates several caption options with optional hashtags and emojis, and you pick or lightly edit the one that best matches your voice before posting.",
+    "samplePrompt": "Write 5 Instagram caption options for a photo of my new home office setup, in a warm, relatable tone, with 3-5 relevant hashtags for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the post and pick a caption, no setup",
+    "trustScore": 3,
+    "pricingNote": "Rytr: free tier available; paid from ~$9/mo. Canva's caption tool: free with a Canva account. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://nimply.io/blog/ai-instagram-caption-generator",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (2 weeks old at time of research)",
+    "accessNotes": "Independent guide; confirm current pricing on rytr.me and canva.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-e267892605",
+    "slug": "i-want-to-brainstorm-content-or-video-ideas-when-i-don-t-know",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator staring at a blank page for their next piece",
+    "title": "I want to brainstorm content or video ideas when I don't know what to make next",
+    "intentLabels": [
+      "content idea generator",
+      "video topic brainstorm",
+      "content ideation",
+      "overcome writer's block"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://uploadkar.com/blog/top-10-ai-tools-for-content-creators-2026",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "Describe your niche, audience, and recent topics you've covered. The AI generates a list of fresh angle ideas, titles, and hooks tailored to your niche, which you can narrow down, combine, or riff on until you land on your next piece.",
+    "samplePrompt": "Brainstorm 15 video ideas for a personal finance channel aimed at people in their 20s, covering budgeting, saving, and beginner investing, avoiding anything I've already covered on debt payoff or credit cards.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe your niche and get a list, no setup",
+    "trustScore": 3,
+    "pricingNote": "ChatGPT: free tier available; Plus at $20/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://uploadkar.com/blog/top-10-ai-tools-for-content-creators-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-31",
+    "accessNotes": "Independent guide; confirm current pricing on chatgpt.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-57acd8dba1",
+    "slug": "i-want-to-rewrite-my-draft-to-make-it-clearer-and-match-the",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer wanting a polished, on-tone final draft",
+    "title": "I want to rewrite my draft to make it clearer and match the right tone",
+    "intentLabels": [
+      "AI rewriting tool",
+      "improve draft clarity",
+      "tone adjuster",
+      "paraphrasing and rewriting"
+    ],
+    "tools": [
+      {
+        "name": "Grammarly",
+        "url": "https://aitoolsbakery.com/blog/best-ai-rewriting-tools/",
+        "catalogueSlug": "grammarly"
+      },
+      {
+        "name": "Wordtune",
+        "catalogueSlug": "wordtune"
+      }
+    ],
+    "workflowSummary": "Paste your rough draft. The tool suggests sentence-level rewrites for clarity, tone (casual, formal, confident), and conciseness, showing you multiple phrasing options per sentence so you can pick the one that sounds most like you.",
+    "samplePrompt": "Rewrite this email draft to sound warmer and more casual, tightening any long sentences, while keeping the same key points.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste and select suggestions, no setup",
+    "trustScore": 4,
+    "pricingNote": "Grammarly: free tier available; Premium ~$12/mo. Wordtune: free tier (10 rewrites/day); paid plans beyond that. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://aitoolsbakery.com/blog/best-ai-rewriting-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Independent comparison blog; confirm current pricing on grammarly.com and wordtune.com. Review AI rewrites for meaning drift before publishing, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-04f787f4db",
+    "slug": "i-want-to-generate-an-illustration-or-image-for-my-blog-post",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger wanting a custom image without stock photos",
+    "title": "I want to generate an illustration or image for my blog post",
+    "intentLabels": [
+      "AI image generator",
+      "blog illustration",
+      "text to image",
+      "custom blog graphics"
+    ],
+    "tools": [
+      {
+        "name": "Midjourney",
+        "url": "https://daylongs.com/blog/en/ai-image-generation-tools-comparison-2026/",
+        "catalogueSlug": "midjourney"
+      },
+      {
+        "name": "DALL-E (via Copilot Designer, free)"
+      }
+    ],
+    "workflowSummary": "Describe the image you want in plain language (subject, style, mood, colors). The AI generates several options in seconds, and you pick, regenerate, or lightly edit the one that best fits your post's header or in-line graphics.",
+    "samplePrompt": "Generate a warm, flat-illustration-style header image of a person journaling at a desk with morning coffee, in soft pastel colors, no text in the image.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe and generate, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Midjourney: no free tier, plans from ~$10-60/mo. Copilot Designer (DALL-E 3): free with daily generation limits. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://daylongs.com/blog/en/ai-image-generation-tools-comparison-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-07",
+    "accessNotes": "Independent comparison blog; confirm current pricing on midjourney.com. Note: purely AI-generated images currently do not qualify for copyright protection under US law, per source — relevant if exclusivity matters to the user.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-58232e905f",
+    "slug": "i-want-to-write-my-email-newsletter-issue-from-scratch",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Newsletter writer with a blank issue to fill",
+    "title": "I want to write my email newsletter issue from scratch",
+    "intentLabels": [
+      "AI newsletter writer",
+      "email newsletter generator",
+      "draft newsletter issue",
+      "newsletter copy"
+    ],
+    "tools": [
+      {
+        "name": "Hoppy Copy",
+        "url": "https://tugan.ai/blog/best-ai-tools-for-newsletter-writers"
+      },
+      {
+        "name": "Tugan.ai"
+      }
+    ],
+    "workflowSummary": "Give the tool your topic, audience, and goal for the issue (or paste a source article/video to base it on). It drafts a full issue with a subject line, intro hook, body sections, and sign-off in your voice, which you then personalize and send from your email platform.",
+    "samplePrompt": "Draft this week's newsletter issue about 3 productivity tips for freelancers, with 2 subject line options, a friendly hook, and a sign-off encouraging replies.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the topic and get a full draft, no setup",
+    "trustScore": 3,
+    "pricingNote": "Hoppy Copy: paid plans, exact pricing not itemized in source — verify directly. Tugan.ai: free 7-day trial, then credit-based subscription. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://tugan.ai/blog/best-ai-tools-for-newsletter-writers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-24",
+    "accessNotes": "Vendor-adjacent blog (Tugan.ai); confirm current pricing on hoppycopy.co and tugan.ai. These tools write the issue only — you still send it from your own email platform (beehiiv, Kit, Substack, etc.), per source.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-930977d282",
+    "slug": "i-want-to-write-a-short-punchy-script-for-a-tiktok-or-reel-with",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator making short-form video for TikTok/Reels/Shorts",
+    "title": "I want to write a short, punchy script for a TikTok or Reel with a strong hook",
+    "intentLabels": [
+      "TikTok script generator",
+      "Reels script writer",
+      "short-form video script",
+      "viral hook writer"
+    ],
+    "tools": [
+      {
+        "name": "Videotok Script Generator (free)",
+        "url": "https://memories.ai/blogs/Top_10_TikTok_Script_Generators_to_Boost_Your_Content_in_2026"
+      },
+      {
+        "name": "ReelsBot (free)"
+      }
+    ],
+    "workflowSummary": "Enter a short description of your video topic. The tool generates a complete short-form script with a hook (first 1-3 seconds), body, and call-to-action, sized to your chosen length (15/30/60 seconds), which you can then read aloud and adjust to match your speaking style.",
+    "samplePrompt": "Write a 30-second TikTok script about '3 signs you're burning out,' with 3 alternative hook options and a call-to-action to follow for more.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no login required, describe and generate",
+    "trustScore": 3,
+    "pricingNote": "Videotok: free, web-based. ReelsBot: free, unlimited, no signup. Verify before publishing.",
+    "pricingTier": "free",
+    "sourceUrl": "https://memories.ai/blogs/Top_10_TikTok_Script_Generators_to_Boost_Your_Content_in_2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (vendor-listed guide, undated)",
+    "accessNotes": "Independent guide; confirm current free-tier availability on the vendor sites directly, since free tools can change terms without notice.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-1a182633eb",
+    "slug": "i-want-to-create-an-outline-with-talking-points-for-my-next",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster who wants structure without sounding scripted",
+    "title": "I want to create an outline with talking points for my next podcast episode",
+    "intentLabels": [
+      "podcast episode outline",
+      "talking points generator",
+      "podcast prep",
+      "episode structure"
+    ],
+    "tools": [
+      {
+        "name": "HyperWrite (AI Podcast Script Outliner)",
+        "url": "https://www.hyperwriteai.com/aitools/ai-podcast-script-outliner"
+      }
+    ],
+    "workflowSummary": "Enter your episode topic, format (solo, interview, co-host), and target length. The tool generates a structured outline with a cold open hook, intro, 3-5 main segments with talking points and transitions, and a closing summary — bullet points to speak from naturally, not a word-for-word script.",
+    "samplePrompt": "Create an outline for a 30-minute solo episode on 'why most side hustles fail,' with a cold-open hook, 4 main talking points, and a closing call-to-action to subscribe.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a few details and get a structured outline, no setup",
+    "trustScore": 3,
+    "pricingNote": "HyperWrite: free tier available, paid plans for heavier use — exact pricing not itemized in source, verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hyperwriteai.com/aitools/ai-podcast-script-outliner",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on hyperwriteai.com. Bullet-point outlines are generally recommended over full scripts for a natural-sounding delivery, per independent source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-3fb495b8c7",
+    "slug": "i-want-to-summarize-a-long-video-or-article-into-a-short-recap",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Researcher/creator who doesn't have time to watch a full video",
+    "title": "I want to summarize a long video or article into a short recap",
+    "intentLabels": [
+      "AI video summarizer",
+      "article summarizer",
+      "TL",
+      "DR generator",
+      "long content recap"
+    ],
+    "tools": [
+      {
+        "name": "ScreenApp",
+        "url": "https://mindmapai.app/blog/100/free-ai-video-summarizer-tools"
+      },
+      {
+        "name": "NoteGPT"
+      }
+    ],
+    "workflowSummary": "Paste the video or article URL (or upload a file). The tool transcribes and analyzes the content, then generates a concise summary with key points and timestamps, which you can skim to decide whether to watch/read the full thing or just use the recap.",
+    "samplePrompt": "Summarize this 45-minute YouTube interview into 5 key takeaways with approximate timestamps for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste a link and get a summary, no setup",
+    "trustScore": 3,
+    "pricingNote": "ScreenApp: free to try, exact paid-tier pricing not itemized in source. NoteGPT: free tier with limited summaries/month, paid plans beyond that. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://mindmapai.app/blog/100/free-ai-video-summarizer-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-09",
+    "accessNotes": "Independent comparison blog; confirm current free-tier limits on screenapp.io and notegpt.io. Summary quality depends on audio clarity and available captions, per source.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-deba12dd4b",
+    "slug": "i-want-to-write-a-press-release-for-my-announcement",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator/business owner announcing something newsworthy",
+    "title": "I want to write a press release for my announcement",
+    "intentLabels": [
+      "AI press release generator",
+      "announcement writer",
+      "product launch press release"
+    ],
+    "tools": [
+      {
+        "name": "Hypotenuse AI",
+        "url": "https://www.hypotenuse.ai/tools/press-release-generator"
+      }
+    ],
+    "workflowSummary": "Answer a few prompts about your announcement (company/creator name, what's happening, target audience, key details). The tool drafts a press release in standard format with a headline, dateline, body, and boilerplate, which you review for accuracy and personalize before sending to any outlets or posting.",
+    "samplePrompt": "Write a press release announcing the launch of my new online course on freelance pricing, aimed at freelance writers and designers, with a quote from me as the founder.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "answer prompts and get a draft, no PR experience needed",
+    "trustScore": 3,
+    "pricingNote": "Hypotenuse AI: free tool to try, paid plans for the broader platform — exact pricing not itemized in source, verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hypotenuse.ai/tools/press-release-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on hypotenuse.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-5cc40cb032",
+    "slug": "i-want-to-write-a-professional-bio-about-myself-for-my-website",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer/creator needing a bio for a website, book, or profile",
+    "title": "I want to write a professional bio about myself for my website or book",
+    "intentLabels": [
+      "AI bio generator",
+      "author bio writer",
+      "about me page",
+      "professional bio"
+    ],
+    "tools": [
+      {
+        "name": "Hypotenuse AI (Author Bio Generator)",
+        "url": "https://www.hypotenuse.ai/tools/author-bio-generator"
+      }
+    ],
+    "workflowSummary": "Answer a short set of questions about your background, achievements, and what you write or create. The tool compiles the answers into a polished, cohesive bio paragraph, and gives you the option to adjust length and tone (e.g. a short 40-80 word back-cover bio vs. a longer, warmer website bio).",
+    "samplePrompt": "Write two versions of my author bio: a short 60-word version for the back cover of my book, and a longer 200-word version for my website, both in a warm but credible tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "answer prompts and get a draft bio, no setup",
+    "trustScore": 3,
+    "pricingNote": "Hypotenuse AI: free tool to try, paid plans for the broader platform — exact pricing not itemized in source, verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hypotenuse.ai/tools/author-bio-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on hypotenuse.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-55c8841bc6",
+    "slug": "i-want-to-write-a-product-review-or-comparison-post",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Affiliate blogger writing about specific products",
+    "title": "I want to write a product review or comparison post",
+    "intentLabels": [
+      "AI product review writer",
+      "comparison post generator",
+      "affiliate content",
+      "product roundup"
+    ],
+    "tools": [
+      {
+        "name": "Koala AI",
+        "url": "https://www.eesel.ai/blog/best-ai-blog-writer"
+      }
+    ],
+    "workflowSummary": "Enter the product(s) or category you're comparing. The tool pulls live product details and customer review data (for supported sources like Amazon) and drafts a structured review or comparison post with pros, cons, and a verdict, which you fact-check and add your own genuine opinion to before publishing.",
+    "samplePrompt": "Write a comparison post for the top 3 budget standing desks under $300, pulling current pricing and features, with a pros/cons list for each and my own recommendation at the end.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the draft is fast, but reviewing pulled product data for accuracy takes a pass before publishing",
+    "trustScore": 3,
+    "pricingNote": "Koala AI: free trial (5,000 words), paid plans beyond that — exact pricing not itemized in source, verify directly. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.eesel.ai/blog/best-ai-blog-writer",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-05",
+    "accessNotes": "Independent guide; confirm current pricing on koala.sh. Pulled product data (pricing, availability) should be double-checked against the live listing before publishing, since it can go stale.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-99990c8622",
+    "slug": "i-want-to-turn-a-rough-idea-into-a-polished-linkedin-post",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator/professional building a LinkedIn presence",
+    "title": "I want to turn a rough idea into a polished LinkedIn post",
+    "intentLabels": [
+      "LinkedIn post generator",
+      "thought leadership post writer",
+      "LinkedIn content from idea"
+    ],
+    "tools": [
+      {
+        "name": "Taplio",
+        "url": "https://taplio.com/linkedin-post-generator"
+      }
+    ],
+    "workflowSummary": "Enter your topic or a rough idea, choose a tone and post length, and toggle hashtags/emojis on or off. The tool generates a ready-to-publish post with a scroll-stopping hook in the first two lines, short paragraphs for mobile readability, and a closing line inviting comments.",
+    "samplePrompt": "Turn this rough idea into a LinkedIn post: 'I stopped answering emails after 6pm and my work actually got better.' Medium length, confident tone, no hashtags, ending with a question to invite comments.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no signup required for the basic generator",
+    "trustScore": 3,
+    "pricingNote": "Taplio: free generator with no signup; paid platform plans beyond that — exact pricing not itemized in source, verify directly. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://taplio.com/linkedin-post-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current platform pricing on taplio.com. LinkedIn labels AI-assisted content with a C2PA transparency tag in some cases, per independent source — worth knowing before publishing.",
+    "batch": "ContentCreators AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-bf9ecbb257",
+    "slug": "i-want-to-plan-and-schedule-my-posts-across-all-my-social",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Solo blogger / small content team",
+    "title": "I want to plan and schedule my posts across all my social accounts in one place",
+    "intentLabels": [
+      "content calendar",
+      "social media scheduler",
+      "multi-platform posting",
+      "post planning tool"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://blog.hootsuite.com/content-calendar-tools/",
+        "catalogueSlug": "buffer"
+      },
+      {
+        "name": "Later"
+      },
+      {
+        "name": "SocialPilot"
+      }
+    ],
+    "workflowSummary": "Connect your social accounts once, then use a visual drag-and-drop calendar to queue posts across Instagram, X, LinkedIn, Facebook, and Pinterest. Set them up in a batch on a Sunday and let the tool auto-publish through the week at AI-suggested best times.",
+    "samplePrompt": "I'm a content creator posting on Instagram, LinkedIn, and X. Help me build a one-week posting schedule from these 5 draft captions, choosing the best day/time slot for each platform based on typical engagement patterns.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop calendars and simple queue setup, no coding",
+    "trustScore": 4,
+    "pricingNote": "Buffer: free plan for 3 channels/10 scheduled posts; paid from ~$6/channel/mo. Later: free plan for 1 user/platform; paid from ~$25/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://blog.hootsuite.com/content-calendar-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-07",
+    "accessNotes": "Public marketing blog post; tool pricing pulled from vendor sites, not the article itself — reverify on Buffer.com / Later.com before quoting to a client.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-93e8857aa3",
+    "slug": "i-want-to-turn-my-blog-post-into-short-video-clips-for-social",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger repurposing long-form content into video/social",
+    "title": "I want to turn my blog post into short video clips for social media",
+    "intentLabels": [
+      "content repurposing",
+      "blog to video",
+      "text to video",
+      "video clip generator"
+    ],
+    "tools": [
+      {
+        "name": "Pictory",
+        "url": "https://www.imagine.art/blogs/best-ai-content-repurposing-tools"
+      },
+      {
+        "name": "Opus Clip",
+        "catalogueSlug": "opus-clip"
+      },
+      {
+        "name": "Lumen5"
+      }
+    ],
+    "workflowSummary": "Paste your blog post URL or script into the tool. It breaks the text into scenes, matches stock footage or your own video to each one, adds AI voiceover and captions, and exports a ready-to-post short video sized for Reels/TikTok/Shorts.",
+    "samplePrompt": "Turn this 900-word blog post into a 60-second vertical video with captions and a voiceover, matching stock footage to each key point. Export it sized for Instagram Reels.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "templates are easy, but reviewing/fixing scene matches takes a first-timer some practice",
+    "trustScore": 4,
+    "pricingNote": "Pictory: paid plans from ~$19/mo (approx, based on 2026 vendor pricing pages), no permanent free tier. Opus Clip: free tier with limited exports; paid from ~$9-15/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.imagine.art/blogs/best-ai-content-repurposing-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-15",
+    "accessNotes": "Third-party comparison blog; confirm current pricing directly on Pictory.ai and OpusClip.com before quoting.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-0371e35de6",
+    "slug": "i-want-to-get-an-accurate-written-transcript-of-my-podcast",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster / video creator needing written transcripts",
+    "title": "I want to get an accurate written transcript of my podcast episode",
+    "intentLabels": [
+      "podcast transcription",
+      "audio to text",
+      "speaker labels",
+      "transcript generator"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://sonix.ai/resources/transcription-tools-podcasts/",
+        "catalogueSlug": "otter-ai"
+      },
+      {
+        "name": "Descript",
+        "catalogueSlug": "descript"
+      },
+      {
+        "name": "Sonix"
+      }
+    ],
+    "workflowSummary": "Upload or link your recorded audio/video file. The tool transcribes it in minutes with speaker labels and timestamps, which you can then lightly edit before using for show notes, captions, or accessibility.",
+    "samplePrompt": "Transcribe this 45-minute podcast interview with speaker labels and timestamps, then give me a clean version with filler words removed.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and go, minimal setup",
+    "trustScore": 4,
+    "pricingNote": "Otter.ai: free tier ~300 min/month; paid from ~$8.33/mo. Descript: free tier 60 min/mo; paid from ~$16/mo. Sonix: pay-per-hour from ~$5-10/audio hour. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://sonix.ai/resources/transcription-tools-podcasts/",
+    "sourceType": "Directory/Product comparison",
+    "freshness": "2026-05-04",
+    "accessNotes": "Vendor-affiliated comparison site (Sonix); cross-check pricing against Otter.ai and Descript.com directly.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d200cb4e90",
+    "slug": "i-want-ai-to-write-my-podcast-show-notes-automatically-from-the",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster who dreads writing show notes every episode",
+    "title": "I want AI to write my podcast show notes automatically from the audio",
+    "intentLabels": [
+      "podcast show notes generator",
+      "episode summary",
+      "timestamps and chapters",
+      "audio to blog"
+    ],
+    "tools": [
+      {
+        "name": "Castmagic",
+        "url": "https://www.automateed.com/ai-tools-for-podcast-show-notes"
+      },
+      {
+        "name": "Riverside"
+      },
+      {
+        "name": "Podsqueeze"
+      }
+    ],
+    "workflowSummary": "Upload your episode (or connect your recording tool). The AI transcribes it, then generates a structured show-notes draft with a summary, timestamped chapters, key quotes, and suggested social captions — which you review and lightly edit before publishing.",
+    "samplePrompt": "From this podcast transcript, write show notes with a 2-sentence summary, 5 timestamped chapter markers, 3 pull-quotes, and 2 social captions in my usual casual, upbeat tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "output quality is good, but editing for 'sounding like you' still takes review",
+    "trustScore": 4,
+    "pricingNote": "Castmagic: paid plans from ~$29/mo (approx), limited free trial. Riverside: free–$29/mo Pro plan. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.automateed.com/ai-tools-for-podcast-show-notes",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-15",
+    "accessNotes": "Independent blog; confirm live pricing on Castmagic.io and Riverside.fm.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-019b3596ba",
+    "slug": "i-want-to-turn-my-long-youtube-video-into-short-viral-clips",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Video/podcast creator wanting short clips from long recordings",
+    "title": "I want to turn my long YouTube video into short viral clips automatically",
+    "intentLabels": [
+      "video repurposing",
+      "short-form clips",
+      "auto clipping",
+      "virality score",
+      "vertical video export"
+    ],
+    "tools": [
+      {
+        "name": "Opus Clip",
+        "url": "https://bigbangindex.com/blog/best-ai-tools-podcasters-2026",
+        "catalogueSlug": "opus-clip"
+      },
+      {
+        "name": "Munch"
+      },
+      {
+        "name": "2short"
+      }
+    ],
+    "workflowSummary": "Upload or link a long-form video (YouTube, Zoom, or a file). The AI finds the most engaging moments, cuts them into 30-180 second clips, reframes them to vertical, adds captions, and scores each clip's predicted virality so you know which to post first.",
+    "samplePrompt": "From this 40-minute YouTube interview, find the 5 most engaging moments and cut them into vertical, captioned clips under 90 seconds each, ranked by predicted engagement.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly automated, minor manual review of clip picks",
+    "trustScore": 3,
+    "pricingNote": "Opus Clip: free tier with limited processing; paid plans from ~$9-19/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://bigbangindex.com/blog/best-ai-tools-podcasters-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-09",
+    "accessNotes": "Independent review site; confirm current pricing on OpusClip.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-55109acc3a",
+    "slug": "i-want-to-generate-seo-meta-descriptions-for-a-bunch-of-my-blog",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger/SEO-conscious writer with a backlog of posts",
+    "title": "I want to generate SEO meta descriptions for a bunch of my blog posts at once",
+    "intentLabels": [
+      "bulk meta description generator",
+      "SEO metadata",
+      "title tags",
+      "blog SEO"
+    ],
+    "tools": [
+      {
+        "name": "RankMath SEO (AI assistant)",
+        "url": "https://www.trysight.ai/blog/seo-metadata-generation-tools"
+      },
+      {
+        "name": "Grammarly (free meta description generator)",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Point the tool at your blog posts (via a WordPress plugin, spreadsheet, or one-by-one paste). It reads each post's title and content, then drafts a search-optimized title tag and meta description under the character limit, which you review before publishing live.",
+    "samplePrompt": "Here are the titles and first paragraphs of 10 blog posts. Write an SEO meta description under 155 characters for each, using the target keyword naturally.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "plugin setup takes a beginner a little guidance; the free Grammarly tool is fully beginner-friendly for one-off use",
+    "trustScore": 3,
+    "pricingNote": "RankMath: free core plugin, AI add-on/PRO from ~$59/yr (approx). Grammarly meta description tool: free. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.trysight.ai/blog/seo-metadata-generation-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Third-party ranked list; verify RankMath and Grammarly pricing on their own sites.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-fbb6adfe95",
+    "slug": "i-want-one-dashboard-to-see-how-all-my-posts-are-performing",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator managing accounts on several platforms",
+    "title": "I want one dashboard to see how all my posts are performing across platforms",
+    "intentLabels": [
+      "content performance analytics",
+      "social media analytics dashboard",
+      "cross-platform reporting"
+    ],
+    "tools": [
+      {
+        "name": "Metricool",
+        "url": "https://virlo.ai/blog/best-tiktok-instagram-reels-analytics-tools-performance-tracking-2026"
+      },
+      {
+        "name": "Socialinsider"
+      },
+      {
+        "name": "Later (analytics)"
+      }
+    ],
+    "workflowSummary": "Connect your social accounts to the analytics dashboard. It pulls engagement, reach, and follower-growth metrics into one view, lets you compare posts side-by-side, and can auto-generate a scheduled performance report.",
+    "samplePrompt": "Pull last month's engagement, reach, and follower growth across my Instagram, TikTok, and LinkedIn accounts into one summary, and tell me which post format performed best.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "dashboards are visual, no data/coding skill needed",
+    "trustScore": 3,
+    "pricingNote": "Metricool: free plan for 1 brand with limited features; paid plans from ~$18/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://virlo.ai/blog/best-tiktok-instagram-reels-analytics-tools-performance-tracking-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-15",
+    "accessNotes": "Independent comparison blog; confirm current Metricool pricing on metricool.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d595c33ad0",
+    "slug": "i-want-my-blog-posts-to-automatically-turn-into-my-weekly-email",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger who wants a newsletter without extra writing",
+    "title": "I want my blog posts to automatically turn into my weekly email newsletter",
+    "intentLabels": [
+      "RSS to email",
+      "newsletter automation",
+      "blog to newsletter",
+      "email digest"
+    ],
+    "tools": [
+      {
+        "name": "FeedOtter",
+        "url": "https://www.junia.ai/blog/ai-tools-newsletters"
+      },
+      {
+        "name": "beehiiv"
+      },
+      {
+        "name": "Planable (blog-to-newsletter tool)"
+      }
+    ],
+    "workflowSummary": "Connect your blog's RSS feed to the newsletter tool. Each time you publish, it pulls the new post(s) into a pre-built email template automatically, so your subscribers get a digest without you manually copy-pasting content into an email builder.",
+    "samplePrompt": "Take my latest 3 blog posts from this RSS feed and format them into a weekly digest email with a short intro, one-line summaries, and 'read more' links, in a friendly tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "first-time template setup benefits from a short tutorial",
+    "trustScore": 3,
+    "pricingNote": "FeedOtter: paid plans from ~$79/mo (aimed at teams, approx). beehiiv: free plan up to 2,500 subscribers, paid from ~$34/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.junia.ai/blog/ai-tools-newsletters",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-13",
+    "accessNotes": "Independent review blog; confirm live pricing on feedotter.com and beehiiv.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-e82e633f28",
+    "slug": "i-want-to-turn-my-podcast-episode-into-a-blog-post",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster wanting more written content from their episodes",
+    "title": "I want to turn my podcast episode into a blog post",
+    "intentLabels": [
+      "podcast to blog",
+      "audio to article",
+      "content repurposing",
+      "podcast transcript to article"
+    ],
+    "tools": [
+      {
+        "name": "Castmagic",
+        "url": "https://postiv.ai/blog/content-repurposing-software"
+      },
+      {
+        "name": "Descript (AI Actions)",
+        "catalogueSlug": "descript"
+      }
+    ],
+    "workflowSummary": "Upload your episode audio. The tool transcribes it, then uses an AI writing pass to restructure the transcript into a readable article with headers, cleaned-up grammar, and a suggested title — ready for you to fact-check and lightly edit.",
+    "samplePrompt": "Turn this podcast transcript into a 700-word blog post with an intro, 3 subheadings, and a closing takeaway, keeping my casual conversational tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "output needs a human edit pass for accuracy and voice",
+    "trustScore": 3,
+    "pricingNote": "Castmagic: paid plans from ~$29/mo (approx). Descript: free 60 min/mo; paid from ~$16/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://postiv.ai/blog/content-repurposing-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Vendor-affiliated blog; confirm live pricing on castmagic.io and descript.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-f18dbe3cbc",
+    "slug": "i-want-to-turn-my-tracked-hours-into-a-professional-invoice",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelance writer billing clients for finished work",
+    "title": "I want to turn my tracked hours into a professional invoice automatically",
+    "intentLabels": [
+      "freelance invoicing",
+      "time-to-invoice",
+      "AI invoice generator",
+      "billing automation"
+    ],
+    "tools": [
+      {
+        "name": "Bonsai",
+        "url": "https://www.energent.ai/energent/compare/en/ai-tools-for-freelance-invoice-template"
+      },
+      {
+        "name": "Harvest"
+      },
+      {
+        "name": "FreshBooks"
+      }
+    ],
+    "workflowSummary": "Log your hours (manually or via an auto-tracker), then let the tool convert those tracked hours directly into a formatted, branded invoice with your rate, tax, and payment terms already filled in — ready to send with one click.",
+    "samplePrompt": "I tracked 12.5 hours on the Acme Corp blog project at $60/hour. Generate a professional invoice with my standard payment terms (net 15) and a polite note about the next project.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly a guided form once time is logged",
+    "trustScore": 4,
+    "pricingNote": "Bonsai: paid plans from ~$17/mo (approx), free trial. Harvest: free plan for 1 seat/2 projects; paid from ~$13.75/mo. FreshBooks: from ~$19/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.energent.ai/energent/compare/en/ai-tools-for-freelance-invoice-template",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-06",
+    "accessNotes": "Comparison blog; confirm current pricing on hellobonsai.com and harvestapp.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-8a76199bb5",
+    "slug": "i-want-to-quickly-draft-a-client-proposal-for-a-writing-project",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelance writer pitching a new client",
+    "title": "I want to quickly draft a client proposal for a writing project",
+    "intentLabels": [
+      "AI proposal writer",
+      "client pitch generator",
+      "freelance proposal template"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://toolrankhq.com/articles/ai-tools-write-proposals-freelancers.html"
+      },
+      {
+        "name": "Bonsai"
+      },
+      {
+        "name": "Qwilr"
+      }
+    ],
+    "workflowSummary": "Fill in a short brief about the client, scope, and price. The AI drafts a polished proposal document with your branding, a scope-of-work section, pricing table, and e-signature block, which you review and send directly from the platform.",
+    "samplePrompt": "Draft a freelance writing proposal for a 4-post blog content package for a SaaS client, at $400/post, with a 2-week turnaround and one round of revisions included.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided templates, minimal setup for a first proposal",
+    "trustScore": 3,
+    "pricingNote": "PandaDoc: free plan (limited); paid from ~$19/user/mo. Bonsai: from ~$17/mo (approx). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://toolrankhq.com/articles/ai-tools-write-proposals-freelancers.html",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-30",
+    "accessNotes": "Independent review blog; confirm live pricing on pandadoc.com and hellobonsai.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-1f623b2944",
+    "slug": "i-want-to-keep-track-of-my-brand-deals-deadlines-and-payments",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Influencer/creator juggling multiple sponsorships",
+    "title": "I want to keep track of my brand deals, deadlines, and payments in one place",
+    "intentLabels": [
+      "brand deal tracker",
+      "sponsorship CRM",
+      "creator deal pipeline",
+      "deliverables tracker"
+    ],
+    "tools": [
+      {
+        "name": "CreatorsJet (Deals)",
+        "url": "https://www.creatorsjet.com/brand-deals-tracker"
+      },
+      {
+        "name": "SponsorFlo"
+      }
+    ],
+    "workflowSummary": "Log each sponsorship inquiry into a simple board with brand name, deadline, payment status, and deliverables. The tool updates automatically as a deal moves from inquiry to signed to paid, and reminds you before deadlines slip.",
+    "samplePrompt": "Set up a tracker for 3 active brand deals with columns for deliverable, deadline, payment status, and next follow-up date, then tell me which one needs attention this week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "board-style interface, similar to a simple spreadsheet or Trello",
+    "trustScore": 3,
+    "pricingNote": "CreatorsJet: free tier available for media kit + basic deal tracking; paid tiers not publicly itemized as of Aug 2026 — verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.creatorsjet.com/brand-deals-tracker",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-08-27 (approx, per related press coverage)",
+    "accessNotes": "Vendor product page; confirm current plan pricing directly on creatorsjet.com before quoting to a customer.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-76bda69b9a",
+    "slug": "i-want-one-searchable-place-to-keep-all-my-content-ideas-and",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer/creator with ideas and research scattered everywhere",
+    "title": "I want one searchable place to keep all my content ideas and research notes",
+    "intentLabels": [
+      "content idea organizer",
+      "personal knowledge base",
+      "note-taking AI",
+      "content research hub"
+    ],
+    "tools": [
+      {
+        "name": "Notion AI",
+        "url": "https://www.helpscout.com/blog/ai-knowledge-base/",
+        "catalogueSlug": "notion-ai"
+      },
+      {
+        "name": "Mem"
+      }
+    ],
+    "workflowSummary": "Capture ideas, article research, and inspiration links into the tool as you go (typed or voice). AI auto-tags and organizes entries by topic, and you can later ask it in plain language to surface everything you've saved on a given subject.",
+    "samplePrompt": "Search my saved notes for anything related to 'email newsletter growth' from the last 3 months and summarize the key ideas into a rough outline I can turn into a blog post.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful once organized, but a beginner needs to build the habit of logging notes consistently",
+    "trustScore": 3,
+    "pricingNote": "Notion: free personal plan; AI add-on from ~$8-10/user/mo (approx). Mem: from ~$8.33/mo billed annually. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.helpscout.com/blog/ai-knowledge-base/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (undated, general guide)",
+    "accessNotes": "General knowledge-base roundup, not creator-specific; confirm current pricing on notion.so and mem.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d0d048b7a8",
+    "slug": "i-want-to-resize-one-image-so-it-fits-perfectly-on-every-social",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator posting the same image across many platforms",
+    "title": "I want to resize one image so it fits perfectly on every social platform",
+    "intentLabels": [
+      "batch image resize",
+      "social media image sizes",
+      "platform-specific crop",
+      "bulk image export"
+    ],
+    "tools": [
+      {
+        "name": "insMind Smart Resize",
+        "url": "https://www.resizo.in/social-media-image-resizer/"
+      },
+      {
+        "name": "Resizo"
+      },
+      {
+        "name": "Zyng AI"
+      }
+    ],
+    "workflowSummary": "Upload one master image once. The tool auto-generates correctly sized, correctly cropped versions for each platform's specs (Instagram post/story, YouTube thumbnail, Facebook cover, Pinterest pin, etc.) and lets you download them all as a batch.",
+    "samplePrompt": "Take this one photo and generate properly sized versions for an Instagram feed post, an Instagram Story, a YouTube thumbnail, and a Pinterest pin, keeping the subject centered in each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click presets, no design skill needed",
+    "trustScore": 4,
+    "pricingNote": "insMind: free tier with limited exports; paid plans from ~$9.90/mo (approx). Resizo: free, browser-based. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.resizo.in/social-media-image-resizer/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-05-01",
+    "accessNotes": "Vendor product page; free browser tool with no account required as described on the page itself.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-1539df5dca",
+    "slug": "i-want-to-check-my-article-for-accidental-plagiarism-and-make",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelance writer wanting to check work before delivery",
+    "title": "I want to check my article for accidental plagiarism and make sure it doesn't read as AI-written",
+    "intentLabels": [
+      "plagiarism checker",
+      "AI content detector",
+      "originality checker",
+      "AI writing detection"
+    ],
+    "tools": [
+      {
+        "name": "Originality.ai",
+        "url": "https://www.eesel.ai/blog/ai-writing-detection-tool"
+      },
+      {
+        "name": "Copyleaks"
+      },
+      {
+        "name": "Grammarly (free AI detector)",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Paste or upload your finished draft. The tool scans it against web/academic sources for copied text and runs an AI-detection model on the writing style, then returns a combined report with a plagiarism percentage and an AI-likelihood score you can review before sending it to a client.",
+    "samplePrompt": "Check this 1,200-word article for plagiarism against public web sources and flag any sections that read as AI-generated, with a short note on why each flagged section was flagged.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and read the report, no technical setup",
+    "trustScore": 3,
+    "pricingNote": "Originality.ai: pay-as-you-go from ~$30 one-time (3,000 credits) or ~$14.95/mo subscription. Grammarly's AI detector: free. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.eesel.ai/blog/ai-writing-detection-tool",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-15",
+    "accessNotes": "Independent comparison blog; confirm live pricing on originality.ai and copyleaks.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-ca79304438",
+    "slug": "i-want-my-computer-to-automatically-track-how-much-time-i-spend",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelancer juggling several client projects at once",
+    "title": "I want my computer to automatically track how much time I spend on each client's work",
+    "intentLabels": [
+      "automatic time tracking",
+      "billable hours tracker",
+      "AI time tracking",
+      "hands-off timesheet"
+    ],
+    "tools": [
+      {
+        "name": "Clockk",
+        "url": "https://thedigitalprojectmanager.com/tools/best-ai-time-tracking-software/"
+      },
+      {
+        "name": "Harvest"
+      },
+      {
+        "name": "Toggl Track"
+      }
+    ],
+    "workflowSummary": "Install the tracker in the background. It watches which apps, documents, or browser tabs you're using and automatically assigns that time to the right client or project, so you get an accurate timesheet at the end of the week without manually starting and stopping timers.",
+    "samplePrompt": "Summarize my tracked hours from this week into a per-client breakdown, flag any day where I logged fewer than 4 focused hours, and format it as a simple table.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automatic tracking is easy to turn on, but categorizing untracked/offline work still needs a manual touch",
+    "trustScore": 3,
+    "pricingNote": "Clockk: paid plans from ~$29/mo (approx), free trial. Harvest: free plan for 1 seat; paid from ~$13.75/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thedigitalprojectmanager.com/tools/best-ai-time-tracking-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Independent review site; confirm live pricing on clockk.com and getharvest.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-892eee054c",
+    "slug": "i-want-ai-to-figure-out-the-best-times-to-post-and-schedule",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Small team/agency managing many client social accounts",
+    "title": "I want AI to figure out the best times to post and schedule everything for me automatically",
+    "intentLabels": [
+      "AI-powered social scheduling",
+      "best time to post",
+      "automated publishing",
+      "multi-client scheduling"
+    ],
+    "tools": [
+      {
+        "name": "SocialPilot",
+        "url": "https://sintra.ai/blog/best-ai-social-media-scheduler"
+      },
+      {
+        "name": "ContentStudio"
+      },
+      {
+        "name": "Sintra AI"
+      }
+    ],
+    "workflowSummary": "Connect all your (or your clients') social accounts. The AI analyzes each account's past engagement to recommend optimal posting windows, then auto-queues and publishes your batch of content at those times without further manual action.",
+    "samplePrompt": "Given these 8 draft posts for 3 different client accounts, recommend the best posting time for each based on typical audience-activity patterns and build a one-week publishing schedule.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "dashboard-driven, though managing multiple client accounts benefits from some onboarding",
+    "trustScore": 3,
+    "pricingNote": "SocialPilot: paid plans from ~$25.50/mo (approx), no permanent free tier. ContentStudio: from ~$25/mo (approx). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://sintra.ai/blog/best-ai-social-media-scheduler",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-26",
+    "accessNotes": "Vendor-adjacent comparison blog (Sintra); cross-check SocialPilot/ContentStudio pricing on their own sites.",
+    "batch": "ContentCreators AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-ee478229ae",
+    "slug": "i-want-to-grow-my-email-list-with-a-free-lead-magnet",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger/newsletter writer building an audience",
+    "title": "I want to grow my email list with a free lead magnet",
+    "intentLabels": [
+      "lead magnet",
+      "email list growth",
+      "opt-in freebie",
+      "newsletter signup"
+    ],
+    "tools": [
+      {
+        "name": "Kit (formerly ConvertKit)",
+        "url": "https://www.biztoolkit.co/post/how-to-build-an-email-list-from-scratch-in-2026"
+      },
+      {
+        "name": "beehiiv"
+      },
+      {
+        "name": "Inkfluence AI Lead Magnet Generator"
+      }
+    ],
+    "workflowSummary": "Use an AI tool to draft a short, specific guide or checklist (your lead magnet), then connect it to a free landing page on your email platform. Promote the sign-up link in your bio and content so new visitors trade their email for the freebie automatically.",
+    "samplePrompt": "Write a 10-page checklist-style lead magnet for freelance writers wanting to raise their rates, with a hook, 7 actionable steps, and a call-to-action to join my newsletter.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "hosted landing pages and templates need no coding",
+    "trustScore": 4,
+    "pricingNote": "Kit: free plan up to 10,000 subscribers. beehiiv: free plan up to 2,500 subscribers, paid from ~$34/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.biztoolkit.co/post/how-to-build-an-email-list-from-scratch-in-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Independent guide; confirm current pricing on kit.com and beehiiv.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-ca96761296",
+    "slug": "i-want-to-write-a-pitch-email-to-a-brand-and-include-my-media",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Micro-influencer pitching brands for the first time",
+    "title": "I want to write a pitch email to a brand and include my media kit",
+    "intentLabels": [
+      "brand pitch email",
+      "sponsorship outreach",
+      "cold pitch",
+      "influencer pitch template"
+    ],
+    "tools": [
+      {
+        "name": "newcollab (AI Pitch Writer)",
+        "url": "https://newcollab.co/blog/brand-pitch-email-templates-micro-creators-2026"
+      },
+      {
+        "name": "Beacons (media kit)"
+      }
+    ],
+    "workflowSummary": "Enter the brand name and your niche/stats into the tool. It drafts a short, personalized pitch email (under 150 words) referencing the brand, attaches or links your auto-generated media kit, and suggests a clear, specific ask (PR, paid post, or affiliate).",
+    "samplePrompt": "Write a 120-word pitch email to a skincare brand proposing a 60-second unboxing Reel, referencing my 5% engagement rate and my beauty-niche audience, with my media kit linked at the end.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-blank style pitch generator",
+    "trustScore": 3,
+    "pricingNote": "newcollab: free tier available (per vendor site); paid tiers not itemized in source, verify directly. Beacons: free plan; paid from ~$8.33-30/mo depending on tier. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://newcollab.co/blog/brand-pitch-email-templates-micro-creators-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-23",
+    "accessNotes": "Vendor blog (newcollab); confirm live pricing on newcollab.co and beacons.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-2f55cba128",
+    "slug": "i-want-to-find-out-which-brands-are-actively-sponsoring",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator looking for new brand deals",
+    "title": "I want to find out which brands are actively sponsoring creators in my niche",
+    "intentLabels": [
+      "sponsor discovery",
+      "brand partnership research",
+      "who's sponsoring creators",
+      "sponsorship prospecting"
+    ],
+    "tools": [
+      {
+        "name": "CreatorsJet (Sponsorship Discovery)",
+        "url": "https://sponsorkit.pro/"
+      },
+      {
+        "name": "SponsorKit.Pro"
+      }
+    ],
+    "workflowSummary": "The tool scans public creator content to detect which brands are currently running paid sponsorships or affiliate deals in your niche, then lets you follow new activity or search by brand so you know who to pitch instead of guessing.",
+    "samplePrompt": "Show me which skincare and wellness brands have sponsored creators with a similar follower count to mine in the last 2 months, and rank them by how active they are with creator partnerships.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "search-and-browse interface, no setup beyond an account",
+    "trustScore": 3,
+    "pricingNote": "CreatorsJet: free tier for media kit + basic discovery (per vendor coverage); paid tiers not itemized. SponsorKit.Pro: from ~$49/mo (Rookie) up to ~$499/mo (Pro+). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://sponsorkit.pro/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (undated vendor page, cross-checked against Aug 27 2026 press coverage)",
+    "accessNotes": "Vendor product page; confirm current CreatorsJet plan pricing directly on creatorsjet.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-af4621cf18",
+    "slug": "i-want-to-find-easy-low-competition-keywords-for-my-next-blog",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger wanting posts to actually rank on Google",
+    "title": "I want to find easy, low-competition keywords for my next blog post",
+    "intentLabels": [
+      "keyword research",
+      "low competition keywords",
+      "SEO for bloggers",
+      "blog topic finder"
+    ],
+    "tools": [
+      {
+        "name": "Mangools KWFinder",
+        "url": "https://thestackreviewer.com/posts/best-keyword-research-tools-bloggers/"
+      },
+      {
+        "name": "Ubersuggest"
+      }
+    ],
+    "workflowSummary": "Type in a broad topic. The tool returns related keyword ideas with search volume and a visual difficulty score (green = easy, red = hard), so you can pick ones you can realistically rank for as a smaller blog before you start writing.",
+    "samplePrompt": "Find 10 low-competition, blogger-friendly keyword ideas related to 'freelance writing rates' with search volume and difficulty scores, sorted from easiest to hardest.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "visual difficulty scale designed for non-experts",
+    "trustScore": 4,
+    "pricingNote": "Mangools: Basic ~$29/mo (100 lookups/day), Premium ~$49/mo, annual billing cheaper. Ubersuggest: limited free searches/day; paid from ~$12-40/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thestackreviewer.com/posts/best-keyword-research-tools-bloggers/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Independent review blog; confirm current pricing on mangools.com and neilpatel.com/ubersuggest.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d7ce5c52b3",
+    "slug": "i-want-to-get-more-clicks-on-my-youtube-video-with-a-better",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "YouTuber whose videos aren't getting clicked",
+    "title": "I want to get more clicks on my YouTube video with a better title and thumbnail",
+    "intentLabels": [
+      "YouTube CTR optimization",
+      "title generator",
+      "thumbnail A/B testing",
+      "click-through rate"
+    ],
+    "tools": [
+      {
+        "name": "TubeBuddy",
+        "url": "https://www.tubebuddy.com/blog/tubebuddy-vs-vidiq/"
+      },
+      {
+        "name": "VidIQ"
+      }
+    ],
+    "workflowSummary": "Upload a couple of thumbnail and title options. The tool's AI scores each for predicted click-through rate, runs a live A/B test by showing different versions to real viewers, and reports which version actually won so you know what to use going forward.",
+    "samplePrompt": "Generate 5 title options and analyze 2 thumbnail drafts for this video about budgeting for freelancers, and tell me which combination is most likely to get clicked.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the browser extension setup is quick, but reading CTR data takes a short learning curve",
+    "trustScore": 4,
+    "pricingNote": "TubeBuddy: free tier limited; paid plans from ~$4.50-39/mo depending on tier. VidIQ: free tier limited; paid from ~$9.50-79/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.tubebuddy.com/blog/tubebuddy-vs-vidiq/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-07-28",
+    "accessNotes": "Vendor comparison page (TubeBuddy); cross-check VidIQ pricing on vidiq.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-7e944bf453",
+    "slug": "i-want-to-sell-my-ebook-or-digital-product-online-without",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer/creator with a finished ebook or template to sell",
+    "title": "I want to sell my ebook or digital product online without building a website",
+    "intentLabels": [
+      "sell digital products",
+      "ebook platform",
+      "no-code storefront",
+      "creator marketplace"
+    ],
+    "tools": [
+      {
+        "name": "Gumroad",
+        "url": "https://mydesigns.io/blog/gumroad-for-selling-digital-products/"
+      },
+      {
+        "name": "Payhip"
+      }
+    ],
+    "workflowSummary": "Upload your finished PDF, template, or course file, set a price, and the platform gives you a ready-made checkout page and payment processing. Share the single product link anywhere your audience already is — no website or developer needed.",
+    "samplePrompt": "Help me write a short, benefit-focused product page description for my 15-page freelance-pricing guide, priced at $19, to use on my Gumroad product page.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "copy a link and paste it, no setup beyond an account",
+    "trustScore": 4,
+    "pricingNote": "Gumroad: free to list, ~10% platform fee per sale. Payhip: free plan available with fees, or paid plans from ~$29/mo with lower fees. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://mydesigns.io/blog/gumroad-for-selling-digital-products/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-25",
+    "accessNotes": "Independent guide; confirm current fee structure on gumroad.com and payhip.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-1a40ef78f8",
+    "slug": "i-want-to-know-what-s-trending-in-my-niche-before-everyone-else",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator wanting to stay ahead of trends in their niche",
+    "title": "I want to know what's trending in my niche before everyone else covers it",
+    "intentLabels": [
+      "trend discovery",
+      "viral topic finder",
+      "content idea generator",
+      "early trend detection"
+    ],
+    "tools": [
+      {
+        "name": "Exploding Topics",
+        "url": "https://bloggingx.com/find-trending-content-ideas-using-ai/"
+      },
+      {
+        "name": "BuzzSumo"
+      }
+    ],
+    "workflowSummary": "Search your niche or industry inside the tool's trend dashboard. It surfaces topics with fast-growing search or social volume before they go mainstream, letting you filter by timeframe and category to catch an idea early instead of publishing after it's saturated.",
+    "samplePrompt": "Show me 10 topics in the personal finance/budgeting niche that are trending upward right now, ranked by growth rate, with a one-line explanation of why each is rising.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browse-and-filter dashboard, no setup",
+    "trustScore": 3,
+    "pricingNote": "Exploding Topics: free tier with limited access; Pro plans from ~$39-99/mo (typical vendor range). BuzzSumo: free trial; paid from ~$199/mo (aimed at teams). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://bloggingx.com/find-trending-content-ideas-using-ai/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2024-11-11 (older guide; cross-check current features/pricing before use)",
+    "accessNotes": "Independent guide with an older publish date; confirm current pricing directly on explodingtopics.com and buzzsumo.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-cff97df26d",
+    "slug": "i-want-to-write-headlines-and-subject-lines-that-get-more-clicks",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger/newsletter writer wanting more opens and clicks",
+    "title": "I want to write headlines and subject lines that get more clicks",
+    "intentLabels": [
+      "headline analyzer",
+      "clickable titles",
+      "subject line optimizer",
+      "headline score"
+    ],
+    "tools": [
+      {
+        "name": "CoSchedule Headline Studio (Headline Analyzer Studio)",
+        "url": "https://www.capterra.com/p/215696/Headline-Analyzer-Studio/pricing/"
+      }
+    ],
+    "workflowSummary": "Paste in a draft headline or email subject line. The tool scores it out of 100 on word balance, sentiment, length, and SEO, then suggests specific word swaps from a bank of proven power/emotional words to raise the score before you publish or send.",
+    "samplePrompt": "Score this blog post title and give me 3 improved alternatives that keep the same meaning but score higher on word balance and emotional pull: '5 Tips for Freelance Writers'.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free browser extension and WordPress plugin, instant scoring",
+    "trustScore": 3,
+    "pricingNote": "Free Basic plan. Premium from ~$4-19/mo depending on source (pricing varies by bundle). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.capterra.com/p/215696/Headline-Analyzer-Studio/pricing/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (Capterra pricing page, undated)",
+    "accessNotes": "Third-party software directory (Capterra); confirm current pricing on coschedule.com/headline-studio.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-5968c1f1ac",
+    "slug": "i-want-to-turn-my-free-newsletter-into-a-paid-subscription",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Newsletter writer with an engaged free audience",
+    "title": "I want to turn my free newsletter into a paid subscription",
+    "intentLabels": [
+      "paid newsletter",
+      "newsletter monetization",
+      "premium subscription",
+      "paywall content"
+    ],
+    "tools": [
+      {
+        "name": "beehiiv (paid subscriptions)",
+        "url": "https://www.junia.ai/blog/ai-tools-newsletters"
+      },
+      {
+        "name": "Patreon"
+      }
+    ],
+    "workflowSummary": "Set up a paid tier inside your newsletter platform, decide what's free vs. paywalled (e.g. bonus deep-dives), and the tool handles billing, access control, and cancellations automatically so subscribers can upgrade with one click.",
+    "samplePrompt": "Draft a short pitch to my free subscribers explaining what they'd get with a $7/month paid tier (2 bonus posts + a monthly Q&A), in a warm, non-salesy tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup is guided, but deciding what to paywall takes some strategy thinking",
+    "trustScore": 3,
+    "pricingNote": "beehiiv: free plan up to 2,500 subs, paid from ~$34/mo (needed for monetization features). Patreon: free to join, 8-12% platform fee on paid tiers. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.junia.ai/blog/ai-tools-newsletters",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-13",
+    "accessNotes": "Independent review blog; confirm current fees/pricing on beehiiv.com and patreon.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-5a00f21805",
+    "slug": "i-want-to-organize-my-affiliate-links-and-see-which-ones-are",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger/affiliate marketer with many product links",
+    "title": "I want to organize my affiliate links and see which ones are earning the most",
+    "intentLabels": [
+      "affiliate link tracking",
+      "link management",
+      "commission tracking",
+      "affiliate dashboard"
+    ],
+    "tools": [
+      {
+        "name": "Pretty Links (WordPress)",
+        "url": "https://affiliateaura.ai/blog/best-tools-for-affiliate-link-organization"
+      },
+      {
+        "name": "Affiliate Aura"
+      }
+    ],
+    "workflowSummary": "Replace your long, ugly affiliate URLs with short, branded links managed inside one dashboard. The tool tracks clicks and (where supported) conversions per link, so you can see at a glance which blog posts or products are actually earning money.",
+    "samplePrompt": "Set up branded short links for these 5 affiliate products and show me a weekly report of clicks per link, sorted from best to worst performing.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "WordPress plugin setup takes a short one-time configuration",
+    "trustScore": 3,
+    "pricingNote": "Pretty Links: free core plugin; Pro from ~$99-499/yr (approx). Affiliate Aura: from ~$29/mo for one site. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://affiliateaura.ai/blog/best-tools-for-affiliate-link-organization",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-22",
+    "accessNotes": "Vendor-adjacent blog (Affiliate Aura); confirm current pricing on affiliateaura.ai and prettylinks.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-f1ec9d516a",
+    "slug": "i-want-to-build-a-sales-page-for-my-online-course",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator launching a paid online course",
+    "title": "I want to build a sales page for my online course",
+    "intentLabels": [
+      "course sales page",
+      "landing page builder",
+      "course launch page",
+      "checkout page"
+    ],
+    "tools": [
+      {
+        "name": "SamCart",
+        "url": "https://www.samcart.com/blog/best-platform-to-sell-ebooks-in-2026-(10-options-compared)"
+      },
+      {
+        "name": "Kajabi"
+      }
+    ],
+    "workflowSummary": "Answer a few prompts about your course (topic, price, bonuses, testimonials). The AI builds a structured sales page with a headline, benefit list, pricing block, and checkout — which you can then edit and publish without hiring a designer.",
+    "samplePrompt": "Build a sales page outline for a $99 'Freelance Pricing Mastery' mini-course, including a headline, 3 benefit bullets, a testimonial placeholder, and a single clear call-to-action.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "templates make it approachable, but course-specific setup (modules, pricing) benefits from a short tutorial",
+    "trustScore": 3,
+    "pricingNote": "SamCart: free trial, paid plans from ~$59/mo (approx). Kajabi: from ~$69-159/mo (approx), no permanent free tier. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.samcart.com/blog/best-platform-to-sell-ebooks-in-2026-(10-options-compared)",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-24",
+    "accessNotes": "Vendor-affiliated blog (SamCart); confirm current pricing on samcart.com and kajabi.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-522838522e",
+    "slug": "i-want-to-see-what-my-competitors-are-posting-and-how-well-it-s",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator wanting to benchmark against similar accounts",
+    "title": "I want to see what my competitors are posting and how well it's performing",
+    "intentLabels": [
+      "competitor content analysis",
+      "competitive benchmarking",
+      "content gap analysis",
+      "rival account tracking"
+    ],
+    "tools": [
+      {
+        "name": "BuzzSumo",
+        "url": "https://bloghunter.se/blog/top-10-content-performance-analysis-tools-for-2026"
+      },
+      {
+        "name": "Socialinsider"
+      }
+    ],
+    "workflowSummary": "Enter a competitor's website, handle, or topic. The tool pulls their most-shared or best-performing recent content, shows engagement by platform, and highlights formats or topics that are outperforming your own — so you can spot gaps to fill.",
+    "samplePrompt": "Compare my last 10 blog posts against 2 competitor blogs in the same niche, and tell me which topics they're covering that I haven't, ranked by their estimated engagement.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "dashboards are visual, but comparing multiple accounts takes some interpretation",
+    "trustScore": 3,
+    "pricingNote": "BuzzSumo: free trial; paid from ~$199/mo (aimed at teams/agencies). Socialinsider: paid plans, exact pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bloghunter.se/blog/top-10-content-performance-analysis-tools-for-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-26",
+    "accessNotes": "Independent blog; confirm current pricing on buzzsumo.com and socialinsider.io.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-605ed86155",
+    "slug": "i-want-one-link-in-bio-page-where-people-can-shop-my-products",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator with scattered links across platforms",
+    "title": "I want one link-in-bio page where people can shop my products and join my list",
+    "intentLabels": [
+      "link in bio",
+      "bio link page",
+      "creator storefront",
+      "link aggregator with email capture"
+    ],
+    "tools": [
+      {
+        "name": "Beacons",
+        "url": "https://talkspresso.com/blog/beacons-vs-linktree-2026"
+      },
+      {
+        "name": "Linktree"
+      }
+    ],
+    "workflowSummary": "Build one page with drag-and-drop blocks for your social links, a digital product or merch storefront, and an email opt-in form. Put the single link in your Instagram/TikTok bio so every platform funnels traffic to one place that can sell and capture emails.",
+    "samplePrompt": "Set up a link-in-bio page outline with sections for my latest YouTube video, my digital product, and an email sign-up block, in that priority order.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop block builder, no coding",
+    "trustScore": 3,
+    "pricingNote": "Beacons: free plan (9% transaction fee); Creator plan ~$10/mo, Creator Plus ~$30/mo with 0% fees. Linktree: free plan; Starter ~$8/mo, Pro ~$15/mo, Premium ~$35/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://talkspresso.com/blog/beacons-vs-linktree-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-10",
+    "accessNotes": "Independent comparison blog; confirm current pricing/fees on beacons.ai and linktr.ee.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-0c9ffd7283",
+    "slug": "i-want-to-calculate-my-sponsorship-rates-and-build-a-rate-card",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator unsure what to charge brands",
+    "title": "I want to calculate my sponsorship rates and build a rate card for brands",
+    "intentLabels": [
+      "sponsorship rate card",
+      "creator pricing calculator",
+      "how much to charge brands",
+      "rate card builder"
+    ],
+    "tools": [
+      {
+        "name": "RedHub AI (Creator Sponsorship & Media Kit System)",
+        "url": "https://blog.redhub.ai/how-to-pitch-brands"
+      }
+    ],
+    "workflowSummary": "Input your platform, follower count, engagement rate, and niche. The tool calculates a defensible per-deliverable rate (e.g. per Reel, per YouTube integration) using industry benchmarks, then formats it into a rate-card menu you can attach to pitches instead of quoting a guessed number.",
+    "samplePrompt": "Calculate a fair sponsorship rate for a single Instagram Reel and a 3-post bundle, given 18,000 followers and a 4.5% engagement rate in the fitness niche, and format it as a simple rate card.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "one-time paid tool with a guided setup, not a free instant calculator",
+    "trustScore": 2,
+    "pricingNote": "RedHub AI Creator Sponsorship & Media Kit System: $79 one-time (per vendor page, checked Aug 2026). Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://blog.redhub.ai/how-to-pitch-brands",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-27",
+    "accessNotes": "Independent/vendor-adjacent blog; single-source pricing — confirm directly on redhub.ai before quoting to a customer.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-589298bfec",
+    "slug": "i-want-other-creators-to-be-able-to-promote-my-product-for-a",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator with their own digital product wanting more distribution",
+    "title": "I want other creators to be able to promote my product for a commission",
+    "intentLabels": [
+      "affiliate program setup",
+      "creator referral program",
+      "commission-based promotion",
+      "recruit affiliates"
+    ],
+    "tools": [
+      {
+        "name": "Payhip (built-in affiliate program)",
+        "url": "https://www.getly.store/blog/gumroad-vs-payhip"
+      },
+      {
+        "name": "Gumroad (affiliates)"
+      }
+    ],
+    "workflowSummary": "Turn on the affiliate feature inside your storefront platform, set a commission percentage, and the platform generates unique tracking links for each affiliate automatically, tracks their referred sales, and handles payout calculations without a separate tool.",
+    "samplePrompt": "Set up an affiliate program for my $29 digital planner at a 30% commission rate, and write a 3-sentence pitch I can send to other creators inviting them to promote it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "toggling the feature on is simple, but writing affiliate recruitment messaging takes some thought",
+    "trustScore": 2,
+    "pricingNote": "Payhip: affiliate feature included on paid plans from ~$29/mo (approx). Gumroad: affiliate feature available; standard ~10% platform fee still applies on sales. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getly.store/blog/gumroad-vs-payhip",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-22",
+    "accessNotes": "Independent comparison blog; confirm current affiliate-feature availability and fees on payhip.com and gumroad.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-63152128ac",
+    "slug": "i-want-to-translate-my-blog-post-into-multiple-languages",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger wanting to reach non-English readers",
+    "title": "I want to translate my blog post into multiple languages",
+    "intentLabels": [
+      "blog translation",
+      "multilingual content",
+      "localize article",
+      "translate to other languages"
+    ],
+    "tools": [
+      {
+        "name": "Junia AI (Blog Post Translator)",
+        "url": "https://www.junia.ai/tools/blog-post-translator"
+      },
+      {
+        "name": "DeepL"
+      }
+    ],
+    "workflowSummary": "Paste or import your post (HTML/Markdown). The tool translates it into your chosen languages in one pass while preserving formatting, then you do a quick read-through to check tone and brand voice before publishing each version.",
+    "samplePrompt": "Translate this 800-word blog post into Spanish, French, and German, keeping the headings, bullet points, and any bolded text intact.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste-and-select-language workflow, no coding",
+    "trustScore": 3,
+    "pricingNote": "Junia AI: paid plans (translator is part of the broader platform), free trial available. DeepL: free tier with character limits; Pro from ~$8.74/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.junia.ai/tools/blog-post-translator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on junia.ai and deepl.com. Always have a native speaker review translated content before publishing, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-bc9405bf1f",
+    "slug": "i-want-to-add-closed-captions-to-my-video-for-accessibility",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Video creator wanting accessible, inclusive content",
+    "title": "I want to add closed captions to my video for accessibility",
+    "intentLabels": [
+      "closed captions",
+      "video subtitles",
+      "accessibility compliance",
+      "caption generator"
+    ],
+    "tools": [
+      {
+        "name": "Kapwing",
+        "url": "https://www.kapwing.com/subtitles/caption-generator"
+      },
+      {
+        "name": "VEED",
+        "catalogueSlug": "veed"
+      }
+    ],
+    "workflowSummary": "Upload your video. The tool auto-transcribes the audio, generates time-synced captions (including speaker labels and sound cues for true closed captions, not just subtitles), and lets you edit any misheard words before exporting as SRT/VTT or burning them into the video.",
+    "samplePrompt": "Generate closed captions for this 8-minute video, including speaker labels and a (music) cue where background music plays, and export as an SRT file.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "auto-generate then light editing, no technical setup",
+    "trustScore": 4,
+    "pricingNote": "Kapwing: free plan with watermark/limits; paid from ~$16-32/mo. VEED: free plan limited; paid from ~$12-30/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.kapwing.com/subtitles/caption-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on kapwing.com and veed.io. Closed captions (not just subtitles) are needed for EAA/ADA-style accessibility compliance per source.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-10a98206ba",
+    "slug": "i-want-to-clean-up-the-background-noise-in-my-recorded-audio",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster/video creator with a noisy recording environment",
+    "title": "I want to clean up the background noise in my recorded audio",
+    "intentLabels": [
+      "audio noise removal",
+      "clean up podcast audio",
+      "remove background hum",
+      "audio enhancement"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Podcast (Enhance Speech)",
+        "url": "https://aivoraai.github.io/blog/ai-tool-remove-background-noise-podcast-recordings-2026.html",
+        "catalogueSlug": "adobe-podcast"
+      },
+      {
+        "name": "Cleanvoice"
+      }
+    ],
+    "workflowSummary": "Upload your raw audio file. The AI separates your voice from background noise (traffic, fans, echo, hum) and reconstructs a cleaner-sounding voice track, which you can then drop straight into your editing software or publish as-is.",
+    "samplePrompt": "Clean up this 20-minute interview recording — remove the background hum and echo, but keep the natural tone of both speakers' voices.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free browser tool, drag-and-drop with no settings to configure",
+    "trustScore": 4,
+    "pricingNote": "Adobe Podcast Enhance Speech: free for ~1 hour of audio/month. Cleanvoice: pay-per-minute at ~$0.015/min, no subscription. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://aivoraai.github.io/blog/ai-tool-remove-background-noise-podcast-recordings-2026.html",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-20",
+    "accessNotes": "Independent comparison blog; confirm current free-tier limits on podcast.adobe.com and cleanvoice.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-bab187f70d",
+    "slug": "i-want-to-design-a-professional-cover-for-my-ebook",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Self-published author about to release an ebook",
+    "title": "I want to design a professional cover for my ebook",
+    "intentLabels": [
+      "AI book cover generator",
+      "ebook cover design",
+      "self-publishing cover",
+      "KDP cover"
+    ],
+    "tools": [
+      {
+        "name": "Canva (AI Book Cover Generator)",
+        "url": "https://www.creolestudios.com/top-ai-book-cover-generator/",
+        "catalogueSlug": "canva"
+      },
+      {
+        "name": "BookBrush"
+      }
+    ],
+    "workflowSummary": "Choose a genre-matched template or generate AI artwork from a short description of your book. Adjust the title, author name, and fonts using the drag-and-drop editor, then export at the exact pixel dimensions Amazon KDP requires.",
+    "samplePrompt": "Design a book cover for a suspense thriller titled 'The Quiet Hour' — moody, dark-blue tones, a single silhouette, and bold white title text, sized for Amazon KDP.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based drag-and-drop, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Canva: free plan available, Pro from ~$13/mo (approx). BookBrush: paid plans, exact pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.creolestudios.com/top-ai-book-cover-generator/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Independent guide; confirm current pricing on canva.com and bookbrush.com. Check each platform's commercial-use license before selling a book with an AI-generated cover.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-604459e0f3",
+    "slug": "i-want-to-format-my-finished-manuscript-for-amazon-kdp",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Self-published author ready to publish on Amazon",
+    "title": "I want to format my finished manuscript for Amazon KDP",
+    "intentLabels": [
+      "book formatting",
+      "KDP formatting",
+      "EPUB conversion",
+      "print-ready PDF"
+    ],
+    "tools": [
+      {
+        "name": "Reedsy (Book Editor)",
+        "url": "https://lacuna.pub/compare/best-book-formatting-software-for-kdp"
+      },
+      {
+        "name": "Atticus"
+      }
+    ],
+    "workflowSummary": "Import your manuscript (usually a Word doc). The tool applies professional typesetting — chapter breaks, drop caps, table of contents — then exports a KDP-compatible EPUB for Kindle and a print-ready PDF for paperback, matching Amazon's trim-size and margin requirements.",
+    "samplePrompt": "Format this 65,000-word manuscript for KDP as both a 6x9 paperback print PDF and a Kindle EPUB, with a simple, classic chapter-heading style.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the editor itself is simple, but understanding trim size/margin requirements takes a first read of KDP's guidelines",
+    "trustScore": 4,
+    "pricingNote": "Reedsy Book Editor: free. Atticus: $147 one-time. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://lacuna.pub/compare/best-book-formatting-software-for-kdp",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-22",
+    "accessNotes": "Independent comparison blog; confirm Reedsy is still free and check Atticus's current price on atticus.io.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-6620fde995",
+    "slug": "i-want-to-fact-check-the-claims-and-statistics-in-my-article",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer worried about AI-generated errors before publishing",
+    "title": "I want to fact-check the claims and statistics in my article before I publish it",
+    "intentLabels": [
+      "AI fact-checker",
+      "claim verification",
+      "catch hallucinations",
+      "verify statistics before publishing"
+    ],
+    "tools": [
+      {
+        "name": "TrueStandard",
+        "url": "https://truestandard.ai/blog/how-to-fact-check-ai-writing-before-publishing"
+      },
+      {
+        "name": "Elicit (for academic/study claims)",
+        "catalogueSlug": "elicit"
+      }
+    ],
+    "workflowSummary": "Paste your draft. The tool checks each factual claim against multiple AI models and available sources, labels each one Verified, Partially Verified, or Challenged, and gives you a prioritized list of what to fix before the piece goes live.",
+    "samplePrompt": "Check this 1,000-word health article for any unverified statistics or overstated claims, and flag which ones need a source citation before I publish.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste and get a report, no research skill required",
+    "trustScore": 3,
+    "pricingNote": "TrueStandard: pricing not itemized in source, evidently subscription-based — verify directly. Elicit: free tier available; paid plans exist for heavier use. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://truestandard.ai/blog/how-to-fact-check-ai-writing-before-publishing",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-07-10",
+    "accessNotes": "Vendor blog (TrueStandard); confirm current pricing on truestandard.ai. Tool assists triage — final publish/don't-publish judgment should stay human, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-71e0572317",
+    "slug": "i-want-to-clone-my-voice-to-narrate-my-audiobook-without-re",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Author wanting an audiobook without hiring a narrator",
+    "title": "I want to clone my voice to narrate my audiobook without re-recording every word",
+    "intentLabels": [
+      "AI voice cloning",
+      "audiobook narration",
+      "text-to-speech audiobook",
+      "narrate in my own voice"
+    ],
+    "tools": [
+      {
+        "name": "ElevenLabs",
+        "url": "https://www.feisworld.com/blog/elevenlabs-audiobook",
+        "catalogueSlug": "elevenlabs"
+      },
+      {
+        "name": "Notevibes"
+      }
+    ],
+    "workflowSummary": "Upload a short sample of your own voice to train a custom voice clone (professional cloning needs more sample audio for consistency). Paste your manuscript in, and the tool generates a full narrated audiobook in your cloned voice, exportable as MP3/WAV.",
+    "samplePrompt": "Narrate this 12,000-word chapter in my cloned voice, with natural pacing and pauses at paragraph breaks, and export as a single MP3 file.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "voice cloning setup is simple, but getting long-form narration to sound natural takes some review/re-generation",
+    "trustScore": 3,
+    "pricingNote": "ElevenLabs: Creator plan ~$22/mo (~$11 first month promo); higher tiers for longer books. Notevibes: ~$19/mo (~12 hrs of audio). Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.feisworld.com/blog/elevenlabs-audiobook",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-05",
+    "accessNotes": "Independent guide; as of this source's evidence date, ACX/Audible's standard terms require human narration — AI-narrated audiobooks are distributed instead via Findaway Voices, Google Play Books, or KDP's separate Virtual Voice feature. Confirm current platform policies before publishing.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-73c35a55a0",
+    "slug": "i-want-to-collaborate-with-a-co-writer-or-editor-on-the-same",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Author/blogger working with a co-writer or editor",
+    "title": "I want to collaborate with a co-writer or editor on the same document in real time",
+    "intentLabels": [
+      "real-time collaborative writing",
+      "co-author document",
+      "live editing together",
+      "shared draft"
+    ],
+    "tools": [
+      {
+        "name": "Google Docs",
+        "url": "https://www.sidekickwriter.com/blog/collaborative-writing-software-review-2026"
+      },
+      {
+        "name": "Ellipsus (for fiction co-authors)"
+      }
+    ],
+    "workflowSummary": "Share one document with your collaborator. Both of you can type, comment, and suggest edits simultaneously, seeing each other's cursors live, with a full version history so you can roll back if a change doesn't work out.",
+    "samplePrompt": "Set up a shared draft with my editor where she can leave inline comments and suggested edits on chapters 1-3, and I can accept or reject each suggestion individually.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "zero learning curve for most people, already familiar interface",
+    "trustScore": 4,
+    "pricingNote": "Google Docs: free with a Google account. Ellipsus: free tier available; paid tiers for larger projects — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.sidekickwriter.com/blog/collaborative-writing-software-review-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-23",
+    "accessNotes": "Independent comparison blog; confirm current Ellipsus pricing on ellipsus.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-377c2a32df",
+    "slug": "i-want-ai-to-automatically-moderate-the-comments-on-my-videos",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator with a growing, hard-to-manage comment section",
+    "title": "I want AI to automatically moderate the comments on my videos and posts",
+    "intentLabels": [
+      "AI comment moderation",
+      "auto-hide toxic comments",
+      "spam filter",
+      "community moderation"
+    ],
+    "tools": [
+      {
+        "name": "replient.ai",
+        "url": "https://replient.ai/en/guide/automate-comment-moderation/"
+      },
+      {
+        "name": "Respondology"
+      }
+    ],
+    "workflowSummary": "Connect your social accounts. The AI reads each incoming comment for context, sentiment, and intent (not just keyword matching), quietly hides spam/harassment before your audience sees it, and lets you review or override any decision in a dashboard.",
+    "samplePrompt": "Set up moderation rules to auto-hide spam, hate speech, and off-topic promotional comments on my last 10 YouTube videos, and show me a weekly summary of what was hidden.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting accounts and setting rules takes some initial configuration",
+    "trustScore": 3,
+    "pricingNote": "replient.ai: free tier for 50 comments, no card required; paid plans beyond that. Respondology: Moderate tool from ~$1,500/mo (aimed at larger brands/creators). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://replient.ai/en/guide/automate-comment-moderation/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-05",
+    "accessNotes": "Vendor blog (replient.ai); confirm current pricing on replient.ai. Respondology's pricing (from a separate source) is aimed at larger creators/brands, not solo creators — flag this gap to the user.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d94b94f13a",
+    "slug": "i-want-to-add-alt-text-to-the-images-in-my-blog-post-for",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger wanting to meet accessibility standards",
+    "title": "I want to add alt text to the images in my blog post for accessibility",
+    "intentLabels": [
+      "AI alt text generator",
+      "image accessibility",
+      "WCAG alt text",
+      "screen reader description"
+    ],
+    "tools": [
+      {
+        "name": "AltText.ai",
+        "url": "https://ratedwithai.com/blog/best-ai-alt-text-generators-2026"
+      },
+      {
+        "name": "Poper.ai"
+      }
+    ],
+    "workflowSummary": "Connect your blog/CMS or upload images in bulk. The AI looks at each image and writes a natural-language description suited for screen readers, which you can review and adjust in tone (straightforward, descriptive, or brand-voice) before it's saved to your image library.",
+    "samplePrompt": "Generate WCAG-compliant alt text for these 8 blog images, keeping descriptions under 125 characters and written in a straightforward, non-promotional tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and review suggested text, no technical setup",
+    "trustScore": 3,
+    "pricingNote": "AltText.ai: paid plans, free trial available — exact pricing not itemized in source, verify directly. Poper.ai: free to try per source description. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://ratedwithai.com/blog/best-ai-alt-text-generators-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-21",
+    "accessNotes": "Independent ranked guide; confirm current pricing on alttext.ai and poper.ai. Note: overlay-based alt text tools don't get indexed by search engines — for permanent accessibility, alt text should be stored in the CMS, per source.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-339403b3d0",
+    "slug": "i-want-to-host-a-live-q-a-or-webinar-with-my-audience",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator wanting more direct interaction with their audience",
+    "title": "I want to host a live Q&A or webinar with my audience",
+    "intentLabels": [
+      "live streaming webinar",
+      "host live Q&A",
+      "interactive live event",
+      "webinar platform for creators"
+    ],
+    "tools": [
+      {
+        "name": "StreamYard",
+        "url": "https://www.learningrevolution.net/streamyard-review/"
+      },
+      {
+        "name": "Slido (paired for advanced Q&A/polls)"
+      }
+    ],
+    "workflowSummary": "Set up a branded live studio in your browser, invite viewer questions to appear on-screen from chat, and stream to multiple platforms (YouTube, Instagram, LinkedIn) at once. Pair with a polling tool if you want structured Q&A voting instead of just chat.",
+    "samplePrompt": "Set up a live Q&A session streaming to YouTube and Instagram at once, with a branded overlay showing my logo and a lower-third for guest names.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browser-based studio, free plan lets you start immediately",
+    "trustScore": 3,
+    "pricingNote": "StreamYard: free plan (1 destination, branded); Core ~$44.99/mo; Advanced ~$88.99/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.learningrevolution.net/streamyard-review/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08 (approx, per 1-month-old source)",
+    "accessNotes": "Independent review blog; confirm current pricing on streamyard.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-585ebd504e",
+    "slug": "i-want-to-dub-my-video-into-another-language-using-a-voice-that",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Video creator wanting to reach non-native speakers",
+    "title": "I want to dub my video into another language using a voice that sounds like mine",
+    "intentLabels": [
+      "AI video dubbing",
+      "voice-preserved translation",
+      "multilingual video",
+      "dub in my own voice"
+    ],
+    "tools": [
+      {
+        "name": "ElevenLabs (Dubbing)",
+        "url": "https://aibestnav.com/elevenlabs-the-most-realistic-ai-voices-you-can-start-free-and-whether-its-worth-paying-in-2026/",
+        "catalogueSlug": "elevenlabs"
+      }
+    ],
+    "workflowSummary": "Upload your video. The tool transcribes and translates the spoken audio into your target language, then re-generates the voiceover using a clone of your own voice (or a natural-sounding alternative), syncing the new audio back to the video's timing.",
+    "samplePrompt": "Dub this 5-minute YouTube video into Spanish using a voice that matches my tone, and keep the lip-sync timing as close as possible to the original.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dubbing pipeline is largely automatic, but syncing and reviewing translated wording takes a review pass",
+    "trustScore": 3,
+    "pricingNote": "ElevenLabs: same credit-based plans as narration, Creator ~$22/mo covers moderate use. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aibestnav.com/elevenlabs-the-most-realistic-ai-voices-you-can-start-free-and-whether-its-worth-paying-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08 (2 weeks old at time of research)",
+    "accessNotes": "Independent review blog; confirm current pricing/features on elevenlabs.io.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-11f12f5056",
+    "slug": "i-want-honest-feedback-on-my-manuscript-before-i-send-it-to",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Novelist wanting feedback before sending to human readers",
+    "title": "I want honest feedback on my manuscript before I send it to beta readers or an editor",
+    "intentLabels": [
+      "AI beta reader",
+      "manuscript feedback",
+      "pacing and character feedback",
+      "developmental read"
+    ],
+    "tools": [
+      {
+        "name": "ProWritingAid (Virtual Beta Reader)",
+        "url": "https://prowritingaid.com/features/virtual-beta-reader"
+      },
+      {
+        "name": "BetaShelf"
+      }
+    ],
+    "workflowSummary": "Upload your manuscript (fiction works best, chapters titled). The AI reads it as a first-person beta reader would, reporting on pacing, favorite characters, emotional high points, and where a real reader's attention might drop — before you spend weeks waiting on human beta readers.",
+    "samplePrompt": "Give me beta-reader-style feedback on chapters 1-3 of my mystery novel: where does pacing drag, which character is most compelling so far, and where might a reader lose interest?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and read the report, no setup",
+    "trustScore": 3,
+    "pricingNote": "ProWritingAid: Virtual Beta Reader included with Premium (~$120/yr) or Premium Pro (~$144/yr) plans; free plan is limited to 500 words/check. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://prowritingaid.com/features/virtual-beta-reader",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing on prowritingaid.com. Tool explicitly states it does not process manuscripts containing CSAM or sensitive PII, and is not a replacement for human beta readers/editors.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-3621afe0f4",
+    "slug": "i-want-to-check-my-writing-s-readability-and-cut-overused-words",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger/marketer wanting punchier, more readable copy",
+    "title": "I want to check my writing's readability and cut overused words or passive voice",
+    "intentLabels": [
+      "readability checker",
+      "simplify writing",
+      "passive voice checker",
+      "grade-level readability"
+    ],
+    "tools": [
+      {
+        "name": "Hemingway Editor",
+        "url": "https://pick-right.com/tools/hemingway-editor/"
+      },
+      {
+        "name": "ProWritingAid"
+      }
+    ],
+    "workflowSummary": "Paste your draft into the tool. It highlights hard-to-read sentences, adverbs, and passive-voice constructions in different colors and gives you an overall reading-grade-level score, so you can simplify specific sentences until the piece reads at your target audience's level.",
+    "samplePrompt": "Check this email newsletter draft for readability, flag any passive voice or overly complex sentences, and tell me what grade level it currently reads at.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free web version, paste and review with no account needed",
+    "trustScore": 4,
+    "pricingNote": "Hemingway Editor: free web version (no usage limits); desktop app $19.99 one-time; Editor Plus (AI rewriting) ~$10/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://pick-right.com/tools/hemingway-editor/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-18",
+    "accessNotes": "Independent review blog; confirm current pricing on hemingwayapp.com. English-only tool per source — not useful for non-English drafts.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-5b8affd909",
+    "slug": "i-want-to-convert-my-handwritten-notes-into-editable-text",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer/researcher with old handwritten notes to digitize",
+    "title": "I want to convert my handwritten notes into editable text",
+    "intentLabels": [
+      "handwriting to text",
+      "OCR handwritten notes",
+      "digitize notes",
+      "scan notes to text"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Scan",
+        "url": "https://mioffice.ai/blog/best-ocr-free-2026"
+      },
+      {
+        "name": "Microsoft Lens"
+      }
+    ],
+    "workflowSummary": "Photograph your handwritten page with your phone using the app. The AI detects the text, runs handwriting recognition, and converts it into editable, searchable text you can copy into your writing tool of choice — no retyping needed.",
+    "samplePrompt": "Scan these 3 pages of handwritten interview notes and convert them into a single editable text document, keeping paragraph breaks where they appear in the original.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "point-and-shoot phone app, no setup",
+    "trustScore": 3,
+    "pricingNote": "Adobe Scan: free with optional Acrobat subscription for advanced features. Microsoft Lens: free. Verify before publishing.",
+    "pricingTier": "free",
+    "sourceUrl": "https://mioffice.ai/blog/best-ocr-free-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-16",
+    "accessNotes": "Independent comparison blog; accuracy on messy/cursive handwriting varies by tool per source — plan on a quick proofread pass for anything beyond neat print handwriting.",
+    "batch": "ContentCreators AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-d6ea995267",
+    "slug": "i-want-to-design-a-custom-thumbnail-for-my-youtube-video",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "YouTuber wanting more clicks on new uploads",
+    "title": "I want to design a custom thumbnail for my YouTube video",
+    "intentLabels": [
+      "YouTube thumbnail maker",
+      "AI thumbnail generator",
+      "click-worthy thumbnail design"
+    ],
+    "tools": [
+      {
+        "name": "Canva",
+        "url": "https://miraflow.ai/blog/canva-vs-miraflow-best-ai-youtube-thumbnail-maker",
+        "catalogueSlug": "canva"
+      },
+      {
+        "name": "Miraflow AI"
+      }
+    ],
+    "workflowSummary": "Choose a template or upload a reference photo/screenshot from your video. The AI suggests layouts, bold text placement, and color schemes proven to grab attention in a crowded feed, which you then tweak and export at YouTube's required 1280x720 size.",
+    "samplePrompt": "Design a YouTube thumbnail for a video about budgeting tips — bold yellow text on a dark background, my photo on the right side, and a shocked expression emoji-style graphic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop templates, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Canva: free plan available, Pro ~$13-15/mo. Miraflow: pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://miraflow.ai/blog/canva-vs-miraflow-best-ai-youtube-thumbnail-maker",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-14",
+    "accessNotes": "Vendor-adjacent comparison blog (Miraflow); confirm current pricing on canva.com and miraflow.ai.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-47a4d8d70c",
+    "slug": "i-want-to-create-pinterest-pins-from-my-blog-posts-automatically",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger driving traffic from Pinterest",
+    "title": "I want to create Pinterest pins from my blog posts automatically",
+    "intentLabels": [
+      "Pinterest pin generator",
+      "blog to pin",
+      "Pinterest marketing images",
+      "pin design"
+    ],
+    "tools": [
+      {
+        "name": "Tailwind Create",
+        "url": "https://www.tailwindapp.com/blog/how-to-create-pinterest-pins-using-tailwinds-free-tools"
+      },
+      {
+        "name": "Canva",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Paste your blog post URL and upload a few brand photos or your logo. The AI pulls the content and images to generate dozens of on-brand pin variations in the correct 2:3 ratio, which you review and schedule directly.",
+    "samplePrompt": "Generate 5 Pinterest pin variations for this blog post about meal prep, using my brand colors (sage green and cream) and pulling the featured image from the post.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "automated design from a URL, minimal manual work",
+    "trustScore": 3,
+    "pricingNote": "Tailwind Create: free plan includes 5 designs/month; paid plans (credit-based) from ~$9.99-17.99/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.tailwindapp.com/blog/how-to-create-pinterest-pins-using-tailwinds-free-tools",
+    "sourceType": "Directory/Product page",
+    "freshness": "2025-09-08",
+    "accessNotes": "Vendor blog (Tailwind); confirm current pricing on tailwindapp.com since the source notes a 2026 move to credit-based pricing.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-a21d6a10ed",
+    "slug": "i-want-to-turn-a-blog-post-into-an-instagram-carousel",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator wanting to repurpose a post into a swipeable format",
+    "title": "I want to turn a blog post into an Instagram carousel",
+    "intentLabels": [
+      "Instagram carousel maker",
+      "blog to carousel",
+      "swipe post design",
+      "carousel graphics"
+    ],
+    "tools": [
+      {
+        "name": "Canva",
+        "url": "https://thestacc.com/blog/ai-infographic-generators/",
+        "catalogueSlug": "canva"
+      },
+      {
+        "name": "Piktochart (carousel export)"
+      }
+    ],
+    "workflowSummary": "Paste your blog post or outline. The tool breaks it into digestible slide-sized sections, matches each to a template layout, and exports the full set pre-sized for Instagram's carousel format, ready to upload in order.",
+    "samplePrompt": "Turn this 600-word blog post on morning routines into an 8-slide Instagram carousel, one key tip per slide, with a strong hook on slide 1 and a call-to-action on the last slide.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, no design background needed",
+    "trustScore": 3,
+    "pricingNote": "Canva: free plan available, Pro ~$13-15/mo. Piktochart: paid plans, exact pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thestacc.com/blog/ai-infographic-generators/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-10",
+    "accessNotes": "Independent guide; confirm current pricing on canva.com and piktochart.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-c611d133da",
+    "slug": "i-want-background-music-or-an-intro-jingle-for-my-podcast",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Podcaster/video creator needing an audio identity",
+    "title": "I want background music or an intro jingle for my podcast",
+    "intentLabels": [
+      "podcast intro music",
+      "royalty-free jingle",
+      "branded audio",
+      "AI music generator"
+    ],
+    "tools": [
+      {
+        "name": "Beatoven.ai",
+        "url": "https://www.beatoven.ai/usecase/podcast"
+      },
+      {
+        "name": "AI Jingle Maker"
+      }
+    ],
+    "workflowSummary": "Describe your show's name, mood, and genre (or answer a few prompts). The AI composes an original, royalty-free track sized for your intro/outro length, which comes with a commercial-use license so you can publish without copyright strikes.",
+    "samplePrompt": "Create a 15-second upbeat, optimistic podcast intro in an electronic style, no vocals, with a clean ending that leaves room for me to say my show's name over it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe mood and length, no music production skill needed",
+    "trustScore": 3,
+    "pricingNote": "Beatoven.ai: non-exclusive perpetual license included with each download, exact plan pricing not itemized in source. AI Jingle Maker: no subscription, pay per generation. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.beatoven.ai/usecase/podcast",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; confirm current pricing/licensing terms on beatoven.ai before commercial use.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-dae7082d40",
+    "slug": "i-want-to-build-a-personal-portfolio-website-to-showcase-my",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelance writer wanting a professional online presence",
+    "title": "I want to build a personal portfolio website to showcase my writing",
+    "intentLabels": [
+      "portfolio website builder",
+      "freelance writer website",
+      "AI website builder",
+      "personal site"
+    ],
+    "tools": [
+      {
+        "name": "Squarespace (Blueprint AI)",
+        "url": "https://www.websitebuilderexpert.com/website-builders/portfolio/"
+      },
+      {
+        "name": "Wix"
+      }
+    ],
+    "workflowSummary": "Answer a short onboarding flow about your work, style, and samples. The AI generates a complete, responsive site with a consistent template, font, and color palette, which you then customize with your actual writing samples, bio, and contact form before publishing.",
+    "samplePrompt": "Build me a simple 3-page portfolio site (Home, Writing Samples, Contact) for a freelance copywriter, in a clean, minimal style with a muted color palette.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided onboarding flow, no coding required",
+    "trustScore": 3,
+    "pricingNote": "Squarespace: plans from ~$16-49/mo (approx, no permanent free tier). Wix: free plan available; paid from ~$14-159/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.websitebuilderexpert.com/website-builders/portfolio/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (2 weeks old at time of research)",
+    "accessNotes": "Independent review blog; confirm current pricing on squarespace.com and wix.com.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-523a32d611",
+    "slug": "i-want-to-design-and-sell-print-on-demand-merch-for-my-brand",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator with a loyal audience wanting merch",
+    "title": "I want to design and sell print-on-demand merch for my brand",
+    "intentLabels": [
+      "print on demand",
+      "custom merch design",
+      "sell t-shirts online",
+      "POD design tool"
+    ],
+    "tools": [
+      {
+        "name": "Printful",
+        "url": "https://www.wearview.co/blog/best-ai-t-shirt-design-tools"
+      },
+      {
+        "name": "Placeit"
+      }
+    ],
+    "workflowSummary": "Design your artwork in the platform's editor (or upload your own), preview it on realistic product mockups (shirts, mugs, tote bags), then connect the product to your online store. The platform handles printing, shipping, and fulfillment automatically each time someone orders.",
+    "samplePrompt": "Design a simple text-based t-shirt with my podcast's tagline in a retro serif font, and show me a mockup on a black t-shirt and a tote bag.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "design tools are simple, but connecting a store and understanding margins takes some setup",
+    "trustScore": 3,
+    "pricingNote": "Printful: free to design and list (no upfront cost), you set your markup over base cost. Placeit: from ~$7.47/mo (annual). Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.wearview.co/blog/best-ai-t-shirt-design-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (1 week old at time of research)",
+    "accessNotes": "Independent guide; confirm current pricing on printful.com and placeit.net.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-fc23ec8ebf",
+    "slug": "i-want-to-build-a-slide-deck-for-a-talk-or-workshop",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator preparing to speak at an event or run a workshop",
+    "title": "I want to build a slide deck for a talk or workshop",
+    "intentLabels": [
+      "AI presentation maker",
+      "slide deck generator",
+      "workshop slides",
+      "pitch deck"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://aiomnifeed.com/tools/best-ai-tools-for-presentations-2026/",
+        "catalogueSlug": "gamma"
+      },
+      {
+        "name": "Beautiful.ai",
+        "catalogueSlug": "beautiful-ai"
+      }
+    ],
+    "workflowSummary": "Paste your topic, outline, or existing notes. The AI generates a complete deck with slide structure, visuals, and speaker notes in under a minute, which you then reorder, restyle, and edit like a flexible set of blocks before exporting to PDF or PowerPoint.",
+    "samplePrompt": "Turn this workshop outline on freelance pricing into a 12-slide deck with one key idea per slide, speaker notes for each, and a clean, professional color scheme.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-to-deck in minutes, no design background needed",
+    "trustScore": 3,
+    "pricingNote": "Gamma: free tier with limited exports; Plus ~$15/mo. Beautiful.ai: paid plans, exact pricing not itemized in source — verify directly. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://aiomnifeed.com/tools/best-ai-tools-for-presentations-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-04",
+    "accessNotes": "Independent guide; confirm current pricing on gamma.app and beautiful.ai. PowerPoint export can shift formatting per source — review before presenting live.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-70c46a6a9a",
+    "slug": "i-want-to-upscale-and-restore-an-old-low-resolution-photo",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer/blogger with old family or reference photos to use",
+    "title": "I want to upscale and restore an old, low-resolution photo",
+    "intentLabels": [
+      "photo restoration",
+      "upscale old photo",
+      "fix blurry photo",
+      "AI photo enhancer"
+    ],
+    "tools": [
+      {
+        "name": "Remini",
+        "url": "https://magic-memory.dev/blog/best-ai-photo-restoration"
+      },
+      {
+        "name": "MyHeritage (Photo Enhancer)"
+      }
+    ],
+    "workflowSummary": "Upload the damaged or low-resolution photo. The AI reconstructs facial detail, removes scratches and fading, and upscales the image to a higher resolution, giving you a downloadable, permanent file you can use in a blog post or print.",
+    "samplePrompt": "Restore this faded 1980s photo — repair the scratches and fading, sharpen the faces, and upscale it to at least 2000px on the long edge.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and download, no editing skill needed",
+    "trustScore": 3,
+    "pricingNote": "Remini: weekly subscription ~$9.99/wk (per source). MyHeritage: bundled into a $119-259/yr genealogy subscription. Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://magic-memory.dev/blog/best-ai-photo-restoration",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-13",
+    "accessNotes": "Independent comparison blog; confirm current pricing on remini.ai and myheritage.com — note MyHeritage's enhancer is bundled with a broader genealogy product, not sold standalone.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-06c446dced",
+    "slug": "i-want-to-generate-a-branded-qr-code-for-my-print-materials",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator with printed materials linking to online content",
+    "title": "I want to generate a branded QR code for my print materials",
+    "intentLabels": [
+      "branded QR code generator",
+      "custom QR code with logo",
+      "scannable code for flyers"
+    ],
+    "tools": [
+      {
+        "name": "QR Code AI",
+        "url": "https://qrcodekit.com/news/best-qr-code-generators/"
+      },
+      {
+        "name": "QRCodeKIT"
+      }
+    ],
+    "workflowSummary": "Enter the destination (a URL, a link-in-bio page, a PDF, or a social profile). The tool generates a QR code and lets you add your logo, brand colors, and a custom shape, then exports it as a high-resolution file suitable for print.",
+    "samplePrompt": "Create a branded QR code linking to my newsletter sign-up page, using my brand's teal color and my logo in the center, exported as a high-res PNG for a flyer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a link and customize visually, no technical setup",
+    "trustScore": 3,
+    "pricingNote": "QR Code AI: free to use per source description. QRCodeKIT: free plan (2 dynamic codes, 100 scans/mo); paid from ~$20/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://qrcodekit.com/news/best-qr-code-generators/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Independent comparison blog; confirm current pricing on qrcodekit.com. Use high error-correction (Level H) and test on multiple devices before printing at scale, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-b24ab18293",
+    "slug": "i-want-to-review-a-freelance-or-brand-deal-contract-for-red",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Freelancer or creator about to sign a client/brand agreement",
+    "title": "I want to review a freelance or brand-deal contract for red flags before I sign it",
+    "intentLabels": [
+      "AI contract review",
+      "freelance contract scanner",
+      "spot bad clauses",
+      "contract red flags"
+    ],
+    "tools": [
+      {
+        "name": "Flag Red",
+        "url": "https://flag.red/free"
+      }
+    ],
+    "workflowSummary": "Upload or paste the contract text. The AI scans every clause for common risk patterns (unlimited liability, vague payment terms, overbroad IP assignment, one-sided termination rights), categorizes each by severity, and explains each flag in plain English along with what to push back on.",
+    "samplePrompt": "Scan this brand sponsorship agreement for red flags in the payment terms, IP rights, and exclusivity clauses, and tell me what to negotiate before I sign.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and read the report, no legal background needed",
+    "trustScore": 3,
+    "pricingNote": "Flag Red: free scanner, no sign-up required for a scan. Verify before publishing.",
+    "pricingTier": "free",
+    "sourceUrl": "https://flag.red/free",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; the tool explicitly states it is an educational analysis tool, not legal advice — for high-value or complex deals, source recommends consulting a qualified attorney.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-2a9b267055",
+    "slug": "i-want-to-dictate-my-writing-hands-free-instead-of-typing-it",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Writer who drafts ideas on the go or has hand-strain from typing",
+    "title": "I want to dictate my writing hands-free instead of typing it",
+    "intentLabels": [
+      "AI dictation tool",
+      "voice to text writing",
+      "speak instead of type",
+      "hands-free drafting"
+    ],
+    "tools": [
+      {
+        "name": "Wispr Flow",
+        "url": "https://efficient.app/apps/wispr-flow"
+      },
+      {
+        "name": "Otter.ai",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Install the app once. Speak naturally anywhere you'd normally type (a doc, an email, a notes app) — the AI transcribes your speech, cleans up filler words and self-corrections in real time, and outputs polished, formatted text instead of a raw transcript.",
+    "samplePrompt": "Draft the opening three paragraphs of my blog post about morning routines by dictation, cleaning up any filler words and formatting it into proper paragraphs.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "speak and it writes, minimal setup",
+    "trustScore": 4,
+    "pricingNote": "Wispr Flow: free tier available; paid plans for heavier use, exact pricing not itemized in source. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://efficient.app/apps/wispr-flow",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (4 days old at time of research)",
+    "accessNotes": "Independent review; confirm current pricing on wisprflow.ai. Source notes cloud-based processing (not fully offline) — relevant if a user handles sensitive material.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-b544a5efef",
+    "slug": "i-want-to-turn-my-blog-post-s-statistics-into-a-shareable",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Blogger wanting to make dense content more shareable",
+    "title": "I want to turn my blog post's statistics into a shareable infographic",
+    "intentLabels": [
+      "blog to infographic",
+      "data visualization",
+      "statistics graphic",
+      "shareable infographic maker"
+    ],
+    "tools": [
+      {
+        "name": "Piktochart",
+        "url": "https://thestacc.com/blog/ai-infographic-generators/"
+      },
+      {
+        "name": "Text2Infographic"
+      }
+    ],
+    "workflowSummary": "Paste your blog post's URL or text. The AI extracts headings, statistics, and key takeaways, then matches each point to an infographic template with charts and icons, letting you edit colors, layout, and text before exporting as an image or splitting it into social-ready slides.",
+    "samplePrompt": "Turn this blog post's key statistics into a single-page infographic with a title, 4 stat call-outs, and simple icons, in my brand's blue-and-white color scheme.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste a URL and get a draft, no design background needed",
+    "trustScore": 3,
+    "pricingNote": "Piktochart: paid plans, exact pricing not itemized in source — verify directly. Text2Infographic: free with 2 starter credits, paid plans beyond that. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thestacc.com/blog/ai-infographic-generators/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-10",
+    "accessNotes": "Independent guide; confirm current pricing on piktochart.com and text2infographic.com. Export with descriptive filenames and alt text for SEO/accessibility, per source guidance.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-5e5e20f0cd",
+    "slug": "i-want-an-ai-avatar-to-present-my-video-content-without-me",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Creator who prefers not to appear on camera",
+    "title": "I want an AI avatar to present my video content without me being on camera",
+    "intentLabels": [
+      "AI avatar presenter",
+      "faceless video with avatar",
+      "talking head AI",
+      "virtual presenter"
+    ],
+    "tools": [
+      {
+        "name": "HeyGen",
+        "url": "https://faceless.directory/blog/heygen-vs-synthesia",
+        "catalogueSlug": "heygen"
+      },
+      {
+        "name": "Synthesia",
+        "catalogueSlug": "synthesia"
+      }
+    ],
+    "workflowSummary": "Write or paste your script. Choose a stock avatar (or, on higher tiers, create a custom one) and a voice, and the tool generates a full video of the avatar speaking your script with synced lip movement, gestures, and optional B-roll — no camera or studio needed.",
+    "samplePrompt": "Turn this 400-word script into a 2-minute video with a professional-looking AI presenter, natural gestures, and burned-in captions, in a friendly, conversational tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "script-to-video is simple, but picking an avatar/voice that fits your brand takes some trial and error",
+    "trustScore": 3,
+    "pricingNote": "HeyGen: Creator plan ~$29/mo (15 video credits); Business ~$89/mo (unlimited). Synthesia: Starter ~$29/mo (10 min); Creator ~$89/mo (30 min). Verify before publishing.",
+    "pricingTier": "paid",
+    "sourceUrl": "https://faceless.directory/blog/heygen-vs-synthesia",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-02",
+    "accessNotes": "Independent comparison blog; confirm current pricing on heygen.com and synthesia.io. Disclose AI-generated/avatar-presented video where required by the platform you publish to.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-3ec8d5b136",
+    "slug": "i-want-to-find-out-if-someone-is-using-my-photos-or-images",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Photographer/illustrator worried about content theft",
+    "title": "I want to find out if someone is using my photos or images without my permission",
+    "intentLabels": [
+      "reverse image search",
+      "find stolen images",
+      "image theft monitoring",
+      "copyright infringement check"
+    ],
+    "tools": [
+      {
+        "name": "Pixsy",
+        "url": "https://www.unitedstatespressagency.com/news/copyright-ai-and-image-theft/"
+      },
+      {
+        "name": "TinEye"
+      }
+    ],
+    "workflowSummary": "Upload your original image or a batch of your portfolio. The tool continuously scans the web (or lets you search on demand) for visual matches, flags where your image appears without credit, and — for Pixsy — can help initiate a takedown notice or licensing negotiation with the unauthorized user.",
+    "samplePrompt": "Search the web for any unauthorized uses of this photo I took, and list the sites where it appears without my name or a link back to my portfolio.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and review results, no technical setup",
+    "trustScore": 3,
+    "pricingNote": "Pixsy: free plan for basic monitoring; paid plans for takedown/legal support, exact pricing not itemized in source. TinEye: free reverse image search. Verify before publishing.",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.unitedstatespressagency.com/news/copyright-ai-and-image-theft/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-11-01",
+    "accessNotes": "Independent article; confirm current pricing on pixsy.com. Metadata and watermarks can be stripped by some platforms, per source — treat as a deterrent and monitoring aid, not a guarantee.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "content-creators-writers-230e85cc9d",
+    "slug": "i-want-to-add-a-watermark-to-my-photos-before-publishing-them",
+    "kind": "workflow",
+    "niche": "Content Creators-Writers",
+    "sector": "Content Creators / Writers",
+    "persona": "Photographer/blogger publishing original images online",
+    "title": "I want to add a watermark to my photos before publishing them online",
+    "intentLabels": [
+      "batch watermark photos",
+      "photo watermark tool",
+      "protect images with watermark",
+      "add logo to photos"
+    ],
+    "tools": [
+      {
+        "name": "Watermarkly",
+        "url": "https://watermarkly.com/"
+      },
+      {
+        "name": "Canva (Watermark Maker)",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Upload a batch of your photos and either type your name/brand as a text watermark or upload your logo. The tool applies it consistently across every image at your chosen opacity, size, and position, then lets you download the whole batch at once.",
+    "samplePrompt": "Add a semi-transparent watermark with my photography business name to these 20 photos, positioned in the bottom-right corner, keeping the original image quality.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "batch upload and one-click apply, no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Watermarkly: free, browser-based, no sign-up required. Canva Watermark Maker: free with a Canva account. Verify before publishing.",
+    "pricingTier": "free",
+    "sourceUrl": "https://watermarkly.com/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (vendor tool page, undated)",
+    "accessNotes": "Vendor product page; a watermark is a deterrent, not a lock, per independent source guidance — pair with monitoring (see row above) for stronger protection.",
+    "batch": "ContentCreators AI Workflows Batch1 Session5",
+    "status": "active"
+  }
+]

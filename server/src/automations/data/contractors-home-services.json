@@ -1,0 +1,1887 @@
+[
+  {
+    "id": "contractors-home-services-f940f3955c",
+    "slug": "how-do-i-stop-losing-leads-when-i-miss-a-call",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business owner/office admin (plumbing, HVAC, electrical, roofing) who can't answer every call",
+    "title": "How do I stop losing leads when I miss a call?",
+    "intentLabels": [
+      "missed call text back",
+      "auto text after missed call",
+      "lead recovery texting",
+      "call-to-text automation"
+    ],
+    "tools": [
+      {
+        "name": "LeadTruffle",
+        "url": "https://www.leadtruffle.co/features/missed-call-text-back/"
+      }
+    ],
+    "workflowSummary": "When a call goes unanswered, the tool auto-detects it and texts the caller within 1-2 minutes with a \"sorry we missed you\" message, asks about the job, and starts qualifying them by text so the lead doesn't call a competitor.",
+    "samplePrompt": "Set up a missed-call text-back message for my plumbing business that asks what the caller needs and lets them know we'll call back within the hour.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "runs automatically once connected to your business number, no technical setup beyond the on-screen wizard",
+    "trustScore": 3,
+    "pricingNote": "Not listed on the page reviewed; contact vendor for pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.leadtruffle.co/features/missed-call-text-back/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page reviewed Sep 2026)",
+    "accessNotes": "Public marketing page; content summarized, not reproduced",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-741a597c77",
+    "slug": "i-want-an-ai-receptionist-to-answer-my-phone-24-7",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Solo contractor or small crew owner (HVAC, plumbing, electrical) who can't answer the phone while on jobs",
+    "title": "I want an AI receptionist to answer my phone 24/7",
+    "intentLabels": [
+      "AI phone answering service",
+      "virtual receptionist",
+      "AI call answering for contractors"
+    ],
+    "tools": [
+      {
+        "name": "Rosie (heyrosie.com)",
+        "url": "https://heyrosie.com/pricing"
+      }
+    ],
+    "workflowSummary": "Rosie scans your website/Google Business Profile to learn your services and hours, then answers every call in your business's voice, captures caller details, and can book appointments on higher tiers; you get a text/email summary and recording after each call.",
+    "samplePrompt": "Act as my company's phone receptionist: greet callers as [Business Name], ask what service they need and their address, and text me a summary after each call.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "setup is connecting your Google Business Profile/website URL and going live same day",
+    "trustScore": 3,
+    "pricingNote": "From $49/month for entry-level minutes, scaling to $149-$299+/month for higher volume - sources show inconsistent minute allotments, verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://heyrosie.com/pricing",
+    "sourceType": "Product/pricing page",
+    "freshness": "2026",
+    "accessNotes": "Public pricing page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-61fd09d527",
+    "slug": "i-want-to-turn-a-few-job-photos-into-a-ready-to-send-quote",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Field service business owner writing on-site estimates (roofing, landscaping, painting, remodeling)",
+    "title": "I want to turn a few job photos into a ready-to-send quote",
+    "intentLabels": [
+      "AI photo-to-quote",
+      "instant estimate generator",
+      "AI estimating software"
+    ],
+    "tools": [
+      {
+        "name": "QuoteIQ (AI Estimator)",
+        "url": "https://myquoteiq.com/ai-estimator/"
+      }
+    ],
+    "workflowSummary": "Upload up to 5 photos of the job and describe it by typing or talking; the AI reads the property/surface condition, checks local pricing data, asks follow-up questions, and builds a priced estimate from your own price list, plus an optional before/after preview image.",
+    "samplePrompt": "Here are photos of a driveway that needs resealing - build me a priced estimate using my standard driveway sealing rates and suggest one add-on service.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "basic quotes are easy, but full value requires loading your own service catalog and pricing into the app first",
+    "trustScore": 3,
+    "pricingNote": "Plans start at $29.99/month (Essentials), billed with monthly 'IQ Credits' for AI features - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://myquoteiq.com/ai-estimator/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public marketing page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-627e709f9b",
+    "slug": "i-want-a-business-coach-that-also-drafts-my-quotes-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business owner wanting a business coach and marketing help inside their existing CRM",
+    "title": "I want a business coach that also drafts my quotes and marketing posts",
+    "intentLabels": [
+      "AI business assistant",
+      "AI copilot for contractors",
+      "quote drafting AI",
+      "marketing content assistant"
+    ],
+    "tools": [
+      {
+        "name": "Jobber Copilot",
+        "url": "https://www.getjobber.com/llm-info/"
+      }
+    ],
+    "workflowSummary": "Inside Jobber, Copilot answers questions about your own job/financial history (\"what should I charge for X\"), analyzes cash flow and workforce data, and can draft blog posts and social posts based on trends in your trade and past jobs.",
+    "samplePrompt": "Based on my last 20 completed jobs, tell me how I can improve my quote close rate, and draft a short social post about a recent kitchen remodel.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built into the Jobber app many contractors already use, and works by asking it questions in plain language",
+    "trustScore": 3,
+    "pricingNote": "Free in beta for US/Canada customers as an add-on within a paid Jobber plan (Jobber itself starts around $39+/month) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.getjobber.com/llm-info/",
+    "sourceType": "Product/official info page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-c4c224ce30",
+    "slug": "i-want-to-show-a-client-what-their-finished-renovation-will",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (remodeling, kitchen/bath, exterior)",
+    "persona": "General contractor or remodeler pitching a renovation job to a homeowner",
+    "title": "I want to show a client what their finished renovation will look like before I start",
+    "intentLabels": [
+      "AI renovation visualizer",
+      "before/after remodel preview",
+      "photorealistic remodel rendering app"
+    ],
+    "tools": [
+      {
+        "name": "Remodel AI",
+        "url": "https://www.remodelai.io/blog/best-ai-apps-for-contractors"
+      }
+    ],
+    "workflowSummary": "On the job site, photograph the client's room in the app, pick a style, and get a photorealistic 'after' render in about 10 seconds to show the client on the spot, reducing 'that's not what I meant' disputes and change orders.",
+    "samplePrompt": "Take this kitchen photo and generate a modern farmhouse remodel preview with white shaker cabinets and a quartz island, so I can show the homeowner before we sign the contract.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for use on a phone, on-site, with no design skills needed",
+    "trustScore": 3,
+    "pricingNote": "3 free previews, then $29/month unlimited - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.remodelai.io/blog/best-ai-apps-for-contractors",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "April 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-45bf5c3cb0",
+    "slug": "i-want-to-measure-my-blueprints-and-get-material-quantities",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting, remodeling, specialty subs)",
+    "persona": "Estimator or general contractor preparing a bid from architectural drawings",
+    "title": "I want to measure my blueprints and get material quantities automatically",
+    "intentLabels": [
+      "AI construction takeoff",
+      "automated material takeoff",
+      "blueprint measurement AI"
+    ],
+    "tools": [
+      {
+        "name": "Togal.AI",
+        "url": "https://www.togal.ai/"
+      }
+    ],
+    "workflowSummary": "Upload architectural drawings; the AI detects walls, doors, windows, and rooms and calculates area/length/count measurements, lets you compare drawing revisions to catch scope changes, and exports quantities into your existing Excel pricing template.",
+    "samplePrompt": "Analyze this floor plan PDF and give me total square footage by room, plus a count of doors and windows, formatted for my Excel estimating sheet.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the interface is straightforward, but interpreting and sanity-checking output benefits from estimating experience",
+    "trustScore": 4,
+    "pricingNote": "Around $250/month per individual estimator seat; custom enterprise pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.togal.ai/",
+    "sourceType": "Product page",
+    "freshness": "July 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-6445d40596",
+    "slug": "i-want-to-turn-today-s-job-site-photos-into-a-report-without",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (roofing, remodeling, general trades)",
+    "persona": "Field crew or foreman documenting daily job progress",
+    "title": "I want to turn today's job site photos into a report without typing",
+    "intentLabels": [
+      "AI daily log generator",
+      "job site report automation",
+      "photo-to-report AI"
+    ],
+    "tools": [
+      {
+        "name": "CompanyCam (AI Daily Logs / AI Summary)",
+        "url": "https://companycam.com/features/pages"
+      }
+    ],
+    "workflowSummary": "Take job photos and add voice-to-text notes as you work; at day's end, select the photos and CompanyCam's AI builds a formatted daily log with a narrative of what happened and a to-do list for tomorrow, ready to export as a PDF for the client or office.",
+    "samplePrompt": "Using today's photos and my voice notes, generate a daily log for this roofing job, including what was completed and what's needed tomorrow.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to require no typing, just taking photos and talking",
+    "trustScore": 4,
+    "pricingNote": "Free 14-day trial; unlimited AI features included on Premium and Elite plans - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://companycam.com/features/pages",
+    "sourceType": "Product feature page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-9459d17265",
+    "slug": "i-want-to-turn-my-before-after-job-photos-into-social-media",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Small home service business owner who wants an active social presence without a marketer",
+    "title": "I want to turn my before/after job photos into social media posts automatically",
+    "intentLabels": [
+      "AI social media post generator",
+      "before/after photo to social post",
+      "auto-posting for contractors"
+    ],
+    "tools": [
+      {
+        "name": "HomeProBadge",
+        "url": "https://www.homeprobadge.com/features/social-auto-posting"
+      }
+    ],
+    "workflowSummary": "Upload before/after job photos; the AI pairs them, writes platform-specific captions (detailed Facebook post, short tweet, professional LinkedIn update, Instagram/TikTok video with branding), and can post to five platforms at once.",
+    "samplePrompt": "Here are before/after photos of a bathroom tile job - write me a Facebook post, a short tweet, and an Instagram caption, each including our license number and phone number.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "stated workflow is 'upload photos, review posts, done'",
+    "trustScore": 2,
+    "pricingNote": "Credit-based; 25 free credits on signup (about 3 complete multi-platform posts) - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.homeprobadge.com/features/social-auto-posting",
+    "sourceType": "Product feature page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-17e99ee63e",
+    "slug": "i-want-ai-to-help-me-reply-to-my-google-reviews-faster",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Business owner or office manager responsible for online reputation",
+    "title": "I want AI to help me reply to my Google reviews faster",
+    "intentLabels": [
+      "AI review response generator",
+      "automated review replies",
+      "reputation management AI"
+    ],
+    "tools": [
+      {
+        "name": "Birdeye (AI Review Response Generator)",
+        "url": "https://birdeye.com/ai-review-response-generator/"
+      }
+    ],
+    "workflowSummary": "When a new review comes in, click to generate an authentic, on-brand response draft; edit or regenerate as needed, then publish - keeping response tone and speed consistent across every location without a dedicated staff member.",
+    "samplePrompt": "Draft a warm, professional reply to this 5-star Google review from a customer who praised our HVAC technician's punctuality, and invite them to refer a friend.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click generator inside the existing review dashboard",
+    "trustScore": 3,
+    "pricingNote": "Full platform pricing starts around $299+/month; AI response generator requires an account upgrade for unlimited use - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://birdeye.com/ai-review-response-generator/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-4b5081360a",
+    "slug": "i-want-a-chatbot-on-my-website-that-can-answer-customer",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business with a website that gets after-hours visitor questions",
+    "title": "I want a chatbot on my website that can answer customer questions 24/7",
+    "intentLabels": [
+      "AI website chatbot",
+      "live chat automation",
+      "AI customer service widget"
+    ],
+    "tools": [
+      {
+        "name": "Tidio (Lyro AI Agent)",
+        "url": "https://www.tidio.com/pricing/"
+      }
+    ],
+    "workflowSummary": "Install the chat widget on your website; Lyro learns from your FAQ page and uploaded info, then answers visitor questions in a human-like way, asks follow-up questions to qualify them, and hands off to a human agent when it can't answer.",
+    "samplePrompt": "Using our FAQ page about service areas and pricing, answer a website visitor asking whether we service their zip code and what a typical service call costs.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click activation with no coding, and 50 free AI conversations to start",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; Lyro AI is a paid add-on from about $39/month for 50 conversations, scaling with volume - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.tidio.com/pricing/",
+    "sourceType": "Product/pricing page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-7397694c0d",
+    "slug": "i-want-a-professional-sounding-voice-recording-for-my-voicemail",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Business owner setting up a professional phone greeting or IVR menu",
+    "title": "I want a professional-sounding voice recording for my voicemail or phone menu",
+    "intentLabels": [
+      "AI voice generator",
+      "text-to-speech for IVR",
+      "AI voicemail greeting"
+    ],
+    "tools": [
+      {
+        "name": "ElevenLabs",
+        "url": "https://contractortoolstack.com/categories/ai-and-automation/",
+        "catalogueSlug": "elevenlabs"
+      }
+    ],
+    "workflowSummary": "Type the script for your voicemail greeting or phone menu, choose or clone a voice, and generate a natural-sounding audio file to upload to your business phone system - useful for multilingual greetings too.",
+    "samplePrompt": "Generate a friendly, professional voicemail greeting in English and Spanish for [Business Name], letting callers know we'll return their call within one business day.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "for basic use - a single greeting is simple to generate; voice cloning and emotional control take more experimentation",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for evaluation (no commercial rights); commercial licensing starts at $6/month on the Starter tier - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://contractortoolstack.com/categories/ai-and-automation/",
+    "sourceType": "Directory/roundup page",
+    "freshness": "2026",
+    "accessNotes": "Public page; verify pricing directly on ElevenLabs' own site before publishing",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-2a8c63e91b",
+    "slug": "i-want-ai-to-help-me-write-invoice-reminders-and-get-paid-faster",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Business owner or bookkeeper trying to get invoices paid on time",
+    "title": "I want AI to help me write invoice reminders and get paid faster",
+    "intentLabels": [
+      "AI invoicing assistant",
+      "automated payment reminders",
+      "AI bookkeeping for small business"
+    ],
+    "tools": [
+      {
+        "name": "QuickBooks (Intuit Assist / Payments AI)",
+        "url": "https://quickbooks.intuit.com/r/innovation/intuit-assist-for-quickbooks/"
+      }
+    ],
+    "workflowSummary": "QuickBooks' AI drafts multiple invoices for quick review, learns each customer's payment patterns, and sends prioritized, AI-drafted reminders for overdue invoices - with your approval before anything goes out.",
+    "samplePrompt": "Draft a polite payment reminder for a customer whose invoice is 10 days overdue, referencing the completed HVAC tune-up job.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI drafts are reviewed and approved by the user, not auto-sent, using the same invoicing screen most owners already know",
+    "trustScore": 4,
+    "pricingNote": "AI features are plan-dependent (available from QuickBooks Online Essentials up); core plans typically start around $20-35/month - verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://quickbooks.intuit.com/r/innovation/intuit-assist-for-quickbooks/",
+    "sourceType": "Product page",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-85a76c8924",
+    "slug": "i-want-to-measure-dirt-volumes-and-site-progress-from-drone",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (excavation, landscaping, earthworks)",
+    "persona": "Excavation or grading contractor tracking site volumes and progress",
+    "title": "I want to measure dirt volumes and site progress from drone footage automatically",
+    "intentLabels": [
+      "AI drone volumetrics",
+      "cut/fill analysis",
+      "automated site measurement"
+    ],
+    "tools": [
+      {
+        "name": "Propeller (AI Volume Breakdown)",
+        "url": "https://myquoteiq.com/top-10-ai-tools-for-excavation-businesses-in-2026/"
+      }
+    ],
+    "workflowSummary": "Fly a drone survey of the site (or use Propeller's mapping), and the AI automatically recognizes stockpiles, cut/fill areas, and haul roads, then calculates volumes - cutting out most of the manual boundary-tracing estimators used to do by hand.",
+    "samplePrompt": "From this week's drone flight, break down the stockpile volumes on-site and flag any areas where we've over-excavated compared to plan.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once a drone survey workflow is already in place; not a fit for a business with no drone/mapping process yet",
+    "trustScore": 3,
+    "pricingNote": "Not stated in the page reviewed; typically quote-based for this category - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://myquoteiq.com/top-10-ai-tools-for-excavation-businesses-in-2026/",
+    "sourceType": "Roundup/review page referencing product",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-f7f216520d",
+    "slug": "i-want-ai-to-check-a-subcontractor-s-bid-for-pricing-mistakes",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting, subcontractor bidding)",
+    "persona": "General contractor or estimator reviewing incoming subcontractor bids",
+    "title": "I want AI to check a subcontractor's bid for pricing mistakes before I accept it",
+    "intentLabels": [
+      "AI bid review",
+      "bid leveling AI",
+      "pricing anomaly detection for contractors"
+    ],
+    "tools": [
+      {
+        "name": "EstimateHawk",
+        "url": "https://www.capterra.com/other-construction-software/"
+      }
+    ],
+    "workflowSummary": "Upload a subcontractor's bid; the AI analyzes it in about 30 seconds to flag pricing anomalies, scope gaps, and hidden costs so you can catch problems before signing.",
+    "samplePrompt": "Review this electrical subcontractor bid for our remodel project and flag anything priced unusually high or low, or any scope that seems to be missing.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful for anyone who reviews bids, but interpreting flagged issues benefits from estimating knowledge",
+    "trustScore": 2,
+    "pricingNote": "Not listed in the source found - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.capterra.com/other-construction-software/",
+    "sourceType": "Software directory listing",
+    "freshness": "2026",
+    "accessNotes": "Public directory page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-24ea51e81d",
+    "slug": "i-want-to-preview-cabinet-colors-siding-or-countertops-on-a",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (kitchen/bath remodel, exterior, landscaping)",
+    "persona": "Contractor or designer wanting to show finish/material options during a sales conversation",
+    "title": "I want to preview cabinet colors, siding, or countertops on a client's actual room photo",
+    "intentLabels": [
+      "AI material visualizer",
+      "finish preview tool",
+      "AI home design render"
+    ],
+    "tools": [
+      {
+        "name": "Home Visualizer AI",
+        "url": "https://www.homevisualizer.ai/"
+      }
+    ],
+    "workflowSummary": "Upload a photo of the client's room or exterior, describe the specific edit (cabinet color, countertop material, siding style), and get a realistic before/after image to align on direction before committing to materials or a full quote.",
+    "samplePrompt": "Upload this kitchen photo and show me how navy blue shaker cabinets with a white quartz countertop would look, keeping the existing layout.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe-your-edit, upload-a-photo simplicity",
+    "trustScore": 3,
+    "pricingNote": "Free to try per the page reviewed - verify current/paid tier limits before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.homevisualizer.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-ed8a54794e",
+    "slug": "i-want-ai-to-plan-and-post-a-week-of-social-content-for-my",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Small home service business owner without time for a marketing calendar",
+    "title": "I want AI to plan and post a week of social content for my business automatically",
+    "intentLabels": [
+      "AI social media scheduler",
+      "automated content calendar",
+      "local business social posting"
+    ],
+    "tools": [
+      {
+        "name": "Presly",
+        "url": "https://presly.ai/blog/best-ai-social-media-tool-home-services-2026"
+      }
+    ],
+    "workflowSummary": "Presly learns your trade, services, and service area, then auto-generates a full week of captions and on-brand images and publishes them across platforms like Facebook, Instagram, and Google Business Profile without you drafting anything yourself.",
+    "samplePrompt": "Generate a week of social posts for my landscaping business, including one seasonal tip post and one recent-project post, and schedule them across Facebook and Google Business Profile.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "positioned as 'create,' not just 'schedule' - it writes the content, not just queues content you already wrote",
+    "trustScore": 3,
+    "pricingNote": "Starts at $39/month; Growth tier with review/DM management at $79/month; 7-day free trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://presly.ai/blog/best-ai-social-media-tool-home-services-2026",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-d37ea2fa27",
+    "slug": "i-want-to-automatically-assign-the-right-technician-to-each-job",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Office admin/dispatcher for a multi-tech HVAC, plumbing, or electrical company",
+    "title": "I want to automatically assign the right technician to each job as it comes in",
+    "intentLabels": [
+      "AI dispatch software",
+      "automated job assignment",
+      "smart dispatcher for field service"
+    ],
+    "tools": [
+      {
+        "name": "FieldCamp (AI Dispatcher)",
+        "url": "https://fieldcamp.ai/features/ai-dispatch-scheduling/"
+      }
+    ],
+    "workflowSummary": "The AI Dispatcher evaluates thousands of scheduling combinations per second, matching each job to a technician by skill, service zone, truck capacity, customer time window, and compliance deadlines, then either auto-assigns the job the moment it's created or queues suggestions for a dispatcher to approve.",
+    "samplePrompt": "A new AC repair request just came in for the north service zone - assign it to the nearest available tech with HVAC certification and no schedule conflicts, and let me approve before it's confirmed.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once your team, zones, and skills are set up in the system; day-to-day use is simple after that",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://fieldcamp.ai/features/ai-dispatch-scheduling/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-14dc3bdc46",
+    "slug": "i-want-to-plan-the-most-efficient-daily-route-for-my-crews",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Dispatcher/owner managing 10+ technicians across daily routes",
+    "title": "I want to plan the most efficient daily route for my crews",
+    "intentLabels": [
+      "AI route optimization",
+      "crew routing software",
+      "dispatch dashboard"
+    ],
+    "tools": [
+      {
+        "name": "Arrivy",
+        "url": "https://www.arrivy.com/blog/best-dispatching-softwares-for-field-service-businesses/"
+      }
+    ],
+    "workflowSummary": "Arrivy's dispatch dashboard shows live crew and job locations and uses AI-powered route optimization to sequence stops and cut drive time; customers get automated notifications and self-scheduling, which also reduces 'where's my tech' calls to the office.",
+    "samplePrompt": "Here are today's 12 service calls across three zones - sequence the stops for two trucks to minimize total drive time and send customers an automatic 'on my way' text 30 minutes before arrival.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dispatch dashboard itself is straightforward, but full value comes from connecting your CRM/accounting tools first",
+    "trustScore": 3,
+    "pricingNote": "Standard $75/month (3 users, +$25/user/month), Premium $150/month (3 users, +$50/user/month), Enterprise on request; 14-day free trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.arrivy.com/blog/best-dispatching-softwares-for-field-service-businesses/",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "April 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-5b367f1afd",
+    "slug": "i-want-to-stop-time-card-disputes-and-know-my-crew-actually",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Construction or contracting business owner managing hourly field crews",
+    "title": "I want to stop time card disputes and know my crew actually worked where they say they did",
+    "intentLabels": [
+      "GPS time tracking",
+      "AI facial recognition clock-in",
+      "construction timesheet app"
+    ],
+    "tools": [
+      {
+        "name": "busybusy",
+        "url": "https://busybusy.com/"
+      }
+    ],
+    "workflowSummary": "Crew members clock in/out from their phone or a job site kiosk; AI-powered facial recognition flags the office if someone tries to clock in for a coworker, and GPS geofencing (Onsite Verification) only allows clock-in once someone is physically inside the job site boundary, producing audit-ready digital timecards for payroll.",
+    "samplePrompt": "Show me which crew members clocked in outside the geofence for the Elm Street job this week, and flag any facial-recognition mismatches.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to start, and the mobile app is built for simple field clock in/out",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans not listed in the pages reviewed - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://busybusy.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-f44a3d711d",
+    "slug": "i-want-to-stop-running-out-of-parts-on-trucks-and-stop-over",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Operations manager for a multi-truck HVAC, plumbing, or electrical company",
+    "title": "I want to stop running out of parts on trucks and stop over-ordering materials that just sit on a shelf",
+    "intentLabels": [
+      "AI inventory forecasting",
+      "automated material reordering",
+      "parts stocking prediction"
+    ],
+    "tools": [
+      {
+        "name": "BuildOps (AI Inventory Optimization)",
+        "url": "https://buildops.com/resources/ai-inventory-optimization-contractors/"
+      }
+    ],
+    "workflowSummary": "The AI analyzes historical job data and seasonality to predict which parts will be needed and when, connects part requirements to technician truck stock in real time so a tech has what they need before leaving the shop, and automates reorders only when actually needed rather than on a fixed schedule.",
+    "samplePrompt": "Based on our last six months of HVAC service calls, tell me which three parts we're most likely to run short on next month and how much truck stock to carry.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once historical job data exists in the system; less useful for a brand-new business with no job history yet",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://buildops.com/resources/ai-inventory-optimization-contractors/",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "May 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-ff081991e6",
+    "slug": "i-want-ai-to-check-subcontractor-insurance-certificates-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting, subcontractor management)",
+    "persona": "General contractor managing certificates of insurance from multiple subcontractors",
+    "title": "I want AI to check subcontractor insurance certificates and tell me what's missing before work starts",
+    "intentLabels": [
+      "AI COI tracking",
+      "subcontractor insurance compliance",
+      "certificate of insurance verification"
+    ],
+    "tools": [
+      {
+        "name": "illumend",
+        "url": "https://www.illumend.ai/product/construction"
+      }
+    ],
+    "workflowSummary": "Subcontractors upload their certificate of insurance once; the AI verifies coverage against your project's requirements in seconds and flags missing or insufficient coverage, while its assistant ('Lumie') explains what's missing in plain, construction-friendly language so the sub knows exactly how to fix it.",
+    "samplePrompt": "Review this subcontractor's certificate of insurance against our project's requirement of $2M general liability and workers' comp, and tell me exactly what's missing.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed so a subcontractor with no insurance background can understand what to fix, per the vendor's own description",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the pages reviewed; vendor mentions a 60-day money-back guarantee - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.illumend.ai/product/construction",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-24dd2e06cb",
+    "slug": "i-want-ai-to-spot-safety-hazards-on-my-job-site-before-someone",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting)",
+    "persona": "Superintendent or safety officer on a construction jobsite",
+    "title": "I want AI to spot safety hazards on my job site before someone gets hurt",
+    "intentLabels": [
+      "AI safety inspection",
+      "jobsite hazard detection",
+      "automated OSHA compliance reporting"
+    ],
+    "tools": [
+      {
+        "name": "DroneDeploy Safety AI",
+        "url": "https://www.dronedeploy.com/product/safety-ai"
+      }
+    ],
+    "workflowSummary": "Walk the site with a 360 camera (no special training needed); the AI analyzes the footage and flags safety risks with a stated 95% confidence, linking each finding to the specific OSHA 1910/1926 standard it relates to, and produces a timestamped, photo-referenced report for compliance and subcontractor accountability.",
+    "samplePrompt": "Here's this week's 360 walkthrough video of the second floor - flag any guardrail, PPE, or housekeeping issues and cite the relevant OSHA standard for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor states 'anyone can do it and there's no training necessary' for the capture step; interpreting findings still benefits from safety knowledge",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.dronedeploy.com/product/safety-ai",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-446a71bf7f",
+    "slug": "i-want-to-know-when-a-truck-needs-maintenance-before-it-breaks",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Business owner or fleet manager running a crew of service trucks",
+    "title": "I want to know when a truck needs maintenance before it breaks down on the road",
+    "intentLabels": [
+      "AI predictive maintenance",
+      "fleet telematics",
+      "vehicle diagnostics alerts"
+    ],
+    "tools": [
+      {
+        "name": "Samsara (Connected Maintenance)",
+        "url": "https://www.samsara.com/products/telematics/fleet-maintenance"
+      }
+    ],
+    "workflowSummary": "Samsara continuously monitors engine diagnostics and fault codes across your vehicles, builds a maintenance cost and usage history per vehicle, and uses AI to flag likely mechanical problems before they become a breakdown, plus AI-powered invoice scanning to catch overcharges from repair vendors.",
+    "samplePrompt": "Which trucks in my fleet are showing early fault-code warnings this week, and what's the estimated cost trend on our top three highest-maintenance vehicles?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires installing telematics hardware first; the dashboard itself is designed for non-technical fleet managers",
+    "trustScore": 3,
+    "pricingNote": "Third-party estimate of roughly $27-60/vehicle/month depending on tier, often with multi-year contracts; Samsara does not publish pricing directly - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.samsara.com/products/telematics/fleet-maintenance",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-efcbd6ffad",
+    "slug": "i-want-to-know-where-all-my-equipment-and-tools-are-and-stop",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting, excavation, specialty trades)",
+    "persona": "Contractor managing heavy equipment, tools, and attachments across multiple job sites",
+    "title": "I want to know where all my equipment and tools are and stop losing them to theft",
+    "intentLabels": [
+      "AI equipment tracking",
+      "tool theft prevention",
+      "construction asset utilization"
+    ],
+    "tools": [
+      {
+        "name": "Tenna",
+        "url": "https://www.tenna.com/ai-info/"
+      }
+    ],
+    "workflowSummary": "GPS trackers and Bluetooth beacons attached to equipment, vehicles, and even smaller tools feed a central platform; AI utilization analytics flag idle or underused equipment, predictive maintenance analyzes engine hours and diagnostic codes, and theft detection alerts you when equipment moves outside authorized areas or times.",
+    "samplePrompt": "Show me which pieces of equipment have been sitting idle for more than a week across all our active job sites, and flag anything that's moved outside its assigned site overnight.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires physically tagging equipment with trackers/beacons first; the dashboard itself is described as straightforward",
+    "trustScore": 4,
+    "pricingNote": "Not listed in the pages reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tenna.com/ai-info/",
+    "sourceType": "Product/official info page",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-8234936988",
+    "slug": "i-want-to-track-punch-list-items-and-change-orders-on-my",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting)",
+    "persona": "Superintendent or project manager closing out a construction project",
+    "title": "I want to track punch list items and change orders on my blueprints instead of a clipboard",
+    "intentLabels": [
+      "AI punch list app",
+      "change order tracking",
+      "blueprint-linked task management"
+    ],
+    "tools": [
+      {
+        "name": "Fieldwire",
+        "url": "https://www.fieldwire.com/blog/fieldwire-vs-procore-comparison/"
+      }
+    ],
+    "workflowSummary": "Inspectors pin punch list items directly to exact locations on digital drawings, attach photos and voice notes via Quick Capture, and assign tasks to the right trade; each item moves through a custom status workflow (Created, Assigned, In Progress, Ready for Inspection, Verified, Closed) visible to office and field in real time.",
+    "samplePrompt": "Log a punch list item at the northeast stairwell for a missing handrail bracket, assign it to the metal subcontractor, and flag it high priority.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "independent reviewers cite Fieldwire as leading in onboarding speed compared to larger platforms like Procore",
+    "trustScore": 4,
+    "pricingNote": "$39/user/month (Pro), $59/user/month (Business) per an independent comparison; free tier available for up to 5 users - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.fieldwire.com/blog/fieldwire-vs-procore-comparison/",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "January 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-af1a7bcdb5",
+    "slug": "i-want-my-english-speaking-pm-and-spanish-speaking-crew-to",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting, remodeling)",
+    "persona": "General contractor or foreman managing a bilingual crew",
+    "title": "I want my English-speaking PM and Spanish-speaking crew to understand each other without a bilingual foreman in the middle",
+    "intentLabels": [
+      "AI jobsite translation",
+      "bilingual crew communication app",
+      "auto-translate construction chat"
+    ],
+    "tools": [
+      {
+        "name": "Jamb AI",
+        "url": "https://jamb.ai/"
+      }
+    ],
+    "workflowSummary": "Send a message in English inside the app's job-site group chat; Spanish-speaking crew members see it automatically translated, and their replies translate back, with voice messages supported for when hands are covered in mud. Phone calls with subs are also transcribed and summarized into decisions and next steps automatically.",
+    "samplePrompt": "Send today's task list to the tile crew group chat in English - make sure it's auto-translated to Spanish for the crew and log it as a change order reminder.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to require no copy-pasting into a separate translation tool; messaging works like a normal group chat",
+    "trustScore": 2,
+    "pricingNote": "Not listed on the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://jamb.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-8d5169946b",
+    "slug": "i-want-to-see-if-a-job-actually-made-money-after-labor",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business owner who wants to know which jobs are actually profitable",
+    "title": "I want to see if a job actually made money after labor, materials, and commissions",
+    "intentLabels": [
+      "AI job costing",
+      "per-job profitability tracking",
+      "margin analysis for contractors"
+    ],
+    "tools": [
+      {
+        "name": "Housecall Pro (Job Costing)",
+        "url": "https://www.housecallpro.com/features/job-costing/"
+      }
+    ],
+    "workflowSummary": "As technicians log time and materials against a job, the platform auto-pulls material costs from your price book, tracks labor and commission costs per employee, and shows profit margin shift instantly as costs are added, giving a clear before/after profitability breakdown per job without a spreadsheet.",
+    "samplePrompt": "Pull up last month's completed water heater installs and show me which ones came in under margin, broken down by labor vs. materials cost.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as replacing spreadsheets with an intuitive, easy-to-use layout inside the existing invoicing/estimate tool",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed (Housecall Pro's core plans are typically $59+/month) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.housecallpro.com/features/job-costing/",
+    "sourceType": "Product feature page",
+    "freshness": "April 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-4090827191",
+    "slug": "i-want-to-know-the-moment-a-permit-clears-instead-of-checking",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (general contracting)",
+    "persona": "General contractor managing permits across multiple active jobs and cities",
+    "title": "I want to know the moment a permit clears instead of checking the city portal myself every day",
+    "intentLabels": [
+      "AI permit tracking",
+      "automated permit status monitoring",
+      "building permit alerts"
+    ],
+    "tools": [
+      {
+        "name": "ClearedNo",
+        "url": "https://www.clearedno.com/blog/permit-tracking-software-for-contractors"
+      }
+    ],
+    "workflowSummary": "The tool monitors your building permits across every city you work in, multiple times a day, and sends an instant alert the moment a permit clears, an inspection fails, or a permit is approaching expiration, so crews can be mobilized the same day instead of days later.",
+    "samplePrompt": "Monitor the electrical rough-in permit for the Maple Ave job and text me the moment it clears so I can schedule the insulation crew.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "positioned as removing manual portal-checking entirely; no special setup described beyond adding your permits",
+    "trustScore": 2,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.clearedno.com/blog/permit-tracking-software-for-contractors",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "July 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-9cc2ef5cbe",
+    "slug": "i-want-to-get-new-field-hires-through-their-paperwork-before",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Office admin or owner hiring field-based crew members (techs, laborers, installers)",
+    "title": "I want to get new field hires through their paperwork before their first day without emailing PDFs back and forth",
+    "intentLabels": [
+      "AI new hire onboarding",
+      "field employee paperwork automation",
+      "text-based onboarding"
+    ],
+    "tools": [
+      {
+        "name": "Team Engine (Onboarding)",
+        "url": "https://www.teamengine.io/features/employee-onboarding-software"
+      }
+    ],
+    "workflowSummary": "New hires complete I-9 and W-4 information, e-sign offer letters, and go through background check initiation entirely from their phone via text message, since field-based employees often don't check email regularly; the office gets a centralized, paperless tracker instead of chasing signatures.",
+    "samplePrompt": "Send our standard new-hire paperwork packet by text to this week's two new HVAC installers, and let me know when both have completed their I-9.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically so new hires don't need an app, portal, or email, just texting",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.teamengine.io/features/employee-onboarding-software",
+    "sourceType": "Product feature page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-0243728c8b",
+    "slug": "i-want-outdoor-jobs-to-automatically-reschedule-when-the",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (painting, roofing, landscaping, concrete)",
+    "persona": "Dispatcher for a weather-sensitive trade",
+    "title": "I want outdoor jobs to automatically reschedule when the forecast turns bad instead of me watching the weather all day",
+    "intentLabels": [
+      "AI weather-based scheduling",
+      "automatic job rescheduling",
+      "weather-sensitive dispatch"
+    ],
+    "tools": [
+      {
+        "name": "Fieldproxy",
+        "url": "https://www.fieldproxy.ai/resources/blog/smart-dispatch-software-ai-powered-solution-guide"
+      }
+    ],
+    "workflowSummary": "The AI factors real-time weather forecasts alongside traffic and technician skill into its scheduling recommendations, and for outdoor trades it can automatically reschedule a job when the forecast turns unfavorable, notifying the affected customer of the new time without dispatch staff having to watch the weather manually.",
+    "samplePrompt": "If tomorrow's forecast shows rain during our scheduled exterior painting jobs, automatically move them to the next open slot and text the affected customers their new time.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the underlying idea is simple, but setting weather-sensitivity rules per trade takes initial configuration",
+    "trustScore": 2,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.fieldproxy.ai/resources/blog/smart-dispatch-software-ai-powered-solution-guide",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-aef4b4f7c6",
+    "slug": "i-want-to-stop-losing-renewal-revenue-because-nobody-remembered",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (HVAC, pest control, lawn care, pool service)",
+    "persona": "Home service business owner running recurring maintenance plans",
+    "title": "I want to stop losing renewal revenue because nobody remembered a maintenance contract was up",
+    "intentLabels": [
+      "Service agreement management",
+      "maintenance contract renewal reminders",
+      "recurring service automation"
+    ],
+    "tools": [
+      {
+        "name": "FieldPulse (Maintenance Agreement Software)",
+        "url": "https://www.fieldpulse.com/features/maintenance-agreements"
+      }
+    ],
+    "workflowSummary": "Store every maintenance agreement in one system with full service history and contract terms; the platform automatically schedules recurring visits based on contract terms, sends reminders to both customers and technicians ahead of each visit, and flags contracts approaching renewal so you don't miss the chance to re-sign a customer.",
+    "samplePrompt": "Show me every HVAC maintenance contract renewing in the next 30 days, and draft a renewal reminder text to send each customer two weeks before their contract ends.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as centralizing agreements, scheduling, and reminders in one place rather than a spreadsheet",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.fieldpulse.com/features/maintenance-agreements",
+    "sourceType": "Product feature page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-2301da7637",
+    "slug": "i-want-ai-to-write-my-google-and-facebook-ad-copy-instead-of",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Owner or marketer running paid Google/Facebook campaigns for a local home service business",
+    "title": "I want AI to write my Google and Facebook ad copy instead of staring at a blank page",
+    "intentLabels": [
+      "AI ad copy generator",
+      "Google Ads copy writer",
+      "Facebook ad headline generator"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai (Free Ad Copy Generator)",
+        "url": "https://www.copy.ai/tools/free-google-ads-generator",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Describe your service, target audience, and unique benefit; the AI generates multiple headline and body copy variations optimized for the character limits and conventions of Google Ads, Facebook Ads, or LinkedIn Ads, so you can test several angles instead of writing one ad and hoping.",
+    "samplePrompt": "Write 8 Google Ads headlines and 4 descriptions for emergency plumbing repair, targeting homeowners searching 'plumber near me', with a strong call-to-action to call now.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a few fields to fill in, then the tool generates copy in seconds",
+    "trustScore": 3,
+    "pricingNote": "Free tool, no account required per the page reviewed; Copy.ai's broader platform has paid tiers - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.copy.ai/tools/free-google-ads-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-357b56cf43",
+    "slug": "i-want-new-google-reviews-to-come-in-automatically-after-every",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business owner who completes jobs but rarely gets around to asking for reviews",
+    "title": "I want new Google reviews to come in automatically after every completed job, without me remembering to ask",
+    "intentLabels": [
+      "AI review request automation",
+      "automated review generation",
+      "post-job review SMS/email"
+    ],
+    "tools": [
+      {
+        "name": "NiceJob (Reviews)",
+        "url": "https://get.nicejob.com/resources/the-best-review-software-for-small-home-service-businesses-in-2026"
+      }
+    ],
+    "workflowSummary": "NiceJob connects to your existing CRM or field service software (Jobber, Housecall Pro, QuickBooks, and others) and automatically sends a review request by SMS and email the moment a job is completed or an invoice is paid, then follows up intelligently with customers who don't respond the first time.",
+    "samplePrompt": "A water heater install job was just marked complete and invoiced - send the customer a review request by text, and follow up by email in three days if they haven't responded.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor states basic connectors can be set up in minutes; a bit more setup time to customize triggers and tone",
+    "trustScore": 3,
+    "pricingNote": "Reviews plan starts at $75/month; 14-day free trial, no long-term contract - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://get.nicejob.com/resources/the-best-review-software-for-small-home-service-businesses-in-2026",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-20d9e8bcd6",
+    "slug": "i-want-happy-customers-to-refer-their-friends-automatically",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Home service business owner who relies on word-of-mouth but has no structured way to ask for referrals",
+    "title": "I want happy customers to refer their friends automatically, without me having to remember to ask them",
+    "intentLabels": [
+      "AI referral program automation",
+      "automated referral requests",
+      "word-of-mouth marketing tool"
+    ],
+    "tools": [
+      {
+        "name": "NiceJob (Referrals)",
+        "url": "https://get.nicejob.com/product/referrals"
+      }
+    ],
+    "workflowSummary": "The tool automatically sends a referral request by SMS or email at the moment a customer is most likely to say yes (right after they leave a positive review), gives each customer a unique trackable referral link, and reports exactly how many referrals and clicks each customer generates.",
+    "samplePrompt": "A customer just left us a 5-star review for a fence installation - send them a referral request with their own trackable link, and let me know if a friend clicks it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as connecting to your existing review sources and running with minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Referral campaigns are included on the Pro plan ($125/month per a third-party pricing comparison); 14-day free trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://get.nicejob.com/product/referrals",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-9a7f8ae11f",
+    "slug": "i-want-ai-to-tell-me-what-s-wrong-with-my-google-business",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Owner or office admin managing their own Google Business Profile without an SEO background",
+    "title": "I want AI to tell me what's wrong with my Google Business Profile and fix it so I rank higher locally",
+    "intentLabels": [
+      "AI Google Business Profile optimization",
+      "local SEO audit tool",
+      "GBP ranking tracker"
+    ],
+    "tools": [
+      {
+        "name": "Localo",
+        "url": "https://localo.com/"
+      }
+    ],
+    "workflowSummary": "Localo's AI agent audits your Google Business Profile against your industry and local competitors, flags missing or weak fields, tracks your ranking position for chosen local keywords over time, and can generate and schedule Google Posts and draft review responses.",
+    "samplePrompt": "Audit our Google Business Profile against the top 3 competing plumbers in our zip code, tell me what's missing, and draft two Google Posts about our current spring promotion.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor markets it toward local business owners directly, not just SEO agencies, with a free-to-try rank checker and review response generator",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the pages reviewed; several free standalone tools (rank checker, review response generator) are available without an account - verify full pricing before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://localo.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-e111b18f55",
+    "slug": "i-want-ai-to-tell-me-which-unbooked-leads-to-call-first-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Contractor whose sales team is slow to follow up on estimates that haven't converted",
+    "title": "I want AI to tell me which unbooked leads to call first and write the follow-up message for me",
+    "intentLabels": [
+      "AI lead scoring",
+      "automated deal follow-up",
+      "sales assistant for contractor CRM"
+    ],
+    "tools": [
+      {
+        "name": "DripJobs (Jobi AI)",
+        "url": "https://dripjobs.com/"
+      }
+    ],
+    "workflowSummary": "Jobi AI reads the notes, texts, and conversation history on every deal in your pipeline, scores each lead so you know where to focus first, and writes a personalized follow-up or project-update message you can send with one click; new leads are auto-detected by stage and dropped into the right drip sequence.",
+    "samplePrompt": "Look at our open deals from the last two weeks and tell me the top 3 I should call today, plus draft a follow-up text for the highest-value one.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as reading deal context and writing the message for you; you still choose whether to send it",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed; a $25/month DripJobs Chat add-on is mentioned for the texting feature - verify full pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dripjobs.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-352f8a12ee",
+    "slug": "i-want-to-turn-a-happy-customer-s-story-into-a-polished-video-i",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (remodeling, roofing, landscaping, exterior trades)",
+    "persona": "Business owner who has before/after job photos but no video production budget",
+    "title": "I want to turn a happy customer's story into a polished video I can use in ads and on my website",
+    "intentLabels": [
+      "AI testimonial video maker",
+      "customer story to video",
+      "social proof video generator"
+    ],
+    "tools": [
+      {
+        "name": "Fliki",
+        "url": "https://fliki.ai/features/testimonial-video-maker"
+      }
+    ],
+    "workflowSummary": "Drop in a customer photo, name, and project details, plus any before/after photos or screenshots; the AI places branded lower-thirds and motion graphics automatically and exports the finished video in multiple aspect ratios (16:9 for the website, 1:1 for feed ads, 9:16 for Reels/Stories ads) from one source.",
+    "samplePrompt": "Turn this customer's 5-star review about their kitchen remodel into a 30-second testimonial-style video, sized for both my website and an Instagram Reels ad.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as drag-and-drop with automatic brand formatting; no video editing skill needed",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed; described elsewhere as offering a free tier - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://fliki.ai/features/testimonial-video-maker",
+    "sourceType": "Product feature page",
+    "freshness": "May 2025",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-a5a09b469f",
+    "slug": "i-want-to-systematically-reach-out-to-old-customers-who-haven-t",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Owner or office admin with hundreds of past customers who haven't booked in a year or more",
+    "title": "I want to systematically reach out to old customers who haven't booked in a while and get some of them to rebook",
+    "intentLabels": [
+      "AI customer reactivation",
+      "dormant lead win-back campaign",
+      "database reactivation calling"
+    ],
+    "tools": [
+      {
+        "name": "Mecha AI",
+        "url": "https://www.gomecha.ai/agent/customer-reactivation/"
+      }
+    ],
+    "workflowSummary": "The AI pulls dormant accounts from your CRM (customers who haven't booked in 6, 12, or 18+ months), then an AI agent calls each one by name, references their service history, and offers a reason to rebook - running through the whole list at once rather than a person dialing a few calls an hour.",
+    "samplePrompt": "Pull every customer who hasn't booked an HVAC tune-up in over a year and have the AI call each one, referencing their last service and offering our current seasonal maintenance special.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the concept is simple, but reviewing call scripts and outcomes before rolling out to a full customer list is worth doing first",
+    "trustScore": 2,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.gomecha.ai/agent/customer-reactivation/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-533a3b0f79",
+    "slug": "i-want-to-design-a-professional-door-hanger-or-flyer-without",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (roofing, solar, pest control, landscaping - canvassing-heavy trades)",
+    "persona": "Owner doing door-to-door canvassing or neighborhood flyer drops",
+    "title": "I want to design a professional door hanger or flyer without hiring a designer",
+    "intentLabels": [
+      "AI door hanger design",
+      "AI flyer maker",
+      "canvassing marketing material generator"
+    ],
+    "tools": [
+      {
+        "name": "PagePop.ai (AI Door Hanger Maker)",
+        "url": "https://www.pagepop.ai/tool/ai-door-hanger-maker"
+      }
+    ],
+    "workflowSummary": "Describe your promotion, key message, brand colors, and any imagery in plain language (or upload your logo); the AI generates multiple ready-to-print door hanger layouts in seconds, accounting for the die-cut hole placement, so you pick a direction instead of starting from a blank canvas.",
+    "samplePrompt": "Design a door hanger for a spring gutter-cleaning promotion, mentioning our $25-off coupon code, in a clean blue-and-white layout with space for the door-hanger hole at the top.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as requiring no design experience, just a text description of what you want",
+    "trustScore": 2,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pagepop.ai/tool/ai-door-hanger-maker",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-b724d81690",
+    "slug": "i-want-to-automatically-reply-to-instagram-and-facebook-dms-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services",
+    "persona": "Business owner who gets Instagram/Facebook DMs asking about pricing and availability but doesn't have time to answer them all",
+    "title": "I want to automatically reply to Instagram and Facebook DMs and capture the lead's info before I ever see the message",
+    "intentLabels": [
+      "AI Instagram/Facebook DM automation",
+      "social media lead capture chatbot",
+      "comment-to-DM automation"
+    ],
+    "tools": [
+      {
+        "name": "ManyChat",
+        "url": "https://manychat.com/blog/ai-chatbots-for-lead-generation/"
+      }
+    ],
+    "workflowSummary": "Set up automated flows triggered by DMs, comments, or story replies; ManyChat's AI answers common questions (pricing, availability, service area) in natural language 24/7, captures the person's contact details, and can qualify them with a short quiz before handing the conversation to you or your CRM.",
+    "samplePrompt": "When someone comments 'PRICE' on our fence installation post, automatically DM them our starting price range, ask for their zip code and project timeline, and add them to our lead list.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "marketed as a drag-and-drop, no-code builder, though building a good qualification flow takes some initial setup",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the pages reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://manychat.com/blog/ai-chatbots-for-lead-generation/",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-3ef5653318",
+    "slug": "i-want-ai-to-reach-out-to-my-maintenance-plan-customers-about",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Contractors & Home Services (HVAC, plumbing, electrical - recurring maintenance plans)",
+    "persona": "Home service business owner with an existing base of maintenance plan / membership customers",
+    "title": "I want AI to reach out to my maintenance plan customers about renewals and upsells so I don't have to manage a spreadsheet of who's due",
+    "intentLabels": [
+      "AI membership coordinator",
+      "maintenance plan renewal outreach",
+      "automated upsell messaging"
+    ],
+    "tools": [
+      {
+        "name": "Podium (AI Membership Coordinator, 'Larry')",
+        "url": "https://homeservices.podium.com/features/marketing-tools"
+      }
+    ],
+    "workflowSummary": "Larry, a dedicated AI agent, works through your full maintenance agreement list by text - reaching out when agreements are up for renewal, when a seasonal visit is due, or when there's an upsell opportunity based on a customer's known equipment history - and books the visit directly into your real calendar without anyone on your team making the calls.",
+    "samplePrompt": "Go through our HVAC maintenance plan customers whose seasonal tune-up is due in the next 30 days, text each one to schedule their visit, and flag any whose plan is close to renewal.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to run in the background once connected to your maintenance list and calendar; no manual dialing or spreadsheet tracking required",
+    "trustScore": 3,
+    "pricingNote": "Paid add-on; requires the Podium FSM (base platform pricing not listed in the page reviewed) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://homeservices.podium.com/features/marketing-tools",
+    "sourceType": "Product feature page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-79bffdcc53",
+    "slug": "i-want-to-walk-a-roof-after-a-storm-and-have-ai-build-the",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Roofing (storm restoration)",
+    "persona": "Roofing contractor or sales rep doing storm damage inspections",
+    "title": "I want to walk a roof after a storm and have AI build the insurance claim report for me before I even get down the ladder",
+    "intentLabels": [
+      "AI roof inspection report",
+      "storm damage documentation",
+      "insurance-ready roofing claim"
+    ],
+    "tools": [
+      {
+        "name": "Paiv",
+        "url": "https://www.paiv.ai/"
+      }
+    ],
+    "workflowSummary": "Run the inspection in the Paiv app, which guides you with an adaptive checklist telling you what to capture as you go; AI generates a structured, insurance-ready damage report with tagged photos in real time, and can turn that into a full Xactimate estimate (reviewed by a licensed Xactimate Level 3 estimator) in under two hours.",
+    "samplePrompt": "I just finished inspecting this hail-damaged roof - compile the tagged photos and notes into an insurance-ready damage report and start the Xactimate estimate.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as guiding even less experienced inspectors through exactly what to capture, step by step",
+    "trustScore": 3,
+    "pricingNote": "One quoted customer mentions '$50 a month' in a testimonial on the page, but this isn't confirmed as official pricing - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.paiv.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-7d4cebe59f",
+    "slug": "i-want-ai-to-check-whether-the-insurance-carrier-missed-line",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Roofing (storm restoration)",
+    "persona": "Roofing contractor who suspects insurance carriers are underpaying claims",
+    "title": "I want AI to check whether the insurance carrier missed line items on this roof claim and write the letter to get us paid for them",
+    "intentLabels": [
+      "AI insurance supplement writer",
+      "underpaid claim recovery",
+      "Xactimate scope audit"
+    ],
+    "tools": [
+      {
+        "name": "RoofGenius.ai",
+        "url": "https://roofgenius.ai/"
+      }
+    ],
+    "workflowSummary": "Drop in the carrier's estimate; the AI audits the scope, code violations, and depreciation errors against a database of 14 million+ Xactimate items plus IRC, OSHA, and GAF standards, then drafts a supplement letter tailored to that specific carrier's known weak spots to recover the shortfall.",
+    "samplePrompt": "Here's the carrier's estimate for this hail claim - find any missed line items or code violations they didn't account for, and draft a supplement letter to the carrier requesting the difference.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI does the heavy lifting, but reviewing what it flags before sending to a carrier still benefits from claims experience",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed; free trial mentioned - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://roofgenius.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-d56b5e299e",
+    "slug": "i-want-to-design-a-solar-system-and-generate-a-customer",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Solar installation",
+    "persona": "Residential solar sales rep or system designer",
+    "title": "I want to design a solar system and generate a customer proposal without doing a site visit",
+    "intentLabels": [
+      "AI solar design software",
+      "remote solar proposal",
+      "3D roof modeling"
+    ],
+    "tools": [
+      {
+        "name": "Aurora Solar",
+        "url": "https://www.toolmage.com/en/tool/aurora-solar/"
+      }
+    ],
+    "workflowSummary": "Aurora AI generates a precise 3D model of the site (roof geometry, obstructions like trees and chimneys) in under 15 seconds using LiDAR data, then AutoDesigner places panels against energy targets and equipment rules; the platform produces a polished, branded proposal with financing comparisons across cash, loan, lease, and PPA options.",
+    "samplePrompt": "Build a solar design for this address using satellite imagery, avoid the two trees on the south side of the roof, and generate a proposal comparing cash purchase against a 20-year loan.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the modeling itself is automated, but a new user still needs to learn the proposal and financing tools",
+    "trustScore": 4,
+    "pricingNote": "Basic $159/user/month, Premium $259/user/month, Enterprise custom, plus a credit-based model for individual project runs (roughly $22 per design equivalent); no free trial, per an independent review - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.toolmage.com/en/tool/aurora-solar/",
+    "sourceType": "Blog/product page (third-party review)",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-87c6e9e1f3",
+    "slug": "i-want-to-identify-an-unfamiliar-pest-from-a-photo-and-know-how",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Pest control",
+    "persona": "Pest control technician in the field who needs to identify an unfamiliar pest",
+    "title": "I want to identify an unfamiliar pest from a photo and know how to treat it, right from the job site",
+    "intentLabels": [
+      "AI pest identification",
+      "image-recognition bug ID",
+      "field treatment reference tool"
+    ],
+    "tools": [
+      {
+        "name": "NameDatBug",
+        "url": "https://www.pctonline.com/news/namedatbug-launches-ai-field-tool-and-expert-consultation-app/"
+      }
+    ],
+    "workflowSummary": "Photograph the pest in the field; image-recognition technology analyzes the photo and provides a taxonomic classification down to family or species level, then surfaces relevant treatment, safety, and biological information, plus product labels and Safety Data Sheets; if still uncertain, submit the specimen for review by a Board-Certified Entomologist.",
+    "samplePrompt": "Here's a photo of an insect I found near a client's foundation - identify it, tell me if it's a structural pest risk, and pull up the relevant treatment and safety information.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works through a web browser with no app-store installation, per the vendor",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pctonline.com/news/namedatbug-launches-ai-field-tool-and-expert-consultation-app/",
+    "sourceType": "Trade publication article (product launch coverage)",
+    "freshness": "June 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-48688341fb",
+    "slug": "i-want-to-run-a-standards-compliant-home-energy-audit-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Home energy audit / weatherization",
+    "persona": "Home energy auditor or weatherization contractor",
+    "title": "I want to run a standards-compliant home energy audit and generate the report on-site instead of doing paperwork back at the office",
+    "intentLabels": [
+      "AI-assisted energy audit software",
+      "BPI-compliant audit reporting",
+      "home performance assessment tool"
+    ],
+    "tools": [
+      {
+        "name": "Snugg Pro",
+        "url": "https://snuggpro.com/"
+      }
+    ],
+    "workflowSummary": "Run the audit on a phone, tablet, or computer using pre-loaded templates and configurable fields; AI-assisted data entry cuts audit time, the software calibrates utility bills against the home's profile and weather normalization, and generates a BPI-2400-compliant report with tailored efficiency recommendations and cost/savings estimates on-site.",
+    "samplePrompt": "Pull in this home's utility bill history, calibrate it against the home's profile, and generate a BPI-compliant audit report with insulation and air-sealing recommendations.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "built for certified energy auditors and assumes familiarity with BPI standards, not a general contractor's first energy audit",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the pages reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://snuggpro.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-07ad4d8f65",
+    "slug": "i-want-ai-to-tell-me-exactly-how-much-chemical-to-add-based-on",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Pool service",
+    "persona": "Pool service technician managing chemical dosing across a route of pools",
+    "title": "I want AI to tell me exactly how much chemical to add based on this pool's readings instead of doing the math myself at every stop",
+    "intentLabels": [
+      "AI pool chemical dosing",
+      "automated LSI calculation",
+      "pool chemistry recommendation engine"
+    ],
+    "tools": [
+      {
+        "name": "Pool Founder",
+        "url": "https://www.poolfounder.com/pool-chemical-tracking-software"
+      }
+    ],
+    "workflowSummary": "Log the pool's current chemistry readings at the start of service; the AI calculates the Langelier Saturation Index automatically and factors in historical trends, water source data, seasonal patterns, and the pool's surface type to recommend a specific dosing plan, then generates a customer-facing service report combining the chemical data with photos and technician notes.",
+    "samplePrompt": "Here are today's readings for this saltwater pool - calculate LSI, recommend exact chemical dosing, and include it in the customer's service report along with the photos I just took.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to let less experienced technicians make correct chemical decisions without memorizing formulas",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.poolfounder.com/pool-chemical-tracking-software",
+    "sourceType": "Blog/comparison page (third-party)",
+    "freshness": "July 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-8afa2fbac6",
+    "slug": "i-want-to-snap-a-photo-of-a-tree-and-get-a-complete-species-id",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Tree service / arboriculture",
+    "persona": "Arborist or tree service technician assessing a tree on a client's property",
+    "title": "I want to snap a photo of a tree and get a complete species ID and health assessment instead of writing up notes by hand",
+    "intentLabels": [
+      "AI tree assessment",
+      "species identification from photo",
+      "automated arborist report"
+    ],
+    "tools": [
+      {
+        "name": "ArborEye",
+        "url": "https://arboreye.net/"
+      }
+    ],
+    "workflowSummary": "Photograph the tree from your phone; the AI identifies the species, assesses visible health condition, and generates a professional work order, with support for utility line clearance documentation and a customer approval workflow, so the report is ready before you leave the property.",
+    "samplePrompt": "Here's a photo of this oak tree in the client's backyard - identify the species, assess its visible health, and draft a work order for the pruning we discussed.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "marketed as 'snap a photo, get a complete arborist report,' with a free tier to start",
+    "trustScore": 2,
+    "pricingNote": "Free to start, per the page reviewed - verify paid tier details before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://arboreye.net/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-1be2f821e1",
+    "slug": "i-want-to-take-a-photo-of-hvac-equipment-and-get-an-instant",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "HVAC (equipment inspection)",
+    "persona": "HVAC technician inspecting equipment during a service call",
+    "title": "I want to take a photo of HVAC equipment and get an instant diagnosis of what's wrong with it",
+    "intentLabels": [
+      "AI HVAC visual inspection",
+      "equipment photo diagnostics",
+      "error code lookup app"
+    ],
+    "tools": [
+      {
+        "name": "EquipAI",
+        "url": "https://apps.apple.com/mx/app/equipai/id6758571806"
+      }
+    ],
+    "workflowSummary": "Photograph the HVAC equipment; the AI analyzes the image to detect issues like refrigerant leaks, electrical problems, or mechanical wear, producing a diagnostic report with severity ratings and maintenance recommendations, while a separate error-code lookup pulls manufacturer-specific troubleshooting steps for major brands like Carrier, Trane, and Lennox.",
+    "samplePrompt": "Here's a photo of this outdoor condenser unit that's making a grinding noise - analyze it for visible issues and pull up the error code for a Trane unit showing 'E4'.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for quick photo-based diagnosis in the field, with a clean interface built for fast data entry",
+    "trustScore": 2,
+    "pricingNote": "Free with in-app purchases for Pro features, per the App Store listing - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://apps.apple.com/mx/app/equipai/id6758571806",
+    "sourceType": "App Store listing",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-e310a1cc04",
+    "slug": "i-want-ai-to-write-my-mold-inspection-report-from-my-instrument",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Water damage / mold remediation",
+    "persona": "Restoration contractor or mold inspector documenting a job for the client and lab",
+    "title": "I want AI to write my mold inspection report from my instrument photos and lab results instead of typing it up myself",
+    "intentLabels": [
+      "AI mold inspection report writer",
+      "water damage documentation",
+      "restoration report automation"
+    ],
+    "tools": [
+      {
+        "name": "RestorationWorkflow",
+        "url": "https://restorationworkflow.com/"
+      }
+    ],
+    "workflowSummary": "The AI reads photos of your inspection instruments (hygrometer, moisture meter, particle counter, thermal camera) without needing manual re-typing, automatically parses lab result PDFs, and drafts a complete, print-ready mold inspection and testing report in your company's house style, with figure-numbered photos and per-floor diagrams.",
+    "samplePrompt": "Pull in today's moisture meter photos, the thermal images from the basement, and the lab results PDF, and draft the mold inspection report in our standard format.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor states 'if you can text a customer, you can run' the platform",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://restorationworkflow.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-4ada0ea4d2",
+    "slug": "i-want-to-check-whether-a-home-s-electrical-panel-can-handle-an",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Electrical (EV charger installation)",
+    "persona": "Electrician quoting a home EV charger installation",
+    "title": "I want to check whether a home's electrical panel can handle an EV charger from a single photo, instead of a separate site visit just for that",
+    "intentLabels": [
+      "AI electrical panel assessment",
+      "EV charger load calculation",
+      "automated permit-ready load calc"
+    ],
+    "tools": [
+      {
+        "name": "Qmerit (Panel Insights + LoadCRE)",
+        "url": "https://qmerit.com/news/qmerit-deploying-ai-for-faster-safer-more-accurate-estimates-for-home-ev-charging-installations/"
+      }
+    ],
+    "workflowSummary": "Take a single photo of the customer's electrical panel; Panel Insights uses AI to evaluate the panel's specifications (available circuit spaces, tandem breakers, total capacity), and LoadCRE instantly calculates the available capacity for an EV charger, heat pump, or other electrification equipment, automatically generating the load calculation required for the electrical permit and flagging if a panel upgrade will be needed.",
+    "samplePrompt": "Here's a photo of this customer's breaker panel - tell me if it has enough available capacity for a Level 2 EV charger, or if they'll need a panel upgrade first, and generate the load calculation for the permit.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "reduces the process to a single photo instead of a manual, in-person load calculation",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://qmerit.com/news/qmerit-deploying-ai-for-faster-safer-more-accurate-estimates-for-home-ev-charging-installations/",
+    "sourceType": "Press release (vendor-published)",
+    "freshness": "November 2023 (older announcement - confirm the feature is still current before recommending)",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-0d206245a4",
+    "slug": "i-want-to-sketch-a-house-s-window-layout-on-a-map-and-generate",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Windows & doors (replacement)",
+    "persona": "Window and door replacement contractor doing an in-home consultation",
+    "title": "I want to sketch a house's window layout on a map and generate priced quote options in one visit",
+    "intentLabels": [
+      "AI window measurement and quoting",
+      "visual window replacement estimate",
+      "door and window elevation generator"
+    ],
+    "tools": [
+      {
+        "name": "WindSketch",
+        "url": "https://www.windsketch.com/blog/best-2025-software-for-estimating-window-and-door-replacement/"
+      }
+    ],
+    "workflowSummary": "Drag and drop windows and doors directly onto a property appraiser map or hand-drawn layout, then generate visual elevation views showing how the replacement will look on each side of the house; show multiple pricing tiers (basic, premium) with one-click duplication, using imported supplier rates adjusted for labor, permits, and discounts.",
+    "samplePrompt": "Place 14 windows on this home's front and side elevations from the property map, generate a basic and premium pricing option for each, and show what the house will look like with the new windows.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built around a drag-and-drop interface intended to replace hand sketches and separate estimate spreadsheets",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.windsketch.com/blog/best-2025-software-for-estimating-window-and-door-replacement/",
+    "sourceType": "Blog/product page (vendor-published)",
+    "freshness": "August 2025",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-5e9baacb11",
+    "slug": "i-want-to-design-an-irrigation-system-on-site-and-have-the",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Landscaping / irrigation",
+    "persona": "Landscaping or irrigation contractor designing a sprinkler system for a client",
+    "title": "I want to design an irrigation system on-site and have the material list and quote calculate itself as I draw",
+    "intentLabels": [
+      "Automated irrigation design software",
+      "sprinkler zone layout tool",
+      "material takeoff for landscaping"
+    ],
+    "tools": [
+      {
+        "name": "ArcSite",
+        "url": "https://www.arcsite.com/feature-details/irrigation-design-software"
+      }
+    ],
+    "workflowSummary": "Import satellite imagery of the property (auto-calibrated for accurate scale), then draw the irrigation layout using a library of reusable, brand-specific shapes (Rain Bird, Toro, etc.); the software automatically calculates pipe lengths, sprinkler counts, and valve zones as you design, turning the finished layout directly into an itemized quote.",
+    "samplePrompt": "Import the satellite image for this property, lay out a Rain Bird sprinkler system for the front and back lawn, and calculate the total pipe length, sprinkler count, and material cost.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the drawing tools are described as intuitive, but full value means learning the shape library and product database first",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the pages reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.arcsite.com/feature-details/irrigation-design-software",
+    "sourceType": "Product feature page",
+    "freshness": "August 2025",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-b2fb97a248",
+    "slug": "i-want-to-describe-an-appliance-problem-or-its-error-code-and",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Appliance repair",
+    "persona": "Appliance repair technician or homeowner deciding whether to call a technician",
+    "title": "I want to describe an appliance problem or its error code and get a structured diagnosis instead of guessing at what's wrong",
+    "intentLabels": [
+      "AI appliance diagnostic assistant",
+      "error code interpretation",
+      "repair-vs-replace analysis"
+    ],
+    "tools": [
+      {
+        "name": "AI Appliance Repair Technician (Jenova)",
+        "url": "https://www.jenova.ai/en/resources/free-ai-for-appliance-repair"
+      }
+    ],
+    "workflowSummary": "Describe the appliance problem or the exact error code shown, or upload a photo of a failed component, nameplate, or error display; the AI follows a systematic diagnostic hierarchy (user operation, mechanical, electrical, water/gas, controls) specific to the brand and model era, then applies a repair-vs-replace cost analysis using the industry-standard 50% rule and appliance lifespan data.",
+    "samplePrompt": "My Samsung front-load washer is showing error code 'SE' and won't start the spin cycle - walk through the likely causes in order, and tell me whether this is worth repairing on a 9-year-old unit.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for both homeowners and technicians, described as no-jargon and step-by-step",
+    "trustScore": 3,
+    "pricingNote": "Free tier available with limited usage; paid plans for more capacity - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.jenova.ai/en/resources/free-ai-for-appliance-repair",
+    "sourceType": "Product/blog page (vendor-published)",
+    "freshness": "May 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-1428689411",
+    "slug": "i-want-to-text-or-send-a-customer-a-real-priced-quote-from",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Junk removal",
+    "persona": "Independent junk removal or hauling operator (one to a few trucks)",
+    "title": "I want to text or send a customer a real, priced quote from their photos instead of driving out for a free in-person estimate",
+    "intentLabels": [
+      "AI photo-estimating for junk removal",
+      "instant hauling quote",
+      "automated booking for haulers"
+    ],
+    "tools": [
+      {
+        "name": "JunkQ",
+        "url": "https://www.openpr.com/news/4609455/junk-removal-365-launches-junkq-an-ai-photo-estimating"
+      }
+    ],
+    "workflowSummary": "The customer submits photos of the items to be removed; the AI produces a priced, itemized estimate built from the operator's own rates, confirms the item list through an automated chat, and texts the operator the finished quote - available both for remote quoting and on-site quoting via the JunkQ Field mobile version, with an optional flat-rate online booking page.",
+    "samplePrompt": "A customer just sent photos of a garage full of old furniture and boxes for pickup - generate a priced estimate using our per-truckload rates and text it to them for approval.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for a one-truck operator to use from a phone, per the vendor",
+    "trustScore": 3,
+    "pricingNote": "Plans start at $29/month, per the press release - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.openpr.com/news/4609455/junk-removal-365-launches-junkq-an-ai-photo-estimating",
+    "sourceType": "Press release (syndicated)",
+    "freshness": "August 2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-32045ca37d",
+    "slug": "i-want-emergency-lockout-calls-answered-and-quoted-instantly-24",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Locksmith",
+    "persona": "Locksmith business owner or dispatcher handling urgent lockout calls",
+    "title": "I want emergency lockout calls answered and quoted instantly, 24/7, instead of losing the caller to voicemail",
+    "intentLabels": [
+      "AI locksmith receptionist",
+      "automated lockout quoting",
+      "emergency dispatch automation"
+    ],
+    "tools": [
+      {
+        "name": "TheKeyBot",
+        "url": "https://www.thekeybot.com/features/automated-quoting"
+      }
+    ],
+    "workflowSummary": "The AI answers calls around the clock, generates an instant quote based on vehicle make/model/year or job type using your price sheet, and automatically assigns the job to the nearest available qualified technician based on GPS location, availability, and skill level, sending that tech an SMS with full job details; can also collect a deposit via SMS payment link before dispatch.",
+    "samplePrompt": "A customer is locked out of a 2021 Honda Civic - quote the job from our price sheet, text the nearest available tech the address and vehicle details, and collect a $25 deposit before they head out.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor states most locksmiths are live within 7-10 days after uploading a price sheet and recording a greeting",
+    "trustScore": 3,
+    "pricingNote": "Plans from $500/month per the vendor's homepage - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.thekeybot.com/features/automated-quoting",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "contractors-home-services-37e3f431e6",
+    "slug": "i-want-ai-to-analyze-my-chimney-inspection-photos-for",
+    "kind": "workflow",
+    "niche": "Contractors & Home Services",
+    "sector": "Chimney sweep / hearth service",
+    "persona": "Chimney sweep or hearth technician doing an inspection",
+    "title": "I want AI to analyze my chimney inspection photos for deficiencies and write the report, grounded in the actual manufacturer manuals, not generic answers",
+    "intentLabels": [
+      "AI chimney inspection assistant",
+      "deficiency photo analysis",
+      "NFPA-compliant report writing"
+    ],
+    "tools": [
+      {
+        "name": "ChimChat",
+        "url": "https://www.chimchat.com/"
+      }
+    ],
+    "workflowSummary": "Upload up to 10 chimney or fireplace inspection photos for AI-powered deficiency analysis, or talk through findings hands-free with voice input on the job; the assistant generates a professional inspection report, drafts a homeowner-facing summary email, and builds a repair estimate from the conversation - citing the specific manufacturer manual or document and page number behind each answer rather than guessing.",
+    "samplePrompt": "Here are photos from today's Level 2 inspection of a masonry chimney with light creosote buildup and a cracked crown - analyze the deficiencies, generate the inspection report, and draft an email to the homeowner summarizing what we found and recommend.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to be used hands-free on the job via voice input, with the option to attach documents or photos mid-conversation",
+    "trustScore": 3,
+    "pricingNote": "Not listed in the page reviewed - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.chimchat.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public page",
+    "batch": "ContractorsHomeServices AI Workflows Batch5",
+    "status": "active"
+  }
+]

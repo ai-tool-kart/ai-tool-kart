@@ -1,0 +1,1935 @@
+[
+  {
+    "id": "office-operations-managers-ed7371193a",
+    "slug": "how-do-i-stop-the-back-and-forth-emails-to-schedule-a-meeting",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers / admin coordinators scheduling internal and external meetings",
+    "title": "How do I stop the back-and-forth emails to schedule a meeting?",
+    "intentLabels": [
+      "meeting scheduler",
+      "calendar assistant",
+      "auto-scheduling",
+      "booking links"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://zapier.com/blog/best-ai-scheduling/"
+      },
+      {
+        "name": "Reclaim.ai"
+      }
+    ],
+    "workflowSummary": "Share a Calendly booking link so invitees pick an open slot themselves; Reclaim.ai auto-blocks focus time on the calendar and reshuffles meetings around existing commitments.",
+    "samplePrompt": "Set up a Calendly booking page for 30-minute vendor check-in calls, limited to Tue/Thu mornings, with a 15-minute buffer before and after.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "link sharing and setup is straightforward",
+    "trustScore": 4,
+    "pricingNote": "Both offer free tiers; paid plans roughly $10-20/user/month (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://zapier.com/blog/best-ai-scheduling/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Sept 2026 (updated within the last week)",
+    "accessNotes": "Publicly available blog post; confirm exact current rates on each vendor's own pricing page before quoting to a customer.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-8a846ea35b",
+    "slug": "i-want-ai-to-take-notes-and-summarize-our-team-meetings",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers running staff and team meetings",
+    "title": "I want AI to take notes and summarize our team meetings automatically",
+    "intentLabels": [
+      "meeting notetaker",
+      "transcription",
+      "action items",
+      "meeting summary"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://www.guideflow.com/blog/best-ai-note-taking-tools",
+        "catalogueSlug": "otter-ai"
+      },
+      {
+        "name": "Fireflies.ai"
+      }
+    ],
+    "workflowSummary": "A bot joins the video call (Zoom/Meet/Teams), transcribes speech in real time, generates a summary with action items, and can push notes into Slack or a CRM.",
+    "samplePrompt": "Summarize today's staff meeting into 5 bullet action items with owners and due dates, and post it to our #ops Slack channel.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Otter: free Basic (300 min/mo), Pro ~$16.99/mo. Fireflies: free plan + Pro ~$10/user/mo (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.guideflow.com/blog/best-ai-note-taking-tools",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Aug 2026 (~3 weeks old)",
+    "accessNotes": "Publicly available blog post; note the meeting bot is visible to attendees unless a bot-free option is chosen.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-64aefbd9dd",
+    "slug": "how-do-i-quickly-write-step-by-step-instructions-for-a-task",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers documenting internal processes for training",
+    "title": "How do I quickly write step-by-step instructions for a task without spending hours documenting it?",
+    "intentLabels": [
+      "SOP generator",
+      "process documentation",
+      "how-to guide",
+      "training doc"
+    ],
+    "tools": [
+      {
+        "name": "Scribe",
+        "url": "https://www.happysupport.ai/en/blog/ai-sop-generator"
+      },
+      {
+        "name": "Tango"
+      }
+    ],
+    "workflowSummary": "Turn on the browser extension, click through the process once, and the tool auto-captures screenshots plus step descriptions into a shareable guide you can lightly edit and export.",
+    "samplePrompt": "Record my process for submitting a purchase order in our system and turn it into a step-by-step guide I can send to new hires.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "capture is automatic, but reviewing/redacting screenshots takes a pass",
+    "trustScore": 4,
+    "pricingNote": "Scribe: free unlimited guides on web apps, Pro ~$25/seat/mo. Tango: free up to 25 guides, Pro ~$20/user/mo (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.happysupport.ai/en/blog/ai-sop-generator",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Aug 10, 2026",
+    "accessNotes": "Publicly available blog post; screen-capture tools may record sensitive on-screen data unless redaction is used.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-e32da35176",
+    "slug": "i-want-employees-to-snap-a-photo-of-a-receipt-and-have-it-auto",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers processing employee expense reports",
+    "title": "I want employees to snap a photo of a receipt and have it auto-filed as an expense",
+    "intentLabels": [
+      "receipt scanner",
+      "expense report",
+      "reimbursement",
+      "expense management"
+    ],
+    "tools": [
+      {
+        "name": "Ramp",
+        "url": "https://ramp.com/blog/best-receipt-scanning-apps"
+      },
+      {
+        "name": "Expensify"
+      }
+    ],
+    "workflowSummary": "An employee photographs a receipt in the mobile app; OCR extracts vendor, date, and amount, matches it to the card transaction, and routes it for manager approval before reimbursement or accounting sync.",
+    "samplePrompt": "Snap a photo of this restaurant receipt and file it under 'Client Meals' for this month's expense report.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Ramp: free core tier, Plus ~$15/user/mo. Expensify: free for individuals, ~$5-9/user/mo for teams (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://ramp.com/blog/best-receipt-scanning-apps",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Aug 2026 (~1 month old)",
+    "accessNotes": "Publicly available blog post; verify current per-user rates directly with each vendor.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-c31445df15",
+    "slug": "how-do-i-get-a-new-hire-s-paperwork-tax-forms-and-account-setup",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office/HR-adjacent managers onboarding new hires",
+    "title": "How do I get a new hire's paperwork, tax forms, and account setup done before their first day?",
+    "intentLabels": [
+      "new hire onboarding",
+      "digital paperwork",
+      "e-signature",
+      "day-one checklist"
+    ],
+    "tools": [
+      {
+        "name": "BambooHR",
+        "url": "https://hrget.com/hr-software/best-employee-onboarding-software-2026/"
+      },
+      {
+        "name": "Rippling"
+      }
+    ],
+    "workflowSummary": "A new hire completes tax forms, ID upload, and policy e-signatures through a self-service portal before day one; the system auto-routes completed docs to HR/payroll and can trigger IT account provisioning.",
+    "samplePrompt": "Set up an onboarding checklist for our new office coordinator starting Monday: W-4, direct deposit form, handbook e-signature, and laptop request.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial checklist setup benefits from HR familiarity",
+    "trustScore": 4,
+    "pricingNote": "BambooHR: roughly $6-25/employee/mo. Rippling: modular pricing from ~$8/employee/mo per module (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://hrget.com/hr-software/best-employee-onboarding-software-2026/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "April 26, 2026",
+    "accessNotes": "Publicly available blog post; get a direct quote since both vendors use tiered/custom pricing.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-bc24c84ce9",
+    "slug": "i-want-visitors-to-sign-themselves-in-and-have-my-team-notified",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers/receptionists handling front-desk visitors",
+    "title": "I want visitors to sign themselves in and have my team notified automatically when guests arrive",
+    "intentLabels": [
+      "visitor management",
+      "front desk check-in",
+      "guest sign-in",
+      "badge printing"
+    ],
+    "tools": [
+      {
+        "name": "Envoy",
+        "url": "https://instacheckin.io/blog/envoy-pricing/"
+      }
+    ],
+    "workflowSummary": "A guest checks in on an iPad kiosk, signs an NDA if required, and the host gets an instant Slack/email notification while a visitor badge prints automatically.",
+    "samplePrompt": "Set up self check-in for visitors at our main office lobby with automatic host notifications and printed badges.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free Basic tier (100 entries/mo, no badge printing); paid Premium ~$362/location/mo billed annually — pricier tier is enterprise-leaning (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://instacheckin.io/blog/envoy-pricing/",
+    "sourceType": "Blog / guide (vendor pricing teardown)",
+    "freshness": "July 15, 2026",
+    "accessNotes": "Publicly available blog post; small offices should size the free/low tier carefully against Envoy's monthly-entry cap.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-993fa4952e",
+    "slug": "how-do-i-stop-missing-vendor-contract-renewal-deadlines",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers tracking vendor and service contracts",
+    "title": "How do I stop missing vendor contract renewal deadlines?",
+    "intentLabels": [
+      "contract management",
+      "renewal reminders",
+      "vendor tracking",
+      "CLM"
+    ],
+    "tools": [
+      {
+        "name": "Concord",
+        "url": "https://owlesq.com/tools/concord"
+      }
+    ],
+    "workflowSummary": "Upload existing vendor contracts into a central repository; the tool auto-tags key dates and sends renewal/expiration alerts ahead of the deadline so nothing auto-renews unnoticed.",
+    "samplePrompt": "Upload our vendor contracts and set renewal reminders 60 days before each expiration date.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial upload/tagging of existing contracts takes setup time",
+    "trustScore": 4,
+    "pricingNote": "From ~$17/user/mo (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://owlesq.com/tools/concord",
+    "sourceType": "Blog / guide (vendor review)",
+    "freshness": "May 9, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-49f6d3ac4d",
+    "slug": "i-want-to-book-employee-flights-hotels-and-have-the-expenses",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers booking employee business travel",
+    "title": "I want to book employee flights/hotels and have the expenses sync automatically",
+    "intentLabels": [
+      "travel booking",
+      "corporate travel",
+      "travel and expense (T&E)",
+      "trip management"
+    ],
+    "tools": [
+      {
+        "name": "Navan",
+        "url": "https://www.g2.com/products/navan-formerly-tripactions/pricing"
+      }
+    ],
+    "workflowSummary": "An employee books flights, hotels, and rental cars within company policy through the app; itineraries and card charges flow automatically into expense reports with GL coding, cutting manual reconciliation.",
+    "samplePrompt": "Book a round-trip flight and hotel for our sales rep's client visit next week within our travel policy, and sync the cost to the Marketing budget.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "policy setup upfront, booking itself is simple",
+    "trustScore": 4,
+    "pricingNote": "Free tier for travel booking; expense features free for first 15 users, then ~$15/user/mo (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.g2.com/products/navan-formerly-tripactions/pricing",
+    "sourceType": "Product / review page",
+    "freshness": "May 27, 2026",
+    "accessNotes": "Publicly available pricing page; confirm current terms directly with Navan.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-ca0b6b10ef",
+    "slug": "i-want-staff-to-report-a-broken-office-ac-or-leaky-faucet-and",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office/facilities managers handling maintenance requests",
+    "title": "I want staff to report a broken office AC or leaky faucet and have it auto-assigned to a technician",
+    "intentLabels": [
+      "maintenance request",
+      "work order",
+      "facility issue reporting",
+      "CMMS"
+    ],
+    "tools": [
+      {
+        "name": "UpKeep",
+        "url": "https://upkeep.com/"
+      }
+    ],
+    "workflowSummary": "An employee submits a maintenance request (with photo) from a mobile app; the built-in AI assistant (Nova) triages and assigns it to the right technician with a generated checklist, and tracks it to completion.",
+    "samplePrompt": "Report a broken AC unit in Conference Room B as high priority and assign it to facilities.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "From ~$24/user/mo, Nova AI included (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://upkeep.com/",
+    "sourceType": "Vendor product page",
+    "freshness": "2026 (current)",
+    "accessNotes": "Publicly available vendor page.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-9e859550a7",
+    "slug": "how-do-i-build-our-weekly-staff-schedule-automatically-and-let",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers scheduling hourly/shift-based staff",
+    "title": "How do I build our weekly staff schedule automatically and let people swap shifts themselves?",
+    "intentLabels": [
+      "shift scheduling",
+      "rota",
+      "staff roster",
+      "shift swap"
+    ],
+    "tools": [
+      {
+        "name": "Deputy",
+        "url": "https://zapier.com/blog/best-employee-scheduling-software/"
+      }
+    ],
+    "workflowSummary": "Managers set staffing rules and a labor budget; the AI auto-builds a schedule matching demand and availability, and employees can swap or claim open shifts from their phone within manager-set guardrails.",
+    "samplePrompt": "Build next week's front-desk schedule so we always have 2 people covering 9am-6pm, staying within our labor budget.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "rule setup takes an initial pass, day-to-day use is simple",
+    "trustScore": 4,
+    "pricingNote": "From ~$5.50/user/mo; no permanent free plan (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://zapier.com/blog/best-employee-scheduling-software/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "May 28, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-33efa45fbb",
+    "slug": "i-want-vendor-invoices-to-be-read-automatically-and-routed-for",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers/bookkeepers processing vendor invoices",
+    "title": "I want vendor invoices to be read automatically and routed for approval instead of typing them into spreadsheets",
+    "intentLabels": [
+      "invoice processing",
+      "accounts payable automation",
+      "AP",
+      "invoice OCR"
+    ],
+    "tools": [
+      {
+        "name": "Dext",
+        "url": "https://autifyai.com/ai-tools-for-automated-invoice-processing/"
+      },
+      {
+        "name": "Bill.com"
+      }
+    ],
+    "workflowSummary": "Vendor invoices are emailed or uploaded; OCR extracts vendor, amount, due date, and line items, then routes the invoice for approval and syncs the coded entry to accounting software once approved.",
+    "samplePrompt": "Forward this vendor invoice to our Dext inbox and categorize it under Office Supplies once approved.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "mapping categories/approval routing takes initial setup",
+    "trustScore": 4,
+    "pricingNote": "Dext from ~$24-31.50/user/mo; Bill.com from ~$25/mo (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://autifyai.com/ai-tools-for-automated-invoice-processing/",
+    "sourceType": "Blog / guide",
+    "freshness": "April 4, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-e9c2b434d4",
+    "slug": "i-want-employees-to-be-able-to-ask-a-question-and-get-the-right",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers fielding repeated internal policy questions",
+    "title": "I want employees to be able to ask a question and get the right internal policy or SOP instead of pinging everyone on Slack",
+    "intentLabels": [
+      "internal search",
+      "company wiki",
+      "knowledge base",
+      "ask HR bot"
+    ],
+    "tools": [
+      {
+        "name": "Notion AI",
+        "url": "https://pickaxe.co/post/top-ai-knowledge-base-tools",
+        "catalogueSlug": "notion-ai"
+      },
+      {
+        "name": "Tettra"
+      }
+    ],
+    "workflowSummary": "Company docs, policies, and SOPs live in a central workspace; employees type a question and the AI searches the indexed content to answer directly or point to the source document, cutting down 'does anyone know...' messages.",
+    "samplePrompt": "What's our current PTO carryover policy? (asked directly inside the tool's search/chat bar)",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Notion AI add-on ~$10/user/mo on top of Team plan; Tettra Basic ~$8/user/mo (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pickaxe.co/post/top-ai-knowledge-base-tools",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 29, 2026",
+    "accessNotes": "Publicly available blog post; answer quality depends heavily on how well-organized the underlying docs are.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-27d0fde589",
+    "slug": "i-need-to-build-a-monthly-office-budget-spreadsheet-with",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers building/maintaining office budgets",
+    "title": "I need to build a monthly office budget spreadsheet with formulas but I'm not great with Excel",
+    "intentLabels": [
+      "spreadsheet formulas",
+      "budget tracking",
+      "Excel help",
+      "expense summary"
+    ],
+    "tools": [
+      {
+        "name": "Numerous.ai",
+        "url": "https://coefficient.io/ai-tools-for-excel"
+      },
+      {
+        "name": "Ajelix"
+      }
+    ],
+    "workflowSummary": "Type a plain-English request inside the spreadsheet (e.g. 'sum this column by category'); the add-in writes the formula directly into the cell, no formula syntax required.",
+    "samplePrompt": "Write a formula that totals office supply spend by month from column C, and flags any month over $2,000 in red.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Numerous.ai from ~$8/mo (Personal). Ajelix free tier (3 messages/day), Pro ~$20/mo or ~$15/mo billed annually (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://coefficient.io/ai-tools-for-excel",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Jan 20, 2026",
+    "accessNotes": "Publicly available blog post; always sanity-check AI-written formulas before relying on them.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-321f67ab27",
+    "slug": "i-want-to-stop-running-out-of-printer-paper-and-coffee-and-have",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers maintaining office supply stock",
+    "title": "I want to stop running out of printer paper and coffee and have it reordered automatically",
+    "intentLabels": [
+      "office supply inventory",
+      "auto-reorder",
+      "stock tracking",
+      "par levels"
+    ],
+    "tools": [
+      {
+        "name": "Sortly",
+        "url": "https://ustechautomations.com/resources/blog/small-business-inventory-reorder-automation-comparison-2026"
+      },
+      {
+        "name": "inFlow"
+      }
+    ],
+    "workflowSummary": "Set a minimum ('par') quantity for each supply item; when logged stock drops below that threshold (via barcode scan or manual count), the system flags it or auto-generates a purchase order to your preferred vendor.",
+    "samplePrompt": "Set a reorder point of 5 boxes for copy paper and alert me by email when we hit it.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Sortly from ~$49/mo; inFlow auto-reorder from ~$89/mo (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ustechautomations.com/resources/blog/small-business-inventory-reorder-automation-comparison-2026",
+    "sourceType": "Blog / guide (comparison)",
+    "freshness": "March 26, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-590482cc4b",
+    "slug": "i-need-to-write-a-clear-company-wide-announcement-email-and",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers writing company-wide communications",
+    "title": "I need to write a clear company-wide announcement email and make sure it doesn't sound harsh or confusing",
+    "intentLabels": [
+      "internal communications",
+      "company announcement",
+      "email drafting",
+      "tone check"
+    ],
+    "tools": [
+      {
+        "name": "Grammarly (Pro/Business)",
+        "url": "https://checkthat.ai/brands/grammarly/pricing",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Draft the announcement as usual in email or Docs with the Grammarly extension active; it flags unclear phrasing, adjusts tone, and can rewrite sentences to match a consistent, professional company voice before you send.",
+    "samplePrompt": "Rewrite this office-closure announcement to sound clear and reassuring, not alarming, for a company-wide email.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; Pro (replaced the old standalone 'Business' plan) ~$12/user/mo billed annually or ~$30/mo monthly, for teams of 3+ (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://checkthat.ai/brands/grammarly/pricing",
+    "sourceType": "Blog / guide",
+    "freshness": "Aug 2026 (~1 month old)",
+    "accessNotes": "Publicly available pricing summary; Grammarly restructured its Business plan into 'Pro' in 2026, so confirm current plan names with the vendor.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-f89f2e0c51",
+    "slug": "i-want-employees-to-request-time-off-and-have-it-automatically",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers processing employee time-off requests",
+    "title": "I want employees to request time off and have it automatically checked against team coverage before I approve it",
+    "intentLabels": [
+      "PTO request",
+      "time-off approval",
+      "leave management",
+      "absence tracking"
+    ],
+    "tools": [
+      {
+        "name": "BambooHR",
+        "url": "https://www.siit.io/blog/best-employee-onboarding-software"
+      },
+      {
+        "name": "Rippling"
+      }
+    ],
+    "workflowSummary": "An employee submits a time-off request through a self-service portal; the system checks it against team calendars/coverage rules and routes it to the manager for one-click approval, then updates PTO balances automatically.",
+    "samplePrompt": "Request 3 days PTO next month and route it to my manager for approval.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "BambooHR: roughly $6-25/employee/mo. Rippling: modular pricing from ~$8/employee/mo (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.siit.io/blog/best-employee-onboarding-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 13, 2026",
+    "accessNotes": "Publicly available blog post; get a direct quote since both vendors use tiered/custom pricing.",
+    "batch": "OfficeOps AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-82bf2ba12d",
+    "slug": "how-do-i-let-employees-book-a-desk-or-meeting-room-themselves",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers coordinating hybrid-office desk and room use",
+    "title": "How do I let employees book a desk or meeting room themselves instead of me managing a spreadsheet?",
+    "intentLabels": [
+      "desk booking",
+      "hybrid workplace",
+      "room reservation",
+      "hot desking"
+    ],
+    "tools": [
+      {
+        "name": "Skedda",
+        "url": "https://www.gable.to/blog/post/best-desk-booking-software"
+      },
+      {
+        "name": "Robin"
+      }
+    ],
+    "workflowSummary": "Employees log into a shared portal or app to see live availability and reserve a desk or room; admins set booking rules (max duration, approval requirements) and get utilization reports without manually tracking a sign-up sheet.",
+    "samplePrompt": "Set up desk booking for our 3rd-floor hot-desk zone, capped at 1 full-day booking per person per week.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Skedda from ~$99/month per space (unlimited users). Robin from ~$399/month for 25 users (enterprise-leaning) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.gable.to/blog/post/best-desk-booking-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "May 4, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-df7f27a7bf",
+    "slug": "i-want-to-know-exactly-which-laptop-monitor-or-piece-of",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers tracking company equipment and gear",
+    "title": "I want to know exactly which laptop, monitor, or piece of equipment each employee has and get it back when they leave",
+    "intentLabels": [
+      "asset tracking",
+      "equipment inventory",
+      "company property",
+      "check-in/check-out"
+    ],
+    "tools": [
+      {
+        "name": "Asset Panda",
+        "url": "https://bulbthings.com/blog/asset-panda-pricing-2026"
+      }
+    ],
+    "workflowSummary": "Tag each asset with a barcode/QR code; employees check equipment in and out through the app, and the AI agent (added Jan 2026) can create assets, log maintenance, and update records via natural language or photo recognition.",
+    "samplePrompt": "Check out laptop #A-1042 to our new hire starting Monday, and remind me to collect it if her employment record changes.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial bulk upload/tagging of existing equipment takes setup time",
+    "trustScore": 4,
+    "pricingNote": "Roughly $3,000-$18,000/year with per-seat fees, scaling by asset volume; no permanent free plan (7-day trial) — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://bulbthings.com/blog/asset-panda-pricing-2026",
+    "sourceType": "Blog / guide (vendor pricing comparison)",
+    "freshness": "April 5, 2026",
+    "accessNotes": "Publicly available blog post; pricing is notably steep for very small offices — confirm fit before recommending.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-e3c0a2803b",
+    "slug": "i-want-employees-my-wifi-won-t-connect-and-i-need-software",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers fielding day-to-day IT requests",
+    "title": "I want employees' 'my WiFi won't connect' and 'I need software installed' requests triaged and routed automatically",
+    "intentLabels": [
+      "IT helpdesk",
+      "ticket triage",
+      "tech support request",
+      "service desk"
+    ],
+    "tools": [
+      {
+        "name": "Freshservice",
+        "url": "https://www.rezolve.ai/blog/freshservice-pricing-and-plans"
+      }
+    ],
+    "workflowSummary": "Employees submit an IT request through a self-service portal or email; the AI (Freddy AI Copilot add-on) analyzes and suggests ticket priority/category, routes it to the right technician, and can draft a knowledge-base answer for common issues.",
+    "samplePrompt": "Triage this ticket about a broken office printer as medium priority and assign it to facilities IT.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "categories/routing rules need initial setup",
+    "trustScore": 4,
+    "pricingNote": "Starter ~$19/agent/month, Growth ~$49/agent/month, Pro ~$99/agent/month; Freddy AI Copilot add-on ~$29/agent/month extra — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.rezolve.ai/blog/freshservice-pricing-and-plans",
+    "sourceType": "Blog / guide",
+    "freshness": "Aug 2026 (~3 weeks old)",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-0eb5dcff8d",
+    "slug": "i-want-employees-to-submit-a-purchase-request-that",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers approving purchase requests across departments",
+    "title": "I want employees to submit a purchase request that automatically checks budget and routes for approval before anything gets ordered",
+    "intentLabels": [
+      "purchase requisition",
+      "procurement approval",
+      "spend control",
+      "purchase order"
+    ],
+    "tools": [
+      {
+        "name": "Precoro",
+        "url": "https://ramp.com/blog/procurement-software-small-business"
+      },
+      {
+        "name": "Procurify"
+      }
+    ],
+    "workflowSummary": "An employee submits a purchase request (or uploads a supplier quote, which the AI converts into a structured requisition); it's checked against budget/policy limits and routed through a configurable approval chain before a purchase order is generated.",
+    "samplePrompt": "Submit a requisition for a $450 replacement office chair from our approved vendor and route it to my manager for approval.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "approval chains and budget rules need initial configuration",
+    "trustScore": 4,
+    "pricingNote": "Precoro: Core ~$499/month, Automation ~$999/month (billed annually). Procurify: quote-based pricing — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://ramp.com/blog/procurement-software-small-business",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Aug 10, 2026",
+    "accessNotes": "Publicly available blog post; pricing here is geared toward small-to-mid-size teams, not solo offices.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-2079b08893",
+    "slug": "how-do-i-make-sure-it-access-equipment-and-final-paperwork-are",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office/HR-adjacent managers processing employee departures",
+    "title": "How do I make sure IT access, equipment, and final paperwork are all handled when someone leaves the company?",
+    "intentLabels": [
+      "employee offboarding",
+      "exit checklist",
+      "access revocation",
+      "equipment return"
+    ],
+    "tools": [
+      {
+        "name": "Rippling",
+        "url": "https://www.guideflow.com/blog/offboarding-software"
+      },
+      {
+        "name": "BambooHR"
+      }
+    ],
+    "workflowSummary": "HR triggers an offboarding workflow when a departure is entered; the system auto-generates a checklist (revoke app/device access, collect equipment, route final pay and exit paperwork) and notifies IT, payroll, and the manager of their tasks.",
+    "samplePrompt": "Start the offboarding workflow for an employee whose last day is Friday: revoke all software access, flag their laptop for return, and notify payroll.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial workflow setup benefits from HR/IT coordination",
+    "trustScore": 4,
+    "pricingNote": "BambooHR: roughly $6-25/employee/mo. Rippling: modular pricing from ~$8/employee/mo per module — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/offboarding-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 14, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-a329f4e056",
+    "slug": "i-want-to-send-a-polished-company-newsletter-and-actually-see",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers writing company-wide newsletters/updates",
+    "title": "I want to send a polished company newsletter and actually see who opened and clicked it",
+    "intentLabels": [
+      "internal newsletter",
+      "employee communications",
+      "email analytics",
+      "company update"
+    ],
+    "tools": [
+      {
+        "name": "ContactMonkey",
+        "url": "https://www.contactmonkey.com/blog/best-internal-newsletter-software"
+      }
+    ],
+    "workflowSummary": "Build the newsletter with a drag-and-drop editor natively inside Outlook or Gmail; AI helps draft and refine the copy, and after sending you get individual-level open/click analytics instead of guessing whether anyone read it.",
+    "samplePrompt": "Draft this month's company newsletter from these three bullet updates, keep it under 300 words, and schedule it to send Friday at 9am.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Pricing available on request (quote-based); positioned as a lower-cost alternative to full intranet suites like Staffbase — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.contactmonkey.com/blog/best-internal-newsletter-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 9, 2026",
+    "accessNotes": "Publicly available blog post; note this source is published by a vendor in the category, so cross-check claims.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-5c1bd7fb19",
+    "slug": "i-want-a-quick-anonymous-way-to-check-how-the-team-is-feeling",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers checking in on team morale",
+    "title": "I want a quick, anonymous way to check how the team is feeling without a huge annual survey process",
+    "intentLabels": [
+      "pulse survey",
+      "employee engagement",
+      "eNPS",
+      "anonymous feedback"
+    ],
+    "tools": [
+      {
+        "name": "Officevibe",
+        "url": "https://work-club.com/best-employee-engagement-survey-tools-remote-2026/"
+      },
+      {
+        "name": "Culture Amp"
+      }
+    ],
+    "workflowSummary": "A short set of validated questions goes out on a recurring cadence (e.g. weekly); responses are aggregated anonymously above a minimum group size, and the AI summarizes themes and eNPS trends for managers without exposing individual answers.",
+    "samplePrompt": "Send a short anonymous pulse survey to the office team this week focused on workload and recognition, and summarize the themes when results come in.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Officevibe: free for up to 10 users, Essential ~$3.50/user/mo, Pro ~$5/user/mo. Culture Amp: roughly $5-8/user/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://work-club.com/best-employee-engagement-survey-tools-remote-2026/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 1, 2026",
+    "accessNotes": "Publicly available blog post; genuine anonymity depends on the minimum group-size threshold the admin sets.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-93a6987e81",
+    "slug": "i-want-to-plan-a-team-offsite-venue-schedule-budget-rsvps",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers organizing internal offsites and company events",
+    "title": "I want to plan a team offsite — venue, schedule, budget, RSVPs — without juggling five separate spreadsheets",
+    "intentLabels": [
+      "offsite planning",
+      "internal event logistics",
+      "team event",
+      "company gathering"
+    ],
+    "tools": [
+      {
+        "name": "Monday.com (AI project planning)",
+        "url": "https://superdots.sh/blog/ai-event-planning-tools/"
+      }
+    ],
+    "workflowSummary": "Build the offsite as a project board with AI-suggested task sequencing (venue booking, catering, transport, agenda); track budget line items and RSVPs in the same board instead of scattered docs, with AI flagging tasks at risk of slipping.",
+    "samplePrompt": "Set up a project board for our 40-person team offsite in October: venue, catering, activities, and a $150/person budget cap, with tasks assigned to me and two coordinators.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free for up to 2 seats; Basic ~$9/seat/mo, Standard ~$12/seat/mo, Pro ~$30/seat/mo (minimum 3 paid seats) — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://superdots.sh/blog/ai-event-planning-tools/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "May 6, 2026",
+    "accessNotes": "Publicly available blog post; best suited to internal events where no ticketing/registration is needed.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-dd64d95640",
+    "slug": "i-want-to-order-catering-for-a-meeting-or-set-up-a-recurring",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers arranging food for meetings and daily office lunches",
+    "title": "I want to order catering for a meeting or set up a recurring office lunch program without calling five restaurants",
+    "intentLabels": [
+      "office catering",
+      "meeting food",
+      "lunch program",
+      "food ordering"
+    ],
+    "tools": [
+      {
+        "name": "ezCater",
+        "url": "https://zerocater.com/solutions/zerocater-vs-ezcater/"
+      },
+      {
+        "name": "ZeroCater (CaterAi)"
+      }
+    ],
+    "workflowSummary": "Describe the event in plain language (headcount, budget, dietary needs) and the AI assistant proposes a full menu from local partner restaurants in minutes, or set a recurring subsidized lunch program that adapts to team preferences over time.",
+    "samplePrompt": "Build a happy-hour menu with appetizers for 75 guests next Thursday at 5:30pm, $30/person budget, and flag any vegetarian/gluten-free options.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "ezCater: free to order (no markup fees on standard orders). ZeroCater/CaterAi: custom quote based on program size — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://zerocater.com/solutions/zerocater-vs-ezcater/",
+    "sourceType": "Vendor blog / comparison",
+    "freshness": "April 3, 2026",
+    "accessNotes": "Publicly available vendor blog post; written by ZeroCater, so cross-check against ezCater's own pricing page too.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-51d654ce3f",
+    "slug": "i-want-to-give-employees-mobile-phone-access-to-office-doors",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responsible for physical office security",
+    "title": "I want to give employees mobile-phone access to office doors instead of managing physical key cards",
+    "intentLabels": [
+      "door access control",
+      "badge management",
+      "keyless entry",
+      "office security"
+    ],
+    "tools": [
+      {
+        "name": "Kisi",
+        "url": "https://www.coram.ai/post/openpath-vs-kisi"
+      },
+      {
+        "name": "Openpath"
+      }
+    ],
+    "workflowSummary": "Replace physical badges with mobile credentials; access is managed from a cloud dashboard connected to your identity provider (e.g. Okta), so granting or revoking a door access when someone joins or leaves happens remotely with no physical reconfiguration.",
+    "samplePrompt": "Grant office and server-room access to our new IT hire starting Monday, and make sure it's automatically revoked if their employment status changes.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "hardware installation and identity-provider integration need IT involvement",
+    "trustScore": 3,
+    "pricingNote": "Both use largely custom/quote-based pricing; Kisi is generally hardware-agnostic and more competitive per-door at 20+ doors — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.coram.ai/post/openpath-vs-kisi",
+    "sourceType": "Blog / guide (comparison)",
+    "freshness": "Jan 29, 2026",
+    "accessNotes": "Publicly available blog post; involves physical hardware installation, so budget for that alongside the software cost.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-b0e49bdd26",
+    "slug": "i-want-to-send-a-document-out-for-signature-and-know-the-moment",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers sending contracts, offer letters, or vendor agreements for signature",
+    "title": "I want to send a document out for signature and know the moment it's been signed",
+    "intentLabels": [
+      "e-signature",
+      "document signing",
+      "contract sending",
+      "digital signature"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://www.pandadoc.com/blog/best-electronic-signature-software/"
+      },
+      {
+        "name": "DocuSign"
+      }
+    ],
+    "workflowSummary": "Upload or build the document, add signer fields, and send; the AI assistant can summarize contract terms or answer questions about what's in a document, and you get real-time tracking of opens, views, and completed signatures.",
+    "samplePrompt": "Send this vendor agreement to their signer for e-signature and notify me as soon as it's completed.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "PandaDoc: free tier (5 docs/mo), Essentials ~$35/user/mo (unlimited envelopes). DocuSign: from ~$45/user/mo (100 envelopes/year, then per-envelope fees) — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.pandadoc.com/blog/best-electronic-signature-software/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "May 14, 2026",
+    "accessNotes": "Publicly available blog post; note it's published by PandaDoc, so treat comparative claims about competitors with a grain of salt.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-03600f1f08",
+    "slug": "i-want-to-schedule-our-company-s-linkedin-instagram-posts-in",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers who also run the company's social media page",
+    "title": "I want to schedule our company's LinkedIn/Instagram posts in advance instead of posting live each time",
+    "intentLabels": [
+      "social media scheduling",
+      "content calendar",
+      "post scheduler",
+      "company page management"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://buffer.com/resources/buffer-vs-hootsuite/",
+        "catalogueSlug": "buffer"
+      },
+      {
+        "name": "Hootsuite"
+      }
+    ],
+    "workflowSummary": "Draft posts (with AI help rewriting or brainstorming captions) and load them into a content calendar; the tool publishes each post automatically at the scheduled time across connected company social accounts.",
+    "samplePrompt": "Draft 3 LinkedIn posts announcing our new office location, and schedule them for Tuesday, Wednesday, and Friday mornings.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Buffer: free for up to 3 channels; Essentials ~$6/channel/mo. Hootsuite: no free plan, from ~$99/month (per-seat) — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://buffer.com/resources/buffer-vs-hootsuite/",
+    "sourceType": "Blog / guide (vendor comparison)",
+    "freshness": "Sept 2026 (~2 weeks old)",
+    "accessNotes": "Publicly available blog post; published by Buffer, so cross-check Hootsuite's own pricing page too.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-0a93c8aee0",
+    "slug": "i-want-to-know-which-desks-and-rooms-actually-get-used-so-i-can",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers deciding how to reallocate underused office space",
+    "title": "I want to know which desks and rooms actually get used so I can decide whether to downsize or reconfigure the floor",
+    "intentLabels": [
+      "space utilization",
+      "occupancy analytics",
+      "office footprint",
+      "workplace data"
+    ],
+    "tools": [
+      {
+        "name": "Robin",
+        "url": "https://www.guideflow.com/blog/space-management-software"
+      },
+      {
+        "name": "Skedda"
+      }
+    ],
+    "workflowSummary": "Booking and check-in data (badge swipes, app check-ins, sensor data where available) is aggregated into utilization dashboards showing which desks, rooms, and zones are over- or under-used, so office managers can make data-backed layout or lease decisions instead of guessing.",
+    "samplePrompt": "Show me which meeting rooms had under 20% utilization last quarter so I can consider repurposing them.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful data takes a few weeks/months of booking history to accumulate",
+    "trustScore": 3,
+    "pricingNote": "Robin: enterprise pricing, typically not published (contact sales). Skedda: from ~$99/month per space, includes basic utilization reporting — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/space-management-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "June 16, 2026",
+    "accessNotes": "Publicly available blog post; deepest analytics tend to sit behind higher-tier/enterprise plans.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-cda76769a6",
+    "slug": "i-want-a-live-spreadsheet-or-dashboard-that-automatically-pulls",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers preparing a weekly ops update for leadership",
+    "title": "I want a live spreadsheet or dashboard that automatically pulls current numbers instead of copy-pasting data every week",
+    "intentLabels": [
+      "live dashboard",
+      "automated reporting",
+      "data sync",
+      "leadership update"
+    ],
+    "tools": [
+      {
+        "name": "Coefficient",
+        "url": "https://resources.rework.com/tools/ai-tools/best-ai-tools-for-excel-2026"
+      }
+    ],
+    "workflowSummary": "Connect your spreadsheet to live data sources (CRM, accounting tool, warehouse/database); the add-in auto-refreshes the numbers on a schedule and can use AI to summarize what changed week over week, so the weekly leadership update stays current without manual re-pulling.",
+    "samplePrompt": "Pull this week's headcount, open IT tickets, and total office spend into my weekly ops report tab, and flag anything that changed more than 10% from last week.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting each data source takes initial setup",
+    "trustScore": 3,
+    "pricingNote": "Pricing not fully published in this source; positioned as a paid add-on layered on top of Excel/Google Sheets — verify current tiers directly with the vendor before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://resources.rework.com/tools/ai-tools/best-ai-tools-for-excel-2026",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "2026 (undated within source)",
+    "accessNotes": "Publicly available blog post; pricing detail here is thin, confirm directly with Coefficient before quoting a rate to a customer.",
+    "batch": "OfficeOps AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-a5e02cdc23",
+    "slug": "how-do-i-write-a-job-posting-and-get-it-in-front-of-candidates",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers handling hiring for a small team without a dedicated recruiter",
+    "title": "How do I write a job posting and get it in front of candidates on multiple job boards without doing it one site at a time?",
+    "intentLabels": [
+      "job posting",
+      "job description writer",
+      "multi-board distribution",
+      "hiring ad"
+    ],
+    "tools": [
+      {
+        "name": "JazzHR",
+        "url": "https://franklandautomation.com/best-applicant-tracking-systems-ats-in-2026-compared-ranked/"
+      },
+      {
+        "name": "Manatal"
+      }
+    ],
+    "workflowSummary": "Write the job description once (AI can help draft or clean up the language and flag exclusionary wording); the tool distributes it automatically across job boards like Indeed and LinkedIn, and applications flow back into one shared inbox instead of five separate ones.",
+    "samplePrompt": "Write a job posting for a part-time office coordinator, keep it under 250 words, avoid gendered language, and post it to Indeed and LinkedIn.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "JazzHR from ~$39/month (small-business friendly). Manatal: pricing tier not detailed in this source — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://franklandautomation.com/best-applicant-tracking-systems-ats-in-2026-compared-ranked/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "March 7, 2026",
+    "accessNotes": "Publicly available blog post; JazzHR is flagged here as the more appropriate small-business entry point vs. enterprise-priced ATS platforms.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-69c8e2043d",
+    "slug": "i-have-80-applications-for-one-role-and-i-don-t-have-time-to",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers reviewing a stack of resumes for an open role",
+    "title": "I have 80 applications for one role and I don't have time to read every resume — how do I get to a shortlist faster?",
+    "intentLabels": [
+      "resume screening",
+      "candidate shortlisting",
+      "ATS scoring",
+      "applicant ranking"
+    ],
+    "tools": [
+      {
+        "name": "JazzHR",
+        "url": "https://skima.ai/blog/product-deep-dives/ashby-reviews"
+      },
+      {
+        "name": "Ashby"
+      }
+    ],
+    "workflowSummary": "Applications flow into the ATS and AI scores each resume against the role's stated requirements, citing the specific resume evidence behind each score, so you can sort by fit instead of reading every application top to bottom.",
+    "samplePrompt": "Score these applicants against the job requirements for our office coordinator role and show me the top 10 with the resume evidence behind each score.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "scoring criteria need to be set up correctly to trust the ranking",
+    "trustScore": 3,
+    "pricingNote": "JazzHR from ~$39/month. Ashby: Foundations ~$400/month for up to 100 employees — verify before publishing; Ashby is priced for growth-stage teams, not solo hiring",
+    "pricingTier": "paid",
+    "sourceUrl": "https://skima.ai/blog/product-deep-dives/ashby-reviews",
+    "sourceType": "Blog / guide",
+    "freshness": "Aug 2026 (~1 month old)",
+    "accessNotes": "Publicly available blog post; always spot-check a sample of AI-scored resumes by hand before trusting the ranking.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-73d2d79b52",
+    "slug": "how-do-i-get-3-interviewers-and-a-candidate-on-the-same-call",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers coordinating interviews between candidates and a hiring panel",
+    "title": "How do I get 3 interviewers and a candidate on the same call without a dozen back-and-forth emails?",
+    "intentLabels": [
+      "interview scheduling",
+      "panel coordination",
+      "candidate availability",
+      "interview loop"
+    ],
+    "tools": [
+      {
+        "name": "GoodTime",
+        "url": "https://www.selectsoftwarereviews.com/buyer-guide/interview-scheduling-software"
+      },
+      {
+        "name": "Calendly"
+      }
+    ],
+    "workflowSummary": "The scheduler checks interviewer and candidate calendars, builds the panel automatically, sends the invite, and rebooks or notifies everyone if an interviewer has to decline or reschedule.",
+    "samplePrompt": "Schedule a 3-person interview panel for this candidate sometime next week, matching everyone's calendar availability, and notify me if anyone declines.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "GoodTime is built for higher hiring volume; for occasional hiring, a simple Calendly link is usually enough",
+    "trustScore": 3,
+    "pricingNote": "GoodTime: typically ~$250-500/month for small teams (per-recruiter/per-interview pricing). Calendly: from ~$10/seat/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.selectsoftwarereviews.com/buyer-guide/interview-scheduling-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "June 26, 2026",
+    "accessNotes": "Publicly available blog post; this source itself notes GoodTime may be overkill for small or infrequent-hiring organizations.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-b9997fcf36",
+    "slug": "i-want-to-see-and-respond-to-our-google-and-glassdoor-reviews",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responsible for how the company looks online to job-seekers and customers",
+    "title": "I want to see and respond to our Google and Glassdoor reviews in one place instead of checking five different sites",
+    "intentLabels": [
+      "reputation management",
+      "review monitoring",
+      "Glassdoor reviews",
+      "Google Business reviews"
+    ],
+    "tools": [
+      {
+        "name": "Birdeye",
+        "url": "https://praising.ai/blog/best-ai-powered-reputation-management-tools-2026"
+      },
+      {
+        "name": "Praising.ai"
+      }
+    ],
+    "workflowSummary": "Reviews from Google, Glassdoor, Yelp, and other sites are pulled into one inbox; AI drafts an on-brand response to each one (positive or negative) for you to approve and send, and flags negative reviews for direct follow-up.",
+    "samplePrompt": "Draft a reply to this 2-star Google review about a delayed appointment, keep it professional and offer to make it right.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Birdeye: roughly $300-500/location/month (enterprise-leaning). Praising.ai: small-business-friendly alternative from ~$19-49/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://praising.ai/blog/best-ai-powered-reputation-management-tools-2026",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "June 12, 2026",
+    "accessNotes": "Publicly available blog post; published by a competitor to Birdeye, so cross-check Birdeye's own pricing page too.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-6421bb0001",
+    "slug": "how-do-i-make-sure-everyone-completes-their-required-safety",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers keeping required staff training/certifications current",
+    "title": "How do I make sure everyone completes their required safety/compliance training on time and I can prove it in an audit?",
+    "intentLabels": [
+      "compliance training",
+      "certification tracking",
+      "training reminders",
+      "audit-ready reporting"
+    ],
+    "tools": [
+      {
+        "name": "TalentLMS",
+        "url": "https://www.valamis.com/blog/best-compliance-training-software"
+      }
+    ],
+    "workflowSummary": "Assign required courses by role; the system sends automated reminders before a deadline or certificate expiration, re-enrolls people whose certification lapses, and generates a timestamped, audit-ready completion report on demand.",
+    "samplePrompt": "Show me which employees haven't completed this quarter's required safety training, and send them a reminder with a 5-day deadline.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free plan for up to 5 users; paid plans from ~$69-89/month for larger teams — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.valamis.com/blog/best-compliance-training-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 9, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-8d06b83a17",
+    "slug": "i-want-to-build-a-budget-forecast-and-quickly-see-what-happens",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers building the office/department budget for leadership",
+    "title": "I want to build a budget forecast and quickly see what happens if we hire two more people or a vendor cost goes up",
+    "intentLabels": [
+      "budget forecasting",
+      "scenario planning",
+      "what-if modeling",
+      "financial planning"
+    ],
+    "tools": [
+      {
+        "name": "Jirav",
+        "url": "https://www.guideflow.com/blog/budgeting-and-forecasting-software"
+      }
+    ],
+    "workflowSummary": "Connect the tool to your accounting system (QuickBooks, Xero, NetSuite); build a driver-based forecast (headcount, vendor costs, revenue) and adjust one assumption to instantly see the ripple effect across the budget, instead of rebuilding a spreadsheet each time.",
+    "samplePrompt": "Show me what happens to our quarterly budget if we add one full-time office coordinator in March and our software vendor raises prices 10% in Q2.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "connecting accounting data and setting up drivers takes initial finance involvement",
+    "trustScore": 3,
+    "pricingNote": "Business plans from ~$10,000/year (Starter) to ~$15,000/year (Pro), Enterprise by quote — geared toward small-to-mid finance teams, not solo office managers — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/budgeting-and-forecasting-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 15, 2026",
+    "accessNotes": "Publicly available blog post; pricing here is a meaningful commitment — confirm it's proportionate to the office's budget size before recommending.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-3b82bf08a7",
+    "slug": "i-need-to-put-together-a-proposal-responding-to-a-client-or",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responding to a vendor's request for proposal (RFP)",
+    "title": "I need to put together a proposal responding to a client or partner's RFP without starting from a blank document each time",
+    "intentLabels": [
+      "RFP response",
+      "proposal writing",
+      "request for proposal",
+      "vendor questionnaire"
+    ],
+    "tools": [
+      {
+        "name": "Bidara",
+        "url": "https://www.bidara.ai/comparison/ai-proposal-software"
+      }
+    ],
+    "workflowSummary": "Upload the RFP document; the AI auto-detects and maps the required sections, drafts responses pulled from your past proposals and content library, and flags any requirement your draft hasn't yet addressed before you submit.",
+    "samplePrompt": "Draft responses to this RFP's technical and pricing sections using our standard proposal content, and flag any question we haven't answered yet.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a maintained library of past proposal content makes the AI more useful over time",
+    "trustScore": 3,
+    "pricingNote": "Bidara: published pricing from ~$49/month (small-business-friendly). Enterprise alternatives like Loopio or Responsive run roughly $20,000+/year and are built for dedicated proposal teams — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.bidara.ai/comparison/ai-proposal-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 27, 2026",
+    "accessNotes": "Publicly available blog post; published by Bidara, so cross-check independently before committing budget.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-16994c1f8c",
+    "slug": "i-want-a-simple-way-for-employees-to-give-each-other-shout-outs",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers running a peer recognition or rewards program",
+    "title": "I want a simple way for employees to give each other shout-outs and redeem points for real rewards",
+    "intentLabels": [
+      "employee recognition",
+      "peer-to-peer rewards",
+      "shout-outs",
+      "points-based rewards"
+    ],
+    "tools": [
+      {
+        "name": "Bonusly",
+        "url": "https://engagedly.com/blog/best-employee-recognition-softwares/"
+      },
+      {
+        "name": "Nectar"
+      }
+    ],
+    "workflowSummary": "Employees give each other points with a short note of recognition, visible in a public feed (often inside Slack or Teams); accumulated points are redeemable for gift cards, charity donations, or company swag, and managers get a dashboard of who's being recognized and how often.",
+    "samplePrompt": "Set up a monthly points budget for our 12-person office so people can recognize each other, redeemable for gift cards.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Bonusly: from ~$3/user/month. Nectar: quote-based, positioned as fast to set up for teams of 50-500 — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://engagedly.com/blog/best-employee-recognition-softwares/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "June 9, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-cf5aabce32",
+    "slug": "i-want-to-order-branded-t-shirts-mugs-or-welcome-kits-without",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers ordering branded merchandise for staff or clients",
+    "title": "I want to order branded T-shirts, mugs, or welcome kits without managing my own inventory and shipping",
+    "intentLabels": [
+      "company swag",
+      "branded merchandise",
+      "welcome kits",
+      "promotional products"
+    ],
+    "tools": [
+      {
+        "name": "SwagUp",
+        "url": "https://merchloop.com/blogs/news/8-best-company-swag-store-platforms-compared-features-pricing-and-pros-cons-2026"
+      },
+      {
+        "name": "Merchloop"
+      }
+    ],
+    "workflowSummary": "Design or select branded items through the platform's dashboard; the vendor handles printing, warehousing, and shipping (including automatically sending a kit when someone is hired, so you don't have to remember), and you track orders from one place instead of juggling multiple print vendors.",
+    "samplePrompt": "Create a welcome kit with a T-shirt, mug, and notebook in our brand colors, and have it auto-shipped to every new hire's home address.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "SwagUp: free Basic plan (fees apply per order/storage/shipping); paid tiers Silver ~$99/month, Gold ~$499/month, Platinum ~$999/month. Merchloop: free company store option, no-minimum on-demand model — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://merchloop.com/blogs/news/8-best-company-swag-store-platforms-compared-features-pricing-and-pros-cons-2026",
+    "sourceType": "Blog / guide (comparison)",
+    "freshness": "April 6, 2026",
+    "accessNotes": "Publicly available blog post; watch for storage, repacking, and per-shipment fees on top of the listed plan price.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-dcbc7f98b8",
+    "slug": "i-want-to-make-a-professional-looking-flyer-for-an-office-event",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers designing flyers or posters for office events and promotions",
+    "title": "I want to make a professional-looking flyer for an office event without hiring a designer",
+    "intentLabels": [
+      "flyer design",
+      "poster maker",
+      "marketing collateral",
+      "event graphics"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Design / Magic Studio)",
+        "url": "https://skillscouter.com/canva-review/",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Describe what you want or start from a template; Magic Design generates an editable flyer layout in seconds, and AI tools (Magic Write, background removal, resizing) let you refine the wording and images and export it for print or digital sharing.",
+    "samplePrompt": "Create a flyer for our office holiday party on December 12th, using our brand colors, and resize it for both a printed poster and an Instagram post.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free plan available (limited templates/AI use). Canva Pro ~$12-15/month; Canva Business ~$20/person/month for team collaboration — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://skillscouter.com/canva-review/",
+    "sourceType": "Blog / guide (review)",
+    "freshness": "Sept 2026 (~2 weeks old)",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-6d72fdc4ab",
+    "slug": "i-want-to-send-a-promotional-email-campaign-to-our-customer",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers who also send marketing emails to customers or clients",
+    "title": "I want to send a promotional email campaign to our customer list and see who opened and clicked it",
+    "intentLabels": [
+      "email marketing campaign",
+      "customer newsletter",
+      "email automation",
+      "campaign analytics"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp",
+        "url": "https://thatmarketingbuddy.com/pricing/mailchimp"
+      }
+    ],
+    "workflowSummary": "Build a campaign with the drag-and-drop editor; AI tools (Creative Assistant, Content Optimizer) help generate the template and tighten the copy, and after sending you get open/click analytics and predictive audience segmentation to refine future sends.",
+    "samplePrompt": "Draft a promotional email announcing our new office location to our customer list, and schedule it to send Tuesday at 10am.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free plan for up to 250 contacts. Essentials from ~$13/month (500 contacts); Standard from ~$20/month; Premium from ~$350/month — pricing rises quickly with list size, and unsubscribed contacts still count toward your total — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://thatmarketingbuddy.com/pricing/mailchimp",
+    "sourceType": "Blog / guide (pricing breakdown)",
+    "freshness": "2026 (undated within source)",
+    "accessNotes": "Publicly available blog post; several independent reviews flag recent price increases and a shrinking free tier — confirm current limits before recommending.",
+    "batch": "OfficeOps AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-6cb5d10e66",
+    "slug": "i-want-to-know-what-our-insurance-actually-covers-and-get",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responsible for the company's business insurance coverage",
+    "title": "I want to know what our insurance actually covers and get flagged when a contract requires coverage we don't have",
+    "intentLabels": [
+      "business insurance tracking",
+      "policy management",
+      "contract insurance requirements",
+      "coverage review"
+    ],
+    "tools": [
+      {
+        "name": "Newfront",
+        "url": "https://www.newfront.com/contract-review"
+      }
+    ],
+    "workflowSummary": "Upload an incoming or outgoing contract; AI highlights the insurance requirements it contains (coverage type, limits, certificate deadlines), compares them against your current policies, and flags gaps or missing certificates before you sign or send it.",
+    "samplePrompt": "Check this vendor contract against our current insurance policies and flag anything we're not covered for.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best used alongside your insurance broker, not as a replacement for one",
+    "trustScore": 3,
+    "pricingNote": "Custom/quote-based pricing; positioned mainly for VC-backed and tech-forward companies rather than general small offices — verify fit and pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.newfront.com/contract-review",
+    "sourceType": "Vendor product page",
+    "freshness": "2026 (undated)",
+    "accessNotes": "Publicly available vendor page; this tool and its comparisons skew toward startup/tech-company insurance buyers — a general small office may be better served by asking a traditional broker whether they offer similar AI-assisted contract review.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-a8b793a0b3",
+    "slug": "i-want-employees-to-clock-in-and-out-from-their-phone-and-have",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers running payroll for hourly or shift-based staff",
+    "title": "I want employees to clock in and out from their phone and have their hours flow straight into payroll without me re-entering anything",
+    "intentLabels": [
+      "timesheet tracking",
+      "employee attendance",
+      "clock in/out",
+      "payroll hours"
+    ],
+    "tools": [
+      {
+        "name": "Homebase",
+        "url": "https://www.joinhomebase.com/blog/time-and-attendance-software"
+      },
+      {
+        "name": "QuickBooks Time"
+      }
+    ],
+    "workflowSummary": "Employees clock in/out from a mobile app or shared tablet (GPS or photo verification optional); the system flags overtime and missed breaks automatically, and approved hours sync directly into payroll instead of being re-typed from a paper timesheet.",
+    "samplePrompt": "Show me which employees are approaching overtime this week and flag any missed clock-outs before I run payroll.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Homebase: free Basic plan for 1 location/up to 10 employees; paid tiers from ~$24-96/month. QuickBooks Time: per-user pricing, most useful if you already use QuickBooks for accounting — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.joinhomebase.com/blog/time-and-attendance-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 24, 2026",
+    "accessNotes": "Publicly available blog post; published by Homebase, so cross-check QuickBooks Time's own pricing directly.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-6a5d01370f",
+    "slug": "i-need-to-run-a-background-check-on-a-candidate-before-we",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers finalizing a new hire before their start date",
+    "title": "I need to run a background check on a candidate before we finalize their offer",
+    "intentLabels": [
+      "background check",
+      "pre-employment screening",
+      "criminal history check",
+      "employment verification"
+    ],
+    "tools": [
+      {
+        "name": "Checkr",
+        "url": "https://checkthat.ai/brands/checkr/pricing"
+      }
+    ],
+    "workflowSummary": "Order a background check package (criminal history, employment/education verification, etc.) from inside your ATS or HRIS; AI speeds up adjudication and turnaround (most criminal checks complete within an hour), and the platform automatically generates the legally required pre-adverse/adverse action notices if a report affects your hiring decision.",
+    "samplePrompt": "Order a standard background check package for this candidate and let me know as soon as results come back.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Basic package from $29.99/check, Essential from $54.99/check, Complete from $89.99/check; no monthly minimum for small businesses, but jurisdiction-based passthrough fees can add 40-70% on top — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://checkthat.ai/brands/checkr/pricing",
+    "sourceType": "Blog / guide (pricing breakdown)",
+    "freshness": "March 30, 2026",
+    "accessNotes": "Publicly available blog post; budget for passthrough fees beyond the listed per-check price, and confirm compliance requirements (FCRA, state law) apply to your process.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-5daa001dd9",
+    "slug": "i-know-our-policies-but-i-ve-never-had-time-to-actually-write",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers who need to write or update the company handbook",
+    "title": "I know our policies but I've never had time to actually write them into a proper employee handbook",
+    "intentLabels": [
+      "employee handbook",
+      "company policy document",
+      "HR policy drafting",
+      "policy acknowledgment"
+    ],
+    "tools": [
+      {
+        "name": "Trainual",
+        "url": "https://www.airmason.com/blog/top-20-employee-handbook-software-of-2026/"
+      }
+    ],
+    "workflowSummary": "Describe your company's policies and let AI draft the handbook language and structure; employees are assigned the handbook as role-based reading with required e-signature acknowledgment, so you get proof everyone has reviewed and accepted current policy — without a static PDF nobody reads.",
+    "samplePrompt": "Draft a remote-work policy section for our handbook covering core hours, equipment stipends, and expense reimbursement, then assign it to all staff for e-signature.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "AI drafts a starting point, but a human (ideally with legal review) should check state-specific compliance details",
+    "trustScore": 3,
+    "pricingNote": "From ~$249/month (Small tier, billed annually); tiers scale up with headcount — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.airmason.com/blog/top-20-employee-handbook-software-of-2026/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 7, 2026",
+    "accessNotes": "Publicly available blog post; AI-drafted policy language is a starting point, not a substitute for employment-law review before publishing to staff.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-f2f95e0920",
+    "slug": "i-want-employees-to-book-a-parking-spot-instead-of-playing",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers with limited parking spots to allocate fairly among staff",
+    "title": "I want employees to book a parking spot instead of playing musical chairs with our small lot every morning",
+    "intentLabels": [
+      "parking management",
+      "space allocation",
+      "parking reservation",
+      "lot booking"
+    ],
+    "tools": [
+      {
+        "name": "Dibsido",
+        "url": "https://dibsido.com/best-parking-management-software-guide"
+      },
+      {
+        "name": "Wayleadr"
+      }
+    ],
+    "workflowSummary": "Employees reserve or release a parking spot through an app; the system enforces fairness rules (e.g. max bookings per week) and auto-releases no-show reservations so unused spots become available to others same-day, replacing a first-come-first-served scramble or a manual sign-up sheet.",
+    "samplePrompt": "Set up parking booking for our 20-space lot, capped at 2 reserved days per employee per week, with unclaimed spots released by 9am.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Dibsido: from ~$4.50 per bookable space/month (small-business friendly). Wayleadr: custom/quote-based pricing, built more for larger or multi-site organizations — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dibsido.com/best-parking-management-software-guide",
+    "sourceType": "Blog / guide (comparison)",
+    "freshness": "March 2, 2026",
+    "accessNotes": "Publicly available blog post; published by Dibsido, a competitor to Wayleadr, so cross-check independently.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-f751315d6e",
+    "slug": "i-want-to-print-shipping-labels-and-postage-from-my-desk",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers handling outgoing mail and packages",
+    "title": "I want to print shipping labels and postage from my desk instead of driving to the post office",
+    "intentLabels": [
+      "shipping labels",
+      "mailroom management",
+      "postage printing",
+      "package tracking"
+    ],
+    "tools": [
+      {
+        "name": "Stamps.com",
+        "url": "https://www.pitneybowes.com/us/shipping-software/pitneyship.html"
+      },
+      {
+        "name": "Pitney Bowes (PitneyShip)"
+      }
+    ],
+    "workflowSummary": "Print USPS/UPS/FedEx shipping labels and postage directly from a desktop or laptop at discounted commercial rates; the platform tracks every outgoing shipment, and incoming packages can be logged and matched to the right recipient instead of piling up at the front desk.",
+    "samplePrompt": "Print a discounted Priority Mail label for this package and log it under our marketing department's shipping account.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Stamps.com: plans vary by volume (no long-term contract required). Pitney Bowes PitneyShip: no monthly fee on pay-as-you-go, or $34.99/month after a 30-day free trial on the subscription plan — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pitneybowes.com/us/shipping-software/pitneyship.html",
+    "sourceType": "Vendor product page",
+    "freshness": "2026 (undated)",
+    "accessNotes": "Publicly available vendor page; postage, carrier charges, and supplies are billed separately from the software fee.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-eac125ac6c",
+    "slug": "i-need-to-translate-a-document-or-policy-into-another-language",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers supporting a multilingual staff or client base",
+    "title": "I need to translate a document or policy into another language without losing the formatting or getting it wrong",
+    "intentLabels": [
+      "document translation",
+      "multilingual communication",
+      "language translation",
+      "policy translation"
+    ],
+    "tools": [
+      {
+        "name": "DeepL",
+        "url": "https://www.eesel.ai/blog/deepl-pricing"
+      }
+    ],
+    "workflowSummary": "Upload a Word, PowerPoint, or PDF document; the AI translates it while preserving layout and formatting, and a shared glossary keeps company-specific terms (product names, job titles) consistent across every translation instead of being re-translated inconsistently each time.",
+    "samplePrompt": "Translate this updated safety policy into Spanish, keep the formatting intact, and use our saved glossary for job titles.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier: 50K characters/month. Individual from ~$8.74/month (annual); Team from ~$28.74/user/month; Business from ~$57.49/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.eesel.ai/blog/deepl-pricing",
+    "sourceType": "Blog / guide (pricing breakdown)",
+    "freshness": "June 5, 2026",
+    "accessNotes": "Publicly available blog post; document-translation limits (e.g. files per month) are separate from the character-count limits and are easy to hit if you translate often.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-469e4ad7db",
+    "slug": "i-want-to-offer-a-gym-wellness-benefit-without-managing-dozens",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers administering employee wellness benefits",
+    "title": "I want to offer a gym/wellness benefit without managing dozens of individual gym memberships or reimbursement paperwork",
+    "intentLabels": [
+      "employee wellness",
+      "gym benefit",
+      "wellness stipend",
+      "corporate wellness program"
+    ],
+    "tools": [
+      {
+        "name": "Wellhub",
+        "url": "https://www.aihratlas.com/tools/wellhub"
+      }
+    ],
+    "workflowSummary": "Employees get one subscription that unlocks a large network of gyms, studios, and wellness apps (fitness, mental health, nutrition, sleep) instead of you tracking receipts for a reimbursement program; an in-app AI coach helps employees build routines, and admins get an enrollment/usage dashboard instead of a pile of expense claims.",
+    "samplePrompt": "Set up a co-funded wellness benefit for our 15-person office and show me enrollment and usage after the first month.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "enterprise-style sales process; plan tiers and company contribution levels need to be worked out upfront",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published; requires a sales conversation. Independent estimates place plan tiers from a free/limited Digital option up to a premium tier around $345/month per employee depending on access level — verify directly with the vendor before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.aihratlas.com/tools/wellhub",
+    "sourceType": "Blog / guide (review)",
+    "freshness": "July 24, 2026",
+    "accessNotes": "Publicly available blog post; the reviewer notes they have not independently tested pricing and relied on published case studies — confirm real numbers with Wellhub directly.",
+    "batch": "OfficeOps AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-d2dd6fec0b",
+    "slug": "i-want-to-log-a-workplace-injury-and-know-whether-it-needs-to",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responsible for workplace safety and OSHA recordkeeping",
+    "title": "I want to log a workplace injury and know whether it needs to go on our OSHA 300 log without digging through regulations myself",
+    "intentLabels": [
+      "workplace safety incident reporting",
+      "OSHA recordkeeping",
+      "injury log",
+      "safety compliance"
+    ],
+    "tools": [
+      {
+        "name": "FileFlo",
+        "url": "https://www.getfileflo.com/blog/best-osha-compliance-software-2026"
+      }
+    ],
+    "workflowSummary": "Log an incident (with photos if relevant) through a mobile-friendly form; the system checks it against OSHA recordkeeping rules to flag whether it's a recordable event, tracks required training and certification expirations, and generates audit-ready documentation for an inspection.",
+    "samplePrompt": "Log this warehouse slip-and-fall incident, tell me if it's OSHA-recordable, and flag any required follow-up training.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "recordability rules still benefit from a safety officer or consultant double-checking edge cases",
+    "trustScore": 3,
+    "pricingNote": "Pricing not detailed in this source; positioned as a small/mid-business-friendly alternative to enterprise EHS platforms — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getfileflo.com/blog/best-osha-compliance-software-2026",
+    "sourceType": "Blog / guide (vendor comparison)",
+    "freshness": "May 28, 2026",
+    "accessNotes": "Publicly available blog post; published by FileFlo, a vendor in this comparison, so cross-check independently.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-885754ab19",
+    "slug": "i-want-to-send-one-alert-to-the-whole-office-by-text-email-and",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers who need to reach everyone quickly during an emergency or severe weather event",
+    "title": "I want to send one alert to the whole office by text, email, and phone call at the same time during a severe weather closure or emergency",
+    "intentLabels": [
+      "emergency notification",
+      "mass notification",
+      "severe weather alert",
+      "crisis communication"
+    ],
+    "tools": [
+      {
+        "name": "AlertMedia",
+        "url": "https://www.guideflow.com/blog/emergency-alert-software"
+      }
+    ],
+    "workflowSummary": "Trigger a pre-built or custom alert (e.g. office closure, severe weather, evacuation) that goes out simultaneously across SMS, voice call, email, and a mobile app; AI helps draft and translate the alert quickly, and you can track who has acknowledged it so you know who's been reached.",
+    "samplePrompt": "Send an office-closure alert for tomorrow due to severe weather to all staff by text and email, and show me who hasn't confirmed receipt by 8am.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of contact lists and alert templates takes some upfront work",
+    "trustScore": 3,
+    "pricingNote": "Custom/quote-based pricing based on audience size and locations; no published numeric plan — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/emergency-alert-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "Aug 13, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-ad246961e1",
+    "slug": "i-want-to-know-before-a-printer-runs-out-of-toner-instead-of",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers keeping shared printers and copiers running without surprise toner outages",
+    "title": "I want to know before a printer runs out of toner instead of finding out when someone's mid-print job",
+    "intentLabels": [
+      "print fleet management",
+      "toner monitoring",
+      "printer maintenance",
+      "copier tracking"
+    ],
+    "tools": [
+      {
+        "name": "PrintFleet",
+        "url": "https://zipdo.co/best/printer-fleet-management-software/"
+      }
+    ],
+    "workflowSummary": "The tool remotely monitors toner and supply levels plus meter counts across every networked printer and copier; it flags devices running low or showing early signs of a service issue, so supplies can be reordered or serviced proactively instead of reactively.",
+    "samplePrompt": "Show me which office printers are below 15% toner right now and flag any with a rising error rate.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial device discovery/setup usually involves IT",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source (vendor/reseller-quoted) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://zipdo.co/best/printer-fleet-management-software/",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "March 12, 2026",
+    "accessNotes": "Publicly available blog post.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-599202cefa",
+    "slug": "i-want-to-know-where-our-company-vehicles-are-and-get-a-heads",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers overseeing a small company vehicle fleet",
+    "title": "I want to know where our company vehicles are and get a heads-up before something needs maintenance",
+    "intentLabels": [
+      "vehicle fleet tracking",
+      "company car GPS",
+      "fleet maintenance",
+      "mileage tracking"
+    ],
+    "tools": [
+      {
+        "name": "Motive",
+        "url": "https://insights.velocityaipartners.co/alternatives/best-fleet-management-software"
+      }
+    ],
+    "workflowSummary": "Install GPS hardware in each vehicle; the dashboard shows real-time location, tracks mileage automatically for reimbursement or tax purposes, and AI flags maintenance needs and driving-safety issues (harsh braking, speeding) before they become bigger problems.",
+    "samplePrompt": "Show me current mileage on all 4 company vans this month, and flag any vehicle due for scheduled maintenance.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires installing tracking hardware and a contract commitment",
+    "trustScore": 3,
+    "pricingNote": "From ~$25-50/vehicle/month depending on tier, 12-month minimum contract; better fit for a genuine small fleet than heavier platforms like Samsara, which lean toward 50+ vehicle operations — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://insights.velocityaipartners.co/alternatives/best-fleet-management-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "June 18, 2026",
+    "accessNotes": "Publicly available blog post; if you don't operate commercial vehicles over 10,001 lbs, you likely don't need ELD/DOT compliance features — a simpler GPS-only tracker may be cheaper and sufficient.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-a2d44335df",
+    "slug": "i-want-someone-to-open-scan-and-email-me-our-business-mail",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers supporting remote or hybrid teams who still receive physical mail",
+    "title": "I want someone to open, scan, and email me our business mail instead of it piling up at an office nobody visits daily",
+    "intentLabels": [
+      "virtual mailbox",
+      "digital mailroom",
+      "mail scanning",
+      "remote mail handling"
+    ],
+    "tools": [
+      {
+        "name": "iPostal1",
+        "url": "https://www.guideflow.com/blog/virtual-mailbox-software"
+      },
+      {
+        "name": "Anytime Mailbox"
+      }
+    ],
+    "workflowSummary": "Incoming mail and packages are received at a real street address; each item's exterior is scanned and uploaded so you can choose to have it opened and scanned in full, forwarded, shredded, or picked up — all from one online inbox instead of a physical mail pile.",
+    "samplePrompt": "Scan the contents of this letter that just arrived and email it to me, then shred the original once I've confirmed I've seen it.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "iPostal1: from ~$9.99/month (Green), up to ~$39.99/month (Gold), plus per-item open-and-scan fees on lower tiers. Anytime Mailbox: from ~$9.99/month, with unlimited scanning typically starting around $29/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/virtual-mailbox-software",
+    "sourceType": "Blog / guide (roundup)",
+    "freshness": "July 14, 2026",
+    "accessNotes": "Publicly available blog post; per-item scanning fees can add up quickly if the office receives high mail volume — compare a flat-fee plan if that's the case.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "office-operations-managers-a7030766c0",
+    "slug": "i-don-t-know-how-long-we-re-legally-required-to-keep-old",
+    "kind": "workflow",
+    "niche": "Office & Operations Managers",
+    "sector": "Office & Operations Managers",
+    "persona": "Office managers responsible for knowing how long to keep company documents",
+    "title": "I don't know how long we're legally required to keep old contracts, tax records, or employee files, or when it's safe to destroy them",
+    "intentLabels": [
+      "records retention",
+      "document destruction",
+      "retention schedule",
+      "recordkeeping compliance"
+    ],
+    "tools": [
+      {
+        "name": "Zasio Versatile",
+        "url": "https://zasio.com/technology-solutions/retention-schedule-management/"
+      }
+    ],
+    "workflowSummary": "Documents are tagged by type (financial, employee, contract, tax), and the system applies a retention schedule backed by a maintained library of legal citations across jurisdictions; it flags when a document's retention period has expired and is safe to destroy, and pauses destruction automatically if litigation or an investigation is pending.",
+    "samplePrompt": "Tell me how long we're required to keep terminated employees' personnel files, and flag any in our system that are now past that date.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "mapping your existing documents into the tool's categories takes initial setup, and destruction decisions should still get a compliance sign-off",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source; positioned for organizations with a formal records-retention program rather than a lightweight small-office need — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://zasio.com/technology-solutions/retention-schedule-management/",
+    "sourceType": "Vendor product page",
+    "freshness": "June 25, 2026",
+    "accessNotes": "Publicly available vendor page; general retention guidance (e.g. 7 years for financial records) is a helpful starting reference, but always confirm exact periods with a qualified attorney or CPA before destroying anything.",
+    "batch": "OfficeOps AI Workflows Batch5",
+    "status": "active"
+  }
+]

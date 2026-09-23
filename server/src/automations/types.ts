@@ -31,8 +31,12 @@ import type { CatalogueKind, NicheName, PricingTier } from '../domain/types.ts'
 export interface AutomationTool {
   /** Display name as the source names it, e.g. "Motion". */
   name: string
-  /** The vendor's own site — the only outbound link this record can offer. */
-  url: string
+  /**
+   * The row's Source URL — set on the first tool only. The sheet has one
+   * Source URL per row and it belongs to the first tool named; a later tool
+   * keeps its name and has no link rather than borrowing someone else's.
+   */
+  url?: string
   /** A real catalogue tool's slug, set only on a confident importer match. */
   catalogueSlug?: string
   /** e.g. "7-day trial requires a card upfront". */
@@ -72,7 +76,15 @@ export interface Automation {
   slug: string
   /** Which directory lists it: the workflow catalogue or the MCP servers page. */
   kind: CatalogueKind
+  /** The source folder — the reliable niche. See `sector` for the sheet's own cell. */
   niche: NicheName
+  /**
+   * The row's Niche/Industry cell, verbatim. Often more specific than the
+   * folder ("Pest control" under Contractors & Home Services) or worded
+   * differently ("Small Business Owners (generic)"), so it is kept as free
+   * text beside `niche` rather than replacing it.
+   */
+  sector?: string
   /** Free text, from the sheet's Audience/Persona column — see SPEC §4 for
    *  why this is not itself a closed vocabulary. */
   persona: string
@@ -84,6 +96,8 @@ export interface Automation {
   workflowSummary: string
   samplePrompt: string
   beginnerFriendly: 'yes' | 'somewhat' | 'no'
+  /** The Beginner-Friendly cell after its leading word, when there is more. */
+  beginnerNote?: string
   /** Stored, never rendered (SPEC §3) — a ranking tiebreak only. */
   trustScore: 1 | 2 | 3 | 4 | 5
   /** Stored, never rendered — prices move monthly; see SPEC §6. */

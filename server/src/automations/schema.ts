@@ -62,7 +62,7 @@ const slug = z
 export const AutomationToolSchema = z
   .object({
     name: nonEmpty(AUTOMATIONS.toolNameMaxChars),
-    url: httpUrl,
+    url: httpUrl.optional(),
     catalogueSlug: slug.optional(),
     accessNote: nonEmpty(AUTOMATIONS.toolAccessNoteMaxChars).optional(),
   })
@@ -84,6 +84,7 @@ export const AutomationSchema = z
     slug,
     kind: z.enum(CATALOGUE_KINDS),
     niche: z.enum(NICHES),
+    sector: nonEmpty(AUTOMATIONS.sectorMaxChars).optional(),
     persona: nonEmpty(AUTOMATIONS.personaMaxChars),
     title: nonEmpty(AUTOMATIONS.titleMaxChars),
     intentLabels: z
@@ -98,6 +99,7 @@ export const AutomationSchema = z
      * catalogue/schema.ts's inline `rating: z.number().min(0).max(5)`.
      */
     beginnerFriendly: z.enum(['yes', 'somewhat', 'no']),
+    beginnerNote: nonEmpty(AUTOMATIONS.beginnerNoteMaxChars).optional(),
     trustScore: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
     pricingNote: nonEmpty(AUTOMATIONS.pricingNoteMaxChars),
     pricingTier: z.enum(PRICING_TIERS),

@@ -167,6 +167,14 @@ await test('AutomationToolSchema and AutomationStepSchema standalone', async (t)
     )
   })
 
+  await t.test('a tool with a name and no url parses — later tools in a row have none', () => {
+    assert.equal(AutomationToolSchema.safeParse({ name: 'Rippling' }).success, true)
+  })
+
+  await t.test('a tool url, when present, must still be http(s)', () => {
+    assert.equal(AutomationToolSchema.safeParse({ name: 'X', url: 'ftp://x.example' }).success, false)
+  })
+
   await t.test('a minimal step (title + body only) parses', () => {
     assert.equal(
       AutomationStepSchema.safeParse({ title: 'Open the tool', body: 'Sign in.' }).success,

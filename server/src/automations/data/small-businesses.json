@@ -1,0 +1,1754 @@
+[
+  {
+    "id": "small-businesses-7a50bbaba0",
+    "slug": "i-want-to-build-a-website-for-my-business-by-just-describing-it",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner without a website or budget for a web developer",
+    "title": "I want to build a website for my business by just describing it",
+    "intentLabels": [
+      "AI website builder",
+      "prompt-to-website generator",
+      "no-code business site"
+    ],
+    "tools": [
+      {
+        "name": "Wix AI Website Builder",
+        "url": "https://www.wix.com/ai-website-builder"
+      }
+    ],
+    "workflowSummary": "Describe the business in a conversational prompt (type, goals, style); the AI generates a complete site with industry-specific layout, tailored copy, and visuals already wired in, including features like booking or online store elements based on the business type - then you can keep chatting with the AI to adjust it or switch to drag-and-drop editing.",
+    "samplePrompt": "\"Build a website for my [type of business], goals are [bookings/sales/leads], style should feel [warm and approachable / modern and minimal].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational prompt, no coding needed",
+    "trustScore": 4,
+    "pricingNote": "Free plan available with Wix branding/subdomain; paid plans remove branding and add features",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.wix.com/ai-website-builder",
+    "sourceType": "Product page",
+    "freshness": "2026-07-23",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-bf701a6e27",
+    "slug": "i-want-to-talk-to-an-ai-instead-of-doing-my-bookkeeping-myself",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner with no time or accounting background to manage bookkeeping",
+    "title": "I want to talk to an AI instead of doing my bookkeeping myself",
+    "intentLabels": [
+      "AI bookkeeping assistant",
+      "conversational accounting",
+      "automated expense categorization"
+    ],
+    "tools": [
+      {
+        "name": "Bookkeeping.ai (Paula AI)",
+        "url": "https://startupowl.com/setup/ai-bookkeeping-for-small-business"
+      }
+    ],
+    "workflowSummary": "Upload bank statements or connect accounts, then chat directly with the AI (\"Paula\") to categorize expenses, generate profit and loss reports, or review cash flow in plain language - no manual data entry or accounting knowledge required to get a basic financial picture.",
+    "samplePrompt": "\"Categorize my expenses from this bank statement and tell me my profit and loss for last month.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational interface, no accounting background needed",
+    "trustScore": 3,
+    "pricingNote": "Reported starting around $29/month; 30-day free trial with no credit card required",
+    "pricingTier": "paid",
+    "sourceUrl": "https://startupowl.com/setup/ai-bookkeeping-for-small-business",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-03-24",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-3b41ea3194",
+    "slug": "i-want-to-send-professional-invoices-and-track-my-expenses-for",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner needing to send invoices and track expenses without paying for software",
+    "title": "I want to send professional invoices and track my expenses for free",
+    "intentLabels": [
+      "Free AI invoicing tool",
+      "expense tracking",
+      "receipt scanning"
+    ],
+    "tools": [
+      {
+        "name": "Wave",
+        "url": "https://bizrunbook.com/best-ai-tools-small-business-invoicing-bookkeeping-2026/"
+      }
+    ],
+    "workflowSummary": "Create and send invoices through a simple online tool, snap photos of receipts for automatic expense logging, and view real-time profit and loss/balance sheet reports generated from your categorized transactions - all on a genuinely free plan rather than a limited trial.",
+    "samplePrompt": "\"Create an invoice for [client name] for [service], due in 30 days, and log this receipt as a business expense.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "straightforward invoicing/receipt tools, no accounting background needed",
+    "trustScore": 4,
+    "pricingNote": "Core invoicing, bookkeeping, and receipt scanning are free; paid add-ons exist for payments/payroll",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bizrunbook.com/best-ai-tools-small-business-invoicing-bookkeeping-2026/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-03-21",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-0277e9df35",
+    "slug": "i-want-invoicing-software-built-for-how-consultants-and",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Freelancer or consultant who bills clients by time or project",
+    "title": "I want invoicing software built for how consultants and freelancers bill clients",
+    "intentLabels": [
+      "AI invoicing for service businesses",
+      "time/project billing",
+      "freelancer invoicing tool"
+    ],
+    "tools": [
+      {
+        "name": "FreshBooks",
+        "url": "https://bizrunbook.com/best-ai-tools-small-business-invoicing-bookkeeping-2026/"
+      }
+    ],
+    "workflowSummary": "Built specifically around billing by time or project rather than physical inventory; the AI helps draft and send invoices, matches incoming payments to categories automatically, and sends payment reminders without manual follow-up - suited to freelancers, consultants, and agencies rather than product-based shops.",
+    "samplePrompt": "\"Create a project-based invoice for [client] covering [hours/deliverables] and set up an automatic reminder if unpaid after 14 days.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided invoicing flow, no accounting background needed",
+    "trustScore": 3,
+    "pricingNote": "Lite $19/mo (5 clients), Plus $33/mo (50 clients), Premium $60/mo (unlimited); 30-day free trial",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bizrunbook.com/best-ai-tools-small-business-invoicing-bookkeeping-2026/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-03-21",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-ad498221db",
+    "slug": "i-want-ai-to-help-manage-paying-my-vendors-and-catch-duplicate",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner paying multiple vendors/suppliers and wanting to reduce manual approval work",
+    "title": "I want AI to help manage paying my vendors and catch duplicate or suspicious invoices",
+    "intentLabels": [
+      "AI accounts payable automation",
+      "vendor bill pay",
+      "invoice fraud detection"
+    ],
+    "tools": [
+      {
+        "name": "BILL",
+        "url": "https://thestacc.com/blog/ai-invoicing-tools-small-business/"
+      }
+    ],
+    "workflowSummary": "Vendor invoices are routed automatically to the right approver based on amount (a small office-supply bill auto-approves, a large vendor invoice goes to the owner), while AI scans for duplicate invoices and suspicious transactions before payment goes out - cutting down the email/Slack chains usually needed to get a bill approved and paid.",
+    "samplePrompt": "\"Route any vendor invoice over $1,000 to me for approval, auto-approve anything under $200, and flag any duplicate invoices.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited once you have a bookkeeper or a bit of AP volume to manage",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published on the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://thestacc.com/blog/ai-invoicing-tools-small-business/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-18",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-cecbf7ccd8",
+    "slug": "i-want-an-ai-to-answer-my-business-phone-when-i-can-t-get-to-it",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Solo owner or small team missing calls while working",
+    "title": "I want an AI to answer my business phone when I can't get to it",
+    "intentLabels": [
+      "AI phone receptionist",
+      "virtual answering service",
+      "missed call automation"
+    ],
+    "tools": [
+      {
+        "name": "Bookipi AI Receptionist",
+        "url": "https://bookipi.com/ai-receptionist/"
+      }
+    ],
+    "workflowSummary": "Add your business details, pick a voice and name for the receptionist, and list the questions customers usually ask; the AI then answers every call 24/7 in natural conversation, handles common questions, books appointments, and captures caller details - logged in a dashboard to review later, so missed calls don't become missed revenue.",
+    "samplePrompt": "\"Set up an AI receptionist for my business that answers common questions about hours and pricing, and books appointments when asked.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided setup with no technical skill needed, or the AI walks you through it",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published on the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bookipi.com/ai-receptionist/",
+    "sourceType": "Product page",
+    "freshness": "2026-05-18",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-3487f7dc4e",
+    "slug": "i-want-ai-to-write-and-design-a-business-proposal-for-a-client",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who needs to send a client a proposal but dreads writing one from scratch",
+    "title": "I want AI to write and design a business proposal for a client",
+    "intentLabels": [
+      "AI business proposal generator",
+      "client proposal writer",
+      "proposal design tool"
+    ],
+    "tools": [
+      {
+        "name": "Piktochart AI Business Proposal Generator",
+        "url": "https://piktochart.com/ai-business-proposal-generator/"
+      }
+    ],
+    "workflowSummary": "Start from a client brief, project scope, or pricing context; the AI turns that prompt into a fully structured, editable proposal with a clear layout and visual direction, covering objectives, deliverables, and pricing - which you then adjust for colors, fonts, and brand details in the editor before sending.",
+    "samplePrompt": "\"Write a business proposal for [service] for [client], covering scope, timeline, and pricing of [amount], professional and confident tone.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-based generation, no design or proposal-writing experience needed",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans for more exports/brand kit features",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://piktochart.com/ai-business-proposal-generator/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-07b2a89416",
+    "slug": "i-want-ai-to-write-a-job-description-for-a-role-i-m-hiring-for",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner hiring their first employee without an HR background",
+    "title": "I want AI to write a job description for a role I'm hiring for",
+    "intentLabels": [
+      "AI job description generator",
+      "hiring post writer",
+      "job posting AI"
+    ],
+    "tools": [
+      {
+        "name": "Indeed Job Description Generator",
+        "url": "https://www.indeed.com/lead/attract-great-candidates-with-indeeds-new-ai-powered-job-description-tool"
+      }
+    ],
+    "workflowSummary": "Enter the job title and basic role details; the AI combines general language generation with Indeed's own data on millions of job postings to draft a tailored job description in seconds, adding role-specific phrasing shown to attract more relevant applicants than a generic template.",
+    "samplePrompt": "\"Write a job description for a part-time [role] at a small [type of business], covering responsibilities, required experience, and pay range.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter role details and generate, no HR background needed",
+    "trustScore": 4,
+    "pricingNote": "Free to use as part of posting a job on Indeed",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.indeed.com/lead/attract-great-candidates-with-indeeds-new-ai-powered-job-description-tool",
+    "sourceType": "Product page",
+    "freshness": "2025-12-18",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-0ff1ae2745",
+    "slug": "i-want-ai-to-help-me-interview-candidates-and-onboard-my-first",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner hiring who also needs interview questions and onboarding steps, not just a job post",
+    "title": "I want AI to help me interview candidates and onboard my first hire, not just write the job post",
+    "intentLabels": [
+      "AI hiring assistant",
+      "interview question generator",
+      "onboarding checklist AI"
+    ],
+    "tools": [
+      {
+        "name": "GoHire",
+        "url": "https://clickup.com/blog/ai-job-description-generators/"
+      }
+    ],
+    "workflowSummary": "Beyond generating the job description itself, the tool produces customized interview questions to assess a candidate's skills and fit, and builds an onboarding checklist for a smooth start once someone is hired - useful for an owner hiring without dedicated HR support.",
+    "samplePrompt": "\"Generate 8 interview questions for a [role] candidate, and an onboarding checklist for their first week.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts for each hiring step, no HR background needed",
+    "trustScore": 3,
+    "pricingNote": "Free job description tool; paid plans for the fuller hiring workflow",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://clickup.com/blog/ai-job-description-generators/",
+    "sourceType": "Blog / guide",
+    "freshness": "2025-05-12",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-a62bd26ded",
+    "slug": "i-want-ai-to-take-notes-and-summarize-my-business-calls-and",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who forgets what was discussed and agreed to in client or team calls",
+    "title": "I want AI to take notes and summarize my business calls and meetings automatically",
+    "intentLabels": [
+      "AI meeting notetaker",
+      "call transcription",
+      "automatic meeting summary"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://otter.ai/",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Join a call (Zoom, Google Meet, etc.) with the AI as a participant; it transcribes the conversation in real time, produces a summary and action items afterward, and makes the full history searchable later - so you don't have to take notes by hand or rely on memory for what was agreed.",
+    "samplePrompt": "\"Summarize this client call and list any action items with who owns each one.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "joins the call and works automatically, no setup needed beyond signing in",
+    "trustScore": 4,
+    "pricingNote": "Free tier covers 300 minutes/month; paid plans from about $8.33-16.99/month",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://otter.ai/",
+    "sourceType": "Product page",
+    "freshness": "1 day ago (page live, current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-df9c3bc4a0",
+    "slug": "i-want-ai-to-help-me-get-more-customer-reviews-and-reply-to",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner relying on word of mouth who needs more Google/Facebook reviews",
+    "title": "I want AI to help me get more customer reviews and reply to them for me",
+    "intentLabels": [
+      "AI review management",
+      "reputation management",
+      "automated review requests"
+    ],
+    "tools": [
+      {
+        "name": "Podium",
+        "url": "https://www.podium.com/article/why-podiums-reviews-tool-is-the-best-reputation-management-software"
+      }
+    ],
+    "workflowSummary": "Send review invites to customers by text after a purchase or visit; the AI suggests personalized, on-brand reply drafts for incoming Google and Facebook reviews, and a conversational AI handles incoming review-related messages around the clock - aimed at doubling monthly reviews within about 60 days per the vendor.",
+    "samplePrompt": "\"Draft a reply to this 5-star review thanking the customer and mentioning [specific detail they praised].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly automated once review requests are set up",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing based on business size; positioned for small to mid-sized local businesses",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.podium.com/article/why-podiums-reviews-tool-is-the-best-reputation-management-software",
+    "sourceType": "Blog / product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-6322cf329a",
+    "slug": "i-want-a-chatbot-on-my-website-that-can-answer-customer",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner whose website visitors leave without getting an answer outside business hours",
+    "title": "I want a chatbot on my website that can answer customer questions any time",
+    "intentLabels": [
+      "AI website chatbot",
+      "customer support automation",
+      "live chat AI"
+    ],
+    "tools": [
+      {
+        "name": "Tidio",
+        "url": "https://www.imagine.art/blogs/ai-tools-for-restaurant-marketing"
+      }
+    ],
+    "workflowSummary": "Connect the chatbot to your website; it instantly answers common questions like hours, product/service availability, and pricing, captures visitor details as leads, and routes conversations to a human only when needed - covering the repetitive questions that would otherwise interrupt an owner's day.",
+    "samplePrompt": "\"Set up a chatbot that answers questions about our hours, pricing, and service area, and collects contact info from interested visitors.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided setup, mostly no-code",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans for higher conversation volume/automation rules",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.imagine.art/blogs/ai-tools-for-restaurant-marketing",
+    "sourceType": "Blog / guide",
+    "freshness": "1 month ago (page live, current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-84dbb9a806",
+    "slug": "i-want-one-ai-tool-that-builds-my-website-and-also-handles",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "New owner wanting one simple tool that covers a website, basic CRM, and SEO together",
+    "title": "I want one AI tool that builds my website and also handles basic customer tracking and SEO",
+    "intentLabels": [
+      "All-in-one small business AI platform",
+      "AI website with built-in CRM",
+      "basic SEO automation"
+    ],
+    "tools": [
+      {
+        "name": "Durable",
+        "url": "https://www.kdnuggets.com/7-essential-ai-website-builders-from-prompt-to-production"
+      }
+    ],
+    "workflowSummary": "Generates a business website quickly from a short description, then layers in built-in tools most small businesses would otherwise buy separately - a basic CRM to track customer contacts, foundational SEO settings, and simple marketing assistants - so a solo owner isn't stitching together three different subscriptions.",
+    "samplePrompt": "\"Build a website for my [business type] with basic SEO set up, and start tracking new customer inquiries in the built-in CRM.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided, single-platform setup",
+    "trustScore": 3,
+    "pricingNote": "Free plan to build and publish with limitations; paid plans unlock more features",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.kdnuggets.com/7-essential-ai-website-builders-from-prompt-to-production",
+    "sourceType": "Blog / guide",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-18ac658559",
+    "slug": "i-want-to-send-clients-a-link-so-they-can-book-time-with-me",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner tired of scheduling back-and-forth over email with clients",
+    "title": "I want to send clients a link so they can book time with me without the back and forth",
+    "intentLabels": [
+      "Self-serve appointment booking",
+      "AI scheduling link",
+      "calendar booking tool"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://www.vellum.ai/blog/best-ai-appointment-scheduling-tools"
+      }
+    ],
+    "workflowSummary": "Share a personal booking link that reflects your real-time calendar availability; clients pick an open slot themselves, and the booking syncs straight to your calendar - eliminating the multi-email back-and-forth of finding a mutually free time.",
+    "samplePrompt": "\"Set up a 30-minute consultation booking link that only shows availability on weekday afternoons.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "link-based self-serve booking, no setup complexity for the client",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans for team scheduling and advanced routing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-appointment-scheduling-tools",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-e4aa83fae5",
+    "slug": "i-want-ai-to-book-an-appointment-for-a-customer-right-while-i-m",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who books most appointments over the phone or in a chat conversation, not by sending a link",
+    "title": "I want AI to book an appointment for a customer right while I'm texting or calling with them",
+    "intentLabels": [
+      "Conversational AI booking agent",
+      "voice/text scheduling assistant",
+      "CRM-synced booking"
+    ],
+    "tools": [
+      {
+        "name": "Dapta",
+        "url": "https://dapta.ai/blog-posts/best-ai-appointment-scheduling-tools/"
+      }
+    ],
+    "workflowSummary": "Instead of sending a booking link, the AI voice or text agent handles the scheduling conversation itself in real time, whether the customer calls or messages, then books the appointment directly into your calendar and logs it in your CRM without you touching a keyboard.",
+    "samplePrompt": "\"When a customer texts asking to book a service, have the AI agent find an open slot and confirm the appointment automatically.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful, but works best once voice/text channels are connected",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published on the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dapta.ai/blog-posts/best-ai-appointment-scheduling-tools/",
+    "sourceType": "Blog / guide",
+    "freshness": "1 month ago (page live, current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-5e3f8a4dd6",
+    "slug": "i-want-to-turn-a-text-description-into-a-professional-graphic",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner without an in-house designer needing quick, editable visuals for various business documents",
+    "title": "I want to turn a text description into a professional graphic for my business",
+    "intentLabels": [
+      "AI graphic/document design generator",
+      "prompt-to-design tool",
+      "business visual generator"
+    ],
+    "tools": [
+      {
+        "name": "Venngage AI Proposal/Design Generator",
+        "url": "https://venngage.com/ai-tools/proposal-generator"
+      }
+    ],
+    "workflowSummary": "Type a short prompt describing what's needed (a proposal, flyer, report, or contract); the AI produces a fully designed, editable document with layout, content, and formatting already handled, plus tools to strengthen the wording or add matching visuals before exporting as a PDF or presentation.",
+    "samplePrompt": "\"Create a one-page business proposal covering our service, pricing, and timeline, professional but approachable tone.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-based generation, no design software needed",
+    "trustScore": 3,
+    "pricingNote": "Free to start; PDF/PPT export and brand kit features on paid plans",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://venngage.com/ai-tools/proposal-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-ac28a9b836",
+    "slug": "i-want-ai-to-plan-and-write-my-social-media-posts-across",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner posting inconsistently across social platforms without a content plan",
+    "title": "I want AI to plan and write my social media posts across platforms",
+    "intentLabels": [
+      "AI social media content generator",
+      "multi-platform caption writer",
+      "content calendar automation"
+    ],
+    "tools": [
+      {
+        "name": "SocialBee",
+        "url": "https://socialbee.com/blog/social-media-content-generator/"
+      }
+    ],
+    "workflowSummary": "The AI analyzes audience data to suggest post topics and themes, then generates captions tailored to each platform's style; posts get scheduled across channels from one place, so a small business can stay consistent without spending hours writing and posting manually every day.",
+    "samplePrompt": "\"Generate a week of social posts for our business announcing [offer/update], one caption each for Instagram, Facebook, and LinkedIn in the right tone for each platform.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided content generation and scheduling, no strategy background needed",
+    "trustScore": 3,
+    "pricingNote": "14-day free trial; paid plans beyond that",
+    "pricingTier": "paid",
+    "sourceUrl": "https://socialbee.com/blog/social-media-content-generator/",
+    "sourceType": "Blog / product page",
+    "freshness": "2026-03-13",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-6dbef611e5",
+    "slug": "i-want-a-free-ai-tool-to-generate-social-media-posts-based-on",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting to test AI content generation before committing to a paid platform",
+    "title": "I want a free AI tool to generate social media posts based on what's trending",
+    "intentLabels": [
+      "Free AI social post generator",
+      "trend-based content",
+      "audience insight tool"
+    ],
+    "tools": [
+      {
+        "name": "Predis.ai",
+        "url": "https://softailed.com/blog/best-ai-social-media-post-generators"
+      }
+    ],
+    "workflowSummary": "Enter your business type or a topic; the AI suggests post ideas and captions informed by audience insights and current trends, giving a usable starting point for engagement-focused content without any upfront cost - a good entry point before investing in a fuller platform.",
+    "samplePrompt": "\"Suggest 5 trending post ideas for a [type of business] and write captions for each.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier covers the core generation features",
+    "trustScore": 3,
+    "pricingNote": "Free version available; paid plans add more features",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://softailed.com/blog/best-ai-social-media-post-generators",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-2efd97704d",
+    "slug": "i-want-ai-to-help-me-post-regularly-to-my-google-business",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner whose Google Business Profile sits untouched for weeks at a time",
+    "title": "I want AI to help me post regularly to my Google Business Profile so I show up in local search",
+    "intentLabels": [
+      "AI Google Business Profile posting",
+      "local search visibility",
+      "GBP content assistant"
+    ],
+    "tools": [
+      {
+        "name": "Localo",
+        "url": "https://offprompt.blog/blog/ai-write-google-business-profile-posts/"
+      }
+    ],
+    "workflowSummary": "Connects directly to your Google Business Profile and suggests post topics based on what people in your specific area are actually searching for, addressing the fact that Google's local algorithm rewards profiles that stay active rather than ones that are simply claimed and left alone.",
+    "samplePrompt": "\"Suggest 3 Google Business Profile post ideas for this week based on what people in [area] are searching for related to [business type].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "if you can write a text message and copy-paste, the tool handles the rest",
+    "trustScore": 3,
+    "pricingNote": "Limited free tier; paid plans start around $24/month",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://offprompt.blog/blog/ai-write-google-business-profile-posts/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-03-23",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-10327a6277",
+    "slug": "i-want-ai-to-fix-and-keep-my-business-listings-consistent",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner whose business info is inconsistent across Google, Yelp, and other directories",
+    "title": "I want AI to fix and keep my business listings consistent across the internet",
+    "intentLabels": [
+      "AI local citation management",
+      "listing consistency automation",
+      "local SEO audit"
+    ],
+    "tools": [
+      {
+        "name": "Local SEO Bot",
+        "url": "https://www.localseobot.com/blog/best-local-seo-tools-google-business-profile-optimization/"
+      }
+    ],
+    "workflowSummary": "After an initial audit of your profile for accuracy and policy issues, the AI creates consistent business citations across hundreds of trusted directories and handles review responses automatically, aiming to secure a spot in Google Maps' local \"map pack\" results.",
+    "samplePrompt": "\"Audit my Google Business Profile for accuracy issues and create consistent citations for my business across major directories.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the audit and citation-building run in the background, but results take time to show",
+    "trustScore": 3,
+    "pricingNote": "Reported around $49/month with a 30-day money-back guarantee",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.localseobot.com/blog/best-local-seo-tools-google-business-profile-optimization/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-01-07",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-5f4bbe4627",
+    "slug": "i-want-ai-to-write-my-facebook-and-google-ad-copy-for-me",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who dreads writing ad copy for every new campaign",
+    "title": "I want AI to write my Facebook and Google ad copy for me",
+    "intentLabels": [
+      "AI ad copy generator",
+      "Facebook/Google ads writer",
+      "ad headline and CTA generator"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai (free Google/Facebook ad generator)",
+        "url": "https://www.copy.ai/tools/free-google-ads-generator",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Enter your product, target audience, and campaign goal; the AI generates multiple headline, description, and call-to-action variations for the chosen platform in seconds, giving you a first draft to test and refine rather than starting from a blank page.",
+    "samplePrompt": "\"Write 3 Facebook ad variations for [product/offer], targeting [audience], with a clear call to action.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in a short brief and generate, no ad-writing experience needed",
+    "trustScore": 3,
+    "pricingNote": "Free tier included (around 2,000 words/month); paid plans for higher volume",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.copy.ai/tools/free-google-ads-generator",
+    "sourceType": "Blog / product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-1985d2d0f9",
+    "slug": "i-want-ai-to-keep-testing-and-improving-my-ad-copy",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner already running ads who wants copy that improves itself over time rather than a one-off draft",
+    "title": "I want AI to keep testing and improving my ad copy automatically based on performance",
+    "intentLabels": [
+      "AI ad optimization",
+      "automated ad creative testing",
+      "performance-based ad copy rotation"
+    ],
+    "tools": [
+      {
+        "name": "Ryze AI",
+        "url": "https://www.get-ryze.ai/blog/ai-ad-copy-generator-free"
+      }
+    ],
+    "workflowSummary": "Rather than generating a static draft once, the AI continuously generates, tests, and rotates ad copy variations based on real performance data from your running campaigns - reported to improve click-through rates meaningfully within a few weeks without the owner manually managing every test.",
+    "samplePrompt": "\"Set up automatic ad copy testing for my current campaign and rotate in new variations based on what's performing best.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automated once connected, but requires an active ad account to learn from",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published on the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.get-ryze.ai/blog/ai-ad-copy-generator-free",
+    "sourceType": "Blog / guide",
+    "freshness": "2026 (2 weeks ago, current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-a8e93e21a1",
+    "slug": "i-want-ai-to-write-ad-copy-for-tiktok-reddit-and-other",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting to run ads on platforms beyond just Facebook and Google",
+    "title": "I want AI to write ad copy for TikTok, Reddit, and other platforms, not just Facebook",
+    "intentLabels": [
+      "Multi-platform AI ad copy tool",
+      "TikTok/Reddit ad writer",
+      "cross-platform ad generator"
+    ],
+    "tools": [
+      {
+        "name": "SmartAdCopy",
+        "url": "https://smartadcopy.com/"
+      }
+    ],
+    "workflowSummary": "Enter a short product name and description and pick a platform, TikTok, Facebook, Google, Reddit, X, or Quora; the AI generates matching titles, descriptions, and calls to action tailored to that platform's tone, useful for owners experimenting with ad channels beyond the usual Facebook/Google split.",
+    "samplePrompt": "\"Write ad copy for [product] for both TikTok and Reddit, matching the tone each platform expects.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no signup required, enter details and get results instantly",
+    "trustScore": 3,
+    "pricingNote": "Free to use per the page",
+    "pricingTier": "free",
+    "sourceUrl": "https://smartadcopy.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-b545e866fd",
+    "slug": "i-want-ai-to-show-me-what-my-competitors-ads-look-like-before-i",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting to know what competitors are running in ads before designing their own",
+    "title": "I want AI to show me what my competitors' ads look like before I create mine",
+    "intentLabels": [
+      "AI competitor ad intelligence",
+      "ad creative generator",
+      "competitive marketing research"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://piktochart.com/blog/ai-tools-social-media-content-creation/",
+        "catalogueSlug": "adcreative-ai"
+      }
+    ],
+    "workflowSummary": "Provide a competitor's name or website; the AI pulls competitive intelligence on their ad activity and creative approach, then helps generate professional-looking ad creative and collateral of your own informed by what's already working in your market.",
+    "samplePrompt": "\"Show me what kind of ads [competitor] is running, then generate 3 ad creative concepts for my business in a similar format but with our own branding.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided research and generation flow",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source; typically subscription-based",
+    "pricingTier": "paid",
+    "sourceUrl": "https://piktochart.com/blog/ai-tools-social-media-content-creation/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-06",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-c40c739cf8",
+    "slug": "i-want-ai-to-help-me-write-and-send-a-regular-newsletter-to-my",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner with an email list who wants a simple way to keep sending newsletters without hiring a writer",
+    "title": "I want AI to help me write and send a regular newsletter to my customer list",
+    "intentLabels": [
+      "AI email newsletter platform",
+      "newsletter writing assistant",
+      "email list engagement"
+    ],
+    "tools": [
+      {
+        "name": "MailerLite",
+        "url": "https://www.emailtooltester.com/en/blog/ai-newsletter-generator/"
+      }
+    ],
+    "workflowSummary": "Build a newsletter using a simple platform with AI writing support built in - a subject line generator and smart-sending suggestions help around the edges - while you still choose the template and guide the content block by block, keeping control over what actually goes out.",
+    "samplePrompt": "\"Suggest 3 subject line options for this month's newsletter about [topic/offer], and help tighten up this draft paragraph.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple platform with AI assistance layered in, no coding needed",
+    "trustScore": 3,
+    "pricingNote": "Free plan available (limited); AI writing features require a paid plan",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.emailtooltester.com/en/blog/ai-newsletter-generator/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-22",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-f49f0f53ef",
+    "slug": "i-want-to-design-a-professional-looking-newsletter-from-a-text",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting a more visually polished newsletter without a designer",
+    "title": "I want to design a professional-looking newsletter from a text prompt",
+    "intentLabels": [
+      "AI newsletter design generator",
+      "visual newsletter templates",
+      "branded email design"
+    ],
+    "tools": [
+      {
+        "name": "Venngage AI Newsletter Generator",
+        "url": "https://venngage.com/ai-tools/newsletter-generator"
+      }
+    ],
+    "workflowSummary": "Describe the newsletter's purpose and content; the AI produces a fully designed layout with professional templates and smart content suggestions, keeping visuals and brand elements consistent - useful for an owner who wants a newsletter that looks designed, not just typed into a plain template.",
+    "samplePrompt": "\"Design a newsletter announcing [update/offer] with a clean, professional layout matching our brand colors.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-based generation with an easy visual editor",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans for more export/brand options",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://venngage.com/ai-tools/newsletter-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-2f788de1c2",
+    "slug": "i-want-ai-to-find-relevant-content-and-ideas-for-my-newsletter",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who struggles to find fresh newsletter content every week",
+    "title": "I want AI to find relevant content and ideas for my newsletter automatically, not just write what I tell it",
+    "intentLabels": [
+      "AI newsletter content sourcing",
+      "automated newsletter research",
+      "weekly content curation"
+    ],
+    "tools": [
+      {
+        "name": "Hoppy Copy",
+        "url": "https://www.hoppycopy.co/ai-newsletter-creator"
+      }
+    ],
+    "workflowSummary": "Rather than starting from a blank prompt, the AI combines your brand's existing content knowledge with real-time data to surface fresh topics and draft copy and imagery each week - aimed at owners who run out of ideas for what to write about, not just those who dislike writing.",
+    "samplePrompt": "\"Find 3 relevant topics for this week's newsletter based on recent activity in our industry, and draft copy for the top one.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "largely automated topic sourcing and drafting",
+    "trustScore": 3,
+    "pricingNote": "Free plan to start; paid plans for more advanced automation and branding",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hoppycopy.co/ai-newsletter-creator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-4e0ef97d28",
+    "slug": "i-want-to-write-one-update-and-have-ai-turn-it-into-a-blog-post",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner writing the same core update separately for the blog, social, and email each time",
+    "title": "I want to write one update and have AI turn it into a blog post, social captions, and an email at once",
+    "intentLabels": [
+      "AI content repurposing",
+      "one-brief multi-format generator",
+      "cross-channel content tool"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot AI Content Generator",
+        "url": "https://www.hubspot.com/products/artificial-intelligence/ai-social"
+      }
+    ],
+    "workflowSummary": "Share raw ideas or a short brief once; the AI generates matching content across formats, a blog post, social captions with the right emoji/hashtag conventions, and marketing email copy, from the same starting input, cutting down the need to rewrite the same update three separate times.",
+    "samplePrompt": "\"Turn this update about [news/offer] into a blog post, three social captions, and a short marketing email.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one input generates multiple outputs, no separate tools needed",
+    "trustScore": 3,
+    "pricingNote": "Available within HubSpot's Marketing Hub; free tier limited",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hubspot.com/products/artificial-intelligence/ai-social",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-1acfd02cbe",
+    "slug": "i-want-ai-to-help-me-track-inventory-across-my-online-store-and",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Small-batch maker or multichannel seller outgrowing spreadsheets for stock tracking",
+    "title": "I want AI to help me track inventory across my online store and stop running out of stock",
+    "intentLabels": [
+      "AI inventory management",
+      "multichannel stock sync",
+      "stockout prevention"
+    ],
+    "tools": [
+      {
+        "name": "Katana",
+        "url": "https://www.vndly.io/blog/best-inventory-management-software-reddit"
+      }
+    ],
+    "workflowSummary": "Connects to your sales channels (Shopify and others) and keeps a live view of stock across all of them; frequently recommended in small-business forums for its clean, non-ERP-level setup, it's especially popular with small-batch makers and Shopify sellers who want multichannel sync without a steep learning curve.",
+    "samplePrompt": "\"Sync my inventory across Shopify and my other sales channels, and alert me when any product's stock runs below 10 units.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "clean interface built for non-technical sellers",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source; positioned as accessible for small-batch sellers",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vndly.io/blog/best-inventory-management-software-reddit",
+    "sourceType": "Blog / Reddit discussion summary",
+    "freshness": "2026-07-29",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-d5d0f99432",
+    "slug": "i-want-one-system-to-manage-inventory-across-amazon-shopify-and",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner selling across Amazon, Shopify, and in-person and needing one accurate stock count",
+    "title": "I want one system to manage inventory across Amazon, Shopify, and my physical store",
+    "intentLabels": [
+      "Multichannel inventory sync",
+      "SKU aliasing",
+      "purchase order management"
+    ],
+    "tools": [
+      {
+        "name": "Cin7 Core",
+        "url": "https://www.vndly.io/blog/best-inventory-management-software-reddit"
+      }
+    ],
+    "workflowSummary": "Recommended repeatedly in small-business inventory discussions for multichannel setups; it handles SKU aliasing so the same product listed differently across Amazon, Shopify, and retail stays in sync, and connects to QuickBooks/Xero so stock and accounting data don't drift apart - though the setup investment is real compared to simpler tools.",
+    "samplePrompt": "\"Sync inventory for [product] across Amazon, Shopify, and our retail POS, and flag any mismatched stock counts.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "more robust than basic tools, so initial setup takes more effort",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vndly.io/blog/best-inventory-management-software-reddit",
+    "sourceType": "Blog / Reddit discussion summary",
+    "freshness": "2026-07-29",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-6afdee8700",
+    "slug": "i-want-to-move-off-spreadsheets-for-tracking-inventory-without",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner still tracking stock in spreadsheets and ready for something simple",
+    "title": "I want to move off spreadsheets for tracking inventory without jumping to something too complex",
+    "intentLabels": [
+      "Basic inventory software",
+      "spreadsheet replacement",
+      "simple stock tracking"
+    ],
+    "tools": [
+      {
+        "name": "Zoho Inventory",
+        "url": "https://www.vndly.io/blog/best-inventory-management-software-reddit"
+      }
+    ],
+    "workflowSummary": "Frequently suggested as the natural next step for a business that has outgrown a spreadsheet but doesn't need a full multichannel or ERP-level system yet - a lower-friction, often free-tier-eligible option for basic stock counts and reorder tracking.",
+    "samplePrompt": "\"Set up basic stock tracking for [number] products with reorder alerts when any item drops below a set quantity.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "positioned as the simplest step up from spreadsheets",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for basic use; paid plans for more volume/features",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.vndly.io/blog/best-inventory-management-software-reddit",
+    "sourceType": "Blog / Reddit discussion summary",
+    "freshness": "2026-07-29",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-099d9a31ab",
+    "slug": "i-want-ai-to-tell-me-when-and-how-much-of-each-product-to",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Solo Shopify seller who keeps either running out of stock or over-ordering",
+    "title": "I want AI to tell me when and how much of each product to reorder based on my sales history",
+    "intentLabels": [
+      "AI demand forecasting",
+      "Shopify reorder automation",
+      "stockout/overstock prevention"
+    ],
+    "tools": [
+      {
+        "name": "Stock Perfect (Shopify app)",
+        "url": "https://apps.shopify.com/inventory-ordering-system"
+      }
+    ],
+    "workflowSummary": "Analyzes historical and recent sales data per product/variant to predict demand, then automates reorder suggestions that account for seasonality and sales velocity, with a Google Sheets integration so ordering doesn't require learning a whole new system.",
+    "samplePrompt": "\"Predict reorder quantities for my top 10 products for next month based on recent sales velocity and seasonality.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for merchants, not inventory specialists",
+    "trustScore": 3,
+    "pricingNote": "Around $29/month",
+    "pricingTier": "paid",
+    "sourceUrl": "https://apps.shopify.com/inventory-ordering-system",
+    "sourceType": "Product page (app store listing)",
+    "freshness": "2025-03-08",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-c78a8c7776",
+    "slug": "i-want-ai-to-draft-a-client-contract-or-agreement-for-my",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who needs client agreements but can't afford a lawyer for every one",
+    "title": "I want AI to draft a client contract or agreement for my business",
+    "intentLabels": [
+      "AI contract generator",
+      "client agreement drafting",
+      "freelance/service contract AI"
+    ],
+    "tools": [
+      {
+        "name": "Bookipi AI Contracts",
+        "url": "https://bookipi.com/business/top-ai-contract-writers/"
+      }
+    ],
+    "workflowSummary": "Generates professional agreements (client contracts, service agreements) from a guided flow built into a broader small-business toolkit, aimed at solo operators and small businesses who can't justify paying a lawyer for every routine agreement they need.",
+    "samplePrompt": "\"Draft a service agreement for [service] with [client], covering scope, payment terms, and a 30-day cancellation policy.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided drafting flow, no legal background needed",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published on the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://bookipi.com/business/top-ai-contract-writers/",
+    "sourceType": "Blog / product page",
+    "freshness": "2026-02-26",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-0be26a3fd4",
+    "slug": "i-want-ai-to-review-a-contract-before-i-sign-it-and-flag",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner about to sign a contract and unsure if the terms are fair",
+    "title": "I want AI to review a contract before I sign it and flag anything risky",
+    "intentLabels": [
+      "AI contract review",
+      "red-flag detection",
+      "free legal insight tool"
+    ],
+    "tools": [
+      {
+        "name": "Rocket Lawyer (Rocket Copilot Contract Review)",
+        "url": "https://www.rocketlawyer.com/newsroom/rocket-lawyer-launches-rocket-copilot-contract-review"
+      }
+    ],
+    "workflowSummary": "Upload a contract before signing; the AI, trained on Rocket Lawyer's own legal analysis data, defines and highlights key terms and red flags worth a closer look, with the option to connect to a human legal professional for anything that needs more than an AI opinion.",
+    "samplePrompt": "\"Review this vendor contract and highlight any clauses that could create financial or reputational risk for my business.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and get flagged terms explained in plain language",
+    "trustScore": 4,
+    "pricingNote": "Free per the announcement; deeper legal support available with a paid membership",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.rocketlawyer.com/newsroom/rocket-lawyer-launches-rocket-copilot-contract-review",
+    "sourceType": "Product page (company announcement)",
+    "freshness": "2025-08-12",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-ff79c8d08b",
+    "slug": "i-want-ai-to-follow-up-with-every-new-lead-automatically-across",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who captures leads but is slow or inconsistent in following up with them",
+    "title": "I want AI to follow up with every new lead automatically across email, phone, and text",
+    "intentLabels": [
+      "AI lead follow-up assistant",
+      "multi-channel lead nurture",
+      "persistent lead memory"
+    ],
+    "tools": [
+      {
+        "name": "Vellum",
+        "url": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up"
+      }
+    ],
+    "workflowSummary": "Captures new leads, qualifies them, and drafts personalized follow-ups across email, phone, and text - carrying memory of each relationship across channels, so a lead who first emails and later calls doesn't have to re-explain themselves, and nothing falls through the cracks from inconsistent manual follow-up.",
+    "samplePrompt": "\"Follow up with any new lead within an hour of first contact, and keep following up every few days until they respond or ask to stop.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful automation, but works best with a bit of initial configuration",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-e953a7e645",
+    "slug": "i-want-ai-to-sort-through-my-emails-follow-up-on-leads-and-keep",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner or small team drowning in repetitive email triage and CRM updates",
+    "title": "I want AI to sort through my emails, follow up on leads, and keep my CRM updated without me doing it manually",
+    "intentLabels": [
+      "No-code AI agent",
+      "email triage automation",
+      "CRM auto-update"
+    ],
+    "tools": [
+      {
+        "name": "Lindy AI",
+        "url": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up"
+      }
+    ],
+    "workflowSummary": "A no-code AI agent builder lets you set up automations for email triage, lead follow-up, and CRM record updates without writing any code - suited to individuals or small teams who want the benefits of automation without hiring an ops person to build and maintain it.",
+    "samplePrompt": "\"Build an agent that sorts incoming leads by email, drafts a follow-up for each, and logs the interaction in our CRM automatically.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "no-code, but initial agent setup takes some trial and error",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-f427074e66",
+    "slug": "i-want-my-crm-to-automatically-fill-in-missing-lead-details-and",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner using HubSpot's CRM who wants it to surface good leads on its own",
+    "title": "I want my CRM to automatically fill in missing lead details and tell me who to contact next",
+    "intentLabels": [
+      "AI CRM enrichment",
+      "automated lead recommendation",
+      "native CRM AI"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot Breeze Intelligence",
+        "url": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up"
+      }
+    ],
+    "workflowSummary": "Lives natively inside HubSpot's CRM rather than as a separate tool; it automatically fills in missing details on CRM records (company size, role, etc.) and recommends which leads are most worth contacting next, so an owner isn't manually researching every new contact.",
+    "samplePrompt": "\"Enrich the details on any new CRM contact automatically, and flag the leads most likely to be a good fit based on our past customers.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works automatically within HubSpot's existing CRM interface",
+    "trustScore": 3,
+    "pricingNote": "Included with HubSpot CRM plans; exact tier pricing not on this page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-tools-for-lead-capture-and-follow-up",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-73a885c06d",
+    "slug": "i-want-ai-to-analyze-my-sales-calls-and-tell-me-what-s-working",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner or small sales team wanting to learn from past sales calls instead of just moving on to the next one",
+    "title": "I want AI to analyze my sales calls and tell me what's working and coach me on what to improve",
+    "intentLabels": [
+      "AI sales call analysis",
+      "call coaching",
+      "win probability scoring"
+    ],
+    "tools": [
+      {
+        "name": "RepEdge.ai",
+        "url": "https://stackshare.io/crm-software-for-small-businesses/vs/repedge-ai"
+      }
+    ],
+    "workflowSummary": "Analyzes recorded sales calls to score the likelihood of winning each deal and provide call coaching feedback, giving a small team without a dedicated sales manager some of the same performance insight larger sales teams get from a manager listening in.",
+    "samplePrompt": "\"Analyze my last 5 sales calls and tell me what I'm doing well and what's hurting my close rate.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful insight, but interpreting coaching feedback benefits from some sales experience",
+    "trustScore": 3,
+    "pricingNote": "10-day unlimited trial offered per the page",
+    "pricingTier": "paid",
+    "sourceUrl": "https://stackshare.io/crm-software-for-small-businesses/vs/repedge-ai",
+    "sourceType": "Blog / product directory",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-5e0b0c8df4",
+    "slug": "i-want-ai-to-help-me-write-linkedin-posts-that-actually-sound",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who knows LinkedIn could bring in clients but doesn't have time to post consistently",
+    "title": "I want AI to help me write LinkedIn posts that actually sound like they know my business",
+    "intentLabels": [
+      "AI LinkedIn content tool",
+      "founder personal branding",
+      "knowledge-grounded post drafting"
+    ],
+    "tools": [
+      {
+        "name": "Oiti",
+        "url": "https://www.ghostwriting-ai.com/comparisons/best-linkedin-ai-content-tools-for-small-business"
+      }
+    ],
+    "workflowSummary": "Add business documents or a customer call transcript to a knowledge base; when drafting a post, the AI researches across that knowledge base, your saved memory, and the live web (including trending topics on X and Reddit relevant to your audience) so posts reflect real expertise rather than generic advice, with a live preview alongside the draft.",
+    "samplePrompt": "\"Draft a LinkedIn post about [topic relevant to my business], pulling in insight from the customer call notes I've added, and match what my audience is currently discussing online.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most value comes after adding some business context to the knowledge base first",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.ghostwriting-ai.com/comparisons/best-linkedin-ai-content-tools-for-small-business",
+    "sourceType": "Blog / guide",
+    "freshness": "2 weeks ago (current)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-81e6c02302",
+    "slug": "i-want-ai-to-write-tweets-and-threads-for-my-business-based-on",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting a presence on X but unsure what performs well on the platform",
+    "title": "I want AI to write tweets and threads for my business based on what actually gets engagement",
+    "intentLabels": [
+      "AI tweet generator",
+      "viral thread writer",
+      "X content automation"
+    ],
+    "tools": [
+      {
+        "name": "Tweet Hunter",
+        "url": "https://deepclick.com/resources/blog/best-twitter-marketing-tools/"
+      }
+    ],
+    "workflowSummary": "Generates tweet drafts trained on patterns from viral content, and automatically re-queues evergreen tweets that performed well in the past so good content keeps getting reused instead of being written once and forgotten - useful for an owner without time to study what works on X.",
+    "samplePrompt": "\"Write 5 tweet ideas for my business about [topic], in a style similar to what tends to perform well on X.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI-assisted drafting with automated scheduling",
+    "trustScore": 3,
+    "pricingNote": "Free tier includes AI assistant per this source; paid plans for more volume",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://deepclick.com/resources/blog/best-twitter-marketing-tools/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-11",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-491f4f5363",
+    "slug": "i-want-a-tool-built-specifically-for-writing-and-scheduling-x",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who writes long-form threads and wants a dedicated writing tool for it",
+    "title": "I want a tool built specifically for writing and scheduling X threads, not just single tweets",
+    "intentLabels": [
+      "AI thread writing tool",
+      "long-form X content",
+      "ghost-tweeting assistant"
+    ],
+    "tools": [
+      {
+        "name": "Typefully",
+        "url": "https://deepclick.com/resources/blog/best-twitter-marketing-tools/"
+      }
+    ],
+    "workflowSummary": "Built around thread composition specifically rather than single tweets - useful for solo creators and ghost-tweeters who build an audience through longer-form storytelling on X rather than one-off posts, with a clean writing interface and scheduling built in.",
+    "samplePrompt": "\"Help me turn these bullet points about [topic] into a well-structured X thread with a strong hook in the first tweet.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "clean, focused interface for thread writing",
+    "trustScore": 3,
+    "pricingNote": "Free tier available per this source",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://deepclick.com/resources/blog/best-twitter-marketing-tools/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-05-11",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-5ad2c852f6",
+    "slug": "i-want-to-turn-a-blog-post-or-idea-into-a-quick-video-for-my",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner wanting short video content for X/social without editing skills",
+    "title": "I want to turn a blog post or idea into a quick video for my social accounts",
+    "intentLabels": [
+      "AI text-to-video generator",
+      "social video creation",
+      "auto-captioned video"
+    ],
+    "tools": [
+      {
+        "name": "FlexClip",
+        "url": "https://inspiretothrive.com/twitter-tools/"
+      }
+    ],
+    "workflowSummary": "Pick a template, drop in clips or text, tweak visuals, and add your brand colors and logo; the AI handles text-to-video conversion, smart editing, voiceovers, and auto-captions, exporting in the right size for X, TikTok, and Instagram without needing video editing experience.",
+    "samplePrompt": "\"Turn this blog post summary into a short video with auto-captions and our brand colors, sized for X.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven with no steep learning curve",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://inspiretothrive.com/twitter-tools/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-eed6a1dc83",
+    "slug": "i-want-ai-to-turn-my-business-idea-into-a-professional-pitch",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Founder who needs a pitch deck for investors or partners but has no design background",
+    "title": "I want AI to turn my business idea into a professional pitch deck",
+    "intentLabels": [
+      "AI pitch deck generator",
+      "investor presentation tool",
+      "text-to-slides"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://www.linkedin.com/pulse/pitch-decks-company-presentations-made-simple-gamma-app-sterkhov",
+        "catalogueSlug": "gamma"
+      }
+    ],
+    "workflowSummary": "Describe the pitch's key message, audience, and essential sections in plain text; the AI expands that into a structured, multi-slide deck covering the sections investors expect (problem, market, business model, financials), handling visual design so the founder can focus on refining the story rather than formatting slides.",
+    "samplePrompt": "\"Create a pitch deck for [business idea], targeting [investor type], covering problem, market size, business model, and financial projections.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "text-in, designed-deck-out, no design software needed",
+    "trustScore": 4,
+    "pricingNote": "Generous free trial per multiple sources; paid plans for branding and higher usage",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.linkedin.com/pulse/pitch-decks-company-presentations-made-simple-gamma-app-sterkhov",
+    "sourceType": "Blog / social (LinkedIn article)",
+    "freshness": "2023-06-04 (tool remains current per newer sources)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-6acb866e24",
+    "slug": "i-want-ai-to-automatically-move-my-ad-budget-to-whichever",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner running ads across LinkedIn, Google, and Facebook without time to manually compare performance",
+    "title": "I want AI to automatically move my ad budget to whichever platform is performing best",
+    "intentLabels": [
+      "AI ad spend optimization",
+      "cross-platform budget reallocation",
+      "performance-based ad automation"
+    ],
+    "tools": [
+      {
+        "name": "Vendasta MatchCraft",
+        "url": "https://www.vendasta.com/blog/best-ai-tools-for-customer-engagement/"
+      }
+    ],
+    "workflowSummary": "Analyzes performance across LinkedIn, Google, and Facebook ad placements in real time, then automatically reallocates ad spend toward whichever channel is currently delivering the best engagement - removing the manual work of checking each platform's dashboard and shifting budget by hand.",
+    "samplePrompt": "\"Monitor our ad performance across LinkedIn, Google, and Facebook this week and shift more budget toward whichever is converting best.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automated once running, but needs active campaigns across platforms to optimize",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vendasta.com/blog/best-ai-tools-for-customer-engagement/",
+    "sourceType": "Blog / guide",
+    "freshness": "2026-07-16",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-501bff9724",
+    "slug": "i-want-ai-to-help-me-build-a-customer-loyalty-program-and-know",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who wants to keep existing customers coming back, not just attract new ones",
+    "title": "I want AI to help me build a customer loyalty program and know who might stop buying from me",
+    "intentLabels": [
+      "AI customer retention platform",
+      "churn prediction",
+      "loyalty program automation"
+    ],
+    "tools": [
+      {
+        "name": "WorkBot",
+        "url": "https://daviddomzalski.substack.com/p/using-ai-to-improve-customer-retention"
+      }
+    ],
+    "workflowSummary": "Combines customer service handling with data insights aimed at retention - surfacing patterns in customer behavior that suggest who might be at risk of leaving, so loyalty offers and outreach can be targeted at the customers who actually need a nudge to stay, rather than blasting everyone the same generic offer.",
+    "samplePrompt": "\"Look at our customer activity and flag anyone who hasn't purchased in a while, then suggest a personalized win-back offer for each.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "insight-driven, works best with some customer history already logged",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://daviddomzalski.substack.com/p/using-ai-to-improve-customer-retention",
+    "sourceType": "Blog / guide (newsletter)",
+    "freshness": "2024 (referenced in ongoing small-business AI coverage)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-22e270d3fb",
+    "slug": "i-want-ai-to-find-relevant-conversations-on-reddit-and-x-where",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who wants to find and join real conversations about their business's topic instead of only broadcasting posts",
+    "title": "I want AI to find relevant conversations on Reddit and X where I could genuinely add value and mention my business",
+    "intentLabels": [
+      "AI social listening",
+      "conversation discovery tool",
+      "organic engagement automation"
+    ],
+    "tools": [
+      {
+        "name": "Reddit Sentinel",
+        "url": "https://stackshare.io/boost-sales-with-leadsgorilla-tools-ai-powered-lead-finder-tool/vs/reddit-sentinel"
+      }
+    ],
+    "workflowSummary": "A browser extension and web app that finds relevant subreddits and threads matching your topic or keywords, then drafts context-aware comment ideas to join the conversation faster - aimed at organic engagement rather than cold outreach or paid ads, with filtering by keyword and post type.",
+    "samplePrompt": "\"Find recent Reddit threads discussing [topic related to my business] and draft a genuinely helpful comment for the top 3.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided discovery and draft comments, still needs a human read-through before posting",
+    "trustScore": 2,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://stackshare.io/boost-sales-with-leadsgorilla-tools-ai-powered-lead-finder-tool/vs/reddit-sentinel",
+    "sourceType": "Product directory",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-6dccaeb032",
+    "slug": "i-want-ai-to-build-my-staff-schedule-for-me-based-on",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner managing hourly staff across shifts (cafes, salons, retail) who builds schedules manually every week",
+    "title": "I want AI to build my staff schedule for me based on availability and expected demand",
+    "intentLabels": [
+      "AI shift scheduling",
+      "hourly staff scheduler",
+      "labor cost forecasting"
+    ],
+    "tools": [
+      {
+        "name": "Homebase",
+        "url": "https://www.joinhomebase.com/employee-scheduling"
+      }
+    ],
+    "workflowSummary": "Snap a photo of an existing paper or spreadsheet schedule and the AI Scheduling Assistant turns it into a digital one instantly, or build fresh based on staff availability and sales forecasts; it flags overtime risk and labor-cost overruns before the schedule is published, with a free plan covering one location.",
+    "samplePrompt": "\"Build next week's schedule for my [number] staff based on their availability, keeping total labor cost under [budget].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mobile-first, staff set their own availability from their phone",
+    "trustScore": 4,
+    "pricingNote": "Free Basic plan for one location; paid tiers add payroll and more locations",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.joinhomebase.com/employee-scheduling",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-ce7d5b6f43",
+    "slug": "i-want-to-check-if-my-website-is-accessible-and-ada-compliant",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner who has never checked whether their website meets accessibility standards",
+    "title": "I want to check if my website is accessible and ADA compliant, and fix what's wrong",
+    "intentLabels": [
+      "AI accessibility scanner",
+      "ADA/WCAG compliance checker",
+      "automated remediation"
+    ],
+    "tools": [
+      {
+        "name": "accessiBe (accessScan + accessWidget)",
+        "url": "https://accessibe.com/accessscan"
+      }
+    ],
+    "workflowSummary": "Run a free scan (accessScan) that checks your site against WCAG 2.1 AA rules in seconds and reports whether it's ADA compliant; if you want ongoing fixes rather than just a report, the accessWidget product continuously monitors and remediates issues automatically, reducing legal risk and expanding your site to users who rely on assistive technology.",
+    "samplePrompt": "\"Scan my website for ADA and WCAG accessibility issues and tell me the most important ones to fix first.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "scan is instant and requires no technical skill to run",
+    "trustScore": 3,
+    "pricingNote": "Free one-time scan; ongoing widget/remediation is a paid subscription",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://accessibe.com/accessscan",
+    "sourceType": "Product page",
+    "freshness": "2025-09-29",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-e1fb72358a",
+    "slug": "i-want-ai-to-write-a-business-plan-i-can-submit-for-a-bank-or",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner applying for a bank or SBA loan who has never written a formal business plan",
+    "title": "I want AI to write a business plan I can submit for a bank or SBA loan",
+    "intentLabels": [
+      "AI business plan generator",
+      "SBA loan plan writer",
+      "lender-ready business document"
+    ],
+    "tools": [
+      {
+        "name": "BizPlanr",
+        "url": "https://bizplanr.ai/"
+      }
+    ],
+    "workflowSummary": "Answer a series of guided questions about the business, funding need, and goals; the AI generates a complete, structured business plan tailored for banks, investors, or grants, covering funding request and financial needs in the format lenders expect - free to generate, with the option to invite partners to review before it's finalized.",
+    "samplePrompt": "\"Generate a business plan for an SBA loan application for my [type of business], requesting $[amount] to [use of funds].\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided question flow, no business-writing background needed",
+    "trustScore": 3,
+    "pricingNote": "Free to generate a full plan; upgrade to Pro for more features",
+    "pricingTier": "free",
+    "sourceUrl": "https://bizplanr.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026-03-03",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-78697321e9",
+    "slug": "i-want-to-check-if-my-business-name-is-available-and-won-t-get",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner about to launch under a new name and worried someone else already owns it",
+    "title": "I want to check if my business name is available and won't get me into trademark trouble",
+    "intentLabels": [
+      "AI trademark search",
+      "business name clearance",
+      "USPTO conflict check"
+    ],
+    "tools": [
+      {
+        "name": "Trademark.io",
+        "url": "https://trademark.io/free-trademark-search"
+      }
+    ],
+    "workflowSummary": "Search the full USPTO trademark database for free by entering a proposed business name; the AI checks name availability and highlights potential conflicts, with an AI Class Finder to help identify which trademark class your goods or services likely fall under - useful groundwork before paying for a formal attorney-led search.",
+    "samplePrompt": "\"Check if the name [business name] is available for trademark in [industry/class] and flag any similar existing marks.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free search, no legal background needed to run it",
+    "trustScore": 3,
+    "pricingNote": "Free basic search; premium reports with risk scoring cost extra",
+    "pricingTier": "free",
+    "sourceUrl": "https://trademark.io/free-trademark-search",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-30007a3746",
+    "slug": "i-want-to-check-if-my-business-name-is-available-as-an-llc",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner naming a new business who wants one place to check everything at once",
+    "title": "I want to check if my business name is available as an LLC, domain, trademark, and social handle all at once",
+    "intentLabels": [
+      "All-in-one name availability checker",
+      "LLC/domain/trademark/handle search"
+    ],
+    "tools": [
+      {
+        "name": "BizNameChecker",
+        "url": "https://biznamechecker.com/"
+      }
+    ],
+    "workflowSummary": "Enter a proposed business name once and get an instant read on LLC availability, domain availability, federal trademark conflicts, and matching social media handles together - saving the trip of checking four separate sites, with an honest manual-check link instead of a guess wherever an instant answer isn't reliable.",
+    "samplePrompt": "\"Check the name [business name] for LLC availability, a matching domain, trademark conflicts, and open social handles.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one search box, no account needed",
+    "trustScore": 3,
+    "pricingNote": "Free with daily search limits",
+    "pricingTier": "free",
+    "sourceUrl": "https://biznamechecker.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live, undated)",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-5e34d12e60",
+    "slug": "i-want-ai-to-translate-customer-chats-and-emails-in-real-time",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner with customers who speak different languages and no budget for multilingual staff",
+    "title": "I want AI to translate customer chats and emails in real time so I can support customers in any language",
+    "intentLabels": [
+      "AI real-time translation",
+      "multilingual customer support",
+      "chat/email translation"
+    ],
+    "tools": [
+      {
+        "name": "Language IO",
+        "url": "https://languageio.com/"
+      }
+    ],
+    "workflowSummary": "Plugs into help desk platforms (Salesforce, Zendesk, and others) to translate incoming and outgoing chat messages and tickets in real time across 150+ languages, so a small support team can resolve issues in a customer's own language without hiring multilingual staff or relying on choppy, literal machine translation.",
+    "samplePrompt": "\"Translate this customer support ticket into English for our team to read, then translate our reply back into the customer's original language.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "operates behind the scenes once connected to your help desk",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://languageio.com/",
+    "sourceType": "Product page",
+    "freshness": "2025-12-04",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "small-businesses-a0103c6e22",
+    "slug": "i-want-an-ai-phone-line-that-can-answer-calls-in-multiple",
+    "kind": "workflow",
+    "niche": "Small Businesses",
+    "sector": "Small Business Owners (generic)",
+    "persona": "Owner (dental, legal, financial services) who loses non-English-speaking callers because no one on staff speaks their language",
+    "title": "I want an AI phone line that can answer calls in multiple languages, not just English",
+    "intentLabels": [
+      "AI multilingual phone answering",
+      "voice AI receptionist",
+      "language-switching call handling"
+    ],
+    "tools": [
+      {
+        "name": "Dialzara",
+        "url": "https://dialzara.com/blog/top-ai-tools-for-multilingual-customer-service"
+      }
+    ],
+    "workflowSummary": "Answers live phone calls in multiple languages with a natural conversational cadence rather than a stiff translated script, built specifically for small and medium businesses where phone calls (not just chat) are how customers reach out - useful for practices like dental offices or legal/financial services trying to serve non-English-speaking callers.",
+    "samplePrompt": "\"Set up phone answering that can handle calls in both English and Spanish, and book an appointment either way.\"",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided setup, no technical or translation background needed",
+    "trustScore": 3,
+    "pricingNote": "Pricing not published in this source",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dialzara.com/blog/top-ai-tools-for-multilingual-customer-service",
+    "sourceType": "Blog / product page",
+    "freshness": "2025-12-19",
+    "accessNotes": "Publicly marketed AI tool; summarized in Claude's own words, not scraped verbatim",
+    "batch": "SmallBusinessOwners AI Workflows Batch5",
+    "status": "active"
+  }
+]

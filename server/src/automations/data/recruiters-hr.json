@@ -1,0 +1,2280 @@
+[
+  {
+    "id": "recruiters-hr-882fda36d0",
+    "slug": "screen-and-rank-job-applicant-resumes-automatically",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Corporate recruiter / TA specialist screening high applicant volume",
+    "title": "screen and rank job applicant resumes automatically",
+    "intentLabels": [
+      "resume screening",
+      "CV parsing",
+      "applicant ranking",
+      "auto-shortlist candidates"
+    ],
+    "tools": [
+      {
+        "name": "HireVue",
+        "url": "https://aitoolsbakery.com/blog/best-ai-resume-screening-tools/"
+      },
+      {
+        "name": "Eightfold AI"
+      },
+      {
+        "name": "Manatal"
+      }
+    ],
+    "workflowSummary": "Upload resumes and a job description; the tool parses each resume into structured data (skills, titles, experience) and scores/ranks candidates against the role so you can review a shortlist instead of every application.",
+    "samplePrompt": "Score these resumes against this job description and rank the top 10 candidates by overall fit, listing the key skills each one matches.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a JD and an ATS or upload workflow set up first; the ranking output itself is easy to read",
+    "trustScore": 4,
+    "pricingNote": "Manatal from $15/user/mo; HireVue and Eightfold AI are enterprise, quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aitoolsbakery.com/blog/best-ai-resume-screening-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-09",
+    "accessNotes": "Public blog post; tool names and pricing signals only — verify current pricing and features on each vendor's own site before publishing to end users.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-44d170aa08",
+    "slug": "write-a-job-description-without-hiring-a-copywriter",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Hiring manager or recruiter with no copywriting background",
+    "title": "write a job description without hiring a copywriter",
+    "intentLabels": [
+      "job description generator",
+      "JD writer",
+      "job posting writer",
+      "job ad creator"
+    ],
+    "tools": [
+      {
+        "name": "Workable",
+        "url": "https://blog.ongig.com/job-descriptions/ai-job-description-tools/"
+      },
+      {
+        "name": "Textio"
+      }
+    ],
+    "workflowSummary": "Enter the job title, key skills, and a few company details; the tool drafts a full job posting in plain language, and a bias/tone pass flags exclusionary or overly masculine-coded wording before you publish it.",
+    "samplePrompt": "Write a clear, inclusive job description for a Customer Success Manager role at a 40-person SaaS company, including responsibilities, requirements, and a short intro paragraph.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-blank fields, no setup required for a first draft",
+    "trustScore": 4,
+    "pricingNote": "Workable offers a free AI job description generator; Textio pricing available on request (verify before publishing)",
+    "pricingTier": "free",
+    "sourceUrl": "https://blog.ongig.com/job-descriptions/ai-job-description-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-04-27",
+    "accessNotes": "Public blog post; verify current free-tier limits and pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-e81a818c60",
+    "slug": "find-passive-candidates-who-aren-t-actively-job-hunting",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "In-house recruiter or TA leader trying to reach candidates who aren't job-hunting",
+    "title": "find passive candidates who aren't actively job-hunting",
+    "intentLabels": [
+      "passive candidate sourcing",
+      "talent sourcing",
+      "find candidates not on job boards",
+      "AI sourcing tool"
+    ],
+    "tools": [
+      {
+        "name": "hireEZ",
+        "url": "https://clearcompany.com/resources/blog/best-ai-sourcing-tools"
+      },
+      {
+        "name": "SeekOut"
+      }
+    ],
+    "workflowSummary": "Describe the role and must-have skills in plain language; the tool searches hundreds of millions of profiles across LinkedIn, GitHub, and other sites, then returns a ranked list of people who match — even if they've never applied anywhere.",
+    "samplePrompt": "Find 20 passive candidates with 3+ years of backend engineering experience in Python, currently employed, who aren't actively applying to jobs.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "search results are easy to browse, but getting good matches takes some trial and error tuning the search criteria",
+    "trustScore": 4,
+    "pricingNote": "Pricing varies by seats/credits, typically enterprise or quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://clearcompany.com/resources/blog/best-ai-sourcing-tools",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-05-06",
+    "accessNotes": "Public blog post; verify current pricing and database coverage claims on the vendor's own site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-638faea37d",
+    "slug": "automatically-source-and-message-candidates-without-doing-it",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Busy in-house recruiter who wants sourcing to run without daily manual work",
+    "title": "automatically source and message candidates without doing it myself",
+    "intentLabels": [
+      "automated outreach",
+      "AI recruiter",
+      "sourcing + outreach automation",
+      "candidate messaging"
+    ],
+    "tools": [
+      {
+        "name": "Fetcher",
+        "url": "https://www.metaview.ai/resources/blog/sourcing-tools-for-recruiters"
+      }
+    ],
+    "workflowSummary": "Give the tool a role brief; it searches for matching candidates, sends personalized outreach emails on your behalf, manages replies, and delivers a curated list of interested candidates to your inbox.",
+    "samplePrompt": "Source and message 15 candidates for a Marketing Manager role who have 4+ years of B2B experience, and let me know who replies.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly hands-off once the role brief is set up",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/sourcing-tools-for-recruiters",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current pricing and claims on the vendor's own site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-b2e3844510",
+    "slug": "let-candidates-book-their-own-interview-time-without-back-and",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter tired of email back-and-forth to book a screening call",
+    "title": "let candidates book their own interview time without back-and-forth emails",
+    "intentLabels": [
+      "self-scheduling",
+      "interview booking link",
+      "candidate self-schedule",
+      "calendar link"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://www.arrangeai.io/blog/best-recruiter-scheduling-software-tools-talent-acquisition"
+      },
+      {
+        "name": "Paradox AI (Olivia)"
+      }
+    ],
+    "workflowSummary": "Send candidates a link showing your real-time availability; they pick a slot themselves and it lands straight on your calendar, with confirmations and reminders handled automatically.",
+    "samplePrompt": "Set up a booking link for 30-minute phone screens next week, and send automatic reminders to candidates 24 hours before their slot.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "link-based tools like Calendly need almost no setup for a first use",
+    "trustScore": 4,
+    "pricingNote": "Calendly free plan available, Pro from $7/user/mo; Paradox AI is enterprise, quote-based (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.arrangeai.io/blog/best-recruiter-scheduling-software-tools-talent-acquisition",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-31",
+    "accessNotes": "Public blog post; verify current pricing tiers on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-b8100bfed1",
+    "slug": "coordinate-a-panel-interview-across-several-interviewers",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA coordinator managing multi-person panel interviews",
+    "title": "coordinate a panel interview across several interviewers' calendars",
+    "intentLabels": [
+      "panel interview scheduling",
+      "multi-interviewer coordination",
+      "interview coordination tool"
+    ],
+    "tools": [
+      {
+        "name": "GoodTime",
+        "url": "https://goodtime.io/products/hire/"
+      }
+    ],
+    "workflowSummary": "Tell the tool who needs to be on the panel and the interview type; it checks everyone's calendars, finds a slot that works for all of them, books the room or video link, and rearranges automatically if someone cancels.",
+    "samplePrompt": "Schedule a 3-person panel interview for a Senior Analyst candidate next week, using the interviewers' existing calendar availability, and notify everyone once it's confirmed.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but built for teams with recurring, higher-volume panel interviews rather than a one-off use",
+    "trustScore": 4,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://goodtime.io/products/hire/",
+    "sourceType": "Product page",
+    "freshness": "2026-05-08",
+    "accessNotes": "Official vendor product page; verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-eceb238231",
+    "slug": "run-screening-and-scheduling-by-text-message-for-high-volume",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader hiring at high volume for hourly or entry-level roles",
+    "title": "run screening and scheduling by text message for high-volume hourly hiring",
+    "intentLabels": [
+      "conversational AI recruiting",
+      "SMS interview scheduling",
+      "chat-based candidate screening"
+    ],
+    "tools": [
+      {
+        "name": "Paradox AI",
+        "url": "https://www.paradox.ai/products/conversational-scheduling"
+      }
+    ],
+    "workflowSummary": "Candidates text, chat, or use WhatsApp to answer basic screening questions and pick an interview time — the assistant handles the whole conversation and books the interview automatically, without a recruiter typing a single message.",
+    "samplePrompt": "Set up a conversational screening flow for warehouse associate applicants that asks about availability and prior experience, then books a phone interview for anyone who qualifies.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "built for enterprise-scale hourly hiring and needs setup by a TA operations team",
+    "trustScore": 4,
+    "pricingNote": "Enterprise, quote-based pricing (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.paradox.ai/products/conversational-scheduling",
+    "sourceType": "Product page",
+    "freshness": "2026-09-06 (accessed; no publish date shown on page)",
+    "accessNotes": "Official vendor product page; verify current pricing and availability before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-0b3199a19d",
+    "slug": "auto-transcribe-an-interview-and-write-structured-notes-into-my",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter who wants clean interview notes without typing during the call",
+    "title": "auto-transcribe an interview and write structured notes into my ATS",
+    "intentLabels": [
+      "AI interview notetaker",
+      "interview transcription",
+      "auto-generated candidate scorecard"
+    ],
+    "tools": [
+      {
+        "name": "Metaview",
+        "url": "https://www.metaview.ai/resources/blog/ai-notetaking-apps"
+      }
+    ],
+    "workflowSummary": "The tool joins your video interview, transcribes the conversation, and writes a structured summary mapped to your interview questions or scorecard — then pushes it straight into your ATS so you don't have to copy-paste notes afterward.",
+    "samplePrompt": "Join my next candidate interview, transcribe it, and write a structured summary covering technical skills, communication, and any red flags, formatted for my scorecard.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "joins the call automatically once connected to your calendar and ATS",
+    "trustScore": 4,
+    "pricingNote": "Free tier available for individuals; paid plans for team/ATS features (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/ai-notetaking-apps",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current free-tier limits and pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-d185553aa2",
+    "slug": "take-notes-on-a-phone-screen-without-a-bot-joining-the-call",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Independent recruiter conducting a lot of phone screens",
+    "title": "take notes on a phone screen without a bot joining the call",
+    "intentLabels": [
+      "phone interview notes",
+      "bot-free note taking",
+      "call recording without a meeting bot"
+    ],
+    "tools": [
+      {
+        "name": "Granola",
+        "url": "https://www.hiretruffle.com/blog/ai-note-taking-tools-for-recruiters"
+      },
+      {
+        "name": "Fireflies.ai"
+      }
+    ],
+    "workflowSummary": "A background app on your desktop or phone captures the audio from your phone call or in-person conversation directly — no meeting bot needs to 'join' — and turns it into a structured summary once the call ends.",
+    "samplePrompt": "Summarize my phone screen with this candidate into a short summary covering their background, salary expectations, and availability to start.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "install once and it runs quietly in the background during calls",
+    "trustScore": 3,
+    "pricingNote": "Granola offers a free tier (limited meetings/month); Fireflies.ai has a free plan too (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.hiretruffle.com/blog/ai-note-taking-tools-for-recruiters",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-15",
+    "accessNotes": "Public blog post; verify current free-tier limits on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-573a5a9792",
+    "slug": "screen-candidates-with-one-way-video-interviews-instead-of-live",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Small business owner or hiring manager doing their own screening",
+    "title": "screen candidates with one-way video interviews instead of live calls",
+    "intentLabels": [
+      "one-way video interview",
+      "async video screening",
+      "pre-recorded interview questions"
+    ],
+    "tools": [
+      {
+        "name": "myInterview",
+        "url": "https://peoplemanagingpeople.com/tools/best-resume-screening-software/"
+      }
+    ],
+    "workflowSummary": "Send candidates a set of interview questions; they record their answers on video whenever it suits them, and you review and compare all the recorded answers side by side instead of scheduling live calls for a first-round screen.",
+    "samplePrompt": "Set up a one-way video interview with 4 questions about customer service experience for candidates applying to our Retail Associate role.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no scheduling needed, candidates record on their own time",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; check vendor site (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-resume-screening-software/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-31",
+    "accessNotes": "Public blog post; verify current pricing and features on the vendor's own site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-a973a9bc0a",
+    "slug": "answer-employee-questions-about-pto-benefits-and-company-policy",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR team fielding repetitive employee questions",
+    "title": "answer employee questions about PTO, benefits, and company policy automatically",
+    "intentLabels": [
+      "HR chatbot",
+      "employee self-service",
+      "HR helpdesk bot",
+      "policy Q&A assistant"
+    ],
+    "tools": [
+      {
+        "name": "Leena AI",
+        "url": "https://www.hrlineup.com/top-ai-chatbots-for-employee-self-service-hr/"
+      },
+      {
+        "name": "BambooHR AI assistant"
+      }
+    ],
+    "workflowSummary": "Employees ask a question in Slack, Teams, or a chat window — the assistant pulls the answer from your actual HR policies and systems (like leave balances) and replies instantly, so HR isn't answering the same question over and over.",
+    "samplePrompt": "Answer this employee's question about how many paid sick days they have left and what our parental leave policy is, using our current HR policy documents.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs your company's policy documents and HR system connected first; day-to-day use by employees is simple",
+    "trustScore": 4,
+    "pricingNote": "Not publicly listed; typically per-employee, quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hrlineup.com/top-ai-chatbots-for-employee-self-service-hr/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-03-17",
+    "accessNotes": "Public blog post; verify current pricing and feature claims on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-c7ed18433f",
+    "slug": "let-employees-check-leave-balance-and-submit-requests-without",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR ops manager trying to cut down routine ticket volume",
+    "title": "let employees check leave balance and submit requests without emailing HR",
+    "intentLabels": [
+      "employee self-service chatbot",
+      "leave request automation",
+      "HR ticket deflection"
+    ],
+    "tools": [
+      {
+        "name": "Moveworks",
+        "url": "https://workativ.com/ai-agent/blog/employee-self-service-chatbot"
+      },
+      {
+        "name": "Workativ"
+      }
+    ],
+    "workflowSummary": "Employees type a request like 'how many vacation days do I have left' or 'submit a leave request' directly in Slack or Teams; the assistant looks it up or completes the action in your HR system without a human touching the ticket.",
+    "samplePrompt": "Let this employee check their remaining vacation balance and submit a 3-day leave request for next month, using our HR system.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a company-wide setup that needs IT/HR to connect it to your existing HR systems first",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://workativ.com/ai-agent/blog/employee-self-service-chatbot",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-04-06",
+    "accessNotes": "Public blog post; verify current pricing and integration coverage on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-c89817c17a",
+    "slug": "analyze-open-text-comments-from-an-employee-survey-to-find",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR business partner reviewing an engagement survey with hundreds of comments",
+    "title": "analyze open-text comments from an employee survey to find common themes",
+    "intentLabels": [
+      "survey sentiment analysis",
+      "open-text analysis",
+      "engagement survey insights",
+      "comment theme detection"
+    ],
+    "tools": [
+      {
+        "name": "Culture Amp",
+        "url": "https://peoplemanagingpeople.com/tools/best-employee-survey-tools/"
+      },
+      {
+        "name": "Lattice"
+      }
+    ],
+    "workflowSummary": "Run your engagement survey through the platform as usual; instead of reading every written comment yourself, the AI groups similar comments into themes and flags overall sentiment, so you can see what employees are really saying without reading hundreds of responses one by one.",
+    "samplePrompt": "Summarize the main themes and overall sentiment from these 200 open-text engagement survey comments, and flag anything that looks urgent.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "survey setup takes some configuration; the theme/sentiment summary itself is easy to read",
+    "trustScore": 4,
+    "pricingNote": "Not publicly listed; typically per-employee, quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-employee-survey-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-30",
+    "accessNotes": "Public blog post; verify current pricing and feature availability on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-d24d40b0eb",
+    "slug": "run-short-weekly-check-ins-to-catch-team-morale-problems-before",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "People manager wanting to catch team morale problems early",
+    "title": "run short weekly check-ins to catch team morale problems before they get bad",
+    "intentLabels": [
+      "pulse survey",
+      "weekly employee check-in",
+      "continuous listening",
+      "morale tracking"
+    ],
+    "tools": [
+      {
+        "name": "Officevibe (Workleap)",
+        "url": "https://deployhyre.com/ai-tools/best-ai-employee-engagement-software/"
+      },
+      {
+        "name": "Qualtrics EmployeeXM"
+      }
+    ],
+    "workflowSummary": "A short automated survey goes out to your team every week; employees answer a few quick questions anonymously, and you get a simple dashboard showing whether morale is trending up or down so you can act before it becomes a bigger issue.",
+    "samplePrompt": "Set up a weekly 5-question pulse survey for my team covering workload and morale, and alert me if scores drop noticeably week over week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "templated pulse surveys are ready to send with minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Officevibe has tiered per-user pricing with a free trial; Qualtrics is enterprise, quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://deployhyre.com/ai-tools/best-ai-employee-engagement-software/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-02",
+    "accessNotes": "Public blog post; verify current pricing and free-trial terms on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-96483359aa",
+    "slug": "check-a-job-posting-for-biased-or-exclusionary-language-before",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter or HR generalist worried about unintentionally biased job ads",
+    "title": "check a job posting for biased or exclusionary language before publishing it",
+    "intentLabels": [
+      "job description bias checker",
+      "inclusive language checker",
+      "gendered language detector"
+    ],
+    "tools": [
+      {
+        "name": "Ongig Text Analyzer",
+        "url": "https://blog.ongig.com/job-descriptions/ai-job-description-tools/"
+      },
+      {
+        "name": "Textio"
+      }
+    ],
+    "workflowSummary": "Paste in your draft job posting; the tool scans the wording for gendered, exclusionary, or overly aggressive phrases (like 'ninja' or 'dominant') and suggests more neutral alternatives before the post goes live.",
+    "samplePrompt": "Check this job posting for biased or exclusionary language and suggest more inclusive wording for anything flagged.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste text in, get flagged suggestions back, no setup required",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://blog.ongig.com/job-descriptions/ai-job-description-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-04-27",
+    "accessNotes": "Public blog post; verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-0bb66aa9bc",
+    "slug": "generate-structured-interview-questions-and-a-scorecard-for-a",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Hiring manager prepping for interviews with no structured process yet",
+    "title": "generate structured interview questions and a scorecard for a role I'm hiring for",
+    "intentLabels": [
+      "interview question generator",
+      "interview kit",
+      "structured interview scorecard"
+    ],
+    "tools": [
+      {
+        "name": "Workable",
+        "url": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators"
+      }
+    ],
+    "workflowSummary": "Enter the job title and the skills that matter most; the tool generates a set of role-specific interview questions along with a simple scorecard template, so every interviewer asks consistent questions and rates candidates the same way.",
+    "samplePrompt": "Generate 8 structured interview questions and a scorecard for a Sales Development Representative role, focused on communication skills and resilience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill in the role details and get a ready-to-use question set",
+    "trustScore": 3,
+    "pricingNote": "Included in Workable's free AI job description generator tools; paid plans for full ATS features (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current free-tier limits and pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-7849a9d3a4",
+    "slug": "reduce-bias-in-resume-screening-with-blind-or-audited-scoring",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader trying to reduce hidden bias in resume screening",
+    "title": "reduce bias in resume screening with blind or audited scoring",
+    "intentLabels": [
+      "bias-free screening",
+      "blind resume review",
+      "audited AI hiring",
+      "fair hiring compliance"
+    ],
+    "tools": [
+      {
+        "name": "Truffle",
+        "url": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/"
+      },
+      {
+        "name": "Eightfold AI"
+      }
+    ],
+    "workflowSummary": "The tool automatically hides personal identifiers (name, photo, school, etc.) from resumes before scoring them, and some platforms undergo third-party bias audits, so candidates are compared mainly on skills and experience rather than identity signals.",
+    "samplePrompt": "Screen these resumes with personal identifiers hidden, and rank candidates only on skills and experience matched to this job description.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "blind-screening features are usually a toggle, but a real bias-reduction program needs a human compliance review too",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-30",
+    "accessNotes": "Public blog post; note a January 2026 FCRA lawsuit involving one enterprise vendor (Eightfold AI) was flagged in coverage — legal/compliance review is recommended before relying on any AI screening tool for hiring decisions.",
+    "batch": "RecruitersHR AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-7f77be9b75",
+    "slug": "generate-an-offer-letter-automatically",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter or hiring manager ready to extend an offer",
+    "title": "generate an offer letter automatically",
+    "intentLabels": [
+      "offer letter generator",
+      "job offer template",
+      "automated offer letter"
+    ],
+    "tools": [
+      {
+        "name": "Hyring",
+        "url": "https://hyring.com/free-hr-toolkit/generate-letters/offer-letter"
+      },
+      {
+        "name": "Quillbot AI Offer Letter Generator"
+      }
+    ],
+    "workflowSummary": "Fill in a few blanks — job title, salary, benefits, start date — and pick a tone; the tool formats it into a polished, professional offer letter you can download as a PDF or DOCX or copy straight into an email.",
+    "samplePrompt": "Create a formal offer letter for a Senior Accountant role, $78,000 salary, start date October 1, standard benefits package.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "click-through fields, no signup required for the free version",
+    "trustScore": 3,
+    "pricingNote": "Free, no signup required (Hyring); Quillbot free tier also available (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://hyring.com/free-hr-toolkit/generate-letters/offer-letter",
+    "sourceType": "Product page",
+    "freshness": "2026-04-04",
+    "accessNotes": "Official vendor product page; verify current free-tier limits and formatting options on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-5d08983f1f",
+    "slug": "run-a-background-check-before-extending-a-job-offer",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter or HR admin who needs to vet a candidate before their start date",
+    "title": "run a background check before extending a job offer",
+    "intentLabels": [
+      "background check",
+      "pre-employment screening",
+      "criminal record check",
+      "employment verification"
+    ],
+    "tools": [
+      {
+        "name": "Checkr",
+        "url": "https://www.pin.com/blog/background-check-tools-recruiters/"
+      },
+      {
+        "name": "GoodHire"
+      }
+    ],
+    "workflowSummary": "Send the candidate a consent request; they verify their identity and fill in a short form, and the platform runs the appropriate checks (criminal record, employment history, etc.) and returns a compliant report within a set turnaround time.",
+    "samplePrompt": "Run a standard background check on this candidate, covering criminal history and employment verification, and let me know when the report is ready.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the check itself is simple to request, but understanding compliance requirements (FCRA, state law) needs some homework first",
+    "trustScore": 4,
+    "pricingNote": "Checkr and GoodHire both price per-check, from roughly $15-30/check depending on package (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pin.com/blog/background-check-tools-recruiters/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-06-02",
+    "accessNotes": "Public blog post; background checks are legally regulated (FCRA in the US) — verify compliance requirements and current pricing with each vendor before publishing to end users.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-358857bc61",
+    "slug": "automate-reference-check-requests-and-collect-responses",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter who wants honest references without chasing people by phone",
+    "title": "automate reference check requests and collect responses",
+    "intentLabels": [
+      "reference check automation",
+      "referee survey",
+      "digital reference checking"
+    ],
+    "tools": [
+      {
+        "name": "Xref",
+        "url": "https://hiringaiguide.com/blog/best-automated-reference-check-software-recruiters-2026/"
+      },
+      {
+        "name": "Checkster"
+      }
+    ],
+    "workflowSummary": "Enter the candidate's referee contact details; the platform sends each referee a structured survey by email or SMS, sends automatic reminders if they don't respond, and compiles all the answers into one report you can share with the hiring manager.",
+    "samplePrompt": "Send a reference check survey to these 3 referees for this candidate, asking about their work performance, reliability, and reason for leaving their last role.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly automated once referee contact details are entered",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based per check or per seat (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://hiringaiguide.com/blog/best-automated-reference-check-software-recruiters-2026/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-06-25",
+    "accessNotes": "Public blog post; note the article flags that automating the logistics doesn't fix the underlying issue that candidates choose their own references — verify pricing and compliance features on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-f3495f1189",
+    "slug": "automate-new-hire-onboarding-paperwork-and-e-signatures",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR admin tired of chasing new-hire paperwork and signatures",
+    "title": "automate new-hire onboarding paperwork and e-signatures",
+    "intentLabels": [
+      "onboarding paperwork automation",
+      "new hire documents",
+      "e-signature for HR forms"
+    ],
+    "tools": [
+      {
+        "name": "Rippling",
+        "url": "https://linezine.com/human-resources/ai-onboarding-tools"
+      },
+      {
+        "name": "WorkBright"
+      }
+    ],
+    "workflowSummary": "New hires get sent a digital packet of forms (contracts, policy acknowledgments, tax forms) before their first day; they review and e-sign everything online, and the signed documents automatically file themselves in the employee's record.",
+    "samplePrompt": "Send this new hire their onboarding paperwork — offer letter acknowledgment, handbook sign-off, and tax forms — for e-signature before their start date.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs initial setup of document templates and workflows, but each new hire's experience is simple",
+    "trustScore": 4,
+    "pricingNote": "Rippling from roughly $8/employee/mo plus module costs; WorkBright pricing on request (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://linezine.com/human-resources/ai-onboarding-tools",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-05-22",
+    "accessNotes": "Public blog post; verify current pricing and module costs on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-68c3bdbbe8",
+    "slug": "automate-new-hire-equipment-and-system-access-requests",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "IT/HR ops coordinator setting up a new employee's first day",
+    "title": "automate new-hire equipment and system access requests",
+    "intentLabels": [
+      "IT provisioning automation",
+      "new hire equipment setup",
+      "account access automation"
+    ],
+    "tools": [
+      {
+        "name": "Rippling",
+        "url": "https://aitoolsbakery.com/blog/best-ai-onboarding-tools/"
+      }
+    ],
+    "workflowSummary": "When an offer is accepted, the tool automatically triggers laptop shipment, software license assignment, and system access (email, Slack, other tools) so everything is ready before the new hire's first day instead of HR emailing IT to request each item separately.",
+    "samplePrompt": "Set up equipment and system access for this new hire starting in two weeks — laptop, email, Slack, and our project management tool.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this connects HR, IT, and finance systems together and needs an admin to configure it first",
+    "trustScore": 4,
+    "pricingNote": "From roughly $8-15/user/month per module (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aitoolsbakery.com/blog/best-ai-onboarding-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-06-16",
+    "accessNotes": "Public blog post; verify current pricing and module scope on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-3999cf636a",
+    "slug": "benchmark-salary-and-compensation-for-a-role-i-m-hiring-for",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter or hiring manager setting an offer amount",
+    "title": "benchmark salary and compensation for a role I'm hiring for",
+    "intentLabels": [
+      "salary benchmarking",
+      "compensation data",
+      "market pay rate",
+      "pay range research"
+    ],
+    "tools": [
+      {
+        "name": "Payscale (Smart Price)",
+        "url": "https://www.pin.com/blog/salary-benchmarking-tools/"
+      },
+      {
+        "name": "Pave"
+      }
+    ],
+    "workflowSummary": "Enter the job title, level, and location; the tool matches it against real market compensation data and returns a suggested pay range, so you can set a competitive offer without guessing or relying on outdated survey data.",
+    "samplePrompt": "What's a competitive salary range for a mid-level Product Marketing Manager in Chicago, based on current market data?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter role details, get a benchmark range back",
+    "trustScore": 4,
+    "pricingNote": "Free tier available for companies under 200 employees (varies by vendor); paid plans for full data access (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.pin.com/blog/salary-benchmarking-tools/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-30",
+    "accessNotes": "Public blog post; verify current data coverage and pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-b2f167501a",
+    "slug": "track-diversity-hiring-metrics-and-generate-an-eeo-ready-report",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader or DEI lead who needs to report on hiring diversity",
+    "title": "track diversity hiring metrics and generate an EEO-ready report",
+    "intentLabels": [
+      "diversity hiring report",
+      "EEOC compliance report",
+      "DEI recruiting metrics",
+      "OFCCP tracking"
+    ],
+    "tools": [
+      {
+        "name": "Workable",
+        "url": "https://softwarefinder.com/resources/best-diversity-recruiting-software"
+      },
+      {
+        "name": "Gem"
+      }
+    ],
+    "workflowSummary": "As candidates move through your pipeline, the tool tracks demographic representation at each stage (application, interview, offer) using voluntary self-ID data, and generates a report formatted for EEOC/OFCCP compliance or internal leadership review.",
+    "samplePrompt": "Generate a diversity hiring report for our open Sales roles this quarter, showing representation at the application, interview, and offer stages.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reporting output is easy to read, but self-ID data collection and legal compliance need HR/legal sign-off first",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically included in existing ATS/CRM subscription tiers (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://softwarefinder.com/resources/best-diversity-recruiting-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-06-02",
+    "accessNotes": "Public blog post; diversity/EEO reporting touches on legally regulated hiring data — recommend legal/compliance review before publishing this workflow to end users.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-defb49f92c",
+    "slug": "automate-exit-interviews-and-find-out-the-real-reasons-people",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR team trying to understand why people are actually leaving",
+    "title": "automate exit interviews and find out the real reasons people leave",
+    "intentLabels": [
+      "exit interview automation",
+      "AI exit interview",
+      "attrition analysis",
+      "departure feedback"
+    ],
+    "tools": [
+      {
+        "name": "Koji",
+        "url": "https://www.koji.so/docs/best-exit-interview-software-2026"
+      },
+      {
+        "name": "Qualtrics EmployeeXM"
+      }
+    ],
+    "workflowSummary": "Instead of a manager awkwardly asking 'why are you leaving' in person, the departing employee has an anonymous, async AI-moderated conversation that asks adaptive follow-up questions, and the results get grouped into themes across teams and managers so HR can see real patterns.",
+    "samplePrompt": "Run an anonymous exit interview for this departing employee covering reasons for leaving, manager relationship, and career growth, then summarize the themes.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the employee just has a conversation with the AI; HR sees a summarized report afterward",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.koji.so/docs/best-exit-interview-software-2026",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-06-21",
+    "accessNotes": "Public blog post; verify current pricing and anonymity/data-handling guarantees on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-4507cb5700",
+    "slug": "track-hiring-pipeline-metrics-like-time-to-hire-and-drop-off",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA ops leader who needs to report on hiring performance to leadership",
+    "title": "track hiring pipeline metrics like time-to-hire and drop-off points in one dashboard",
+    "intentLabels": [
+      "recruiting analytics dashboard",
+      "time-to-hire tracking",
+      "pipeline drop-off report",
+      "hiring KPIs"
+    ],
+    "tools": [
+      {
+        "name": "X0PA AI",
+        "url": "https://x0pa.com/features/recruitment-dashboard/"
+      },
+      {
+        "name": "Ashby"
+      }
+    ],
+    "workflowSummary": "Instead of pulling numbers into a spreadsheet manually, the dashboard automatically tracks every candidate's journey from application to offer and shows you live metrics — time-to-hire, cost-per-hire, where candidates are dropping off — filterable by role, department, or recruiter.",
+    "samplePrompt": "Show me a live dashboard of our hiring pipeline for open Engineering roles, including time-to-hire and where candidates are dropping off in the process.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dashboard itself is easy to read, but it needs to be connected to your ATS data first",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://x0pa.com/features/recruitment-dashboard/",
+    "sourceType": "Product page",
+    "freshness": "2026-09-06 (accessed; no publish date shown on page)",
+    "accessNotes": "Official vendor product page; verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-ca43418668",
+    "slug": "draft-or-update-sections-of-an-employee-handbook",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR generalist at a small company without a dedicated policy writer",
+    "title": "draft or update sections of an employee handbook",
+    "intentLabels": [
+      "employee handbook writer",
+      "HR policy drafting",
+      "company policy generator"
+    ],
+    "tools": [
+      {
+        "name": "Simplified",
+        "url": "https://www.navero.me/blog/best-ai-job-description-generators-for-hiring"
+      }
+    ],
+    "workflowSummary": "Pick a policy type (PTO, remote work, code of conduct, etc.) from a template library; the tool drafts a first version in plain language matched to your company's tone, which you then review and adjust to match your actual policies.",
+    "samplePrompt": "Draft a remote work policy section for our employee handbook, covering core hours, equipment stipends, and expectations for availability.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, no setup required for a first draft",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; check vendor site (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.navero.me/blog/best-ai-job-description-generators-for-hiring",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-03-04",
+    "accessNotes": "Public blog post; a handbook policy has legal implications — recommend HR/legal review of any AI-drafted policy before it's published to employees.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-2238e991fa",
+    "slug": "draft-rejection-emails-to-candidates-who-didn-t-get-the-job",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter who has to send many rejection emails after closing a role",
+    "title": "draft rejection emails to candidates who didn't get the job",
+    "intentLabels": [
+      "candidate rejection email",
+      "decline letter",
+      "'we've decided to move forward with another candidate' email"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.techtarget.com/enterprise-software/tip/Top-AI-recruiting-tools-and-software-of-2026",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the tool a few details — the role, the candidate's name, how far they got in the process — and it drafts a warm, respectful rejection email you can send as-is or lightly edit, instead of writing each one from scratch.",
+    "samplePrompt": "Write a warm, respectful rejection email for a candidate who made it to the final round for our Operations Manager role but wasn't selected.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the situation, get a ready-to-send draft",
+    "trustScore": 3,
+    "pricingNote": "ChatGPT and Claude both offer free tiers; paid plans for higher usage (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.techtarget.com/enterprise-software/tip/Top-AI-recruiting-tools-and-software-of-2026",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; article notes AI-generated correspondence should always get a human review pass before sending — verify current free-tier limits on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-2e3a0d1946",
+    "slug": "find-and-merge-duplicate-candidate-records-in-my-ats",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter managing a messy candidate database across multiple sourcing channels",
+    "title": "find and merge duplicate candidate records in my ATS",
+    "intentLabels": [
+      "duplicate candidate detection",
+      "ATS data cleanup",
+      "candidate record deduplication",
+      "merge candidate profiles"
+    ],
+    "tools": [
+      {
+        "name": "Greenhouse",
+        "url": "https://www.mokahr.io/articles/en/the-best-resume-deduplication-ats-feature"
+      },
+      {
+        "name": "Lever"
+      }
+    ],
+    "workflowSummary": "The ATS automatically flags likely duplicate candidates using email, name, and phone matching (even catching near-matches like a maiden-name change), and gives you a simple review screen to merge the records into one clean profile instead of manually searching for duplicates.",
+    "samplePrompt": "Find any duplicate candidate records in my ATS caused by people applying through both LinkedIn and our careers page, and merge them into a single profile.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automatic flagging is easy, but reviewing and approving merges takes a little manual judgment",
+    "trustScore": 3,
+    "pricingNote": "Included in existing Greenhouse or Lever ATS subscription (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mokahr.io/articles/en/the-best-resume-deduplication-ats-feature",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current deduplication accuracy and pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-94ef399c41",
+    "slug": "post-a-job-opening-to-multiple-job-boards-at-once",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter posting a new role and wanting maximum visibility",
+    "title": "post a job opening to multiple job boards at once",
+    "intentLabels": [
+      "multi-board job posting",
+      "job distribution",
+      "post to Indeed LinkedIn ZipRecruiter at once"
+    ],
+    "tools": [
+      {
+        "name": "Zoho Recruit",
+        "url": "https://juicebox.ai/blog/ai-recruiting-tools"
+      },
+      {
+        "name": "Workable"
+      }
+    ],
+    "workflowSummary": "Write the job posting once inside the platform; with one click it distributes the listing out to dozens of job boards and social channels simultaneously, instead of you copy-pasting the same posting into each site's own interface one at a time.",
+    "samplePrompt": "Post this Warehouse Supervisor job opening to all the major job boards we use, and let me know once it's live everywhere.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-click distribution once the posting is written",
+    "trustScore": 3,
+    "pricingNote": "Zoho Recruit and Workable both have tiered per-user pricing (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://juicebox.ai/blog/ai-recruiting-tools",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog post; verify current list of connected job boards and pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-f58d6cd8de",
+    "slug": "verify-new-hire-employment-eligibility-paperwork-i-9-w-4",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR admin responsible for employment-eligibility compliance in the US",
+    "title": "verify new-hire employment eligibility paperwork (I-9/W-4) digitally",
+    "intentLabels": [
+      "I-9 automation",
+      "E-Verify",
+      "employment eligibility verification",
+      "digital W-4"
+    ],
+    "tools": [
+      {
+        "name": "WorkBright",
+        "url": "https://www.hrcloud.com/blog/best-ai-onboarding-software"
+      }
+    ],
+    "workflowSummary": "New hires fill out I-9 and W-4 forms on their phone or computer before day one; the tool checks the forms for common errors, walks remote hires through the in-person document-inspection requirement, and flags compliance deadlines so nothing gets missed.",
+    "samplePrompt": "Send this remote new hire their I-9 and W-4 forms to complete before their start date, and flag if anything is filled out incorrectly.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the employee-facing form-filling is simple, but HR needs to understand the underlying I-9/E-Verify compliance requirements",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hrcloud.com/blog/best-ai-onboarding-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-05-28",
+    "accessNotes": "Public blog post; I-9/E-Verify is a US federal compliance requirement — recommend legal/compliance review before relying on any tool for this workflow, and verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-727691ad7e",
+    "slug": "check-if-a-job-posting-complies-with-salary-transparency-and",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Comp/HR admin worried about pay-transparency law violations in job postings",
+    "title": "check if a job posting complies with salary transparency and pay disclosure laws",
+    "intentLabels": [
+      "salary transparency compliance",
+      "pay disclosure law check",
+      "state salary range requirement"
+    ],
+    "tools": [
+      {
+        "name": "OpenComp",
+        "url": "https://www.captivateiq.com/blog/compensation-benchmarking-software"
+      },
+      {
+        "name": "Payscale"
+      }
+    ],
+    "workflowSummary": "Enter the role, level, and the state or country you're hiring in; the tool checks whether that location legally requires a posted salary range and, if so, suggests a range based on current market data so the posting is both compliant and competitive.",
+    "samplePrompt": "Check whether this job posting for a role based in Colorado needs a disclosed salary range, and suggest a compliant range based on current market data.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the compliance check is simple to run, but pay transparency laws vary by state/country and change over time",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for companies under 200 employees (OpenComp); Payscale pricing on request (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.captivateiq.com/blog/compensation-benchmarking-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-05-11",
+    "accessNotes": "Public blog post; pay transparency requirements are a legal compliance matter that varies by jurisdiction and changes over time — recommend legal review and verify current law coverage on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-81d3e3bdcb",
+    "slug": "build-a-careers-page-that-reflects-our-employer-brand",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader or HR marketer building out an employer brand presence",
+    "title": "build a careers page that reflects our employer brand",
+    "intentLabels": [
+      "career site builder",
+      "branded jobs page",
+      "recruitment marketing website"
+    ],
+    "tools": [
+      {
+        "name": "Teamtailor",
+        "url": "https://www.joveo.com/blog/best-ai-career-site-builders/"
+      },
+      {
+        "name": "Joveo"
+      }
+    ],
+    "workflowSummary": "Describe your company and paste in your open roles; the tool builds a branded, no-code careers page with your colors, photos, and messaging, and personalizes job recommendations for visitors instead of showing a plain list of postings.",
+    "samplePrompt": "Build a careers page for our company that features our open roles, team photos, and a short 'why work here' section, matching our brand colors.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code builder with templates, ready to deploy same day",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.joveo.com/blog/best-ai-career-site-builders/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog post; verify current pricing and template options on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-0c4c856c04",
+    "slug": "turn-employee-stories-into-content-for-our-careers-page-and",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR marketer wanting authentic content instead of stock photos",
+    "title": "turn employee stories into content for our careers page and social media",
+    "intentLabels": [
+      "employee generated content",
+      "employer branding video",
+      "authentic recruiting content"
+    ],
+    "tools": [
+      {
+        "name": "Vouch",
+        "url": "https://www.vouchfor.com/blog/top-ai-tools-for-employer-branding"
+      }
+    ],
+    "workflowSummary": "Employees record short video or written stories about their work and team on their phone; the tool helps edit, organize, and distribute those stories to your careers page, LinkedIn, and job ads, so your employer brand is built on real voices instead of generic marketing copy.",
+    "samplePrompt": "Turn these 5 employee video clips about our engineering team into short, polished stories I can post on our careers page and LinkedIn.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "employees need to record raw footage first; editing and distribution is handled by the tool",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.vouchfor.com/blog/top-ai-tools-for-employer-branding",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-01-07",
+    "accessNotes": "Public blog post; get employee consent before publishing their name, likeness, or story publicly, and verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-50010cd1fd",
+    "slug": "run-job-ads-that-automatically-optimize-spend-across-job-boards",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader running high-volume hiring who wants ad spend to work harder",
+    "title": "run job ads that automatically optimize spend across job boards and search",
+    "intentLabels": [
+      "programmatic job advertising",
+      "automated job ad bidding",
+      "recruitment media buying"
+    ],
+    "tools": [
+      {
+        "name": "Appcast",
+        "url": "https://www.guideflow.com/blog/programmatic-job-advertising-software"
+      },
+      {
+        "name": "Joveo"
+      }
+    ],
+    "workflowSummary": "Set a budget and the roles you're hiring for; the platform automatically distributes your job ads across thousands of job boards, search engines, and social sites, then shifts spend in real time toward the channels producing the best applicants instead of you manually picking and paying for each board.",
+    "samplePrompt": "Run a $2,000 job ad campaign for our open Warehouse Associate roles, optimized to get the most qualified applicants for the budget.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is a media-buying platform aimed at teams with real ad budgets and hiring volume, not a one-off posting tool",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; usage-based fees tied to media spend, often quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/programmatic-job-advertising-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog post; verify current pricing model and minimum spend requirements on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-e16ce01825",
+    "slug": "nurture-passive-candidates-in-a-talent-crm-with-automated-email",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter who wants to keep good candidates warm for future roles",
+    "title": "nurture passive candidates in a talent CRM with automated email sequences",
+    "intentLabels": [
+      "candidate nurture campaign",
+      "talent CRM",
+      "passive candidate email sequence",
+      "talent pool engagement"
+    ],
+    "tools": [
+      {
+        "name": "Beamery",
+        "url": "https://www.metaview.ai/resources/blog/best-crm-for-recruitment"
+      },
+      {
+        "name": "Gem"
+      }
+    ],
+    "workflowSummary": "Add candidates you liked but didn't have a role for into talent pools; the CRM automatically sends them a scheduled series of emails (company news, relevant content, a soft check-in) over weeks or months, so they stay warm and think of you when they're ready for a move.",
+    "samplePrompt": "Set up a 3-email nurture sequence over 6 weeks for candidates in our 'strong but no current fit' talent pool, sharing recent company news and a soft check-in.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "sequence setup takes some thought, but sending and tracking is automatic once configured",
+    "trustScore": 4,
+    "pricingNote": "Gem from $135/month (Startup tier); Beamery is enterprise, quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/best-crm-for-recruitment",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current pricing tiers on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-b01ef40f91",
+    "slug": "monitor-glassdoor-and-indeed-reviews-and-see-what-s-driving-our",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR/employer branding lead monitoring public perception",
+    "title": "monitor Glassdoor and Indeed reviews and see what's driving our rating",
+    "intentLabels": [
+      "employer review monitoring",
+      "Glassdoor sentiment analysis",
+      "employee review tracking"
+    ],
+    "tools": [
+      {
+        "name": "Glassdoor Review Intelligence",
+        "url": "https://www.glassdoor.com/employers/solutions/review-intelligence/"
+      },
+      {
+        "name": "PageCrawl.io"
+      }
+    ],
+    "workflowSummary": "Instead of manually reading hundreds of reviews, the tool analyzes the text of your Glassdoor and Indeed reviews and surfaces the themes behind your rating (culture, management, pay, etc.), tracks sentiment over time, and can alert you if your rating drops or a critical review comes in.",
+    "samplePrompt": "Summarize the main themes in our Glassdoor reviews from the last 6 months, and flag whether our rating trend is improving or declining.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "reading the summary is easy, but you'll want an official Glassdoor for Employers account set up first",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; Glassdoor Review Intelligence requires an Enhanced Profile (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.glassdoor.com/employers/solutions/review-intelligence/",
+    "sourceType": "Product page",
+    "freshness": "2026-08-26 (last updated per page metadata; feature may be newer)",
+    "accessNotes": "Official vendor product page; verify current feature availability and pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-c809c3c6a0",
+    "slug": "survey-candidates-about-their-experience-and-track-a-candidate",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter who wants to know if candidates are having a good experience",
+    "title": "survey candidates about their experience and track a candidate NPS score",
+    "intentLabels": [
+      "candidate experience survey",
+      "candidate NPS",
+      "candidate satisfaction feedback"
+    ],
+    "tools": [
+      {
+        "name": "RecruitBPM",
+        "url": "https://recruitbpm.com/blog/5-tools-to-provide-best-candidate-experience"
+      }
+    ],
+    "workflowSummary": "After a candidate is rejected or hired, they get a short automated survey asking how likely they are to recommend applying to your company (0-10); the tool calculates your candidate Net Promoter Score and centralizes the feedback alongside your other hiring metrics so you can see what's helping or hurting your reputation.",
+    "samplePrompt": "Send a short candidate experience survey to everyone who applied for our Customer Support role last month, and calculate our candidate NPS.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "survey sends and scoring happen automatically once triggered",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; check vendor site (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://recruitbpm.com/blog/5-tools-to-provide-best-candidate-experience",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-05-05",
+    "accessNotes": "Public blog post; verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-b735bfde1f",
+    "slug": "run-and-track-an-employee-referral-program",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR team wanting to lean more on employee networks for hiring",
+    "title": "run and track an employee referral program",
+    "intentLabels": [
+      "employee referral software",
+      "referral bonus tracking",
+      "refer-a-friend hiring"
+    ],
+    "tools": [
+      {
+        "name": "Teamable",
+        "url": "https://www.mokahr.io/articles/en/the-best-employee-referral-program-software"
+      },
+      {
+        "name": "Firstbird"
+      }
+    ],
+    "workflowSummary": "Employees get a simple way to refer people from their network (a link or a form); the tool tracks each referral through your hiring pipeline automatically, calculates and reminds you about referral bonuses owed, and shows you which employees and teams are referring the most.",
+    "samplePrompt": "Set up a referral program for our open Sales roles with a $1,000 bonus paid after 90 days, and let me know which referrals are still in process.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup (bonus rules, ATS integration) takes some configuration, but day-to-day use by employees is simple",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mokahr.io/articles/en/the-best-employee-referral-program-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-09-06 (accessed; no publish date shown on article)",
+    "accessNotes": "Public blog post; verify current pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-ea1f782a91",
+    "slug": "create-a-recruitment-video-for-a-job-posting-without-hiring-a",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR marketer or small business owner without a video production budget",
+    "title": "create a recruitment video for a job posting without hiring a film crew",
+    "intentLabels": [
+      "AI recruitment video",
+      "job posting video",
+      "employer branding video without filming"
+    ],
+    "tools": [
+      {
+        "name": "Pexo",
+        "url": "https://pexo.ai/blog/how-to-make-a-recruitment-video-with-ai-2026-0966"
+      },
+      {
+        "name": "Synthesia",
+        "catalogueSlug": "synthesia"
+      }
+    ],
+    "workflowSummary": "Describe the role and tone, or upload a few real team photos; the tool generates a short (60-90 second) polished video with visuals, voiceover, and text, ready to post on LinkedIn, your careers page, or a job ad — no camera crew or editing software needed.",
+    "samplePrompt": "Create a 60-second recruitment video for our open Retail Store Manager role, highlighting career growth and team culture, using a friendly and upbeat tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe what you want and get a finished video back, no editing skills required",
+    "trustScore": 3,
+    "pricingNote": "Synthesia Starter plan from $18/month (120 video minutes/year); Pexo pricing on request (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pexo.ai/blog/how-to-make-a-recruitment-video-with-ai-2026-0966",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-15",
+    "accessNotes": "Public blog post; verify current pricing and video-length limits on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-1e73456930",
+    "slug": "schedule-and-manage-recruiting-content-across-social-media",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR marketer managing an employer brand presence across multiple platforms",
+    "title": "schedule and manage recruiting content across social media channels",
+    "intentLabels": [
+      "social media recruiting scheduler",
+      "recruitment marketing calendar",
+      "employer brand social posts"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://100hires.com/social-media-recruiting-tools.html",
+        "catalogueSlug": "buffer"
+      },
+      {
+        "name": "Hootsuite"
+      }
+    ],
+    "workflowSummary": "Write and design your posts (job openings, culture content, employee spotlights) once, then schedule them to go out across LinkedIn, Instagram, and other channels at set times — all from one calendar view instead of logging into each platform separately.",
+    "samplePrompt": "Schedule these 4 employer branding posts to go out on LinkedIn and Instagram over the next two weeks, one every few days.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "straightforward calendar interface, minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Buffer has a free plan for small teams; Hootsuite pricing on request (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://100hires.com/social-media-recruiting-tools.html",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-19",
+    "accessNotes": "Public blog post; verify current free-tier limits and pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-fe3cd7db14",
+    "slug": "build-a-landing-page-for-a-specific-hiring-campaign-or-career",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA team running a hiring push for one specific role, event, or location",
+    "title": "build a landing page for a specific hiring campaign or career fair",
+    "intentLabels": [
+      "recruiting landing page",
+      "hiring campaign page",
+      "career fair signup page"
+    ],
+    "tools": [
+      {
+        "name": "Recruit Rooster",
+        "url": "https://www.joveo.com/blog/recruiting-landing-page-builders/"
+      },
+      {
+        "name": "Teamdash"
+      }
+    ],
+    "workflowSummary": "Instead of sending candidates to your general careers page, build a focused, single-purpose page for one campaign (a specific role, city, or event) with one clear call to action, like 'apply now' or 'join our talent community' — no developer needed.",
+    "samplePrompt": "Build a landing page for our upcoming career fair in Austin, with a short pitch about open roles and a signup form to join our talent community.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "template-driven, but choosing the right template and messaging takes a little marketing judgment",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.joveo.com/blog/recruiting-landing-page-builders/",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog post; verify current pricing on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-89869e937f",
+    "slug": "draft-social-media-posts-to-promote-an-open-role",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter without a marketing background who needs to promote a role",
+    "title": "draft social media posts to promote an open role",
+    "intentLabels": [
+      "job posting social copy",
+      "LinkedIn recruiting post",
+      "social recruiting content"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://100hires.com/social-media-recruiting-tools.html",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Canva",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Describe the role and where you're posting (LinkedIn, Instagram, etc.); one tool drafts short, scroll-stopping copy in the right tone for that platform, and the other turns the job details into an eye-catching graphic — so you can post without hiring a copywriter or designer.",
+    "samplePrompt": "Write 3 short LinkedIn post variations to promote our open UX Designer role, each with a different hook, plus a matching graphic with the role title and key details.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the role, get ready-to-post copy and graphics back",
+    "trustScore": 3,
+    "pricingNote": "Both offer free tiers; paid plans for higher usage (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://100hires.com/social-media-recruiting-tools.html",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-19",
+    "accessNotes": "Public blog post; verify current free-tier limits on each vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-13e1e9b522",
+    "slug": "see-which-recruitment-marketing-channels-actually-drive-quality",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA leader trying to justify recruitment marketing spend to leadership",
+    "title": "see which recruitment marketing channels actually drive quality hires",
+    "intentLabels": [
+      "recruitment marketing attribution",
+      "channel ROI",
+      "source-of-hire analytics"
+    ],
+    "tools": [
+      {
+        "name": "Recruitics",
+        "url": "https://www.guideflow.com/blog/programmatic-job-advertising-software"
+      }
+    ],
+    "workflowSummary": "The platform combines your job ad spend data with actual hiring outcomes from your ATS, so instead of just seeing which channel got the most clicks, you can see which channels actually produced hires — and where you're wasting budget.",
+    "samplePrompt": "Show me which of our recruitment marketing channels produced the most actual hires last quarter, not just the most applicants or clicks.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "this is an analytics platform that needs ATS and ad-spend data connected first, typically set up by a TA ops or marketing team",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.guideflow.com/blog/programmatic-job-advertising-software",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog post; verify current pricing and reporting capabilities on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-a1cd7ee0d5",
+    "slug": "turn-a-job-description-into-a-social-ready-graphic-or-ad",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR marketer who needs eye-catching creative but has no design skills",
+    "title": "turn a job description into a social-ready graphic or ad creative",
+    "intentLabels": [
+      "job ad graphic design",
+      "job posting creative",
+      "hiring social media graphic"
+    ],
+    "tools": [
+      {
+        "name": "Canva",
+        "url": "https://100hires.com/social-media-recruiting-tools.html",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Paste in the key details from your job description (title, salary range, location, a few perks); the tool drops them into a branded, ready-to-post graphic template sized correctly for LinkedIn, Instagram, or a job board ad — no design software needed.",
+    "samplePrompt": "Turn this job description for our Delivery Driver role into a LinkedIn-sized graphic with the title, pay range, and 'apply today' call to action.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven drag-and-drop editor",
+    "trustScore": 3,
+    "pricingNote": "Free plan available; Canva Pro from roughly $13/month (verify before publishing)",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://100hires.com/social-media-recruiting-tools.html",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-19",
+    "accessNotes": "Public blog post; verify current pricing on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-28175bba79",
+    "slug": "automatically-distribute-a-job-posting-across-social-media",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR/recruiting team wanting more reach for open roles without manual posting",
+    "title": "automatically distribute a job posting across social media channels",
+    "intentLabels": [
+      "automated social job distribution",
+      "auto-post jobs to social media",
+      "social job syndication"
+    ],
+    "tools": [
+      {
+        "name": "CareerArc HireSocial",
+        "url": "https://100hires.com/social-media-recruiting-tools.html"
+      }
+    ],
+    "workflowSummary": "Connect your ATS or job feed once; whenever a new role opens, the tool automatically formats and posts it across your company's social media accounts (LinkedIn, Facebook, X, etc.) without a recruiter manually creating and posting each one.",
+    "samplePrompt": "Automatically post any new job opening in our Sales department to our company's LinkedIn and Facebook pages as soon as it's approved.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "one-time setup connecting your ATS and social accounts, then it runs automatically",
+    "trustScore": 3,
+    "pricingNote": "Not publicly listed; typically quote-based (verify before publishing)",
+    "pricingTier": "paid",
+    "sourceUrl": "https://100hires.com/social-media-recruiting-tools.html",
+    "sourceType": "Directory / comparison blog",
+    "freshness": "2026-07-19",
+    "accessNotes": "Public blog post; verify current pricing and supported platforms on the vendor's site before publishing.",
+    "batch": "RecruitersHR AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-031f7b2726",
+    "slug": "screen-and-rank-resumes-against-a-job-description",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "In-house recruiter / TA coordinator",
+    "title": "Screen and rank resumes against a job description",
+    "intentLabels": [
+      "resume screening AI",
+      "rank candidates",
+      "shortlist resumes",
+      "ATS scoring",
+      "parse resumes"
+    ],
+    "tools": [
+      {
+        "name": "Manatal",
+        "url": "https://www.pin.com/blog/ai-resume-screening-tools/"
+      },
+      {
+        "name": "Skima AI"
+      }
+    ],
+    "workflowSummary": "Recruiter uploads a batch of resumes plus the job description; the tool parses each resume, semantically matches it to the role's requirements, and returns a ranked shortlist with visible reasoning so the recruiter can sanity-check the top matches instead of reading every resume manually.",
+    "samplePrompt": "\"Here's the job description for [role]. Score and rank the attached resumes against the must-have requirements: [list them], and flag any candidate missing a hard requirement.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy to use once resumes are uploaded, but a recruiter should learn how the ranking logic works before trusting it fully",
+    "trustScore": 4,
+    "pricingNote": "Manatal from $15/user/mo; Skima AI $49/mo — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pin.com/blog/ai-resume-screening-tools/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "June 3, 2026",
+    "accessNotes": "Third-party review site; confirm current pricing/features on each vendor's own site before quoting",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-005e1d4321",
+    "slug": "write-a-clear-unbiased-job-description-that-attracts-more",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR generalist / hiring manager writing a req",
+    "title": "Write a clear, unbiased job description that attracts more applicants",
+    "intentLabels": [
+      "job description generator",
+      "JD writer",
+      "inclusive language checker",
+      "bias-free job posting"
+    ],
+    "tools": [
+      {
+        "name": "Textio",
+        "url": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators"
+      },
+      {
+        "name": "Workable"
+      }
+    ],
+    "workflowSummary": "HR types in the role, seniority, and a few responsibilities; the tool drafts a structured JD (summary, responsibilities, qualifications) and can score or rewrite it to remove exclusionary language before it's posted to job boards.",
+    "samplePrompt": "\"Write a job description for a [seniority] [role title] at a [industry] company. Keep the tone friendly and jargon-free, and flag any language that might discourage diverse applicants.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Workable free JD tool; Textio paid plans on request — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators",
+    "sourceType": "Blog/guide",
+    "freshness": "2026",
+    "accessNotes": "Third-party review site; Textio and Workable both have their own product pages with current pricing",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-1eca988209",
+    "slug": "automatically-schedule-interviews-across-recruiter-interviewer",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA coordinator scheduling interview loops",
+    "title": "Automatically schedule interviews across recruiter, interviewer, and candidate calendars",
+    "intentLabels": [
+      "interview scheduling AI",
+      "coordinate interview panels",
+      "self-scheduling link",
+      "reduce reschedules"
+    ],
+    "tools": [
+      {
+        "name": "GoodTime",
+        "url": "https://www.pin.com/blog/best-ai-interview-scheduling-tools/"
+      },
+      {
+        "name": "Calendly"
+      }
+    ],
+    "workflowSummary": "Instead of emailing back and forth to find a time, the tool checks everyone's calendar, proposes times a candidate can self-book, and automatically rebalances or reschedules when an interviewer declines.",
+    "samplePrompt": "\"Find a 45-minute slot next week where [candidate name], [interviewer names], and I are all free, and send the candidate a self-scheduling link.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Calendly from $10/seat/mo; GoodTime pricing on request — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.pin.com/blog/best-ai-interview-scheduling-tools/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "June 3, 2026",
+    "accessNotes": "Third-party review site; confirm current plans directly with each vendor",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-f2f455c809",
+    "slug": "find-and-reach-passive-candidates-on-linkedin-and-beyond-who",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Technical/agency recruiter sourcing passive talent",
+    "title": "Find and reach passive candidates on LinkedIn and beyond who aren't actively applying",
+    "intentLabels": [
+      "passive candidate sourcing",
+      "LinkedIn sourcing tool",
+      "candidate database search",
+      "outbound recruiting"
+    ],
+    "tools": [
+      {
+        "name": "hireEZ",
+        "url": "https://clearcompany.com/resources/blog/best-ai-sourcing-tools"
+      },
+      {
+        "name": "SeekOut"
+      }
+    ],
+    "workflowSummary": "Recruiter describes the role in plain language; the tool searches hundreds of millions of profiles across LinkedIn, GitHub, and other sites, ranks candidates by fit, and can kick off outreach sequences to the ones who look like a match.",
+    "samplePrompt": "\"Find 20 candidates with 5+ years of [skill] experience in [location] who aren't actively job-hunting, and prioritize ones who've changed roles in the last 2 years.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the search works out of the box, but getting good outreach reply rates takes some trial and error",
+    "trustScore": 4,
+    "pricingNote": "Pricing on request for both — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://clearcompany.com/resources/blog/best-ai-sourcing-tools",
+    "sourceType": "Blog/guide",
+    "freshness": "May 6, 2026",
+    "accessNotes": "Third-party review site; verify current features/pricing with hireEZ and SeekOut directly",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-35bce9bb8a",
+    "slug": "generate-role-specific-interview-questions-from-a-job",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Hiring manager or recruiter prepping for interviews",
+    "title": "Generate role-specific interview questions from a job description",
+    "intentLabels": [
+      "interview question generator",
+      "behavioral interview questions",
+      "screening questions",
+      "interview guide"
+    ],
+    "tools": [
+      {
+        "name": "Kickresume AI Interview Questions Generator",
+        "url": "https://www.reed.com/tools/interview-question-generator"
+      },
+      {
+        "name": "Reed Interview Question Generator"
+      }
+    ],
+    "workflowSummary": "Paste in a job title (or full job description) and seniority level; the tool returns a tailored mix of behavioral, situational, and skills-based questions, often with what to listen for in a strong answer.",
+    "samplePrompt": "\"Generate 8 interview questions for a [seniority] [role title], mixing behavioral and situational questions, and tell me what a strong answer to each one looks like.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.reed.com/tools/interview-question-generator",
+    "sourceType": "Product/tool page",
+    "freshness": "2026",
+    "accessNotes": "Free tool page; confirm no login/data-sharing requirements before use with real candidate info",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-0e0acde9a6",
+    "slug": "draft-a-compliant-professional-offer-letter-in-minutes",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR/hiring manager extending a job offer",
+    "title": "Draft a compliant, professional offer letter in minutes",
+    "intentLabels": [
+      "offer letter generator",
+      "job offer template",
+      "employment offer AI",
+      "offer letter writer"
+    ],
+    "tools": [
+      {
+        "name": "Hyring AI Offer Letter Generator",
+        "url": "https://hyring.com/free-hr-toolkit/generate-letters/offer-letter"
+      }
+    ],
+    "workflowSummary": "HR fills in role, salary, start date, and benefits; the tool formats a complete offer letter and flags common compliance gaps (missing at-will language, missing contingencies) before it's sent to the candidate.",
+    "samplePrompt": "\"Draft an offer letter for [candidate name] for the role of [title], starting [date], salary [amount], with a 5 business day response deadline and a background-check contingency.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free, no sign-up required — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://hyring.com/free-hr-toolkit/generate-letters/offer-letter",
+    "sourceType": "Product/tool page",
+    "freshness": "April 4, 2026",
+    "accessNotes": "Free tool; still have offer letters reviewed by HR/legal for local labor-law compliance",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-67a6990956",
+    "slug": "build-a-30-60-90-day-onboarding-checklist-for-a-new-hire",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR/People Ops onboarding a new hire",
+    "title": "Build a 30-60-90 day onboarding checklist for a new hire",
+    "intentLabels": [
+      "onboarding checklist",
+      "new hire checklist",
+      "onboarding plan generator",
+      "first 90 days plan"
+    ],
+    "tools": [
+      {
+        "name": "Rippling",
+        "url": "https://linezine.com/human-resources/ai-onboarding-tools"
+      },
+      {
+        "name": "BambooHR"
+      }
+    ],
+    "workflowSummary": "HR enters the role and start date; the tool generates a phase-by-phase checklist (pre-boarding, day one, first week, first 30-60-90 days) covering IT setup, paperwork, training, and manager check-ins, and can assign tasks automatically.",
+    "samplePrompt": "\"Create a 30-60-90 day onboarding checklist for a new [role title] joining a [team size]-person team, organized by Day 1, Week 1, Week 2, and Weeks 3-4.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Rippling ~$8-15/user/month per module; BambooHR pricing on request — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://linezine.com/human-resources/ai-onboarding-tools",
+    "sourceType": "Blog/guide",
+    "freshness": "May 22, 2026",
+    "accessNotes": "Third-party review site; confirm current per-module pricing directly with each vendor",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-1f4579af12",
+    "slug": "draft-performance-review-feedback-from-rough-notes",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "People manager writing performance feedback",
+    "title": "Draft performance review feedback from rough notes",
+    "intentLabels": [
+      "performance review writer",
+      "AI feedback generator",
+      "review draft",
+      "performance evaluation writer"
+    ],
+    "tools": [
+      {
+        "name": "Easy-Peasy.AI",
+        "url": "https://www.performyard.com/articles/ai-performance-review-generators"
+      },
+      {
+        "name": "ClickUp Brain"
+      }
+    ],
+    "workflowSummary": "Manager types in a few bullet points about an employee's achievements and growth areas; the tool turns them into a clear, professional review draft the manager then edits for accuracy and tone before sharing.",
+    "samplePrompt": "\"Turn these notes into a performance review for [employee name], [role]: [bullet list of achievements and growth areas]. Keep the tone constructive and specific, not generic.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Easy-Peasy.AI has a free generator; ClickUp Brain requires a paid plan — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.performyard.com/articles/ai-performance-review-generators",
+    "sourceType": "Blog/guide",
+    "freshness": "May 14, 2026",
+    "accessNotes": "Third-party review site; avoid pasting confidential employee data into free/consumer tools without checking their data policy",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-230c37219e",
+    "slug": "run-and-analyze-exit-interviews-to-understand-why-people-are",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR leader trying to reduce turnover",
+    "title": "Run and analyze exit interviews to understand why people are leaving",
+    "intentLabels": [
+      "exit interview software",
+      "attrition analysis",
+      "turnover insights",
+      "offboarding survey AI"
+    ],
+    "tools": [
+      {
+        "name": "SurveyMonkey",
+        "url": "https://www.recruiterslineup.com/best-exit-interview-software-to-look-for/"
+      },
+      {
+        "name": "Culture Amp"
+      }
+    ],
+    "workflowSummary": "Departing employees complete a structured survey; the tool uses AI text analysis to surface recurring themes (pay, management, growth) across many exit interviews so HR can spot patterns instead of reading each response in isolation.",
+    "samplePrompt": "\"Summarize the top 3 recurring themes from this quarter's exit interview responses, and flag any comments related to management or compensation.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "survey setup is simple, but interpreting the AI-surfaced themes benefits from HR judgment",
+    "trustScore": 3,
+    "pricingNote": "Pricing on request for both — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.recruiterslineup.com/best-exit-interview-software-to-look-for/",
+    "sourceType": "Blog/guide",
+    "freshness": "April 14, 2026",
+    "accessNotes": "Third-party review site; exit feedback is sensitive — confirm confidentiality settings before rollout",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-a00eacc1a1",
+    "slug": "let-employees-self-serve-answers-to-hr-policy-questions-pto",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR team fielding repetitive employee questions",
+    "title": "Let employees self-serve answers to HR policy questions (PTO, benefits, remote work)",
+    "intentLabels": [
+      "HR chatbot",
+      "employee self-service",
+      "policy Q&A bot",
+      "HR helpdesk automation"
+    ],
+    "tools": [
+      {
+        "name": "Leena AI",
+        "url": "https://www.tryrisotto.com/blog/ai-hr-chatbot-for-employee-self-service"
+      },
+      {
+        "name": "Moveworks"
+      }
+    ],
+    "workflowSummary": "The chatbot is trained on the company's own handbook, benefits guide, and policy documents; employees ask questions in plain language in Slack or Teams and get an instant, sourced answer instead of emailing HR.",
+    "samplePrompt": "\"Set this chatbot up to answer employee questions using our employee handbook and benefits guide, and have it hand off to a real HR person for anything about an individual's pay or performance.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs an initial setup/training step on company documents before it's reliable",
+    "trustScore": 4,
+    "pricingNote": "Pricing on request for both — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.tryrisotto.com/blog/ai-hr-chatbot-for-employee-self-service",
+    "sourceType": "Blog/guide",
+    "freshness": "April 29, 2026",
+    "accessNotes": "Third-party review site; keep compensation/individual-case questions routed to a human, not the bot",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-457d7af6c2",
+    "slug": "automate-reference-checks-instead-of-chasing-referees-by-phone",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter finalizing a candidate before an offer",
+    "title": "Automate reference checks instead of chasing referees by phone",
+    "intentLabels": [
+      "reference check automation",
+      "automated references",
+      "candidate reference verification"
+    ],
+    "tools": [
+      {
+        "name": "Checkster",
+        "url": "https://peoplemanagingpeople.com/tools/best-reference-check-software/"
+      },
+      {
+        "name": "HiPeople"
+      }
+    ],
+    "workflowSummary": "Recruiter enters the candidate and referee contact info; the tool sends referees a short survey they can complete on their phone, then summarizes and scores the responses so the recruiter isn't stuck playing phone tag.",
+    "samplePrompt": "\"Send a reference check survey to [referee name] for [candidate name]'s application to [role], and summarize the responses with a score once all references are in.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Pricing on request for both — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-reference-check-software/",
+    "sourceType": "Blog/guide",
+    "freshness": "August 2026",
+    "accessNotes": "Third-party review site; get candidate consent before contacting references, per standard hiring practice",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-84a4520e53",
+    "slug": "automatically-summarize-and-score-interview-notes-into-a",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter running back-to-back candidate interviews",
+    "title": "Automatically summarize and score interview notes into a candidate report",
+    "intentLabels": [
+      "interview notetaker",
+      "AI interview summary",
+      "candidate scorecard automation",
+      "interview intelligence"
+    ],
+    "tools": [
+      {
+        "name": "Metaview",
+        "url": "https://www.metaview.ai/resources/blog/ai-hiring-tools"
+      }
+    ],
+    "workflowSummary": "The tool joins or records the interview call, transcribes it, and turns the conversation into a structured candidate report mapped to the interview rubric — so the recruiter isn't typing notes while also trying to run the conversation.",
+    "samplePrompt": "\"Summarize this interview against our scorecard for [role]: strengths, concerns, and a recommended next step, using only what the candidate actually said.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free to sign up with a work email — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/ai-hiring-tools",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "May 29, 2026",
+    "accessNotes": "Vendor blog; get candidate/interviewer consent before recording or transcribing calls",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-e3c94a1595",
+    "slug": "check-a-job-post-for-biased-or-exclusionary-language-before",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR/recruiter finalizing a job post before it goes live",
+    "title": "Check a job post for biased or exclusionary language before posting",
+    "intentLabels": [
+      "bias detection job posting",
+      "inclusive language checker",
+      "gendered language in job ads"
+    ],
+    "tools": [
+      {
+        "name": "Textio",
+        "url": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators"
+      }
+    ],
+    "workflowSummary": "HR pastes in a drafted job post; the tool scores it and highlights specific words or phrases statistically linked to lower application rates or reduced diversity, with suggested rewrites.",
+    "samplePrompt": "\"Score this job posting for biased or exclusionary language and suggest specific rewrites for anything that could discourage diverse applicants: [paste job post].\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Paid plans on request; limited free trial — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators",
+    "sourceType": "Blog/guide",
+    "freshness": "2026",
+    "accessNotes": "Third-party review site; use as a second pass after drafting, not as the sole source of the JD",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-e4794d06a8",
+    "slug": "write-a-personalized-cold-outreach-email-to-a-passive-candidate",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Agency or in-house recruiter doing outbound sourcing",
+    "title": "Write a personalized cold outreach email to a passive candidate",
+    "intentLabels": [
+      "candidate outreach email",
+      "cold recruiting email",
+      "InMail generator",
+      "sourcing email writer"
+    ],
+    "tools": [
+      {
+        "name": "Recruit CRM AI Candidate Outreach Email Generator",
+        "url": "https://recruitcrm.io/hiring-tools/candidate-outreach-tool/"
+      },
+      {
+        "name": "Skillora"
+      }
+    ],
+    "workflowSummary": "Recruiter pastes in a candidate's background and the open role; the tool drafts a short, specific outreach email or InMail (with subject line) that references the candidate's actual experience instead of reading like a mass template.",
+    "samplePrompt": "\"Write a short cold outreach email to a [role] candidate with a background in [specific skill/experience], inviting them to a 15-minute call about [role] at [company]. Keep it under 150 words.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free — verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://recruitcrm.io/hiring-tools/candidate-outreach-tool/",
+    "sourceType": "Product/tool page",
+    "freshness": "July 21, 2026",
+    "accessNotes": "Free tool; avoid including personal characteristics or demographic proxies in outreach prompts",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-048567bf2b",
+    "slug": "give-candidates-a-skills-test-before-the-interview-instead-of",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Recruiter/hiring manager evaluating candidate ability before interviews",
+    "title": "Give candidates a skills test before the interview instead of relying on resumes alone",
+    "intentLabels": [
+      "pre-employment assessment",
+      "skills test AI",
+      "candidate testing platform",
+      "job simulation test"
+    ],
+    "tools": [
+      {
+        "name": "TestGorilla",
+        "url": "https://www.noon.ai/blog/articles/290-top-10-skills-assessment-tools"
+      },
+      {
+        "name": "Vervoe"
+      }
+    ],
+    "workflowSummary": "Recruiter picks or builds a short assessment matched to the role (cognitive, technical, or a realistic work sample); candidates complete it online, and the tool auto-scores results so recruiters can compare candidates on demonstrated ability rather than resume claims.",
+    "samplePrompt": "\"Build a 30-minute assessment for a [role title] candidate that tests [specific skill], including one realistic work-sample task, and auto-score the results.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "building a good assessment takes a bit of setup the first time",
+    "trustScore": 4,
+    "pricingNote": "TestGorilla has a free tier; Vervoe from $19/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.noon.ai/blog/articles/290-top-10-skills-assessment-tools",
+    "sourceType": "Blog/guide",
+    "freshness": "August 2026",
+    "accessNotes": "Third-party review site; confirm candidates are told in advance that AI scoring is used, where required by local law",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-cf832c7946",
+    "slug": "screen-and-pre-qualify-high-volume-frontline-applicants-over",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "TA team hiring at high volume (retail, hospitality, healthcare)",
+    "title": "Screen and pre-qualify high-volume frontline applicants over chat or text",
+    "intentLabels": [
+      "conversational AI recruiting",
+      "high-volume screening chatbot",
+      "SMS candidate screening"
+    ],
+    "tools": [
+      {
+        "name": "Paradox (Olivia)",
+        "url": "https://www.sitepoint.com/12-best-ai-recruiting-sourcing-tools-for-2026/"
+      }
+    ],
+    "workflowSummary": "Applicants text or chat with a conversational assistant that asks qualifying questions, answers their questions about the role, and books a next step for anyone who qualifies — built for roles where speed matters more than deep, individualized screening.",
+    "samplePrompt": "\"Set up a chat screener for [frontline role] that asks about availability, required certifications, and location, and automatically books a video interview for anyone who qualifies.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but built for enterprise-scale hiring, so setup involves more configuration",
+    "trustScore": 3,
+    "pricingNote": "Enterprise-only pricing, contact sales — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sitepoint.com/12-best-ai-recruiting-sourcing-tools-for-2026/",
+    "sourceType": "Blog/guide",
+    "freshness": "April 6, 2026",
+    "accessNotes": "Third-party review site; not a fit for low-volume or highly specialized hiring",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-64dbbff3ea",
+    "slug": "conduct-one-way-video-interviews-for-early-stage-screening",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "Candidate or recruiter preparing for a video screening round",
+    "title": "Conduct one-way video interviews for early-stage screening",
+    "intentLabels": [
+      "async video interview",
+      "one-way video screening",
+      "on-demand video interviewing"
+    ],
+    "tools": [
+      {
+        "name": "myInterview",
+        "url": "https://peoplemanagingpeople.com/tools/best-resume-screening-software/"
+      },
+      {
+        "name": "HireVue"
+      }
+    ],
+    "workflowSummary": "Candidates record themselves answering a set list of questions on their own time; recruiters and hiring managers then review and shortlist the recorded responses in bulk instead of scheduling a live call for every applicant.",
+    "samplePrompt": "\"Set up a one-way video interview for [role] with these 4 questions: [list], and let me review and shortlist responses afterward.\"",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy for recruiters, but some candidates find async video less comfortable than a live call",
+    "trustScore": 3,
+    "pricingNote": "Pricing on request for both — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-resume-screening-software/",
+    "sourceType": "Blog/guide",
+    "freshness": "August 2026",
+    "accessNotes": "Third-party review site; tell candidates in advance if AI is used to score their responses",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "recruiters-hr-1df0478645",
+    "slug": "draft-an-hr-policy-or-handbook-section-e-g-a-remote-work-or",
+    "kind": "workflow",
+    "niche": "Recruiters & HR",
+    "sector": "Recruiters & HR",
+    "persona": "HR generalist at a small business writing internal policy",
+    "title": "Draft an HR policy or handbook section (e.g. a remote work or expense policy)",
+    "intentLabels": [
+      "HR policy generator",
+      "employee handbook AI",
+      "workplace policy writer",
+      "company policy template"
+    ],
+    "tools": [
+      {
+        "name": "Taskade AI HR Policy Generator",
+        "url": "https://www.taskade.com/generate/human-resource/offer-letter-template"
+      }
+    ],
+    "workflowSummary": "HR describes the policy area and a few company-specific details; the tool drafts a structured policy document (purpose, scope, rules, examples) that HR then reviews and customizes to match local labor law and company practice before publishing it in the handbook.",
+    "samplePrompt": "\"Draft a remote work policy for a [company size] company, covering eligibility, expected availability hours, and equipment reimbursement. Keep the tone clear and non-legalistic.\"",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier available — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.taskade.com/generate/human-resource/offer-letter-template",
+    "sourceType": "Product/tool page",
+    "freshness": "April 1, 2026",
+    "accessNotes": "Free tool; always have HR-specific and location-specific policies reviewed by legal before publishing",
+    "batch": "Recruiters HR AI Workflows Batch5",
+    "status": "active"
+  }
+]

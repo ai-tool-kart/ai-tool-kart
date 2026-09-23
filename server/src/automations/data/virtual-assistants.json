@@ -1,0 +1,2146 @@
+[
+  {
+    "id": "virtual-assistants-34cf3d42b6",
+    "slug": "book-a-client-call-without-back-and-forth-emails",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing client-facing bookings",
+    "title": "book a client call without back-and-forth emails",
+    "intentLabels": [
+      "scheduling link",
+      "booking page",
+      "discovery call scheduling",
+      "calendar link",
+      "avoid email tag"
+    ],
+    "tools": [
+      {
+        "name": "SavvyCal",
+        "url": "https://vaautomationlab.com/best-ai-scheduling-tools/"
+      }
+    ],
+    "workflowSummary": "Create one booking link per meeting type. Clients see their own calendar laid next to your open slots so they can pick a time that actually works without emailing back and forth.",
+    "samplePrompt": "Set up a 30-minute discovery call booking link in SavvyCal with a 15-minute buffer before and after, and connect it to my Google Calendar so double-bookings are blocked automatically.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code setup, usable free tier for one link",
+    "trustScore": 4,
+    "pricingNote": "Free (1 link, 1 calendar); Basic $12/mo; Premium $20/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Public guide; publisher discloses affiliate links — check SavvyCal's own site/terms before recommending to a client",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-e290f3f609",
+    "slug": "stop-clients-from-booking-over-my-deep-work-time",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA protecting their own work time across multiple clients",
+    "title": "stop clients from booking over my deep-work time",
+    "intentLabels": [
+      "focus time protection",
+      "calendar defense",
+      "habit scheduling",
+      "buffer time"
+    ],
+    "tools": [
+      {
+        "name": "Reclaim.ai",
+        "url": "https://vaautomationlab.com/best-ai-scheduling-tools/"
+      }
+    ],
+    "workflowSummary": "Set recurring 'habit' blocks for deep work and admin time. The tool defends those blocks automatically and reshuffles them as new client meetings get booked.",
+    "samplePrompt": "In Reclaim.ai, create a daily 2-hour 'Deep Work' habit from 9am-12pm marked High priority, plus a 45-minute 'Admin' habit from 4-6pm, and cap external meetings at 4 per day.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier covers a solo VA's first setup",
+    "trustScore": 4,
+    "pricingNote": "Free (Lite tier); Starter $10/mo; Business $15/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Same publisher as above; affiliate links disclosed",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-a77f6cf44b",
+    "slug": "set-up-online-booking-for-a-client-s-service-business",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA running appointment booking for a client's coaching/clinic business",
+    "title": "set up online booking for a client's service business",
+    "intentLabels": [
+      "service booking",
+      "multi-provider scheduling",
+      "payment at booking",
+      "booking widget"
+    ],
+    "tools": [
+      {
+        "name": "SimplyBook.me",
+        "url": "https://vaautomationlab.com/best-ai-scheduling-tools/"
+      }
+    ],
+    "workflowSummary": "Build a branded booking widget with a service list, provider assignments, and payment collection, then embed it on the client's own website.",
+    "samplePrompt": "Set up SimplyBook.me for a coaching client with 3 services, 2 providers, Stripe payment at booking, and an intake form for new clients.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "more configuration than a simple link, but no code required",
+    "trustScore": 4,
+    "pricingNote": "Free (50 bookings/mo, 1 provider); Basic $14/mo; Standard $29/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Same publisher as above; affiliate links disclosed",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-9fa2d435d2",
+    "slug": "get-my-inbox-under-control-every-morning-without-reading",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA triaging a busy client or personal inbox",
+    "title": "get my inbox under control every morning without reading everything",
+    "intentLabels": [
+      "inbox zero",
+      "email triage",
+      "AI email drafts",
+      "inbox management"
+    ],
+    "tools": [
+      {
+        "name": "Fyxer",
+        "url": "https://www.getinboxzero.com/blog/post/best-ai-email-assistants"
+      }
+    ],
+    "workflowSummary": "The tool auto-labels incoming mail into categories like client, invoice, and newsletter, and drafts replies to routine messages in your voice for you to review and send.",
+    "samplePrompt": "Draft a reply to this client email confirming receipt of their files and letting them know I'll review by Thursday. Keep it warm and professional, under 60 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "connects to Gmail/Outlook, no setup beyond authorizing the inbox",
+    "trustScore": 3,
+    "pricingNote": "Paid plans only, tier pricing not confirmed in this pass — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.getinboxzero.com/blog/post/best-ai-email-assistants",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-08-28",
+    "accessNotes": "Independent comparison site; confirm current pricing on Fyxer's own site",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-36bd70121a",
+    "slug": "automatically-transcribe-and-summarize-a-client-call",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA who joins or manages client Zoom/Meet calls",
+    "title": "automatically transcribe and summarize a client call",
+    "intentLabels": [
+      "meeting transcription",
+      "call notes",
+      "action item extraction",
+      "meeting recap"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://www.read.ai/articles/best-ai-meeting-assistants"
+      }
+    ],
+    "workflowSummary": "The tool joins the call as a bot, transcribes everything said, and produces a summary with action items and a speaker breakdown right after the call ends.",
+    "samplePrompt": "Summarize this meeting transcript into 3 key decisions, action items with owners, and open questions. Keep it under 150 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "connects to most video platforms with no setup",
+    "trustScore": 4,
+    "pricingNote": "Free (800 min storage); paid plans from $10-19/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.read.ai/articles/best-ai-meeting-assistants",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (undated, recent)",
+    "accessNotes": "Independent comparison site (Read AI); confirm current pricing on Fireflies' own site",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-08b60232df",
+    "slug": "turn-my-raw-meeting-notes-into-a-client-ready-recap-email",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA sending a client-ready recap after a weekly check-in call",
+    "title": "turn my raw meeting notes into a client-ready recap email",
+    "intentLabels": [
+      "meeting summary",
+      "client update email",
+      "recap template",
+      "follow-up email"
+    ],
+    "tools": [
+      {
+        "name": "Claude (or similar general-purpose AI writing assistant)",
+        "url": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Paste the raw meeting notes into an AI writing assistant with a short template prompt, review the draft for accuracy and tone, then send it within minutes of the call ending.",
+    "samplePrompt": "Write a meeting summary email for a weekly client check-in. Client: [NAME]. Meeting date: [DATE]. Topics covered: [PASTE NOTES]. Decisions made: [LIST]. Action items: [WHO does WHAT by WHEN]. Next meeting: [DATE/TIME]. Tone: professional and warm. Length: under 150 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one prompt, no setup",
+    "trustScore": 4,
+    "pricingNote": "Free tier available on most general AI assistants; paid tiers vary — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Prompt template adapted from this publisher's workflow guide; affiliate links disclosed",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-881cf4b6bf",
+    "slug": "schedule-a-month-of-social-posts-across-multiple-client-accounts",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "Social media VA managing several client accounts",
+    "title": "schedule a month of social posts across multiple client accounts",
+    "intentLabels": [
+      "social media scheduling",
+      "content calendar",
+      "post queue",
+      "multi-account posting"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://keachassistants.com/social-media/best-scheduling-tools-for-social-media-virtual-assistants/",
+        "catalogueSlug": "buffer"
+      }
+    ],
+    "workflowSummary": "Queue posts on a shared content calendar for each connected client account, and use the built-in AI assistant to suggest captions and the best times to post.",
+    "samplePrompt": "Write 3 Instagram caption variations for this product photo, casual tone, under 150 characters, with 5 relevant hashtags.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "clean interface, free plan for up to 3 channels",
+    "trustScore": 4,
+    "pricingNote": "Free (3 channels); paid plans from $6/channel/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://keachassistants.com/social-media/best-scheduling-tools-for-social-media-virtual-assistants/",
+    "sourceType": "Blog / Comparison guide (VA-focused)",
+    "freshness": "2026-04-08",
+    "accessNotes": "Published by a VA staffing agency; independent tool review, no affiliate disclosure noted",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-13ac8f544b",
+    "slug": "let-a-client-approve-social-posts-before-they-get-published",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "Social media VA whose clients want to review posts before they go live",
+    "title": "let a client approve social posts before they get published",
+    "intentLabels": [
+      "content approval workflow",
+      "client review",
+      "social media collaboration"
+    ],
+    "tools": [
+      {
+        "name": "Planable",
+        "url": "https://getsocialclaw.com/blog/best-ai-social-media-scheduling-tools-2026"
+      }
+    ],
+    "workflowSummary": "Draft posts with platform-accurate previews, tag the client to leave comments directly on the post, and auto-publish once they give final sign-off.",
+    "samplePrompt": "Draft a LinkedIn post announcing a client's new service launch, professional tone, under 120 words, with a call-to-action to book a call.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "approval workflows take some initial setup per client",
+    "trustScore": 4,
+    "pricingNote": "Plans from $33/month per workspace — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://getsocialclaw.com/blog/best-ai-social-media-scheduling-tools-2026",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Independent comparison site; confirm current pricing on Planable's own site",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-0dea0d78e2",
+    "slug": "send-a-professional-invoice-and-track-billable-hours-per-client",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA billing hourly or retainer across multiple clients",
+    "title": "send a professional invoice and track billable hours per client",
+    "intentLabels": [
+      "invoicing",
+      "time tracking",
+      "billable hours",
+      "retainer billing"
+    ],
+    "tools": [
+      {
+        "name": "Plutio",
+        "url": "https://www.plutio.com/solutions/virtual-assistants/invoicing"
+      }
+    ],
+    "workflowSummary": "Run a timer while working on each client's task, tag the logged time to that client's project, and convert the tracked hours directly into a branded invoice with no manual re-entry.",
+    "samplePrompt": "Summarize this week's tracked hours by client and flag any client who is over their retainer cap.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for solo service providers",
+    "trustScore": 4,
+    "pricingNote": "Core plan $19/month (unlimited invoicing, up to 9 active clients) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.plutio.com/solutions/virtual-assistants/invoicing",
+    "sourceType": "Product page",
+    "freshness": "2026-02-04",
+    "accessNotes": "Vendor's own product page — pricing likely favorable to Plutio; cross-check against a neutral comparison before publishing",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-5500ec6945",
+    "slug": "send-a-proposal-and-contract-a-client-can-sign-and-pay-in-one",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA or freelancer who needs signed contracts and paid deposits fast",
+    "title": "send a proposal and contract a client can sign and pay in one step",
+    "intentLabels": [
+      "client proposals",
+      "e-signature",
+      "contract automation",
+      "deposit collection"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook",
+        "url": "https://agiled.app/blog/best-invoicing-software-for-virtual-assistants"
+      }
+    ],
+    "workflowSummary": "Combine a proposal, contract, and invoice into one branded document the client reviews, signs, and pays from a single link, instead of juggling three separate tools.",
+    "samplePrompt": "Draft a proposal summary for a 3-month social media management retainer at $1,200/month, covering content creation, scheduling, and monthly reporting.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "pricing rose significantly in 2025; worth comparing against Plutio first",
+    "trustScore": 3,
+    "pricingNote": "Starter ~$29/mo annual; Essentials ~$49/mo; Premium ~$109/mo — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://agiled.app/blog/best-invoicing-software-for-virtual-assistants",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-04-16",
+    "accessNotes": "Independent comparison site; publisher sells a competing product (Agiled) — read pricing claims with that in mind",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-872224969d",
+    "slug": "set-up-a-chatbot-that-answers-common-customer-questions-24-7",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA supporting a small business owner's customer service",
+    "title": "set up a chatbot that answers common customer questions 24/7",
+    "intentLabels": [
+      "customer support chatbot",
+      "live chat automation",
+      "FAQ bot"
+    ],
+    "tools": [
+      {
+        "name": "Tidio (Lyro AI)",
+        "url": "https://dataresearchanalysiscollection.com/best-ai-chatbots-small-business/"
+      }
+    ],
+    "workflowSummary": "Train the chatbot on the client's help-center content so it can answer common questions like shipping times and returns automatically, and hand off to a human for anything it can't resolve.",
+    "samplePrompt": "Write 10 FAQ answers for a Lyro chatbot covering shipping times, returns, and order tracking for an online homewares store, in a friendly, concise tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code, quick deploy on most website platforms",
+    "trustScore": 4,
+    "pricingNote": "Starter plan around $29/month (roughly 100 conversations) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dataresearchanalysiscollection.com/best-ai-chatbots-small-business/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-04-08",
+    "accessNotes": "Independent comparison site; confirm current pricing on Tidio's own site",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-1b0bae802b",
+    "slug": "get-the-key-points-from-a-long-report-or-contract-without",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA processing long reports or contracts for a client",
+    "title": "get the key points from a long report or contract without reading the whole thing",
+    "intentLabels": [
+      "PDF summarizer",
+      "document summary",
+      "contract review",
+      "ask questions about a PDF"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Acrobat AI Assistant",
+        "url": "https://www.adobe.com/acrobat/online/ai-summary-generator.html"
+      }
+    ],
+    "workflowSummary": "Upload the PDF and ask the assistant for a summary or a specific answer; it points back to the exact passage in the document so you can verify the source yourself.",
+    "samplePrompt": "Summarize this 40-page vendor contract in under 200 words, and list any clauses about cancellation, payment terms, and liability.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop, no account needed for a basic summary",
+    "trustScore": 4,
+    "pricingNote": "Free with usage limits; full access requires a paid Acrobat plan — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.adobe.com/acrobat/online/ai-summary-generator.html",
+    "sourceType": "Product page",
+    "freshness": "2026 (undated, current vendor page)",
+    "accessNotes": "Vendor's own product page — confirm free-tier limits are still current before quoting to a client",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-83d354d41b",
+    "slug": "turn-a-rough-outline-into-a-polished-slide-deck-for-a-client",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA preparing a client-facing presentation without design skills",
+    "title": "turn a rough outline into a polished slide deck for a client",
+    "intentLabels": [
+      "AI presentation maker",
+      "slide deck generator",
+      "pitch deck",
+      "client deck"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://toolsmadeeasy.com/blog/best-ai-presentation-makers-2026",
+        "catalogueSlug": "gamma"
+      }
+    ],
+    "workflowSummary": "Paste an outline or a few bullet points and the tool generates a fully designed deck — layout, imagery, and speaker notes included — that you can then lightly edit.",
+    "samplePrompt": "Turn this outline into a 10-slide client-facing deck: intro, problem, our approach, 3 case studies, pricing, next steps. Clean, professional design.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-to-deck in under 2 minutes",
+    "trustScore": 4,
+    "pricingNote": "Free (400 lifetime credits); Plus from around $10/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://toolsmadeeasy.com/blog/best-ai-presentation-makers-2026",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Independent comparison site; confirm current pricing on Gamma's own site",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-d1b4916d49",
+    "slug": "keep-track-of-leads-and-follow-ups-without-buying-a-full-crm",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA tracking leads and follow-ups for a solo client or their own business",
+    "title": "keep track of leads and follow-ups without buying a full CRM",
+    "intentLabels": [
+      "lightweight CRM",
+      "lead tracker",
+      "pipeline tracker",
+      "follow-up reminders"
+    ],
+    "tools": [
+      {
+        "name": "Notion (with Notion AI) or Airtable",
+        "url": "https://damongo.com/crm-for-freelancers-2026-complete-comparison-guide/"
+      }
+    ],
+    "workflowSummary": "Build a simple contacts-and-pipeline database with stages like New, Contacted, Booked, Client. AI can draft follow-up emails and auto-fill notes from meeting transcripts as leads move through the pipeline.",
+    "samplePrompt": "Draft a friendly follow-up email to a lead who booked a discovery call two weeks ago and hasn't responded since.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs 2-4 hours of setup and has no built-in email tracking",
+    "trustScore": 3,
+    "pricingNote": "Free personal plans; paid team tiers vary by tool — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://damongo.com/crm-for-freelancers-2026-complete-comparison-guide/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (undated, ~1 month old)",
+    "accessNotes": "Independent comparison site; treat as a DIY option, not a dedicated CRM replacement",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-05f5d42f94",
+    "slug": "book-and-manage-a-business-trip-for-the-executive-i-support",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "Executive assistant booking travel for the person they support",
+    "title": "book and manage a business trip for the executive I support",
+    "intentLabels": [
+      "business travel booking",
+      "flight and hotel booking",
+      "travel and expense"
+    ],
+    "tools": [
+      {
+        "name": "Navan (Navan Travel)",
+        "url": "https://navan.com/blog/ai-tools-for-executive-assistants"
+      }
+    ],
+    "workflowSummary": "Search and book flights and hotels from one shared platform tied to the company's travel policy, with expenses captured automatically so nothing needs manual reconciling afterward.",
+    "samplePrompt": "Find round-trip flights from [origin] to [destination] for [dates], economy class, under $600, arriving before 6pm, and hold the itinerary for approval.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to supporting multiple executives; may be more than a single-client VA needs",
+    "trustScore": 3,
+    "pricingNote": "Business/enterprise pricing, not publicly listed — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://navan.com/blog/ai-tools-for-executive-assistants",
+    "sourceType": "Blog / Comparison guide (vendor-published)",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Published by Navan itself, evaluating its own product alongside others — read comparative claims with that in mind",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-82b9e6a4a1",
+    "slug": "put-together-a-day-by-day-itinerary-for-a-client-s-trip",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA planning a trip on behalf of a client or executive",
+    "title": "put together a day-by-day itinerary for a client's trip",
+    "intentLabels": [
+      "AI itinerary planner",
+      "trip planning assistant",
+      "travel research"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT (Agent Mode) or Stardrift",
+        "url": "https://stardrift.ai/resources/best-ai-travel-planners"
+      }
+    ],
+    "workflowSummary": "Describe the destination, dates, and budget in plain language. The assistant researches flights, hotels, and activities and returns a structured day-by-day plan you can hand straight to the client.",
+    "samplePrompt": "Build a 3-day itinerary for [city] in [month], mid-range budget, focused on food and walkable neighborhoods, with 2-3 activities per day and estimated costs.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational, no setup",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available on both; paid plans needed for agent/booking features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://stardrift.ai/resources/best-ai-travel-planners",
+    "sourceType": "Blog / Comparison guide (vendor-published)",
+    "freshness": "2026-07-02",
+    "accessNotes": "Published by Stardrift itself, evaluating its own product alongside others — always double-check prices, hours, and visa requirements before sending an itinerary to a client",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-91528fce40",
+    "slug": "automate-what-happens-after-a-new-client-books-a-call",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA who wants the post-booking admin (CRM entry, task, folder) to happen automatically",
+    "title": "automate what happens after a new client books a call",
+    "intentLabels": [
+      "workflow automation",
+      "no-code automation",
+      "booking-to-CRM automation",
+      "post-booking workflow"
+    ],
+    "tools": [
+      {
+        "name": "Make (formerly Integromat) + Jotform AI Agents",
+        "url": "https://vaautomationlab.com/best-ai-scheduling-tools/"
+      }
+    ],
+    "workflowSummary": "When a new booking comes in, trigger an automation that creates a CRM contact, a prep task, and a client folder automatically — no manual re-entry required.",
+    "samplePrompt": "Draft 4 qualifying intake questions for a Jotform AI Agent to ask before a new client books an onboarding call.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the first automation takes about 45-60 minutes to build, but no code is required",
+    "trustScore": 4,
+    "pricingNote": "Make: free tier, Core $9/mo. Jotform: free (5 forms), Bronze $39/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://vaautomationlab.com/best-ai-scheduling-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Same publisher as rows 1-3 and 6; affiliate links disclosed",
+    "batch": "VirtualAssistants AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-5cb23463b5",
+    "slug": "keep-track-of-every-client-s-tasks-and-deadlines-in-one-place",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA juggling task boards and deadlines across several clients",
+    "title": "keep track of every client's tasks and deadlines in one place",
+    "intentLabels": [
+      "project management",
+      "task tracker",
+      "multi-client task board",
+      "deadline tracking"
+    ],
+    "tools": [
+      {
+        "name": "ClickUp",
+        "url": "https://stealthagents.com/best-project-management-tools-for-vas"
+      }
+    ],
+    "workflowSummary": "Build one workspace with a separate space per client, use AI to auto-generate task descriptions from a short note, and let AI summarize progress so you can update a client without digging through the board.",
+    "samplePrompt": "Summarize the status of all open tasks in the [Client Name] space: what's done this week, what's overdue, and what's blocked — 5 bullet points max.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier supports up to 15 team members, enough for most VA-client setups",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans add automations and advanced reporting — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://stealthagents.com/best-project-management-tools-for-vas",
+    "sourceType": "Blog / Comparison guide (VA-focused)",
+    "freshness": "2026-07-07",
+    "accessNotes": "Independent guide; no affiliate disclosure noted — confirm current free-tier limits on ClickUp's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-fe3f5c4226",
+    "slug": "get-my-daily-task-list-rebuilt-automatically-around-my-meetings",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing a heavy daily mix of tasks and meetings",
+    "title": "get my daily task list rebuilt automatically around my meetings",
+    "intentLabels": [
+      "AI day planning",
+      "auto-scheduling tasks",
+      "task prioritization",
+      "dynamic rescheduling"
+    ],
+    "tools": [
+      {
+        "name": "Motion",
+        "url": "https://aitoolkitpro.blog/best-ai-tools-for-virtual-assistants-2026/"
+      }
+    ],
+    "workflowSummary": "Add tasks with a priority and deadline; the tool drops them into open calendar slots and automatically reshuffles the plan whenever a meeting is added or runs long.",
+    "samplePrompt": "I have these 6 tasks due this week with the priorities and deadlines listed — slot them into my calendar around my existing meetings, protecting a 2-hour block each morning for focused work.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "more setup than a plain to-do list, but no code required",
+    "trustScore": 3,
+    "pricingNote": "Free Lite plan (limited calendars/smart meetings); Starter $8/user/month; Business $12/user/month, billed annually — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://aitoolkitpro.blog/best-ai-tools-for-virtual-assistants-2026/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-17",
+    "accessNotes": "Independent comparison site; confirm current pricing on Motion's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-46392e07f2",
+    "slug": "turn-a-process-i-do-often-into-a-step-by-step-guide-without",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA who repeats the same client walkthrough or internal process often",
+    "title": "turn a process I do often into a step-by-step guide without writing it myself",
+    "intentLabels": [
+      "SOP generator",
+      "process documentation",
+      "how-to guide",
+      "training guide"
+    ],
+    "tools": [
+      {
+        "name": "Scribe",
+        "url": "https://tasknestly.com/scribe-review-2026-best-ai-tool-for-creating-process-documentation/"
+      }
+    ],
+    "workflowSummary": "Record your screen while you do the task once; the tool auto-captures each click and screenshot and turns it into a formatted step-by-step guide you can lightly edit and share.",
+    "samplePrompt": "Turn this captured workflow into a client onboarding SOP with a short intro paragraph, numbered steps, and a note at the end about who to contact if something goes wrong.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "genuinely no-code, works via browser extension or desktop app",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid seat-based plans for team use and branding — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://tasknestly.com/scribe-review-2026-best-ai-tool-for-creating-process-documentation/",
+    "sourceType": "Blog / Review",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent review site; confirm current pricing on Scribe's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-7f59e1dcce",
+    "slug": "categorize-a-client-s-expenses-and-reconcile-transactions",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA doing light bookkeeping for a client's small business",
+    "title": "categorize a client's expenses and reconcile transactions automatically",
+    "intentLabels": [
+      "AI bookkeeping",
+      "expense categorization",
+      "bank reconciliation",
+      "automated accounting"
+    ],
+    "tools": [
+      {
+        "name": "QuickBooks Online (Intuit Assist)",
+        "url": "https://aiessentials.us/blog/whats-the-best-ai-powered-tool-for-small-business-accounting"
+      }
+    ],
+    "workflowSummary": "Connect the client's bank feed; the AI auto-categorizes transactions and flags anything unusual, and you can ask plain-language questions like why a spending category spiked.",
+    "samplePrompt": "Why did this client's software expense category spike in March compared to the last 3 months? List the individual transactions driving the increase.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "categorization needs a human review pass; AI auto-categorization got roughly a third of test transactions wrong in one independent test",
+    "trustScore": 3,
+    "pricingNote": "Typically $20-80/month depending on plan; several plans rose in price in 2026 — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://aiessentials.us/blog/whats-the-best-ai-powered-tool-for-small-business-accounting",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-04",
+    "accessNotes": "Independent comparison site; cross-check the accuracy caveat against a second source before publishing",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-882bcfa7fa",
+    "slug": "scan-and-log-a-client-s-receipts-for-a-monthly-expense-report",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA preparing a client's monthly expense report",
+    "title": "scan and log a client's receipts for a monthly expense report",
+    "intentLabels": [
+      "receipt scanning",
+      "expense report",
+      "SmartScan",
+      "expense tracking"
+    ],
+    "tools": [
+      {
+        "name": "Expensify",
+        "url": "https://receiptor.ai/blog/receiptor-ai-vs-expensify-email-receipt-scanning-compared-2026"
+      }
+    ],
+    "workflowSummary": "Photograph or forward each receipt; SmartScan pulls out the merchant, date, and amount automatically, and the expenses route through approval into a report ready for reimbursement or the client's books.",
+    "samplePrompt": "n/a — this task is primarily photo capture and approval inside the app rather than a text prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mobile-first, receipt capture takes seconds per item",
+    "trustScore": 4,
+    "pricingNote": "Collect plan $5/member/month; Control plan $9-36/member/month depending on billing/card — verified June 2026, still confirm before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://receiptor.ai/blog/receiptor-ai-vs-expensify-email-receipt-scanning-compared-2026",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-22",
+    "accessNotes": "Comparison published by a competitor (Receiptor AI); pricing for Expensify is cited as publicly available info — cross-check on Expensify's own pricing page",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-fcb4ae149b",
+    "slug": "write-a-client-s-blog-post-from-a-rough-outline",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA writing a blog post for a client from a rough outline",
+    "title": "write a client's blog post from a rough outline",
+    "intentLabels": [
+      "AI blog writer",
+      "content writing",
+      "long-form copy",
+      "brand voice"
+    ],
+    "tools": [
+      {
+        "name": "Jasper",
+        "url": "https://www.ryrob.com/ai-content-writing-tools/",
+        "catalogueSlug": "jasper"
+      }
+    ],
+    "workflowSummary": "Feed the outline and the client's brand voice guidelines into the tool; it produces a full first draft in the client's tone that you then fact-check and lightly edit before publishing.",
+    "samplePrompt": "Write a 900-word blog post from this outline for [Client]'s audience of small business owners. Match this brand voice: [paste 2-3 sample sentences]. Include an intro, 3 sections, and a short conclusion with a call-to-action.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "quality is strong but the tool has a real learning curve for brand-voice setup",
+    "trustScore": 4,
+    "pricingNote": "Creator plan around $49/month; Boss Mode/Pro tiers higher — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.ryrob.com/ai-content-writing-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-08-08",
+    "accessNotes": "Independent comparison site; confirm current pricing on Jasper's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-f5d298d6b8",
+    "slug": "put-together-an-seo-content-brief-before-a-writer-starts-a-blog",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA supporting a client's content marketing with SEO-ready briefs",
+    "title": "put together an SEO content brief before a writer starts a blog post",
+    "intentLabels": [
+      "SEO content brief",
+      "keyword research",
+      "content optimization",
+      "SERP analysis"
+    ],
+    "tools": [
+      {
+        "name": "Frase.io",
+        "url": "https://similarlabs.com/blog/best-ai-blog-writing-tools-seo"
+      }
+    ],
+    "workflowSummary": "Enter the target keyword; the tool researches what's already ranking and builds a structured brief with headings, questions to answer, and word count target for the writer to follow.",
+    "samplePrompt": "Build a content brief for the keyword '[keyword]' — include suggested headings, 5 questions the article should answer, competitor word count average, and 3 internal linking opportunities.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once you're comfortable with basic SEO concepts",
+    "trustScore": 4,
+    "pricingNote": "Basic $38/month (1 user, 15 projects); Professional $98/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://similarlabs.com/blog/best-ai-blog-writing-tools-seo",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-02-12",
+    "accessNotes": "Independent comparison site; confirm current pricing on Frase's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-624bed2fbf",
+    "slug": "research-a-competitor-or-topic-quickly-with-real-citable-sources",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA researching a topic or competitor for a client quickly",
+    "title": "research a competitor or topic quickly with real, citable sources",
+    "intentLabels": [
+      "AI research assistant",
+      "sourced answers",
+      "competitive research",
+      "fact-checking"
+    ],
+    "tools": [
+      {
+        "name": "Perplexity AI",
+        "url": "https://www.secondtalent.com/resources/perplexity-ai-features-capabilities-2026/"
+      }
+    ],
+    "workflowSummary": "Ask a plain-language research question; the tool searches the live web and returns a synthesized answer with inline citations you can click through to verify, instead of you opening a dozen tabs.",
+    "samplePrompt": "What are the current pricing tiers and standout features of [competitor]'s product, based on their own site and any 2026 reviews? Cite each claim.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational interface, no setup",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid Pro tier for deeper/unlimited research — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.secondtalent.com/resources/perplexity-ai-features-capabilities-2026/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent guide; confirm current pricing on Perplexity's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-9db95bb85a",
+    "slug": "pull-data-from-a-website-into-a-spreadsheet-without-copying-and",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA doing repetitive web-based data entry for a client",
+    "title": "pull data from a website into a spreadsheet without copying and pasting",
+    "intentLabels": [
+      "web scraping",
+      "data extraction automation",
+      "lead list building",
+      "spreadsheet automation"
+    ],
+    "tools": [
+      {
+        "name": "Bardeen",
+        "url": "https://sfailabs.com/guides/best-no-code-ai-tools-business"
+      }
+    ],
+    "workflowSummary": "Describe the task in plain English — for example, pulling contact details from a list of company websites — and the tool builds a repeatable automation that extracts the data and exports it straight into a spreadsheet.",
+    "samplePrompt": "n/a — this task is built as a point-and-click automation inside the tool rather than a single text prompt",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the automation builder is easy to start, but multi-step scrapers take some trial and error to get exactly right",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited automations; paid from around $10/month for unlimited use — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://sfailabs.com/guides/best-no-code-ai-tools-business",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-02-06",
+    "accessNotes": "Independent comparison site; confirm current pricing and automation limits on Bardeen's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-4b0bc59e90",
+    "slug": "translate-a-client-document-or-email-into-another-language",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA handling correspondence or documents for a client with international contacts",
+    "title": "translate a client document or email into another language",
+    "intentLabels": [
+      "document translation",
+      "business translation",
+      "multilingual email",
+      "formatted PDF translation"
+    ],
+    "tools": [
+      {
+        "name": "DeepL",
+        "url": "https://omidsaffari.com/blog/best-ai-translator"
+      }
+    ],
+    "workflowSummary": "Upload the document or paste the text; the tool translates it while preserving formatting (tables, headers) for DOCX, PPTX, and PDF files, which matters for anything you're handing back to a client.",
+    "samplePrompt": "Translate this client email into formal business French. Keep the tone professional and preserve the paragraph structure.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop or paste, no setup",
+    "trustScore": 4,
+    "pricingNote": "Free tier (500,000 chars/month web); Starter $10.49/mo; Advanced $34.49/mo; Ultimate $68.99/mo — verified August 2026, still confirm before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://omidsaffari.com/blog/best-ai-translator",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-08-09",
+    "accessNotes": "Independent comparison site; prices verified against vendor pages by the publisher on 2026-08-05",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-d5bc0809d6",
+    "slug": "write-a-job-posting-that-attracts-good-applicants",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA helping a small business owner hire for an open role",
+    "title": "write a job posting that attracts good applicants",
+    "intentLabels": [
+      "job description generator",
+      "job posting",
+      "hiring ad",
+      "recruiting copy"
+    ],
+    "tools": [
+      {
+        "name": "Factorial",
+        "url": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/"
+      }
+    ],
+    "workflowSummary": "Describe the role and must-have skills; the built-in generator drafts a complete job posting, which you can then post directly since recruiting and onboarding sit in the same platform.",
+    "samplePrompt": "Write a job posting for a part-time bookkeeper role, remote, 10 hours/week, requiring QuickBooks experience. Friendly but professional tone, under 250 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Small/mid-business pricing not published in this pass — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~2 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; confirm current pricing and plan tiers on Factorial's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-15d210ffaf",
+    "slug": "screen-job-applicants-and-shortlist-the-strongest-resumes",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA helping a small business owner shortlist applicants for an open role",
+    "title": "screen job applicants and shortlist the strongest resumes",
+    "intentLabels": [
+      "resume screening",
+      "applicant shortlist",
+      "candidate ranking",
+      "ATS"
+    ],
+    "tools": [
+      {
+        "name": "Factorial",
+        "url": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/"
+      }
+    ],
+    "workflowSummary": "Applicants apply through one pipeline; AI ranks each resume against the job requirements you set, so instead of reading every application you start with a pre-sorted shortlist to review.",
+    "samplePrompt": "n/a — ranking happens automatically inside the platform against the job criteria you configure, rather than through a single text prompt",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "set-up of screening criteria takes some care, and AI rankings still need a human sanity-check for fairness",
+    "trustScore": 3,
+    "pricingNote": "Small/mid-business pricing not published in this pass — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://peoplemanagingpeople.com/tools/best-ai-resume-screening-software/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~2 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; AI screening can encode bias from historical hiring data — review shortlists for fairness before advancing candidates",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-016dff341a",
+    "slug": "turn-one-blog-post-into-social-captions-an-email-and-a-short",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "Content VA repurposing one piece of content into several formats",
+    "title": "turn one blog post into social captions, an email, and a short summary",
+    "intentLabels": [
+      "content repurposing",
+      "multi-format content",
+      "one-to-many content",
+      "atomization"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://www.browse-ai.tools/blog/jasper-vs-copyai-vs-writesonic-best-ai-writing-tool-2026",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Paste the source blog post or transcript; the tool's workflow templates generate a set of shorter derivative pieces — captions, an email blurb, a summary — in one pass instead of rewriting each by hand.",
+    "samplePrompt": "Turn this 900-word blog post into: 3 LinkedIn post variations, 1 short email teaser, and a 2-sentence summary for a newsletter. Keep the tone consistent with the original post.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "generous free tier good for trying the workflow templates",
+    "trustScore": 3,
+    "pricingNote": "Free tier; Pro plan around $49/month for unlimited words — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.browse-ai.tools/blog/jasper-vs-copyai-vs-writesonic-best-ai-writing-tool-2026",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-01-17",
+    "accessNotes": "Independent comparison site; confirm current pricing on Copy.ai's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-a0696b4e27",
+    "slug": "build-a-searchable-internal-wiki-so-client-knowledge-doesn-t",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA who fields the same client questions because answers live in scattered docs and chats",
+    "title": "build a searchable internal wiki so client knowledge doesn't just live in my head",
+    "intentLabels": [
+      "knowledge base",
+      "internal wiki",
+      "team documentation",
+      "searchable notes"
+    ],
+    "tools": [
+      {
+        "name": "Notion (with Notion AI)",
+        "url": "https://sfailabs.com/guides/best-no-code-ai-tools-business"
+      }
+    ],
+    "workflowSummary": "Centralize client preferences, SOPs, and notes in one workspace; Notion AI can draft first-pass pages, summarize long threads into a note, and answer questions about what's already in the workspace instead of you searching manually.",
+    "samplePrompt": "Summarize everything in this workspace about [Client]'s brand guidelines and content approval process into one reference page, under 200 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "familiar note-taking interface, AI features layered on top",
+    "trustScore": 3,
+    "pricingNote": "Free personal plan; paid team tiers around $20/user/month for AI features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://sfailabs.com/guides/best-no-code-ai-tools-business",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-02-06",
+    "accessNotes": "Independent comparison site; confirm current AI-feature pricing on Notion's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-62045fa13d",
+    "slug": "check-the-tone-and-grammar-of-client-facing-copy-before-i-send",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA proofreading and polishing client-facing copy before it goes out",
+    "title": "check the tone and grammar of client-facing copy before I send it",
+    "intentLabels": [
+      "proofreading",
+      "tone check",
+      "grammar checker",
+      "style editing"
+    ],
+    "tools": [
+      {
+        "name": "Grammarly",
+        "url": "https://storychief.io/blog/ai-writing-tool",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Paste in a draft email, post, or document; the tool flags grammar and clarity issues and suggests tone adjustments so the final copy matches the intended audience before it goes to the client or their customers.",
+    "samplePrompt": "Review this client email for grammar and clarity, and suggest tone adjustments to make it sound more warm and less formal, without changing the core message.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browser extension and web app, minimal setup",
+    "trustScore": 4,
+    "pricingNote": "Free tier covers basic grammar/clarity checks; paid tiers add tone detection and full rewrites — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://storychief.io/blog/ai-writing-tool",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-01-14",
+    "accessNotes": "Independent comparison site; confirm current pricing on Grammarly's own site",
+    "batch": "VirtualAssistants AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-1f99a31e40",
+    "slug": "write-and-send-a-client-s-newsletter-without-starting-from-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA sending a weekly or monthly newsletter for a client",
+    "title": "write and send a client's newsletter without starting from a blank page",
+    "intentLabels": [
+      "email newsletter",
+      "email marketing",
+      "AI subject lines",
+      "send-time optimization"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp (or Brevo for a tighter budget)",
+        "url": "https://wicxo.com/ai-email-marketing-tools/"
+      }
+    ],
+    "workflowSummary": "Draft the newsletter content with the built-in AI writing assistant, let the tool suggest a subject line based on what's driven opens before, and schedule the send for the time it predicts will perform best for this list.",
+    "samplePrompt": "Draft a monthly newsletter for [Client]'s subscribers: a short update on what's new, 2 blog post highlights with one-line teasers, and a closing call-to-action. Friendly, concise tone, under 300 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan available and template library makes first sends easy",
+    "trustScore": 4,
+    "pricingNote": "Mailchimp: free tier plus paid from low double digits per month, rises with list size; Brevo: more generous free tier — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://wicxo.com/ai-email-marketing-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-08-08",
+    "accessNotes": "Independent comparison site; confirm current pricing on Mailchimp's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-177ef6ec9b",
+    "slug": "generate-ad-creatives-for-a-client-s-facebook-or-instagram",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA producing paid ad creative for a client running Meta/Google ads",
+    "title": "generate ad creatives for a client's Facebook or Instagram campaign",
+    "intentLabels": [
+      "ad creative generator",
+      "paid social ads",
+      "ad copy",
+      "ad performance scoring"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://sascribe.com/posts/2026-03-31-adcreative-ai-comparison-1774994382306/",
+        "catalogueSlug": "adcreative-ai"
+      }
+    ],
+    "workflowSummary": "Upload the client's brand kit and product images; the tool generates multiple ad variations and scores each one on predicted performance before any ad spend goes out, so you launch with a shortlist instead of guessing.",
+    "samplePrompt": "Generate 5 static ad variations for [Client]'s [product] using our brand colors and this product photo, each with a different headline angle: urgency, social proof, discount, benefit-led, and question-led.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once you understand basic ad performance concepts",
+    "trustScore": 3,
+    "pricingNote": "Pricing tiers range widely by plan, Professional tier cited around $141/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://sascribe.com/posts/2026-03-31-adcreative-ai-comparison-1774994382306/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-03-31",
+    "accessNotes": "Publisher discloses affiliate links — confirm current pricing on AdCreative.ai's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-ba978e5706",
+    "slug": "design-a-social-graphic-or-marketing-flyer-without-a-designer",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA producing everyday marketing graphics for a client's brand",
+    "title": "design a social graphic or marketing flyer without a designer",
+    "intentLabels": [
+      "graphic design",
+      "marketing asset",
+      "social media graphic",
+      "brand kit design"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Studio)",
+        "url": "https://www.adstellar.ai/blog/ai-ad-creative-tool-vs-designer",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Upload the client's brand kit once; use Magic Design to generate layout options from a prompt, Magic Media for images, and Magic Resize to adapt one design across every platform's dimensions automatically.",
+    "samplePrompt": "Design an Instagram post announcing [Client]'s weekend sale, using our brand colors and logo, with bold text for '20% OFF' and a clean, modern layout.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the most accessible AI design tool for non-designers",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; Canva Pro from $15/month unlocks most AI features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.adstellar.ai/blog/ai-ad-creative-tool-vs-designer",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-07",
+    "accessNotes": "Independent comparison site; confirm current pricing on Canva's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-693c4067e7",
+    "slug": "edit-a-client-s-podcast-or-webinar-recording-and-pull-out",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA turning a client's long-form recording into usable content",
+    "title": "edit a client's podcast or webinar recording and pull out shareable clips",
+    "intentLabels": [
+      "podcast editing",
+      "video editing",
+      "transcript-based editing",
+      "clip repurposing"
+    ],
+    "tools": [
+      {
+        "name": "Descript",
+        "url": "https://www.switchtools.io/tool/descript",
+        "catalogueSlug": "descript"
+      }
+    ],
+    "workflowSummary": "Upload the recording; the tool transcribes it automatically, removes filler words and dead air with one click, and lets you cut the video by deleting text in the transcript instead of scrubbing a timeline. AI Actions then generate show notes and short social clips from the same file.",
+    "samplePrompt": "From this podcast transcript, write show notes (150 words), 3 possible episode titles, and identify 3 quotable moments that would work well as short social clips.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "text-based editing is far more approachable than a traditional timeline editor",
+    "trustScore": 4,
+    "pricingNote": "Free tier (1 hour transcription/month); paid individual and team plans add more hours, 4K export, and advanced AI features — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.switchtools.io/tool/descript",
+    "sourceType": "Product directory listing",
+    "freshness": "2026-05-04",
+    "accessNotes": "Third-party tool directory; confirm current pricing on Descript's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-331e831afe",
+    "slug": "respond-to-a-client-s-google-reviews-without-writing-each-one",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing a client's online reputation across review platforms",
+    "title": "respond to a client's Google reviews without writing each one by hand",
+    "intentLabels": [
+      "review response",
+      "reputation management",
+      "Google reviews",
+      "review monitoring"
+    ],
+    "tools": [
+      {
+        "name": "Podium",
+        "url": "https://epiphanydynamics.ai/blog/best-ai-tools-for-review-management/"
+      }
+    ],
+    "workflowSummary": "Connect the client's Google Business Profile and other review sources; the tool pulls in new reviews, drafts a personalized response matched to the client's tone, and lets you approve or lightly edit before it posts.",
+    "samplePrompt": "Draft a response to this 2-star Google review about a late delivery. Apologize sincerely, avoid sounding defensive, and invite the reviewer to email us directly to resolve it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drafts are editable before posting, so no risk of an unreviewed AI reply going out",
+    "trustScore": 3,
+    "pricingNote": "Multi-location/agency-oriented tools in this category often start around $300+/month; lighter single-purpose tools exist from ~$10/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://epiphanydynamics.ai/blog/best-ai-tools-for-review-management/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-04",
+    "accessNotes": "Independent comparison site published by an AI automation agency; confirm current pricing on Podium's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-1e97406a00",
+    "slug": "run-a-cold-email-outreach-campaign-to-generate-leads-for-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA running cold outreach for a client's lead generation",
+    "title": "run a cold email outreach campaign to generate leads for a client",
+    "intentLabels": [
+      "cold email",
+      "outbound sales",
+      "email sequences",
+      "lead generation automation"
+    ],
+    "tools": [
+      {
+        "name": "Instantly.ai",
+        "url": "https://woodpecker.co/blog/instantly-ai-pricing/"
+      }
+    ],
+    "workflowSummary": "Upload or build a prospect list, write a sequence with AI-suggested variations to avoid spam filters, and let the platform warm up sending inboxes and manage follow-ups automatically across the campaign.",
+    "samplePrompt": "Write a 3-email cold outreach sequence for [Client]'s service, targeting small business owners. Email 1: introduce the problem and solution. Email 2: social proof. Email 3: short breakup email. Keep each under 100 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "deliverability and inbox warmup need some upfront setup to avoid landing in spam",
+    "trustScore": 3,
+    "pricingNote": "Growth plan from roughly $37-47/month depending on billing; lead-database and CRM add-ons are priced separately — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://woodpecker.co/blog/instantly-ai-pricing/",
+    "sourceType": "Blog / Comparison guide (published by a competitor)",
+    "freshness": "2026-06-23",
+    "accessNotes": "Published by Woodpecker, a competing product — cross-check pricing claims against Instantly's own pricing page",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-17f4fbaa76",
+    "slug": "build-a-landing-page-for-a-client-s-promotion-without-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA building a landing page for a client's promotion or lead magnet",
+    "title": "build a landing page for a client's promotion without a developer",
+    "intentLabels": [
+      "landing page builder",
+      "campaign page",
+      "lead capture page",
+      "AI page generation"
+    ],
+    "tools": [
+      {
+        "name": "Leadpages",
+        "url": "https://www.anygen.io/showcase/best-ai-landing-page-builders/index.html"
+      }
+    ],
+    "workflowSummary": "Describe the offer and let the AI-assisted builder generate a first-draft page with copy and layout, then customize the template, connect the client's email list, and publish without touching code.",
+    "samplePrompt": "Write landing page copy for a free downloadable checklist offer aimed at small business owners: a headline, 3 benefit bullets, and a short call-to-action for the email opt-in form.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for small-business lead capture, no traffic-volume threshold needed to get value",
+    "trustScore": 3,
+    "pricingNote": "Grow plan around $49/month for the first 3 months, then roughly $99/month; no traffic caps — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.anygen.io/showcase/best-ai-landing-page-builders/index.html",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (pricing accessed 2026-06-25)",
+    "accessNotes": "Independent comparison site; confirm current pricing on Leadpages' own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-ed65fd90cb",
+    "slug": "set-up-an-ai-receptionist-so-a-client-stops-missing-calls-after",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA setting up a small business client to stop losing leads from missed calls",
+    "title": "set up an AI receptionist so a client stops missing calls after hours",
+    "intentLabels": [
+      "AI receptionist",
+      "missed call recovery",
+      "virtual phone answering",
+      "call handling"
+    ],
+    "tools": [
+      {
+        "name": "Synthflow",
+        "url": "https://www.happyrobot.ai/hub/synthflow-reviews-and-pricing"
+      }
+    ],
+    "workflowSummary": "Build a no-code voice agent that answers every call, books appointments straight into the client's calendar, and texts the business owner a summary — so after-hours and busy-period calls get handled instead of going to voicemail.",
+    "samplePrompt": "Write a greeting script for an AI phone receptionist for a plumbing business: confirm the caller's name and issue, offer to book an appointment, and let them know a technician will confirm within the hour.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "no-code setup, but a full working receptionist usually needs a separate booking tool and CRM connected on top",
+    "trustScore": 3,
+    "pricingNote": "Usage-based, roughly $0.11-0.16/minute all-in before add-ons; flat-rate entry plans from other vendors in this category start around $29-49/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.happyrobot.ai/hub/synthflow-reviews-and-pricing",
+    "sourceType": "Blog / Review",
+    "freshness": "2026-08-07",
+    "accessNotes": "Independent review site; confirm current pricing on Synthflow's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-eee54b7a4c",
+    "slug": "record-a-quick-tutorial-video-for-a-client-instead-of-writing-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA sending a client a quick walkthrough instead of a meeting",
+    "title": "record a quick tutorial video for a client instead of writing a long email",
+    "intentLabels": [
+      "screen recording",
+      "async video",
+      "video messaging",
+      "client walkthrough"
+    ],
+    "tools": [
+      {
+        "name": "Loom",
+        "url": "https://www.arcade.software/post/loom-pricing"
+      }
+    ],
+    "workflowSummary": "Hit record, walk through the screen while narrating, and share the link instead of scheduling a call or writing a long explanation. On the AI-enabled tier, the tool also generates a written summary and chapter markers so the client can skim instead of watching the whole thing.",
+    "samplePrompt": "n/a — this task is a spoken screen recording rather than a text prompt; if using the AI tier, you might ask: 'Generate a written summary and 3 action items from this recording.'",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "record-and-share takes under 2 minutes",
+    "trustScore": 4,
+    "pricingNote": "Starter free (25 videos, 5-min cap); Business ~$15-18/user/month; Business + AI ~$20-24/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.arcade.software/post/loom-pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-18",
+    "accessNotes": "Independent guide; every figure linked to its source per the publisher — confirm current pricing on Loom's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-2e5e3e1623",
+    "slug": "collect-customer-feedback-or-run-a-quick-survey-for-a-client",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA collecting client or customer feedback for a business owner",
+    "title": "collect customer feedback or run a quick survey for a client",
+    "intentLabels": [
+      "survey builder",
+      "feedback form",
+      "customer feedback",
+      "form builder"
+    ],
+    "tools": [
+      {
+        "name": "Typeform",
+        "url": "https://www.usercall.co/post/typeform-pricing"
+      }
+    ],
+    "workflowSummary": "Build a short, conversational form that shows one question at a time (which lifts completion rates versus a traditional form); AI can help draft the questions and summarize open-text responses into themes once results come in.",
+    "samplePrompt": "Write 5 short survey questions to collect feedback after a client's product purchase: satisfaction, likelihood to recommend, and 2 open-ended questions about what could be better.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI form builder drafts a first version from a short description",
+    "trustScore": 3,
+    "pricingNote": "Paid plans with hard monthly response caps, roughly $25-29/month (100 responses) up to $83-99/month (10,000 responses) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.usercall.co/post/typeform-pricing",
+    "sourceType": "Blog / Review",
+    "freshness": "2026 (~1 month old at time of search)",
+    "accessNotes": "Independent review site; response caps are a hard wall on this tool — confirm current limits before recommending for high-volume use",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-f6e23c22f9",
+    "slug": "catch-up-on-a-busy-client-slack-channel-without-reading-every",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing team or client communication across busy Slack channels",
+    "title": "catch up on a busy client Slack channel without reading every message",
+    "intentLabels": [
+      "Slack search",
+      "channel summary",
+      "thread summary",
+      "catch-up digest"
+    ],
+    "tools": [
+      {
+        "name": "Slack AI",
+        "url": "https://clearfeed.ai/blogs/slack-ai"
+      }
+    ],
+    "workflowSummary": "Instead of scrolling a channel with dozens of unread messages, use 'Summarize channel' or 'Summarize thread' to get a condensed version with citations back to the original messages, or set up a daily recap of the most important channels.",
+    "samplePrompt": "n/a — this task runs through Slack's built-in menu options (Summarize channel/thread) rather than a typed prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one click from the channel menu, no setup beyond having the plan that includes it",
+    "trustScore": 3,
+    "pricingNote": "Basic summaries free on any paid Slack plan (from $7.25/user/month); full AI search and recaps require Business+ (~$15-18/user/month) — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://clearfeed.ai/blogs/slack-ai",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-05-29",
+    "accessNotes": "Independent comparison site; confirm current plan gating on Slack's own pricing page, as AI features have moved between tiers in the past year",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-d5e0cea2ba",
+    "slug": "write-an-seo-friendly-etsy-listing-title-and-description-for-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing product listings for a client's Etsy shop",
+    "title": "write an SEO-friendly Etsy listing title and description for a client's product",
+    "intentLabels": [
+      "Etsy SEO",
+      "listing optimization",
+      "product title generator",
+      "tags and keywords"
+    ],
+    "tools": [
+      {
+        "name": "Roketfy",
+        "url": "https://craftybase.com/blog/best-ai-for-etsy-listings"
+      }
+    ],
+    "workflowSummary": "Describe the product; the AI Writer generates a title, description, and tags modeled on what's currently performing in Etsy search, and a separate Listing Checker grades existing listings and flags specific fixes.",
+    "samplePrompt": "Write an Etsy listing for a handmade ceramic mug: an SEO-friendly title under 140 characters, a 150-word description, and 13 tags, in a warm, handmade-craft tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided, built specifically for Etsy's search algorithm rather than generic copywriting",
+    "trustScore": 3,
+    "pricingNote": "Hobby plan $29.99/month; Professional plan $49.99/month, with discounts on annual billing — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://craftybase.com/blog/best-ai-for-etsy-listings",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-03-24",
+    "accessNotes": "Independent comparison site; confirm current pricing on Roketfy's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-d0f03ebd4a",
+    "slug": "make-a-training-or-explainer-video-without-filming-a-real",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA producing a training or explainer video for a client without filming anyone",
+    "title": "make a training or explainer video without filming a real presenter",
+    "intentLabels": [
+      "AI avatar video",
+      "explainer video",
+      "training video",
+      "text-to-video presenter"
+    ],
+    "tools": [
+      {
+        "name": "Synthesia",
+        "url": "https://www.arcade.software/post/synthesia-pricing",
+        "catalogueSlug": "synthesia"
+      }
+    ],
+    "workflowSummary": "Paste a script, pick an AI avatar and language, and the tool generates a full presenter-style video with synchronized lip movement — useful for onboarding or explainer content that needs regular updates without re-filming.",
+    "samplePrompt": "Turn this onboarding script into a 3-minute training video with a professional-looking presenter avatar, in English, with on-screen text highlighting each key step.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no camera, microphone, or actor needed; free tier lets you test before paying",
+    "trustScore": 3,
+    "pricingNote": "Free (10 min/month, watermarked); Starter ~$18-29/month; Creator ~$64-89/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.arcade.software/post/synthesia-pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-04-15",
+    "accessNotes": "Independent comparison site; confirm current pricing and minute allowances on Synthesia's own site",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-3c36e74695",
+    "slug": "write-and-optimize-a-client-s-amazon-product-listing-to-rank",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing product listings for a client's Amazon shop",
+    "title": "write and optimize a client's Amazon product listing to rank and convert better",
+    "intentLabels": [
+      "Amazon listing optimization",
+      "keyword research",
+      "Rufus AI search",
+      "A9 algorithm"
+    ],
+    "tools": [
+      {
+        "name": "Helium 10 (Listing Builder)",
+        "url": "https://epinium.com/en/blog/amazon-listing-tools/"
+      }
+    ],
+    "workflowSummary": "Enter the product's core facts (name, features, audience, brand voice); the tool combines this with keyword research from its own database to generate a title, bullet points, and backend search terms designed for both traditional Amazon search and its Rufus AI shopping assistant.",
+    "samplePrompt": "Using these product facts and target keywords, write an Amazon listing: a keyword-rich title, 5 benefit-led bullet points, and backend search terms under 250 bytes.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once paired with the platform's keyword research tools, which have their own learning curve",
+    "trustScore": 3,
+    "pricingNote": "Free plan with limited tools; Platinum ~$99-129/month; Diamond ~$279-359/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://epinium.com/en/blog/amazon-listing-tools/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; notes Helium 10 raised prices and retired its lower tier in April 2026 — confirm current pricing before publishing",
+    "batch": "VirtualAssistants AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-bbfb9ac3f2",
+    "slug": "get-a-new-client-s-onboarding-paperwork-signed-without-chasing",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA sending a new client their first proposal, contract, and invoice",
+    "title": "get a new client's onboarding paperwork signed without chasing them by email",
+    "intentLabels": [
+      "e-signature",
+      "client onboarding documents",
+      "proposal and contract",
+      "document tracking"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://bindlegal.com/resources/comparisons/pandadoc-pricing-2026/"
+      }
+    ],
+    "workflowSummary": "Build the proposal, contract, and payment request from a reusable template, send it as one document, and track in real time when the client opens, views, and signs it — no separate email chain to manage.",
+    "samplePrompt": "Draft a client onboarding packet: a one-page service agreement for a monthly retainer, a payment schedule section, and a signature block, in a friendly but professional tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop templates, no legal background needed for standard documents",
+    "trustScore": 4,
+    "pricingNote": "Free plan (5 docs/month, e-sign only); Starter $19/user/month; Business $49/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://bindlegal.com/resources/comparisons/pandadoc-pricing-2026/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-10",
+    "accessNotes": "Independent comparison site; several add-ons (API, bulk send, notarization) cost extra — confirm current pricing on PandaDoc's own site",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-efc0d92fe7",
+    "slug": "get-a-first-pass-review-of-a-contract-before-a-client-signs-it",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA supporting a client who needs a vendor or client contract reviewed before signing",
+    "title": "get a first-pass review of a contract before a client signs it",
+    "intentLabels": [
+      "contract review",
+      "redlining",
+      "risk flagging",
+      "clause benchmarking"
+    ],
+    "tools": [
+      {
+        "name": "Spellbook",
+        "url": "https://www.datastudios.org/post/spellbook-ai-contract-drafting-inside-word-playbook-enforcement-and-pricing-explained"
+      }
+    ],
+    "workflowSummary": "Upload the contract inside Microsoft Word; the tool flags clauses that deviate from standard market terms, suggests redlines as tracked changes, and lets a human reviewer accept, edit, or reject every suggestion before anything is final.",
+    "samplePrompt": "Review this vendor services agreement and flag any non-standard terms around liability, termination notice period, and auto-renewal, with a plain-language note on why each one matters.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "built for lawyers and transactional legal work, so a VA would use it strictly for first-pass flagging, not as a substitute for legal advice",
+    "trustScore": 2,
+    "pricingNote": "Sources disagree sharply — figures range from $20 to $199+/user/month depending on the source; treat any single number with caution and get a direct quote — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.datastudios.org/post/spellbook-ai-contract-drafting-inside-word-playbook-enforcement-and-pricing-explained",
+    "sourceType": "Blog / Review",
+    "freshness": "2026 (~1 week old at time of search)",
+    "accessNotes": "Independent review explicitly notes conflicting published pricing across sources; this is a legal-adjacent task — flag to the client that AI review is not a substitute for a lawyer",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-7af165ed6f",
+    "slug": "create-a-privacy-policy-and-cookie-consent-banner-for-a-client",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA setting up privacy compliance for a client's website or online store",
+    "title": "create a privacy policy and cookie consent banner for a client's website",
+    "intentLabels": [
+      "privacy policy generator",
+      "GDPR compliance",
+      "CCPA compliance",
+      "cookie consent"
+    ],
+    "tools": [
+      {
+        "name": "Termly",
+        "url": "https://allaboutcookies.org/termly-review"
+      }
+    ],
+    "workflowSummary": "Answer a short guided questionnaire about what data the client's site collects; the tool generates a privacy policy and cookie banner covering GDPR, CCPA, and other major privacy laws, and updates the policy automatically as those laws change.",
+    "samplePrompt": "n/a — this task runs through Termly's guided questionnaire rather than a typed prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "plain-language questionnaire, no legal background needed, takes about 10 minutes",
+    "trustScore": 4,
+    "pricingNote": "Free tier (1 policy, Termly branding); paid plans from $10/website/month remove branding and add unlimited policies — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://allaboutcookies.org/termly-review",
+    "sourceType": "Blog / Review",
+    "freshness": "2026-04-29",
+    "accessNotes": "Independent review site; confirm current pricing on Termly's own site",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-fe2eb06fe0",
+    "slug": "automate-shipping-labels-and-order-tracking-for-a-client-s",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA managing order fulfillment for a client's online store",
+    "title": "automate shipping labels and order tracking for a client's online store",
+    "intentLabels": [
+      "shipping automation",
+      "order fulfillment",
+      "label printing",
+      "multi-channel shipping"
+    ],
+    "tools": [
+      {
+        "name": "ShipStation",
+        "url": "https://www.g2.com/products/shipstation/pricing"
+      }
+    ],
+    "workflowSummary": "Connect the client's sales channels (Shopify, Etsy, Amazon, etc.); the tool pulls in new orders automatically, applies routing rules to pick the right carrier and service, and generates discounted shipping labels in batches instead of one at a time.",
+    "samplePrompt": "n/a — this task is configuration (connecting stores, setting automation rules) rather than a text prompt",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of automation rules takes some care, but day-to-day use is straightforward",
+    "trustScore": 4,
+    "pricingNote": "Starter ~$9.99-14.99/month (50 shipments); Standard ~$29.99/month; higher tiers scale with shipment volume — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.g2.com/products/shipstation/pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (recent, undated)",
+    "accessNotes": "Third-party review aggregator; confirm current pricing on ShipStation's own site",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-5beb3497e6",
+    "slug": "show-a-client-whether-they-ll-have-enough-cash-for-an-upcoming",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA helping a client understand whether they can afford an upcoming expense",
+    "title": "show a client whether they'll have enough cash for an upcoming expense",
+    "intentLabels": [
+      "cash flow forecasting",
+      "what-if scenario planning",
+      "budget vs actual"
+    ],
+    "tools": [
+      {
+        "name": "Float",
+        "url": "https://dynamicbusiness.com/featured/tech-tuesday/tech-tuesday-the-best-cash-flow-forecasting-tools-in-2026.html"
+      }
+    ],
+    "workflowSummary": "Connect the client's accounting software; the tool projects cash position day-by-day up to three years out and lets you model 'what-if' scenarios — like hiring someone or losing a client — to see the cash impact before the client commits.",
+    "samplePrompt": "n/a — this task runs through Float's scenario-modeling interface rather than a typed prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "visual, easy to read even without an accounting background",
+    "trustScore": 3,
+    "pricingNote": "Plans from roughly $49/month scaling to $179/month depending on features — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://dynamicbusiness.com/featured/tech-tuesday/tech-tuesday-the-best-cash-flow-forecasting-tools-in-2026.html",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-03-31",
+    "accessNotes": "Independent comparison site; confirm current pricing on Float's own site",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-ea67a991cb",
+    "slug": "set-up-event-registration-and-a-landing-page-for-a-client-s",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA setting up a webinar or in-person event for a client",
+    "title": "set up event registration and a landing page for a client's workshop or webinar",
+    "intentLabels": [
+      "event registration",
+      "webinar signup",
+      "ticketing",
+      "event page builder"
+    ],
+    "tools": [
+      {
+        "name": "Eventbrite",
+        "url": "https://www.jotform.com/blog/event-registration-software/"
+      }
+    ],
+    "workflowSummary": "Use the AI event page generator to draft a header image and event summary from a short description, then fill in the date, location, and agenda; the platform also handles ticketing, promo codes, and basic email marketing to registrants.",
+    "samplePrompt": "Write an event description for a free 60-minute workshop on [topic] aimed at small business owners, including 3 bullet points on what attendees will learn.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI-generated event pages are usable for small, low-pressure events with minimal editing",
+    "trustScore": 3,
+    "pricingNote": "Per-ticket fee model rather than a flat subscription; free events are free to list — verify current fee structure before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.jotform.com/blog/event-registration-software/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; notes the AI generator is best for small/low-pressure events, not viable for more serious gatherings without heavy editing",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-3ccbe1669b",
+    "slug": "build-a-searchable-employee-handbook-with-training-new-hires",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA building out a growing client's employee handbook and onboarding training",
+    "title": "build a searchable employee handbook with training new hires actually complete",
+    "intentLabels": [
+      "employee handbook",
+      "onboarding training",
+      "LMS",
+      "policy documentation with tracking"
+    ],
+    "tools": [
+      {
+        "name": "Trainual",
+        "url": "https://www.layer3labs.io/guides/trainual-pricing"
+      }
+    ],
+    "workflowSummary": "Use the built-in AI SOP generator to turn a described process into a first-draft lesson, organize lessons into role-based training paths, and track exactly which employees have completed and tested on each policy — unlike a static document, it shows who actually did the training.",
+    "samplePrompt": "Turn this description of our client onboarding process into a step-by-step training lesson with a 3-question quiz at the end to check understanding.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once a client has enough employees to need tracked, repeatable training rather than a single shared doc",
+    "trustScore": 3,
+    "pricingNote": "Flat monthly fees by team size, roughly $199-299/month for up to 50-100 employees; Trainual doesn't always publish current pricing — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.layer3labs.io/guides/trainual-pricing",
+    "sourceType": "Blog / Review",
+    "freshness": "2026-07-22",
+    "accessNotes": "Independent review site; pricing not always public — confirm current rates directly with Trainual",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-8943392d95",
+    "slug": "triage-internal-it-support-tickets-so-nothing-important-gets",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA handling internal tech support requests for a small team",
+    "title": "triage internal IT support tickets so nothing important gets missed",
+    "intentLabels": [
+      "IT helpdesk",
+      "ticket triage",
+      "support ticketing",
+      "internal tech support"
+    ],
+    "tools": [
+      {
+        "name": "Freshdesk (with Freddy AI Copilot)",
+        "url": "https://www.helpdesk.com/blog/freshdesk-pricing/"
+      }
+    ],
+    "workflowSummary": "Route incoming support requests into one ticketing queue; Freddy AI auto-categorizes and prioritizes tickets and drafts a suggested reply based on the ticket content and past responses, so routine requests (password resets, access requests) get resolved faster.",
+    "samplePrompt": "Draft a reply to this internal support ticket about a locked account: confirm the request was received, explain the reset will take under 30 minutes, and ask for a preferred contact method for the temporary password.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "core ticketing is straightforward, but the AI add-ons (Copilot, AI Agent sessions) have a genuinely complex, usage-based pricing structure worth budgeting carefully",
+    "trustScore": 3,
+    "pricingNote": "Core ticketing from $19/agent/month (Growth); Freddy AI Copilot adds $29/agent/month; AI Agent sold in session packs (~$49-100/100 sessions) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.helpdesk.com/blog/freshdesk-pricing/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; multiple sources flag the AI add-on costs as easy to underestimate — budget the full stack, not just the seat price",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-cbedf91188",
+    "slug": "onboard-a-new-international-contractor-for-a-client-with",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA onboarding a new independent contractor for a client with international hires",
+    "title": "onboard a new international contractor for a client with compliant paperwork and payments",
+    "intentLabels": [
+      "contractor onboarding",
+      "global payroll compliance",
+      "international contractor payments"
+    ],
+    "tools": [
+      {
+        "name": "Deel",
+        "url": "https://www.gloroots.com/blog/deel-pricing"
+      }
+    ],
+    "workflowSummary": "Set up the contractor's profile and compliant contract through the platform; it handles classification compliance, invoicing, and automated payouts in the contractor's local currency, so the client doesn't have to research employment law in every country they hire from.",
+    "samplePrompt": "n/a — this task is account and contract setup inside Deel's platform rather than a typed prompt",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup is guided, but understanding which product (contractor management vs. Employer of Record) fits the hire takes some research first",
+    "trustScore": 3,
+    "pricingNote": "Contractor management pricing is inconsistently reported across sources (some cite ~$49/contractor/month, Deel's own current pricing page reportedly lists it as free) — confirm directly with Deel before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.gloroots.com/blog/deel-pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~1 month old at time of search)",
+    "accessNotes": "Independent comparison site explicitly flags conflicting pricing between review sources and Deel's own site — do not quote a number to a client without checking Deel directly",
+    "batch": "VirtualAssistants AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-d41a19e47c",
+    "slug": "book-a-restaurant-reservation-or-handle-a-quick-online-errand",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "Executive assistant handling personal errands for the person they support",
+    "title": "book a restaurant reservation or handle a quick online errand for an executive",
+    "intentLabels": [
+      "AI browsing agent",
+      "personal errand",
+      "online booking",
+      "agentic browser"
+    ],
+    "tools": [
+      {
+        "name": "Perplexity Comet",
+        "url": "https://www.secondtalent.com/resources/perplexity-ai-features-capabilities-2026/"
+      }
+    ],
+    "workflowSummary": "Describe the errand in plain language (book a table, fill out a form, compare a few options); the agentic browser navigates the actual websites and completes multi-step tasks like booking or form-filling, instead of the assistant doing each click by hand.",
+    "samplePrompt": "Find a table for 4 at a highly-rated Italian restaurant near [location] this Friday at 7:30pm and book it under [name].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational instructions, no setup beyond having the browser installed",
+    "trustScore": 3,
+    "pricingNote": "Free on all platforms as of its 2025-2026 rollout — verify current availability before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.secondtalent.com/resources/perplexity-ai-features-capabilities-2026/",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~3 weeks old at time of search)",
+    "accessNotes": "Independent guide; agentic browsing is a newer capability — confirm current reliability and availability before recommending for time-sensitive bookings",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-5bb17791e1",
+    "slug": "write-and-distribute-a-press-release-for-a-client-s-product",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA handling PR for a small business client with news to announce",
+    "title": "write and distribute a press release for a client's product launch or milestone",
+    "intentLabels": [
+      "press release writing",
+      "PR distribution",
+      "media syndication"
+    ],
+    "tools": [
+      {
+        "name": "Prowly (Semrush AI PR Toolkit)",
+        "url": "https://pressranger.com/blog/best-press-release-distribution-service"
+      }
+    ],
+    "workflowSummary": "Draft the release with AI assistance, tap the built-in media database to target relevant journalists by beat, and distribute through the platform instead of writing from scratch and building a press list by hand.",
+    "samplePrompt": "Write a press release announcing [client]'s new product launch: a headline, a 2-sentence lead paragraph, a quote from the founder, and a boilerplate company description, in an announcement tone under 400 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI draft is a strong starting point, but press releases still benefit from a human editing pass for newsworthiness",
+    "trustScore": 3,
+    "pricingNote": "Subscriptions from $29-$119/month for the software; this is a relationship-and-software tool, not a guaranteed-placement wire service — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://pressranger.com/blog/best-press-release-distribution-service",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Independent comparison site; notes Prowly is software for pitching, not a distribution wire with guaranteed placements — set client expectations accordingly",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-448abc27ba",
+    "slug": "find-and-respond-to-journalist-requests-looking-for-an-expert",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA looking for press coverage opportunities for a client who wants to be quoted as an expert",
+    "title": "find and respond to journalist requests looking for an expert source",
+    "intentLabels": [
+      "journalist source requests",
+      "HARO alternative",
+      "expert commentary",
+      "media opportunities"
+    ],
+    "tools": [
+      {
+        "name": "Qwoted",
+        "url": "https://medialyst.ai/compare/qwoted"
+      }
+    ],
+    "workflowSummary": "Browse or get matched to live journalist queries in the client's area of expertise, then pitch directly through the platform; the vetting process on both sides keeps request quality higher than open, ungated alternatives.",
+    "samplePrompt": "Write a 100-word pitch responding to this journalist request about [topic], positioning [client] as the expert source, with one specific, quotable insight rather than generic commentary.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browsing and pitching requires no technical setup",
+    "trustScore": 3,
+    "pricingNote": "Free tier (2 pitches/month, 2-hour response delay); Pro $99/month annual ($149/month) for 35 pitches — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://medialyst.ai/compare/qwoted",
+    "sourceType": "Blog / Comparison guide (published by a competitor)",
+    "freshness": "2026-06-16",
+    "accessNotes": "Published by a competing product; pricing is stated as pulled from Qwoted's own public pricing page — cross-check directly with Qwoted before publishing",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-b7bf0e9ff1",
+    "slug": "get-a-client-booked-as-a-guest-on-relevant-podcasts",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA booking podcast guest appearances for a client building their personal brand",
+    "title": "get a client booked as a guest on relevant podcasts",
+    "intentLabels": [
+      "podcast guest booking",
+      "guest matching",
+      "podcast PR",
+      "interview booking"
+    ],
+    "tools": [
+      {
+        "name": "PodMatch",
+        "url": "https://www.podseeker.co/blog/podseeker-vs-podmatch"
+      }
+    ],
+    "workflowSummary": "Build a detailed guest profile with the client's expertise, topics, and sample questions; an algorithm sends daily host matches to review and message, instead of manually searching and cold-pitching podcasts one by one.",
+    "samplePrompt": "Write a podcast guest one-sheet for [client]: a short bio, 3 topics they can speak on, and 3 sample interview questions a host could ask.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "profile setup takes under an hour, matches arrive automatically after that",
+    "trustScore": 3,
+    "pricingNote": "Standard $32/month; Professional $64/month; Agency plan $64/month for 2 managed clients plus $32/month per additional client — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.podseeker.co/blog/podseeker-vs-podmatch",
+    "sourceType": "Blog / Comparison guide (published by a competitor)",
+    "freshness": "2026-08-31",
+    "accessNotes": "Published by a competing product but researched from PodMatch's own public pricing page per the publisher's methodology note",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-241bc15677",
+    "slug": "run-payroll-for-a-client-s-small-team-and-stay-on-top-of-tax",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA running payroll for a client's small team",
+    "title": "run payroll for a client's small team and stay on top of tax filing deadlines",
+    "intentLabels": [
+      "payroll processing",
+      "tax filing automation",
+      "payroll compliance"
+    ],
+    "tools": [
+      {
+        "name": "Gusto",
+        "url": "https://www.spotsaas.com/blog/gusto-pricing"
+      }
+    ],
+    "workflowSummary": "Run payroll on autopilot on a set schedule; the built-in Cofounder AI assistant flags unusual payroll activity, tracks upcoming tax deadlines, and can answer plain-language questions about a specific pay run without you digging through reports.",
+    "samplePrompt": "n/a — running payroll and reviewing AI-flagged anomalies happens inside Gusto's dashboard rather than through a typed prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for non-specialists, unlimited payroll runs with automatic tax filing",
+    "trustScore": 4,
+    "pricingNote": "Simple $49/month + $6/employee/month; Plus $80/month + $12/employee/month; Premium ~$180/month + $22/employee/month — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.spotsaas.com/blog/gusto-pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026 (~2 weeks old at time of search)",
+    "accessNotes": "Independent comparison site; confirm current pricing on Gusto's own site, as rates rose in March 2026",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-832eabeea0",
+    "slug": "find-grant-opportunities-and-draft-a-grant-application-for-a",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA helping a small nonprofit client find and apply for grant funding",
+    "title": "find grant opportunities and draft a grant application for a client",
+    "intentLabels": [
+      "grant writing",
+      "grant discovery",
+      "RFP analysis",
+      "nonprofit funding"
+    ],
+    "tools": [
+      {
+        "name": "Grantable",
+        "url": "https://grantable.co/guides/ai-grant-writing-tools"
+      }
+    ],
+    "workflowSummary": "The tool researches funders that match the client's mission and screens their public filings for fit, then helps draft the proposal against the specific RFP requirements — checking the draft against what the funder actually asks for instead of writing blind.",
+    "samplePrompt": "Analyze this RFP and list every required section, the word or page limit for each, and any eligibility requirements I need to confirm before we start drafting.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once you understand the basics of how grant proposals are structured",
+    "trustScore": 3,
+    "pricingNote": "Free tier (funder discovery, basic AI); Starter $50/month; Pro $150/month; nonprofit discount available for orgs under $500K budget — verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://grantable.co/guides/ai-grant-writing-tools",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-06-01",
+    "accessNotes": "Published by the vendor evaluating its own product alongside others — cross-check claims against an independent source before publishing",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-b9c61b6741",
+    "slug": "track-a-client-s-competitors-pricing-and-marketing-moves",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA keeping a client informed about what their competitors are doing",
+    "title": "track a client's competitors' pricing and marketing moves without checking manually",
+    "intentLabels": [
+      "competitive intelligence",
+      "competitor monitoring",
+      "pricing tracking"
+    ],
+    "tools": [
+      {
+        "name": "Kompyte",
+        "url": "https://www.autobound.ai/blog/top-15-competitive-intelligence-tools-2026"
+      }
+    ],
+    "workflowSummary": "Set up automated tracking on a handful of named competitors; the tool monitors their websites, pricing pages, and marketing content for changes and delivers a digest instead of you manually revisiting each competitor's site every week.",
+    "samplePrompt": "Summarize what changed on [competitor]'s pricing page and homepage messaging this month, and flag anything that looks like a new feature or price change.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "much lower setup and cost than enterprise CI platforms, suited to a small business tracking a handful of named competitors",
+    "trustScore": 3,
+    "pricingNote": "Cited around $99/month at the low end, up to roughly $800/month for fuller monitoring — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.autobound.ai/blog/top-15-competitive-intelligence-tools-2026",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-02-20",
+    "accessNotes": "Independent comparison site; enterprise alternatives (Klue, Crayon) run $15K-40K/year and are not a fit for typical VA-supported small business clients",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "virtual-assistants-17cd65cab5",
+    "slug": "register-a-new-llc-or-file-a-trademark-application-for-a-client",
+    "kind": "workflow",
+    "niche": "Virtual Assistants",
+    "sector": "Virtual Assistants",
+    "persona": "VA helping a client register a new business or protect a trademark",
+    "title": "register a new LLC or file a trademark application for a client",
+    "intentLabels": [
+      "business formation",
+      "LLC registration",
+      "trademark filing",
+      "registered agent"
+    ],
+    "tools": [
+      {
+        "name": "LegalZoom",
+        "url": "https://checkthat.ai/brands/legalzoom/pricing"
+      }
+    ],
+    "workflowSummary": "Answer a guided questionnaire about the client's business; the platform prepares and files the formation paperwork (or trademark application, with attorney review) with the state or USPTO, instead of the client learning the filing process themselves.",
+    "samplePrompt": "n/a — this task runs through LegalZoom's guided questionnaire and attorney-reviewed filing process rather than a typed prompt",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided step-by-step process, no legal background needed for standard filings",
+    "trustScore": 2,
+    "pricingNote": "LLC formation from $0 + state filing fees; Pro $249, Premium $299; trademark filing $899 + USPTO fees; registered agent $249/year (renewal rates can run higher) — verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://checkthat.ai/brands/legalzoom/pricing",
+    "sourceType": "Blog / Comparison guide",
+    "freshness": "2026-05-20",
+    "accessNotes": "Independent comparison site flags that several services (registered agent, compliance plan) auto-renew at higher rates than the intro price — this is a guided/attorney-assisted service rather than an AI-driven workflow, worth noting for the client",
+    "batch": "VirtualAssistants AI Workflows Batch5",
+    "status": "active"
+  }
+]

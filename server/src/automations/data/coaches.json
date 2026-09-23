@@ -1,0 +1,2326 @@
+[
+  {
+    "id": "coaches-5f0b735efc",
+    "slug": "how-do-i-get-notes-from-my-coaching-call-without-typing-them",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Solo life/business coach running 5-30 active clients over video calls",
+    "title": "How do I get notes from my coaching call without typing them myself?",
+    "intentLabels": [
+      "session notes",
+      "call transcription",
+      "meeting notes",
+      "auto session summary",
+      "transcribe coaching call"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://otter.ai/",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Otter joins your Zoom, Google Meet, or Teams call, transcribes everything in real time, and hands you a summary with decisions and action items already pulled out right after the call ends.",
+    "samplePrompt": "Summarize this coaching session transcript into: the client's stated goal, 3 key insights from the conversation, obstacles they mentioned, the commitment/action item they agreed to, and the focus for next session.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "runs automatically once connected to your calendar, no setup beyond linking your video app.",
+    "trustScore": 4,
+    "pricingNote": "Free plan with limited monthly transcription minutes; paid plans add longer/more meetings - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://otter.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product/marketing page, no login needed to view. Don't reproduce site copy verbatim in client-facing material.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-2afcbb886e",
+    "slug": "is-there-a-note-taking-ai-that-won-t-send-my-client-s-private",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants session summaries to stay private because client conversations are sensitive",
+    "title": "Is there a note-taking AI that won't send my client's private conversation to the cloud?",
+    "intentLabels": [
+      "private meeting notes",
+      "on-device transcription",
+      "confidential session notes",
+      "GDPR-friendly notetaker"
+    ],
+    "tools": [
+      {
+        "name": "Hedy AI",
+        "url": "https://www.hedy.ai/post/ai-note-taker-coaching-practice-guide/"
+      }
+    ],
+    "workflowSummary": "Hedy's Coaching & Mentoring mode listens on your own device during the session (not the cloud), suggests follow-up questions in real time, and writes a structured summary afterward, built with client confidentiality in mind.",
+    "samplePrompt": "Turn on Coaching & Mentoring mode, note this client's stated development goal, any recurring theme from past sessions, and generate 3 powerful follow-up questions I could ask before the session ends.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires understanding on-device vs. cloud settings and getting explicit client consent before recording.",
+    "trustScore": 4,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.hedy.ai/post/ai-note-taker-coaching-practice-guide/",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "July 16, 2026",
+    "accessNotes": "Public blog post on vendor's domain. Recording any client call requires the client's explicit consent regardless of tool used.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-c8c24292c7",
+    "slug": "what-software-actually-tracks-my-client-s-homework-and-progress",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach running a structured practice with multiple active clients who wants one place for scheduling, notes, and progress",
+    "title": "What software actually tracks my client's homework and progress between sessions?",
+    "intentLabels": [
+      "client accountability tracker",
+      "homework tracking",
+      "progress metrics",
+      "coaching CRM",
+      "between-session tracking"
+    ],
+    "tools": [
+      {
+        "name": "CoachAccountable",
+        "url": "https://psychology.com/coaching-software/"
+      }
+    ],
+    "workflowSummary": "CoachAccountable gives each client a portal where they see assigned action items and log progress on metrics you set (like 'sleep hours' or 'sales calls made'), so you walk into every session already knowing what happened since the last one.",
+    "samplePrompt": "Set up an action item for [Client Name] due before our next session: [action], and a metric they log daily for [goal, e.g. weekly outreach calls].",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most powerful once you set up program templates, so there is a learning curve up front.",
+    "trustScore": 4,
+    "pricingNote": "Paid tiers scale with client count; check current pricing page - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://psychology.com/coaching-software/",
+    "sourceType": "Directory/Ranking",
+    "freshness": "July 28, 2026",
+    "accessNotes": "Public comparison article. Re-verify pricing figures on CoachAccountable's own site before quoting to a customer.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-6a1a261957",
+    "slug": "how-do-i-let-clients-book-and-pay-for-a-coaching-package",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants to sell packages and stop chasing scheduling and payment manually",
+    "title": "How do I let clients book and pay for a coaching package without me sending invoices manually?",
+    "intentLabels": [
+      "sell coaching packages",
+      "booking and payment in one",
+      "client self-checkout",
+      "coaching store"
+    ],
+    "tools": [
+      {
+        "name": "Paperbell",
+        "url": "https://psychology.com/coaching-software/life-coaching-software"
+      }
+    ],
+    "workflowSummary": "Paperbell lets a client pick a package, sign your contract, pay, and book their first session in one flow on a link you send them, with no separate invoice or calendar step from you.",
+    "samplePrompt": "Setup task, not an AI prompt: Create a package named [name], with [number] sessions at [price]. Attach my standard coaching contract and connect my calendar availability.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "flat monthly price, guided setup, no coding.",
+    "trustScore": 4,
+    "pricingNote": "Flat ~$57/month (or ~$570/year), no free plan, 30-day money-back guarantee - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://psychology.com/coaching-software/life-coaching-software",
+    "sourceType": "Directory/Ranking",
+    "freshness": "July 28, 2026",
+    "accessNotes": "Public review page. Reconfirm price on Paperbell's own pricing page before publishing to a customer.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-7fd8d4192f",
+    "slug": "i-want-to-send-my-clients-guided-exercises-to-do-between-our",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants to give clients guided exercises to do between sessions",
+    "title": "I want to send my clients guided exercises to do between our sessions",
+    "intentLabels": [
+      "coaching homework",
+      "client activities",
+      "between-session engagement",
+      "coaching pathways"
+    ],
+    "tools": [
+      {
+        "name": "Quenza",
+        "url": "https://quenza.com/"
+      }
+    ],
+    "workflowSummary": "Quenza lets you build or pick from 400+ ready-made activities (reflections, worksheets, assessments) and automatically send them to a client's app on a schedule you set, so the coaching continues between calls.",
+    "samplePrompt": "Setup task: Build a 4-step pathway for a new client - welcome message, values assessment, weekly reflection prompt, goal check-in.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "activity builder has a learning curve, but templates speed it up.",
+    "trustScore": 4,
+    "pricingNote": "From ~$25/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://quenza.com/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-0f4d8ef7c7",
+    "slug": "how-do-i-turn-my-coaching-framework-into-a-self-paced-online",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who has run 1:1 coaching for a while and wants to package their method into a paid course",
+    "title": "How do I turn my coaching framework into a self-paced online course?",
+    "intentLabels": [
+      "build online course",
+      "turn coaching into course",
+      "course creator AI",
+      "curriculum builder"
+    ],
+    "tools": [
+      {
+        "name": "Coursebox",
+        "url": "https://www.coursebox.ai/"
+      }
+    ],
+    "workflowSummary": "Coursebox takes a document or topic description you give it and drafts a complete course outline and content, which you then edit by chatting with the AI - no instructional design background needed.",
+    "samplePrompt": "Create a course outline from this coaching framework: [paste your method/notes]. Structure it into 5 modules for a beginner audience, each with a short lesson and one practice exercise.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor describes it as usable by anyone who can write a message.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.coursebox.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page. Vendor claims (ratings, awards) should be independently verified before repeating to a customer.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-8905e71586",
+    "slug": "i-have-hours-of-workshop-recordings-how-do-i-turn-them-into",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants to repurpose a recorded workshop or session into short social clips or podcast episodes",
+    "title": "I have hours of workshop recordings - how do I turn them into social media clips?",
+    "intentLabels": [
+      "repurpose video content",
+      "video editing AI",
+      "turn recordings into clips",
+      "content repurposing for coaches"
+    ],
+    "tools": [
+      {
+        "name": "Descript",
+        "url": "https://pickaxe.co/post/ai-tools-for-coaches",
+        "catalogueSlug": "descript"
+      }
+    ],
+    "workflowSummary": "Descript lets you edit video/audio by editing the text transcript - delete a sentence in the transcript and it cuts that part of the video - and it can auto-generate short clips and remove filler words for you.",
+    "samplePrompt": "From this session transcript, find the 3 most quotable 30-60 second moments that would work as standalone social clips, and mark the timestamps.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "text-based editing is built for non-editors.",
+    "trustScore": 4,
+    "pricingNote": "Free plan with limited export minutes; Hobbyist ~$12/mo, Creator ~$22/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://pickaxe.co/post/ai-tools-for-coaches",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 16, 2026",
+    "accessNotes": "Public blog article. Reconfirm pricing on Descript's own site.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-5c5e08f1b3",
+    "slug": "i-need-a-professional-coaching-website-but-i-don-t-know-how-to",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach without a website who needs one live quickly to look credible",
+    "title": "I need a professional coaching website but I don't know how to build one",
+    "intentLabels": [
+      "website builder for coaches",
+      "AI website generator",
+      "coach website",
+      "done-for-you coach site"
+    ],
+    "tools": [
+      {
+        "name": "SiteForge",
+        "url": "https://gigapress.net/ai-website-builder-for-coaches/"
+      }
+    ],
+    "workflowSummary": "SiteForge generates a complete website (about page, discovery-call funnel, testimonials section, group-program page) in about 15 minutes from a description of your coaching business, no designer needed.",
+    "samplePrompt": "Build a website for a [niche, e.g. burnout recovery] coach targeting [audience]. Include an about page, a free discovery call booking page, a testimonials section, and a lead magnet opt-in.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to design, no credit card required per the source.",
+    "trustScore": 3,
+    "pricingNote": "Free to design, no credit card required - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://gigapress.net/ai-website-builder-for-coaches/",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 8, 2026",
+    "accessNotes": "Public blog article, not the vendor's own page. Verify claims on SiteForge's own site.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-0861e54b22",
+    "slug": "i-want-a-landing-page-for-my-free-discovery-call-that-actually",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach running paid ads or a discovery-call funnel who needs a page that converts",
+    "title": "I want a landing page for my free discovery call that actually converts visitors into bookings",
+    "intentLabels": [
+      "coaching landing page",
+      "discovery call funnel page",
+      "opt-in page builder",
+      "AI landing page generator"
+    ],
+    "tools": [
+      {
+        "name": "Leadpages",
+        "url": "https://leadpages.com/"
+      }
+    ],
+    "workflowSummary": "Leadpages turns a plain description of your offer into a live, branded landing page in about 60 seconds, then keeps testing headline and layout variations against each other to improve the booking rate automatically.",
+    "samplePrompt": "Build a landing page for a free 20-minute discovery call for [coaching niche]. Headline should speak to [main client pain point]. Include a calendar booking button and 3 testimonial slots.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-sentence prompt generates the first draft.",
+    "trustScore": 3,
+    "pricingNote": "Plans start at ~$99/month, no free plan mentioned - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://leadpages.com/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-daf17fe267",
+    "slug": "how-do-i-create-a-free-pdf-guide-to-give-away-in-exchange-for",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants to grow an email list with a free downloadable resource",
+    "title": "How do I create a free PDF guide to give away in exchange for email signups?",
+    "intentLabels": [
+      "lead magnet generator",
+      "free PDF opt-in",
+      "ebook creator",
+      "checklist generator for coaches"
+    ],
+    "tools": [
+      {
+        "name": "Venngage (AI Lead Magnet Generator)",
+        "url": "https://venngage.com/ai-tools/lead-magnet-generator"
+      }
+    ],
+    "workflowSummary": "You describe your brand and topic, Venngage's AI writes the copy and headlines and lays it out in an ebook/checklist/guide template, then you export it as a branded PDF ready to attach to your opt-in form.",
+    "samplePrompt": "Create a 5-page checklist lead magnet titled '[Title]' for [target audience], covering: [3-5 key points]. Tone: warm and encouraging, no jargon.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop editor, no design skill needed.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited credits, paid plans for more - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://venngage.com/ai-tools/lead-magnet-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-e7689987cc",
+    "slug": "how-do-i-get-my-website-to-answer-common-client-questions",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who gets the same handful of questions from prospects and wants their site to answer automatically",
+    "title": "How do I get my website to answer common client questions automatically, even when I'm asleep?",
+    "intentLabels": [
+      "FAQ chatbot",
+      "website AI assistant",
+      "24/7 client questions bot",
+      "no-code chatbot"
+    ],
+    "tools": [
+      {
+        "name": "Jotform AI Chatbot",
+        "url": "https://www.jotform.com/ai/chatbot/"
+      }
+    ],
+    "workflowSummary": "You train the chatbot on your existing FAQ page, pricing info, and policies (no coding), embed one snippet on your website, and it answers visitor questions instantly, handing off to you for anything it can't answer.",
+    "samplePrompt": "Setup task: Train this chatbot on my FAQ page and pricing page. When someone asks something outside those pages, have it collect their email and say a coach will follow up.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no shortcodes or coding required, per the source.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available with usage limits - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.jotform.com/ai/chatbot/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-7a63caab59",
+    "slug": "i-want-to-send-a-weekly-newsletter-to-my-audience-but-i-don-t",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who knows they should send a regular newsletter but always runs out of time to write one",
+    "title": "I want to send a weekly newsletter to my audience but I don't have time to write it from scratch every week",
+    "intentLabels": [
+      "AI newsletter writer",
+      "email newsletter generator",
+      "coach email marketing",
+      "weekly content for subscribers"
+    ],
+    "tools": [
+      {
+        "name": "Beehiiv AI",
+        "url": "https://www.growbo.com/best-ai-writing-tools/"
+      }
+    ],
+    "workflowSummary": "Beehiiv's built-in AI writing assistant drafts your newsletter structure and copy right inside the platform you already send from, so you add your personal story or client win and publish instead of starting from a blank page.",
+    "samplePrompt": "Draft this week's coaching newsletter: open with a short personal note about [recent theme], give one practical tip on [topic], and close with one question inviting replies.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best results come from adding a personal story yourself rather than letting AI write the whole thing, per the source.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with subscriber limits; paid plans scale with list size - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.growbo.com/best-ai-writing-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "August 27, 2025",
+    "accessNotes": "Public blog article, not the vendor's own page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-b3105aa455",
+    "slug": "i-need-to-send-a-professional-invoice-to-a-coaching-client-and",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Solo coach or freelancer who wants to look professional and get paid faster without accounting software",
+    "title": "I need to send a professional invoice to a coaching client and don't want to pay for software just for that",
+    "intentLabels": [
+      "free invoicing software",
+      "send invoice online",
+      "get paid faster",
+      "freelance billing"
+    ],
+    "tools": [
+      {
+        "name": "Wave",
+        "url": "https://www.waveapps.com/invoicing"
+      }
+    ],
+    "workflowSummary": "Wave creates a professional, branded invoice with your logo in a few clicks, tracks whether it's been viewed and paid, and can send automatic payment reminders, all on its free plan.",
+    "samplePrompt": "Setup task: Create an invoice for [Client Name]: [number of sessions] coaching sessions at [rate], due in 14 days, with a reminder if unpaid after the due date.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for freelancers and small businesses with no accounting background.",
+    "trustScore": 3,
+    "pricingNote": "Free invoicing; payment processing fees apply - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.waveapps.com/invoicing",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d73a7a83bf",
+    "slug": "how-do-i-get-new-clients-to-fill-out-an-intake-form-before-our",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach onboarding a new client who wants their goals and history before the first session",
+    "title": "How do I get new clients to fill out an intake form before our first session?",
+    "intentLabels": [
+      "client intake form",
+      "coaching onboarding form",
+      "new client questionnaire",
+      "pre-session form"
+    ],
+    "tools": [
+      {
+        "name": "Jotform (Life Coach Intake Form template)",
+        "url": "https://www.jotform.com/form-templates/life-coach-intake-form"
+      }
+    ],
+    "workflowSummary": "Jotform gives you a ready-made life-coach intake form template (goals, contact info, appointment picker, e-signature) that you customize with your branding and send as a link, with submissions landing in one dashboard.",
+    "samplePrompt": "Setup task: Customize the Life Coach Intake Form template - add questions on the client's main goal, biggest obstacle, and preferred session time. Add my logo and brand colors.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop, pre-built template covers most of the work.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available with Jotform branding; paid removes branding - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.jotform.com/form-templates/life-coach-intake-form",
+    "sourceType": "Product page (template page)",
+    "freshness": "May 11, 2026",
+    "accessNotes": "Public template page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-6001d144a9",
+    "slug": "i-want-a-month-of-social-media-posts-planned-out-for-my",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants a consistent Instagram/social presence without spending hours planning posts weekly",
+    "title": "I want a month of social media posts planned out for my coaching business without doing it all manually",
+    "intentLabels": [
+      "social media content calendar",
+      "AI post planner",
+      "Instagram scheduler for coaches",
+      "content batching"
+    ],
+    "tools": [
+      {
+        "name": "Later",
+        "url": "https://quso.ai/blog/social-media-automation-tools-for-coaches"
+      }
+    ],
+    "workflowSummary": "Later's visual calendar lets you drag posts onto a grid to preview your Instagram feed before it goes live, generates AI captions and hashtag suggestions, and auto-publishes on schedule across your platforms.",
+    "samplePrompt": "Suggest 12 Instagram post ideas for a [coaching niche] coach this month, mixing client wins, tips, and behind-the-scenes, with a caption draft for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plan available, drag-and-drop calendar.",
+    "trustScore": 3,
+    "pricingNote": "Free plan (limited); paid plans for more accounts/posts - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://quso.ai/blog/social-media-automation-tools-for-coaches",
+    "sourceType": "Blog/Guide",
+    "freshness": "March 5, 2026",
+    "accessNotes": "Public blog article, not Later's own page. Verify current pricing on Later's site.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d5d693ec80",
+    "slug": "how-do-i-get-more-client-testimonials-without-manually-chasing",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with happy clients who never think to leave a review or testimonial unless asked",
+    "title": "How do I get more client testimonials without manually chasing every happy client?",
+    "intentLabels": [
+      "automated testimonial requests",
+      "review collection tool",
+      "client feedback automation",
+      "social proof for coaches"
+    ],
+    "tools": [
+      {
+        "name": "Senja",
+        "url": "https://stackmention.com/blogs/ai-testimonial-feedback-collection-software/"
+      }
+    ],
+    "workflowSummary": "Senja sends an automatic request (video, text, or audio) after a milestone you define, like completing a program, and uses AI to turn the response into ready-to-embed testimonial captions and widgets for your website.",
+    "samplePrompt": "Setup task: Send a testimonial request to any client whose program status changes to 'Completed', asking what result they got and what almost stopped them from starting.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "described as one of the more popular, straightforward AI testimonial platforms.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://stackmention.com/blogs/ai-testimonial-feedback-collection-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "November 8, 2025",
+    "accessNotes": "Public blog article, not the vendor's own page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-aa1e410355",
+    "slug": "i-want-to-write-a-one-line-positioning-statement-that-describes",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose 'I coach everyone' messaging isn't attracting the right clients",
+    "title": "I want to write a one-line positioning statement that describes exactly who I help and how",
+    "intentLabels": [
+      "niche positioning statement",
+      "coaching bio statement",
+      "ideal client messaging",
+      "brand messaging for coaches"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.forbes.com/sites/jodiecook/2026/02/18/5-chatgpt-prompts-to-become-the-obvious-choice-in-your-industry/",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "You describe your background, who you've helped, and the transformation you deliver, and ChatGPT drafts several versions of a short positioning statement for your bio, website, or sales page, then you pick and refine the one that sounds like you.",
+    "samplePrompt": "I'm a coach who helps [specific audience] do [specific outcome] in [timeframe/context]. Write 5 versions of a one-sentence positioning statement I could use in my Instagram bio or website headline, each with a different angle.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires answering a few questions about your work honestly.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage/latest model - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.forbes.com/sites/jodiecook/2026/02/18/5-chatgpt-prompts-to-become-the-obvious-choice-in-your-industry/",
+    "sourceType": "Blog/Guide",
+    "freshness": "February 18, 2026",
+    "accessNotes": "Public article.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-6c501430a5",
+    "slug": "how-do-i-stop-clients-from-no-showing-on-booked-coaching-calls",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach losing money and time to clients who book a call and don't show up",
+    "title": "How do I stop clients from no-showing on booked coaching calls?",
+    "intentLabels": [
+      "reduce no-shows",
+      "appointment reminders",
+      "coaching call scheduling",
+      "automated booking reminders"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://calendly.com/"
+      }
+    ],
+    "workflowSummary": "Calendly lets clients book directly into your open slots, then automatically sends email and text reminders before the call and lets them reschedule themselves instead of no-showing silently; its AI assistant, Callie, can also handle finding a time by email.",
+    "samplePrompt": "Setup task: Set up a coaching call booking page with 2 reminder emails (24 hours and 2 hours before) and 1 text reminder, and require payment at booking for paid sessions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one of the most widely used scheduling tools, minimal setup.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; paid tiers add reminders/payments/routing - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://calendly.com/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-6616b05149",
+    "slug": "i-want-to-design-a-client-workbook-with-exercises-and",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants a printable or downloadable workbook for a group program or 1:1 clients",
+    "title": "I want to design a client workbook with exercises and worksheets but I'm not a designer",
+    "intentLabels": [
+      "coaching workbook design",
+      "worksheet creator",
+      "PDF workbook maker",
+      "client resource design"
+    ],
+    "tools": [
+      {
+        "name": "Piktochart",
+        "url": "https://piktochart.com/ai-lead-magnet-generator/"
+      }
+    ],
+    "workflowSummary": "You give Piktochart a topic and audience, its AI generates the checklist/worksheet/one-pager content and layout, and you tweak colors, fonts, and branding in the editor before exporting a print-ready PDF for clients.",
+    "samplePrompt": "Create a 6-page client workbook for a [program name] program, with a goal-setting worksheet, a weekly reflection page, and a progress tracker page.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop editor with monthly AI credits included.",
+    "trustScore": 3,
+    "pricingNote": "Free plan with 60 monthly AI credits - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://piktochart.com/ai-lead-magnet-generator/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "coaches-25fb8765e7",
+    "slug": "how-do-i-get-a-client-to-sign-my-coaching-agreement-without",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who needs a signed contract before starting work with a new client",
+    "title": "How do I get a client to sign my coaching agreement without printing or mailing anything?",
+    "intentLabels": [
+      "e-signature",
+      "digital contract",
+      "sign coaching agreement online",
+      "contract renewal reminders"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://paperbell.com/blog/electronic-signature-software/"
+      }
+    ],
+    "workflowSummary": "PandaDoc lets you build or upload your coaching contract, send it for signature by email, and the client signs on their phone or computer in a couple of minutes; it also reminds you when a recurring contract is coming up for renewal.",
+    "samplePrompt": "Setup task: Upload my standard coaching agreement, add a signature field for the client and me, and set a renewal reminder 30 days before the contract end date.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "draw, type, or upload your signature; drag-and-drop editor.",
+    "trustScore": 4,
+    "pricingNote": "14-day free trial, plans starting around $19/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://paperbell.com/blog/electronic-signature-software/",
+    "sourceType": "Blog/Guide (coach-focused)",
+    "freshness": "January 16, 2025",
+    "accessNotes": "Public blog article aimed at coaches, not the vendor's own page. Reconfirm current pricing on PandaDoc's own site.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-e9de11b154",
+    "slug": "how-do-i-stop-losing-money-on-tax-deductions-i-forgot-to-track",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Solo coach who is self-employed and dreads tracking receipts for tax season",
+    "title": "How do I stop losing money on tax deductions I forgot to track all year?",
+    "intentLabels": [
+      "tax deduction tracker",
+      "self-employed expense app",
+      "freelancer tax write-offs",
+      "quarterly tax help"
+    ],
+    "tools": [
+      {
+        "name": "Keeper Tax",
+        "url": "https://www.keepertax.com/posts/best-app-to-track-receipts-for-taxes"
+      }
+    ],
+    "workflowSummary": "Keeper's AI scans your linked bank and card accounts, flags business expenses as possible write-offs, and lets you accept or reject each one, then helps you file directly when tax time comes.",
+    "samplePrompt": "Setup task: Connect my business bank account and card, and flag any coaching-related software subscriptions, home office costs, and travel as potential write-offs for review.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for freelancers and gig workers with no accounting background.",
+    "trustScore": 4,
+    "pricingNote": "14-day free trial, then paid plans - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.keepertax.com/posts/best-app-to-track-receipts-for-taxes",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "February 4, 2026",
+    "accessNotes": "Public blog post on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-890ee90ae6",
+    "slug": "i-m-fully-booked-how-do-i-keep-a-waitlist-so-i-don-t-lose",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who is fully booked and doesn't want to lose interested prospects",
+    "title": "I'm fully booked - how do I keep a waitlist so I don't lose people who want to work with me?",
+    "intentLabels": [
+      "waitlist management",
+      "fully booked coach",
+      "queue new clients",
+      "notify when a spot opens"
+    ],
+    "tools": [
+      {
+        "name": "Waitlist App",
+        "url": "https://waitlistapp.org/"
+      }
+    ],
+    "workflowSummary": "Waitlist App lets prospects join a free digital waitlist for your coaching spots; when a current client finishes or cancels, you notify the next person on the list automatically instead of managing it in a spreadsheet or your head.",
+    "samplePrompt": "Setup task: Create a waitlist for 1:1 coaching spots. When a slot opens, notify the next 3 people on the list by text and email and give them 24 hours to claim it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no signup required to start, works offline.",
+    "trustScore": 3,
+    "pricingNote": "Free core plan; paid tiers add extra queues and features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://waitlistapp.org/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-bd8dd5073f",
+    "slug": "how-do-i-let-a-client-pay-for-my-6-000-program-in-3",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach selling a high-ticket package who wants to offer payment plans without chasing installments manually",
+    "title": "How do I let a client pay for my $6,000 program in 3 installments instead of all at once?",
+    "intentLabels": [
+      "payment plans",
+      "installment billing",
+      "recurring payments",
+      "split payment for coaching package"
+    ],
+    "tools": [
+      {
+        "name": "HoneyBook",
+        "url": "https://www.honeybook.com/blog/recurring-payments"
+      }
+    ],
+    "workflowSummary": "HoneyBook lets you set up a payment schedule when you send the proposal - split a package into a deposit plus installments - and it automatically charges the client's saved card on each due date and retries if a card fails.",
+    "samplePrompt": "Setup task: Create a payment schedule for a $6,000 coaching package: $2,000 deposit due at signing, then 2 monthly installments of $2,000, auto-charged to the client's card on file.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided proposal and payment setup, no coding.",
+    "trustScore": 4,
+    "pricingNote": "Three-tiered pricing starting around $16/month (annual) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.honeybook.com/blog/recurring-payments",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "January 28, 2026",
+    "accessNotes": "Public blog post on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-32a6d8fd3b",
+    "slug": "how-much-of-my-week-is-actually-billable-coaching-time-versus",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who bills some work hourly and wants to know where their week actually goes",
+    "title": "How much of my week is actually billable coaching time versus admin work?",
+    "intentLabels": [
+      "time tracking",
+      "billable vs admin hours",
+      "freelance time tracker",
+      "where does my time go"
+    ],
+    "tools": [
+      {
+        "name": "Toggl Track",
+        "url": "https://toggl.com/track/freelance-time-tracking/"
+      }
+    ],
+    "workflowSummary": "Toggl Track lets you start a one-click timer for each client or task, then shows a report splitting your week into billable coaching time versus non-billable admin (email, bookkeeping, marketing), so you can see where your hours are actually going.",
+    "samplePrompt": "Setup task: Track my time this week across 3 categories - client sessions, admin/email, and marketing - then show me the percentage split at the end of the week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "start a timer with one click; free plan covers unlimited projects and clients.",
+    "trustScore": 4,
+    "pricingNote": "Free plan for up to 5 users; paid plans from ~$9-10/user/month add billable rates and estimates - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://toggl.com/track/freelance-time-tracking/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-24dd1cef50",
+    "slug": "how-do-i-stop-my-inbox-from-taking-over-the-first-hour-of-my-day",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who gets 50+ emails a day and loses time triaging before they can start real work",
+    "title": "How do I stop my inbox from taking over the first hour of my day?",
+    "intentLabels": [
+      "email inbox triage",
+      "AI email sorting",
+      "inbox overwhelm",
+      "prioritize important emails"
+    ],
+    "tools": [
+      {
+        "name": "SaneBox",
+        "url": "https://www.sanebox.com/"
+      }
+    ],
+    "workflowSummary": "SaneBox connects to your existing Gmail or Outlook inbox and learns which senders matter to you, automatically moving newsletters and low-priority mail into a separate folder so only the emails that need your attention stay in your main inbox.",
+    "samplePrompt": "Setup task: Connect my email account and move anything that isn't from an active client, a referral partner, or a payment notification out of my main inbox into a folder I can check later.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works with your existing email client, nothing to install, initial sort is automatic.",
+    "trustScore": 4,
+    "pricingNote": "7-day free trial on each plan; paid plans required after trial - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.sanebox.com/",
+    "sourceType": "Product page",
+    "freshness": "September 6, 2026 (page checked)",
+    "accessNotes": "Public product page. SaneBox states it reads only headers and metadata, not email content - worth confirming this matches your client-confidentiality needs before connecting a client-facing inbox.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-c6acb8117e",
+    "slug": "i-do-this-task-the-same-way-every-time-how-do-i-turn-it-into",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants to hand off a repeatable task to a future assistant without writing it up from scratch",
+    "title": "I do this task the same way every time - how do I turn it into instructions I can hand off?",
+    "intentLabels": [
+      "SOP creation",
+      "standard operating procedure",
+      "process documentation",
+      "delegate a task"
+    ],
+    "tools": [
+      {
+        "name": "Scribe",
+        "url": "https://scribe.com/lp/scribe-ai"
+      }
+    ],
+    "workflowSummary": "Turn on the Scribe browser extension, go through the task once as you normally would, and Scribe automatically captures screenshots and writes step-by-step instructions - so you get a shareable SOP without typing anything.",
+    "samplePrompt": "Setup task: Record me going through [task, e.g. 'sending a new client their welcome packet'] once, then generate a step-by-step guide with screenshots I can share with a future assistant.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "click to start, do the task, click to stop; guide is generated automatically.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; paid plans add branding and advanced sharing - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://scribe.com/lp/scribe-ai",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-613f7a0c14",
+    "slug": "how-do-i-get-more-new-clients-from-referrals-without-manually",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with happy clients whose word-of-mouth referrals aren't being tracked or rewarded",
+    "title": "How do I get more new clients from referrals without manually asking and tracking who sent who?",
+    "intentLabels": [
+      "referral program",
+      "automate referrals",
+      "reward referring clients",
+      "word-of-mouth tracking"
+    ],
+    "tools": [
+      {
+        "name": "ReferralHero",
+        "url": "https://referralhero.com/industries/referral-program-for-small-business"
+      }
+    ],
+    "workflowSummary": "ReferralHero gives each client a unique referral link and automatically tracks who they refer, then triggers a reward - a discount, gift card, or free session - the moment a referral books a consultation, without you tracking any of it by hand.",
+    "samplePrompt": "Setup task: Set up a referral program that gives an existing client a free 30-minute session for every new client who books and pays for their first month, and send referring clients their link automatically after their 3rd session.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for small, service-based businesses; guided setup.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://referralhero.com/industries/referral-program-for-small-business",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-8d9297159d",
+    "slug": "i-want-to-hire-a-virtual-assistant-to-help-with-my-coaching",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who is finally ready to hire a virtual assistant but doesn't know how to write the job posting",
+    "title": "I want to hire a virtual assistant to help with my coaching business but don't know how to write the job post",
+    "intentLabels": [
+      "hire a VA",
+      "virtual assistant job description",
+      "job posting generator",
+      "delegate admin work"
+    ],
+    "tools": [
+      {
+        "name": "MyOutDesk (Job Description Generator)",
+        "url": "https://www.myoutdesk.com/tools/job-description-generator/"
+      }
+    ],
+    "workflowSummary": "You answer a few questions about your coaching business and the tasks you want off your plate, and the AI drafts a complete, ready-to-post job description for a virtual assistant, which you can download as a PDF and post immediately.",
+    "samplePrompt": "Setup task: Generate a job description for a part-time virtual assistant to handle email triage, calendar scheduling, and client intake forms for a solo coaching business.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no writing skills or hiring experience required, per the source.",
+    "trustScore": 3,
+    "pricingNote": "Free tool - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.myoutdesk.com/tools/job-description-generator/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-cb5abffb4e",
+    "slug": "how-do-i-keep-track-of-every-prospect-who-s-inquired-so-nobody",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose prospects are scattered across DMs, emails, and sticky notes and keeps losing track of who's interested",
+    "title": "How do I keep track of every prospect who's inquired so nobody falls through the cracks?",
+    "intentLabels": [
+      "lead pipeline",
+      "coaching CRM",
+      "track prospects",
+      "client inquiry management"
+    ],
+    "tools": [
+      {
+        "name": "Dubsado",
+        "url": "https://www.dubsado.com/capture-leads"
+      }
+    ],
+    "workflowSummary": "Dubsado gives you a lead capture form for your website that automatically creates a project the moment someone inquires, then tracks that lead through your pipeline (inquiry, proposal sent, booked) so you always know exactly who you're waiting to hear back from.",
+    "samplePrompt": "Setup task: Create a lead capture form for my discovery call inquiries, and set project statuses for Lead, Proposal Sent, and Booked so I can see my pipeline at a glance.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful automation once set up, but the initial workflow setup takes some time.",
+    "trustScore": 4,
+    "pricingNote": "Free trial limited to 3 clients; paid plans from around $20/month (monthly) - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.dubsado.com/capture-leads",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page. Vendor's own site confirms coaches are an established use case (intake forms, contracts, subscription payments, scheduling).",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-3259d7229f",
+    "slug": "i-want-to-write-an-actual-business-plan-with-financial",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who knows they need a real business plan but has never written one",
+    "title": "I want to write an actual business plan with financial projections for my coaching business",
+    "intentLabels": [
+      "business plan generator",
+      "financial projections",
+      "solopreneur business plan",
+      "coaching business roadmap"
+    ],
+    "tools": [
+      {
+        "name": "BizPlanr",
+        "url": "https://bizplanr.ai/"
+      }
+    ],
+    "workflowSummary": "You answer a short questionnaire about your coaching business, market, and pricing, and BizPlanr drafts a full business plan - executive summary, market analysis, marketing strategy, and a 3-year financial projection - which you can keep editing and export as a PDF.",
+    "samplePrompt": "Answer this about my coaching business: [niche, target audience, pricing, expected client volume]. Draft a one-page business plan with a simple 12-month revenue projection based on those numbers.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided questionnaire format, no financial modeling background needed.",
+    "trustScore": 3,
+    "pricingNote": "Free to start; Pro tier for rewriting sections and adding financials/visuals - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://bizplanr.ai/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-af1ac83025",
+    "slug": "how-do-i-get-all-my-client-documents-organized-in-one-place-i",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with client PDFs, contracts, and session notes scattered across their laptop, email, and phone",
+    "title": "How do I get all my client documents organized in one place I can actually find things in?",
+    "intentLabels": [
+      "organize client files",
+      "document management",
+      "secure file storage",
+      "AI file organization"
+    ],
+    "tools": [
+      {
+        "name": "Google Workspace with Gemini",
+        "url": "https://workspace.google.com/resources/ai-for-small-business/"
+      }
+    ],
+    "workflowSummary": "Gemini in Google Drive can suggest where your loose files should go based on the folder structure you already use, create new folders on a plain-language request, and summarize or find a contract inside a folder without you opening every file.",
+    "samplePrompt": "Setup task: Look through my loose files in Drive and suggest which client folder each one belongs in, based on the client-name folder structure I already have.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the suggestion feature is new and works best once you already have a basic folder structure to sort into.",
+    "trustScore": 3,
+    "pricingNote": "Included with paid Google Workspace or Google AI Pro/Ultra plans - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://workspace.google.com/resources/ai-for-small-business/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page. Client records may be sensitive - confirm your Workspace plan's data-handling terms fit your confidentiality obligations before storing client files there.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-61d3e14d5d",
+    "slug": "i-want-someone-or-something-to-actually-do-my-bookkeeping-so-i",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who has been doing their own books in spreadsheets and wants accurate financials without doing it themselves",
+    "title": "I want someone (or something) to actually do my bookkeeping so I stop guessing at tax time",
+    "intentLabels": [
+      "bookkeeping automation",
+      "monthly books",
+      "small business accounting",
+      "automated expense categorization"
+    ],
+    "tools": [
+      {
+        "name": "Bench",
+        "url": "https://www.bench.co/"
+      }
+    ],
+    "workflowSummary": "Bench connects to your bank and payment accounts, automatically categorizes your transactions, and a real bookkeeper reviews and corrects your books every month, delivering financial statements you can hand straight to a tax preparer.",
+    "samplePrompt": "Setup task, not an AI prompt: Connect my business bank account and Stripe account, and let my bookkeeper categorize and reconcile transactions monthly, flagging anything unusual for my review.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "onboarding and setup handled by your assigned bookkeeper.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; free trial available - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.bench.co/",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-523e7edab2",
+    "slug": "how-do-i-keep-our-internal-team-check-ins-and-decisions",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who has grown to a small team (VA, associate coach) and keeps re-explaining the same SOPs in Slack or in person",
+    "title": "How do I keep our internal team check-ins and decisions somewhere everyone can search later, instead of relying on memory?",
+    "intentLabels": [
+      "internal team knowledge base",
+      "team wiki",
+      "searchable company docs",
+      "AI Q&A on internal docs"
+    ],
+    "tools": [
+      {
+        "name": "Notion AI",
+        "url": "https://www.notion.com/help/guides/use-notion-ai-to-give-teams-perfect-memory-and-save-time",
+        "catalogueSlug": "notion-ai"
+      }
+    ],
+    "workflowSummary": "You keep your SOPs, team check-in notes, and decisions in Notion, and Notion AI's Q&A feature lets anyone on the team ask a plain-language question and get a cited answer pulled from those pages, instead of searching manually or asking in chat.",
+    "samplePrompt": "Setup task: Turn on Notion AI Q&A for our team workspace, and organize our client-process SOPs, team meeting notes, and policies into one wiki so anyone can ask a question and get a cited answer.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy once your docs already live in Notion; less useful if your team's info is scattered across other tools.",
+    "trustScore": 3,
+    "pricingNote": "Free for personal use; Plus ~$10/seat/month, Business ~$18/seat/month for the AI Q&A add-on - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.notion.com/help/guides/use-notion-ai-to-give-teams-perfect-memory-and-save-time",
+    "sourceType": "Product page",
+    "freshness": "September 6, 2026 (page checked)",
+    "accessNotes": "Public help-center page on Notion's own site.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-e276a9b729",
+    "slug": "i-want-notes-from-my-internal-team-meetings-too-not-just-my",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with a growing team (VA, associate coaches) who wants a record of internal check-ins, not just client sessions",
+    "title": "I want notes from my internal team meetings too, not just my client calls",
+    "intentLabels": [
+      "internal meeting notes",
+      "team check-in summary",
+      "staff meeting transcription",
+      "action items for team"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://fireflies.ai/blog/automated-meeting-notes"
+      }
+    ],
+    "workflowSummary": "Fireflies automatically joins your internal Zoom, Google Meet, or Teams call, transcribes it, and generates a summary with action items attributed to whoever said they'd do them, so team check-ins produce a record without anyone taking notes by hand.",
+    "samplePrompt": "Summarize this team check-in transcript into: decisions made, action items with who owns each one, and any open questions to follow up on next check-in.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "joins calls automatically once connected to your calendar; free plan covers unlimited transcription up to 800 minutes stored.",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; paid plans unlock longer storage and more AI features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://fireflies.ai/blog/automated-meeting-notes",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "June 15, 2026",
+    "accessNotes": "Public blog post on vendor's domain. If any client matters come up in an internal call, apply the same recording-consent care as with client sessions.",
+    "batch": "Coaches AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "coaches-3936447896",
+    "slug": "how-do-i-prep-for-a-discovery-call-without-spending-20-minutes",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with a discovery call booked who wants to walk in already knowing the prospect's situation",
+    "title": "How do I prep for a discovery call without spending 20 minutes googling the person first?",
+    "intentLabels": [
+      "discovery call prep",
+      "sales call research",
+      "pre-call brief",
+      "prospect research automation"
+    ],
+    "tools": [
+      {
+        "name": "Sybill",
+        "url": "https://www.sybill.ai/blogs/ai-pre-meeting-brief-sales-call-prospect-research"
+      }
+    ],
+    "workflowSummary": "Sybill automatically assembles a pre-meeting brief before your call - pulling together anything you know about the prospect, prior conversation notes, and a suggested agenda - so you open one document instead of piecing together research from memory, email, and notes.",
+    "samplePrompt": "Before my discovery call with [prospect name/company], pull together what we know about them, any prior conversation notes, and suggest 3 opening questions based on what they said when they booked.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to start; the brief is generated automatically once connected.",
+    "trustScore": 3,
+    "pricingNote": "Free to start - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.sybill.ai/blogs/ai-pre-meeting-brief-sales-call-prospect-research",
+    "sourceType": "Product page (vendor's own blog)",
+    "freshness": "April 30, 2026",
+    "accessNotes": "Public blog post on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-1d2a334e27",
+    "slug": "how-do-i-make-sure-only-serious-qualified-people-book-a-call",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "High-ticket coach whose calendar keeps getting filled with people who can't afford or aren't ready for the program",
+    "title": "How do I make sure only serious, qualified people book a call with me?",
+    "intentLabels": [
+      "application form",
+      "qualify leads",
+      "discovery call screening",
+      "high-ticket application quiz"
+    ],
+    "tools": [
+      {
+        "name": "ScoreApp",
+        "url": "https://www.scoreapp.com/coaches-consultants/"
+      }
+    ],
+    "workflowSummary": "ScoreApp gives prospects a short interactive quiz or discovery audit before they can book a call, capturing their goals and challenges upfront so your calendar only fills with people who are actually a fit - and your first question on the call is already about their real problem.",
+    "samplePrompt": "Setup task: Build a 6-question discovery audit that asks about the prospect's current situation, biggest obstacle, timeline, and budget range, and only show my booking link after they submit it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for coaches and consultants, guided setup.",
+    "trustScore": 4,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.scoreapp.com/coaches-consultants/",
+    "sourceType": "Product page",
+    "freshness": "December 5, 2025",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d1327ac7df",
+    "slug": "i-want-to-practice-handling-objections-before-i-actually-get-on",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who gets nervous or fumbles when a prospect pushes back on price or timing",
+    "title": "I want to practice handling objections before I actually get on a sales call",
+    "intentLabels": [
+      "sales roleplay",
+      "practice objection handling",
+      "rehearse a pitch",
+      "AI sales coach"
+    ],
+    "tools": [
+      {
+        "name": "Yoodli",
+        "url": "https://yoodli.ai/pricing"
+      }
+    ],
+    "workflowSummary": "Yoodli runs a live AI roleplay where a simulated prospect pushes back with realistic objections - pricing, timing, 'let me think about it' - and after each practice session it scores your delivery (filler words, pacing, confidence) so you walk into the real call already rehearsed.",
+    "samplePrompt": "Roleplay a discovery call for a coaching program where the prospect raises price and timing objections partway through. Score my response on confidence and clarity afterward.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier included (5 lifetime sessions); guided roleplay format.",
+    "trustScore": 3,
+    "pricingNote": "Free tier (5 lifetime sessions); Pro from $8/month, Advanced from $20/month (annual billing) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://yoodli.ai/pricing",
+    "sourceType": "Product page",
+    "freshness": "September 6, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-077792cb27",
+    "slug": "i-want-a-script-for-the-3-objections-i-hear-most-so-i-m-not",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who freezes up or gives a weak answer when a prospect says 'that's too expensive'",
+    "title": "I want a script for the 3 objections I hear most so I'm not caught off guard",
+    "intentLabels": [
+      "objection handling script",
+      "price objection response",
+      "sales talking points",
+      "handle pushback"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://theaicareerlab.com/blog/best-ai-tools-for-copywriters-2026",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "You describe the objections you actually hear (price, timing, needing to check with a partner), and Claude drafts a short, natural-sounding response to each one in your own voice - something you can adapt on the call rather than read verbatim.",
+    "samplePrompt": "I'm a coach and I keep hearing these 3 objections on discovery calls: [list them]. Write a short, natural response to each one that acknowledges the concern without being pushy, in a warm and direct tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires being honest about which objections actually come up.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://theaicareerlab.com/blog/best-ai-tools-for-copywriters-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 20, 2026",
+    "accessNotes": "Public blog article discussing Claude's use for structured copywriting tasks; not a coaching-specific source.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-bfd0246137",
+    "slug": "how-do-i-send-a-professional-proposal-with-my-pricing-right",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who just had a great discovery call and needs to send pricing before the prospect's interest cools",
+    "title": "How do I send a professional proposal with my pricing right after a great sales call?",
+    "intentLabels": [
+      "proposal generator",
+      "send pricing packet",
+      "close the deal",
+      "professional quote"
+    ],
+    "tools": [
+      {
+        "name": "Proposify",
+        "url": "https://www.proposify.com/ai-proposal-generator"
+      }
+    ],
+    "workflowSummary": "Paste your call notes or a rough outline into Proposify's editor, and its AI drafts the executive summary, scope, and pricing sections into a branded, trackable proposal - then you can see when the prospect opens it so you know when to follow up.",
+    "samplePrompt": "Turn these call notes into a proposal: [paste notes]. Include an executive summary of their goal, a 3-month coaching package with pricing, and a clear next step to get started.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI drafts content well, but building the visual template takes some initial setup.",
+    "trustScore": 3,
+    "pricingNote": "Free AI proposal generator; paid plans for full platform features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.proposify.com/ai-proposal-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-ac0a125c42",
+    "slug": "a-prospect-seemed-really-interested-but-went-silent-after-our",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose promising prospect went quiet after a good discovery call and hasn't replied",
+    "title": "A prospect seemed really interested but went silent after our call - how do I follow up without being annoying?",
+    "intentLabels": [
+      "cold lead follow-up",
+      "re-engage a prospect",
+      "went silent",
+      "breakup email"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.mixmax.com/blog/cold-email-followup-examples",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "You describe where the conversation left off, and ChatGPT drafts a short 2-3 email follow-up sequence - each one offering something new (a resource, a specific answer to their hesitation, or a respectful close-the-loop message) instead of just 'checking in.'",
+    "samplePrompt": "I had a great discovery call with a prospect about [program] and they went quiet after saying they needed to think about it. Write a 3-email follow-up sequence: one offering a helpful resource, one addressing their likely hesitation, and one respectful 'closing the loop' message if they still don't reply.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires describing the situation honestly.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage/latest model - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.mixmax.com/blog/cold-email-followup-examples",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 8, 2026",
+    "accessNotes": "Public blog article on follow-up email structure; not coaching-specific, but the framework (offer new value each touch, respectful breakup email) applies directly.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-31237ffde6",
+    "slug": "i-have-an-amazing-client-result-how-do-i-turn-it-into-a-case",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who has a great client result but hasn't turned it into something to show future prospects",
+    "title": "I have an amazing client result - how do I turn it into a case study I can use in sales conversations?",
+    "intentLabels": [
+      "case study generator",
+      "turn testimonial into case study",
+      "proof of results",
+      "sales collateral"
+    ],
+    "tools": [
+      {
+        "name": "Venngage (AI Case Study Generator)",
+        "url": "https://venngage.com/ai-tools/case-study-generator"
+      }
+    ],
+    "workflowSummary": "You describe the client's starting point, what you did together, and the result, and Venngage's AI structures it into a polished case study with a problem/solution/results narrative, which you can export as a PDF or slide to show skeptical prospects during a sales conversation.",
+    "samplePrompt": "Turn this into a case study: client started at [starting point], we worked on [what you did], and the result was [measurable outcome]. Structure it as problem, approach, and results, and include a pull-quote from their testimonial.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompt-based workflow, no design skill needed.",
+    "trustScore": 3,
+    "pricingNote": "Free tool available - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://venngage.com/ai-tools/case-study-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-c225a9a409",
+    "slug": "i-don-t-know-what-to-charge-for-my-coaching-package-and-keep",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "New or established coach who isn't sure what to actually charge for a package",
+    "title": "I don't know what to charge for my coaching package and keep guessing",
+    "intentLabels": [
+      "pricing calculator",
+      "how much to charge",
+      "coaching rate benchmarks",
+      "package pricing"
+    ],
+    "tools": [
+      {
+        "name": "quso.ai Coaching Price Calculator",
+        "url": "https://quso.ai/blog/how-to-price-your-coaching-services-free-calculator-inside"
+      }
+    ],
+    "workflowSummary": "You enter your income goal, expected client load, and delivery model, and the calculator shows what to charge per session or per package to hit that goal, alongside typical rate ranges for your coaching niche as a sanity check.",
+    "samplePrompt": "Not a prompt-based tool - fill in: income goal, number of active clients you can realistically hold, and sessions per client per month. The calculator returns a suggested package price.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-blank calculator, no coaching business background needed.",
+    "trustScore": 3,
+    "pricingNote": "Free - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://quso.ai/blog/how-to-price-your-coaching-services-free-calculator-inside",
+    "sourceType": "Blog/Guide (with embedded free tool)",
+    "freshness": "December 17, 2025",
+    "accessNotes": "Public blog article with an embedded free calculator tool.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d79696e41d",
+    "slug": "i-m-opening-enrollment-for-a-new-cohort-how-do-i-write-launch",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach launching a new cohort or group program who wants real urgency without sounding sleazy",
+    "title": "I'm opening enrollment for a new cohort - how do I write launch emails that create urgency honestly?",
+    "intentLabels": [
+      "launch email sequence",
+      "cohort enrollment emails",
+      "ethical urgency",
+      "program launch copy"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://github.com/wondelai/skills/blob/main/plugins/sales-influence/skills/hundred-million-offers/references/scarcity-urgency.md",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "You give Claude your real enrollment details - actual spot count, actual close date - and it drafts the classic 5-email launch arc (announcement, doors open, proof, objection-handling, final countdown), built only around urgency that's true, not manufactured scarcity.",
+    "samplePrompt": "I'm opening enrollment for Cohort 7 of my group coaching program: 15 spots, doors close March 10. Write a 5-email launch sequence (announce, open cart, share proof, handle objections, final countdown) using only real details - no fake urgency.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires having real enrollment details to plug in.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://github.com/wondelai/skills/blob/main/plugins/sales-influence/skills/hundred-million-offers/references/scarcity-urgency.md",
+    "sourceType": "Blog/Guide",
+    "freshness": "August 2026 (repository last updated)",
+    "accessNotes": "Public reference document on ethical scarcity/urgency patterns; illustrates the framework rather than being a product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-015e74834c",
+    "slug": "how-do-i-keep-track-of-every-prospect-i-m-talking-to-without",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach juggling several prospects at different stages who has no idea what their actual close rate is",
+    "title": "How do I keep track of every prospect I'm talking to without paying for a full CRM?",
+    "intentLabels": [
+      "sales pipeline tracker",
+      "close rate tracking",
+      "lead tracking spreadsheet",
+      "lightweight CRM"
+    ],
+    "tools": [
+      {
+        "name": "Airtable (Sales Pipeline Template)",
+        "url": "https://www.airtable.com/templates/sales-pipeline/expuCeCuZwIAc89uI"
+      }
+    ],
+    "workflowSummary": "Airtable's free Sales Pipeline template gives you a ready-made board with stages (Lead, Call Booked, Proposal Sent, Closed), so you can drag each prospect across stages and see your real close rate at a glance, without setting up or paying for a full CRM.",
+    "samplePrompt": "Setup task: Duplicate the Sales Pipeline template, and add my current prospects with a status of Lead, Call Booked, Proposal Sent, or Closed so I can see where each one stands and calculate my close rate.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "pre-built template, just add your own leads.",
+    "trustScore": 3,
+    "pricingNote": "Free to use the template on a free Airtable account - verify before publishing",
+    "pricingTier": "free",
+    "sourceUrl": "https://www.airtable.com/templates/sales-pipeline/expuCeCuZwIAc89uI",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-2cbbde1ffa",
+    "slug": "i-ran-a-free-training-and-got-a-lot-of-registrants-how-do-i",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who runs a free webinar or masterclass to sell a program but sales taper off after the live event",
+    "title": "I ran a free training and got a lot of registrants - how do I actually turn them into paying clients?",
+    "intentLabels": [
+      "webinar to sale",
+      "convert webinar attendees",
+      "evergreen webinar funnel",
+      "post-webinar follow-up"
+    ],
+    "tools": [
+      {
+        "name": "EverWebinar",
+        "url": "https://everwebinar.com/automated-webinar/"
+      }
+    ],
+    "workflowSummary": "EverWebinar turns your recorded training into an always-on funnel, running it on a schedule with live-feeling chat and polls, and automatically sends different follow-up emails to attendees, early exits, and no-shows so each group gets a message suited to how engaged they actually were.",
+    "samplePrompt": "Setup task: Schedule my recorded masterclass to run daily at multiple times, and send 3 different follow-up sequences based on whether someone attended fully, left early, or didn't show up.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the automated funnel setup takes real time to configure well, per independent reviews.",
+    "trustScore": 3,
+    "pricingNote": "Around $99/month - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://everwebinar.com/automated-webinar/",
+    "sourceType": "Product page",
+    "freshness": "July 28, 2026",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d5de631f03",
+    "slug": "someone-no-showed-my-free-discovery-call-how-do-i-get-them-to",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose prospect booked a free discovery call and then simply didn't show up",
+    "title": "Someone no-showed my free discovery call - how do I get them to rebook without sounding annoyed?",
+    "intentLabels": [
+      "no-show follow-up",
+      "rebook a missed call",
+      "discovery call no-show message"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://instantly.ai/blog/no-response-follow-ups-complete-guide/",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "You describe that the prospect no-showed, and ChatGPT drafts a short, warm message that assumes good intent (life happens) and makes it easy to rebook with one click, instead of a message that reads as passive-aggressive or guilt-tripping.",
+    "samplePrompt": "A prospect no-showed our discovery call today. Write a short, warm follow-up message that assumes something came up, includes my booking link to rebook, and doesn't sound annoyed or guilt-trippy.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just describe the situation.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://instantly.ai/blog/no-response-follow-ups-complete-guide/",
+    "sourceType": "Blog/Guide",
+    "freshness": "January 31, 2026",
+    "accessNotes": "Public blog article on follow-up email etiquette and cadence; not coaching-specific, but the tone guidance applies directly.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-ecd8939eaa",
+    "slug": "i-have-3-pricing-tiers-for-my-program-how-do-i-show-prospects",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach with multiple program tiers (e.g. self-study, group, 1:1 VIP) who wants prospects to easily compare and choose",
+    "title": "I have 3 pricing tiers for my program - how do I show prospects the difference clearly?",
+    "intentLabels": [
+      "pricing tiers comparison",
+      "program comparison one-pager",
+      "package options visual"
+    ],
+    "tools": [
+      {
+        "name": "Canva (Magic Design)",
+        "url": "https://www.aiworthit.com/blog/canva-ai-review/",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Describe your 3 program tiers and what's included in each, and Canva's Magic Design generates a clean comparison one-pager with columns for each tier, which you can edit and send alongside a proposal or add to your sales page.",
+    "samplePrompt": "Create a 3-column comparison one-pager for my coaching tiers: Self-Study ($297), Group Coaching ($1,500), and VIP 1:1 ($5,000), listing what's included in each and highlighting the VIP tier as the recommended option.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe what you want in plain language, layouts generate automatically.",
+    "trustScore": 3,
+    "pricingNote": "Free plan available (limited monthly AI credits); Pro ~$15/month unlocks more credits - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.aiworthit.com/blog/canva-ai-review/",
+    "sourceType": "Blog/Guide",
+    "freshness": "July 31, 2026",
+    "accessNotes": "Public independent review; reconfirm current AI credit limits and pricing on Canva's own pricing page.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-11bf536126",
+    "slug": "i-need-to-write-an-actual-sales-page-for-my-coaching-program",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who has never written a real sales page for their paid program and is staring at a blank page",
+    "title": "I need to write an actual sales page for my coaching program and don't know where to start",
+    "intentLabels": [
+      "sales page copy",
+      "AIDA framework",
+      "program sales page",
+      "persuasive coaching offer copy"
+    ],
+    "tools": [
+      {
+        "name": "Jasper",
+        "url": "https://www.jasper.ai/blog/sales-page-copy-template",
+        "catalogueSlug": "jasper"
+      }
+    ],
+    "workflowSummary": "Jasper's AIDA (Attention, Interest, Desire, Action) template walks you through your offer, audience, and tone, then drafts a full sales page - headline, benefits, testimonials section, and a call to action - that you edit and publish rather than writing from a blank page.",
+    "samplePrompt": "Using the AIDA framework, write a sales page for my coaching program: [program name], for [audience], solving [core problem], priced at [price]. Include a headline, 3 benefit sections, a spot for testimonials, and a clear call to action.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided templates, no copywriting background needed.",
+    "trustScore": 3,
+    "pricingNote": "Paid plans only, from around $49/month; free trial may be available - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.jasper.ai/blog/sales-page-copy-template",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "May 30, 2025",
+    "accessNotes": "Public blog post on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "coaches-b945f83a67",
+    "slug": "i-want-a-private-space-where-my-group-coaching-members-can-talk",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach running a group or cohort program who wants members to connect with each other between live calls",
+    "title": "I want a private space where my group coaching members can talk to each other between our calls",
+    "intentLabels": [
+      "community platform",
+      "group coaching space",
+      "cohort community",
+      "member discussion space"
+    ],
+    "tools": [
+      {
+        "name": "Circle",
+        "url": "https://www.group.app/blog/skool-vs-circle/"
+      }
+    ],
+    "workflowSummary": "Circle gives each cohort its own branded space for discussion, resources, and events, with course content that can drip on a schedule tied to that specific intake - so a new cohort gets its own room instead of mixing in with members from an earlier round.",
+    "samplePrompt": "Setup task: Create a dedicated Space for Cohort 4 with a discussion feed, a resources area, and a course area that drips content weekly, separate from the Cohort 3 space.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful once set up, but the space/course structure takes real planning up front.",
+    "trustScore": 3,
+    "pricingNote": "Plans vary; check circle.so/pricing for current tiers - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.group.app/blog/skool-vs-circle/",
+    "sourceType": "Blog/Guide",
+    "freshness": "August 3, 2026",
+    "accessNotes": "Independent comparison article; reconfirm current features and pricing on Circle's own site.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-83691dbfb6",
+    "slug": "how-do-i-make-sure-everyone-in-my-cohort-sees-each-week-s",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach running a live cohort where everyone needs to be on the same lesson at the same time for calls to make sense",
+    "title": "How do I make sure everyone in my cohort sees each week's material on the same day, no matter when they signed up?",
+    "intentLabels": [
+      "cohort drip content",
+      "synchronized content release",
+      "calendar-based drip",
+      "cohort pacing"
+    ],
+    "tools": [
+      {
+        "name": "Kajabi",
+        "url": "https://www.kajabi.com/blog/course-drip-by-date-cohort-programs"
+      }
+    ],
+    "workflowSummary": "Kajabi's 'Drip by Specific Date' setting releases each module on the same calendar date for every member regardless of when they enrolled, so your live call each week lines up with what everyone just unlocked instead of some members being ahead or behind.",
+    "samplePrompt": "Setup task: Set Module 1 to unlock March 3rd, Module 2 to unlock March 10th, and Module 3 to unlock March 17th for everyone in this cohort, regardless of enrollment date.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the setting itself is simple, but planning the calendar around your live call schedule takes some upfront thought.",
+    "trustScore": 4,
+    "pricingNote": "Cohort-based course feature requires Growth or Pro plan - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.kajabi.com/blog/course-drip-by-date-cohort-programs",
+    "sourceType": "Product page (vendor's own blog)",
+    "freshness": "February 25, 2026",
+    "accessNotes": "Public blog post on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d2403bba51",
+    "slug": "i-have-two-cohorts-of-the-same-program-running-at-the-same-time",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who runs the same 8-week program multiple times a year and now has 2-3 cohorts active at once",
+    "title": "I have two cohorts of the same program running at the same time - how do I keep their content and calls from getting mixed up?",
+    "intentLabels": [
+      "multiple cohorts",
+      "run concurrent programs",
+      "cohort management",
+      "separate intakes"
+    ],
+    "tools": [
+      {
+        "name": "Kajabi",
+        "url": "https://help.kajabi.com/articles/products/courses/customize-your-cohort-based-course"
+      }
+    ],
+    "workflowSummary": "Kajabi's Cohorts Index page lists every active cohort of a program separately, each with its own member list, drip schedule, and certificates, so Spring Cohort and Summer Cohort stay fully separate even though they're running the same curriculum at once.",
+    "samplePrompt": "Setup task: Create a second cohort of this program for our Summer intake, with its own drip schedule starting June 1st, kept separate from the Spring cohort already in progress.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the cohort structure itself is straightforward, but requires the Growth or Pro plan to access.",
+    "trustScore": 4,
+    "pricingNote": "Cohort-based course feature requires Growth or Pro plan - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://help.kajabi.com/articles/products/courses/customize-your-cohort-based-course",
+    "sourceType": "Product page (vendor's help center)",
+    "freshness": "September 16, 2025",
+    "accessNotes": "Public help-center article on vendor's domain.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-b0e3df7517",
+    "slug": "how-do-i-keep-my-group-program-members-actually-engaged-instead",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose group program members log in once and never come back",
+    "title": "How do I keep my group program members actually engaged instead of joining once and disappearing?",
+    "intentLabels": [
+      "member engagement",
+      "gamification",
+      "leaderboards",
+      "keep community active"
+    ],
+    "tools": [
+      {
+        "name": "Skool",
+        "url": "https://kourses.com/skool-vs-circle/"
+      }
+    ],
+    "workflowSummary": "Skool's built-in points system and leaderboards give members visible progress and light competition just for participating and completing lessons, without you having to build a rewards system yourself - creators running cohort programs report better completion rates because of it.",
+    "samplePrompt": "Setup task: Turn on Skool's points and leaderboard for this community, awarding points for posting, commenting, and completing each module.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the gamification is built in and turns on with a toggle, no setup required.",
+    "trustScore": 3,
+    "pricingNote": "Paid plans only, check skool.com/pricing for current rates - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://kourses.com/skool-vs-circle/",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 12, 2026",
+    "accessNotes": "Independent comparison article; reconfirm current features and pricing on Skool's own site.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-5d24a60eb9",
+    "slug": "i-want-to-give-my-clients-a-certificate-when-they-finish-my",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach who wants clients to finish their program feeling recognized, not just done",
+    "title": "I want to give my clients a certificate when they finish my coaching program",
+    "intentLabels": [
+      "completion certificate",
+      "program graduation",
+      "certificate generator",
+      "course completion"
+    ],
+    "tools": [
+      {
+        "name": "Certifier",
+        "url": "https://certifier.io/free-ai-certificate-generator"
+      }
+    ],
+    "workflowSummary": "You describe the program and what completing it means, and Certifier's AI drafts the certificate wording and layout, which you can save as a reusable template so every future cohort graduate gets one automatically without you redesigning it each time.",
+    "samplePrompt": "Create a certificate for completing my 12-week 'Confident Leader' group coaching program, dated for this cohort's graduation, with a spot for the recipient's name and my signature.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the certificate in plain language, no design skill needed.",
+    "trustScore": 3,
+    "pricingNote": "Free AI certificate generator; paid plans for reusable templates and bulk sending - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://certifier.io/free-ai-certificate-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-e6e42b0eeb",
+    "slug": "i-want-my-whole-group-of-clients-to-check-in-on-their",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach managing 10-30 group program clients who can't personally check in with each one daily between sessions",
+    "title": "I want my whole group of clients to check in on their commitments daily, not just during our sessions",
+    "intentLabels": [
+      "group accountability",
+      "daily check-ins",
+      "client accountability feed",
+      "between-session engagement"
+    ],
+    "tools": [
+      {
+        "name": "GroupHabits",
+        "url": "https://www.grouphabits.com/blog/client-accountability-apps-for-personal-trainers"
+      }
+    ],
+    "workflowSummary": "GroupHabits gives your whole roster a shared live feed where every client logs their daily check-in and can see (and react to) everyone else's, so accountability happens continuously between sessions instead of only during the time you personally have with each client.",
+    "samplePrompt": "Setup task: Set up a daily check-in feed for this cohort where each member logs one action toward their program goal, visible to the whole group with reactions enabled.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browser-based, no app download required for members to start checking in.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.grouphabits.com/blog/client-accountability-apps-for-personal-trainers",
+    "sourceType": "Product page (vendor's own blog)",
+    "freshness": "March 27, 2026",
+    "accessNotes": "Public blog post on vendor's domain; written for personal trainers, but the same one-to-many accountability model applies directly to group coaching.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-680423d643",
+    "slug": "how-do-i-make-my-group-call-replays-easier-for-busy-clients-to",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose group call replays sit in a video library that members rarely go back and watch",
+    "title": "How do I make my group call replays easier for busy clients to actually go back and review?",
+    "intentLabels": [
+      "call replay library",
+      "audio replays",
+      "private podcast",
+      "content on the go"
+    ],
+    "tools": [
+      {
+        "name": "Hello Audio",
+        "url": "https://helloaudio.fm/"
+      }
+    ],
+    "workflowSummary": "Hello Audio turns your recorded group coaching calls into a private podcast feed members can subscribe to in their own podcast app, so they can relisten to a session while driving or walking instead of needing to sit down and rewatch a video.",
+    "samplePrompt": "Setup task: Upload this week's group call recording to a private podcast feed for this cohort only, with an episode title summarizing what we covered.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed specifically for course creators and group coaches turning existing recordings into audio.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://helloaudio.fm/",
+    "sourceType": "Product page",
+    "freshness": "September 9, 2025",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-da6018b5e0",
+    "slug": "i-want-to-check-in-with-my-whole-cohort-partway-through-the",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach halfway through a group program who wants to know how it's landing before it's too late to adjust",
+    "title": "I want to check in with my whole cohort partway through the program to see how it's going",
+    "intentLabels": [
+      "mid-program feedback",
+      "pulse check",
+      "cohort survey",
+      "program check-in"
+    ],
+    "tools": [
+      {
+        "name": "Typeform (Coaching Feedback Form Template)",
+        "url": "https://www.typeform.com/templates/coaching-feedback-form-template"
+      }
+    ],
+    "workflowSummary": "Typeform's coaching feedback template gives you a ready-made short survey to send at the midpoint of a program, asking how the experience and progress feel so far, so you can adjust pacing or content before the program ends instead of only finding out what worked in a final review.",
+    "samplePrompt": "Setup task: Customize the Coaching Feedback Form template into a 4-question midpoint pulse check: how supported they feel, what's working, what's not, and one thing they wish we covered.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "ready-made template, just customize the questions.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available with response limits; paid plans for more responses - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.typeform.com/templates/coaching-feedback-form-template",
+    "sourceType": "Product page (template page)",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public template page.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-c23df6d0af",
+    "slug": "my-program-just-ended-how-do-i-keep-past-clients-connected",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach whose clients finish a great program and then disappear, losing the relationship and future referrals",
+    "title": "My program just ended - how do I keep past clients connected instead of losing touch with them completely?",
+    "intentLabels": [
+      "alumni community",
+      "keep past clients engaged",
+      "graduate network",
+      "post-program retention"
+    ],
+    "tools": [
+      {
+        "name": "Mighty Networks",
+        "url": "https://www.mightynetworks.com/case-studies/arc-alumni-coaching-groups"
+      }
+    ],
+    "workflowSummary": "A coach running a 10-week program invited graduates into a dedicated alumni space inside their Mighty Network after their cohort ended, giving them continued community and connection instead of the relationship simply stopping - the same structure that's led repeat members to apply for a program again.",
+    "samplePrompt": "Setup task: Create an alumni space for graduates of this program, separate from active cohort members, where they can stay connected and hear about future offers.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the community structure itself is straightforward, but deciding what ongoing value to offer alumni takes planning.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.mightynetworks.com/case-studies/arc-alumni-coaching-groups",
+    "sourceType": "Blog/Guide (vendor's own case study)",
+    "freshness": "2026",
+    "accessNotes": "Public case study on vendor's domain describing a real coaching-group alumni implementation.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-71f8454fef",
+    "slug": "i-want-to-break-my-group-call-into-smaller-discussion-groups",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Coaches",
+    "persona": "Coach running a group coaching call who wants people to actually talk to each other, not just listen",
+    "title": "I want to break my group call into smaller discussion groups instead of everyone just listening to me",
+    "intentLabels": [
+      "breakout rooms",
+      "small group discussion",
+      "mastermind group facilitation",
+      "live call groups"
+    ],
+    "tools": [
+      {
+        "name": "Zoom (Breakout Rooms)",
+        "url": "https://www.diygenius.com/zooms-breakout-rooms/"
+      }
+    ],
+    "workflowSummary": "Zoom lets you split a group coaching call into smaller breakout rooms for a discussion or paired accountability exercise, then bring everyone back to the main room to share - a simple way to make a mastermind-style call feel participatory instead of one-directional.",
+    "samplePrompt": "Setup task: Split today's group call into breakout rooms of 3-4 people for a 10-minute discussion on this week's topic, then bring everyone back to share one takeaway.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "breakout rooms are a built-in meeting feature, no extra setup needed beyond enabling them.",
+    "trustScore": 4,
+    "pricingNote": "Breakout rooms included in Zoom Meetings on paid plans - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.diygenius.com/zooms-breakout-rooms/",
+    "sourceType": "Blog/Guide",
+    "freshness": "December 24, 2025",
+    "accessNotes": "Public blog article specifically about using Zoom breakout rooms for mastermind/group coaching.",
+    "batch": "Coaches AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "coaches-86b6eca6a7",
+    "slug": "i-want-to-run-a-real-360-degree-feedback-assessment-for-my",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach starting a new engagement with a corporate leader who wants a baseline read on how the leader is perceived",
+    "title": "I want to run a real 360-degree feedback assessment for my executive client without hiring a separate consultant",
+    "intentLabels": [
+      "360 feedback assessment",
+      "multi-rater feedback",
+      "leadership 360",
+      "executive assessment tool"
+    ],
+    "tools": [
+      {
+        "name": "Launch-360",
+        "url": "https://launch-360.com/blog/best-360-degree-feedback-tools-for-leadership-coaches/"
+      }
+    ],
+    "workflowSummary": "Launch-360 is a plug-and-play 360 platform built specifically for coaches - you select from six research-backed leadership competencies (executive presence, staff management, communication, etc.), invite the client's raters, and get a report you can walk through in a single debrief session, no consultants or certifications required.",
+    "samplePrompt": "Setup task: Launch a 360 assessment for [client name] covering executive presence, communication, and relationship management, with raters including their manager, 3 peers, and 2 direct reports.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for coaches specifically, no installation or consultant needed to launch.",
+    "trustScore": 4,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://launch-360.com/blog/best-360-degree-feedback-tools-for-leadership-coaches/",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "September 2026 (3 weeks prior to search)",
+    "accessNotes": "Public blog post on vendor's domain. 360 feedback involves other people's opinions about the client - agree on confidentiality and anonymity rules with the client and sponsor before launching.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-0abb76acba",
+    "slug": "my-client-and-their-manager-keep-talking-past-each-other-how-do",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach whose client keeps clashing with a particular stakeholder (manager, peer, or board member) due to a communication style mismatch",
+    "title": "My client and their manager keep talking past each other - how do I help my client understand how to communicate with them?",
+    "intentLabels": [
+      "communication style insight",
+      "DISC profile",
+      "stakeholder communication",
+      "personality-based coaching"
+    ],
+    "tools": [
+      {
+        "name": "Crystal Knows",
+        "url": "https://findmyaitool.com/tool/crystal"
+      }
+    ],
+    "workflowSummary": "Crystal predicts a person's DISC-based communication style from public professional data and generates practical guidance on how to adapt tone and approach for them, which you can use to help your client prepare for a specific meeting with a stakeholder whose style differs from their own.",
+    "samplePrompt": "My client is a [DISC type] working with a manager who tends to be [direct/analytical/etc.]. Give me 3 practical adjustments my client could make in how they present ideas to this person.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Chrome extension overlays insights directly on LinkedIn profiles, minimal setup.",
+    "trustScore": 3,
+    "pricingNote": "Free plan (5 profile credits); Premium ~$49/month (annual) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://findmyaitool.com/tool/crystal",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 26, 2026",
+    "accessNotes": "Independent tool directory listing; reconfirm current pricing on Crystal's own site. Predicting a real person's personality from public data without their knowledge raises its own consent considerations worth discussing with your client.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d11e251f37",
+    "slug": "i-have-my-client-s-assessment-results-how-do-i-turn-them-into-a",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach who has assessment and 360 results for a client but needs to turn them into an actual development roadmap",
+    "title": "I have my client's assessment results - how do I turn them into a real development plan instead of just a debrief conversation?",
+    "intentLabels": [
+      "individual development plan",
+      "IDP generator",
+      "leadership development roadmap",
+      "coaching action plan"
+    ],
+    "tools": [
+      {
+        "name": "ClickUp Brain (IDP Generator)",
+        "url": "https://clickup.com/p/features/ai/individual-development-plan-generator"
+      }
+    ],
+    "workflowSummary": "You feed ClickUp Brain your client's role, strengths, development areas, and goals, and it drafts a structured individual development plan with milestones and suggested learning activities, which then stays linked to tasks and check-ins so the plan evolves as the engagement progresses instead of sitting in a static document.",
+    "samplePrompt": "Create a 6-month individual development plan for a [role] transitioning into [new responsibility]. Strengths: [list]. Development areas: [list]. Include 60-day and 120-day milestones and suggested development activities for each area.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "drafts the plan quickly, but you'll want to customize activities to match your own coaching methodology.",
+    "trustScore": 3,
+    "pricingNote": "Free to start; paid plans for full ClickUp Brain features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://clickup.com/p/features/ai/individual-development-plan-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-ae86c73c7b",
+    "slug": "my-client-s-company-wants-a-report-showing-the-coaching-is",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach whose corporate sponsor (HR or L&D) wants to see evidence the coaching engagement is working, not just that sessions happened",
+    "title": "My client's company wants a report showing the coaching is actually working, not just a list of session dates",
+    "intentLabels": [
+      "coaching ROI report",
+      "sponsor reporting",
+      "impact report for HR",
+      "executive coaching business case"
+    ],
+    "tools": [
+      {
+        "name": "Delenta",
+        "url": "https://www.delenta.com/blog/instant-hr-reporting-for-coaching-organizations"
+      }
+    ],
+    "workflowSummary": "Delenta centralizes session logs, goal tracking, and engagement data on one platform and can generate a sponsor-facing report - engagement themes, completion rates, and progress against the original goals - so building a credible impact report takes minutes instead of hours of manual write-up.",
+    "samplePrompt": "Setup task: Generate a quarterly sponsor report for [client]'s engagement showing sessions completed, progress against the 3 goals set at kickoff, and overall engagement health, without including session content details.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the reporting is automated once session data is logged consistently, but requires adopting the platform for day-to-day session tracking first.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.delenta.com/blog/instant-hr-reporting-for-coaching-organizations",
+    "sourceType": "Blog/Guide (vendor's own site)",
+    "freshness": "2026",
+    "accessNotes": "Public blog post on vendor's domain. A sponsor report should never include the substance of what was discussed in sessions - agree on what's shareable with the client and sponsor before the engagement starts.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-c5d838d5c2",
+    "slug": "my-client-has-a-huge-presentation-to-the-board-coming-up-how-do",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach helping a client prepare for a high-stakes board presentation or leadership town hall",
+    "title": "My client has a huge presentation to the board coming up - how do I help them rehearse it properly?",
+    "intentLabels": [
+      "presentation practice",
+      "board meeting prep",
+      "executive presence coaching",
+      "public speaking rehearsal"
+    ],
+    "tools": [
+      {
+        "name": "Yoodli",
+        "url": "https://yoodli.ai/pricing"
+      }
+    ],
+    "workflowSummary": "Yoodli runs a live AI roleplay where your client can rehearse their presentation or Q&A out loud, then get feedback on pacing, filler words, and clarity - useful as homework between sessions so your client walks into the real board meeting having already rehearsed under some pressure.",
+    "samplePrompt": "Roleplay a board presentation Q&A where the AI plays a skeptical board member asking pointed follow-up questions about [topic]. Score the response on clarity and confidence afterward.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free tier included; guided roleplay format works for presentation practice as well as conversations.",
+    "trustScore": 3,
+    "pricingNote": "Free tier (5 lifetime sessions); Pro from $8/month, Advanced from $20/month (annual billing) - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://yoodli.ai/pricing",
+    "sourceType": "Product page",
+    "freshness": "September 6, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-d0716b3b63",
+    "slug": "i-m-about-to-start-coaching-a-new-executive-client-what-should",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach kicking off a new corporate engagement who needs to understand the client's context before session one",
+    "title": "I'm about to start coaching a new executive client - what should I ask their manager and peers before our first session?",
+    "intentLabels": [
+      "stakeholder interview questions",
+      "engagement kickoff",
+      "pre-coaching intake",
+      "sponsor alignment call"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://www.delenta.com/blog/instant-hr-reporting-for-coaching-organizations",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "You describe the client's role and why the coaching was commissioned, and Claude drafts a short set of stakeholder interview questions for the client's manager or sponsor - covering what success looks like, specific behaviors to watch for, and any context the coach should know - so the kickoff call has real structure instead of an open-ended chat.",
+    "samplePrompt": "I'm starting an executive coaching engagement with a [role] whose manager requested coaching because of [reason]. Draft 6 stakeholder interview questions for a 30-minute alignment call with the manager before session one.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires describing the context honestly.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.delenta.com/blog/instant-hr-reporting-for-coaching-organizations",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026",
+    "accessNotes": "Public blog article describing the importance of pre-engagement baseline and stakeholder alignment in corporate coaching; not a product page for Claude itself.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-6a472be451",
+    "slug": "my-client-has-to-deliver-really-difficult-news-to-their-team",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach whose client has a difficult conversation coming up (a hard feedback conversation, a conflict with a peer, or a layoff)",
+    "title": "My client has to deliver really difficult news to their team - how do I help them prepare what to say?",
+    "intentLabels": [
+      "difficult conversation prep",
+      "hard feedback script",
+      "layoff conversation",
+      "conflict conversation talking points"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://www.mixmax.com/blog/cold-email-followup-examples",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "You describe the situation and what your client needs to communicate, and Claude drafts talking points that are direct and honest without being harsh - a starting point your client can adapt into their own words rather than reading verbatim, which you then review together in session.",
+    "samplePrompt": "My client needs to tell a direct report their role is being eliminated in a reorg. Draft compassionate but direct talking points for this conversation: the news itself, why it's happening, and what support is available, without over-apologizing or being vague.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires describing the situation clearly; review the output together in session rather than having the client read it verbatim.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tier for higher usage - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.mixmax.com/blog/cold-email-followup-examples",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 8, 2026",
+    "accessNotes": "Public blog article on structuring hard messages clearly; not specific to executive coaching, but the plain-and-direct framing applies. This task involves sensitive personnel matters - never include the employee's real name or identifying details in the prompt.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-b3621d8a39",
+    "slug": "i-need-to-send-a-formal-proposal-to-a-company-s-hr-department",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach pitching a coaching engagement to a corporate HR or L&D buyer, not an individual paying client",
+    "title": "I need to send a formal proposal to a company's HR department for an executive coaching engagement, not just a quote for a private client",
+    "intentLabels": [
+      "corporate coaching proposal",
+      "statement of work",
+      "HR buyer pitch",
+      "B2B coaching contract"
+    ],
+    "tools": [
+      {
+        "name": "Proposify",
+        "url": "https://www.proposify.com/ai-proposal-generator"
+      }
+    ],
+    "workflowSummary": "Paste your scoping call notes into Proposify's editor, and its AI drafts a formal statement-of-work style proposal - engagement objectives, session cadence, measurement approach, and pricing - built for a corporate procurement or HR audience rather than an individual consumer.",
+    "samplePrompt": "Turn these scoping notes into a proposal for [company]'s HR department: coaching [number] of leaders over [timeframe], including kickoff stakeholder interviews, monthly sponsor check-ins, and a final impact report. Include pricing per leader and as a program total.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI drafts content well, but a corporate-facing proposal template takes more setup than a consumer one.",
+    "trustScore": 3,
+    "pricingNote": "Free AI proposal generator; paid plans for full platform features - verify before publishing",
+    "pricingTier": "freemium",
+    "sourceUrl": "https://www.proposify.com/ai-proposal-generator",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-3087bea62e",
+    "slug": "i-m-coaching-leaders-at-4-different-companies-right-now-how-do",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach juggling engagements across several different companies at once, each with its own sponsor and confidentiality boundaries",
+    "title": "I'm coaching leaders at 4 different companies right now - how do I keep each engagement organized without mixing anything up?",
+    "intentLabels": [
+      "multi-client coaching management",
+      "enterprise coaching platform",
+      "manage corporate engagements",
+      "coaching practice at scale"
+    ],
+    "tools": [
+      {
+        "name": "Coaching.com",
+        "url": "https://www.coaching.com/coaching-management-software"
+      }
+    ],
+    "workflowSummary": "Coaching.com gives each engagement its own branded client portal, session notes, and goal tracking, with role-based access so a sponsor only ever sees what's meant for them - keeping four separate corporate engagements cleanly siloed instead of relying on folders and memory.",
+    "samplePrompt": "Setup task: Set up a new engagement workspace for [Company D], with its own branded portal, goal tracker, and sponsor-visible dashboard kept separate from my other 3 active company engagements.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful once set up, but structuring engagement templates and access rules takes upfront work.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://www.coaching.com/coaching-management-software",
+    "sourceType": "Product page",
+    "freshness": "September 3, 2026 (page checked)",
+    "accessNotes": "Public product page.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "coaches-750c4049c9",
+    "slug": "how-do-i-keep-my-private-coaching-notes-secure-and-separate",
+    "kind": "workflow",
+    "niche": "Coaches",
+    "sector": "Executive & Leadership Coaching",
+    "persona": "Executive coach who needs to keep detailed session notes for their own use while sharing only high-level progress with the sponsor",
+    "title": "How do I keep my private coaching notes secure and separate from what I share with my client's company?",
+    "intentLabels": [
+      "confidential session notes",
+      "HIPAA GDPR compliant coaching software",
+      "data privacy for coaches",
+      "sponsor vs. coachee confidentiality"
+    ],
+    "tools": [
+      {
+        "name": "Simply.Coach",
+        "url": "https://simply.coach/"
+      }
+    ],
+    "workflowSummary": "Simply.Coach is SOC2, HIPAA, and GDPR-compliant coaching software with role-based permissions, so you can keep your private session notes visible only to you while a separate, sponsor-facing view shows only the high-level progress data the company is entitled to see.",
+    "samplePrompt": "Setup task: Set my detailed session notes to private (coach-only visibility), and configure the sponsor dashboard to show only goal progress and session completion, not note content.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the compliance and permission structure is a real strength, but takes deliberate configuration to use correctly.",
+    "trustScore": 3,
+    "pricingNote": "Not confirmed in source - verify before publishing",
+    "pricingTier": "paid",
+    "sourceUrl": "https://simply.coach/",
+    "sourceType": "Product page",
+    "freshness": "July 13, 2026",
+    "accessNotes": "Public product page. Confirm the specific compliance certifications (SOC2, HIPAA, GDPR) are still current and relevant to your jurisdiction before relying on them for sensitive client data.",
+    "batch": "Coaches AI Workflows Batch5",
+    "status": "active"
+  }
+]
