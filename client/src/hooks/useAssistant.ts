@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ApiRequestError } from '@/services/http'
 import { sendAssistantMessage } from '@/services/assistant'
 import type {
+  AssistantAutomation,
   AssistantChatRequest,
   AssistantChatResponse,
   AssistantPlan,
@@ -69,6 +70,8 @@ export interface AssistantSession {
   turns: ChatTurn[]
   /** The most recent plan, or undefined until one arrives. */
   plan: AssistantPlan | undefined
+  /** The guide shown above `plan`. Replaced whenever `plan` is, never on its own. */
+  automation: AssistantAutomation | undefined
   /** The assistant's read of role/goal/constraints, from the last reply. */
   understood: AssistantUnderstood | undefined
   status: AssistantStatus
@@ -109,6 +112,7 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
   /* The transcript as `send` reads it — see the header note on purity. */
   const turnsRef = useRef<ChatTurn[]>([])
   const [plan, setPlan] = useState<AssistantPlan | undefined>(undefined)
+  const [automation, setAutomation] = useState<AssistantAutomation | undefined>(undefined)
   const [understood, setUnderstood] = useState<AssistantUnderstood | undefined>(undefined)
   const [status, setStatusState] = useState<AssistantStatus>('idle')
   const [error, setError] = useState<string | undefined>(undefined)
@@ -164,8 +168,13 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
         contextRef.current = reply.context
         setUnderstood(reply.understood)
         // A turn without a plan (a clarifying question) leaves the panel showing
-        // whatever the last planned turn produced. See the header note.
-        if (reply.plan) setPlan(reply.plan)
+        // whatever the last planned turn produced. See the header note. The
+        // guide belongs to its plan: a new plan replaces both, and one that
+        // came without a guide clears it.
+        if (reply.plan) {
+          setPlan(reply.plan)
+          setAutomation(reply.automation)
+        }
         turnsRef.current = [
           ...turnsRef.current,
           {
@@ -234,6 +243,7 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
     turnsRef.current = []
     setTurns([])
     setPlan(undefined)
+    setAutomation(undefined)
     setUnderstood(undefined)
     setError(undefined)
     setCanRetry(false)
@@ -243,6 +253,7 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
   return {
     turns,
     plan,
+    automation,
     understood,
     status,
     error,

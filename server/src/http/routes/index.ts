@@ -49,7 +49,10 @@ export function createApiRouter(container: Container): Router {
   router.use(SAVINGS_API.path, createWorkSavingsRouter({ savings: container.savings }))
   router.use(
     AUTOMATIONS_API.path,
-    createAutomationsRouter({ automations: container.automations }),
+    createAutomationsRouter({
+      automations: container.automations,
+      matcher: container.automationMatcher,
+    }),
   )
   router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
   router.use(SUBMISSIONS.path, createSubmissionsRouter({ service: container.submissions }))

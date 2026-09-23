@@ -32,6 +32,14 @@
  * so it already scores at least titlePhrase + titleTerms, more than every
  * other signal combined can give a record without one.
  *
+ * ── One figure is NOT a share ────────────────────────────────────────────────
+ *
+ * Every signal above is normalised, which is what makes the weights readable.
+ * `titleWeight` deliberately is not: it is the raw IDF weight of the query
+ * terms the title carries, and it is the only thing that can tell a real match
+ * from a record agreeing on the query's commonest word. assistant/engine.ts
+ * gates the guide it shows above a plan on it. See SPEC-automations.md §7.
+ *
  * ── Why not retrieval/ ───────────────────────────────────────────────────────
  *
  * retrieval/score.ts is typed to Tool and infers category and stage from the
@@ -75,6 +83,22 @@ export interface AutomationMatch {
   automation: Automation
   score: number
   signals: AutomationMatchSignals
+  /**
+   * IDF weight of the query terms this record's TITLE carries — an absolute
+   * sum, deliberately NOT normalised to 0–1 the way every signal above is.
+   *
+   * It is the one figure here that answers "how much of what the user typed
+   * was rare, and did the title account for it", and assistant/engine.ts gates
+   * the shown guide on it (ASSISTANT.automationMinTitleWeight). A share cannot
+   * answer that question, because dividing by the query's own weight discards
+   * exactly the rarity that makes the answer differ — see SPEC-automations.md
+   * §7, "Why the guide gate is an absolute weight".
+   *
+   * Reported in the same units as the IDF table it comes from, so it moves
+   * with the size of the indexed set; the gate is expressed as a multiple of
+   * AUTOMATION_MATCH.idfBase rather than as a bare number of nats.
+   */
+  titleWeight: number
 }
 
 export interface AutomationMatcher {
@@ -122,12 +146,17 @@ interface WeightedTerm {
   idf: number
 }
 
+/** IDF weight of the query terms the field contains. Absolute, not a share. */
+function weightIn(query: readonly WeightedTerm[], field: ReadonlySet<string>): number {
+  let hits = 0
+  for (const { term, idf } of query) if (field.has(term)) hits += idf
+  return hits
+}
+
 /** IDF-weighted share of the query that the field contains, 0–1. */
 function share(query: readonly WeightedTerm[], total: number, field: ReadonlySet<string>): number {
   if (total === 0) return 0
-  let hits = 0
-  for (const { term, idf } of query) if (field.has(term)) hits += idf
-  return hits / total
+  return weightIn(query, field) / total
 }
 
 /**
@@ -181,6 +210,7 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
       if (options.niche !== undefined && automation.niche !== options.niche) continue
       if (options.kind !== undefined && automation.kind !== options.kind) continue
 
+      const titleWeight = weightIn(terms, entry.title)
       const signals: AutomationMatchSignals = {
         titlePhrase: entry.phrase.includes(phrase) ? AUTOMATION_MATCH_WEIGHTS.titlePhrase : 0,
         titleTerms: AUTOMATION_MATCH_WEIGHTS.titleTerms * share(terms, weight, entry.title),
@@ -198,7 +228,7 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
       // Trust breaks ties between text matches; it never makes one.
       if (text === 0) continue
       signals.trust = AUTOMATION_MATCH_WEIGHTS.trust * (automation.trustScore / 5)
-      const result = { automation, score: text + signals.trust, signals }
+      const result = { automation, score: text + signals.trust, signals, titleWeight }
       titleWords.set(result, entry.titleWords)
       results.push(result)
     }

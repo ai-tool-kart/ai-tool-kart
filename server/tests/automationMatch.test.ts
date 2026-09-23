@@ -10,7 +10,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createJsonAutomations } from '../src/automations/json.ts'
 import { createAutomationMatcher, termsOf } from '../src/automations/match.ts'
-import { AUTOMATION_MATCH, AUTOMATION_MATCH_WEIGHTS } from '../src/config/limits.ts'
+import { ASSISTANT, AUTOMATION_MATCH, AUTOMATION_MATCH_WEIGHTS } from '../src/config/limits.ts'
 import { makeAutomation } from './helpers.ts'
 
 /** A fixture whose only text is what the test gives it. */
@@ -209,5 +209,74 @@ await test('the imported automations: every title retrieves its own automation',
       .filter((a) => m.match(a.title, { limit: 1 })[0]?.automation.id !== a.id)
       .map((a) => `${a.niche}: ${a.title}`)
     assert.deepEqual(notFirst, [])
+  })
+})
+
+/*
+ * The gate on the guide the assistant shows above its plan — engine.ts's
+ * qualifyingAutomation, SPEC-automations.md §7, "Why the guide gate is an
+ * absolute weight".
+ *
+ * Against the REAL imported set, because an absolute IDF weight only means
+ * anything at the scale it was calibrated on: in a two-record fixture every
+ * term is worth about idfBase and nothing can clear a floor of 5.2.
+ *
+ * Each figure below was measured, and is pinned to 3dp rather than to a side
+ * of the floor. That is the point of the block: the numbers are the evidence
+ * that a gap EXISTS, and a weight change or a re-import that narrows it has to
+ * fail here, while the separation is still visible in the diff, rather than
+ * silently start showing the scholarship video for "edit videos faster" again.
+ * A re-import that moves a figure without closing the gap is expected to
+ * update these numbers — read the two extremes before you do.
+ */
+await test('the guide gate: matched title weight, on the imported set', async (t) => {
+  const all = await createJsonAutomations().list()
+  const m = createAutomationMatcher(all)
+  const floor = ASSISTANT.automationMinTitleWeight * AUTOMATION_MATCH.idfBase
+
+  /** query, measured titleWeight, whether the guide is shown. */
+  const CASES: ReadonlyArray<readonly [string, number, boolean]> = [
+    ['review a contract before I sign it', 16.931, true],
+    ['help me write a cover letter', 14.34, true],
+    ['make a study schedule', 9.987, true],
+    ['follow up with clients automatically', 8.051, true],
+    ['I am a teacher and I want to grade essays faster', 6.407, true],
+    // ─── the floor, 5.2 ───
+    ['edit videos faster', 4.022, false],
+    ['I need AI tools for video editing', 4.022, false],
+    ['help me with marketing', 3.517, false],
+    ['I need something for my business', 3.259, false],
+  ]
+
+  for (const [query, expected, shown] of CASES) {
+    await t.test(`${shown ? 'shows' : 'hides'} — "${query}"`, () => {
+      const top = m.match(query, { limit: 1 })[0]
+      assert.ok(top, 'the query matched nothing at all')
+      assert.equal(
+        Number(top.titleWeight.toFixed(3)),
+        expected,
+        `titleWeight moved; top match is "${top.automation.title}"`,
+      )
+      assert.equal(top.titleWeight >= floor, shown)
+    })
+  }
+
+  await t.test('the floor sits inside the gap, not on an edge', () => {
+    const lowestShown = Math.min(...CASES.filter(([, , s]) => s).map(([, w]) => w))
+    const highestHidden = Math.max(...CASES.filter(([, , s]) => !s).map(([, w]) => w))
+    assert.ok(
+      highestHidden < floor && floor < lowestShown,
+      `floor ${floor} is not between ${highestHidden} and ${lowestShown}`,
+    )
+  })
+
+  await t.test('the scholarship video is a three-signal match, which is why counting failed', () => {
+    // The case that killed the rule this replaced: three fields agree, all of
+    // them on the query's commonest words.
+    const top = m.match('edit videos faster', { limit: 1 })[0]
+    assert.ok(top)
+    const { trust: _trust, ...text } = top.signals
+    assert.equal(Object.values(text).filter((value) => value > 0).length, 3)
+    assert.ok(top.signals.titleTerms > 0 && top.signals.intentTerms > 0)
   })
 })

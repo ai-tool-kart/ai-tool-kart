@@ -331,6 +331,64 @@ export const ASSISTANT = {
   maxToolPhrases: 4,
   /** Words taken after a rejection or confirmation marker before resolving. */
   maxToolPhraseWords: 4,
+
+  /* ── The step-by-step guide above the plan ─────────────────────────────── */
+  /**
+   * How much of the message's rarity the top automation's TITLE must account
+   * for before the guide is shown, as a multiple of AUTOMATION_MATCH.idfBase.
+   * The engine reads AutomationMatch.titleWeight against it.
+   *
+   * ── Why a title weight, and not a signal count or a coverage share ───────
+   *
+   * This replaced a two-signal rule (at least two of titlePhrase, titleTerms,
+   * intentTerms, personaTerms, toolTerms above zero). Counting fields cannot
+   * separate a real match from a coincidence, because a record can agree with
+   * three fields on nothing but the query's commonest words: "edit videos
+   * faster" is a genuine THREE-signal match against a scholarship intro
+   * video, on `video` in its title and `edit` in its intent labels.
+   *
+   * An IDF coverage SHARE — the matched terms as a fraction of the query's
+   * total weight — was measured next and is worse than useless here: it is
+   * scale-free, so it divides out the very quantity that separates the cases.
+   * All four known-bad queries score 1.000 and the lowest score in the set
+   * belongs to a query that should qualify. The full table is in
+   * SPEC-automations.md §7.
+   *
+   * What separates them is the ABSOLUTE rarity the title accounts for, which
+   * is what this is. Measured over the 1,560 imported automations:
+   *
+   *     16.93  review a contract before I sign it              show
+   *     14.34  help me write a cover letter                    show
+   *      9.99  make a study schedule                           show
+   *      8.05  follow up with clients automatically            show
+   *      6.41  I am a teacher and I want to grade essays…      show
+   *   ──────── 5.2, this floor, mid-gap ───────────────────────────────
+   *      4.02  edit videos faster                              hide
+   *      4.02  I need AI tools for video editing               hide
+   *      3.52  help me with marketing                          hide
+   *      3.26  I need something for my business                hide
+   *
+   * automationMatch.test.ts pins all nine, so a weight or data change that
+   * closes the gap fails loudly instead of quietly showing the scholarship
+   * video again.
+   *
+   * ── On the unit ──────────────────────────────────────────────────────────
+   *
+   * A multiple of idfBase, because idfBase is the floor of the IDF scale: a
+   * term in EVERY automation is worth exactly idfBase, so "5.2" reads as "the
+   * title carries what 5.2 of the commonest possible terms would be worth".
+   * Today idfBase is 1, so the absolute value is 5.2 nats — a title holding
+   * one term that appears in ~28 of 1,560 automations clears it alone.
+   *
+   * Be clear about what that unit does NOT buy: it pins the threshold to the
+   * BOTTOM of the scale, not to the catalogue's size. Every idf also carries
+   * ln((N + smoothing) / (df + smoothing)), so as the imported set grows the
+   * whole scale stretches and a fixed multiple slowly gets easier to clear.
+   * The real guard against that is re-measuring the nine on import, which the
+   * test does on every run; this unit only stops the number being a bare
+   * quantity of nats with nothing to read it against.
+   */
+  automationMinTitleWeight: 5.2,
 } as const
 
 /* ─── Submissions — SPEC-submit-backend.md §6, §7 ──────────────────────────── */

@@ -39,6 +39,7 @@
 
 import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
 import { createJsonAutomations } from './automations/json.ts'
+import { createAutomationMatcher, type AutomationMatcher } from './automations/match.ts'
 import type { AutomationRepository } from './automations/repository.ts'
 import { createJsonToolCatalogue } from './catalogue/json.ts'
 import type { ToolCatalogueRepository } from './catalogue/repository.ts'
@@ -68,6 +69,8 @@ export interface Container {
   readonly savings: WorkSavingsRepository
   /** Imported task recipes (SPEC-automations.md). Never imports the catalogue. */
   readonly automations: AutomationRepository
+  /** The one automation search index, built on first use. Route and assistant share it. */
+  readonly automationMatcher: () => Promise<AutomationMatcher>
   /** One client, one budget, one unit of work. Never share the result. */
   readonly createLLMClientForTurn: () => LLMClient
   readonly assistant: AssistantEngine
@@ -145,6 +148,15 @@ export function createContainer({
   // the catalogue only by slug (SPEC-automations.md §1).
   const automations = injectedAutomations ?? createJsonAutomations({ logger })
 
+  // ONE search index over the active automations, shared by GET
+  // /api/automations and the assistant. Built on first use and kept: the set
+  // is fixed for the life of the process, so a second index would repeat it.
+  let automationIndex: Promise<AutomationMatcher> | undefined
+  const automationMatcher = (): Promise<AutomationMatcher> => {
+    automationIndex ??= automations.list().then((all) => createAutomationMatcher(all))
+    return automationIndex
+  }
+
   // createSubmissionStore() (submissions/store.ts) is itself the switch point
   // for a future Postgres implementation, so this line never has to name
   // store.json.ts directly — unlike catalogue/stories/savings above, which
@@ -170,6 +182,7 @@ export function createContainer({
     retrieval,
     catalogue,
     createClient: createLLMClientForTurn,
+    automations: automationMatcher,
     logger,
   })
 
@@ -181,6 +194,7 @@ export function createContainer({
     stories,
     savings,
     automations,
+    automationMatcher,
     createLLMClientForTurn,
     assistant,
     submissions,

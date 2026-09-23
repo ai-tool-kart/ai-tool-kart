@@ -33,7 +33,16 @@ import { createMockProvider, type MockProviderOptions } from '../src/llm/provide
 import { createRetrievalService } from '../src/retrieval/service.ts'
 import type { ToolCatalogueRepository, ToolQuery } from '../src/catalogue/repository.ts'
 import type { Tool } from '../src/domain/types.ts'
-import { fixtureCatalogue, makeAssistantReply, makeTool, testLogger } from './helpers.ts'
+import { createJsonAutomations } from '../src/automations/json.ts'
+import { createAutomationMatcher, type AutomationMatcher } from '../src/automations/match.ts'
+import type { Automation } from '../src/automations/types.ts'
+import {
+  fixtureCatalogue,
+  makeAssistantReply,
+  makeAutomation,
+  makeTool,
+  testLogger,
+} from './helpers.ts'
 
 /* ═══ Fixtures ═════════════════════════════════════════════════════════════ */
 
@@ -111,10 +120,19 @@ interface Harness {
   /** Every provider request, so a test can read the prompt that was sent. */
   prompts: Array<{ system: string; input: string }>
   calls: number
+  /** Times the engine asked for the automation index. */
+  automationLookups: number
 }
 
 function harness(
-  options: { mock?: MockProviderOptions; catalogue?: ToolCatalogueRepository } = {},
+  options: {
+    mock?: MockProviderOptions
+    catalogue?: ToolCatalogueRepository
+    /** The automations the engine may put above a plan. None by default. */
+    automations?: Automation[]
+    /** Replaces the index outright, e.g. with one that fails to build. */
+    automationIndex?: () => Promise<AutomationMatcher>
+  } = {},
 ): Harness {
   const logger = testLogger()
   const catalogue = options.catalogue ?? fixtureCatalogue(TOOLS)
@@ -125,6 +143,7 @@ function harness(
     budgets: [],
     prompts: [],
     calls: 0,
+    automationLookups: 0,
     engine: undefined as never,
   }
 
@@ -148,6 +167,10 @@ function harness(
       })
       state.budgets.push(budget)
       return createLLMClient({ provider, budget, logger })
+    },
+    automations: () => {
+      state.automationLookups += 1
+      return options.automationIndex?.() ?? Promise.resolve(createAutomationMatcher(options.automations ?? []))
     },
     logger,
   })
@@ -881,3 +904,133 @@ await test('catalogue kind', async (t) => {
   })
 })
 
+
+/* ═══ The step-by-step guide above the plan ═══════════════════════════════ */
+
+/*
+ * These run against the REAL imported automations, not fixtures.
+ *
+ * The gate is an absolute IDF weight — how much of the message's rarity the
+ * matched title accounts for (ASSISTANT.automationMinTitleWeight, and
+ * SPEC-automations.md §7 for why a signal count and a coverage share both
+ * failed). An absolute weight only means anything at the scale it was
+ * calibrated on: inside a two-record fixture every term is worth about
+ * idfBase, so nothing clears a floor of 5.2 and a "qualifying" fixture could
+ * only be manufactured by padding the index until the arithmetic worked.
+ *
+ * The separation itself is pinned in automationMatch.test.ts, which holds all
+ * nine measured figures. What these tests own is the engine's behaviour around
+ * the gate: which turns consult it, what it puts on the response, and what
+ * happens when it says no.
+ */
+
+/** Built once — indexing 1,560 records per harness would dominate the suite. */
+const AUTOMATIONS = await createJsonAutomations().list()
+const AUTOMATION_INDEX = createAutomationMatcher(AUTOMATIONS)
+const realIndex = () => Promise.resolve(AUTOMATION_INDEX)
+
+/** Its title carries 10.58 of VIDEO_QUERY's weight, comfortably over the floor. */
+const VIDEO_GUIDE_TITLE = 'I want to write a YouTube video script from a topic'
+
+/**
+ * Three signals — title, intent labels, persona — every one of them on a word
+ * as common as `video`, and a matched title weight of 4.02. The case the
+ * replaced two-signal rule let through.
+ */
+const COINCIDENCE_QUERY = 'edit videos faster'
+
+await test('the automation above the plan', async (t) => {
+  await t.test('a title-carrying match is shown on a recommend turn, as title, niche and slug', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal(response.automation?.title, VIDEO_GUIDE_TITLE)
+
+    const shown = AUTOMATIONS.find((a) => a.title === VIDEO_GUIDE_TITLE)
+    assert.ok(shown)
+    assert.deepEqual(response.automation, {
+      title: shown.title,
+      niche: shown.niche,
+      slug: shown.slug,
+    })
+  })
+
+  await t.test('a match on common words alone is coincidence, and nothing is shown', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: COINCIDENCE_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal('automation' in response, false)
+    // It really did match, and on more than one field — it is the gate that
+    // rejected it, not an empty result.
+    const top = AUTOMATION_INDEX.match(COINCIDENCE_QUERY, { limit: 1 })[0]
+    assert.ok(top)
+    assert.ok(top.signals.titleTerms > 0 && top.signals.intentTerms > 0)
+  })
+
+  await t.test('the raw message is matched, not the refined query', async () => {
+    // A whole-phrase title hit only survives if nothing is prefixed to the
+    // message, and a fixture is the only way to guarantee one. Its title is
+    // the message, so it carries the whole query weight and clears the floor.
+    const phrase = makeAutomation({
+      id: 'phrase',
+      slug: 'phrase',
+      title: VIDEO_QUERY,
+      intentLabels: ['unrelated label'],
+      persona: 'Nobody in particular',
+      tools: [{ name: 'Placeholder', url: 'https://example.com' }],
+    })
+    const h = harness({ automations: [...AUTOMATIONS, phrase] })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.equal(response.automation?.slug, 'phrase')
+  })
+
+  await t.test("an 'mcp' turn never asks for the index", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS), automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal('automation' in response, false)
+    assert.equal(h.automationLookups, 0)
+  })
+
+  await t.test('a clarifying turn carries no automation', async () => {
+    const h = harness({ mock: { assistantIntent: 'clarify' }, automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'clarify')
+    assert.equal('automation' in response, false)
+  })
+
+  await t.test('the empty-retrieval answer is unchanged, even when a guide would qualify', async () => {
+    const h = harness({ catalogue: fixtureCatalogue([]), automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.message, NO_CANDIDATES_MESSAGE)
+    assert.equal(h.calls, 0)
+    assert.equal('automation' in response, false)
+  })
+
+  await t.test('a later turn that does not qualify clears it rather than carrying it', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const first = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.ok(first.automation)
+
+    const second = await h.engine.runTurn({
+      message: 'only free tools please',
+      context: first.context,
+    })
+    assert.equal(second.intent, 'recommend')
+    assert.equal('automation' in second, false)
+  })
+
+  await t.test('an index that fails to build costs the guide, not the plan', async () => {
+    const h = harness({ automationIndex: () => Promise.reject(new Error('index unavailable')) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.ok(response.plan)
+    assert.equal('automation' in response, false)
+  })
+})

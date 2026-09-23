@@ -28,7 +28,7 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import { deriveSteps } from '../../automations/deriveSteps.ts'
-import { createAutomationMatcher, type AutomationMatcher } from '../../automations/match.ts'
+import type { AutomationMatcher } from '../../automations/match.ts'
 import type { AutomationRepository } from '../../automations/repository.ts'
 import type { Automation, AutomationStep } from '../../automations/types.ts'
 import { AUTOMATIONS, AUTOMATIONS_API } from '../../config/limits.ts'
@@ -133,18 +133,15 @@ const DetailParamsSchema = z
 
 export interface AutomationsRouteOptions {
   automations: AutomationRepository
+  /** The container's shared search index — the one the assistant also ranks with. */
+  matcher: () => Promise<AutomationMatcher>
 }
 
-export function createAutomationsRouter({ automations }: AutomationsRouteOptions): Router {
+export function createAutomationsRouter({
+  automations,
+  matcher: getMatcher,
+}: AutomationsRouteOptions): Router {
   const router = Router()
-
-  // Built on first search and kept: the repository's set is fixed for the life
-  // of the process, so indexing it per request would repeat a constant.
-  let matcher: Promise<AutomationMatcher> | undefined
-  const getMatcher = (): Promise<AutomationMatcher> => {
-    matcher ??= automations.list().then((all) => createAutomationMatcher(all))
-    return matcher
-  }
 
   router.get('/', (req, res, next) => {
     void (async () => {

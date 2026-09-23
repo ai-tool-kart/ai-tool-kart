@@ -27,6 +27,18 @@ interface ButtonProps {
    * Ignored when `to` makes this a link — a link cannot be disabled.
    */
   disabled?: boolean
+  /**
+   * Link-only, both optional and both additive: absent, the rendered anchor
+   * carries neither attribute and behaves exactly as it always has. Ignored
+   * without `to`, because a <button> has no target.
+   *
+   * A caller passing `target="_blank"` owns two things this component cannot
+   * decide for it: `rel="noopener noreferrer"`, and telling a screen reader
+   * the tab is coming — the codebase says that with
+   * `<span className="sr-only"> (opens in a new tab)</span>` inside the label.
+   */
+  target?: string
+  rel?: string
   className?: string
 }
 
@@ -56,6 +68,8 @@ export default function Button({
   magnetic = false,
   fullWidth = false,
   disabled = false,
+  target,
+  rel,
   className = '',
 }: ButtonProps) {
   const classes = [
@@ -73,7 +87,13 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} data-magnet={magnetic ? '1' : undefined} className={classes}>
+      <Link
+        to={to}
+        target={target}
+        rel={rel}
+        data-magnet={magnetic ? '1' : undefined}
+        className={classes}
+      >
         {children}
       </Link>
     )

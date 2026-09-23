@@ -4,6 +4,7 @@
  *   validated request
  *     → merge context
  *     → deterministic retrieval                       (no model involved)
+ *       ∥ automation match on the raw message         (no model involved)
  *     → no useful candidates? clarify, WITHOUT calling the model
  *     → trusted candidate cards + untrusted user turn
  *     → LLM client: schema validation and bounded repair
@@ -14,7 +15,7 @@
  * ── What this module is not allowed to know ───────────────────────────────────
  *
  * It receives a RetrievalService, a ToolCatalogueRepository, a function that
- * makes an LLM client, and a logger. It does not construct any of them, does not
+ * makes an LLM client, the shared automation index, and a logger. It does not construct any of them, does not
  * know the catalogue is a JSON file, and does not name a provider. Swapping
  * either implementation is a line in container.ts — the boundary
  * ASSISTANT_ARCHITECTURE_PLAN.md §6.1 and §6.4 exist to protect, and one
@@ -36,10 +37,12 @@
  * turning either into an error would trade a useful answer for a red toast.
  */
 
+import type { AutomationMatch, AutomationMatcher } from '../automations/match.ts'
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
 import { STAGE_ACTIONS, type WorkflowStage } from '../catalogue/taxonomy.ts'
-import { ASSISTANT, RETRIEVAL } from '../config/limits.ts'
+import { ASSISTANT, AUTOMATION_MATCH, RETRIEVAL } from '../config/limits.ts'
 import type {
+  AssistantAutomation,
   AssistantChatResponse,
   AssistantPlan,
   AssistantPlanStep,
@@ -110,6 +113,12 @@ export interface CreateAssistantEngineOptions {
    * between requests. See the note at the top of this file.
    */
   createClient: () => LLMClient
+  /**
+   * The shared automation search index — the same one GET /api/automations
+   * ranks with. A getter because the index is built from an async listing,
+   * once, on first use.
+   */
+  automations: () => Promise<AutomationMatcher>
   logger: Logger
 }
 
@@ -117,6 +126,7 @@ export function createAssistantEngine({
   retrieval,
   catalogue,
   createClient,
+  automations,
   logger,
 }: CreateAssistantEngineOptions): AssistantEngine {
   return {
@@ -153,23 +163,46 @@ export function createAssistantEngine({
        * The page's kind is stated too — by the client rather than the user.
        */
       const filters = hardFilters(refined.retrieval.pricingTiers, request.kind)
-      const retrieved = await retrieval.retrieve({
-        query: refined.retrieval.query,
-        context: {
-          ...(refined.retrieval.role ? { role: refined.retrieval.role } : {}),
-          ...(refined.retrieval.categories.length > 0
-            ? { categories: refined.retrieval.categories }
-            : {}),
-          ...(refined.retrieval.rejectedToolIds.length > 0
-            ? { rejectedToolIds: refined.retrieval.rejectedToolIds }
-            : {}),
-          ...(refined.retrieval.confirmedToolIds.length > 0
-            ? { confirmedToolIds: refined.retrieval.confirmedToolIds }
-            : {}),
-        },
-        ...(filters ? { filters } : {}),
-        limit: RETRIEVAL.defaultCandidates,
-      })
+
+      /*
+       * The automation match runs beside retrieval, on the RAW message rather
+       * than the refined query: refinement expands "follow-ups" into catalogue
+       * words like "email, outreach", which is the rewrite automations/match.ts
+       * exists to avoid, and prefixing the goal breaks the whole-phrase title
+       * hit. Skipped on the MCP page — every automation is a workflow recipe.
+       *
+       * A failure here costs the guide, never the plan: it is logged and the
+       * turn carries on without one.
+       */
+      const [retrieved, topAutomation] = await Promise.all([
+        retrieval.retrieve({
+          query: refined.retrieval.query,
+          context: {
+            ...(refined.retrieval.role ? { role: refined.retrieval.role } : {}),
+            ...(refined.retrieval.categories.length > 0
+              ? { categories: refined.retrieval.categories }
+              : {}),
+            ...(refined.retrieval.rejectedToolIds.length > 0
+              ? { rejectedToolIds: refined.retrieval.rejectedToolIds }
+              : {}),
+            ...(refined.retrieval.confirmedToolIds.length > 0
+              ? { confirmedToolIds: refined.retrieval.confirmedToolIds }
+              : {}),
+          },
+          ...(filters ? { filters } : {}),
+          limit: RETRIEVAL.defaultCandidates,
+        }),
+        request.kind === 'mcp'
+          ? undefined
+          : automations()
+              .then((matcher) => matcher.match(request.message, { limit: 1 })[0])
+              .catch((error: unknown) => {
+                log.warn('Automation match failed; answering without a guide', {
+                  error: error instanceof Error ? error.message : String(error),
+                })
+                return undefined
+              }),
+      ])
 
       const candidates = retrieved.candidates.map((entry) => entry.tool)
 
@@ -273,6 +306,11 @@ export function createAssistantEngine({
         }
       }
 
+      // Recommend turns only, and only a match that qualifies. Nothing from an
+      // earlier turn is carried: an absent field is the answer for this one.
+      const automation =
+        plan && intent === 'recommend' ? qualifyingAutomation(topAutomation) : undefined
+
       /*
        * The one metric §10.2 calls out. It must be logged on every turn, and it
        * should be empty: a non-empty value is a prompt bug or a model
@@ -290,6 +328,7 @@ export function createAssistantEngine({
         confirmed: refined.retrieval.confirmedToolIds.length,
         candidates: candidates.length,
         planSteps: plan?.steps.length ?? 0,
+        automation: automation?.slug ?? null,
         attempts: response.attempts,
         model: response.model,
         droppedToolIds,
@@ -314,6 +353,7 @@ export function createAssistantEngine({
         },
       }
       if (plan) result.plan = plan
+      if (automation) result.automation = automation
       return result
     },
   }
@@ -363,6 +403,32 @@ async function hydrate(
     map.set(tool.id, toToolSummary(tool))
   }
   return map
+}
+
+/**
+ * The top automation, if enough of the message agreed with its TITLE.
+ *
+ * The test is how much of the message's IDF weight the title accounts for,
+ * against ASSISTANT.automationMinTitleWeight — see that constant for why an
+ * absolute weight, and not the signal count or the coverage share this
+ * replaced. Title only: title ∪ intent labels does not separate, because the
+ * labels are where a generic word like `edit` lands on an unrelated record.
+ *
+ * Only the top match is judged. A lower one that would qualify is not
+ * promoted, because it lost to the one that did not.
+ */
+function qualifyingAutomation(match: AutomationMatch | undefined): AssistantAutomation | undefined {
+  if (!match) return undefined
+  if (match.titleWeight < ASSISTANT.automationMinTitleWeight * AUTOMATION_MATCH.idfBase) {
+    return undefined
+  }
+  // Implied by the floor today — a positive title weight is a positive title
+  // share — and kept explicit anyway, so lowering the floor cannot quietly
+  // start promoting a record that agrees on its persona or its tool names and
+  // on nothing a user would recognise as the subject.
+  if (match.signals.titleTerms <= 0 && match.signals.intentTerms <= 0) return undefined
+  const { title, niche, slug } = match.automation
+  return { title, niche, slug }
 }
 
 /** What we already believed, for a turn that never reached the model. */

@@ -13,6 +13,8 @@
  * handle all three cases, so the types make them impossible to forget.
  */
 
+import type { NicheName } from '@/types/automation'
+
 /** What the assistant understood the turn to be. Drives nothing but copy. */
 export type AssistantIntent = 'clarify' | 'recommend' | 'refine' | 'explain' | 'off_topic'
 
@@ -103,11 +105,23 @@ export interface AssistantMeta {
   droppedToolIds: string[]
 }
 
+/**
+ * The step-by-step guide shown above a plan. Picked by the server from its own
+ * automation match; niche and slug together because slugs repeat across niches.
+ */
+export interface AssistantAutomation {
+  title: string
+  niche: NicheName
+  slug: string
+}
+
 export interface AssistantChatResponse {
   message: string
   intent: AssistantIntent
   understood: AssistantUnderstood
   plan?: AssistantPlan
+  /** Only on a recommend turn whose message matched an automation well. */
+  automation?: AssistantAutomation
   /** Refinement chips offered under the answer. At most three. */
   followUps: string[]
   context: ConversationContext

@@ -16,6 +16,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createAssistantEngine } from '../src/assistant/engine.ts'
+import { createAutomationMatcher } from '../src/automations/match.ts'
 import { UNTRUSTED_DELIMITERS } from '../src/llm/prompts/shared.ts'
 import { createBudget } from '../src/llm/budget.ts'
 import { createLLMClient } from '../src/llm/client.ts'
@@ -218,6 +219,7 @@ function harness(mock: MockProviderOptions = {}, catalogue?: ToolCatalogueReposi
     retrieval,
     catalogue: repository,
     logger,
+    automations: async () => createAutomationMatcher([]),
     createClient: () =>
       createLLMClient({
         provider: {

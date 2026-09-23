@@ -9,6 +9,7 @@
 
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import type { AutomationRepository } from '../src/automations/repository.ts'
 import type { ErrorBody } from '../src/http/errorHandler.ts'
 import type {
   AutomationListResponse,
@@ -298,5 +299,32 @@ await test('pricingNote never leaves the server (SPEC-automations.md §6)', asyn
         assert.equal(text.includes('pricingNote'), false, item.slug)
       }
     })
+  })
+})
+
+await test('one search index, shared with the assistant', async (t) => {
+  await t.test('the route and the assistant build it once between them', async () => {
+    const inner = fixtureAutomations(FIXTURES)
+    let listings = 0
+    const spied: AutomationRepository = {
+      ...inner,
+      list: (query) => {
+        listings += 1
+        return inner.list(query)
+      },
+    }
+    const shared = testContainer(testEnv(), testLogger(), undefined, undefined, undefined, undefined, undefined, spied)
+
+    // The assistant first, so the index the route then searches is the one
+    // the assistant built. A route with its own cache would list again.
+    await shared.assistant.runTurn({ message: 'plan my week around exams' })
+    assert.equal(listings, 1)
+    await withServer(shared, async ({ origin }) => {
+      assert.equal((await get(origin, '?q=plan')).status, 200)
+      assert.equal((await get(origin, '?q=scholarships')).status, 200)
+    })
+
+    assert.equal(listings, 1)
+    assert.equal(shared.automationMatcher(), shared.automationMatcher())
   })
 })

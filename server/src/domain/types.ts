@@ -404,6 +404,18 @@ export interface AssistantMeta {
   droppedToolIds: string[]
 }
 
+/**
+ * The one automation shown above a plan, as a link to its detail page.
+ *
+ * Picked by the engine from its own match, never by the model, so there is no
+ * id to ground. Niche and slug together, because slugs repeat across niches.
+ */
+export interface AssistantAutomation {
+  title: string
+  niche: NicheName
+  slug: string
+}
+
 /** The body of a successful POST /api/assistant/chat (§10.2). */
 export interface AssistantChatResponse {
   message: string
@@ -414,6 +426,8 @@ export interface AssistantChatResponse {
     constraints: string[]
   }
   plan?: AssistantPlan
+  /** Present only on a recommend turn whose message matched an automation well. */
+  automation?: AssistantAutomation
   followUps: string[]
   /** Echo back on the next turn. */
   context: ConversationContext

@@ -58,6 +58,26 @@ restyle, or reorganise anything that already exists.
   the assistant's UI. If a shared component needs a new capability,
   extend it additively behind an optional prop; never change its
   default appearance.
+
+  **The navigation clause applied during the build and is now lifted,
+  for one addition only.** It did its job — nothing about the nav was
+  disturbed while the feature was built — but it also left the
+  finished feature with no way in: `/automations` shipped reachable
+  only through the assistant's "Step-by-step guide" button, so 1,560
+  records had no entry point for a reader who had not already asked
+  the assistant a qualifying question. The nav now carries **Guides**
+  → `/automations`, directly after Workflows, built from the existing
+  `NAV_ITEMS` shape with no new tokens and no style change.
+
+  "Guides" rather than "Automations" is a width constraint, not a
+  naming preference: the pill is capped at `--max-w-nav` (1060px), so
+  its nav box is 709px at every width from the 1080px breakpoint up,
+  and the six existing items use 608px. "Automations" measures 111px
+  against 101px of headroom and wraps onto a second line. Anything
+  added to the nav later has the same ~99px budget.
+
+  The rest of this clause stands. A second nav change is a new
+  decision, not a precedent set by this one.
 - New pages compose existing primitives from `components/ui/` and
   `components/layout/`, and use the tokens in `styles/index.css`
   `@theme`. No new colours, fonts, spacing scales, or shadows.
@@ -306,6 +326,56 @@ capped (`AUTOMATION_MATCH.defaultLimit` 10, `maxLimit` 50).
 
 **Verification** (slice 5): every one of the 1,560 imported titles, run
 as a query against the full set, ranks its own automation first.
+
+### Why the guide gate is an absolute weight
+
+The assistant shows the top automation above its plan only when the
+match is good enough (`engine.ts`, `qualifyingAutomation`). Two gates
+were tried and rejected before the one that ships; both are recorded
+here because the ranking above makes them look reasonable.
+
+**A signal count** — at least two of the five text signals above zero —
+cannot separate a real match from a coincidence. A record can agree with
+three fields on nothing but the query's commonest words: "edit videos
+faster" is a genuine *three-signal* match against "make a short intro
+video about myself for a scholarship or internship application", on
+`video` in the title and `edit` in the intent labels.
+
+**An IDF coverage share** — matched terms as a fraction of the query's
+total IDF weight — is worse, and fails in principle rather than by a
+narrow miss. A share is scale-free: dividing by the query's own weight
+discards exactly the rarity that distinguishes the cases. After stopword
+removal "help me with marketing" is the single term `market`, so any
+record with that word in its title accounts for 100% of it. Measured on
+the imported set, over every union of scored fields:
+
+| coverage (all fields) | | query |
+|---|---|---|
+| 1.000 | show | review a contract before I sign it |
+| 1.000 | show | I am a teacher and I want to grade essays faster |
+| 1.000 | show | help me write a cover letter |
+| 1.000 | show | make a study schedule |
+| 1.000 | *hide* | edit videos faster |
+| 1.000 | *hide* | I need AI tools for video editing |
+| 1.000 | *hide* | help me with marketing |
+| 1.000 | *hide* | I need something for my business |
+| 0.753 | show | follow up with clients automatically |
+
+Every should-hide query sits at the ceiling and the lowest score in the
+set is a should-show query, so no threshold works in either direction.
+Narrowing the union to title ∪ intent or to the title alone only moves
+different should-show queries to the bottom (0.747, then 0.364) while
+`marketing` and `business` stay pinned at 1.000.
+
+**What ships** is the absolute IDF weight of the query terms the TITLE
+carries — `AutomationMatch.titleWeight`, against
+`ASSISTANT.automationMinTitleWeight` (5.2 × `idfBase`, mid-gap between
+4.02 and 6.41). Title only: title ∪ intent does not separate either,
+because the intent labels are where a generic word like `edit` lands on
+an unrelated record, which lifts both video queries to 9.08 — above
+"follow up with clients automatically" at 8.05. `automationMatch.test.ts`
+pins all nine figures, so a weight change or a re-import that closes the
+gap fails loudly instead of quietly showing the scholarship video again.
 
 ---
 
