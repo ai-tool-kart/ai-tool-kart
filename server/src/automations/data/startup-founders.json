@@ -1,0 +1,2266 @@
+[
+  {
+    "id": "startup-founders-4e42509160",
+    "slug": "make-me-a-pitch-deck-for-investors",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Pre-seed/seed founder building a pitch",
+    "title": "make me a pitch deck for investors",
+    "intentLabels": [
+      "AI pitch deck maker",
+      "investor deck generator",
+      "turn my idea into slides",
+      "startup deck builder"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://www.roundfunded.com/en/blogs/ai-pitch-deck-generators-2026",
+        "catalogueSlug": "gamma"
+      },
+      {
+        "name": "Beautiful.ai",
+        "catalogueSlug": "beautiful-ai"
+      },
+      {
+        "name": "Canva Magic Design"
+      }
+    ],
+    "workflowSummary": "Founder pastes a short description of the business (or an outline/website URL) into the tool; the AI drafts a full investor-style deck with problem/solution/traction/financials slides in the standard order, then the founder edits wording, swaps in real numbers, and adjusts branding before sending to investors.",
+    "samplePrompt": "Create a 10-slide investor pitch deck for a [industry] startup that helps [target customer] do [core value prop]. Include problem, solution, market size, business model, traction, team, and ask slides. Keep the tone confident but factual.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts and templates need no design skill, though founders should still tighten the narrative themselves",
+    "trustScore": 4,
+    "pricingNote": "Gamma from ~$8-10/mo with free tier; Beautiful.ai from ~$12/mo; Canva free tier + paid from ~$13/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.roundfunded.com/en/blogs/ai-pitch-deck-generators-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-08-04",
+    "accessNotes": "Roundup article; tool names and pricing are third-party claims, verify directly with each vendor before quoting to end users",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-8121b2e41d",
+    "slug": "write-a-business-plan-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "First-time founder writing a business plan",
+    "title": "write a business plan for my startup",
+    "intentLabels": [
+      "business plan generator",
+      "startup business plan writer",
+      "investor-ready business plan AI"
+    ],
+    "tools": [
+      {
+        "name": "LivePlan",
+        "url": "https://www.successtechservices.com/ai-business-plan-generators/"
+      },
+      {
+        "name": "Upmetrics"
+      },
+      {
+        "name": "Bizplanr"
+      }
+    ],
+    "workflowSummary": "Founder answers a guided questionnaire about the business idea, target market, and revenue model; the tool structures a full plan (executive summary, market analysis, financial forecast) from those answers, which the founder then fact-checks and personalizes with real customer evidence before sharing with a bank or investor.",
+    "samplePrompt": "Based on this business idea: [one-paragraph description], generate a business plan outline with executive summary, market analysis, competitive landscape, revenue model, and a 12-month financial forecast section I can fill in myself.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "step-by-step questionnaires are built for non-experts",
+    "trustScore": 4,
+    "pricingNote": "Bizplanr has a free core plan; LivePlan and Upmetrics are paid subscriptions, typically $20-30/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.successtechservices.com/ai-business-plan-generators/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "3 days ago (as of search)",
+    "accessNotes": "Roundup article; treat plan output as a first draft only, not a validated business case",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-29b30e3664",
+    "slug": "create-a-logo-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder launching a brand with no design budget",
+    "title": "create a logo for my startup",
+    "intentLabels": [
+      "AI logo maker",
+      "logo generator",
+      "startup branding tool",
+      "logo design AI"
+    ],
+    "tools": [
+      {
+        "name": "Looka",
+        "url": "https://brandingstudio.ai/blog/best-ai-branding-tools-2026",
+        "catalogueSlug": "looka"
+      },
+      {
+        "name": "Tailor Brands"
+      },
+      {
+        "name": "Brandmark.io"
+      }
+    ],
+    "workflowSummary": "Founder types in the business name, industry, and style preference; the tool generates dozens of logo concepts in seconds, the founder picks a direction and customizes colors/fonts/icons, then downloads a brand kit (logo files, social media assets, sometimes business cards) without hiring a designer.",
+    "samplePrompt": "Generate logo concepts for a startup called [name] in the [industry] space. Style: modern and minimal. Include a few color palette options and a version that works as a small app icon.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no design background needed, guided style questions do the work",
+    "trustScore": 4,
+    "pricingNote": "Most plans run $20-65 one-time or ~$10-20/mo for ongoing brand kit access - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://brandingstudio.ai/blog/best-ai-branding-tools-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-03-05",
+    "accessNotes": "Roundup article; confirm final logo doesn't infringe existing trademarks before use",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-19269648b7",
+    "slug": "research-my-competitors-and-market-size",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder validating an idea before building",
+    "title": "research my competitors and market size",
+    "intentLabels": [
+      "AI market research tool",
+      "competitor analysis AI",
+      "TAM SAM SOM generator",
+      "startup market validation"
+    ],
+    "tools": [
+      {
+        "name": "Perplexity",
+        "url": "https://startupshortcut.com/knowledge-base/best-ai-market-research-tools-startups",
+        "catalogueSlug": "perplexity"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Founder asks the AI assistant to research the competitive landscape and market size for their idea; the tool searches the web, synthesizes competitor pricing/positioning and cites sources, and the founder uses that synthesis as a starting point for slides or planning documents - always double-checking cited figures before using them publicly.",
+    "samplePrompt": "Research the competitive landscape for an AI tool that helps [target customer] do [task]. List the top 5 competitors, their pricing, and their main differentiators, with sources for each claim.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy to use, but founders need to learn to verify every cited statistic before trusting it",
+    "trustScore": 4,
+    "pricingNote": "Perplexity free tier limited, Pro ~$20/mo; Claude free tier limited, Pro ~$20/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://startupshortcut.com/knowledge-base/best-ai-market-research-tools-startups",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-25",
+    "accessNotes": "Roundup article; AI-cited statistics can be fabricated-sounding, always verify against a real source before using in a pitch",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-3fae1722a9",
+    "slug": "incorporate-my-startup-as-an-llc-or-c-corp",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder ready to legally form the company",
+    "title": "incorporate my startup as an LLC or C-Corp",
+    "intentLabels": [
+      "startup incorporation service",
+      "LLC formation AI",
+      "Delaware C-Corp setup",
+      "business formation online"
+    ],
+    "tools": [
+      {
+        "name": "Stripe Atlas",
+        "url": "https://institutionhq.com/resources/insights/best-incorporation-services-ai-startups"
+      },
+      {
+        "name": "ZenBusiness"
+      },
+      {
+        "name": "Clerky"
+      }
+    ],
+    "workflowSummary": "Founder answers questions about entity type, state, and founder ownership; the platform files the incorporation paperwork, obtains an EIN, and generates standard founder/equity documents, letting a non-lawyer get a bank-ready, investor-ready legal entity set up online in days instead of going through a law firm from scratch.",
+    "samplePrompt": "I'm forming a Delaware C-Corp for a two-founder SaaS startup. Walk me through what documents and steps I need (incorporation, EIN, founder stock, 83(b) election) and in what order.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "platforms guide you step by step, but founders should still understand what an EIN, registered agent, and 83(b) election are before clicking through",
+    "trustScore": 4,
+    "pricingNote": "Stripe Atlas ~$500 one-time; ZenBusiness plans from ~$0+state fees; Clerky ~$427 one-time - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://institutionhq.com/resources/insights/best-incorporation-services-ai-startups",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "1 week ago (as of search)",
+    "accessNotes": "Roundup article; this is general information, not legal advice - confirm scope with the provider or a lawyer before filing",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-e2dc6ac900",
+    "slug": "build-financial-projections-for-investors",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder prepping numbers for a raise",
+    "title": "build financial projections for investors",
+    "intentLabels": [
+      "financial model generator",
+      "revenue forecast AI",
+      "startup financial projections tool",
+      "investor-ready spreadsheet"
+    ],
+    "tools": [
+      {
+        "name": "Forecastr",
+        "url": "https://fluxel.dev/financial-model-generator"
+      },
+      {
+        "name": "Fluxel"
+      }
+    ],
+    "workflowSummary": "Founder inputs their business model basics (pricing, customer acquisition assumptions, cost structure); the tool builds a 3-statement or unit-economics-driven forecast with scenario cases (base/optimistic/conservative), producing an investor-ready spreadsheet the founder can defend in a fundraising meeting instead of a fragile DIY spreadsheet.",
+    "samplePrompt": "Build a 3-year revenue forecast for a SaaS startup with 200 current customers paying $99/month, 12% annual churn, and 15 new customers added per month. Show base, optimistic, and conservative scenarios.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful for structure, but founders need basic knowledge of their own unit economics to get realistic output",
+    "trustScore": 3,
+    "pricingNote": "Fluxel free to start; Forecastr pricing on request, typically a paid engagement - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://fluxel.dev/financial-model-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; AI-suggested benchmark statistics inside these tools should be manually verified, not taken as fact",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-7308266095",
+    "slug": "set-up-an-ai-chatbot-to-answer-customer-questions",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder who can't staff support yet",
+    "title": "set up an AI chatbot to answer customer questions",
+    "intentLabels": [
+      "AI customer support chatbot",
+      "no-code chatbot builder",
+      "website FAQ bot",
+      "AI live chat"
+    ],
+    "tools": [
+      {
+        "name": "SiteGPT",
+        "url": "https://sitegpt.ai/blog/best-no-code-ai-chatbot-builders"
+      },
+      {
+        "name": "Tidio"
+      },
+      {
+        "name": "Chatbase"
+      }
+    ],
+    "workflowSummary": "Founder uploads their website URL, help docs, or FAQ content into the tool; the AI trains a chatbot on that content so it can answer visitor questions in real time on the website, with a human handoff option when the bot doesn't know the answer - all without writing any code.",
+    "samplePrompt": "Set up an AI chatbot trained on my website content that can answer common customer questions about pricing, shipping, and returns, and hand off to a human email if it can't answer.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload documents or a URL, no coding or setup scripting required",
+    "trustScore": 4,
+    "pricingNote": "SiteGPT from ~$39/mo; Tidio has a free tier, paid plans from ~$29/mo; Chatbase free tier + paid from ~$40/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://sitegpt.ai/blog/best-no-code-ai-chatbot-builders",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-03-30",
+    "accessNotes": "Roundup article; confirm current message-volume limits on free tiers before relying on them for real customer traffic",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-e155fb26a3",
+    "slug": "schedule-and-write-social-media-posts-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Solo founder handling their own marketing",
+    "title": "schedule and write social media posts for my startup",
+    "intentLabels": [
+      "AI social media scheduler",
+      "social media content generator",
+      "auto-post startup social media"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://www.blotato.com/blog/social-media-automation-tools",
+        "catalogueSlug": "buffer"
+      }
+    ],
+    "workflowSummary": "Founder connects their social accounts, then uses the tool's AI assistant to brainstorm post ideas and captions from a short prompt, schedules a week or month of posts in one sitting, and lets the platform auto-publish at recommended times instead of manually posting every day.",
+    "samplePrompt": "Write 5 LinkedIn posts for a startup founder sharing progress updates about building an AI tool for [audience]. Keep the tone honest and behind-the-scenes, not salesy, and suggest a posting day for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for solo creators and small teams with no marketing team needed",
+    "trustScore": 4,
+    "pricingNote": "Buffer free plan covers 3 channels/10 scheduled posts per channel; paid plans scale up from there - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.blotato.com/blog/social-media-automation-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "4 weeks ago (as of search)",
+    "accessNotes": "Roundup article; pricing and free-tier limits change often, confirm on Buffer's own pricing page",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-5a3fa91b47",
+    "slug": "write-a-job-description-for-my-first-hire",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder hiring their first employees",
+    "title": "write a job description for my first hire",
+    "intentLabels": [
+      "AI job description generator",
+      "job posting writer",
+      "hiring template AI",
+      "inclusive job ad generator"
+    ],
+    "tools": [
+      {
+        "name": "Workable",
+        "url": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators"
+      },
+      {
+        "name": "Grammarly",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Founder enters the role title, key responsibilities, and must-have skills; the tool drafts a clear, bias-checked job description in a professional tone, and the founder edits it for their specific company voice before posting it to job boards - saving hours versus writing from a blank page.",
+    "samplePrompt": "Write a job description for our first Customer Success hire at an early-stage SaaS startup. Responsibilities include onboarding new customers and handling support tickets. Keep the tone approachable and flag any language that might discourage diverse applicants.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-blank style inputs need no HR background",
+    "trustScore": 3,
+    "pricingNote": "Workable offers a free AI-powered generator; Grammarly's is free with no signup - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/free-ai-job-description-generators",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; always do a final human read for company-specific tone and legal compliance before posting",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-b340190b60",
+    "slug": "transcribe-and-summarize-my-meeting-notes-automatically",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder taking investor or customer calls",
+    "title": "transcribe and summarize my meeting notes automatically",
+    "intentLabels": [
+      "AI meeting notes",
+      "meeting transcription tool",
+      "auto meeting summary",
+      "AI note taker"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://ticnote.com/en/blog/ai-meeting-transcription-tools-comparison",
+        "catalogueSlug": "otter-ai"
+      },
+      {
+        "name": "Fireflies.ai"
+      }
+    ],
+    "workflowSummary": "Founder invites the AI note-taker to their Zoom/Google Meet/Teams call (or it auto-joins from calendar); it transcribes the conversation live, generates a summary with action items afterward, and can push that summary into tools like Slack, Notion, or a CRM - so the founder doesn't have to type notes during the call.",
+    "samplePrompt": "Summarize this meeting transcript into: key discussion points, decisions made, and action items with owners. Keep it under 200 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "joins calls automatically and needs no setup beyond connecting a calendar",
+    "trustScore": 4,
+    "pricingNote": "Otter.ai free tier covers 300 transcription minutes/month; paid plans add more minutes and integrations - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://ticnote.com/en/blog/ai-meeting-transcription-tools-comparison",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-03-31",
+    "accessNotes": "Roundup article; sensitive fundraising or board conversations should be checked against the tool's data-privacy/training policy first",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-20f5867a56",
+    "slug": "build-a-landing-page-to-test-my-startup-idea",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder validating a product idea before it's built",
+    "title": "build a landing page to test my startup idea",
+    "intentLabels": [
+      "AI landing page builder",
+      "MVP landing page",
+      "pre-launch page generator",
+      "no-code website builder"
+    ],
+    "tools": [
+      {
+        "name": "Lovable",
+        "url": "https://unicornplatform.com/blog/ai-landing-page-builders-in-2026/"
+      },
+      {
+        "name": "Mixo"
+      },
+      {
+        "name": "Unicorn Platform"
+      }
+    ],
+    "workflowSummary": "Founder describes the product idea and target audience in a chat prompt or short form; the tool generates a live, published landing page (headline, value prop, waitlist or signup form) in minutes, letting the founder start collecting emails or running ad traffic to validate demand before writing a line of code.",
+    "samplePrompt": "Build a landing page for a startup that helps freelancers track invoices and get paid faster. Include a headline, three benefit bullets, a waitlist signup form, and a clean, modern design.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the idea in plain language and the page is generated for you",
+    "trustScore": 4,
+    "pricingNote": "Mixo has a free tier; Unicorn Platform and Lovable have free tiers with paid plans from ~$10-20/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://unicornplatform.com/blog/ai-landing-page-builders-in-2026/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-05-07",
+    "accessNotes": "Roundup article; verify current free-tier page limits and custom domain support before committing",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-b9906b91c5",
+    "slug": "write-and-send-an-email-newsletter-to-my-customers",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder running early email marketing",
+    "title": "write and send an email newsletter to my customers",
+    "intentLabels": [
+      "AI email marketing tool",
+      "newsletter writer AI",
+      "email campaign generator",
+      "startup email automation"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp",
+        "url": "https://pipeline.zoominfo.com/marketing/ai-email-marketing-tools"
+      }
+    ],
+    "workflowSummary": "Founder connects their contact list, then uses the built-in AI assistant to draft subject lines and email copy from a short prompt about what they want to announce; the platform also recommends send times and automates follow-up sequences like welcome emails, all from one dashboard.",
+    "samplePrompt": "Write a short product-update newsletter for our early customers announcing a new feature that lets them export reports to PDF. Keep it under 150 words with a clear call to action to try the feature.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "templates, drag-and-drop editor, and AI suggestions require no coding or design skill",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; paid plans typically start around $13-20/mo depending on list size - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pipeline.zoominfo.com/marketing/ai-email-marketing-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-12",
+    "accessNotes": "Roundup article; confirm current free-tier contact limits before publishing to end users",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-ec65a293f1",
+    "slug": "find-and-track-investors-for-my-startup-raise",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder actively fundraising",
+    "title": "find and track investors for my startup raise",
+    "intentLabels": [
+      "investor CRM",
+      "fundraising pipeline tool",
+      "AI investor matching",
+      "track investor outreach"
+    ],
+    "tools": [
+      {
+        "name": "Foundersuite",
+        "url": "https://www.gritt.io/blog/best-crm-for-fundraising"
+      }
+    ],
+    "workflowSummary": "Founder builds a target investor list (by stage, sector, and check size), logs every outreach email and call in the CRM's pipeline view, and gets reminded to follow up - replacing a messy spreadsheet with a purpose-built system that tracks the whole raise from first contact to term sheet.",
+    "samplePrompt": "I'm raising a $750K pre-seed round for a [industry] startup. Help me draft a cold outreach email to an investor whose fund focuses on early-stage [industry] companies, keeping it under 125 words.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the CRM itself is easy to use, but running an effective raise still requires founder judgment on strategy and timing",
+    "trustScore": 3,
+    "pricingNote": "Plans typically range from ~$40-80/mo depending on investor database access tier - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.gritt.io/blog/best-crm-for-fundraising",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-08",
+    "accessNotes": "Roundup article; investor contact databases can go stale quickly, confirm current investor details before outreach",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-a33fdf0bd2",
+    "slug": "create-a-survey-to-get-feedback-from-my-users",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder collecting customer feedback",
+    "title": "create a survey to get feedback from my users",
+    "intentLabels": [
+      "AI survey tool",
+      "customer feedback survey generator",
+      "NPS survey AI",
+      "user feedback analysis"
+    ],
+    "tools": [
+      {
+        "name": "Tally",
+        "url": "https://cleverx.com/blog/best-survey-tools-for-startups-in-2026-10-platforms-by-stage-and-use-case/"
+      },
+      {
+        "name": "Typeform"
+      }
+    ],
+    "workflowSummary": "Founder describes the survey goal in plain language and the AI drafts a full set of questions (or the founder builds it manually with a simple form builder); responses come in automatically, and built-in AI analysis clusters open-ended answers into themes so the founder doesn't have to read every response by hand.",
+    "samplePrompt": "Create a 5-question customer satisfaction survey for early users of a project management app, including one open-ended question about what they'd want improved next.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "unlimited free tier and a simple builder needs no research background",
+    "trustScore": 4,
+    "pricingNote": "Tally is free with an unlimited tier; Typeform has a free tier with paid plans from ~$25/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cleverx.com/blog/best-survey-tools-for-startups-in-2026-10-platforms-by-stage-and-use-case/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-08",
+    "accessNotes": "Roundup article; confirm current response-volume limits on free tiers before relying on them at scale",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-0015248abc",
+    "slug": "automate-my-startup-s-bookkeeping",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder trying to stay on top of the books",
+    "title": "automate my startup's bookkeeping",
+    "intentLabels": [
+      "AI bookkeeping tool",
+      "automated accounting for startups",
+      "expense categorization AI",
+      "burn rate tracker"
+    ],
+    "tools": [
+      {
+        "name": "QuickBooks Online",
+        "url": "https://puzzle.io/blog/ai-accounting-software-startups"
+      },
+      {
+        "name": "Puzzle"
+      }
+    ],
+    "workflowSummary": "Founder connects their business bank and credit card accounts; the tool automatically categorizes transactions, reconciles accounts, and surfaces real-time metrics like burn rate and runway on a dashboard - cutting down the hours founders would otherwise spend on manual spreadsheet bookkeeping each month.",
+    "samplePrompt": "Explain, in plain language, what burn rate and runway mean and how I can find these numbers automatically once my bank account is connected to a bookkeeping tool.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automated categorization is easy, but founders still benefit from basic accounting literacy to sanity-check the output",
+    "trustScore": 3,
+    "pricingNote": "QuickBooks Online from ~$30/mo; Puzzle pricing varies by plan, aimed at early-stage startups - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://puzzle.io/blog/ai-accounting-software-startups",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; AI categorization still needs periodic human review, especially before tax filing or investor reporting",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-96df4bc4eb",
+    "slug": "come-up-with-a-name-and-tagline-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder naming a new company or product",
+    "title": "come up with a name and tagline for my startup",
+    "intentLabels": [
+      "AI business name generator",
+      "startup name generator",
+      "tagline generator",
+      "slogan maker AI"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://martechseries.com/predictive-ai/ai-platforms-machine-learning/llcnamegenerator-ai-launches-free-ai-powered-llc-name-generator-with-live-domain-checks-for-businesses/",
+        "catalogueSlug": "copy-ai"
+      },
+      {
+        "name": "LLCNameGenerator.ai"
+      }
+    ],
+    "workflowSummary": "Founder describes what the business does in one sentence; the tool generates a batch of name and/or tagline options across different tones (punchy, aspirational, benefit-focused), often with a live domain-availability check, letting the founder shortlist options in minutes instead of brainstorming alone.",
+    "samplePrompt": "Suggest 10 short, memorable startup names for a company that helps small e-commerce brands manage returns, plus 3 tagline options for the top 3 names.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-sentence input generates dozens of instant options with no branding expertise needed",
+    "trustScore": 3,
+    "pricingNote": "Copy.ai's slogan/name tools are free; LLCNameGenerator.ai is free with live domain checks - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://martechseries.com/predictive-ai/ai-platforms-machine-learning/llcnamegenerator-ai-launches-free-ai-powered-llc-name-generator-with-live-domain-checks-for-businesses/",
+    "sourceType": "Press release / product announcement",
+    "freshness": "2026-03-30",
+    "accessNotes": "Press release; always run a trademark and domain check before finalizing any generated name",
+    "batch": "StartupFounders AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-bfbc48fd2e",
+    "slug": "create-an-nda-or-contractor-agreement-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder onboarding a contractor or vendor",
+    "title": "create an NDA or contractor agreement for my startup",
+    "intentLabels": [
+      "AI NDA generator",
+      "contract generator",
+      "freelance agreement tool",
+      "startup legal document AI"
+    ],
+    "tools": [
+      {
+        "name": "AiDocX",
+        "url": "https://aidocx.ai/en/blog/best-free-nda-generators-2026"
+      },
+      {
+        "name": "Rocket Lawyer"
+      }
+    ],
+    "workflowSummary": "Founder describes the relationship (contractor, vendor, or partner) and the confidential information involved; the tool selects a base template and drafts a full contract with jurisdiction-aware clauses (confidentiality, termination, IP assignment), which the founder reviews and sends out for signature - without paying a lawyer for a routine document.",
+    "samplePrompt": "Create a mutual NDA between my startup, [Company Name], and a freelance contractor who will have access to our product roadmap and codebase. Include a 2-year confidentiality term and standard IP assignment language.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts or a short questionnaire produce a full document with no legal background needed",
+    "trustScore": 3,
+    "pricingNote": "AiDocX free tier covers basic generation; Rocket Lawyer plans typically run ~$40/mo or per-document fees - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aidocx.ai/en/blog/best-free-nda-generators-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-03-31",
+    "accessNotes": "Roundup article; this is general drafting help, not legal advice - have a lawyer review before using for high-stakes agreements",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-4d03ec3afd",
+    "slug": "get-a-contract-signed-electronically",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder closing a contract with a client or vendor",
+    "title": "get a contract signed electronically",
+    "intentLabels": [
+      "e-signature tool",
+      "electronic signature software",
+      "sign documents online",
+      "DocuSign alternative"
+    ],
+    "tools": [
+      {
+        "name": "Dropbox Sign",
+        "url": "https://valueaddvc.com/blog/best-e-signature-tools-for-startups-in-2026-docusign-pandadoc-dropbox-sign-compared"
+      },
+      {
+        "name": "PandaDoc"
+      }
+    ],
+    "workflowSummary": "Founder uploads a contract (or builds one from a template), adds signature fields for each party, and sends it out; recipients sign from any device, and the founder gets a completed, legally binding PDF with an audit trail - no printing, scanning, or in-person signing required.",
+    "samplePrompt": "I need to send a service agreement to a new client for e-signature. Walk me through adding signature fields, a date field, and setting a reminder if they haven't signed within 3 days.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop signature fields need no technical setup",
+    "trustScore": 4,
+    "pricingNote": "Dropbox Sign from ~$15/mo; PandaDoc from ~$35/mo, both with limited free tiers - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://valueaddvc.com/blog/best-e-signature-tools-for-startups-in-2026-docusign-pandadoc-dropbox-sign-compared",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2 weeks ago (as of search)",
+    "accessNotes": "Roundup article; confirm current free-tier document/signature limits before relying on them for real client contracts",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-f3827ef3ed",
+    "slug": "set-up-and-manage-my-startup-s-cap-table",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder with multiple co-founders and early investors",
+    "title": "set up and manage my startup's cap table",
+    "intentLabels": [
+      "cap table software",
+      "equity management tool",
+      "SAFE modeling",
+      "startup ownership tracker"
+    ],
+    "tools": [
+      {
+        "name": "Pulley",
+        "url": "https://blog.withmantle.com/best-cap-table-management-software-2026/"
+      },
+      {
+        "name": "Carta"
+      }
+    ],
+    "workflowSummary": "Founder inputs founder equity splits, option pool size, and any SAFEs or convertible notes; the platform models how each future funding round will dilute ownership, keeps a single source of truth for who owns what, and generates the documentation investors and lawyers expect during diligence - replacing an error-prone spreadsheet.",
+    "samplePrompt": "Explain in plain language how a $500K SAFE at a $5M valuation cap would affect my company's cap table if I later raise a priced round at a $10M valuation.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the software is guided, but founders benefit from understanding basic SAFE/dilution mechanics before relying on the numbers",
+    "trustScore": 4,
+    "pricingNote": "Pulley plans typically start around $3,500+/year; Carta free tier available for early-stage, paid plans scale with company stage - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://blog.withmantle.com/best-cap-table-management-software-2026/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-07-15",
+    "accessNotes": "Roundup article; cap table errors can affect legal ownership - have a lawyer or the platform's tie-out service verify before a funding round closes",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-a261f73c31",
+    "slug": "set-up-a-data-room-to-share-documents-with-investors",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder preparing for fundraising or M&A diligence",
+    "title": "set up a data room to share documents with investors",
+    "intentLabels": [
+      "virtual data room",
+      "investor data room",
+      "due diligence folder",
+      "secure document sharing for fundraising"
+    ],
+    "tools": [
+      {
+        "name": "Papermark",
+        "url": "https://www.ethosdata.com/blog/top-virtual-data-room-providers-in-2026-pricing-features-reviews-use-cases-compared/"
+      },
+      {
+        "name": "DocSend"
+      }
+    ],
+    "workflowSummary": "Founder uploads pitch decks, financials, and legal documents into a secure, permission-controlled folder; investors get a single link to review everything, and the founder can see page-by-page analytics on who viewed what and for how long - useful for prioritizing follow-up with engaged investors during a raise.",
+    "samplePrompt": "What documents should I include in an investor data room for a seed round, and how should I organize the folder structure so it's easy for investors to navigate?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload-and-share workflow needs no technical setup, though founders should think through what to include",
+    "trustScore": 3,
+    "pricingNote": "Papermark has a free tier; DocSend plans typically start around $15-45/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.ethosdata.com/blog/top-virtual-data-room-providers-in-2026-pricing-features-reviews-use-cases-compared/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-07-10",
+    "accessNotes": "Roundup article; confirm current storage/analytics limits on free tiers before a live fundraising round",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-409561b5f6",
+    "slug": "send-an-invoice-and-get-paid-by-my-clients",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder billing clients for products or services",
+    "title": "send an invoice and get paid by my clients",
+    "intentLabels": [
+      "AI invoicing tool",
+      "invoice generator",
+      "get paid online",
+      "freelance billing software"
+    ],
+    "tools": [
+      {
+        "name": "Wave",
+        "url": "https://aviy.ai/blog/best-invoicing-software-for-freelancers"
+      },
+      {
+        "name": "Aviy"
+      }
+    ],
+    "workflowSummary": "Founder describes the work performed in plain language (client name, services, hours, or line items); the tool generates a polished, branded invoice in seconds, attaches a payment link so the client can pay by card or bank transfer, and automatically sends reminders for anything overdue - all from one dashboard.",
+    "samplePrompt": "Create an invoice for 20 hours of consulting work at $150/hour for a client called Acme Co, due in 30 days, with a note that late payments incur a 1.5% monthly fee.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the invoice in plain language and it's generated instantly",
+    "trustScore": 4,
+    "pricingNote": "Wave's invoicing is genuinely free; Aviy has a free tier with paid plans for advanced features - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aviy.ai/blog/best-invoicing-software-for-freelancers",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-23",
+    "accessNotes": "Roundup article; confirm current payment-processing fees before quoting a client",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-b5eee99203",
+    "slug": "set-up-payroll-for-my-first-employee",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder hiring their first W-2 employee",
+    "title": "set up payroll for my first employee",
+    "intentLabels": [
+      "payroll software",
+      "run payroll startup",
+      "employee payroll setup",
+      "small business payroll AI"
+    ],
+    "tools": [
+      {
+        "name": "Gusto",
+        "url": "https://gusto.com/product/payroll"
+      }
+    ],
+    "workflowSummary": "Founder enters basic company and employee information (state, pay rate, bank details); the platform handles tax registration, calculates withholdings, files payroll taxes in all 50 states, and runs payroll automatically each pay period - letting a founder with zero HR background pay their first employee compliantly within about 30 minutes of setup.",
+    "samplePrompt": "I'm hiring my first full-time employee in California. Walk me through what I need to set up payroll correctly, including state tax registration and what forms the employee needs to fill out.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided setup wizard needs no HR or accounting background",
+    "trustScore": 4,
+    "pricingNote": "Plans typically start around $40-55/mo plus a small per-employee fee - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://gusto.com/product/payroll",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; confirm current state coverage and per-employee pricing directly with Gusto before committing",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-42782a27fb",
+    "slug": "set-up-a-booking-link-so-people-can-schedule-meetings-with-me",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder juggling investor and customer calls",
+    "title": "set up a booking link so people can schedule meetings with me",
+    "intentLabels": [
+      "meeting scheduler",
+      "booking link tool",
+      "Calendly alternative",
+      "automated scheduling"
+    ],
+    "tools": [
+      {
+        "name": "Calendly",
+        "url": "https://calendly.com/newsroom/press-release/calendly-new-ai-product-suite"
+      }
+    ],
+    "workflowSummary": "Founder connects their calendar and sets available time slots for different meeting types (investor call, customer demo, interview); the tool generates a shareable booking link that automatically checks availability and books the meeting - eliminating the back-and-forth of finding a time by email.",
+    "samplePrompt": "Set up a 30-minute 'Investor Intro Call' event type with a buffer of 15 minutes before and after, limited to weekday afternoons, and a question asking the investor which fund they're with.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one-time setup, then the link works automatically with no ongoing effort",
+    "trustScore": 4,
+    "pricingNote": "Free tier covers one event type; paid plans (Standard/Teams) run roughly $10-20/user/month - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://calendly.com/newsroom/press-release/calendly-new-ai-product-suite",
+    "sourceType": "Press release / product announcement",
+    "freshness": "3 weeks ago (as of search)",
+    "accessNotes": "Press release; confirm current plan tiers since Calendly recently restructured pricing around new AI features",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-8ade7f9f42",
+    "slug": "organize-and-track-tasks-for-my-small-team",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder managing a small team's day-to-day work",
+    "title": "organize and track tasks for my small team",
+    "intentLabels": [
+      "project management tool",
+      "task tracker",
+      "team task board",
+      "startup project management AI"
+    ],
+    "tools": [
+      {
+        "name": "ClickUp",
+        "url": "https://techaigoz.com/blog/best-ai-project-management-tools-2026"
+      },
+      {
+        "name": "Asana"
+      }
+    ],
+    "workflowSummary": "Founder creates a shared workspace with tasks, deadlines, and owners for each project; team members update status as they go, and the built-in AI drafts task summaries, flags overdue items, and turns meeting notes into assigned action items - replacing scattered spreadsheets and Slack threads with one visible source of truth.",
+    "samplePrompt": "Set up a project board for launching our v2 product with three stages: To Do, In Progress, Done. Add tasks for design review, QA testing, and launch announcement, each with a suggested owner and deadline.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop boards and templates need no project management background",
+    "trustScore": 4,
+    "pricingNote": "Both have free tiers for small teams; paid plans typically run ~$7-12/user/month - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://techaigoz.com/blog/best-ai-project-management-tools-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-26",
+    "accessNotes": "Roundup article; confirm current free-tier user and task limits before relying on it for a growing team",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-db0d063147",
+    "slug": "create-a-privacy-policy-and-terms-of-service-for-my-website",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder launching a website or app",
+    "title": "create a privacy policy and terms of service for my website",
+    "intentLabels": [
+      "privacy policy generator",
+      "terms of service generator",
+      "GDPR CCPA compliance tool",
+      "legal pages for website"
+    ],
+    "tools": [
+      {
+        "name": "Termly",
+        "url": "https://termly.io/products/privacy-policy-generator/"
+      },
+      {
+        "name": "FreeTOS"
+      }
+    ],
+    "workflowSummary": "Founder answers a short questionnaire about what data their website or app collects (emails, cookies, payment info) and which regions they operate in; the tool assembles a compliant privacy policy and terms of service covering GDPR, CCPA, and other relevant laws, ready to publish on the website footer.",
+    "samplePrompt": "Generate a privacy policy and terms of service for a SaaS product that collects email addresses, uses cookies for analytics, and processes payments via Stripe, aimed at US and EU customers.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided questionnaire needs no legal background to produce a first draft",
+    "trustScore": 3,
+    "pricingNote": "Termly has a free tier for one policy; FreeTOS is free with no signup required - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://termly.io/products/privacy-policy-generator/",
+    "sourceType": "Product page",
+    "freshness": "2026-05-21",
+    "accessNotes": "Product page; treat as a compliant first draft, not a substitute for legal review, especially if handling sensitive user data",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-49eb5ed753",
+    "slug": "check-if-my-business-name-is-trademarked",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder about to publicly launch a product name or brand",
+    "title": "check if my business name is trademarked",
+    "intentLabels": [
+      "trademark search tool",
+      "check name availability",
+      "USPTO trademark search",
+      "brand name conflict check"
+    ],
+    "tools": [
+      {
+        "name": "Trademarkia",
+        "url": "https://www.trademarkia.ai/"
+      },
+      {
+        "name": "Trademark.io"
+      }
+    ],
+    "workflowSummary": "Founder types the proposed business or product name into the search tool; the AI scans USPTO filings (and sometimes state/common-law databases) for identical or confusingly similar marks, flags potential conflicts by trademark class, and gives the founder an early read on registrability before spending money on branding or filing.",
+    "samplePrompt": "Search whether the name '[proposed name]' is available to trademark for a software/SaaS business, and flag any existing marks that might conflict in that class.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "type in a name and get instant results, no legal background needed for the initial check",
+    "trustScore": 3,
+    "pricingNote": "Both offer free basic searches; premium reports with conflict analysis typically run $9.99-$50+ per report - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trademarkia.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; a free search is a starting point only, not a substitute for a full clearance search or trademark attorney before filing",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-a3f5145227",
+    "slug": "get-a-business-address-for-my-startup-without-renting-an-office",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Remote-first founder needing a professional address",
+    "title": "get a business address for my startup without renting an office",
+    "intentLabels": [
+      "virtual business address",
+      "virtual mailbox",
+      "registered agent service",
+      "remote startup mailing address"
+    ],
+    "tools": [
+      {
+        "name": "Anytime Mailbox",
+        "url": "https://www.usepostal.com/blog/best-virtual-address-for-business"
+      },
+      {
+        "name": "Physical Address"
+      }
+    ],
+    "workflowSummary": "Founder signs up and selects a real street address in a city of their choice; incoming mail is scanned and uploaded to a secure online dashboard where the founder can view, forward, or shred each item remotely - giving a remote or home-based startup a professional, bank-and-investor-acceptable business address without leasing physical space.",
+    "samplePrompt": "I'm a remote founder with no physical office. What do I need a virtual business address for (banking, incorporation, EIN), and what should I look for when choosing a provider?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "sign-up and mail-scanning workflow needs no setup expertise",
+    "trustScore": 3,
+    "pricingNote": "Plans range widely, roughly $8-50/month depending on provider and whether registered agent service is bundled - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.usepostal.com/blog/best-virtual-address-for-business",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; confirm the provider accepts USPS Form 1583 and is valid for banking/incorporation in your state before relying on it",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-edc0b617a5",
+    "slug": "review-a-contract-before-i-sign-it",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder reviewing a vendor or client contract before signing",
+    "title": "review a contract before I sign it",
+    "intentLabels": [
+      "AI contract review",
+      "contract risk analysis",
+      "red flag clause checker",
+      "legal document review AI"
+    ],
+    "tools": [
+      {
+        "name": "AiDocX",
+        "url": "https://aidocx.ai/en/blog/best-ai-contract-tools-startups-2026"
+      }
+    ],
+    "workflowSummary": "Founder uploads a contract they've received from a client, vendor, or partner; the AI reads through it and flags risky or unusual clauses (like one-sided termination terms or missing liability caps) in plain language, so the founder knows what to push back on or ask a lawyer about before signing.",
+    "samplePrompt": "Review this vendor contract and flag any clauses that are unusually one-sided, missing, or risky for a small startup - explain each flag in plain language, not legal jargon.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "upload and review is simple, but founders should still treat flagged issues as a prompt to ask a lawyer, not a final verdict",
+    "trustScore": 3,
+    "pricingNote": "AiDocX free tier includes basic contract analysis; paid plans add more usage - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aidocx.ai/en/blog/best-ai-contract-tools-startups-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-03-04",
+    "accessNotes": "Roundup article; AI contract review is a triage tool, not legal advice - have a lawyer review any contract with real financial or liability stakes",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-d1af291d08",
+    "slug": "track-time-worked-by-my-team-or-contractors",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder tracking contractor or employee hours",
+    "title": "track time worked by my team or contractors",
+    "intentLabels": [
+      "time tracking tool",
+      "timesheet software",
+      "contractor hours tracker",
+      "billable hours app"
+    ],
+    "tools": [
+      {
+        "name": "Gusto",
+        "url": "https://gusto.com/resources/guides/most-user-friendly-payroll-software"
+      }
+    ],
+    "workflowSummary": "Founder or team members clock in and out (or log hours manually) through the payroll platform's time tracking feature; hours flow directly into payroll calculations for hourly employees and contractors, removing the need for a separate spreadsheet or timesheet tool and reducing payroll errors.",
+    "samplePrompt": "Explain how time tracking works inside a payroll platform for a small team with two hourly employees and one contractor, and how those hours flow into payroll each pay period.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "clock-in/clock-out interface needs no training",
+    "trustScore": 3,
+    "pricingNote": "Time tracking is typically bundled into payroll plans starting around $40-55/mo - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://gusto.com/resources/guides/most-user-friendly-payroll-software",
+    "sourceType": "Product/vendor page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Vendor page; confirm time-tracking is included in your specific plan tier, as some providers charge extra for it",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-f53d76d34c",
+    "slug": "get-a-registered-agent-for-my-llc-or-c-corp",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder incorporating and needing ongoing compliance support",
+    "title": "get a registered agent for my LLC or C-Corp",
+    "intentLabels": [
+      "registered agent service",
+      "startup compliance service",
+      "annual report filing reminder",
+      "business compliance AI"
+    ],
+    "tools": [
+      {
+        "name": "ZenBusiness",
+        "url": "https://ecommerceparadise.com/best-virtual-mailbox-startups-2026/"
+      },
+      {
+        "name": "MyCompanyWorks"
+      }
+    ],
+    "workflowSummary": "Founder selects a registered agent plan during or after incorporation; the service receives official state and legal correspondence on the company's behalf, forwards it digitally, and sends automated reminders for annual report filings and other compliance deadlines - reducing the risk of the company falling out of good standing.",
+    "samplePrompt": "Explain what a registered agent does, why my startup needs one, and what happens if I miss an annual report filing deadline in my state of incorporation.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a set-and-forget service that needs no ongoing technical involvement",
+    "trustScore": 3,
+    "pricingNote": "Registered agent service typically runs $99-125/year standalone, or bundled free/discounted with incorporation packages - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://ecommerceparadise.com/best-virtual-mailbox-startups-2026/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-12",
+    "accessNotes": "Roundup article; confirm which states the provider covers and whether the first year is free before renewing",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-8173bee090",
+    "slug": "create-a-business-proposal-for-a-potential-client",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder drafting a standard vendor or client proposal",
+    "title": "create a business proposal for a potential client",
+    "intentLabels": [
+      "AI proposal generator",
+      "business proposal template",
+      "sales proposal writer",
+      "client proposal AI"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://www.jotform.com/products/sign/docusign-alternatives/"
+      }
+    ],
+    "workflowSummary": "Founder describes the scope of work and pricing for a potential client; the tool drafts a polished, branded proposal document with pricing tables and a built-in e-signature field, then tracks when the client opens and reads it - so the founder can follow up at the right moment instead of guessing.",
+    "samplePrompt": "Create a business proposal for a 3-month website redesign project for a client called Acme Co, with a fixed price of $12,000 paid in two installments, and include a section on project timeline and deliverables.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in templates and AI drafting need no design or sales background",
+    "trustScore": 3,
+    "pricingNote": "Plans typically start around $35/mo, with proposal + e-signature bundled - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jotform.com/products/sign/docusign-alternatives/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "3 days ago (as of search)",
+    "accessNotes": "Roundup article; confirm current plan includes both document creation and e-signature before committing",
+    "batch": "StartupFounders AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-856db0f926",
+    "slug": "write-seo-blog-posts-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder driving organic traffic without an SEO background",
+    "title": "write SEO blog posts for my startup",
+    "intentLabels": [
+      "AI SEO content writer",
+      "blog post generator",
+      "organic content for startups",
+      "SEO article AI"
+    ],
+    "tools": [
+      {
+        "name": "Writesonic",
+        "url": "https://www.trysight.ai/blog/startup-seo-content-tools",
+        "catalogueSlug": "writesonic"
+      },
+      {
+        "name": "Jasper",
+        "catalogueSlug": "jasper"
+      }
+    ],
+    "workflowSummary": "Founder enters a target keyword and a short brief about the audience; the tool researches the topic, structures a full article with headings and meta description, and optimizes it for the target keyword, giving the founder a publish-ready draft to edit and post to the company blog - no SEO expertise required to get started.",
+    "samplePrompt": "Write a 1200-word SEO blog post targeting the keyword 'best project management software for remote teams,' aimed at startup founders, with an intro, 4 subheadings, and a conclusion with a call to action to try our product.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "keyword-in, article-out workflow needs no SEO background to get a usable first draft",
+    "trustScore": 4,
+    "pricingNote": "Writesonic has a free trial with paid plans from ~$15-49/mo; Jasper starts around $49/mo per seat - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trysight.ai/blog/startup-seo-content-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-23",
+    "accessNotes": "Roundup article; AI drafts still need human fact-checking and editing before publishing to avoid inaccurate claims",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-a69d66bc78",
+    "slug": "find-the-right-keywords-for-my-startup-s-website",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder deciding what topics to write about",
+    "title": "find the right keywords for my startup's website",
+    "intentLabels": [
+      "keyword research tool",
+      "SEO keyword finder",
+      "search volume tool",
+      "content topic research AI"
+    ],
+    "tools": [
+      {
+        "name": "Semrush",
+        "url": "https://www.trysight.ai/blog/ai-seo-tool-for-startups"
+      }
+    ],
+    "workflowSummary": "Founder enters a broad topic or competitor's website; the tool returns a list of related keywords with search volume, difficulty, and intent classification, helping the founder prioritize which blog topics or landing pages are worth writing first based on realistic ranking potential rather than guesswork.",
+    "samplePrompt": "Find 15 keyword opportunities related to 'AI tools for startup founders' that have decent search volume but low-to-medium competition, and group them into 3 content themes.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the data is easy to read, but founders benefit from understanding basic SEO concepts like search intent and difficulty scores",
+    "trustScore": 4,
+    "pricingNote": "Essential plan starts around $89-140/mo depending on current pricing tier - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trysight.ai/blog/ai-seo-tool-for-startups",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-06",
+    "accessNotes": "Roundup article; keyword difficulty scores are estimates from the vendor's own model, not a guarantee of ranking",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-070e03d563",
+    "slug": "write-ad-copy-for-google-or-meta-ads",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder running paid ads for the first time",
+    "title": "write ad copy for Google or Meta ads",
+    "intentLabels": [
+      "AI ad copy generator",
+      "Google Ads writer",
+      "Facebook ad copy AI",
+      "PPC ad copy tool"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://www.copy.ai/tools/free-google-ads-generator",
+        "catalogueSlug": "copy-ai"
+      }
+    ],
+    "workflowSummary": "Founder describes the product, target audience, and offer; the tool generates multiple headline, description, and call-to-action variants formatted to each platform's character limits, giving the founder several angles to A/B test instead of writing and guessing from a blank page.",
+    "samplePrompt": "Write 5 Google Ads headline and description variants and 3 Meta ad primary-text variants for a project management app aimed at startup founders, emphasizing the free trial and ease of setup.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the product and get instant ad variants with no advertising background needed",
+    "trustScore": 3,
+    "pricingNote": "Copy.ai's ad copy tools are free to use within its broader free/paid plans - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.copy.ai/tools/free-google-ads-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; AI-generated ad copy should still be checked against each platform's ad policy before submitting for review",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-5bc30ffc2e",
+    "slug": "find-potential-customers-to-reach-out-to",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder doing outbound sales before hiring a sales team",
+    "title": "find potential customers to reach out to",
+    "intentLabels": [
+      "lead generation tool",
+      "prospecting AI",
+      "find B2B leads",
+      "ideal customer profile search"
+    ],
+    "tools": [
+      {
+        "name": "Apollo.io",
+        "url": "https://pipeline.zoominfo.com/sales/ai-lead-generation-tools"
+      }
+    ],
+    "workflowSummary": "Founder describes their ideal customer (industry, company size, job title) in the search filters or a plain-language prompt; the tool searches its database of verified contacts and returns a targeted list with emails, which the founder can export or push directly into an outreach sequence - replacing hours of manual LinkedIn searching.",
+    "samplePrompt": "Find 50 contacts who are founders or heads of operations at seed-to-Series-A B2B SaaS startups with 10-50 employees, and export their verified work emails.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "filter-based search needs no sales background to get a usable list",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans start around $49/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/ai-lead-generation-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; confirm the contact data is current and that outreach complies with CAN-SPAM/GDPR before sending",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-c64fcf8a58",
+    "slug": "write-a-cold-outreach-email-sequence-for-prospective-customers",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder emailing prospects who don't know the company yet",
+    "title": "write a cold outreach email sequence for prospective customers",
+    "intentLabels": [
+      "cold email tool",
+      "B2B outreach sequence writer",
+      "sales email automation",
+      "multi-step follow-up email AI"
+    ],
+    "tools": [
+      {
+        "name": "Snov.io",
+        "url": "https://snov.io/blog/cold-email-ai/"
+      },
+      {
+        "name": "Apollo.io"
+      }
+    ],
+    "workflowSummary": "Founder inputs a short product description and the target persona; the tool drafts a multi-step email sequence (initial outreach plus 2-3 follow-ups) with personalization placeholders, then automatically sends and tracks opens/replies - letting a founder run a structured outbound campaign without a dedicated SDR.",
+    "samplePrompt": "Write a 3-email cold outreach sequence for a project management tool, targeting startup COOs, with the first email under 100 words, a follow-up after 3 days, and a breakup email after a week of no response.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided sequence builder needs no sales training to launch a first campaign",
+    "trustScore": 3,
+    "pricingNote": "Snov.io has a free plan; Apollo.io outreach features included from its $49/mo tier - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://snov.io/blog/cold-email-ai/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "5 days ago (as of search)",
+    "accessNotes": "Roundup article; confirm current sending limits and check regional email compliance laws (CAN-SPAM, GDPR) before sending at volume",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-c14d217cd3",
+    "slug": "turn-my-product-update-into-a-short-video-for-tiktok-or",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder trying to reach younger or more visual audiences",
+    "title": "turn my product update into a short video for TikTok or Instagram",
+    "intentLabels": [
+      "AI short-form video generator",
+      "TikTok video maker",
+      "Reels creator AI",
+      "text-to-video tool"
+    ],
+    "tools": [
+      {
+        "name": "CapCut",
+        "url": "https://www.nextrtechnology.com/blog/6-best-free-ai-tools-for-creating-reels-shorts-in-2026/",
+        "catalogueSlug": "capcut"
+      },
+      {
+        "name": "OpusClip"
+      }
+    ],
+    "workflowSummary": "Founder writes or pastes a script (or uploads existing long-form video); the tool generates a vertical, captioned short video with music and transitions, or automatically clips the best moments from a longer recording - producing platform-ready content without any video editing skill.",
+    "samplePrompt": "Turn this product announcement script into a 30-second vertical video with on-screen captions and upbeat background music, formatted for TikTok and Instagram Reels: [script text].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe or upload content and get a finished video with no editing experience needed",
+    "trustScore": 4,
+    "pricingNote": "CapCut is free with no forced watermark; OpusClip has a free tier with paid plans from ~$9-29/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.nextrtechnology.com/blog/6-best-free-ai-tools-for-creating-reels-shorts-in-2026/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "3 weeks ago (as of search)",
+    "accessNotes": "Roundup article; confirm current export resolution and watermark policy on the free tier before using for public marketing",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-af6794d8c8",
+    "slug": "write-a-press-release-for-my-startup-announcement",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder announcing a funding round, launch, or milestone",
+    "title": "write a press release for my startup announcement",
+    "intentLabels": [
+      "AI press release generator",
+      "PR writing tool",
+      "startup announcement writer",
+      "funding announcement press release"
+    ],
+    "tools": [
+      {
+        "name": "Copy.ai",
+        "url": "https://www.copy.ai/tools/ai-press-release-writer",
+        "catalogueSlug": "copy-ai"
+      },
+      {
+        "name": "EIN Presswire"
+      }
+    ],
+    "workflowSummary": "Founder provides the key facts (what's being announced, quotes, key numbers); the tool structures a properly formatted press release with a headline, dateline, and boilerplate in AP style, ready to send to journalists or publish through a distribution service - without hiring a PR agency for routine announcements.",
+    "samplePrompt": "Write a press release announcing our $2M seed round led by [investor], including a quote from our CEO about how the funding will be used and a boilerplate paragraph about the company.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-facts format needs no PR background to produce a properly structured draft",
+    "trustScore": 3,
+    "pricingNote": "Copy.ai's press release tool is free within its plans; EIN Presswire's AI generator is free, distribution is a separate paid service - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.copy.ai/tools/ai-press-release-writer",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; a journalist-ready draft still benefits from a human review pass for tone and factual accuracy before sending",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-0acab1a1f5",
+    "slug": "turn-customer-feedback-into-a-case-study-or-testimonial",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder with happy customers but no social proof yet",
+    "title": "turn customer feedback into a case study or testimonial",
+    "intentLabels": [
+      "AI case study generator",
+      "testimonial tool",
+      "customer story writer",
+      "social proof generator"
+    ],
+    "tools": [
+      {
+        "name": "Testimonial.to",
+        "url": "https://help.testimonial.to/en/articles/8570034-ai-case-study-generator"
+      }
+    ],
+    "workflowSummary": "Founder collects a written or video testimonial from a customer (often via a simple shareable collection link); the tool uses AI to turn that raw feedback into a structured case study or polished testimonial snippet, which the founder can embed on the website, in a pitch deck, or in sales materials as social proof.",
+    "samplePrompt": "Turn this raw customer quote into a short, structured case study with a headline, the problem the customer had, how our product solved it, and the result, keeping the customer's own words where possible: [paste quote].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "collection links and AI formatting need no writing or design background",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for collecting testimonials; AI case study feature is on paid plans - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://help.testimonial.to/en/articles/8570034-ai-case-study-generator",
+    "sourceType": "Product/help center page",
+    "freshness": "2026-05-22",
+    "accessNotes": "Vendor help center page; always get the customer's explicit permission before publishing their name, quote, or likeness",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-11357ce8b3",
+    "slug": "write-linkedin-posts-to-grow-my-personal-brand-as-a-founder",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder building a personal following as the face of the company",
+    "title": "write LinkedIn posts to grow my personal brand as a founder",
+    "intentLabels": [
+      "AI LinkedIn content writer",
+      "founder personal branding tool",
+      "LinkedIn post generator",
+      "thought leadership content AI"
+    ],
+    "tools": [
+      {
+        "name": "Taplio",
+        "url": "https://www.salesforge.ai/blog/linkedin-ai-tools"
+      }
+    ],
+    "workflowSummary": "Founder describes a topic, recent milestone, or lesson learned; the tool drafts a LinkedIn post in a founder-appropriate voice (often trained on the founder's past posts or a library of high-performing examples), then schedules it to publish at the best time for engagement - helping a busy founder post consistently without starting from a blank page each time.",
+    "samplePrompt": "Write a LinkedIn post about a lesson I learned from a failed product launch, in an honest, behind-the-scenes tone (not salesy), ending with a question to invite engagement in the comments.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "topic-in, post-out workflow needs no content strategy background to get started",
+    "trustScore": 3,
+    "pricingNote": "Plans typically start around $29-40/mo depending on tier - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.salesforge.ai/blog/linkedin-ai-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "1 month ago (as of search)",
+    "accessNotes": "Roundup article; AI-drafted posts read as generic if used unedited - founders should rewrite in their own voice before publishing",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-18dd08e071",
+    "slug": "write-copy-for-my-startup-s-homepage",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder launching or refreshing their company website",
+    "title": "write copy for my startup's homepage",
+    "intentLabels": [
+      "AI website copywriting tool",
+      "homepage copy generator",
+      "startup website copy AI",
+      "conversion copywriting tool"
+    ],
+    "tools": [
+      {
+        "name": "Jasper",
+        "url": "https://juma.ai/blog/website-copy-generators",
+        "catalogueSlug": "jasper"
+      },
+      {
+        "name": "GravityWrite"
+      }
+    ],
+    "workflowSummary": "Founder describes the product, target audience, and key value proposition; the tool drafts homepage sections (hero headline, subheadline, feature blurbs, calls to action) in a persuasive, conversion-oriented style, giving the founder a full first draft to drop into their website builder instead of writing from scratch.",
+    "samplePrompt": "Write homepage copy for a startup that helps small e-commerce brands manage returns automatically, including a hero headline, three feature bullets with benefit-focused subheads, and a closing call-to-action section.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the product and get a full page of draft copy with no copywriting background needed",
+    "trustScore": 3,
+    "pricingNote": "Jasper from ~$49/mo per seat; GravityWrite has a free plan with paid tiers for advanced features - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://juma.ai/blog/website-copy-generators",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2025-07-23",
+    "accessNotes": "Roundup article; treat AI copy as a first draft - factual claims about the product should be verified before publishing",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-651c8b083f",
+    "slug": "turn-one-piece-of-content-into-multiple-social-posts",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder who just recorded a podcast, webinar, or long video",
+    "title": "turn one piece of content into multiple social posts",
+    "intentLabels": [
+      "AI content repurposing tool",
+      "turn video into clips and posts",
+      "one-to-many content tool",
+      "content atomization AI"
+    ],
+    "tools": [
+      {
+        "name": "Repurpose.io",
+        "url": "https://wavegen.ai/best-ai-content-repurposing-tools"
+      },
+      {
+        "name": "OpusClip"
+      }
+    ],
+    "workflowSummary": "Founder uploads a long-form video, podcast episode, or blog post; the tool automatically extracts the best short clips, generates captions, and can reformat the source material into LinkedIn posts, tweets, or carousel slides - then distributes everything to multiple platforms, turning one hour of content creation into a week's worth of posts.",
+    "samplePrompt": "Take this podcast transcript and pull out 3 quotable moments as short video clip ideas, plus write 2 LinkedIn posts and 1 Twitter thread summarizing the key takeaways: [paste transcript].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload once and get multiple outputs with no video editing or content strategy background needed",
+    "trustScore": 3,
+    "pricingNote": "Repurpose.io plans typically start around $15-30/mo; OpusClip has a free tier with paid plans from ~$9-29/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://wavegen.ai/best-ai-content-repurposing-tools",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-05-23",
+    "accessNotes": "Roundup article; confirm current clip-length and export limits on free tiers before relying on them for a full week's content calendar",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-25f5bf4382",
+    "slug": "check-if-my-website-is-ranking-on-google",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder tracking whether their SEO content is actually ranking",
+    "title": "check if my website is ranking on Google",
+    "intentLabels": [
+      "rank tracking tool",
+      "SEO position tracker",
+      "search ranking monitor",
+      "site audit AI"
+    ],
+    "tools": [
+      {
+        "name": "Semrush",
+        "url": "https://www.trysight.ai/blog/ai-seo-software-for-founders"
+      }
+    ],
+    "workflowSummary": "Founder connects their website domain; the tool tracks keyword rankings over time, flags technical SEO issues (broken links, slow pages, missing meta tags) that could be hurting visibility, and surfaces competitor comparisons - giving the founder a dashboard view of SEO progress instead of manually searching Google for their own rankings.",
+    "samplePrompt": "Run a basic site audit on [domain] and tell me the top 3 technical SEO issues I should fix first to improve search rankings.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the dashboard is readable, but acting on technical SEO recommendations may require some web development knowledge",
+    "trustScore": 4,
+    "pricingNote": "Essential plan starts around $89-140/mo depending on current pricing tier - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trysight.ai/blog/ai-seo-software-for-founders",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-27",
+    "accessNotes": "Roundup article; some technical fixes flagged may require a developer to implement, especially on custom-built sites",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-a0c63672b4",
+    "slug": "turn-a-blog-post-into-an-explainer-video",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder wanting a quick explainer video without hiring a video team",
+    "title": "turn a blog post into an explainer video",
+    "intentLabels": [
+      "text-to-video generator",
+      "blog-to-video AI",
+      "explainer video maker",
+      "script to video tool"
+    ],
+    "tools": [
+      {
+        "name": "InVideo AI",
+        "url": "https://www.nemovideo.com/blog/best-ai-short-form-video-generators-2026"
+      }
+    ],
+    "workflowSummary": "Founder pastes in a blog post, script, or topic sentence; the tool generates a complete video with stock footage, an AI voiceover, captions, and scene transitions - producing a polished explainer or promotional video in minutes without filming, editing, or hiring a videographer.",
+    "samplePrompt": "Turn this blog post into a 90-second explainer video with stock footage, an upbeat AI voiceover, and on-screen captions summarizing the top 3 points: [paste blog post].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste text and get a finished video with no filming or editing skill required",
+    "trustScore": 3,
+    "pricingNote": "Free trial available; paid plans typically run $20-40/mo depending on video minutes - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.nemovideo.com/blog/best-ai-short-form-video-generators-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; verify current watermark policy and export limits on the free tier before using footage commercially",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-331b5db370",
+    "slug": "research-how-my-competitors-are-doing-content-marketing",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder wanting to see how competitors are marketing themselves",
+    "title": "research how my competitors are doing content marketing",
+    "intentLabels": [
+      "competitor content analysis",
+      "competitor SEO research",
+      "marketing competitive intelligence AI",
+      "content gap analysis tool"
+    ],
+    "tools": [
+      {
+        "name": "Semrush",
+        "url": "https://www.trysight.ai/blog/best-ai-seo-platforms-for-founders"
+      }
+    ],
+    "workflowSummary": "Founder enters a competitor's domain; the tool shows which keywords that competitor ranks for, their top-performing content, and estimated traffic sources, helping the founder spot content gaps - topics competitors rank for that the founder's site doesn't cover yet - to prioritize in their own content calendar.",
+    "samplePrompt": "Show me the top 10 keywords that [competitor domain] ranks for that my site doesn't currently rank for, and suggest which 3 would be easiest for a new startup site to compete on.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the report is straightforward to read, but prioritizing opportunities benefits from basic SEO judgment",
+    "trustScore": 4,
+    "pricingNote": "Essential plan starts around $89-140/mo depending on current pricing tier - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trysight.ai/blog/best-ai-seo-platforms-for-founders",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-05-09",
+    "accessNotes": "Roundup article; competitor traffic and keyword estimates are the vendor's own modeled data, not exact figures",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-2b01ffe1cf",
+    "slug": "create-branded-graphics-for-my-marketing-posts",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder without in-house design help for marketing visuals",
+    "title": "create branded graphics for my marketing posts",
+    "intentLabels": [
+      "AI graphic design tool",
+      "marketing visuals generator",
+      "social media graphics AI",
+      "branded content creator"
+    ],
+    "tools": [
+      {
+        "name": "Canva",
+        "url": "https://www.analyticsinsight.net/artificial-intelligence/best-ai-tools-for-social-media-content-creation-and-scheduling-in-2026",
+        "catalogueSlug": "canva"
+      }
+    ],
+    "workflowSummary": "Founder types a description of the graphic needed (or starts from a template) and adds their brand colors, logo, and fonts; the AI suggests layouts and design elements, letting the founder produce on-brand social media graphics, ad creatives, or blog header images in minutes without hiring a designer.",
+    "samplePrompt": "Create 3 Instagram post graphics announcing a new feature launch, using our brand colors (list colors) and logo, with a short headline and consistent visual style across all three.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop templates and AI suggestions need no design background",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans (Canva Pro) typically run ~$13-15/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.analyticsinsight.net/artificial-intelligence/best-ai-tools-for-social-media-content-creation-and-scheduling-in-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "1 week ago (as of search)",
+    "accessNotes": "Roundup article; confirm current free-tier export resolution and brand kit limits before relying on it for a full brand refresh",
+    "batch": "StartupFounders AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-0659b8af9e",
+    "slug": "write-a-monthly-investor-update-email",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder with active investors to keep informed",
+    "title": "write a monthly investor update email",
+    "intentLabels": [
+      "AI investor update generator",
+      "monthly founder update email",
+      "investor communication tool",
+      "startup KPI update writer"
+    ],
+    "tools": [
+      {
+        "name": "Papermark",
+        "url": "https://www.papermark.com/investor-update-email-generator"
+      },
+      {
+        "name": "UpdateMate"
+      }
+    ],
+    "workflowSummary": "Founder pulls together key metrics (MRR, churn, runway, hiring, product news); the tool structures those numbers into a concise, well-organized update email with a clear ask at the end, and can pull some metrics automatically from connected tools - helping a founder maintain consistent investor communication without starting from a blank page every month.",
+    "samplePrompt": "Write a monthly investor update for a seed-stage SaaS startup, including sections for key metrics, wins, challenges, and a specific ask for help with enterprise sales intros. Keep it under 400 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "fill-in-the-metrics format needs no special communication background to produce a clear update",
+    "trustScore": 3,
+    "pricingNote": "Papermark's generator is free within its platform; UpdateMate pricing varies by plan tier - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.papermark.com/investor-update-email-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; the metrics and narrative must reflect the real state of the business - never let a template overstate traction",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-4796590692",
+    "slug": "build-a-board-meeting-deck-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder preparing for a recurring board meeting",
+    "title": "build a board meeting deck for my startup",
+    "intentLabels": [
+      "board deck builder",
+      "board meeting presentation AI",
+      "board book generator",
+      "investor-to-board reporting tool"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://waveup.com/blog/top-19-ai-tools-for-startups-and-small-businesses/",
+        "catalogueSlug": "gamma"
+      }
+    ],
+    "workflowSummary": "Founder pulls together the recurring metrics, decisions needed, and updates since the last meeting; the tool turns a prompt or rough outline into a structured, consistently formatted deck (metrics, wins, risks, asks, decisions needed), cutting a half-day PowerPoint exercise down to about 20 minutes of editing a draft.",
+    "samplePrompt": "Build a board meeting deck with sections for key metrics since last meeting, wins, challenges, cash position and runway, hiring updates, and three specific decisions we need the board to weigh in on.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-to-deck workflow needs no design or presentation background to get a usable structure",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans typically run $8-20/mo depending on tier - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://waveup.com/blog/top-19-ai-tools-for-startups-and-small-businesses/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-29",
+    "accessNotes": "Roundup article; a board deck reports to directors who already own equity - fidelity of the numbers matters more than polish, verify all figures before the meeting",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-64b1b2cd5d",
+    "slug": "screen-resumes-for-an-open-role",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder hiring without an in-house recruiter",
+    "title": "screen resumes for an open role",
+    "intentLabels": [
+      "AI resume screening tool",
+      "candidate screening software",
+      "applicant ranking AI",
+      "ATS with AI scoring"
+    ],
+    "tools": [
+      {
+        "name": "PyjamaHR",
+        "url": "https://redirecruit.com/best-ai-tools-for-candidate-screening/"
+      }
+    ],
+    "workflowSummary": "Founder uploads or connects incoming applications; the tool parses each resume, scores candidates against the job requirements, and ranks them into shortlist tiers - letting a founder with no HR background quickly identify the strongest applicants out of a large pile instead of reading every resume by hand.",
+    "samplePrompt": "Screen these 40 resumes against this job description for a Founding Engineer role and rank the top 10 candidates by fit, with a one-line reason for each ranking.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the ranking output is easy to read, but founders should still review top candidates personally rather than trusting the ranking blindly",
+    "trustScore": 3,
+    "pricingNote": "Plans vary; many startup-focused ATS tools with AI screening start around $30-100/mo - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://redirecruit.com/best-ai-tools-for-candidate-screening/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "November 24, 2025",
+    "accessNotes": "Roundup article; AI screening can carry bias from historical data - review shortlists for fairness and never rely on it as the sole hiring decision",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-86c34b73e1",
+    "slug": "write-interview-questions-for-a-job-candidate",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder about to interview a candidate",
+    "title": "write interview questions for a job candidate",
+    "intentLabels": [
+      "AI interview question generator",
+      "structured interview kit",
+      "behavioral interview questions AI",
+      "hiring rubric generator"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://fireflies.ai/skills/recruiting/interview-question-generator-ai-app"
+      }
+    ],
+    "workflowSummary": "Founder pastes in the job description or role details; the tool generates a structured set of role-specific questions (technical, behavioral, culture-fit) along with what a good answer looks like, giving every interviewer on the team the same evaluation criteria instead of improvising questions on the spot.",
+    "samplePrompt": "Generate 8 structured interview questions for a Product Manager role at an early-stage startup, mixing behavioral and problem-solving questions, each with a note on what a strong answer should include.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste a job description and get a ready-to-use interview script with no HR background needed",
+    "trustScore": 3,
+    "pricingNote": "Fireflies.ai's recruiting skill is included in its existing paid plans - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://fireflies.ai/skills/recruiting/interview-question-generator-ai-app",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; a generated script cannot know your team's specific culture or past hiring mistakes - customize before using it live",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-04715358eb",
+    "slug": "create-an-employee-handbook-for-my-startup",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder onboarding their first few employees",
+    "title": "create an employee handbook for my startup",
+    "intentLabels": [
+      "AI employee handbook generator",
+      "company policy document tool",
+      "startup HR handbook AI",
+      "workplace policy writer"
+    ],
+    "tools": [
+      {
+        "name": "Waybook",
+        "url": "https://www.waybook.com/tools/employee-manual-generator"
+      }
+    ],
+    "workflowSummary": "Founder answers questions about company policies, benefits, and culture (PTO, remote work rules, code of conduct); the tool assembles a complete, professionally formatted handbook covering standard legal sections (anti-discrimination, at-will employment) alongside the company's specific culture and perks - giving a first-time employer a solid starting document instead of starting from a blank page.",
+    "samplePrompt": "Create an employee handbook section on our remote work policy: employees can work remotely up to 3 days a week with manager approval, must have reliable internet, and are expected to be available during core hours of 10am-3pm local time.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided step-by-step builder needs no HR or legal background to produce a first draft",
+    "trustScore": 3,
+    "pricingNote": "Plans vary by vendor; many offer a free tier or trial with paid plans from ~$19-49/mo - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.waybook.com/tools/employee-manual-generator",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; have a lawyer review the final handbook to confirm it follows local labor laws before distributing to employees",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-40090de538",
+    "slug": "check-if-my-invention-idea-is-already-patented",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder wondering if their idea is patentable",
+    "title": "check if my invention idea is already patented",
+    "intentLabels": [
+      "AI patent search tool",
+      "prior art search",
+      "invention novelty check",
+      "free patent search AI"
+    ],
+    "tools": [
+      {
+        "name": "PQAI",
+        "url": "https://projectpq.ai/top-ai-patent-search-tools-2026/"
+      }
+    ],
+    "workflowSummary": "Founder describes their invention or technical idea in plain English; the tool searches a patent database using semantic matching (not just keyword search) and returns conceptually similar existing patents, giving the founder an early, free signal on whether the idea might already be covered before investing in a formal attorney-led patent search.",
+    "samplePrompt": "Describe this invention and tell me if there are existing patents covering something functionally similar: [describe the invention in a few sentences].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "plain-English description gets results with no patent law background needed for a first check",
+    "trustScore": 3,
+    "pricingNote": "Free to use",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://projectpq.ai/top-ai-patent-search-tools-2026/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-21",
+    "accessNotes": "Roundup article; a free semantic search is a preliminary screen only - a formal patentability opinion requires a licensed patent attorney",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-8dbd52b4f2",
+    "slug": "build-an-onboarding-flow-for-new-users-of-my-product",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder launching a product that needs a guided first-use experience",
+    "title": "build an onboarding flow for new users of my product",
+    "intentLabels": [
+      "customer onboarding software",
+      "in-app onboarding builder",
+      "user activation tool",
+      "SaaS welcome flow AI"
+    ],
+    "tools": [
+      {
+        "name": "Userpilot",
+        "url": "https://www.taskade.com/blog/ai-customer-onboarding-software"
+      }
+    ],
+    "workflowSummary": "Founder defines what a new user should accomplish to reach their first 'aha moment' (e.g., completing setup, creating a first project); the no-code builder lets the founder create in-app checklists, tooltips, and welcome flows that guide new users to that outcome, with analytics showing exactly where users drop off - without writing any code.",
+    "samplePrompt": "Design a 3-step onboarding checklist for a new user of a project management app: connect their calendar, create their first project, and invite a teammate. Suggest a tooltip for each step.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the builder itself is no-code, but designing an effective onboarding flow benefits from first defining what 'activated' means for the product",
+    "trustScore": 3,
+    "pricingNote": "Starter plans typically run around $299/mo, priced by tracked users - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.taskade.com/blog/ai-customer-onboarding-software",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-15",
+    "accessNotes": "Roundup article; pricing is often usage-based (per monthly active user), so confirm current tiers match expected user volume",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-0e573ccb2f",
+    "slug": "build-a-help-center-for-my-customers",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder fielding the same customer questions repeatedly",
+    "title": "build a help center for my customers",
+    "intentLabels": [
+      "AI knowledge base builder",
+      "help center software",
+      "self-service support docs AI",
+      "FAQ page builder"
+    ],
+    "tools": [
+      {
+        "name": "Document360",
+        "url": "https://bunnydesk.ai/blog/best-ai-help-center-software-for-startups/"
+      }
+    ],
+    "workflowSummary": "Founder writes or uploads existing support answers, product docs, or FAQs; the tool organizes them into a searchable, branded help center with an AI-powered search that gives customers direct answers instead of a support ticket - reducing repetitive support questions as the customer base grows.",
+    "samplePrompt": "Organize these 10 frequently asked support questions and answers into a structured help center outline with categories for Getting Started, Billing, and Troubleshooting: [paste Q&A list].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload existing content and get an organized help center with no technical setup needed",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing; many startup-focused help center tools offer a free trial with paid plans from ~$50-100/mo - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://bunnydesk.ai/blog/best-ai-help-center-software-for-startups/",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "January 28, 2026",
+    "accessNotes": "Roundup article; keep the help center updated as the product changes, since outdated self-service content can create more confusion than it resolves",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-5083049cbc",
+    "slug": "set-goals-and-track-progress-for-my-startup-team",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder trying to keep a small team focused on the same priorities",
+    "title": "set goals and track progress for my startup team",
+    "intentLabels": [
+      "OKR software",
+      "goal tracking tool for startups",
+      "AI goal-setting assistant",
+      "team alignment tool"
+    ],
+    "tools": [
+      {
+        "name": "Tability",
+        "url": "https://mooncamp.com/blog/best-okr-software"
+      }
+    ],
+    "workflowSummary": "Founder describes what the company or team is trying to achieve; the AI helps draft objectives and measurable key results, then the platform tracks progress with lightweight weekly check-ins (often via Slack), giving the founder a live view of whether the team is on track without a separate spreadsheet or a lot of meeting overhead.",
+    "samplePrompt": "Help me draft 3 company-level OKRs for this quarter for an early-stage SaaS startup focused on hitting product-market fit, each with 2-3 measurable key results.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI-assisted goal drafting removes the blank-page problem for teams new to OKRs",
+    "trustScore": 3,
+    "pricingNote": "Free tier available for small teams; paid plans typically run ~$8/user/month for unlimited goals - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://mooncamp.com/blog/best-okr-software",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-06-01",
+    "accessNotes": "Roundup article; goals only stay useful if check-ins actually happen - confirm the team will keep them updated before adopting a new tool",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-5bd621b1f2",
+    "slug": "figure-out-how-much-to-charge-for-my-product",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder unsure what to charge for their product",
+    "title": "figure out how much to charge for my product",
+    "intentLabels": [
+      "AI pricing strategy tool",
+      "SaaS pricing calculator",
+      "pricing page generator",
+      "subscription pricing AI"
+    ],
+    "tools": [
+      {
+        "name": "PricingMaker",
+        "url": "https://pricingmaker.com/"
+      }
+    ],
+    "workflowSummary": "Founder inputs details about their product, target customer, and competitor pricing; the tool analyzes market data and suggests optimal price points and packaging (tiers, usage-based, or hybrid), giving a founder without a pricing background a data-informed starting point instead of guessing or copying a competitor's page.",
+    "samplePrompt": "Suggest a 3-tier pricing structure for a project management SaaS tool targeting startup teams of 5-20 people, considering that our closest competitor charges $12/user/month.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the output is easy to read, but pricing decisions still benefit from founder judgment about their specific customer's willingness to pay",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies by plan; many pricing tools offer a free calculator with paid plans for deeper analysis - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pricingmaker.com/",
+    "sourceType": "Product page",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Product page; treat AI pricing suggestions as a starting hypothesis to test with real customers, not a final answer",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-418d3053fe",
+    "slug": "apply-for-a-startup-grant-or-accelerator-program",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder applying for non-dilutive funding",
+    "title": "apply for a startup grant or accelerator program",
+    "intentLabels": [
+      "AI grant writing tool",
+      "accelerator application writer",
+      "SBIR proposal AI",
+      "non-dilutive funding application generator"
+    ],
+    "tools": [
+      {
+        "name": "Granted AI",
+        "url": "https://grantedai.com/blog/best-ai-grant-writing-tools-2026"
+      }
+    ],
+    "workflowSummary": "Founder uploads the grant's request-for-proposal or application requirements; the tool analyzes the document to identify required sections and evaluation criteria, then coaches the founder through drafting each section (problem statement, technical approach, budget justification) grounded in the founder's own answers - saving significant time versus writing a first federal or accelerator application from scratch.",
+    "samplePrompt": "Analyze this SBIR Phase I solicitation and list the required sections and evaluation criteria, then help me draft a technical approach section for a [describe technology] startup.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "section-by-section coaching helps, but grant writing still benefits from someone who understands the specific program's expectations",
+    "trustScore": 3,
+    "pricingNote": "Basic plan around $29/mo; Professional plan around $89/mo - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://grantedai.com/blog/best-ai-grant-writing-tools-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "February 23, 2026",
+    "accessNotes": "Roundup article; a first federal grant application typically takes significant staff time even with AI assistance - budget realistic time for review and compliance checks",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-3d3e263ef6",
+    "slug": "triage-and-draft-replies-for-my-founder-inbox",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder juggling investor, customer, and candidate emails in one inbox",
+    "title": "triage and draft replies for my founder inbox",
+    "intentLabels": [
+      "AI email triage tool",
+      "inbox prioritization for founders",
+      "email drafting assistant",
+      "founder email management AI"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://www.alkmist.com/best-email-software-startup-founders",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "ChatGPT",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "Founder connects or pastes in a backlog of emails; the assistant reads each one, flags which need the founder's personal attention versus which can be drafted and sent with review, and drafts replies in the founder's voice for routine items (investor follow-ups, candidate scheduling, customer questions) - nothing sends automatically, but the founder reviews drafts instead of writing from scratch.",
+    "samplePrompt": "Here are 5 emails from an investor, a job candidate, and two customers. Draft a reply to each in a professional but warm tone, and flag which ones need my personal input before sending: [paste emails].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste emails and get draft replies with no special tools or setup required to start",
+    "trustScore": 3,
+    "pricingNote": "Both have free tiers with paid plans around $20/month for expanded usage - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.alkmist.com/best-email-software-startup-founders",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026 (page live at time of search)",
+    "accessNotes": "Roundup article; review every draft before sending, especially investor and legal-adjacent replies - the AI drafts, the founder decides",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-6f1beacb6a",
+    "slug": "get-feedback-on-my-pitch-deck-before-sending-it-to-investors",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder needing objective feedback before sending a fundraising deck",
+    "title": "get feedback on my pitch deck before sending it to investors",
+    "intentLabels": [
+      "AI pitch deck reviewer",
+      "deck feedback tool",
+      "investor readiness check",
+      "pitch deck critique AI"
+    ],
+    "tools": [
+      {
+        "name": "Slidebean",
+        "url": "https://perceptis.ai/blog/best-ai-presentation-tools-for-founders-and-startup-teams"
+      }
+    ],
+    "workflowSummary": "Founder uploads their existing pitch deck; the tool reviews it against patterns from decks that have successfully raised funding, flagging missing sections, weak narrative structure, or slides likely to raise investor questions - giving the founder a chance to fix issues before a real investor sees the deck.",
+    "samplePrompt": "Review this pitch deck and tell me which standard sections (problem, solution, market size, traction, ask) are missing or underdeveloped, and flag any slides likely to raise investor red flags.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and review workflow needs no design or fundraising background to get useful feedback",
+    "trustScore": 3,
+    "pricingNote": "Starter plan around $7/mo billed yearly includes unlimited AI pitch-deck reviews - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://perceptis.ai/blog/best-ai-presentation-tools-for-founders-and-startup-teams",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "4 weeks ago (as of search)",
+    "accessNotes": "Roundup article; AI feedback catches structural gaps but can't judge whether your specific story or numbers will resonate with a particular investor",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-87f109a8b7",
+    "slug": "understand-what-s-in-my-investor-term-sheet",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder wanting to understand a term sheet before signing",
+    "title": "understand what's in my investor term sheet",
+    "intentLabels": [
+      "AI term sheet explainer",
+      "startup legal document analysis",
+      "term sheet review AI",
+      "fundraising document explainer"
+    ],
+    "tools": [
+      {
+        "name": "Claude",
+        "url": "https://www.iwoszapar.com/p/best-ai-tools-for-founders",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Founder uploads or pastes in the term sheet; the assistant reads through it and explains each clause (liquidation preference, anti-dilution, board seats, pro-rata rights) in plain language, flagging terms that are unusual or founder-unfriendly compared to standard market terms - giving the founder a clearer starting point for questions to ask their lawyer.",
+    "samplePrompt": "Explain this term sheet clause by clause in plain English, and flag anything that looks unusual or less founder-friendly than typical seed-stage terms: [paste term sheet].",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "plain-language explanations help a lot, but any real negotiation should involve a startup lawyer before signing",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; Pro plan around $20/month for expanded usage - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.iwoszapar.com/p/best-ai-tools-for-founders",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-07-20",
+    "accessNotes": "Roundup article; this is educational explanation, not legal advice - always have a startup attorney review and negotiate the actual term sheet",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "startup-founders-b4dd690faf",
+    "slug": "figure-out-which-customers-are-at-risk-of-churning",
+    "kind": "workflow",
+    "niche": "Startup Founders",
+    "sector": "Startup Founders",
+    "persona": "Founder trying to reduce customer churn",
+    "title": "figure out which customers are at risk of churning",
+    "intentLabels": [
+      "customer churn prediction tool",
+      "customer health score AI",
+      "retention analytics for startups",
+      "at-risk customer alert tool"
+    ],
+    "tools": [
+      {
+        "name": "Vitally",
+        "url": "https://userorbit.com/blog/complete-guide-saas-user-onboarding-2026"
+      }
+    ],
+    "workflowSummary": "Founder connects their product usage data, support tickets, and billing information; the tool calculates a health score for each customer based on engagement patterns and flags accounts showing early warning signs of churn (declining usage, unresolved tickets, no recent logins) - letting a small team proactively reach out before losing a customer instead of finding out after they cancel.",
+    "samplePrompt": "Based on this customer's usage data (list metrics), does this account show signs of churn risk, and what would be a good proactive outreach message to send them?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "health scores are easy to read, but interpreting which signals matter most benefits from some customer success experience",
+    "trustScore": 3,
+    "pricingNote": "Plans typically start around $500+/mo depending on customer volume - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://userorbit.com/blog/complete-guide-saas-user-onboarding-2026",
+    "sourceType": "Blog/guide roundup",
+    "freshness": "2026-04-15",
+    "accessNotes": "Roundup article; churn prediction models need a meaningful amount of historical usage data to be accurate - early-stage startups may see limited value until they have more customers",
+    "batch": "StartupFounders AI Workflows Batch4",
+    "status": "active"
+  }
+]

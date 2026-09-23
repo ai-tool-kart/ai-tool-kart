@@ -47,9 +47,9 @@ export {
   ASSISTANT_SCHEMA_NAME,
   AssistantPlanSchema,
   AssistantReplySchema,
+  AssistantStepSchema,
   AssistantUnderstoodSchema,
-  AssistantWorkflowEntrySchema,
 } from './schema.ts'
-export type { AssistantReply, AssistantReplyPlan, AssistantWorkflowEntry } from './schema.ts'
+export type { AssistantReply, AssistantReplyPlan, AssistantStep } from './schema.ts'
 
 export * from './prompts/index.ts'

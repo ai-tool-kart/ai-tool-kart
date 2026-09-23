@@ -30,15 +30,26 @@ export const API_BASE: string = (
  * a reader: the server writes its 4xx/5xx messages for exactly that, and the
  * network case is written here.
  */
+interface ApiRequestErrorOptions extends ErrorOptions {
+  /** Per-field messages from a VALIDATION_FAILED body, keyed by field name. */
+  fields?: Record<string, string>
+  /** Parsed from a `Retry-After` response header, if the server sent one. */
+  retryAfterSeconds?: number
+}
+
 export class ApiRequestError extends Error {
   readonly code: string
   readonly status: number
+  readonly fields?: Record<string, string>
+  readonly retryAfterSeconds?: number
 
-  constructor(message: string, code: string, status: number, options?: ErrorOptions) {
+  constructor(message: string, code: string, status: number, options?: ApiRequestErrorOptions) {
     super(message, options)
     this.name = 'ApiRequestError'
     this.code = code
     this.status = status
+    this.fields = options?.fields
+    this.retryAfterSeconds = options?.retryAfterSeconds
   }
 
   /** True when retrying the same request could plausibly succeed. */
@@ -47,25 +58,41 @@ export class ApiRequestError extends Error {
   }
 }
 
-/** The server's error envelope: `{ error: { code, message, details? } }`. */
+/** The server's error envelope: `{ error: { code, message, details?, fields? } }`. */
 interface ErrorEnvelope {
-  error?: { code?: unknown; message?: unknown }
+  error?: { code?: unknown; message?: unknown; fields?: unknown }
+}
+
+/** Narrows an unknown `fields` value to a string-to-string map, dropping anything else. */
+function fieldsFrom(value: unknown): Record<string, string> | undefined {
+  if (typeof value !== 'object' || value === null) return undefined
+  const entries = Object.entries(value as Record<string, unknown>).filter(
+    (entry): entry is [string, string] => typeof entry[1] === 'string',
+  )
+  return entries.length > 0 ? Object.fromEntries(entries) : undefined
 }
 
 async function errorFrom(response: Response): Promise<ApiRequestError> {
   let code = 'INTERNAL'
   let message = `The server responded ${response.status}.`
+  let fields: Record<string, string> | undefined
 
   try {
     const body = (await response.json()) as ErrorEnvelope
     if (typeof body.error?.code === 'string') code = body.error.code
     if (typeof body.error?.message === 'string') message = body.error.message
+    fields = fieldsFrom(body.error?.fields)
   } catch {
     // A non-JSON error body (a proxy's HTML 502, say). The status-derived
     // message above is already the best thing we can show.
   }
 
-  return new ApiRequestError(message, code, response.status)
+  // Present on RATE_LIMITED today (http/middleware/rateLimit.ts); a generic
+  // read so any future error carrying it is picked up the same way.
+  const retryAfterHeader = Number(response.headers.get('Retry-After'))
+  const retryAfterSeconds = Number.isFinite(retryAfterHeader) && retryAfterHeader > 0 ? retryAfterHeader : undefined
+
+  return new ApiRequestError(message, code, response.status, { fields, retryAfterSeconds })
 }
 
 export interface ApiRequestOptions {

@@ -26,6 +26,7 @@
  */
 
 import type {
+  CatalogueKind,
   PricingTier,
   RoleName,
   SortOption,
@@ -55,6 +56,17 @@ export interface ToolQuery {
   /** Inclusive floor. A tool with no ratings (rating 0) never passes a floor > 0. */
   minRating?: number
   excludeIds?: string[]
+  /**
+   * Which directory is asking. 'mcp' keeps only `isMcpServer` tools; 'workflow'
+   * and absent apply no filter.
+   *
+   * 'workflow' does not exclude MCP tools because the kinds are not disjoint:
+   * an MCP server flag marks a tool that ALSO ships a Model Context Protocol
+   * server, and GitHub or Slack is still a workflow tool on Home. 'mcp' narrows
+   * to a subset of the catalogue; 'workflow' is the whole catalogue, so
+   * filtering on it would only delete right answers from the default view.
+   */
+  kind?: CatalogueKind
   /** Defaults to 'active'. Pass 'all' to include drafts — admin paths only. */
   status?: ToolStatus | 'all'
   sort?: SortOption
@@ -82,4 +94,26 @@ export interface ToolCatalogueRepository {
   taxonomy(): Promise<Taxonomy>
   /** Active records only — the number a health check should report. */
   size(): Promise<number>
+  /**
+   * A tool whose own `url` normalizes (utils/normalizeUrl.ts) to `url` —
+   * across every record, not just active ones, so an unpublished draft at
+   * this address still counts. Backs the Submit intake's catalogue-side
+   * duplicate check (SPEC-submit-backend.md §7 step 6). Deliberately a real
+   * lookup rather than a `search()` scan: `search()` is capped at
+   * RETRIEVAL.prefilterLimit, and a catalogue that outgrows that cap must
+   * not be able to silently stop catching duplicates past the cutoff.
+   */
+  findByNormalizedUrl(url: string): Promise<Tool | undefined>
+  /**
+   * Adds one tool to the catalogue. The review script's write
+   * (review/approve.ts) — nothing else calls this today.
+   *
+   * `tool` must already be a complete, valid record: this does not assign an
+   * id/slug, compute a pricing tier, or fill in a missing field. It DOES
+   * revalidate the whole catalogue with the new record included through the
+   * same parse function the loader uses, and refuses to write anything the
+   * server would refuse to boot with — see the JSON adapter for why that
+   * check has to happen before the write, not after.
+   */
+  create(tool: Tool): Promise<Tool>
 }

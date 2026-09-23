@@ -80,10 +80,7 @@ async function chat(origin: string, body: unknown): Promise<AssistantChatRespons
 
 /** Every tool id and name the response actually shows a user. */
 function shownTools(body: AssistantChatResponse): string[] {
-  const tools = [
-    ...(body.plan?.tools ?? []),
-    ...(body.plan?.workflow.flatMap((step) => (step.tool ? [step.tool] : [])) ?? []),
-  ]
+  const tools = body.plan?.steps.map((step) => step.tool) ?? []
   return tools.flatMap((tool) => [tool.id, tool.name, tool.slug, tool.url])
 }
 
@@ -108,8 +105,8 @@ await test('an injected instruction cannot produce a tool that does not exist', 
           assert.doesNotMatch(shown, /fake\.example/)
 
           // Whatever it recommended, it came from the catalogue.
-          for (const tool of body.plan?.tools ?? []) {
-            assert.ok(['beta-editor', 'clip-maker'].includes(tool.id), tool.id)
+          for (const step of body.plan?.steps ?? []) {
+            assert.ok(['beta-editor', 'clip-maker'].includes(step.tool.id), step.tool.id)
           }
         },
       )

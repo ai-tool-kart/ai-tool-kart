@@ -252,14 +252,14 @@ export const LLM_BUDGET = {
  *
  * ── Where the plan's numbers were relaxed, and why ───────────────────────────
  *
- * §10.1 describes a plan as 2–6 tools, 3–5 workflow stages and 3–5 steps. The
- * MAXIMA are enforced by the schema. The MINIMA are not, and that is deliberate:
- * they are enforced by the prompt instead.
+ * The plan is a flat list of steps, at most `maxPlanSteps`. The MAXIMUM is
+ * enforced by the schema. There is no MINIMUM there, and that is deliberate: it
+ * is enforced by the prompt instead.
  *
  * A minimum in the schema is a rejection. If retrieval can only offer one
  * candidate — a narrow query against a young catalogue — a model that correctly
  * recommends that one tool would fail validation three times and the turn would
- * end in a 422, which is a worse answer than the honest single-tool plan. The
+ * end in a 422, which is a worse answer than the honest single-step plan. The
  * failure mode of a missing minimum is a thin plan; the failure mode of an
  * enforced one is no plan at all.
  */
@@ -279,25 +279,34 @@ export const ASSISTANT = {
   /** Conversation length before `turn` stops counting up. Truncated (§11). */
   maxConversationTurns: 12,
 
-  /* ── Response (§10.1) ──────────────────────────────────────────────────── */
+  /* ── Response (§10.1, simplified — see the plain-language plan note) ──── */
   maxMessageReplyChars: 600,
-  maxPlanTools: 6,
-  maxAgents: 3,
-  maxWorkflowStages: 5,
-  maxWhyChars: 160,
-  maxSteps: 6,
+  /** A plan is at most this many steps. Each step names one stage and one tool. */
+  maxPlanSteps: 4,
+  /** Alternates shown under a step's main pick, e.g. "Also good: X, Y". */
+  maxAlsoGood: 2,
+  /**
+   * How a step's tool pool is cut from the ranked candidate list, before
+   * grouping by primary stage: a tool must score at least this fraction of
+   * the top candidate's score, and the pool is capped regardless.
+   *
+   * Below this line a tool did not really compete for the request — it is in
+   * the candidate set because retrieval keeps a broad pool for stage
+   * coverage and follow-up chips, not because it is a plausible pick. A plan
+   * built from the whole pool could put a tool scoring half the leader's
+   * relevance forward as an "also good" alternative, which reads as an
+   * endorsement the numbers do not support.
+   */
+  stepScoreCutoffRatio: 0.75,
+  /** Hard ceiling on the tool pool the cutoff above can leave standing. */
+  maxStepCandidates: 6,
   maxFollowUps: 3,
   maxConstraints: 4,
   /** Free-text fields the model fills. Bounded so a runaway string is a reject. */
-  maxTitleChars: 120,
   maxRoleChars: 80,
   maxGoalChars: 200,
   maxConstraintChars: 80,
-  maxStepChars: 240,
-  maxNoteChars: 240,
   maxFollowUpChars: 120,
-  maxAgentChars: 60,
-  maxStageChars: 40,
   /** A catalogue id. Long enough for any slug, short enough to bound the parse. */
   maxToolIdChars: 64,
 
@@ -322,4 +331,245 @@ export const ASSISTANT = {
   maxToolPhrases: 4,
   /** Words taken after a rejection or confirmation marker before resolving. */
   maxToolPhraseWords: 4,
+
+  /* ── The step-by-step guide above the plan ─────────────────────────────── */
+  /**
+   * How much of the message's rarity the top automation's TITLE must account
+   * for before the guide is shown, as a multiple of AUTOMATION_MATCH.idfBase.
+   * The engine reads AutomationMatch.titleWeight against it.
+   *
+   * ── Why a title weight, and not a signal count or a coverage share ───────
+   *
+   * This replaced a two-signal rule (at least two of titlePhrase, titleTerms,
+   * intentTerms, personaTerms, toolTerms above zero). Counting fields cannot
+   * separate a real match from a coincidence, because a record can agree with
+   * three fields on nothing but the query's commonest words: "edit videos
+   * faster" is a genuine THREE-signal match against a scholarship intro
+   * video, on `video` in its title and `edit` in its intent labels.
+   *
+   * An IDF coverage SHARE — the matched terms as a fraction of the query's
+   * total weight — was measured next and is worse than useless here: it is
+   * scale-free, so it divides out the very quantity that separates the cases.
+   * All four known-bad queries score 1.000 and the lowest score in the set
+   * belongs to a query that should qualify. The full table is in
+   * SPEC-automations.md §7.
+   *
+   * What separates them is the ABSOLUTE rarity the title accounts for, which
+   * is what this is. Measured over the 1,560 imported automations:
+   *
+   *     16.93  review a contract before I sign it              show
+   *     14.34  help me write a cover letter                    show
+   *      9.99  make a study schedule                           show
+   *      8.05  follow up with clients automatically            show
+   *      6.41  I am a teacher and I want to grade essays…      show
+   *   ──────── 5.2, this floor, mid-gap ───────────────────────────────
+   *      4.02  edit videos faster                              hide
+   *      4.02  I need AI tools for video editing               hide
+   *      3.52  help me with marketing                          hide
+   *      3.26  I need something for my business                hide
+   *
+   * automationMatch.test.ts pins all nine, so a weight or data change that
+   * closes the gap fails loudly instead of quietly showing the scholarship
+   * video again.
+   *
+   * ── On the unit ──────────────────────────────────────────────────────────
+   *
+   * A multiple of idfBase, because idfBase is the floor of the IDF scale: a
+   * term in EVERY automation is worth exactly idfBase, so "5.2" reads as "the
+   * title carries what 5.2 of the commonest possible terms would be worth".
+   * Today idfBase is 1, so the absolute value is 5.2 nats — a title holding
+   * one term that appears in ~28 of 1,560 automations clears it alone.
+   *
+   * Be clear about what that unit does NOT buy: it pins the threshold to the
+   * BOTTOM of the scale, not to the catalogue's size. Every idf also carries
+   * ln((N + smoothing) / (df + smoothing)), so as the imported set grows the
+   * whole scale stretches and a fixed multiple slowly gets easier to clear.
+   * The real guard against that is re-measuring the nine on import, which the
+   * test does on every run; this unit only stops the number being a bare
+   * quantity of nats with nothing to read it against.
+   */
+  automationMinTitleWeight: 5.2,
+} as const
+
+/* ─── Submissions — SPEC-submit-backend.md §6, §7 ──────────────────────────── */
+
+/**
+ * Route mount point and length caps for the Submit intake
+ * (submissions/schema.ts, http/routes/submissions.ts). `path` gives
+ * `POST /api/submissions` per §7.
+ *
+ * The length caps mirror client/src/types/submit.ts's own constants
+ * (TAGLINE_MAX, DESCRIPTION_MAX, MAX_TAGS, MAX_ALTERNATIVES, MAX_FAQS,
+ * LAUNCH_STORY_MAX) — deliberately duplicated, not imported, per the spec's
+ * §6 note: the client/server boundary is not worth a shared package yet,
+ * and a half-working path alias across it would be worse than an honest
+ * copy. If the two drift and it starts causing bugs, the fix is a real
+ * `shared/` workspace, not a one-off import.
+ */
+/**
+ * Per-field length/range limits the catalogue schema enforces
+ * (catalogue/schema.ts's `ToolSchema`) — the single place both the schema
+ * and the review script's live prompt-time validation (review/validate.ts)
+ * read them from, so the two can never drift apart the way a second,
+ * hand-copied "40" and "600" would.
+ *
+ * Scoped to exactly the fields the review script prompts for (mono, price,
+ * pop, tags, summary, slug) — name/tagline/trend/badge/api/ctx/team/trial/
+ * integr are never reviewer-entered (copied from the submission or fixed by
+ * buildTool.ts), so their limits stay inline in schema.ts, same as before.
+ */
+export const TOOL_FIELDS = {
+  /** `mono` — the two-character card-avatar monogram. Fixed length, not a range. */
+  monoLength: 2,
+  /** `price` — the display price string. */
+  priceMaxChars: 60,
+  /** `pop` — editorial prominence score. */
+  popMin: 0,
+  popMax: 100,
+  /** `tags` — each entry, and the array itself. */
+  tagMaxChars: 40,
+  tagsMin: 1,
+  tagsMax: 12,
+  /** `summary` — what retrieval and the assistant reason over. */
+  summaryMinChars: 40,
+  summaryMaxChars: 600,
+  /** `slug`/`id` — see catalogue/schema.ts's SLUG_PATTERN for the format rule. */
+  slugMaxChars: 64,
+} as const
+
+export const SUBMISSIONS = {
+  path: '/submissions',
+
+  maxSiteUrlChars: 2048,
+  maxNameChars: 80,
+  maxTaglineChars: 80,
+  maxDescriptionChars: 2000,
+  maxPriceChars: 80,
+  maxTags: 6,
+  maxTagChars: 40,
+  maxAudienceChars: 200,
+  maxAlternatives: 6,
+  maxAlternativeChars: 80,
+  maxFaqs: 5,
+  maxFaqQuestionChars: 200,
+  maxFaqAnswerChars: 1000,
+  maxLaunchStoryChars: 600,
+  /** The honeypot field (`company`, SPEC-submit-backend.md §9) — a bot's junk, not a real name. */
+  maxHoneypotChars: 200,
+} as const
+
+/**
+ * Rate limiting for the Submit intake — SPEC-submit-backend.md §9.
+ * http/middleware/rateLimit.ts is the only module that reads these.
+ */
+export const RATE_LIMIT = {
+  /**
+   * Requests a single IP may make inside the rolling window. Raised from 5 to
+   * 20 for slice 6 (client wiring, SPEC-submit-backend.md §8): the limiter
+   * counts every request regardless of outcome, so 5 left no room for an
+   * honest user who hits a 409 or two, fixes a typo, and tries again a few
+   * times in one sitting.
+   */
+  maxPerWindow: 20,
+  /** The rolling window's length, in milliseconds. */
+  windowMs: 60 * 60 * 1000,
+} as const
+
+/**
+ * Per-field length/count limits automations/schema.ts enforces
+ * (SPEC-automations.md §3). Same reasoning as TOOL_FIELDS above: tuning a
+ * cap must never mean editing the validation logic that enforces it.
+ *
+ * A rating-scale bound (`trustScore` 1–5) and a fixed literal union
+ * (`beginnerFriendly`, `status`) are not "caps" in this sense — catalogue/
+ * schema.ts's own `rating: z.number().min(0).max(5)` sets the same
+ * precedent of leaving a domain-fixed scale inline rather than here.
+ */
+export const AUTOMATIONS = {
+  idMaxChars: 64,
+  slugMaxChars: 64,
+  personaMaxChars: 300,
+  titleMaxChars: 160,
+  intentLabelMaxChars: 80,
+  maxIntentLabels: 12,
+  toolNameMaxChars: 80,
+  toolAccessNoteMaxChars: 200,
+  maxTools: 6,
+  workflowSummaryMaxChars: 1000,
+  samplePromptMaxChars: 4000,
+  pricingNoteMaxChars: 500,
+  /** The sheet's Niche/Industry cell; the longest surveyed is 97. */
+  sectorMaxChars: 160,
+  /** Beginner-Friendly after its leading word; the longest surveyed cell is 217. */
+  beginnerNoteMaxChars: 300,
+  sourceTypeMaxChars: 120,
+  freshnessMaxChars: 100,
+  accessNotesMaxChars: 800,
+  batchMaxChars: 80,
+  /** `AutomationStep` fields — one authored step, not the derived default. */
+  stepTitleMaxChars: 80,
+  stepBodyMaxChars: 600,
+  stepPromptMaxChars: 4000,
+  stepToolNameMaxChars: 80,
+  stepTipMaxChars: 300,
+  maxSteps: 6,
+} as const
+
+/**
+ * Automation search weights — SPEC-automations.md §7.
+ *
+ * Here and not in automations/match.ts for the reason SCORE_WEIGHTS is not in
+ * retrieval/score.ts: tuning relevance must not mean editing scoring logic,
+ * and boundary.test.ts holds match.ts to that.
+ *
+ * Every signal but the phrase hit is normalised to 0–1 before weighting — an
+ * overlap is the SHARE of query terms the field contains, not a count — so a
+ * weight reads directly against every other. The client wrote Task Title and
+ * Intent Labels as the phrases a user would type, which is why they dominate.
+ */
+export const AUTOMATION_MATCH_WEIGHTS = {
+  /** The whole query appears in the title, word for word. */
+  titlePhrase: 3.0,
+  /** Share of query terms found in the title. */
+  titleTerms: 1.5,
+  /** Share of query terms found across the intent labels. */
+  intentTerms: 1.2,
+  /** Share of query terms found in the persona. */
+  personaTerms: 0.6,
+  /** Share of query terms found in the tool names. */
+  toolTerms: 0.5,
+  /**
+   * trustScore / 5. A near-tiebreak: the most and least trusted records differ
+   * by at most 0.08, so it decides only between text matches that close.
+   */
+  trust: 0.1,
+} as const
+
+/** Automation search limits. */
+export const AUTOMATION_MATCH = {
+  /** Results when the caller names no limit. */
+  defaultLimit: 10,
+  /** Hard ceiling on results, whatever the caller asks for. */
+  maxLimit: 50,
+  /** Shorter query terms are dropped as noise — same floor as RETRIEVAL. */
+  minTermLength: 3,
+  /**
+   * Term rarity (IDF): idf = ln((N + idfSmoothing) / (df + idfSmoothing)) + idfBase,
+   * where N is the automations the matcher was built over and df how many of
+   * them contain the term in any scored field. Smoothing keeps an unseen term
+   * finite; the base keeps the most common term above zero, so it still counts
+   * a little rather than vanishing.
+   */
+  idfSmoothing: 1,
+  idfBase: 1,
+} as const
+
+/** GET /api/automations — SPEC-automations.md §9. */
+export const AUTOMATIONS_API = {
+  path: '/automations',
+  defaultLimit: AUTOMATION_MATCH.defaultLimit,
+  /** The matcher's own ceiling, so a search and a listing cap alike. */
+  maxLimit: AUTOMATION_MATCH.maxLimit,
+  /** Longer queries are rejected rather than truncated, so the caller knows. */
+  maxQueryLength: 200,
 } as const

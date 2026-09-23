@@ -54,7 +54,13 @@
   --color-muted-dim: #8e88a8;
   --color-muted-soft: #aba5c2;
   --color-subtle: #7b7595;
-  --color-subtle-dim: #6f6a88;
+  /*
+   * Raised from the handoff's #6f6a88 (3.99:1 on --color-canvas, fails WCAG
+   * AA's 4.5:1 for text below 18.66px). Same hue/saturation (250°, 12.4%),
+   * lightness only: 47.5% -> 53.1%, landing at 4.92:1 against #040407 —
+   * inside the 4.8-5.0 target band, not flush against the 4.5 minimum.
+   */
+  --color-subtle-dim: #7d7996;
   --color-subtle-soft: #a6a0bc;
   --color-placeholder: #6b6588;
 

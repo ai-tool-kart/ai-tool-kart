@@ -22,6 +22,7 @@ import { parseCatalogue } from '../src/catalogue/schema.ts'
 import {
   GOALS_BY_ROLE,
   INTAKE,
+  PLAN_STEP_STAGE_ORDER,
   PRICING_MODELS_BY_TIER,
   ROLES,
   TOOL_CATEGORIES,
@@ -371,6 +372,16 @@ await test('the real seed catalogue', async (t) => {
         `stage "${stage}" has ${count} active tools, needs ${RETRIEVAL.minPerStage}`,
       )
     }
+  })
+
+  await t.test('PLAN_STEP_STAGE_ORDER is a permutation of WORKFLOW_STAGES', () => {
+    // A hand-typed re-ordering of the same ten values — nothing enforces that
+    // by construction, so a typo (a dropped or duplicated stage) needs a test
+    // to catch it rather than silently mis-ordering, or dropping, a plan step.
+    assert.deepEqual(
+      [...PLAN_STEP_STAGE_ORDER].sort(),
+      [...WORKFLOW_STAGES].sort(),
+    )
   })
 
   await t.test('every role has at least three tools, so a plan is possible', () => {

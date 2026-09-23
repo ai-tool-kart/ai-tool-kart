@@ -72,12 +72,22 @@ export default function NavPill() {
           </span>
         </Link>
 
-        {/* Full nav from 1080px up; below that it moves into the panel. */}
-        <nav className="hidden flex-auto items-center justify-center gap-[2px] min-[1080px]:flex">
+        {/*
+          Full nav from 1100px up; below that it moves into the panel.
+
+          1100 and not a round 1080 because that is where the row actually
+          fits. The pill is `mx-auto max-w-nav`, so it only reaches its 1060px
+          cap at ~1123px viewport and is narrower below that — at 1080px the
+          nav box is 666px against 684px of items, and the flex row answers by
+          wrapping a label onto a second line. Measured: two rows through
+          1098px, one row from 1099px up. See data/navigation.ts for the width
+          budget an eighth item would have to live in.
+        */}
+        <nav className="hidden flex-auto items-center justify-center gap-[2px] min-[1100px]:flex">
           {links}
         </nav>
 
-        <div className="flex flex-auto items-center justify-end gap-[10px] min-[1080px]:flex-none">
+        <div className="flex flex-auto items-center justify-end gap-[10px] min-[1100px]:flex-none">
           <Link to={SUBMIT_ROUTE} data-magnet="1" className={CTA_CLASSES}>
             Submit Your Tool
           </Link>
@@ -88,7 +98,7 @@ export default function NavPill() {
             aria-controls="nav-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 flex-none cursor-pointer items-center justify-center rounded-pill border border-hairline text-ink transition-[background-color,border-color] duration-200 hover:bg-white/[0.06] min-[1080px]:hidden"
+            className="flex h-10 w-10 flex-none cursor-pointer items-center justify-center rounded-pill border border-hairline text-ink transition-[background-color,border-color] duration-200 hover:bg-white/[0.06] min-[1100px]:hidden"
           >
             <span aria-hidden="true" className="flex w-[16px] flex-col gap-[4px]">
               <span className="h-[1.5px] w-full rounded-full bg-current" />
@@ -102,7 +112,7 @@ export default function NavPill() {
       {menuOpen && (
         <nav
           id="nav-menu"
-          className="flex flex-col gap-1 border-t border-hairline px-3 pt-3 pb-4 min-[1080px]:hidden"
+          className="flex flex-col gap-1 border-t border-hairline px-3 pt-3 pb-4 min-[1100px]:hidden"
         >
           {links}
         </nav>

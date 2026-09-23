@@ -1,3 +1,4 @@
+import { Link, useLocation } from 'react-router-dom'
 import { HERO_KINDS, type HeroKindIcon } from '@/data/hero'
 
 /*
@@ -25,8 +26,14 @@ import { HERO_KINDS, type HeroKindIcon } from '@/data/hero'
  *
  * That is the only change the removal required.
  *
- * The selection drives nothing but its own highlight, in the design and here.
- * See the note on HERO_KINDS in data/hero.ts.
+ * Both pills are real links now, not just a highlight — see the note on
+ * HERO_KINDS in data/hero.ts. Each kind renders as a `Link` to its own route
+ * (Home for "AI Workflows", /mcp-servers for "MCP Servers"), and the active
+ * pill is whichever kind's `to` matches the CURRENT route, not local state.
+ * That is what makes switching work from either side: clicking "AI Workflows"
+ * while on /mcp-servers has to navigate away, exactly as clicking "MCP
+ * Servers" from Home does, and a kind cannot know it is not the active route
+ * without asking the router.
  */
 
 const ICONS: Record<HeroKindIcon, React.ReactElement> = {
@@ -63,31 +70,29 @@ const ICONS: Record<HeroKindIcon, React.ReactElement> = {
   ),
 }
 
-interface KindTabsProps {
-  value: string
-  onChange: (label: string) => void
-}
+export default function KindTabs() {
+  const { pathname } = useLocation()
 
-export default function KindTabs({ value, onChange }: KindTabsProps) {
   return (
     <div className="mb-[46px] flex justify-center [animation:akFade_1.2s_cubic-bezier(.16,.84,.44,1)_both]">
+      {/* Not `role="tablist"`: these are navigation links, not tabs. */}
       <div
-        role="tablist"
+        role="group"
         aria-label="Catalogue kind"
         className="inline-grid grid-cols-1 items-center gap-1 rounded-pill border border-white/[0.085] bg-[rgba(10,8,17,0.55)] p-[5px] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_18px_44px_-30px_rgba(0,0,0,1)] backdrop-blur-[24px] backdrop-saturate-[1.5] min-[380px]:grid-cols-2"
       >
         {HERO_KINDS.map((kind) => {
-          const active = kind.label === value
+          const active = kind.to === pathname
+          const className = `relative inline-flex cursor-pointer items-center justify-center gap-[9px] rounded-pill px-[22px] py-[11px] text-[15px] font-semibold tracking-[-0.014em] whitespace-nowrap transition-colors duration-300 ${
+            active ? 'text-white' : 'text-[#8F89A8] hover:text-[#DCD6F0]'
+          }`
+
           return (
-            <button
+            <Link
               key={kind.label}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              onClick={() => onChange(kind.label)}
-              className={`relative inline-flex cursor-pointer items-center justify-center gap-[9px] rounded-pill px-[22px] py-[11px] text-[15px] font-semibold tracking-[-0.014em] whitespace-nowrap transition-colors duration-300 ${
-                active ? 'text-white' : 'text-[#8F89A8] hover:text-[#DCD6F0]'
-              }`}
+              to={kind.to}
+              aria-current={active ? 'page' : undefined}
+              className={className}
             >
               {active && (
                 <span
@@ -97,7 +102,7 @@ export default function KindTabs({ value, onChange }: KindTabsProps) {
               )}
               <span className="relative flex items-center">{ICONS[kind.icon]}</span>
               <span className="relative">{kind.label}</span>
-            </button>
+            </Link>
           )
         })}
       </div>

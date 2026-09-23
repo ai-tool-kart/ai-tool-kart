@@ -1,0 +1,2495 @@
+[
+  {
+    "id": "property-managers-e26ee8bfe9",
+    "slug": "screen-a-rental-applicant-with-ai",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Small-to-midsize residential property managers and independent landlords (5-500 units)",
+    "title": "screen a rental applicant with AI",
+    "intentLabels": [
+      "tenant screening AI",
+      "background check automation",
+      "credit + eviction check tool",
+      "applicant scoring"
+    ],
+    "tools": [
+      {
+        "name": "TurboTenant (AI-assisted screening)",
+        "url": "https://cogniagent.ai/best-ai-tools-for-property-management/"
+      },
+      {
+        "name": "Buildium AI-assisted tenant screening"
+      }
+    ],
+    "workflowSummary": "Applicant submits an online application; the tool pulls credit, criminal, and eviction records and returns a plain-language risk summary and score so the manager can apply the same criteria to every applicant and stay Fair Housing compliant.",
+    "samplePrompt": "Summarize this applicant's credit, criminal, and eviction report in plain language, flag anything unusual, and tell me if they meet a 650+ credit score and 3x-rent income requirement.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built into the leasing workflow, no setup beyond entering screening criteria",
+    "trustScore": 4,
+    "pricingNote": "TurboTenant: free core screening (applicant pays report fee). Buildium: from roughly $58-$479/mo depending on plan. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cogniagent.ai/best-ai-tools-for-property-management/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Publicly available vendor roundup; screening reports require FCRA-compliant applicant consent",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-d72ebf073a",
+    "slug": "check-if-a-rental-application-has-fake-documents",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Leasing agents and PM companies processing high application volume",
+    "title": "check if a rental application has fake documents",
+    "intentLabels": [
+      "fraud detection",
+      "fake pay stub detector",
+      "ID verification",
+      "document authenticity check"
+    ],
+    "tools": [
+      {
+        "name": "Snappt",
+        "url": "https://truedoc.io/industries/tenant-screening-document-verification"
+      },
+      {
+        "name": "TrueDoc"
+      }
+    ],
+    "workflowSummary": "Applicant-submitted pay stubs, bank statements, and ID are run through document-forensics AI that checks formatting, metadata, and math consistency; flagged files route to a human for manual review before approval.",
+    "samplePrompt": "Run this applicant's pay stub and bank statement through fraud detection and tell me which fields look edited or inconsistent before I approve the lease.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "layered onto an existing screening workflow, not a standalone step",
+    "trustScore": 4,
+    "pricingNote": "Custom / per-application pricing, typically an add-on to screening. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://truedoc.io/industries/tenant-screening-document-verification",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page; no license restrictions noted",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-747f14975b",
+    "slug": "write-a-property-listing-description-with-ai",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Independent landlords and leasing staff listing vacant units",
+    "title": "write a property listing description with AI",
+    "intentLabels": [
+      "AI listing generator",
+      "property description writer",
+      "rental ad copy"
+    ],
+    "tools": [
+      {
+        "name": "Apartments.com AI Description Generator",
+        "url": "https://www.apartments.com/rental-manager/resources/you-list/how-create-fantastic-ai-generated-listing-apartmentscom"
+      },
+      {
+        "name": "TurboTenant AI Listing Builder"
+      }
+    ],
+    "workflowSummary": "Manager enters property details and uploads photos; AI recognizes rooms in the photos and drafts a Fair Housing-compliant description ready to paste into the listing.",
+    "samplePrompt": "Using these details - 2 bed/1 bath, in-unit laundry, near downtown, $1,650/mo - write a friendly, Fair Housing-compliant listing description under 150 words.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free with an Apartments.com Rental Manager or TurboTenant account. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.apartments.com/rental-manager/resources/you-list/how-create-fantastic-ai-generated-listing-apartmentscom",
+    "sourceType": "Product Page / Help Article",
+    "freshness": "2024-10-04",
+    "accessNotes": "Public help article",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-5e078550b5",
+    "slug": "add-furniture-to-empty-apartment-photos-with-ai",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Property managers marketing vacant units",
+    "title": "add furniture to empty apartment photos with AI",
+    "intentLabels": [
+      "virtual staging",
+      "AI furniture photos",
+      "empty room staging"
+    ],
+    "tools": [
+      {
+        "name": "RoomStage AI",
+        "url": "https://www.roomstage.ai/use-cases/rental-properties"
+      },
+      {
+        "name": "StagePro AI"
+      }
+    ],
+    "workflowSummary": "Upload a photo of an empty room; AI detects the space and adds photorealistic furniture in a chosen style within about a minute, ready for the listing site.",
+    "samplePrompt": "Stage this empty living room photo in a modern style so it looks furnished for my rental listing.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "From roughly $5/room (RoomStage), per-photo pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.roomstage.ai/use-cases/rental-properties",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-f9985c0f48",
+    "slug": "make-a-3d-virtual-tour-of-my-rental-unit",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM and leasing teams marketing units to remote or out-of-town renters",
+    "title": "make a 3D virtual tour of my rental unit",
+    "intentLabels": [
+      "virtual tour software",
+      "360 walkthrough",
+      "Matterport tour"
+    ],
+    "tools": [
+      {
+        "name": "Matterport",
+        "url": "https://www.cloudpano.com/property-managers/ai-powered-virtual-tours-for-property-managers"
+      },
+      {
+        "name": "CloudPano"
+      }
+    ],
+    "workflowSummary": "Manager scans the unit with a phone or 360 camera; the platform stitches images into a self-guided, clickable 3D tour that embeds on listing sites so prospects can 'walk through' remotely before booking a showing.",
+    "samplePrompt": "Not prompt-based - capture the unit with a phone or 360 camera and upload it; the tour is generated automatically.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a photo/scan capture step first",
+    "trustScore": 4,
+    "pricingNote": "CloudPano and similar tools from roughly $10-$40/mo per active tour. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cloudpano.com/property-managers/ai-powered-virtual-tours-for-property-managers",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-23ce535b52",
+    "slug": "figure-out-what-rent-to-charge-for-my-rental",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Landlords and PMs pricing new listings or renewals",
+    "title": "figure out what rent to charge for my rental",
+    "intentLabels": [
+      "rent pricing tool",
+      "market rent analysis",
+      "AI comp pricing"
+    ],
+    "tools": [
+      {
+        "name": "Rentana",
+        "url": "https://www.leasey.ai/smart-rent-pricing/"
+      },
+      {
+        "name": "Leasey.AI"
+      }
+    ],
+    "workflowSummary": "Enter the unit's specs and address; AI pulls comparable listings, vacancy rates, and seasonal demand to recommend a rent range with a confidence level, and flags if the current price is under- or over-market.",
+    "samplePrompt": "Compare my 2-bed unit at [address] to similar rentals within a mile and recommend a monthly rent range with reasoning.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.leasey.ai/smart-rent-pricing/",
+    "sourceType": "Product Page",
+    "freshness": "2026-02-27",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-415ed5c75d",
+    "slug": "set-up-a-chatbot-to-answer-tenant-questions",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Small PM offices without after-hours staff",
+    "title": "set up a chatbot to answer tenant questions",
+    "intentLabels": [
+      "tenant chatbot",
+      "AI leasing assistant",
+      "resident FAQ bot"
+    ],
+    "tools": [
+      {
+        "name": "Hyperleap AI",
+        "url": "https://hyperleap.ai/blog/ai-chatbot-property-managers-tenant-requests"
+      },
+      {
+        "name": "EliseAI"
+      }
+    ],
+    "workflowSummary": "Chatbot is trained on the lease terms, pet policy, and property rules; it answers routine questions like rent due dates and parking rules instantly, and escalates anything unusual or urgent to a human.",
+    "samplePrompt": "Train a chatbot on our lease terms and pet policy, and have it answer tenant questions about rent, parking, and move-in dates automatically.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires uploading policies and lease terms to train it",
+    "trustScore": 4,
+    "pricingNote": "Custom pricing; add-ons noted from roughly $40-$99/mo. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://hyperleap.ai/blog/ai-chatbot-property-managers-tenant-requests",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-17",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-4884f47ace",
+    "slug": "triage-tenant-maintenance-requests-automatically",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PMs fielding frequent repair requests across a portfolio",
+    "title": "triage tenant maintenance requests automatically",
+    "intentLabels": [
+      "maintenance triage AI",
+      "work order automation",
+      "repair request bot"
+    ],
+    "tools": [
+      {
+        "name": "Latchel",
+        "url": "https://www.vellum.ai/blog/best-ai-assistants-for-property-managers"
+      }
+    ],
+    "workflowSummary": "Tenants submit issues by chat, text, or phone at any hour; AI classifies urgency, walks them through basic troubleshooting for common issues, and only dispatches a vendor when it's truly needed.",
+    "samplePrompt": "A tenant reports 'no hot water' - classify the urgency, suggest troubleshooting steps to try first, and tell me whether to dispatch a vendor tonight.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Custom, quoted per portfolio size. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-assistants-for-property-managers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-825089336b",
+    "slug": "get-an-ai-assistant-to-answer-my-property-management-phone-calls",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM offices that miss calls during busy hours or overnight",
+    "title": "get an AI assistant to answer my property management phone calls",
+    "intentLabels": [
+      "AI receptionist",
+      "virtual leasing agent",
+      "call answering service"
+    ],
+    "tools": [
+      {
+        "name": "Super (usesuper.com)",
+        "url": "https://www.buildium.com/blog/best-ai-property-management-tools/"
+      }
+    ],
+    "workflowSummary": "Calls, texts, and emails route through an always-on AI receptionist that answers leasing questions, logs maintenance issues, and escalates emergencies, replacing an answering service or after-hours staffing.",
+    "samplePrompt": "Not prompt-based - configure FAQs, emergency escalation rules, and phone routing during onboarding.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs onboarding and FAQ setup",
+    "trustScore": 4,
+    "pricingNote": "From $250/mo (Rollover Plan) to $415/mo (24/7 Plan); custom pricing above that. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.buildium.com/blog/best-ai-property-management-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-4fcc32f7dc",
+    "slug": "summarize-a-commercial-lease-with-ai",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Commercial/portfolio managers handling dense lease documents",
+    "title": "summarize a commercial lease with AI",
+    "intentLabels": [
+      "lease abstraction",
+      "lease summary tool",
+      "AI lease reader"
+    ],
+    "tools": [
+      {
+        "name": "LeaseLens",
+        "url": "https://www.baselane.com/resources/best-ai-lease-abstraction-tools"
+      },
+      {
+        "name": "Prophia"
+      }
+    ],
+    "workflowSummary": "Upload the lease PDF; AI extracts the rent schedule, renewal options, break clauses, and critical dates into a structured summary, with links back to the source page so each extracted term can be verified.",
+    "samplePrompt": "Extract the rent schedule, renewal options, and critical dates from this lease PDF into a table, and link each entry to the page it came from.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best for portfolios with more than a handful of leases",
+    "trustScore": 4,
+    "pricingNote": "Custom, quoted by portfolio size. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.baselane.com/resources/best-ai-lease-abstraction-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-06-20",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-126e0afbb6",
+    "slug": "write-a-notice-to-pay-rent-or-quit",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Landlords and PMs handling rent nonpayment",
+    "title": "write a notice to pay rent or quit",
+    "intentLabels": [
+      "eviction notice generator",
+      "pay or quit notice",
+      "late rent letter AI"
+    ],
+    "tools": [
+      {
+        "name": "AI Lawyer (ailawyer.pro)",
+        "url": "https://ailawyer.pro/blog/notice-to-pay-or-quit-template-guide-(free-download-ai-generator)"
+      }
+    ],
+    "workflowSummary": "Enter the tenant's name, amount owed, and state; AI calculates the statutory cure period for that jurisdiction and drafts a compliant notice, meant to be reviewed by a local attorney before serving.",
+    "samplePrompt": "Draft a Notice to Pay or Quit for a tenant in [state] who owes $1,200 in rent, using the correct statutory cure period for that state.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "output should still get a local attorney's review, given how state-specific eviction law is",
+    "trustScore": 3,
+    "pricingNote": "Free template download; AI generator behind a paid plan. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://ailawyer.pro/blog/notice-to-pay-or-quit-template-guide-(free-download-ai-generator)",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-08-12",
+    "accessNotes": "Public blog post; generated legal documents should be attorney-reviewed before use",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-aea484c0a6",
+    "slug": "predict-which-tenants-won-t-renew-their-lease",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Multifamily and portfolio managers focused on retention",
+    "title": "predict which tenants won't renew their lease",
+    "intentLabels": [
+      "tenant churn prediction",
+      "retention AI",
+      "renewal risk score"
+    ],
+    "tools": [
+      {
+        "name": "Kumo.ai",
+        "url": "https://kumo.ai/solutions/industries/real-estate/tenant-churn/"
+      },
+      {
+        "name": "Datagrid"
+      }
+    ],
+    "workflowSummary": "AI reviews payment timing, maintenance tickets, and communication patterns across the portfolio and outputs a weekly list of at-risk tenants with a probable reason, so managers can make a retention offer before the tenant decides to leave.",
+    "samplePrompt": "Review this quarter's payment and maintenance-ticket history and flag which tenants are at risk of not renewing, ranked by likelihood.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "requires connecting property-management-system data",
+    "trustScore": 3,
+    "pricingNote": "Custom/enterprise pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://kumo.ai/solutions/industries/real-estate/tenant-churn/",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page; source notes payment-behavior signals alone catch only 30-40% of non-renewals",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-c50f205219",
+    "slug": "respond-to-my-property-s-google-reviews-with-ai",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies managing online reputation across many properties",
+    "title": "respond to my property's Google reviews with AI",
+    "intentLabels": [
+      "review response AI",
+      "reputation management tool",
+      "review reply generator"
+    ],
+    "tools": [
+      {
+        "name": "RightResponse AI",
+        "url": "https://www.rightresponseai.com/solutions/property-management"
+      },
+      {
+        "name": "Respage"
+      }
+    ],
+    "workflowSummary": "AI pulls reviews from Google, Yelp, and Apartments.com into one dashboard and drafts on-brand replies for approval, so no review goes unanswered without adding staff time.",
+    "samplePrompt": "Draft a professional, on-brand reply to this 2-star Google review about a slow maintenance response, without admitting fault or sharing tenant details.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Subscription-based, tiered by number of locations. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.rightresponseai.com/solutions/property-management",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-3acaf31b8f",
+    "slug": "compare-move-in-and-move-out-photos-to-check-for-damage",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PMs handling security-deposit disputes",
+    "title": "compare move-in and move-out photos to check for damage",
+    "intentLabels": [
+      "AI inspection software",
+      "damage detection",
+      "move-out photo comparison"
+    ],
+    "tools": [
+      {
+        "name": "SnapInspect",
+        "url": "https://www.snapinspect.com/ai-property-inspection-software"
+      },
+      {
+        "name": "Inspect360"
+      }
+    ],
+    "workflowSummary": "Inspector takes photos or video at move-in and move-out; AI compares the two sets, flags new damage versus normal wear, and auto-generates a timestamped report that supports any deposit deduction.",
+    "samplePrompt": "Not prompt-based - capture move-in and move-out photos through the app; AI generates the comparison report automatically.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Typically $1-$5 per inspection or a monthly per-unit fee. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.snapinspect.com/ai-property-inspection-software",
+    "sourceType": "Product Page",
+    "freshness": "2026-06-26",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-2f131b4b6f",
+    "slug": "automate-my-rent-collection-and-late-fee-reminders",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Independent landlords and small PM teams",
+    "title": "automate my rent collection and late fee reminders",
+    "intentLabels": [
+      "online rent collection",
+      "late fee automation",
+      "AI rent reminders"
+    ],
+    "tools": [
+      {
+        "name": "TurboTenant",
+        "url": "https://cogniagent.ai/best-ai-tools-for-property-management/"
+      },
+      {
+        "name": "RentRedi"
+      }
+    ],
+    "workflowSummary": "Tenants pay online through the platform; the system automatically reminds tenants before rent is due, applies late fees per the lease terms, and flags accounts trending toward missed payments.",
+    "samplePrompt": "Not prompt-based - connect your lease terms and bank account; reminders and late fees apply automatically per your settings.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "TurboTenant free core plan; premium from roughly $12.42/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cogniagent.ai/best-ai-tools-for-property-management/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-281865c9d6",
+    "slug": "qualify-leads-and-book-showings-automatically",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Multifamily leasing teams with high inquiry volume",
+    "title": "qualify leads and book showings automatically",
+    "intentLabels": [
+      "AI leasing agent",
+      "virtual leasing assistant",
+      "tour scheduling bot"
+    ],
+    "tools": [
+      {
+        "name": "EliseAI",
+        "url": "https://www.vellum.ai/blog/best-ai-assistants-for-property-managers"
+      }
+    ],
+    "workflowSummary": "AI answers inbound leasing inquiries by text, email, and chat around the clock, asks qualifying questions, and books tours directly onto the leasing team's calendar, so leads aren't lost waiting for a callback.",
+    "samplePrompt": "Not prompt-based - connect your leasing inbox and calendar; the AI qualifies leads and books tours automatically per your criteria.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs calendar and messaging integration",
+    "trustScore": 4,
+    "pricingNote": "Custom/enterprise pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.vellum.ai/blog/best-ai-assistants-for-property-managers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-eb58fc6dc8",
+    "slug": "verify-a-tenant-s-income-without-trusting-a-pay-stub",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Leasing teams verifying income-to-rent ratios",
+    "title": "verify a tenant's income without trusting a pay stub",
+    "intentLabels": [
+      "income verification",
+      "employment verification",
+      "bank-verified income"
+    ],
+    "tools": [
+      {
+        "name": "MeasureOne",
+        "url": "https://westernverify.com/resources/blog/the-perfect-pay-stub-problem-ai-has-made-rental-application-fraud-easy-heres-how-landlords-catch-it-anyway"
+      },
+      {
+        "name": "Western Verify"
+      }
+    ],
+    "workflowSummary": "Instead of reviewing an uploaded pay stub, the applicant securely connects their bank or payroll account and the tool confirms actual deposits and employment directly at the source, closing the loophole that AI-generated fake pay stubs exploit.",
+    "samplePrompt": "Not prompt-based - the applicant connects their bank/payroll account; the tool verifies income and employment directly at the source.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires the applicant to complete a secure connection step",
+    "trustScore": 4,
+    "pricingNote": "Custom, typically a per-verification fee. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://westernverify.com/resources/blog/the-perfect-pay-stub-problem-ai-has-made-rental-application-fraud-easy-heres-how-landlords-catch-it-anyway",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-23",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-7492485dc0",
+    "slug": "predict-which-appliances-or-hvac-units-are-about-to-fail",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PMs managing HVAC and appliances across many units",
+    "title": "predict which appliances or HVAC units are about to fail",
+    "intentLabels": [
+      "predictive maintenance",
+      "failure prediction AI",
+      "capital planning tool"
+    ],
+    "tools": [
+      {
+        "name": "Oxmaint digital property inspection platform",
+        "url": "https://oxmaint.com/industries/delivery-operations-management/digital-property-inspection-software"
+      }
+    ],
+    "workflowSummary": "AI reviews historical inspection and repair data across the portfolio to spot patterns - for example, which appliance brands fail earliest or which HVAC systems degrade fastest - enabling proactive replacement instead of reactive emergency repairs.",
+    "samplePrompt": "Review our maintenance history for the last 2 years and tell me which appliance brands or systems are trending toward failure soonest.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "needs 1-2 years of historical maintenance data logged in the system",
+    "trustScore": 3,
+    "pricingNote": "Custom/enterprise pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://oxmaint.com/industries/delivery-operations-management/digital-property-inspection-software",
+    "sourceType": "Product Page",
+    "freshness": "2026-02-24",
+    "accessNotes": "Public product page; pattern analysis is only as reliable as the historical data behind it",
+    "batch": "PropertyManagers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-4349584ee1",
+    "slug": "categorize-my-rental-property-expenses-automatically",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Independent landlords and small PM teams doing their own books",
+    "title": "categorize my rental property expenses automatically",
+    "intentLabels": [
+      "AI bookkeeping",
+      "expense categorization",
+      "transaction coding"
+    ],
+    "tools": [
+      {
+        "name": "Topkey",
+        "url": "https://topkey.io/features/ai-accounting"
+      },
+      {
+        "name": "Baselane"
+      }
+    ],
+    "workflowSummary": "Bank and card transactions sync in automatically; AI reads each one, tags it to the right property and GL code, matches receipts, and flags duplicates or anomalies so the books are nearly closed by month-end.",
+    "samplePrompt": "Categorize this month's bank transactions by property and expense type, flag any duplicate charges or anomalies, and tell me which ones need my review.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "runs in the background once bank accounts are connected",
+    "trustScore": 4,
+    "pricingNote": "Baselane: free core banking + bookkeeping for real estate investors. Topkey: custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://topkey.io/features/ai-accounting",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-17edf8dab9",
+    "slug": "generate-1099-tax-forms-for-my-vendors-and-owners",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Property accountants and PMs issuing year-end 1099s to owners/vendors",
+    "title": "generate 1099 tax forms for my vendors and owners",
+    "intentLabels": [
+      "1099 automation",
+      "vendor tax forms",
+      "W-9 collection AI"
+    ],
+    "tools": [
+      {
+        "name": "TaxBandits",
+        "url": "https://developer.taxbandits.com/form-1099-automation/"
+      },
+      {
+        "name": "Tax1099 (Zenwork AI Tax Assist)"
+      }
+    ],
+    "workflowSummary": "AI cross-references vendor payment records against W-9 data, validates tax ID numbers, automatically applies the correct 1099 form and reporting threshold, and flags any vendor missing documentation before forms are filed with the IRS.",
+    "samplePrompt": "Review this year's vendor payments, match them to W-9s on file, flag anyone missing a W-9 or with a mismatched tax ID, and generate the correct 1099 forms.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs clean, connected payment and W-9 data to start from",
+    "trustScore": 4,
+    "pricingNote": "Tax1099: from roughly $2.90/form with volume discounts; TIN matching and corrections priced as add-ons. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://developer.taxbandits.com/form-1099-automation/",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-49188ccbcb",
+    "slug": "generate-a-monthly-owner-statement-automatically",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PMs sending monthly financial reports to property owners",
+    "title": "generate a monthly owner statement automatically",
+    "intentLabels": [
+      "owner statement generator",
+      "financial reporting AI",
+      "owner portal reports"
+    ],
+    "tools": [
+      {
+        "name": "AppFolio",
+        "url": "https://magicdoor.com/blog/best-property-management-financial-reporting-software-tools"
+      },
+      {
+        "name": "Genie AI (via MagicDoor)"
+      }
+    ],
+    "workflowSummary": "AI pulls the month's rent collected, expenses paid, and reserve activity from the ledger, applies late/NSF fees, flags accounting anomalies, and assembles a clean, owner-ready statement that's shared through a secure portal instead of built by hand.",
+    "samplePrompt": "Pull this property's rent, expenses, and reserve activity for the month and put together an owner statement, flagging any unusual charges before I send it.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "report quality depends on the underlying bookkeeping being current",
+    "trustScore": 4,
+    "pricingNote": "AppFolio: custom pricing, contact for quote. MagicDoor: free tier for 1-9 leases, paid tiers from $25/mo. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://magicdoor.com/blog/best-property-management-financial-reporting-software-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-19",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-976ff7a721",
+    "slug": "track-which-vendors-have-expired-or-missing-insurance",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies coordinating vendors across a portfolio",
+    "title": "track which vendors have expired or missing insurance certificates",
+    "intentLabels": [
+      "COI tracking",
+      "certificate of insurance compliance",
+      "vendor insurance monitoring"
+    ],
+    "tools": [
+      {
+        "name": "NetVendor",
+        "url": "https://trackmyvendor.com/property-manager-compliance"
+      },
+      {
+        "name": "TrackMyVendor"
+      }
+    ],
+    "workflowSummary": "Vendors upload their Certificate of Insurance; AI reads the ACORD form, extracts coverage limits and expiration dates, checks it against the property's minimum requirements, and sends automated renewal alerts at 90/60/30 days out so no vendor works uninsured.",
+    "samplePrompt": "Read this vendor's certificate of insurance, check it against our $1M general liability requirement with additional-insured status, and tell me if anything is missing or about to expire.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "vendor uploads the document and the alerts run automatically after setup",
+    "trustScore": 4,
+    "pricingNote": "TrackMyVendor: free to track first 25 vendors. NetVendor: custom/enterprise pricing. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://trackmyvendor.com/property-manager-compliance",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-a6cd6dba96",
+    "slug": "get-alerted-before-a-lease-renewal-or-option-deadline-slips-by",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Portfolio and commercial PMs tracking lease critical dates",
+    "title": "get alerted before a lease renewal or option deadline slips by",
+    "intentLabels": [
+      "lease critical date tracking",
+      "renewal alert software",
+      "expiration management"
+    ],
+    "tools": [
+      {
+        "name": "GrowthFactor (Clara AI agent)",
+        "url": "https://www.growthfactor.ai/resources/blog/lease-expiration-date-management-software"
+      },
+      {
+        "name": "Re-Leased"
+      }
+    ],
+    "workflowSummary": "AI scans every lease in the portfolio for renewal options, notice windows, and expiration dates, then sends escalating alerts to the responsible manager (and a backup) well before a deadline, so a missed renewal option doesn't quietly cost a year of below-market rent.",
+    "samplePrompt": "Scan all leases in this portfolio and list every renewal option or termination notice window coming up in the next 90 days, sorted by deadline.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once lease data is imported or abstracted into the system",
+    "trustScore": 4,
+    "pricingNote": "Custom/enterprise pricing for both. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.growthfactor.ai/resources/blog/lease-expiration-date-management-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-05-28",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-731a403916",
+    "slug": "keep-track-of-every-property-deadline-lease-insurance-and-tax",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Independent landlords and small portfolio owners managing their own compliance",
+    "title": "keep track of every property deadline - lease, insurance, and tax - in one place",
+    "intentLabels": [
+      "property deadline tracker",
+      "document digitization",
+      "compliance reminders"
+    ],
+    "tools": [
+      {
+        "name": "PropertyTools",
+        "url": "https://www.propertytools.ai/organization-compliance"
+      }
+    ],
+    "workflowSummary": "Upload any lease, insurance policy, or tax document as a PDF; AI extracts key dates, dollar amounts, and renewal terms automatically, files it in a searchable library by property, and sends reminders 60/30/7 days before anything expires.",
+    "samplePrompt": "Read this insurance policy PDF and pull out the coverage amount, premium, and renewal date, then file it under this property.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not publicly listed - verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.propertytools.ai/organization-compliance",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-70620fc155",
+    "slug": "split-a-shared-utility-bill-fairly-across-units-without",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Multifamily operators on master water/gas meters without submeters",
+    "title": "split a shared utility bill fairly across units without submeters",
+    "intentLabels": [
+      "RUBS",
+      "ratio utility billing",
+      "utility bill splitting software"
+    ],
+    "tools": [
+      {
+        "name": "Zego (Resident Utility Billing)",
+        "url": "https://www.gozego.com/articles/rubs-ratio-utility-billing-explained/"
+      }
+    ],
+    "workflowSummary": "AI allocates a single master utility bill across units using a formula based on square footage, occupancy, and fixtures, bundles the calculated charge into each resident's rent invoice, and flags anomalies in usage or recovery rate.",
+    "samplePrompt": "Not prompt-based - connect your master utility bills and unit data; the platform calculates and bills each resident's share automatically each cycle.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "RUBS is restricted or illegal in some states/cities, so confirm local rules before turning it on",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.gozego.com/articles/rubs-ratio-utility-billing-explained/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-06-06",
+    "accessNotes": "Public blog post; check state/local RUBS legality before implementing (illegal in CT, restricted in CA and elsewhere)",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-3823dc2c58",
+    "slug": "turn-a-board-meeting-recording-into-official-minutes",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "HOA and condo association managers and board secretaries",
+    "title": "turn a board meeting recording into official minutes",
+    "intentLabels": [
+      "AI meeting minutes",
+      "HOA board documentation",
+      "meeting transcription"
+    ],
+    "tools": [
+      {
+        "name": "BoardBreeze",
+        "url": "https://appboardbreeze.com/hoa"
+      }
+    ],
+    "workflowSummary": "Upload the audio or video recording of a board meeting; AI transcribes it, documents motions, votes, and action items in a governance-compliant format, and a secretary reviews and approves the draft before it's published as the official record.",
+    "samplePrompt": "Turn this board meeting recording into HOA meeting minutes, capturing every motion, who seconded it, the vote count, and the exact wording adopted.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "$29.99/mo, handles multiple communities under one subscription; 15-day free trial. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://appboardbreeze.com/hoa",
+    "sourceType": "Product Page",
+    "freshness": "2026-06-23",
+    "accessNotes": "Public product page; a human should still review and approve minutes before publishing per the source",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-4131cbbb89",
+    "slug": "build-a-capital-expenditure-forecast-across-my-portfolio",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Portfolio managers planning multi-year capital replacements (roofs, HVAC, appliances)",
+    "title": "build a capital expenditure forecast across my portfolio",
+    "intentLabels": [
+      "CapEx planning AI",
+      "capital budget forecasting",
+      "reserve fund modeling"
+    ],
+    "tools": [
+      {
+        "name": "Datagrid",
+        "url": "https://datagrid.com/blog/ai-agents-property-capex-planning"
+      },
+      {
+        "name": "OxMaint"
+      }
+    ],
+    "workflowSummary": "AI agents pull work-order history, vendor quotes, and equipment age from siloed systems into one dataset, then forecast when major systems will need replacing and what it will cost, replacing manual spreadsheet guesswork with a continuously updated capital plan.",
+    "samplePrompt": "Using our work order history and equipment install dates, forecast which HVAC and roofing replacements are due in the next 3 years and estimate the cost for each.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "needs several years of maintenance and asset data already logged in a connected system",
+    "trustScore": 3,
+    "pricingNote": "Custom/enterprise pricing; source cites a ~24x first-year payback on one portfolio, results will vary. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://datagrid.com/blog/ai-agents-property-capex-planning",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-12-12",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-2066ce6309",
+    "slug": "put-together-an-itemized-security-deposit-deduction-statement",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Landlords and PMs processing move-out security deposit refunds",
+    "title": "put together an itemized security deposit deduction statement",
+    "intentLabels": [
+      "security deposit disposition",
+      "itemized deduction letter",
+      "deposit return documentation"
+    ],
+    "tools": [
+      {
+        "name": "Azibo",
+        "url": "https://www.azibo.com/blog/itemized-security-deposit-deduction-letter"
+      },
+      {
+        "name": "Leasey.AI"
+      }
+    ],
+    "workflowSummary": "AI compares move-in and move-out inspection photos, applies the property's wear-and-tear policy, ties each proposed deduction to a vendor invoice or photo, and drafts an itemized statement within the state's statutory return deadline.",
+    "samplePrompt": "Compare these move-in and move-out photos, list any damage beyond normal wear and tear, and draft an itemized deposit deduction statement with each charge tied to evidence.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "deduction rules and return deadlines are state-specific, so a human should verify compliance before sending",
+    "trustScore": 3,
+    "pricingNote": "Azibo: free account. Leasey.AI: custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.azibo.com/blog/itemized-security-deposit-deduction-letter",
+    "sourceType": "Blog/Guide",
+    "freshness": "2024-11-19",
+    "accessNotes": "Public blog post; missing a state's statutory deadline can forfeit the right to withhold any amount, so confirm local law before sending",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-1377dfc1c6",
+    "slug": "process-and-code-vendor-invoices-automatically",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "AP/accounting staff at PM companies processing vendor bills",
+    "title": "process and code vendor invoices automatically",
+    "intentLabels": [
+      "AP automation",
+      "invoice OCR",
+      "bill coding software"
+    ],
+    "tools": [
+      {
+        "name": "Ramp",
+        "url": "https://thecfoclub.com/tools/best-property-management-accounting-software/"
+      },
+      {
+        "name": "Topkey"
+      }
+    ],
+    "workflowSummary": "Vendor invoices are emailed or uploaded; AI reads the invoice with OCR, codes it to the right property and expense account, routes it through an approval workflow, and flags missing memos or mismatched charges before payment goes out.",
+    "samplePrompt": "Read this vendor invoice, code it to the correct property and expense category, and flag anything that looks like a duplicate or a mismatched charge.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Ramp: free core platform (revenue from card interchange); Topkey: custom pricing. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thecfoclub.com/tools/best-property-management-accounting-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-462c0e2b30",
+    "slug": "draft-a-lease-renewal-offer-letter-to-send-to-a-tenant",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Small-portfolio landlords who write their own leases and letters",
+    "title": "draft a lease renewal offer letter to send to a tenant",
+    "intentLabels": [
+      "lease renewal letter",
+      "renewal offer generator",
+      "tenant renewal notice"
+    ],
+    "tools": [
+      {
+        "name": "Leasey.AI",
+        "url": "https://www.usehaven.ai/post/ai-for-lease-renewals-tools"
+      }
+    ],
+    "workflowSummary": "Enter the tenant's current rent, proposed new rent, and renewal term; AI drafts a renewal offer letter with the required notice language for that state, ready to send or hand off to a leasing AI tool for outreach.",
+    "samplePrompt": "Draft a lease renewal offer letter for a tenant whose rent is increasing from $1,500 to $1,575 for a 12-month renewal, including the notice period required in [state].",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.usehaven.ai/post/ai-for-lease-renewals-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-21",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-3a646aae23",
+    "slug": "ask-a-natural-language-question-about-lease-terms-across-my",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Commercial and multifamily lease administrators",
+    "title": "ask a natural-language question about lease terms across my whole portfolio",
+    "intentLabels": [
+      "lease Q&A",
+      "portfolio lease search",
+      "AI lease chat"
+    ],
+    "tools": [
+      {
+        "name": "Kolena",
+        "url": "https://www.kolena.com/blog/best-ai-solutions-for-lease-processing-top-8-in-2026/"
+      },
+      {
+        "name": "Prophia"
+      }
+    ],
+    "workflowSummary": "Leases are abstracted into structured data; a manager can then type a plain question like 'which leases expire in Q2 with renewal options' and get a direct answer instead of manually searching PDF files one at a time.",
+    "samplePrompt": "Which leases in our portfolio expire in the next 6 months and have a renewal option, and what's the notice deadline for each?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once a portfolio's leases are already abstracted into the system",
+    "trustScore": 4,
+    "pricingNote": "Custom, quoted by portfolio size. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.kolena.com/blog/best-ai-solutions-for-lease-processing-top-8-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-23",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-22ab9d4750",
+    "slug": "draft-an-hoa-rule-violation-notice-to-a-homeowner",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "HOA/condo managers tracking rule violations and owner communications",
+    "title": "draft an HOA rule violation notice to a homeowner",
+    "intentLabels": [
+      "HOA violation letter",
+      "compliance notice generator",
+      "association communication"
+    ],
+    "tools": [
+      {
+        "name": "Perfect HOA",
+        "url": "https://perfecthoa.com/features/hoa-meeting-minutes/"
+      }
+    ],
+    "workflowSummary": "Manager logs the violation with photos and the governing rule cited; AI drafts a notice referencing the specific covenant, the cure period, and next steps, and files it alongside the property's minutes and compliance records for a searchable history.",
+    "samplePrompt": "Draft a violation notice to a homeowner for an unapproved fence, citing our governing document's fence rule and giving them a 14-day cure period.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing; comparable HOA platforms start around $49/mo. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://perfecthoa.com/features/hoa-meeting-minutes/",
+    "sourceType": "Product Page",
+    "freshness": "2026-02-10",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-fc23dbc244",
+    "slug": "keep-every-vendor-and-service-contract-organized-with-renewal",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies tracking recurring service contracts (landscaping, elevator, pest control, etc.)",
+    "title": "keep every vendor and service contract organized with renewal dates in one place",
+    "intentLabels": [
+      "vendor contract management",
+      "service agreement tracking",
+      "contract renewal AI"
+    ],
+    "tools": [
+      {
+        "name": "Contracko",
+        "url": "https://contracko.com/industries/property-management"
+      }
+    ],
+    "workflowSummary": "Signed contracts are ingested automatically from email, e-signature tools, or a shared drive; AI extracts renewal dates, contract value, and key terms for every vendor and service agreement, and tracks them alongside leases in one dashboard.",
+    "samplePrompt": "Scan our signed vendor contracts and list every one that auto-renews in the next 60 days, along with the value and cancellation notice period for each.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs contracts uploaded or connected to a document source first",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://contracko.com/industries/property-management",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-2acf19e4e7",
+    "slug": "reconcile-bank-transactions-to-the-right-property-and-flag",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM back-office staff managing multiple owners' portfolios",
+    "title": "reconcile bank transactions to the right property and flag anything unusual",
+    "intentLabels": [
+      "bank reconciliation AI",
+      "anomaly detection",
+      "transaction matching"
+    ],
+    "tools": [
+      {
+        "name": "Topkey",
+        "url": "https://magicdoor.com/blog/best-property-management-financial-reporting-software-tools"
+      },
+      {
+        "name": "Genie AI (via MagicDoor)"
+      }
+    ],
+    "workflowSummary": "AI matches incoming rent payments to the correct tenant ledger, applies late or NSF fees automatically, and flags transactions that don't reconcile cleanly - like a duplicate vendor payment or an unexplained deposit - before they hit a financial statement.",
+    "samplePrompt": "Reconcile this month's bank transactions against our rent roll and vendor bills, and flag anything that doesn't match cleanly.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "accuracy depends on clean underlying ledger and rent-roll data",
+    "trustScore": 4,
+    "pricingNote": "Custom pricing for Topkey; MagicDoor free tier for 1-9 leases. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://magicdoor.com/blog/best-property-management-financial-reporting-software-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-19",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-d998dd7765",
+    "slug": "assemble-a-board-meeting-packet-from-open-items-and-prior",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PMs preparing board packets or owner meeting agendas",
+    "title": "assemble a board meeting packet from open items and prior minutes",
+    "intentLabels": [
+      "board packet automation",
+      "meeting agenda AI",
+      "HOA prep tool"
+    ],
+    "tools": [
+      {
+        "name": "BoardBreeze",
+        "url": "https://onehomeagent.com/blog/ai-board-meeting-minutes-hoa/"
+      }
+    ],
+    "workflowSummary": "AI pulls open action items from the previous meeting's minutes, unresolved violations, and pending vendor bids into a draft agenda and packet, so the manager edits a draft instead of assembling one from scratch the night before.",
+    "samplePrompt": "Using last meeting's minutes and this month's open violations and vendor bids, draft a board meeting agenda and packet for review.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once prior minutes and records already live in the system",
+    "trustScore": 3,
+    "pricingNote": "$29.99/mo tier referenced above; packet-assembly features vary by platform. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://onehomeagent.com/blog/ai-board-meeting-minutes-hoa/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-c5cd5e27dd",
+    "slug": "check-that-every-vendor-has-a-valid-w-9-on-file-before-tax",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Small PM teams verifying vendor tax paperwork before year-end filing",
+    "title": "check that every vendor has a valid W-9 on file before tax season",
+    "intentLabels": [
+      "W-9 collection",
+      "vendor tax data validation",
+      "TIN matching"
+    ],
+    "tools": [
+      {
+        "name": "Tax1099",
+        "url": "https://www.tax1099.com/"
+      },
+      {
+        "name": "TaxBandits"
+      }
+    ],
+    "workflowSummary": "AI mass-requests missing W-9s from vendors, runs TIN matching against IRS records to catch name/ID mismatches, and flags vendors who are missing documentation weeks before the 1099 filing deadline instead of during a year-end scramble.",
+    "samplePrompt": "Check our vendor list against W-9s on file, run TIN matching, and tell me which vendors are missing a W-9 or have a mismatched tax ID.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Tax1099 from roughly $2.90/form; TIN matching priced as an add-on. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.tax1099.com/",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-9f033b967a",
+    "slug": "write-social-media-posts-to-promote-my-property-management",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM company owners/marketers promoting the business itself (not a single unit)",
+    "title": "write social media posts to promote my property management company",
+    "intentLabels": [
+      "AI social media caption writer",
+      "content calendar generator",
+      "real estate social content"
+    ],
+    "tools": [
+      {
+        "name": "Hootsuite (OwlyWriter AI)",
+        "url": "https://www.hootsuite.com/industries/real-estate"
+      }
+    ],
+    "workflowSummary": "Give the tool a couple of words about the company or a recent win; it drafts captions from scratch, adds relevant hashtags, and suggests post ideas that can be scheduled across Facebook, Instagram, and LinkedIn from one dashboard.",
+    "samplePrompt": "Write 5 LinkedIn and Instagram captions promoting our property management company's local expertise, each with relevant hashtags, in a friendly but professional tone.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Hootsuite plans vary; OwlyWriter AI is bundled into paid Hootsuite tiers. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.hootsuite.com/industries/real-estate",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-36c870f0ce",
+    "slug": "capture-and-qualify-leads-from-prospective-property-owners",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies whose website gets traffic from prospective property owners, not just tenants",
+    "title": "capture and qualify leads from prospective property owners visiting my website",
+    "intentLabels": [
+      "website lead capture chatbot",
+      "owner lead qualification",
+      "live chat widget"
+    ],
+    "tools": [
+      {
+        "name": "Elfsight (real estate chatbot)",
+        "url": "https://elfsight.com/blog/real-estate-chatbot/"
+      }
+    ],
+    "workflowSummary": "A chat widget engages every website visitor, asks a short set of needs-based questions tailored to property management (portfolio size, property type, current pain point), captures contact details, and routes qualified owner leads to a human for follow-up.",
+    "samplePrompt": "Set up a chatbot for our website that asks visitors whether they're a prospective owner or a renter, then asks an owner how many units they have and what's frustrating them about their current management, before collecting their contact info.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Elfsight offers a free tier with limited views; paid plans scale with traffic. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://elfsight.com/blog/real-estate-chatbot/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-15f851119e",
+    "slug": "build-a-pitch-deck-to-win-a-new-property-management-assignment",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies pitching for a new management assignment from a property owner",
+    "title": "build a pitch deck to win a new property management assignment",
+    "intentLabels": [
+      "management proposal deck",
+      "sales presentation generator",
+      "RFP response tool"
+    ],
+    "tools": [
+      {
+        "name": "PitchBoost",
+        "url": "https://pitchboost.ai/industries/commercial-real-estate"
+      }
+    ],
+    "workflowSummary": "Enter the prospective owner's property details and business context; AI generates a personalized management-pitch deck - covering fee structure, services, and market positioning - tailored to that specific owner in under a minute, ready to send or present.",
+    "samplePrompt": "Build a management pitch deck for a 40-unit multifamily owner in [city] considering switching property managers, covering our fee structure, maintenance response times, and a market update for their submarket.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pitchboost.ai/industries/commercial-real-estate",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-22ee1db3ff",
+    "slug": "optimize-my-google-business-profile-so-more-owners-find-my",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting to rank higher in Google Maps searches for local property managers",
+    "title": "optimize my Google Business Profile so more owners find my company",
+    "intentLabels": [
+      "Google Business Profile optimization",
+      "local SEO",
+      "GMB audit tool"
+    ],
+    "tools": [
+      {
+        "name": "Localo",
+        "url": "https://localo.com/blog/google-business-profile-optimization"
+      }
+    ],
+    "workflowSummary": "AI audits the Google Business Profile against local ranking factors and competitors, suggests specific fixes (categories, attributes, posting cadence), and can auto-generate and schedule GBP posts and review responses from one dashboard.",
+    "samplePrompt": "Audit our Google Business Profile for a property management company in [city], compare it to our top 3 local competitors, and tell me the highest-impact changes to make first.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Custom/subscription pricing; details vary by plan. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://localo.com/blog/google-business-profile-optimization",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-8dccfa32b1",
+    "slug": "get-more-reviews-from-satisfied-property-owners-and-tenants",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies whose review count and star rating lag behind competitors",
+    "title": "get more reviews from satisfied property owners and tenants",
+    "intentLabels": [
+      "review request campaign",
+      "review generation software",
+      "reputation building"
+    ],
+    "tools": [
+      {
+        "name": "Property Manager Websites (Reputation Management)",
+        "url": "https://www.propertymanagerwebsites.com/blog/turning-reviews-around-a-real-world-reputation-comeback"
+      }
+    ],
+    "workflowSummary": "AI identifies good moments to ask for a review (after a tour, a completed service request, a lease renewal) and sends automated, personalized text or email requests, routing happy respondents toward Google or Zillow and unhappy ones to a private follow-up instead of a public review.",
+    "samplePrompt": "Set up an automated review request campaign that texts owners 3 days after a completed maintenance job and tenants 1 week after move-in, routing positive responses to our Google review link.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.propertymanagerwebsites.com/blog/turning-reviews-around-a-real-world-reputation-comeback",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-6ef1ce8d73",
+    "slug": "check-whether-ai-search-tools-recommend-my-company-over-local",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies concerned about how ChatGPT and AI search describe them to prospects",
+    "title": "check whether AI search tools recommend my company over local competitors",
+    "intentLabels": [
+      "AI visibility tracking",
+      "generative engine optimization (GEO)",
+      "AI search monitoring"
+    ],
+    "tools": [
+      {
+        "name": "Trakkr",
+        "url": "https://trakkr.ai/resources/industry-tools/best-ai-search-optimization-tools-for-property-management-companies"
+      }
+    ],
+    "workflowSummary": "AI monitors prompts like 'best property manager for single-family rentals in [city]' across ChatGPT, Gemini, and other AI search tools daily, shows which sources (reviews, directories, competitor pages) the AI is pulling from, and flags where a competitor is being recommended instead of you.",
+    "samplePrompt": "Track how AI search tools answer 'best property manager for single-family rentals in [city]' and tell me which competitors are being recommended and why.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful alongside an existing SEO/content strategy",
+    "trustScore": 3,
+    "pricingNote": "From roughly $100/mo after a 14-day trial. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://trakkr.ai/resources/industry-tools/best-ai-search-optimization-tools-for-property-management-companies",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-01",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-bad731dca5",
+    "slug": "turn-my-company-s-story-into-a-short-branded-video-for-social",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting brand-building video content without a production budget",
+    "title": "turn my company's story into a short branded video for social media",
+    "intentLabels": [
+      "AI video generator",
+      "faceless short-form video",
+      "brand video maker"
+    ],
+    "tools": [
+      {
+        "name": "Fliki",
+        "url": "https://fliki.ai/features/real-estate-video-maker"
+      }
+    ],
+    "workflowSummary": "Describe the video's purpose (agent intro, testimonial reel, closing-day recap) and paste in text or a script; AI generates a polished vertical video with narration, captions, and branding, sized for Instagram Reels, TikTok, or YouTube Shorts, with no camera or editing skills required.",
+    "samplePrompt": "Turn this 3-sentence client testimonial into a 30-second branded vertical video with captions and our logo, ready to post as an Instagram Reel.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans for longer/branded videos. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://fliki.ai/features/real-estate-video-maker",
+    "sourceType": "Product Page",
+    "freshness": "2026-05-20",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-005150f574",
+    "slug": "find-and-reach-out-to-prospective-property-owners-to-pitch-my",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies actively prospecting for new owner-clients rather than waiting for inbound",
+    "title": "find and reach out to prospective property owners to pitch my management services",
+    "intentLabels": [
+      "owner prospecting",
+      "outbound lead lists",
+      "AI-driven seller/owner outreach"
+    ],
+    "tools": [
+      {
+        "name": "REsimpli",
+        "url": "https://resimpli.com/blog/best-real-estate-crm-for-managing-seller-leads-and-drip-campaigns-in-2026/"
+      }
+    ],
+    "workflowSummary": "AI pulls targeted owner lists (e.g. self-managing landlords, absentee owners) using public records, then runs an automated multi-channel outreach sequence - SMS, email, and mail - that pauses or escalates based on how each prospect responds.",
+    "samplePrompt": "Not prompt-based - the platform pulls a targeted owner list and runs the outreach sequence automatically; the manager sets the criteria and messaging once.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "list quality and outreach compliance (TCPA, CAN-SPAM) need review before large sends",
+    "trustScore": 3,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://resimpli.com/blog/best-real-estate-crm-for-managing-seller-leads-and-drip-campaigns-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog post; confirm outbound messaging complies with TCPA/CAN-SPAM and local regulations before sending",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-4881481e8c",
+    "slug": "write-seo-blog-content-that-attracts-property-owners-searching",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting inbound leads from owners actively searching for a manager",
+    "title": "write SEO blog content that attracts property owners searching for a manager",
+    "intentLabels": [
+      "property management SEO content",
+      "owner-intent blog writing",
+      "service page copy"
+    ],
+    "tools": [
+      {
+        "name": "Cometrank",
+        "url": "https://cometrank.ai/real-estate/ai-seo-agency-for-property-management/"
+      }
+    ],
+    "workflowSummary": "AI researches owner-intent search terms (e.g. 'property management cost for landlords', 'best property manager for single family rentals'), then drafts service pages and blog posts targeting those queries so the company shows up when an owner is actively comparing options.",
+    "samplePrompt": "Write a blog post targeting the search 'property management cost for landlords in [city]' that answers the question honestly and includes a call to action to request a quote.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most effective as part of an ongoing content plan, not a one-off post",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cometrank.ai/real-estate/ai-seo-agency-for-property-management/",
+    "sourceType": "Product Page",
+    "freshness": "2026-04-23",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-8601611afb",
+    "slug": "design-a-direct-mail-postcard-to-attract-new-property-owner",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies running geographic farming or owner-acquisition mail campaigns",
+    "title": "design a direct mail postcard to attract new property owner clients",
+    "intentLabels": [
+      "AI postcard design",
+      "direct mail creative generator",
+      "real estate mailer"
+    ],
+    "tools": [
+      {
+        "name": "Lovart",
+        "url": "https://www.lovart.ai/features/real-estate-postcard-design"
+      }
+    ],
+    "workflowSummary": "Describe the campaign's goal, target owner audience, and any branding preferences; AI generates a print-ready postcard design in real time and revises it conversationally ('make the headline bigger', 'add our logo') until it's ready to send to a mailing service.",
+    "samplePrompt": "Design a postcard aimed at self-managing landlords in [zip code], with a headline about saving time on maintenance calls and our logo and phone number prominent.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.lovart.ai/features/real-estate-postcard-design",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-42eaefc36f",
+    "slug": "run-facebook-and-google-ads-that-bring-in-new-property-owner",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies running paid social/search campaigns to win new owner clients",
+    "title": "run Facebook and Google ads that bring in new property owner clients",
+    "intentLabels": [
+      "AI ad targeting",
+      "paid lead generation",
+      "Facebook/Google ads automation"
+    ],
+    "tools": [
+      {
+        "name": "Ylopo",
+        "url": "https://www.ylopo.com/blog/ai-lead-generation-for-real-estate"
+      }
+    ],
+    "workflowSummary": "AI builds and continuously tunes Facebook and Google ad campaigns targeting owner-relevant audiences, dynamically adjusting which ad creative and copy each person sees based on their browsing behavior, and surfaces long-tail local keywords a manual campaign would likely miss.",
+    "samplePrompt": "Not prompt-based - the platform builds and optimizes the ad campaigns automatically once the target audience, budget, and creative are set.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "best suited to companies with a marketing budget and someone to manage the account",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing, typically requires a marketing budget on top of the platform fee. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.ylopo.com/blog/ai-lead-generation-for-real-estate",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-03-26",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-47218b61a2",
+    "slug": "draft-a-monthly-newsletter-for-residents-to-boost-retention",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting to boost lease renewals through better resident communication",
+    "title": "draft a monthly newsletter for residents to boost retention",
+    "intentLabels": [
+      "resident newsletter generator",
+      "community update email",
+      "tenant retention marketing"
+    ],
+    "tools": [
+      {
+        "name": "General-purpose AI (ChatGPT/Claude) via prompt template",
+        "url": "https://www.buildium.com/blog/ai-prompts-for-property-management/"
+      },
+      {
+        "name": "STAN.AI for HOA/community-specific drafting"
+      }
+    ],
+    "workflowSummary": "Manager gives the AI the month's community events, maintenance updates, and any policy changes; AI drafts a friendly newsletter that highlights amenities and reminds residents why they chose the property, which research links to higher renewal rates.",
+    "samplePrompt": "Write a monthly newsletter for our residents highlighting [event], a maintenance update on [item], a tenant tip about saving energy, and a friendly reminder about parking rules.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free with an existing ChatGPT/Claude subscription; STAN.AI is custom-priced. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.buildium.com/blog/ai-prompts-for-property-management/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2024-01-29",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-e48d4f1439",
+    "slug": "launch-a-tenant-referral-program-email-campaign",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting to grow their tenant base through word of mouth",
+    "title": "launch a tenant referral program email campaign",
+    "intentLabels": [
+      "referral program email",
+      "refer-a-friend campaign",
+      "tenant advocacy marketing"
+    ],
+    "tools": [
+      {
+        "name": "General-purpose AI (ChatGPT/Claude) via prompt template",
+        "url": "https://www.realty-ai.com/post/essential-ai-prompts-for-property-managers"
+      }
+    ],
+    "workflowSummary": "Manager describes the referral incentive (e.g. a rent credit); AI drafts an announcement email and a couple of short follow-up reminders encouraging current tenants to refer friends, ready to send through the property's existing email tool.",
+    "samplePrompt": "Draft an email announcing a tenant referral program: refer a friend who signs a lease, earn a $200 rent credit. Include a clear call to action and a friendly tone.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free with an existing ChatGPT/Claude subscription. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.realty-ai.com/post/essential-ai-prompts-for-property-managers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-30",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-fd0f64ce74",
+    "slug": "research-my-competitors-pricing-and-positioning-before-i-set-my",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies setting or reviewing their management fee structure",
+    "title": "research my competitors' pricing and positioning before I set my management fees",
+    "intentLabels": [
+      "competitor analysis AI",
+      "market positioning research",
+      "pricing benchmarking"
+    ],
+    "tools": [
+      {
+        "name": "Manus",
+        "url": "https://manus.im/playbook/competitor-analysis"
+      }
+    ],
+    "workflowSummary": "AI reviews competitor websites, pricing pages, and reviews across a chosen market, then builds a structured comparison matrix and SWOT-style summary showing where a company's fees and service offering sit relative to local competitors.",
+    "samplePrompt": "Research the 5 largest property management companies in [city], compare their management fees, leasing fees, and services offered, and summarize where we're priced high or low relative to them.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful starting research, but pricing pages aren't always current or complete",
+    "trustScore": 3,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://manus.im/playbook/competitor-analysis",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-d952ac63d8",
+    "slug": "build-an-email-nurture-sequence-for-owner-leads-who-aren-t",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies with owner leads who aren't ready to switch managers yet",
+    "title": "build an email nurture sequence for owner leads who aren't ready to switch yet",
+    "intentLabels": [
+      "lead nurture drip campaign",
+      "prospect email sequence",
+      "long-term follow-up automation"
+    ],
+    "tools": [
+      {
+        "name": "General-purpose AI (ChatGPT/Claude) via prompt template",
+        "url": "https://www.aimadefor.com/blog/ai-email-drip-campaigns-realtors/"
+      },
+      {
+        "name": "loaded into a CRM's automation"
+      }
+    ],
+    "workflowSummary": "Manager gives AI the sequence length and goal; AI drafts a series of short, value-first emails (market updates, owner tips, case studies) spaced out over weeks so the company stays top of mind until the owner is ready to switch, without manual follow-up.",
+    "samplePrompt": "Write a 6-email nurture sequence for a property owner lead who isn't ready to switch managers, spaced two weeks apart, each under 150 words, 80% value and 20% call to action.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free with an existing ChatGPT/Claude subscription; sending requires a connected CRM/email tool. Verify before publishing.",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.aimadefor.com/blog/ai-email-drip-campaigns-realtors/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-17",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-2070086ce6",
+    "slug": "find-out-which-marketing-channel-actually-brings-in-my-best",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies running multiple marketing channels for owner acquisition",
+    "title": "find out which marketing channel actually brings in my best property owner clients",
+    "intentLabels": [
+      "marketing attribution",
+      "lead source ROI",
+      "cost-per-acquisition analysis"
+    ],
+    "tools": [
+      {
+        "name": "Mackdata",
+        "url": "https://mackdata.ai/real-estate-marketing-software/"
+      }
+    ],
+    "workflowSummary": "AI consolidates spend and lead data from every channel - direct mail, paid ads, referrals, cold outreach - into one view and answers plain-language questions about which channel actually produces signed management agreements, not just inquiries.",
+    "samplePrompt": "What was our cost per signed management agreement from each marketing channel last quarter, and which channel should we put more budget behind?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires channels and CRM data to be connected first",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://mackdata.ai/real-estate-marketing-software/",
+    "sourceType": "Product Page",
+    "freshness": "2026-01-29",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-9d6a05b7e1",
+    "slug": "turn-a-client-s-results-into-a-case-study-to-show-prospective",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting proof points to show skeptical prospective owners",
+    "title": "turn a client's results into a case study to show prospective owners",
+    "intentLabels": [
+      "case study generator",
+      "customer success story",
+      "social proof content"
+    ],
+    "tools": [
+      {
+        "name": "Storydoc",
+        "url": "https://www.storydoc.com/templates/real-estate-pitch-deck"
+      }
+    ],
+    "workflowSummary": "Manager provides the before/after numbers for a client (e.g. reduced vacancy days, faster maintenance response), and AI structures it into a polished, on-brand case study or customer-success presentation that can be shared as a sales asset in pitches or on the website.",
+    "samplePrompt": "Turn these numbers - vacancy dropped from 45 to 12 days, maintenance response time cut in half - into a one-page case study for a multifamily client, written for a prospective owner audience.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom/subscription pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.storydoc.com/templates/real-estate-pitch-deck",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-c85d9a9e44",
+    "slug": "create-a-market-trends-newsletter-to-send-prospective-and",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "PM companies wanting recurring thought-leadership content for prospects and owners",
+    "title": "create a market trends newsletter to send prospective and current owners",
+    "intentLabels": [
+      "market update newsletter",
+      "thought leadership content",
+      "owner email marketing"
+    ],
+    "tools": [
+      {
+        "name": "Narrato",
+        "url": "https://narrato.io/blog/real-estate-social-media-marketing-with-ai/"
+      }
+    ],
+    "workflowSummary": "AI generates a newsletter combining a local rental market update, an owner-relevant tip, and one featured success story or listing, so the company stays visible to prospects who aren't ready to switch yet as well as current owner clients.",
+    "samplePrompt": "Write a quarterly market trends newsletter for property owners in [city], including a rental rate update, one tip on reducing turnover costs, and a short client success story.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing; free trial commonly available for AI content platforms. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://narrato.io/blog/real-estate-social-media-marketing-with-ai/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-08-08",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-10bafc0b9f",
+    "slug": "set-the-right-nightly-rate-for-my-airbnb-or-vrbo-listing",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "Vacation rental hosts and STR property managers pricing nightly rates",
+    "title": "set the right nightly rate for my Airbnb or Vrbo listing automatically",
+    "intentLabels": [
+      "dynamic pricing",
+      "revenue management",
+      "short-term rental rate optimization"
+    ],
+    "tools": [
+      {
+        "name": "PriceLabs",
+        "url": "https://hello.pricelabs.co/dynamic-pricing/"
+      },
+      {
+        "name": "Beyond"
+      }
+    ],
+    "workflowSummary": "AI analyzes seasonality, local events, booking pace, and comparable listings across Airbnb, Vrbo, and Booking.com daily, then recommends or auto-updates each listing's nightly rate; newer tools like Beyond's Neyoba AI can explain in plain language why a given rate was set.",
+    "samplePrompt": "Review our listing's booking pace and local events for the next 90 days, and recommend nightly rate adjustments to maximize revenue without hurting occupancy.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once historical booking data exists to calibrate against",
+    "trustScore": 4,
+    "pricingNote": "PriceLabs and similar tools typically charge per listing per month; Beyond uses a commission model. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://hello.pricelabs.co/dynamic-pricing/",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-da09eb2ddd",
+    "slug": "auto-respond-to-guest-questions-on-airbnb-vrbo-and-booking-com",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR hosts/managers fielding repetitive guest questions across multiple platforms",
+    "title": "auto-respond to guest questions on Airbnb, Vrbo, and Booking.com",
+    "intentLabels": [
+      "AI guest messaging",
+      "unified inbox",
+      "auto-reply for vacation rentals"
+    ],
+    "tools": [
+      {
+        "name": "Hospitable",
+        "url": "https://www.nowistay.com/ressources/best-ai-guest-messaging-tool-airbnb"
+      },
+      {
+        "name": "Nowistay"
+      }
+    ],
+    "workflowSummary": "Messages from every booking platform (plus SMS, email, WhatsApp) land in one inbox; AI reads what the guest is actually asking, pulls the answer from the property's details, and drafts or sends a natural-sounding reply in seconds, in the guest's own language.",
+    "samplePrompt": "A guest just messaged asking if they can drop bags off before the 3pm check-in - draft a reply based on our early-arrival policy and today's cleaning schedule.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Nowistay starts around €12/month per property; Hospitable pricing varies by plan. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.nowistay.com/ressources/best-ai-guest-messaging-tool-airbnb",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-f1e2370634",
+    "slug": "screen-a-booking-for-party-risk-or-fraud-before-confirming-it",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR operators wanting to screen bookings before confirming them",
+    "title": "screen a booking for party risk or fraud before confirming it",
+    "intentLabels": [
+      "guest screening",
+      "party prevention",
+      "booking risk scoring"
+    ],
+    "tools": [
+      {
+        "name": "Autohost",
+        "url": "https://www.hostaway.com/glossary/guest-verification/"
+      },
+      {
+        "name": "Superhog"
+      }
+    ],
+    "workflowSummary": "Every incoming reservation is automatically scored using booking patterns (local address, last-minute timing, guest history) and identity checks; high-risk bookings are flagged for manual review or declined before check-in, instead of relying on a manager's gut feel.",
+    "samplePrompt": "Not prompt-based - the platform screens every incoming reservation automatically against the risk criteria set once during onboarding.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "risk thresholds need to be tuned to avoid rejecting legitimate guests",
+    "trustScore": 4,
+    "pricingNote": "Typically $5-$15 per booking, custom pricing for portfolios. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.hostaway.com/glossary/guest-verification/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-04",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-8d0e636906",
+    "slug": "schedule-and-coordinate-cleaning-between-guest-turnovers",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR property managers coordinating cleaning between back-to-back bookings",
+    "title": "schedule and coordinate cleaning between guest turnovers automatically",
+    "intentLabels": [
+      "turnover cleaning software",
+      "cleaner marketplace",
+      "housekeeping automation"
+    ],
+    "tools": [
+      {
+        "name": "Turno",
+        "url": "https://www.nowistay.com/ressources/best-software-manage-vacation-rental-cleaning-team"
+      },
+      {
+        "name": "Breezeway"
+      }
+    ],
+    "workflowSummary": "Cleaning tasks are auto-created the moment a reservation is confirmed or changed, synced directly from the booking platforms; the tool assigns the job to the right cleaner, sends photo checklists, and automatically reschedules if a guest checks out early or a same-day turnover gets booked.",
+    "samplePrompt": "Not prompt-based - the platform creates and assigns cleaning tasks automatically whenever a reservation is booked, changed, or cancelled.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Turno from $8/mo per property for scheduling; Breezeway is custom-priced, typically suited to 50+ properties. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.nowistay.com/ressources/best-software-manage-vacation-rental-cleaning-team",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-05",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-168f46c742",
+    "slug": "get-alerted-before-a-noise-complaint-turns-into-a-neighbor",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR hosts/managers worried about noise complaints and unauthorized parties",
+    "title": "get alerted before a noise complaint turns into a neighbor calling the city",
+    "intentLabels": [
+      "noise monitoring sensor",
+      "party detection",
+      "decibel alert system"
+    ],
+    "tools": [
+      {
+        "name": "Minut",
+        "url": "https://gleamsync.com/blog/airbnb-noise-monitors"
+      },
+      {
+        "name": "NoiseAware"
+      }
+    ],
+    "workflowSummary": "A privacy-compliant sensor tracks decibel levels (never recording audio or video) and automatically sends the guest a pre-written message when noise crosses a set threshold; if it continues, the host is notified so they can escalate before it becomes a formal complaint.",
+    "samplePrompt": "Not prompt-based - the sensor detects a noise threshold breach and sends a pre-written guest message automatically; the manager only steps in if it escalates.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Minut from $10/mo per property; NoiseAware and similar tools in a comparable range. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://gleamsync.com/blog/airbnb-noise-monitors",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-16",
+    "accessNotes": "Public blog post; disclose the monitoring device in the listing and pre-arrival message per platform policy and, in some jurisdictions, privacy law",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-9b506a566a",
+    "slug": "check-whether-my-short-term-rental-listings-comply-with-local",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR property managers operating in cities with permit or registration requirements",
+    "title": "check whether my short-term rental listings comply with local permit rules before the city flags me",
+    "intentLabels": [
+      "STR regulatory compliance",
+      "permit tracking",
+      "municipal enforcement risk"
+    ],
+    "tools": [
+      {
+        "name": "PropertyVouch",
+        "url": "https://www.propertyvouch.com/insights/ai-enforcement-and-short-term-rental-compliance-in-2026"
+      }
+    ],
+    "workflowSummary": "AI continuously monitors municipal code changes and cross-references a manager's active listings against local registration and permit requirements, flagging properties at risk of enforcement action before a city's own AI-driven audit catches an unregistered or non-compliant listing.",
+    "samplePrompt": "Review our active listings against [city]'s short-term rental ordinance and flag any that are missing a required permit or violate a night-cap or zoning rule.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful for managers operating across several regulated cities",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.propertyvouch.com/insights/ai-enforcement-and-short-term-rental-compliance-in-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-02-25",
+    "accessNotes": "Public blog post; local ordinances vary significantly and change often - confirm current requirements directly with each municipality",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-929368c309",
+    "slug": "check-what-my-short-term-rental-market-is-expected-to-do-this",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR investors and managers deciding where and how to price a market",
+    "title": "check what my short-term rental market is expected to do this year",
+    "intentLabels": [
+      "STR market forecast",
+      "occupancy data",
+      "revenue benchmarking"
+    ],
+    "tools": [
+      {
+        "name": "AirDNA",
+        "url": "https://www.airdna.co/outlook-report"
+      }
+    ],
+    "workflowSummary": "AI-driven market analytics track daily performance across 10M+ Airbnb, Vrbo, and Booking.com listings worldwide, producing occupancy, ADR, and RevPAR forecasts by market so a manager can benchmark a property or decide whether a new market is worth entering.",
+    "samplePrompt": "What's the occupancy, average daily rate, and RevPAR forecast for [city] this year, and how does that compare to last year?",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free market-level data available; paid plans unlock property-level and portfolio tools. Verify before publishing.",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.airdna.co/outlook-report",
+    "sourceType": "Product Page",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-596166291f",
+    "slug": "automate-guest-check-in-codes-so-i-never-have-to-send-them",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers running properties with keypad or smart-lock entry",
+    "title": "automate guest check-in codes so I never have to send them manually",
+    "intentLabels": [
+      "smart lock automation",
+      "self check-in",
+      "keyless entry"
+    ],
+    "tools": [
+      {
+        "name": "RemoteLock",
+        "url": "https://www.airroi.com/glossary/smart-lock"
+      },
+      {
+        "name": "Operto"
+      }
+    ],
+    "workflowSummary": "When a reservation is confirmed, the platform automatically generates a unique, time-bound access code, sends it to the guest through the scheduled pre-arrival message, and deactivates it right after checkout - eliminating manual code creation and reducing the risk of a guest using a stale code.",
+    "samplePrompt": "Not prompt-based - the platform generates and sends a unique access code automatically once a reservation is confirmed, and deactivates it at checkout.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires compatible smart locks and PMS integration to be set up first",
+    "trustScore": 4,
+    "pricingNote": "RemoteLock hardware from roughly $200/lock; middleware platforms typically add $5-$15 per door per month. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.airroi.com/glossary/smart-lock",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-28",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-3123756bca",
+    "slug": "handle-a-guest-damage-claim-without-holding-a-security-deposit",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers deciding how to handle guest-caused property damage",
+    "title": "handle a guest damage claim without holding a security deposit",
+    "intentLabels": [
+      "damage waiver",
+      "guest damage protection",
+      "deposit-free claims processing"
+    ],
+    "tools": [
+      {
+        "name": "Waivo",
+        "url": "https://waivo.io/"
+      }
+    ],
+    "workflowSummary": "Instead of collecting and later refunding a security deposit, a per-booking waiver fee covers guest-caused damage; when something breaks, the manager submits photos and documentation through a portal and gets reimbursed directly, without having to contact or accuse the guest.",
+    "samplePrompt": "Not prompt-based - the manager files a damage claim with photos through the Waivo portal; the platform handles reimbursement without contacting the guest.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Damage protection limits from $500 to $20,000 per claim; per-booking pricing not fully public. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://waivo.io/",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page; note this is a damage waiver product with an automated claims workflow rather than an AI-scoring tool",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-40b57cd24d",
+    "slug": "respond-to-airbnb-and-vrbo-guest-reviews-without-writing-each",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers responding to Airbnb and Vrbo guest reviews at scale",
+    "title": "respond to Airbnb and Vrbo guest reviews without writing each one from scratch",
+    "intentLabels": [
+      "guest review response",
+      "STR reputation management",
+      "review automation"
+    ],
+    "tools": [
+      {
+        "name": "Jurny (AI review response)",
+        "url": "https://www.jurny.com/product/guest-screening-a-i-software"
+      }
+    ],
+    "workflowSummary": "AI drafts a reply to every incoming guest review across platforms, tuned to the review's sentiment and content, so ratings and public perception get protected without a manager reading and responding to each one individually.",
+    "samplePrompt": "Draft a reply to this 4-star Airbnb review that mentions slow WiFi, thanking the guest and noting we've since upgraded the property's internet.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing as part of a broader STR platform. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jurny.com/product/guest-screening-a-i-software",
+    "sourceType": "Product Page",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public product page",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-98b41a1e90",
+    "slug": "communicate-with-international-guests-in-their-own-language",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers hosting international guests across multiple platforms",
+    "title": "communicate with international guests in their own language automatically",
+    "intentLabels": [
+      "multilingual guest messaging",
+      "AI translation",
+      "international host support"
+    ],
+    "tools": [
+      {
+        "name": "Hospitable",
+        "url": "https://www.aeve.ai/mini-blog/guest-messaging-ai-airbnb-vrbo-2026"
+      },
+      {
+        "name": "Aeve"
+      }
+    ],
+    "workflowSummary": "AI detects the language a guest is writing in and replies in that language automatically - leading platforms support 30-50+ languages - removing the need for a multilingual virtual assistant or manual translation for international bookings.",
+    "samplePrompt": "This guest wrote to us in Spanish asking about parking - reply in Spanish with our parking instructions, then also give me the English translation of what they asked.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Bundled into guest-messaging platform pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.aeve.ai/mini-blog/guest-messaging-ai-airbnb-vrbo-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-02",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-d0fbdc8649",
+    "slug": "figure-out-which-parts-of-my-short-term-rental-operation-to",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers scaling from a handful of properties into a larger portfolio",
+    "title": "figure out which parts of my short-term rental operation to automate first",
+    "intentLabels": [
+      "STR AI adoption roadmap",
+      "operations prioritization",
+      "automation stack planning"
+    ],
+    "tools": [
+      {
+        "name": "General guidance (no single tool) - see source for the layered rollout",
+        "url": "https://rapideyeinspections.com/blog/best-ai-short-term-rental-operations-2026/"
+      }
+    ],
+    "workflowSummary": "Rather than automating everything at once, the manager reviews which task - guest messaging, dynamic pricing, or turnover/damage detection - has the best-documented payback and lowest risk to pilot first, based on industry adoption survey data.",
+    "samplePrompt": "Given that we handle guest messaging manually and haven't touched pricing or turnover inspection automation yet, which should we automate first for the fastest, lowest-risk payback?",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Not applicable - this is a planning framework, not a paid tool. Verify current adoption data before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://rapideyeinspections.com/blog/best-ai-short-term-rental-operations-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (3 weeks old as of research)",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-5d36836633",
+    "slug": "manage-my-long-term-rentals-and-short-term-rentals-from-one",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR property managers running a mixed portfolio of long-term and short-term units",
+    "title": "manage my long-term rentals and short-term rentals from one place",
+    "intentLabels": [
+      "hybrid portfolio management",
+      "unified PMS",
+      "mixed long/short-term operations"
+    ],
+    "tools": [
+      {
+        "name": "Guesty",
+        "url": "https://stayfi.com/vrm-insider/2026/05/21/best-vacation-rental-dynamic-pricing-software/"
+      },
+      {
+        "name": "Hostaway"
+      }
+    ],
+    "workflowSummary": "A single platform syncs calendars, guest/tenant communication, and financial reporting across both short-term listings (Airbnb, Vrbo, Booking.com) and traditional long-term leases, so a manager isn't running two disconnected systems for one portfolio.",
+    "samplePrompt": "Pull a combined occupancy and revenue report across our short-term and long-term units for last month, broken out by property type.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "migrating an existing portfolio into a unified PMS takes setup time",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing, typically tiered by number of units. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://stayfi.com/vrm-insider/2026/05/21/best-vacation-rental-dynamic-pricing-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-6b1e11584c",
+    "slug": "tune-my-noise-sensor-so-it-catches-real-parties-without",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers wanting to reduce false-alarm noise escalations",
+    "title": "tune my noise sensor so it catches real parties without bothering quiet guests",
+    "intentLabels": [
+      "noise threshold tuning",
+      "false-positive reduction",
+      "sensor calibration"
+    ],
+    "tools": [
+      {
+        "name": "Minut",
+        "url": "https://renttools.io/blog/noise-monitoring-short-term-rental"
+      },
+      {
+        "name": "NoiseAware"
+      },
+      {
+        "name": "Roomonitor (comparison)"
+      }
+    ],
+    "workflowSummary": "AI-driven decibel analysis distinguishes a sustained loud event from a brief spike (like a vacuum or a TV); the manager sets a threshold and duration (e.g. 70dB sustained for 10 minutes) calibrated to the property type, balancing catching real problems against triggering unnecessary guest messages.",
+    "samplePrompt": "We're getting noise alerts from quiet TV-watching guests - help me figure out the right decibel threshold and duration setting for a downtown condo versus a suburban house with a yard.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the right threshold depends on property type and takes some trial and error",
+    "trustScore": 3,
+    "pricingNote": "Hardware $150-$220 per unit; subscriptions roughly $10-$15/month per property. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://renttools.io/blog/noise-monitoring-short-term-rental",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-10",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-37d87fc604",
+    "slug": "decide-whether-to-charge-guests-a-damage-waiver-fee-or-collect",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers deciding how to charge for guest damage coverage",
+    "title": "decide whether to charge guests a damage waiver fee or collect a security deposit",
+    "intentLabels": [
+      "damage waiver vs. security deposit",
+      "guest-caused damage strategy",
+      "deposit-free booking"
+    ],
+    "tools": [
+      {
+        "name": "Waivo",
+        "url": "https://keystonebookkeepers.com/blog/damage-waiver-options-for-short-term-rental-property-managers-str-pm-guide"
+      },
+      {
+        "name": "Superhog (comparison)"
+      }
+    ],
+    "workflowSummary": "The manager compares three approaches to guest damage risk - passing waiver fees through to guests and letting a third party cover claims, self-insuring with low claim volume, or collecting a traditional deposit - based on claim frequency and how much friction they're willing to add to booking.",
+    "samplePrompt": "We handle about 5 damage incidents a year across 20 units - would a damage waiver program or a traditional security deposit make more sense for us?",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Waivo per-booking pricing not fully public; a self-managed deposit has no separate cost. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://keystonebookkeepers.com/blog/damage-waiver-options-for-short-term-rental-property-managers-str-pm-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (page current as of Sept 2026)",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-b3c0e67eaa",
+    "slug": "spot-guest-caused-damage-from-turnover-photos-before-the-next",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers who want fewer unnecessary vendor call-outs after guests leave",
+    "title": "spot guest-caused damage from turnover photos before the next guest checks in",
+    "intentLabels": [
+      "turnover damage detection",
+      "photo comparison AI",
+      "pre-booking condition check"
+    ],
+    "tools": [
+      {
+        "name": "RapidEye",
+        "url": "https://rapideyeinspections.com/blog/ai-property-damage-detection-from-photos/"
+      }
+    ],
+    "workflowSummary": "AI compares the turnover photos cleaners already upload against a per-property baseline of known-good condition, flagging new damage a cleaner or in-person inspector might miss, so it gets caught (and billed to the right guest) before the next guest arrives.",
+    "samplePrompt": "Compare today's turnover photos against this property's baseline condition photos and flag anything that looks like new damage.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a baseline set of condition photos established first",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://rapideyeinspections.com/blog/ai-property-damage-detection-from-photos/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-22",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "property-managers-58aae9594d",
+    "slug": "keep-our-vrbo-response-rate-and-premier-host-status-from",
+    "kind": "workflow",
+    "niche": "Property Managers",
+    "sector": "Property Managers",
+    "persona": "STR managers deciding whether a VRBO-specific messaging workflow is needed",
+    "title": "keep our Vrbo response rate and Premier Host status from slipping",
+    "intentLabels": [
+      "VRBO Premier Host compliance",
+      "response rate automation",
+      "platform-specific messaging"
+    ],
+    "tools": [
+      {
+        "name": "Dimora",
+        "url": "https://dimora.ai/blog/automate-vrbo-guest-messages-ai"
+      }
+    ],
+    "workflowSummary": "AI reads each incoming VRBO message, pulls the relevant property data, and drafts a complete reply within seconds - including handling VRBO's stricter no-phone-number policy automatically - which helps maintain the booking acceptance, cancellation, and response-rate thresholds VRBO's Premier Host program requires.",
+    "samplePrompt": "Draft a reply to this VRBO inquiry about a 10-night family stay, making sure no phone number or off-platform contact info is included per VRBO's messaging policy.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable for managers running a meaningful volume of VRBO bookings",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing. Verify before publishing.",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://dimora.ai/blog/automate-vrbo-guest-messages-ai",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-02-23",
+    "accessNotes": "Public blog post",
+    "batch": "PropertyManagers AI Workflows Batch1 Session4",
+    "status": "active"
+  }
+]

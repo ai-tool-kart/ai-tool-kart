@@ -30,13 +30,16 @@ interface HeroSearchProps {
   onSubmit: (query: string) => void
   /** The chip currently reflected in the query, so its tone matches the design. */
   activeTask?: string
+  /** True while the assistant turn this feeds is in flight. */
+  busy?: boolean
 }
 
-export default function HeroSearch({ onSubmit, activeTask }: HeroSearchProps) {
+export default function HeroSearch({ onSubmit, activeTask, busy = false }: HeroSearchProps) {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
 
   const submit = (value: string) => {
+    if (busy) return
     const trimmed = value.trim()
     if (trimmed) onSubmit(trimmed)
   }
@@ -110,8 +113,9 @@ export default function HeroSearch({ onSubmit, activeTask }: HeroSearchProps) {
         <button
           type="button"
           onClick={() => submit(query)}
+          disabled={busy}
           data-magnet="1"
-          className="relative flex h-12 flex-none cursor-pointer items-center justify-center gap-2 rounded-[92px] border border-white/[0.24] bg-[linear-gradient(180deg,#B69CFF_0%,#7C5AF6_46%,#5B3EE0_100%)] px-6 text-[14.5px] font-semibold tracking-[-0.008em] whitespace-nowrap text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_30px_-12px_rgba(116,80,244,1),0_0_44px_-14px_rgba(167,139,250,0.85)] transition-[box-shadow,transform] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_18px_40px_-12px_rgba(116,80,244,1),0_0_56px_-12px_rgba(176,140,255,0.95)] max-[560px]:w-full"
+          className="relative flex h-12 flex-none cursor-pointer items-center justify-center gap-2 rounded-[92px] border border-white/[0.24] bg-[linear-gradient(180deg,#B69CFF_0%,#7C5AF6_46%,#5B3EE0_100%)] px-6 text-[14.5px] font-semibold tracking-[-0.008em] whitespace-nowrap text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_30px_-12px_rgba(116,80,244,1),0_0_44px_-14px_rgba(167,139,250,0.85)] transition-[box-shadow,transform] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_18px_40px_-12px_rgba(116,80,244,1),0_0_56px_-12px_rgba(176,140,255,0.95)] max-[560px]:w-full disabled:cursor-default disabled:opacity-60 disabled:hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_30px_-12px_rgba(116,80,244,1),0_0_44px_-14px_rgba(167,139,250,0.85)]"
         >
           Show Me How
           <span aria-hidden="true" className="text-[15px] leading-none">
@@ -134,7 +138,8 @@ export default function HeroSearch({ onSubmit, activeTask }: HeroSearchProps) {
                 setQuery(task)
                 submit(task)
               }}
-              className={`${CHIP_BASE} ${
+              disabled={busy}
+              className={`${CHIP_BASE} disabled:cursor-default disabled:opacity-50 disabled:hover:translate-y-0 ${
                 active
                   ? 'border-[rgba(178,150,255,0.5)] bg-[rgba(124,88,244,0.2)] text-[#F1EAFF]'
                   : 'border-white/[0.09] bg-white/[0.03] text-[#B9B3CC]'

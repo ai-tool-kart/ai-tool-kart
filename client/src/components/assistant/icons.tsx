@@ -57,15 +57,6 @@ export function SendIcon({ className }: IconProps) {
   )
 }
 
-/** Section-complete tick in the plan panel. */
-export function CheckIcon({ className }: IconProps) {
-  return (
-    <svg {...STROKE} strokeWidth={2.6} className={className}>
-      <path d="m5 12.6 4.4 4.4L19 7.4" />
-    </svg>
-  )
-}
-
 /** Dropdown chevron on the setup pickers. */
 export function ChevronDownIcon({ className }: IconProps) {
   return (

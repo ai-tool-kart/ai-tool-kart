@@ -1,0 +1,2678 @@
+[
+  {
+    "id": "job-seekers-career-changers-f6d72f29c9",
+    "slug": "build-a-resume-that-beats-ats-filters",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Any job seeker building or refreshing a resume",
+    "title": "Build a resume that beats ATS filters",
+    "intentLabels": [
+      "ats resume checker",
+      "resume scanner",
+      "will my resume pass the applicant tracking system",
+      "ats optimization"
+    ],
+    "tools": [
+      {
+        "name": "Teal",
+        "url": "https://resume.io/blog/what-is-the-best-ai-resume-builder"
+      },
+      {
+        "name": "Jobscan"
+      },
+      {
+        "name": "Rezi"
+      }
+    ],
+    "workflowSummary": "Upload or paste your existing resume, then paste the job posting. The tool scores your resume against that specific listing, flags missing keywords, and suggests bullet-point rewrites. You edit the AI's suggestions rather than accepting them as-is, then re-scan until the match score improves.",
+    "samplePrompt": "Here is my resume and the job description I'm applying to. Score how well my resume matches this posting, list the top 5 missing keywords, and suggest 3 rewritten bullet points that add those keywords truthfully based on my real experience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free scans and guided prompts make this approachable for a first-time user",
+    "trustScore": 4,
+    "pricingNote": "Jobscan: free 5 scans on signup + 5/month, $49/mo unlimited; Teal: free tier, Teal+ ~$13/week - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://resume.io/blog/what-is-the-best-ai-resume-builder",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-05-29",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-1b3564448e",
+    "slug": "write-a-cover-letter-tailored-to-a-specific-job-posting",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker applying to multiple postings who dreads writing letters",
+    "title": "Write a cover letter tailored to a specific job posting",
+    "intentLabels": [
+      "cover letter generator",
+      "write my cover letter",
+      "ai cover letter writer",
+      "tailor cover letter to job"
+    ],
+    "tools": [
+      {
+        "name": "VisualCV",
+        "url": "https://www.visualcv.com/blog/best-ai-cover-letter-generators/"
+      },
+      {
+        "name": "Teal"
+      },
+      {
+        "name": "Kickresume"
+      }
+    ],
+    "workflowSummary": "Paste your resume and the job posting into the tool. It drafts a letter that pulls specific achievements from your resume and matches the language of the posting. You then read it aloud and edit anything that doesn't sound like your own voice before sending.",
+    "samplePrompt": "Using my resume and this job posting, draft a 3-paragraph cover letter: opening hook tied to the company, a paragraph connecting 2 of my real achievements to their listed requirements, and a short closing. Keep it under 300 words and avoid generic phrases like 'I am excited to apply.'",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "templates and guided fields walk beginners through it",
+    "trustScore": 4,
+    "pricingNote": "Kickresume premium ~$24/month; Teal free tier available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.visualcv.com/blog/best-ai-cover-letter-generators/",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-05-29",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-58a1e6bcd7",
+    "slug": "fix-my-linkedin-profile-so-recruiters-actually-find-me",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who wants recruiters to find them on LinkedIn",
+    "title": "Fix my LinkedIn profile so recruiters actually find me",
+    "intentLabels": [
+      "linkedin profile optimizer",
+      "linkedin profile checker",
+      "improve linkedin profile",
+      "linkedin headline generator"
+    ],
+    "tools": [
+      {
+        "name": "Resume Worded (LinkedIn Review)",
+        "url": "https://www.viralbrain.ai/blog/best-linkedin-profile-optimization-tools"
+      },
+      {
+        "name": "Teal"
+      }
+    ],
+    "workflowSummary": "Paste your LinkedIn 'About' section and headline into the checker. It scores the profile section by section (headline, about, experience, skills) against what recruiters search for, then hands you a rewritten headline and about section you paste back into LinkedIn yourself - there's no direct-write API.",
+    "samplePrompt": "Here is my current LinkedIn headline and About section. Rewrite the headline to include my target job title and top 2 skills, and rewrite the About section in 4 short paragraphs that lead with results, not job duties. Keep my real experience - don't invent achievements.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the free scan gives a plain-language score and fixes",
+    "trustScore": 4,
+    "pricingNote": "Resume Worded: free LinkedIn Review scan; Pro plan bundles it - verify current price before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.viralbrain.ai/blog/best-linkedin-profile-optimization-tools",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-06-22",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-806ec4aa8a",
+    "slug": "practice-answering-interview-questions-before-the-real-thing",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker nervous about an upcoming interview",
+    "title": "Practice answering interview questions before the real thing",
+    "intentLabels": [
+      "mock interview ai",
+      "practice interview questions",
+      "ai interview simulator",
+      "interview prep tool"
+    ],
+    "tools": [
+      {
+        "name": "Google Interview Warmup (free)",
+        "url": "https://favtutor.com/best-ai-mock-interview-tools-2026/"
+      },
+      {
+        "name": "Pramp"
+      },
+      {
+        "name": "Exponent"
+      },
+      {
+        "name": "Final Round AI"
+      }
+    ],
+    "workflowSummary": "Start with the free tool to get comfortable answering out loud to a screen. It transcribes your spoken answer and highlights frequently used words. For a closer simulation, move to a tool that role-plays as the interviewer and asks natural follow-up questions grounded in your resume and the job description.",
+    "samplePrompt": "Act as an interviewer for a [job title] role at a [industry] company. Ask me one behavioral question at a time based on my resume below, wait for my answer, then give me one specific piece of feedback before asking the next question.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Google's tool needs no signup and no resume upload",
+    "trustScore": 4,
+    "pricingNote": "Google Interview Warmup: free; Pramp: free peer practice; Final Round AI: paid tiers - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://favtutor.com/best-ai-mock-interview-tools-2026/",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-06-20",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-a5e88bb2b6",
+    "slug": "find-jobs-that-actually-match-my-skills-and-experience",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Active job seeker wanting a daily feed of relevant openings",
+    "title": "Find jobs that actually match my skills and experience",
+    "intentLabels": [
+      "job search engine",
+      "find jobs near me",
+      "ai job matching",
+      "job recommendation tool"
+    ],
+    "tools": [
+      {
+        "name": "LinkedIn Jobs",
+        "url": "https://jobwizard.ai/blog/best-job-search-tools-2026"
+      },
+      {
+        "name": "Indeed"
+      },
+      {
+        "name": "Jobright"
+      }
+    ],
+    "workflowSummary": "Set up your profile once (skills, target roles, locations) on one broad aggregator and one AI-matching tool. The matching tool ranks daily listings by fit and explains why each one was suggested, which is faster to scan than manually searching a raw job board every day.",
+    "samplePrompt": "Based on my resume, suggest 5 job titles I should be searching for besides my current title, including near-adjacent roles that use the same core skills.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to browse and set up on all three",
+    "trustScore": 3,
+    "pricingNote": "LinkedIn Jobs and Indeed: free; Jobright: free tier with paid upgrades - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://jobwizard.ai/blog/best-job-search-tools-2026",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-05-28",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-8382914155",
+    "slug": "prepare-to-negotiate-salary-before-accepting-an-offer",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who just received an offer and wants to negotiate",
+    "title": "Prepare to negotiate salary before accepting an offer",
+    "intentLabels": [
+      "salary negotiation script",
+      "how much should i ask for",
+      "negotiate job offer",
+      "counter offer email"
+    ],
+    "tools": [
+      {
+        "name": "Levels.fyi",
+        "url": "https://four-leaf.ai/blog/best-salary-negotiation-tools-2026"
+      },
+      {
+        "name": "Glassdoor"
+      },
+      {
+        "name": "ChatGPT",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Pull a target compensation range from a free comp-data site first, then use a general AI chatbot to role-play the actual negotiation conversation - state your offer and target number and have it push back the way a recruiter might, so you're not hearing pushback for the first time on the real call.",
+    "samplePrompt": "I received a job offer of [$X] for a [role] in [city]. Market data suggests the range is [$Y-$Z]. Help me draft a short counter-offer email asking for [$target], and then role-play as the recruiter pushing back so I can practice responding.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the data sites are easy, but scripting a negotiation benefits from some guidance on tone",
+    "trustScore": 4,
+    "pricingNote": "Levels.fyi and Glassdoor: free; ChatGPT/Claude: free tiers available - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://four-leaf.ai/blog/best-salary-negotiation-tools-2026",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-08-19",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-fce420bc8c",
+    "slug": "figure-out-which-of-my-skills-transfer-to-a-new-career",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Mid-career professional considering switching industries",
+    "title": "Figure out which of my skills transfer to a new career",
+    "intentLabels": [
+      "transferable skills",
+      "career change assessment",
+      "what jobs can i do with my skills",
+      "skills gap analysis"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://skillshift.ai/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude (guided prompts)",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "SkillShift.ai"
+      }
+    ],
+    "workflowSummary": "Paste your resume and a target job description (or target industry) into a chatbot and ask it to map your existing responsibilities to the language of the new field. A dedicated skills-gap tool can add a scored fit percentage and a prioritized list of what to learn next.",
+    "samplePrompt": "Here is my resume and the industry I want to move into: [target industry]. List my top 8 transferable skills, reframe 5 of my resume bullet points in language that industry would recognize, and tell me the 3 biggest skill gaps I'd need to close.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just needs a resume and a plain-language target role",
+    "trustScore": 3,
+    "pricingNote": "SkillShift.ai: free plan with core features, Pro for unlimited analyses - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://skillshift.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026-08-01",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-a3e7a567df",
+    "slug": "write-a-linkedin-message-to-reach-out-to-a-recruiter-or-hiring",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who wants to reach out to a recruiter or hiring manager directly",
+    "title": "Write a LinkedIn message to reach out to a recruiter or hiring manager",
+    "intentLabels": [
+      "linkedin cold message",
+      "networking message generator",
+      "how to message a recruiter",
+      "linkedin outreach"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://typli.ai/ai-linkedin-message-generator",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "Typli.ai LinkedIn Message Generator"
+      }
+    ],
+    "workflowSummary": "Give the tool the recipient's role, the company, and one specific, genuine reason you're reaching out (a shared connection, a post they wrote, the exact role). It drafts a short message; keep it under LinkedIn's connection-note character limit and edit out anything that sounds like a form letter before sending.",
+    "samplePrompt": "Write a short LinkedIn connection request (under 300 characters) to a recruiter at [company] about the [role] opening. Mention that I saw the posting and one specific reason I'm a fit, without sounding like a template.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one short prompt produces a usable draft",
+    "trustScore": 3,
+    "pricingNote": "Typli.ai: from $7.99/month for 10,000+ credits; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://typli.ai/ai-linkedin-message-generator",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-db3a3422a5",
+    "slug": "keep-track-of-every-job-i-ve-applied-to-and-when-to-follow-up",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker applying to many roles at once",
+    "title": "Keep track of every job I've applied to and when to follow up",
+    "intentLabels": [
+      "job application tracker",
+      "job search spreadsheet",
+      "track job applications",
+      "application pipeline"
+    ],
+    "tools": [
+      {
+        "name": "Teal",
+        "url": "https://www.jobfinder-ai.com/blog/job-application-tracking-software"
+      },
+      {
+        "name": "Huntr"
+      }
+    ],
+    "workflowSummary": "Install the browser extension so it captures job details (title, company, listing link) as you browse LinkedIn or a company careers page with one click. Move each saved job through pipeline stages (applied, interview, offer) and set follow-up reminders instead of tracking this in a scattered spreadsheet or inbox.",
+    "samplePrompt": "I'm applying to roles across marketing and product management. Suggest a simple set of pipeline stages I should track for each application (beyond just 'applied' and 'rejected') and what follow-up reminder timing makes sense at each stage.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the free tiers cover core tracking with no setup complexity",
+    "trustScore": 4,
+    "pricingNote": "Teal: free tier, Teal+ ~$13/week; Huntr: free tier with paid upgrades - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jobfinder-ai.com/blog/job-application-tracking-software",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-09-06",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-1cbb6487d8",
+    "slug": "build-a-simple-portfolio-website-to-show-my-work",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker or freelancer who wants an online portfolio without coding",
+    "title": "Build a simple portfolio website to show my work",
+    "intentLabels": [
+      "portfolio website builder",
+      "ai website builder",
+      "make a portfolio site",
+      "personal website for job search"
+    ],
+    "tools": [
+      {
+        "name": "Seera",
+        "url": "https://myseera.com/blog/best-portfolio-website-builders-2026"
+      },
+      {
+        "name": "Wix"
+      }
+    ],
+    "workflowSummary": "Upload your resume or LinkedIn PDF - the AI extracts your experience and skills automatically and places them into a template. Pick a portfolio-specific layout, swap in real project samples or writing/design work, then connect a custom domain or share the generated link directly with recruiters.",
+    "samplePrompt": "I have a resume for a [field] role. Suggest 3-5 sections a portfolio website should have for someone in this field, and a one-sentence description I could use for each of my last two jobs as a project highlight.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "resume-to-site extraction is designed for non-technical users",
+    "trustScore": 3,
+    "pricingNote": "Seera: free tier, Pro EUR 5.99/month; Wix: free tier with paid plans - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://myseera.com/blog/best-portfolio-website-builders-2026",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-08-07",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-7b01f55350",
+    "slug": "get-free-ongoing-career-advice-and-coaching",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who can't afford a paid human career coach",
+    "title": "Get free, ongoing career advice and coaching",
+    "intentLabels": [
+      "free ai career coach",
+      "career advice chatbot",
+      "career guidance for job seekers",
+      "ai career counselor"
+    ],
+    "tools": [
+      {
+        "name": "COACH by CareerVillage.org",
+        "url": "https://www.aicareercoach.org/jobseekers"
+      }
+    ],
+    "workflowSummary": "Chat with the free assistant about your specific situation - resume questions, interview nerves, or general direction - the way you'd talk to a human career counselor. Because it's built by a nonprofit specifically for job seekers (not a general chatbot), answers stay focused on career support with no usage caps.",
+    "samplePrompt": "I'm a [background] considering a move into [target field] and don't know where to start. Ask me a few questions about my goals and experience, then suggest 2-3 realistic next steps.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically to be an accessible, free entry point",
+    "trustScore": 4,
+    "pricingNote": "Free (nonprofit-run) - verify current access before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.aicareercoach.org/jobseekers",
+    "sourceType": "Nonprofit product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; nonprofit resource, note this in any published listing",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-869d3ebd57",
+    "slug": "write-a-thank-you-email-after-a-job-interview",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker right after finishing an interview",
+    "title": "Write a thank-you email after a job interview",
+    "intentLabels": [
+      "interview thank you email",
+      "post interview follow up",
+      "thank you note after interview",
+      "interview follow-up template"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.hyperwriteai.com/aitools/post-interview-thank-you-note-composer",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "HyperWrite Post-Interview Thank You Note Composer"
+      }
+    ],
+    "workflowSummary": "Give the tool the interviewer's name, the role, and 1-2 specific things you discussed. It drafts a short note referencing those specifics rather than a generic 'thank you for your time.' Send it within 24 hours of the interview for the best impression.",
+    "samplePrompt": "I interviewed today with [interviewer name] for the [role] position. We discussed [topic 1] and [topic 2]. Write a warm, concise thank-you email (under 150 words) that references both topics and reaffirms my interest, without sounding like a template.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with 2-3 details produces a ready draft",
+    "trustScore": 4,
+    "pricingNote": "HyperWrite: free tier with paid plans; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.hyperwriteai.com/aitools/post-interview-thank-you-note-composer",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-011de4f29d",
+    "slug": "rewrite-my-resume-bullet-points-so-my-experience-makes-sense-to",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Career changer whose past job titles don't map cleanly to a new industry",
+    "title": "Rewrite my resume bullet points so my experience makes sense to a new industry",
+    "intentLabels": [
+      "reframe resume for career change",
+      "translate my experience",
+      "resume for career pivot",
+      "industry-specific resume rewrite"
+    ],
+    "tools": [
+      {
+        "name": "cvtailor.ai",
+        "url": "https://www.cvtailor.ai/blog/ai-transferable-skills-career-change"
+      },
+      {
+        "name": "ChatGPT",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Feed the tool your current resume plus a job posting or two from the target industry. It compares the language and flags where your existing bullet points use old-industry jargon (e.g. 'client liaison') that should be reframed into terms the new field recognizes (e.g. 'stakeholder management') - without changing what you actually did.",
+    "samplePrompt": "Here is my resume from [old industry] and a job posting from [new industry]. For each of my bullet points, tell me if the underlying skill transfers, and if so, rewrite it using language this new industry would recognize - keep the facts the same, just change the framing.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful output, but requires the user to sanity-check that rewrites stay truthful to their actual experience",
+    "trustScore": 3,
+    "pricingNote": "cvtailor.ai pricing not stated on source page - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.cvtailor.ai/blog/ai-transferable-skills-career-change",
+    "sourceType": "Blog post",
+    "freshness": "2025-10-29",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-933bb143c8",
+    "slug": "check-if-my-resume-actually-matches-this-specific-job",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker deciding whether to apply, or tailoring for a specific listing",
+    "title": "Check if my resume actually matches this specific job description",
+    "intentLabels": [
+      "resume job description match",
+      "job match score",
+      "keyword match checker",
+      "will i get an interview for this job"
+    ],
+    "tools": [
+      {
+        "name": "Jobscan",
+        "url": "https://jobwinner.ai/blog/transferable-skills-for-career-change/"
+      },
+      {
+        "name": "JobWinner Job Match Analysis"
+      }
+    ],
+    "workflowSummary": "Paste your resume and the job posting side by side. The tool returns a compatibility score plus a list of the specific keywords and requirements in the posting that your resume is currently missing, so you can decide whether it's worth tailoring your resume for this application or skipping it.",
+    "samplePrompt": "Compare my resume against this job posting and give me a match score out of 100, list the top 5 missing keywords, and tell me honestly whether this role is a realistic reach or a strong fit based on my actual experience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a paste-and-score workflow with no setup",
+    "trustScore": 4,
+    "pricingNote": "Jobscan: free 5 scans on signup + 5/month, $49/mo unlimited - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://jobwinner.ai/blog/transferable-skills-for-career-change/",
+    "sourceType": "Blog post",
+    "freshness": "2026-03-17",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f1fb783fa4",
+    "slug": "practice-speaking-my-interview-answers-out-loud-and-get",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who freezes up or rambles when answering interview questions out loud",
+    "title": "Practice speaking my interview answers out loud and get feedback on delivery",
+    "intentLabels": [
+      "interview delivery coach",
+      "speak more confidently in interviews",
+      "filler word feedback",
+      "interview speaking practice"
+    ],
+    "tools": [
+      {
+        "name": "Yoodli",
+        "url": "https://interviewdrills.com/blog/best-ai-mock-interview-tools"
+      },
+      {
+        "name": "Google Interview Warmup (free)"
+      }
+    ],
+    "workflowSummary": "Record yourself answering a practice question out loud. The tool transcribes it and scores delivery specifically - filler words ('um', 'like'), pacing, and clarity - rather than just judging the content of the answer, which is what most people actually need to fix before an interview.",
+    "samplePrompt": "N/A - this is a spoken-practice tool used directly, not a text prompt; the workflow is: pick a practice question, answer out loud into the tool, and review the delivery feedback it returns.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Google's free tool needs no signup",
+    "trustScore": 3,
+    "pricingNote": "Yoodli: free tier (5 lifetime roleplays as of Aug 2026), paid from ~$8/month billed annually; Google Interview Warmup: free - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://interviewdrills.com/blog/best-ai-mock-interview-tools",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-08-19",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-a46d8a59ed",
+    "slug": "draft-a-follow-up-email-when-i-haven-t-heard-back-after",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who applied and hasn't heard back",
+    "title": "Draft a follow-up email when I haven't heard back after applying or interviewing",
+    "intentLabels": [
+      "job application follow up email",
+      "haven't heard back after interview",
+      "polite follow up email",
+      "check on application status"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://skillscouter.com/ai-interview-follow-up-templates/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "Teal (follow-up email templates)"
+      }
+    ],
+    "workflowSummary": "Wait about a week after your application or interview before following up. Give the tool the role, the date you applied or last spoke, and who you're contacting; it drafts a brief, courteous note that asks for a status update without sounding impatient or pushy.",
+    "samplePrompt": "I applied for the [role] at [company] on [date] and haven't heard back. Write a short, polite follow-up email checking on my application status, without sounding impatient.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with a date and role produces a ready draft",
+    "trustScore": 4,
+    "pricingNote": "Teal: free tier includes email templates; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://skillscouter.com/ai-interview-follow-up-templates/",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-11",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f2d6ca698e",
+    "slug": "research-a-company-before-an-interview",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker with an interview scheduled and no real sense of the company",
+    "title": "Research a company before an interview",
+    "intentLabels": [
+      "research company before interview",
+      "company culture check",
+      "know before you go interview prep",
+      "employer research tool"
+    ],
+    "tools": [
+      {
+        "name": "Glassdoor",
+        "url": "https://www.jackandjill.ai/blog/best-ai-job-search-tools-for-2026"
+      },
+      {
+        "name": "CleverPrep"
+      }
+    ],
+    "workflowSummary": "Look up salary ranges, employee reviews, and reported interview questions on a free research site first. For a more structured pass, a dedicated interview-prep tool can turn that same research into likely questions and talking points for 'why this company' answers, rather than leaving you to read reviews with no next step.",
+    "samplePrompt": "I have an interview at [company] for a [role]. Based on what's publicly known about this company, suggest 3 thoughtful questions I could ask the interviewer, and a one-paragraph answer to 'why do you want to work here' that sounds specific, not generic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Glassdoor requires no setup beyond a free account",
+    "trustScore": 3,
+    "pricingNote": "Glassdoor: free to browse; CleverPrep: paid plans, check current pricing - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jackandjill.ai/blog/best-ai-job-search-tools-for-2026",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-07-03",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-dc9fd78872",
+    "slug": "check-if-a-job-posting-or-recruiter-message-is-a-scam-before-i",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who received an unsolicited or too-good-to-be-true job offer",
+    "title": "Check if a job posting or recruiter message is a scam before I apply",
+    "intentLabels": [
+      "is this job a scam",
+      "fake job posting checker",
+      "verify job listing legit",
+      "job scam checker"
+    ],
+    "tools": [
+      {
+        "name": "JobScamScore",
+        "url": "https://jobscamscore.com/guides/job-scam-red-flags"
+      }
+    ],
+    "workflowSummary": "Paste the job posting text, or the recruiter's message and any company links, into the checker. It cross-references the company, careers page, recruiter contact, and salary claims against known scam patterns and returns a risk verdict with reasons, rather than leaving you to manually check each red flag yourself.",
+    "samplePrompt": "N/A - this is a paste-and-scan tool used directly rather than a text prompt; the workflow is: paste the full job posting or recruiter message into the checker and review the risk verdict and flagged reasons it returns.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no account required to run a scan",
+    "trustScore": 3,
+    "pricingNote": "Free scan - verify current pricing/limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://jobscamscore.com/guides/job-scam-red-flags",
+    "sourceType": "Product page / guide",
+    "freshness": "2026-07-20",
+    "accessNotes": "Public guide/product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-28ab297a93",
+    "slug": "compare-multiple-job-offers-side-by-side-to-decide-which-to",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who has more than one offer in hand",
+    "title": "Compare multiple job offers side by side to decide which to accept",
+    "intentLabels": [
+      "compare job offers",
+      "which job offer should i take",
+      "job offer comparison calculator",
+      "weigh two job offers"
+    ],
+    "tools": [
+      {
+        "name": "LoopCV Job Offer Comparison Calculator",
+        "url": "https://www.loopcv.pro/tools/job-offer-comparison/"
+      },
+      {
+        "name": "AIApply Job Offer Comparison Calculator"
+      }
+    ],
+    "workflowSummary": "Enter compensation details (base, bonus, equity, signing bonus) and work conditions (remote days, PTO, commute) for each offer. Set how much you personally weigh pay versus growth versus stability, and the calculator produces a scored, side-by-side comparison instead of a gut-feeling guess.",
+    "samplePrompt": "I have two job offers: [summarize offer A] and [summarize offer B]. I care most about [e.g. career growth and remote flexibility, in that order]. Score both offers against those priorities and tell me what's actually different between them beyond the base salary.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided fields walk you through what to enter",
+    "trustScore": 4,
+    "pricingNote": "LoopCV: free tool; AIApply: free calculator, paid plans for other features - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.loopcv.pro/tools/job-offer-comparison/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-96f4bd2da8",
+    "slug": "compare-take-home-pay-between-job-offers-after-taxes",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker deciding between offers with different pay structures or states",
+    "title": "Compare take-home pay between job offers after taxes",
+    "intentLabels": [
+      "take home pay calculator",
+      "net salary comparison",
+      "paycheck calculator compare offers",
+      "after tax salary"
+    ],
+    "tools": [
+      {
+        "name": "TakeHome Pay (realtakehomepay.com)",
+        "url": "https://www.realtakehomepay.com/offer-comparison"
+      },
+      {
+        "name": "ADP Salary Paycheck Calculator"
+      }
+    ],
+    "workflowSummary": "Enter each offer's gross salary, state, filing status, and any pre-tax deductions (401k, HSA). The calculator applies current federal and state tax brackets plus FICA to show what actually lands in your bank account per paycheck and per year, so a higher headline salary in a high-tax state doesn't quietly lose to a lower offer elsewhere.",
+    "samplePrompt": "N/A - this is a calculator you fill in directly rather than a text prompt; the workflow is: enter each offer's salary, state, and deductions into the comparison mode and read the side-by-side net pay result.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just requires numbers from your offer letters, no account needed",
+    "trustScore": 4,
+    "pricingNote": "Both tools: free - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.realtakehomepay.com/offer-comparison",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-abe4e044fb",
+    "slug": "write-a-professional-resignation-letter",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who accepted a new role and needs to leave their current job gracefully",
+    "title": "Write a professional resignation letter",
+    "intentLabels": [
+      "resignation letter generator",
+      "how to quit my job letter",
+      "write my resignation letter",
+      "two weeks notice letter"
+    ],
+    "tools": [
+      {
+        "name": "Kickresume AI Resignation Letter Writer",
+        "url": "https://www.kickresume.com/en/ai-resignation-letter-writer/"
+      },
+      {
+        "name": "Grammarly AI Resignation Letter Writer"
+      }
+    ],
+    "workflowSummary": "Give the tool your job title, company, and last working day. It drafts a short, professional letter that states your departure date without venting grievances or over-explaining. Read it aloud before sending, and always have the in-person or video conversation with your manager first - never let a letter be how they find out.",
+    "samplePrompt": "Write a professional resignation letter for my role as [job title] at [company]. My last working day will be [date]. Keep it brief, appreciative, and neutral - no reasons for leaving, no criticism of the company.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a few fields produce a ready draft",
+    "trustScore": 3,
+    "pricingNote": "Kickresume: premium ~$24/month, some tools free; Grammarly: free tier with paid upgrades - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.kickresume.com/en/ai-resignation-letter-writer/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-b79855382a",
+    "slug": "understand-a-confusing-job-offer-letter-or-benefits-package",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker staring at a dense offer letter full of benefits jargon",
+    "title": "Understand a confusing job offer letter or benefits package",
+    "intentLabels": [
+      "explain my job offer",
+      "what does this benefits package mean",
+      "understand 401k HSA offer letter",
+      "decode offer letter jargon"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.tomsguide.com/ai/chatgpt/i-used-chatgpt-to-make-sense-of-my-employee-benefits-heres-how-it-saved-my-open-enrollment",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Upload or paste the offer letter or benefits comparison chart and ask the chatbot to explain it in plain English - what each plan type means, the practical difference between options, and which acronyms (HSA, FSA, PPO, vesting) actually matter for your situation. Treat it as a translator, not a source of legal or tax advice.",
+    "samplePrompt": "Here is my job offer letter / benefits comparison chart [paste or upload]. Explain what each benefit actually means in plain English, and tell me which questions I should ask HR before I decide anything, since you can't see my personal financial situation.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works with a simple copy-paste, no account needed beyond the chatbot itself",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.tomsguide.com/ai/chatgpt/i-used-chatgpt-to-make-sense-of-my-employee-benefits-heres-how-it-saved-my-open-enrollment",
+    "sourceType": "First-person blog post",
+    "freshness": "n/a - undated, accessed 2026-09-09",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-6f462f0e1d",
+    "slug": "explain-an-employment-gap-on-my-resume-and-in-interviews",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker with a resume gap from a layoff, health issue, caregiving, or career break",
+    "title": "Explain an employment gap on my resume and in interviews",
+    "intentLabels": [
+      "how to explain employment gap",
+      "resume gap excuse",
+      "career break interview question",
+      "unemployed gap in resume"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.hrlens.io/articles/10-ai-prompts-to-explain-employment-gaps",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude (guided prompts)",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "Scale.jobs"
+      }
+    ],
+    "workflowSummary": "Give the chatbot the real reason for the gap and ask it to turn that into a short, factual, forward-looking explanation - what happened, what you did with the time, why you're ready now - rather than an over-explained or overly polished story. Use the same short explanation consistently across your resume, cover letter, and interview answers.",
+    "samplePrompt": "I had a [length] gap in my work history because [real reason]. Help me write a short, honest, and confident explanation I can use consistently on my resume, in a cover letter, and out loud in an interview - keep it factual and forward-looking, not defensive.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "just needs the real reason and produces a usable script",
+    "trustScore": 3,
+    "pricingNote": "Scale.jobs: from $9/month; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.hrlens.io/articles/10-ai-prompts-to-explain-employment-gaps",
+    "sourceType": "Blog post",
+    "freshness": "2026-07-07",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-2ca3a0063f",
+    "slug": "draft-an-email-declining-a-job-offer",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who accepted one offer and needs to turn down another",
+    "title": "Draft an email declining a job offer",
+    "intentLabels": [
+      "how to decline a job offer email",
+      "turn down job offer politely",
+      "reject job offer email",
+      "email declining employment"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.loopcv.pro/tools/job-offer-comparison/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "LoopCV (built-in decline-email generator)"
+      }
+    ],
+    "workflowSummary": "Give the tool the role, company, and (optionally) a brief honest reason. It drafts a short, gracious email that declines clearly without over-explaining, so you can keep the door open with that recruiter or company for future roles.",
+    "samplePrompt": "I need to decline a job offer for [role] at [company]. I'm accepting a different offer. Write a brief, gracious email declining the offer that keeps the relationship positive and doesn't over-explain my reasoning.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with role and company produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "LoopCV: free with the offer comparison tool; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.loopcv.pro/tools/job-offer-comparison/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f6ff25566c",
+    "slug": "draft-an-email-accepting-a-job-offer",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker ready to formally accept a job offer",
+    "title": "Draft an email accepting a job offer",
+    "intentLabels": [
+      "how to accept a job offer email",
+      "job offer acceptance letter",
+      "email accepting employment",
+      "confirm job offer acceptance"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.loopcv.pro/tools/job-offer-comparison/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "LoopCV (built-in accept-email generator)"
+      }
+    ],
+    "workflowSummary": "Give the tool the role, company, start date, and any terms you want to confirm in writing (salary, start date, reporting manager). It drafts a professional acceptance email that confirms those details in writing, which protects you if anything is misremembered later.",
+    "samplePrompt": "I'm accepting a job offer for [role] at [company], starting [date] at [salary]. Write a professional acceptance email that confirms these details in writing and expresses genuine enthusiasm without sounding over the top.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with the key details produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "LoopCV: free with the offer comparison tool; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.loopcv.pro/tools/job-offer-comparison/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-d49474ba75",
+    "slug": "build-a-weekly-job-search-schedule-so-i-don-t-burn-out",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker mid-search who is applying inconsistently or feeling burned out",
+    "title": "Build a weekly job-search schedule so I don't burn out",
+    "intentLabels": [
+      "job search schedule",
+      "how many hours a day should i job search",
+      "avoid job search burnout",
+      "job hunting daily routine"
+    ],
+    "tools": [
+      {
+        "name": "Motion",
+        "url": "https://www.resumly.ai/blog/how-to-organize-your-daily-routine-while-job-hunting"
+      },
+      {
+        "name": "general calendar time-blocking (no single dedicated app required)"
+      }
+    ],
+    "workflowSummary": "Time-block your week into distinct chunks - applications, networking, skill-building, rest - rather than treating the whole day as one undifferentiated 'job search' task. A time-blocking or AI task-planning app can auto-schedule these blocks around your existing commitments and remind you to actually stop at the end of a block.",
+    "samplePrompt": "Help me build a realistic weekly job-search schedule. I can commit about [X] hours a day. Split that time into application blocks, networking, skill-building, and follow-ups, and include at least one recharge block a day so I don't burn out.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the underlying idea (time-blocking) needs no special tool, though a planner app makes it easier to stick to",
+    "trustScore": 3,
+    "pricingNote": "Motion: paid, check current pricing; time-blocking itself is free with any calendar - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.resumly.ai/blog/how-to-organize-your-daily-routine-while-job-hunting",
+    "sourceType": "Blog post",
+    "freshness": "2026-06-18",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-8bde3fc05e",
+    "slug": "figure-out-what-paperwork-i-need-to-bring-or-complete-on-my",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker starting a new job and unsure what paperwork to expect",
+    "title": "Figure out what paperwork I need to bring or complete on my first day at a new job",
+    "intentLabels": [
+      "new hire paperwork checklist",
+      "what do i need for first day of work",
+      "W-4 vs I-9",
+      "documents needed to start a new job"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.britannica.com/money/new-job-paperwork",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Ask the chatbot to explain, in plain language, the difference between the standard U.S. new-hire forms (W-4 for tax withholding, I-9 for work-eligibility verification) and what physical documents (ID, Social Security card) you'll need to bring to satisfy them, so you're not caught off guard on day one.",
+    "samplePrompt": "I'm starting a new U.S. job next week. Explain in plain language what a W-4 and an I-9 form are each for, what physical documents I need to bring to complete them, and what else new hires are typically asked to fill out in their first week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a single plain-language question gets a clear answer",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.britannica.com/money/new-job-paperwork",
+    "sourceType": "Explainer article",
+    "freshness": "2026-07-10",
+    "accessNotes": "Public article; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-7584058854",
+    "slug": "ask-for-feedback-after-being-rejected-from-a-job",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who was just rejected and wants to improve for next time",
+    "title": "Ask for feedback after being rejected from a job",
+    "intentLabels": [
+      "ask for feedback after rejection",
+      "why didn't i get the job",
+      "request interview feedback email",
+      "job rejection follow up"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.finalroundai.com/blog/how-to-ask-for-feedback-after-rejection",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Draft a short, specific request rather than a vague 'why wasn't I selected' - the tool builds in a genuine thank-you, acknowledgment of the decision, one narrow question, and an easy way for the recruiter to decline, which research suggests gets more real answers than an open-ended ask.",
+    "samplePrompt": "I was just rejected for the [role] position at [company] after [an interview / applying]. Write a short, polite email (under 100 words) thanking them, acknowledging the decision, and asking for one specific piece of feedback - with an easy way for them to decline if they can't share anything.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with role and stage produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.finalroundai.com/blog/how-to-ask-for-feedback-after-rejection",
+    "sourceType": "Blog post",
+    "freshness": "n/a - undated, accessed 2026-09-09",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-d52ed1b7f1",
+    "slug": "ask-a-former-manager-or-colleague-for-a-reference-letter",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who needs a reference letter from a former manager or colleague",
+    "title": "Ask a former manager or colleague for a reference letter",
+    "intentLabels": [
+      "how to ask for a reference letter",
+      "reference letter request email",
+      "recommendation letter generator",
+      "professional reference request"
+    ],
+    "tools": [
+      {
+        "name": "AIApply Reference Letter Generator",
+        "url": "https://aiapply.co/tools/reference-letter-generator"
+      },
+      {
+        "name": "LogicBalls Professional Reference Request"
+      }
+    ],
+    "workflowSummary": "Give the tool your relationship to the person, the role you're applying for, and 2-3 achievements you'd like highlighted. It drafts either the request email to send your reference, or a starter reference letter your reference can edit and personalize themselves, so they aren't starting from a blank page.",
+    "samplePrompt": "I need to ask my former manager [name] for a reference letter for a [role] I'm applying to. We worked together at [company] where I [1-2 real achievements]. Draft a short, respectful request email that makes it easy for them to say yes.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with names and achievements produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "AIApply: free tool, paid plans for other features; LogicBalls: free to try - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aiapply.co/tools/reference-letter-generator",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-87c354697b",
+    "slug": "decide-whether-to-accept-a-counter-offer-from-my-current",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who resigned and is being offered more money to stay",
+    "title": "Decide whether to accept a counter-offer from my current employer",
+    "intentLabels": [
+      "should i accept a counter offer",
+      "counter offer from current employer",
+      "declining a counter offer",
+      "how to respond to a counter offer"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://findskill.ai/skills/productivity/job-offer-comparison-tool/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Lay out the real reasons you started looking in the first place (pay, growth, management, workload) next to the counter-offer's terms. A chatbot can't tell you what to choose, but it can help you separate 'this fixes my actual problem' from 'this is a short-term raise that doesn't address why I wanted to leave' - a distinction career advisors say most people skip under pressure.",
+    "samplePrompt": "My employer offered me a counter-offer of [terms] after I resigned to take a new job. My original reasons for leaving were [list them honestly]. Help me think through whether this counter-offer actually addresses those reasons, and draft a polite response either way.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful for structuring the decision, but this is a judgment call the tool can't make for you",
+    "trustScore": 2,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://findskill.ai/skills/productivity/job-offer-comparison-tool/",
+    "sourceType": "Product page",
+    "freshness": "2026-02-06",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-be1391b35f",
+    "slug": "prepare-specific-questions-to-ask-my-interviewer-about-the",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker preparing for an upcoming interview at a specific company",
+    "title": "Prepare specific questions to ask my interviewer about the company and role",
+    "intentLabels": [
+      "good questions to ask interviewer",
+      "what to ask in a job interview",
+      "questions for hiring manager",
+      "smart interview questions"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.cleverprep.com/blog/best-ai-interview-prep-tools",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "CleverPrep"
+      }
+    ],
+    "workflowSummary": "Give the tool the company, role, and anything you already know from your company research. It suggests 3-5 specific, non-generic questions tied to that company's actual situation (not 'what's the culture like'), which signals genuine interest rather than a memorized script.",
+    "samplePrompt": "I have an interview for [role] at [company]. Based on what's publicly known about them, suggest 4 specific interview questions I could ask that go beyond generic culture questions and show I've actually researched the company and role.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with company and role produces usable questions",
+    "trustScore": 3,
+    "pricingNote": "CleverPrep: paid plans, check current pricing; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cleverprep.com/blog/best-ai-interview-prep-tools",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-05-21",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch2 Ops",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f9fc5fdb44",
+    "slug": "get-a-professional-looking-headshot-photo-without-hiring-a",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker whose profile photo is years old or nonexistent",
+    "title": "Get a professional-looking headshot photo without hiring a photographer",
+    "intentLabels": [
+      "ai headshot generator",
+      "professional headshot online",
+      "linkedin photo without photographer",
+      "generate business headshot"
+    ],
+    "tools": [
+      {
+        "name": "Aragon AI",
+        "url": "https://posteverywhere.ai/blog/20-best-ai-headshot-generators"
+      },
+      {
+        "name": "HeadshotPro"
+      }
+    ],
+    "workflowSummary": "Upload 10-20 casual photos of yourself from different angles. The tool trains a model on your likeness and generates a batch of studio-style headshots in different outfits and backgrounds within an hour or two, which you then pick from and download - no studio booking required.",
+    "samplePrompt": "N/A - this is a photo-upload tool used directly rather than a text prompt; the workflow is: upload 10-20 clear photos of yourself, choose a style/background, and review the generated headshot options within about an hour.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload-and-wait workflow with no design skill needed",
+    "trustScore": 3,
+    "pricingNote": "Aragon AI: from ~$35 for 20-100 headshots; HeadshotPro: from ~$29/shoot - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://posteverywhere.ai/blog/20-best-ai-headshot-generators",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-6b93bdd16f",
+    "slug": "write-and-practice-a-concise-elevator-pitch-or-tell-me-about",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who freezes up when asked 'tell me about yourself'",
+    "title": "Write and practice a concise elevator pitch or 'tell me about yourself' answer",
+    "intentLabels": [
+      "elevator pitch generator",
+      "tell me about yourself answer",
+      "30 second pitch job interview",
+      "how to introduce myself professionally"
+    ],
+    "tools": [
+      {
+        "name": "Careerflow.ai AI Elevator Pitch Generator",
+        "url": "https://help.careerflow.ai/en/articles/9012634-using-the-ai-elevator-pitch-generator"
+      },
+      {
+        "name": "SkillsFirst Elevator Pitch Builder"
+      }
+    ],
+    "workflowSummary": "Feed the tool your resume or LinkedIn profile. It drafts a short, structured pitch (who you are, what you do, what you're looking for) you can adapt for a career fair, an interview opener, or your LinkedIn summary. Some versions let you record yourself saying it out loud and get feedback on clarity and pacing, not just the written text.",
+    "samplePrompt": "Based on my resume, write a 30-second 'tell me about yourself' answer for a [target role] interview: 2 sentences on my background, 2 on my most relevant achievement, 1 on why I want this specific type of role. Keep it conversational, not like a résumé read aloud.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "resume-in, pitch-out with minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Careerflow.ai: free tier with paid upgrades; SkillsFirst: institutional/paid access - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://help.careerflow.ai/en/articles/9012634-using-the-ai-elevator-pitch-generator",
+    "sourceType": "Product help doc",
+    "freshness": "2026-01-09",
+    "accessNotes": "Public help doc; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-06dbf6dfa3",
+    "slug": "write-a-reusable-professional-bio-for-linkedin-a-personal",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who needs one bio that works everywhere",
+    "title": "Write a reusable professional bio for LinkedIn, a personal website, and speaker or podcast intros",
+    "intentLabels": [
+      "professional bio generator",
+      "linkedin about section",
+      "short bio for website",
+      "podcast guest bio"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the chatbot your resume or a few career highlights and ask for 3 lengths of the same bio (one-line, 2-3 sentence, and a short paragraph), written in third person for intros and first person for your own profiles, so you have one consistent story instead of writing a new bio from scratch every time someone asks.",
+    "samplePrompt": "Using my resume, write my professional bio in 3 versions: a one-line tagline, a 2-3 sentence version for a LinkedIn About section (first person), and a short paragraph a podcast host could read to introduce me (third person). Keep the facts consistent across all three.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "one prompt with a resume produces all three versions",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-30",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-bf70605929",
+    "slug": "write-linkedin-posts-to-stay-visible-while-i-m-job-searching",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who wants recruiters to find them, not just apply cold",
+    "title": "Write LinkedIn posts to stay visible while I'm job searching",
+    "intentLabels": [
+      "what to post on linkedin while job searching",
+      "linkedin content for job seekers",
+      "get noticed by recruiters on linkedin",
+      "linkedin post ideas"
+    ],
+    "tools": [
+      {
+        "name": "WildandFree free LinkedIn Post Generator",
+        "url": "https://wildandfreetools.com/blog/linkedin-post-ideas-job-seekers-2026/"
+      },
+      {
+        "name": "Supergrow"
+      }
+    ],
+    "workflowSummary": "Give the tool a rough idea - a lesson from a past project, a skill you're building, or what kind of role you're looking for - and it drafts a short, specific LinkedIn post rather than a vague 'open to work' announcement. Posting a few times a week with real substance, not just visibility, is what the research behind this tool points to as the difference-maker.",
+    "samplePrompt": "Turn this rough idea into a LinkedIn post: [describe a lesson learned, a project, or what you're looking for]. Keep it under 150 words, specific and concrete (not generic advice), and end with a soft, non-desperate way of mentioning I'm open to opportunities.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the free generator needs no account or signup",
+    "trustScore": 3,
+    "pricingNote": "WildandFree tool: free, no login; Supergrow: paid plans, check current pricing - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://wildandfreetools.com/blog/linkedin-post-ideas-job-seekers-2026/",
+    "sourceType": "Blog / product page",
+    "freshness": "2026-01-05",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-a2fb9ae194",
+    "slug": "create-a-digital-business-card-to-share-at-networking-events",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker attending career fairs, conferences, or networking events",
+    "title": "Create a digital business card to share at networking events",
+    "intentLabels": [
+      "digital business card app",
+      "virtual business card free",
+      "QR code business card",
+      "share contact info job fair"
+    ],
+    "tools": [
+      {
+        "name": "HiHello",
+        "url": "https://blinq.me/blog/best-digital-business-cards"
+      },
+      {
+        "name": "Popl"
+      }
+    ],
+    "workflowSummary": "Build a card with your name, target role or headline, phone, email, and LinkedIn link in the free app. Share it by QR code, tap (on supported phones), or link instead of running out of paper cards - and update it instantly if your target role or contact info changes mid-search.",
+    "samplePrompt": "N/A - this is an app you set up directly rather than a text prompt; the workflow is: create a card with your name, headline, and contact links, then share it by QR code or link at events instead of a paper card.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free plans cover the core use case for an individual",
+    "trustScore": 3,
+    "pricingNote": "HiHello: free plan available; Popl: free plan available, paid plans for advanced features - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://blinq.me/blog/best-digital-business-cards",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-78b053290d",
+    "slug": "turn-my-past-work-into-star-method-stories-i-can-pull-from-in",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who blanks on specifics when asked behavioral interview questions",
+    "title": "Turn my past work into STAR-method stories I can pull from in any interview",
+    "intentLabels": [
+      "star method examples",
+      "behavioral interview story bank",
+      "turn resume into interview stories",
+      "star format answers"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://skillsfirst.com/solutions/elevator-pitch-builder",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Walk through your resume project by project and ask the chatbot to help you structure each one into a Situation-Task-Action-Result story. Building this story bank once means you're pulling from prepared material in the interview instead of improvising a structure under pressure.",
+    "samplePrompt": "Here's my resume. For my 3 most significant achievements, help me structure each one into a STAR-format story (Situation, Task, Action, Result) I can use to answer behavioral interview questions like 'tell me about a time you solved a difficult problem.'",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "resume-in, structured stories out",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://skillsfirst.com/solutions/elevator-pitch-builder",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-75db304f3b",
+    "slug": "write-a-short-personal-positioning-tagline-for-my-resume-header",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker whose resume header and bios all say something slightly different",
+    "title": "Write a short personal positioning tagline for my resume header and bios",
+    "intentLabels": [
+      "personal tagline generator",
+      "professional positioning statement",
+      "resume headline tagline",
+      "personal brand statement"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the tool your target role and 2-3 things that set you apart and ask for several short tagline options (under 10 words), the kind that goes under your name on a resume header or as a LinkedIn headline. Pick one and use it consistently across your resume, LinkedIn, and personal website so your positioning doesn't shift between materials.",
+    "samplePrompt": "I'm targeting [role/field] and my strongest differentiators are [list 2-3 things]. Give me 5 short tagline options (under 10 words each) I could use under my name on a resume header or as a personal positioning statement - avoid generic buzzwords like 'results-driven' or 'passionate.'",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt produces several options to choose from",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-30",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-b105e3cf92",
+    "slug": "check-and-clean-up-what-shows-up-when-someone-searches-my-name",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker worried about what an interviewer will find when they search their name",
+    "title": "Check and clean up what shows up when someone searches my name online",
+    "intentLabels": [
+      "google yourself before interview",
+      "clean up online presence job search",
+      "what do recruiters see when they search my name",
+      "personal digital footprint audit"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Search your own name the way a recruiter would, note what comes up (old social posts, unrelated namesakes, outdated info), then paste that summary into a chatbot and ask it to help you decide what to update, hide, or ignore - and to draft updated bios for the profiles that actually show up on page one.",
+    "samplePrompt": "Here's what comes up when I search my own name: [list what you found]. Help me figure out which of these actually matter for a job search, which I should update or make private, and draft an updated one-line bio for the top 2 profiles that show up.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the searching is manual; the chatbot helps you decide what to do with what you find",
+    "trustScore": 2,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-30",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-aa3b599e43",
+    "slug": "write-the-about-page-copy-for-a-personal-website",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker building or refreshing a personal website",
+    "title": "Write the 'About' page copy for a personal website",
+    "intentLabels": [
+      "personal website about page",
+      "write about me page",
+      "personal website copywriting",
+      "portfolio site bio content"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the chatbot your resume and describe the tone you want (warm, direct, playful) and it drafts About-page copy structured around what you do, who you help, and how to work with or hire you - the actual words to paste into the site-builder tool, rather than the site itself.",
+    "samplePrompt": "Write the copy for the 'About' page of my personal website. Here's my resume and background: [paste]. Tone: [e.g. warm but professional]. Structure it around what I do, who I help, and a call to action at the end (e.g. 'let's talk'). Keep it under 250 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a resume and a tone preference produce ready copy",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://spicyautocorrect.com/posts/personal-ai-branding-managing-your-online-presence/",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-30",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-4dedb2f2cb",
+    "slug": "prepare-talking-points-for-an-informational-interview-or",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Career changer setting up a coffee chat with someone in their target field",
+    "title": "Prepare talking points for an informational interview or networking coffee chat",
+    "intentLabels": [
+      "informational interview questions",
+      "networking coffee chat prep",
+      "what to ask in an informational interview",
+      "career exploration conversation"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.workingcareer.co.uk/career-resources/ai-career-change",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the tool the person's role/industry and your own goal for the conversation (exploring a pivot, learning about a company, building a contact). It drafts a short list of genuine, non-generic questions suited to that specific conversation, so you're not asking 'what's a day in your life like' to someone who's answered that thirty times.",
+    "samplePrompt": "I'm having an informational interview with a [their role] at [company/industry] to learn about pivoting into [target field]. Suggest 5 specific, non-generic questions I could ask, plus a short opening line to explain why I reached out.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with context produces usable questions",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.workingcareer.co.uk/career-resources/ai-career-change",
+    "sourceType": "Blog post",
+    "freshness": "2025-10-30",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-27fe061494",
+    "slug": "ask-a-colleague-to-write-me-a-linkedin-recommendation",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who wants social proof on their LinkedIn profile",
+    "title": "Ask a colleague to write me a LinkedIn recommendation",
+    "intentLabels": [
+      "how to ask for linkedin recommendation",
+      "request recommendation from coworker",
+      "linkedin recommendation message",
+      "ask for endorsement"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.viralbrain.ai/blog/best-linkedin-profile-optimization-tools",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the tool your relationship to the person and 1-2 things you'd like them to mention (a project, a skill), and it drafts a short, easy-to-say-yes-to request that also gives your colleague a starting point, since most people freeze up writing recommendations from a blank page.",
+    "samplePrompt": "I want to ask my former colleague [name] for a LinkedIn recommendation. We worked together on [project/context] and I'd love if they could mention [specific skill or outcome]. Draft a short, low-pressure request message, plus 2-3 bullet points I could offer as a starting point for them to build on.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with names and context produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.viralbrain.ai/blog/best-linkedin-profile-optimization-tools",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-06-22",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-3e44db1bb0",
+    "slug": "turn-a-project-i-m-proud-of-into-a-portfolio-case-study",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker in a portfolio-driven field (design, marketing, product, writing)",
+    "title": "Turn a project I'm proud of into a portfolio case study",
+    "intentLabels": [
+      "how to write a case study for portfolio",
+      "turn project into case study",
+      "portfolio writeup template",
+      "showcase work sample"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://portfoliovideo.com/blog/linkedin-intro-video-tips-for-profile-branding",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Walk the chatbot through what the project was, the problem, your role, and the outcome, and it structures that into a case-study format (context, challenge, approach, result) you can drop into a portfolio site or PDF - the writing, not the site design, which is the harder part for most non-designers.",
+    "samplePrompt": "Help me turn this project into a portfolio case study: [describe the project, your role, the problem, and the outcome]. Structure it as: Context, Challenge, My Approach, Result - and suggest one strong visual or metric I should highlight if I have one.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a project description produces a structured write-up",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://portfoliovideo.com/blog/linkedin-intro-video-tips-for-profile-branding",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-22",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-16ff2a0d7c",
+    "slug": "prepare-a-60-second-self-introduction-for-a-career-fair-or",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker about to walk into a career fair or industry mixer",
+    "title": "Prepare a 60-second self-introduction for a career fair or networking event",
+    "intentLabels": [
+      "career fair elevator pitch",
+      "networking event introduction script",
+      "job fair self introduction",
+      "60 second pitch"
+    ],
+    "tools": [
+      {
+        "name": "Careerflow.ai AI Elevator Pitch Generator",
+        "url": "https://help.careerflow.ai/en/articles/9012634-using-the-ai-elevator-pitch-generator"
+      },
+      {
+        "name": "ChatGPT",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Generate a slightly longer, more conversational version of your elevator pitch specifically for a face-to-face setting - who you are, what you're looking for, and one thing that makes you memorable - and practice saying it out loud a few times so it doesn't come out sounding memorized.",
+    "samplePrompt": "Write a 60-second self-introduction I can say out loud at a career fair. Include who I am, what type of role I'm looking for, and one specific, memorable detail about my background - conversational, not like reading a résumé.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt produces a ready script to rehearse",
+    "trustScore": 3,
+    "pricingNote": "Careerflow.ai: free tier with paid upgrades; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://help.careerflow.ai/en/articles/9012634-using-the-ai-elevator-pitch-generator",
+    "sourceType": "Product help doc",
+    "freshness": "2026-01-09",
+    "accessNotes": "Public help doc; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-571f6bbb26",
+    "slug": "record-a-short-polished-video-introduction-for-linkedin-or-a",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker applying to roles that ask for a video introduction",
+    "title": "Record a short, polished video introduction for LinkedIn or a video-first job application",
+    "intentLabels": [
+      "linkedin intro video",
+      "video cover letter maker",
+      "ai video resume",
+      "one way video interview prep"
+    ],
+    "tools": [
+      {
+        "name": "PortfolioVideo",
+        "url": "https://portfoliovideo.com/blog/linkedin-intro-video-tips-for-profile-branding"
+      },
+      {
+        "name": "SkillsFirst Elevator Pitch Builder (video mode)"
+      }
+    ],
+    "workflowSummary": "Write a short script first (who you are, what you're known for, what you're looking for), then record it in the tool, which can clean up background, add captions, and trim it to a tight length - since most video-first applications and LinkedIn intro clips work best under 60-90 seconds.",
+    "samplePrompt": "Write a 45-second video script for a LinkedIn intro / video application: an opening line that isn't 'hi, I'm...', a quick summary of what I do, and a closing line about what I'm looking for. Make it sound spoken, not written.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "scripting is easy with AI help, but being on camera takes a few takes for most people",
+    "trustScore": 2,
+    "pricingNote": "PortfolioVideo and SkillsFirst pricing not fully stated on source pages - verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://portfoliovideo.com/blog/linkedin-intro-video-tips-for-profile-branding",
+    "sourceType": "Blog post",
+    "freshness": "2026-05-22",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-c9441f798a",
+    "slug": "design-a-simple-personal-logo-or-monogram-for-my-resume-and",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker or freelancer who wants a small personal mark for their resume, email signature, or site",
+    "title": "Design a simple personal logo or monogram for my resume and website header",
+    "intentLabels": [
+      "personal monogram logo maker",
+      "free logo for resume",
+      "initials logo generator",
+      "personal brand mark"
+    ],
+    "tools": [
+      {
+        "name": "Canva Free Monogram Maker",
+        "url": "https://www.canva.com/create/monograms/"
+      }
+    ],
+    "workflowSummary": "Enter your initials and pick a style; the AI-assisted editor arranges them into a clean monogram you can customize (font, color, layout) and export as an image - useful as a small personal mark for a resume header, email signature, or personal website, without hiring a designer for something this simple.",
+    "samplePrompt": "N/A - this is a template-and-customize tool used directly rather than a text prompt; the workflow is: enter your initials, pick a monogram style, adjust font and color, and download the image for reuse across your resume, site, and email signature.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based with no design experience needed",
+    "trustScore": 2,
+    "pricingNote": "Canva: free tier covers this; Magic Studio AI features may require a paid plan - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.canva.com/create/monograms/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch3 Branding",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-03a73edbc8",
+    "slug": "translate-military-experience-mos-rank-into-a-civilian-resume",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Veteran or transitioning service member",
+    "title": "Translate military experience (MOS/rank) into a civilian resume",
+    "intentLabels": [
+      "military to civilian resume",
+      "translate MOS to civilian job",
+      "veteran resume builder",
+      "convert rank to job title"
+    ],
+    "tools": [
+      {
+        "name": "BestMilitaryResume (Scout Resume Builder)",
+        "url": "https://bestmilitaryresume.com/military-resume-builder"
+      },
+      {
+        "name": "Careerflow Veteran Resume Builder"
+      }
+    ],
+    "workflowSummary": "Enter your MOS/AFSC/rating code and branch. The tool converts military acronyms, rank structures, and jargon into civilian job titles and business language, and suggests ways to quantify achievements (team size, budget, readiness metrics) the way a civilian hiring manager expects to see them.",
+    "samplePrompt": "Here is my military role: [MOS/rank/branch and a description of duties in military terms]. Rewrite this as 2-3 civilian resume bullet points using the STAR method, quantify the impact where possible, and avoid any military jargon or acronyms a civilian recruiter wouldn't recognize.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter your MOS/role and get a civilian translation with no military-to-civilian knowledge needed",
+    "trustScore": 3,
+    "pricingNote": "BestMilitaryResume: some tools free, resume builder from ~$10; Careerflow: free tier with paid upgrades - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://bestmilitaryresume.com/military-resume-builder",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-7b881e1e86",
+    "slug": "write-a-federal-resume-for-usajobs",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker applying to a U.S. federal government position",
+    "title": "Write a federal resume for USAJOBS",
+    "intentLabels": [
+      "federal resume builder",
+      "USAJOBS resume format",
+      "OPM compliant resume",
+      "how to write a federal resume"
+    ],
+    "tools": [
+      {
+        "name": "GovRes",
+        "url": "https://www.govres.ai/"
+      },
+      {
+        "name": "jobsmatchpro"
+      }
+    ],
+    "workflowSummary": "Paste the USAJOBS announcement link or control number. The tool identifies exactly what the hiring agency is screening for, then asks guided questions to make sure your resume includes required fields (hours per week, supervisor contact, salary history) that a private-sector resume skips but a federal one requires - producing a résumé formatted to the current 2-page OPM standard.",
+    "samplePrompt": "Here is a USAJOBS job announcement: [paste text or link]. Based on the duties and qualifications listed, tell me which of my existing resume bullet points are strong matches, which federal-specific fields I'm missing (hours per week, supervisor, salary), and rewrite my top 3 bullets using the federal CCAR format (Challenge, Context, Action, Result).",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "federal resumes have unusual required fields most first-time applicants don't know to include",
+    "trustScore": 3,
+    "pricingNote": "GovRes: pricing not fully stated on source page; jobsmatchpro: has a free tier - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.govres.ai/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-bddd628f47",
+    "slug": "find-companies-that-sponsor-a-u-s-work-visa",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "International candidate who needs work-visa sponsorship",
+    "title": "Find companies that sponsor a U.S. work visa",
+    "intentLabels": [
+      "H1B sponsorship jobs",
+      "companies that sponsor visa",
+      "international candidate job search",
+      "visa sponsor employer list"
+    ],
+    "tools": [
+      {
+        "name": "FrogHire.ai",
+        "url": "https://migratemate.co/blog/best-ai-job-search-tools"
+      },
+      {
+        "name": "Migrate Mate"
+      }
+    ],
+    "workflowSummary": "The tool overlays sponsorship history directly on job listings on sites like LinkedIn and Indeed, pulling from public government filing data (like the Department of Labor's LCA filings) so you can see an employer's actual sponsorship track record before spending hours applying to a role that will never sponsor you.",
+    "samplePrompt": "N/A - this is a browser extension/platform used directly rather than a text prompt; the workflow is: install the tool, browse job listings as usual, and check the sponsorship-history overlay on each posting before applying.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "installs as a browser extension and overlays info automatically",
+    "trustScore": 3,
+    "pricingNote": "FrogHire.ai: free with premium tier; Migrate Mate: check current pricing - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://migratemate.co/blog/best-ai-job-search-tools",
+    "sourceType": "Blog / product roundup",
+    "freshness": "2026-06-15",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-48e850b8a0",
+    "slug": "find-and-prepare-for-a-returnship-or-re-entry-program-after-a",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker returning to the workforce after an extended career break",
+    "title": "Find and prepare for a returnship or re-entry program after a career break",
+    "intentLabels": [
+      "returnship programs",
+      "career re-entry program",
+      "return to work after career break",
+      "returnship application"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.hrlens.io/articles/best-returnship-programs-2026-guide",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "HRLens CV analyzer"
+      }
+    ],
+    "workflowSummary": "Research which major returnship programs (paid, 10-16 week, often converting to full-time) fit your field and break length, then use a resume analyzer to check your CV is ATS-compatible before applying - most of these programs run through the same application systems as any other corporate job posting.",
+    "samplePrompt": "I've been out of the workforce for [length] due to [reason, e.g. caregiving]. My background is in [field]. Help me identify what a returnship program in this field would likely look for, and draft a short paragraph I could use in an application explaining my break and readiness to return.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the concept and application prep need no special tool beyond a resume checker and a chatbot",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude; HRLens CV analysis is free - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.hrlens.io/articles/best-returnship-programs-2026-guide",
+    "sourceType": "Blog post",
+    "freshness": "2026-08-10",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-5d66c89046",
+    "slug": "translate-a-phd-or-postdoc-academic-cv-into-an-industry-resume",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "PhD or postdoc considering a move out of academia",
+    "title": "Translate a PhD or postdoc academic CV into an industry resume",
+    "intentLabels": [
+      "academic CV to industry resume",
+      "alt-ac career transition",
+      "phd to industry resume",
+      "postdoc leaving academia"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.alma.me/blog/How_to_Translate_Your_Academic_CV_to_an_Industry_Ready_Resume_A_Guide_for_PhDs%C2%A0",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Give the chatbot your academic CV and ask it to condense it from a comprehensive, multi-page document into a focused 1-2 page industry resume - cutting publication lists and conference talks down to a line or two, and reframing research skills (grant writing, data analysis, project leadership) in language an industry hiring manager recognizes.",
+    "samplePrompt": "Here is my academic CV: [paste]. Rewrite it as a 1-2 page industry resume for a [target industry/role] position. Condense my publications to a single 'Selected Publications' line, translate my research and grant experience into business language, and lead with transferable skills like project management and data analysis.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a CV paste produces a full first-draft industry resume",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.alma.me/blog/How_to_Translate_Your_Academic_CV_to_an_Industry_Ready_Resume_A_Guide_for_PhDs%C2%A0",
+    "sourceType": "Blog post",
+    "freshness": "2024-04-18",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f1dcc137a1",
+    "slug": "present-decades-of-experience-without-looking-overqualified-or",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker over 50 worried about age bias in resume screening",
+    "title": "Present decades of experience without looking 'overqualified' or getting flagged by an AI screener",
+    "intentLabels": [
+      "resume for older workers",
+      "avoid age discrimination resume",
+      "overqualified how to answer",
+      "AI hiring bias older candidates"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://stylingcv.com/blog/resume-for-older-workers-2026-beat-age-bias-land-interviews/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Ask the chatbot to help condense a long career into a resume that leads with the most recent 10-15 years of relevant experience, removes graduation years, and folds earlier roles into a single summarized line - standard practice that reduces how easily an automated screener flags 'too many years of experience' as a mismatch, without hiding or misrepresenting anything.",
+    "samplePrompt": "Here is my resume, which spans [X] years. Help me condense it to focus on the most recent 10-15 years, fold my earliest roles into a single 'Early Career' summary line, and remove any dates that aren't necessary - without misrepresenting my actual experience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a resume paste produces a condensed, ready-to-review version",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://stylingcv.com/blog/resume-for-older-workers-2026-beat-age-bias-land-interviews/",
+    "sourceType": "Blog post",
+    "freshness": "2026-08-19",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-b818ceee95",
+    "slug": "find-fully-remote-only-jobs",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who specifically wants a fully remote role, not just 'remote-friendly'",
+    "title": "Find fully remote-only jobs",
+    "intentLabels": [
+      "fully remote jobs only",
+      "remote job board",
+      "work from anywhere job search",
+      "100% remote positions"
+    ],
+    "tools": [
+      {
+        "name": "Himalayas",
+        "url": "https://himalayas.app/"
+      }
+    ],
+    "workflowSummary": "Search a job board built specifically around remote roles (rather than a general board with a remote filter that often includes hybrid listings), and use its built-in tools to research which companies are genuinely distributed teams versus requiring occasional office presence, before generating a resume and cover letter tailored to a specific remote posting.",
+    "samplePrompt": "N/A - this is a job board browsed directly rather than a text prompt; the workflow is: search or filter by role and location on the remote-specific board, and use the built-in resume/cover-letter tools on listings you want to apply to.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to browse and search",
+    "trustScore": 3,
+    "pricingNote": "Free to browse; some AI features may require an account - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://himalayas.app/",
+    "sourceType": "Product page",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-6116468de7",
+    "slug": "find-a-job-that-fits-how-my-neurodivergent-brain-works",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Neurodivergent job seeker (autistic, ADHD, or otherwise) evaluating job fit",
+    "title": "Find a job that fits how my neurodivergent brain works",
+    "intentLabels": [
+      "neurodivergent friendly jobs",
+      "autism ADHD job search",
+      "workplace fit assessment",
+      "neuroinclusive employers"
+    ],
+    "tools": [
+      {
+        "name": "Raaha",
+        "url": "https://www.disabled-world.com/disability/employment/raaha.php"
+      },
+      {
+        "name": "Mentra"
+      }
+    ],
+    "workflowSummary": "Instead of guessing which companies are 'neurodivergent-friendly' from vague diversity statements, these tools compare a specific job description against how you actually prefer to work (sensory needs, communication style, structure vs. flexibility) and return a fit score plus specific questions to ask before you apply or accept.",
+    "samplePrompt": "N/A - these are assessment tools used directly rather than a text prompt; the workflow is: enter a job description and your own working-style preferences, and review the fit score and suggested questions the tool returns.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "Raaha is free and needs no account to try",
+    "trustScore": 3,
+    "pricingNote": "Raaha: free; Mentra: free to job seekers - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.disabled-world.com/disability/employment/raaha.php",
+    "sourceType": "Blog post",
+    "freshness": "2026-07-18",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-5827ec4c56",
+    "slug": "find-part-time-or-flexible-jobs-compatible-with-caregiving",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Parent or caregiver who needs work around childcare or caregiving responsibilities",
+    "title": "Find part-time or flexible jobs compatible with caregiving",
+    "intentLabels": [
+      "flexible jobs for parents",
+      "part-time remote jobs caregivers",
+      "caregiver friendly job board",
+      "schedule flexible work"
+    ],
+    "tools": [
+      {
+        "name": "Flex For Parents",
+        "url": "https://flexforparents.com/"
+      },
+      {
+        "name": "Side Gig Radar"
+      }
+    ],
+    "workflowSummary": "Browse a job board that's pre-filtered for genuinely flexible-schedule, part-time, async, or contract roles (rather than a general board where 'flexible' is just marketing language), organized by category so you can search customer support, design, or engineering roles specifically built around non-traditional hours.",
+    "samplePrompt": "N/A - this is a job board browsed directly rather than a text prompt; the workflow is: filter by role category and browse listings pre-screened for genuinely flexible or part-time schedules.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free to browse, no account required to see listings",
+    "trustScore": 3,
+    "pricingNote": "Both boards: free to browse - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://flexforparents.com/",
+    "sourceType": "Product page",
+    "freshness": "2026-07-07",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-273f080718",
+    "slug": "find-a-trade-or-union-apprenticeship-program",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Career changer or recent grad interested in a skilled trade instead of an office job",
+    "title": "Find a trade or union apprenticeship program",
+    "intentLabels": [
+      "find an apprenticeship",
+      "union apprenticeship search",
+      "skilled trades career change",
+      "apprenticeship.gov"
+    ],
+    "tools": [
+      {
+        "name": "Apprenticeship.gov Job Finder",
+        "url": "https://www.apprenticeship.gov/apprenticeship-job-finder"
+      },
+      {
+        "name": "AdultSkilledTrades.com"
+      }
+    ],
+    "workflowSummary": "Search the federal Apprenticeship Finder by trade and location to see registered, paid apprenticeship openings (earn-while-you-learn, no tuition debt) directly from employers and program sponsors, and cross-check with a trade-specific directory that filters by schedule, cost, and veteran/career-changer funding paths.",
+    "samplePrompt": "N/A - these are directory/search tools used directly rather than a text prompt; the workflow is: search by trade and location on the Apprenticeship Finder, then apply directly with the employer or program sponsor listed.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, government-run tool with no account required to search",
+    "trustScore": 3,
+    "pricingNote": "Apprenticeship.gov: free, official U.S. government service; AdultSkilledTrades.com: free to browse - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.apprenticeship.gov/apprenticeship-job-finder",
+    "sourceType": "Government directory",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public government site; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f7586c3c24",
+    "slug": "find-a-well-paying-job-that-doesn-t-require-a-college-degree",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Career changer without a 4-year degree, or who doesn't want one to be a barrier",
+    "title": "Find a well-paying job that doesn't require a college degree",
+    "intentLabels": [
+      "jobs without a degree",
+      "skills-based hiring",
+      "no degree required careers",
+      "high paying jobs no college"
+    ],
+    "tools": [
+      {
+        "name": "SkillUp Coalition",
+        "url": "https://skillup.org/resources/ai-job-search-tools"
+      }
+    ],
+    "workflowSummary": "Browse a free job board where listings are human-verified against wage standards and no-degree criteria before they're posted, rather than an AI-matching tool that optimizes for volume of results regardless of whether the pay is livable - and explore short-term training tied to specific no-degree career paths.",
+    "samplePrompt": "N/A - this is a job board browsed directly rather than a text prompt; the workflow is: create a free profile, explore no-degree career paths, and browse the pre-screened job board.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "entirely free with a simple profile setup",
+    "trustScore": 3,
+    "pricingNote": "Free - nonprofit-run service",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://skillup.org/resources/ai-job-search-tools",
+    "sourceType": "Product page / nonprofit resource",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Public product page; nonprofit resource, note this in any published listing",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-37ea6154fa",
+    "slug": "find-civilian-jobs-that-value-my-active-security-clearance",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Veteran or former government employee with an active security clearance",
+    "title": "Find civilian jobs that value my active security clearance",
+    "intentLabels": [
+      "security clearance jobs",
+      "jobs for cleared veterans",
+      "where to use my clearance civilian job",
+      "clearance friendly employer"
+    ],
+    "tools": [
+      {
+        "name": "Vet2Hire",
+        "url": "https://vet2hire.com/"
+      },
+      {
+        "name": "ChatGPT",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Use a veteran-focused job network to search for and be discovered by employers specifically looking for cleared candidates, and add your clearance level and status to your profile since 'clearance friendly' roles (defense contracting, intelligence-adjacent tech) often pay a premium for candidates who don't need a fresh, lengthy investigation.",
+    "samplePrompt": "I hold a [clearance level] clearance from my time in [military/government role]. Help me identify which civilian industries and job titles most commonly seek candidates with an active clearance at my level, and how to phrase that clearance status on my resume and LinkedIn profile.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt about clearance level and background produces useful direction",
+    "trustScore": 3,
+    "pricingNote": "Vet2Hire: free to job seekers; ChatGPT/Claude free tiers available - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://vet2hire.com/",
+    "sourceType": "Product page",
+    "freshness": "2026-02-15",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-ea286b40dc",
+    "slug": "request-a-reasonable-accommodation-during-the-interview-process",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker with a disability or neurodivergent need going into an interview process",
+    "title": "Request a reasonable accommodation during the interview process",
+    "intentLabels": [
+      "ask for interview accommodation",
+      "disability accommodation job interview",
+      "how to request accommodations ADA",
+      "neurodivergent interview request"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://career.auburn.edu/blog/2025/12/03/unlocking-potential-how-ai-and-workplace-rights-empower-neurodivergent-employees/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Draft a short, direct request to HR or the recruiter before the interview - asking for something specific (questions in advance, extra time, a quiet room, written follow-up) rather than a vague request, since under the ADA (US) and similar laws elsewhere, employers must provide reasonable accommodations to qualified candidates who ask.",
+    "samplePrompt": "I have [a disability/neurodivergent condition] and would like to request [specific accommodation, e.g. interview questions in advance] for my upcoming interview. Draft a short, professional email to the recruiter making this request - direct and matter-of-fact, not over-explained or apologetic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with the specific need produces a ready draft",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://career.auburn.edu/blog/2025/12/03/unlocking-potential-how-ai-and-workplace-rights-empower-neurodivergent-employees/",
+    "sourceType": "Blog post",
+    "freshness": "2025-12-03",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-ccc946c1db",
+    "slug": "juggle-multiple-simultaneous-interview-processes-without",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker actively interviewing at several companies at once",
+    "title": "Juggle multiple simultaneous interview processes without missing deadlines or mixing up details",
+    "intentLabels": [
+      "managing multiple job interviews",
+      "tracking several job offers timeline",
+      "juggling interview processes",
+      "multiple interview loops at once"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.jobfinder-ai.com/blog/job-application-tracking-software",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "List out every active process (company, stage, next deadline, key people, what you told them) and ask the chatbot to help you build a simple tracking structure and flag any timeline conflicts - useful when you're trying to time multiple offers to land close together, or simply avoid the embarrassment of confusing one company's details with another's in an email.",
+    "samplePrompt": "I'm actively interviewing at these companies: [list company, stage, and next deadline for each]. Help me spot any scheduling conflicts or timing issues, and suggest how I might politely ask one company to speed up or slow down their process to align timelines with the others.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "listing out the details produces a clear structure and conflict check",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jobfinder-ai.com/blog/job-application-tracking-software",
+    "sourceType": "Blog post",
+    "freshness": "2026-09-06",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch4 EdgeCases",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-5adfa9b83e",
+    "slug": "decide-whether-a-paid-auto-apply-service-is-worth-it-or-use-a",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker deciding how to spend money and time on volume-applying",
+    "title": "Decide whether a paid 'auto-apply' service is worth it, or use a free autofill tool instead",
+    "intentLabels": [
+      "is auto apply worth it",
+      "LazyApply reddit review",
+      "auto apply services worth paying for",
+      "mass apply to jobs AI"
+    ],
+    "tools": [
+      {
+        "name": "Teal",
+        "url": "https://www.teamblind.com/post/best-auto-apply-tools-for-linkedin-company-sites-247buxr1"
+      }
+    ],
+    "workflowSummary": "Community discussion is split: free autofill tools that still require you to click submit each time get consistently good reviews, while fully autonomous paid auto-apply services get mixed-to-skeptical reviews - several experienced users report their actual interviews still came from roles they tailored and applied to manually, not the auto-applied batch. Start with a free autofill tool; treat paid full-automation as an experiment, not a guaranteed shortcut.",
+    "samplePrompt": "I'm deciding whether to pay for a full auto-apply service or use a free autofill extension and apply manually. Given that auto-applied resumes usually aren't tailored per job, help me think through the tradeoff for my situation: [describe your field, how many roles you're targeting, and how much time you have].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the decision itself is simple; the tools involved need minimal setup",
+    "trustScore": 3,
+    "pricingNote": "Teal and Simplify.jobs: free; paid auto-apply services run $30-100+/month - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.teamblind.com/post/best-auto-apply-tools-for-linkedin-company-sites-247buxr1",
+    "sourceType": "Forum thread (Blind)",
+    "freshness": "n/a - recent thread, accessed 2026-09-09",
+    "accessNotes": "Community forum thread; summarize sentiment only, do not quote individual posters verbatim",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f8396c5343",
+    "slug": "quickly-autofill-repetitive-fields-across-many-job-application",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker applying to many roles who's tired of retyping the same fields",
+    "title": "Quickly autofill repetitive fields across many job application forms",
+    "intentLabels": [
+      "job application autofill extension",
+      "fill out job applications faster",
+      "chrome extension job apply",
+      "auto fill resume info"
+    ],
+    "tools": [
+      {
+        "name": "Simplify.jobs",
+        "url": "https://www.aitooldiscovery.com/guides/ai-job-search-tools-reddit"
+      }
+    ],
+    "workflowSummary": "Install the free Chrome extension and fill out your profile once (contact info, work history, education, common screening-question answers). It then detects and fills matching fields on most major ATS platforms (Greenhouse, Lever, Workday) as you click through applications manually - you still review and submit each one, so tailoring stays in your control.",
+    "samplePrompt": "N/A - this is a browser extension used directly rather than a text prompt; the workflow is: fill out your profile once in the extension, then browse and apply to jobs as usual while it autofills repetitive fields.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free install, one-time profile setup",
+    "trustScore": 4,
+    "pricingNote": "Free - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.aitooldiscovery.com/guides/ai-job-search-tools-reddit",
+    "sourceType": "Blog post (Reddit-sourced roundup)",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-f98e06375f",
+    "slug": "check-whether-a-job-listing-is-a-real-ghost-job-with-no-genuine",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who's spent hours prepping for a role that may not actually be open",
+    "title": "Check whether a job listing is a real 'ghost job' with no genuine intent to hire",
+    "intentLabels": [
+      "is this a ghost job",
+      "ghost job checker",
+      "job posting never filled",
+      "fake job listing no intent to hire"
+    ],
+    "tools": [
+      {
+        "name": "GhostJobs.io",
+        "url": "https://www.rezi.ai/posts/ghost-jobs"
+      }
+    ],
+    "workflowSummary": "Paste or search a company/listing to see if it has a track record of postings that stay open for months, get reposted repeatedly, or never result in a hire - a different problem than an outright scam listing, since the company and role are real, but the posting may exist to build a talent pipeline or satisfy an HR requirement rather than fill an actual opening now.",
+    "samplePrompt": "N/A - this is a lookup tool used directly rather than a text prompt; the workflow is: check a company or listing against the tool's tracked posting history before investing time tailoring an application.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free lookup with no account required",
+    "trustScore": 3,
+    "pricingNote": "Free - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.rezi.ai/posts/ghost-jobs",
+    "sourceType": "Blog post",
+    "freshness": "2025-07-08",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-36c4ec4bce",
+    "slug": "check-whether-a-recruiter-message-on-linkedin-is-a-real-person",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker contacted out of the blue by someone claiming to be a recruiter",
+    "title": "Check whether a recruiter message on LinkedIn is a real person or a scam/bot",
+    "intentLabels": [
+      "is this recruiter real",
+      "fake recruiter linkedin",
+      "verify recruiter legitimacy",
+      "linkedin recruiter scam check"
+    ],
+    "tools": [
+      {
+        "name": "JobScamScore",
+        "url": "https://www.teamblind.com/post/how-to-tell-a-fake-recruiter-kxdpwszh"
+      }
+    ],
+    "workflowSummary": "Paste the recruiter's message, name, and any company/role details into the checker to cross-reference against known scam patterns. Community discussion consistently points to the same manual checks alongside any tool: ask for a company email address (not a generic Gmail), do a reverse-image search on their profile photo, and be wary of any recruiter who wants to move the conversation off-platform quickly.",
+    "samplePrompt": "A recruiter messaged me on LinkedIn claiming to be hiring for [role] at [company]. Here's what they said: [paste message]. What red or green flags do you see in how they're approaching this, and what should I ask them to verify they're legitimate before I share any personal information?",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free scan, no account required",
+    "trustScore": 3,
+    "pricingNote": "Free - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.teamblind.com/post/how-to-tell-a-fake-recruiter-kxdpwszh",
+    "sourceType": "Forum thread (Blind)",
+    "freshness": "n/a - recent thread, accessed 2026-09-09",
+    "accessNotes": "Community forum thread; summarize sentiment only, do not quote individual posters verbatim",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-b03e507af8",
+    "slug": "check-whether-my-resume-or-cover-letter-reads-as-obviously-ai",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker worried their AI-assisted resume or cover letter reads as generic or machine-written",
+    "title": "Check whether my resume or cover letter reads as obviously AI-written before I submit it",
+    "intentLabels": [
+      "does my resume sound like AI wrote it",
+      "AI detector resume",
+      "humanize AI cover letter",
+      "avoid sounding like chatgpt"
+    ],
+    "tools": [
+      {
+        "name": "Walter Writes AI",
+        "url": "https://walterwrites.ai/ai-humanizer/job-applications/"
+      }
+    ],
+    "workflowSummary": "Paste a draft you wrote with AI help into the checker. It scores how 'AI-sounding' the text reads (repetitive structure, generic phrasing, unnatural polish) and suggests rewrites that keep your real content but read more like something you'd actually say - useful because recruiters increasingly report being able to spot generic AI output, and a document that sounds like everyone else's hurts more than a slightly rougher one that sounds like you.",
+    "samplePrompt": "Here is a cover letter paragraph I drafted with AI help: [paste]. Rewrite it so it sounds like something I'd actually say out loud - vary the sentence length, cut generic phrases like 'passionate about' or 'proven track record,' and keep it specific to my real experience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste-and-check workflow with no setup",
+    "trustScore": 2,
+    "pricingNote": "Check current pricing - not fully stated on source page; verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://walterwrites.ai/ai-humanizer/job-applications/",
+    "sourceType": "Product page",
+    "freshness": "2026-05-20",
+    "accessNotes": "Public product page; do not reproduce site text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-55de6f5736",
+    "slug": "cold-email-a-hiring-manager-or-founder-at-a-company-that-isn-t",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker targeting specific companies that aren't actively posting a matching role",
+    "title": "Cold-email a hiring manager or founder at a company that isn't actively posting a role",
+    "intentLabels": [
+      "cold email hiring manager",
+      "hidden job market outreach",
+      "email company not hiring",
+      "reach out before job is posted"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.jobfinder-ai.com/blog/hidden-job-market-explained",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      },
+      {
+        "name": "PitchHired"
+      }
+    ],
+    "workflowSummary": "Identify the hiring manager or team lead (not HR generally) at a company you'd genuinely want to work for, and draft a short, specific email explaining why you're reaching out even though nothing is posted - most of the job market is filled through exactly this kind of outreach before a role is ever advertised. A dedicated tool can help find verified contact emails at scale if you're targeting many companies at once.",
+    "samplePrompt": "I want to cold-email the [role, e.g. Head of Design] at [company] even though they aren't currently hiring. Here's why I'm interested in their work: [specific reason]. Draft a short (under 150 words) email that's specific to them, not a generic template, and doesn't sound desperate or presumptuous.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a short prompt with a specific reason produces a usable draft",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for ChatGPT/Claude; PitchHired: pay-as-you-go credits - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jobfinder-ai.com/blog/hidden-job-market-explained",
+    "sourceType": "Blog post",
+    "freshness": "2026-06-08",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-cd5cc73f8b",
+    "slug": "find-real-interview-questions-a-specific-company-has-actually",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker who wants to practice with real, not generic, interview questions",
+    "title": "Find real interview questions a specific company has actually asked candidates",
+    "intentLabels": [
+      "what questions does [company] ask in interviews",
+      "real interview questions by company",
+      "company-specific interview prep",
+      "glassdoor interview questions"
+    ],
+    "tools": [
+      {
+        "name": "Glassdoor Interview Questions",
+        "url": "https://www.teamblind.com/post/fake-tiktok-recruiters-0tw0gozd"
+      },
+      {
+        "name": "community-sourced question threads (e.g. Blind)"
+      }
+    ],
+    "workflowSummary": "Search the specific company and role on Glassdoor's Interview Questions section, where past candidates report the actual questions they were asked. Cross-check against relevant threads on professional forums for a second data point, since any single source can be dated or unrepresentative - then practice those specific questions rather than only generic behavioral prompts.",
+    "samplePrompt": "Here are real interview questions previous candidates reported being asked for a [role] at [company]: [paste 3-5 from Glassdoor]. Help me draft a strong answer outline for each, tailored to my actual background: [paste relevant resume details].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "searching and reading requires no special skill",
+    "trustScore": 3,
+    "pricingNote": "Glassdoor: free to browse with an account; Blind: free to browse - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.teamblind.com/post/fake-tiktok-recruiters-0tw0gozd",
+    "sourceType": "Forum context (Blind, general platform use)",
+    "freshness": "n/a - accessed 2026-09-09",
+    "accessNotes": "Community forum; summarize sentiment only, do not quote individual posters verbatim",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  },
+  {
+    "id": "job-seekers-career-changers-7dc157878d",
+    "slug": "decide-whether-and-how-to-mention-using-ai-tools-if-it-comes-up",
+    "kind": "workflow",
+    "niche": "Job Seekers-Career Changers",
+    "sector": "Job Seekers / Career Changers",
+    "persona": "Job seeker unsure how open to be about using AI tools during their search",
+    "title": "Decide whether and how to mention using AI tools if it comes up in an interview",
+    "intentLabels": [
+      "should i tell interviewer i used AI",
+      "disclose AI use job search",
+      "is using chatgpt for job search bad",
+      "AI use interview question"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://www.thehrdigest.com/everyone-knows-candidates-are-using-ai-to-cheat-tech-interviews/",
+        "catalogueSlug": "chatgpt"
+      },
+      {
+        "name": "Claude",
+        "catalogueSlug": "claude"
+      }
+    ],
+    "workflowSummary": "Community and hiring-manager reporting suggests most interviewers aren't bothered by AI-assisted prep (resumes, mock interviews) but react negatively to answers that sound copy-pasted or to candidates who can't explain their own work in follow-up questions. Prepare a short, honest, low-key answer for if it comes up, framed around how you used the tool (a starting point you edited) rather than treating it as something to hide or over-explain.",
+    "samplePrompt": "If an interviewer asks whether I used AI to help prepare my resume or interview answers, help me draft a short, honest response that frames it as normal preparation (a starting point I edited and made my own) without sounding defensive or like I'm hiding something.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "a single prompt produces a usable, calm answer",
+    "trustScore": 3,
+    "pricingNote": "Free tiers available for both ChatGPT and Claude - verify current limits before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.thehrdigest.com/everyone-knows-candidates-are-using-ai-to-cheat-tech-interviews/",
+    "sourceType": "Blog post",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog post; do not reproduce article text, link out to source",
+    "batch": "JobSeekers AI Workflows Batch5 Community",
+    "status": "active"
+  }
+]

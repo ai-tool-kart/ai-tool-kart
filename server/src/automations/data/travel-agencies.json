@@ -1,0 +1,1968 @@
+[
+  {
+    "id": "travel-agencies-6ca60f3f5a",
+    "slug": "i-want-to-build-a-client-itinerary-quickly-without-copy-pasting",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Independent travel advisor / small leisure agency",
+    "title": "I want to build a client itinerary quickly without copy-pasting from ten different sites",
+    "intentLabels": [
+      "build trip itinerary",
+      "create client itinerary",
+      "automate itinerary building",
+      "trip planner for agents"
+    ],
+    "tools": [
+      {
+        "name": "mTrip (AI Import Wizard)",
+        "url": "https://www.mtrip.com/en/best-itinerary-builder-2026/"
+      },
+      {
+        "name": "TravelJoy Itinerary Builder"
+      }
+    ],
+    "workflowSummary": "Agent pastes or forwards booking confirmations, hotel emails, and flight PDFs. The tool's AI import feature parses those documents and auto-populates a structured, branded itinerary (days, times, addresses) instead of manual data entry. Agent reviews, adds notes/photos, and shares a client-facing link or PDF.",
+    "samplePrompt": "Import this flight confirmation, hotel booking, and tour voucher, and build a day-by-day itinerary for a 7-night trip to Lisbon, grouped by date with addresses and confirmation numbers included.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the import/parsing step is easy, but agents need to review AI-parsed details for accuracy before sending to a client.",
+    "trustScore": 4,
+    "pricingNote": "Paid, agency-tier subscription (custom quote); TravelJoy offers a free trial — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.mtrip.com/en/best-itinerary-builder-2026/",
+    "sourceType": "Product/company page (directory-style roundup)",
+    "freshness": "May 21, 2026",
+    "accessNotes": "Publicly available marketing page; no login required to read overview. Confirm licensing/reseller terms directly with vendor before recommending to end clients.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-cbb52a3421",
+    "slug": "i-want-a-chatbot-on-my-travel-agency-website-to-answer",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Small agency owner managing a website",
+    "title": "I want a chatbot on my travel agency website to answer questions when I'm not available",
+    "intentLabels": [
+      "travel chatbot",
+      "website live chat AI",
+      "24/7 customer support bot",
+      "lead qualification chatbot"
+    ],
+    "tools": [
+      {
+        "name": "Tidio (AI chatbot + live chat)",
+        "url": "https://www.quantumdesk.com/blog/best-chatbots-for-travel-agencies"
+      }
+    ],
+    "workflowSummary": "Owner installs the chatbot widget on their existing website (no-code embed). It's trained on the agency's FAQ (destinations, deposit policy, office hours) and can qualify leads by asking about destination, dates, and budget before handing off a summary to the agent.",
+    "samplePrompt": "Set up an FAQ-trained chatbot for my travel agency website that can answer questions about booking deposits, cancellation policy, and office hours, and collect name/email/destination for any lead that wants a custom quote.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code widget install, guided setup wizard, and templates aimed at small businesses.",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans scale with chat volume/features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.quantumdesk.com/blog/best-chatbots-for-travel-agencies",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "July 28, 2026",
+    "accessNotes": "Public marketing/comparison content; Tidio pricing page should be checked directly for current tiers.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-a45faaeec4",
+    "slug": "i-want-to-send-a-deal-newsletter-to-my-client-list-without",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency owner running email newsletters",
+    "title": "I want to send a deal newsletter to my client list without writing it from scratch every time",
+    "intentLabels": [
+      "email marketing for travel deals",
+      "newsletter AI writer",
+      "automate client email campaigns"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp (AI-powered content/subject line tools)",
+        "url": "https://www.capterra.com/ai-marketing-tools-software/"
+      }
+    ],
+    "workflowSummary": "Owner uploads or syncs their client email list, picks a campaign template, and uses the built-in AI content assistant to draft subject lines and body copy from a short brief (e.g. 'all-inclusive Caribbean deal, book by Friday'). Owner edits tone/details, then schedules or sends.",
+    "samplePrompt": "Draft a short, warm email announcing a limited-time $200 discount on our all-inclusive Punta Cana package, with a clear call-to-action to reply or book by Friday, and suggest 3 subject line options.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop editor and guided AI prompts designed for non-technical small business owners.",
+    "trustScore": 4,
+    "pricingNote": "Free plan for small lists; paid tiers scale with subscriber count — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.capterra.com/ai-marketing-tools-software/",
+    "sourceType": "Directory (Capterra)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Capterra listing is public; confirm current Mailchimp AI feature availability and pricing directly on mailchimp.com.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-8bd7342a87",
+    "slug": "i-want-to-create-a-month-of-instagram-facebook-posts-about",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency social media manager (often the owner)",
+    "title": "I want to create a month of Instagram/Facebook posts about destinations without hiring a designer",
+    "intentLabels": [
+      "social media content for travel agency",
+      "AI post generator",
+      "destination content calendar",
+      "caption writer"
+    ],
+    "tools": [
+      {
+        "name": "Canva Magic Studio (Magic Write + Magic Design)",
+        "url": "https://www.socialpilot.co/ai-social-media-content-creation-tools"
+      }
+    ],
+    "workflowSummary": "Manager picks a destination-themed template, uses Magic Write to generate captions from a short prompt, and Magic Design to auto-generate on-brand graphics from existing photos or descriptions. Posts are queued via Canva's scheduler or exported for another scheduling tool.",
+    "samplePrompt": "Write 5 short, upbeat Instagram captions promoting a 'last-minute deals to Mexico' campaign, each under 150 characters, with 3 relevant hashtags, in a friendly non-salesy tone.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, widely used by small businesses with no design background.",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limited AI credits; Canva Pro required for full Magic Studio features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.socialpilot.co/ai-social-media-content-creation-tools",
+    "sourceType": "Blog/guide (tool roundup)",
+    "freshness": "July 7, 2026",
+    "accessNotes": "Public roundup article; confirm current Canva pricing/credit limits directly on canva.com.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-78cd1163be",
+    "slug": "i-want-help-writing-replies-to-google-tripadvisor-reviews",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Small agency owner managing online reputation",
+    "title": "I want help writing replies to Google/TripAdvisor reviews without sounding robotic",
+    "intentLabels": [
+      "review response generator",
+      "reply to customer reviews",
+      "reputation management AI",
+      "TripAdvisor review replies"
+    ],
+    "tools": [
+      {
+        "name": "RightResponse AI",
+        "url": "https://www.rightresponseai.com/free-ai-review-response-generator"
+      }
+    ],
+    "workflowSummary": "Owner pastes the review text (or connects Google Business Profile) into the tool, which drafts a personalized, on-brand reply matching the review's tone (thankful for praise, empathetic/solution-oriented for complaints). Owner edits lightly and posts.",
+    "samplePrompt": "Write a warm, professional reply to this 5-star Google review thanking the client for choosing us for their honeymoon trip to Greece and inviting them back for their next trip, in under 60 words.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste-and-generate workflow with no setup required for single responses.",
+    "trustScore": 3,
+    "pricingNote": "Pay-as-you-go from about $10/location/month plus per-response fee; 7-day free trial — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.rightresponseai.com/free-ai-review-response-generator",
+    "sourceType": "Product page",
+    "freshness": "April 27, 2025",
+    "accessNotes": "Public product page with self-serve free trial; pricing subject to change, confirm on vendor site.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-72cf66fc28",
+    "slug": "i-want-to-build-a-professional-travel-agency-website-myself",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "New or rebranding travel agency owner",
+    "title": "I want to build a professional travel agency website myself without hiring a developer",
+    "intentLabels": [
+      "AI website builder for travel agency",
+      "DIY travel website",
+      "build travel agency site"
+    ],
+    "tools": [
+      {
+        "name": "Hostinger AI Website Builder",
+        "url": "https://www.websiteplanet.com/blog/best-website-builder-travel-agency/"
+      },
+      {
+        "name": "Wix AI Website Builder (ADI)"
+      }
+    ],
+    "workflowSummary": "Owner answers a few prompts about their agency (niche, destinations, services) and the AI generates a starter site with pages, layout, and placeholder copy. Owner swaps in real photos/copy, connects a booking widget or contact form, and publishes.",
+    "samplePrompt": "Generate a homepage, About page, and Destinations page for a boutique travel agency specializing in African safaris and honeymoon trips, with a warm, adventurous tone and a prominent 'Request a Quote' button.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "explicitly designed for non-technical small business owners; guided AI setup flow.",
+    "trustScore": 4,
+    "pricingNote": "Paid hosting plans typically $2.99-$15.99/month depending on tier; free trial/limited free plan varies by vendor — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.websiteplanet.com/blog/best-website-builder-travel-agency/",
+    "sourceType": "Blog/guide (tool roundup)",
+    "freshness": "April 8, 2026",
+    "accessNotes": "Public review article; contains affiliate links per its own disclosure — verify pricing on hostinger.com/wix.com directly.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-8df9df5c6d",
+    "slug": "i-want-a-simple-crm-to-keep-track-of-who-i-ve-quoted-followed",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Small agency with multiple leads/clients to track",
+    "title": "I want a simple CRM to keep track of who I've quoted, followed up with, and booked",
+    "intentLabels": [
+      "CRM for travel agents",
+      "lead tracking software",
+      "client follow-up system",
+      "travel agency management software"
+    ],
+    "tools": [
+      {
+        "name": "Zoho CRM — Travel Agency Edition",
+        "url": "https://blog.zoho.com/index.php/marketplace/optimize-your-business-processes-with-travel-agency-crm.html"
+      }
+    ],
+    "workflowSummary": "Agent connects their website inquiry form and email/live chat so new leads auto-populate in the CRM. AI-assisted lead scoring flags high-intent leads, and automated follow-up sequences send reminder emails so no inquiry is forgotten. Agent tracks each lead through quote → booking → post-trip stages.",
+    "samplePrompt": "Set up a pipeline with stages New Inquiry, Quote Sent, Booking Confirmed, and Post-Trip Follow-Up, and create an automated reminder email that sends 3 days after a quote is sent if the client hasn't replied.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of pipelines/automations benefits from a short onboarding session, but daily use is straightforward.",
+    "trustScore": 4,
+    "pricingNote": "Free tier for very small teams; paid tiers scale with users/features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://blog.zoho.com/index.php/marketplace/optimize-your-business-processes-with-travel-agency-crm.html",
+    "sourceType": "Product/company blog page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public vendor blog page; confirm current Travel Agency Edition pricing and availability directly with Zoho.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-0fab70125f",
+    "slug": "i-want-to-turn-my-destination-photos-into-a-short-promo-video",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting more engaging destination marketing video",
+    "title": "I want to turn my destination photos into a short promo video for social media",
+    "intentLabels": [
+      "AI travel video maker",
+      "destination promo video",
+      "social media reels for travel",
+      "photo to video AI"
+    ],
+    "tools": [
+      {
+        "name": "InVideo AI",
+        "url": "https://invideo.io/make/travel-video-maker/"
+      }
+    ],
+    "workflowSummary": "Owner enters a short prompt describing the trip/destination and desired length/platform. InVideo AI writes a script, selects stock or AI-generated clips (or uses the agency's own photos), adds voiceover, subtitles, and music, producing a ready-to-post vertical or widescreen video.",
+    "samplePrompt": "Create a 30-second vertical promo video for a 7-day all-inclusive trip to Bali, using an upbeat tone, a friendly female voiceover, on-screen text highlighting 'Save $300 - Book by Sept 30', and background music.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "prompt-based workflow with an editable 'magic box' for simple revisions, no video editing skills required.",
+    "trustScore": 3,
+    "pricingNote": "Free plan with watermark/limited exports; paid plans remove watermark and add features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://invideo.io/make/travel-video-maker/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; verify current commercial usage rights and stock footage licensing terms directly with InVideo before using in paid campaigns.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-3ef726ac66",
+    "slug": "i-want-to-write-blog-posts-about-destinations-that-actually",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting more inbound website traffic",
+    "title": "I want to write blog posts about destinations that actually show up in Google search",
+    "intentLabels": [
+      "AI blog writer for travel",
+      "SEO content generator",
+      "destination guide writer",
+      "travel agency blog content"
+    ],
+    "tools": [
+      {
+        "name": "Writesonic",
+        "url": "https://www.marketermilk.com/blog/best-ai-writer",
+        "catalogueSlug": "writesonic"
+      }
+    ],
+    "workflowSummary": "Owner enters a target keyword or destination topic (e.g. 'best time to visit Costa Rica') and a short product description. The tool generates a structured, SEO-oriented draft with headings and suggested keywords; owner reviews for factual accuracy on travel specifics (visa rules, weather) before publishing to their site.",
+    "samplePrompt": "Write a 700-word SEO-friendly blog post titled 'Best Time to Visit Costa Rica' aimed at first-time family travelers, including a section on weather by season and a call-to-action to contact our agency for a custom itinerary.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts and templates aimed at non-writers, though factual travel details still need human review.",
+    "trustScore": 3,
+    "pricingNote": "Free trial with limited word credits; paid plans scale with monthly word volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.marketermilk.com/blog/best-ai-writer",
+    "sourceType": "Blog/guide (tool roundup)",
+    "freshness": "September 9, 2025",
+    "accessNotes": "Public roundup article; confirm current Writesonic pricing/word limits on writesonic.com.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-0c252e818b",
+    "slug": "i-want-to-talk-to-a-client-who-doesn-t-speak-my-language-on-a",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency serving international/non-English-speaking clients",
+    "title": "I want to talk to a client who doesn't speak my language on a phone or video call",
+    "intentLabels": [
+      "real-time voice translation for business calls",
+      "live interpreter app",
+      "multilingual client calls"
+    ],
+    "tools": [
+      {
+        "name": "Palabra.ai",
+        "url": "https://www.palabra.ai/"
+      }
+    ],
+    "workflowSummary": "Agent starts a Palabra session before a client call (phone or video), selects both languages, and speaks normally. The tool translates speech in near-real-time so each party hears the conversation in their own language, useful for sales/consultation calls or customer support with international clients.",
+    "samplePrompt": "Set up a live English-to-Spanish voice translation session for a video consultation call with a client about their upcoming trip to Argentina, and enable live translated captions as backup.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup and language selection are simple, but agents should do a quick test call before using it with a real client.",
+    "trustScore": 3,
+    "pricingNote": "Paid plans; enterprise/private cloud options available — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.palabra.ai/",
+    "sourceType": "Product page",
+    "freshness": "February 18, 2026",
+    "accessNotes": "Public product page; confirm data-handling/security claims and current pricing directly on palabra.ai before relying on them for client-sensitive calls.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-fe406a19c4",
+    "slug": "i-want-to-stop-scribbling-notes-during-client-calls-and-get-a",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent who wants a clean record of client consultation calls",
+    "title": "I want to stop scribbling notes during client calls and get a clean summary afterward",
+    "intentLabels": [
+      "AI meeting notes",
+      "call summarizer",
+      "transcription for client calls",
+      "automatic follow-up notes"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://fellow.ai/blog/ai-meeting-summary-tools/",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Agent connects Otter to their video conferencing tool (Zoom, Teams, Google Meet) or records in-person consultations via mobile. Otter transcribes the conversation and generates a summary with key details (destination, dates, budget, preferences) and action items, which the agent can copy into the CRM or a follow-up email.",
+    "samplePrompt": "Summarize this client consultation call into: destination and travel dates discussed, budget range mentioned, any special requests (dietary, accessibility, celebration), and next steps I committed to.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "connects to existing video tools with minimal setup; free tier covers casual use.",
+    "trustScore": 4,
+    "pricingNote": "Free plan (300 minutes/month); paid plans from about $8.33/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://fellow.ai/blog/ai-meeting-summary-tools/",
+    "sourceType": "Blog/guide (tool roundup)",
+    "freshness": "July 27, 2026",
+    "accessNotes": "Public roundup article; confirm current Otter.ai pricing/minute limits on otter.ai.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-7c0c86f3c6",
+    "slug": "i-want-a-professional-logo-for-my-travel-agency-without-hiring",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "New agency owner or rebrand in progress",
+    "title": "I want a professional logo for my travel agency without hiring a designer",
+    "intentLabels": [
+      "AI logo maker for travel agency",
+      "logo generator",
+      "branding for travel business"
+    ],
+    "tools": [
+      {
+        "name": "Looka",
+        "url": "https://looka.com/logo-ideas/travel-logo-design/",
+        "catalogueSlug": "looka"
+      }
+    ],
+    "workflowSummary": "Owner enters the agency name and picks preferred styles, colors, and symbols (e.g. compass, plane, palm tree). Looka's AI generates dozens of logo mockups; owner selects a favorite and fine-tunes fonts/colors/layout in the built-in editor, then downloads final files.",
+    "samplePrompt": "Generate travel agency logo concepts for the name 'Blue Horizon Travel', using a coastal/adventure theme, blue and sandy-gold colors, and a compass or wave motif, suitable for both a website header and a business card.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided 2-minute setup flow with no design skills required.",
+    "trustScore": 4,
+    "pricingNote": "Free to browse/design; payment required to download final files — verify current pricing before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://looka.com/logo-ideas/travel-logo-design/",
+    "sourceType": "Product page",
+    "freshness": "September 12, 2023",
+    "accessNotes": "Public product page; confirm current pricing and licensing terms (commercial use rights) directly on looka.com before publishing to a client-facing site.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-e44908adaf",
+    "slug": "i-want-an-easy-way-to-track-my-business-expenses-and-receipts",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Independent agent or small agency handling their own bookkeeping",
+    "title": "I want an easy way to track my business expenses and receipts for tax time",
+    "intentLabels": [
+      "AI expense tracker",
+      "receipt scanning app",
+      "small business bookkeeping",
+      "freelancer expense management"
+    ],
+    "tools": [
+      {
+        "name": "Expensify",
+        "url": "https://www.freelancer-tools-guide.com/blog/2026-02-05-best-expense-tracking-software-freelancers"
+      }
+    ],
+    "workflowSummary": "Agent photographs or forwards receipts (fam trips, supplier meals, software subscriptions) to Expensify, which uses AI to read and categorize the vendor, amount, and date automatically. Expenses can be tagged by client/trip for billable tracking and exported into a tax-ready report.",
+    "samplePrompt": "Categorize this restaurant receipt from a supplier familiarization trip as a business travel expense, tag it to the 'Q3 Fam Trips' project, and flag it for my accountant's quarterly report.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "snap-a-photo workflow requires no bookkeeping background.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; verify current pricing (approx $9.99/month or similar tiers) directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.freelancer-tools-guide.com/blog/2026-02-05-best-expense-tracking-software-freelancers",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "February 5, 2026",
+    "accessNotes": "Public comparison article; confirm current Expensify pricing/features on expensify.com.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-9aaefb0fe0",
+    "slug": "i-want-to-turn-a-supplier-s-booking-confirmation-into-a",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Independent travel advisor closing custom trip sales",
+    "title": "I want to turn a supplier's booking confirmation into a polished proposal I can send my client",
+    "intentLabels": [
+      "travel proposal generator",
+      "quote builder for travel agents",
+      "client-facing trip proposal",
+      "convert supplier invoice to proposal"
+    ],
+    "tools": [
+      {
+        "name": "Travefy",
+        "url": "https://creoproposals.com/blog/best-proposal-software-for-travel-agents"
+      },
+      {
+        "name": "Creo Proposals"
+      }
+    ],
+    "workflowSummary": "Agent uploads or forwards the raw supplier invoice/confirmation (hotel, tour, flight). The AI extracts the itinerary details (dates, pricing, inclusions) and writes narrative, experience-focused descriptions, assembling everything into a branded, shareable proposal link or PDF the client can review and accept online.",
+    "samplePrompt": "Convert this supplier invoice for a 5-night Amalfi Coast package into a branded client proposal with day-by-day highlights, an experience-focused description of each hotel, and a clear total price breakdown.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload-and-generate workflow designed specifically for independent travel agents with no proposal-writing background.",
+    "trustScore": 4,
+    "pricingNote": "Travefy: paid subscription with 10-day free trial; Creo Proposals: credit-based from about $4/proposal, 3 free proposals on signup — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://creoproposals.com/blog/best-proposal-software-for-travel-agents",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "February 23, 2026",
+    "accessNotes": "Public comparison article from a vendor in the category; cross-check claims against travefy.com directly before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-620c65c539",
+    "slug": "i-want-to-quickly-check-what-visa-and-documents-my-client-needs",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency booking international trips",
+    "title": "I want to quickly check what visa and documents my client needs before they travel",
+    "intentLabels": [
+      "visa requirements checker",
+      "document checklist for travelers",
+      "entry requirements tool",
+      "passport and visa lookup"
+    ],
+    "tools": [
+      {
+        "name": "Sherpa°",
+        "url": "https://www.joinsherpa.com/solutions"
+      }
+    ],
+    "workflowSummary": "Agent enters the client's passport country and destination(s) into Sherpa's requirements tool, which returns visa, passport validity, transit, and vaccination requirements. Agent shares the checklist with the client or embeds the tool on their own website/CRM so clients can self-check basic requirements.",
+    "samplePrompt": "Check visa, passport validity, and any vaccination requirements for a US passport holder traveling to Vietnam and Cambodia on a combined 12-day trip, and list documents needed before departure.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple lookup interface for basic checks, though agents should treat results as a starting point, not final legal confirmation.",
+    "trustScore": 4,
+    "pricingNote": "Free-to-explore consumer lookup; API/white-label integration is paid, quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.joinsherpa.com/solutions",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page. Visa/entry requirement information changes frequently — always direct clients to also confirm with the relevant embassy/consulate before travel.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-6764201d5e",
+    "slug": "i-want-eye-catching-destination-images-for-my-ads-and-social",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency needing marketing images without a photo shoot budget",
+    "title": "I want eye-catching destination images for my ads and social posts without paying for stock photos",
+    "intentLabels": [
+      "AI image generator for travel marketing",
+      "destination graphics",
+      "commercially safe AI images",
+      "ad creative for travel"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Firefly",
+        "url": "https://morphic.com/ai-glossary/firefly-adobe",
+        "catalogueSlug": "adobe-firefly"
+      }
+    ],
+    "workflowSummary": "Owner describes the destination scene needed (e.g. 'sunset over turquoise water with a private overwater villa') and Firefly generates several image options trained on licensed/commercially-safe data. Owner picks the best option, adjusts via generative fill if needed, and uses it in ads, email headers, or social posts.",
+    "samplePrompt": "Generate a warm, golden-hour image of an overwater villa in the Maldives with clear turquoise water, suitable for a Facebook ad promoting a honeymoon package, in a 1:1 square format.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "image generation itself is simple, but getting a specific, brand-consistent result usually takes a few prompt iterations.",
+    "trustScore": 4,
+    "pricingNote": "Included with Adobe Creative Cloud subscription; limited free generations available standalone — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://morphic.com/ai-glossary/firefly-adobe",
+    "sourceType": "Blog/guide (reference page)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public reference page; confirm current Firefly pricing and commercial usage/IP indemnification terms directly on adobe.com before using in paid ad campaigns.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-6c95b95a19",
+    "slug": "i-want-my-agency-s-phone-to-be-answered-even-when-i-m-on",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Solo agent or small agency losing leads to voicemail",
+    "title": "I want my agency's phone to be answered even when I'm on another call or planning a trip",
+    "intentLabels": [
+      "AI phone answering service for travel agency",
+      "virtual receptionist",
+      "after-hours call answering",
+      "missed call recovery"
+    ],
+    "tools": [
+      {
+        "name": "Flozic AI Voice Receptionist for Travel Agencies",
+        "url": "https://www.flozic.ai/agents/voice/receptionist-travel-agency"
+      }
+    ],
+    "workflowSummary": "Owner forwards their business line to the AI receptionist and connects their booking calendar and CRM. The AI answers every call in a natural voice, captures the destination, travel dates, and budget for trip inquiries, books consultation calls directly into the agent's calendar, and flags high-quality leads.",
+    "samplePrompt": "Set up a phone answering flow that greets callers as [Agency Name], asks for destination, travel dates, and approximate budget for any new trip inquiry, and books a 15-minute consultation call on my calendar if the caller wants to proceed.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code setup described as plain-English configuration of call flows and booking rules.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.flozic.ai/agents/voice/receptionist-travel-agency",
+    "sourceType": "Product page",
+    "freshness": "July 18, 2024",
+    "accessNotes": "Public product page from a smaller/less-established vendor — verify company legitimacy, current pricing, and data handling practices before recommending to end users.",
+    "batch": "TravelAgencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-ecb73a4b67",
+    "slug": "i-want-to-manage-a-group-trip-with-rooming-lists-and-payments",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Tour operator / agency booking groups of 10+ travelers",
+    "title": "I want to manage a group trip with rooming lists and payments without a spreadsheet mess",
+    "intentLabels": [
+      "group travel management software",
+      "rooming list tool",
+      "group tour booking software",
+      "manage group trip payments"
+    ],
+    "tools": [
+      {
+        "name": "YouLi",
+        "url": "https://go.youli.io/travel-management-software"
+      }
+    ],
+    "workflowSummary": "Organizer sets up the group trip in YouLi, adds package options and room types, and shares a booking link. Travelers self-select rooms/upgrades and pay their own share (deposit or full) through the portal. Organizer views a live rooming list and payment status dashboard instead of tracking it manually.",
+    "samplePrompt": "Set up a group trip for 24 travelers on a 6-day Peru tour with 3 room types (single, double, triple), a $300 deposit per person, and a rooming list I can export to Excel for the hotel.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial trip/package setup takes some configuration, but day-to-day use (checking who's paid, who's assigned which room) is straightforward.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; specific tiers not published — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://go.youli.io/travel-management-software",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current pricing and contract terms directly with YouLi before recommending to end users.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-c3ea590cee",
+    "slug": "i-want-to-help-my-client-compare-travel-insurance-plans-without",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Independent advisor helping clients choose travel insurance",
+    "title": "I want to help my client compare travel insurance plans without becoming an insurance expert myself",
+    "intentLabels": [
+      "travel insurance comparison tool",
+      "compare travel insurance plans",
+      "recommend travel insurance to clients"
+    ],
+    "tools": [
+      {
+        "name": "InsureMyTrip",
+        "url": "https://www.insuremytrip.com/"
+      }
+    ],
+    "workflowSummary": "Agent (or client directly) enters trip cost, destination, dates, and traveler ages into the comparison tool, which returns matched plans from multiple providers with side-by-side coverage and pricing. Agent can walk the client through the shortlist rather than researching each provider's policy individually.",
+    "samplePrompt": "Compare travel insurance plans for a $6,000 two-week trip to Italy for a couple in their 60s, prioritizing trip cancellation coverage and pre-existing condition waivers, and summarize the top 3 options in plain language.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed for end consumers as well as agents, with plain-language comparisons and no insurance background required.",
+    "trustScore": 4,
+    "pricingNote": "Free to use for consumers/agents; InsureMyTrip earns commission from insurers, not from the agent or client — verify current terms before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.insuremytrip.com/",
+    "sourceType": "Product page",
+    "freshness": "June 17, 2026",
+    "accessNotes": "Public consumer-facing product page; note that AI-only recommendations (e.g. from a general chatbot) have been shown to miss policy-specific exclusions — always confirm final policy details with the client and provider directly, especially for pre-existing conditions.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-03b68d3401",
+    "slug": "i-want-clients-to-review-and-e-sign-my-booking-terms-and",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency needing signed client agreements before booking",
+    "title": "I want clients to review and e-sign my booking terms and conditions without printing anything",
+    "intentLabels": [
+      "e-signature for travel contracts",
+      "booking terms and conditions signature",
+      "digital contract signing for travel agency"
+    ],
+    "tools": [
+      {
+        "name": "DocuSign IAM (Intelligent Agreement Management)",
+        "url": "https://www.esignglobal.com/blog/use-e-signatures-travel-agency-contracts-b2b-tourism"
+      }
+    ],
+    "workflowSummary": "Agent uploads their standard booking terms/waiver template, sends it to the client via email with fields marked for signature, date, and initials. Client signs from any device; agent receives a notification and a stored, audit-trailed copy automatically attached to the booking file.",
+    "samplePrompt": "Send this trip waiver and payment terms document to the client for e-signature, with a signature field, date field, and an initial box next to the cancellation policy paragraph, and remind them if unsigned after 3 days.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template upload and send flow is guided, though agencies should have a lawyer review the underlying contract language itself.",
+    "trustScore": 4,
+    "pricingNote": "Tiered plans from about $10-$25/user/month (Personal/Standard); Business Pro around $40/user/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.esignglobal.com/blog/use-e-signatures-travel-agency-contracts-b2b-tourism",
+    "sourceType": "Blog/guide (industry comparison)",
+    "freshness": "December 27, 2025",
+    "accessNotes": "Public blog post from an e-signature vendor comparing competitors; confirm current DocuSign pricing/features directly on docusign.com. E-signature validity for certain documents (e.g. some immigration paperwork) varies by country — verify locally before relying on it exclusively.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-ad4c5be40d",
+    "slug": "i-want-one-form-that-collects-everything-i-need-from-a-new",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent tired of long back-and-forth email chains to scope a trip",
+    "title": "I want one form that collects everything I need from a new client before our first call",
+    "intentLabels": [
+      "client intake form for travel agents",
+      "travel inquiry form",
+      "trip questionnaire",
+      "collect client preferences and budget"
+    ],
+    "tools": [
+      {
+        "name": "Jotform (Travel Intake Form / Travel Booking AI Agents)",
+        "url": "https://www.jotform.com/form-templates/travel-intake-form"
+      }
+    ],
+    "workflowSummary": "Agent uses a pre-built travel intake template (or the AI form-builder) to create a form covering destination, dates, budget, traveler count, and special requirements. Form is embedded on the agency website or sent as a link; responses flow into a spreadsheet or connected CRM automatically, ready before the first consultation call.",
+    "samplePrompt": "Build a client intake form for a luxury honeymoon planning business, asking for travel dates, budget range, preferred destinations, dietary restrictions, and any special occasions to celebrate, and connect submissions to a Google Sheet.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop builder with ready-made travel templates, no coding required.",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limited monthly submissions; paid plans scale with form volume/features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jotform.com/form-templates/travel-intake-form",
+    "sourceType": "Product page (template)",
+    "freshness": "August 3, 2026",
+    "accessNotes": "Public template page; confirm current Jotform pricing and data-storage/privacy terms on jotform.com before collecting client personal details.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-45c0e3a51c",
+    "slug": "i-want-to-know-if-a-hotel-rate-drops-after-i-ve-already-booked",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent who booked a client's hotel and wants to keep an eye on the rate",
+    "title": "I want to know if a hotel rate drops after I've already booked it for my client, so I can rebook and save them money",
+    "intentLabels": [
+      "hotel price tracker",
+      "rebooking rate monitor",
+      "post-booking price drop alert",
+      "save money on booked hotel"
+    ],
+    "tools": [
+      {
+        "name": "RatePunk",
+        "url": "https://travelaidaily.com/blog/best-ai-hotel-price-tracker-rebooking-2026/"
+      }
+    ],
+    "workflowSummary": "Agent (or client) enters the confirmed hotel booking details (property, dates, rate) into the tracker, which continuously monitors for the same room type at a lower refundable rate. If a drop is found, the agent gets an alert and can cancel/rebook at the lower rate before the free-cancellation deadline.",
+    "samplePrompt": "Track this confirmed hotel booking in Rome (dates, room type, and current rate) and alert me if a lower refundable rate appears at the same property before the cancellation deadline.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter booking details once and monitoring runs automatically in the background.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited tracked bookings; premium tiers for more properties/frequent checks — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://travelaidaily.com/blog/best-ai-hotel-price-tracker-rebooking-2026/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "July 27, 2026",
+    "accessNotes": "Public comparison article citing a vendor-reported study (28,000 tracked cases); treat drop-rate and savings figures as vendor claims, not independently verified — confirm current features/pricing on ratepunk.com.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-e06f504636",
+    "slug": "i-want-a-way-to-know-if-my-client-is-safe-if-something-goes",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency booking international or higher-risk trips for clients",
+    "title": "I want a way to know if my client is safe if something goes wrong at their destination (strike, natural disaster, unrest)",
+    "intentLabels": [
+      "duty of care travel tool",
+      "traveler safety tracking",
+      "destination risk alerts",
+      "emergency travel assistance for clients"
+    ],
+    "tools": [
+      {
+        "name": "Global Rescue (Travel Intelligence Center / GRID)",
+        "url": "https://www.globalrescue.com/common/blog/detail/travel-intelligence-center/"
+      }
+    ],
+    "workflowSummary": "Agency enrolls travelers (or recommends they enroll) so their itinerary and location are tracked in the platform. If a security, weather, or health event affects the traveler's destination, the agency and traveler receive an automatic alert with guidance, and can access 24/7 security/medical support if the situation escalates.",
+    "samplePrompt": "Check the current destination report and any active security or health alerts for a client traveling to Nairobi and Zanzibar next month, and outline what happens if we need to request emergency support during their trip.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "free destination reports and alerts are simple to access, but enrolling and understanding a paid membership's coverage terms takes some reading.",
+    "trustScore": 3,
+    "pricingNote": "Free destination reports/alerts; paid membership required for evacuation/security response services — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.globalrescue.com/common/blog/detail/travel-intelligence-center/",
+    "sourceType": "Product/company blog page",
+    "freshness": "May 24, 2022",
+    "accessNotes": "Public vendor blog page. This is a paid safety/insurance-adjacent membership service, not a free app — confirm exact coverage, exclusions, and current pricing directly with Global Rescue before recommending it as a client's sole safety net.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-bbf7a14db7",
+    "slug": "i-want-to-automatically-ask-clients-how-their-trip-went-and",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting testimonials and structured feedback after a trip",
+    "title": "I want to automatically ask clients how their trip went and turn good answers into testimonials",
+    "intentLabels": [
+      "post-trip feedback survey",
+      "client satisfaction survey",
+      "automated testimonial collection",
+      "NPS for travel agency"
+    ],
+    "tools": [
+      {
+        "name": "SurveyMonkey",
+        "url": "https://www.feedbackrobot.com/articles/best-customer-survey-tools-for-small-business"
+      }
+    ],
+    "workflowSummary": "Agency sets up a short post-trip survey (using AI-assisted question suggestions) that auto-sends by email a few days after the client returns. Responses are scored (e.g. NPS/satisfaction), and strong positive responses are flagged so the agent can follow up and ask permission to use the feedback as a testimonial or review.",
+    "samplePrompt": "Create a 5-question post-trip survey asking about overall satisfaction, the best part of the trip, anything that could be improved, likelihood to book again, and likelihood to refer a friend, and suggest a follow-up email to send if someone rates their experience 9 or 10 out of 10.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "large library of ready-made templates and guided AI question suggestions aimed at non-researchers.",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limited responses/questions; paid plans scale with response volume and features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.feedbackrobot.com/articles/best-customer-survey-tools-for-small-business",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "June 15, 2026",
+    "accessNotes": "Public comparison article; confirm current SurveyMonkey pricing and AI feature availability directly on surveymonkey.com.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-c9d44498f8",
+    "slug": "i-want-to-stop-manually-chasing-clients-for-deposit-and",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Tour operator/retreat host collecting deposits and installments from a group",
+    "title": "I want to stop manually chasing clients for deposit and installment payments on a group trip",
+    "intentLabels": [
+      "automated payment plan travel",
+      "deposit reminder tool",
+      "installment payment tracking for tours",
+      "travel payment collection"
+    ],
+    "tools": [
+      {
+        "name": "SquadTrip",
+        "url": "https://www.squadtrip.com/guides/travel-agency-payment-plans/"
+      }
+    ],
+    "workflowSummary": "Host creates a trip page with a total price, deposit amount, and installment schedule. Each traveler gets a personal payment link; the platform auto-charges cards on the scheduled dates, sends reminder emails before/after due dates, and shows the host a live dashboard of who's paid, who's behind, and total collected.",
+    "samplePrompt": "Set up a payment plan for a $2,200 retreat with a $500 deposit due at signup and the remaining balance split into 4 equal monthly installments, with automatic reminder emails sent 7 days, 3 days, and on the due date.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided trip and payment-plan setup with no coding or manual invoicing required.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.squadtrip.com/guides/travel-agency-payment-plans/",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "June 7, 2026",
+    "accessNotes": "Public vendor blog content; SquadTrip is the vendor being described, so treat feature claims as vendor-sourced and confirm directly on squadtrip.com before publishing pricing.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-df22af21a4",
+    "slug": "i-want-to-know-for-certain-that-every-supplier-actually-paid-me",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency/host agency managing commissions across many suppliers",
+    "title": "I want to know for certain that every supplier actually paid me the commission I'm owed",
+    "intentLabels": [
+      "commission tracking software travel agents",
+      "commission reconciliation",
+      "supplier payment matching",
+      "agent payout statements"
+    ],
+    "tools": [
+      {
+        "name": "Sion",
+        "url": "https://www.sioncentral.com/"
+      }
+    ],
+    "workflowSummary": "Agency imports supplier commission statements (via file upload or GDS integration) and Sion automatically matches each line item against bookings in the system, flagging missing or short payments. Agency can generate on-brand collection invoices for unpaid commissions and auto-generate advisor payout statements once reconciled.",
+    "samplePrompt": "Import this supplier commission statement, match each line to our existing bookings, flag any bookings that are missing or underpaid, and generate a follow-up invoice for the missing amounts.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "matching and reconciliation logic runs automatically, but agencies should review flagged discrepancies before sending collection invoices to suppliers.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.sioncentral.com/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current pricing, supported suppliers/GDS integrations, and data security practices directly with Sion before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-c4a5518ef2",
+    "slug": "i-want-to-know-the-moment-my-client-s-flight-is-delayed-or",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent whose client is currently traveling and could be affected by a flight delay",
+    "title": "I want to know the moment my client's flight is delayed or canceled, ideally before the airline tells them",
+    "intentLabels": [
+      "flight delay alert tool",
+      "flight disruption monitoring",
+      "real-time flight tracking for travel agents",
+      "rebooking assistance"
+    ],
+    "tools": [
+      {
+        "name": "TripIt Pro",
+        "url": "https://aiagentinsider.ai/ai-agents-for-flight-change-management/"
+      }
+    ],
+    "workflowSummary": "Agent forwards the client's flight confirmation email to TripIt, which builds a master itinerary and monitors the flight in real time. If a delay, cancellation, or gate change occurs, both the traveler and (if shared) the agent get an alert — often before the airline's own notification — along with rebooking options.",
+    "samplePrompt": "Forward this flight confirmation to build a monitored itinerary, and set up alerts for gate changes, delays, or cancellations so I can proactively reach out to the client if something changes.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "forward-the-confirmation-email workflow requires no manual data entry.",
+    "trustScore": 4,
+    "pricingNote": "Free basic itinerary tracking; Pro tier (real-time alerts, rebooking assistance) is a paid annual subscription — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://aiagentinsider.ai/ai-agents-for-flight-change-management/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "August 23, 2025",
+    "accessNotes": "Public comparison article; confirm current TripIt Pro pricing and feature set directly on tripit.com.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-fe401d8db1",
+    "slug": "i-want-my-clients-to-have-one-place-to-find-their-tickets",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent sharing trip documents with clients before and during travel",
+    "title": "I want my clients to have one place to find their tickets, vouchers, and insurance info without emailing me during their trip",
+    "intentLabels": [
+      "travel document sharing app",
+      "client document portal",
+      "e-ticket and voucher storage for clients",
+      "itinerary document delivery"
+    ],
+    "tools": [
+      {
+        "name": "TravelDocs (by QuoteCloud)",
+        "url": "https://www.quote.cloud/traveldocs-mobile-app"
+      }
+    ],
+    "workflowSummary": "Agent attaches e-tickets, hotel vouchers, insurance documents, and visas to the relevant segment of a client's itinerary in the back-end platform. The client accesses everything through the TravelDocs app or a shared link, including push notifications for gate changes, so they're not messaging the agent mid-trip for a document they already have.",
+    "samplePrompt": "Attach this hotel voucher and travel insurance PDF to the Rome hotel segment of the client's itinerary, and confirm the client will get a push notification if there's a flight gate change during that leg of the trip.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "for the client-facing app; agent-side setup within the linked platform (QuoteCloud) takes a bit more onboarding.",
+    "trustScore": 3,
+    "pricingNote": "Free for travelers; agency-side platform (QuoteCloud) is a paid subscription — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.quote.cloud/traveldocs-mobile-app",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current QuoteCloud/TravelDocs pricing and data security practices before uploading clients' sensitive documents (passports, insurance).",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-19fd54d5e4",
+    "slug": "i-want-to-invoice-an-international-client-in-their-own-currency",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency serving clients who want to pay in their home currency",
+    "title": "I want to invoice an international client in their own currency instead of doing manual conversions",
+    "intentLabels": [
+      "multi-currency invoicing for travel agency",
+      "bill international clients",
+      "foreign currency invoice tool"
+    ],
+    "tools": [
+      {
+        "name": "Invoicera",
+        "url": "https://www.invoicera.com/industries/travel-tour-billing"
+      }
+    ],
+    "workflowSummary": "Agent sets up the client's preferred currency in their profile; when creating an invoice for a flight, hotel, or package booking, Invoicera applies the correct currency formatting and current/locked exchange rate automatically, and routes payment through one of its supported international gateways.",
+    "samplePrompt": "Create an invoice in Euros for this 10-night Greece package booked by a client based in Germany, using today's exchange rate, and set up an automatic payment reminder 5 days before the balance due date.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "currency selection is a dropdown at invoice creation; no manual conversion math required.",
+    "trustScore": 3,
+    "pricingNote": "Free trial limited to 50 invoices/estimates; paid plans scale with volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.invoicera.com/industries/travel-tour-billing",
+    "sourceType": "Product page",
+    "freshness": "April 23, 2025",
+    "accessNotes": "Public product page; confirm current pricing tiers and supported payment gateways/currencies directly on invoicera.com.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-341e9c7990",
+    "slug": "i-want-a-full-tour-to-automatically-offer-the-spot-to-the-next",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Tour operator running small-group tours with limited capacity",
+    "title": "I want a full tour to automatically offer the spot to the next person in line when someone cancels",
+    "intentLabels": [
+      "waitlist management for tours",
+      "automated cancellation waitlist",
+      "notify next traveler when spot opens",
+      "tour booking automation"
+    ],
+    "tools": [
+      {
+        "name": "Square (booking/waitlist management)",
+        "url": "https://docs.google.com/document/d/1cfIOoNIpqk5NNJVHPtnqCaydN-pJzNxOpUTJMmPA2Gk/mobilebasic"
+      }
+    ],
+    "workflowSummary": "Operator sets tour capacity in Square's booking system and enables waitlist management. When a booked traveler cancels, the system automatically notifies the next person on the waitlist that a spot has opened, with a link to claim and pay for it, without the operator manually tracking or calling down a list.",
+    "samplePrompt": "Set up a waitlist for this 12-person sunset kayak tour so that if someone cancels, the next person on the waitlist automatically gets notified by text with a link to book the open spot.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "waitlist toggle and notification settings are part of the standard booking setup, no coding required.",
+    "trustScore": 3,
+    "pricingNote": "Square booking features are typically bundled with its point-of-sale/appointments plans — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://docs.google.com/document/d/1cfIOoNIpqk5NNJVHPtnqCaydN-pJzNxOpUTJMmPA2Gk/mobilebasic",
+    "sourceType": "Blog/guide (independent roundup)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Source is an independent guide (with disclosed affiliate links) describing Square's waitlist feature; confirm current feature availability and pricing directly on squareup.com before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-5a28f9ad39",
+    "slug": "i-want-to-run-google-and-facebook-ads-for-my-agency-without",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency owner running paid Google/Facebook ads with limited marketing time",
+    "title": "I want to run Google and Facebook ads for my agency without babysitting the budget every day",
+    "intentLabels": [
+      "AI Google Ads management",
+      "AI Meta Ads for travel agency",
+      "automated ad campaign optimization",
+      "paid ad management tool"
+    ],
+    "tools": [
+      {
+        "name": "Ryze AI",
+        "url": "https://www.get-ryze.ai/blog/ai-meta-ads-for-travel-agencies"
+      }
+    ],
+    "workflowSummary": "Owner connects their Google Ads and Meta Ads accounts to Ryze AI, sets a monthly budget and target destinations/packages. The platform automatically adjusts bids, reallocates budget toward better-performing ads, refreshes ad creative, and flags underperforming campaigns, so the owner reviews a weekly summary instead of managing bids manually.",
+    "samplePrompt": "Connect my Google Ads and Meta Ads accounts, set a combined $1,500/month budget split evenly, and automatically shift spend toward whichever destination package (Caribbean vs. Europe) is converting best each week.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial account connection and goal-setting takes some setup, but day-to-day optimization runs automatically afterward.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.get-ryze.ai/blog/ai-meta-ads-for-travel-agencies",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "2 weeks ago (accessed September 2026)",
+    "accessNotes": "Public vendor blog post; Ryze AI is the vendor being described, so ROAS improvement figures (2.1x to 4.3x) are vendor-reported claims — confirm current pricing and verify performance claims independently before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-414829d15a",
+    "slug": "i-want-to-show-up-when-someone-nearby-searches-for-a-travel",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Local travel agency wanting to show up in Google Maps and local search",
+    "title": "I want to show up when someone nearby searches for a travel agent on Google",
+    "intentLabels": [
+      "local SEO for travel agency",
+      "Google Business Profile optimization",
+      "rank on Google Maps",
+      "local search visibility"
+    ],
+    "tools": [
+      {
+        "name": "BrightLocal",
+        "url": "https://www.localseobot.com/blog/best-local-seo-tools-google-business-profile-optimization/"
+      }
+    ],
+    "workflowSummary": "Owner connects their Google Business Profile to BrightLocal, which audits the listing across 300+ local SEO data points (categories, descriptions, photos, missing fields) and gives a prioritized checklist to fix. The tool also tracks local map-pack ranking over time for chosen keywords like 'travel agent near me.'",
+    "samplePrompt": "Audit my Google Business Profile for a travel agency and tell me exactly what's missing or weak compared to the top 3 competitors ranking for 'travel agent' in my city, then track my ranking for that term weekly.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the audit and checklist are easy to follow, but implementing every recommendation takes some ongoing attention.",
+    "trustScore": 4,
+    "pricingNote": "Paid plans starting around $29-$49/month, tiers vary by number of locations tracked — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.localseobot.com/blog/best-local-seo-tools-google-business-profile-optimization/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "January 7, 2026",
+    "accessNotes": "Public comparison article; confirm current BrightLocal pricing and feature set directly on brightlocal.com.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-dfe3ff838f",
+    "slug": "i-want-to-reward-clients-for-referring-their-friends-to-my",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting past clients to refer friends and family",
+    "title": "I want to reward clients for referring their friends to my agency without tracking it by hand",
+    "intentLabels": [
+      "referral program software travel agency",
+      "customer referral marketing",
+      "reward clients for referrals",
+      "word-of-mouth marketing tool"
+    ],
+    "tools": [
+      {
+        "name": "Genius Referrals",
+        "url": "https://geniusreferrals.com/travel-referral-program"
+      }
+    ],
+    "workflowSummary": "Agency picks a ready-made template (e.g. a post-booking referral widget or a client 'advocate portal'), sets the reward for both referrer and friend (travel credit, discount, gift card), and launches with no coding. Each past client gets a unique shareable link; the dashboard tracks who referred whom and automatically applies the reward once the referred friend books.",
+    "samplePrompt": "Set up a referral program that gives $50 in travel credit to a past client and a $50 discount to their referred friend once the friend completes a booking, with a shareable link each client can send by text or email.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop setup with ready-made templates, no coding required.",
+    "trustScore": 3,
+    "pricingNote": "Paid plans; specific tiers not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://geniusreferrals.com/travel-referral-program",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current pricing and integration options directly on geniusreferrals.com. The claimed 'up to 40% CAC reduction' is a vendor marketing claim, not independently verified.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-587073bc7f",
+    "slug": "i-want-real-travelers-to-create-short-videos-or-photos-about",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting authentic client photos/videos for marketing without a photoshoot",
+    "title": "I want real travelers to create short videos or photos about their trip that I can use in my marketing",
+    "intentLabels": [
+      "UGC creator sourcing",
+      "user-generated content for travel",
+      "influencer content for travel agency",
+      "find travel content creators"
+    ],
+    "tools": [
+      {
+        "name": "Collabstr",
+        "url": "https://collabstr.com/blog/best-ugc-platforms"
+      }
+    ],
+    "workflowSummary": "Agency browses vetted creators filtered by travel niche and content type (unboxing-style trip recaps, testimonial videos, destination photos), and purchases a content package directly from a chosen creator with transparent, upfront pricing — no lengthy outreach or negotiation needed.",
+    "samplePrompt": "Find 3 travel content creators who can produce a 30-second testimonial-style video about their recent all-inclusive trip, with usage rights for our Instagram and website, and show me pricing for each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "browse-and-purchase workflow with transparent, listed pricing per creator; no negotiation skills required.",
+    "trustScore": 3,
+    "pricingNote": "Pricing set per creator/content package; platform itself has no separate subscription fee for buyers — verify current terms before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://collabstr.com/blog/best-ugc-platforms",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "December 18, 2025",
+    "accessNotes": "Public comparison article from the Collabstr blog (a vendor in this category); confirm current platform terms, usage rights, and pricing directly on collabstr.com.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-2548859347",
+    "slug": "i-want-to-re-engage-website-visitors-who-asked-for-a-quote-but",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency losing website visitors who requested a quote but never booked",
+    "title": "I want to re-engage website visitors who asked for a quote but disappeared before booking",
+    "intentLabels": [
+      "retargeting ads for abandoned leads",
+      "remarketing for travel inquiries",
+      "re-engage website visitors",
+      "recover lost leads"
+    ],
+    "tools": [
+      {
+        "name": "Customers.ai",
+        "url": "https://customers.ai/blog/ad-remarketing-software"
+      }
+    ],
+    "workflowSummary": "Agency installs a tracking pixel on their quote-request form. When a visitor starts but doesn't complete a quote request (or requests one but doesn't book), the platform automatically segments them and serves a personalized retargeting ad across Facebook, Instagram, and Google reminding them of the specific package they viewed.",
+    "samplePrompt": "Set up a retargeting campaign for anyone who started our 'Request a Quote' form for the Bali package but didn't submit it, showing them a reminder ad with the same package and a 'still interested?' message within 48 hours.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "pixel installation and initial segment setup takes some technical comfort, but campaigns run automatically once configured.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited tracked visitors; paid plans scale with audience size — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://customers.ai/blog/ad-remarketing-software",
+    "sourceType": "Blog/guide (comparison roundup, vendor-authored)",
+    "freshness": "December 24, 2024",
+    "accessNotes": "Public comparison article published by Customers.ai (a vendor in this category); confirm current features and pricing directly on customers.ai, and disclose to visitors that their browsing data is used for retargeting per applicable privacy laws.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-48d9b91c79",
+    "slug": "i-want-an-interactive-quiz-on-my-website-that-matches-visitors",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting a fun, interactive way to capture leads on their website",
+    "title": "I want an interactive quiz on my website that matches visitors to a trip and captures their email",
+    "intentLabels": [
+      "travel quiz for lead generation",
+      "trip match quiz",
+      "interactive website quiz",
+      "capture leads with a quiz"
+    ],
+    "tools": [
+      {
+        "name": "LeadQuizzes",
+        "url": "https://www.leadquizzes.com/"
+      }
+    ],
+    "workflowSummary": "Owner describes their business and audience, and the AI drafts a full quiz (e.g. 'What's Your Ideal Trip?') with branching questions and destination-based outcomes. The quiz is embedded on the website or shared as a link; each completed quiz captures the visitor's email and is automatically scored/segmented before syncing to the agency's CRM or email tool.",
+    "samplePrompt": "Create a 'What's Your Ideal Trip?' quiz for a boutique travel agency, with questions about budget, travel style, and preferred climate, ending in one of 5 destination outcomes, and capture the visitor's email before showing results.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI drafts the full quiz from a short description; no design or logic-building skills required.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited responses; paid plans scale with monthly leads captured — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.leadquizzes.com/",
+    "sourceType": "Product page",
+    "freshness": "April 29, 2026",
+    "accessNotes": "Public product page; confirm current pricing tiers and CRM/email integrations directly on leadquizzes.com.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-bcc76dfb67",
+    "slug": "i-want-to-send-clients-an-automatic-email-sequence-suggesting",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting clients to add travel insurance, excursions, or upgrades after booking",
+    "title": "I want to send clients an automatic email sequence suggesting add-ons after they've already booked their trip",
+    "intentLabels": [
+      "post-booking upsell email",
+      "cross-sell travel add-ons",
+      "automated email sequence",
+      "sell travel insurance and excursions by email"
+    ],
+    "tools": [
+      {
+        "name": "Mailmodo AI",
+        "url": "https://www.mailmodo.com/email-flow/ecommerce-email-flows/ecommerce-upsell-cross-sell-email-flow/"
+      }
+    ],
+    "workflowSummary": "Owner describes the upsell goal (e.g. sell travel insurance or a day excursion to clients who've already booked their main trip), and the AI drafts a complete email sequence — objectives, timing, subject lines, and body copy for each email — which the owner reviews, customizes, and automates to send at set intervals after booking confirmation.",
+    "samplePrompt": "Create a 3-email upsell sequence for clients who've booked a Caribbean package but haven't added travel insurance, sent 1 day, 5 days, and 10 days after booking, with a warm non-pushy tone and a clear link to add insurance.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describing the goal in plain language generates a full campaign plan and draft copy to review and adjust.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited contacts/sends; paid plans scale with list size and automation features — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.mailmodo.com/email-flow/ecommerce-email-flows/ecommerce-upsell-cross-sell-email-flow/",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "February 2, 2026",
+    "accessNotes": "Public vendor blog content describing Mailmodo's own AI feature; confirm current pricing and feature availability directly on mailmodo.com.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-cad4e64ddb",
+    "slug": "i-want-to-get-local-press-coverage-for-a-new-destination",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting free media coverage for a milestone or new offering",
+    "title": "I want to get local press coverage for a new destination package or agency milestone without hiring a PR firm",
+    "intentLabels": [
+      "AI press release writer",
+      "media outreach tool",
+      "get press coverage for small business",
+      "write a press release"
+    ],
+    "tools": [
+      {
+        "name": "Pressy.ai",
+        "url": "https://www.pressy.ai/"
+      }
+    ],
+    "workflowSummary": "Owner describes the news (e.g. a new sustainable-travel package launch, an agency anniversary, or a local award) and the AI drafts a properly formatted press release. The platform also surfaces relevant journalist contacts and can send automated, tracked outreach and follow-ups on the owner's behalf.",
+    "samplePrompt": "Write a press release announcing our travel agency's new sustainable-tourism package to the Galápagos, and suggest 5 local or travel-niche journalists who might be interested in covering it.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided prompts draft the release and suggest contacts; no PR background required, though the tone should be reviewed for accuracy and brand fit.",
+    "trustScore": 3,
+    "pricingNote": "Free starter tier (100 journalist contacts/month); paid plan around $79/month for more contacts and campaigns — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.pressy.ai/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current pricing, journalist database accuracy, and deliverability claims directly on pressy.ai before committing budget.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-0a098dec95",
+    "slug": "i-want-a-dedicated-web-page-for-my-summer-sale-that-s-built-to",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency running a specific seasonal or destination promotion",
+    "title": "I want a dedicated web page for my summer sale that's built to convert, not just my regular homepage",
+    "intentLabels": [
+      "landing page builder for travel promotion",
+      "campaign page for ads",
+      "conversion-focused webpage",
+      "seasonal sale landing page"
+    ],
+    "tools": [
+      {
+        "name": "Leadpages",
+        "url": "https://www.perspective.co/article/ai-landing-page-builder"
+      }
+    ],
+    "workflowSummary": "Owner picks a conversion-focused template, and the AI-assisted editor suggests headlines and copy based on a short description of the promotion. The page is built for one goal (e.g. capturing quote requests for a specific sale), unlike a general website page, and can be connected directly to the paid ad campaigns driving traffic to it.",
+    "samplePrompt": "Build a landing page for a 'Summer Europe Sale — Save $300' promotion, with one clear call-to-action to request a quote, a countdown timer for the sale end date, and mobile-optimized layout for ad traffic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop editor and AI copy suggestions designed for non-technical small business owners.",
+    "trustScore": 3,
+    "pricingNote": "Plans start around $37/month; 14-day free trial, no permanent free plan — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.perspective.co/article/ai-landing-page-builder",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "March 27, 2026",
+    "accessNotes": "Public comparison article; confirm current Leadpages pricing and AI feature set directly on leadpages.com.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-b32547f9c2",
+    "slug": "i-want-to-send-a-personal-feeling-postcard-or-letter-to-past",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting to reach past clients or a local neighborhood with a physical touch",
+    "title": "I want to send a personal-feeling postcard or letter to past clients or a local neighborhood without designing and printing it myself",
+    "intentLabels": [
+      "AI direct mail postcard marketing",
+      "handwritten-style mail campaign",
+      "local postcard marketing",
+      "automated print mail for small business"
+    ],
+    "tools": [
+      {
+        "name": "Thanks.io",
+        "url": "https://thanks.io/"
+      }
+    ],
+    "workflowSummary": "Owner describes the campaign goal in plain language (e.g. re-engage past clients who haven't booked in a year, or target neighbors near the office). The AI generates postcard/letter copy and creative, personalizes each piece with recipient-specific details, and schedules a multi-touch mail sequence automatically, including handwritten-style notes that print and mail without manual design work.",
+    "samplePrompt": "Create a handwritten-style postcard campaign for past clients who haven't booked a trip in over 12 months, offering a $100 travel credit if they book by the end of next month, and schedule it to mail this week.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "plain-language prompt generates the full campaign; no design or mailing logistics experience required.",
+    "trustScore": 3,
+    "pricingNote": "Pay-per-piece pricing; exact rates not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thanks.io/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current per-piece pricing, turnaround times, and data-handling practices (recipient addresses) directly on thanks.io before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-b1d5604aef",
+    "slug": "i-want-to-confirm-a-hotel-is-actually-wheelchair-accessible",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency serving clients with mobility, sensory, or other accessibility needs",
+    "title": "I want to confirm a hotel is actually wheelchair accessible before I book it for my client, not just labeled 'accessible'",
+    "intentLabels": [
+      "accessible travel planning",
+      "wheelchair-friendly hotel finder",
+      "verified accessibility information",
+      "travel planning for disabled clients"
+    ],
+    "tools": [
+      {
+        "name": "Wheel the World",
+        "url": "https://wheeltheworld.com/accessible-travel"
+      }
+    ],
+    "workflowSummary": "Agent builds a client Accessibility Profile (wheelchair type, bathroom requirements, sensory needs) and searches hotels/activities/transportation. The platform's AI-assisted Accessibility Match compares each listing against its own verified database of 200+ accessibility data points per property (roll-in showers, doorway widths, step-free routes) rather than relying on a generic 'accessible' label.",
+    "samplePrompt": "Find hotels in Barcelona with a verified roll-in shower, step-free route from lobby to room, and an elevator wide enough for a power wheelchair, for a client traveling in October.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "the accessibility profile and search filters are designed for direct client or agent use with no technical background needed.",
+    "trustScore": 4,
+    "pricingNote": "Free to search and browse; specific booking/commission terms not published in sourced material — verify current terms directly with vendor before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://wheeltheworld.com/accessible-travel",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; even with verified data, agencies should still confirm exact room measurements and physical details directly with the property before booking, per the platform's own guidance.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-9c0ff1c6c4",
+    "slug": "i-want-to-give-wedding-guests-their-own-itinerary-with-events",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent coordinating a destination wedding weekend for a couple and their guests",
+    "title": "I want to give wedding guests their own itinerary with events, hotel info, and local recommendations, not just send one group email",
+    "intentLabels": [
+      "destination wedding guest itinerary",
+      "wedding weekend planning tool",
+      "guest experience coordination",
+      "group wedding travel itinerary"
+    ],
+    "tools": [
+      {
+        "name": "MindTrip",
+        "url": "https://thewed.com/magazine/7-next-level-ai-tools-to-simplify-and-elevate-your-wedding-planning"
+      }
+    ],
+    "workflowSummary": "Agent builds a shared itinerary covering the full wedding weekend (welcome dinner, ceremony, group excursions) plus destination guides and restaurant recommendations, then shares a link so each guest sees a personalized, day-by-day view instead of a static PDF or group email chain.",
+    "samplePrompt": "Build a shareable destination wedding weekend itinerary for Tulum, Mexico, including the welcome dinner, ceremony and reception times, a group snorkeling excursion, and restaurant recommendations near the guest hotel block, formatted for guests to view on their phones.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational itinerary-building interface designed for non-technical use.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tiers for additional features — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thewed.com/magazine/7-next-level-ai-tools-to-simplify-and-elevate-your-wedding-planning",
+    "sourceType": "Blog/guide (roundup)",
+    "freshness": "July 14, 2025",
+    "accessNotes": "Public roundup article; confirm current MindTrip pricing and sharing/collaboration features directly on mindtrip.ai.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-a2db549e93",
+    "slug": "i-want-to-deliver-the-kind-of-personalized-high-touch",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Luxury travel advisor serving high-net-worth clients at scale",
+    "title": "I want to deliver the kind of personalized, high-touch recommendations a luxury client expects without spending hours per trip researching",
+    "intentLabels": [
+      "luxury travel personalization at scale",
+      "AI for luxury travel advisors",
+      "high-net-worth client trip curation",
+      "bespoke itinerary tool for agents"
+    ],
+    "tools": [
+      {
+        "name": "The Trip Boutique (with Amadeus)",
+        "url": "https://aquent.com/blog/how-ai-and-tech-are-shaping-luxury-travel-experiences"
+      }
+    ],
+    "workflowSummary": "Advisor inputs a client's known preferences, past trips, and stated interests, and the platform's AI generates tailored destination and experience recommendations in real time, which the advisor reviews and layers with their own personal touches (a favorite hotelier relationship, a known preference) before presenting to the client.",
+    "samplePrompt": "Generate a curated set of villa and boutique hotel recommendations in the Amalfi Coast for a repeat client who previously loved private chef dinners and quiet, design-forward properties, with a brief note on why each option fits their taste.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the AI recommendations are easy to review, but advisors are expected to add the personal relationship-based touches that define true luxury service.",
+    "trustScore": 3,
+    "pricingNote": "Available through Amadeus travel technology partnerships; specific advisor pricing not published in sourced material — verify current terms directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aquent.com/blog/how-ai-and-tech-are-shaping-luxury-travel-experiences",
+    "sourceType": "Blog/guide (industry article)",
+    "freshness": "March 19, 2025",
+    "accessNotes": "Public industry article describing a vendor partnership; confirm current availability, pricing, and integration requirements directly with Amadeus or The Trip Boutique before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-5f21e6ea42",
+    "slug": "i-want-one-itinerary-that-actually-works-for-grandparents",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent planning a multigenerational family reunion trip (grandparents, parents, kids)",
+    "title": "I want one itinerary that actually works for grandparents, parents, and kids at the same time, not three separate trips glued together",
+    "intentLabels": [
+      "multigenerational family trip planning",
+      "family reunion itinerary",
+      "trip planning for mixed ages and mobility needs",
+      "grandparents and grandkids travel"
+    ],
+    "tools": [
+      {
+        "name": "Stardrift",
+        "url": "https://stardrift.ai/info/blog/use-case-workflow/what-s-the-best-travel-planner-for-a-family-reunion-trip-with-grandparents-parents-and-kids-who-all--93cbbb"
+      }
+    ],
+    "workflowSummary": "Organizer lists every traveler's needs up front — ages, mobility constraints, budget ranges, room requirements, dietary needs — and Stardrift's chat-based planner builds a single itinerary that paces activities and accommodations around the whole group, rather than defaulting to a plan suited to just one age group.",
+    "samplePrompt": "Plan a 7-day family reunion trip to Charleston for 11 people across 3 generations: 2 grandparents with limited mobility, 2 sets of parents, and 4 kids ages 6-14, with hotel rooms close together, activities that don't overtire the grandparents, and options for kids to break off with a parent.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "describing everyone's needs clearly up front takes some upfront effort, but the resulting itinerary is easy to review and adjust.",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tiers for advanced features — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://stardrift.ai/info/blog/use-case-workflow/what-s-the-best-travel-planner-for-a-family-reunion-trip-with-grandparents-parents-and-kids-who-all--93cbbb",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "August 4, 2026",
+    "accessNotes": "Public vendor blog post describing Stardrift's own product; confirm current pricing and feature set directly on stardrift.ai.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-4e12089729",
+    "slug": "i-want-to-know-exactly-what-documents-and-steps-my-client-needs",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent booking international travel for a client bringing a pet",
+    "title": "I want to know exactly what documents and steps my client needs to bring their dog or cat on an international trip",
+    "intentLabels": [
+      "pet travel requirements",
+      "international pet travel documentation",
+      "airline pet policy checker",
+      "traveling abroad with a pet"
+    ],
+    "tools": [
+      {
+        "name": "Pet Holiday Club",
+        "url": "https://www.petholidayclub.com/blog/ai-pet-tech-in-2026-what-actually-works-for-international-travel-and-what-is-still-hype/"
+      }
+    ],
+    "workflowSummary": "Agent enters the pet's species/breed, departure and destination countries, and travel dates. The platform returns a personalized, government-sourced and vet-verified checklist (health certificates, vaccination timing, quarantine rules, airline-specific carrier and documentation requirements) covering that specific route.",
+    "samplePrompt": "Generate a document checklist for a client flying with a small dog from the US to France, including required vaccinations, health certificate timing, and any quarantine or entry restrictions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "enter species, route, and dates to get a personalized checklist; no veterinary or customs background required.",
+    "trustScore": 3,
+    "pricingNote": "Free checklist generation; subscription required for ongoing documentation support — verify current pricing before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.petholidayclub.com/blog/ai-pet-tech-in-2026-what-actually-works-for-international-travel-and-what-is-still-hype/",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "May 22, 2026",
+    "accessNotes": "Public vendor blog post; pet import/entry rules and airline policies change frequently and vary by carrier — always direct clients to confirm final requirements with the airline and destination country's official agriculture/customs authority before travel.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-2bbe54e4cf",
+    "slug": "i-want-to-show-clients-the-carbon-footprint-of-their-trip-and",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency wanting to offer carbon offsetting as part of sustainable-travel packages",
+    "title": "I want to show clients the carbon footprint of their trip and let them offset it without doing the math myself",
+    "intentLabels": [
+      "carbon footprint calculator for travel",
+      "carbon offset for clients",
+      "sustainable tourism tool",
+      "eco-friendly trip add-on"
+    ],
+    "tools": [
+      {
+        "name": "Sustainable Travel International (embeddable carbon calculator)",
+        "url": "https://sustainabletravel.org/business/embeddable-carbon-calculator/"
+      }
+    ],
+    "workflowSummary": "Agency embeds a free, no-code carbon footprint calculator on their website (via an iFrame generator, customizable to match their branding). Clients entering their flight, driving, or cruise details get an instant emissions estimate and can purchase verified carbon offsets directly, with proceeds going to certified climate projects.",
+    "samplePrompt": "Set up an embeddable carbon footprint calculator on our travel agency website, branded with our colors, covering flights and cruises, so clients can calculate and offset their trip's emissions after booking.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no-code iFrame generator with brand customization; no technical setup required beyond copy-pasting the embed code.",
+    "trustScore": 4,
+    "pricingNote": "Free to embed and use; revenue comes from the offset purchases themselves, not a subscription fee — verify current terms before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://sustainabletravel.org/business/embeddable-carbon-calculator/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page from a nonprofit social enterprise (Sustainable Travel International); confirm current calculator methodology and offset project certifications (e.g. Gold Standard, Verra) directly on sustainabletravel.org.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-e51d781ddb",
+    "slug": "i-want-to-help-a-client-figure-out-which-country-s-digital",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent serving clients who want to work remotely from abroad for months at a time",
+    "title": "I want to help a client figure out which country's digital nomad visa actually fits their income, budget, and lifestyle",
+    "intentLabels": [
+      "digital nomad visa comparison",
+      "remote work visa matching",
+      "long-stay visa research",
+      "best country for remote work"
+    ],
+    "tools": [
+      {
+        "name": "WhereToNomad",
+        "url": "https://wheretonomad.com/"
+      }
+    ],
+    "workflowSummary": "Agent (or client) enters income, passport country, and lifestyle priorities (tax treatment, cost of living, climate, EU access), and the tool scores every active digital nomad visa program against that profile, surfacing the best-fit countries instead of the client having to compare 50+ programs manually.",
+    "samplePrompt": "Compare digital nomad visas for a US passport holder earning $4,500/month who wants low income tax, warm climate, and a path to longer-term residency, and rank the top 3 fits.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "input-and-score interface requires no immigration background to use.",
+    "trustScore": 3,
+    "pricingNote": "Free, no signup required per the source material — verify current terms directly with vendor before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://wheretonomad.com/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; digital nomad visa rules, income thresholds, and tax treatment change frequently — always direct clients to confirm current requirements with the relevant consulate or immigration authority before applying.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-ef1b8b9310",
+    "slug": "i-want-to-recommend-a-safety-app-to-solo-female-clients",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agent booking trips for solo female clients",
+    "title": "I want to recommend a safety app to solo female clients traveling alone, not just tell them to 'be careful'",
+    "intentLabels": [
+      "solo female travel safety app",
+      "personal safety app for travelers",
+      "emergency alert app",
+      "solo travel security tool"
+    ],
+    "tools": [
+      {
+        "name": "Noonlight",
+        "url": "https://imalive.co/data/solo-travel-safety-apps-comparison-2026"
+      }
+    ],
+    "workflowSummary": "Client installs the app before their trip and uses its 'hold the button' feature when walking somewhere alone or feeling uneasy — releasing it and entering a PIN if safe, or having emergency dispatch automatically alerted with their location if not. Agent can include this as a standard recommendation in pre-trip materials for solo travelers.",
+    "samplePrompt": "Add a note to this solo female client's pre-trip packet recommending she download Noonlight before her trip and explaining how the 'hold the button' safety feature works for walking alone at night.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple hold-and-release interface designed for use in the moment, no advance configuration required beyond initial setup.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with self-help SOS features; paid 'Protect Me' tier adds contact escalation and SMS alerts — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://imalive.co/data/solo-travel-safety-apps-comparison-2026",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public comparison article; this is a personal safety tool, not a substitute for destination risk research or professional security services — confirm current features and coverage areas directly on noonlight.com.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-c0362927a6",
+    "slug": "i-want-to-double-check-terrain-and-route-difficulty-for-a",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency booking hiking, climbing, or mountain-based adventure trips",
+    "title": "I want to double-check terrain and route difficulty for a client's hiking or mountain trip before I book their adventure package",
+    "intentLabels": [
+      "adventure travel route planning",
+      "mountain terrain identification",
+      "hiking trip difficulty check",
+      "outdoor route safety tool"
+    ],
+    "tools": [
+      {
+        "name": "PeakVisor",
+        "url": "https://www.buhave.com/ai-tools/ai-tools-for-adventure-trips/"
+      }
+    ],
+    "workflowSummary": "Agent looks up the specific peaks, trails, or terrain features involved in a proposed adventure itinerary. The AI-powered app identifies mountain peaks and trail routes, provides panoramic terrain views, and surfaces route information the agent can use to sanity-check a tour operator's difficulty rating before confirming the booking.",
+    "samplePrompt": "Look up the trail route and terrain difficulty for this proposed Torres del Paine trek so I can confirm it matches the 'moderate' difficulty rating the tour operator gave my client.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "search-and-view interface requires no mountaineering background, though agents should still rely on the tour operator's official safety briefing for final decisions.",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited features; paid tiers unlock additional route and terrain data — verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.buhave.com/ai-tools/ai-tools-for-adventure-trips/",
+    "sourceType": "Blog/guide (comparison roundup)",
+    "freshness": "September 27, 2025",
+    "accessNotes": "Public comparison article; treat this as a supplementary research tool, not a substitute for the tour operator's own safety certifications, guide qualifications, and equipment standards — verify those directly with the operator before booking.",
+    "batch": "TravelAgencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-c6da732251",
+    "slug": "i-want-my-corporate-client-s-employees-to-book-within-their",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency taking on a small business corporate travel account",
+    "title": "I want my corporate client's employees to book within their travel policy automatically, not get flagged after the fact",
+    "intentLabels": [
+      "corporate travel policy compliance tool",
+      "self-booking tool for business travel",
+      "travel policy enforcement",
+      "T&E compliance software"
+    ],
+    "tools": [
+      {
+        "name": "Navan",
+        "url": "https://navan.com/blog/ai-tools-corporate-travel-policy-compliance"
+      }
+    ],
+    "workflowSummary": "Agency (or the corporate client directly) loads the company's travel policy into the platform — spend limits, preferred airlines/hotels, advance-purchase rules. When an employee searches for flights or hotels, compliant options are surfaced first and non-compliant ones are flagged or blocked at the point of booking, instead of finance discovering an out-of-policy expense weeks later.",
+    "samplePrompt": "Set up a corporate travel policy for a 15-person client with a $400/night hotel cap, economy-only domestic flights, and a requirement to book 14+ days in advance, with non-compliant options flagged before checkout.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial policy configuration takes some setup time, but day-to-day use by employees is self-service and simple.",
+    "trustScore": 4,
+    "pricingNote": "Enterprise/mid-market pricing; specific tiers not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://navan.com/blog/ai-tools-corporate-travel-policy-compliance",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "February 12, 2026",
+    "accessNotes": "Public vendor blog post; Navan is the vendor being described, so compliance-rate figures are vendor-reported — confirm current pricing and features directly on navan.com before publishing.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-7a0ecaf42b",
+    "slug": "i-want-to-manage-flights-hotels-and-a-branded-event-agenda-for",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency planning a corporate conference, sales meeting, or incentive trip",
+    "title": "I want to manage flights, hotels, and a branded event agenda for a 100-person company conference without juggling five spreadsheets",
+    "intentLabels": [
+      "MICE event planning software",
+      "corporate conference travel management",
+      "incentive trip planning tool",
+      "meetings and events platform"
+    ],
+    "tools": [
+      {
+        "name": "Cvent",
+        "url": "https://www.mtrip.com/en/meeting-incentives-events/"
+      }
+    ],
+    "workflowSummary": "Agency (or the corporate meeting planner) builds the event program — registration, room blocks, agenda, and travel logistics — in one platform. Attendees register and see their personalized schedule; the agency tracks group air/hotel commitments and can pull real-time reporting on registrations, room pickup, and budget against the event.",
+    "samplePrompt": "Set up event registration and a hotel room block for a 100-person sales conference, with a branded agenda attendees can view on their phones and a live dashboard showing registrations against our room block commitment.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial event setup (registration forms, room blocks, agenda structure) takes real configuration time, though day-to-day monitoring is straightforward.",
+    "trustScore": 3,
+    "pricingNote": "Enterprise/custom pricing based on event size and features — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.mtrip.com/en/meeting-incentives-events/",
+    "sourceType": "Blog/guide (comparison mention, competitor context)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public vendor comparison page naming Cvent as an established registration/event platform; confirm current Cvent pricing and feature scope directly on cvent.com.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-d81619301c",
+    "slug": "i-want-to-know-exactly-what-margin-i-m-making-on-a-new-tour",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Tour operator building a new multi-day tour package",
+    "title": "I want to know exactly what margin I'm making on a new tour package before I publish the price",
+    "intentLabels": [
+      "tour profit margin calculator",
+      "tour costing tool",
+      "pricing tours for profitability",
+      "break-even calculator for tour operators"
+    ],
+    "tools": [
+      {
+        "name": "TourCalculator.com",
+        "url": "https://www.tourcalculator.com/"
+      }
+    ],
+    "workflowSummary": "Operator enters direct costs (guides, transport, accommodation, activities), fixed overhead allocation, and desired margin into the free calculator. The tool returns the break-even point, recommended selling price, and profit margin at different group sizes, so pricing decisions are based on real numbers instead of a rough guess.",
+    "samplePrompt": "Calculate the break-even price and profit margin for a 3-day food tour with $180 in direct costs per person, a 35% target margin, and typical group sizes of 8-12 people.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, simple input-and-calculate tool with no accounting background required.",
+    "trustScore": 3,
+    "pricingNote": "Free tool",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.tourcalculator.com/",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public free tool; confirm it accounts for all relevant costs (including distribution commissions, which can be 15-30% and are easy to omit) before relying on its output for final pricing.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-200e68bdcd",
+    "slug": "i-want-to-get-a-newly-hired-agent-selling-confidently-within",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency owner hiring and training new travel agents",
+    "title": "I want to get a newly hired agent selling confidently within their first week instead of taking a month to ramp up",
+    "intentLabels": [
+      "travel agent onboarding training",
+      "new hire training for travel agency",
+      "sales training platform for agents",
+      "agent ramp-up program"
+    ],
+    "tools": [
+      {
+        "name": "TravelSalesIQ",
+        "url": "https://www.travelsalesiq.com/blog/travel-agent-onboarding-selling-fast"
+      }
+    ],
+    "workflowSummary": "Owner enrolls the new hire in a structured, adaptive onboarding track covering common customer scenarios, destination knowledge, and sales practice. The platform adjusts pace based on what the new agent already knows (e.g. skipping ahead for someone with strong destination knowledge) and gives unlimited practice scenarios with immediate feedback, rather than relying solely on shadowing a mentor.",
+    "samplePrompt": "Enroll our newly hired agent in a 5-day onboarding track covering common booking scenarios, our top 5 supplier destinations, and sales practice roleplays, with progress reports I can review at the end of each day.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "designed to be handed directly to a new hire with minimal manager setup beyond initial enrollment.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.travelsalesiq.com/blog/travel-agent-onboarding-selling-fast",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "May 8, 2026",
+    "accessNotes": "Public vendor blog post; confirm current pricing and course content directly on travelsalesiq.com.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-7f797baa22",
+    "slug": "i-want-my-team-to-be-able-to-ask-a-question-and-instantly-find",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Multi-agent agency with scattered supplier contracts and rate sheets",
+    "title": "I want my team to be able to ask a question and instantly find the right supplier contract or rate sheet instead of digging through old emails",
+    "intentLabels": [
+      "internal knowledge base search",
+      "supplier contract search tool",
+      "company document search AI",
+      "find internal documents fast"
+    ],
+    "tools": [
+      {
+        "name": "ActionSync",
+        "url": "https://actionsync.ai/best-ai-internal-knowledge-base-search-software-tools-platform-engine-for-employees-companies"
+      }
+    ],
+    "workflowSummary": "Agency connects its shared drives, email, and internal document folders (supplier contracts, rate sheets, past proposals) to the tool. Staff can then ask a plain-language question and get an answer pulled directly from the right document, with permission controls intact, instead of manually searching folders or asking a colleague.",
+    "samplePrompt": "Connect our shared drive of supplier contracts and rate sheets, then let any agent ask 'what's our current commission rate with [supplier name]?' and get the answer pulled directly from the contract.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial connection of data sources takes IT-adjacent setup, but day-to-day use (asking questions) is simple for any staff member.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://actionsync.ai/best-ai-internal-knowledge-base-search-software-tools-platform-engine-for-employees-companies",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public vendor blog post; confirm current pricing, supported data sources, and data security/permission controls directly on actionsync.ai before connecting contracts containing commercially sensitive supplier terms.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-7953a152ac",
+    "slug": "i-want-to-confirm-every-airline-ticket-we-sold-actually",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "US-based agency accredited to issue airline tickets",
+    "title": "I want to confirm every airline ticket we sold actually reconciles against our ARC or BSP settlement statement without manually checking each line",
+    "intentLabels": [
+      "ARC BSP settlement reconciliation",
+      "airline ticket settlement automation",
+      "travel agency accounting software",
+      "ADM ACM reconciliation"
+    ],
+    "tools": [
+      {
+        "name": "PHPTravels (accounting/BSP-ARC module)",
+        "url": "https://phptravels.com/travel-accounting-systems-integration"
+      }
+    ],
+    "workflowSummary": "Agency imports its BSP or ARC settlement statement (PDF, CSV, or API) alongside its own ticket and invoice records. The system automatically matches tickets to the settlement report, flags variances like ADMs/ACMs, taxes, and refunds with an exportable audit trail, and posts journals or exports to accounting software like QuickBooks or Xero.",
+    "samplePrompt": "Import this week's BSP settlement statement and match it against our issued tickets, flag any ADMs or discrepancies with a note explaining each one, and export a clean audit summary I can review before the period locks.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup and understanding the flagged variance types takes some back-office familiarity, but the matching itself runs automatically.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://phptravels.com/travel-accounting-systems-integration",
+    "sourceType": "Product page",
+    "freshness": "Accessed September 2026",
+    "accessNotes": "Public product page; confirm current pricing, supported settlement formats (BSP vs. ARC), and accounting software integrations directly on phptravels.com before relying on it for financial reconciliation.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "travel-agencies-a0c1dbac0d",
+    "slug": "i-want-to-build-a-fair-weekly-staff-schedule-that-covers-our",
+    "kind": "workflow",
+    "niche": "Travel Agencies",
+    "sector": "Travel Agencies",
+    "persona": "Agency office with multiple agents covering phone/chat hours",
+    "title": "I want to build a fair weekly staff schedule that covers our phone and chat hours without spending an hour every week on a spreadsheet",
+    "intentLabels": [
+      "staff scheduling software",
+      "shift rostering tool",
+      "fair shift schedule generator",
+      "call coverage scheduling"
+    ],
+    "tools": [
+      {
+        "name": "RosterLab",
+        "url": "https://rosterlab.com/blog/should-your-next-staff-roster-be-built-with-ai"
+      }
+    ],
+    "workflowSummary": "Manager enters each agent's availability, skills (e.g. Spanish-speaking, group booking specialist), and any labor-law constraints (max hours, required rest periods). The AI generates an optimized weekly schedule balancing fair shift distribution and full phone/chat coverage, and can auto-fill open shifts or process shift swaps within the same rules.",
+    "samplePrompt": "Build next week's schedule covering our 8am-6pm phone/chat hours with 4 agents, respecting each agent's stated availability, keeping shifts fair across the team, and flagging any coverage gaps.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of availability, skills, and constraints takes some configuration, but generating and adjusting a schedule afterward is quick.",
+    "trustScore": 3,
+    "pricingNote": "Paid subscription; specific pricing not published in sourced material — verify current pricing directly with vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://rosterlab.com/blog/should-your-next-staff-roster-be-built-with-ai",
+    "sourceType": "Blog/guide (vendor content)",
+    "freshness": "May 29, 2026",
+    "accessNotes": "Public vendor blog post; confirm current pricing and whether the platform supports small teams (RosterLab's examples skew toward larger workforces) directly on rosterlab.com before committing.",
+    "batch": "TravelAgencies AI Workflows Batch5",
+    "status": "active"
+  }
+]

@@ -22,6 +22,23 @@ interface ButtonProps {
   /** Adds the magnetic-hover anchor read by the Phase 9 hook. */
   magnetic?: boolean
   fullWidth?: boolean
+  /**
+   * Optional and additive: absent, the button renders exactly as before.
+   * Ignored when `to` makes this a link — a link cannot be disabled.
+   */
+  disabled?: boolean
+  /**
+   * Link-only, both optional and both additive: absent, the rendered anchor
+   * carries neither attribute and behaves exactly as it always has. Ignored
+   * without `to`, because a <button> has no target.
+   *
+   * A caller passing `target="_blank"` owns two things this component cannot
+   * decide for it: `rel="noopener noreferrer"`, and telling a screen reader
+   * the tab is coming — the codebase says that with
+   * `<span className="sr-only"> (opens in a new tab)</span>` inside the label.
+   */
+  target?: string
+  rel?: string
   className?: string
 }
 
@@ -50,12 +67,19 @@ export default function Button({
   type = 'button',
   magnetic = false,
   fullWidth = false,
+  disabled = false,
+  target,
+  rel,
   className = '',
 }: ButtonProps) {
   const classes = [
     'inline-block text-center cursor-pointer',
     VARIANTS[variant],
     fullWidth ? 'w-full' : '',
+    // The same disabled treatment BrowseControls' Reset and Browse's "Show
+    // more" already use. `disabled:` variants only apply when disabled, so an
+    // enabled button's classes resolve exactly as before.
+    'disabled:cursor-default disabled:opacity-40 disabled:hover:translate-y-0',
     className,
   ]
     .filter(Boolean)
@@ -63,7 +87,13 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} data-magnet={magnetic ? '1' : undefined} className={classes}>
+      <Link
+        to={to}
+        target={target}
+        rel={rel}
+        data-magnet={magnetic ? '1' : undefined}
+        className={classes}
+      >
         {children}
       </Link>
     )
@@ -73,6 +103,7 @@ export default function Button({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       data-magnet={magnetic ? '1' : undefined}
       className={classes}
     >

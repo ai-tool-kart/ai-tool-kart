@@ -43,9 +43,11 @@ function statusLabel(session: AssistantSession): string {
 
 interface ChatPanelProps {
   session: AssistantSession
+  /** Header title. Defaults to the design's own wording. */
+  label?: string
 }
 
-export default function ChatPanel({ session }: ChatPanelProps) {
+export default function ChatPanel({ session, label = 'AI Assistant' }: ChatPanelProps) {
   const [draft, setDraft] = useState('')
   const [focused, setFocused] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -80,7 +82,7 @@ export default function ChatPanel({ session }: ChatPanelProps) {
         </span>
         <span className="flex min-w-0 flex-col gap-px">
           <span className="text-[14px] font-semibold tracking-[-0.014em] text-[#EFEAFB]">
-            AI Assistant
+            {label}
           </span>
           <span className="truncate text-[11.5px] text-subtle">
             Describe the work — the plan builds itself

@@ -272,7 +272,7 @@ function AddedMeta({ tool, now }: { tool: Tool; now: number }) {
   if (!added) return null
 
   return (
-    <span className="inline-flex min-w-0 items-center gap-[5px] truncate text-[12px] text-[#615C7A]">
+    <span className="inline-flex min-w-0 items-center gap-[5px] truncate text-[12px] text-muted-dim">
       <svg
         viewBox="0 0 24 24"
         fill="none"

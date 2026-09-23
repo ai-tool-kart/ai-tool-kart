@@ -31,9 +31,18 @@ import { isLLMError } from '../src/llm/errors.ts'
 import { UNTRUSTED_DELIMITERS } from '../src/llm/prompts/shared.ts'
 import { createMockProvider, type MockProviderOptions } from '../src/llm/providers/mock.ts'
 import { createRetrievalService } from '../src/retrieval/service.ts'
-import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
+import type { ToolCatalogueRepository, ToolQuery } from '../src/catalogue/repository.ts'
 import type { Tool } from '../src/domain/types.ts'
-import { fixtureCatalogue, makeAssistantReply, makeTool, testLogger } from './helpers.ts'
+import { createJsonAutomations } from '../src/automations/json.ts'
+import { createAutomationMatcher, type AutomationMatcher } from '../src/automations/match.ts'
+import type { Automation } from '../src/automations/types.ts'
+import {
+  fixtureCatalogue,
+  makeAssistantReply,
+  makeAutomation,
+  makeTool,
+  testLogger,
+} from './helpers.ts'
 
 /* ═══ Fixtures ═════════════════════════════════════════════════════════════ */
 
@@ -111,10 +120,19 @@ interface Harness {
   /** Every provider request, so a test can read the prompt that was sent. */
   prompts: Array<{ system: string; input: string }>
   calls: number
+  /** Times the engine asked for the automation index. */
+  automationLookups: number
 }
 
 function harness(
-  options: { mock?: MockProviderOptions; catalogue?: ToolCatalogueRepository } = {},
+  options: {
+    mock?: MockProviderOptions
+    catalogue?: ToolCatalogueRepository
+    /** The automations the engine may put above a plan. None by default. */
+    automations?: Automation[]
+    /** Replaces the index outright, e.g. with one that fails to build. */
+    automationIndex?: () => Promise<AutomationMatcher>
+  } = {},
 ): Harness {
   const logger = testLogger()
   const catalogue = options.catalogue ?? fixtureCatalogue(TOOLS)
@@ -125,6 +143,7 @@ function harness(
     budgets: [],
     prompts: [],
     calls: 0,
+    automationLookups: 0,
     engine: undefined as never,
   }
 
@@ -149,6 +168,10 @@ function harness(
       state.budgets.push(budget)
       return createLLMClient({ provider, budget, logger })
     },
+    automations: () => {
+      state.automationLookups += 1
+      return options.automationIndex?.() ?? Promise.resolve(createAutomationMatcher(options.automations ?? []))
+    },
     logger,
   })
 
@@ -160,7 +183,7 @@ function harness(
 await test('the authoritative assistant schema', async (t) => {
   const valid = makeAssistantReply()
 
-  await t.test('a recommendation with a six-section plan validates', () => {
+  await t.test('a recommendation with a plan validates', () => {
     const parsed = AssistantReplySchema.safeParse(valid)
     assert.equal(parsed.success, true)
     assert.ok(parsed.success && parsed.data.plan)
@@ -196,7 +219,7 @@ await test('the authoritative assistant schema', async (t) => {
         ...valid,
         plan: {
           ...valid.plan,
-          workflow: [{ stage: 'edit', why: 'a', run: 'rm -rf /' }],
+          steps: [{ stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [], run: 'rm -rf /' }],
         },
       }).success,
       false,
@@ -210,17 +233,21 @@ await test('the authoritative assistant schema', async (t) => {
     )
   })
 
-  await t.test('the plan carries tool IDS, never tool objects', () => {
+  await t.test('a step carries a tool ID, never a tool object', () => {
     // A schema that accepted tool objects would let the model DESCRIBE a tool,
     // which is the one thing it must never do.
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { ...valid.plan, toolIds: [{ id: 'beta-editor', name: 'Beta Editor' }] },
+      plan: {
+        steps: [
+          { stage: 'edit', toolId: { id: 'beta-editor', name: 'Beta Editor' }, alsoGoodToolIds: [] },
+        ],
+      },
     })
     assert.equal(result.success, false)
   })
 
-  await t.test('the caps from §10.1 are enforced', () => {
+  await t.test('the caps are enforced', () => {
     const over = <T>(value: T, count: number): T[] => Array.from({ length: count }, () => value)
     assert.equal(
       AssistantReplySchema.safeParse({ ...valid, followUps: over('x', 4) }).success,
@@ -233,41 +260,55 @@ await test('the authoritative assistant schema', async (t) => {
       }).success,
       false,
     )
-    assert.equal(
-      AssistantReplySchema.safeParse({
-        ...valid,
-        plan: { ...valid.plan, toolIds: over('beta-editor', ASSISTANT.maxPlanTools + 1) },
-      }).success,
-      false,
-    )
+    const stages = ['research', 'ideate', 'draft', 'design', 'build'] as const
     assert.equal(
       AssistantReplySchema.safeParse({
         ...valid,
         plan: {
-          ...valid.plan,
-          workflow: over({ stage: 'edit', why: 'a' }, ASSISTANT.maxWorkflowStages + 1),
+          steps: Array.from({ length: ASSISTANT.maxPlanSteps + 1 }, (_unused, index) => ({
+            stage: stages[index],
+            toolId: `tool-${index}`,
+            alsoGoodToolIds: [],
+          })),
         },
       }).success,
       false,
-    )
-    assert.equal(
-      AssistantReplySchema.safeParse({
-        ...valid,
-        plan: {
-          ...valid.plan,
-          workflow: [{ stage: 'edit', why: 'x'.repeat(ASSISTANT.maxWhyChars + 1) }],
-        },
-      }).success,
-      false,
+      'more steps than the schema allows must fail even with distinct tools and stages',
     )
   })
 
-  await t.test('a workflow tool id is optional, so an unstaffed stage is expressible', () => {
+  await t.test('a stage outside the closed vocabulary is rejected', () => {
     const result = AssistantReplySchema.safeParse({
       ...valid,
-      plan: { ...valid.plan, workflow: [{ stage: 'publish', why: 'No candidate covers this.' }] },
+      plan: { steps: [{ stage: 'invent', toolId: 'beta-editor', alsoGoodToolIds: [] }] },
     })
-    assert.equal(result.success, true)
+    assert.equal(result.success, false)
+  })
+
+  await t.test('a tool used in two steps is rejected', () => {
+    const result = AssistantReplySchema.safeParse({
+      ...valid,
+      plan: {
+        steps: [
+          { stage: 'draft', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+        ],
+      },
+    })
+    assert.equal(result.success, false)
+  })
+
+  await t.test('a stage used in two steps is rejected', () => {
+    const result = AssistantReplySchema.safeParse({
+      ...valid,
+      plan: {
+        steps: [
+          { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          { stage: 'edit', toolId: 'alpha-writer', alsoGoodToolIds: [] },
+        ],
+      },
+    })
+    assert.equal(result.success, false)
   })
 
   await t.test('the plan/intent relationship is left to grounding, not refined here', () => {
@@ -366,6 +407,7 @@ await test('the assistant prompt keeps the trust asymmetry', async (t) => {
       pricingTier: 'paid',
       stages: ['edit'],
       tagline: 'Cuts long video down.',
+      score: 5,
     },
   ]
 
@@ -423,42 +465,38 @@ await test('a normal recommendation turn', async (t) => {
     assert.ok(response.plan)
   })
 
-  await t.test('every plan tool is a real, hydrated catalogue record', () => {
+  await t.test('every step tool is a real, hydrated catalogue record', () => {
     const ids = new Set(TOOLS.filter((tool) => tool.status === 'active').map((tool) => tool.id))
-    for (const tool of response.plan?.tools ?? []) {
-      assert.ok(ids.has(tool.id), `${tool.id} is not in the catalogue`)
-      assert.equal(typeof tool.slug, 'string')
-      assert.equal(typeof tool.url, 'string')
-      assert.equal(typeof tool.mono, 'string')
-      assert.equal(typeof tool.price, 'string')
+    for (const step of response.plan?.steps ?? []) {
+      assert.ok(ids.has(step.tool.id), `${step.tool.id} is not in the catalogue`)
+      assert.equal(typeof step.tool.slug, 'string')
+      assert.equal(typeof step.tool.url, 'string')
+      assert.equal(typeof step.tool.mono, 'string')
+      assert.equal(typeof step.tool.price, 'string')
     }
   })
 
-  await t.test('all six plan sections are present', () => {
+  await t.test('the plan carries a goal line and at least one step', () => {
     const plan = response.plan
     assert.ok(plan)
-    assert.ok(plan.tools.length > 0)
-    assert.ok(Array.isArray(plan.agents))
-    assert.ok(plan.workflow.length > 0)
-    assert.equal(typeof plan.prompts, 'string')
-    assert.equal(typeof plan.comparison, 'string')
+    assert.equal(plan.goal, VIDEO_QUERY, 'the goal is the user\'s own message, verbatim')
     assert.ok(plan.steps.length > 0)
   })
 
-  await t.test('workflow tools are hydrated, not left as ids', () => {
-    const staffed = response.plan?.workflow.filter((step) => step.tool) ?? []
-    assert.ok(staffed.length > 0)
-    for (const step of staffed) {
-      assert.equal(typeof step.tool?.name, 'string')
-      assert.ok(response.plan?.tools.some((tool) => tool.id === step.tool?.id))
+  await t.test('each step names a plain-language action', () => {
+    for (const step of response.plan?.steps ?? []) {
+      assert.equal(typeof step.action, 'string')
+      assert.ok(step.action.length > 0)
     }
   })
 
+  await t.test('no tool repeats across steps', () => {
+    const steps = response.plan?.steps ?? []
+    assert.equal(new Set(steps.map((step) => step.tool.id)).size, steps.length)
+  })
+
   await t.test('the draft record never reaches the response', () => {
-    const shown = [
-      ...(response.plan?.tools ?? []),
-      ...(response.plan?.workflow.flatMap((step) => (step.tool ? [step.tool] : [])) ?? []),
-    ]
+    const shown = response.plan?.steps.map((step) => step.tool) ?? []
     assert.equal(shown.some((tool) => tool.id === 'draft-hidden'), false)
   })
 
@@ -523,16 +561,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Video workflow',
-                  toolIds: ['beta-editor', 'superfakeai'],
-                  agents: [],
-                  workflow: [
-                    { stage: 'edit', toolId: 'beta-editor', why: 'It cuts video.' },
-                    { stage: 'publish', toolId: 'superfakeai', why: 'It publishes.' },
+                  steps: [
+                    { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+                    { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
                   ],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
                 },
               }),
             ),
@@ -543,13 +575,12 @@ await test('grounding is wired into the turn', async (t) => {
 
     const response = await h.engine.runTurn({ message: VIDEO_QUERY })
     assert.deepEqual(
-      response.plan?.tools.map((tool) => tool.id),
+      response.plan?.steps.map((step) => step.tool.id),
       ['beta-editor'],
     )
     assert.deepEqual(response.meta.droppedToolIds, ['superfakeai'])
     // Counted in meta, and present nowhere else in the response.
     assert.equal(JSON.stringify(response.plan).includes('superfakeai'), false)
-    assert.equal(response.plan?.workflow[1]?.tool, undefined)
   })
 
   await t.test('a plan of nothing but forged ids degrades to a clarification', async () => {
@@ -561,13 +592,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Invented',
-                  toolIds: ['superfakeai', 'ghost-tool'],
-                  agents: [],
-                  workflow: [{ stage: 'edit', toolId: 'superfakeai', why: 'x' }],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
+                  steps: [
+                    { stage: 'edit', toolId: 'superfakeai', alsoGoodToolIds: [] },
+                    { stage: 'build', toolId: 'ghost-tool', alsoGoodToolIds: [] },
+                  ],
                 },
               }),
             ),
@@ -603,13 +631,10 @@ await test('grounding is wired into the turn', async (t) => {
             text: JSON.stringify(
               makeAssistantReply({
                 plan: {
-                  title: 'Mixed',
-                  toolIds: ['beta-editor', 'superfakeai'],
-                  agents: [],
-                  workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'x' }],
-                  prompts: 'p',
-                  comparison: 'c',
-                  steps: ['s'],
+                  steps: [
+                    { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+                    { stage: 'build', toolId: 'superfakeai', alsoGoodToolIds: [] },
+                  ],
                 },
               }),
             ),
@@ -737,5 +762,275 @@ await test('the conversation is carried into the turn', async (t) => {
     const input = h.prompts[0]?.input ?? ''
     assert.match(input, /turn-11/)
     assert.doesNotMatch(input, /turn-0\b/, 'the oldest turns are truncated, not rejected')
+  })
+})
+
+/* ═══ Catalogue kind ═══════════════════════════════════════════════════════ */
+
+/*
+ * The MCP directory's assistant. The fixture puts non-MCP tools where they
+ * would otherwise win — Beta Editor and Shorts Studio outrank every MCP tool on
+ * their stages — so a plan made only of MCP servers is the filter working, not
+ * the ranking.
+ */
+const KIND_TOOLS: Tool[] = [
+  ...TOOLS.map((tool) => (tool.id === 'clip-maker' ? { ...tool, isMcpServer: true } : tool)),
+  makeTool({
+    id: 'reel-server',
+    slug: 'reel-server',
+    name: 'Reel Server',
+    cat: 'Video',
+    pricingTier: 'freemium',
+    pop: 50,
+    url: 'https://reel-server.example',
+    tags: ['Video editing'],
+    roles: ['Video Editor'],
+    useCases: ['Edit long videos'],
+    stages: ['edit'],
+    tagline: 'Edits video from an agent over MCP.',
+    summary: 'Reel Server exposes video editing to an agent through MCP.',
+    isMcpServer: true,
+  }),
+  makeTool({
+    id: 'upload-server',
+    slug: 'upload-server',
+    name: 'Upload Server',
+    cat: 'Video',
+    model: 'Free',
+    pricingTier: 'free',
+    pop: 45,
+    url: 'https://upload-server.example',
+    tags: ['YouTube'],
+    roles: ['Video Editor', 'Content Creator'],
+    useCases: ['Generate clips'],
+    stages: ['publish'],
+    tagline: 'Publishes finished video to YouTube over MCP.',
+    summary: 'Upload Server lets an agent publish a finished video to YouTube.',
+    isMcpServer: true,
+  }),
+  makeTool({
+    id: 'shorts-studio',
+    slug: 'shorts-studio',
+    name: 'Shorts Studio',
+    cat: 'Video',
+    pricingTier: 'freemium',
+    pop: 84,
+    url: 'https://shorts-studio.example',
+    tags: ['Shorts', 'Video editing'],
+    roles: ['Video Editor', 'Content Creator'],
+    useCases: ['Create shorts'],
+    stages: ['edit', 'publish'],
+    tagline: 'Edits and publishes short-form video.',
+    summary: 'Shorts Studio edits long video into shorts and publishes them.',
+  }),
+]
+
+const MCP_IDS = new Set(KIND_TOOLS.filter((tool) => tool.isMcpServer).map((tool) => tool.id))
+
+/** Every id a response shows: step picks and their alternates. */
+function shownIds(response: Awaited<ReturnType<Harness['engine']['runTurn']>>): string[] {
+  return (response.plan?.steps ?? []).flatMap((step) => [
+    step.tool.id,
+    ...step.alsoGood.map((tool) => tool.id),
+  ])
+}
+
+/** The kind fixture, recording every query that reaches the port. */
+function spiedCatalogue(queries: ToolQuery[]): ToolCatalogueRepository {
+  const inner = fixtureCatalogue(KIND_TOOLS)
+  return {
+    id: inner.id,
+    findById: (id) => inner.findById(id),
+    findBySlug: (slug) => inner.findBySlug(slug),
+    findManyByIds: (ids) => inner.findManyByIds(ids),
+    search: (query) => {
+      queries.push(query)
+      return inner.search(query)
+    },
+    taxonomy: () => inner.taxonomy(),
+    size: () => inner.size(),
+    findByNormalizedUrl: (url) => inner.findByNormalizedUrl(url),
+    create: (tool) => inner.create(tool),
+  }
+}
+
+await test('catalogue kind', async (t) => {
+  await t.test("an 'mcp' turn only ever shows MCP servers, picks and alternates", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+
+    assert.equal(response.intent, 'recommend')
+    assert.ok(
+      response.plan?.steps.some((step) => step.alsoGood.length > 0),
+      'the fixture must produce an alternate, or this proves nothing about them',
+    )
+    for (const id of shownIds(response)) assert.ok(MCP_IDS.has(id), `${id} is not an MCP server`)
+    // The model is only ever shown MCP servers, so it cannot name anything else.
+    assert.doesNotMatch(h.prompts[0]?.system ?? '', /- (beta-editor|shorts-studio) · /)
+  })
+
+  await t.test('the same query without a kind does show non-MCP tools', async () => {
+    // The guard on the test above: unfiltered, this fixture recommends tools
+    // the 'mcp' turn must not.
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.ok(shownIds(response).some((id) => !MCP_IDS.has(id)))
+  })
+
+  await t.test('a turn with no kind behaves exactly as before', async () => {
+    const queries: ToolQuery[] = []
+    const h = harness({ catalogue: spiedCatalogue(queries) })
+    await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.ok(queries.length > 0)
+    for (const query of queries) assert.equal('kind' in query, false)
+  })
+
+  await t.test("'workflow' applies no filter: identical to sending no kind", async () => {
+    const none = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const workflow = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const a = await none.engine.runTurn({ message: VIDEO_QUERY })
+    const b = await workflow.engine.runTurn({ message: VIDEO_QUERY, kind: 'workflow' })
+
+    assert.deepEqual(b, a)
+    assert.equal(workflow.prompts[0]?.system, none.prompts[0]?.system)
+  })
+
+  await t.test("an 'mcp' turn with no MCP servers clarifies without the model", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+    assert.equal(response.intent, 'clarify')
+    assert.equal(h.calls, 0)
+  })
+})
+
+
+/* ═══ The step-by-step guide above the plan ═══════════════════════════════ */
+
+/*
+ * These run against the REAL imported automations, not fixtures.
+ *
+ * The gate is an absolute IDF weight — how much of the message's rarity the
+ * matched title accounts for (ASSISTANT.automationMinTitleWeight, and
+ * SPEC-automations.md §7 for why a signal count and a coverage share both
+ * failed). An absolute weight only means anything at the scale it was
+ * calibrated on: inside a two-record fixture every term is worth about
+ * idfBase, so nothing clears a floor of 5.2 and a "qualifying" fixture could
+ * only be manufactured by padding the index until the arithmetic worked.
+ *
+ * The separation itself is pinned in automationMatch.test.ts, which holds all
+ * nine measured figures. What these tests own is the engine's behaviour around
+ * the gate: which turns consult it, what it puts on the response, and what
+ * happens when it says no.
+ */
+
+/** Built once — indexing 1,560 records per harness would dominate the suite. */
+const AUTOMATIONS = await createJsonAutomations().list()
+const AUTOMATION_INDEX = createAutomationMatcher(AUTOMATIONS)
+const realIndex = () => Promise.resolve(AUTOMATION_INDEX)
+
+/** Its title carries 10.58 of VIDEO_QUERY's weight, comfortably over the floor. */
+const VIDEO_GUIDE_TITLE = 'I want to write a YouTube video script from a topic'
+
+/**
+ * Three signals — title, intent labels, persona — every one of them on a word
+ * as common as `video`, and a matched title weight of 4.02. The case the
+ * replaced two-signal rule let through.
+ */
+const COINCIDENCE_QUERY = 'edit videos faster'
+
+await test('the automation above the plan', async (t) => {
+  await t.test('a title-carrying match is shown on a recommend turn, as title, niche and slug', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal(response.automation?.title, VIDEO_GUIDE_TITLE)
+
+    const shown = AUTOMATIONS.find((a) => a.title === VIDEO_GUIDE_TITLE)
+    assert.ok(shown)
+    assert.deepEqual(response.automation, {
+      title: shown.title,
+      niche: shown.niche,
+      slug: shown.slug,
+    })
+  })
+
+  await t.test('a match on common words alone is coincidence, and nothing is shown', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: COINCIDENCE_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal('automation' in response, false)
+    // It really did match, and on more than one field — it is the gate that
+    // rejected it, not an empty result.
+    const top = AUTOMATION_INDEX.match(COINCIDENCE_QUERY, { limit: 1 })[0]
+    assert.ok(top)
+    assert.ok(top.signals.titleTerms > 0 && top.signals.intentTerms > 0)
+  })
+
+  await t.test('the raw message is matched, not the refined query', async () => {
+    // A whole-phrase title hit only survives if nothing is prefixed to the
+    // message, and a fixture is the only way to guarantee one. Its title is
+    // the message, so it carries the whole query weight and clears the floor.
+    const phrase = makeAutomation({
+      id: 'phrase',
+      slug: 'phrase',
+      title: VIDEO_QUERY,
+      intentLabels: ['unrelated label'],
+      persona: 'Nobody in particular',
+      tools: [{ name: 'Placeholder', url: 'https://example.com' }],
+    })
+    const h = harness({ automations: [...AUTOMATIONS, phrase] })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.equal(response.automation?.slug, 'phrase')
+  })
+
+  await t.test("an 'mcp' turn never asks for the index", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS), automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+
+    assert.equal(response.intent, 'recommend')
+    assert.equal('automation' in response, false)
+    assert.equal(h.automationLookups, 0)
+  })
+
+  await t.test('a clarifying turn carries no automation', async () => {
+    const h = harness({ mock: { assistantIntent: 'clarify' }, automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'clarify')
+    assert.equal('automation' in response, false)
+  })
+
+  await t.test('the empty-retrieval answer is unchanged, even when a guide would qualify', async () => {
+    const h = harness({ catalogue: fixtureCatalogue([]), automationIndex: realIndex })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.message, NO_CANDIDATES_MESSAGE)
+    assert.equal(h.calls, 0)
+    assert.equal('automation' in response, false)
+  })
+
+  await t.test('a later turn that does not qualify clears it rather than carrying it', async () => {
+    const h = harness({ automationIndex: realIndex })
+    const first = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.ok(first.automation)
+
+    const second = await h.engine.runTurn({
+      message: 'only free tools please',
+      context: first.context,
+    })
+    assert.equal(second.intent, 'recommend')
+    assert.equal('automation' in second, false)
+  })
+
+  await t.test('an index that fails to build costs the guide, not the plan', async () => {
+    const h = harness({ automationIndex: () => Promise.reject(new Error('index unavailable')) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.equal(response.intent, 'recommend')
+    assert.ok(response.plan)
+    assert.equal('automation' in response, false)
   })
 })

@@ -62,6 +62,8 @@ export interface Tool {
   cat: ToolCategoryName
   model: PricingModel
   tagline: string
+  /** Plainer restatement of the tagline for a plan step. Absent on most tools. */
+  plainLine?: string
   /** 0 across the seeded catalogue — render nothing, not "0". */
   rating: number
   /** 0 across the seeded catalogue. */
@@ -75,6 +77,13 @@ export interface Tool {
   tags: string[]
   /** Editorial prominence score, 0–100. Drives the `popular` sort. */
   pop: number
+  /**
+   * True when the tool ships an official MCP (Model Context Protocol) server —
+   * a connector an AI assistant can call directly, as opposed to a workflow a
+   * person runs by hand. Optional: absent/false for the ordinary catalogue
+   * tool. Backs pages/McpServersPage.tsx.
+   */
+  isMcpServer?: boolean
   /** Spec fields. "—" across the seeded catalogue. */
   api: string
   ctx: string

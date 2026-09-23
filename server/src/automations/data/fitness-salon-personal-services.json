@@ -1,0 +1,3135 @@
+[
+  {
+    "id": "fitness-salon-personal-services-962b0f5152",
+    "slug": "i-want-an-ai-that-answers-my-salon-s-phone-when-we-re-busy-with",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner (solo/small team)",
+    "title": "I want an AI that answers my salon's phone when we're busy with clients",
+    "intentLabels": [
+      "AI receptionist for salon",
+      "salon answering service",
+      "missed call AI",
+      "phone booking assistant"
+    ],
+    "tools": [
+      {
+        "name": "Zoca AI Front Desk Agent",
+        "url": "https://zoca.com/post/best-salon-scheduling-software-for-salons-spas-in-2026"
+      },
+      {
+        "name": "My AI Front Desk"
+      },
+      {
+        "name": "Voksha"
+      },
+      {
+        "name": "Podium"
+      }
+    ],
+    "workflowSummary": "Forward your business line to an AI voice agent that answers 24/7, quotes services/hours/pricing, books or reschedules appointments directly into your calendar, and texts a confirmation — so calls during a haircut or massage don't go to voicemail.",
+    "samplePrompt": "Set up an AI receptionist for my hair salon that answers calls when we're busy, quotes our price list, and books appointments into our existing calendar. It should text a confirmation after booking.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup takes configuring hours/services/greeting, but daily use is hands-off",
+    "trustScore": 4,
+    "pricingNote": "~$49-$129/mo starting tier common across vendors — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://zoca.com/post/best-salon-scheduling-software-for-salons-spas-in-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-20",
+    "accessNotes": "Vendor comparison content; confirm current pricing and call-forwarding setup directly with chosen vendor before publishing to end users",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-bcd35940c4",
+    "slug": "i-want-to-stop-losing-calls-when-my-staff-can-t-answer-the-gym",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or fitness studio owner",
+    "title": "I want to stop losing calls when my staff can't answer the gym phone",
+    "intentLabels": [
+      "gym AI receptionist",
+      "fitness studio phone answering",
+      "missed call text back"
+    ],
+    "tools": [
+      {
+        "name": "AgentZap (Vagaro AI Receptionist)",
+        "url": "https://storydrips.com/blog/best-ai-booking-no-show-software-for-gyms"
+      },
+      {
+        "name": "Zen Planner"
+      },
+      {
+        "name": "PushPress"
+      }
+    ],
+    "workflowSummary": "An AI phone-answering layer sits on top of your existing gym software (Vagaro, Zen Planner, PushPress) and picks up calls about class times, membership pricing, and trial bookings around the clock, logging everything into your existing system.",
+    "samplePrompt": "I run a small gym on Vagaro. Recommend an AI phone answering add-on that connects to Vagaro, and explain roughly what it costs and how setup works.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "From ~$109/mo commonly cited for salon/gym AI answering add-ons — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://storydrips.com/blog/best-ai-booking-no-show-software-for-gyms",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-30",
+    "accessNotes": "Independent comparison site; article notes none of the core gym platforms (PushPress/Zen Planner/Vagaro/Mindbody/Glofox) natively answer calls — an AI receptionist is a separate add-on layer",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-ab73d13434",
+    "slug": "i-want-an-easy-online-booking-system-with-ai-scheduling-built-in",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon/spa owner or manager",
+    "title": "I want an easy online booking system with AI scheduling built in",
+    "intentLabels": [
+      "salon booking software",
+      "online appointment scheduler",
+      "AI scheduling optimizer"
+    ],
+    "tools": [
+      {
+        "name": "Vagaro",
+        "url": "https://www.studioloop.app/best-salon-software"
+      },
+      {
+        "name": "Fresha"
+      },
+      {
+        "name": "Mangomint"
+      },
+      {
+        "name": "Boulevard"
+      },
+      {
+        "name": "Zoca"
+      }
+    ],
+    "workflowSummary": "Replace phone-tag booking with a client-facing online booking page/app that lets clients pick a stylist, service, and time slot themselves; several platforms layer AI on top to auto-optimize the schedule, fill cancellations, and send automated reminders.",
+    "samplePrompt": "Compare Vagaro, Fresha, and Mangomint for a 3-chair hair salon and tell me which has the easiest online booking page for clients plus automated reminder texts.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Vagaro from ~$30/mo + $10/staff; Fresha has a free tier with booth-fee model; Mangomint from ~$99/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.studioloop.app/best-salon-software",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-02-01",
+    "accessNotes": "Independent platform-comparison page; pricing and feature claims should be confirmed on each vendor's own site before quoting to a client",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-85b8630331",
+    "slug": "i-want-an-app-that-builds-personalized-workout-plans-for-my",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Independent personal trainer",
+    "title": "I want an app that builds personalized workout plans for my clients automatically",
+    "intentLabels": [
+      "AI workout plan generator",
+      "personal training software",
+      "client program builder"
+    ],
+    "tools": [
+      {
+        "name": "Coach Catalyst",
+        "url": "https://coachcatalyst.com/solutions/workout-builder"
+      },
+      {
+        "name": "Trainerize"
+      },
+      {
+        "name": "TrueCoach"
+      }
+    ],
+    "workflowSummary": "Use an AI-assisted coaching platform to auto-generate a client's workout program from their goals, equipment, and history, then assign it, track their logged sets/reps, and adjust automatically as they progress — without building every program by hand.",
+    "samplePrompt": "Build me a 4-week strength program for a beginner client with access to dumbbells only, 3 days a week, goal is fat loss. Format it so I can assign it in my coaching app.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Coach Catalyst / Trainerize typically ~$5-$10 per active client per month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://coachcatalyst.com/solutions/workout-builder",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; describes trainer-facing tools, not a consumer app",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-5defefd0c7",
+    "slug": "i-want-an-app-that-gives-me-a-free-workout-plan-built-just-for",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo gym-goer / fitness client (non-technical, no trainer)",
+    "title": "I want an app that gives me a free workout plan built just for me",
+    "intentLabels": [
+      "AI personal trainer app",
+      "free workout generator",
+      "adaptive fitness plan"
+    ],
+    "tools": [
+      {
+        "name": "Load Muscle",
+        "url": "https://loadmuscle.com/blog/best-ai-workout-apps-2026"
+      },
+      {
+        "name": "Planfit"
+      },
+      {
+        "name": "Arvo"
+      }
+    ],
+    "workflowSummary": "Answer a short intake (goals, experience level, available equipment) inside a free app and the AI immediately generates a structured workout plan with videos for each exercise, then adjusts sets/weights as you log your sessions.",
+    "samplePrompt": "I'm a beginner with access to a home gym with dumbbells and a bench. Build me a free 3-day-a-week workout plan focused on building muscle.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available on Load Muscle and Planfit; premium tiers ~$5-$16/mo on comparable apps — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://loadmuscle.com/blog/best-ai-workout-apps-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Independent app-testing roundup; app store listing and current free-tier limits should be re-checked before publishing",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-0b1e62a2a1",
+    "slug": "i-want-one-app-that-plans-my-workouts-and-tracks-my-food",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym member or home fitness user",
+    "title": "I want one app that plans my workouts and tracks my food together",
+    "intentLabels": [
+      "AI fitness and nutrition app",
+      "workout and meal plan combo",
+      "calorie and macro tracker AI"
+    ],
+    "tools": [
+      {
+        "name": "Trainera",
+        "url": "https://trainera.fit/blogs/best-ai-fitness-and-nutrition-app-2026"
+      },
+      {
+        "name": "MyFitnessPal"
+      },
+      {
+        "name": "Fitbod"
+      }
+    ],
+    "workflowSummary": "A combined AI app that builds a workout plan and also lets you log meals by photo, estimating calories/macros automatically, so you don't need two separate apps for training and diet.",
+    "samplePrompt": "Set me up with a plan that includes a beginner workout program plus a simple way to track my meals by taking photos of my food.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier common (no card needed on some); paid tiers for advanced coaching features vary by app — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://trainera.fit/blogs/best-ai-fitness-and-nutrition-app-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Vendor-adjacent comparison blog; verify actual feature parity and pricing directly on each app's own store listing",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-1bc85c961b",
+    "slug": "i-want-ai-to-help-me-write-replies-to-my-google-reviews-quickly",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner responding to online reviews",
+    "title": "I want AI to help me write replies to my Google reviews quickly",
+    "intentLabels": [
+      "AI review response generator",
+      "Google review reply tool",
+      "reputation management AI"
+    ],
+    "tools": [
+      {
+        "name": "Reply Champion",
+        "url": "https://www.replychampion.com/best-ai-review-response-tool"
+      },
+      {
+        "name": "ReviewSense"
+      },
+      {
+        "name": "Localo AI Review Response Generator"
+      }
+    ],
+    "workflowSummary": "Paste a client's Google or Yelp review into an AI tool, select the star rating and tone, and get a ready-to-post, personalized reply in seconds that references the specific service mentioned — instead of writing every reply from scratch.",
+    "samplePrompt": "Here's a 2-star review about a color appointment that ran long and didn't match what the client asked for. Write a professional, empathetic reply from our salon that doesn't admit fault or promise a refund.",
+    "beginnerFriendly": "yes",
+    "trustScore": 5,
+    "pricingNote": "Several tools offer a free tier or trial (e.g., Localo free tool, Reply Champion ~$10/mo) — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.replychampion.com/best-ai-review-response-tool",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor comparison written by a competing tool's own site; cross-check claims (e.g., pricing of competitors) independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-cef3c17868",
+    "slug": "i-want-ai-to-write-my-instagram-captions-and-post-ideas-for-my",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner or social media manager for a beauty business",
+    "title": "I want AI to write my Instagram captions and post ideas for my salon",
+    "intentLabels": [
+      "salon social media AI",
+      "Instagram caption generator",
+      "beauty content calendar AI"
+    ],
+    "tools": [
+      {
+        "name": "Canva AI Instagram Caption Generator",
+        "url": "https://www.canva.com/ai-caption-generator/"
+      },
+      {
+        "name": "Appointica AI Social Media"
+      },
+      {
+        "name": "SocialPilot AI Pilot"
+      }
+    ],
+    "workflowSummary": "Describe a post topic (a balayage transformation, a new service, a seasonal promo) and the AI drafts a complete caption with relevant hashtags in your brand's tone, which you can then schedule across Instagram, TikTok, and Facebook from the same tool.",
+    "samplePrompt": "Write an Instagram caption for a before/after balayage transformation photo, warm and friendly tone, include 4 relevant beauty hashtags, under 150 characters.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Canva's caption generator is free within Canva; dedicated salon marketing add-ons often bundled into booking software pricing — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.canva.com/ai-caption-generator/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; Canva tool is broadly free, but industry-specific tools (Appointica) may require an existing platform subscription",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-6b368fef86",
+    "slug": "i-want-ai-to-keep-my-gym-s-social-media-posted-with-real",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or fitness studio owner",
+    "title": "I want AI to keep my gym's social media posted with real content, not stock photos",
+    "intentLabels": [
+      "gym social media automation",
+      "fitness content calendar AI",
+      "AI post scheduler for gyms"
+    ],
+    "tools": [
+      {
+        "name": "Apaya",
+        "url": "https://apaya.com/blog/ai-social-media-gyms"
+      },
+      {
+        "name": "quso.ai"
+      },
+      {
+        "name": "SocialPilot"
+      }
+    ],
+    "workflowSummary": "Point the tool at your gym's website (class schedule, trainer bios, membership info); it learns your brand voice and auto-drafts a week's worth of captions and post ideas built around real class content you upload, then schedules them across platforms for a quick weekly review.",
+    "samplePrompt": "Using our class schedule and trainer bios, draft 5 Instagram/Facebook posts for this week promoting our 6am bootcamp class, in an energetic, motivating tone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once you feed it real business info to avoid generic output",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies by platform, typically subscription-based — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://apaya.com/blog/ai-social-media-gyms",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-03",
+    "accessNotes": "Vendor blog post promoting its own tool; treat feature claims and case-study numbers as marketing copy, verify independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-7fe54eb44b",
+    "slug": "i-want-to-see-what-a-new-haircut-or-hair-color-would-look-like",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon client (end consumer) or salon owner offering it as a consult tool",
+    "title": "I want to see what a new haircut or hair color would look like on me before booking",
+    "intentLabels": [
+      "AI hairstyle try-on",
+      "virtual hair makeover",
+      "hair color simulator app"
+    ],
+    "tools": [
+      {
+        "name": "YouCam Makeup",
+        "url": "https://www.fotor.com/ai-hairstyle-changer/"
+      },
+      {
+        "name": "Fotor AI Hairstyle Changer"
+      },
+      {
+        "name": "L'Oréal Professionnel Style My Hair"
+      }
+    ],
+    "workflowSummary": "Upload a clear front-facing selfie into a virtual try-on app, browse or describe a cut/color, and the AI generates a realistic preview blended to your face shape and hair texture — useful for a stylist consultation or for a client deciding before they book.",
+    "samplePrompt": "Show me what I'd look like with a shoulder-length layered bob in a warm caramel balayage, using this photo of me.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limited previews common; HD/unlimited previews often paid — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.fotor.com/ai-hairstyle-changer/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; realism varies by lighting/photo quality per multiple independent reviews",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-f9224eb637",
+    "slug": "i-want-ai-to-design-a-logo-and-brand-name-for-my-new-studio",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "New salon, gym, or personal-training business owner",
+    "title": "I want AI to design a logo and brand name for my new studio",
+    "intentLabels": [
+      "AI logo generator",
+      "business name generator",
+      "brand kit maker"
+    ],
+    "tools": [
+      {
+        "name": "Looka",
+        "url": "https://cropink.com/best-ai-logo-generators",
+        "catalogueSlug": "looka"
+      },
+      {
+        "name": "Namelix"
+      },
+      {
+        "name": "Canva AI Logo Generator"
+      }
+    ],
+    "workflowSummary": "Enter your business name (or use a name generator first) plus a few style keywords, and the AI proposes several logo directions and a full brand kit (colors, fonts) you can customize and download — no designer needed for a first version.",
+    "samplePrompt": "Generate logo concepts for a boutique Pilates studio called 'Rise Pilates,' modern and minimal style, in blush pink and charcoal.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Looka logo design free to start, downloads/brand kits from ~$20-$80; Canva's logo tool free within Canva — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cropink.com/best-ai-logo-generators",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-05-12",
+    "accessNotes": "Independent comparison roundup; note none of these tools clear trademarks — a manual trademark/domain check is still required",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-642dd3ff54",
+    "slug": "i-want-ai-to-build-me-a-website-for-my-personal-training",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer or small studio launching a website",
+    "title": "I want AI to build me a website for my personal training business",
+    "intentLabels": [
+      "AI website builder for personal trainers",
+      "fitness landing page generator",
+      "gym website AI"
+    ],
+    "tools": [
+      {
+        "name": "Leadpages",
+        "url": "https://www.websiteplanet.com/blog/best-really-free-website-builders-personal-trainers/"
+      },
+      {
+        "name": "Wix"
+      },
+      {
+        "name": "Webador AI website builder"
+      }
+    ],
+    "workflowSummary": "Answer a short questionnaire about your business (services, location, target client) and the AI drafts a complete site — homepage, booking CTA, trainer bio, before/after gallery — which you then edit and connect to your existing booking calendar.",
+    "samplePrompt": "Build me a one-page website for a personal trainer offering 1-on-1 and small-group sessions, with a 'Book a free consult' button, a bio section, and a pricing table.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Webador free plan available (limited features); Leadpages from ~$37/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.websiteplanet.com/blog/best-really-free-website-builders-personal-trainers/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-02",
+    "accessNotes": "Independent review site; free-tier limitations (video/HD uploads, e-commerce) vary by plan and should be checked before recommending",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-fa3ef7f770",
+    "slug": "i-want-to-automatically-text-clients-so-they-don-t-forget-their",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner managing appointment reminders",
+    "title": "I want to automatically text clients so they don't forget their appointments",
+    "intentLabels": [
+      "appointment reminder SMS",
+      "two-way texting salon",
+      "AI-assisted no-show reduction"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti two-way SMS",
+        "url": "https://www.eztexting.com/industries/salons-spas"
+      },
+      {
+        "name": "EZ Texting"
+      },
+      {
+        "name": "Vagaro SMS"
+      }
+    ],
+    "workflowSummary": "Automated SMS reminders and confirmations go out ahead of each appointment, clients can reply directly to confirm/reschedule, and last-minute cancellations trigger an automatic text blast to your waitlist to refill the slot — cutting empty chair time.",
+    "samplePrompt": "Set up automated text reminders that go out 24 hours and 2 hours before each appointment, and let clients reply 'C' to confirm or 'R' to reschedule.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Often bundled into salon/spa software subscriptions (e.g., Vagaro, Zenoti); standalone SMS tools like EZ Texting have separate monthly plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.eztexting.com/industries/salons-spas",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; industry-cited stat of ~35% no-show reduction (SchedulingKit) is a third-party estimate, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-251654f3e7",
+    "slug": "i-want-ai-to-help-draft-my-email-and-text-marketing-campaigns",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon, spa, or gym owner doing routine front-desk admin",
+    "title": "I want AI to help draft my email and text marketing campaigns for slow weeks",
+    "intentLabels": [
+      "AI marketing content for salons",
+      "email/SMS campaign generator",
+      "rebooking message AI"
+    ],
+    "tools": [
+      {
+        "name": "Vagaro Pro AI",
+        "url": "https://noimosai.com/en/blog/top-7-salon-marketing-automation-tools-for-2026-cut-costs-and-maintain-content-consistency"
+      },
+      {
+        "name": "NoimosAI"
+      },
+      {
+        "name": "Mangomint AI marketing content"
+      }
+    ],
+    "workflowSummary": "Ask the AI to draft a promotional email or text (e.g., a slow-Tuesday discount, a rebooking nudge, a birthday offer), personalized with your business name and tone, then send it through your existing booking platform's marketing tool to your client list.",
+    "samplePrompt": "Write a friendly text message offering 15% off any color service booked for a Tuesday or Wednesday this month, to send to clients who haven't booked in 60+ days.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Frequently bundled into higher-tier plans of booking platforms already in use (e.g., Vagaro Ultimate ~$499/mo tier) — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://noimosai.com/en/blog/top-7-salon-marketing-automation-tools-for-2026-cut-costs-and-maintain-content-consistency",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-19",
+    "accessNotes": "Vendor-adjacent comparison blog (published by one of the listed tools); verify competitor claims and pricing independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-f42160b5d8",
+    "slug": "i-want-ai-to-turn-my-workout-videos-into-polished-social-media",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Fitness content creator, gym owner, or personal trainer",
+    "title": "I want AI to turn my workout videos into polished social media clips",
+    "intentLabels": [
+      "AI video editor for fitness content",
+      "workout video generator",
+      "TikTok/Reels editor AI"
+    ],
+    "tools": [
+      {
+        "name": "Captions AI",
+        "url": "https://captions.ai/solutions/fitness-creators"
+      },
+      {
+        "name": "quso.ai"
+      },
+      {
+        "name": "CapCut",
+        "catalogueSlug": "capcut"
+      }
+    ],
+    "workflowSummary": "Upload raw phone footage of a workout demo or client testimonial; the AI auto-edits it into a short, captioned, platform-optimized clip (rep counters, on-screen text, trending audio) ready to post — no editing software required.",
+    "samplePrompt": "Turn this 3-minute workout demo video into a 45-second Instagram Reel with on-screen rep counts, captions, and upbeat music.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tiers with watermarks/limits common; paid plans typically ~$15-$30/mo — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://captions.ai/solutions/fitness-creators",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page targeted specifically at fitness creators; sample prompts on the page were adapted, not quoted verbatim",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-8d4b58865b",
+    "slug": "i-want-an-ai-assistant-to-handle-client-intake-questions-and",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo massage therapist, esthetician, or personal trainer without a receptionist",
+    "title": "I want an AI assistant to handle client intake questions and FAQs for my business",
+    "intentLabels": [
+      "AI FAQ chatbot",
+      "client intake automation",
+      "small business virtual assistant"
+    ],
+    "tools": [
+      {
+        "name": "Voksha",
+        "url": "https://voksha.com/blog/best-ai-receptionist-for-salons-and-spas"
+      },
+      {
+        "name": "My AI Front Desk"
+      },
+      {
+        "name": "Dialzara"
+      }
+    ],
+    "workflowSummary": "Configure a chatbot/voice AI with your services, hours, cancellation policy, and pricing; it answers common client questions by phone, text, or web chat around the clock, escalating anything unusual (complaints, medical questions) to you directly.",
+    "samplePrompt": "Set up an AI assistant that can answer client questions about our cancellation policy, session pricing, and parking, and forward anything else to my cell phone.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup requires listing your policies accurately",
+    "trustScore": 3,
+    "pricingNote": "Entry tiers commonly start around $29/mo with per-minute overage charges — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://voksha.com/blog/best-ai-receptionist-for-salons-and-spas",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-11",
+    "accessNotes": "Independent comparison blog; per-minute overage pricing structures vary significantly by vendor and should be confirmed directly",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-15bf38dd1e",
+    "slug": "i-want-an-ai-phone-assistant-that-works-for-my-barbershop-or",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Barbershop or nail salon owner",
+    "title": "I want an AI phone assistant that works for my barbershop or nail salon specifically",
+    "intentLabels": [
+      "barbershop AI receptionist",
+      "nail salon answering service",
+      "industry-specific voice AI"
+    ],
+    "tools": [
+      {
+        "name": "Blismo",
+        "url": "https://agentzap.ai/industries/salon"
+      },
+      {
+        "name": "AgentZap"
+      },
+      {
+        "name": "Agentplace"
+      }
+    ],
+    "workflowSummary": "An AI voice agent trained on barbershop/nail-salon terminology (services, chair-time lengths, walk-in policy) answers calls, quotes services, and books into your existing scheduling software, covering the gaps when your hands are busy with a client.",
+    "samplePrompt": "Set up an AI phone assistant for my barbershop that knows our haircut and beard trim pricing, can quote wait times for walk-ins, and books appointments into our calendar.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "From ~$109/mo cited for salon-focused phone AI add-ons — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://agentzap.ai/industries/salon",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-07-18",
+    "accessNotes": "Vendor product page; claims about missed-call revenue loss are third-party industry estimates cited by the vendor, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-2cc952c3cb",
+    "slug": "i-want-ai-to-help-me-pick-a-business-name-and-check-if-the",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "New personal trainer or fitness coach building an online presence",
+    "title": "I want AI to help me pick a business name and check if the domain is free",
+    "intentLabels": [
+      "business name generator with domain check",
+      "brandable name AI",
+      "fitness studio naming tool"
+    ],
+    "tools": [
+      {
+        "name": "Namelix",
+        "url": "https://www.layer3labs.io/guides/ai-logo-and-name-generator-tools-for-small-business"
+      },
+      {
+        "name": "Looka name generator"
+      }
+    ],
+    "workflowSummary": "Enter a few keywords about your fitness business, and the AI generates a list of short, brandable name candidates along with a matching logo concept and live domain/social-handle availability shown alongside each suggestion.",
+    "samplePrompt": "Suggest 10 brandable business names for a women's strength-training studio, and show which .com domains are available.",
+    "beginnerFriendly": "yes",
+    "trustScore": 5,
+    "pricingNote": "Both tools offer a free name-generation entry point; paid tiers apply for logo downloads/domain purchase — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.layer3labs.io/guides/ai-logo-and-name-generator-tools-for-small-business",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Independent guide; notes neither tool checks federal/state trademarks — a manual trademark search is still required before finalizing a name",
+    "batch": "Fitness Salon AI Workflows Batch1 Session1",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-bb9b0ef3bd",
+    "slug": "i-want-ai-to-build-my-staff-work-schedule-around-who-s-available",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon/gym owner scheduling staff shifts",
+    "title": "I want AI to build my staff work schedule around who's available",
+    "intentLabels": [
+      "AI staff scheduling",
+      "shift planning software",
+      "automatic roster builder"
+    ],
+    "tools": [
+      {
+        "name": "Homebase",
+        "url": "https://dynamicbusiness.com/featured/tech-tuesday/tech-tuesday-the-best-staff-scheduling-optimisation-tools.html"
+      },
+      {
+        "name": "Deputy"
+      },
+      {
+        "name": "ZoomShift"
+      }
+    ],
+    "workflowSummary": "Enter each employee's availability, role, and labor budget once; the AI auto-generates a conflict-free weekly shift schedule, flags overlaps or compliance issues, and lets staff swap shifts through the app instead of texting the manager.",
+    "samplePrompt": "Build next week's front-desk and stylist schedule from our team's availability, keep total weekly hours under budget, and flag any double-bookings.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Homebase free plan for single location; paid tiers with payroll typically ~$20-$80/mo per location — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://dynamicbusiness.com/featured/tech-tuesday/tech-tuesday-the-best-staff-scheduling-optimisation-tools.html",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-06",
+    "accessNotes": "Independent roundup; pricing/features change frequently across scheduling vendors, confirm directly on vendor site",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-93fa099dd0",
+    "slug": "i-want-scheduling-software-built-specifically-for-salon-staff",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Multi-chair salon or barbershop owner",
+    "title": "I want scheduling software built specifically for salon staff, not generic shift apps",
+    "intentLabels": [
+      "salon staff scheduling",
+      "stylist shift planner",
+      "workforce management for salons"
+    ],
+    "tools": [
+      {
+        "name": "XShift AI",
+        "url": "https://www.xshift.ai/industries/salons-spas"
+      },
+      {
+        "name": "ZoomShift"
+      },
+      {
+        "name": "Deelo"
+      }
+    ],
+    "workflowSummary": "A salon-specific scheduling tool (separate from client appointment booking) manages which stylists/estheticians/front-desk staff work which shifts, respects role licensing requirements, and lets an AI copilot auto-generate or adjust the roster when someone calls in sick.",
+    "samplePrompt": "Generate this week's stylist shift schedule for our salon, making sure only licensed colorists are scheduled for color-service days, and flag any missing coverage.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial setup of roles/licenses takes some configuration",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies by platform and staff count — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.xshift.ai/industries/salons-spas",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-06-13",
+    "accessNotes": "Vendor product page; explicitly distinguishes staff scheduling from client booking software — don't conflate the two when recommending",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-0da53161c7",
+    "slug": "i-want-ai-to-track-my-business-expenses-and-get-me-ready-for",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo personal trainer or massage therapist doing their own books",
+    "title": "I want AI to track my business expenses and get me ready for tax time",
+    "intentLabels": [
+      "AI bookkeeping for solopreneurs",
+      "expense tracking app",
+      "tax-ready financial records"
+    ],
+    "tools": [
+      {
+        "name": "ReceiptsAI",
+        "url": "https://www.usetabby.com/"
+      },
+      {
+        "name": "Tabby"
+      },
+      {
+        "name": "Cashflowy"
+      }
+    ],
+    "workflowSummary": "Upload receipts, invoices, or a bank statement; the AI extracts vendor, amount, date, and category automatically, separates client payments from business expenses, and produces an export-ready report for your accountant or tax filing — no manual spreadsheet entry.",
+    "samplePrompt": "Upload my last month of bank statement transactions and separate client payments from business expenses like gym rent, travel, and marketing. Export a clean report for my accountant.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Tabby free up to $15K/yr tracked expenses, paid from ~$19/mo; ReceiptsAI offers free starter credits — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.usetabby.com/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2025-04-21",
+    "accessNotes": "Vendor product page; not a tax advisor — always confirm deductions with a licensed accountant before filing",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-5e45234469",
+    "slug": "i-want-bookkeeping-software-that-understands-a-fitness-coach-s",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Independent fitness coach with mixed income streams (1:1, group programs, digital sales)",
+    "title": "I want bookkeeping software that understands a fitness coach's messy income streams",
+    "intentLabels": [
+      "AI accounting for fitness coaches",
+      "multi-income bookkeeping",
+      "coaching business finances"
+    ],
+    "tools": [
+      {
+        "name": "Cashflowy",
+        "url": "https://www.cashflowy.ai/blog/bookkeeping-software-for-fitness-coaches"
+      },
+      {
+        "name": "Wave"
+      },
+      {
+        "name": "QuickBooks Self-Employed"
+      }
+    ],
+    "workflowSummary": "An AI-assisted bookkeeping platform built for solopreneurs consolidates income from retainers, group program sales, digital product sales, and affiliate commissions into one real-time profit view, instead of manually reconciling multiple payment platforms.",
+    "samplePrompt": "Pull together this month's income from client retainers, my group coaching program, and digital meal plan sales, and show me my actual profit after expenses.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Wave offers free basic accounting; Cashflowy and similar coach-focused tools are typically paid subscriptions — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cashflowy.ai/blog/bookkeeping-software-for-fitness-coaches",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor blog for a named tool in the space; compare against Wave/QuickBooks independently before recommending one option",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c7b3c38b89",
+    "slug": "i-want-ai-to-tell-me-when-i-m-about-to-run-out-of-retail-or",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner managing retail product stock",
+    "title": "I want AI to tell me when I'm about to run out of retail or backbar products",
+    "intentLabels": [
+      "salon inventory management",
+      "automatic reorder alerts",
+      "retail stock tracking AI"
+    ],
+    "tools": [
+      {
+        "name": "Vagaro Inventory",
+        "url": "https://www.vagaro.com/pro/inventory"
+      },
+      {
+        "name": "Meevo"
+      },
+      {
+        "name": "GlossGenius"
+      }
+    ],
+    "workflowSummary": "Connect your point-of-sale to an inventory module that deducts stock automatically at checkout, tracks separate retail vs. backbar (service-use) product levels, and sends an alert — or auto-builds a purchase order — when a product drops below the reorder threshold you set.",
+    "samplePrompt": "Show me which retail products are below their reorder point this week and draft a purchase order to our usual supplier for those items.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Often bundled into existing salon software subscription (e.g., Vagaro from ~$30/mo); standalone inventory add-ons vary — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.vagaro.com/pro/inventory",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; forecasting/reorder-point accuracy depends on clean historical sales data being entered first",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-a55b8ef427",
+    "slug": "i-want-to-compare-a-few-inventory-options-for-my-salon-before",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner comparing inventory tools",
+    "title": "I want to compare a few inventory options for my salon before picking one",
+    "intentLabels": [
+      "salon inventory software comparison",
+      "beauty supply stock tracking",
+      "POS inventory integration"
+    ],
+    "tools": [
+      {
+        "name": "Square for Retail",
+        "url": "https://biz.booksy.com/blog/the-best-salon-inventory-management-software-options"
+      },
+      {
+        "name": "Booksy"
+      },
+      {
+        "name": "Phorest"
+      }
+    ],
+    "workflowSummary": "Compare a shortlist of inventory-capable salon platforms on barcode scanning, automated reorder alerts, and separate retail-vs-backbar tracking, then pick the one that matches your salon's size and existing POS/booking setup rather than adding a disconnected extra tool.",
+    "samplePrompt": "Compare Square for Retail, Booksy, and Phorest for a 2-location salon that wants barcode scanning and automatic low-stock alerts. Which fits a small team best?",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Feature tiers and per-location pricing vary widely — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://biz.booksy.com/blog/the-best-salon-inventory-management-software-options",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-08-01",
+    "accessNotes": "Vendor-affiliated comparison (published by Booksy, one of the compared tools); cross-check claims against each vendor's own pricing page",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-64a47c51a9",
+    "slug": "i-want-ai-to-generate-a-liability-waiver-for-my-gym-or-fitness",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or fitness studio owner onboarding new members",
+    "title": "I want AI to generate a liability waiver for my gym or fitness class",
+    "intentLabels": [
+      "AI waiver generator",
+      "liability release form",
+      "fitness consent form builder"
+    ],
+    "tools": [
+      {
+        "name": "Jotform AI Waiver Generator",
+        "url": "https://www.jotform.com/ai/waiver-generator/"
+      },
+      {
+        "name": "Happy Waiver"
+      },
+      {
+        "name": "Waiverly"
+      }
+    ],
+    "workflowSummary": "Describe your activity type (CrossFit, yoga, boxing, personal training) and jurisdiction; the AI drafts a complete waiver with appropriate risk disclosures and a digital signature field, ready to send as a link or display on a front-desk kiosk/QR code for new members to sign on their phone.",
+    "samplePrompt": "Generate a liability waiver for a CrossFit box in Texas, including risk disclosures for barbell training and cardiac exertion, with a digital signature field.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Jotform AI Waiver Generator free to start; Happy Waiver free for first 100 signatures then ~$0.01/signature — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jotform.com/ai/waiver-generator/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; AI-generated legal waivers should still be reviewed by a lawyer for your specific state/activity before relying on them",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-5ffa2aa688",
+    "slug": "i-want-new-members-to-sign-in-and-complete-health-forms-without",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Fitness studio front desk handling new-member paperwork",
+    "title": "I want new members to sign in and complete health forms without a paper clipboard",
+    "intentLabels": [
+      "digital check-in kiosk",
+      "gym intake form software",
+      "conversational waiver assistant"
+    ],
+    "tools": [
+      {
+        "name": "Jotform AI Agents (Fitness Center Waiver Intake Assistant)",
+        "url": "https://www.jotform.com/agent-templates/fitness-center-waiver-intake-assistant"
+      },
+      {
+        "name": "Formfy AI Copilot"
+      },
+      {
+        "name": "PushPress"
+      }
+    ],
+    "workflowSummary": "An AI-driven intake assistant walks a new member through a conversational form — name, contact info, health history, class type, waiver acknowledgment — on a tablet or their phone, capturing a signature and syncing the data directly into your member records without manual re-entry.",
+    "samplePrompt": "Set up a conversational check-in form for new gym members that collects contact info, injury history, and a signed waiver, and saves it to their member profile automatically.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "branching health-history logic may need review/customization",
+    "trustScore": 3,
+    "pricingNote": "Pricing usually bundled with the broader form/gym platform subscription — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.jotform.com/agent-templates/fitness-center-waiver-intake-assistant",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; per independent buying guides, some generic form tools only generate a 'thin' waiver shell — check that full risk-disclosure language is included, not just signature fields",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-610ee5a9ee",
+    "slug": "i-want-payroll-software-that-automatically-calculates",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner running payroll for a mixed team",
+    "title": "I want payroll software that automatically calculates commission and tips for my stylists",
+    "intentLabels": [
+      "salon commission payroll",
+      "automatic tip calculation",
+      "stylist pay stub generator"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti Payroll & Tipping",
+        "url": "https://www.joinhomebase.com/blog/salon-software-with-payroll"
+      },
+      {
+        "name": "Mangomint"
+      },
+      {
+        "name": "Homebase"
+      }
+    ],
+    "workflowSummary": "Payroll software pulls service and retail sales by stylist directly from your booking system, applies each person's commission rate or tier automatically, adds in pooled or individual tips, and generates a pay stub showing the full breakdown — no manual re-keying of numbers each pay period.",
+    "samplePrompt": "Run this week's payroll: apply each stylist's commission tier to their service and retail sales, add their share of pooled tips, and show a clear breakdown on each pay stub.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "commission-rule setup takes some upfront configuration",
+    "trustScore": 4,
+    "pricingNote": "Payroll add-ons commonly run an extra ~$40/mo plus per-employee fee on top of the base booking platform — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.joinhomebase.com/blog/salon-software-with-payroll",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-04",
+    "accessNotes": "Independent comparison; notes payout timing and customization limits vary by vendor — read user complaints section before recommending one option",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-a462e14db5",
+    "slug": "i-want-an-automatic-fair-way-to-split-tips-between-the-stylists",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner dealing with tip disputes among staff",
+    "title": "I want an automatic, fair way to split tips between the stylists who worked on one client",
+    "intentLabels": [
+      "tip splitting software",
+      "automated tip distribution",
+      "salon tip pooling rules"
+    ],
+    "tools": [
+      {
+        "name": "Salon Stacks",
+        "url": "https://salonstacks.com/salon-tip-distribution-software/"
+      },
+      {
+        "name": "Zenoti"
+      },
+      {
+        "name": "POS tip-tracking add-ons (e.g., Clover)"
+      }
+    ],
+    "workflowSummary": "Set a tip-splitting rule once (equal split, percentage-based, or role-based between stylist/assistant), and every card or digital tip collected at checkout is automatically divided according to that rule and logged per employee, eliminating manual math and reducing pay disputes.",
+    "samplePrompt": "Set up a tip-splitting rule where the primary stylist keeps 80% of the tip and the assistant gets 20%, and apply it automatically at checkout going forward.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Often included with POS/payroll subscription; standalone tip-distribution tools may charge separately — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://salonstacks.com/salon-tip-distribution-software/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-04-13",
+    "accessNotes": "Vendor product page for a single named tool; treat as one option among several POS/payroll platforms with similar built-in tip-splitting features",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-16bf15bab4",
+    "slug": "i-want-a-point-of-sale-system-that-automatically-tracks-tips",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner choosing a payment processing / POS system",
+    "title": "I want a point-of-sale system that automatically tracks tips and commissions when clients pay",
+    "intentLabels": [
+      "salon POS system",
+      "integrated card processing",
+      "automatic commission tracking at checkout"
+    ],
+    "tools": [
+      {
+        "name": "Clover (via Limelight Payments)",
+        "url": "https://www.limelightpayments.com/blog/top-7-salon-and-spa-pos-systems-for-2026"
+      },
+      {
+        "name": "Square for Retail"
+      },
+      {
+        "name": "Boulevard"
+      }
+    ],
+    "workflowSummary": "An integrated POS ties payment processing directly to your booking software, so every checkout automatically attributes the sale (and any tip) to the stylist who performed the service, updates inventory, and feeds clean data straight into payroll — instead of manually reconciling receipts at the end of the week.",
+    "samplePrompt": "Recommend a salon POS system that automatically tracks which stylist gets credit for each sale and tip, and tell me roughly what the card-processing fees look like.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "comparing processing fees and contract terms takes some research",
+    "trustScore": 3,
+    "pricingNote": "Processing rates and hardware costs vary significantly by provider and are often the hidden cost — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.limelightpayments.com/blog/top-7-salon-and-spa-pos-systems-for-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-04",
+    "accessNotes": "Independent comparison; pricing reflects publicly published rates as of early 2026 per the source and should be reconfirmed with each provider",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c42fa0f0a2",
+    "slug": "i-want-software-to-handle-membership-billing-freezes-and",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or studio owner managing recurring memberships",
+    "title": "I want software to handle membership billing, freezes, and cancellations automatically",
+    "intentLabels": [
+      "gym membership management",
+      "recurring billing automation",
+      "membership freeze/cancel workflow"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti",
+        "url": "https://www.zenoti.com/thecheckin/best-fitness-gym-software-2026"
+      },
+      {
+        "name": "Glofox"
+      },
+      {
+        "name": "Mindbody"
+      }
+    ],
+    "workflowSummary": "Membership software handles the full billing lifecycle automatically — recurring charges, retrying failed payments, letting members self-serve a freeze or cancellation within your rules, and triggering renewal reminders — so staff aren't manually processing every membership change.",
+    "samplePrompt": "Set up automatic monthly billing for our membership tiers, allow members to request a freeze of up to 60 days through a self-service link, and auto-retry any failed payments twice before flagging it to me.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setting billing/freeze rules requires some upfront decisions",
+    "trustScore": 4,
+    "pricingNote": "Zenoti starting around $99/mo; Glofox and Mindbody pricing scale with member count/locations — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.zenoti.com/thecheckin/best-fitness-gym-software-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-29",
+    "accessNotes": "Vendor-published comparison content; independently verify claims like after-hours call recovery rates before repeating them to end users",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-76bd11a60c",
+    "slug": "i-want-ai-to-warn-me-before-a-member-is-about-to-cancel-their",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner worried about members quietly canceling",
+    "title": "I want AI to warn me before a member is about to cancel their membership",
+    "intentLabels": [
+      "churn prediction AI",
+      "at-risk member alerts",
+      "gym retention automation"
+    ],
+    "tools": [
+      {
+        "name": "Keepme",
+        "url": "https://www.tommasomariaricci.com/blog/ai-for-gyms"
+      },
+      {
+        "name": "Zenoti churn prediction"
+      },
+      {
+        "name": "1club"
+      }
+    ],
+    "workflowSummary": "AI monitors attendance frequency, missed classes, and engagement signals (like unopened emails) already sitting in your gym software, flags members showing early warning signs of canceling, and suggests a personalized intervention — a win-back message or a free session offer — before they actually leave.",
+    "samplePrompt": "Show me which members have had a big drop in check-in frequency over the last month, and draft a personalized win-back text for the top 10 at-risk members.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once you already have a gym management platform generating the underlying attendance data",
+    "trustScore": 3,
+    "pricingNote": "Dedicated churn-prediction platforms typically priced separately from core gym management software — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.tommasomariaricci.com/blog/ai-for-gyms",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-20",
+    "accessNotes": "Independent guide; describes churn-prediction as the 'highest-return' AI use case but is one person's opinion piece, not a vendor-neutral benchmark",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c040697456",
+    "slug": "i-want-ai-to-answer-routine-questions-like-hours-pricing-and",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym front desk fielding repetitive member questions",
+    "title": "I want AI to answer routine questions like hours, pricing, and freeze requests so my front desk doesn't have to",
+    "intentLabels": [
+      "gym AI communication assistant",
+      "automated member FAQ",
+      "self-service account changes"
+    ],
+    "tools": [
+      {
+        "name": "Infinity Sky AI",
+        "url": "https://infinitysky.ai/blog/ai-automation-fitness-studios-gyms-2026"
+      },
+      {
+        "name": "Carly"
+      },
+      {
+        "name": "Mindbody Messenger[ai]"
+      }
+    ],
+    "workflowSummary": "An AI communication layer answers repetitive member questions (hours, pricing, parking, freeze/cancellation policy) across phone, text, email, and web chat using your actual policies, and can process simple account actions like a freeze request directly — freeing front-desk staff for in-person interactions.",
+    "samplePrompt": "Set up an AI assistant that can answer member questions about hours, membership pricing, and our freeze policy, and let members request a freeze directly through it.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Often tiered by message/call volume; typically a separate subscription from your core gym software — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://infinitysky.ai/blog/ai-automation-fitness-studios-gyms-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-01",
+    "accessNotes": "Vendor blog promoting its own platform; treat specific outcome claims as marketing copy and verify independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-8466c36de9",
+    "slug": "i-want-to-know-which-ai-tools-actually-help-run-a-gym-day-to",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner comparing several AI tools for different back-office jobs",
+    "title": "I want to know which AI tools actually help run a gym day-to-day, not just marketing hype",
+    "intentLabels": [
+      "AI tools for gyms comparison",
+      "gym back-office automation stack",
+      "which AI to use for a gym"
+    ],
+    "tools": [
+      {
+        "name": "Carly (member communication/win-back)",
+        "url": "https://www.usecarly.com/blog/best-ai-tools-for-gyms/"
+      },
+      {
+        "name": "Mindbody Messenger[ai]"
+      },
+      {
+        "name": "general-purpose AI (e.g., ChatGPT) for drafting policies and content"
+      }
+    ],
+    "workflowSummary": "Rather than buying one all-in-one AI platform, match each specific back-office pain point to a purpose-built tool — a messaging AI for lost inquiries and win-backs, your existing gym software's AI features for scheduling/billing, and a general AI assistant for drafting policies, class descriptions, or staff communications.",
+    "samplePrompt": "We're losing membership inquiries to slow replies and members are quietly stopping their visits. Which AI tools should we start with first, and what should we hold off on?",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Mix of free (general AI drafting) and paid per-tool subscriptions depending on which gaps you address — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.usecarly.com/blog/best-ai-tools-for-gyms/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-13",
+    "accessNotes": "Vendor blog (published by one of the recommended tools, Carly) framed as a buyer's guide; cross-check the other named tools independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-71dd59051c",
+    "slug": "i-want-my-booking-receptionist-ai-to-handle-client-calls-and",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon, spa, or gym owner serving non-English-speaking clients",
+    "title": "I want my booking/receptionist AI to handle client calls and texts in more than one language",
+    "intentLabels": [
+      "multilingual AI receptionist",
+      "Spanish-speaking booking assistant",
+      "translation for client communication"
+    ],
+    "tools": [
+      {
+        "name": "CallMissed (AI voice + WhatsApp, 22 Indian languages)",
+        "url": "https://www.callmissed.com/blog/ai-receptionist-salons-2026-phone-whatsapp-implementation"
+      },
+      {
+        "name": "Voksha"
+      },
+      {
+        "name": "Zenoti multilingual support"
+      }
+    ],
+    "workflowSummary": "Configure your AI phone/chat assistant to detect and respond in the client's language automatically — handling booking, rescheduling, and FAQs in Spanish, Hindi, or other locally common languages — instead of requiring a bilingual staff member to be present for every call.",
+    "samplePrompt": "Set up our AI receptionist to handle incoming calls in both English and Spanish, and confirm which of these languages it currently supports before we go live.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "verify actual supported languages and quality per vendor before committing",
+    "trustScore": 3,
+    "pricingNote": "Multilingual support is often a feature of existing AI receptionist plans rather than a separate add-on cost — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.callmissed.com/blog/ai-receptionist-salons-2026-phone-whatsapp-implementation",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Vendor blog for a specific tool (22 Indian languages cited is that vendor's specific claim, not an industry standard) — confirm actual language coverage per vendor before publishing",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-ccdb56bc26",
+    "slug": "i-want-ai-generated-reports-that-tell-me-how-my-salon-or-gym-is",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or gym owner wanting one dashboard for day-to-day operations",
+    "title": "I want AI-generated reports that tell me how my salon or gym is actually performing each week",
+    "intentLabels": [
+      "gym/salon business intelligence dashboard",
+      "AI performance reporting",
+      "operational analytics for wellness business"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti reporting",
+        "url": "https://www.replify.ai/ai-sales-service-blog/best-software-for-fitness-studios-and-clubs-owner-and-operations-guide"
+      },
+      {
+        "name": "Glofox analytics"
+      },
+      {
+        "name": "Insight Gym"
+      }
+    ],
+    "workflowSummary": "AI-driven analytics tools digest your booking, billing, and attendance data automatically and surface plain-language weekly summaries — net member movement, top-selling services, staffing utilization, cancellation patterns — instead of you manually pulling and interpreting separate reports.",
+    "samplePrompt": "Give me a plain-language summary of this week's performance: new members, cancellations, top-selling classes, and any staffing gaps I should know about.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once fed several weeks of clean data from your existing booking/billing system",
+    "trustScore": 3,
+    "pricingNote": "Typically included in mid-to-upper tier plans of existing gym/salon management software — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.replify.ai/ai-sales-service-blog/best-software-for-fitness-studios-and-clubs-owner-and-operations-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-10",
+    "accessNotes": "Vendor-adjacent guide; specific case-study metrics cited (e.g., support cost reductions) are third-party claims, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-fc49992d11",
+    "slug": "i-want-a-simple-way-to-invoice-my-studio-or-clients-and-know",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Independent contractor stylist or trainer renting a chair/space",
+    "title": "I want a simple way to invoice my studio or clients and know what I owe in taxes",
+    "intentLabels": [
+      "1099 contractor bookkeeping",
+      "simple invoicing app",
+      "self-employed tax set-aside tool"
+    ],
+    "tools": [
+      {
+        "name": "Tabby",
+        "url": "https://www.usetabby.com/"
+      },
+      {
+        "name": "Wave"
+      },
+      {
+        "name": "Expensify"
+      }
+    ],
+    "workflowSummary": "A mobile-first bookkeeping app built for 1099 workers lets you send a professional invoice in seconds, categorizes incoming payments and expenses automatically from linked bank accounts, and estimates how much to set aside for quarterly taxes based on year-to-date income.",
+    "samplePrompt": "Send an invoice to my studio for this month's booth rent split, and tell me roughly how much I should be setting aside for taxes based on what I've earned so far this year.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Tabby free up to $15K/yr in tracked expenses; Wave's core invoicing/accounting is free — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.usetabby.com/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2025-04-21",
+    "accessNotes": "Vendor product page; tax set-aside estimates are approximations, not tax advice — confirm with an accountant",
+    "batch": "Fitness Salon AI Workflows Batch1 Session2",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-ffb42d0f97",
+    "slug": "i-want-ai-to-keep-my-google-business-profile-optimized-so-i",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or gym owner managing their Google listing",
+    "title": "I want AI to keep my Google Business Profile optimized so I show up in local search",
+    "intentLabels": [
+      "Google Business Profile AI optimization",
+      "local SEO tool",
+      "GBP audit and posting AI"
+    ],
+    "tools": [
+      {
+        "name": "Localo",
+        "url": "https://catchaiinfo.com/ai-tools-for-google-business-profile-optimization-2026/"
+      },
+      {
+        "name": "Merchynt ProfilePro"
+      },
+      {
+        "name": "Semrush Local"
+      }
+    ],
+    "workflowSummary": "An AI tool audits your Google Business Profile for missing or weak fields, suggests keyword-relevant categories and descriptions, drafts regular Google Posts automatically, and tracks how you rank in local Maps results — instead of you guessing what to update.",
+    "samplePrompt": "Audit our salon's Google Business Profile, tell me what's missing or weak, and draft 2 Google Posts for this week using our current promotion.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "worth a human review before auto-publishing to a live profile",
+    "trustScore": 3,
+    "pricingNote": "Tools in this space typically range from free basic audits to paid monthly plans for full posting/tracking — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://catchaiinfo.com/ai-tools-for-google-business-profile-optimization-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Independent tester's roundup; explicitly notes AI speeds up GBP work but shouldn't replace human review for brand tone and accuracy",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-d93ab46755",
+    "slug": "i-want-ai-to-write-and-design-my-facebook-and-instagram-ads-for",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or studio owner running paid Facebook/Instagram ads",
+    "title": "I want AI to write and design my Facebook and Instagram ads for a local promotion",
+    "intentLabels": [
+      "AI ad creative generator",
+      "Facebook ad copy AI",
+      "Instagram ad design tool"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://www.trylapis.com/resources/best-ai-ad-generators-facebook-instagram",
+        "catalogueSlug": "adcreative-ai"
+      },
+      {
+        "name": "Canva",
+        "catalogueSlug": "canva"
+      },
+      {
+        "name": "Lapis"
+      }
+    ],
+    "workflowSummary": "Describe your offer (a free trial week, a seasonal membership discount) and target area; the AI generates multiple ad image/video variants sized correctly for each Meta placement along with several headline and copy options, which you can then launch or hand to Ads Manager.",
+    "samplePrompt": "Create 3 Facebook/Instagram ad variations promoting a free trial week at our gym, targeting people within 5 miles, with a clear 'Book your free class' call to action.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "still requires basic familiarity with Meta Ads Manager to actually launch",
+    "trustScore": 3,
+    "pricingNote": "AdCreative.ai and similar tools typically run subscription pricing based on number of ad generations per month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.trylapis.com/resources/best-ai-ad-generators-facebook-instagram",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Independent comparison; some listed tools (Lapis) also appear as the article's own publisher, so cross-check competitor claims separately",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-66bc531bce",
+    "slug": "i-want-ai-to-run-and-manage-my-local-facebook-ads-without-me",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Local gym, salon, or personal trainer new to running paid ads",
+    "title": "I want AI to run and manage my local Facebook ads without me learning Ads Manager",
+    "intentLabels": [
+      "AI-managed local ad campaigns",
+      "automated Facebook ads for local business",
+      "geo-targeted ad tool"
+    ],
+    "tools": [
+      {
+        "name": "FastiAds",
+        "url": "https://www.fastiads.com/"
+      },
+      {
+        "name": "AdStellar AI"
+      }
+    ],
+    "workflowSummary": "Point the tool at your business website; it identifies your service area and typical customer, then builds and launches geo-targeted Facebook/Instagram campaigns automatically, writing the copy and creative itself and pausing spend automatically if performance drops below a threshold you set.",
+    "samplePrompt": "Set up a geo-targeted Facebook ad campaign for our personal training studio within a 10-mile radius, with a $20/day budget, and automatically pause it if cost-per-lead goes above $25.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Typically a monthly platform fee plus your own ad spend budget — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.fastiads.com/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; performance guardrail claims (auto-pause thresholds) should be tested with a small budget before scaling up",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-273262c060",
+    "slug": "i-want-to-set-up-a-loyalty-or-referral-rewards-program-for-my",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner designing a client rewards program",
+    "title": "I want to set up a loyalty or referral rewards program for my salon clients",
+    "intentLabels": [
+      "salon loyalty program software",
+      "referral rewards app",
+      "points-based client retention"
+    ],
+    "tools": [
+      {
+        "name": "Loyalty Pass",
+        "url": "https://www.loyaltypass.co/blog/industries/salon-loyalty-program"
+      },
+      {
+        "name": "Casa Loyalty Rewards"
+      },
+      {
+        "name": "Loyal-n-Save"
+      }
+    ],
+    "workflowSummary": "Choose a loyalty structure (points, tiers, or a referral bonus) and the platform tracks client visits, purchases, and referrals automatically, awarding points or discounts without you manually keeping score, and prompts clients about their rewards status at checkout or by text.",
+    "samplePrompt": "Set up a simple points-based loyalty program for our salon where clients earn 1 point per dollar spent and get a referral bonus when they bring in a new client. Explain how to launch it with our front desk.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Varies by platform; some (Loyal-n-Save) are quote-based, others integrate into existing POS at added monthly cost — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.loyaltypass.co/blog/industries/salon-loyalty-program",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-28",
+    "accessNotes": "Independent industry guide; cited stats (e.g., referral likelihood increase) are third-party research figures, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-9c6d65fcce",
+    "slug": "i-want-a-system-that-automatically-tracks-and-rewards-member",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or fitness studio owner building a referral pipeline",
+    "title": "I want a system that automatically tracks and rewards member referrals",
+    "intentLabels": [
+      "gym referral software",
+      "member-get-member tracking",
+      "referral rewards automation for fitness studios"
+    ],
+    "tools": [
+      {
+        "name": "ClubReady",
+        "url": "https://ustechautomations.com/resources/blog/best-referral-software-for-gyms-and-studios-2026"
+      },
+      {
+        "name": "Vagaro referral tracking"
+      },
+      {
+        "name": "Birdeye"
+      }
+    ],
+    "workflowSummary": "Referral-tracking software captures which existing member referred a new sign-up, automatically applies a reward (discount, free session) to both parties once the referral converts, and reports referral volume so you know which members are your best promoters.",
+    "samplePrompt": "Set up a referral tracking system so that when a current member refers a friend who signs up, both get a free personal training session automatically applied to their account.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "some platforms track referrals at a basic lead-field level rather than a full rewards workflow — check before committing",
+    "trustScore": 3,
+    "pricingNote": "Pricing varies; some tools require connecting a membership platform to a rewards system separately — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://ustechautomations.com/resources/blog/best-referral-software-for-gyms-and-studios-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Independent comparison; explicitly notes some listed platforms don't fully automate the reward workflow — confirm exact capability before recommending",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-fce1bf3db8",
+    "slug": "i-want-ai-to-help-me-write-my-salon-s-monthly-email-newsletter",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner sending a monthly client newsletter",
+    "title": "I want AI to help me write my salon's monthly email newsletter",
+    "intentLabels": [
+      "AI email newsletter generator",
+      "salon email marketing",
+      "client retention email content"
+    ],
+    "tools": [
+      {
+        "name": "Mailchimp",
+        "url": "https://salonly.io/blog/email-marketing-tools-for-salon-business/"
+      },
+      {
+        "name": "Klaviyo"
+      },
+      {
+        "name": "Flodesk"
+      }
+    ],
+    "workflowSummary": "Describe the month's theme (a seasonal color trend, a new service, a product spotlight) and the AI drafts a complete newsletter — subject line, body copy, and a call to action — formatted for your existing email platform, ready for you to add photos and send.",
+    "samplePrompt": "Write our salon's monthly newsletter for October: one seasonal hair color trend, one product recommendation, and a reminder about holiday gift card sales.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Mailchimp and Klaviyo both offer free tiers for smaller lists; pricing scales with subscriber count — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://salonly.io/blog/email-marketing-tools-for-salon-business/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-02",
+    "accessNotes": "Independent guide; recommends checking each platform's official pricing page directly since costs vary heavily by list size and plan",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-334533f885",
+    "slug": "i-want-ai-to-automatically-email-clients-who-haven-t-booked-in",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner trying to get lapsed clients to rebook",
+    "title": "I want AI to automatically email clients who haven't booked in a while",
+    "intentLabels": [
+      "win-back email automation",
+      "rebooking reminder AI",
+      "lapsed client re-engagement"
+    ],
+    "tools": [
+      {
+        "name": "Boulevard marketing automation",
+        "url": "https://www.wellnessliving.com/blog/automated-gym-marketing-software-for-sms-and-email-campaigns/"
+      },
+      {
+        "name": "Klaviyo"
+      },
+      {
+        "name": "WellnessLiving Marketing Suite"
+      }
+    ],
+    "workflowSummary": "Set a rule (e.g., \"no visit in 60+ days\") once, and the platform automatically sends a personalized win-back email or text using the client's actual service history and last visit date — no manual list-building or one-off email blasts required.",
+    "samplePrompt": "Set up an automatic win-back email that goes out to any client who hasn't booked in 60 days, referencing their last service and offering a small incentive to rebook.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Often bundled into existing booking-platform marketing tiers; standalone email tools priced separately by list size — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.wellnessliving.com/blog/automated-gym-marketing-software-for-sms-and-email-campaigns/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-09-04",
+    "accessNotes": "Vendor blog for a named platform; compare feature depth against dedicated email tools (Klaviyo, Mailchimp) before choosing one option",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c7e5cb458e",
+    "slug": "i-want-an-ai-chatbot-on-my-website-that-captures-leads-and",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner losing leads who message after hours",
+    "title": "I want an AI chatbot on my website that captures leads and books trial classes 24/7",
+    "intentLabels": [
+      "gym website chatbot",
+      "lead capture AI widget",
+      "trial class booking bot"
+    ],
+    "tools": [
+      {
+        "name": "ChatBot.com",
+        "url": "https://simplyboost.io/blogs/ai-chatbot-for-gyms-fitness-studios"
+      },
+      {
+        "name": "SimplyBoost"
+      },
+      {
+        "name": "Oscar Chat"
+      }
+    ],
+    "workflowSummary": "Add a chat widget to your gym's website that answers visitor questions about pricing, class types, and trial offers in real time, captures their contact details as part of the conversation, and books a trial class directly into your calendar — even outside staffed hours.",
+    "samplePrompt": "Set up a website chatbot for our gym that answers questions about membership pricing and class types, and books a free trial class directly for anyone who wants one.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best results require connecting it to your real pricing/class data first",
+    "trustScore": 4,
+    "pricingNote": "Many chatbot platforms offer a free trial period (commonly 7 days) before paid tiers — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://simplyboost.io/blogs/ai-chatbot-for-gyms-fitness-studios",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Vendor blog; distinct from an AI phone receptionist — this is a website/DM chat widget for lead capture specifically, not a phone-answering service",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-1fbdb80d8a",
+    "slug": "i-want-ai-to-suggest-add-on-products-or-services-my-staff-can",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner wanting bigger average tickets per visit",
+    "title": "I want AI to suggest add-on products or services my staff can recommend at checkout",
+    "intentLabels": [
+      "upsell recommendation engine",
+      "cross-sell AI for salons",
+      "retail add-on suggestion tool"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti recommendation engine",
+        "url": "https://www.zenoti.com/thecheckin/using-ai-to-boost-salon-and-spa-revenue"
+      }
+    ],
+    "workflowSummary": "An AI recommendation engine analyzes the service a client just booked or received (e.g., a color treatment) and automatically suggests a relevant retail product or add-on service for staff to mention at checkout or during online booking, based on what similar clients have purchased.",
+    "samplePrompt": "After a color service is booked, suggest a relevant retail product or add-on treatment our front desk can offer at checkout to increase the average ticket.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once already using a platform that has this feature built in",
+    "trustScore": 3,
+    "pricingNote": "Typically included as a feature within an existing salon/spa management platform rather than sold standalone — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.zenoti.com/thecheckin/using-ai-to-boost-salon-and-spa-revenue",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-14",
+    "accessNotes": "Vendor blog citing the vendor's own 2025 benchmark report for supporting statistics — treat cited percentages as vendor-reported, not independently verified",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-420ed2e5c5",
+    "slug": "i-want-to-sell-my-retail-products-online-with-ai-helping-upsell",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner adding retail e-commerce",
+    "title": "I want to sell my retail products online with AI helping upsell related items",
+    "intentLabels": [
+      "salon e-commerce upsell",
+      "online retail bundle AI",
+      "Shopify salon add-on apps"
+    ],
+    "tools": [
+      {
+        "name": "Shopify with EA Upsell & Cross-Sell app",
+        "url": "https://easyappsecom.com/guides/best-shopify-apps-beauty-salon"
+      }
+    ],
+    "workflowSummary": "Add an AI-driven upsell app to your salon's online store so that when a client buys a retail product (like shampoo), the app automatically suggests a complementary product (like a matching conditioner) as a bundle or add-on before checkout, increasing average order value without extra staff effort.",
+    "samplePrompt": "Set up product bundle suggestions on our online store so anyone buying shampoo also sees a matching conditioner offered as an add-on before checkout.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires an existing Shopify or similar e-commerce storefront first",
+    "trustScore": 3,
+    "pricingNote": "App-based add-ons typically run their own monthly fee on top of the Shopify plan — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://easyappsecom.com/guides/best-shopify-apps-beauty-salon",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-07",
+    "accessNotes": "Independent guide; cited revenue-increase statistics are industry figures, not guaranteed outcomes — flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c4f9d96204",
+    "slug": "i-want-ai-to-give-me-a-month-of-blog-post-ideas-that-help-my",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or gym owner who wants a content calendar without writer's block",
+    "title": "I want AI to give me a month of blog post ideas that help my local SEO",
+    "intentLabels": [
+      "AI blog idea generator",
+      "local SEO content ideas",
+      "salon/gym blog topic generator"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot Blog Ideas Generator",
+        "url": "https://www.enji.co/ai-idea-generator-blogs"
+      },
+      {
+        "name": "Enji AI Idea Generator"
+      }
+    ],
+    "workflowSummary": "Describe your business and location, and the AI generates a list of blog post topics tied to real search demand in your area (e.g., \"best hair color trends for [city] winters\"), which you can turn into short blog posts to support your website's local search visibility.",
+    "samplePrompt": "Give me 10 blog post ideas for a hair salon in a mid-size city, focused on topics our local clients are actually searching for.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "HubSpot and Enji both offer free tiers for basic idea generation; full drafting/publishing tools are typically paid — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.enji.co/ai-idea-generator-blogs",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page for a small-business-focused tool; cross-check topic relevance against your specific local market before publishing",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-0e6e5af5b4",
+    "slug": "i-want-ai-to-help-me-plan-out-promotions-and-content-for-the",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner planning seasonal promotions",
+    "title": "I want AI to help me plan out promotions and content for the whole year",
+    "intentLabels": [
+      "seasonal marketing calendar AI",
+      "promotion planning tool",
+      "salon content calendar by season"
+    ],
+    "tools": [
+      {
+        "name": "Sequenzy (seasonal salon marketing guidance)",
+        "url": "https://www.sequenzy.com/email-marketing-for/hair-salons"
+      },
+      {
+        "name": "Mailchimp content calendar"
+      }
+    ],
+    "workflowSummary": "Use an AI-assisted planning guide to map recurring seasonal promotions (spring color trends, summer sun-protection tips, holiday gift card pushes) onto a content and email calendar in advance, so your marketing isn't created last-minute each month.",
+    "samplePrompt": "Build me a quarter-by-quarter promotion and content calendar for our salon covering spring, summer, fall, and winter service and retail pushes.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Planning guidance is often free content; execution tools (email platform, social scheduler) carry their own separate subscription cost — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.sequenzy.com/email-marketing-for/hair-salons",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-15",
+    "accessNotes": "Independent guide combining email marketing tool comparisons with seasonal content templates; treat suggested seasonal topics as a starting template, not a finished calendar",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-f4e9b311ca",
+    "slug": "i-want-ai-to-follow-up-automatically-with-people-who-tried-a",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner worried about losing trial members before they convert to paying",
+    "title": "I want AI to follow up automatically with people who tried a free class but didn't join",
+    "intentLabels": [
+      "trial-to-member conversion AI",
+      "gym lead nurture sequence",
+      "automated trial follow-up"
+    ],
+    "tools": [
+      {
+        "name": "Replify",
+        "url": "https://www.replify.ai/ai-sales-service-blog/best-ai-for-gyms-complete-buyers-guide"
+      },
+      {
+        "name": "Carly"
+      }
+    ],
+    "workflowSummary": "After someone attends a free trial class or tour, an AI communication tool automatically follows up by text or email over the next several days with personalized nudges (addressing common hesitations, offering a limited-time join incentive) instead of relying on staff to remember to call.",
+    "samplePrompt": "Set up an automatic 5-day follow-up sequence for anyone who attends a free trial class but doesn't sign up, including one message addressing cost concerns and one limited-time join offer.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Typically a separate monthly subscription layered on top of your core gym management software — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.replify.ai/ai-sales-service-blog/best-ai-for-gyms-complete-buyers-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-10",
+    "accessNotes": "Vendor-adjacent buyer's guide; case-study conversion numbers cited are vendor-reported and should be treated as marketing claims, not independent benchmarks",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-057d4970be",
+    "slug": "i-want-an-easy-way-to-sell-digital-gift-cards-online-and-get",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo massage therapist or esthetician wanting to sell gift cards",
+    "title": "I want an easy way to sell digital gift cards online and get clients to spend more than the card value",
+    "intentLabels": [
+      "digital gift card sales",
+      "salon gift card platform",
+      "online gift card marketing"
+    ],
+    "tools": [
+      {
+        "name": "Shopify gift cards",
+        "url": "https://easyappsecom.com/guides/best-shopify-apps-beauty-salon"
+      },
+      {
+        "name": "GlossGenius gift cards"
+      },
+      {
+        "name": "Vagaro gift cards"
+      }
+    ],
+    "workflowSummary": "Set up digital gift cards through your existing booking/e-commerce platform so clients can buy and send them online; gift card recipients statistically spend more than the card's face value when they redeem it, making this a low-effort way to bring in new revenue and new clients.",
+    "samplePrompt": "Set up digital gift cards on our website that clients can buy and email directly to a friend, and suggest a small holiday promotion to boost gift card sales.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Gift card features are usually included free with an existing booking/e-commerce plan — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://easyappsecom.com/guides/best-shopify-apps-beauty-salon",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-07",
+    "accessNotes": "Independent guide; cited stat that gift card recipients spend ~20% more than card value is an industry figure, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-c067f7822f",
+    "slug": "i-want-to-see-how-my-prices-and-services-compare-to-other-gyms",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or salon owner wanting to know what nearby competitors charge and offer",
+    "title": "I want to see how my prices and services compare to other gyms/salons near me",
+    "intentLabels": [
+      "competitor analysis for local business",
+      "local pricing benchmark tool",
+      "nearby business comparison"
+    ],
+    "tools": [
+      {
+        "name": "BrightLocal",
+        "url": "https://blog.trendybaybd.com/ai-tools-for-gbp-optimization/"
+      },
+      {
+        "name": "Semrush Local"
+      }
+    ],
+    "workflowSummary": "Use a local SEO / competitive intelligence tool to pull publicly available data on nearby competitors — their reviews, posted pricing where available, and search visibility — to see how your salon or gym's online presence and offers compare in your immediate area.",
+    "samplePrompt": "Show me how our gym's Google review rating and posting activity compares to the 3 closest competing gyms in our area.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to owners already comfortable with basic local SEO concepts",
+    "trustScore": 3,
+    "pricingNote": "BrightLocal and Semrush Local pricing is typically subscription-based, often priced per location — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://blog.trendybaybd.com/ai-tools-for-gbp-optimization/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-29",
+    "accessNotes": "Independent blog covering multiple GBP/local SEO tools together; pricing and feature depth should be confirmed directly on each vendor's site",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-e302e6e58f",
+    "slug": "i-want-ai-to-design-simple-promotional-graphics-and-offer",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner wanting client-facing marketing graphics without a designer",
+    "title": "I want AI to design simple promotional graphics and offer banners for my salon's website and profile",
+    "intentLabels": [
+      "AI graphic design tool",
+      "promotional banner generator",
+      "salon marketing visuals"
+    ],
+    "tools": [
+      {
+        "name": "Canva AI",
+        "url": "https://blog.trendybaybd.com/ai-tools-for-gbp-optimization/"
+      }
+    ],
+    "workflowSummary": "Describe the promotion (a holiday gift card sale, a new-client discount) and Canva's AI generates a set of branded graphic options sized for your website, Google Business Profile, and social posts, which you can customize with your own colors and logo before publishing.",
+    "samplePrompt": "Design a promotional banner announcing 20% off gift cards for the holidays, using our salon's pink and gold brand colors, sized for both our website and Instagram.",
+    "beginnerFriendly": "yes",
+    "trustScore": 5,
+    "pricingNote": "Canva's AI design tools are largely free within the platform; Canva Pro unlocks additional templates/assets — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://blog.trendybaybd.com/ai-tools-for-gbp-optimization/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-04-29",
+    "accessNotes": "Independent blog mentioning Canva as part of a broader local-marketing toolkit; Canva's own product page should be checked for current free-vs-paid feature splits",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-1895c41161",
+    "slug": "i-want-to-understand-which-ai-marketing-tools-are-actually",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner deciding which AI marketing tool to invest in first",
+    "title": "I want to understand which AI marketing tools are actually worth it for a small gym, not just hype",
+    "intentLabels": [
+      "AI marketing tools comparison for gyms",
+      "where to start with AI for a fitness business",
+      "gym AI ROI"
+    ],
+    "tools": [
+      {
+        "name": "Replify",
+        "url": "https://www.replify.ai/ai-sales-service-blog/best-ai-for-gyms-complete-buyers-guide"
+      },
+      {
+        "name": "Carly"
+      },
+      {
+        "name": "Zenoti"
+      }
+    ],
+    "workflowSummary": "Rather than buying every AI marketing tool at once, match the tool to your biggest specific leak — a lead-capture/communication AI if you're losing inquiries, a churn-prediction tool if members are quietly canceling, or a recommendation engine if average ticket size is low — and expand from there.",
+    "samplePrompt": "We're a small gym losing membership inquiries because nobody replies fast enough after hours. What's the single AI tool we should start with, and what should we hold off on until later?",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Mix of free general-purpose AI drafting and paid, purpose-built tools depending on the gap being addressed — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.replify.ai/ai-sales-service-blog/best-ai-for-gyms-complete-buyers-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-10",
+    "accessNotes": "Vendor-adjacent buyer's guide; frames itself as neutral but is published by one of the recommended tools — cross-check named competitors independently",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-fc4f519d28",
+    "slug": "i-want-ai-to-create-short-promotional-video-ads-for-my-salon-or",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner wanting to advertise via short video without a videographer",
+    "title": "I want AI to create short promotional video ads for my salon or spa services",
+    "intentLabels": [
+      "AI video ad generator",
+      "short-form promo video for local business",
+      "UGC-style ad creation tool"
+    ],
+    "tools": [
+      {
+        "name": "Creatify",
+        "url": "https://fluxnote.io/guides/ai-video-ads-for-local-businesses"
+      },
+      {
+        "name": "FluxNote"
+      }
+    ],
+    "workflowSummary": "Describe your service or offer and the AI generates a short, platform-ready promotional video (with voiceover, captions, and background footage or your own uploaded clips) suited for Instagram Reels or TikTok ads, without hiring a videographer or editor.",
+    "samplePrompt": "Create a 30-second promotional video ad for a spring facial special at our spa, using an upbeat tone with captions, ready to post as an Instagram Reel ad.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tiers commonly limited to 1 video/month; paid plans needed for regular use — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://fluxnote.io/guides/ai-video-ads-for-local-businesses",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-12",
+    "accessNotes": "Independent guide from a tool in this space (FluxNote); cited performance multipliers (e.g., \"3.5x better\") are the source's own claims, flag as approximate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session3",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-955b9f69f3",
+    "slug": "i-want-ai-to-manage-my-google-ads-without-hiring-an-agency",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or salon owner running paid Google search ads",
+    "title": "I want AI to manage my Google Ads without hiring an agency",
+    "intentLabels": [
+      "AI Google Ads management",
+      "automated PPC for local business",
+      "self-serve Google Ads AI"
+    ],
+    "tools": [
+      {
+        "name": "VibeAds",
+        "url": "https://getvibeads.com/blog/best-google-ads-tools-local-services-2026"
+      },
+      {
+        "name": "Ryze AI"
+      }
+    ],
+    "workflowSummary": "Select your service category, location, and budget; the AI builds a geo-targeted Google Search/Local Services campaign, writes the ad copy, and continuously adjusts bids and pauses underperforming keywords — without paying an agency's monthly management fee on top of ad spend.",
+    "samplePrompt": "Set up a Google Search ad campaign for our personal training studio, targeting people within 8 miles searching for 'personal trainer near me,' with a $15/day budget.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "still requires reviewing the campaign before/after launch",
+    "trustScore": 3,
+    "pricingNote": "VibeAds cites a flat ~$20/month tool fee plus your ad spend; other tools charge a percentage of spend — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://getvibeads.com/blog/best-google-ads-tools-local-services-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-19",
+    "accessNotes": "Independent comparison written by one of the compared tools' founder (VibeAds); disclosed bias in the source — cross-check competitor pricing separately",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-cc94a8cd57",
+    "slug": "i-want-an-ai-tool-to-scan-and-analyze-a-client-s-skin-before",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Med spa or advanced skincare studio owner",
+    "title": "I want an AI tool to scan and analyze a client's skin before recommending treatments",
+    "intentLabels": [
+      "AI skin analysis app",
+      "facial scan consultation tool",
+      "skincare diagnostic AI"
+    ],
+    "tools": [
+      {
+        "name": "ScanSkinAI",
+        "url": "https://www.scanskinai.com/blog/best-ai-skin-analysis-tools-salons-spas-2026"
+      },
+      {
+        "name": "Perfect Corp Skincare AI"
+      },
+      {
+        "name": "Haut.AI"
+      }
+    ],
+    "workflowSummary": "A client's face is scanned for 60-90 seconds using an iPad or phone camera; the AI analyzes dozens of skin metrics (texture, tone, hydration, visible conditions) and generates a report matched to your treatment menu, giving both provider and client an objective basis for the recommendation instead of a purely visual guess.",
+    "samplePrompt": "Scan this client's skin and generate a report on hydration, texture, and pigmentation, then match the top 3 concerns to services we currently offer.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to spas with an established treatment menu to match results against",
+    "trustScore": 4,
+    "pricingNote": "App-based scanners start around $59.99/year; enterprise/per-store contracts cost more — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.scanskinai.com/blog/best-ai-skin-analysis-tools-salons-spas-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-19",
+    "accessNotes": "Independent guide; explicitly advises checking for FDA/CE/UKCA registration and a published accuracy study rather than trusting a bare 'AI-powered' claim",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-cf5519dc4a",
+    "slug": "i-want-to-charge-more-during-busy-hours-and-less-during-slow",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym, salon, or spa owner considering time-based price changes",
+    "title": "I want to charge more during busy hours and less during slow hours automatically",
+    "intentLabels": [
+      "dynamic pricing software",
+      "peak-hour pricing automation",
+      "off-peak discount AI"
+    ],
+    "tools": [
+      {
+        "name": "Zenoti Dynamic Pricing",
+        "url": "https://www.zenoti.com/platform/dynamic-pricing"
+      }
+    ],
+    "workflowSummary": "Set pricing rules once (e.g., a premium rate for Friday evening classes, a discount for weekday mornings), and the system automatically applies the correct price everywhere a client can book — app, website, kiosk, or front desk — without you or your staff manually updating prices for each time slot.",
+    "samplePrompt": "Set up a 15% premium price for Saturday morning color appointments and a 10% discount for Tuesday/Wednesday morning slots, applied automatically across our booking channels.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires careful rollout — clients can react negatively to price changes if not framed as clear off-peak savings",
+    "trustScore": 3,
+    "pricingNote": "Typically a feature within an existing salon/spa/gym management platform's higher tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.zenoti.com/platform/dynamic-pricing",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page; an independent operator guide (Tommaso Maria Ricci) cautions that clumsy dynamic pricing can feel unfair to members if not framed as added value, not just a surcharge",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-6ea8445531",
+    "slug": "i-want-ai-to-keep-our-brand-consistent-across-all-our-locations",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Franchise or multi-location gym/salon marketing manager",
+    "title": "I want AI to keep our brand consistent across all our locations' Google and social profiles",
+    "intentLabels": [
+      "franchise brand consistency AI",
+      "multi-location listings management",
+      "local content governance"
+    ],
+    "tools": [
+      {
+        "name": "SOCi Genius Social Agent",
+        "url": "https://www.soci.ai/blog/how-to-choose-the-best-franchise-social-media-management-software-in-2026/"
+      },
+      {
+        "name": "Birdeye Listings"
+      }
+    ],
+    "workflowSummary": "An AI content-governance platform manages each location's Google Business Profile, social posts, and local listings within corporate-approved brand guidelines, letting individual locations still post locally-relevant content without the risk of off-brand messaging or inconsistent business information across dozens of profiles.",
+    "samplePrompt": "Set up brand-approved social post templates that each of our 6 gym locations can localize with their own class times and staff, without changing our core brand voice or logo usage.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to operators with 5+ locations; overkill for a single site",
+    "trustScore": 3,
+    "pricingNote": "Enterprise multi-location platforms are typically quote-based and priced per location — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.soci.ai/blog/how-to-choose-the-best-franchise-social-media-management-software-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-05",
+    "accessNotes": "Vendor blog for a named platform; independently compare against Birdeye and other multi-location tools before committing to one vendor",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-81f1d9ec48",
+    "slug": "i-want-our-business-info-hours-address-phone-to-be-accurate",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Franchisee or multi-location salon/gym owner managing local business listings",
+    "title": "I want our business info (hours, address, phone) to be accurate everywhere online across all our locations",
+    "intentLabels": [
+      "franchise listings management",
+      "multi-location NAP consistency",
+      "local directory sync AI"
+    ],
+    "tools": [
+      {
+        "name": "Birdeye Listings",
+        "url": "https://birdeye.com/blog/listings-management-for-franchises/"
+      }
+    ],
+    "workflowSummary": "Centralized listings-management software pushes accurate business information (name, address, phone, hours, photos) out to Google Business Profile, Apple Business Connect, Bing, Yelp, and other directories for every location at once, and flags inconsistencies automatically instead of requiring manual updates location-by-location.",
+    "samplePrompt": "Check that our business hours and address are accurate and consistent across Google, Apple Maps, Yelp, and Bing for all 4 of our salon locations, and flag anything that doesn't match.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Multi-location listings tools are typically subscription-based, priced per location — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://birdeye.com/blog/listings-management-for-franchises/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Vendor blog; cites the vendor's own 'State of AI Search 2026' report for supporting data — treat as vendor-reported research, not independently verified",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-9ce260e811",
+    "slug": "i-want-to-find-local-content-creators-to-make-real-customer",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or salon owner wanting authentic-feeling social proof",
+    "title": "I want to find local content creators to make real customer-style videos for my gym or salon",
+    "intentLabels": [
+      "UGC creator marketplace",
+      "local influencer sourcing",
+      "authentic testimonial video creators"
+    ],
+    "tools": [
+      {
+        "name": "Collabstr",
+        "url": "https://www.modernmarketingpartners.com/2026/08/24/tools-to-find-ugc-creators-for-local-marketing-campaigns-in-2026/"
+      },
+      {
+        "name": "Modern Marketing Partners' recommended tools (Apify for custom local sourcing)"
+      }
+    ],
+    "workflowSummary": "Browse or search a marketplace of vetted content creators filtered by location and niche, describe the video you want (a client testimonial, a behind-the-scenes class clip), and book a creator directly — paying per piece of content instead of negotiating a long-term influencer contract.",
+    "samplePrompt": "Find 3 local content creators near our gym who could film a short authentic testimonial-style video about trying our first class, and estimate typical cost per video.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Marketplace platforms often charge no platform fee to browse; creator rates vary by follower count/niche and are set per project — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.modernmarketingpartners.com/2026/08/24/tools-to-find-ugc-creators-for-local-marketing-campaigns-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-24",
+    "accessNotes": "Independent guide; notes results depend heavily on budget, team size, and how much control you want over creator selection — treat as a starting point, not a guaranteed outcome",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-8a47512e5b",
+    "slug": "i-want-ai-to-help-catch-fraudulent-transactions-and-fight",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner worried about disputed credit card charges",
+    "title": "I want AI to help catch fraudulent transactions and fight chargebacks before they cost me money",
+    "intentLabels": [
+      "AI fraud detection for small business",
+      "chargeback prevention tool",
+      "payment dispute automation"
+    ],
+    "tools": [
+      {
+        "name": "AI fraud-detection features from payment processors (e.g., Square, Stripe Radar)",
+        "url": "https://kicksdigitalmarketing.com/2026/07/08/ai-fraud-detection-for-small-business-stop-chargebacks/"
+      },
+      {
+        "name": "dedicated tools like those covered by Payment Nerds"
+      }
+    ],
+    "workflowSummary": "AI reviews each transaction and the customer's history in real time to estimate the likelihood it will be disputed, flags high-risk charges for extra verification before they're approved, and — when a chargeback is filed anyway — automatically compiles supporting evidence (booking records, service history) to help you contest it.",
+    "samplePrompt": "Review our last month of card transactions and flag any that look unusually high-risk for a future chargeback, and explain what evidence I should gather to contest any disputes that come in.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "thresholds need tuning — too aggressive a setting can decline legitimate customers",
+    "trustScore": 3,
+    "pricingNote": "Fraud-detection features are often included with your existing payment processor at no extra cost; dedicated fraud platforms are separately priced — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://kicksdigitalmarketing.com/2026/07/08/ai-fraud-detection-for-small-business-stop-chargebacks/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-24",
+    "accessNotes": "Independent guide; explicitly recommends treating AI as a co-pilot with a documented human review process for edge cases, not a fully automated decision-maker",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-de4c96fb0a",
+    "slug": "i-want-ai-to-standardize-how-we-follow-up-with-new-leads-across",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner running a multi-location franchise's lead generation",
+    "title": "I want AI to standardize how we follow up with new leads across every one of our gym locations",
+    "intentLabels": [
+      "franchise lead nurture standardization",
+      "multi-location sales automation",
+      "consistent trial follow-up across sites"
+    ],
+    "tools": [
+      {
+        "name": "MaxMembers.ai",
+        "url": "https://www.fmconsulting.net/gym-consultant/are-your-gym-locations-missing-members-how-ai-can-standardize-growth-across-every-franchise/"
+      },
+      {
+        "name": "Replify"
+      }
+    ],
+    "workflowSummary": "Rather than each location handling lead follow-up its own way, an AI platform applies the same proven follow-up sequence (speed-to-lead response, trial nurture, objection handling) automatically at every location, while still rolling up performance reporting so corporate can see which locations convert well and which need coaching.",
+    "samplePrompt": "Set up the same automatic lead follow-up sequence — instant reply, trial offer, 3-day nurture — across all 5 of our gym locations, and show me a report comparing conversion rates by location.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to multi-location operators; a single gym doesn't need the roll-up reporting layer",
+    "trustScore": 3,
+    "pricingNote": "Franchise-focused AI platforms are typically priced per location or by lead volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.fmconsulting.net/gym-consultant/are-your-gym-locations-missing-members-how-ai-can-standardize-growth-across-every-franchise/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-15",
+    "accessNotes": "Vendor-adjacent consulting blog promoting a named platform; treat specific outcome claims as illustrative, not guaranteed, and compare against other multi-location AI tools",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-182625af5a",
+    "slug": "i-want-clients-to-see-an-accurate-price-estimate-on-my-website",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon owner needing instant online price quotes for clients",
+    "title": "I want clients to see an accurate price estimate on my website before they even call",
+    "intentLabels": [
+      "AI price quoting tool",
+      "online salon price calculator",
+      "dynamic quote widget"
+    ],
+    "tools": [
+      {
+        "name": "Dynalord AI voice/quoting tools",
+        "url": "https://dynalord.com/blog/ai-quoting-hair-salons/"
+      },
+      {
+        "name": "Mangomint (native pricing display)"
+      }
+    ],
+    "workflowSummary": "An AI-driven quoting widget on your website asks a client a few questions (service type, hair length, add-ons) and instantly displays an accurate price range based on your actual price list and stylist experience tiers, cutting down on the back-and-forth pricing calls that eat into front-desk time.",
+    "samplePrompt": "Set up a price quote tool on our website that asks about hair length and desired service, then shows an accurate price range for a balayage before the client calls.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires your price list to be fully and accurately entered first",
+    "trustScore": 3,
+    "pricingNote": "Salon software with this feature is typically priced $24-$200+/month depending on platform and tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://dynalord.com/blog/ai-quoting-hair-salons/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-04",
+    "accessNotes": "Vendor-adjacent comparison blog for a named tool (Dynalord); cross-check pricing math examples against your own call volume and average ticket size before assuming the same ROI",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-411d05de57",
+    "slug": "i-want-to-know-how-to-protect-myself-if-a-client-disputes-a",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Massage therapist or personal trainer worried about a bad-faith chargeback",
+    "title": "I want to know how to protect myself if a client disputes a charge for a session they actually attended",
+    "intentLabels": [
+      "friendly fraud protection",
+      "service-based chargeback defense",
+      "session dispute evidence"
+    ],
+    "tools": [
+      {
+        "name": "Payment processor dispute tools (e.g., Square, Stripe)",
+        "url": "https://chargebacks911.com/chargeback-field-report/"
+      },
+      {
+        "name": "general guidance from Chargebacks911"
+      }
+    ],
+    "workflowSummary": "When a client disputes a charge for a service they actually received, gather objective evidence — the signed waiver/intake form, appointment confirmation, and any session notes — and use your payment processor's dispute-response tool (many now AI-assisted) to submit that evidence in the standard format card networks expect, improving your odds of winning the dispute.",
+    "samplePrompt": "Walk me through what evidence I should submit to fight a chargeback from a client who attended their massage session but is now disputing the charge as 'unauthorized.'",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Dispute-response tools are typically included with your existing payment processor at no separate cost — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://chargebacks911.com/chargeback-field-report/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-30",
+    "accessNotes": "Independent industry report; notes chargeback rules increasingly favor cardholders, so documentation quality matters more than ever — general guidance, not legal advice",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-fccfbba05b",
+    "slug": "i-want-ai-to-help-me-write-training-materials-for-new-hires",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner training staff on new equipment or protocols",
+    "title": "I want AI to help me write training materials for new hires without doing it all from scratch",
+    "intentLabels": [
+      "AI training content generator",
+      "employee onboarding guide creator",
+      "staff SOP writer"
+    ],
+    "tools": [
+      {
+        "name": "General-purpose AI writing tools (e.g., ChatGPT, Claude) for drafting",
+        "url": "https://www.oscarchat.ai/blog/ai-chatbot-gyms-fitness-studios-2026-2/"
+      },
+      {
+        "name": "Jotform for turning drafts into interactive checklists"
+      }
+    ],
+    "workflowSummary": "Describe the role and the tasks a new hire needs to learn (front-desk check-in procedure, class safety protocols, product knowledge); the AI drafts a structured onboarding document or checklist you can review, edit for accuracy, and hand to new staff instead of writing training materials from a blank page each time.",
+    "samplePrompt": "Draft a first-week onboarding checklist for a new front-desk hire at our gym, covering check-in procedure, answering common member questions, and basic emergency protocols.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "General-purpose AI writing tools are often free or low-cost for this kind of drafting; formatting into interactive checklists may need a separate form tool — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.oscarchat.ai/blog/ai-chatbot-gyms-fitness-studios-2026-2/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-18",
+    "accessNotes": "Adapted from a broader gym-AI guide's mention of onboarding workflows; the specific prompt and workflow here are a reasonable general-purpose use of AI drafting tools, not a single vendor's named feature",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-b39070202c",
+    "slug": "i-want-to-make-sure-our-ai-chatbot-doesn-t-get-us-in-legal",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Salon or spa owner wanting AI oversight before deploying customer-facing chatbots",
+    "title": "I want to make sure our AI chatbot doesn't get us in legal trouble with clients",
+    "intentLabels": [
+      "AI chatbot disclosure compliance",
+      "EU AI Act transparency rules",
+      "AI disclosure requirements for businesses"
+    ],
+    "tools": [
+      {
+        "name": "General compliance guidance (no single tool — policy/process task)",
+        "url": "https://nutripy.io/blog/ai-chatbot-for-gyms"
+      }
+    ],
+    "workflowSummary": "Before deploying any AI chatbot or voice agent that talks directly with clients, make sure it clearly discloses that the client is interacting with AI (required under rules like the EU AI Act's Article 50 for businesses serving EU clients, and increasingly expected by consumers generally), rather than letting the bot pass itself off as a human staff member.",
+    "samplePrompt": "Review our chatbot's greeting script and tell me whether it clearly discloses to clients that they're talking to an AI, not a staff member.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "No tool cost — this is a compliance review task, applicable regardless of which chatbot platform is used",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://nutripy.io/blog/ai-chatbot-for-gyms",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-21",
+    "accessNotes": "Independent guide; cites the EU AI Act's Article 50 transparency requirement (effective August 2026) as an example of a real regulatory driver — confirm applicability to your specific jurisdiction and client base",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-21eb013bf4",
+    "slug": "i-want-a-safe-way-to-store-and-get-consent-for-before-and-after",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo massage therapist or esthetician managing before/after client photos",
+    "title": "I want a safe way to store and get consent for before-and-after photos I take of clients",
+    "intentLabels": [
+      "client photo consent management",
+      "before/after photo storage",
+      "treatment photo compliance tool"
+    ],
+    "tools": [
+      {
+        "name": "Waiverly",
+        "url": "http://www.happywaiver.com/compare/best-waiver-software-for-gyms"
+      },
+      {
+        "name": "Happy Waiver (photo consent add-ons)"
+      },
+      {
+        "name": "general practice-management platforms with photo storage"
+      }
+    ],
+    "workflowSummary": "Rather than storing before/after photos loosely on a personal phone, use a practice-management or waiver platform's photo consent feature to capture explicit client permission for how photos may be used (internal records only, vs. marketing/social media), storing both the photo and the signed consent together for each client.",
+    "samplePrompt": "Set up a consent form that clients sign before we take before/after photos, with a clear option for 'internal use only' vs. 'okay to use in marketing,' and store both together per client.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Photo consent add-ons are typically bundled with an existing waiver or practice-management platform subscription — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "http://www.happywaiver.com/compare/best-waiver-software-for-gyms",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor comparison page for waiver software generally; photo-consent-specific features and storage compliance should be confirmed directly with the chosen vendor",
+    "batch": "Fitness Salon AI Workflows Batch1 Session4",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-b855f188d4",
+    "slug": "i-want-ai-to-check-my-squat-or-deadlift-form-from-a-video",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym-goer or personal training client wanting form feedback",
+    "title": "I want AI to check my squat or deadlift form from a video",
+    "intentLabels": [
+      "AI form checker",
+      "exercise technique analysis",
+      "workout form feedback app"
+    ],
+    "tools": [
+      {
+        "name": "Gymscore",
+        "url": "https://www.gymscore.ai/blog/best-ai-workout-form-check-app-2026/"
+      },
+      {
+        "name": "Gymaholic"
+      },
+      {
+        "name": "Form Check (AI Gym Coach)"
+      }
+    ],
+    "workflowSummary": "Record or upload a short clip of a lift; the AI analyzes range of motion, alignment, tempo, and stability, then returns a score and specific, frame-by-frame feedback on what to fix — useful between trainer sessions or for clients training on their own.",
+    "samplePrompt": "Analyze this video of my squat and tell me if my depth, knee tracking, and back position look safe, plus one thing to fix on my next set.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Many form-check apps offer a free tier with limited scans/month; full access typically runs a modest monthly subscription — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.gymscore.ai/blog/best-ai-workout-form-check-app-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-11",
+    "accessNotes": "Independent product blog for a named tool (Gymscore); an unrelated independent guide (Sensai) notes single-camera capture has real accuracy limits, so treat scores as directional, not clinical",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-39dcdec649",
+    "slug": "i-want-a-tool-where-my-remote-clients-can-send-workout-videos",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer reviewing client technique remotely",
+    "title": "I want a tool where my remote clients can send workout videos and I can see AI-flagged form issues before I review them myself",
+    "intentLabels": [
+      "trainer form review tool",
+      "remote client video coaching",
+      "AI-assisted movement screening"
+    ],
+    "tools": [
+      {
+        "name": "Gymscore",
+        "url": "https://www.sensai.fit/blog/best-ai-workout-form-check-apps-2026"
+      },
+      {
+        "name": "FormFusion"
+      },
+      {
+        "name": "CueForm AI"
+      }
+    ],
+    "workflowSummary": "Clients record their lifts and upload through the app; the AI pre-screens the video for common form issues (range of motion, alignment, tempo) and surfaces a summary, so the trainer's own review time focuses on borderline calls and coaching cues rather than watching every rep from scratch.",
+    "samplePrompt": "Set up a workflow where my online coaching clients upload workout videos, get an automatic AI form score first, and I only need to add follow-up notes for anything flagged as a concern.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best paired with, not substituted for, a trainer's own review",
+    "trustScore": 3,
+    "pricingNote": "Trainer/business tiers of form-check apps typically cost more than the individual consumer tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.sensai.fit/blog/best-ai-workout-form-check-apps-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-29",
+    "accessNotes": "Independent guide; explicitly distinguishes real-time camera-based form checkers from photo/chat-based AI coaches — pick based on which failure mode (live feedback vs. asynchronous review) matters more",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-e0fc6c2a5c",
+    "slug": "i-want-a-3d-body-scanner-clients-can-use-to-track-their",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym or studio owner offering a body composition/measurement service",
+    "title": "I want a 3D body scanner clients can use to track their progress instead of just a scale",
+    "intentLabels": [
+      "3D body scan for gyms",
+      "body composition tracking device",
+      "client transformation tracking tool"
+    ],
+    "tools": [
+      {
+        "name": "Styku",
+        "url": "https://www.styku.com/"
+      },
+      {
+        "name": "ShapeScale"
+      },
+      {
+        "name": "Size Stream"
+      }
+    ],
+    "workflowSummary": "Clients step onto or in front of a scanning device for under a minute; the system generates a 3D avatar plus detailed body composition and circumference measurements, letting trainers program more precisely and clients see visual, motivating progress beyond what the bathroom scale shows.",
+    "samplePrompt": "Explain how a Styku or ShapeScale 3D body scan could work as a free onboarding perk for new gym members, and what ongoing costs I should expect.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a hardware purchase/lease decision, not just a software signup",
+    "trustScore": 3,
+    "pricingNote": "Hardware units represent a meaningful upfront/lease cost significantly above app-based alternatives — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.styku.com/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page featuring customer testimonials; independent guide (LearnMuscles) offers a useful comparison across several scanning devices and their accuracy claims",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-6258fff3ec",
+    "slug": "i-want-an-app-only-way-to-track-my-body-measurements-and-shape",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Individual client or trainer wanting a lower-cost body scan option",
+    "title": "I want an app-only way to track my body measurements and shape changes without buying hardware",
+    "intentLabels": [
+      "phone-based 3D body scan",
+      "smartphone body measurement app",
+      "no-hardware progress photos"
+    ],
+    "tools": [
+      {
+        "name": "MeThreeSixty",
+        "url": "https://gainframe.app/blog/best-body-composition-apps/"
+      },
+      {
+        "name": "3D Measure Me"
+      },
+      {
+        "name": "ZOZOFIT"
+      }
+    ],
+    "workflowSummary": "Take two or four smartphone photos (front and side) in the app; it builds a 3D avatar and estimates dozens of body measurements and body fat percentage, letting individual clients or trainers track shape change over time without any special equipment.",
+    "samplePrompt": "Walk me through taking my first body scan with a smartphone-based app, and explain what measurements it can track over time compared to just weighing myself.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "App-based scanners are typically free to start or low-cost (roughly $5-$15/month range across comparable apps) — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://gainframe.app/blog/best-body-composition-apps/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Independent, detailed comparison guide; explicitly notes accuracy varies by method and that consistency of use matters more than lab-grade precision for most users",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-dd5df0b993",
+    "slug": "i-want-ai-to-turn-my-spoken-notes-into-a-properly-formatted",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Massage therapist writing up session notes",
+    "title": "I want AI to turn my spoken notes into a properly formatted SOAP note after a massage session",
+    "intentLabels": [
+      "AI SOAP notes",
+      "massage therapy documentation",
+      "voice-to-text session notes"
+    ],
+    "tools": [
+      {
+        "name": "PatientNotes",
+        "url": "https://www.patientnotes.app/professions/massage-therapist"
+      },
+      {
+        "name": "general AI assistants (ChatGPT/Claude) prompted with a SOAP template"
+      }
+    ],
+    "workflowSummary": "After a session, dictate a plain-language summary of what you observed and did (presenting complaint, techniques used, client response); the AI formats it into a properly structured, compliant SOAP note in seconds, which you review and sign — instead of typing the full note from scratch.",
+    "samplePrompt": "Turn this into a SOAP note: client had tight left shoulder and reduced range of motion, I did 60 minutes of deep tissue on the shoulder and upper back, pain went from 6/10 to 2/10 by the end, plan is weekly sessions for a month.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "PatientNotes offers a free 14-day trial; general-purpose AI assistants used for this are often free or low-cost — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.patientnotes.app/professions/massage-therapist",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-01-01",
+    "accessNotes": "Vendor product page for a therapy-specific tool; general AI assistants can do the same formatting task but don't include the HIPAA-oriented storage/search features a dedicated tool offers",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-013795f009",
+    "slug": "i-want-one-documentation-system-that-handles-notes-for",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Physical therapist, chiropractor, or massage therapist across multiple modalities",
+    "title": "I want one documentation system that handles notes for different types of sessions without me rebuilding templates each time",
+    "intentLabels": [
+      "multi-modality clinical documentation",
+      "customizable SOAP/DAP templates",
+      "AI clinical note platform"
+    ],
+    "tools": [
+      {
+        "name": "Noterro",
+        "url": "https://www.lindy.ai/blog/best-ai-progress-notes"
+      },
+      {
+        "name": "Dragon Copilot"
+      }
+    ],
+    "workflowSummary": "Build (or let the AI help build) a flexible note template once per session type — mental health, physical therapy, massage — and the system locks it after first use to keep documentation consistent; AI-generated summaries can also condense long intake forms into key points automatically.",
+    "samplePrompt": "Set up separate note templates for my physical therapy sessions and my massage sessions, and have the AI summarize new client intake forms into a short list of key points before my first appointment with them.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "initial template setup takes some configuration",
+    "trustScore": 3,
+    "pricingNote": "Multi-modality clinical documentation platforms are typically priced per practitioner per month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.lindy.ai/blog/best-ai-progress-notes",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Independent tester's comparison across several named tools; test scenarios were mock/simulated, so real-world transcription accuracy for your specific accent/terminology should be verified with a trial",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-528b404b32",
+    "slug": "i-want-to-use-my-clients-whoop-oura-or-garmin-data-to-adjust",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer with clients using fitness wearables",
+    "title": "I want to use my clients' Whoop, Oura, or Garmin data to adjust their training instead of guessing how recovered they are",
+    "intentLabels": [
+      "wearable data coaching integration",
+      "HRV-based training adjustment",
+      "recovery-informed programming"
+    ],
+    "tools": [
+      {
+        "name": "My PT Hub (wearable integrations)",
+        "url": "https://www.mypthub.net/features/integrations/"
+      },
+      {
+        "name": "ABC Trainerize"
+      }
+    ],
+    "workflowSummary": "Clients connect their existing wearable (Whoop, Oura, Garmin, Apple Watch, Fitbit) to your coaching platform; their sleep, HRV, and recovery data appears alongside their workout log, letting you make an informed call — like swapping a heavy session for a lighter one — instead of relying only on what the client tells you.",
+    "samplePrompt": "My client's Whoop shows their HRV dropped 15% and they only slept 5 hours last night. Should I adjust today's scheduled heavy squat session, and how would I explain that to them?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once a critical mass of clients actually wear a compatible device",
+    "trustScore": 3,
+    "pricingNote": "Wearable integrations are typically included in existing coaching-platform subscriptions rather than priced separately — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.mypthub.net/features/integrations/",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-04-22",
+    "accessNotes": "Vendor product page; a separate independent guide (My PT Hub's own blog) notes roughly half of clients now wear some tracking device, though this stat should be treated as a general industry estimate",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-a5d37008fe",
+    "slug": "i-want-one-ai-coach-that-looks-at-all-my-different-fitness",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Serious athlete or hybrid-training client working with multiple wearables",
+    "title": "I want one AI coach that looks at all my different fitness trackers together, not one app at a time",
+    "intentLabels": [
+      "multi-device AI coaching",
+      "unified wearable data coach",
+      "cross-platform recovery and training sync"
+    ],
+    "tools": [
+      {
+        "name": "Vora",
+        "url": "https://the5krunner.com/2026/04/30/athletedata-ai-coach/"
+      },
+      {
+        "name": "athletedata"
+      }
+    ],
+    "workflowSummary": "Connect several wearables and training platforms (Garmin, WHOOP, Oura, Strava, TrainingPeaks) to one AI coaching layer that synthesizes sleep, recovery, and training load across all of them into a single daily recommendation, instead of a client or trainer manually cross-referencing four separate apps each morning.",
+    "samplePrompt": "Connect my Garmin, WHOOP, and Strava data and tell me each morning whether I should stick to my planned workout or adjust based on my recovery.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable for clients already using 2+ wearables/platforms; unnecessary for a single-device user",
+    "trustScore": 3,
+    "pricingNote": "Pricing for these coaching layers is typically a separate monthly subscription on top of the wearables themselves — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://the5krunner.com/2026/04/30/athletedata-ai-coach/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-29",
+    "accessNotes": "Independent product review; the reviewer notes this fills a real gap (raw data appearing on another dashboard vs. an actual synthesis layer that changes recommendations) but is one person's assessment of one product",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-a330829721",
+    "slug": "i-want-ai-to-automatically-generate-a-monthly-progress-report",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer managing a growing client roster",
+    "title": "I want AI to automatically generate a monthly progress report for each of my training clients",
+    "intentLabels": [
+      "automated client progress reports",
+      "monthly training summary generator",
+      "AI coaching report builder"
+    ],
+    "tools": [
+      {
+        "name": "ABC Trainerize",
+        "url": "https://firstrep.fit/blog/ai-personal-training-tools-guide"
+      },
+      {
+        "name": "FirstRep"
+      }
+    ],
+    "workflowSummary": "The platform compiles a client's weekly check-in data, workout compliance, body stats trends, and milestone achievements (like a new personal record) into a formatted, easy-to-read monthly report automatically — so trainers aren't manually pulling numbers from a spreadsheet to write updates for every client each month.",
+    "samplePrompt": "Generate this month's progress report for my client, pulling together their workout compliance, any new personal records, and their body measurement trend, in a format I can send them directly.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Included as a feature within most all-in-one personal training platform subscriptions rather than sold separately — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://firstrep.fit/blog/ai-personal-training-tools-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-02-26",
+    "accessNotes": "Independent guide from a platform in this space (FirstRep); explicitly notes AI analytics become genuinely useful only after 30+ days of accumulated client data, not from day one",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-e25e59de17",
+    "slug": "i-want-ai-to-warn-me-when-one-of-my-training-clients-seems-to",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer worried about a client quietly disengaging",
+    "title": "I want AI to warn me when one of my training clients seems to be losing motivation, not just my gym's overall churn numbers",
+    "intentLabels": [
+      "client-level churn signal for trainers",
+      "disengagement detection",
+      "personal training retention AI"
+    ],
+    "tools": [
+      {
+        "name": "ABC Trainerize",
+        "url": "https://www.tommasomariaricci.com/blog/ai-for-personal-trainers"
+      },
+      {
+        "name": "PT Distinction"
+      },
+      {
+        "name": "Everfit"
+      }
+    ],
+    "workflowSummary": "AI watches per-client behavioral signals — missed check-ins, declining session frequency, slower message replies, stalled progress — and flags an individual client as at-risk before they cancel, which is a different (more granular) signal than gym-wide churn-prediction tools built for membership-level retention.",
+    "samplePrompt": "Flag which of my current 1:1 training clients have missed check-ins or shown declining workout compliance over the last 2 weeks, so I can reach out personally before they consider quitting.",
+    "beginnerFriendly": "somewhat",
+    "trustScore": 3,
+    "pricingNote": "Typically included within an all-in-one personal training platform subscription — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.tommasomariaricci.com/blog/ai-for-personal-trainers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-06",
+    "accessNotes": "Independent operator's guide; distinct from the gym membership-level churn prediction covered in an earlier session — this row is specifically about per-client 1:1 training relationship signals",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-0bc7cf96a9",
+    "slug": "i-want-to-turn-my-client-s-raw-workout-and-measurement-logs",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer wanting visual, motivating progress updates for clients",
+    "title": "I want to turn my client's raw workout and measurement logs into a clean visual progress summary instead of a spreadsheet",
+    "intentLabels": [
+      "progress visualization tool",
+      "before-and-after comparison generator",
+      "client-facing visual report"
+    ],
+    "tools": [
+      {
+        "name": "ABC Trainerize",
+        "url": "https://www.winningstrengthblueprint.com/blog/progress-tracking-for-personal-trainers-the-complete-2025-guide"
+      },
+      {
+        "name": "Winning Strength Blueprint-style progress tracking systems"
+      }
+    ],
+    "workflowSummary": "Raw logged data (weights lifted, measurements, progress photos) is automatically organized into visual charts, before-and-after photo comparisons, and milestone callouts, so a client sees a compelling picture of their progress rather than a plain number that's easy to overlook during a plateau.",
+    "samplePrompt": "Turn my client's last 3 months of workout logs and progress photos into a simple visual summary showing their strength gains and body changes, formatted to send them directly.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Typically bundled into an existing personal training software subscription — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.winningstrengthblueprint.com/blog/progress-tracking-for-personal-trainers-the-complete-2025-guide",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-01",
+    "accessNotes": "Independent guide; emphasizes tracking multiple metrics beyond weight loss alone (photos, strength, measurements) to keep clients motivated through plateaus",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-2eb73acb42",
+    "slug": "i-want-one-platform-that-generates-my-clients-programs-tracks",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Solo personal trainer running an online coaching business",
+    "title": "I want one platform that generates my clients' programs, tracks their data, and handles messaging so I'm not doing it all manually",
+    "intentLabels": [
+      "all-in-one AI personal training platform",
+      "online coaching software with AI",
+      "scalable PT business tool"
+    ],
+    "tools": [
+      {
+        "name": "ABC Trainerize",
+        "url": "https://www.trainerfu.com/blog/the-27-best-personal-trainer-software/"
+      },
+      {
+        "name": "TrainerFu"
+      },
+      {
+        "name": "PT Distinction"
+      }
+    ],
+    "workflowSummary": "An all-in-one coaching platform combines AI workout generation, automated client communication, progress tracking, and payment collection into a single system, so a trainer scaling beyond a handful of in-person clients doesn't need to stitch together five separate tools to run an online coaching business.",
+    "samplePrompt": "Recommend an all-in-one coaching platform for a solo trainer with 20 online clients that handles workout delivery, progress tracking, automated check-in messages, and payments in one place.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Pricing for these platforms typically scales with active client count, often in the $5-$20/client/month range — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trainerfu.com/blog/the-27-best-personal-trainer-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-24",
+    "accessNotes": "Independent comparison of 10+ platforms; feature depth and pricing tiers vary meaningfully between the named tools, so match to the trainer's actual client volume before recommending one",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-66f9ea4c6c",
+    "slug": "i-want-ai-to-generate-an-intake-questionnaire-specific-to-my",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Massage therapist or physical therapist needing intake paperwork tailored per specialty",
+    "title": "I want AI to generate an intake questionnaire specific to my type of practice (sports massage vs. prenatal, for example)",
+    "intentLabels": [
+      "specialty-specific intake form generator",
+      "modality-tailored health history questionnaire"
+    ],
+    "tools": [
+      {
+        "name": "General AI assistants (ChatGPT/Claude) prompted with practice specifics",
+        "url": "https://beginnersinai.org/ai-for-massage-therapists/"
+      },
+      {
+        "name": "PatientNotes"
+      }
+    ],
+    "workflowSummary": "Describe your specific modality and typical client population (sports massage, prenatal, deep tissue) and the AI drafts a tailored intake questionnaire covering the health history and precautions relevant to that specialty, rather than using a generic one-size-fits-all form.",
+    "samplePrompt": "Create an intake questionnaire specifically for a prenatal massage practice, covering pregnancy stage, any complications, and positioning preferences.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Drafting via a general-purpose AI assistant is typically free; dedicated practice-management platforms with built-in forms are separately priced — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://beginnersinai.org/ai-for-massage-therapists/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-14",
+    "accessNotes": "Independent practical guide; recommends reviewing and adjusting any AI-drafted clinical/health-history form against your state's specific practice requirements before using it with clients",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-15cb8d48b6",
+    "slug": "i-want-to-run-a-monthly-fitness-challenge-for-my-clients-with",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Personal trainer running fitness challenges to boost engagement",
+    "title": "I want to run a monthly fitness challenge for my clients with automatic tracking and leaderboards",
+    "intentLabels": [
+      "gym fitness challenge app",
+      "client engagement challenge tool",
+      "automated leaderboard tracking"
+    ],
+    "tools": [
+      {
+        "name": "ABC Trainerize (habit/challenge tracking)",
+        "url": "https://www.trainerize.com/blog/ai-for-personal-trainers/"
+      },
+      {
+        "name": "Everfit (group coaching features)"
+      }
+    ],
+    "workflowSummary": "Set up a challenge (a step count goal, a workout-frequency streak, a strength milestone) once inside your coaching platform; client progress is tracked automatically from their logged workouts or connected wearable, and a leaderboard updates without you manually tallying results each week.",
+    "samplePrompt": "Set up a 30-day workout consistency challenge for my group coaching clients with an automatic leaderboard based on sessions logged per week.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Typically included as a feature within an existing coaching platform's group/community tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.trainerize.com/blog/ai-for-personal-trainers/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-15",
+    "accessNotes": "Vendor blog for a named platform (Trainerize/ABC Trainerize); community and challenge feature depth varies by platform tier, confirm specifics before recommending",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  },
+  {
+    "id": "fitness-salon-personal-services-f5b2c947f3",
+    "slug": "i-want-to-just-ask-a-question-about-a-client-s-recent-training",
+    "kind": "workflow",
+    "niche": "Fitness-Salon-Personal Services",
+    "sector": "Fitness/Salon/Personal Services",
+    "persona": "Gym owner or trainer wanting quick AI answers about a client's data",
+    "title": "I want to just ask a question about a client's recent training data instead of digging through charts myself",
+    "intentLabels": [
+      "conversational AI coaching assistant",
+      "chat-based client data query",
+      "AI coach via messaging app"
+    ],
+    "tools": [
+      {
+        "name": "athletedata (Telegram/WhatsApp interface)",
+        "url": "https://www.productcool.com/product/athletedata-ai-fitness-coach"
+      },
+      {
+        "name": "Vora"
+      }
+    ],
+    "workflowSummary": "Instead of opening multiple dashboards, a trainer or athlete can message an AI coaching assistant directly through Telegram or WhatsApp with a plain question about recent training or recovery data, and get a synthesized answer or recommendation back in the same conversation.",
+    "samplePrompt": "Ask my AI coaching assistant why my recovery score dropped this week and whether I should scale back tomorrow's planned workout.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Typically a monthly subscription on top of the connected wearable/training platforms — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.productcool.com/product/athletedata-ai-fitness-coach",
+    "sourceType": "Directory/Product Page",
+    "freshness": "2026-04-06",
+    "accessNotes": "Vendor-adjacent product profile; best suited to hybrid/endurance athletes already using multiple wearables — likely more than a typical gym member or single-modality client needs",
+    "batch": "Fitness Salon AI Workflows Batch1 Session5",
+    "status": "active"
+  }
+]

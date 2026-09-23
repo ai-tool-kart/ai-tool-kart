@@ -13,7 +13,6 @@
 
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { ASSISTANT } from '../src/config/limits.ts'
 import { GROUNDING_FALLBACK_MESSAGE, groundReply } from '../src/assistant/ground.ts'
 import { AssistantReplySchema } from '../src/assistant/schema.ts'
 import { makeAssistantReply } from './helpers.ts'
@@ -21,134 +20,85 @@ import { makeAssistantReply } from './helpers.ts'
 const CANDIDATES = ['alpha-writer', 'beta-editor', 'gamma-coder']
 
 await test('a forged tool id never survives grounding', async (t) => {
-  await t.test('a forged id in plan.toolIds is dropped and counted', () => {
+  await t.test('a forged id is dropped and counted, the real one survives', () => {
     const result = groundReply(
       makeAssistantReply({
         plan: {
-          title: 'Video workflow',
-          toolIds: ['beta-editor', 'superfakeai'],
-          agents: [],
-          workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'It cuts video.' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
+          steps: [
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+            { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
+          ],
         },
       }),
       CANDIDATES,
     )
 
-    assert.deepEqual(result.reply.plan?.toolIds, ['beta-editor'])
+    assert.deepEqual(
+      result.reply.plan?.steps.map((step) => step.toolId),
+      ['beta-editor'],
+    )
     assert.deepEqual(result.droppedToolIds, ['superfakeai'])
     assert.equal(result.degraded, false)
-  })
-
-  await t.test('a forged id in a workflow entry is dropped, the stage survives', () => {
-    const result = groundReply(
-      makeAssistantReply({
-        plan: {
-          title: 'Video workflow',
-          toolIds: ['beta-editor'],
-          agents: [],
-          workflow: [
-            { stage: 'edit', toolId: 'beta-editor', why: 'It cuts video.' },
-            { stage: 'publish', toolId: 'superfakeai', why: 'It publishes.' },
-          ],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
-        },
-      }),
-      CANDIDATES,
-    )
-
-    // The step is named honestly with no tool, rather than deleted to hide it.
-    assert.equal(result.reply.plan?.workflow.length, 2)
-    assert.equal(result.reply.plan?.workflow[1]?.stage, 'publish')
-    assert.equal(result.reply.plan?.workflow[1]?.toolId, undefined)
-    assert.deepEqual(result.droppedToolIds, ['superfakeai'])
   })
 
   await t.test('valid ids are kept while forged ones are counted', () => {
     const result = groundReply(
       makeAssistantReply({
         plan: {
-          title: 'Mixed',
-          toolIds: ['alpha-writer', 'ghost-one', 'beta-editor', 'ghost-two'],
-          agents: [],
-          workflow: [
-            { stage: 'draft', toolId: 'alpha-writer', why: 'a' },
-            { stage: 'edit', toolId: 'ghost-two', why: 'b' },
+          steps: [
+            { stage: 'draft', toolId: 'alpha-writer', alsoGoodToolIds: [] },
+            { stage: 'edit', toolId: 'ghost-two', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'beta-editor', alsoGoodToolIds: [] },
           ],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
         },
       }),
       CANDIDATES,
     )
 
-    assert.deepEqual(result.reply.plan?.toolIds, ['alpha-writer', 'beta-editor'])
-    assert.deepEqual(result.droppedToolIds, ['ghost-one', 'ghost-two'])
+    assert.deepEqual(
+      result.reply.plan?.steps.map((step) => step.toolId),
+      ['alpha-writer', 'beta-editor'],
+    )
+    assert.deepEqual(result.droppedToolIds, ['ghost-two'])
   })
 
   await t.test('a repeated forged id is counted once', () => {
     const result = groundReply(
       makeAssistantReply({
         plan: {
-          title: 'Repeats',
-          toolIds: ['ghost', 'ghost', 'beta-editor'],
-          agents: [],
-          workflow: [{ stage: 'edit', toolId: 'ghost', why: 'b' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
+          steps: [
+            { stage: 'edit', toolId: 'ghost', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'ghost', alsoGoodToolIds: [] },
+            { stage: 'draft', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          ],
         },
       }),
       CANDIDATES,
     )
 
-    // A model repeating an invented id is one mistake, not three.
+    // A model repeating an invented id is one mistake, not two.
     assert.deepEqual(result.droppedToolIds, ['ghost'])
   })
 
-  await t.test('a duplicated valid id is deduplicated, first occurrence wins', () => {
+  await t.test('the model ordering of steps is preserved, never re-sorted', () => {
     const result = groundReply(
       makeAssistantReply({
         plan: {
-          title: 'Repeats',
-          toolIds: ['beta-editor', 'alpha-writer', 'beta-editor'],
-          agents: [],
-          workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'b' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
-        },
-      }),
-      CANDIDATES,
-    )
-
-    assert.deepEqual(result.reply.plan?.toolIds, ['beta-editor', 'alpha-writer'])
-    assert.deepEqual(result.droppedToolIds, [])
-  })
-
-  await t.test('the model ranking is preserved, never re-sorted', () => {
-    const result = groundReply(
-      makeAssistantReply({
-        plan: {
-          title: 'Order',
-          toolIds: ['gamma-coder', 'alpha-writer', 'beta-editor'],
-          agents: [],
-          workflow: [{ stage: 'build', toolId: 'gamma-coder', why: 'b' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
+          steps: [
+            { stage: 'build', toolId: 'gamma-coder', alsoGoodToolIds: [] },
+            { stage: 'draft', toolId: 'alpha-writer', alsoGoodToolIds: [] },
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+          ],
         },
       }),
       CANDIDATES,
     )
 
     // Arrangement is what the model was asked for. Re-sorting would discard it.
-    assert.deepEqual(result.reply.plan?.toolIds, ['gamma-coder', 'alpha-writer', 'beta-editor'])
+    assert.deepEqual(
+      result.reply.plan?.steps.map((step) => step.toolId),
+      ['gamma-coder', 'alpha-writer', 'beta-editor'],
+    )
   })
 })
 
@@ -156,13 +106,10 @@ await test('a plan grounding cannot save degrades to a clarification', async (t)
   const forged = makeAssistantReply({
     message: 'Here are four excellent tools for that.',
     plan: {
-      title: 'All invented',
-      toolIds: ['ghost-one', 'ghost-two'],
-      agents: [],
-      workflow: [{ stage: 'edit', toolId: 'ghost-one', why: 'b' }],
-      prompts: 'p',
-      comparison: 'c',
-      steps: ['s'],
+      steps: [
+        { stage: 'edit', toolId: 'ghost-one', alsoGoodToolIds: [] },
+        { stage: 'build', toolId: 'ghost-two', alsoGoodToolIds: [] },
+      ],
     },
   })
   const result = groundReply(forged, CANDIDATES)
@@ -177,7 +124,7 @@ await test('a plan grounding cannot save degrades to a clarification', async (t)
   })
 
   await t.test("the model's message goes with the plan it described", () => {
-    // It was written to introduce a stack that is no longer there.
+    // It was written to introduce tools that are no longer there.
     assert.equal(result.reply.message, GROUNDING_FALLBACK_MESSAGE)
     assert.doesNotMatch(result.reply.message, /ghost/)
   })
@@ -198,82 +145,6 @@ await test('a plan grounding cannot save degrades to a clarification', async (t)
   })
 })
 
-await test('internal consistency between the plan and its workflow', async (t) => {
-  await t.test('a real candidate the plan forgot to list is added to it', () => {
-    const result = groundReply(
-      makeAssistantReply({
-        plan: {
-          title: 'Forgot one',
-          toolIds: ['beta-editor'],
-          agents: [],
-          workflow: [
-            { stage: 'edit', toolId: 'beta-editor', why: 'a' },
-            { stage: 'draft', toolId: 'alpha-writer', why: 'b' },
-          ],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
-        },
-      }),
-      CANDIDATES,
-    )
-
-    // It is a tool retrieval offered and the model chose; the Tools section is
-    // meant to hold the plan's tools, so listing it is the consistent answer.
-    assert.deepEqual(result.reply.plan?.toolIds, ['beta-editor', 'alpha-writer'])
-    assert.equal(result.reply.plan?.workflow[1]?.toolId, 'alpha-writer')
-    assert.deepEqual(result.droppedToolIds, [])
-  })
-
-  await t.test('a workflow entry with no tool is left alone', () => {
-    const result = groundReply(
-      makeAssistantReply({
-        plan: {
-          title: 'Unstaffed stage',
-          toolIds: ['beta-editor'],
-          agents: [],
-          workflow: [
-            { stage: 'edit', toolId: 'beta-editor', why: 'a' },
-            { stage: 'publish', why: 'No candidate covers this step.' },
-          ],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
-        },
-      }),
-      CANDIDATES,
-    )
-
-    assert.equal(result.reply.plan?.workflow[1]?.toolId, undefined)
-    assert.deepEqual(result.droppedToolIds, [])
-  })
-
-  await t.test('a real id beyond the tool cap loses its reference but is not "dropped"', () => {
-    const many = ['t1', 't2', 't3', 't4', 't5', 't6', 't7']
-    const result = groundReply(
-      makeAssistantReply({
-        plan: {
-          title: 'Full list',
-          toolIds: many.slice(0, ASSISTANT.maxPlanTools),
-          agents: [],
-          workflow: [{ stage: 'edit', toolId: 't7', why: 'a' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
-        },
-      }),
-      many,
-    )
-
-    assert.equal(result.reply.plan?.toolIds.length, ASSISTANT.maxPlanTools)
-    assert.equal(result.reply.plan?.workflow[0]?.toolId, undefined)
-    // Not a hallucination, so counting it would corrupt the one metric §10.2
-    // says matters. It is reported separately, for the log only.
-    assert.deepEqual(result.droppedToolIds, [])
-    assert.deepEqual(result.unlistedToolIds, ['t7'])
-  })
-})
-
 await test('an intent that carries no plan cannot smuggle one', async (t) => {
   for (const intent of ['clarify', 'off_topic'] as const) {
     await t.test(`${intent} loses any attached plan`, () => {
@@ -286,20 +157,12 @@ await test('an intent that carries no plan cannot smuggle one', async (t) => {
       const result = groundReply(
         makeAssistantReply({
           intent,
-          plan: {
-            title: 'Smuggled',
-            toolIds: ['ghost'],
-            agents: [],
-            workflow: [{ stage: 'edit', toolId: 'ghost-two', why: 'a' }],
-            prompts: 'p',
-            comparison: 'c',
-            steps: ['s'],
-          },
+          plan: { steps: [{ stage: 'edit', toolId: 'ghost-two', alsoGoodToolIds: [] }] },
         }),
         CANDIDATES,
       )
       assert.equal(result.reply.plan, undefined)
-      assert.deepEqual(result.droppedToolIds, ['ghost', 'ghost-two'])
+      assert.deepEqual(result.droppedToolIds, ['ghost-two'])
     })
   }
 
@@ -320,19 +183,19 @@ await test('grounding is bounded by the candidate set, not by the catalogue', as
     const result = groundReply(
       makeAssistantReply({
         plan: {
-          title: 'Off-set',
-          toolIds: ['beta-editor', 'delta-hidden'],
-          agents: [],
-          workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'a' }],
-          prompts: 'p',
-          comparison: 'c',
-          steps: ['s'],
+          steps: [
+            { stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] },
+            { stage: 'build', toolId: 'delta-hidden', alsoGoodToolIds: [] },
+          ],
         },
       }),
       CANDIDATES,
     )
 
-    assert.deepEqual(result.reply.plan?.toolIds, ['beta-editor'])
+    assert.deepEqual(
+      result.reply.plan?.steps.map((step) => step.toolId),
+      ['beta-editor'],
+    )
     assert.deepEqual(result.droppedToolIds, ['delta-hidden'])
   })
 

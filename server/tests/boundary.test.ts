@@ -135,7 +135,7 @@ await test('the catalogue storage boundary holds', async (t) => {
     const offenders = files
       .filter((file) => file !== join(CATALOGUE_DIR, 'taxonomy.ts'))
       .filter((file) =>
-        /(const|let)\s+(TOOL_CATEGORIES|WORKFLOW_STAGES|PRICING_TIERS|ROLES)\s*=/.test(
+        /(const|let)\s+(TOOL_CATEGORIES|WORKFLOW_STAGES|PRICING_TIERS|ROLES|NICHES|CATALOGUE_KINDS)\s*=/.test(
           codeOf(file),
         ),
       )
@@ -547,5 +547,128 @@ await test('the assistant module keeps its dependencies pointing inward', async 
   await t.test('grounding does no IO, so its guarantee is provable', () => {
     const ground = codeOf(join(ASSISTANT_DIR, 'ground.ts'))
     assert.equal(/await |async |from 'node:/.test(ground), false)
+  })
+})
+
+/*
+ * The automations boundary.
+ *
+ * A fourth content source behind a fourth port (SPEC-automations.md §2), with
+ * the stories' guards plus two of its own. It must never import the catalogue
+ * or retrieval: an automation EMBEDS its tools and links to the catalogue only
+ * through `catalogueSlug`, and an import would turn a recipe into a join. And
+ * it is 25 files, not one, so the guard is on the data DIRECTORY and on the
+ * filesystem itself — only json.ts may touch either.
+ *
+ * The importer (server/scripts/importAutomations.ts) is outside src/, so this
+ * scan does not see it; its header says it must never be imported from here.
+ */
+await test('the automations boundary holds', async (t) => {
+  const AUTOMATIONS_DIR = join(SRC, 'automations')
+  const automationFiles = files.filter((file) => file.startsWith(AUTOMATIONS_DIR))
+
+  await t.test('the scan found the automations module', () => {
+    assert.ok(automationFiles.length >= 6, `expected automations/, found ${automationFiles.length} files`)
+  })
+
+  await t.test('nothing outside automations/ names its data directory', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(AUTOMATIONS_DIR))
+      .filter((file) => /automations[\/]data/.test(readFileSync(file, 'utf8')))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'only src/automations/ may know where the automations live')
+  })
+
+  await t.test('only the JSON adapter touches the filesystem, even inside automations/', () => {
+    const offenders = automationFiles
+      .filter((file) => !file.endsWith('json.ts'))
+      .filter((file) => /from 'node:fs'|from 'fs'/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the directory read belongs in automations/json.ts alone')
+  })
+
+  await t.test('automations never import the catalogue or retrieval', () => {
+    // One sanctioned exception (SPEC-automations.md §7): match.ts borrows the
+    // word-level vocabulary — `stem` and `STOPWORDS` — from retrieval/normalize.ts,
+    // so both searches tokenise alike. It is stripped out before the check, so
+    // any OTHER name from normalize.ts (INTENT_MAP above all), any other
+    // retrieval/ module, or the same import in any other file still fails.
+    const SANCTIONED = /import \{ STOPWORDS, stem \} from '\.\.\/retrieval\/normalize\.ts'/
+    const offenders = automationFiles
+      .filter((file) => {
+        const code = codeOf(file)
+        const checked = file === join(AUTOMATIONS_DIR, 'match.ts') ? code.replace(SANCTIONED, '') : code
+        return /from '\.\.\/(catalogue|retrieval)\//.test(checked)
+      })
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'an automation embeds its tools; vocabulary comes via domain/types.ts')
+  })
+
+  await t.test('match.ts never uses INTENT_MAP', () => {
+    assert.equal(codeOf(join(AUTOMATIONS_DIR, 'match.ts')).includes('INTENT_MAP'), false)
+  })
+
+  await t.test('match weights live in config, not in the matcher', () => {
+    // The same rule retrieval/score.ts is held to above.
+    const body = codeOf(join(AUTOMATIONS_DIR, 'match.ts'))
+    assert.ok(body.includes('AUTOMATION_MATCH_WEIGHTS.'), 'weights are read from config/limits.ts')
+    assert.equal(
+      /AUTOMATION_MATCH_WEIGHTS\.\w+\s*\*\s*\d/.test(body),
+      false,
+      'a weight must never be multiplied by a literal in the matcher',
+    )
+    assert.equal(/\b\d+\.\d+\b/.test(body), false, 'no decimal literal may stand in for a weight')
+  })
+
+  await t.test('match.ts does no IO, so a ranking is reproducible', () => {
+    const body = codeOf(join(AUTOMATIONS_DIR, 'match.ts'))
+    assert.equal(/await |async |from 'node:/.test(body), false)
+  })
+
+  await t.test('the catalogue and retrieval never import automations', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(CATALOGUE_DIR) || file.startsWith(join(SRC, 'retrieval')))
+      .filter((file) => /from '\.\.\/automations\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('automations never import express or the HTTP layer', () => {
+    const offenders = automationFiles
+      .filter((file) => /from 'express'|from '\.\.\/http\//.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('routes never import the JSON automations adapter', () => {
+    const offenders = files
+      .filter((file) => file.startsWith(join(SRC, 'http')))
+      .filter((file) => /createJsonAutomations|automations\/json/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'routes receive a repository from the container')
+  })
+
+  await t.test('container.ts is the only module constructing the adapter', () => {
+    const offenders = files
+      .filter((file) => !file.startsWith(AUTOMATIONS_DIR))
+      .filter((file) => file !== join(SRC, 'container.ts'))
+      .filter((file) => codeOf(file).includes('createJsonAutomations('))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [])
+  })
+
+  await t.test('no src/ module imports the importer', () => {
+    const offenders = files
+      .filter((file) => /scripts\/importAutomations|importAutomations\.ts/.test(codeOf(file)))
+      .map((file) => relative(SRC, file))
+
+    assert.deepEqual(offenders, [], 'the importer and SheetJS stay out of the server')
   })
 })

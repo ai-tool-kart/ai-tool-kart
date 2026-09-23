@@ -16,6 +16,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createAssistantEngine } from '../src/assistant/engine.ts'
+import { createAutomationMatcher } from '../src/automations/match.ts'
 import { UNTRUSTED_DELIMITERS } from '../src/llm/prompts/shared.ts'
 import { createBudget } from '../src/llm/budget.ts'
 import { createLLMClient } from '../src/llm/client.ts'
@@ -134,7 +135,10 @@ const CATALOGUE: Tool[] = [
     pricingTier: 'freemium',
     roles: ['Developer'],
     useCases: ['Debug an issue'],
-    stages: ['build', 'analyse'],
+    // Analysis, not building, is what this tool is FOR — its primary stage
+    // must be distinct from cursor/copilot's or the mock's step assignment
+    // (primary stage only, no fallback) drops it outright.
+    stages: ['analyse', 'build'],
     tags: ['Debugging'],
     tagline: 'Finds and explains the bug behind an error.',
     summary: 'Sentry AI triages errors and explains the bug behind a stack trace.',
@@ -154,7 +158,9 @@ const CATALOGUE: Tool[] = [
     pricingTier: 'freemium',
     roles: ['UI/UX Designer'],
     useCases: ['Build wireframes'],
-    stages: ['design', 'ideate'],
+    // Same reasoning as sentry-ai above: its primary stage must not collide
+    // with figma-ai's 'design'.
+    stages: ['ideate', 'design'],
     tags: ['Wireframe'],
     tagline: 'Turns a sketch into a UI wireframe.',
     summary: 'Uizard turns sketches into editable UI wireframes and prototypes.',
@@ -213,6 +219,7 @@ function harness(mock: MockProviderOptions = {}, catalogue?: ToolCatalogueReposi
     retrieval,
     catalogue: repository,
     logger,
+    automations: async () => createAutomationMatcher([]),
     createClient: () =>
       createLLMClient({
         provider: {
@@ -244,8 +251,13 @@ function candidatesOf(system: string): string[] {
     .map((line) => (line.slice(2).split(' · ')[0] ?? '').trim())
 }
 
+/** The tools a plan's steps actually name, in step order. */
+function toolsOf(response: AssistantChatResponse) {
+  return response.plan?.steps.map((step) => step.tool) ?? []
+}
+
 function categoriesOf(response: AssistantChatResponse): string[] {
-  return (response.plan?.tools ?? []).map((entry) => entry.cat)
+  return toolsOf(response).map((tool) => tool.cat)
 }
 
 /* ═══ The coding acceptance path (§14, Phase F) ════════════════════════════ */
@@ -283,7 +295,7 @@ await test('"tools for coding" asks, then the answer narrows', async (t) => {
 
   await t.test('the second turn returns a real plan', () => {
     assert.ok(second.plan)
-    assert.ok((second.plan?.tools.length ?? 0) > 0)
+    assert.ok(toolsOf(second).length > 0)
     assert.deepEqual(second.meta.droppedToolIds, [])
   })
 
@@ -347,7 +359,7 @@ await test('"video editing", then "free or freemium only, and not Descript"', as
 
   await t.test('the first turn recommends video tools', () => {
     assert.equal(first.intent, 'recommend')
-    assert.ok(first.plan?.tools.some((entry) => entry.cat === 'Video'))
+    assert.ok(toolsOf(first).some((tool) => tool.cat === 'Video'))
   })
 
   await t.test('Descript is available before it is rejected', () => {
@@ -375,18 +387,14 @@ await test('"video editing", then "free or freemium only, and not Descript"', as
   })
 
   await t.test('Descript is gone from every field of the response', () => {
-    assert.equal(second.plan?.tools.some((entry) => entry.id === 'descript'), false)
-    assert.equal(
-      second.plan?.workflow.some((step) => step.tool?.id === 'descript'),
-      false,
-    )
+    assert.equal(toolsOf(second).some((tool) => tool.id === 'descript'), false)
     assert.equal(JSON.stringify(second.plan).includes('descript'), false)
   })
 
   await t.test('the paid tool is filtered out by the budget constraint', () => {
     assert.equal(candidatesOf(h.prompts[1] ?? '').includes('runway'), false)
-    for (const entry of second.plan?.tools ?? []) {
-      assert.notEqual(entry.pricingTier, 'paid')
+    for (const tool of toolsOf(second)) {
+      assert.notEqual(tool.pricingTier, 'paid')
     }
   })
 
@@ -394,12 +402,12 @@ await test('"video editing", then "free or freemium only, and not Descript"', as
     const ids = new Set(candidatesOf(h.prompts[1] ?? ''))
     assert.ok(ids.has('opus-clip'))
     assert.ok(ids.has('veed'))
-    assert.ok((second.plan?.tools.length ?? 0) >= 2)
+    assert.ok(toolsOf(second).length >= 1)
   })
 
   await t.test('the topic survived a message that never mentioned it', () => {
     assert.ok(
-      (second.plan?.tools ?? []).some((entry) => entry.cat === 'Video'),
+      toolsOf(second).some((tool) => tool.cat === 'Video'),
       'the accumulated goal is what kept this about video',
     )
   })
@@ -436,7 +444,7 @@ await test('a confirmed tool is preferred where it fits', async (t) => {
     })
     const ids = candidatesOf(fresh.prompts[0] ?? '')
     assert.ok(ids.length > 1, 'the rest of the catalogue is still in the running')
-    assert.ok((response.plan?.tools.length ?? 0) >= 1)
+    assert.ok(toolsOf(response).length >= 1)
   })
 })
 
@@ -596,8 +604,8 @@ await test('the server holds no conversation state', async (t) => {
     const second = await h.engine.runTurn({ message: 'I need AI tools for video editing' })
     assert.deepEqual(second.context, first.context)
     assert.deepEqual(
-      second.plan?.tools.map((entry) => entry.id),
-      first.plan?.tools.map((entry) => entry.id),
+      toolsOf(second).map((tool) => tool.id),
+      toolsOf(first).map((tool) => tool.id),
     )
   })
 
@@ -622,8 +630,8 @@ await test('the server holds no conversation state', async (t) => {
 
     assert.deepEqual(alsoContinued.context, continued.context)
     assert.deepEqual(
-      alsoContinued.plan?.tools.map((entry) => entry.id),
-      continued.plan?.tools.map((entry) => entry.id),
+      toolsOf(alsoContinued).map((tool) => tool.id),
+      toolsOf(continued).map((tool) => tool.id),
     )
   })
 })
@@ -656,16 +664,10 @@ await test('multi-turn state is not a way around grounding', async (t) => {
           text: JSON.stringify(
             makeAssistantReply({
               plan: {
-                title: 'Clips',
-                toolIds: ['opus-clip', 'superfakeai'],
-                agents: [],
-                workflow: [
-                  { stage: 'edit', toolId: 'opus-clip', why: 'It cuts clips.' },
-                  { stage: 'publish', toolId: 'superfakeai', why: 'It posts them.' },
+                steps: [
+                  { stage: 'edit', toolId: 'opus-clip', alsoGoodToolIds: [] },
+                  { stage: 'publish', toolId: 'superfakeai', alsoGoodToolIds: [] },
                 ],
-                prompts: 'p',
-                comparison: 'c',
-                steps: ['s'],
               },
             }),
           ),
@@ -675,7 +677,7 @@ await test('multi-turn state is not a way around grounding', async (t) => {
 
     const response = await h.engine.runTurn({ message: 'what should I use for clips?', context })
     assert.deepEqual(
-      response.plan?.tools.map((entry) => entry.id),
+      toolsOf(response).map((tool) => tool.id),
       ['opus-clip'],
     )
     assert.deepEqual(response.meta.droppedToolIds, ['superfakeai'])
@@ -691,9 +693,12 @@ await test('multi-turn state is not a way around grounding', async (t) => {
     })
 
     assert.equal(candidatesOf(h.prompts[0] ?? '').includes('descript'), false)
-    const shown = JSON.stringify(response.plan ?? {}).toLowerCase()
-    assert.equal(shown.includes('descript'), false)
-    assert.equal(shown.includes('superfakeai'), false)
+    // The goal line echoes the user's OWN message verbatim (they can already see
+    // it in the transcript), so it legitimately contains the words they typed.
+    // The property that must hold is about the TOOLS recommended, not the quote.
+    const shownIds = toolsOf(response).flatMap((tool) => [tool.id, tool.slug])
+    assert.equal(shownIds.includes('descript'), false)
+    assert.equal(shownIds.includes('superfakeai'), false)
   })
 
   await t.test('the context is wrapped as untrusted, however tidy its shape', async () => {
@@ -751,8 +756,8 @@ await test('a two-turn conversation over HTTP', async (t) => {
         assert.ok(second.plan)
         assert.deepEqual(second.meta.droppedToolIds, [])
         assert.equal(JSON.stringify(second.plan).includes('descript'), false)
-        for (const entry of second.plan?.tools ?? []) {
-          assert.notEqual(entry.pricingTier, 'paid')
+        for (const tool of toolsOf(second)) {
+          assert.notEqual(tool.pricingTier, 'paid')
         }
       })
     },

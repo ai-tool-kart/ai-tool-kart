@@ -6,13 +6,22 @@
  * the API representation, and the JSON adapter owns the on-disk representation.
  *
  * The vocabulary types (ToolCategoryName, PricingTier, WorkflowStage, RoleName,
- * SortOption) are re-exported from catalogue/taxonomy.ts, which is the single
- * source of truth for every closed list (ASSISTANT_ARCHITECTURE_PLAN.md §5.3).
- * That import direction is deliberate: vocabulary is configuration, not storage,
- * so it does not cross the boundary §6.1 protects.
+ * SortOption, NicheName, CatalogueKind) are re-exported from catalogue/taxonomy.ts, which is
+ * the single source of truth for every closed list (ASSISTANT_ARCHITECTURE_PLAN.md
+ * §5.3). That import direction is deliberate: vocabulary is configuration, not
+ * storage, so it does not cross the boundary §6.1 protects.
+ *
+ * `PRICING_TIERS`, `NICHES` and `CATALOGUE_KINDS` are re-exported as VALUES,
+ * not just types, for the same reason: SPEC-automations.md §2 forbids
+ * automations/ from importing catalogue/ at all (an automation's tools are
+ * embedded, never catalogue records), but its `pricingTier`/`niche`/`kind`
+ * fields still validate against the one vocabulary taxonomy.ts owns for each.
+ * This is the one supported way to reach any of them without that import.
  */
 
 import type {
+  CatalogueKind,
+  NicheName,
   PricingModel,
   PricingTier,
   RoleName,
@@ -22,8 +31,11 @@ import type {
   ToolStatus,
   WorkflowStage,
 } from '../catalogue/taxonomy.ts'
+import { CATALOGUE_KINDS, NICHES, PRICING_TIERS } from '../catalogue/taxonomy.ts'
 
 export type {
+  CatalogueKind,
+  NicheName,
   PricingModel,
   PricingTier,
   RoleName,
@@ -33,6 +45,7 @@ export type {
   ToolStatus,
   WorkflowStage,
 }
+export { CATALOGUE_KINDS, NICHES, PRICING_TIERS }
 
 /**
  * A catalogue record.
@@ -55,6 +68,12 @@ export interface Tool {
   /** Display pricing chip. Must agree with `pricingTier`; the schema enforces it. */
   model: PricingModel
   tagline: string
+  /**
+   * An even plainer restatement of the tagline, written for a non-technical
+   * reader seeing the tool for the first time in a plan step. Optional —
+   * most records do not have one, and a reader falls back to `tagline`.
+   */
+  plainLine?: string
   /** 1–5, or 0 meaning "no ratings collected yet". */
   rating: number
   reviews: number
@@ -67,6 +86,15 @@ export interface Tool {
   tags: string[]
   /** Editorial prominence score, 0–100. See PROMINENCE in taxonomy.ts. */
   pop: number
+  /**
+   * True when the tool ships an official MCP (Model Context Protocol) server —
+   * a connector an AI assistant can call directly, as opposed to a workflow a
+   * person runs by hand. Optional: absent/false for the ordinary catalogue
+   * tool. Backs GET /mcp-servers on the client; unrelated to a tool's own
+   * `cat`/`tags`, which describe what it does rather than how an assistant
+   * reaches it.
+   */
+  isMcpServer?: boolean
   api: string
   ctx: string
   team: string
@@ -137,6 +165,8 @@ export interface ToolSummary {
   mono: string
   cat: ToolCategoryName
   tagline: string
+  /** See `Tool.plainLine`. Absent when the record has none. */
+  plainLine?: string
   pricingTier: PricingTier
   /** Display string, not an amount. */
   price: string
@@ -154,6 +184,7 @@ export function toToolSummary(tool: Tool): ToolSummary {
     mono: tool.mono,
     cat: tool.cat,
     tagline: tool.tagline,
+    plainLine: tool.plainLine,
     pricingTier: tool.pricingTier,
     price: tool.price,
     rating: tool.rating,
@@ -324,28 +355,35 @@ export interface ConversationMessage {
   text: string
 }
 
-/** One step of a plan, with its tool already hydrated. */
-export interface AssistantWorkflowStep {
-  stage: string
-  tool?: ToolSummary
-  why: string
+/**
+ * One step of a plan, with its tools already hydrated.
+ *
+ * `action` is the plain-language phrase for the stage (STAGE_ACTIONS in
+ * catalogue/taxonomy.ts), computed here rather than written by the model — a
+ * reader is better served by our own words about a real tool than by the
+ * model's paraphrase of them. The tool's tagline and free/paid label live on
+ * `tool` itself; the step does not repeat them.
+ *
+ * `alsoGood` holds the step's runners-up — other tools that cleared the step
+ * cutoff and share this stage as their primary one, ranked below `tool` but
+ * still worth naming. Possibly empty: a step is not required to have any.
+ */
+export interface AssistantPlanStep {
+  action: string
+  tool: ToolSummary
+  alsoGood: ToolSummary[]
 }
 
 /**
- * The six sections of "Your AI Plan", one field each (§10.1's table).
+ * "Your plan" — a goal line and a short list of steps, one tool each.
  *
- * The field order below is the render order in the design, and the names are the
- * design's own — Tools, Agents, Workflow, Prompts, Comparison, Steps — so the
- * Phase G panel maps onto it without a translation layer.
+ * `goal` is the user's own message, verbatim, not a title the model wrote:
+ * "Your goal: automate client follow-ups" reads back exactly what was asked
+ * for, which needs no model involvement to get right.
  */
 export interface AssistantPlan {
-  title: string
-  tools: ToolSummary[]
-  agents: string[]
-  workflow: AssistantWorkflowStep[]
-  prompts: string
-  comparison: string
-  steps: string[]
+  goal: string
+  steps: AssistantPlanStep[]
 }
 
 /**
@@ -366,6 +404,18 @@ export interface AssistantMeta {
   droppedToolIds: string[]
 }
 
+/**
+ * The one automation shown above a plan, as a link to its detail page.
+ *
+ * Picked by the engine from its own match, never by the model, so there is no
+ * id to ground. Niche and slug together, because slugs repeat across niches.
+ */
+export interface AssistantAutomation {
+  title: string
+  niche: NicheName
+  slug: string
+}
+
 /** The body of a successful POST /api/assistant/chat (§10.2). */
 export interface AssistantChatResponse {
   message: string
@@ -376,6 +426,8 @@ export interface AssistantChatResponse {
     constraints: string[]
   }
   plan?: AssistantPlan
+  /** Present only on a recommend turn whose message matched an automation well. */
+  automation?: AssistantAutomation
   followUps: string[]
   /** Echo back on the next turn. */
   context: ConversationContext

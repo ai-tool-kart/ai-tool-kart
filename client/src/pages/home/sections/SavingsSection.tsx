@@ -60,7 +60,12 @@ import { useWorkSavings } from '@/hooks/useWorkSavings'
  * than a shared system.
  */
 
-export default function SavingsSection() {
+interface SavingsSectionProps {
+  /** Heading override. Defaults to SAVINGS_COPY.heading, the design's own wording. */
+  heading?: string
+}
+
+export default function SavingsSection({ heading = SAVINGS_COPY.heading }: SavingsSectionProps = {}) {
   const { estimates, isLoading, failed } = useWorkSavings()
   const [role, setRole] = useState('')
 
@@ -113,7 +118,7 @@ export default function SavingsSection() {
             {SAVINGS_COPY.eyebrow}
           </div>
           <h2 className="mx-auto mt-3 text-[clamp(30px,3.2vw,40px)] leading-[1.08] font-bold tracking-[-0.032em] text-pretty text-ink">
-            {SAVINGS_COPY.heading}
+            {heading}
           </h2>
           <p className="mx-auto mt-[14px] max-w-[58ch] text-[15px] leading-[1.62] tracking-[-0.006em] text-pretty text-muted-dim">
             {SAVINGS_COPY.subtitle}

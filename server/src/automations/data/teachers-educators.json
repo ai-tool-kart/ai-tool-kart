@@ -1,0 +1,1824 @@
+[
+  {
+    "id": "teachers-educators-b88be48b5c",
+    "slug": "create-a-lesson-plan-for-my-class-in-minutes",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "K-12 classroom teacher, any subject",
+    "title": "Create a lesson plan for my class in minutes",
+    "intentLabels": [
+      "AI lesson plan generator",
+      "lesson planning tool",
+      "write me a lesson plan",
+      "standards-aligned lesson plan"
+    ],
+    "tools": [
+      {
+        "name": "MagicSchool AI (Lesson Plan Generator)",
+        "url": "https://www.magicschool.ai/pricing"
+      }
+    ],
+    "workflowSummary": "Teacher enters grade level, subject, topic and standard into MagicSchool's Lesson Plan Generator; the tool drafts an objective, warm-up, direct instruction, practice, and assessment, which the teacher edits and exports to Google Docs/Slides.",
+    "samplePrompt": "Create a 45-minute 5th grade science lesson plan on the water cycle, aligned to NGSS, including a warm-up, direct instruction, a hands-on activity, and an exit ticket.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided fields, no prompt-writing needed, free tier available",
+    "trustScore": 5,
+    "pricingNote": "Free forever tier (80+ teacher tools, usage limits); Plus $12.99/mo or $8.33/mo billed annually (unlimited); Enterprise custom-quoted for districts - verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.magicschool.ai/pricing",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-07-24",
+    "accessNotes": "Public vendor pricing page; teacher/student data reportedly not used to train AI models per vendor FAQ - verify DPA terms before district use",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-df64cbbb35",
+    "slug": "turn-one-reading-passage-into-versions-for-different-reading",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "ELA/reading teacher with mixed-ability classroom",
+    "title": "Turn one reading passage into versions for different reading levels",
+    "intentLabels": [
+      "differentiated reading passages",
+      "leveled worksheets",
+      "text leveler",
+      "reading level adapter",
+      "differentiation tool"
+    ],
+    "tools": [
+      {
+        "name": "Diffit",
+        "url": "https://www.teachfloor.com/blog/diffit"
+      }
+    ],
+    "workflowSummary": "Teacher pastes a passage, article URL, PDF, or YouTube link into Diffit and selects target reading levels; Diffit generates the same content at multiple grade-level tiers plus comprehension questions and vocabulary, ready to assign.",
+    "samplePrompt": "Take this article about the water cycle and generate three versions at 3rd-grade, 5th-grade, and 8th-grade reading levels, each with 5 comprehension questions and a vocabulary list.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "single input produces multiple ready outputs",
+    "trustScore": 4,
+    "pricingNote": "Free 'Basic' tier for core differentiation; Individual/Pro paid tier reported between $9-$14.99/mo depending on source, or ~$34.99/yr on some listings - pricing varies by source, verify current rate before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.teachfloor.com/blog/diffit",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-06-10",
+    "accessNotes": "Third-party review summarizing vendor pricing; confirm exact current tier pricing directly on diffit.com before quoting to a customer",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-0f31cf53db",
+    "slug": "give-my-students-feedback-on-their-essays-faster",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Any teacher who assigns written work in Google Docs",
+    "title": "Give my students feedback on their essays faster",
+    "intentLabels": [
+      "AI essay feedback",
+      "grade student writing",
+      "inline comments on student writing",
+      "writing feedback tool"
+    ],
+    "tools": [
+      {
+        "name": "Brisk Teaching (Chrome/Edge extension)",
+        "url": "https://www.briskteaching.com/faq"
+      }
+    ],
+    "workflowSummary": "Teacher opens a student's essay in Google Docs, clicks the Brisk extension, selects rubric criteria under 'Give Feedback,' and Brisk generates specific in-line comments and a written strengths/weaknesses summary without leaving the document.",
+    "samplePrompt": "Give this student essay feedback based on a 4-point argumentative writing rubric, highlighting strengths, one area for improvement, and a specific next step.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works inside Google Docs teachers already use, 30-second install",
+    "trustScore": 5,
+    "pricingNote": "Free 'Educator' plan with 20+ tools, unlimited usage on standard models; Premium/Intelligence tiers quote-based for schools/districts (batched feedback, faster models)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.briskteaching.com/faq",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (FAQ page, undated)",
+    "accessNotes": "FERPA compliance stated by vendor; 93% Common Sense Privacy Rating reported in third-party coverage - verify current compliance docs before district rollout",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-dc86947047",
+    "slug": "make-my-lesson-interactive-with-live-polls-and-student-responses",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Secondary teacher wanting more student participation",
+    "title": "Make my lesson interactive with live polls and student responses",
+    "intentLabels": [
+      "interactive lesson slides",
+      "live polls for class",
+      "engagement tool",
+      "formative assessment slides",
+      "class discussion tool"
+    ],
+    "tools": [
+      {
+        "name": "Curipod",
+        "url": "https://www.kuraplan.com/reviews/curipod-review"
+      }
+    ],
+    "workflowSummary": "Teacher types a topic and grade level; Curipod generates a slide deck with polls, word clouds, drawing prompts, and open-ended questions. The teacher presents live, students join with a room code, and responses appear on screen in real time.",
+    "samplePrompt": "Build an interactive lesson for 8th grade ELA on theme in short fiction, including a warm-up poll, a word cloud activity, and an open-response question with AI feedback.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no design skills needed, free plan covers live sessions",
+    "trustScore": 4,
+    "pricingNote": "Free tier (live sessions, single-session reports); School & District tier is custom-quoted and adds persistent lesson reports and per-student 'Glow and Grow' summaries",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.kuraplan.com/reviews/curipod-review",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-20",
+    "accessNotes": "Independent review citing curipod.com/pricing as of May 2026; vendor does not publish an exact per-user dollar figure for paid tier - verify at curipod.com before quoting price",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-acca719c41",
+    "slug": "create-a-quiz-from-my-chapter-or-slides",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Any subject teacher needing a quick formative check",
+    "title": "Create a quiz from my chapter or slides",
+    "intentLabels": [
+      "AI quiz generator",
+      "make a quiz from my notes",
+      "gamified quiz",
+      "auto-generate test questions"
+    ],
+    "tools": [
+      {
+        "name": "Quizizz AI",
+        "url": "https://www.lingobright.com/ed-tech/quizziz-pricing/"
+      }
+    ],
+    "workflowSummary": "Teacher uploads a document, pastes text, or shares a URL/YouTube link into Quizizz's AI generator, which drafts multiple-choice and other question types; teacher edits, then runs the quiz live with leaderboards or assigns it as self-paced homework.",
+    "samplePrompt": "Generate a 15-question multiple-choice quiz on the causes of World War I from this chapter PDF, with one easy, one medium, and one hard question per topic.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "AI drafts full quiz from an upload in under a minute",
+    "trustScore": 4,
+    "pricingNote": "Free 'Starter' tier (basic quiz creation, live sessions, 20+ resource cap); paid individual tiers reported roughly $5-$20/mo depending on source and included AI credits - verify current pricing, plan names changed in 2024/2025 rebrand to 'Wayground'",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.lingobright.com/ed-tech/quizziz-pricing/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-02-25",
+    "accessNotes": "Third-party pricing summary; Quizizz has reportedly rebranded to 'Wayground' - confirm current brand name and plan structure directly on the vendor site before publishing",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-0f4b0c04cb",
+    "slug": "write-iep-goals-and-accommodations-for-a-student",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Special education teacher / case manager",
+    "title": "Write IEP goals and accommodations for a student",
+    "intentLabels": [
+      "AI IEP writer",
+      "IEP goal generator",
+      "SMART goals for IEP",
+      "accommodations generator",
+      "IDEA-compliant IEP"
+    ],
+    "tools": [
+      {
+        "name": "Playground IEP (IEP CoPilot)",
+        "url": "https://www.playgroundiep.com/iep-copilot"
+      }
+    ],
+    "workflowSummary": "Case manager enters a student's present levels, strengths, and challenge areas (no personally identifying data) into IEP CoPilot; the tool drafts SMART, standards-aligned goals, suggested accommodations, and a PLAAFP statement for the teacher to review, personalize, and bring to the IEP team.",
+    "samplePrompt": "Draft two measurable annual IEP goals for a 4th-grade student working on reading comprehension at a 2nd-grade instructional level, including short-term objectives and progress-monitoring criteria.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "free and no login required, but IEP terminology has a learning curve",
+    "trustScore": 4,
+    "pricingNote": "Free, no login required, does not collect personally identifying student data per vendor",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.playgroundiep.com/iep-copilot",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor states IDEA-alignment intent, but output must still go through the full IEP team process required by law - AI draft is not a substitute for the legally required team decision",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-666deb3353",
+    "slug": "write-a-parent-email-and-translate-it-into-a-family-s-home",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher with multilingual families in class",
+    "title": "Write a parent email and translate it into a family's home language",
+    "intentLabels": [
+      "parent email translator",
+      "multilingual parent communication",
+      "translate note home",
+      "family communication in Spanish"
+    ],
+    "tools": [
+      {
+        "name": "OpenEduCat AI Email Templates for Teacher-Parent Communication",
+        "url": "https://openeducat.org/ai/tools/email-family-templates/"
+      }
+    ],
+    "workflowSummary": "Teacher selects an email template (progress update, behavior note, reminder), the AI drafts it in an appropriate warm or formal tone, then translates the complete email into the family's preferred language while preserving any personalized details.",
+    "samplePrompt": "Write a warm progress-update email for a parent whose child improved significantly in reading this quarter, then translate it into Vietnamese.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-based, teacher just reviews and approves before sending",
+    "trustScore": 4,
+    "pricingNote": "Not publicly listed as standalone pricing (part of OpenEduCat's broader school platform) - verify licensing/pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://openeducat.org/ai/tools/email-family-templates/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor states the tool generates a draft only; teacher must review/approve before sending, and should personalize or call directly for sensitive topics (behavior concerns, safeguarding, IEP discussions)",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-ca6479d280",
+    "slug": "write-report-card-comments-for-my-whole-class",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Homeroom/classroom teacher at report card time",
+    "title": "Write report card comments for my whole class",
+    "intentLabels": [
+      "report card comment generator",
+      "end of term comments",
+      "progress report writer",
+      "student feedback comments"
+    ],
+    "tools": [
+      {
+        "name": "Khanmigo (Khan Academy) - Report Card Comments tool",
+        "url": "https://www.khanmigo.ai/report-card-comments"
+      }
+    ],
+    "workflowSummary": "Teacher shares each student's strengths and areas for growth (without sensitive personal data); Khanmigo generates a grade-specific, personalized comment that guides and motivates rather than just evaluates, which the teacher edits before publishing to the report card system.",
+    "samplePrompt": "Write a supportive 3rd-grade report card comment for a student who is strong in math problem-solving but needs to work on completing writing assignments independently.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple inputs, no account complexity, completely free",
+    "trustScore": 5,
+    "pricingNote": "100% free for teachers, no limits, funded by Khan Academy (nonprofit) with Microsoft support",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.khanmigo.ai/report-card-comments",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Free nonprofit tool; avoid entering full student names or other identifying details beyond what's needed for the comment",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-1d6dce9d39",
+    "slug": "turn-my-notes-or-outline-into-a-slide-deck",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Any teacher building a presentation for class or PD",
+    "title": "Turn my notes or outline into a slide deck",
+    "intentLabels": [
+      "AI presentation maker",
+      "turn notes into slides",
+      "PowerPoint generator",
+      "AI slideshow for teachers"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://gamma.app/pricing",
+        "catalogueSlug": "gamma"
+      }
+    ],
+    "workflowSummary": "Teacher pastes an outline, topic, or uploads a Word/PDF doc into Gamma; the AI drafts a full slide deck with text, layout, and images in under a minute, which the teacher can edit, re-theme, and export to PowerPoint, PDF, or Google Slides.",
+    "samplePrompt": "Turn this unit outline on the American Revolution into a 12-slide presentation for 8th graders, with one image-supported slide per major event and a discussion question on the final slide.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the topic, first draft is usually presentation-ready",
+    "trustScore": 4,
+    "pricingNote": "Free tier: 400 one-time AI credits, up to 10 slides per generation, Gamma branding on exports; Plus $10/mo ($8/mo billed annually) for unlimited generation and up to 100 slides per prompt",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://gamma.app/pricing",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (pricing page, undated)",
+    "accessNotes": "Vendor is SOC 2 Type II compliant per site; free-tier exports carry Gamma branding unless upgraded",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-c678d2ad6b",
+    "slug": "turn-my-class-notes-into-flashcards-students-can-study-from",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher wanting to build student study materials",
+    "title": "Turn my class notes into flashcards students can study from",
+    "intentLabels": [
+      "AI flashcard maker",
+      "turn notes into flashcards",
+      "study guide generator",
+      "Quizlet AI"
+    ],
+    "tools": [
+      {
+        "name": "Quizlet (AI flashcard generator / AI study guides)",
+        "url": "https://quizlet.com/features/ai-study-tools"
+      }
+    ],
+    "workflowSummary": "Teacher uploads lecture slides, notes, or a PDF into Quizlet; the AI extracts key terms and definitions and builds a flashcard set plus a study guide with outline and practice questions, which the teacher reviews, edits, and shares with the class.",
+    "samplePrompt": "Turn these vocabulary notes on cell biology into a 20-term flashcard set with clear, student-friendly definitions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and generate in a few clicks, free tier available",
+    "trustScore": 4,
+    "pricingNote": "Free tier available for basic flashcard/study-guide generation; Quizlet Plus subscription (individual) reported around $7.99/mo or ~$36-$44/yr for unlimited study modes and full AI features - verify current price before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://quizlet.com/features/ai-study-tools",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor page; some AI features are gated behind Quizlet Plus - confirm which features are actually free at time of publishing",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-43fdaf5755",
+    "slug": "create-a-substitute-sub-plan-for-when-i-m-out",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who will be absent and needs coverage",
+    "title": "Create a substitute (sub) plan for when I'm out",
+    "intentLabels": [
+      "AI sub plan generator",
+      "substitute teacher lesson plan",
+      "emergency sub plans",
+      "ready-to-go lesson for a sub"
+    ],
+    "tools": [
+      {
+        "name": "Brisk Teaching (AI Sub Plan Generator)",
+        "url": "https://www.briskteaching.com/ai-tools/sub-plan-generator"
+      }
+    ],
+    "workflowSummary": "Teacher describes the topic, grade level, and duration; Brisk generates a full sub plan with objectives, step-by-step activities, timing guidance, transition instructions, and backup tasks, which the teacher can refine by chatting with the tool, then export to Google Docs or Word.",
+    "samplePrompt": "Create a 90-minute AP Literature substitute plan on poetry analysis, including the full text of an appropriate short poem, annotation instructions, discussion questions on literary devices, and a written response task.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "conversational refinement, exports ready to print",
+    "trustScore": 4,
+    "pricingNote": "Free (part of Brisk's Educator plan, 20+ tools included)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.briskteaching.com/ai-tools/sub-plan-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Same vendor privacy/FERPA claims as Brisk's core product apply - verify current compliance documentation before district use",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-b7434ddfd2",
+    "slug": "give-each-student-their-own-ai-tutor-i-can-monitor",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher wanting to personalize instruction for every student at once",
+    "title": "Give each student their own AI tutor I can monitor",
+    "intentLabels": [
+      "AI tutoring spaces",
+      "personalized learning AI",
+      "student AI tutor with teacher oversight",
+      "guardrailed student chatbot"
+    ],
+    "tools": [
+      {
+        "name": "SchoolAI",
+        "url": "https://insights.velocityaipartners.co/tools/schoolai"
+      }
+    ],
+    "workflowSummary": "Teacher creates a custom 'Space' (e.g., a Socratic questioner for history, a step-by-step math guide) with specific goals and guardrails; students work with their personalized AI tutor simultaneously while the teacher watches a real-time dashboard of every student-AI interaction and engagement level.",
+    "samplePrompt": "Set up an AI tutoring space for my 6th-grade math class that walks students through solving two-step equations using guided questions, not direct answers, and flags any student who seems stuck.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires defining goals/guardrails, but templates exist",
+    "trustScore": 4,
+    "pricingNote": "Free for individual teachers with basic features and 200,000+ premade 'Spaces'; Pro reported from roughly $5/student/year for full customization and analytics; district pricing custom-quoted",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://insights.velocityaipartners.co/tools/schoolai",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-01",
+    "accessNotes": "Third-party review; vendor states FERPA/FIPPA/COPPA/SOC 2/1EdTech compliance on free tier - verify current certification status directly with SchoolAI before district adoption",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-9b984bf58a",
+    "slug": "create-a-rubric-for-my-assignment",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Any teacher creating an assignment that needs grading criteria",
+    "title": "Create a rubric for my assignment",
+    "intentLabels": [
+      "AI rubric generator",
+      "grading rubric maker",
+      "scoring criteria generator",
+      "rubric builder"
+    ],
+    "tools": [
+      {
+        "name": "MagicSchool AI (Rubric Generator)",
+        "url": "https://www.magicschool.ai/tools/report-card-comments"
+      }
+    ],
+    "workflowSummary": "Teacher describes the assignment, grade level, and what they're assessing; the Rubric Generator drafts scoring criteria and performance-level descriptions across multiple categories, which the teacher edits and exports for grading.",
+    "samplePrompt": "Create a 4-point rubric for a 7th-grade persuasive essay, scoring claim clarity, use of evidence, organization, and conventions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided fields, part of the same free tier as lesson planning",
+    "trustScore": 4,
+    "pricingNote": "Included in MagicSchool's free forever tier (80+ tools) and Plus tier ($12.99/mo or $8.33/mo annual) - see full plan details on vendor pricing page",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.magicschool.ai/tools/report-card-comments",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page listing tool suite, undated)",
+    "accessNotes": "Part of MagicSchool's broader tool suite; same vendor privacy claims as other MagicSchool rows in this batch apply",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-8a514f5ea0",
+    "slug": "turn-my-lesson-into-differentiated-worksheets-for-different",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher building tiered practice for mixed-ability classes",
+    "title": "Turn my lesson into differentiated worksheets for different ability levels",
+    "intentLabels": [
+      "differentiated worksheet generator",
+      "scaffolded worksheets",
+      "tiered assignments",
+      "AI worksheet maker for differentiation"
+    ],
+    "tools": [
+      {
+        "name": "Eduaide.AI",
+        "url": "https://chalkie.ai/en/blog/ai-worksheet-generator-tools"
+      }
+    ],
+    "workflowSummary": "Teacher inputs a topic, standard, or existing lesson; Eduaide.AI generates a scaffolded set of worksheets or activities at varying complexity levels, which the teacher reviews and assigns to different student groups.",
+    "samplePrompt": "Create three tiers of a worksheet on fractions - a scaffolded version with visual models, a grade-level version, and a challenge version with word problems - all covering the same learning objective.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "more configuration options than single-purpose tools, still no coding",
+    "trustScore": 3,
+    "pricingNote": "Free tier; Premium reported from around $6/mo per one third-party comparison - verify current pricing directly with vendor before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://chalkie.ai/en/blog/ai-worksheet-generator-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-29",
+    "accessNotes": "Third-party comparison article; pricing not independently confirmed on Eduaide's own site during this research pass - verify before publishing",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-c2d81dcd3f",
+    "slug": "grade-a-stack-of-student-assignments-faster-using-ai-assisted",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher (often secondary/university) grading written or structured responses at scale",
+    "title": "Grade a stack of student assignments faster using AI-assisted grouping",
+    "intentLabels": [
+      "AI grading tool",
+      "grade papers faster",
+      "batch grading",
+      "rubric-based grading at scale"
+    ],
+    "tools": [
+      {
+        "name": "Gradescope",
+        "url": "https://aiteacheasy.com/ai-tools-for-teachers/"
+      }
+    ],
+    "workflowSummary": "Students submit work digitally or the teacher scans paper work; Gradescope's AI groups similar student answers together so the teacher grades one representative answer per group and the same grade/feedback applies to every matching response, then the teacher spot-checks outliers.",
+    "samplePrompt": "Group these 30 scanned short-answer responses to the same physics problem by similarity so I can grade each group once instead of grading all 30 individually.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "very fast at scale, but initial rubric setup takes some learning",
+    "trustScore": 4,
+    "pricingNote": "Not detailed in this research pass - originally built for university settings, now used in secondary schools; verify current K-12 pricing directly with Gradescope/Turnitin before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://aiteacheasy.com/ai-tools-for-teachers/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-07",
+    "accessNotes": "Third-party review; confirm current ownership/pricing (Gradescope is part of Turnitin) directly on the vendor site before publishing",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-99a9643eb8",
+    "slug": "summarize-research-articles-for-my-professional-development",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher pursuing professional development or staying current on research",
+    "title": "Summarize research articles for my professional development",
+    "intentLabels": [
+      "summarize PD readings",
+      "research article summarizer",
+      "professional development AI tool",
+      "digest education research"
+    ],
+    "tools": [
+      {
+        "name": "NotebookLM (Google)",
+        "url": "https://edu.google.com/ai-notebooklm/",
+        "catalogueSlug": "notebooklm"
+      }
+    ],
+    "workflowSummary": "Teacher uploads PDFs of research articles, education reports, or PD readings as 'sources'; NotebookLM answers questions grounded only in those uploaded documents, generates a summary or study guide, and can produce an audio overview to listen to while commuting.",
+    "samplePrompt": "Summarize the key findings, methodology, and limitations of these three uploaded research articles on differentiated instruction, and note where they agree or disagree.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "upload and ask questions in plain language, free to use",
+    "trustScore": 5,
+    "pricingNote": "Free (Google account required); answers are grounded only in uploaded sources with citations back to them",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://edu.google.com/ai-notebooklm/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Google states data is not human-reviewed or used to train AI models for this product - verify current terms for your school's Google Workspace for Education agreement",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-b97a01c5d6",
+    "slug": "design-a-worksheet-poster-or-classroom-material-that-looks",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher creating visual classroom materials on a budget",
+    "title": "Design a worksheet, poster, or classroom material that looks professional",
+    "intentLabels": [
+      "visual worksheet maker",
+      "classroom poster design",
+      "AI design tool for teachers",
+      "free design tool for education"
+    ],
+    "tools": [
+      {
+        "name": "Canva for Education",
+        "url": "https://teachtools.co/blog/best-free-ai-worksheet-generators-2026"
+      }
+    ],
+    "workflowSummary": "Teacher types a topic into Canva's 'Design for me' AI feature or picks a template; Canva generates a layout with text, images, and formatting the teacher can edit, resize, and export as a worksheet, poster, slide deck, or newsletter.",
+    "samplePrompt": "Design a colorful one-page classroom poster explaining the water cycle for a 4th-grade science bulletin board.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "drag-and-drop editing, huge template library, widely used already",
+    "trustScore": 5,
+    "pricingNote": "Completely free for verified K-12 teachers and students",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://teachtools.co/blog/best-free-ai-worksheet-generators-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-17",
+    "accessNotes": "Third-party comparison confirming free-for-K-12 status; verify eligibility/verification steps directly on canva.com/education",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-26f7139d30",
+    "slug": "write-a-behavior-intervention-plan-bip-for-a-student",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Special education teacher managing student behavior",
+    "title": "Write a behavior intervention plan (BIP) for a student",
+    "intentLabels": [
+      "AI BIP writer",
+      "behavior intervention plan generator",
+      "challenging behavior plan",
+      "replacement behavior strategies"
+    ],
+    "tools": [
+      {
+        "name": "Playground IEP (BIP Writer)",
+        "url": "https://www.playgroundiep.com/iep-copilot"
+      }
+    ],
+    "workflowSummary": "Teacher or case manager describes the challenging behavior and its context; the BIP Writer generates a plan of support including intervention strategies, replacement behaviors, and reinforcement techniques, which staff review and personalize before implementation.",
+    "samplePrompt": "Draft a behavior intervention plan for a 3rd-grade student who leaves their seat and disrupts small-group work; include two replacement behaviors and a reinforcement strategy.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "free and fast, but requires professional judgment to individualize appropriately",
+    "trustScore": 4,
+    "pricingNote": "Free, 'Try Now, It's Free!' per vendor page",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.playgroundiep.com/iep-copilot",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Same vendor as the IEP goals row above; AI-drafted plan still requires review by qualified staff and, where applicable, the IEP/behavior support team before use",
+    "batch": "Teachers AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-09fddec5ce",
+    "slug": "create-a-seating-chart-for-my-class-in-a-few-minutes",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "K-12 classroom teacher setting up or refreshing a room",
+    "title": "Create a seating chart for my class in a few minutes",
+    "intentLabels": [
+      "AI seating chart generator",
+      "classroom seating plan",
+      "arrange student desks",
+      "seating arrangement tool"
+    ],
+    "tools": [
+      {
+        "name": "EasyClass (AI Seating Chart Maker)",
+        "url": "https://easyclass.ai/seating-chart-maker"
+      }
+    ],
+    "workflowSummary": "Teacher picks a layout template (rows, pods, U-shape, pairs), enters the class roster and any behavioral notes or IEP accommodations, states the instructional goal (group work, test conditions, discussion), and the AI places students strategically; any placement can be dragged and overridden.",
+    "samplePrompt": "Create a seating chart for 26 students in table groups of 4, keep two named students apart, put a student who needs front-row seating near the board, and optimize for group discussion.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no login, no watermark, drag-and-drop override on top of AI suggestions",
+    "trustScore": 4,
+    "pricingNote": "Free forever tier, no login, no trial period, no watermarks on printed charts",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://easyclass.ai/seating-chart-maker",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor states behavioral notes and IEP accommodations can be factored into arrangement - confirm what student data is stored/retained before entering identifiable behavior notes",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-266d66c255",
+    "slug": "track-attendance-and-spot-behavior-patterns-from-my-seating-plan",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Homeroom or form teacher tracking attendance and early warning signs",
+    "title": "Track attendance and spot behavior patterns from my seating plan",
+    "intentLabels": [
+      "attendance tracker from seating chart",
+      "behavior pattern tracking",
+      "tutor group dashboard",
+      "intervention data"
+    ],
+    "tools": [
+      {
+        "name": "Seating Plan (seatingplan.com)",
+        "url": "https://www.seatingplan.com/"
+      }
+    ],
+    "workflowSummary": "Teacher records attendance and homework completion directly from the same visual seating chart used daily; the tool's algorithm also factors student preferences and behavior data into future seating suggestions, and a tutor-group dashboard surfaces patterns for fast intervention.",
+    "samplePrompt": "Using this term's attendance and homework-completion data recorded against my seating chart, flag any students with a pattern of increasing absences or missing homework I should follow up on.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "attendance/behavior logging is quick, but initial setup takes more time than a single-purpose tool",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - optional integration with compatible school systems; verify current pricing directly on seatingplan.com before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.seatingplan.com/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor states no personally-identifiable data is submitted to third parties when generating AI reports - verify current data-handling terms before entering real student names",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-9086a1fb3d",
+    "slug": "create-a-classroom-rules-and-expectations-poster-or-handout",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Any teacher setting classroom norms at the start of a term",
+    "title": "Create a classroom rules and expectations poster or handout",
+    "intentLabels": [
+      "classroom rules generator",
+      "classroom expectations document",
+      "norms poster for students",
+      "class agreement generator"
+    ],
+    "tools": [
+      {
+        "name": "Taskade (Classroom Rules Generator)",
+        "url": "https://www.taskade.com/generate/education/classroom-seating-chart"
+      }
+    ],
+    "workflowSummary": "Teacher describes the grade level, subject, and the values or behaviors they want to emphasize; the AI drafts a set of clear, age-appropriate classroom rules and expectations, which the teacher edits and can pair with the same platform's seating chart and attendance tools.",
+    "samplePrompt": "Write 6 classroom rules for a 3rd-grade class that emphasize respect, listening, and safe hands, phrased positively and in kid-friendly language, plus 2 sentences explaining why each rule matters.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the tone and grade level, get an editable draft",
+    "trustScore": 3,
+    "pricingNote": "Free to use (part of Taskade's broader free workspace/generator tools)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.taskade.com/generate/education/classroom-seating-chart",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-07-01",
+    "accessNotes": "Vendor page for a related generator in the same suite; verify the standalone Classroom Rules Generator's own current terms before publishing",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-fe1dae9bd2",
+    "slug": "build-an-agenda-for-my-parent-teacher-conferences",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher preparing for parent-teacher conference day",
+    "title": "Build an agenda for my parent-teacher conferences",
+    "intentLabels": [
+      "parent-teacher conference agenda",
+      "conference talking points",
+      "meeting outline for parent conference"
+    ],
+    "tools": [
+      {
+        "name": "Taskade (AI Parent-Teacher Conference Agenda Generator)",
+        "url": "https://www.taskade.com/generate/education/parent-teacher-conference-agenda"
+      }
+    ],
+    "workflowSummary": "Teacher enters the student's name, key strengths, growth areas, and any concerns; the AI drafts a structured meeting agenda with talking points and suggested next steps, which the teacher customizes before printing or sharing digitally for each conference slot.",
+    "samplePrompt": "Create a 10-minute parent-teacher conference agenda for a 6th grader who is strong in class discussion but struggling with turning in homework on time, including one actionable next step for home.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "automates a repetitive prep task, editable output",
+    "trustScore": 3,
+    "pricingNote": "Not detailed on this page - part of Taskade's free generator suite; verify current pricing for any premium features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.taskade.com/generate/education/parent-teacher-conference-agenda",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General-purpose workspace tool, not education-specific compliance-certified - avoid entering full student names or sensitive details until data-handling terms are verified",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-f073cc312c",
+    "slug": "get-a-summary-and-action-items-from-a-meeting-i-recorded",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher attending staff meetings, PLCs, or IEP/504 meetings",
+    "title": "Get a summary and action items from a meeting I recorded",
+    "intentLabels": [
+      "AI meeting transcription",
+      "meeting notes summarizer",
+      "staff meeting summary",
+      "IEP meeting notes"
+    ],
+    "tools": [
+      {
+        "name": "Otter.ai",
+        "url": "https://tldv.io/blog/otter-pricing/",
+        "catalogueSlug": "otter-ai"
+      }
+    ],
+    "workflowSummary": "Teacher records or connects Otter to a Zoom/Teams/Meet staff or IEP meeting; Otter transcribes it live with speaker labels, then generates a structured summary with key points and action items the teacher can search, chat with, and share afterward.",
+    "samplePrompt": "Summarize this 45-minute IEP meeting recording into key decisions made, action items with owners, and any follow-up dates mentioned.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "install once, works automatically in the background during meetings",
+    "trustScore": 4,
+    "pricingNote": "Free 'Basic' plan: 300 transcription minutes/month, 30-minute cap per conversation, 3 lifetime file imports; Pro $16.99/mo ($8.33/mo billed annually, reported 20% off for .edu emails on some listings) for 1,200 minutes/month; Business $30/mo ($19.99/mo annual, 5-seat minimum)",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://tldv.io/blog/otter-pricing/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-10",
+    "accessNotes": "Third-party pricing summary, cross-checked against Otter's own July 2026 pricing page per the source; recording meetings involving students/families may require parental consent under state wiretapping laws - verify before recording an IEP or family meeting",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-0d13497157",
+    "slug": "write-a-letter-of-recommendation-for-a-student",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher writing letters for students applying to college, scholarships, or programs",
+    "title": "Write a letter of recommendation for a student",
+    "intentLabels": [
+      "AI recommendation letter generator",
+      "college recommendation letter",
+      "scholarship reference letter",
+      "letter of rec for student"
+    ],
+    "tools": [
+      {
+        "name": "Brisk Teaching (Letter of Recommendation Generator)",
+        "url": "https://www.briskteaching.com/ai-tools/letter-of-recommendation-generator"
+      }
+    ],
+    "workflowSummary": "Teacher shares specific details about the student - achievements, character, growth, and the purpose of the letter (college, scholarship, award) - and Brisk drafts a personalized, professional letter, which the teacher edits to add anecdotes and their own voice before signing.",
+    "samplePrompt": "Write a college recommendation letter for a student who has been in my AP Biology class for two years, highlighting her independent research project and her growth from a hesitant participant to a confident lab leader.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "works inside the same free Chrome extension as other Brisk tools",
+    "trustScore": 4,
+    "pricingNote": "Free (part of Brisk's Educator plan, 20+ tools included)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.briskteaching.com/ai-tools/letter-of-recommendation-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Education reporting (EdWeek, Oct 2024) notes roughly a third of teachers surveyed have used AI for recommendation letters, with some concerned about generic-sounding output - review and personalize before sending, don't submit an unedited AI draft",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-aad2c9a012",
+    "slug": "turn-my-notes-into-a-weekly-or-monthly-class-newsletter",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who sends regular updates to families",
+    "title": "Turn my notes into a weekly or monthly class newsletter",
+    "intentLabels": [
+      "class newsletter generator",
+      "weekly family update",
+      "classroom highlights newsletter"
+    ],
+    "tools": [
+      {
+        "name": "Brisk Teaching (AI Newsletter Generator)",
+        "url": "https://www.briskteaching.com/ai-tools/newsletter-generator"
+      }
+    ],
+    "workflowSummary": "Teacher pastes bullet points, student updates, or lesson highlights into Brisk; the tool organizes them into a clear, tone-adjustable newsletter (upbeat/fun or professional/concise) that the teacher can edit by chatting back and forth, then export to Google Docs, email, or an LMS.",
+    "samplePrompt": "Turn these bullet points about this week's science unit, the upcoming field trip, and two student shoutouts into a warm, friendly weekly newsletter for families.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste notes, get a formatted newsletter, no design skill needed",
+    "trustScore": 4,
+    "pricingNote": "Free (part of Brisk's Educator plan, same free tier as the letter-of-recommendation tool above)",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.briskteaching.com/ai-tools/newsletter-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Same vendor and free-tier terms as the recommendation-letter row above",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-6abb1cb600",
+    "slug": "turn-a-photo-of-my-timetable-into-an-organized-weekly-plan",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher juggling a non-standard or rotating class schedule",
+    "title": "Turn a photo of my timetable into an organized weekly plan",
+    "intentLabels": [
+      "AI weekly planner",
+      "digital teacher planner",
+      "extract timetable from photo",
+      "organize teaching week"
+    ],
+    "tools": [
+      {
+        "name": "Kuraplan (Weekly Planner)",
+        "url": "https://www.kuraplan.com/features/weekly-planner"
+      }
+    ],
+    "workflowSummary": "Teacher takes a photo of their existing paper timetable or screenshots their school's digital timetable; Kuraplan's AI extracts the subjects, periods, and schedule automatically into an editable weekly planner view, which the teacher reviews and adjusts before saving.",
+    "samplePrompt": "Extract my weekly timetable from this photo of my paper planner and build it into a digital weekly view I can edit, including my rotating Wednesday schedule.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "photo in, organized weekly plan out, review before saving",
+    "trustScore": 3,
+    "pricingNote": "Free (Weekly Planner is one of Kuraplan's stated free classroom tools); Kuraplan Pro reported around $9/mo elsewhere in this niche's research - verify current pricing for any paid tier directly on the vendor site",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.kuraplan.com/features/weekly-planner",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor is positioned for NZ/AU/UK/Canadian/Irish curricula as well as US - confirm regional fit before recommending to a US-only audience",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-8415e4eeeb",
+    "slug": "get-an-early-warning-when-students-start-falling-behind",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher wanting to catch struggling students earlier in the term",
+    "title": "Get an early warning when students start falling behind",
+    "intentLabels": [
+      "at-risk student flagging",
+      "learning analytics dashboard",
+      "identify struggling students early",
+      "predictive intervention alerts"
+    ],
+    "tools": [
+      {
+        "name": "SchoolAI (Mission Control)",
+        "url": "https://schoolai.com/blog/teachers-use-ai-student-progress-tracking"
+      }
+    ],
+    "workflowSummary": "Teacher connects assignment submissions, quiz results, and engagement signals from their classroom AI activities; Mission Control's live dashboard watches these signals and flags students who are falling behind before the next grading window closes, with teacher-reviewable recommendations rather than automatic decisions.",
+    "samplePrompt": "Look at this month's quiz scores and assignment completion data and flag any students showing an early pattern of falling behind, with a one-line reason for each flag.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "dashboard is straightforward to read, but useful insights depend on feeding it clean, connected data over time",
+    "trustScore": 3,
+    "pricingNote": "Free for individual teachers with basic features; Pro reported from roughly $5/student/year for full customization and analytics (same tier structure as SchoolAI's tutoring tool covered in Session 1); district pricing custom-quoted",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://schoolai.com/blog/teachers-use-ai-student-progress-tracking",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-08-19",
+    "accessNotes": "Vendor states FERPA-compliant infrastructure, bias audits, and teacher-overridable recommendations - this is a different SchoolAI feature (Mission Control) than the student-tutoring Space covered in the Session 1 batch; verify current claims before district use",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-558f6c81db",
+    "slug": "create-a-field-trip-permission-slip-for-parents-to-sign",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher organizing an off-campus trip or excursion",
+    "title": "Create a field trip permission slip for parents to sign",
+    "intentLabels": [
+      "field trip permission slip generator",
+      "parental consent form",
+      "field trip waiver",
+      "digital permission form"
+    ],
+    "tools": [
+      {
+        "name": "Jotform (AI Permission Slip Generator)",
+        "url": "https://www.jotform.com/ai/permission-slip-generator/"
+      }
+    ],
+    "workflowSummary": "Teacher describes the trip - destination, date, transportation, cost, and any medical/emergency fields needed - and the AI formats a professional permission slip with the requested fields, which the teacher customizes and shares as a digital form (e-signature) or printable PDF.",
+    "samplePrompt": "Create a field trip permission slip for a 4th-grade class visiting the science museum on a Friday, including bus transportation, a $12 fee, emergency contact fields, and a medical/allergy section.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided fields, minimal technical skill needed per vendor",
+    "trustScore": 4,
+    "pricingNote": "Free tier available (Jotform's broader freemium form-builder plans apply); exact AI-generator-specific pricing not detailed in this research pass - verify current tier before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jotform.com/ai/permission-slip-generator/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Confirm your district's required legal/liability language is included or added - a generic AI-drafted waiver may not fully match local policy requirements",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-13d8d27f25",
+    "slug": "write-a-professional-email-to-my-principal-or-department-head",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher handling routine administrative correspondence",
+    "title": "Write a professional email to my principal or department head",
+    "intentLabels": [
+      "admin email writer",
+      "email to principal",
+      "professional email for teachers",
+      "PD or supply request email"
+    ],
+    "tools": [
+      {
+        "name": "EasyClass (Free AI Teacher Email Generator)",
+        "url": "https://easyclass.ai/professional-email"
+      }
+    ],
+    "workflowSummary": "Teacher selects the email type (PD request, supply order, substitute coverage, meeting request) and describes the situation in plain language; the AI drafts a formal, concise email addressed to an administrator or colleague, which the teacher reviews and sends.",
+    "samplePrompt": "Write a formal, concise email to my principal requesting approval and funding for two new classroom document cameras, explaining the instructional need in two sentences.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "purpose-built templates by recipient/situation, no prompt-writing needed",
+    "trustScore": 4,
+    "pricingNote": "Free (part of EasyClass's broader free teacher-tools suite, no credit card required per vendor)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://easyclass.ai/professional-email",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Same vendor as the Session 1 seating-chart-adjacent research; verify current data-handling terms before including sensitive personnel or student details in a draft",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-d89ddf5188",
+    "slug": "create-an-agenda-for-my-plc-or-department-meeting",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who leads or attends a Professional Learning Community (PLC) or department meeting",
+    "title": "Create an agenda for my PLC or department meeting",
+    "intentLabels": [
+      "PLC agenda generator",
+      "department meeting agenda",
+      "professional learning community planning tool"
+    ],
+    "tools": [
+      {
+        "name": "Knowt (PLC Agenda tool)",
+        "url": "https://knowt.com/free-ai-tools-for-teachers/ai-recommendation-letter-generator"
+      }
+    ],
+    "workflowSummary": "Teacher describes the meeting's focus (data review, curriculum alignment, shared planning) and how much time is available; the AI drafts a structured agenda with time-boxed sections and discussion prompts, which the teacher edits before sharing with colleagues.",
+    "samplePrompt": "Create a 45-minute PLC agenda focused on reviewing last unit's common assessment data and planning reteach groups for the next two weeks.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "simple inputs, ready-to-share structured output",
+    "trustScore": 3,
+    "pricingNote": "Free (part of Knowt's free teacher-tools suite, same suite as report card comments and substitute plans referenced elsewhere in this niche's research)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://knowt.com/free-ai-tools-for-teachers/ai-recommendation-letter-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page listing tool suite, undated)",
+    "accessNotes": "Tool listed within Knowt's broader free teacher-tools page; verify the standalone PLC Agenda tool's own page and terms before publishing",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-f36c43d650",
+    "slug": "write-a-beginning-of-year-welcome-letter-to-families",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher writing to families before the school year starts",
+    "title": "Write a beginning-of-year welcome letter to families",
+    "intentLabels": [
+      "welcome letter generator",
+      "back-to-school letter",
+      "first-day letter to parents",
+      "classroom introduction letter"
+    ],
+    "tools": [
+      {
+        "name": "The Canadian Teacher (Free Welcome Letter Generator)",
+        "url": "https://thecanadianteacher.com/tools/letters/welcome/"
+      }
+    ],
+    "workflowSummary": "Teacher selects grade level and tone (casual/fun vs. formal/structured), then fills in sections for personal introduction, materials/supplies, classroom expectations, and home-support tips; the tool generates a framework letter the teacher personalizes with their own voice in about 15 minutes.",
+    "samplePrompt": "Generate a warm, casual welcome letter for my 2nd-grade families covering who I am, what supplies they need to send, and two things they can do at home to support reading this year.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided sections, adjusts language automatically by grade level",
+    "trustScore": 3,
+    "pricingNote": "Free tool (no pricing barrier stated on the page)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thecanadianteacher.com/tools/letters/welcome/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-04-08",
+    "accessNotes": "General free tool, not confirmed as FERPA/COPPA-certified - avoid entering identifying student details; fine for a general class-wide letter",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-9121d6364a",
+    "slug": "take-a-quick-photo-based-inventory-of-my-classroom-supplies-and",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher managing shared classroom equipment and supplies",
+    "title": "Take a quick photo-based inventory of my classroom supplies and equipment",
+    "intentLabels": [
+      "classroom inventory app",
+      "supply tracking with photos",
+      "AI catalog classroom equipment",
+      "find what's in my supply closet"
+    ],
+    "tools": [
+      {
+        "name": "SnapFind (Education/Classroom solution)",
+        "url": "https://www.snapfind.app/solutions/education-asset-tracking"
+      }
+    ],
+    "workflowSummary": "Teacher photographs cabinets, carts, and storage bins; SnapFind's AI catalogs the visible supplies and equipment automatically and attaches the photos to scannable labels, so the teacher (or any staff member) can search what's available before filing a purchase request instead of physically checking every closet.",
+    "samplePrompt": "Catalog the contents of this classroom supply cabinet from these three photos, grouping items by type (art supplies, science equipment, general classroom materials).",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "photograph and go, no manual data entry required per vendor",
+    "trustScore": 3,
+    "pricingNote": "Free to start per vendor ('Download SnapFind free'); full pricing tiers not detailed in this research pass - verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.snapfind.app/solutions/education-asset-tracking",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General small-business/home inventory tool with an education use case, not education-specific compliance-certified - fine for equipment/supply photos, avoid photographing anything with visible student information",
+    "batch": "Teachers AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-a257236186",
+    "slug": "write-a-product-title-and-description-for-my-teachers-pay",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who sells lesson plans, worksheets, or resources on Teachers Pay Teachers",
+    "title": "Write a product title and description for my Teachers Pay Teachers listing",
+    "intentLabels": [
+      "TPT listing optimizer",
+      "TPT product description writer",
+      "SEO title for TPT",
+      "sell resources on Teachers Pay Teachers"
+    ],
+    "tools": [
+      {
+        "name": "Teachers Boost (AI Description Writer + Title Generator)",
+        "url": "https://teachersboost.com/"
+      }
+    ],
+    "workflowSummary": "Seller pastes their resource details or an existing listing URL; the tool researches low-competition keywords for that niche, then generates an SEO-optimized title and a full product description with education standards automatically referenced, which the seller reviews and publishes or uses to refresh an underperforming listing.",
+    "samplePrompt": "Write an SEO-optimized TPT title and product description for a 4th-grade fractions worksheet bundle, targeting keywords a 4th-grade math teacher would search for, and highlight what's included.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided keyword research plus one-click description generation",
+    "trustScore": 4,
+    "pricingNote": "3 free keyword searches per week to try the tool; paid subscriptions reported at $10 or $15/month, or $100-$144/year for unlimited access - verify current tiers directly on the vendor site before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://teachersboost.com/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2025-11-26",
+    "accessNotes": "Independent tool, not affiliated with or endorsed by Teachers Pay Teachers/IXL Learning - confirm it complies with TPT's current seller content guidelines before use",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-8dc55c0881",
+    "slug": "write-a-grant-proposal-to-fund-classroom-supplies-or-a-school",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher or school staff seeking funding for classroom materials or programs",
+    "title": "Write a grant proposal to fund classroom supplies or a school program",
+    "intentLabels": [
+      "AI grant writing tool",
+      "Title I/IDEA/ESSER grant help",
+      "classroom funding proposal",
+      "education grant writer"
+    ],
+    "tools": [
+      {
+        "name": "Granted AI",
+        "url": "https://grantedai.com/"
+      }
+    ],
+    "workflowSummary": "User uploads the grant's RFP or guidelines, or selects an education funding category (Title I, IDEA, ESSER, state education grants); the AI identifies every required section, coaches the writer through the details it needs, and drafts a grounded, complete proposal for review and submission.",
+    "samplePrompt": "Draft a Title I grant proposal requesting funding for a classroom reading intervention program, including a needs statement, goals, and a budget outline for $3,000 in materials.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "guided section-by-section, but still requires real program details and district-specific context",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - verify current pricing directly on the vendor site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://grantedai.com/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor explicitly targets educators writing grants after the school day; as with any AI grant draft, have your district's grants office or administrator review before submission for accuracy and compliance",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-e2df549b22",
+    "slug": "write-a-cover-letter-for-a-teaching-job-application",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher applying for a new teaching position",
+    "title": "Write a cover letter for a teaching job application",
+    "intentLabels": [
+      "AI cover letter generator for teachers",
+      "teaching job cover letter",
+      "write my teacher cover letter"
+    ],
+    "tools": [
+      {
+        "name": "Kickresume",
+        "url": "https://www.kickresume.com/en/help-center/online-teacher-cover-letter-sample/"
+      }
+    ],
+    "workflowSummary": "Teacher starts from a profession-specific teacher cover letter sample, then uses the AI rewrite feature to tailor it to their own experience, the grade level/subject they teach, and the specific school or district posting, producing an editable draft to personalize further.",
+    "samplePrompt": "Rewrite this teacher cover letter sample to reflect 5 years of experience teaching middle school science, emphasizing hands-on lab instruction and a recent STEM grant I secured for my classroom.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "starts from a real sample, AI rewrite handles the tailoring",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass for the teacher-specific template - Kickresume's broader plans include a free tier with paid upgrades for full export/download features; verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.kickresume.com/en/help-center/online-teacher-cover-letter-sample/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (help center page, undated)",
+    "accessNotes": "General-purpose career tool, not education-specific - fine for cover letter drafting; no student or district data involved",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-4219b9507f",
+    "slug": "design-a-poster-to-recruit-students-for-a-club-or-promote-a",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher promoting a club, science fair, election, or school event",
+    "title": "Design a poster to recruit students for a club or promote a school event",
+    "intentLabels": [
+      "school poster maker",
+      "club recruitment flyer",
+      "event poster generator",
+      "student election poster"
+    ],
+    "tools": [
+      {
+        "name": "Felo (Free School Poster Maker AI)",
+        "url": "https://felo.ai/en/agents/free-school-poster-maker-ai-DUVR5EeFKd5DSBMqTZqAqt"
+      }
+    ],
+    "workflowSummary": "Teacher describes the event or club theme (club recruitment, science fair, prom, student election); the AI generates a high-quality, professionally laid-out poster from that theme, which the teacher can adjust and print or post digitally.",
+    "samplePrompt": "Design a poster recruiting students for a new coding club, with a friendly, tech-themed design, meeting day/time, and a QR code placeholder for sign-up.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the theme, get a finished poster layout",
+    "trustScore": 3,
+    "pricingNote": "Free per vendor page (specific tier limits not detailed in this research pass - verify before publishing)",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://felo.ai/en/agents/free-school-poster-maker-ai-DUVR5EeFKd5DSBMqTZqAqt",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General AI design agent branded for school use - no student data required to generate a generic event/club poster",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-f8071b8eb1",
+    "slug": "create-a-flyer-to-promote-a-classroom-or-school-fundraiser",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher organizing a fundraiser, book fair, or classroom/school event",
+    "title": "Create a flyer to promote a classroom or school fundraiser",
+    "intentLabels": [
+      "fundraiser flyer generator",
+      "school event flyer",
+      "book fair flyer",
+      "AI flyer maker for schools"
+    ],
+    "tools": [
+      {
+        "name": "Piktochart (AI Event Flyer Generator)",
+        "url": "https://piktochart.com/ai-event-flyer-generator/"
+      }
+    ],
+    "workflowSummary": "Teacher describes the event (fundraiser, book fair, open house, science fair) and key details (date, location, cause); Piktochart's AI generates an editable flyer draft from a template, which the teacher customizes with text, colors, and images before printing or sharing digitally.",
+    "samplePrompt": "Create a flyer for a school book fair fundraiser next month, including the dates, hours, location, and a line about proceeds supporting the school library.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the event, get a professional flyer draft in seconds",
+    "trustScore": 3,
+    "pricingNote": "Free plan includes AI credits (exact monthly allotment not detailed in this research pass); paid tiers available for more credits/branding - verify current pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://piktochart.com/ai-event-flyer-generator/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General-purpose design tool with an explicit school-events use case listed by the vendor; no student data required for a generic fundraiser flyer",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-dfd6520f6c",
+    "slug": "turn-a-teaching-moment-into-a-social-media-post-to-promote-my",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who runs a private tutoring side business",
+    "title": "Turn a teaching moment into a social media post to promote my tutoring business",
+    "intentLabels": [
+      "AI social media post generator",
+      "tutor marketing content",
+      "promote my tutoring business online",
+      "social media for tutors"
+    ],
+    "tools": [
+      {
+        "name": "Predis.ai",
+        "url": "https://tutorxcel.com/blog/the-best-online-marketing-strategies-for-independent-tutors"
+      }
+    ],
+    "workflowSummary": "Tutor types a brief description of a teaching win, a common student mistake, or a study tip; the AI turns that short prompt into a ready-to-publish social media post, carousel, or short video with a caption, which the tutor reviews and posts to Instagram, LinkedIn, or Facebook.",
+    "samplePrompt": "Turn this into an Instagram carousel: 'A student finally understood fractions today by comparing them to pizza slices' - include a caption and 3 tips parents can use at home.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "short prompt in, ready-to-publish post out, no design or video-editing skill needed",
+    "trustScore": 3,
+    "pricingNote": "Free tier with roughly 15 AI-generated posts/month reported by one source; paid plans reported from about $19-$32/month (Core/Lite) up to $139-$249/month (Agency/Enterprise+) depending on source - pricing varies across listings, verify current tiers on predis.ai/pricing before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://tutorxcel.com/blog/the-best-online-marketing-strategies-for-independent-tutors",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-01",
+    "accessNotes": "General-purpose social media tool cited specifically for tutor marketing in this source; review AI-generated claims/testimonials for accuracy before posting, especially anything implying specific student results",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-4bc1c829a6",
+    "slug": "improve-my-linkedin-profile-to-attract-teaching-job",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher job-searching or building a professional online presence",
+    "title": "Improve my LinkedIn profile to attract teaching job opportunities",
+    "intentLabels": [
+      "LinkedIn optimization for teachers",
+      "AI LinkedIn review",
+      "teacher job search LinkedIn",
+      "profile audit tool"
+    ],
+    "tools": [
+      {
+        "name": "Resume Worded (LinkedIn review tool)",
+        "url": "https://resumeworded.com/cover-letter-samples/teacher"
+      }
+    ],
+    "workflowSummary": "User connects or pastes their LinkedIn profile; the AI analyzes headline, summary, and experience sections against what recruiters and hiring managers look for, then generates specific suggestions to improve visibility and profile views.",
+    "samplePrompt": "Review my LinkedIn profile as a 3rd-grade teacher looking to move into an instructional coaching role, and suggest a stronger headline and summary that highlights coaching-relevant experience.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free automated review, specific actionable suggestions",
+    "trustScore": 3,
+    "pricingNote": "Free AI-powered review tool per vendor page; broader Resume Worded resume tools have paid tiers - verify current pricing for any premium features before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://resumeworded.com/cover-letter-samples/teacher",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General-purpose career tool, not education-specific - fine for personal profile optimization; no student or district data involved",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-629730e644",
+    "slug": "create-eye-catching-preview-images-for-my-teachers-pay-teachers",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Established Teachers Pay Teachers seller wanting more polished store visuals",
+    "title": "Create eye-catching preview images for my Teachers Pay Teachers listing",
+    "intentLabels": [
+      "TPT preview maker",
+      "TPT thumbnail generator",
+      "product cover image for TPT",
+      "AI TPT listing images"
+    ],
+    "tools": [
+      {
+        "name": "Anthropologist in Heels — TpT Preview Maker (custom GPT)",
+        "url": "https://www.anthropologistinheels.com/blog/how-to-use-ai-to-create-product-previews-on-teachers-pay-teachers"
+      }
+    ],
+    "workflowSummary": "Seller describes their resource and target audience inside a custom-built ChatGPT GPT trained specifically on what makes TPT preview images skimmable and click-worthy; the GPT generates preview image concepts and layout guidance following TPT-specific design rules built into it by its creator.",
+    "samplePrompt": "Using the TpT Preview Maker rules, design a 3-slide preview for a middle school grammar worksheet bundle that shows what's included, the grade level, and one before/after example.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires a ChatGPT Plus-level account to access a custom GPT, plus some trial and error refining the output",
+    "trustScore": 2,
+    "pricingNote": "Requires access to the creator's custom GPT (typically sold or bundled by the creator; exact current price not detailed in this research pass) plus a ChatGPT plan that supports custom GPTs - verify both before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.anthropologistinheels.com/blog/how-to-use-ai-to-create-product-previews-on-teachers-pay-teachers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-27",
+    "accessNotes": "Independent creator's tool built on top of ChatGPT, not an official TPT or OpenAI product - verify current access terms and cost before recommending; creator explicitly states AI should not create the resource content itself, only support the preview design",
+    "batch": "Teachers AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-bdaefa0ebe",
+    "slug": "generate-practice-exercises-and-sightreading-material-at-my",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "K-12 music teacher (band, orchestra, choir, piano)",
+    "title": "Generate practice exercises and sightreading material at my students' level",
+    "intentLabels": [
+      "AI sheet music generator",
+      "sightreading exercise maker",
+      "music practice material generator",
+      "method exercises for instrument"
+    ],
+    "tools": [
+      {
+        "name": "Noteshift AI",
+        "url": "https://noteshift.ai/"
+      }
+    ],
+    "workflowSummary": "Teacher describes the instrument, skill level, and technique to target (scales, a specific rhythm pattern, a piece's difficulty range); the AI generates notation-accurate sightreading exercises or method-style practice material, which the teacher can preview, play back, and export or share as a link with students.",
+    "samplePrompt": "Generate 5 progressive sightreading exercises for beginner violin students focused on quarter and eighth notes in 4/4 time, in the key of D major.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe the technique and level, get playable notation back",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - vendor page did not surface specific pricing; verify current tiers directly on noteshift.ai before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://noteshift.ai/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General music-notation AI tool, not education-specific or FERPA-certified - fine for generic exercise generation with no student data involved",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-fb170974bf",
+    "slug": "give-my-students-extra-speaking-practice-in-the-language-they",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "World language teacher (Spanish, French, Mandarin, etc.)",
+    "title": "Give my students extra speaking practice in the language they're learning",
+    "intentLabels": [
+      "AI conversation partner for language learners",
+      "target-language speaking practice",
+      "AI language tutor for students",
+      "conversation practice app"
+    ],
+    "tools": [
+      {
+        "name": "Langua",
+        "url": "https://thefabryk.com/blog/langua-review"
+      }
+    ],
+    "workflowSummary": "Teacher assigns or recommends Langua as homework/supplement; students have open-ended or scenario-based spoken/typed conversations with an AI tutor calibrated to their proficiency level, receive corrections and vocabulary suggestions, and the teacher can choose tutor personas or topics tied to what's being taught in class.",
+    "samplePrompt": "Set up a beginner-level Spanish conversation practice session on ordering food at a restaurant, with the AI tutor correcting grammar gently and offering vocabulary suggestions when the student is stuck.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided conversation modes, reply suggestions built in for beginners",
+    "trustScore": 3,
+    "pricingNote": "Free account with a brief trial conversation, no credit card; unlocking unlimited practice requires a free trial (5 days monthly plan / 7 days annual plan) that does require a card; Standard plan reported around $12.50/month billed annually; school/institution plans are custom-priced",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thefabryk.com/blog/langua-review",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (recent review, month not specified)",
+    "accessNotes": "General-purpose consumer language app, not classroom-management software - per other sources in this niche's research, best used as supervised/assigned practice rather than unsupervised chatbot access for younger students; verify current school-plan terms before recommending district-wide",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-728ad8c5e3",
+    "slug": "create-a-social-emotional-learning-sel-lesson-for-my-students",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "School counselor or advisor delivering SEL instruction",
+    "title": "Create a social-emotional learning (SEL) lesson for my students",
+    "intentLabels": [
+      "SEL lesson generator",
+      "CASEL-aligned lesson",
+      "social emotional learning activity",
+      "counselor lesson plan tool"
+    ],
+    "tools": [
+      {
+        "name": "Musely (SEL Lesson Generator)",
+        "url": "https://musely.ai/tools/sel-lesson-generator"
+      }
+    ],
+    "workflowSummary": "Counselor selects grade level (Pre-K through 12th), a CASEL competency (self-awareness, self-management, social awareness, relationship skills, responsible decision-making), and a specific skill focus; the AI generates a complete lesson with activities (discussion, role-play, mindfulness), materials list, timing, and optional cultural-responsiveness and assessment additions.",
+    "samplePrompt": "Generate a 30-minute SEL lesson for 5th graders focused on conflict resolution under the CASEL relationship-skills competency, using a role-play activity and a short group discussion.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided dropdown selections, no prompt-writing needed",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - verify current pricing directly on musely.ai before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://musely.ai/tools/sel-lesson-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "General AI tool suite (Musely also builds sports and other generators) rather than a counseling-specific platform - fine for lesson drafting; no student data required to generate a generic lesson",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-e3e34ab36a",
+    "slug": "create-a-warm-up-or-full-pe-lesson-activity-for-my-class",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Physical education (PE) teacher",
+    "title": "Create a warm-up or full PE lesson activity for my class",
+    "intentLabels": [
+      "AI PE lesson planner",
+      "PE warm-up generator",
+      "physical education activity generator",
+      "PE games tool"
+    ],
+    "tools": [
+      {
+        "name": "ConnectedPE",
+        "url": "https://connectedpe.com/"
+      }
+    ],
+    "workflowSummary": "Teacher describes the class size, space/equipment constraints, and skill focus (e.g. a basketball unit warm-up for a mixed-ability class); the AI generates several activity or lesson options with progressions, which the teacher reviews and picks the best fit, then can pair with the same platform's rubric and differentiation tools.",
+    "samplePrompt": "Generate 3 indoor warm-up game options for a Year 3-4 basketball unit, 28 students, some with limited mobility, that need no more than 5 minutes and minimal equipment.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "describe constraints, get several ready-to-use options",
+    "trustScore": 4,
+    "pricingNote": "Free tier: start with 5 AI credits; paid upgrade for unlimited access to all tools/courses/features; department-level plans available with centralized billing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://connectedpe.com/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Purpose-built for PE teachers by PE teachers per vendor - no student data required for activity/warm-up generation",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-99ba1226c0",
+    "slug": "recommend-the-next-book-for-a-student-based-on-what-they-ve",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "School librarian or media specialist",
+    "title": "Recommend the next book for a student based on what they've already read",
+    "intentLabels": [
+      "AI book recommendation for school library",
+      "readers' advisory tool",
+      "reading list generator",
+      "match student to book"
+    ],
+    "tools": [
+      {
+        "name": "LibraryAid",
+        "url": "https://libraryaid.net/ai-powered-recommendations"
+      }
+    ],
+    "workflowSummary": "Librarian connects the school's existing library catalogue; the AI analyzes over 30 factors per student (reading level, interests, favorite authors, curriculum topics, series progression) and generates a personalized reading list split into 'Challenge Reading' and 'Reading for Pleasure' sections, without needing to recatalogue the collection.",
+    "samplePrompt": "Recommend the next 5 books for a 4th-grade student who loved the 'Percy Jackson' series and reads about a year above grade level, split between a challenge pick and books for pure enjoyment.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires connecting your catalogue, but recommendations are automatic after that",
+    "trustScore": 3,
+    "pricingNote": "From £20/month per vendor page - verify current pricing and currency/region before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://libraryaid.net/ai-powered-recommendations",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Vendor states recommendations pull only from the school's own existing catalogue and apply age-appropriate content ratings, not just reading-difficulty matching - verify current data-handling terms before connecting a real student catalogue",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-9eb8e2f0e1",
+    "slug": "create-a-practice-plan-for-my-team",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Teacher who also coaches a school sports team",
+    "title": "Create a practice plan for my team",
+    "intentLabels": [
+      "AI sports practice plan generator",
+      "coach practice planner",
+      "team practice session generator",
+      "athletics practice plan"
+    ],
+    "tools": [
+      {
+        "name": "MagicSchool AI (Coach's Sports Practice Generator)",
+        "url": "https://www.magicschool.ai/tools/coachs-sports-practice-generator"
+      }
+    ],
+    "workflowSummary": "Coach enters the sport, age/skill level, practice duration, and focus areas (conditioning, specific skills, game strategy); the tool generates a full, time-blocked practice plan with warm-up, drills, and cool-down, which the coach edits and shares with players or assistant coaches.",
+    "samplePrompt": "Create a 90-minute high school JV soccer practice plan focused on passing accuracy and defensive shape, for a team of 20 players with cones and 10 balls available.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided fields, part of the same platform as other MagicSchool tools in this niche's research",
+    "trustScore": 4,
+    "pricingNote": "Included in MagicSchool's free forever tier (80+ tools) and Plus tier ($12.99/mo or $8.33/mo annual) - same plan structure as other MagicSchool rows in this niche's research",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.magicschool.ai/tools/coachs-sports-practice-generator",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (product page, undated)",
+    "accessNotes": "Same vendor and free-tier terms as MagicSchool rows covered in the Session 1 batch (lesson plans, rubrics, report card comments) - this is a distinct tool (coaching, not classroom teaching), not a duplicate entry",
+    "batch": "Teachers AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-3ac2559f7d",
+    "slug": "turn-my-classroom-walkthrough-notes-into-written-teacher",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "School principal or assistant principal",
+    "title": "Turn my classroom walkthrough notes into written teacher feedback",
+    "intentLabels": [
+      "AI observation feedback generator",
+      "walkthrough notes to feedback",
+      "Danielson framework feedback",
+      "classroom observation write-up"
+    ],
+    "tools": [
+      {
+        "name": "Observation Copilot (by Edthena)",
+        "url": "https://www.edthena.com/observation-copilot-post-walkthrough-feedback/"
+      }
+    ],
+    "workflowSummary": "Principal takes notes (typed or via audio upload) during a 5-15 minute walkthrough or a longer formal observation; the AI turns those notes into structured, framework-aligned (e.g. Danielson) written feedback ready to edit and share with the teacher the same day, and tracks each teacher's growth across multiple visits over the year.",
+    "samplePrompt": "Turn these walkthrough notes into Danielson-framework-aligned feedback for a 10-minute visit to a 7th-grade math class: strong use of think-pair-share, but three students were off-task during independent work with no redirection observed.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "paste or dictate notes, get structured feedback back in minutes",
+    "trustScore": 4,
+    "pricingNote": "Free for individual principals to use",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.edthena.com/observation-copilot-post-walkthrough-feedback/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026 (recent page, exact date not specified)",
+    "accessNotes": "Vendor states notes are encrypted, accessible only to the principal, and not used to train third-party AI models; principals can delete notes or their account at any time - final written feedback and any personnel-record decisions remain the principal's judgment, not the AI's",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-120e927778",
+    "slug": "collect-and-track-progress-data-for-the-students-i-support",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Paraprofessional, instructional aide, or related service provider on an IEP team",
+    "title": "Collect and track progress data for the students I support",
+    "intentLabels": [
+      "paraprofessional data collection app",
+      "IEP progress monitoring for paras",
+      "special education data tracking",
+      "para collaboration tool"
+    ],
+    "tools": [
+      {
+        "name": "Ablespace",
+        "url": "https://cograder.com/content/ai-tools-for-special-education-teachers/"
+      }
+    ],
+    "workflowSummary": "Para or related service provider logs data (trials, frequency, duration, percentage accuracy, and other data types) for shared students directly in the app during the school day; the platform auto-generates graphs and progress reports the case manager can bring into IEP meetings, with the whole IEP team - not just the case manager - able to contribute data.",
+    "samplePrompt": "Log today's data for this student's IEP goal on independent transitions between activities: 4 out of 6 successful transitions with no more than one verbal prompt each.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built for quick, in-the-moment logging during the school day",
+    "trustScore": 4,
+    "pricingNote": "Free plan covers unlimited students, standard data tracking, reports/graphs, scheduling, service time tracking, and para collaboration, with a 1-month trial of paid features; school/district/enterprise plans are custom-priced",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://cograder.com/content/ai-tools-for-special-education-teachers/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (recent review, exact date not specified)",
+    "accessNotes": "Built for the full IEP team including paraprofessionals, not just the case manager - confirm with your district's special education office which data-collection tool is approved before entering real student names or goal data",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-f18e37d6d8",
+    "slug": "turn-my-recorded-lesson-video-into-an-interactive-lesson",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Online or virtual course teacher (asynchronous/flipped classroom)",
+    "title": "Turn my recorded lesson video into an interactive lesson students can't just passively watch",
+    "intentLabels": [
+      "interactive video lesson tool",
+      "turn video into quiz",
+      "asynchronous learning tool",
+      "flipped classroom video"
+    ],
+    "tools": [
+      {
+        "name": "PlayPosit",
+        "url": "https://www.edcafe.ai/blog/7-asynchronous-learning-tools-for-anytime-anywhere-learning"
+      }
+    ],
+    "workflowSummary": "Teacher uploads an existing instructional video (their own recording or a curated video); PlayPosit lets them layer in questions and prompts at specific points in the video, turning it into a self-contained interactive lesson ('bulb') that pauses for student responses instead of playing straight through, suited to flipped classrooms and fully online courses.",
+    "samplePrompt": "Take this 8-minute recorded lecture on the water cycle and add a multiple-choice check for understanding after each major concept, plus one open-response reflection question at the end.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "editing interaction points takes a bit of setup time the first time, but is quick after that",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - verify current free-tier limits and paid pricing directly on the vendor site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.edcafe.ai/blog/7-asynchronous-learning-tools-for-anytime-anywhere-learning",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-13",
+    "accessNotes": "General-purpose video-interactivity tool, not specific to any one LMS - confirm compatibility with your school's LMS before building a full course around it",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-03b3a0dfce",
+    "slug": "keep-my-course-content-aligned-with-shifting-industry-standards",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Career and Technical Education (CTE) instructor",
+    "title": "Keep my course content aligned with shifting industry standards and certifications",
+    "intentLabels": [
+      "CTE curriculum alignment tool",
+      "industry-aligned curriculum generator",
+      "career technical education AI planning",
+      "certification-aligned lessons"
+    ],
+    "tools": [
+      {
+        "name": "Curriculum Genie",
+        "url": "https://www.learning-genie.com/resources/use-cases/industry-alignment-and-mentorship-in-cte"
+      }
+    ],
+    "workflowSummary": "CTE instructor or program director inputs current industry standards and certification requirements for their pathway (e.g. graphic design, health sciences); the tool generates scaffolded worksheets, quizzes, and slide decks that stay aligned to those shifting standards, and can help a mentor teacher rapidly build materials for a newer colleague entering the same specialized field.",
+    "samplePrompt": "Update my Graphic Design pathway's unit on digital portfolios to reflect this year's industry certification requirements, and generate a scaffolded worksheet a first-year CTE teacher could hand out with minimal prep.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful when the instructor already knows the current industry/certification standards to feed in",
+    "trustScore": 3,
+    "pricingNote": "Not detailed in this research pass - verify current pricing directly on the vendor site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.learning-genie.com/resources/use-cases/industry-alignment-and-mentorship-in-cte",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-03-20",
+    "accessNotes": "Vendor case study focused on CTE-specific use - confirm current product name/scope, since 'Curriculum Genie' is referenced as a feature within the broader Learning Genie platform in this source",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-da89805f05",
+    "slug": "get-coaching-feedback-on-my-own-teaching-between-formal-mentor",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "First-year or early-career teacher going through district induction",
+    "title": "Get coaching feedback on my own teaching between formal mentor visits",
+    "intentLabels": [
+      "AI teacher coach",
+      "new teacher induction support",
+      "self-reflection coaching tool",
+      "instructional coaching between mentor visits"
+    ],
+    "tools": [
+      {
+        "name": "AI Coach (by Edthena)",
+        "url": "https://www.edthena.com/ai-coach-for-teachers/"
+      }
+    ],
+    "workflowSummary": "New teacher uploads a video or audio recording of their own lesson; the AI guides them through a structured self-coaching conversation (based on an Analyze-Reflect-Enact-Impact cycle grounded in instructional coaching research) to set a goal, reflect on what happened, and identify a concrete next step - available any time, not just during scheduled mentor visits.",
+    "samplePrompt": "Walk me through a coaching reflection on this recorded 9th-grade English lesson, focused specifically on how much wait time I gave students after asking questions.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided reflection prompts, works on the teacher's own schedule",
+    "trustScore": 3,
+    "pricingNote": "District/school licensing, not individual-teacher pricing - one source cites 600+ contact hours of on-demand coaching for $3,450 at the district level; verify current pricing and licensing model directly with the vendor before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.edthena.com/ai-coach-for-teachers/",
+    "sourceType": "Directory/Product page",
+    "freshness": "2026-01-26",
+    "accessNotes": "Recognized as a TIME Best Invention (2025) per vendor; independent reporting (Colorado Public Radio, Jan 2026) notes it's designed as a supplement to human mentoring, not a replacement - it cannot observe classroom management nuances the way an in-person coach can",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "teachers-educators-c6976b896b",
+    "slug": "plan-curriculum-across-several-grade-levels-or-subjects-i-m",
+    "kind": "workflow",
+    "niche": "Teachers & Educators",
+    "sector": "Teachers & Educators",
+    "persona": "Homeschool parent-teacher, especially in a co-op teaching multiple children or grade levels",
+    "title": "Plan curriculum across several grade levels or subjects I'm responsible for teaching",
+    "intentLabels": [
+      "homeschool multi-grade planning",
+      "homeschool co-op curriculum tool",
+      "teach multiple children different levels",
+      "AI homeschool lesson generator"
+    ],
+    "tools": [
+      {
+        "name": "EduGenius",
+        "url": "https://www.edugenius.app/blog/best-ai-tools-for-homeschool-families"
+      }
+    ],
+    "workflowSummary": "Parent-teacher creates a class profile for each child (grade level, subject-by-subject level, e.g. 'Grade 2/reading above level, math on-grade'); the AI generates lesson plans, reading comprehension questions, science investigations, and assessments matched to each child's specific level, which co-op members can also use to generate materials in their own subject specialty for the group.",
+    "samplePrompt": "Generate a week's worth of differentiated science lessons on the water cycle for three children: a Grade 2 on-level reader, a Grade 5 advanced reader, and a Grade 8 student working at grade level.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "class-profile setup once, then generate materials per child on demand",
+    "trustScore": 3,
+    "pricingNote": "Free with credits per vendor's stated pricing model; one source notes a $4/month cost comparison against $50-150/month curriculum subscriptions - verify current pricing directly on the vendor site before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.edugenius.app/blog/best-ai-tools-for-homeschool-families",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-10",
+    "accessNotes": "General homeschool-focused AI tool, not FERPA-specific since it serves individual families rather than public school data systems - fine for a homeschool/co-op context; not vetted for public school district use",
+    "batch": "Teachers AI Workflows Batch5",
+    "status": "active"
+  }
+]

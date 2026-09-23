@@ -11,6 +11,9 @@
 import type { AddressInfo } from 'node:net'
 import type { Express } from 'express'
 import { createApp } from '../src/app.ts'
+import { createJsonAutomations } from '../src/automations/json.ts'
+import type { AutomationRepository } from '../src/automations/repository.ts'
+import type { Automation } from '../src/automations/types.ts'
 import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
 import type { ServerEnv } from '../src/config/env.ts'
@@ -22,6 +25,8 @@ import { createJsonWorkSavingsRepository } from '../src/savings/json.ts'
 import type { WorkSavingsRepository } from '../src/savings/repository.ts'
 import { createJsonUsageStoryRepository } from '../src/stories/json.ts'
 import type { UsageStoryRepository } from '../src/stories/repository.ts'
+import type { SubmissionStore } from '../src/submissions/store.ts'
+import type { NewSubmission } from '../src/submissions/types.ts'
 import { createLogger, type LogLevel, type Logger } from '../src/utils/logger.ts'
 
 /**
@@ -88,6 +93,8 @@ export function testContainer(
   mock?: MockProviderOptions,
   stories?: UsageStoryRepository,
   savings?: WorkSavingsRepository,
+  submissionStore?: SubmissionStore,
+  automations?: AutomationRepository,
 ): Container {
   return createContainer({
     env,
@@ -96,6 +103,8 @@ export function testContainer(
     ...(mock ? { mock } : {}),
     ...(stories ? { stories } : {}),
     ...(savings ? { savings } : {}),
+    ...(submissionStore ? { submissionStore } : {}),
+    ...(automations ? { automations } : {}),
   })
 }
 
@@ -153,6 +162,44 @@ export function makeTool(overrides: Partial<Tool> = {}): Tool {
  */
 export function fixtureCatalogue(tools: Tool[]): ToolCatalogueRepository {
   return createJsonToolCatalogue({ records: tools })
+}
+
+/* ─── Automation fixtures ──────────────────────────────────────────────────── */
+
+/**
+ * A valid automation record with every required field filled in, overridable
+ * field by field — same reasoning as `makeTool` above.
+ */
+export function makeAutomation(overrides: Partial<Automation> = {}): Automation {
+  const id = overrides.id ?? overrides.slug ?? 'fixture-automation'
+  return {
+    id,
+    slug: id,
+    kind: 'workflow',
+    niche: 'Students',
+    persona: 'A fixture persona used by the server test-suite.',
+    title: 'Fixture automation task',
+    intentLabels: ['fixture task'],
+    tools: [{ name: 'Fixture Tool', url: 'https://example.com' }],
+    workflowSummary: 'A fixture workflow summary used by the server test-suite.',
+    samplePrompt: 'Do the fixture task.',
+    beginnerFriendly: 'yes',
+    trustScore: 3,
+    pricingNote: 'Free tier available as of the fixture date.',
+    pricingTier: 'freemium',
+    pricingTierSource: 'matched',
+    sourceUrl: 'https://example.com/source',
+    sourceType: 'Vendor site',
+    freshness: 'Retrieved for the fixture suite',
+    batch: 'Fixture Batch',
+    status: 'active',
+    ...overrides,
+  }
+}
+
+/** An automations repository over fixture records — never the imported data. */
+export function fixtureAutomations(automations: Automation[]): AutomationRepository {
+  return createJsonAutomations({ records: automations })
 }
 
 /* ─── Usage-story fixtures ─────────────────────────────────────────────────── */
@@ -226,6 +273,60 @@ export function fixtureSavings(estimates: WorkSavingsEstimate[]): WorkSavingsRep
   return createJsonWorkSavingsRepository({ records: estimates })
 }
 
+/* ─── Submission fixtures (SPEC-submit-backend.md) ─────────────────────────── */
+
+/**
+ * A valid NewSubmission with every required field filled in, overridable
+ * field by field. Same rationale as makeTool: a test states only what it is
+ * actually testing.
+ */
+export function makeSubmission(overrides: Partial<NewSubmission> = {}): NewSubmission {
+  return {
+    siteUrl: 'https://example.com',
+    normalizedUrl: 'example.com',
+    name: 'Fixture Tool',
+    tagline: 'A fixture used by the server test-suite.',
+    description:
+      'A fixture submission used to exercise the store without depending on real intake.',
+    category: 'Writing',
+    pricingModel: 'Freemium',
+    tags: [],
+    alternatives: [],
+    faqs: [],
+    plan: 'free',
+    launchWeekId: '2026-11-16',
+    ...overrides,
+  }
+}
+
+/**
+ * A valid raw submission REQUEST BODY — the shape a client actually POSTs,
+ * before normalizeUrl or the store add anything server-side. Distinct from
+ * makeSubmission's NewSubmission: a real request body has no normalizedUrl,
+ * id, status or createdAt at all, and schema.test.ts needs to inject
+ * invalid values (wrong types, missing keys, extra keys) that would not
+ * type-check against a strict interface — hence the loose return type.
+ */
+export function makeSubmissionPayload(
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return {
+    siteUrl: 'https://example.com',
+    name: 'Fixture Tool',
+    tagline: 'A fixture used by the server test-suite.',
+    description:
+      'A fixture submission used to exercise the schema without depending on real intake.',
+    category: 'Writing',
+    pricingModel: 'Freemium',
+    tags: [],
+    alternatives: [],
+    faqs: [],
+    plan: 'free',
+    launchWeekId: '2026-11-16',
+    ...overrides,
+  }
+}
+
 export interface TestServer {
   /** e.g. http://127.0.0.1:53124 — no trailing slash. */
   origin: string
@@ -295,17 +396,11 @@ export async function withServer(
  */
 export function makeAssistantReply(overrides: Partial<AssistantReply> = {}): AssistantReply {
   const base: AssistantReply = {
-    message: 'Here is a stack for that.',
+    message: 'Here is a plan for that.',
     intent: 'recommend',
     understood: { constraints: [] },
     plan: {
-      title: 'Video workflow',
-      toolIds: ['beta-editor'],
-      agents: [],
-      workflow: [{ stage: 'edit', toolId: 'beta-editor', why: 'It cuts long video down.' }],
-      prompts: 'Starter prompts for the first cut',
-      comparison: 'Beta Editor on one upload',
-      steps: ['Upload a recording to Beta Editor.'],
+      steps: [{ stage: 'edit', toolId: 'beta-editor', alsoGoodToolIds: [] }],
     },
     followUps: ['Compare the top two'],
   }

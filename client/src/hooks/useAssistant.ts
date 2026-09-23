@@ -2,11 +2,13 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ApiRequestError } from '@/services/http'
 import { sendAssistantMessage } from '@/services/assistant'
 import type {
+  AssistantAutomation,
   AssistantChatRequest,
   AssistantChatResponse,
   AssistantPlan,
   AssistantStatus,
   AssistantUnderstood,
+  CatalogueKind,
   ChatTurn,
   ConversationContext,
   ConversationMessage,
@@ -68,6 +70,8 @@ export interface AssistantSession {
   turns: ChatTurn[]
   /** The most recent plan, or undefined until one arrives. */
   plan: AssistantPlan | undefined
+  /** The guide shown above `plan`. Replaced whenever `plan` is, never on its own. */
+  automation: AssistantAutomation | undefined
   /** The assistant's read of role/goal/constraints, from the last reply. */
   understood: AssistantUnderstood | undefined
   status: AssistantStatus
@@ -80,6 +84,14 @@ export interface AssistantSession {
   send: (text: string) => void
   retry: () => void
   reset: () => void
+}
+
+export interface UseAssistantOptions {
+  /**
+   * The directory this conversation belongs to, sent with every turn. Fixed for
+   * the life of the page, so it is not part of the server's context.
+   */
+  kind?: CatalogueKind
 }
 
 function messageFor(error: unknown): { message: string; retryable: boolean } {
@@ -95,13 +107,14 @@ function toHistory(turns: ChatTurn[]): ConversationMessage[] {
   return turns.map((turn) => ({ role: turn.role, text: turn.text }))
 }
 
-export function useAssistant(): AssistantSession {
+export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSession {
   const [turns, setTurns] = useState<ChatTurn[]>([])
   /* The transcript as `send` reads it — see the header note on purity. */
   const turnsRef = useRef<ChatTurn[]>([])
   const [plan, setPlan] = useState<AssistantPlan | undefined>(undefined)
+  const [automation, setAutomation] = useState<AssistantAutomation | undefined>(undefined)
   const [understood, setUnderstood] = useState<AssistantUnderstood | undefined>(undefined)
-  const [status, setStatus] = useState<AssistantStatus>('idle')
+  const [status, setStatusState] = useState<AssistantStatus>('idle')
   const [error, setError] = useState<string | undefined>(undefined)
   const [canRetry, setCanRetry] = useState(false)
 
@@ -112,6 +125,20 @@ export function useAssistant(): AssistantSession {
   const controllerRef = useRef<AbortController | undefined>(undefined)
   const sequenceRef = useRef(0)
   const mountedRef = useRef(true)
+
+  /*
+   * `send` needs to know whether a turn is in flight the INSTANT it is called,
+   * not after the next render. Two clicks inside one event-loop tick (a
+   * double-click, or two elements both wired to `send`) both read `status` from
+   * the same stale render and would both pass a `status === 'thinking'` check —
+   * React state updates are not synchronous. A ref is, so `send` reads this
+   * instead of the state value.
+   */
+  const statusRef = useRef<AssistantStatus>('idle')
+  const setStatus = useCallback((next: AssistantStatus) => {
+    statusRef.current = next
+    setStatusState(next)
+  }, [])
 
   useEffect(() => {
     mountedRef.current = true
@@ -141,8 +168,13 @@ export function useAssistant(): AssistantSession {
         contextRef.current = reply.context
         setUnderstood(reply.understood)
         // A turn without a plan (a clarifying question) leaves the panel showing
-        // whatever the last planned turn produced. See the header note.
-        if (reply.plan) setPlan(reply.plan)
+        // whatever the last planned turn produced. See the header note. The
+        // guide belongs to its plan: a new plan replaces both, and one that
+        // came without a guide clears it.
+        if (reply.plan) {
+          setPlan(reply.plan)
+          setAutomation(reply.automation)
+        }
         turnsRef.current = [
           ...turnsRef.current,
           {
@@ -163,12 +195,17 @@ export function useAssistant(): AssistantSession {
         setCanRetry(retryable)
         setStatus('error')
       })
-  }, [])
+  }, [setStatus])
 
   const send = useCallback(
     (text: string) => {
       const message = text.trim()
       if (!message) return
+      // A second send while a reply is loading is ignored outright, not
+      // queued: see the note on `statusRef` above. `run` already aborts and
+      // replaces an in-flight request, which is right for a genuine retry or
+      // refinement, but wrong for an accidental double-click of the same chip.
+      if (statusRef.current === 'thinking') return
 
       // The history posted with this turn is the transcript BEFORE it — the
       // message itself travels in `message`, and sending it twice would make
@@ -185,9 +222,10 @@ export function useAssistant(): AssistantSession {
         message,
         messages: history,
         ...(contextRef.current ? { context: contextRef.current } : {}),
+        ...(kind ? { kind } : {}),
       })
     },
-    [run],
+    [run, kind],
   )
 
   const retry = useCallback(() => {
@@ -205,15 +243,17 @@ export function useAssistant(): AssistantSession {
     turnsRef.current = []
     setTurns([])
     setPlan(undefined)
+    setAutomation(undefined)
     setUnderstood(undefined)
     setError(undefined)
     setCanRetry(false)
     setStatus('idle')
-  }, [])
+  }, [setStatus])
 
   return {
     turns,
     plan,
+    automation,
     understood,
     status,
     error,

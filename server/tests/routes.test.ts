@@ -773,7 +773,7 @@ function assistantContainer(mock?: MockProviderOptions) {
 }
 
 await test('POST /api/assistant/chat', async (t) => {
-  await t.test('a valid request returns 200 and the hydrated six-section plan', async () => {
+  await t.test('a valid request returns 200 and the hydrated plan', async () => {
     await withServer(assistantContainer(), async ({ origin }) => {
       const response = await chat(origin, {
         message: 'I am a video editor and I want to speed up my YouTube editing workflow',
@@ -789,16 +789,13 @@ await test('POST /api/assistant/chat', async (t) => {
 
       const plan = body.plan
       assert.ok(plan, 'a recommendation carries a plan')
-      assert.ok(plan.title.length > 0)
-      assert.ok(plan.tools.length > 0)
-      assert.ok(Array.isArray(plan.agents))
-      assert.ok(plan.workflow.length > 0)
-      assert.equal(typeof plan.prompts, 'string')
-      assert.equal(typeof plan.comparison, 'string')
+      assert.ok(plan.goal.length > 0)
       assert.ok(plan.steps.length > 0)
 
-      // Hydrated records, not ids — this is what "Your AI Plan" renders.
-      for (const tool of plan.tools) {
+      // Hydrated records, not ids — this is what the plan panel renders.
+      for (const step of plan.steps) {
+        assert.ok(step.action.length > 0)
+        const tool = step.tool
         assert.equal(typeof tool.slug, 'string')
         assert.equal(typeof tool.mono, 'string')
         assert.equal(typeof tool.url, 'string')
@@ -817,9 +814,9 @@ await test('POST /api/assistant/chat', async (t) => {
         await chat(origin, { message: 'edit videos faster for youtube' }),
       )
 
-      for (const tool of body.plan?.tools ?? []) {
-        const lookup = await fetch(`${origin}/api/tools/${tool.slug}`)
-        assert.equal(lookup.status, 200, `${tool.slug} should be a real catalogue record`)
+      for (const step of body.plan?.steps ?? []) {
+        const lookup = await fetch(`${origin}/api/tools/${step.tool.slug}`)
+        assert.equal(lookup.status, 200, `${step.tool.slug} should be a real catalogue record`)
       }
     })
   })
@@ -867,6 +864,25 @@ await test('POST /api/assistant/chat', async (t) => {
     await withServer(assistantContainer(), async ({ origin }) => {
       const response = await chat(origin, { message: 'hi', model: 'gpt-4' })
       assert.equal(response.status, 400)
+    })
+  })
+
+  await t.test('a kind outside the vocabulary is a 400 naming the field', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      for (const kind of ['all', 'MCP', '', 1, null]) {
+        const response = await chat(origin, { message: 'hi', kind })
+        assert.equal(response.status, 400, `kind ${JSON.stringify(kind)} must be rejected`)
+        assert.match(JSON.stringify((await readJson<ErrorBody>(response)).error.details), /kind/)
+      }
+    })
+  })
+
+  await t.test('kind is top-level, not a context key', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      const nested = await chat(origin, { message: 'hi', context: { kind: 'mcp' } })
+      assert.equal(nested.status, 400)
+      const topLevel = await chat(origin, { message: 'edit videos faster', kind: 'mcp' })
+      assert.equal(topLevel.status, 200)
     })
   })
 

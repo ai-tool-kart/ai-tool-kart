@@ -6,7 +6,7 @@ import KindTabs from '@/pages/home/sections/KindTabs'
 import StatBlock from '@/components/ui/StatBlock'
 import TypedWord from '@/components/ui/TypedWord'
 import type { HomeAssistant } from '@/pages/home/useHomeAssistant'
-import { HERO_INDEX_LINE, HERO_KINDS, HERO_WORD_CHAIN } from '@/data/hero'
+import { HERO_INDEX_LINE, HERO_WORD_CHAIN } from '@/data/hero'
 import { HERO_STATS } from '@/data/stats'
 
 /*
@@ -35,10 +35,27 @@ import { HERO_STATS } from '@/data/stats'
 interface HeroProps {
   /** The page's one assistant conversation. See pages/home/useHomeAssistant.ts. */
   assistant: HomeAssistant
+  /**
+   * Overrides for the embedded stage's three labels — "AI Assistant", "Your AI
+   * Plan", "Build Your AI Setup" — so a kind other than Home's own "AI
+   * Workflows" (e.g. /mcp-servers) can brand the identical stage as its own,
+   * without a second copy of this component. Home passes none, so its wording
+   * is exactly the design's.
+   */
+  stageLabels?: {
+    chat?: string
+    plan?: string
+    setup?: string
+  }
+  /** The headline's second line. Defaults to the design's own wording. */
+  headlineSuffix?: string
 }
 
-export default function Hero({ assistant }: HeroProps) {
-  const [kind, setKind] = useState(HERO_KINDS[0].label)
+export default function Hero({
+  assistant,
+  stageLabels,
+  headlineSuffix = 'Get the Best AI for It.',
+}: HeroProps) {
   const [task, setTask] = useState<string | undefined>(undefined)
   const { session, stageRef, revealStage, ask } = assistant
 
@@ -50,7 +67,7 @@ export default function Hero({ assistant }: HeroProps) {
 
   return (
     <section className="relative z-[1] mx-auto max-w-site px-8 pt-[125px] text-center">
-      <KindTabs value={kind} onChange={setKind} />
+      <KindTabs />
 
       <div className="inline-flex items-center gap-[11px] text-[13.5px] tracking-[-0.005em] text-[#B3ACC8] [animation:akFade_1.2s_cubic-bezier(.16,.84,.44,1)_both]">
         <span
@@ -76,7 +93,7 @@ export default function Hero({ assistant }: HeroProps) {
           </span>
         </span>
         <span className="block [animation:akLineIn_1.25s_cubic-bezier(.16,.84,.44,1)_.26s_both]">
-          Get the Best AI for It.
+          {headlineSuffix}
         </span>
       </h1>
 
@@ -85,14 +102,20 @@ export default function Hero({ assistant }: HeroProps) {
         workflows, useful prompts, clear comparisons, and simple step-by-step guidance.
       </p>
 
-      <HeroSearch onSubmit={runTask} activeTask={task} />
+      <HeroSearch onSubmit={runTask} activeTask={task} busy={session.status === 'thinking'} />
 
-      <AssistantStage session={session} panelRef={stageRef} />
+      <AssistantStage
+        session={session}
+        panelRef={stageRef}
+        chatLabel={stageLabels?.chat}
+        planLabel={stageLabels?.plan}
+      />
 
       <BuildSetupCard
         onBuild={session.send}
         onScrollToStage={revealStage}
         busy={session.status === 'thinking'}
+        {...(stageLabels?.setup ? { label: stageLabels.setup } : {})}
       />
 
       <div data-reveal="0" className="mt-[65px]">

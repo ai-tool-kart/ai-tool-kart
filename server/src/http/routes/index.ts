@@ -16,15 +16,19 @@
 import { Router } from 'express'
 import {
   ASSISTANT,
+  AUTOMATIONS_API,
   HEALTH,
   SAVINGS_API,
   STORIES_API,
+  SUBMISSIONS,
   TAXONOMY_API,
   TOOLS_API,
 } from '../../config/limits.ts'
 import type { Container } from '../../container.ts'
 import { createAssistantRouter } from './assistant.ts'
+import { createAutomationsRouter } from './automations.ts'
 import { createHealthRouter } from './health.ts'
+import { createSubmissionsRouter } from './submissions.ts'
 import { createTaxonomyRouter, createToolsRouter } from './tools.ts'
 import { createUsageStoriesRouter } from './usageStories.ts'
 import { createWorkSavingsRouter } from './workSavings.ts'
@@ -43,7 +47,15 @@ export function createApiRouter(container: Container): Router {
   router.use(TAXONOMY_API.path, createTaxonomyRouter({ retrieval: container.retrieval }))
   router.use(STORIES_API.path, createUsageStoriesRouter({ stories: container.stories }))
   router.use(SAVINGS_API.path, createWorkSavingsRouter({ savings: container.savings }))
+  router.use(
+    AUTOMATIONS_API.path,
+    createAutomationsRouter({
+      automations: container.automations,
+      matcher: container.automationMatcher,
+    }),
+  )
   router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
+  router.use(SUBMISSIONS.path, createSubmissionsRouter({ service: container.submissions }))
 
   return router
 }

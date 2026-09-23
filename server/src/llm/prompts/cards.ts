@@ -35,9 +35,11 @@
 /**
  * The projection of a catalogue record the model is shown.
  *
- * Structurally compatible with domain/types.ts ToolSummary, but declared
- * independently on purpose: nothing under llm/ may import the server's domain,
- * or the directory cannot be lifted into a shared package in Phase H.
+ * Its display fields are structurally compatible with domain/types.ts
+ * ToolSummary, but declared independently on purpose: nothing under llm/ may
+ * import the server's domain, or the directory cannot be lifted into a shared
+ * package in Phase H. `score` is the one field ToolSummary does not carry —
+ * it is retrieval's own number, not a display fact about the tool.
  */
 export interface ToolCard {
   id: string
@@ -46,6 +48,14 @@ export interface ToolCard {
   pricingTier: string
   stages: string[]
   tagline: string
+  /**
+   * The candidate's own retrieval relevance score, unrounded at the type
+   * level but rendered to two decimal places on the wire (`formatToolCard`).
+   * Carried so a step-building pass can apply a score-relative cutoff — "at
+   * least 75% of the leader" — without the server narrowing the candidate
+   * pool itself and starving breadth/follow-up signals that need it broad.
+   */
+  score: number
 }
 
 /** Field separator. A middle dot cannot appear in a slug, tier or stage. */
@@ -57,7 +67,11 @@ const HEADER = [
   'CANDIDATE TOOLS',
   '',
   'These are the only tools you may recommend. Each line is:',
-  '  id · name · category · pricing · stages · what it does',
+  '  id · name · category · pricing · stages · what it does · score',
+  '',
+  'score is this candidate\'s own retrieval relevance, highest first. When',
+  'building a plan step, only use tools scoring at least 75% of the highest',
+  'score on this list.',
   '',
   'Use the id exactly as written. A tool that is not on this list does not exist.',
   '',
@@ -78,6 +92,7 @@ export function formatToolCard(card: ToolCard): string {
       sanitize(card.pricingTier),
       card.stages.join('/'),
       sanitize(card.tagline),
+      card.score.toFixed(2),
     ].join(FIELD)
   )
 }
@@ -109,10 +124,14 @@ export function parseToolCards(prompt: string): ToolCard[] {
   for (const line of prompt.split('\n')) {
     if (!line.startsWith(PREFIX)) continue
     const parts = line.slice(PREFIX.length).split(FIELD)
-    if (parts.length !== 6) continue
+    if (parts.length !== 7) continue
 
-    const [id, name, cat, pricingTier, stages, tagline] = parts
-    if (!id || !name || !cat || !pricingTier || stages === undefined || !tagline) continue
+    const [id, name, cat, pricingTier, stages, tagline, scoreText] = parts
+    if (!id || !name || !cat || !pricingTier || stages === undefined || !tagline || !scoreText) {
+      continue
+    }
+    const score = Number.parseFloat(scoreText)
+    if (!Number.isFinite(score)) continue
 
     cards.push({
       id: id.trim(),
@@ -121,6 +140,7 @@ export function parseToolCards(prompt: string): ToolCard[] {
       pricingTier: pricingTier.trim(),
       stages: stages.split('/').map((stage) => stage.trim()).filter((stage) => stage.length > 0),
       tagline: tagline.trim(),
+      score,
     })
   }
 

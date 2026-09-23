@@ -45,7 +45,7 @@ export default function LaunchGroupHeading({ label, count }: LaunchGroupHeadingP
         aria-hidden="true"
         className="h-px flex-auto bg-[linear-gradient(90deg,rgba(178,150,255,0.3),rgba(255,255,255,0.05)_42%,transparent)]"
       />
-      <span className="text-[12.5px] whitespace-nowrap text-[#615C7A]">
+      <span className="text-[12.5px] whitespace-nowrap text-muted-dim">
         {count} {count === 1 ? 'tool' : 'tools'}
       </span>
     </div>

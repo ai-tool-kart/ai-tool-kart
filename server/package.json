@@ -8,11 +8,13 @@
     "node": ">=22.5.0"
   },
   "scripts": {
-    "dev": "node --watch --env-file-if-exists=.env src/index.ts",
-    "start": "node --env-file-if-exists=.env src/index.ts",
+    "dev": "node --experimental-strip-types --watch --env-file-if-exists=.env src/index.ts",
+    "start": "node --experimental-strip-types --env-file-if-exists=.env src/index.ts",
+    "review": "node --experimental-strip-types --env-file-if-exists=.env src/reviewSubmissions.ts",
+    "import:automations": "node --experimental-strip-types scripts/importAutomations.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "test": "node --test tests/**/*.test.ts"
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^24.13.3",
-    "typescript": "~6.0.2"
+    "typescript": "~6.0.2",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
 }

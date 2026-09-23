@@ -1,0 +1,2764 @@
+[
+  {
+    "id": "marketing-agencies-6c8e11ecbb",
+    "slug": "write-ad-copy-that-converts-for-a-client-s-google-or-facebook",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / account manager",
+    "title": "write ad copy that converts for a client's Google or Facebook campaign",
+    "intentLabels": [
+      "AI ad copy generator",
+      "write ad copy",
+      "PPC copywriting",
+      "Google/Facebook ad text"
+    ],
+    "tools": [
+      {
+        "name": "Jasper",
+        "url": "https://www.adstellar.ai/blog/ai-ad-copywriting-platform",
+        "catalogueSlug": "jasper"
+      },
+      {
+        "name": "Copysmith"
+      }
+    ],
+    "workflowSummary": "Feed the tool the client's product/service details, audience, and tone. It drafts multiple headline/description variants sized to each platform's character limits, which the account manager edits for brand voice before loading into the ad platform.",
+    "samplePrompt": "Write 5 Google Ads headlines (max 30 characters) and 3 descriptions (max 90 characters) for [service], targeting [audience], with a call-to-action to [book a call / get a quote].",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "template-driven, no setup beyond an account",
+    "trustScore": 4,
+    "pricingNote": "Jasper paid plans from ~$49/month; Copysmith similar tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.adstellar.ai/blog/ai-ad-copywriting-platform",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-25",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-fa221ae51b",
+    "slug": "generate-a-batch-of-ad-copy-variants-to-a-b-test",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency media buyer",
+    "title": "generate a batch of ad copy variants to A/B test",
+    "intentLabels": [
+      "ad copy variants",
+      "A/B test ad copy",
+      "bulk ad generation",
+      "performance ad copy"
+    ],
+    "tools": [
+      {
+        "name": "AdCreative.ai",
+        "url": "https://syntermedia.ai/blog/ai-ad-copy-generation-tools",
+        "catalogueSlug": "adcreative-ai"
+      },
+      {
+        "name": "Synter"
+      }
+    ],
+    "workflowSummary": "Submit one product brief and the tool outputs many headline/primary-text combinations, each respecting the target platform's character limits, so the media buyer launches a proper A/B test instead of guessing at one version.",
+    "samplePrompt": "Generate 10 Meta ad primary text variants and 5 headline variants for [product], each testing a different pain point, under [character limit].",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "output is easy to get, but interpreting test results needs media-buying know-how",
+    "trustScore": 4,
+    "pricingNote": "Plans vary by tier and volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://syntermedia.ai/blog/ai-ad-copy-generation-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-15",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-df07a015f4",
+    "slug": "build-a-white-labeled-client-reporting-dashboard",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "build a white-labeled client reporting dashboard",
+    "intentLabels": [
+      "client reporting dashboard",
+      "white label report",
+      "automated marketing report"
+    ],
+    "tools": [
+      {
+        "name": "AgencyAnalytics",
+        "url": "https://www.zite.com/blog/best-client-dashboard-tools-for-agencies"
+      }
+    ],
+    "workflowSummary": "Connect the client's Google Ads, Meta, GA4, and SEO accounts once. The platform pulls the numbers into a branded dashboard automatically and can schedule the same report to land in the client's inbox every month.",
+    "samplePrompt": "Show me month-over-month spend and conversions across all connected ad accounts for [Client Name], and flag any changes above 15%.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "mostly connect-and-go setup",
+    "trustScore": 4,
+    "pricingNote": "Priced per client; check current tier on AgencyAnalytics' pricing page — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.zite.com/blog/best-client-dashboard-tools-for-agencies",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-168ac8a4fc",
+    "slug": "turn-multi-platform-campaign-data-into-one-polished-client",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "turn multi-platform campaign data into one polished client report",
+    "intentLabels": [
+      "cross-channel report",
+      "consolidate marketing data",
+      "client report narrative"
+    ],
+    "tools": [
+      {
+        "name": "Whatagraph",
+        "url": "https://www.zite.com/blog/best-client-dashboard-tools-for-agencies"
+      }
+    ],
+    "workflowSummary": "Whatagraph blends roughly 55 native data sources into a single cross-channel view, then its AI layer writes a plain-language narrative and lets the account manager chat with the data for follow-up questions before sending the report.",
+    "samplePrompt": "Summarize this month's performance across Google Ads, Meta Ads, and GA4 for [Client Name] in plain language, highlighting the top 3 wins and 1 area to watch.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but takes setup time across many integrations",
+    "trustScore": 3,
+    "pricingNote": "Restructured in 2026 into two annual-billing plans, priced above mid-market tools — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.zite.com/blog/best-client-dashboard-tools-for-agencies",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-081436e686",
+    "slug": "turn-a-campaign-dashboard-into-a-client-ready-powerpoint-report",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "turn a campaign dashboard into a client-ready PowerPoint report",
+    "intentLabels": [
+      "auto-generate PowerPoint report",
+      "dashboard to slides",
+      "client presentation report"
+    ],
+    "tools": [
+      {
+        "name": "Signara",
+        "url": "https://thedigitalprojectmanager.com/tools/best-marketing-agency-reporting-software/"
+      }
+    ],
+    "workflowSummary": "Ask the connected dashboard questions in natural language, then convert the whole thing into a formatted PPTX with an AI-written narrative summary — ready to present on the next client call instead of being rebuilt by hand.",
+    "samplePrompt": "Turn this month's dashboard into a client-ready PowerPoint report with a plain-language summary of what drove the numbers.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify pricing directly on Signara's site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://thedigitalprojectmanager.com/tools/best-marketing-agency-reporting-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-3223f7f730",
+    "slug": "draft-a-client-proposal-or-scope-of-work-quickly",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / new business lead",
+    "title": "draft a client proposal or scope of work quickly",
+    "intentLabels": [
+      "AI proposal writer",
+      "scope of work generator",
+      "client proposal draft"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://dupple.com/learn/best-ai-proposal-writing-tools"
+      }
+    ],
+    "workflowSummary": "Enter the client name, service package, and pricing. The AI drafts a full proposal — executive summary, scope, a self-calculating pricing table, and an e-signature block — that the new-business lead edits before sending.",
+    "samplePrompt": "Draft a proposal for a 3-month social media management retainer for [Client Name], covering content creation, community management, and monthly reporting, priced at $[X]/month.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free plan (60 documents/year, unlimited e-signatures); Starter $19/user/month; Business $49/user/month, annual billing — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://dupple.com/learn/best-ai-proposal-writing-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-16",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-d805e21525",
+    "slug": "create-an-interactive-proposal-clients-can-t-ignore",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / new business lead",
+    "title": "create an interactive proposal clients can't ignore",
+    "intentLabels": [
+      "interactive proposal",
+      "trackable proposal",
+      "web-based sales proposal"
+    ],
+    "tools": [
+      {
+        "name": "Qwilr",
+        "url": "https://www.successtechservices.com/ai-proposal-writing-tools/"
+      }
+    ],
+    "workflowSummary": "Build the proposal as a web page instead of a static PDF, add a pricing table and case studies, then send a link and see which sections the client actually opened — useful for timing the follow-up call.",
+    "samplePrompt": "Build an interactive proposal page for [Client Name] covering [service], including a pricing table and 2 case studies, with a 'book a call' button at the end.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the page-builder format takes a bit longer to learn than a plain doc",
+    "trustScore": 3,
+    "pricingNote": "Around $35/user/month as of Aug 2026 — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.successtechservices.com/ai-proposal-writing-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-05",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-7b945dfa31",
+    "slug": "plan-and-schedule-a-month-of-social-content-for-a-client",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social media manager",
+    "title": "plan and schedule a month of social content for a client",
+    "intentLabels": [
+      "social media content calendar",
+      "batch schedule posts",
+      "social media planning"
+    ],
+    "tools": [
+      {
+        "name": "Buffer",
+        "url": "https://buffer.com/resources/social-media-scheduling-tools/",
+        "catalogueSlug": "buffer"
+      },
+      {
+        "name": "Metricool"
+      }
+    ],
+    "workflowSummary": "Batch-write a week or month of captions in one sitting, let the tool suggest each platform's best send time from the client's own engagement data, then queue everything across Instagram, LinkedIn, Facebook, and X from one calendar.",
+    "samplePrompt": "Draft 8 LinkedIn posts and 8 Instagram captions for [Client]'s March content calendar, covering [themes], each with 3 hashtag suggestions.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Metricool free tier covers 20 posts/month; Starter plan ~$25/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://buffer.com/resources/social-media-scheduling-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-09-01",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-0ee80f0de6",
+    "slug": "write-on-brand-social-captions-without-breaking-voice-across",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social media manager",
+    "title": "write on-brand social captions without breaking voice across clients",
+    "intentLabels": [
+      "brand voice captions",
+      "social copy generator",
+      "consistent tone social posts"
+    ],
+    "tools": [
+      {
+        "name": "Sintra AI (Soshie)",
+        "url": "https://sintra.ai/blog/social-media-scheduling-tools"
+      },
+      {
+        "name": "Hootsuite OwlyWriter AI"
+      }
+    ],
+    "workflowSummary": "Set the client's brand tone in the tool once, then turn a short content idea into a platform-ready caption and hashtag set that stays on-voice, instead of rewriting the same brand guidelines into every prompt.",
+    "samplePrompt": "Write an Instagram caption in [Client]'s brand voice announcing [offer/launch], under 150 characters, with a clear CTA and 5 relevant hashtags.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Varies by plan — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://sintra.ai/blog/social-media-scheduling-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-09-01",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-223ec31d99",
+    "slug": "find-keyword-gaps-against-a-client-s-competitors",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency SEO specialist",
+    "title": "find keyword gaps against a client's competitors",
+    "intentLabels": [
+      "keyword gap analysis",
+      "competitor keyword research",
+      "SEO content gap"
+    ],
+    "tools": [
+      {
+        "name": "Semrush",
+        "url": "https://www.semrush.com/blog/best-ai-seo-tools/"
+      }
+    ],
+    "workflowSummary": "Run the Keyword Gap tool comparing the client's domain against up to 4 competitor domains, export the keywords competitors rank for that the client doesn't, and prioritize the list by search volume for the content calendar.",
+    "samplePrompt": "Compare [client-domain.com] against [competitor1.com] and [competitor2.com] and list the top 20 keywords they rank for that we don't, sorted by search volume.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the data is easy to pull but needs SEO judgment to prioritize",
+    "trustScore": 5,
+    "pricingNote": "Starter plan around $199/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.semrush.com/blog/best-ai-seo-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-01",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-0402ab1556",
+    "slug": "run-a-technical-seo-audit-when-onboarding-a-new-client-site",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency SEO specialist",
+    "title": "run a technical SEO audit when onboarding a new client site",
+    "intentLabels": [
+      "site audit",
+      "technical SEO checkup",
+      "crawlability audit"
+    ],
+    "tools": [
+      {
+        "name": "Ahrefs",
+        "url": "https://onelittleweb.com/top-tools/best-ai-seo-tools/"
+      }
+    ],
+    "workflowSummary": "Crawl the client's site and get a prioritized issue list — Core Web Vitals, crawlability, schema, orphan pages — that feeds straight into the onboarding report instead of a manual page-by-page review.",
+    "samplePrompt": "Run a full site audit on [client-domain.com] and summarize the top 10 technical issues by priority for a client-facing onboarding report.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "output needs an SEO-literate person to translate into client language",
+    "trustScore": 4,
+    "pricingNote": "Plans vary by crawl volume — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://onelittleweb.com/top-tools/best-ai-seo-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-09-03",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6bd6449f04",
+    "slug": "repurpose-a-client-s-webinar-or-podcast-into-short-social-clips",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency content/video producer",
+    "title": "repurpose a client's webinar or podcast into short social clips",
+    "intentLabels": [
+      "repurpose long-form video",
+      "webinar to reels",
+      "podcast to short clips"
+    ],
+    "tools": [
+      {
+        "name": "Opus Clip",
+        "url": "https://pictory.ai/blog/best-ai-reel-maker-2026",
+        "catalogueSlug": "opus-clip"
+      },
+      {
+        "name": "Pictory"
+      }
+    ],
+    "workflowSummary": "Upload the long-form recording. The AI scans the transcript, surfaces the most engaging moments, auto-captions each one, applies the client's brand kit, and exports 9:16 clips ready for Reels, TikTok, and Shorts.",
+    "samplePrompt": "From this 45-minute webinar recording, pull the 5 most quotable moments and export each as a captioned 9:16 clip with [Client]'s brand kit applied.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free trials available; paid plans scale with monthly export volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pictory.ai/blog/best-ai-reel-maker-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8309ca8216",
+    "slug": "turn-a-product-photo-into-a-short-ad-video-without-a",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social media manager",
+    "title": "turn a product photo into a short ad video without a videographer",
+    "intentLabels": [
+      "photo to video ad",
+      "AI video generator",
+      "product video ad"
+    ],
+    "tools": [
+      {
+        "name": "CapCut AI",
+        "url": "https://maxaeo.ai/blog/best-ai-tools-for-marketers-content-creation-in-2026-11-picks-for-video-ads-scale/"
+      },
+      {
+        "name": "InVideo AI"
+      }
+    ],
+    "workflowSummary": "Upload a product photo or short brief, pick a template/style, and the AI assembles a short vertical video with captions, music, and effects — ready to post as a paid social ad the same day.",
+    "samplePrompt": "Turn this product photo into a 15-second vertical ad video for Instagram Reels, with upbeat background music and captions highlighting [key benefit].",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "CapCut has a strong free tier; Pro pricing varies by region — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://maxaeo.ai/blog/best-ai-tools-for-marketers-content-creation-in-2026-11-picks-for-video-ads-scale/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-24",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-d21c29597b",
+    "slug": "get-notes-and-a-summary-from-a-client-call-without-a-bot-joining",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "get notes and a summary from a client call without a bot joining",
+    "intentLabels": [
+      "bot-free meeting notes",
+      "client call transcription",
+      "private meeting summary"
+    ],
+    "tools": [
+      {
+        "name": "Granola",
+        "url": "https://zackproser.com/blog/best-ai-meeting-notes-tools-2026"
+      },
+      {
+        "name": "Jamie"
+      }
+    ],
+    "workflowSummary": "The tool records locally (Granola) or joins invisibly (Jamie) during the client Zoom or Meet call, so nothing announces itself to the client, then produces a structured summary and action items right after the call ends.",
+    "samplePrompt": "Summarize this client call into 3 key decisions, 5 action items with owners, and one open question for our next call.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Granola: free tier, paid plans from ~$18/month; Jamie: check current pricing — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://zackproser.com/blog/best-ai-meeting-notes-tools-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-01",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-ae4073cdae",
+    "slug": "push-client-call-notes-and-action-items-straight-into-the-crm",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "push client call notes and action items straight into the CRM",
+    "intentLabels": [
+      "meeting notes to CRM",
+      "auto-log client call",
+      "CRM integration transcription"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://www.simular.ai/alternatives/ai-meeting-note-takers"
+      }
+    ],
+    "workflowSummary": "A bot joins the client call, transcribes it, then automatically pushes the summary and action items into HubSpot, Salesforce, Slack, or Asana, so nothing has to be retyped after the call.",
+    "samplePrompt": "After this client call, generate a summary with action items and push it to the [Client] deal in HubSpot.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans scale with team size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.simular.ai/alternatives/ai-meeting-note-takers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-02",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6459abe908",
+    "slug": "send-a-weekly-client-newsletter-that-actually-gets-opened",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency email marketer",
+    "title": "send a weekly client newsletter that actually gets opened",
+    "intentLabels": [
+      "AI newsletter tool",
+      "subject line generator",
+      "email send-time optimization"
+    ],
+    "tools": [
+      {
+        "name": "Brevo",
+        "url": "https://www.simular.ai/alternatives/ai-email-marketing"
+      }
+    ],
+    "workflowSummary": "Draft the newsletter content, then let the AI suggest subject lines based on the client's own past open-rate patterns and automatically send at the best time for each subscriber's timezone.",
+    "samplePrompt": "Write 3 subject line options for this week's client newsletter about [topic], optimized for open rate, plus a 2-sentence preview text for each.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Budget-friendly multichannel plans; check current tier — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.simular.ai/alternatives/ai-email-marketing",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-22",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-80725c29f7",
+    "slug": "set-up-an-automated-nurture-sequence-for-new-leads",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency email marketer",
+    "title": "set up an automated nurture sequence for new leads",
+    "intentLabels": [
+      "email nurture automation",
+      "lead nurture sequence",
+      "drip campaign setup"
+    ],
+    "tools": [
+      {
+        "name": "ActiveCampaign",
+        "url": "https://thecmo.com/tools/best-ai-email-marketing-tools/"
+      }
+    ],
+    "workflowSummary": "Define the trigger — a new lead form fill — and let the AI build the automation logic and content suggestions, personalizing send timing to each contact's behavior instead of a fixed drip schedule.",
+    "samplePrompt": "Build a 4-email nurture sequence for new leads who downloaded [lead magnet], spaced 2 days apart, moving them toward booking a discovery call.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "automation logic takes a bit of setup the first time",
+    "trustScore": 4,
+    "pricingNote": "Plans scale with contact list size — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://thecmo.com/tools/best-ai-email-marketing-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-20",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-874c3b1e3a",
+    "slug": "polish-client-facing-copy-for-tone-before-it-goes-out-for",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency copywriter / account manager",
+    "title": "polish client-facing copy for tone before it goes out for approval",
+    "intentLabels": [
+      "AI copy editor",
+      "rewrite tone",
+      "grammar and clarity check"
+    ],
+    "tools": [
+      {
+        "name": "Wordtune",
+        "url": "https://startuptalky.com/best-ai-tools-for-writing-ad-descriptions/",
+        "catalogueSlug": "wordtune"
+      },
+      {
+        "name": "Grammarly",
+        "catalogueSlug": "grammarly"
+      }
+    ],
+    "workflowSummary": "Paste the draft, pick a target tone, and choose from several rewrite options rather than one fixed rewrite, then run a grammar/style pass before sending the copy to the client for sign-off.",
+    "samplePrompt": "Rewrite this paragraph in a more persuasive, upbeat tone for a landing page headline area, keep it under 40 words, and give me 3 variations.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tiers available on both; paid plans for advanced rewrites — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://startuptalky.com/best-ai-tools-for-writing-ad-descriptions/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-31",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-ea72dda1ef",
+    "slug": "automate-the-new-client-onboarding-checklist-and-kickoff-tasks",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency operations lead / account manager",
+    "title": "automate the new client onboarding checklist and kickoff tasks",
+    "intentLabels": [
+      "client onboarding automation",
+      "onboarding checklist",
+      "kickoff workflow"
+    ],
+    "tools": [
+      {
+        "name": "Rocketlane",
+        "url": "https://www.trupeer.ai/blog/best-client-onboarding-automation-software"
+      },
+      {
+        "name": "Dock"
+      }
+    ],
+    "workflowSummary": "Build a repeatable onboarding template with tasks and timelines, auto-assign owners the moment a deal closes, and give the client a shared workspace to track progress instead of chasing status by email.",
+    "samplePrompt": "Create a 15-day onboarding checklist for a new paid social client, covering kickoff call, account access, brand assets, and first campaign launch, with owners and due dates for each task.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Rocketlane paid plans from ~$50/user/month; Dock has a free tier — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trupeer.ai/blog/best-client-onboarding-automation-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-31",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-a81e4714da",
+    "slug": "auto-generate-a-client-kickoff-document-straight-from-the",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency operations lead",
+    "title": "auto-generate a client kickoff document straight from the intake form",
+    "intentLabels": [
+      "AI kickoff doc",
+      "intake form automation",
+      "auto-draft onboarding brief"
+    ],
+    "tools": [
+      {
+        "name": "Zapier or Gumloop + Claude",
+        "url": "https://taskip.net/ai-tools-for-agency-workflows/"
+      }
+    ],
+    "workflowSummary": "A client fills out an intake form, an automation tool creates the CRM entry and project automatically, then an AI model drafts the kickoff document from the intake answers — turning a 2-3 hour manual step into a quick review and edit.",
+    "samplePrompt": "Using these intake form answers [paste], draft a client kickoff document covering goals, target audience, brand guidelines, and first 30-day milestones.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the automation chain takes some setup the first time",
+    "trustScore": 3,
+    "pricingNote": "Zapier/Gumloop plans vary by task volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://taskip.net/ai-tools-for-agency-workflows/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-15",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-7d2aa1a976",
+    "slug": "give-clients-a-branded-portal-to-check-project-status-without",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager",
+    "title": "give clients a branded portal to check project status without emailing you",
+    "intentLabels": [
+      "client portal",
+      "project status portal",
+      "self-serve client updates"
+    ],
+    "tools": [
+      {
+        "name": "Dock",
+        "url": "https://www.eesel.ai/blog/best-ai-customer-onboarding-tools"
+      },
+      {
+        "name": "Rocketlane"
+      }
+    ],
+    "workflowSummary": "Build a shared workspace per client showing tasks, timeline, and outstanding documents in real time, so clients stop sending 'what's the status?' emails and check the portal instead.",
+    "samplePrompt": "Set up a client portal for [Client Name] showing the onboarding timeline, next steps, and outstanding documents.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Dock has a free plan with limited features; Rocketlane paid — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.eesel.ai/blog/best-ai-customer-onboarding-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-23",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-08c90cdb62",
+    "slug": "manage-tasks-and-deliverables-across-many-client-accounts-in",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency project / traffic manager",
+    "title": "manage tasks and deliverables across many client accounts in one place",
+    "intentLabels": [
+      "agency project management",
+      "client task tracking",
+      "workload dashboard"
+    ],
+    "tools": [
+      {
+        "name": "ClickUp (ClickUp Brain)",
+        "url": "https://www.teamwork.com/blog/best-ai-project-management-tools-agencies/"
+      }
+    ],
+    "workflowSummary": "Build one workspace with a project per client, then use the built-in AI to summarize long comment threads, draft status updates, and flag deadlines at risk instead of manually checking every project.",
+    "samplePrompt": "Summarize the last 2 weeks of comments on the [Client] homepage redesign task into a 3-bullet status update for tomorrow's client call.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but the sheer flexibility takes time to configure well",
+    "trustScore": 4,
+    "pricingNote": "Free plan available; AI features (ClickUp Brain) often gated to paid tiers — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.teamwork.com/blog/best-ai-project-management-tools-agencies/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-ad929b8a0b",
+    "slug": "track-billable-hours-across-multiple-clients-without-forgetting",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency finance / ops lead",
+    "title": "track billable hours across multiple clients without forgetting to log time",
+    "intentLabels": [
+      "time tracking",
+      "billable hours tracker",
+      "automatic time entry"
+    ],
+    "tools": [
+      {
+        "name": "Toggl Track",
+        "url": "https://lifestack.ai/blog/best-time-tracking-app-for-freelancers"
+      },
+      {
+        "name": "Timely"
+      }
+    ],
+    "workflowSummary": "Run a one-click timer per client or project, or let Timely auto-detect activity in the background and suggest time entries, then pull a clean picture of where billable hours actually went.",
+    "samplePrompt": "Show me billable vs. non-billable hours by client for the past 2 weeks and flag any project running over its estimated hours.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Toggl Track free tier covers unlimited tracking for 1 user; paid plans scale by team size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://lifestack.ai/blog/best-time-tracking-app-for-freelancers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-04",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-e098691b33",
+    "slug": "turn-tracked-hours-straight-into-a-client-invoice",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency finance / ops lead",
+    "title": "turn tracked hours straight into a client invoice",
+    "intentLabels": [
+      "time to invoice",
+      "automatic invoicing",
+      "billing from timesheets"
+    ],
+    "tools": [
+      {
+        "name": "Harvest",
+        "url": "https://www.jobbers.io/best-invoicing-software-for-freelancers-2026-12-tools-tested-and-ranked/"
+      }
+    ],
+    "workflowSummary": "Log time against a project as usual, then convert the tracked hours directly into a branded invoice with a payment link, instead of retyping line items into a separate billing tool.",
+    "samplePrompt": "Generate this month's invoice for [Client Name] from the tracked hours on the [Project] budget, itemized by task.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Restructured in 2026 into seat-based Teams (~$9–$11/seat/month) and Enterprise (~$14–$17.50/seat/month) tiers, plus usage fees — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.jobbers.io/best-invoicing-software-for-freelancers-2026-12-tools-tested-and-ranked/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-04",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6cdf1c48a0",
+    "slug": "build-an-internal-sop-library-so-new-hires-stop-asking-the-same",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency ops / knowledge manager",
+    "title": "build an internal SOP library so new hires stop asking the same questions",
+    "intentLabels": [
+      "internal knowledge base",
+      "SOP documentation",
+      "process library"
+    ],
+    "tools": [
+      {
+        "name": "Notion AI",
+        "url": "https://buildin.ai/blog/best-ai-powered-knowledge-base-tools",
+        "catalogueSlug": "notion-ai"
+      },
+      {
+        "name": "Guru"
+      }
+    ],
+    "workflowSummary": "Draft first-version SOPs from existing docs, calls, or Slack threads with AI, then keep them living inside the tool the team already works in (Slack, Chrome) with owners and expiration dates so nothing goes stale.",
+    "samplePrompt": "Turn this Slack thread and call transcript into a step-by-step SOP for onboarding a new paid social client, with a clear owner for each step.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Notion free for individuals, Team plan $10/user/month, AI add-on a further $10/user/month; Guru pricing varies — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://buildin.ai/blog/best-ai-powered-knowledge-base-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-15",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-1f11ca5547",
+    "slug": "centralize-client-feedback-and-approvals-on-creative-assets",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency creative / account lead",
+    "title": "centralize client feedback and approvals on creative assets instead of email chains",
+    "intentLabels": [
+      "creative approval workflow",
+      "client proofing",
+      "asset review and sign-off"
+    ],
+    "tools": [
+      {
+        "name": "Filestage",
+        "url": "https://approval.studio/blog/online-proofing-tools-2026/"
+      }
+    ],
+    "workflowSummary": "Route each asset through the right reviewers (client, legal, internal) in sequence with automated reminders, collect all annotated feedback in one thread, and get a clear sign-off instead of scattered email replies.",
+    "samplePrompt": "Set up a 2-stage review for this campaign video: internal creative review first, then client sign-off, with a 48-hour reminder if there's no response.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans scale with users/projects — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://approval.studio/blog/online-proofing-tools-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-decdfc09ca",
+    "slug": "see-whether-the-team-has-capacity-to-take-on-a-new-client",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency ops / resourcing lead",
+    "title": "see whether the team has capacity to take on a new client before promising a start date",
+    "intentLabels": [
+      "resource capacity planning",
+      "team availability",
+      "over-allocation alert"
+    ],
+    "tools": [
+      {
+        "name": "Float",
+        "url": "https://www.runn.io/blog/best-resource-planning-software"
+      },
+      {
+        "name": "Runn"
+      }
+    ],
+    "workflowSummary": "Schedule current bookings against each person's available hours, get an alert before someone is over-allocated, and check a few weeks out whether the team can actually staff a new project.",
+    "samplePrompt": "Show me which team members have capacity in the next 2 weeks to take on a new 20-hour/week client project.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once bookings are entered, but keeping data current takes discipline",
+    "trustScore": 4,
+    "pricingNote": "Runn has a free plan for small teams; Float is paid-only with a free trial — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.runn.io/blog/best-resource-planning-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-12-04 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-aaad379e57",
+    "slug": "catch-scope-creep-and-see-project-profitability-before-the",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / operations lead",
+    "title": "catch scope creep and see project profitability before the quarter-end surprise",
+    "intentLabels": [
+      "project profitability tracking",
+      "scope creep alert",
+      "margin visibility"
+    ],
+    "tools": [
+      {
+        "name": "Productive",
+        "url": "https://thedigitalprojectmanager.com/tools/creative-project-management-software/"
+      }
+    ],
+    "workflowSummary": "Connect time tracking, budgets, and invoicing in one workspace so project margins update in real time instead of only at billing time, with pre-built reports on utilization and fees for staffing decisions.",
+    "samplePrompt": "Show me which active client projects are tracking over budget this month and by how much.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the profitability layer takes setup to connect budgets, time, and invoicing",
+    "trustScore": 4,
+    "pricingNote": "Plans scale by seats and features — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://thedigitalprojectmanager.com/tools/creative-project-management-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6a1ab8ba78",
+    "slug": "find-and-vet-freelance-talent-quickly-to-staff-up-for-a-client",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / resourcing lead",
+    "title": "find and vet freelance talent quickly to staff up for a client project",
+    "intentLabels": [
+      "freelancer sourcing",
+      "contractor vetting",
+      "staff up for a project"
+    ],
+    "tools": [
+      {
+        "name": "Upwork (Uma AI)",
+        "url": "https://www.upwork.com/resources/ai-tools-for-freelancers"
+      }
+    ],
+    "workflowSummary": "Use the platform's AI matching to surface freelancers fitting the skill, budget, and timeline, review AI-summarized profiles and past work, then bring the contractor on for the specific project without running a full hiring process.",
+    "samplePrompt": "Find 5 freelance video editors available this month, experienced with short-form social ads, within a $30–$50/hour range.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to browse/post; Upwork service fees apply on contracts — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.upwork.com/resources/ai-tools-for-freelancers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-06-03 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-5f2c62e02a",
+    "slug": "connect-the-agency-s-tools-so-status-updates-and-leads-don-t",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency ops lead",
+    "title": "connect the agency's tools so status updates and leads don't need retyping between systems",
+    "intentLabels": [
+      "workflow automation",
+      "tool integration",
+      "no-code automation"
+    ],
+    "tools": [
+      {
+        "name": "Zapier",
+        "url": "https://taskip.net/ai-tools-for-agency-workflows/",
+        "catalogueSlug": "zapier"
+      },
+      {
+        "name": "Gumloop"
+      }
+    ],
+    "workflowSummary": "Build an automation that watches for a trigger (new lead form, task marked done) in one tool and pushes the update into the CRM, project tracker, or Slack automatically, replacing a manual copy-paste step.",
+    "samplePrompt": "When a new lead fills out our intake form, create a CRM contact, a new project in [PM tool], and post a summary to the #new-clients Slack channel.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "building the first automation takes some trial and error",
+    "trustScore": 4,
+    "pricingNote": "Free tiers available; paid plans scale with task/zap volume — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://taskip.net/ai-tools-for-agency-workflows/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-15",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-029590244e",
+    "slug": "stop-chasing-paper-receipts-and-manually-reconciling-billable",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency finance / ops lead",
+    "title": "stop chasing paper receipts and manually reconciling billable client expenses",
+    "intentLabels": [
+      "expense tracking",
+      "receipt capture",
+      "billable expense management"
+    ],
+    "tools": [
+      {
+        "name": "Expensify",
+        "url": "https://chatfin.ai/blog/top-ai-tools-for-cfos/top-10-ai-tools-for-expense-management-2026-edition/"
+      },
+      {
+        "name": "Ramp"
+      }
+    ],
+    "workflowSummary": "Staff photograph or forward a receipt, AI extracts merchant, date, and amount and matches it to the card transaction automatically, and the expense is coded and routed for approval without manual entry.",
+    "samplePrompt": "Categorize this receipt as a billable expense for [Client Name] and flag it for approval.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free entry-level plans exist on some platforms; paid tiers vary by team size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://chatfin.ai/blog/top-ai-tools-for-cfos/top-10-ai-tools-for-expense-management-2026-edition/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-26",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-54d3fa5458",
+    "slug": "screen-resumes-faster-when-hiring-for-an-open-agency-role",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / small-team hiring manager",
+    "title": "screen resumes faster when hiring for an open agency role",
+    "intentLabels": [
+      "AI resume screening",
+      "candidate shortlisting",
+      "hiring automation"
+    ],
+    "tools": [
+      {
+        "name": "Manatal",
+        "url": "https://www.metaview.ai/resources/blog/ai-hiring-tools"
+      }
+    ],
+    "workflowSummary": "Post the role, let the AI score and rank applicants against the job requirements, and use social-media enrichment to flesh out thin candidate profiles before booking first-round interviews.",
+    "samplePrompt": "Rank these 40 applicants for our [role] opening against these 5 must-have skills and give me the top 8 to interview first.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "From $15/user/month on the Professional plan — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.metaview.ai/resources/blog/ai-hiring-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-3abb6caf55",
+    "slug": "draft-an-offer-letter-or-job-ad-quickly-when-hiring-for-an",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency ops lead",
+    "title": "draft an offer letter or job ad quickly when hiring for an agency role",
+    "intentLabels": [
+      "job description generator",
+      "offer letter generator",
+      "hiring admin"
+    ],
+    "tools": [
+      {
+        "name": "Sintra AI (Scouty)",
+        "url": "https://sintra.ai/blog/best-ai-resume-screening-tools"
+      }
+    ],
+    "workflowSummary": "Generate a first-draft job ad or offer letter from a short role brief, then edit for tone and specifics before sending — useful for small agencies without a dedicated recruiter.",
+    "samplePrompt": "Write a job ad for a mid-level paid social specialist role at a 12-person marketing agency, remote-friendly, with a friendly but professional tone.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Plan pricing not stated in source — verify directly on Sintra's site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://sintra.ai/blog/best-ai-resume-screening-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-26",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-71ed373aca",
+    "slug": "keep-a-shared-always-current-view-of-who-owns-what-across-an",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency project / traffic manager",
+    "title": "keep a shared, always-current view of who owns what across an active client project",
+    "intentLabels": [
+      "task ownership tracking",
+      "project visibility",
+      "workload transparency"
+    ],
+    "tools": [
+      {
+        "name": "Asana (Asana Intelligence)",
+        "url": "https://www.upwork.com/resources/ai-tools-for-freelancers"
+      }
+    ],
+    "workflowSummary": "Assign owners and due dates to every deliverable in one board, and let the AI layer surface bottlenecks and suggest reassignments when someone is overloaded, instead of finding out about a missed handoff after the fact.",
+    "samplePrompt": "Show me every task on the [Client] campaign that's overdue or has no owner assigned.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Premium and Business tier plans include AI features at no extra cost; plans start around $10.99/user/month billed annually — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.upwork.com/resources/ai-tools-for-freelancers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-06-03 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-d8f77238b8",
+    "slug": "build-a-campaign-landing-page-fast-without-a-developer",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency growth marketer / paid media manager",
+    "title": "build a campaign landing page fast without a developer",
+    "intentLabels": [
+      "AI landing page builder",
+      "no-code landing page",
+      "campaign page generator"
+    ],
+    "tools": [
+      {
+        "name": "Landingi",
+        "url": "https://www.flint.com/articles/best-ai-landing-page-builders-marketing-agencies"
+      },
+      {
+        "name": "Unbounce"
+      }
+    ],
+    "workflowSummary": "Describe the campaign in a prompt or pick a template. The AI generates page copy and layout suggestions and pulls in brand styling automatically, and the page connects straight to ad traffic and A/B testing without an engineering queue.",
+    "samplePrompt": "Build a landing page for a free consultation offer from [Client]'s HVAC business, with a hero headline, 3 benefit bullets, a testimonial section, and a lead form.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Landingi Build plan has a 14-day free trial then paid tiers; Unbounce plans vary — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.flint.com/articles/best-ai-landing-page-builders-marketing-agencies",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-09",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6e445ed57d",
+    "slug": "add-a-chatbot-to-a-client-s-website-to-capture-and-qualify-leads",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social/digital manager",
+    "title": "add a chatbot to a client's website to capture and qualify leads",
+    "intentLabels": [
+      "website chatbot",
+      "lead qualification bot",
+      "AI chat widget"
+    ],
+    "tools": [
+      {
+        "name": "Landbot",
+        "url": "https://www.lindy.ai/blog/ai-lead-generation-chatbot"
+      },
+      {
+        "name": "Tidio"
+      }
+    ],
+    "workflowSummary": "Build a visual chat flow with a few qualifying questions, sync captured leads straight to the client's CRM, and hand off to a live rep when a visitor is ready to talk instead of leaving a static contact form.",
+    "samplePrompt": "Build a website chatbot flow that asks a visitor about their budget and timeline, then books a call on our calendar if they qualify.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Varies by plan and message volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.lindy.ai/blog/ai-lead-generation-chatbot",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-06",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-71f2a0b8e5",
+    "slug": "put-together-a-client-pitch-deck-or-new-business-presentation",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency new-business lead",
+    "title": "put together a client pitch deck or new-business presentation quickly",
+    "intentLabels": [
+      "AI pitch deck generator",
+      "presentation maker",
+      "new business deck"
+    ],
+    "tools": [
+      {
+        "name": "Gamma",
+        "url": "https://posteverywhere.ai/blog/15-best-ai-presentation-makers",
+        "catalogueSlug": "gamma"
+      },
+      {
+        "name": "Beautiful.ai",
+        "catalogueSlug": "beautiful-ai"
+      }
+    ],
+    "workflowSummary": "Describe the pitch in a prompt or outline. The AI drafts a structured, on-brand deck covering approach, case studies, timeline, and pricing, then the team edits copy and swaps in real client data before presenting.",
+    "samplePrompt": "Create a 10-slide new business pitch deck for a social media management retainer, covering our approach, 2 case studies, timeline, and pricing.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Gamma has a free tier (400 lifetime AI credits); Beautiful.ai is subscription-only with a free trial — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://posteverywhere.ai/blog/15-best-ai-presentation-makers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-23",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-70fc77beb2",
+    "slug": "generate-on-brand-ad-creative-images-without-hiring-a",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency creative / social team",
+    "title": "generate on-brand ad creative images without hiring a photographer",
+    "intentLabels": [
+      "AI image generator",
+      "ad creative generator",
+      "text-to-image marketing visuals"
+    ],
+    "tools": [
+      {
+        "name": "Midjourney",
+        "url": "https://getimg.ai/blog/best-ai-image-generator-for-marketing",
+        "catalogueSlug": "midjourney"
+      },
+      {
+        "name": "Adobe Firefly",
+        "catalogueSlug": "adobe-firefly"
+      }
+    ],
+    "workflowSummary": "Describe the visual concept in a prompt, generate several options, and pick the strongest. Adobe Firefly drops straight into Photoshop/Illustrator for final touch-ups within existing brand files.",
+    "samplePrompt": "Generate 4 lifestyle-style images of someone using [product] outdoors at golden hour, bright and airy style, no visible text.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "prompting well takes practice, and text-on-image remains unreliable",
+    "trustScore": 3,
+    "pricingNote": "Midjourney from $10/month, no free trial; Adobe Firefly bundled with Creative Cloud plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://getimg.ai/blog/best-ai-image-generator-for-marketing",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-20",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f88cee46d5",
+    "slug": "generate-a-full-set-of-visually-consistent-campaign-images-from",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency creative director",
+    "title": "generate a full set of visually consistent campaign images from one brief",
+    "intentLabels": [
+      "campaign visual generation",
+      "consistent AI creative set",
+      "brand-consistent image batch"
+    ],
+    "tools": [
+      {
+        "name": "Rainfrog",
+        "url": "https://www.rainfrog.ai/blog/12-best-ai-tools-for-creative-agencies-2026"
+      }
+    ],
+    "workflowSummary": "Submit one campaign brief with product, character, style, and environment details, and get an entire set of images that look like they came from the same photoshoot, instead of generating one-off images and manually matching the style.",
+    "samplePrompt": "From this brief [paste], generate 6 campaign images of the same model wearing [product] across 3 different settings, with consistent lighting and color grade.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best used with a clear creative brief already in hand",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly on Rainfrog's site before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.rainfrog.ai/blog/12-best-ai-tools-for-creative-agencies-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-26",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-9fb94643e5",
+    "slug": "monitor-what-people-are-saying-about-a-client-s-brand-across",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager / PR lead",
+    "title": "monitor what people are saying about a client's brand across social and the web",
+    "intentLabels": [
+      "brand monitoring",
+      "social listening",
+      "sentiment tracking"
+    ],
+    "tools": [
+      {
+        "name": "Brand24",
+        "url": "https://thecmo.com/tools/best-social-listening-tools/"
+      },
+      {
+        "name": "Mentionlytics"
+      }
+    ],
+    "workflowSummary": "Set up keyword tracking for the client's brand and competitors, get AI-classified sentiment on each mention in real time, and get an alert before a small issue turns into a PR problem.",
+    "samplePrompt": "Show me all mentions of [Client Name] from the last 7 days with negative sentiment, sorted by reach.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Brand24 Individual plan around $79/month; Mentionlytics from ~$49/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://thecmo.com/tools/best-social-listening-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-31",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8f4cd81573",
+    "slug": "back-up-a-new-business-pitch-with-data-on-the-client-s-industry",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency strategist / account lead",
+    "title": "back up a new-business pitch with data on the client's industry conversation and competitors",
+    "intentLabels": [
+      "share of voice",
+      "competitive social intelligence",
+      "data-backed pitch"
+    ],
+    "tools": [
+      {
+        "name": "Brandwatch",
+        "url": "https://syncly.app/blog/best-social-listening-tools-for-marketing-agencies"
+      }
+    ],
+    "workflowSummary": "Pull historical social/web data on the client's category and competitors, let the AI analyst explain spikes and trends, and turn the findings into data-backed slides for the pitch instead of guessing at the market narrative.",
+    "samplePrompt": "Compare share of voice for [Client] against [Competitor1] and [Competitor2] over the last 6 months and summarize the biggest shifts.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but has a real learning curve and a high price point",
+    "trustScore": 4,
+    "pricingNote": "Custom, high-end pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://syncly.app/blog/best-social-listening-tools-for-marketing-agencies",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-01-26 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8a3bdc1a64",
+    "slug": "find-and-vet-influencers-who-actually-fit-a-client-s-brand-and",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social / influencer manager",
+    "title": "find and vet influencers who actually fit a client's brand and audience",
+    "intentLabels": [
+      "influencer discovery",
+      "creator search",
+      "AI influencer matching"
+    ],
+    "tools": [
+      {
+        "name": "Modash",
+        "url": "https://www.janney.ai/blog/best-ai-influencer-marketing-platforms-2026/"
+      },
+      {
+        "name": "Upfluence"
+      }
+    ],
+    "workflowSummary": "Search creators using plain-language filters (niche, engagement rate, audience location), check audience quality and fraud signals, and shortlist a handful for outreach instead of scrolling Instagram manually.",
+    "samplePrompt": "Find 15 micro-influencers in the sustainable fashion niche with 20k–80k followers, at least 3% engagement rate, and audience mostly based in the US.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Modash from around $399/month; Upfluence pricing varies by plan — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.janney.ai/blog/best-ai-influencer-marketing-platforms-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-24",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-3abe789c97",
+    "slug": "automate-the-first-outreach-message-and-follow-ups-to",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency influencer / partnerships manager",
+    "title": "automate the first outreach message and follow-ups to influencers",
+    "intentLabels": [
+      "influencer outreach automation",
+      "creator outreach email",
+      "AI follow-up sequence"
+    ],
+    "tools": [
+      {
+        "name": "Janney AI",
+        "url": "https://www.janney.ai/blog/best-ai-influencer-marketing-platforms-2026/"
+      },
+      {
+        "name": "Influencer Hero"
+      }
+    ],
+    "workflowSummary": "Let the AI draft a personalized outreach email per creator, referencing their content, send it from the team's own inbox, and automatically send follow-ups if there's no reply, instead of manually messaging each creator.",
+    "samplePrompt": "Draft a personalized outreach email to [Creator Name] proposing a paid partnership for [Client]'s product launch, referencing their recent [platform] content.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once the campaign brief and offer terms are already defined",
+    "trustScore": 3,
+    "pricingNote": "Janney AI from $49/month, no annual contract required — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.janney.ai/blog/best-ai-influencer-marketing-platforms-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-24",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-89119b1dad",
+    "slug": "turn-one-campaign-asset-into-on-brand-variations-across-formats",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency creative team (Canva-first)",
+    "title": "turn one campaign asset into on-brand variations across formats and platforms",
+    "intentLabels": [
+      "creative resizing",
+      "multi-format ad variations",
+      "brand kit automation"
+    ],
+    "tools": [
+      {
+        "name": "Canva Magic Studio",
+        "url": "https://www.cometly.com/post/ai-marketing-creative-generator"
+      }
+    ],
+    "workflowSummary": "Use Magic Write and Magic Studio to generate copy and design variations from a single brand kit, so one core creative gets resized and restyled across Instagram, LinkedIn, and email without starting from scratch each time.",
+    "samplePrompt": "Take this Instagram post design and adapt it into a LinkedIn banner, an email header, and a Story format, keeping [Client]'s brand colors and fonts.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier; Pro plans scale with team size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cometly.com/post/ai-marketing-creative-generator",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-c1aa4bc14b",
+    "slug": "build-a-quiz-or-interactive-lead-qualification-page-instead-of",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency growth / product marketer",
+    "title": "build a quiz or interactive lead-qualification page instead of a static form",
+    "intentLabels": [
+      "interactive quiz funnel",
+      "lead scoring page",
+      "qualification calculator"
+    ],
+    "tools": [
+      {
+        "name": "involve.me",
+        "url": "https://www.flint.com/articles/best-ai-landing-page-builders-marketing-operations"
+      }
+    ],
+    "workflowSummary": "Build a multi-step quiz or calculator with logic and scoring, show each visitor a personalized outcome, and trigger a different email sequence depending on how they answered — turning a generic contact form into a qualification funnel.",
+    "samplePrompt": "Build a 5-question quiz that scores a visitor's 'social media readiness' and recommends one of 3 service packages based on their score.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the logic/scoring setup takes more time than a plain form",
+    "trustScore": 3,
+    "pricingNote": "Built-in lead scoring and personalized outcome pages available on the free plan — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.flint.com/articles/best-ai-landing-page-builders-marketing-operations",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-09",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-0771c989ad",
+    "slug": "check-how-a-client-s-brand-shows-up-in-ai-answers-not-just",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social manager",
+    "title": "check how a client's brand shows up in AI answers, not just search or social",
+    "intentLabels": [
+      "AI visibility tracking",
+      "ChatGPT brand mentions",
+      "generative search monitoring"
+    ],
+    "tools": [
+      {
+        "name": "Brandi AI",
+        "url": "https://www.designrush.com/agency/social-media-marketing/trends/social-listening-tools"
+      }
+    ],
+    "workflowSummary": "Monitor how the client's brand appears inside AI-generated answers across ChatGPT, Gemini, and Perplexity, benchmark against competitors, and get content optimization guidance to improve AI visibility instead of only tracking classic search rankings.",
+    "samplePrompt": "Show me how often [Client] is mentioned by ChatGPT and Perplexity when asked about [category], and what competitors are mentioned instead.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "a newer category, worth piloting before committing budget",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.designrush.com/agency/social-media-marketing/trends/social-listening-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-23",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-0a10e6ae2c",
+    "slug": "get-a-plain-language-daily-brief-on-a-client-s-brand-instead-of",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account / PR lead",
+    "title": "get a plain-language daily brief on a client's brand instead of digging through a dashboard",
+    "intentLabels": [
+      "daily brand brief",
+      "AI social intelligence advisor",
+      "automated mention summary"
+    ],
+    "tools": [
+      {
+        "name": "Mentionlytics (SIA)",
+        "url": "https://brand24.com/blog/social-listening-tools/"
+      }
+    ],
+    "workflowSummary": "The AI advisor pushes a daily brief summarizing the most important brand mentions, anomalies, and sentiment shifts, so the account manager doesn't have to open the dashboard and dig for what matters.",
+    "samplePrompt": "Give me today's brief on [Client]'s brand mentions: anything unusual, and the 3 most important mentions to react to.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Public pricing starts around $49/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://brand24.com/blog/social-listening-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-27",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-72fe09b1c8",
+    "slug": "spot-logo-or-product-mentions-in-photos-and-videos-that-text",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency social manager",
+    "title": "spot logo or product mentions in photos and videos that text-only tools would miss",
+    "intentLabels": [
+      "visual social listening",
+      "logo detection",
+      "image recognition brand tracking"
+    ],
+    "tools": [
+      {
+        "name": "YouScan",
+        "url": "https://www.dashsocial.com/blog/social-media-listening-tools"
+      }
+    ],
+    "workflowSummary": "Use AI image and video recognition to detect a client's logo, product, or scenes across social posts even when the brand isn't tagged or mentioned in text, surfacing UGC and mentions a keyword-only tool would miss.",
+    "samplePrompt": "Find all posts from the last 30 days where our product appears in a photo or video, even if we're not tagged or mentioned by name.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable for visually-driven categories like fashion, food, or CPG",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.dashsocial.com/blog/social-media-listening-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-2dc967fc96",
+    "slug": "check-an-influencer-s-audience-for-fake-followers-before",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency influencer / partnerships manager",
+    "title": "check an influencer's audience for fake followers before agreeing to pay them",
+    "intentLabels": [
+      "influencer fraud detection",
+      "audience quality check",
+      "fake follower analysis"
+    ],
+    "tools": [
+      {
+        "name": "HypeAuditor",
+        "url": "https://loudscale.com/blog/best-ai-tools-influencer-marketing-2026/"
+      }
+    ],
+    "workflowSummary": "Run a creator's profile through an audience-quality and fraud-detection check before signing a partnership, so the agency doesn't end up paying for followers that turn out to be bots.",
+    "samplePrompt": "Check this creator's [handle] audience for fake followers and engagement authenticity before we finalize the partnership.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://loudscale.com/blog/best-ai-tools-influencer-marketing-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-05",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-44560ca4e3",
+    "slug": "automate-bid-management-and-budget-pacing-across-meta-and",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency media buyer / paid social manager",
+    "title": "automate bid management and budget pacing across Meta and Google campaigns",
+    "intentLabels": [
+      "AI bid automation",
+      "budget pacing",
+      "autonomous ad optimization"
+    ],
+    "tools": [
+      {
+        "name": "Madgicx",
+        "url": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers"
+      },
+      {
+        "name": "Revealbot"
+      }
+    ],
+    "workflowSummary": "Connect ad accounts, set target CPA or ROAS goals, and let the AI adjust bids and reallocate budget across campaigns automatically based on live performance, instead of checking dashboards and adjusting bids by hand.",
+    "samplePrompt": "Set up a rule that shifts budget toward any ad set with ROAS above 3x and pauses anything under 1x after 3 days of spend.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "rule logic takes some setup, but templates help",
+    "trustScore": 4,
+    "pricingNote": "Madgicx starts at $44/month scaling with spend; Revealbot pricing varies — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-18",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-ebc69b0348",
+    "slug": "diagnose-why-a-client-s-google-ads-performance-suddenly-dropped",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency PPC specialist",
+    "title": "diagnose why a client's Google Ads performance suddenly dropped",
+    "intentLabels": [
+      "PPC diagnostics",
+      "performance drop investigation",
+      "ad account anomaly detection"
+    ],
+    "tools": [
+      {
+        "name": "Optmyzr",
+        "url": "https://www.cometly.com/post/media-buying-optimization-tool"
+      }
+    ],
+    "workflowSummary": "Run the PPC Investigator tool to surface the specific changes, trends, or anomalies behind a performance shift, instead of manually digging through change history and reports account by account.",
+    "samplePrompt": "Show me what changed in [Client]'s Google Ads account in the last 7 days that could explain the drop in conversions.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Starts at $208/month, based on spend managed and number of accounts — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cometly.com/post/media-buying-optimization-tool",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-26",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-33ca36a8f7",
+    "slug": "generate-hundreds-of-ad-creative-variations-from-one-product",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency creative / paid social team",
+    "title": "generate hundreds of ad creative variations from one product catalog",
+    "intentLabels": [
+      "programmatic creative",
+      "dynamic ad templates",
+      "catalog-based ad generation"
+    ],
+    "tools": [
+      {
+        "name": "Smartly.io",
+        "url": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers"
+      }
+    ],
+    "workflowSummary": "Build modular creative templates that combine product catalog data, messaging, and design elements programmatically, generating hundreds of ad variations automatically instead of designing each one by hand — useful for e-commerce clients with large catalogs.",
+    "samplePrompt": "Generate ad variations for every product in this catalog using our approved template, swapping in product image, price, and name.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the template setup takes real design/ops time upfront",
+    "trustScore": 3,
+    "pricingNote": "Enterprise pricing, custom quote — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-18",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-d74e4f0088",
+    "slug": "keep-track-of-leads-and-deals-in-one-pipeline-instead-of-a",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / new-business lead",
+    "title": "keep track of leads and deals in one pipeline instead of a spreadsheet",
+    "intentLabels": [
+      "sales CRM",
+      "deal pipeline tracking",
+      "lead management"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot (Breeze AI)",
+        "url": "https://pipeline.zoominfo.com/sales/best-sales-pipeline-management-software-tools"
+      },
+      {
+        "name": "Pipedrive"
+      }
+    ],
+    "workflowSummary": "Log every new lead as a deal card, let AI score deals based on engagement and suggest next actions, and get a forecast of pipeline health without manually updating a spreadsheet after every call.",
+    "samplePrompt": "Show me every deal in the 'Proposal Sent' stage that hasn't had activity in the last 7 days and suggest a next step for each.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "HubSpot free CRM tier available; paid Sales Hub plans from ~$9/seat/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/best-sales-pipeline-management-software-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-14",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-df95ab9595",
+    "slug": "prioritize-which-leads-to-follow-up-with-first",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency sales / business development lead",
+    "title": "prioritize which leads to follow up with first",
+    "intentLabels": [
+      "AI lead scoring",
+      "deal prioritization",
+      "at-risk deal alerts"
+    ],
+    "tools": [
+      {
+        "name": "Freshsales (Freddy AI)",
+        "url": "https://pipeline.zoominfo.com/sales/ai-crm-tools-sales"
+      }
+    ],
+    "workflowSummary": "Let the AI score prospects by conversion likelihood based on email responses, website visits, and engagement, and flag at-risk deals before they stall, instead of guessing which lead to call next.",
+    "samplePrompt": "Rank our open leads by likelihood to close this month and flag any that have gone quiet in the last 10 days.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Plans vary by team size — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/ai-crm-tools-sales",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-12",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-64f4182922",
+    "slug": "see-a-unified-dashboard-of-marketing-performance-across-all",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / ops-finance lead",
+    "title": "see a unified dashboard of marketing performance across all clients without manual exports",
+    "intentLabels": [
+      "unified marketing dashboard",
+      "automated data pipeline",
+      "cross-client reporting"
+    ],
+    "tools": [
+      {
+        "name": "Improvado",
+        "url": "https://improvado.io/blog/ai-dashboard"
+      }
+    ],
+    "workflowSummary": "Connect data sources across clients, let the platform's governance engine catch tracking issues like missing UTMs automatically, and get a no-code dashboard that updates itself instead of pulling CSVs from every ad platform every week.",
+    "samplePrompt": "Show me total spend, conversions, and CAC by channel across all connected clients for the last 30 days, and flag any campaigns missing UTM tracking.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful but built for larger data volumes and setups",
+    "trustScore": 3,
+    "pricingNote": "Enterprise pricing; typically operational within a week of setup — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://improvado.io/blog/ai-dashboard",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-31",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f5a37e86d5",
+    "slug": "figure-out-which-channel-actually-drove-a-conversion-not-just",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency performance marketer",
+    "title": "figure out which channel actually drove a conversion, not just which one got the last click",
+    "intentLabels": [
+      "multi-touch attribution",
+      "true ROAS by channel",
+      "cross-channel measurement"
+    ],
+    "tools": [
+      {
+        "name": "Northbeam",
+        "url": "https://www.cometly.com/post/ai-marketing-attribution-software"
+      },
+      {
+        "name": "Triple Whale"
+      }
+    ],
+    "workflowSummary": "Connect ad platforms and the client's store or CRM, let the platform model credit across every touchpoint using first-party and server-side tracking, and see true ROAS per channel instead of relying on each ad platform's own attribution.",
+    "samplePrompt": "Show me true multi-touch ROAS by channel for [Client] over the last 30 days, not last-click.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "set-up and interpretation benefit from some analytics background",
+    "trustScore": 4,
+    "pricingNote": "Custom pricing based on ad spend — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cometly.com/post/ai-marketing-attribution-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8d32bedc1e",
+    "slug": "prove-which-marketing-channels-are-actually-worth-the-client-s",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / client-facing strategist",
+    "title": "prove which marketing channels are actually worth the client's budget",
+    "intentLabels": [
+      "incrementality testing",
+      "budget shift recommendations",
+      "marketing mix modeling"
+    ],
+    "tools": [
+      {
+        "name": "SegmentStream",
+        "url": "https://segmentstream.com/blog/articles/best-attribution-tools"
+      },
+      {
+        "name": "HockeyStack"
+      }
+    ],
+    "workflowSummary": "Combine multi-touch attribution with incrementality testing (geo holdouts) so the agency isn't just re-weighting the same touchpoint data, and get automated budget-shift recommendations to defend in the next strategy review.",
+    "samplePrompt": "Which channel should we shift 10% more budget toward next month based on incremental impact, not just attributed conversions?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "incrementality testing is a more advanced concept to explain to clients",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://segmentstream.com/blog/articles/best-attribution-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-05",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f67ac8025e",
+    "slug": "manage-and-automate-ppc-campaigns-across-google-microsoft-and",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency PPC / paid search manager",
+    "title": "manage and automate PPC campaigns across Google, Microsoft, and Amazon Ads from one place",
+    "intentLabels": [
+      "cross-platform PPC automation",
+      "bid rules",
+      "PPC management software"
+    ],
+    "tools": [
+      {
+        "name": "Optmyzr",
+        "url": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers"
+      }
+    ],
+    "workflowSummary": "Build rule-based automations (bid changes, budget pacing, dayparting) alongside AI-driven recommendations, and use scripting for anything custom, instead of logging into 3 separate ad platforms to make the same kind of change.",
+    "samplePrompt": "Set up a rule across [Client]'s Google and Microsoft Ads campaigns to pause any keyword with CPA over $80 after 20 clicks with no conversion.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "rule-building is powerful but has a learning curve",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; Plus plan from $99/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.adstellar.ai/blog/ai-tools-for-media-buyers",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-18",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8a4cbd8930",
+    "slug": "translate-a-client-s-marketing-campaign-into-multiple-languages",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency account manager (multi-market clients)",
+    "title": "translate a client's marketing campaign into multiple languages while keeping brand terminology consistent",
+    "intentLabels": [
+      "AI translation",
+      "campaign localization",
+      "brand-consistent multilingual copy"
+    ],
+    "tools": [
+      {
+        "name": "Lokalise",
+        "url": "https://lokalise.com/blog/best-ai-translation-tools/"
+      },
+      {
+        "name": "Smartcat"
+      }
+    ],
+    "workflowSummary": "Ground the AI translation in the client's existing translation memory, glossary, and brand style rules rather than a generic translation, run QA checks automatically, then route anything flagged to a human reviewer instead of trusting a raw machine translation.",
+    "samplePrompt": "Translate this email campaign into Spanish, Portuguese, and Italian, keeping our brand terms ([list]) exactly as specified in the glossary, and flag anything you're not confident about.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://lokalise.com/blog/best-ai-translation-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-16",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-2cd4010145",
+    "slug": "dub-or-subtitle-a-client-s-video-ad-into-multiple-languages",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency video / creative team (multi-market clients)",
+    "title": "dub or subtitle a client's video ad into multiple languages without a studio",
+    "intentLabels": [
+      "AI video dubbing",
+      "multilingual subtitles",
+      "voice cloning localization"
+    ],
+    "tools": [
+      {
+        "name": "Synthesia",
+        "url": "https://www.companionlink.com/blog/2026/07/the-5-best-ai-video-translators-for-marketing-agencies-in-2026/",
+        "catalogueSlug": "synthesia"
+      },
+      {
+        "name": "Rask AI"
+      }
+    ],
+    "workflowSummary": "Upload the source video, generate lip-synced dubbed audio with voice cloning and automatic subtitles in 100+ languages, and keep the client's brand voice consistent across markets instead of booking separate voice actors and studio time per language.",
+    "samplePrompt": "Dub this 30-second product video into German, French, and Japanese with lip-sync, keeping the same voice tone as the English version.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.companionlink.com/blog/2026/07/the-5-best-ai-video-translators-for-marketing-agencies-in-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-17",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-e57de540d9",
+    "slug": "hand-campaign-execution-entirely-to-an-autonomous-ai-within-set",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency growth / paid media lead",
+    "title": "hand campaign execution entirely to an autonomous AI within set guardrails",
+    "intentLabels": [
+      "autonomous ad management",
+      "fully automated campaign optimization",
+      "AI-managed ad spend"
+    ],
+    "tools": [
+      {
+        "name": "Albert.ai",
+        "url": "https://www.cometly.com/post/ai-powered-ad-optimization-platform"
+      }
+    ],
+    "workflowSummary": "Set business objectives and budget parameters, then let the platform handle audience selection, creative testing, and bid management autonomously, continuously learning from performance data without waiting for manual approval on every change.",
+    "samplePrompt": "Manage this campaign's budget and targeting toward a $40 CPA goal within a $10k monthly cap, and alert me only if spend pace is more than 20% off target.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "meant for teams comfortable ceding real-time control over live ad spend",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.cometly.com/post/ai-powered-ad-optimization-platform",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-49b7b4c97d",
+    "slug": "get-a-plain-language-forecast-of-which-deals-are-likely-to",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency sales / business development lead",
+    "title": "get a plain-language forecast of which deals are likely to close this quarter",
+    "intentLabels": [
+      "AI revenue forecasting",
+      "deal risk flagging",
+      "pipeline health"
+    ],
+    "tools": [
+      {
+        "name": "Clari",
+        "url": "https://pipeline.zoominfo.com/sales/generative-ai-sales-tools"
+      }
+    ],
+    "workflowSummary": "Analyze CRM activity, sales calls, and customer interactions to predict revenue outcomes and flag at-risk deals, giving the team an early warning instead of finding out a deal stalled at the end of the quarter.",
+    "samplePrompt": "Which deals in our pipeline are most at risk of slipping to next quarter, and why?",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once there's enough CRM activity history to learn from",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://pipeline.zoominfo.com/sales/generative-ai-sales-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-07",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f4fee68c0a",
+    "slug": "build-a-self-serve-dashboard-clients-can-query-in-plain-english",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency owner / client-facing strategist",
+    "title": "build a self-serve dashboard clients can query in plain English instead of waiting on a report",
+    "intentLabels": [
+      "natural language analytics",
+      "self-serve BI",
+      "conversational dashboard"
+    ],
+    "tools": [
+      {
+        "name": "ThoughtSpot",
+        "url": "https://improvado.io/blog/ai-dashboard"
+      }
+    ],
+    "workflowSummary": "Connect the client's data sources and let them, or the account team, ask natural-language questions directly against the data, instead of building a new chart every time someone has a new question.",
+    "samplePrompt": "What were our top 3 highest-converting campaigns last month, and how does that compare to the month before?",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://improvado.io/blog/ai-dashboard",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-31",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-a3b147d53b",
+    "slug": "track-a-b2b-client-s-whole-buyer-journey-from-anonymous-website",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency B2B account manager",
+    "title": "track a B2B client's whole buyer journey from anonymous website visit to closed deal",
+    "intentLabels": [
+      "B2B revenue attribution",
+      "account journey mapping",
+      "full-funnel tracking"
+    ],
+    "tools": [
+      {
+        "name": "Dreamdata",
+        "url": "https://www.cometly.com/post/ai-marketing-attribution-software"
+      },
+      {
+        "name": "HockeyStack"
+      }
+    ],
+    "workflowSummary": "Automatically stitch together anonymous website visits, content downloads, demo requests, and sales activity into one account-level view, instead of manually piecing together which touchpoints influenced a long B2B sales cycle.",
+    "samplePrompt": "Show me every touchpoint for [Account Name] from their first website visit to their closed-won deal, and which content or channel had the biggest influence.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "designed for longer B2B sales cycles, less useful for quick-turn campaigns",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing based on ad spend/data volume — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.cometly.com/post/ai-marketing-attribution-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-08",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-fedd69e866",
+    "slug": "turn-a-product-url-into-a-ready-to-test-tiktok-video-ad",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency e-commerce / DTC social team",
+    "title": "turn a product URL into a ready-to-test TikTok video ad",
+    "intentLabels": [
+      "TikTok video ad generator",
+      "URL-to-video",
+      "UGC-style AI ad"
+    ],
+    "tools": [
+      {
+        "name": "Creatify",
+        "url": "https://www.trylapis.com/resources/best-ai-ad-generators-tiktok"
+      },
+      {
+        "name": "AdsTurbo"
+      }
+    ],
+    "workflowSummary": "Paste a product page URL, the AI generates a script with hook, benefits, and CTA, adds an AI avatar or voiceover, and auto-captions the video in TikTok's native vertical format — ready to launch as a Spark Ad without hiring a UGC creator.",
+    "samplePrompt": "Turn this product page [URL] into a 20-second TikTok video ad with an AI avatar presenter, a strong hook in the first 2 seconds, and burned-in captions.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Plans vary; several tools start around $20–$50/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.trylapis.com/resources/best-ai-ad-generators-tiktok",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-10",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-e877ba6da4",
+    "slug": "produce-a-batch-of-tiktok-shop-product-videos-quickly-across",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency TikTok Shop manager",
+    "title": "produce a batch of TikTok Shop product videos quickly across many SKUs",
+    "intentLabels": [
+      "TikTok Shop video generator",
+      "product video at scale",
+      "AI avatar presenter"
+    ],
+    "tools": [
+      {
+        "name": "Pippit",
+        "url": "https://www.nemovideo.com/blog/best-ai-tools-tiktok-shop-videos-2026"
+      },
+      {
+        "name": "TikTok Symphony Creative Studio"
+      }
+    ],
+    "workflowSummary": "Upload product photos, pick an AI avatar or styled presentation template, and generate a shoppable product video per SKU without booking a photo or video shoot for every item.",
+    "samplePrompt": "Generate a 15-second TikTok Shop product video for this item using these 5 photos [upload], styled like a model presentation with upbeat background music.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Symphony Creative Studio is free (TikTok native); Pippit has paid tiers — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.nemovideo.com/blog/best-ai-tools-tiktok-shop-videos-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026 (exact date not shown in source)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-3023b96474",
+    "slug": "research-which-products-or-creators-are-trending-on-tiktok-shop",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency TikTok performance manager",
+    "title": "research which products or creators are trending on TikTok Shop before pitching a campaign",
+    "intentLabels": [
+      "TikTok Shop trend research",
+      "product research tool",
+      "creator trend tracking"
+    ],
+    "tools": [
+      {
+        "name": "Kalodata",
+        "url": "https://www.nexscope.ai/blog/ai-tools-for-tiktok-shop"
+      }
+    ],
+    "workflowSummary": "Pull research across products, shops, creators, videos, livestreams, and categories to spot a genuinely rising trend rather than a short spike, before recommending it to a client as a campaign angle.",
+    "samplePrompt": "Show me the top 10 rising products in [category] on TikTok Shop this week, with enough sales volume and creator activity to suggest sustained demand.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful signal, but still needs judgment on what's a real trend vs. a spike",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.nexscope.ai/blog/ai-tools-for-tiktok-shop",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-15",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-aba85734e9",
+    "slug": "write-and-test-linkedin-ad-copy-for-a-b2b-campaign",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency B2B paid social manager",
+    "title": "write and test LinkedIn ad copy for a B2B campaign",
+    "intentLabels": [
+      "LinkedIn ad copy generator",
+      "B2B ad copywriting",
+      "ad variation testing"
+    ],
+    "tools": [
+      {
+        "name": "Hypotenuse",
+        "url": "https://www.factors.ai/blog/best-ai-tools-for-linkedin-advertising"
+      }
+    ],
+    "workflowSummary": "Generate multiple ad copy variations based on topic, tone, and target audience, then test which version performs best instead of writing one version and hoping it lands.",
+    "samplePrompt": "Write 5 LinkedIn ad copy variations for a webinar promoting [topic], targeting VPs of Marketing at mid-size B2B SaaS companies.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Starts at $19/month with a free trial — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.factors.ai/blog/best-ai-tools-for-linkedin-advertising",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f5f11444c9",
+    "slug": "figure-out-which-website-visitors-are-from-target-accounts",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency B2B growth marketer",
+    "title": "figure out which website visitors are from target accounts before running an ABM campaign",
+    "intentLabels": [
+      "ABM account identification",
+      "website visitor ID",
+      "intent signal tracking"
+    ],
+    "tools": [
+      {
+        "name": "Factors.ai",
+        "url": "https://www.factors.ai/blog/best-ai-tools-for-linkedin-advertising"
+      }
+    ],
+    "workflowSummary": "Identify anonymous website visitors and match them to target accounts, combine intent signals with LinkedIn ad targeting, and align paid, outreach, and content around the same account list instead of running ads blind.",
+    "samplePrompt": "Show me which accounts on our target list visited the site this week and what pages they looked at.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once a target account list already exists",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.factors.ai/blog/best-ai-tools-for-linkedin-advertising",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-28",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-3469b4a1c5",
+    "slug": "automate-linkedin-ad-experimentation-instead-of-manually",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency B2B paid media manager",
+    "title": "automate LinkedIn ad experimentation instead of manually building every test",
+    "intentLabels": [
+      "ad experimentation automation",
+      "B2B A/B testing at scale",
+      "campaign optimization platform"
+    ],
+    "tools": [
+      {
+        "name": "Metadata.io",
+        "url": "https://ivristech.com/best-linkedin-ads-tools-agencies/"
+      }
+    ],
+    "workflowSummary": "Define the audiences, creative, and budget, and let the platform automatically run and iterate on ad experiments across LinkedIn and other B2B channels, surfacing the winning combination instead of manually building each A/B test.",
+    "samplePrompt": "Run an experiment testing 3 audience segments and 4 ad creatives for this LinkedIn campaign and tell me which combination is winning after a week.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires clear audience and creative inputs upfront",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://ivristech.com/best-linkedin-ads-tools-agencies/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-02",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-1c2fe8fef2",
+    "slug": "automate-bid-and-budget-management-for-a-client-s-amazon-ppc",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency e-commerce / Amazon marketplace manager",
+    "title": "automate bid and budget management for a client's Amazon PPC campaigns",
+    "intentLabels": [
+      "Amazon PPC automation",
+      "bid management",
+      "ACoS optimization"
+    ],
+    "tools": [
+      {
+        "name": "Optmyzr (Amazon Ads)",
+        "url": "https://www.designrush.com/agency/paid-media-pay-per-click/trends/ai-ppc-tools"
+      },
+      {
+        "name": "Perpetua"
+      }
+    ],
+    "workflowSummary": "Connect the client's Seller or Vendor Central account, let the AI adjust bids toward a target ACoS and reallocate budget across Sponsored Products, Brands, and Display automatically, instead of manually checking bids every day.",
+    "samplePrompt": "Manage this Amazon campaign toward a 20% ACoS target and pause any keyword with 15+ clicks and no sales in the last 14 days.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs an ACoS target and some Amazon Ads familiarity to set up well",
+    "trustScore": 4,
+    "pricingNote": "Percentage-of-spend or subscription pricing common in this category — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.designrush.com/agency/paid-media-pay-per-click/trends/ai-ppc-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-12-11 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-c475c74947",
+    "slug": "create-and-launch-hundreds-of-amazon-ad-campaigns-quickly-for-a",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency Amazon marketplace manager",
+    "title": "create and launch hundreds of Amazon ad campaigns quickly for a large catalog",
+    "intentLabels": [
+      "bulk Amazon campaign creation",
+      "catalog-scale PPC",
+      "automated campaign builder"
+    ],
+    "tools": [
+      {
+        "name": "AiHello",
+        "url": "https://www.aihello.com/resources/blog/amazon-ppc-software-tools/"
+      }
+    ],
+    "workflowSummary": "Let the AI create and automate ad campaigns at scale across a large product catalog, optimizing toward a target ACoS, instead of manually building a campaign for every SKU.",
+    "samplePrompt": "Create Amazon Sponsored Products campaigns for all 40 SKUs in this catalog, structured by category, targeting a 25% ACoS.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Positioned as less expensive than most PPC software tools in this category — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.aihello.com/resources/blog/amazon-ppc-software-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-07-14",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-1396fb01a5",
+    "slug": "get-a-unified-view-of-a-client-s-amazon-ppc-seo-and-buy-box",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency Amazon marketplace manager",
+    "title": "get a unified view of a client's Amazon PPC, SEO, and Buy Box status in one place",
+    "intentLabels": [
+      "Amazon account health dashboard",
+      "ads and SEO integration",
+      "Buy Box monitoring"
+    ],
+    "tools": [
+      {
+        "name": "SalesDuo",
+        "url": "https://salesduo.com/blog/amazon-ppc-management-tools/"
+      }
+    ],
+    "workflowSummary": "Integrate advertising performance with SEO rankings and Buy Box monitoring so budget decisions account for the whole account picture, not just ad metrics in isolation.",
+    "samplePrompt": "Show me how [Client]'s ad spend correlates with organic ranking changes and Buy Box win rate over the last 30 days.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful for accounts with enough sales history to show correlation",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://salesduo.com/blog/amazon-ppc-management-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-27",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-f2d0ab83d2",
+    "slug": "keep-a-client-s-business-listings-accurate-and-consistent",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency local SEO manager (multi-location / franchise clients)",
+    "title": "keep a client's business listings accurate and consistent across dozens of locations",
+    "intentLabels": [
+      "multi-location listings management",
+      "bulk NAP updates",
+      "directory sync"
+    ],
+    "tools": [
+      {
+        "name": "Yext",
+        "url": "https://www.guideflow.com/blog/local-listing-management-software-tools"
+      },
+      {
+        "name": "Moz Local"
+      }
+    ],
+    "workflowSummary": "Push name, address, phone, and hours updates from one dashboard out to every directory and map platform at once, instead of manually updating each location's Google Business Profile, Yelp, and other listings one at a time.",
+    "samplePrompt": "Update holiday hours for all 40 [Client] locations across every connected directory at once.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free (Google Business Profile) up to $500+/month for enterprise multi-location platforms — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.guideflow.com/blog/local-listing-management-software-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-08-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-6628bc17d2",
+    "slug": "keep-a-client-s-google-business-profile-active-with-regular",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency local SEO / reputation manager",
+    "title": "keep a client's Google Business Profile active with regular posts and fast review replies at scale",
+    "intentLabels": [
+      "GBP posting automation",
+      "AI review response",
+      "multi-location reputation management"
+    ],
+    "tools": [
+      {
+        "name": "SOCi",
+        "url": "https://localith.ai/blog/best-google-business-profile-management-tools/"
+      },
+      {
+        "name": "Birdeye"
+      }
+    ],
+    "workflowSummary": "Use AI to draft Google Business posts and suggest or send review responses within hours instead of days, and flag profile issues like missing categories or outdated photos across a portfolio of client locations from one dashboard.",
+    "samplePrompt": "Draft a reply to this 3-star review for [Client]'s [Location] branch, acknowledging the complaint about [issue] and inviting them back.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://localith.ai/blog/best-google-business-profile-management-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-04-29",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-8191620ed7",
+    "slug": "audit-google-business-profile-completeness-and-flag-what-s",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency local SEO manager",
+    "title": "audit Google Business Profile completeness and flag what's hurting a client's local ranking",
+    "intentLabels": [
+      "GBP audit",
+      "local SEO checklist",
+      "ranking factor review"
+    ],
+    "tools": [
+      {
+        "name": "Whitespark",
+        "url": "https://gmbmantra.ai/blogs/top-10-seo-tools-for-google-my-business-management"
+      },
+      {
+        "name": "BrightLocal"
+      }
+    ],
+    "workflowSummary": "Run an audit against known local ranking factors (categories, hours, photos, review recency), and get a prioritized fix list instead of manually comparing a profile against best practices.",
+    "samplePrompt": "Audit [Client]'s Google Business Profile against local SEO best practices and give me the top 5 fixes that would most improve ranking.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://gmbmantra.ai/blogs/top-10-seo-tools-for-google-my-business-management",
+    "sourceType": "Blog/Guide",
+    "freshness": "2025-10-08 (older source — re-verify before publishing)",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-443287a00b",
+    "slug": "run-and-optimize-ad-campaigns-across-both-meta-and-tiktok",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency cross-platform paid social manager",
+    "title": "run and optimize ad campaigns across both Meta and TikTok without switching tools",
+    "intentLabels": [
+      "cross-platform ad management",
+      "unified Meta and TikTok execution",
+      "multi-channel paid social"
+    ],
+    "tools": [
+      {
+        "name": "Hyper",
+        "url": "https://www.hyperfx.ai/blog/best-ai-tools-for-meta-and-tiktok-ads-2026"
+      }
+    ],
+    "workflowSummary": "Manage execution across both platforms from one interface, layering in dedicated creative-generation tools for variant supply, instead of learning and logging into each platform's native ad manager separately.",
+    "samplePrompt": "Launch this campaign across both Meta and TikTok with platform-appropriate creative variants and a shared budget cap.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "cross-platform execution tools still benefit from paid media experience",
+    "trustScore": 3,
+    "pricingNote": "Not stated in source — verify directly before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.hyperfx.ai/blog/best-ai-tools-for-meta-and-tiktok-ads-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-05-17",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-4c9d335d52",
+    "slug": "get-set-and-forget-amazon-ppc-bid-automation-without-paying",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency Amazon marketplace manager",
+    "title": "get set-and-forget Amazon PPC bid automation without paying agency-level fees",
+    "intentLabels": [
+      "flat-fee Amazon PPC automation",
+      "set-and-forget bid management",
+      "budget-friendly PPC tool"
+    ],
+    "tools": [
+      {
+        "name": "Daniks.AI",
+        "url": "https://daniks.ai/blog/best-amazon-ppc-tools-2026"
+      }
+    ],
+    "workflowSummary": "Automate daily bid and budget management toward a target ACoS at a flat, transparent cost instead of a percentage of ad spend, useful for accounts under $100K/month where a dedicated tool tends to outperform an agency retainer on cost.",
+    "samplePrompt": "Set this account to auto-manage bids toward a 22% ACoS with daily adjustments.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Transparent flat pricing (vs. agencies charging 10–15% of spend); exact figure not stated — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://daniks.ai/blog/best-amazon-ppc-tools-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-03-14",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "marketing-agencies-1aeedeed58",
+    "slug": "enhance-and-clean-up-tiktok-shop-product-photos-without-a-studio",
+    "kind": "workflow",
+    "niche": "Marketing Agencies",
+    "sector": "Marketing Agencies",
+    "persona": "Agency TikTok content producer",
+    "title": "enhance and clean up TikTok Shop product photos without a studio",
+    "intentLabels": [
+      "AI product photo editing",
+      "background removal",
+      "TikTok Shop image formatting"
+    ],
+    "tools": [
+      {
+        "name": "Rewarx Photography Studio",
+        "url": "https://www.rewarx.com/blogs/top-15-best-ai-tiktok-shop-creative-tools-in-h1-2026"
+      }
+    ],
+    "workflowSummary": "Upload raw product photos, let AI adjust lighting, remove backgrounds, and apply consistent color correction matching brand guidelines, then export in TikTok Shop-compatible formats — instead of booking studio time for every SKU.",
+    "samplePrompt": "Clean up these product photos [upload]: remove the background, fix the lighting for consistency, and export them in TikTok Shop's recommended format.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier available — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.rewarx.com/blogs/top-15-best-ai-tiktok-shop-creative-tools-in-h1-2026",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026-06-12",
+    "accessNotes": "Public blog article, no login required. Used for internal research reference only — verify tool claims directly with the vendor before publishing to end users.",
+    "batch": "Marketing Agencies AI Workflows Batch5",
+    "status": "active"
+  }
+]

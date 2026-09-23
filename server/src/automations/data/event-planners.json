@@ -1,0 +1,2111 @@
+[
+  {
+    "id": "event-planners-bd2846bab9",
+    "slug": "find-a-venue-for-a-150-person-conference-near-me",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Independent planner sourcing a venue for a client",
+    "title": "find a venue for a 150-person conference near me",
+    "intentLabels": [
+      "venue search",
+      "venue sourcing",
+      "find event space",
+      "book a venue",
+      "venue RFP"
+    ],
+    "tools": [
+      {
+        "name": "Cvent Supplier Network",
+        "url": "https://www.cvent.com/en/event-marketing-management/cvent-supplier-network"
+      }
+    ],
+    "workflowSummary": "Type in your event size, dates, and city; the tool searches a database of hundreds of thousands of hotels and venues, lets you filter results, and sends one request for proposal to multiple venues at once so you can compare replies in one place.",
+    "samplePrompt": "I need a venue in [city] for a 150-guest conference on [date], with AV support and breakout rooms, under $10,000. Show me matching venues and help me send an RFP to the top 5.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "guided search, no special skills needed, free to browse",
+    "trustScore": 4,
+    "pricingNote": "Free to search and send RFPs; paid enterprise tier for advanced sourcing features — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.cvent.com/en/event-marketing-management/cvent-supplier-network",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; requires free signup to send RFPs",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-af71d35599",
+    "slug": "build-a-website-for-my-event-without-hiring-a-designer",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Solo planner or venue building a client-facing event site",
+    "title": "build a website for my event without hiring a designer",
+    "intentLabels": [
+      "event website builder",
+      "event landing page",
+      "no-code event site"
+    ],
+    "tools": [
+      {
+        "name": "RSVPify Event Website Builder",
+        "url": "https://rsvpify.com/event-website-builder/"
+      }
+    ],
+    "workflowSummary": "Choose a template, add your event details — date, schedule, sponsors, photos — and the builder assembles a mobile-friendly site with RSVP and ticketing already built in, no coding required.",
+    "samplePrompt": "Build me an event website for [event name] on [date] with an agenda page, speaker bios, and an RSVP form.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans scale with guest list size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://rsvpify.com/event-website-builder/",
+    "sourceType": "Product page",
+    "freshness": "December 2, 2025",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-857ff090a6",
+    "slug": "design-an-invitation-or-poster-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or host needing branded invitations, posters, or social graphics",
+    "title": "design an invitation or poster for my event",
+    "intentLabels": [
+      "event invitation design",
+      "event flyer maker",
+      "AI graphic design for events"
+    ],
+    "tools": [
+      {
+        "name": "Canva Magic Studio (Magic Design)",
+        "url": "https://plusheventplanning.com/ai-event-planning-tools-2026/"
+      }
+    ],
+    "workflowSummary": "Describe the event or upload a photo, and the AI suggests ready-made layouts, graphics, and copy that you can edit and export as a poster, invitation, or social media post.",
+    "samplePrompt": "Create an elegant invitation for a [event type] on [date] at [venue], in [color scheme], with RSVP details included.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier with limited exports; Canva Pro roughly $120/year — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://plusheventplanning.com/ai-event-planning-tools-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "October 27, 2025",
+    "accessNotes": "Third-party blog mentioning the product; verify current features on Canva's own site before publishing",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-67735c9a83",
+    "slug": "create-a-proposal-my-client-can-sign-and-pay-a-deposit-on",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Independent planner sending proposals to clients",
+    "title": "create a proposal my client can sign and pay a deposit on",
+    "intentLabels": [
+      "event proposal generator",
+      "e-signature proposal",
+      "client contract"
+    ],
+    "tools": [
+      {
+        "name": "PandaDoc",
+        "url": "https://www.usecarly.com/blog/best-ai-tools-event-planners/"
+      }
+    ],
+    "workflowSummary": "Fill in your event details and pricing in a branded template; AI helps draft the wording, and the client can view, e-sign, and pay a deposit directly from the same document.",
+    "samplePrompt": "Draft a proposal for a [event type] on [date], listing my package prices and a 30% deposit due on signing.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "templates help, but connecting payments/e-sign needs light setup",
+    "trustScore": 4,
+    "pricingNote": "Free e-sign tier; paid plans roughly $19–$49 per seat/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.usecarly.com/blog/best-ai-tools-event-planners/",
+    "sourceType": "Blog/Guide",
+    "freshness": "June 15, 2026",
+    "accessNotes": "Third-party comparison blog; verify current pricing on PandaDoc's own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-dd331bb94b",
+    "slug": "write-a-vendor-outreach-email-asking-for-pricing",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner emailing multiple vendors for quotes",
+    "title": "write a vendor outreach email asking for pricing",
+    "intentLabels": [
+      "vendor email template",
+      "vendor outreach",
+      "RFP email draft"
+    ],
+    "tools": [
+      {
+        "name": "ChatGPT",
+        "url": "https://onyxranked.com/best-ai-tools-for-event-planners-2026/",
+        "catalogueSlug": "chatgpt"
+      }
+    ],
+    "workflowSummary": "Describe your event and what you need from the vendor; the AI drafts a clear, professional outreach email you can send as-is or lightly edit per vendor.",
+    "samplePrompt": "Write a short, friendly email to a florist asking for a quote on centerpieces for a 120-guest wedding on [date], mentioning our budget range and style.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid plans from roughly $20/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://onyxranked.com/best-ai-tools-for-event-planners-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 4, 2026",
+    "accessNotes": "Third-party comparison blog; ChatGPT itself is a well-known public product",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-7a4352c1c1",
+    "slug": "create-a-run-of-show-event-timeline",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner building a day-of schedule for their team",
+    "title": "create a run of show / event timeline",
+    "intentLabels": [
+      "event timeline generator",
+      "run of show",
+      "day-of schedule",
+      "event project plan"
+    ],
+    "tools": [
+      {
+        "name": "ClickUp AI",
+        "url": "https://plusheventplanning.com/ai-event-planning-tools-2026/"
+      }
+    ],
+    "workflowSummary": "Describe the event and its moving parts; the AI assistant breaks it into a structured task list with timing, owners, and dependencies that you can adjust as plans change.",
+    "samplePrompt": "Plan a 100-person company offsite in [city] for Q3 with team-building, workshops, and a dinner event, and create a task timeline with owners.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "powerful, but project-management features take a bit to learn",
+    "trustScore": 3,
+    "pricingNote": "Free tier limited; paid plans vary by seat count — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://plusheventplanning.com/ai-event-planning-tools-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "October 27, 2025",
+    "accessNotes": "Third-party blog; verify current AI features on ClickUp's own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-2fad6eb603",
+    "slug": "track-rsvps-and-send-reminders-automatically",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner managing guest responses",
+    "title": "track RSVPs and send reminders automatically",
+    "intentLabels": [
+      "RSVP management",
+      "guest tracking",
+      "automated reminders"
+    ],
+    "tools": [
+      {
+        "name": "RSVPify",
+        "url": "https://rsvpify.com/event-website-builder/"
+      }
+    ],
+    "workflowSummary": "Guests RSVP through a branded form; the platform tracks responses in a live dashboard and automatically sends reminder emails to anyone who hasn't replied yet.",
+    "samplePrompt": "Set up an RSVP form for [event] with a plus-one option and meal choice, and remind non-responders a week before the deadline.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier for small guest lists; paid plans scale with guest count — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://rsvpify.com/event-website-builder/",
+    "sourceType": "Product page",
+    "freshness": "December 2, 2025",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-fe28da0018",
+    "slug": "build-a-seating-chart-that-keeps-certain-guests-together-or",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Wedding or event planner assigning tables",
+    "title": "build a seating chart that keeps certain guests together or apart",
+    "intentLabels": [
+      "seating chart maker",
+      "table assignment tool",
+      "wedding seating plan"
+    ],
+    "tools": [
+      {
+        "name": "SeatPlan.io",
+        "url": "https://seatplan.io/wedding-seating-chart"
+      }
+    ],
+    "workflowSummary": "Import your guest list, set rules like 'keep families together' or note dietary and accessibility needs, then drag guests onto tables. AI can also turn a photo of the venue floor plan into an editable layout to start from.",
+    "samplePrompt": "Import my 180-guest list and arrange them into 20 round tables of 8–10, keeping the Smith and Jones families together and separating [specific guests].",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free designer with limited exports; paid Event Manager plan needed for PDF/Excel export — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://seatplan.io/wedding-seating-chart",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-3346894f0c",
+    "slug": "create-a-post-event-feedback-survey",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner collecting attendee feedback after an event",
+    "title": "create a post-event feedback survey",
+    "intentLabels": [
+      "attendee feedback form",
+      "post-event survey",
+      "event NPS"
+    ],
+    "tools": [
+      {
+        "name": "Typeform AI",
+        "url": "https://www.typeform.com/use-case/event-feedback"
+      }
+    ],
+    "workflowSummary": "Describe the event and the AI drafts a short, conversational survey; responses come back with sentiment analysis so you can quickly see what worked and what didn't.",
+    "samplePrompt": "Create a 5-question post-event feedback survey for a corporate conference, asking about session quality, venue, and likelihood to attend next year.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limited monthly responses; paid plans from roughly $25/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.typeform.com/use-case/event-feedback",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-ab0b350603",
+    "slug": "generate-name-badges-for-all-my-attendees-automatically",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner registering and printing badges for a large event",
+    "title": "generate name badges for all my attendees automatically",
+    "intentLabels": [
+      "name badge generator",
+      "attendee badge printing",
+      "conference badges"
+    ],
+    "tools": [
+      {
+        "name": "Whova",
+        "url": "https://whova.com/event-management-software/name-badge-generation/"
+      }
+    ],
+    "workflowSummary": "Upload your attendee list and the platform auto-populates each person's badge with name, company, and title — you can print all of them, or just the newest sign-ups, on demand.",
+    "samplePrompt": "Generate name badges for all 300 registered attendees, showing name, company, and job title, and flag which ones haven't been printed yet.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Bundled with Whova event management plans — verify current pricing before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://whova.com/event-management-software/name-badge-generation/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-c5a16f08b6",
+    "slug": "get-a-summary-and-action-items-from-my-planning-call",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running a post-event or vendor debrief call",
+    "title": "get a summary and action items from my planning call",
+    "intentLabels": [
+      "meeting transcription",
+      "call summary",
+      "action item extraction"
+    ],
+    "tools": [
+      {
+        "name": "Fireflies.ai",
+        "url": "https://www.success.com/ai-meeting-notes-tools-compared-otter-vs-fireflies-vs-grain"
+      }
+    ],
+    "workflowSummary": "The tool joins your call, transcribes it, and generates a summary with action items and speaker-by-speaker notes that you can search later or share with your team.",
+    "samplePrompt": "Summarize today's vendor debrief call into key decisions and action items, and note who owns each follow-up.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier with unlimited transcription but limited AI summaries; paid plans from roughly $10/user/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.success.com/ai-meeting-notes-tools-compared-otter-vs-fireflies-vs-grain",
+    "sourceType": "Blog/Guide",
+    "freshness": "March 25, 2026",
+    "accessNotes": "Third-party comparison blog; verify current pricing on Fireflies' own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-4c224b5294",
+    "slug": "set-up-a-chatbot-to-answer-attendee-questions-about-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner fielding repetitive attendee questions",
+    "title": "set up a chatbot to answer attendee questions about my event",
+    "intentLabels": [
+      "event FAQ chatbot",
+      "attendee support bot",
+      "event Q&A assistant"
+    ],
+    "tools": [
+      {
+        "name": "Tidio",
+        "url": "https://www.aiforevents.co/blog/ai-chatbots-for-events"
+      }
+    ],
+    "workflowSummary": "Upload your event FAQ, schedule, and venue info; the chatbot answers common attendee questions on your event website around the clock, cutting down on repetitive emails.",
+    "samplePrompt": "Train a chatbot on my event FAQ, schedule, and venue directions so attendees can ask questions and get instant answers on my event page.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "needs a well-written FAQ document to train on first",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans scale with conversation volume — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.aiforevents.co/blog/ai-chatbots-for-events",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 8, 2026",
+    "accessNotes": "Third-party guide; verify current features and pricing on Tidio's own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-9fe9a4b656",
+    "slug": "plan-a-catering-menu-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner arranging catering for a client event",
+    "title": "plan a catering menu for my event",
+    "intentLabels": [
+      "catering menu planner",
+      "event food quote",
+      "dietary-friendly menu"
+    ],
+    "tools": [
+      {
+        "name": "CaterAi (by Zerocater)",
+        "url": "https://zerocater.com/cater-ai/"
+      }
+    ],
+    "workflowSummary": "Chat with the tool about your headcount, budget, and dietary needs; it curates a custom menu from local restaurants and caterers, and can also help arrange staffing and delivery.",
+    "samplePrompt": "Plan a lunch menu for 80 people with 15 vegetarian and 5 gluten-free options, budget $20/person, delivered by 12pm.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing per event based on menu, staffing, and equipment — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://zerocater.com/cater-ai/",
+    "sourceType": "Product page",
+    "freshness": "August 4, 2026",
+    "accessNotes": "Public product page; currently available in 12 North American cities",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-06e6feaf85",
+    "slug": "edit-hundreds-of-event-photos-quickly-and-consistently",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Event photographer or planner delivering photos quickly",
+    "title": "edit hundreds of event photos quickly and consistently",
+    "intentLabels": [
+      "batch photo editing",
+      "event photo culling",
+      "fast photo delivery"
+    ],
+    "tools": [
+      {
+        "name": "Imagen AI",
+        "url": "https://imagen-ai.com/valuable-tips/best-ai-event-photo-editing-software-2026/"
+      }
+    ],
+    "workflowSummary": "Upload your raw event photos; the AI learns your editing style from past work and applies consistent color, exposure, and retouching across the whole gallery in minutes instead of days.",
+    "samplePrompt": "Batch-edit these 800 conference photos to match my usual style — clean white balance, no harsh shadows — and flag any blurry or duplicate shots.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most useful once you already have a personal editing style/catalog to train on",
+    "trustScore": 4,
+    "pricingNote": "Pay-as-you-go from roughly $0.22/photo; free 250-photo trial — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://imagen-ai.com/valuable-tips/best-ai-event-photo-editing-software-2026/",
+    "sourceType": "Blog/Guide",
+    "freshness": "3 weeks ago (accessed September 2026)",
+    "accessNotes": "Third-party roundup published by the tool's own company; verify pricing on Imagen's site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-9b8c6a8495",
+    "slug": "help-attendees-find-the-right-people-to-network-with",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Conference organizer who wants attendees to network well",
+    "title": "help attendees find the right people to network with",
+    "intentLabels": [
+      "attendee matchmaking",
+      "networking recommendations",
+      "1:1 meeting scheduling"
+    ],
+    "tools": [
+      {
+        "name": "Brella",
+        "url": "https://www.unite.ai/best-ai-tools-for-event-planning/"
+      }
+    ],
+    "workflowSummary": "Attendees set their goals and interests; the AI recommends relevant people, sessions, and exhibitors to them and lets them book 1:1 meetings directly in the event app.",
+    "samplePrompt": "Set up AI-matched networking for my 500-attendee conference so people can find and book meetings with relevant peers and sponsors.",
+    "beginnerFriendly": "no",
+    "beginnerNote": "platform-level setup, best suited to larger conferences with organizer support",
+    "trustScore": 4,
+    "pricingNote": "Custom / quote-based pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.unite.ai/best-ai-tools-for-event-planning/",
+    "sourceType": "Blog/Guide",
+    "freshness": "1 month ago (accessed September 2026)",
+    "accessNotes": "Third-party review site; verify current features on Brella's own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-a27d860669",
+    "slug": "create-a-sponsorship-pitch-deck-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or organizer seeking event sponsors",
+    "title": "create a sponsorship pitch deck for my event",
+    "intentLabels": [
+      "sponsorship proposal",
+      "sponsor deck generator",
+      "pitch sponsors"
+    ],
+    "tools": [
+      {
+        "name": "Storydoc",
+        "url": "https://www.storydoc.com/templates/event-sponsorship-pitch-deck"
+      }
+    ],
+    "workflowSummary": "Start from a sponsorship deck template and describe your event and target sponsor; the AI drafts the content, design, and audience stats, which you can refine and send as a trackable link.",
+    "samplePrompt": "Create a sponsorship pitch deck for my [event type], including audience demographics, sponsorship package tiers, and past event success stories.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free templates; paid plans required for full AI generation and analytics — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.storydoc.com/templates/event-sponsorship-pitch-deck",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-92823ea78b",
+    "slug": "turn-my-event-plan-into-a-task-list-my-team-can-follow",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Internal event coordinator managing a planning team",
+    "title": "turn my event plan into a task list my team can follow",
+    "intentLabels": [
+      "event project management",
+      "task tracking",
+      "team coordination"
+    ],
+    "tools": [
+      {
+        "name": "Monday.com AI",
+        "url": "https://superdots.sh/blog/ai-event-planning-tools/"
+      }
+    ],
+    "workflowSummary": "Describe the event in plain language and the AI project assistant generates a structured project with tasks, subtasks, dependencies, and suggested owners that your team can update as things progress.",
+    "samplePrompt": "Plan a 100-person company holiday party for December, including venue booking, catering, entertainment, and decor, and break it into tasks with deadlines.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "easy to generate the plan, more setup to fully use as ongoing project management",
+    "trustScore": 3,
+    "pricingNote": "Free tier for small teams; paid plans from roughly $9–$19 per seat/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://superdots.sh/blog/ai-event-planning-tools/",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 6, 2026",
+    "accessNotes": "Third-party comparison blog; verify current pricing on Monday.com's own site",
+    "batch": "EventPlanners AI Workflows Batch1",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-aa0448430c",
+    "slug": "estimate-my-event-budget-before-i-book-anything",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner estimating costs before committing to vendors",
+    "title": "estimate my event budget before I book anything",
+    "intentLabels": [
+      "event budget calculator",
+      "budget estimator",
+      "cost breakdown generator"
+    ],
+    "tools": [
+      {
+        "name": "NavioHQ AI Event Budget Planner",
+        "url": "https://naviohq.com/finance/event-budget-planner"
+      }
+    ],
+    "workflowSummary": "Enter your event scale, venue type, catering needs, and entertainment plans; the AI generates a few budget variants with category-by-category cost breakdowns, a DIY-vs-hired comparison, and a planning checklist.",
+    "samplePrompt": "Estimate a budget for a 120-person corporate holiday party in [city], including venue, catering, entertainment, and decor, and show me DIY vs. hired cost options.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no sign-up required",
+    "trustScore": 3,
+    "pricingNote": "100% free, no account needed — verify current features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://naviohq.com/finance/event-budget-planner",
+    "sourceType": "Product page",
+    "freshness": "April 21, 2026",
+    "accessNotes": "Public free tool; no login required",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-63728a40ac",
+    "slug": "review-a-vendor-contract-before-i-sign-it",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner reviewing a vendor or venue contract before signing",
+    "title": "review a vendor contract before I sign it",
+    "intentLabels": [
+      "contract review",
+      "contract summary",
+      "flag risky contract terms"
+    ],
+    "tools": [
+      {
+        "name": "Adobe Acrobat AI Assistant",
+        "url": "https://www.adobe.com/in/acrobat/roc/blog/ai-contract-analysis-review.html"
+      }
+    ],
+    "workflowSummary": "Upload the contract PDF and ask the assistant to summarize key terms — payment schedule, cancellation policy, liability — so you can spot anything unusual before you sign, without reading every page line by line.",
+    "samplePrompt": "Summarize this vendor contract's payment schedule, cancellation policy, and any clauses that seem unusual, in plain language.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "good for a first pass, but a real legal review still matters for high-value contracts",
+    "trustScore": 4,
+    "pricingNote": "Included with Acrobat plans from roughly $19.99/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.adobe.com/in/acrobat/roc/blog/ai-contract-analysis-review.html",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026",
+    "accessNotes": "Published by Adobe; verify current AI Assistant features on Adobe's own product page",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-37643e16d1",
+    "slug": "build-a-shift-schedule-for-my-event-day-staff-and-volunteers",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner building a shift schedule for event-day staff and volunteers",
+    "title": "build a shift schedule for my event-day staff and volunteers",
+    "intentLabels": [
+      "event staff scheduling",
+      "volunteer shift planner",
+      "workforce schedule"
+    ],
+    "tools": [
+      {
+        "name": "eventpage.ai (AI workforce scheduling)",
+        "url": "https://eventpage.ai/en/en-blog-event-staff-scheduling-ai/"
+      }
+    ],
+    "workflowSummary": "Give it your list of available staff/volunteers and the roles that need covering; it proposes a shift schedule in seconds and automatically flags conflicts, like someone double-booked across two areas.",
+    "samplePrompt": "I have 18 volunteers available for a 500-guest conference. Build a shift schedule covering entrance, info desk, and catering support, and flag any scheduling conflicts.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "useful once you've listed availability, but needs accurate input data first",
+    "trustScore": 3,
+    "pricingNote": "Pricing tied to eventpage.ai platform plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://eventpage.ai/en/en-blog-event-staff-scheduling-ai/",
+    "sourceType": "Blog/Guide",
+    "freshness": "August 4, 2026",
+    "accessNotes": "Published by the tool's own company; verify current pricing on eventpage.ai's site",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-62ffdc1826",
+    "slug": "design-a-room-layout-with-av-staging-and-booth-placement",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner designing a room layout with AV, staging, or booths",
+    "title": "design a room layout with AV, staging, and booth placement",
+    "intentLabels": [
+      "event floor plan software",
+      "AV layout tool",
+      "booth placement designer"
+    ],
+    "tools": [
+      {
+        "name": "vFairs Event Floor Plan Builder",
+        "url": "https://www.vfairs.com/features/floor-plan-builder/"
+      }
+    ],
+    "workflowSummary": "Drag and drop tables, stages, and booths onto a to-scale digital floor plan; the builder helps you allocate exhibit space, visualize the full venue layout in real time, and share it with your AV or production team.",
+    "samplePrompt": "Design a floor plan for a 40-booth trade show, with a keynote stage, registration area, and networking lounge, and let me save different layout versions.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Pricing tied to vFairs platform plans, typically quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.vfairs.com/features/floor-plan-builder/",
+    "sourceType": "Product page",
+    "freshness": "April 10, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-f3e71b2f8b",
+    "slug": "set-up-self-service-check-in-so-guests-don-t-wait-in-line",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running on-site registration for a large event",
+    "title": "set up self-service check-in so guests don't wait in line",
+    "intentLabels": [
+      "event check-in kiosk",
+      "self-service badge printing",
+      "registration kiosk"
+    ],
+    "tools": [
+      {
+        "name": "Eventleaf Self Check-In Kiosk",
+        "url": "https://www.eventleaf.com/event-management-platform/self-check-in-kiosk"
+      }
+    ],
+    "workflowSummary": "Attendees scan a QR code or search their name at a kiosk, confirm or correct their details, and get a badge printed on the spot — including walk-ins who never pre-registered.",
+    "samplePrompt": "Set up a self check-in kiosk for my 300-person conference that prints a badge automatically and lets walk-ins register on the spot.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Bundled with Eventleaf event management plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.eventleaf.com/event-management-platform/self-check-in-kiosk",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-4e7b8e8373",
+    "slug": "track-my-rental-equipment-and-inventory-across-events",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Event rental company or planner tracking equipment across events",
+    "title": "track my rental equipment and inventory across events",
+    "intentLabels": [
+      "rental inventory tracker",
+      "equipment booking software",
+      "event rental management"
+    ],
+    "tools": [
+      {
+        "name": "Goodshuffle Pro",
+        "url": "https://www.krowdbase.com/best-ai-event-rental-software"
+      }
+    ],
+    "workflowSummary": "Log your tables, linens, AV gear, and decor into one inventory; the platform tracks what's booked, what's available, and what's out at which event, so you don't double-book the same items for two events on the same day.",
+    "samplePrompt": "Show me what inventory is available the weekend of [date] and flag anything that's already booked for another event.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most valuable once your full inventory catalog is set up",
+    "trustScore": 4,
+    "pricingNote": "Paid plans, pricing generally quote-based — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.krowdbase.com/best-ai-event-rental-software",
+    "sourceType": "Blog/Guide",
+    "freshness": "March 31, 2026",
+    "accessNotes": "Third-party comparison site; verify current pricing on Goodshuffle Pro's own site",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-93cee1a737",
+    "slug": "track-vendor-receipts-and-expenses-against-my-event-budget",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner reconciling vendor receipts against the event budget",
+    "title": "track vendor receipts and expenses against my event budget",
+    "intentLabels": [
+      "expense tracking",
+      "receipt scanning",
+      "event expense report"
+    ],
+    "tools": [
+      {
+        "name": "Expensify",
+        "url": "https://use.expensify.com/resource-center/guides/best-business-expense-tracking-app"
+      }
+    ],
+    "workflowSummary": "Snap a photo of each vendor receipt and the AI reads the amount, vendor, and category automatically, so your event expenses stay organized and easy to check against your budget without manual data entry.",
+    "samplePrompt": "Scan these vendor receipts from the gala and categorize them into venue, catering, and decor, then total each category against my budget.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier for individuals; paid plans scale with team size — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://use.expensify.com/resource-center/guides/best-business-expense-tracking-app",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 1, 2026",
+    "accessNotes": "Third-party guide describing the tool; verify current pricing on Expensify's own site",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-a5fa34370a",
+    "slug": "coordinate-travel-for-speakers-or-out-of-town-guests",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner coordinating travel for speakers or out-of-town guests",
+    "title": "coordinate travel for speakers or out-of-town guests",
+    "intentLabels": [
+      "speaker travel coordination",
+      "guest travel booking",
+      "event travel assistant"
+    ],
+    "tools": [
+      {
+        "name": "Otto (AI travel assistant)",
+        "url": "https://www.ottotheagent.com/"
+      }
+    ],
+    "workflowSummary": "Otto looks at the event schedule on your calendar and books or adjusts flights and hotels around it — if a session time changes, it automatically updates the traveler's itinerary instead of you having to do it manually.",
+    "samplePrompt": "Book and manage travel for our keynote speaker around the event schedule on [date], and auto-adjust if the agenda changes.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "works best once connected to a calendar and given clear preferences",
+    "trustScore": 3,
+    "pricingNote": "Subscription-based, pricing on request — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.ottotheagent.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-fcabb38368",
+    "slug": "plan-shuttle-routes-and-guest-transportation-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner arranging guest transportation for a large event",
+    "title": "plan shuttle routes and guest transportation for my event",
+    "intentLabels": [
+      "event shuttle software",
+      "transportation logistics",
+      "guest shuttle scheduling"
+    ],
+    "tools": [
+      {
+        "name": "ShuttleControl",
+        "url": "https://shuttlecontrol.com/events"
+      }
+    ],
+    "workflowSummary": "Set your pickup points, drop-off zones, and vehicle count; the platform manages shuttle dispatch, live tracking, and rider requests from one dashboard so guests and VIPs get where they need to be without radio calls or guesswork.",
+    "samplePrompt": "Set up shuttle routes between the hotel block and the venue for a 400-guest conference, with a separate dedicated route for VIP speakers.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "best suited to larger events with real transportation logistics to manage",
+    "trustScore": 4,
+    "pricingNote": "Custom / quote-based pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://shuttlecontrol.com/events",
+    "sourceType": "Product page",
+    "freshness": "July 4, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-928668e059",
+    "slug": "check-the-weather-risk-for-my-outdoor-event-and-plan-a-backup",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner hosting an outdoor event who needs a weather backup plan",
+    "title": "check the weather risk for my outdoor event and plan a backup",
+    "intentLabels": [
+      "outdoor event weather forecast",
+      "weather contingency planning",
+      "rain backup plan"
+    ],
+    "tools": [
+      {
+        "name": "LocationWeather.io",
+        "url": "https://locationweather.io/outdoor-event-weather-risk/"
+      }
+    ],
+    "workflowSummary": "Get a forecast tied to your exact venue coordinates (not just the city), with automatic severe-weather alerts, so you know early enough to book a tent or move the event indoors while options are still available.",
+    "samplePrompt": "Show me the 10-day weather outlook for [venue address] on [date] and alert me automatically if severe weather is forecast.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Pricing not fully public; likely subscription-based — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://locationweather.io/outdoor-event-weather-risk/",
+    "sourceType": "Blog/Guide",
+    "freshness": "July 27, 2026",
+    "accessNotes": "Published by the tool's own company; verify current pricing on their site",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-c07f709c2a",
+    "slug": "manage-a-waitlist-when-my-event-sells-out",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running a high-demand event that has sold out",
+    "title": "manage a waitlist when my event sells out",
+    "intentLabels": [
+      "event waitlist management",
+      "sold out event waitlist",
+      "ticket waitlist automation"
+    ],
+    "tools": [
+      {
+        "name": "Eventbrite Waitlist Management",
+        "url": "https://www.eventbrite.com/features/waitlist/"
+      }
+    ],
+    "workflowSummary": "Turn on the waitlist feature once your event sells out; the platform automatically collects names, and when a spot opens from a cancellation, it offers the ticket to the next person in line without you manually tracking who's next.",
+    "samplePrompt": "Turn on a waitlist for my sold-out workshop, cap it at 50 names, and automatically offer spots to the next person when someone cancels.",
+    "beginnerFriendly": "yes",
+    "trustScore": 5,
+    "pricingNote": "Free to enable; standard Eventbrite ticketing fees apply — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.eventbrite.com/features/waitlist/",
+    "sourceType": "Product page",
+    "freshness": "1 month ago (accessed September 2026)",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-14f3566b64",
+    "slug": "build-a-day-of-logistics-checklist-so-nothing-gets-missed",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner building a runbook so nothing gets missed on event day",
+    "title": "build a day-of logistics checklist so nothing gets missed",
+    "intentLabels": [
+      "event day checklist",
+      "logistics runbook",
+      "event planning checklist generator"
+    ],
+    "tools": [
+      {
+        "name": "AI Checklist Generator (checklistgenerator.ai)",
+        "url": "https://checklistgenerator.ai/"
+      }
+    ],
+    "workflowSummary": "Describe your event and the tool generates a detailed, editable checklist covering setup, vendor arrivals, staff roles, and teardown — a starting runbook you can hand to your team on event day.",
+    "samplePrompt": "Generate a day-of logistics checklist for a 200-person outdoor wedding, covering vendor arrival times, setup, ceremony, reception, and teardown.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid tiers for advanced templates — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://checklistgenerator.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-fe8a32de36",
+    "slug": "turn-my-event-into-one-workspace-with-a-budget-tracker-vendor",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Solo planner who wants budget, vendors, and guest list in one place",
+    "title": "turn my event into one workspace with a budget tracker, vendor contacts, and guest list",
+    "intentLabels": [
+      "event planning workspace",
+      "all-in-one event app",
+      "event operations hub"
+    ],
+    "tools": [
+      {
+        "name": "Taskade Genesis (AI Event Planning Generator)",
+        "url": "https://www.taskade.com/generate/event-planning"
+      }
+    ],
+    "workflowSummary": "Describe your event in a sentence and it builds a live, working workspace — guest list, task timeline, budget tracker, and vendor contacts all connected — instead of juggling five separate spreadsheets.",
+    "samplePrompt": "Plan a 200-person product launch with a speaker schedule, RSVP tracker, vendor checklist, and day-of run sheet, all in one workspace.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "quick to generate, but takes some setup to make it your daily tool",
+    "trustScore": 3,
+    "pricingNote": "Free plan available; paid plans for advanced AI features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.taskade.com/generate/event-planning",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-07acee0f39",
+    "slug": "turn-my-event-brief-into-a-full-execution-plan-with-deadlines",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner needing a full execution plan from an event brief",
+    "title": "turn my event brief into a full execution plan with deadlines",
+    "intentLabels": [
+      "event execution plan",
+      "task sequencing from brief",
+      "AI event planning tool"
+    ],
+    "tools": [
+      {
+        "name": "Praloop AI Planning Tool",
+        "url": "https://praloop.com/ai-planning-tool/"
+      }
+    ],
+    "workflowSummary": "Upload your event brief — objectives, audience, format, budget — and the AI reads it and builds a complete task-by-task plan with deadlines calculated backward from your event date and priorities already assigned.",
+    "samplePrompt": "Here's my event brief for a 150-person client conference — build a full execution plan with deadlines counting back from [date] and priority levels on each task.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "most effective when you already have a written event brief to feed it",
+    "trustScore": 3,
+    "pricingNote": "Custom / subscription pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://praloop.com/ai-planning-tool/",
+    "sourceType": "Product page",
+    "freshness": "May 15, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-3d475b1f9f",
+    "slug": "keep-my-on-site-team-in-sync-during-the-event-without-a-flood",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner keeping their on-site team in sync during the event",
+    "title": "keep my on-site team in sync during the event without a flood of missed messages",
+    "intentLabels": [
+      "event team communication",
+      "push-to-talk app",
+      "on-site coordination tool"
+    ],
+    "tools": [
+      {
+        "name": "Voxer (Voxer AI)",
+        "url": "https://www.voxer.com/"
+      }
+    ],
+    "workflowSummary": "Your team uses Voxer like a walkie-talkie — live voice, text, and photo sharing that works over data instead of radio range — and if a busy channel piles up messages while you're heads-down, Voxer AI summarizes what you missed at the press of a button.",
+    "samplePrompt": "Summarize everything my team channel discussed in the last hour so I can catch up without scrolling through every message.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier available; paid Voxer Plus / AI features from roughly $4.99+/month — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.voxer.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch2",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-fa7781bed4",
+    "slug": "write-ad-copy-and-social-posts-to-promote-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner promoting a specific upcoming event",
+    "title": "write ad copy and social posts to promote my event",
+    "intentLabels": [
+      "event ad copy generator",
+      "social media post writer",
+      "event promotion copywriting"
+    ],
+    "tools": [
+      {
+        "name": "HubSpot Social Media Ad Generator",
+        "url": "https://www.hubspot.com/campaign-assistant/ai-social-media-ad-generator"
+      }
+    ],
+    "workflowSummary": "Describe your event and audience; the AI writes platform-tailored ad copy for Facebook, Instagram, and LinkedIn, aimed at boosting registrations, that you can edit before posting.",
+    "samplePrompt": "Write 3 Facebook/Instagram ad variations promoting my [event type] on [date], targeting [audience], with a clear call to action to register.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no design skills needed",
+    "trustScore": 4,
+    "pricingNote": "Free to use — verify current features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.hubspot.com/campaign-assistant/ai-social-media-ad-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public free tool; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-c9b19905ae",
+    "slug": "schedule-and-publish-my-event-s-social-media-content-in-one",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner managing social content across multiple platforms",
+    "title": "schedule and publish my event's social media content in one place",
+    "intentLabels": [
+      "social media scheduling",
+      "content calendar tool",
+      "multi-platform publishing"
+    ],
+    "tools": [
+      {
+        "name": "Ocoya",
+        "url": "https://events.com/blog/ai-tools-for-event-promotion/"
+      }
+    ],
+    "workflowSummary": "Draft posts once and Ocoya's AI adapts the copy and hashtags per platform, then schedules and publishes across Instagram, Facebook, LinkedIn, and TikTok from a single dashboard, with analytics to see what's working.",
+    "samplePrompt": "Schedule a week of posts counting down to my event across Instagram, Facebook, and LinkedIn, with platform-appropriate captions and hashtags.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, typically with a free trial — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://events.com/blog/ai-tools-for-event-promotion/",
+    "sourceType": "Blog/Guide",
+    "freshness": "July 29, 2025",
+    "accessNotes": "Third-party guide describing the tool; verify current pricing on Ocoya's own site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-f531456c08",
+    "slug": "build-an-email-sequence-to-drive-event-registrations",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner driving registrations via email before the event",
+    "title": "build an email sequence to drive event registrations",
+    "intentLabels": [
+      "email drip campaign",
+      "registration email sequence",
+      "pre-event email marketing"
+    ],
+    "tools": [
+      {
+        "name": "RegFox Drip Campaigns",
+        "url": "https://www.regfox.com/blog/from-one-off-emails-to-revenue-machines-mastering-event-drip-campaigns"
+      }
+    ],
+    "workflowSummary": "Write a short sequence of emails — teaser, agenda reveal, urgency reminder — and the platform automatically sends them on your schedule to your list, removing anyone who's already registered so they don't get pestered.",
+    "samplePrompt": "Build a 3-email drip sequence for [event] over the next 6 weeks: a teaser, a speaker announcement, and a last-chance reminder with a registration deadline.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Bundled with RegFox event registration plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.regfox.com/blog/from-one-off-emails-to-revenue-machines-mastering-event-drip-campaigns",
+    "sourceType": "Blog/Guide",
+    "freshness": "2026",
+    "accessNotes": "Published by the tool's own company; verify current pricing on RegFox's site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-e45256080f",
+    "slug": "create-a-promotional-teaser-video-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner wanting eye-catching video content to promote an event",
+    "title": "create a promotional teaser video for my event",
+    "intentLabels": [
+      "event promo video maker",
+      "teaser video generator",
+      "event trailer AI"
+    ],
+    "tools": [
+      {
+        "name": "Luma AI",
+        "url": "https://lumalabs.ai/create/ai-video-generator-for-event-promotions"
+      }
+    ],
+    "workflowSummary": "Provide a short event description, key highlights, or a few images; the AI generates a cinematic promo video sized for Instagram, Facebook, or YouTube without any filming or editing experience needed.",
+    "samplePrompt": "Create a 15-second cinematic teaser video for my [event type] on [date], highlighting [key details], sized for Instagram Stories.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, typically with limited free credits — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://lumalabs.ai/create/ai-video-generator-for-event-promotions",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-d794161ae3",
+    "slug": "write-a-press-release-announcing-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner announcing an event to local media or industry outlets",
+    "title": "write a press release announcing my event",
+    "intentLabels": [
+      "event press release generator",
+      "media announcement",
+      "event PR writing"
+    ],
+    "tools": [
+      {
+        "name": "AI Event Press Release Generator (AIFreeBox)",
+        "url": "https://aifreebox.com/list/ai-event-press-release-generator"
+      }
+    ],
+    "workflowSummary": "Enter your event's key facts and the tool drafts a structured press release — headline, lead, body, boilerplate, contact — following standard press-release conventions, marking any missing details so you know what to fill in before sending it out.",
+    "samplePrompt": "Write a press release announcing our [event type] on [date] at [venue], featuring [speaker/highlight], for local media and industry blogs.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "free, no sign-up required",
+    "trustScore": 3,
+    "pricingNote": "100% free, no account needed — verify current features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://aifreebox.com/list/ai-event-press-release-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public free tool; no login required",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-7b6d07b4f2",
+    "slug": "find-influencers-to-promote-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or organizer wanting influencers to help promote an event",
+    "title": "find influencers to promote my event",
+    "intentLabels": [
+      "influencer marketing platform",
+      "influencer outreach",
+      "creator partnerships"
+    ],
+    "tools": [
+      {
+        "name": "Afluencer",
+        "url": "https://sproutsocial.com/insights/influencer-marketing-platforms/"
+      }
+    ],
+    "workflowSummary": "Set your criteria — follower count, niche, platform — and Afluencer matches you with influencers looking for partnerships, so you can pitch them directly instead of cold DMing strangers on Instagram.",
+    "samplePrompt": "Find 10 local lifestyle micro-influencers in [city] with 5,000–50,000 followers who might promote my [event type] in exchange for free tickets.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to browse; paid plans for advanced campaign management — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://sproutsocial.com/insights/influencer-marketing-platforms/",
+    "sourceType": "Blog/Guide",
+    "freshness": "March 16, 2026",
+    "accessNotes": "Third-party roundup; verify current pricing on Afluencer's own site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-f751eac39a",
+    "slug": "collect-testimonials-from-past-clients-for-my-planning-business",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner collecting social proof from past clients",
+    "title": "collect testimonials from past clients for my planning business",
+    "intentLabels": [
+      "testimonial collection software",
+      "client review requests",
+      "social proof tool"
+    ],
+    "tools": [
+      {
+        "name": "Feedspace",
+        "url": "https://www.feedspace.io/"
+      }
+    ],
+    "workflowSummary": "Send past clients a short branded form; they record a text, audio, or video testimonial in a few clicks, and the tool organizes and displays the best ones as a widget on your website or in social posts.",
+    "samplePrompt": "Send a testimonial request to the 12 clients I worked with last quarter, asking for a short video or written review of their event.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans for more storage and imports — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.feedspace.io/",
+    "sourceType": "Product page",
+    "freshness": "July 15, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-f1ac6c4257",
+    "slug": "qualify-inbound-leads-on-my-planning-business-website",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner fielding inquiries from prospective clients on their own website",
+    "title": "qualify inbound leads on my planning business website",
+    "intentLabels": [
+      "lead qualification chatbot",
+      "website lead capture",
+      "sales chatbot for service business"
+    ],
+    "tools": [
+      {
+        "name": "Chatling",
+        "url": "https://chatling.ai/use-cases/lead-generation"
+      }
+    ],
+    "workflowSummary": "The chatbot greets visitors on your business website, asks a few qualifying questions (event type, date, budget range), and routes the promising ones straight to you instead of you manually replying to every inquiry form.",
+    "samplePrompt": "Set up a chatbot on my planner website that asks visitors about their event type, date, and budget, then flags the ones that fit my typical client profile.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "no-code setup, but works best once you define what a 'qualified' lead looks like",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans scale with conversation volume — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://chatling.ai/use-cases/lead-generation",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-5a8cff2650",
+    "slug": "reach-out-to-new-corporate-clients-for-my-event-planning",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner trying to land new corporate or wedding clients",
+    "title": "reach out to new corporate clients for my event planning business",
+    "intentLabels": [
+      "cold email outreach",
+      "prospecting for planning clients",
+      "sales outreach automation"
+    ],
+    "tools": [
+      {
+        "name": "Lemlist",
+        "url": "https://overloop.com/blog/9-best-ai-email-outreach-tools"
+      }
+    ],
+    "workflowSummary": "Upload a list of prospects (e.g., HR or marketing contacts at local companies) and the AI writes personalized opening lines referencing each company, then sends and follows up on a schedule so you're not writing every email from scratch.",
+    "samplePrompt": "Draft a personalized cold outreach email to HR managers at mid-size companies in [city], introducing my corporate event planning services, with a 2-step follow-up sequence.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "effective once you have a target list, but takes setup to avoid feeling spammy",
+    "trustScore": 3,
+    "pricingNote": "Paid plans from roughly $69/month — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://overloop.com/blog/9-best-ai-email-outreach-tools",
+    "sourceType": "Blog/Guide",
+    "freshness": "3 weeks ago (accessed September 2026)",
+    "accessNotes": "Third-party comparison guide; verify current pricing on Lemlist's own site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-6966bcb1a2",
+    "slug": "set-up-a-referral-program-for-past-clients",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Solo or small-team planner wanting repeat referrals from past clients",
+    "title": "set up a referral program for past clients",
+    "intentLabels": [
+      "referral marketing software",
+      "refer-a-friend program",
+      "client referral tracking"
+    ],
+    "tools": [
+      {
+        "name": "ReferralHero",
+        "url": "https://referralhero.com/industries/referral-program-for-small-business"
+      }
+    ],
+    "workflowSummary": "Set a reward (a discount, gift card, or free add-on) and the platform gives each past client a shareable referral link; when someone books through it, ReferralHero tracks the referral and can auto-issue the reward.",
+    "samplePrompt": "Set up a referral program offering past clients a $100 credit for every new client who books through their referral link.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans; some tiers built around a 48-hour setup service — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://referralhero.com/industries/referral-program-for-small-business",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-d5caa31f33",
+    "slug": "build-a-landing-page-for-a-specific-marketing-campaign",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running a paid campaign to generate new business inquiries",
+    "title": "build a landing page for a specific marketing campaign",
+    "intentLabels": [
+      "lead capture landing page",
+      "campaign landing page builder",
+      "ad landing page"
+    ],
+    "tools": [
+      {
+        "name": "Leadpages",
+        "url": "https://leadpages.com/"
+      }
+    ],
+    "workflowSummary": "Describe your campaign in plain language — a free consultation offer, a seasonal promotion, a downloadable planning checklist — and the AI generates a complete, on-brand landing page with a headline, form, and images in about a minute.",
+    "samplePrompt": "Build a landing page offering a free 20-minute consultation call for couples planning a wedding in [city], with a simple contact form.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans from roughly $37/month, no permanent free plan — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://leadpages.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-3f4221a741",
+    "slug": "write-seo-blog-content-to-attract-new-clients-to-my-business",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner wanting to attract new clients through search",
+    "title": "write SEO blog content to attract new clients to my business",
+    "intentLabels": [
+      "SEO blog writing tool",
+      "website content for planners",
+      "blog content generator"
+    ],
+    "tools": [
+      {
+        "name": "Website Content Writers",
+        "url": "https://websitecontentwriters.org/"
+      }
+    ],
+    "workflowSummary": "Tell it your topic and business type; it produces a publish-ready, SEO-structured blog post (with human editing available) aimed at small business owners who don't want to learn prompting or SEO themselves.",
+    "samplePrompt": "Write an SEO blog post titled '10 Questions to Ask Before Booking a Wedding Planner in [city]' aimed at engaged couples researching planners.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "built specifically for non-technical small business owners",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid packages for more content and human editing — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://websitecontentwriters.org/",
+    "sourceType": "Product page",
+    "freshness": "May 3, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-22570a79c1",
+    "slug": "set-early-bird-and-dynamic-pricing-for-my-event-tickets",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Event organizer selling tickets over a multi-week sales window",
+    "title": "set early-bird and dynamic pricing for my event tickets",
+    "intentLabels": [
+      "dynamic ticket pricing",
+      "early bird pricing tool",
+      "ticket price optimizer"
+    ],
+    "tools": [
+      {
+        "name": "Hytix",
+        "url": "https://www.hytix.com/blog/dynamic-pricing-for-event/"
+      }
+    ],
+    "workflowSummary": "Set pricing rules based on ticket quantity sold, purchase date, or day of the week, and the platform automatically raises or lowers the price as sales come in — rewarding early buyers and capturing more revenue as the event gets closer to selling out.",
+    "samplePrompt": "Set up early-bird pricing for my ticket that increases by $10 every time 25% more tickets sell, capped at [max price] two weeks before the event.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "the pricing rules are simple, but deciding what rules to set takes some strategy",
+    "trustScore": 3,
+    "pricingNote": "Pricing tied to Hytix ticketing platform plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.hytix.com/blog/dynamic-pricing-for-event/",
+    "sourceType": "Blog/Guide",
+    "freshness": "May 22, 2025",
+    "accessNotes": "Published by the tool's own company; verify current pricing on Hytix's own site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-68dbfcc244",
+    "slug": "show-ads-to-people-who-visited-my-event-page-but-didn-t-register",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner who wants to re-engage people who visited the event page but didn't register",
+    "title": "show ads to people who visited my event page but didn't register",
+    "intentLabels": [
+      "retargeting ads",
+      "remarketing campaign",
+      "re-engage website visitors"
+    ],
+    "tools": [
+      {
+        "name": "AdRoll",
+        "url": "https://www.adroll.com/blog/best-retargeting-platforms"
+      }
+    ],
+    "workflowSummary": "Add a small tracking snippet to your event website; AdRoll then automatically shows your ad to those specific visitors as they browse other sites and social media, using AI-driven bidding to spend your ad budget on the people most likely to come back and register.",
+    "samplePrompt": "Set up a retargeting campaign showing my event registration ad to anyone who visited my event page in the last 14 days but didn't sign up.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "setup requires adding a tracking pixel to your site",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, pricing tied to ad spend — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.adroll.com/blog/best-retargeting-platforms",
+    "sourceType": "Blog/Guide",
+    "freshness": "April 27, 2026",
+    "accessNotes": "Third-party comparison guide; verify current pricing on AdRoll's own site",
+    "batch": "EventPlanners AI Workflows Batch3",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-26652583bf",
+    "slug": "make-my-event-accessible-with-live-captions-and-translation",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner hosting guests who are deaf, hard of hearing, or don't speak the event's language",
+    "title": "make my event accessible with live captions and translation",
+    "intentLabels": [
+      "live captioning",
+      "ADA accessibility",
+      "real-time translation for events"
+    ],
+    "tools": [
+      {
+        "name": "Wordly",
+        "url": "https://www.wordly.ai/ai-captioning"
+      }
+    ],
+    "workflowSummary": "Wordly listens to the speaker and instantly displays captions (or a translated version) on a screen or on attendees' own phones via a QR code — no human captioner or interpreter needed to book in advance.",
+    "samplePrompt": "Set up live captions for my keynote speaker, plus real-time translation into Spanish and Mandarin that attendees can follow on their phones.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Paid plans, pricing typically per session/minute — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.wordly.ai/ai-captioning",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-c6c76ebf16",
+    "slug": "customize-a-ceremony-script-for-a-multicultural-or-interfaith",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Wedding planner working with an interfaith or multicultural couple",
+    "title": "customize a ceremony script for a multicultural or interfaith wedding",
+    "intentLabels": [
+      "interfaith ceremony script",
+      "multicultural wedding traditions",
+      "officiant script generator"
+    ],
+    "tools": [
+      {
+        "name": "WedSpeech.ai",
+        "url": "https://wedspeech.ai/wedding-officiant-speech-generator"
+      }
+    ],
+    "workflowSummary": "Answer questions about the couple's traditions, faiths, and preferences, and the AI drafts a full ceremony script — welcome, readings, vows, rituals, pronouncement — that blends specific cultural or religious elements the couple wants included.",
+    "samplePrompt": "Write a ceremony script for a couple blending a Christian and Hindu wedding tradition, including a unity ritual from each and a bilingual welcome.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, some free preview content — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://wedspeech.ai/wedding-officiant-speech-generator",
+    "sourceType": "Product page",
+    "freshness": "August 1, 2025",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-6643415679",
+    "slug": "measure-and-reduce-the-carbon-footprint-of-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or client who wants to measure and reduce an event's environmental impact",
+    "title": "measure and reduce the carbon footprint of my event",
+    "intentLabels": [
+      "sustainable event planning",
+      "carbon footprint calculator",
+      "green event certification"
+    ],
+    "tools": [
+      {
+        "name": "EcoIndex",
+        "url": "https://ecoindex.ai/"
+      }
+    ],
+    "workflowSummary": "Enter details about travel, venue energy use, catering, and waste; the platform calculates emissions and issues a verified sustainability rating (Bronze to Platinum), which you can show sponsors or clients as proof of your green commitments.",
+    "samplePrompt": "Calculate the carbon footprint of a 300-guest conference, including attendee travel and catering, and tell me what changes would improve our sustainability rating.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "requires gathering some data (attendee travel, catering) before it's useful",
+    "trustScore": 3,
+    "pricingNote": "Pricing tied to EcoIndex platform plans — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://ecoindex.ai/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-105517d045",
+    "slug": "plan-a-menu-for-guests-with-several-different-food-allergies",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or caterer managing a guest list with multiple, overlapping food allergies",
+    "title": "plan a menu for guests with several different food allergies",
+    "intentLabels": [
+      "allergy-safe menu planner",
+      "dietary restriction menu generator",
+      "food allergy accommodation"
+    ],
+    "tools": [
+      {
+        "name": "Party Genius AI Allergy-Safe Menu Planner",
+        "url": "https://partygeniusai.com/tools/allergy-safe-menu-planner"
+      }
+    ],
+    "workflowSummary": "Enter your guest count and the allergies represented (nuts, dairy, gluten, eggs, soy, shellfish); the tool generates a full menu — apps through dessert — with safe substitutions and allergen-free labels flagged for every dish.",
+    "samplePrompt": "Plan a menu for 40 guests, 3 of whom have nut allergies, 2 who are gluten-free, and 1 who is dairy-free, with clear allergen labels for each dish.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to use — verify current features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://partygeniusai.com/tools/allergy-safe-menu-planner",
+    "sourceType": "Product page",
+    "freshness": "April 19, 2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-9451ac3618",
+    "slug": "run-a-silent-auction-or-fundraising-component-at-my-gala",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Nonprofit organizer or gala planner running a fundraising auction",
+    "title": "run a silent auction or fundraising component at my gala",
+    "intentLabels": [
+      "silent auction software",
+      "gala fundraising platform",
+      "mobile bidding"
+    ],
+    "tools": [
+      {
+        "name": "GalaBid",
+        "url": "https://www.galabid.com/silent-auction"
+      }
+    ],
+    "workflowSummary": "Build a digital auction catalog, let guests bid from their phones via QR code instead of paper bid sheets, and combine silent auction, live auction, and donation appeals in one campaign with a single check-in and checkout.",
+    "samplePrompt": "Set up a silent auction for my 150-guest charity gala with 30 donated items, mobile bidding by QR code, and automatic checkout for winners.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free plan available; paid tiers for larger events — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.galabid.com/silent-auction",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-b72c4f580d",
+    "slug": "stream-my-hybrid-event-to-remote-attendees",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running an event with both in-person and remote attendees",
+    "title": "stream my hybrid event to remote attendees",
+    "intentLabels": [
+      "hybrid event platform",
+      "live streaming for events",
+      "remote attendee engagement"
+    ],
+    "tools": [
+      {
+        "name": "CrowdComms",
+        "url": "https://www.crowdcomms.com/streaming-hybrid-tools/"
+      }
+    ],
+    "workflowSummary": "Connects your in-room content and remote livestream into one platform, so virtual attendees can watch, ask questions, and vote in polls alongside the people in the room, with unified reporting on both audiences afterward.",
+    "samplePrompt": "Set up a hybrid livestream for my 2-day conference so remote attendees can watch keynotes live, submit Q&A questions, and see the same polls as the in-room audience.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "production quality benefits from AV support alongside the software",
+    "trustScore": 3,
+    "pricingNote": "Custom / quote-based pricing — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.crowdcomms.com/streaming-hybrid-tools/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-f380fe1ea3",
+    "slug": "create-a-liability-waiver-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner running an event with physical or higher-risk activities",
+    "title": "create a liability waiver for my event",
+    "intentLabels": [
+      "event liability waiver",
+      "release of liability",
+      "event participation agreement"
+    ],
+    "tools": [
+      {
+        "name": "Happy Waiver",
+        "url": "https://www.happywaiver.com/ai-waiver-generator"
+      }
+    ],
+    "workflowSummary": "Describe your event or activity and the AI drafts a complete waiver — risk disclosures, release language, signature fields — which you can edit and then distribute by QR code, link, or email for guests to e-sign before attending.",
+    "samplePrompt": "Create a liability waiver for a 100-person outdoor obstacle-course team-building event, including a guardian consent section for minors.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "but treat the output as a first draft, not a substitute for a lawyer's review",
+    "trustScore": 3,
+    "pricingNote": "Pay-per-waiver from roughly $0.01 per signed waiver — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.happywaiver.com/ai-waiver-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; this is not legal advice — have an attorney review before using with guests",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-66b77949a2",
+    "slug": "coordinate-a-destination-event-across-time-zones-and-legal",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner coordinating a wedding or event abroad for guests in multiple countries",
+    "title": "coordinate a destination event across time zones and legal requirements",
+    "intentLabels": [
+      "destination wedding planning",
+      "international event coordination",
+      "marriage abroad legal research"
+    ],
+    "tools": [
+      {
+        "name": "TheWeddingPlanner.ai",
+        "url": "https://www.theweddingplanner.ai/destination-wedding-guide"
+      }
+    ],
+    "workflowSummary": "Describe the destination and guest count; the AI researches marriage/legal requirements for the couple's nationalities, estimates guest travel costs using flight and hotel data, and builds a guest communication timeline across time zones for save-the-dates and RSVPs.",
+    "samplePrompt": "We're a UK couple planning a wedding in Bali for 60 guests — research the legal marriage requirements, estimate guest travel costs, and build a save-the-date and RSVP timeline.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free planning tools; paid tiers for more advanced features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.theweddingplanner.ai/destination-wedding-guide",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-91546e025c",
+    "slug": "plan-a-family-friendly-event-layout-with-a-kids-activity-area",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner hosting a family event that needs to keep kids occupied",
+    "title": "plan a family-friendly event layout with a kids' activity area",
+    "intentLabels": [
+      "kid-friendly event layout",
+      "family event planning",
+      "kids activity corner design"
+    ],
+    "tools": [
+      {
+        "name": "PartyPilotAI",
+        "url": "https://partypilotai.com/"
+      }
+    ],
+    "workflowSummary": "Upload a photo of your event space and describe the guest count and must-have zones (including a kids' activity corner); the AI generates a practical floor plan, seating guidance, and a shopping/setup checklist built around that space.",
+    "samplePrompt": "Plan a backyard birthday layout for 30 guests with a kids' activity corner, shaded parent seating, a cake table, and a simple setup checklist.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free tier available; paid plans for more generations — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://partypilotai.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch4",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-2a6aac7a44",
+    "slug": "create-a-mood-board-for-my-event-theme-and-decor",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or client exploring a visual direction for an event's theme",
+    "title": "create a mood board for my event theme and decor",
+    "intentLabels": [
+      "event mood board generator",
+      "vision board maker",
+      "theme inspiration board"
+    ],
+    "tools": [
+      {
+        "name": "MoodBoardAI",
+        "url": "https://moodboardai.com/ai-generator"
+      }
+    ],
+    "workflowSummary": "Describe the event, style, and mood you're going for; the AI curates and arranges a cohesive set of images, colors, and textures into a shareable mood board you can present to a client or send to vendors for feasibility.",
+    "samplePrompt": "Create a mood board for a rustic-luxury outdoor wedding in sage green and terracotta, with wildflower centerpieces and string lighting.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to start; paid plans for more generations — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://moodboardai.com/ai-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-7a10835516",
+    "slug": "see-what-decor-will-actually-look-like-in-my-venue-before",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or client deciding on decor before committing to purchases",
+    "title": "see what decor will actually look like in my venue before booking it",
+    "intentLabels": [
+      "decor visualization",
+      "tablescape preview",
+      "photorealistic event rendering"
+    ],
+    "tools": [
+      {
+        "name": "VenuePreview",
+        "url": "https://www.venuepreview.com/blog/ai-wedding-decoration-visualization/"
+      }
+    ],
+    "workflowSummary": "Upload a photo of the empty venue space; the AI renders tables, florals, chairs, and lighting into that same photo so you (or your client) can compare different decor directions before spending a dollar on the real thing.",
+    "samplePrompt": "Upload a photo of this banquet hall and show me what it would look like decorated in a 'Modern Tuscan' style with sage and eucalyptus greenery.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, pricing not fully public — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.venuepreview.com/blog/ai-wedding-decoration-visualization/",
+    "sourceType": "Blog/Guide",
+    "freshness": "February 10, 2026",
+    "accessNotes": "Published by the tool's own company; verify current pricing on VenuePreview's site",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-e36907648f",
+    "slug": "book-a-dj-or-live-band-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner sourcing a DJ, band, or other live entertainment for an event",
+    "title": "book a DJ or live band for my event",
+    "intentLabels": [
+      "entertainment booking platform",
+      "DJ marketplace",
+      "live music for events"
+    ],
+    "tools": [
+      {
+        "name": "AGNT",
+        "url": "https://agnt.com/"
+      }
+    ],
+    "workflowSummary": "Describe your event type, budget, and vibe; the AI-driven marketplace matches you with vetted performers (DJs, bands, singers, comedians), handles messaging and secure payment, and lets you compare options before booking.",
+    "samplePrompt": "Find 3 DJs available on [date] in [city] for a 150-guest corporate holiday party, budget around $1,500, who can play a mix of top 40 and classics.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to browse and get quotes; booking fees vary by performer — verify before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://agnt.com/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-8e97dc7479",
+    "slug": "design-an-event-program-or-agenda-booklet",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner designing a printed or digital program for an event",
+    "title": "design an event program or agenda booklet",
+    "intentLabels": [
+      "event program design",
+      "agenda booklet maker",
+      "printable ceremony program"
+    ],
+    "tools": [
+      {
+        "name": "Veeso AI",
+        "url": "https://veeso.ai/ai-design-tools/program-generator"
+      }
+    ],
+    "workflowSummary": "Paste in your speaker list, schedule, or ceremony order and describe a theme; the AI automatically lays out a clean, print-ready booklet with correct columns, bleed margins, and formatting so a local print shop can run it as-is.",
+    "samplePrompt": "Design a bi-fold wedding ceremony program for 150 guests, bilingual in English and Spanish, in an elegant minimalist style, ready for print.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Paid plans, typically with a free trial — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://veeso.ai/ai-design-tools/program-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-64a7dc3704",
+    "slug": "design-custom-branded-swag-or-gifts-for-my-event",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or brand wanting branded giveaways or gifts for an event",
+    "title": "design custom branded swag or gifts for my event",
+    "intentLabels": [
+      "event merchandise design",
+      "branded swag generator",
+      "corporate gift curation"
+    ],
+    "tools": [
+      {
+        "name": "Giftpack",
+        "url": "https://giftpack.ai/swags/"
+      }
+    ],
+    "workflowSummary": "Describe the event and audience in plain language; the AI selects appropriate merchandise, applies your logo, and generates realistic mockups so you can see exactly what will arrive before placing the order.",
+    "samplePrompt": "Hosting a 500-person trade show booth in Las Vegas — design and pick branded swag items that fit a tech industry audience, with our logo applied.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Custom pricing per order — verify before publishing",
+    "pricingTier": "paid",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://giftpack.ai/swags/",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-e0c7b26280",
+    "slug": "collect-everything-i-need-from-a-new-client-in-one-intake-form",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Independent planner onboarding a new client",
+    "title": "collect everything I need from a new client in one intake form",
+    "intentLabels": [
+      "client intake form",
+      "wedding planner questionnaire",
+      "event planning brief"
+    ],
+    "tools": [
+      {
+        "name": "Formester",
+        "url": "https://formester.com/blog/best-client-intake-form-software/"
+      }
+    ],
+    "workflowSummary": "Upload your existing client questionnaire (Word doc, PDF, or Google Doc) or describe what you need, and the AI rebuilds it as a structured digital form with logic and required fields, so new clients answer everything in one place instead of an email back-and-forth.",
+    "samplePrompt": "Build a new client intake form for my wedding planning business covering vision, budget, guest count, venue preferences, and must-have vendors.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free plan with unlimited forms and responses; paid plans for more advanced features — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://formester.com/blog/best-client-intake-form-software/",
+    "sourceType": "Blog/Guide",
+    "freshness": "3 weeks ago (accessed September 2026)",
+    "accessNotes": "Third-party comparison blog; verify current pricing on Formester's own site",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-de15b48221",
+    "slug": "turn-my-event-photos-and-clips-into-a-highlight-recap-video",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner or photographer wrapping up an event and wanting shareable content",
+    "title": "turn my event photos and clips into a highlight recap video",
+    "intentLabels": [
+      "event recap video maker",
+      "highlight reel generator",
+      "social media event recap"
+    ],
+    "tools": [
+      {
+        "name": "HeyGen",
+        "url": "https://www.heygen.com/video/event-recap-highlight-video-maker",
+        "catalogueSlug": "heygen"
+      }
+    ],
+    "workflowSummary": "Upload your event photos and video clips; the AI automatically arranges them into a polished, fast-paced highlight video with music and transitions, sized for Instagram or other social platforms, without any editing experience required.",
+    "samplePrompt": "Turn these 40 photos and 10 video clips from Saturday's gala into a 45-second highlight reel for Instagram, with upbeat music and our logo in the corner.",
+    "beginnerFriendly": "yes",
+    "trustScore": 4,
+    "pricingNote": "Free tier with limits; paid plans for more generations — verify before publishing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://www.heygen.com/video/event-recap-highlight-video-maker",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  },
+  {
+    "id": "event-planners-141808cf9e",
+    "slug": "write-personalized-thank-you-notes-to-clients-and-vendors-after",
+    "kind": "workflow",
+    "niche": "Event Planners",
+    "sector": "Event Planners",
+    "persona": "Planner following up with clients, vendors, or sponsors after an event",
+    "title": "write personalized thank-you notes to clients and vendors after an event",
+    "intentLabels": [
+      "thank you note generator",
+      "post-event gratitude message",
+      "vendor appreciation note"
+    ],
+    "tools": [
+      {
+        "name": "Musely Thank You Note Generator",
+        "url": "https://musely.ai/tools/thank-you-note-generator"
+      }
+    ],
+    "workflowSummary": "Enter the recipient's name, what you're thanking them for, and your preferred tone; the AI drafts a warm, specific-feeling note in seconds — useful for getting through a long list of vendors and clients after a busy event season without every note sounding identical.",
+    "samplePrompt": "Write a warm thank-you note to our florist for going above and beyond on last weekend's wedding, mentioning the last-minute centerpiece redo.",
+    "beginnerFriendly": "yes",
+    "trustScore": 3,
+    "pricingNote": "Free to use — verify current features before publishing",
+    "pricingTier": "free",
+    "pricingTierSource": "matched",
+    "sourceUrl": "https://musely.ai/tools/thank-you-note-generator",
+    "sourceType": "Product page",
+    "freshness": "2026",
+    "accessNotes": "Public product page; standard terms of service apply",
+    "batch": "EventPlanners AI Workflows Batch5",
+    "status": "active"
+  }
+]

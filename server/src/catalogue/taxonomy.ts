@@ -268,6 +268,16 @@ export type ToolStatus = (typeof TOOL_STATUSES)[number]
 /** Only this status is ever recommended or listed by default. */
 export const DEFAULT_STATUS: ToolStatus = 'active'
 
+/* ─── Catalogue kind ───────────────────────────────────────────────────────── */
+
+/**
+ * Which directory a request is browsing: the workflow catalogue (Home) or the
+ * MCP server directory (/mcp-servers). There is no 'all' value — an absent
+ * kind means no filter, so every existing caller keeps its behaviour.
+ */
+export const CATALOGUE_KINDS = ['workflow', 'mcp'] as const
+export type CatalogueKind = (typeof CATALOGUE_KINDS)[number]
+
 /* ─── Roles ────────────────────────────────────────────────────────────────── */
 
 /**
@@ -363,6 +373,7 @@ export const GOALS_BY_ROLE: Record<RoleName, readonly string[]> = {
     'Create social content',
     'Analyze audience',
     'Build email campaigns',
+    'Follow up with clients',
   ],
   Writer: [
     'Research a topic',
@@ -443,6 +454,31 @@ export const WORKFLOW_STAGES = [
 ] as const
 
 export type WorkflowStage = (typeof WORKFLOW_STAGES)[number]
+
+/**
+ * The order a plan's steps are shown in, once they have been chosen.
+ *
+ * Deliberately a SEPARATE list from `WORKFLOW_STAGES`, and not a re-sort of
+ * it: that array is the taxonomy's own declaration order (grouping research
+ * near ideation, editorial work near design), which is not the order a
+ * reader wants to see a plan unfold in. This one reads as a narrative —
+ * work out what to do, make it, ship it, then keep it running and in sync —
+ * so "publish" comes before "automate", not after "analyse" as it does
+ * above. A permutation of the same ten values, verified by
+ * tests/catalogue.test.ts.
+ */
+export const PLAN_STEP_STAGE_ORDER: readonly WorkflowStage[] = [
+  'research',
+  'ideate',
+  'draft',
+  'design',
+  'build',
+  'edit',
+  'publish',
+  'automate',
+  'analyse',
+  'collaborate',
+]
 
 export interface StageDefinition {
   readonly id: WorkflowStage
@@ -543,7 +579,7 @@ export const STAGE_DEFINITIONS: readonly StageDefinition[] = [
     keywords: [
       'publish', 'post', 'posting', 'share', 'distribute', 'launch', 'ship',
       'deploy', 'upload', 'social', 'seo', 'promote', 'campaign', 'schedule',
-      'audience', 'reach', 'outreach',
+      'audience', 'reach',
     ],
   },
   {
@@ -561,6 +597,29 @@ export const STAGE_DEFINITIONS: readonly StageDefinition[] = [
 export const STAGE_BY_ID: Record<WorkflowStage, StageDefinition> = Object.fromEntries(
   STAGE_DEFINITIONS.map((stage) => [stage.id, stage]),
 ) as Record<WorkflowStage, StageDefinition>
+
+/**
+ * The plain-language phrase a non-technical reader sees instead of the stage id.
+ *
+ * "research", "automate" and the rest are the closed vocabulary retrieval and
+ * scoring reason over — they stay exactly as they are everywhere else in this
+ * file. This map is the ONE place a stage becomes a sentence a reader outside
+ * the industry would say out loud, so the assistant's plan can show "Come up
+ * with ideas" instead of "ideate" without a second stage vocabulary appearing
+ * anywhere.
+ */
+export const STAGE_ACTIONS: Record<WorkflowStage, string> = {
+  research: 'Look into your options',
+  ideate: 'Come up with ideas',
+  draft: 'Write the first version',
+  design: 'Make it look good',
+  build: 'Build it',
+  edit: 'Polish it',
+  analyse: 'See how it is doing',
+  automate: 'Make it run on its own',
+  publish: 'Share it',
+  collaborate: 'Work on it with your team',
+}
 
 /* ─── Sorting ──────────────────────────────────────────────────────────────── */
 
@@ -704,3 +763,48 @@ export function isUseCase(value: string): boolean {
 export function isWorkflowStage(value: string): value is WorkflowStage {
   return STAGE_SET.has(value)
 }
+
+/* ─── Niches (automations, SPEC-automations.md §4) ────────────────────────────
+ *
+ * Not a Tool vocabulary — nothing above this line reads it, and no Tool field
+ * is validated against it. It exists here anyway because taxonomy.ts is the
+ * single source for every closed list in the server (§5.3), and an automation
+ * is close enough in kind (a curated, editorial record) that a second such
+ * list belongs beside this one rather than starting a new file for one array.
+ * It is deliberately NOT part of `Taxonomy`/`buildTaxonomy()` above: that
+ * shape backs the catalogue's public GET /api/taxonomy, and automations have
+ * no route yet to serve it through.
+ *
+ * The values are the source folder names under server/scripts/data/,
+ * verbatim, for the 25 folders that contain data (docs/BATCH-SURVEY.md). The
+ * importer takes an automation's niche from its folder, so a folder rename
+ * is a vocabulary change here too. Six folders are empty and are not listed.
+ */
+export const NICHES = [
+  'Accountants & Bookkeepers',
+  'Coaches',
+  'Content Creators-Writers',
+  'Contractors & Home Services',
+  'Customer Support Teams',
+  'Event Planners',
+  'Fitness-Salon-Personal Services',
+  'Freelancers-Consultants',
+  'Hotels & Hospitality',
+  'Job Seekers-Career Changers',
+  'Marketing Agencies',
+  'Office & Operations Managers',
+  'Photographers & Videographers',
+  'Property Managers',
+  'Real Estate',
+  'Recruiters & HR',
+  'Restaurants',
+  'Retail-E-commerce Small Biz',
+  'Sales Teams',
+  'Small Businesses',
+  'Startup Founders',
+  'Students',
+  'Teachers & Educators',
+  'Travel Agencies',
+  'Virtual Assistants',
+] as const
+export type NicheName = (typeof NICHES)[number]

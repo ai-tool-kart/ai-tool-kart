@@ -159,10 +159,10 @@ export function createMockProvider(options: MockProviderOptions = {}): LLMProvid
  * restatement here costs a few lines and keeps the directory movable; an import
  * would make the move a rewrite. The test is what holds the two in agreement.
  */
-interface WorkflowEntry {
+interface PlanStep {
   stage: string
-  toolId?: string
-  why: string
+  toolId: string
+  alsoGoodToolIds: string[]
 }
 
 interface MockAssistantReply {
@@ -170,28 +170,69 @@ interface MockAssistantReply {
   intent: 'clarify' | 'recommend'
   understood: { role?: string; goal?: string; constraints: string[] }
   plan?: {
-    title: string
-    toolIds: string[]
-    agents: string[]
-    workflow: WorkflowEntry[]
-    prompts: string
-    comparison: string
-    steps: string[]
+    steps: PlanStep[]
   }
   followUps: string[]
 }
 
-const MAX_PLAN_TOOLS = 5
-const MAX_WORKFLOW_STAGES = 4
+const MAX_PLAN_STEPS = 4
+const MAX_ALSO_GOOD = 2
 const MAX_FOLLOW_UPS = 3
+/** A card must score at least this fraction of the leader's score to compete
+ *  for a step at all. Restated from config/limits.ts's ASSISTANT.stepScoreCutoffRatio. */
+const STEP_SCORE_CUTOFF_RATIO = 0.75
+/** Hard ceiling on the tool pool the ratio above can leave standing.
+ *  Restated from ASSISTANT.maxStepCandidates. */
+const MAX_STEP_CANDIDATES = 6
+
+/**
+ * The order a plan's steps are shown in.
+ *
+ * A restatement of catalogue/taxonomy.ts's PLAN_STEP_STAGE_ORDER, deliberately
+ * not imported — same reasoning as STAGE_PHRASES below: this directory has no
+ * dependency on the catalogue today, and Phase H lifts it into shared/llm for
+ * the News Agent, which has no plan to order at all.
+ */
+const STAGE_ORDER = [
+  'research', 'ideate', 'draft', 'design', 'build',
+  'edit', 'publish', 'automate', 'analyse', 'collaborate',
+]
+
+/**
+ * The plain-language phrase for a stage, for chips only.
+ *
+ * A restatement of catalogue/taxonomy.ts's STAGE_ACTIONS, deliberately not
+ * imported: this directory has no dependency on the catalogue at all today,
+ * and Phase H lifts it into shared/llm for the News Agent, which has no
+ * catalogue either. Same reasoning as MockAssistantReply below.
+ */
+const STAGE_PHRASES: Record<string, string> = {
+  research: 'Look into your options',
+  ideate: 'Come up with ideas',
+  draft: 'Write the first version',
+  design: 'Make it look good',
+  build: 'Build it',
+  edit: 'Polish it',
+  analyse: 'See how it is doing',
+  automate: 'Make it run on its own',
+  publish: 'Share it',
+  collaborate: 'Work on it with your team',
+}
+
+/** Falls back to the raw stage rather than throwing on an unknown one. */
+function stagePhrase(stage: string): string {
+  return STAGE_PHRASES[stage] ?? stage
+}
 
 /**
  * Builds a plan out of the candidate cards, and nothing else.
  *
- * The ordering rule is worth stating: candidates arrive from retrieval already
- * ranked, so the mock preserves that order rather than scoring anything itself.
- * Any "preference" the mock expressed would be a second, invisible ranking that
- * Phase E's tests would then be asserting against instead of the real one.
+ * The ranking rule is worth stating: candidates arrive from retrieval already
+ * scored, and the mock reads that score back off each card rather than
+ * scoring anything itself — see stepCandidatePool and buildSteps for the
+ * cutoff and the grouping. Any "preference" the mock expressed on top of the
+ * numbers would be a second, invisible ranking that Phase E's tests would
+ * then be asserting against instead of the real one.
  */
 function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOptions): string {
   const cards = parseToolCards(request.system)
@@ -219,28 +260,18 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
     return JSON.stringify(clarify, null, 2)
   }
 
-  const chosen = cards.slice(0, MAX_PLAN_TOOLS)
-  const stages = deriveStages(chosen)
+  const steps = buildSteps(cards)
+  const chosen = steps
+    .map((step) => cards.find((card) => card.id === step.toolId))
+    .filter((card): card is ToolCard => card !== undefined)
 
   const reply: MockAssistantReply = {
-    message: `Here is a starting stack built from ${chosen.length} of the ${cards.length} tools I have for this.`,
+    message: 'Here is a plan for that.',
     intent: 'recommend',
     understood: {
       constraints: constraintsFrom(userText, cards),
     },
-    plan: {
-      title: planTitle(chosen),
-      toolIds: chosen.map((card) => card.id),
-      agents: [],
-      workflow: stages,
-      // One line each, as §10.1 specifies. Both name only tools already chosen.
-      prompts: `Starter prompts for ${chosen[0]?.name ?? 'the first step'}`,
-      comparison:
-        chosen.length > 1
-          ? `${chosen[0]?.name} vs ${chosen[1]?.name} on the same task`
-          : `${chosen[0]?.name} on a single task`,
-      steps: chosen.map((card) => `Try ${card.name} for the ${card.stages[0] ?? 'first'} step.`),
-    },
+    plan: { steps },
     followUps: followUpsFrom(chosen),
   }
 
@@ -271,41 +302,73 @@ function mockAssistant(request: LLMRequest<unknown>, options: MockProviderOption
 }
 
 /**
- * One workflow entry per distinct stage present in the chosen cards.
+ * Cuts the candidate cards to the ones actually in the running for a step.
  *
- * Stages come off the cards, so the mock cannot invent a step nothing can staff
- * — the same guarantee retrieval/select.ts enforces upstream.
+ * `cards` arrive rank-ordered — retrieval's own score order, preserved end to
+ * end through the prompt and back (see cards.ts) — so the leader is always
+ * `cards[0]`. A card below `STEP_SCORE_CUTOFF_RATIO` of the leader's score did
+ * not really compete for this request; it is in the wider candidate set for
+ * stage coverage and follow-up chips, not because it is a plausible pick. The
+ * hard cap on top of that keeps a plan from reading as a long, unranked list
+ * even when many cards clear the ratio.
  */
-function deriveStages(cards: readonly ToolCard[]): WorkflowEntry[] {
-  const seen = new Set<string>()
-  const workflow: WorkflowEntry[] = []
-
-  for (const card of cards) {
-    for (const stage of card.stages) {
-      if (seen.has(stage) || workflow.length >= MAX_WORKFLOW_STAGES) continue
-      seen.add(stage)
-      workflow.push({
-        stage,
-        toolId: card.id,
-        why: `${card.name} covers the ${stage} step.`,
-      })
-    }
-  }
-
-  if (workflow.length === 0 && cards[0]) {
-    workflow.push({
-      stage: 'start',
-      toolId: cards[0].id,
-      why: `${cards[0].name} is the closest match in the candidate set.`,
-    })
-  }
-
-  return workflow
+function stepCandidatePool(cards: readonly ToolCard[]): ToolCard[] {
+  const topScore = cards[0]?.score ?? 0
+  const cutoff = topScore * STEP_SCORE_CUTOFF_RATIO
+  return cards.filter((card) => card.score >= cutoff).slice(0, MAX_STEP_CANDIDATES)
 }
 
-function planTitle(cards: readonly ToolCard[]): string {
-  const category = cards[0]?.cat ?? 'AI'
-  return `${category} workflow`
+/**
+ * Groups the candidate cards into steps, by primary stage.
+ *
+ * A card's `stages[0]` is the stage it is FOR — the thing it is actually good
+ * at, not a job it can also limp through. This runs against the score-cut
+ * pool (`stepCandidatePool`), so every card considered here already competed
+ * on the numbers; the only question left is how to arrange them.
+ *
+ * That arrangement is a single pass: walk the pool in rank order and file
+ * each card under its primary stage. Because the pool is rank-ordered, the
+ * first card filed under a stage is — by construction — the highest-scoring
+ * one that wanted it, which makes it that step's main pick; whichever cards
+ * land after it in the same bucket are the "also good" alternates, in the
+ * same rank order, capped at `MAX_ALSO_GOOD`.
+ *
+ * A card is NEVER moved to a stage it lists second because its first choice
+ * was taken by a higher-ranked one — that used to mean a tool nobody ranked
+ * highly for a job could still end up staffing it, a plan that looked
+ * complete while quietly recommending the wrong tool for the step it named.
+ * It becomes an alternate under ITS OWN primary stage instead, or is left out
+ * of the plan if that stage does not make the cut.
+ *
+ * Which stages make the cut is decided by the order buckets first FILL, same
+ * as before — the highest-ranked cards effectively choose which stages get a
+ * step. Once chosen, the steps are re-ordered for DISPLAY by `STAGE_ORDER`,
+ * which is a narrative reading order, not a relevance one.
+ */
+function buildSteps(cards: readonly ToolCard[]): PlanStep[] {
+  const pool = stepCandidatePool(cards)
+  const groups = new Map<string, ToolCard[]>()
+
+  for (const card of pool) {
+    const stage = card.stages[0]
+    if (stage === undefined) continue
+    const group = groups.get(stage)
+    if (group) group.push(card)
+    else groups.set(stage, [card])
+  }
+
+  const chosenStages = [...groups.keys()].slice(0, MAX_PLAN_STEPS)
+
+  const steps = chosenStages.map((stage): PlanStep => {
+    const [main, ...rest] = groups.get(stage) as [ToolCard, ...ToolCard[]]
+    return {
+      stage,
+      toolId: main.id,
+      alsoGoodToolIds: rest.slice(0, MAX_ALSO_GOOD).map((card) => card.id),
+    }
+  })
+
+  return steps.sort((a, b) => STAGE_ORDER.indexOf(a.stage) - STAGE_ORDER.indexOf(b.stage))
 }
 
 /**
@@ -430,7 +493,11 @@ function followUpsFrom(cards: readonly ToolCard[]): string[] {
 
   for (const stage of byFrequency(cards.flatMap((card) => card.stages))) {
     if (chips.length >= MAX_FOLLOW_UPS) break
-    chips.push(`Focus on ${stage}`)
+    // The raw stage id ("automate", "collaborate") is plumbing, not something a
+    // non-technical reader would say. See the plain-language rules in
+    // assistant/prompts/assistant.ts, which this mirrors for the same reason
+    // MockAssistantReply restates the schema rather than importing it.
+    chips.push(stagePhrase(stage))
   }
 
   if (chips.length < MAX_FOLLOW_UPS && cards.length > 1) chips.push('Compare the top two')

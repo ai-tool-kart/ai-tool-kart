@@ -1,3 +1,5 @@
+import { MCP_SERVERS_ROUTE } from '@/data/navigation'
+
 /*
  * Hero content, ported from the final design
  * (ai-tool-kart-pre-final-design/project/AI Tool Kart Site.dc.html):
@@ -10,10 +12,12 @@ export const HERO_WORD_CHAIN = ['Task', 'Job', 'Niche', 'Business', 'Goal'] as c
 /**
  * The catalogue kinds offered above the headline.
  *
- * In the design this selection drives nothing but its own highlight — no filter,
- * no query, no navigation — so it is reproduced as exactly that here. It becomes
- * a real filter when the catalogue distinguishes the kinds; inventing that
- * behaviour now would be inventing a feature.
+ * In the design this selection drove nothing but its own highlight — no
+ * filter, no query, no navigation. Now both kinds are real destinations: Home
+ * ("AI Workflows") and /mcp-servers ("MCP Servers") each render this same Hero,
+ * so KindTabs is a real switcher between the two pages, with the active pill
+ * derived from the current route rather than from local state — see KindTabs,
+ * which reads `location.pathname` against each kind's `to`.
  *
  * The handoff offers three. "AI Agents" was dropped by product decision, so the
  * union below no longer carries an `agents` icon either — this list is the only
@@ -28,11 +32,13 @@ export type HeroKindIcon = 'workflows' | 'mcp'
 export interface HeroKind {
   label: string
   icon: HeroKindIcon
+  /** The route this kind switches to. Every kind is a real destination now. */
+  to: string
 }
 
 export const HERO_KINDS: HeroKind[] = [
-  { label: 'AI Workflows', icon: 'workflows' },
-  { label: 'MCP Servers', icon: 'mcp' },
+  { label: 'AI Workflows', icon: 'workflows', to: '/' },
+  { label: 'MCP Servers', icon: 'mcp', to: MCP_SERVERS_ROUTE },
 ]
 
 /** Suggested tasks under the hero search. */

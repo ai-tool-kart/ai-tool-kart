@@ -21,7 +21,12 @@ const PANEL =
 const ACTION =
   'mt-5 inline-flex h-[46px] cursor-pointer items-center gap-2 rounded-pill border border-white/[0.22] bg-[linear-gradient(180deg,#B08CFF_0%,#8858F2_48%,#6A32DC_100%)] px-[22px] text-[14px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_16px_32px_-20px_rgba(116,80,244,0.95)] transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-px'
 
-function StatePanel({
+/**
+ * The dashed state panel both states below are built from. Exported so other
+ * list pages (automations) render their empty and error states in the same
+ * shape rather than a lookalike.
+ */
+export function StatePanel({
   title,
   detail,
   action,

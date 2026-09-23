@@ -126,7 +126,7 @@ export default function CatalogueToolCard({
             <h3 className="truncate text-[16.5px] font-semibold tracking-[-0.018em] text-[#F5F2FD]">
               {tool.name}
             </h3>
-            <p className="truncate text-[12px] text-[#7C7697]">
+            <p className="truncate text-[12px] text-muted-dim">
               {tool.cat} · {tool.model}
             </p>
           </div>
@@ -156,14 +156,14 @@ export default function CatalogueToolCard({
             {tool.model}
           </span>
           {meta ?? (tool.reviews > 0 ? (
-            <span className="truncate text-[12px] text-[#615C7A]">
+            <span className="truncate text-[12px] text-muted-dim">
               {tool.reviews.toLocaleString()} reviews
             </span>
           ) : (
             /* The design puts the review count here. With none to show, the
                slot carries the tool's actual price string instead — real
                information, in the space that was reserved for information. */
-            <span className="truncate text-[12px] text-[#615C7A]">{tool.price}</span>
+            <span className="truncate text-[12px] text-muted-dim">{tool.price}</span>
           ))}
         </div>
 

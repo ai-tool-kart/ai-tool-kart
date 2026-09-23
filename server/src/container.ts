@@ -38,6 +38,9 @@
  */
 
 import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
+import { createJsonAutomations } from './automations/json.ts'
+import { createAutomationMatcher, type AutomationMatcher } from './automations/match.ts'
+import type { AutomationRepository } from './automations/repository.ts'
 import { createJsonToolCatalogue } from './catalogue/json.ts'
 import type { ToolCatalogueRepository } from './catalogue/repository.ts'
 import type { ServerEnv } from './config/env.ts'
@@ -49,6 +52,8 @@ import type { MockProviderOptions } from './llm/providers/mock.ts'
 import { createRetrievalService, type RetrievalService } from './retrieval/service.ts'
 import { createJsonWorkSavingsRepository } from './savings/json.ts'
 import type { WorkSavingsRepository } from './savings/repository.ts'
+import { createSubmissionService, type SubmissionService } from './submissions/service.ts'
+import { createSubmissionStore, type SubmissionStore } from './submissions/store.ts'
 import { createJsonUsageStoryRepository } from './stories/json.ts'
 import type { UsageStoryRepository } from './stories/repository.ts'
 import type { Logger } from './utils/logger.ts'
@@ -62,9 +67,17 @@ export interface Container {
   readonly stories: UsageStoryRepository
   /** Editorial work-savings estimates. Keyed on a kind of work, not on a tool. */
   readonly savings: WorkSavingsRepository
+  /** Imported task recipes (SPEC-automations.md). Never imports the catalogue. */
+  readonly automations: AutomationRepository
+  /** The one automation search index, built on first use. Route and assistant share it. */
+  readonly automationMatcher: () => Promise<AutomationMatcher>
   /** One client, one budget, one unit of work. Never share the result. */
   readonly createLLMClientForTurn: () => LLMClient
   readonly assistant: AssistantEngine
+  /** The Submit form's intake — SPEC-submit-backend.md §7's orchestration. */
+  readonly submissions: SubmissionService
+  /** The raw store behind `submissions` — the review script reads/writes this directly. */
+  readonly submissionStore: SubmissionStore
 }
 
 export interface CreateContainerOptions {
@@ -87,6 +100,16 @@ export interface CreateContainerOptions {
   stories?: UsageStoryRepository
   /** Test seam for the work-savings estimates. Same purpose as `stories`. */
   savings?: WorkSavingsRepository
+  /** Test seam for the automations. Same purpose as `stories`. */
+  automations?: AutomationRepository
+  /**
+   * Test seam for the submission store.
+   *
+   * Same purpose as `catalogue`: a route test points this at an isolated
+   * `createJsonSubmissionStore(tempPath)` so it neither touches
+   * server/data/submissions.json nor leaks state between test files.
+   */
+  submissionStore?: SubmissionStore
   /**
    * Test seam for the provider.
    *
@@ -104,6 +127,8 @@ export function createContainer({
   catalogue: injected,
   stories: injectedStories,
   savings: injectedSavings,
+  automations: injectedAutomations,
+  submissionStore: injectedSubmissionStore,
   mock,
 }: CreateContainerOptions): Container {
   // The only line in the server that names a concrete catalogue implementation.
@@ -117,6 +142,27 @@ export function createContainer({
 
   // ...and the only line naming a concrete savings implementation.
   const savings = injectedSavings ?? createJsonWorkSavingsRepository({ logger })
+
+  // ...and the only line naming a concrete automations implementation. The
+  // catalogue is not passed in: an automation embeds its tools and references
+  // the catalogue only by slug (SPEC-automations.md §1).
+  const automations = injectedAutomations ?? createJsonAutomations({ logger })
+
+  // ONE search index over the active automations, shared by GET
+  // /api/automations and the assistant. Built on first use and kept: the set
+  // is fixed for the life of the process, so a second index would repeat it.
+  let automationIndex: Promise<AutomationMatcher> | undefined
+  const automationMatcher = (): Promise<AutomationMatcher> => {
+    automationIndex ??= automations.list().then((all) => createAutomationMatcher(all))
+    return automationIndex
+  }
+
+  // createSubmissionStore() (submissions/store.ts) is itself the switch point
+  // for a future Postgres implementation, so this line never has to name
+  // store.json.ts directly — unlike catalogue/stories/savings above, which
+  // have no such factory of their own yet.
+  const submissionStore = injectedSubmissionStore ?? createSubmissionStore()
+  const submissions = createSubmissionService({ store: submissionStore, catalogue })
 
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
@@ -136,6 +182,7 @@ export function createContainer({
     retrieval,
     catalogue,
     createClient: createLLMClientForTurn,
+    automations: automationMatcher,
     logger,
   })
 
@@ -146,7 +193,11 @@ export function createContainer({
     retrieval,
     stories,
     savings,
+    automations,
+    automationMatcher,
     createLLMClientForTurn,
     assistant,
+    submissions,
+    submissionStore,
   }
 }

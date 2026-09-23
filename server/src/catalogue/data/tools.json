@@ -181,6 +181,7 @@
       "Knowledge"
     ],
     "pop": 85,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -427,6 +428,7 @@
       "Debugging"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -757,6 +759,7 @@
       "Collections"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -803,6 +806,7 @@
       "Handoff"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -855,6 +859,7 @@
       "Brand kit"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -1823,6 +1828,7 @@
       "Narration"
     ],
     "pop": 85,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -2057,6 +2063,7 @@
       "Follow-ups"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -2945,6 +2952,7 @@
       "Workflow"
     ],
     "pop": 95,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -3042,6 +3050,7 @@
       "Workflow"
     ],
     "pop": 85,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -3089,6 +3098,7 @@
       "Open source"
     ],
     "pop": 70,
+    "isMcpServer": true,
     "api": "—",
     "ctx": "—",
     "team": "—",
@@ -3201,7 +3211,8 @@
       "Analyze feedback",
       "Research users",
       "Summarize notes",
-      "Find early users"
+      "Find early users",
+      "Follow up with clients"
     ],
     "stages": [
       "collaborate",
@@ -3212,5 +3223,100 @@
     "status": "active",
     "verified": true,
     "addedAt": "2026-08-13"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "mono": "Gh",
+    "cat": "Code",
+    "model": "Freemium",
+    "tagline": "Where code lives — its official MCP server lets an agent open PRs and manage issues directly.",
+    "rating": 4.7,
+    "reviews": 41200,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Repositories",
+      "Pull requests",
+      "Issues",
+      "Code search",
+      "MCP"
+    ],
+    "pop": 90,
+    "isMcpServer": true,
+    "api": "—",
+    "ctx": "—",
+    "team": "—",
+    "trial": "—",
+    "integr": "—",
+    "slug": "github",
+    "url": "https://github.com",
+    "summary": "GitHub hosts code, pull requests and issues. Its official MCP server lets an AI agent read repositories, open pull requests, manage issues and search code on a developer's behalf, instead of a person relaying each step by hand.",
+    "roles": [
+      "Developer",
+      "Product Manager"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Build APIs",
+      "Research documentation"
+    ],
+    "stages": [
+      "build",
+      "automate",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true,
+    "addedAt": "2026-02-20"
+  },
+  {
+    "id": "slack",
+    "name": "Slack",
+    "mono": "Sk",
+    "cat": "Agents",
+    "model": "Freemium",
+    "tagline": "Team chat an agent can search, post to and automate through its official MCP server.",
+    "rating": 4.5,
+    "reviews": 27600,
+    "price": "Free tier + paid plans",
+    "trend": "",
+    "badge": "",
+    "tags": [
+      "Team chat",
+      "Search",
+      "Automation",
+      "MCP",
+      "Notifications"
+    ],
+    "pop": 85,
+    "isMcpServer": true,
+    "api": "—",
+    "ctx": "—",
+    "team": "—",
+    "trial": "—",
+    "integr": "—",
+    "slug": "slack",
+    "url": "https://slack.com",
+    "summary": "Slack is where teams talk. Its official MCP server lets an AI agent search channel history, post updates and trigger workflows on a team's behalf, instead of a person copying context between the two.",
+    "roles": [
+      "Product Manager",
+      "Entrepreneur",
+      "Marketer"
+    ],
+    "useCases": [
+      "Automate dev chores",
+      "Automate reports"
+    ],
+    "stages": [
+      "automate",
+      "collaborate"
+    ],
+    "pricingTier": "freemium",
+    "status": "active",
+    "verified": true,
+    "addedAt": "2026-02-17"
   }
 ]

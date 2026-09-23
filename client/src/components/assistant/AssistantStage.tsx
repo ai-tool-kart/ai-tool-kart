@@ -46,9 +46,18 @@ interface AssistantStageProps {
   session: AssistantSession
   /** Scroll target for "Let's Build", which sends a turn from further down. */
   panelRef?: RefObject<HTMLDivElement | null>
+  /** Forwarded to ChatPanel. Defaults to the design's own wording. */
+  chatLabel?: string
+  /** Forwarded to PlanPanel. Defaults to the design's own wording. */
+  planLabel?: string
 }
 
-export default function AssistantStage({ session, panelRef }: AssistantStageProps) {
+export default function AssistantStage({
+  session,
+  panelRef,
+  chatLabel,
+  planLabel,
+}: AssistantStageProps) {
   return (
     <div
       ref={panelRef}
@@ -69,7 +78,7 @@ export default function AssistantStage({ session, panelRef }: AssistantStageProp
           className="pointer-events-none absolute top-0 right-[18%] left-[18%] h-px bg-[linear-gradient(90deg,transparent,rgba(240,232,255,0.5),transparent)]"
         />
 
-        <ChatPanel session={session} />
+        <ChatPanel session={session} {...(chatLabel ? { label: chatLabel } : {})} />
 
         {/* The lit seam, with the design's pulse travelling down it while a
             turn is in flight — the one cue that ties the two panes together. */}
@@ -82,7 +91,7 @@ export default function AssistantStage({ session, panelRef }: AssistantStageProp
           )}
         </div>
 
-        <PlanPanel session={session} />
+        <PlanPanel session={session} {...(planLabel ? { label: planLabel } : {})} />
       </div>
     </div>
   )
