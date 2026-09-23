@@ -99,9 +99,11 @@ not a `@theme` token. "Worst" is the lowest ratio across the 12 frames.
 | Setup card counts ("3 tools · 1 workflow · 4 prompts") | `#7E7899` | `components/aiSetups/SetupCard.tsx:152` | 12px/400 | **4.48:1** | 0 | literal |
 
 `#7E7899` also appears as text in `components/assistant/ChatPanel.tsx:107`
-and `components/community/SocialCard.tsx:84`; those instances measured at
-or above 4.5:1 on their backgrounds, but they share the colour of three
-failing rows above and would move with any fix to it.
+and `components/community/SocialCard.tsx:84`. Those two were not checked
+individually — the measurement grouped nine `#7E7899` elements at 12.5px
+and reported three examples, all from the rows above — so treat them as
+unverified. They share the colour of three failing rows and would move
+with any fix to it.
 
 ## If these are fixed
 
