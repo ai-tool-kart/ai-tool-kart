@@ -366,6 +366,11 @@ order, filtered by `niche` and `kind`. With `q`, ranked by `match.ts`
 `slug, niche, title, persona, tools` (names only)`, beginnerFriendly,
 pricingTier` — so a client cannot tell which path ran. `limit` defaults
 to 10 and is capped at 50 (`AUTOMATIONS_API`); beyond the cap is a 400.
+The response is `{ items, total }`: `total` counts every match before
+`limit` (listing and search alike), so a client can report the real
+number and say when it is showing only the first 50. For a search,
+"match" means any term overlap — the ranking, not the count, is what
+separates a good answer from a loose one.
 
 **Detail.** Slugs are unique within a niche only (one real slug is shared
 by two niches), so the path carries both, URL-encoded

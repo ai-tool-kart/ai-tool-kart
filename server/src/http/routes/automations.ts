@@ -63,6 +63,8 @@ export type ApiAutomation = Omit<
 
 export interface AutomationListResponse {
   items: ApiAutomationCard[]
+  /** How many matched before `limit` — what a result count reports. */
+  total: number
 }
 
 export interface AutomationResponse {
@@ -154,12 +156,21 @@ export function createAutomationsRouter({ automations }: AutomationsRouteOptions
           ...(query.kind ? { kind: query.kind } : {}),
         }
 
-        const found =
-          query.q !== undefined && query.q.length > 0
-            ? (await getMatcher()).match(query.q, { ...filters, limit }).map((m) => m.automation)
-            : await automations.list({ ...filters, limit })
+        let found: Automation[]
+        let total: number
+        if (query.q !== undefined && query.q.length > 0) {
+          const ranked = (await getMatcher()).matchWithTotal(query.q, { ...filters, limit })
+          found = ranked.matches.map((m) => m.automation)
+          total = ranked.total
+        } else {
+          // Listed whole, then capped here, so the count is of every match and
+          // not of the page. The set is in memory; slicing it costs nothing.
+          const all = await automations.list(filters)
+          found = all.slice(0, limit)
+          total = all.length
+        }
 
-        const body: AutomationListResponse = { items: found.map(toCard) }
+        const body: AutomationListResponse = { items: found.map(toCard), total }
         res.json(body)
       } catch (error) {
         next(error)

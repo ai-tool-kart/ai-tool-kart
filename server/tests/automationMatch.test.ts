@@ -182,6 +182,14 @@ await test('filters and caps', async (t) => {
     assert.equal(many.match('plan week', { limit: 10_000 }).length, AUTOMATION_MATCH.maxLimit)
   })
 
+  await t.test('matchWithTotal counts past the limit; matches equal match()', () => {
+    const ranked = m.matchWithTotal('plan week', { limit: 1 })
+    assert.equal(ranked.matches.length, 1)
+    assert.equal(ranked.total, 3)
+    assert.deepEqual(ranked.matches, m.match('plan week', { limit: 1 }))
+    assert.equal(m.matchWithTotal('plan week', { niche: 'Coaches', limit: 1 }).total, 2)
+  })
+
   await t.test('the input is not modified', () => {
     const before = records.map((r) => r.id)
     m.match('plan week')

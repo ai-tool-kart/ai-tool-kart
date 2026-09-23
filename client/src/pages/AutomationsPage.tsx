@@ -27,11 +27,11 @@ import { isNiche, type AutomationFilters, type NicheName } from '@/types/automat
  * A `niche` the vocabulary does not know is dropped rather than sent: the API
  * answers an unknown niche with a 400 for the whole request.
  *
- * ── No total, so the count is honest about the cap ───────────────────────────
+ * ── The count is the server's total ──────────────────────────────────────────
  *
- * The API returns at most 50 and no total. When a search fills the cap the
- * pill says "50+", not "50", because 50 would be a claim about how many
- * automations match that the page cannot make.
+ * The API returns at most 50 results but counts every match, so the pill and
+ * the status line report the real number. When it is larger than what is
+ * shown, the status line says so rather than letting 50 cards pass for all.
  */
 
 export default function AutomationsPage() {
@@ -76,10 +76,10 @@ export default function AutomationsPage() {
     setSearchParams(new URLSearchParams())
   }, [setSearchParams])
 
-  const count = results.automations.length
+  const shown = results.automations.length
+  const count = results.total
   const countKnown = !results.isLoading && !results.error
-  const capped = count >= MAX_AUTOMATIONS
-  const countText = `${count.toLocaleString()}${capped ? '+' : ''}`
+  const countText = count.toLocaleString()
   const filtered = filters.q.trim().length > 0 || filters.niche !== undefined
 
   return (
@@ -132,6 +132,9 @@ export default function AutomationsPage() {
               <>
                 <span className="font-semibold text-[#E4DEF5]">{countText}</span>{' '}
                 {count === 1 ? 'automation matches' : 'automations match'}
+                {shown < count && (
+                  <span className="text-[#615C7A]"> · showing the first {shown.toLocaleString()}</span>
+                )}
               </>
             )}
           </p>
@@ -147,7 +150,7 @@ export default function AutomationsPage() {
             detail={results.error}
             action={{ label: 'Try again', onClick: results.retry }}
           />
-        ) : count === 0 ? (
+        ) : shown === 0 ? (
           <StatePanel
             role="status"
             title="Nothing matches that search"

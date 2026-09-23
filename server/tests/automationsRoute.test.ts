@@ -120,6 +120,26 @@ await test('GET /api/automations', async (t) => {
     })
   })
 
+  await t.test('total counts every match, not the capped page, on both paths', async () => {
+    await withServer(container(), async ({ origin }) => {
+      // 18 active fixtures (the draft is not counted), 12 of them Real Estate.
+      const all = await readJson<AutomationListResponse>(await get(origin, '?limit=2'))
+      assert.equal(all.items.length, 2)
+      assert.equal(all.total, 18)
+
+      const niche = await readJson<AutomationListResponse>(await get(origin, '?niche=Real%20Estate&limit=5'))
+      assert.equal(niche.items.length, 5)
+      assert.equal(niche.total, 12)
+
+      const searched = await readJson<AutomationListResponse>(await get(origin, '?q=write+listing&limit=3'))
+      assert.equal(searched.items.length, 3)
+      assert.equal(searched.total, 12, 'every "Write listing number N" matches')
+
+      const none = await readJson<AutomationListResponse>(await get(origin, '?q=I+want+to'))
+      assert.equal(none.total, 0)
+    })
+  })
+
   await t.test('limit caps both paths; beyond the maximum is a 400', async () => {
     await withServer(container(), async ({ origin }) => {
       assert.equal((await readJson<AutomationListResponse>(await get(origin, '?limit=2'))).items.length, 2)

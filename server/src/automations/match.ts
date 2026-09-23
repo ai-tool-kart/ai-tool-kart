@@ -79,6 +79,14 @@ export interface AutomationMatch {
 
 export interface AutomationMatcher {
   match(query: string, options?: AutomationMatchOptions): AutomationMatch[]
+  /**
+   * The same ranking, plus how many automations matched before the limit —
+   * what a result count reports. `matches` is exactly what `match` returns.
+   */
+  matchWithTotal(
+    query: string,
+    options?: AutomationMatchOptions,
+  ): { matches: AutomationMatch[]; total: number }
 }
 
 interface Indexed {
@@ -150,63 +158,69 @@ export function createAutomationMatcher(automations: readonly Automation[]): Aut
     Math.log((indexed.length + idfSmoothing) / ((documentFrequency.get(term) ?? 0) + idfSmoothing)) +
     idfBase
 
-  return {
-    match(query, options = {}) {
-      const terms = termsOf(query).map((term) => ({ term, idf: idfOf(term) }))
-      // A query of nothing but stopwords has no signal; matching on trust
-      // alone would return the whole set in trust order.
-      if (terms.length === 0) return []
-      const total = terms.reduce((sum, { idf }) => sum + idf, 0)
-      const phrase = ` ${phraseOf(query)} `
+  const rank = (
+    query: string,
+    options: AutomationMatchOptions = {},
+  ): { matches: AutomationMatch[]; total: number } => {
+    const terms = termsOf(query).map((term) => ({ term, idf: idfOf(term) }))
+    // A query of nothing but stopwords has no signal; matching on trust
+    // alone would return the whole set in trust order.
+    if (terms.length === 0) return { matches: [], total: 0 }
+    const weight = terms.reduce((sum, { idf }) => sum + idf, 0)
+    const phrase = ` ${phraseOf(query)} `
 
-      const limit = Math.min(
-        Math.max(options.limit ?? AUTOMATION_MATCH.defaultLimit, 0),
-        AUTOMATION_MATCH.maxLimit,
-      )
-      const results: AutomationMatch[] = []
-      const titleWords = new Map<AutomationMatch, number>()
+    const limit = Math.min(
+      Math.max(options.limit ?? AUTOMATION_MATCH.defaultLimit, 0),
+      AUTOMATION_MATCH.maxLimit,
+    )
+    const results: AutomationMatch[] = []
+    const titleWords = new Map<AutomationMatch, number>()
 
-      for (const entry of indexed) {
-        const { automation } = entry
-        if (options.niche !== undefined && automation.niche !== options.niche) continue
-        if (options.kind !== undefined && automation.kind !== options.kind) continue
+    for (const entry of indexed) {
+      const { automation } = entry
+      if (options.niche !== undefined && automation.niche !== options.niche) continue
+      if (options.kind !== undefined && automation.kind !== options.kind) continue
 
-        const signals: AutomationMatchSignals = {
-          titlePhrase: entry.phrase.includes(phrase) ? AUTOMATION_MATCH_WEIGHTS.titlePhrase : 0,
-          titleTerms: AUTOMATION_MATCH_WEIGHTS.titleTerms * share(terms, total, entry.title),
-          intentTerms: AUTOMATION_MATCH_WEIGHTS.intentTerms * share(terms, total, entry.intent),
-          personaTerms: AUTOMATION_MATCH_WEIGHTS.personaTerms * share(terms, total, entry.persona),
-          toolTerms: AUTOMATION_MATCH_WEIGHTS.toolTerms * share(terms, total, entry.tools),
-          trust: 0,
-        }
-        const text =
-          signals.titlePhrase +
-          signals.titleTerms +
-          signals.intentTerms +
-          signals.personaTerms +
-          signals.toolTerms
-        // Trust breaks ties between text matches; it never makes one.
-        if (text === 0) continue
-        signals.trust = AUTOMATION_MATCH_WEIGHTS.trust * (automation.trustScore / 5)
-        const result = { automation, score: text + signals.trust, signals }
-        titleWords.set(result, entry.titleWords)
-        results.push(result)
+      const signals: AutomationMatchSignals = {
+        titlePhrase: entry.phrase.includes(phrase) ? AUTOMATION_MATCH_WEIGHTS.titlePhrase : 0,
+        titleTerms: AUTOMATION_MATCH_WEIGHTS.titleTerms * share(terms, weight, entry.title),
+        intentTerms: AUTOMATION_MATCH_WEIGHTS.intentTerms * share(terms, weight, entry.intent),
+        personaTerms: AUTOMATION_MATCH_WEIGHTS.personaTerms * share(terms, weight, entry.persona),
+        toolTerms: AUTOMATION_MATCH_WEIGHTS.toolTerms * share(terms, weight, entry.tools),
+        trust: 0,
       }
+      const text =
+        signals.titlePhrase +
+        signals.titleTerms +
+        signals.intentTerms +
+        signals.personaTerms +
+        signals.toolTerms
+      // Trust breaks ties between text matches; it never makes one.
+      if (text === 0) continue
+      signals.trust = AUTOMATION_MATCH_WEIGHTS.trust * (automation.trustScore / 5)
+      const result = { automation, score: text + signals.trust, signals }
+      titleWords.set(result, entry.titleWords)
+      results.push(result)
+    }
 
-      // Phrase hits first (they outscore everything else anyway — see the
-      // header), shorter title first among them, then score. Stable: a full
-      // tie keeps the caller's order.
-      results.sort((a, b) => {
-        const aPhrase = a.signals.titlePhrase > 0
-        const bPhrase = b.signals.titlePhrase > 0
-        if (aPhrase !== bPhrase) return aPhrase ? -1 : 1
-        if (aPhrase) {
-          const byLength = (titleWords.get(a) ?? 0) - (titleWords.get(b) ?? 0)
-          if (byLength !== 0) return byLength
-        }
-        return b.score - a.score
-      })
-      return results.slice(0, limit)
-    },
+    // Phrase hits first (they outscore everything else anyway — see the
+    // header), shorter title first among them, then score. Stable: a full
+    // tie keeps the caller's order.
+    results.sort((a, b) => {
+      const aPhrase = a.signals.titlePhrase > 0
+      const bPhrase = b.signals.titlePhrase > 0
+      if (aPhrase !== bPhrase) return aPhrase ? -1 : 1
+      if (aPhrase) {
+        const byLength = (titleWords.get(a) ?? 0) - (titleWords.get(b) ?? 0)
+        if (byLength !== 0) return byLength
+      }
+      return b.score - a.score
+    })
+    return { matches: results.slice(0, limit), total: results.length }
+  }
+
+  return {
+    match: (query, options) => rank(query, options).matches,
+    matchWithTotal: rank,
   }
 }

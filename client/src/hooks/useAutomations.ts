@@ -21,6 +21,8 @@ import type { AutomationCard, AutomationDetail, AutomationFilters } from '@/type
 
 export interface AutomationsResource {
   automations: AutomationCard[]
+  /** Every match, from the server — may exceed `automations.length` at the cap. */
+  total: number
   /** True while a filter set is loading — the skeleton state. */
   isLoading: boolean
   /** A reader-facing message, or undefined when the request succeeded. */
@@ -45,6 +47,7 @@ export function useAutomations(
   { debounceMs = 0, limit = MAX_AUTOMATIONS }: UseAutomationsOptions = {},
 ): AutomationsResource {
   const [automations, setAutomations] = useState<AutomationCard[]>([])
+  const [total, setTotal] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | undefined>(undefined)
   const [attempt, setAttempt] = useState(0)
@@ -74,9 +77,10 @@ export function useAutomations(
       controllerRef.current = controller
 
       getAutomations({ ...filters, limit }, controller.signal)
-        .then((items) => {
+        .then((page) => {
           if (controller.signal.aborted || !liveRef.current) return
-          setAutomations(items)
+          setAutomations(page.items)
+          setTotal(page.total)
           setIsLoading(false)
         })
         .catch((cause: unknown) => {
@@ -87,6 +91,7 @@ export function useAutomations(
           // Cleared on failure on purpose: the previous filter's results are
           // not the answer to the new question.
           setAutomations([])
+          setTotal(0)
         })
     }
 
@@ -102,7 +107,7 @@ export function useAutomations(
 
   const retry = useCallback(() => setAttempt((n) => n + 1), [])
 
-  return { automations, isLoading, error, retry }
+  return { automations, total, isLoading, error, retry }
 }
 
 /**

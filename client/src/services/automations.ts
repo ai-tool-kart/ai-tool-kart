@@ -22,8 +22,11 @@ const AUTOMATIONS_PATH = '/automations'
 /** The API's ceiling. Asking for more is a 400. */
 export const MAX_AUTOMATIONS = 50
 
-interface AutomationListResponse {
+/** GET /api/automations — `AutomationListResponse` on the server. */
+export interface AutomationListResponse {
   items: AutomationCard[]
+  /** How many matched before `limit`: the real count, not the page size. */
+  total: number
 }
 
 interface AutomationDetailResponse {
@@ -47,13 +50,11 @@ export function automationQueryString(query: AutomationQuery): string {
 export async function getAutomations(
   query: AutomationQuery = {},
   signal?: AbortSignal,
-): Promise<AutomationCard[]> {
+): Promise<AutomationListResponse> {
   const search = automationQueryString(query)
-  const { items } = await apiRequest<AutomationListResponse>(
-    `${AUTOMATIONS_PATH}${search ? `?${search}` : ''}`,
-    { signal },
-  )
-  return items
+  return apiRequest<AutomationListResponse>(`${AUTOMATIONS_PATH}${search ? `?${search}` : ''}`, {
+    signal,
+  })
 }
 
 /**
