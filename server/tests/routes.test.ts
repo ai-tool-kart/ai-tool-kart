@@ -867,6 +867,25 @@ await test('POST /api/assistant/chat', async (t) => {
     })
   })
 
+  await t.test('a kind outside the vocabulary is a 400 naming the field', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      for (const kind of ['all', 'MCP', '', 1, null]) {
+        const response = await chat(origin, { message: 'hi', kind })
+        assert.equal(response.status, 400, `kind ${JSON.stringify(kind)} must be rejected`)
+        assert.match(JSON.stringify((await readJson<ErrorBody>(response)).error.details), /kind/)
+      }
+    })
+  })
+
+  await t.test('kind is top-level, not a context key', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      const nested = await chat(origin, { message: 'hi', context: { kind: 'mcp' } })
+      assert.equal(nested.status, 400)
+      const topLevel = await chat(origin, { message: 'edit videos faster', kind: 'mcp' })
+      assert.equal(topLevel.status, 200)
+    })
+  })
+
   await t.test('a malformed history entry is a 400', async () => {
     await withServer(assistantContainer(), async ({ origin }) => {
       const response = await chat(origin, {

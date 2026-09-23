@@ -43,15 +43,17 @@ import type {
   AssistantChatResponse,
   AssistantPlan,
   AssistantPlanStep,
+  CatalogueKind,
   ConversationContext,
   ConversationMessage,
+  PricingTier,
   ToolSummary,
 } from '../domain/types.ts'
 import { toToolSummary } from '../domain/types.ts'
 import type { LLMClient } from '../llm/client.ts'
 import type { ToolCard } from '../llm/prompts/cards.ts'
 import type { ScoredTool } from '../retrieval/score.ts'
-import type { RetrievalService } from '../retrieval/service.ts'
+import type { RetrievalRequest, RetrievalService } from '../retrieval/service.ts'
 import type { Logger } from '../utils/logger.ts'
 import { advanceContext, normalizeContext, truncateHistory } from './context.ts'
 import {
@@ -85,6 +87,12 @@ export interface AssistantTurnRequest {
   messages?: ConversationMessage[]
   /** The context returned with the previous turn, if any. */
   context?: ConversationContextInput | null
+  /**
+   * Which directory the conversation is happening in — the page, not the
+   * dialogue, so it is a request field rather than part of the context. A hard
+   * filter: the caller stated it. See ToolQuery.kind for why only 'mcp' narrows.
+   */
+  kind?: CatalogueKind
 }
 
 export interface AssistantEngine {
@@ -142,7 +150,9 @@ export function createAssistantEngine({
        * out are hard: the answer must not contain them, whatever they score. A
        * category the server merely inferred is passed as context, where it lifts
        * the right tools without deleting the audio tool the video workflow needs.
+       * The page's kind is stated too — by the client rather than the user.
        */
+      const filters = hardFilters(refined.retrieval.pricingTiers, request.kind)
       const retrieved = await retrieval.retrieve({
         query: refined.retrieval.query,
         context: {
@@ -157,9 +167,7 @@ export function createAssistantEngine({
             ? { confirmedToolIds: refined.retrieval.confirmedToolIds }
             : {}),
         },
-        ...(refined.retrieval.pricingTiers.length > 0
-          ? { filters: { pricingTiers: refined.retrieval.pricingTiers } }
-          : {}),
+        ...(filters ? { filters } : {}),
         limit: RETRIEVAL.defaultCandidates,
       })
 
@@ -363,5 +371,17 @@ function understoodFrom(context: ConversationContext): AssistantChatResponse['un
     ...(context.role ? { role: context.role } : {}),
     ...(context.goal ? { goal: context.goal } : {}),
     constraints: [...context.constraints],
+  }
+}
+
+/** The stated constraints, or undefined when there are none. */
+function hardFilters(
+  pricingTiers: PricingTier[],
+  kind: CatalogueKind | undefined,
+): RetrievalRequest['filters'] {
+  if (pricingTiers.length === 0 && !kind) return undefined
+  return {
+    ...(pricingTiers.length > 0 ? { pricingTiers } : {}),
+    ...(kind ? { kind } : {}),
   }
 }

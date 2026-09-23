@@ -71,6 +71,7 @@ export const CONTRACT_FIXTURES: Tool[] = [
     stages: ['build'],
     addedAt: '2026-03-02',
     url: 'https://beta-coder.example',
+    isMcpServer: true,
   }),
   makeTool({
     id: 'gamma-writer',
@@ -312,6 +313,29 @@ export async function runCatalogueContract({ name, create }: ContractOptions): P
       const catalogue = await repo()
       const page = await catalogue.search({ excludeIds: ['ghost'], limit: 100 })
       assert.equal(page.total, ACTIVE_IDS.length)
+    })
+
+    /* ── Kind ─────────────────────────────────────────────────────────────── */
+
+    await t.test("kind: 'mcp' keeps only MCP server records", async () => {
+      const catalogue = await repo()
+      const page = await catalogue.search({ kind: 'mcp', limit: 100 })
+      assert.deepEqual(
+        page.items.map((tool) => tool.id),
+        ['beta-coder'],
+      )
+    })
+
+    await t.test("kind: 'workflow' is the whole catalogue, MCP servers included", async () => {
+      const catalogue = await repo()
+      const page = await catalogue.search({ kind: 'workflow', limit: 100 })
+      assert.equal(page.total, ACTIVE_IDS.length)
+    })
+
+    await t.test("kind: 'mcp' combines with the other facets", async () => {
+      const catalogue = await repo()
+      const page = await catalogue.search({ kind: 'mcp', categories: ['Writing'], limit: 100 })
+      assert.equal(page.total, 0)
     })
 
     /* ── Free text ────────────────────────────────────────────────────────── */

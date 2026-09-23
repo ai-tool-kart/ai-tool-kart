@@ -405,6 +405,7 @@ function runSearch(tools: Tool[], indexes: Indexes, query: ToolQuery): ToolPage 
   for (const tool of scanned) {
     if (status !== 'all' && tool.status !== status) continue
     if (excluded.has(tool.id)) continue
+    if (query.kind === 'mcp' && tool.isMcpServer !== true) continue
     if (query.categories?.length && !query.categories.includes(tool.cat)) continue
     if (query.pricingTiers?.length && !query.pricingTiers.includes(tool.pricingTier)) continue
     if (query.roles?.length && !intersects(tool.roles, query.roles)) continue

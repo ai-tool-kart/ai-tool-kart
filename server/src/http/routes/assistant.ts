@@ -37,6 +37,7 @@ import { z } from 'zod'
 import { ConversationContextSchema, ConversationMessageSchema } from '../../assistant/context.ts'
 import type { AssistantEngine } from '../../assistant/engine.ts'
 import { ASSISTANT } from '../../config/limits.ts'
+import { CATALOGUE_KINDS } from '../../domain/types.ts'
 import { assistantUnavailable, providerUnavailable } from '../../domain/errors.ts'
 import { isLLMError } from '../../llm/errors.ts'
 import { parseOrThrow } from '../validate.ts'
@@ -57,6 +58,9 @@ const ChatBodySchema = z
     message: z.string().trim().min(1).max(ASSISTANT.maxMessageChars),
     messages: z.array(ConversationMessageSchema).optional(),
     context: ConversationContextSchema.optional(),
+    // Top level, not inside context: the page the user is on, not something
+    // the conversation learned. The client sends it every turn.
+    kind: z.enum(CATALOGUE_KINDS).optional(),
   })
   .strict()
 
@@ -78,6 +82,7 @@ export function createAssistantRouter({ engine }: AssistantRouteOptions): Router
             message: body.message,
             ...(body.messages ? { messages: body.messages } : {}),
             ...(body.context ? { context: body.context } : {}),
+            ...(body.kind ? { kind: body.kind } : {}),
           }),
         )
       } catch (error) {

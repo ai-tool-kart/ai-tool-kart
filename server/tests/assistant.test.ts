@@ -31,7 +31,7 @@ import { isLLMError } from '../src/llm/errors.ts'
 import { UNTRUSTED_DELIMITERS } from '../src/llm/prompts/shared.ts'
 import { createMockProvider, type MockProviderOptions } from '../src/llm/providers/mock.ts'
 import { createRetrievalService } from '../src/retrieval/service.ts'
-import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
+import type { ToolCatalogueRepository, ToolQuery } from '../src/catalogue/repository.ts'
 import type { Tool } from '../src/domain/types.ts'
 import { fixtureCatalogue, makeAssistantReply, makeTool, testLogger } from './helpers.ts'
 
@@ -741,3 +741,143 @@ await test('the conversation is carried into the turn', async (t) => {
     assert.doesNotMatch(input, /turn-0\b/, 'the oldest turns are truncated, not rejected')
   })
 })
+
+/* ═══ Catalogue kind ═══════════════════════════════════════════════════════ */
+
+/*
+ * The MCP directory's assistant. The fixture puts non-MCP tools where they
+ * would otherwise win — Beta Editor and Shorts Studio outrank every MCP tool on
+ * their stages — so a plan made only of MCP servers is the filter working, not
+ * the ranking.
+ */
+const KIND_TOOLS: Tool[] = [
+  ...TOOLS.map((tool) => (tool.id === 'clip-maker' ? { ...tool, isMcpServer: true } : tool)),
+  makeTool({
+    id: 'reel-server',
+    slug: 'reel-server',
+    name: 'Reel Server',
+    cat: 'Video',
+    pricingTier: 'freemium',
+    pop: 50,
+    url: 'https://reel-server.example',
+    tags: ['Video editing'],
+    roles: ['Video Editor'],
+    useCases: ['Edit long videos'],
+    stages: ['edit'],
+    tagline: 'Edits video from an agent over MCP.',
+    summary: 'Reel Server exposes video editing to an agent through MCP.',
+    isMcpServer: true,
+  }),
+  makeTool({
+    id: 'upload-server',
+    slug: 'upload-server',
+    name: 'Upload Server',
+    cat: 'Video',
+    model: 'Free',
+    pricingTier: 'free',
+    pop: 45,
+    url: 'https://upload-server.example',
+    tags: ['YouTube'],
+    roles: ['Video Editor', 'Content Creator'],
+    useCases: ['Generate clips'],
+    stages: ['publish'],
+    tagline: 'Publishes finished video to YouTube over MCP.',
+    summary: 'Upload Server lets an agent publish a finished video to YouTube.',
+    isMcpServer: true,
+  }),
+  makeTool({
+    id: 'shorts-studio',
+    slug: 'shorts-studio',
+    name: 'Shorts Studio',
+    cat: 'Video',
+    pricingTier: 'freemium',
+    pop: 84,
+    url: 'https://shorts-studio.example',
+    tags: ['Shorts', 'Video editing'],
+    roles: ['Video Editor', 'Content Creator'],
+    useCases: ['Create shorts'],
+    stages: ['edit', 'publish'],
+    tagline: 'Edits and publishes short-form video.',
+    summary: 'Shorts Studio edits long video into shorts and publishes them.',
+  }),
+]
+
+const MCP_IDS = new Set(KIND_TOOLS.filter((tool) => tool.isMcpServer).map((tool) => tool.id))
+
+/** Every id a response shows: step picks and their alternates. */
+function shownIds(response: Awaited<ReturnType<Harness['engine']['runTurn']>>): string[] {
+  return (response.plan?.steps ?? []).flatMap((step) => [
+    step.tool.id,
+    ...step.alsoGood.map((tool) => tool.id),
+  ])
+}
+
+/** The kind fixture, recording every query that reaches the port. */
+function spiedCatalogue(queries: ToolQuery[]): ToolCatalogueRepository {
+  const inner = fixtureCatalogue(KIND_TOOLS)
+  return {
+    id: inner.id,
+    findById: (id) => inner.findById(id),
+    findBySlug: (slug) => inner.findBySlug(slug),
+    findManyByIds: (ids) => inner.findManyByIds(ids),
+    search: (query) => {
+      queries.push(query)
+      return inner.search(query)
+    },
+    taxonomy: () => inner.taxonomy(),
+    size: () => inner.size(),
+    findByNormalizedUrl: (url) => inner.findByNormalizedUrl(url),
+    create: (tool) => inner.create(tool),
+  }
+}
+
+await test('catalogue kind', async (t) => {
+  await t.test("an 'mcp' turn only ever shows MCP servers, picks and alternates", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+
+    assert.equal(response.intent, 'recommend')
+    assert.ok(
+      response.plan?.steps.some((step) => step.alsoGood.length > 0),
+      'the fixture must produce an alternate, or this proves nothing about them',
+    )
+    for (const id of shownIds(response)) assert.ok(MCP_IDS.has(id), `${id} is not an MCP server`)
+    // The model is only ever shown MCP servers, so it cannot name anything else.
+    assert.doesNotMatch(h.prompts[0]?.system ?? '', /- (beta-editor|shorts-studio) · /)
+  })
+
+  await t.test('the same query without a kind does show non-MCP tools', async () => {
+    // The guard on the test above: unfiltered, this fixture recommends tools
+    // the 'mcp' turn must not.
+    const h = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY })
+    assert.ok(shownIds(response).some((id) => !MCP_IDS.has(id)))
+  })
+
+  await t.test('a turn with no kind behaves exactly as before', async () => {
+    const queries: ToolQuery[] = []
+    const h = harness({ catalogue: spiedCatalogue(queries) })
+    await h.engine.runTurn({ message: VIDEO_QUERY })
+
+    assert.ok(queries.length > 0)
+    for (const query of queries) assert.equal('kind' in query, false)
+  })
+
+  await t.test("'workflow' applies no filter: identical to sending no kind", async () => {
+    const none = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const workflow = harness({ catalogue: fixtureCatalogue(KIND_TOOLS) })
+    const a = await none.engine.runTurn({ message: VIDEO_QUERY })
+    const b = await workflow.engine.runTurn({ message: VIDEO_QUERY, kind: 'workflow' })
+
+    assert.deepEqual(b, a)
+    assert.equal(workflow.prompts[0]?.system, none.prompts[0]?.system)
+  })
+
+  await t.test("an 'mcp' turn with no MCP servers clarifies without the model", async () => {
+    const h = harness({ catalogue: fixtureCatalogue(TOOLS) })
+    const response = await h.engine.runTurn({ message: VIDEO_QUERY, kind: 'mcp' })
+    assert.equal(response.intent, 'clarify')
+    assert.equal(h.calls, 0)
+  })
+})
+

@@ -28,6 +28,7 @@
 import { RETRIEVAL } from '../config/limits.ts'
 import type { ToolCatalogueRepository, ToolQuery } from '../catalogue/repository.ts'
 import type {
+  CatalogueKind,
   PricingTier,
   Taxonomy,
   Tool,
@@ -49,6 +50,8 @@ export interface RetrievalRequest {
     pricingTiers?: PricingTier[]
     minRating?: number
     excludeIds?: string[]
+    /** See ToolQuery.kind: only 'mcp' narrows. */
+    kind?: CatalogueKind
   }
   /** Candidates to return. Clamped to RETRIEVAL.maxCandidates. */
   limit?: number
@@ -111,6 +114,7 @@ export function createRetrievalService({
     if (request.filters?.categories?.length) query.categories = request.filters.categories
     if (request.filters?.pricingTiers?.length) query.pricingTiers = request.filters.pricingTiers
     if (request.filters?.minRating !== undefined) query.minRating = request.filters.minRating
+    if (request.filters?.kind) query.kind = request.filters.kind
 
     // Two sources of exclusion, both hard: an explicit filter and a tool the
     // user has already turned down in conversation.

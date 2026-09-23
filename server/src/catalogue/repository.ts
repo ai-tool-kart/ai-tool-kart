@@ -26,6 +26,7 @@
  */
 
 import type {
+  CatalogueKind,
   PricingTier,
   RoleName,
   SortOption,
@@ -55,6 +56,17 @@ export interface ToolQuery {
   /** Inclusive floor. A tool with no ratings (rating 0) never passes a floor > 0. */
   minRating?: number
   excludeIds?: string[]
+  /**
+   * Which directory is asking. 'mcp' keeps only `isMcpServer` tools; 'workflow'
+   * and absent apply no filter.
+   *
+   * 'workflow' does not exclude MCP tools because the kinds are not disjoint:
+   * an MCP server flag marks a tool that ALSO ships a Model Context Protocol
+   * server, and GitHub or Slack is still a workflow tool on Home. 'mcp' narrows
+   * to a subset of the catalogue; 'workflow' is the whole catalogue, so
+   * filtering on it would only delete right answers from the default view.
+   */
+  kind?: CatalogueKind
   /** Defaults to 'active'. Pass 'all' to include drafts — admin paths only. */
   status?: ToolStatus | 'all'
   sort?: SortOption
