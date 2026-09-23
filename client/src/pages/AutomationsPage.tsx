@@ -113,7 +113,7 @@ export default function AutomationsPage() {
           <span className="text-[13.5px] font-semibold text-[#E4DEF5]">
             {countKnown ? `${countText} ${count === 1 ? 'automation' : 'automations'}` : '— automations'}
           </span>
-          {countKnown && filtered && <span className="text-[13px] text-[#615C7A]">· filtered</span>}
+          {countKnown && filtered && <span className="text-[13px] text-muted-dim">· filtered</span>}
         </div>
       </header>
 
@@ -133,12 +133,12 @@ export default function AutomationsPage() {
                 <span className="font-semibold text-[#E4DEF5]">{countText}</span>{' '}
                 {count === 1 ? 'automation matches' : 'automations match'}
                 {shown < count && (
-                  <span className="text-[#615C7A]"> · showing the first {shown.toLocaleString()}</span>
+                  <span className="text-muted-dim"> · showing the first {shown.toLocaleString()}</span>
                 )}
               </>
             )}
           </p>
-          {countKnown && filters.q.trim() && <p className="text-[13px] text-[#615C7A]">Best match first</p>}
+          {countKnown && filters.q.trim() && <p className="text-[13px] text-muted-dim">Best match first</p>}
         </div>
 
         {results.isLoading ? (

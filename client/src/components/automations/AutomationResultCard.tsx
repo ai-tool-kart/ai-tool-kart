@@ -26,7 +26,7 @@ export default function AutomationResultCard({ automation }: { automation: Autom
 
   return (
     <SpotCard reveal="stagger" className="flex flex-col gap-[11px] rounded-panel p-[18px]">
-      <p className="relative truncate text-[12px] text-[#7C7697]">{automation.niche}</p>
+      <p className="relative truncate text-[12px] text-muted-dim">{automation.niche}</p>
 
       {/* Not `relative`: the link's ::after must position against the card. */}
       <h3 className="text-[16.5px] leading-[1.35] font-semibold tracking-[-0.018em] text-pretty text-[#F5F2FD]">

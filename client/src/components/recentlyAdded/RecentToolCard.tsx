@@ -124,7 +124,7 @@ export default function RecentToolCard({ tool, index, isNew }: RecentToolCardPro
               <span aria-hidden="true" className="text-[12px] text-[#615C7A]">
                 ·
               </span>
-              <span className="text-[12px] text-[#615C7A]">
+              <span className="text-[12px] text-muted-dim">
                 {formatReviewCount(tool.reviews)} reviews
               </span>
             </>

@@ -67,7 +67,7 @@ export default function LaunchChipRow({ chips, selected, onSelect }: LaunchChipR
             className={`${CHIP} ${active ? ACTIVE : IDLE}`}
           >
             {chip.label}
-            <span className="text-[11.5px] text-[#615C7A]">{chip.count}</span>
+            <span className="text-[11.5px] text-muted-dim">{chip.count}</span>
           </button>
         )
       })}

@@ -153,7 +153,7 @@ export default function RefineSidebar({
         </div>
       </div>
 
-      <p className="border-t border-white/[0.06] pt-[18px] text-[12.5px] leading-[1.6] text-[#615C7A]">
+      <p className="border-t border-white/[0.06] pt-[18px] text-[12.5px] leading-[1.6] text-muted-dim">
         Rankings come from our own test runs. Vendors can&apos;t buy placement.
       </p>
     </aside>

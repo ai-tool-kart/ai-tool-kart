@@ -205,7 +205,7 @@ export default function BrowsePage() {
             <span className="text-[13.5px] font-semibold text-[#E4DEF5]">
               {countKnown ? `${results.total.toLocaleString()} ${results.total === 1 ? 'tool' : 'tools'}` : '— tools'}
             </span>
-            {countKnown && canReset && <span className="text-[13px] text-[#615C7A]">· filtered</span>}
+            {countKnown && canReset && <span className="text-[13px] text-muted-dim">· filtered</span>}
           </div>
         )}
       </header>
@@ -291,7 +291,7 @@ export default function BrowsePage() {
                     </>
                   )}
                 </p>
-                <p className="text-[13px] text-[#615C7A]">
+                <p className="text-[13px] text-muted-dim">
                   {taxonomy.data?.sorts.find((s) => s.value === filters.sort)?.label ?? ''}
                 </p>
               </div>
