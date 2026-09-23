@@ -71,7 +71,7 @@ export default function NewsTicker() {
         {/* Hidden below the nav's breakpoint: at that width the rail is already
             down to a few characters of headline, and the chip crowds it out. */}
         <Link
-          to="/browse"
+          to="/blog"
           data-magnet="1"
           className="hidden h-[26px] flex-none items-center gap-[7px] rounded-pill border border-white/[0.14] bg-[image:var(--gradient-chrome)] px-3 text-[12px] font-medium tracking-[-0.006em] text-[#DCD7EA] shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(0,0,0,0.35)] backdrop-blur-[10px] backdrop-saturate-[1.25] transition-[color,border-color,background,box-shadow] duration-300 hover:border-white/[0.28] hover:bg-[image:var(--gradient-chrome-hover)] hover:text-white min-[720px]:inline-flex"
         >
