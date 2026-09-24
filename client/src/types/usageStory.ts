@@ -1,3 +1,4 @@
+import type { AutomationRef } from '@/types/automation'
 import type { Tool } from '@/types/tool'
 
 /*
@@ -49,6 +50,8 @@ export interface UsageStory {
   avatarUrl?: string
   /** Editorial sequence, ascending. Distinct per story. */
   order: number
+  /** The guide the card opens. Absent means the card is not a link. */
+  automation?: AutomationRef
 }
 
 /**

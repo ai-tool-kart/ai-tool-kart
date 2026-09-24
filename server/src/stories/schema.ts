@@ -21,15 +21,15 @@
 
 import { z } from 'zod'
 import { configError } from '../domain/errors.ts'
-import type { UsageStory } from '../domain/types.ts'
+import { AUTOMATIONS } from '../config/limits.ts'
+import { NICHES, type UsageStory } from '../domain/types.ts'
 
 /** Lowercase, hyphen-separated, no leading/trailing/doubled hyphens. */
+const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
 const slug = z
   .string()
-  .regex(
-    /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
-    'must be lowercase alphanumeric words joined by single hyphens',
-  )
+  .regex(SLUG_PATTERN, 'must be lowercase alphanumeric words joined by single hyphens')
   .max(64)
 
 const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
@@ -77,6 +77,19 @@ export const UsageStorySchema = z
     resultDetail: nonEmpty(120).optional(),
     avatarUrl: httpUrl.optional(),
     order: z.number().int().min(0),
+    /*
+     * The guide the card opens, chosen by hand. The niche is the closed
+     * vocabulary and the slug follows the automations' own length rule; that
+     * the pair names a real guide is checked by the test suite against the
+     * imported automations, not here, because stories/ does not load them.
+     */
+    automation: z
+      .object({
+        niche: z.enum(NICHES),
+        slug: z.string().regex(SLUG_PATTERN).max(AUTOMATIONS.slugMaxChars),
+      })
+      .strict()
+      .optional(),
   })
   .strict()
 

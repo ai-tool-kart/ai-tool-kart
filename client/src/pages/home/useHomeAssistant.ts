@@ -5,6 +5,7 @@ import {
   type AssistantSession,
   type UseAssistantOptions,
 } from '@/hooks/useAssistant'
+import type { AssistantRequestSource } from '@/types/assistant'
 
 /*
  * The homepage's single assistant conversation, and the stage it is drawn in.
@@ -59,7 +60,7 @@ export interface HomeAssistant {
   /** Brings the stage into view — used after sending from outside it. */
   revealStage: () => void
   /** Sends a turn from anywhere on the page and reveals the answer. */
-  ask: (message: string) => void
+  ask: (message: string, source?: AssistantRequestSource) => void
 }
 
 /** What another page puts in router state to open a setup in the assistant. */
@@ -87,8 +88,8 @@ export function useHomeAssistant(options: UseAssistantOptions = {}): HomeAssista
   }, [])
 
   const ask = useCallback(
-    (message: string) => {
-      session.send(message)
+    (message: string, source?: AssistantRequestSource) => {
+      session.send(message, source)
       revealStage()
     },
     [session, revealStage],
@@ -114,7 +115,8 @@ export function useHomeAssistant(options: UseAssistantOptions = {}): HomeAssista
     consumedKeyRef.current = handoffKey
 
     navigate(location.pathname + location.search, { replace: true, state: null })
-    session.send(handoff)
+    // Only a setup card hands off a message, so the source is known.
+    session.send(handoff, 'setup')
 
     /*
      * A frame later, so PageShell's ScrollToTop has already reset the page and

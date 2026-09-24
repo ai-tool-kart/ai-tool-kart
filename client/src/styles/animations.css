@@ -145,8 +145,11 @@
   100% { top: 94%; opacity: 0; }
 }
 
-/* The source pauses a marquee on hover via this exact selector pair. */
-[data-marquee]:hover [data-marquee-track] {
+/* The source pauses a marquee on hover via this exact selector pair. Keyboard
+   focus pauses it too: a linked story card is focusable, and a focused card
+   must not slide away under the edge mask while it is being read. */
+[data-marquee]:hover [data-marquee-track],
+[data-marquee]:focus-within [data-marquee-track] {
   animation-play-state: paused;
 }
 

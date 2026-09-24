@@ -32,15 +32,31 @@ import { HERO_STATS } from '@/data/stats'
  * word of copy here is the final design's.
  */
 
-interface HeroProps {
-  /** The page's one assistant conversation. See pages/home/useHomeAssistant.ts. */
-  assistant: HomeAssistant
+/*
+ * With an assistant (Home), the search feeds it and the stage and setup card
+ * render below the search. Without one (/mcp-servers), neither renders and the
+ * search goes wherever `onSearch` sends it — a page must pick a destination,
+ * because a search box that fed no visible answer would be a dead end.
+ */
+type HeroAssistantProps =
+  | {
+      /** The page's one assistant conversation. See pages/home/useHomeAssistant.ts. */
+      assistant: HomeAssistant
+      onSearch?: never
+    }
+  | {
+      assistant?: undefined
+      /** Where the search and its task chips go when there is no assistant. */
+      onSearch: (query: string) => void
+    }
+
+type HeroProps = HeroAssistantProps & {
   /**
    * Overrides for the embedded stage's three labels — "AI Assistant", "Your AI
    * Plan", "Build Your AI Setup" — so a kind other than Home's own "AI
-   * Workflows" (e.g. /mcp-servers) can brand the identical stage as its own,
-   * without a second copy of this component. Home passes none, so its wording
-   * is exactly the design's.
+   * Workflows" can brand the identical stage as its own, without a second copy
+   * of this component. Home passes none, so its wording is exactly the
+   * design's. Ignored without an assistant.
    */
   stageLabels?: {
     chat?: string
@@ -53,16 +69,20 @@ interface HeroProps {
 
 export default function Hero({
   assistant,
+  onSearch,
   stageLabels,
   headlineSuffix = 'Get the Best AI for It.',
 }: HeroProps) {
   const [task, setTask] = useState<string | undefined>(undefined)
-  const { session, stageRef, revealStage, ask } = assistant
 
   /* The design hands the hero query straight to the assistant panel. */
   const runTask = (query: string) => {
+    if (!assistant) {
+      onSearch(query)
+      return
+    }
     setTask(query)
-    ask(query)
+    assistant.ask(query)
   }
 
   return (
@@ -102,21 +122,29 @@ export default function Hero({
         workflows, useful prompts, clear comparisons, and simple step-by-step guidance.
       </p>
 
-      <HeroSearch onSubmit={runTask} activeTask={task} busy={session.status === 'thinking'} />
-
-      <AssistantStage
-        session={session}
-        panelRef={stageRef}
-        chatLabel={stageLabels?.chat}
-        planLabel={stageLabels?.plan}
+      <HeroSearch
+        onSubmit={runTask}
+        activeTask={task}
+        busy={assistant?.session.status === 'thinking'}
       />
 
-      <BuildSetupCard
-        onBuild={session.send}
-        onScrollToStage={revealStage}
-        busy={session.status === 'thinking'}
-        {...(stageLabels?.setup ? { label: stageLabels.setup } : {})}
-      />
+      {assistant && (
+        <>
+          <AssistantStage
+            session={assistant.session}
+            panelRef={assistant.stageRef}
+            chatLabel={stageLabels?.chat}
+            planLabel={stageLabels?.plan}
+          />
+
+          <BuildSetupCard
+            onBuild={(message) => assistant.session.send(message, 'build')}
+            onScrollToStage={assistant.revealStage}
+            busy={assistant.session.status === 'thinking'}
+            {...(stageLabels?.setup ? { label: stageLabels.setup } : {})}
+          />
+        </>
+      )}
 
       <div data-reveal="0" className="mt-[65px]">
         <div className="flex items-center gap-[22px]">

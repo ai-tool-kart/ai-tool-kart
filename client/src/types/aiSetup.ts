@@ -1,3 +1,4 @@
+import type { AutomationRef } from '@/types/automation'
 import type { Tool } from '@/types/tool'
 
 /*
@@ -98,6 +99,11 @@ export interface AiSetup {
   /** Editorial. The prompt pack the setup ships with. */
   promptCount: number
   tone: SetupToneName
+  /**
+   * The guide "View Setup" opens, chosen by hand (docs/LINK-CANDIDATES.md).
+   * Absent means "View Setup" asks the assistant, as it always has.
+   */
+  automation?: AutomationRef
 }
 
 /**

@@ -135,11 +135,21 @@ export interface AssistantChatResponse {
  */
 export type CatalogueKind = 'workflow' | 'mcp'
 
+/**
+ * Who wrote the message — mirrors the server's ASSISTANT_REQUEST_SOURCES.
+ * 'typed' is the chat box, its chips and the hero search; 'setup' is a setup
+ * card's composeSetupRequest; 'build' is the "Build Your AI Setup" sentence.
+ * The server matches only typed messages against the automations.
+ */
+export type AssistantRequestSource = 'typed' | 'setup' | 'build'
+
 export interface AssistantChatRequest {
   message: string
   messages?: ConversationMessage[]
   context?: ConversationContext
   kind?: CatalogueKind
+  /** Absent is 'typed' on the server. */
+  source?: AssistantRequestSource
 }
 
 /*

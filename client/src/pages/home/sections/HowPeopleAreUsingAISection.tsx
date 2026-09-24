@@ -1,3 +1,4 @@
+import { useRef, type FocusEvent } from 'react'
 import UsageStoriesSkeleton from '@/components/usageStories/UsageStoriesSkeleton'
 import UsageStoryCard from '@/components/usageStories/UsageStoryCard'
 import { useUsageStories } from '@/hooks/useUsageStories'
@@ -60,6 +61,87 @@ export default function HowPeopleAreUsingAISection({
   heading = 'How People Are Using AI',
 }: HowPeopleAreUsingAISectionProps = {}) {
   const { stories, isLoading, failed } = useUsageStories()
+  const railRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  /*
+   * Keyboard focus on a linked card, which the rail was never built for.
+   *
+   * Only the FIRST pass is focusable (the duplicate is aria-hidden, its links
+   * tabIndex -1), and by the time anyone tabs in, the loop has usually carried
+   * that pass off the left edge — what is on screen is the duplicate. Pausing
+   * alone (the :focus-within rule) would freeze the rail with the focused card
+   * out of sight, and the browser cannot scroll it back: it is left of the
+   * rail, and an overflow-hidden box does not scroll below zero.
+   *
+   * So when a focused card is not fully inside the rail (less the 5% edge
+   * mask), the running marquee animation is SEEKED to the moment that card
+   * sits at the left. The :focus-within rule holds it there, and when focus
+   * leaves, the CSS unpauses it and the loop carries on from that exact spot —
+   * no jump. Pointer users never reach this: hover pauses the rail in place.
+   *
+   * Two rules keep the CSS in charge:
+   *
+   *   ONLY `currentTime` IS SET. Calling the animation's own pause() or play()
+   *   detaches a CSS animation from `animation-play-state` for good, which
+   *   would quietly break the hover pause from then on.
+   *
+   *   THE LOOP ONLY MOVES LEFT. Its range is translateX(0) to -50%, so the
+   *   first card can come no further right than the rail's edge: it sits
+   *   under the edge mask's first 5%. Every other card clears it.
+   *
+   * With reduced motion there is no running animation to seek (the global
+   * override finishes it at once), so the track is positioned by hand instead
+   * and put back when focus leaves. Nothing loops there, so nothing jumps.
+   */
+  const revealFocusedCard = (event: FocusEvent<HTMLDivElement>) => {
+    const rail = railRef.current
+    const track = trackRef.current
+    const card = event.target instanceof HTMLElement ? event.target.closest('a[href]') : null
+    if (!rail || !track || !card) return
+    // Focusing an element off to the right makes the browser scroll this
+    // overflow-hidden rail to it before the event arrives, and that scroll
+    // outlives the focus: once the loop resumes, the offset pushes the track
+    // past its own end and the rail shows blank space. The rail must only ever
+    // move by its animation, so the scroll is undone before measuring.
+    rail.scrollLeft = 0
+    const railBox = rail.getBoundingClientRect()
+    const cardBox = card.getBoundingClientRect()
+    const inset = railBox.width * 0.05
+    if (cardBox.left >= railBox.left + inset && cardBox.right <= railBox.right - inset) return
+    // Both boxes carry the track's current transform, so the difference is the
+    // card's untransformed position along the track.
+    const offset = cardBox.left - track.getBoundingClientRect().left
+    const target = inset - offset
+
+    const loop = runningMarquee(track)
+    if (loop) {
+      // Flush style first so the :focus-within pause is already in effect and
+      // the seeked frame is the one that holds.
+      void getComputedStyle(track).animationPlayState
+      const half = track.scrollWidth / 2
+      const x = Math.min(0, Math.max(target, -half))
+      loop.animation.currentTime = (-x / half) * loop.duration
+      return
+    }
+
+    // Reduced motion: nothing is running, so place the track directly.
+    // Unclamped: for the first card the gap that opens on the left is inside
+    // the edge mask, which is transparent anyway.
+    track.style.animation = 'none'
+    track.style.transform = `translateX(${target}px)`
+  }
+
+  const resumeRail = (event: FocusEvent<HTMLDivElement>) => {
+    const rail = railRef.current
+    const track = trackRef.current
+    if (!rail || !track || rail.contains(event.relatedTarget as Node | null)) return
+    rail.scrollLeft = 0
+    // Only the reduced-motion path sets these; the seek needs no undoing —
+    // the CSS unpauses the animation from where it was left.
+    track.style.animation = ''
+    track.style.transform = ''
+  }
 
   if (failed || (!isLoading && stories.length === 0)) return null
 
@@ -115,10 +197,14 @@ export default function HowPeopleAreUsingAISection({
        * here traps a swipe because the track is not a scroll container.
        */}
       <div
+        ref={railRef}
         data-marquee="1"
+        onFocus={revealFocusedCard}
+        onBlur={resumeRail}
         className="relative mt-[30px] mb-5 overflow-hidden [mask-image:linear-gradient(90deg,transparent_0,#000_5%,#000_95%,transparent_100%)]"
       >
         <div
+          ref={trackRef}
           data-marquee-track="1"
           {...(isLoading ? { role: 'status', 'aria-label': 'Loading usage stories' } : {})}
           /*
@@ -162,6 +248,22 @@ export default function HowPeopleAreUsingAISection({
       </div>
     </section>
   )
+}
+
+/**
+ * The track's marquee animation, if one is running and seekable.
+ *
+ * Undefined under reduced motion, where the global override finishes the
+ * animation immediately and there is no loop to seek.
+ */
+function runningMarquee(track: HTMLElement): { animation: Animation; duration: number } | undefined {
+  const animation = track
+    .getAnimations()
+    .find((candidate) => candidate instanceof CSSAnimation && candidate.animationName === 'akMarquee')
+  if (!animation || animation.playState === 'finished') return undefined
+  const duration = animation.effect?.getTiming().duration
+  if (typeof duration !== 'number' || duration <= 0) return undefined
+  return { animation, duration }
 }
 
 /**

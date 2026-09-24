@@ -5,7 +5,6 @@ import CommunitySection from '@/pages/home/sections/CommunitySection'
 import FeaturedToolsSection from '@/pages/home/sections/FeaturedToolsSection'
 import Hero from '@/pages/home/sections/Hero'
 import HowPeopleAreUsingAISection from '@/pages/home/sections/HowPeopleAreUsingAISection'
-import PopularWaysSection from '@/pages/home/sections/PopularWaysSection'
 import SavingsSection from '@/pages/home/sections/SavingsSection'
 import RecentlyAddedToolsSection from '@/pages/home/sections/RecentlyAddedToolsSection'
 import { useHomeAssistant } from '@/pages/home/useHomeAssistant'
@@ -13,8 +12,11 @@ import { useHomeAssistant } from '@/pages/home/useHomeAssistant'
 /*
  * Composition, and the one thing the sections have to share.
  *
- * Section order matches the handoff exactly — all ten of its home sections, in
- * its order, and nothing else. Four sections built from the FIRST design export
+ * Section order matches the handoff, with one change: "Popular Ways to Use AI"
+ * (PopularWaysSection) is UNMOUNTED, not removed, and "How People Are Using AI"
+ * moved up into its slot. The component, its usePopularWays hook and the
+ * POPULAR_WAYS data are all still in the codebase; re-rendering it is one
+ * import and one line. Four sections built from the FIRST design export
  * used to sit between Community and the closing CTA (Trending, Categories, the
  * Compare teaser and FAQ); the final design has no equivalent of any of them on
  * Home, so they were removed rather than restyled. Their components and data
@@ -32,11 +34,12 @@ export default function HomePage() {
   return (
     <>
       <Hero assistant={assistant} />
-      <PopularWaysSection />
+      {/* PopularWaysSection used to render here. It is unmounted, not deleted —
+          see the note above. The carousel below takes its slot. */}
+      <HowPeopleAreUsingAISection />
       <AiForYourWorkSection onAskAssistant={assistant.ask} />
       <FeaturedToolsSection />
       <RecentlyAddedToolsSection />
-      <HowPeopleAreUsingAISection />
       <SavingsSection />
       <BlogInsightsSection />
       <CommunitySection />
