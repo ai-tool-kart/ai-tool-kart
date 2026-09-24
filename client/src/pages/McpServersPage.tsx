@@ -7,7 +7,6 @@ import CommunitySection from '@/pages/home/sections/CommunitySection'
 import Hero from '@/pages/home/sections/Hero'
 import HowPeopleAreUsingAISection from '@/pages/home/sections/HowPeopleAreUsingAISection'
 import SavingsSection from '@/pages/home/sections/SavingsSection'
-import { useHomeAssistant } from '@/pages/home/useHomeAssistant'
 import type { Tool } from '@/types/tool'
 
 /*
@@ -21,12 +20,16 @@ import type { Tool } from '@/types/tool'
  * Only Blog Insights is dropped — nothing about a WordPress journal is
  * specific to a kind.
  *
- * Hero and How People Are Using AI are not quite verbatim: each now takes an
- * optional label override (`Hero`'s `stageLabels`, `HowPeopleAreUsingAISection`
- * `heading`, `SavingsSection` `heading`) so THIS page can read "MCP Assistant",
- * "Your MCP Plan", "Build Your MCP Setup", "How People Are Using MCP" and "See
- * What MCP Can Save You" without a second copy of any of them — Home passes
- * none of these props, so its own wording is untouched. Real tool names (e.g.
+ * Hero and How People Are Using AI are not quite verbatim: each takes an
+ * optional override (`Hero`'s `headlineSuffix`, `HowPeopleAreUsingAISection`
+ * `heading`, `SavingsSection` `heading`) so THIS page can read "Get the Best
+ * MCP for It.", "How People Are Using MCP" and "See What MCP Can Save You"
+ * without a second copy of any of them — Home passes none of these props, so
+ * its own wording is untouched.
+ *
+ * There is no assistant here. Hero is given `onSearch` instead of an
+ * assistant, which drops the chat panel, the plan panel and the setup card and
+ * sends the search box and its task chips to Browse. Real tool names (e.g.
  * "Notion AI"), the site's own brand ("AI Tool Kart"), and the usage stories'
  * "AI setup" chips are deliberately left alone: those stories are generic
  * illustrative content that doesn't actually feature MCP servers, so relabelling
@@ -56,8 +59,16 @@ const SECTION_COUNT = 6
 
 export default function McpServersPage() {
   const navigate = useNavigate()
-  const assistant = useHomeAssistant({ kind: 'mcp' })
   const { index, isLoading, failed, retry } = useToolIndex()
+
+  /*
+   * No assistant on this page, so the hero search is a Browse search. Browse
+   * has no MCP-only filter, so this searches the whole catalogue.
+   */
+  const search = useCallback(
+    (query: string) => navigate(`/browse?${new URLSearchParams({ q: query })}`),
+    [navigate],
+  )
 
   const servers = useMemo(() => {
     if (!index) return []
@@ -93,11 +104,7 @@ export default function McpServersPage() {
 
   return (
     <>
-      <Hero
-        assistant={assistant}
-        stageLabels={{ chat: 'MCP Assistant', plan: 'Your MCP Plan', setup: 'Build Your MCP Setup' }}
-        headlineSuffix="Get the Best MCP for It."
-      />
+      <Hero onSearch={search} headlineSuffix="Get the Best MCP for It." />
       <HowPeopleAreUsingAISection heading="How People Are Using MCP" />
 
       {showError ? (
