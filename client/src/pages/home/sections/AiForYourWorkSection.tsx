@@ -5,6 +5,7 @@ import SetupCategoryChips from '@/components/aiSetups/SetupCategoryChips'
 import { AI_SETUPS } from '@/data/aiSetups'
 import { useToolIndex } from '@/hooks/useToolIndex'
 import type { ResolvedSetup, SetupCategory } from '@/types/aiSetup'
+import type { AssistantRequestSource } from '@/types/assistant'
 import { composeSetupRequest, resolveSetup, setupsForCategory } from '@/utils/aiSetups'
 
 /*
@@ -67,7 +68,7 @@ import { composeSetupRequest, resolveSetup, setupsForCategory } from '@/utils/ai
 
 interface AiForYourWorkSectionProps {
   /** Sends a turn to the page's assistant and scrolls its answer into view. */
-  onAskAssistant: (message: string) => void
+  onAskAssistant: (message: string, source: AssistantRequestSource) => void
 }
 
 export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSectionProps) {
@@ -87,7 +88,7 @@ export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSe
   const toolsStatus = isLoading ? 'loading' : index === undefined || failed ? 'unavailable' : 'ready'
 
   const openSetup = useCallback(
-    (entry: ResolvedSetup) => onAskAssistant(composeSetupRequest(entry)),
+    (entry: ResolvedSetup) => onAskAssistant(composeSetupRequest(entry), 'setup'),
     [onAskAssistant],
   )
 

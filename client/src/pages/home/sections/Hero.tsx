@@ -112,7 +112,7 @@ export default function Hero({
       />
 
       <BuildSetupCard
-        onBuild={session.send}
+        onBuild={(message) => session.send(message, 'build')}
         onScrollToStage={revealStage}
         busy={session.status === 'thinking'}
         {...(stageLabels?.setup ? { label: stageLabels.setup } : {})}

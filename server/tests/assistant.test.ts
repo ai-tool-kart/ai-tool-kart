@@ -24,7 +24,7 @@ import {
 import { GROUNDING_FALLBACK_MESSAGE } from '../src/assistant/ground.ts'
 import { AssistantReplySchema } from '../src/assistant/schema.ts'
 import { assistantSystemPrompt, assistantUserPrompt } from '../src/assistant/prompts/assistant.ts'
-import { ASSISTANT, LLM_BUDGET } from '../src/config/limits.ts'
+import { ASSISTANT, AUTOMATION_MATCH, LLM_BUDGET } from '../src/config/limits.ts'
 import { createBudget, type Budget } from '../src/llm/budget.ts'
 import { createLLMClient } from '../src/llm/client.ts'
 import { isLLMError } from '../src/llm/errors.ts'
@@ -1032,5 +1032,58 @@ await test('the automation above the plan', async (t) => {
     assert.equal(response.intent, 'recommend')
     assert.ok(response.plan)
     assert.equal('automation' in response, false)
+  })
+})
+
+/*
+ * Only a message the user typed is matched. The two composed sentences below
+ * are real client output — a setup card's composeSetupRequest and the "Build
+ * Your AI Setup" sentence — and each clears the floor on an unrelated title
+ * ("Ship an API" on `plan` + `build`, the build sentence on `issue`). Each
+ * test first proves the sentence WOULD show a guide when typed, so the skip is
+ * what hides it, not a failed match.
+ */
+const SETUP_SENTENCE =
+  'Walk me through the "Ship an API" setup using Claude, Cursor and Postman — Plan → Build → Test → Document.'
+const BUILD_SENTENCE = "I'm a developer — I need to debug an issue."
+
+function clearsTheFloor(message: string): boolean {
+  const top = AUTOMATION_INDEX.match(message, { limit: 1 })[0]
+  return top !== undefined && top.titleWeight >= ASSISTANT.automationMinTitleWeight * AUTOMATION_MATCH.idfBase
+}
+
+await test('the request source', async (t) => {
+  for (const [source, message] of [
+    ['setup', SETUP_SENTENCE],
+    ['build', BUILD_SENTENCE],
+  ] as const) {
+    await t.test(`a '${source}' turn never carries an automation, even over the floor`, async () => {
+      assert.ok(clearsTheFloor(message), 'precondition: the sentence clears the floor')
+
+      const typed = harness({ automationIndex: realIndex })
+      const shown = await typed.engine.runTurn({ message })
+      assert.ok(shown.automation, 'precondition: typed, the same sentence shows a guide')
+
+      const h = harness({ automationIndex: realIndex })
+      const response = await h.engine.runTurn({ message, source })
+
+      assert.equal(response.intent, 'recommend')
+      assert.ok(response.plan, 'the plan is unaffected')
+      assert.deepEqual(response.plan, shown.plan)
+      assert.equal('automation' in response, false)
+      assert.equal(h.automationLookups, 0)
+    })
+  }
+
+  await t.test("an explicit 'typed' turn is the untagged turn", async () => {
+    const untagged = await harness({ automationIndex: realIndex }).engine.runTurn({ message: VIDEO_QUERY })
+    const typed = await harness({ automationIndex: realIndex }).engine.runTurn({
+      message: VIDEO_QUERY,
+      source: 'typed',
+    })
+
+    assert.equal(typed.automation?.title, VIDEO_GUIDE_TITLE)
+    assert.deepEqual(typed.automation, untagged.automation)
+    assert.deepEqual(typed.plan, untagged.plan)
   })
 })

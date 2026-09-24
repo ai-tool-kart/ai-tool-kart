@@ -35,7 +35,7 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import { ConversationContextSchema, ConversationMessageSchema } from '../../assistant/context.ts'
-import type { AssistantEngine } from '../../assistant/engine.ts'
+import { ASSISTANT_REQUEST_SOURCES, type AssistantEngine } from '../../assistant/engine.ts'
 import { ASSISTANT } from '../../config/limits.ts'
 import { CATALOGUE_KINDS } from '../../domain/types.ts'
 import { assistantUnavailable, providerUnavailable } from '../../domain/errors.ts'
@@ -61,6 +61,9 @@ const ChatBodySchema = z
     // Top level, not inside context: the page the user is on, not something
     // the conversation learned. The client sends it every turn.
     kind: z.enum(CATALOGUE_KINDS).optional(),
+    // Who wrote the message. Untagged is 'typed', exactly as before the field
+    // existed; only typed messages are matched against the automations.
+    source: z.enum(ASSISTANT_REQUEST_SOURCES).optional().default('typed'),
   })
   .strict()
 
@@ -83,6 +86,7 @@ export function createAssistantRouter({ engine }: AssistantRouteOptions): Router
             ...(body.messages ? { messages: body.messages } : {}),
             ...(body.context ? { context: body.context } : {}),
             ...(body.kind ? { kind: body.kind } : {}),
+            source: body.source,
           }),
         )
       } catch (error) {

@@ -6,6 +6,7 @@ import type {
   AssistantChatRequest,
   AssistantChatResponse,
   AssistantPlan,
+  AssistantRequestSource,
   AssistantStatus,
   AssistantUnderstood,
   CatalogueKind,
@@ -81,7 +82,8 @@ export interface AssistantSession {
   canRetry: boolean
   /** True once anything has been said — drives "Start over" and the idle panel. */
   hasStarted: boolean
-  send: (text: string) => void
+  /** `source` defaults to 'typed'; composed sentences say who composed them. */
+  send: (text: string, source?: AssistantRequestSource) => void
   retry: () => void
   reset: () => void
 }
@@ -198,7 +200,7 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
   }, [setStatus])
 
   const send = useCallback(
-    (text: string) => {
+    (text: string, source: AssistantRequestSource = 'typed') => {
       const message = text.trim()
       if (!message) return
       // A second send while a reply is loading is ignored outright, not
@@ -223,6 +225,7 @@ export function useAssistant({ kind }: UseAssistantOptions = {}): AssistantSessi
         messages: history,
         ...(contextRef.current ? { context: contextRef.current } : {}),
         ...(kind ? { kind } : {}),
+        source,
       })
     },
     [run, kind],

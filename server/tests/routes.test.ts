@@ -877,6 +877,44 @@ await test('POST /api/assistant/chat', async (t) => {
     })
   })
 
+  await t.test('a source outside the vocabulary is a 400 naming the field', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      for (const source of ['chip', 'Typed', '', 1, null]) {
+        const response = await chat(origin, { message: 'hi', source })
+        assert.equal(response.status, 400, `source ${JSON.stringify(source)} must be rejected`)
+        assert.match(JSON.stringify((await readJson<ErrorBody>(response)).error.details), /source/)
+      }
+    })
+  })
+
+  await t.test('every source in the vocabulary is accepted, and untagged still is', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      for (const body of [
+        { message: 'edit videos faster' },
+        { message: 'edit videos faster', source: 'typed' },
+        { message: 'edit videos faster', source: 'setup' },
+        { message: 'edit videos faster', source: 'build' },
+      ]) {
+        const response = await chat(origin, body)
+        assert.equal(response.status, 200, JSON.stringify(body))
+      }
+    })
+  })
+
+  await t.test('the source reaches the engine: a composed turn carries no guide', async () => {
+    await withServer(assistantContainer(), async ({ origin }) => {
+      const message = 'I am a video editor and I want to speed up my YouTube editing workflow'
+      const typed = await readJson<AssistantChatResponse>(await chat(origin, { message }))
+      assert.ok(typed.automation, 'precondition: typed, this message shows a guide')
+
+      for (const source of ['setup', 'build']) {
+        const body = await readJson<AssistantChatResponse>(await chat(origin, { message, source }))
+        assert.ok(body.plan)
+        assert.equal('automation' in body, false, `a '${source}' turn must not carry a guide`)
+      }
+    })
+  })
+
   await t.test('kind is top-level, not a context key', async () => {
     await withServer(assistantContainer(), async ({ origin }) => {
       const nested = await chat(origin, { message: 'hi', context: { kind: 'mcp' } })

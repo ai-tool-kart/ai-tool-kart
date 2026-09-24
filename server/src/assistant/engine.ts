@@ -83,6 +83,24 @@ export const NO_CANDIDATES_FOLLOW_UPS = [
 /** Reported as the model when no model was called. Never a real model id. */
 export const NO_MODEL = 'none'
 
+/**
+ * Who wrote the message: the user, or a card that composed it for them.
+ *
+ *   typed   the chat box and its suggestion chips — the user's own words
+ *   setup   composeSetupRequest, from a setup card on Home or /workflows
+ *   build   the "Build Your AI Setup" role → goal sentence
+ *
+ * Only a typed message is matched against the automations. The gate was
+ * calibrated on short things people type, and a composed sentence is neither:
+ * its template ("Walk me through", "setup"), stage strip and role noun are rare
+ * words in the automation set, so one of them alone clears the floor on an
+ * unrelated title — "Ship an API" was shown an account growth plan on `plan` +
+ * `build`. The plan itself is unaffected; only the guide above it is skipped.
+ */
+export const ASSISTANT_REQUEST_SOURCES = ['typed', 'setup', 'build'] as const
+
+export type AssistantRequestSource = (typeof ASSISTANT_REQUEST_SOURCES)[number]
+
 export interface AssistantTurnRequest {
   /** The current message, as typed. Validated for length at the HTTP boundary. */
   message: string
@@ -96,6 +114,8 @@ export interface AssistantTurnRequest {
    * filter: the caller stated it. See ToolQuery.kind for why only 'mcp' narrows.
    */
   kind?: CatalogueKind
+  /** Who wrote `message`. Absent is 'typed', so an untagged caller behaves as before. */
+  source?: AssistantRequestSource
 }
 
 export interface AssistantEngine {
@@ -169,7 +189,8 @@ export function createAssistantEngine({
        * than the refined query: refinement expands "follow-ups" into catalogue
        * words like "email, outreach", which is the rewrite automations/match.ts
        * exists to avoid, and prefixing the goal breaks the whole-phrase title
-       * hit. Skipped on the MCP page — every automation is a workflow recipe.
+       * hit. Skipped on the MCP page — every automation is a workflow recipe —
+       * and for any message the user did not type (see ASSISTANT_REQUEST_SOURCES).
        *
        * A failure here costs the guide, never the plan: it is logged and the
        * turn carries on without one.
@@ -192,7 +213,7 @@ export function createAssistantEngine({
           ...(filters ? { filters } : {}),
           limit: RETRIEVAL.defaultCandidates,
         }),
-        request.kind === 'mcp'
+        request.kind === 'mcp' || (request.source ?? 'typed') !== 'typed'
           ? undefined
           : automations()
               .then((matcher) => matcher.match(request.message, { limit: 1 })[0])
