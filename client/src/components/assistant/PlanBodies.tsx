@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import type { AssistantPlanStep } from '@/types/assistant'
 
 /*
@@ -8,6 +9,9 @@ import type { AssistantPlanStep } from '@/types/assistant'
  * written by the model: `action` comes from the server's STAGE_ACTIONS map
  * and the description and pricing label are read straight off the hydrated
  * tool — `plainLine` when the record has one, its `tagline` otherwise.
+ *
+ * Every tool name, the pick and each "Also good", opens that tool on Browse.
+ * See ToolLink.
  */
 
 /**
@@ -20,6 +24,32 @@ function priceLabel(pricingTier: AssistantPlanStep['tool']['pricingTier']): stri
   if (pricingTier === 'free') return 'Free'
   if (pricingTier === 'freemium') return 'Free plan'
   return 'Paid'
+}
+
+/*
+ * A tool name that opens that tool on Browse — the destination "See these
+ * tools" uses for the whole plan, narrowed to one slug, and in a new tab for
+ * the same reason: the conversation stays where it is.
+ *
+ * The NAME is the link, not the row. A row-sized target would sit on top of
+ * the "Also good" names, which are links too, and nested interactive content
+ * is invalid; stretching one link across the row instead would stop the
+ * tool's line being selectable text. The caller passes the colour the text
+ * had before (the base `a` rule would otherwise paint it --color-link), so the
+ * step reads exactly as before until it is hovered or focused.
+ */
+function ToolLink({ tool, className }: { tool: AssistantPlanStep['tool']; className: string }) {
+  return (
+    <a
+      href={`/browse?tools=${encodeURIComponent(tool.slug)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className} rounded-[4px] underline-offset-2 hover:underline focus-visible:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent`}
+    >
+      {tool.name}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
+  )
 }
 
 export function PlanSteps({ steps }: { steps: AssistantPlanStep[] }) {
@@ -41,7 +71,7 @@ export function PlanSteps({ steps }: { steps: AssistantPlanStep[] }) {
               {step.action}
             </p>
             <p className="text-[12.5px] leading-[1.45] tracking-[-0.006em] text-pretty text-[#C0B9D6]">
-              <span className="font-medium text-[#D3CCE6]">{step.tool.name}</span>
+              <ToolLink tool={step.tool} className="font-medium text-[#D3CCE6]" />
               {' — '}
               {step.tool.plainLine ?? step.tool.tagline}
             </p>
@@ -50,7 +80,13 @@ export function PlanSteps({ steps }: { steps: AssistantPlanStep[] }) {
             </span>
             {step.alsoGood.length > 0 && (
               <p className="text-[11px] leading-[1.4] tracking-[-0.006em] text-pretty text-[#8A83A6]">
-                Also good: {step.alsoGood.map((tool) => tool.name).join(', ')}
+                Also good:{' '}
+                {step.alsoGood.map((tool, index) => (
+                  <Fragment key={tool.id}>
+                    {index > 0 && ', '}
+                    <ToolLink tool={tool} className="text-inherit" />
+                  </Fragment>
+                ))}
               </p>
             )}
           </div>
