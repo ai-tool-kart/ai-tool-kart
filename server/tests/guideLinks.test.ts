@@ -13,9 +13,10 @@
  * guide would leave a card pointing at a 404 with nothing to say so. This file
  * is that something: every stored pair must name an ACTIVE imported guide.
  *
- * It also pins which items are linked. The other 19 of the 39 are pending a
- * client decision and must keep today's behaviour — which, for all three, is
- * exactly "has no link" — so a link added without that decision fails here.
+ * It also pins which items are linked. Every story card links (three matched
+ * to a guide, five rewritten around one). The setups and roles not listed
+ * below are pending a client decision and must keep today's behaviour — which
+ * is exactly "has no link" — so a link added without that decision fails here.
  *
  * ── Why a server test reads client files ─────────────────────────────────────
  *
@@ -41,8 +42,22 @@ interface GuideRef {
   slug: string
 }
 
+/**
+ * Every story card links. Three were matched to an existing guide (the ✅ rows
+ * in docs/LINK-CANDIDATES.md); the other five were rewritten around a guide
+ * that exists, so no card is left unlinked.
+ */
+const LINKED_STORIES = [
+  'restaurant-owner-menu',
+  'video-editor-shorts',
+  'career-changer-interviews',
+  'freelance-designer-ad-visuals',
+  'agency-founder-followups',
+  'estate-agent-neighbourhood-guide',
+  'startup-founder-market-research',
+  'studio-owner-local-ads',
+]
 /** The decision recorded in docs/LINK-CANDIDATES.md — the ✅ rows, and only those. */
-const LINKED_STORIES = ['restaurant-owner-menu', 'video-editor-shorts', 'agency-founder-followups']
 const LINKED_SETUPS = [
   'seo-blog-production',
   'social-content-pipeline',
@@ -109,11 +124,16 @@ await test('hand-picked guide links', async (t) => {
     assert.deepEqual(entries.map(([role]) => role).filter((role) => !roles.includes(role)), [])
   })
 
-  await t.test('exactly the chosen stories are linked; every other story stays a plain card', () => {
+  await t.test('every story card is linked, and to eight different niches', () => {
     assert.deepEqual(
       stories.filter((s) => s.automation).map((s) => s.id).sort(),
       [...LINKED_STORIES].sort(),
     )
+    assert.equal(stories.length, LINKED_STORIES.length, 'a story without a link')
+    // The rail shows different kinds of work; two cards opening guides from
+    // the same niche would say the opposite.
+    const niches = stories.map((s) => s.automation?.niche)
+    assert.equal(new Set(niches).size, stories.length, `niches repeat: ${niches.join(', ')}`)
   })
 
   await t.test('exactly the chosen setups are linked; every other setup still asks the assistant', () => {

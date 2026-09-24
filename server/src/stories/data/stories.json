@@ -30,26 +30,34 @@
     }
   },
   {
-    "id": "student-research",
-    "role": "Student",
+    "id": "career-changer-interviews",
+    "role": "Career Changer",
     "personName": "Aisha K.",
     "location": "Toronto",
-    "task": "Summarize research papers fast.",
-    "toolSlugs": ["chatgpt", "elicit", "notion-ai"],
-    "resultHeadline": "Weeks of reading in one afternoon.",
-    "resultDetail": "Cited notes, ready for the essay.",
-    "order": 30
+    "task": "Stop blanking on interview questions.",
+    "toolSlugs": ["chatgpt", "claude"],
+    "resultHeadline": "A story for every question.",
+    "resultDetail": "Built once, reused in every interview.",
+    "order": 30,
+    "automation": {
+      "niche": "Job Seekers-Career Changers",
+      "slug": "turn-my-past-work-into-star-method-stories-i-can-pull-from-in"
+    }
   },
   {
-    "id": "freelance-designer-pitch",
+    "id": "freelance-designer-ad-visuals",
     "role": "Freelance Designer",
     "personName": "Noah B.",
     "location": "Berlin",
-    "task": "Pitch three brand directions in a day.",
-    "toolSlugs": ["midjourney", "figma", "claude"],
-    "resultHeadline": "Three concepts, one afternoon.",
-    "resultDetail": "Client signed off on the first round.",
-    "order": 40
+    "task": "Make on-brand ad images without a shoot.",
+    "toolSlugs": ["midjourney", "adobe-firefly"],
+    "resultHeadline": "Ad visuals without booking a shoot.",
+    "resultDetail": "Finished in the brand's own Photoshop files.",
+    "order": 40,
+    "automation": {
+      "niche": "Marketing Agencies",
+      "slug": "generate-on-brand-ad-creative-images-without-hiring-a"
+    }
   },
   {
     "id": "agency-founder-followups",
@@ -67,36 +75,48 @@
     }
   },
   {
-    "id": "podcast-producer-notes",
-    "role": "Podcast Producer",
+    "id": "estate-agent-neighbourhood-guide",
+    "role": "Estate Agent",
     "personName": "Tom A.",
     "location": "Dublin",
-    "task": "Turn each interview into notes and clips.",
-    "toolSlugs": ["otter-ai", "descript", "elevenlabs"],
-    "resultHeadline": "Show notes done before the guest leaves.",
-    "resultDetail": "Two hours of editing back every week.",
-    "order": 60
+    "task": "Write neighbourhood pages people actually find.",
+    "toolSlugs": ["perplexity", "claude", "chatgpt"],
+    "resultHeadline": "A neighbourhood page in one sitting.",
+    "resultDetail": "Every line checked before it went live.",
+    "order": 60,
+    "automation": {
+      "niche": "Real Estate",
+      "slug": "i-want-to-write-a-neighbourhood-guide-for-my-website-that"
+    }
   },
   {
-    "id": "product-manager-spec",
-    "role": "Product Manager",
+    "id": "startup-founder-market-research",
+    "role": "Startup Founder",
     "personName": "Sofia M.",
     "location": "São Paulo",
-    "task": "Turn scattered feedback into one spec.",
-    "toolSlugs": ["notebooklm", "claude", "gamma"],
-    "resultHeadline": "One spec from forty tickets.",
-    "resultDetail": "Kickoff pulled forward by a week.",
-    "order": 70
+    "task": "Size up the market before building.",
+    "toolSlugs": ["perplexity", "claude"],
+    "resultHeadline": "Competitors mapped, every source cited.",
+    "resultDetail": "Every figure checked before the deck.",
+    "order": 70,
+    "automation": {
+      "niche": "Startup Founders",
+      "slug": "research-my-competitors-and-market-size"
+    }
   },
   {
-    "id": "shop-owner-social",
-    "role": "Shop Owner",
+    "id": "studio-owner-local-ads",
+    "role": "Studio Owner",
     "personName": "Ines V.",
     "location": "Porto",
-    "task": "Keep the shop posting without a marketer.",
-    "toolSlugs": ["jasper", "canva", "buffer"],
-    "resultHeadline": "A month of posts in one sitting.",
-    "resultDetail": "First quarter the schedule never slipped.",
-    "order": 80
+    "task": "Run local ads without an agency.",
+    "toolSlugs": ["adcreative-ai", "canva"],
+    "resultHeadline": "Ads sized for every placement in one go.",
+    "resultDetail": "Trial-week promo launched the same day.",
+    "order": 80,
+    "automation": {
+      "niche": "Fitness-Salon-Personal Services",
+      "slug": "i-want-ai-to-write-and-design-my-facebook-and-instagram-ads-for"
+    }
   }
 ]
