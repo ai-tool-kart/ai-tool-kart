@@ -59,6 +59,17 @@ export function isNiche(value: string | null | undefined): value is NicheName {
 
 export type BeginnerFriendly = 'yes' | 'somewhat' | 'no'
 
+/**
+ * A hand-chosen link from editorial content (a usage story, a setup, a Build
+ * role) to one guide. Niche and slug together: slugs repeat across niches.
+ * That each stored pair names a real guide is pinned by
+ * server/tests/guideLinks.test.ts against the imported automations.
+ */
+export interface AutomationRef {
+  niche: NicheName
+  slug: string
+}
+
 /** One result card — GET /api/automations `items[]`. */
 export interface AutomationCard {
   slug: string

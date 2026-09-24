@@ -244,6 +244,12 @@ export interface UsageStory {
   avatarUrl?: string
   /** Editorial sequence, ascending. Distinct per story, so the rail is stable. */
   order: number
+  /**
+   * The step-by-step guide this story's card opens, chosen by hand. Absent
+   * means the card is not a link. A reference only — niche and slug together,
+   * because automation slugs are unique within a niche, not across them.
+   */
+  automation?: { niche: NicheName; slug: string }
 }
 
 /* ── Work-savings estimates ────────────────────────────────────────────────── */

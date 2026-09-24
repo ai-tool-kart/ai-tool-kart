@@ -8,7 +8,11 @@
     "toolSlugs": ["chatgpt", "midjourney", "rows"],
     "resultHeadline": "New menu live in 2 hrs.",
     "resultDetail": "Sales up 18% in the first month.",
-    "order": 10
+    "order": 10,
+    "automation": {
+      "niche": "Restaurants",
+      "slug": "i-want-to-create-a-menu-for-my-restaurant-using-ai"
+    }
   },
   {
     "id": "video-editor-shorts",
@@ -19,7 +23,11 @@
     "toolSlugs": ["descript", "opus-clip", "veed"],
     "resultHeadline": "10 clips in 15 mins.",
     "resultDetail": "3× more views across shorts.",
-    "order": 20
+    "order": 20,
+    "automation": {
+      "niche": "Content Creators-Writers",
+      "slug": "i-want-to-turn-my-long-youtube-video-into-short-viral-clips"
+    }
   },
   {
     "id": "student-research",
@@ -52,7 +60,11 @@
     "toolSlugs": ["claude", "zapier", "clay"],
     "resultHeadline": "Follow-ups out within the hour.",
     "resultDetail": "Reply rate up from 9% to 24%.",
-    "order": 50
+    "order": 50,
+    "automation": {
+      "niche": "Virtual Assistants",
+      "slug": "keep-track-of-leads-and-follow-ups-without-buying-a-full-crm"
+    }
   },
   {
     "id": "podcast-producer-notes",

@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import SetupCard from '@/components/aiSetups/SetupCard'
+import { automationPath } from '@/components/automations/labels'
 import SetupCategoryChips from '@/components/aiSetups/SetupCategoryChips'
 import { AI_SETUPS } from '@/data/aiSetups'
 import { useToolIndex } from '@/hooks/useToolIndex'
@@ -93,8 +94,10 @@ export default function WorkflowsPage() {
   )
 
   /*
-   * "View Setup" opens the setup in the assistant, which is where a setup
-   * becomes a plan you can refine.
+   * "View Setup" opens the setup's step-by-step guide when one was chosen for
+   * it (`setup.automation`, hand-picked — see data/aiSetups.ts). Otherwise it
+   * opens the setup in the assistant, which is where a setup becomes a plan
+   * you can refine. The rest of this note is about that second path.
    *
    * The assistant lives on the homepage, so the composed sentence travels in
    * router state and useHomeAssistant sends it on arrival, scrolling the stage
@@ -109,8 +112,14 @@ export default function WorkflowsPage() {
    * it names against the catalogue.
    */
   const openSetup = useCallback(
-    (entry: ResolvedSetup) =>
-      navigate('/', { state: { assistantMessage: composeSetupRequest(entry) } }),
+    (entry: ResolvedSetup) => {
+      const guide = entry.setup.automation
+      if (guide) {
+        navigate(automationPath(guide.niche, guide.slug))
+        return
+      }
+      navigate('/', { state: { assistantMessage: composeSetupRequest(entry) } })
+    },
     [navigate],
   )
 

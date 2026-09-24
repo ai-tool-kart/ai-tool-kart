@@ -37,6 +37,15 @@ import type { AiSetup } from '@/types/aiSetup'
  * been no equivalent, the slug would simply be absent and the card would render
  * with two tools and say "2 tools".
  *
+ * ── Guide links ──────────────────────────────────────────────────────────────
+ *
+ * Eleven setups carry an `automation` reference: the guide "View Setup" opens
+ * instead of asking the assistant. Each was chosen by hand from the shortlist
+ * in docs/LINK-CANDIDATES.md (the "good fit" rows only); the other eight are
+ * pending a client decision and keep the assistant behaviour. Every stored
+ * pair is checked against the imported automations by
+ * server/tests/guideLinks.test.ts.
+ *
  * Also worth noting: the prototype drew Gamma with the monogram "Gm" and Gemini
  * with "Gm" too. The catalogue is unambiguous (Gamma is "Ga", Gemini is "Gm")
  * and the cards now show the catalogue's, so that collision is gone.
@@ -66,6 +75,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Keywords', 'Draft', 'Optimise', 'Publish'],
     promptCount: 5,
     tone: 'sky',
+    automation: {
+      niche: 'Content Creators-Writers',
+      slug: 'i-want-to-find-easy-low-competition-keywords-for-my-next-blog',
+    },
   },
   {
     id: 'social-content-pipeline',
@@ -76,6 +89,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Idea', 'Copy', 'Visual', 'Schedule'],
     promptCount: 6,
     tone: 'pink',
+    automation: {
+      niche: 'Real Estate',
+      slug: 'i-want-a-month-of-social-media-posts-for-my-real-estate',
+    },
   },
 
   /* ── Coding & Dev ────────────────────────────────────────────────────────── */
@@ -93,6 +110,10 @@ export const AI_SETUPS: AiSetup[] = [
     workflowCount: 1,
     promptCount: 3,
     tone: 'blue',
+    automation: {
+      niche: 'Startup Founders',
+      slug: 'build-a-landing-page-to-test-my-startup-idea',
+    },
   },
   {
     id: 'debug-and-refactor',
@@ -126,6 +147,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Shoot', 'Clean', 'Generate', 'Retouch'],
     promptCount: 4,
     tone: 'sand',
+    automation: {
+      niche: 'Retail-E-commerce Small Biz',
+      slug: 'remove-the-background-from-my-product-photos',
+    },
   },
   {
     id: 'brand-concept-exploration',
@@ -151,6 +176,10 @@ export const AI_SETUPS: AiSetup[] = [
     workflowCount: 1,
     promptCount: 4,
     tone: 'blue',
+    automation: {
+      niche: 'Content Creators-Writers',
+      slug: 'i-want-to-turn-my-long-youtube-video-into-short-viral-clips',
+    },
   },
   {
     id: 'ai-ad-creation',
@@ -177,6 +206,10 @@ export const AI_SETUPS: AiSetup[] = [
     workflowCount: 1,
     promptCount: 5,
     tone: 'sky',
+    automation: {
+      niche: 'Contractors & Home Services',
+      slug: 'i-want-ai-to-tell-me-which-unbooked-leads-to-call-first-and',
+    },
   },
   {
     id: 'campaign-research-copy',
@@ -187,6 +220,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Research', 'Angle', 'Copy', 'Test'],
     promptCount: 4,
     tone: 'pink',
+    automation: {
+      niche: 'Marketing Agencies',
+      slug: 'generate-a-batch-of-ad-copy-variants-to-a-b-test',
+    },
   },
 
   /* ── Business ────────────────────────────────────────────────────────────── */
@@ -211,6 +248,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Record', 'Summarise', 'Assign', 'Track'],
     promptCount: 3,
     tone: 'sand',
+    automation: {
+      niche: 'Real Estate',
+      slug: 'i-want-to-turn-our-team-meeting-into-a-written-summary-and',
+    },
   },
 
   /* ── Research ────────────────────────────────────────────────────────────── */
@@ -234,6 +275,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Gather', 'Compare', 'Position', 'Present'],
     promptCount: 4,
     tone: 'violet',
+    automation: {
+      niche: 'Property Managers',
+      slug: 'research-my-competitors-pricing-and-positioning-before-i-set-my',
+    },
   },
 
   /* ── Audio & Voice ───────────────────────────────────────────────────────── */
@@ -246,6 +291,10 @@ export const AI_SETUPS: AiSetup[] = [
     stages: ['Script', 'Voice', 'Clean', 'Master'],
     promptCount: 3,
     tone: 'pink',
+    automation: {
+      niche: 'Photographers & Videographers',
+      slug: 'add-professional-voiceover-narration-to-a-promo-reel-or',
+    },
   },
 
   /* ── Assistants ──────────────────────────────────────────────────────────── */
@@ -272,5 +321,9 @@ export const AI_SETUPS: AiSetup[] = [
     agentCount: 2,
     promptCount: 3,
     tone: 'violet',
+    automation: {
+      niche: 'Sales Teams',
+      slug: 'i-want-my-inbox-automatically-sorted-so-i-know-which-prospect',
+    },
   },
 ]

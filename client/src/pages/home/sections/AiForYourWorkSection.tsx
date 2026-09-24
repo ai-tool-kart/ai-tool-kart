@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SetupCard from '@/components/aiSetups/SetupCard'
+import { automationPath } from '@/components/automations/labels'
 import SetupCategoryChips from '@/components/aiSetups/SetupCategoryChips'
 import { AI_SETUPS } from '@/data/aiSetups'
 import { useToolIndex } from '@/hooks/useToolIndex'
@@ -73,6 +74,7 @@ interface AiForYourWorkSectionProps {
 
 export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSectionProps) {
   const [category, setCategory] = useState<SetupCategory | undefined>(undefined)
+  const navigate = useNavigate()
   const { index, isLoading, failed } = useToolIndex()
 
   /*
@@ -87,9 +89,17 @@ export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSe
 
   const toolsStatus = isLoading ? 'loading' : index === undefined || failed ? 'unavailable' : 'ready'
 
+  /* A setup with a hand-picked guide opens it; the rest ask the assistant. */
   const openSetup = useCallback(
-    (entry: ResolvedSetup) => onAskAssistant(composeSetupRequest(entry), 'setup'),
-    [onAskAssistant],
+    (entry: ResolvedSetup) => {
+      const guide = entry.setup.automation
+      if (guide) {
+        navigate(automationPath(guide.niche, guide.slug))
+        return
+      }
+      onAskAssistant(composeSetupRequest(entry), 'setup')
+    },
+    [navigate, onAskAssistant],
   )
 
   return (

@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SetupPicker from '@/components/assistant/SetupPicker'
 import { GoalIcon, PlanSectionIcon, RoleIcon } from '@/components/assistant/icons'
+import { automationPath } from '@/components/automations/labels'
 import { WORKFLOW_ICON } from '@/data/assistant'
+import { ROLE_GUIDES } from '@/data/roleGuides'
 import { useTaxonomy } from '@/hooks/useTaxonomy'
 
 /*
@@ -93,6 +95,14 @@ export default function BuildSetupCard({
     const trimmedRole = role.trim()
     const trimmedGoal = goal.trim()
     if (busy || (!trimmedRole && !trimmedGoal)) return
+    // A role with a hand-picked guide opens it, whichever goal was chosen —
+    // role-level by design; see data/roleGuides.ts. Every other role, and any
+    // role typed by hand, asks the assistant as before.
+    const guide = ROLE_GUIDES[trimmedRole]
+    if (guide) {
+      navigate(automationPath(guide.niche, guide.slug))
+      return
+    }
     onBuild(composeSetupMessage(trimmedRole, trimmedGoal))
     onScrollToStage()
   }

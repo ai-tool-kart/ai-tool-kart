@@ -1,3 +1,4 @@
+import { automationPath } from '@/components/automations/labels'
 import StoryAvatar from '@/components/usageStories/StoryAvatar'
 import type { ResolvedUsageStory } from '@/types/usageStory'
 import { storyByline } from '@/utils/usageStories'
@@ -21,13 +22,25 @@ import { storyByline } from '@/utils/usageStories'
  * bare name and that is right — this section is about the workflow, and
  * catalogue metadata here would turn a story into a search result.
  *
- * ── Not a link ───────────────────────────────────────────────────────────────
+ * ── A link only where a guide was chosen ─────────────────────────────────────
  *
- * The handoff's card has no click target and neither does this one. There is
- * nowhere honest to go: a story has no page, and sending a reader to the vendor
- * of the first chip would be inventing a destination the card never offered. The
- * hover lift is the design's, and it reads as "this is a card", not "this is a
- * button". Chips are `<span>`s for the same reason.
+ * The handoff's card has no click target. A story has no page of its own, so
+ * the only honest destination is a step-by-step guide for the same task — and
+ * that exists only where one was chosen BY HAND (`story.automation`, from the
+ * shortlist in docs/LINK-CANDIDATES.md). Nothing is inferred: a matcher guess
+ * sent most of these cards to the wrong guide, and the vendor of the first chip
+ * would be inventing a destination the card never offered.
+ *
+ * So a card with a guide is one `<a>` around the whole card, opening in a new
+ * tab like the plan-step links; the card contains nothing else interactive (the
+ * chips are `<span>`s), so the single link is valid. A card without one stays a
+ * plain `<article>`, exactly as before. The hover lift is the design's on both.
+ *
+ * The rail moves on its own, so the link half has two obligations the rail
+ * meets elsewhere: it pauses on keyboard focus as well as hover
+ * (`[data-marquee]:focus-within` in styles/animations.css), and the duplicate
+ * pass's links are `tabIndex={-1}` — the duplicate is aria-hidden, and a
+ * focusable element inside aria-hidden content is announced as nothing.
  *
  * ── The right margin is the rail's gap ───────────────────────────────────────
  *
@@ -50,16 +63,53 @@ interface UsageStoryCardProps {
   duplicate?: boolean
 }
 
+const CARD_CLASS =
+  'relative mr-[18px] flex w-[328px] flex-none flex-col gap-[18px] overflow-hidden rounded-panel border border-hairline bg-[linear-gradient(180deg,rgba(255,246,246,0.05)_0%,rgba(255,255,255,0.015)_100%)] px-[22px] py-6 shadow-[inset_0_1px_0_rgba(248,224,224,0.16),inset_0_-1px_0_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.4),0_24px_44px_-32px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow] duration-[380ms] ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[5px] hover:border-[rgba(240,169,180,0.3)] hover:shadow-[inset_0_1px_0_rgba(252,232,232,0.28),0_2px_6px_rgba(0,0,0,0.45),0_32px_58px_-30px_rgba(198,96,116,0.5)]'
+
+/*
+ * What a linked card adds: the base `a` rule's link colour undone (every text
+ * node here sets its own colour, so `inherit` renders exactly as the article
+ * did), and the accent focus ring the setup cards use.
+ */
+const LINK_CLASS =
+  'text-inherit focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent'
+
 export default function UsageStoryCard({ entry, duplicate = false }: UsageStoryCardProps) {
+  const { story } = entry
+  const guide = story.automation
+  const hidden = duplicate ? { 'aria-hidden': true } : {}
+
+  if (!guide) {
+    return (
+      <article {...hidden} data-spot="1" className={CARD_CLASS}>
+        <CardBody entry={entry} />
+      </article>
+    )
+  }
+
+  return (
+    <a
+      {...hidden}
+      {...(duplicate ? { tabIndex: -1 } : {})}
+      href={automationPath(guide.niche, guide.slug)}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-spot="1"
+      className={`${CARD_CLASS} ${LINK_CLASS}`}
+    >
+      <CardBody entry={entry} />
+      <span className="sr-only"> — open the step-by-step guide (opens in a new tab)</span>
+    </a>
+  )
+}
+
+/** Everything inside the card. Identical whether or not the card is a link. */
+function CardBody({ entry }: { entry: ResolvedUsageStory }) {
   const { story, tools } = entry
   const byline = storyByline(story)
 
   return (
-    <article
-      {...(duplicate ? { 'aria-hidden': true } : {})}
-      data-spot="1"
-      className="relative mr-[18px] flex w-[328px] flex-none flex-col gap-[18px] overflow-hidden rounded-panel border border-hairline bg-[linear-gradient(180deg,rgba(255,246,246,0.05)_0%,rgba(255,255,255,0.015)_100%)] px-[22px] py-6 shadow-[inset_0_1px_0_rgba(248,224,224,0.16),inset_0_-1px_0_rgba(0,0,0,0.45),0_1px_2px_rgba(0,0,0,0.4),0_24px_44px_-32px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow] duration-[380ms] ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[5px] hover:border-[rgba(240,169,180,0.3)] hover:shadow-[inset_0_1px_0_rgba(252,232,232,0.28),0_2px_6px_rgba(0,0,0,0.45),0_32px_58px_-30px_rgba(198,96,116,0.5)]"
-    >
+    <>
       {/* The cursor-tracking wash, faded in by the shared pointer hook. Geometry
           and fade come from [data-spot-layer] in styles/index.css; only the fill
           is restated, because this section's is rose where the default is
@@ -116,7 +166,7 @@ export default function UsageStoryCard({ entry, duplicate = false }: UsageStoryC
           <p className="text-[13px] text-[#B79AA1]">{story.resultDetail}</p>
         )}
       </div>
-    </article>
+    </>
   )
 }
 
