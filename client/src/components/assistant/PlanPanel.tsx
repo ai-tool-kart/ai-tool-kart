@@ -35,18 +35,22 @@ import type { AssistantPlan } from '@/types/assistant'
  * This pane is the result the chat pane produces, so it is the wider of the
  * two (see AssistantStage) and is laid out to be understood at a glance: a
  * header bar that mirrors the chat's, the user's goal set as the plan's title
- * with a one-line count of what was assembled, then the numbered steps, each
- * with its own call to action (PlanBodies). The guide and "See these tools"
+ * with a one-line summary of the workflow, then the numbered steps, each
+ * as a workflow stage with the tools that do it (PlanBodies). The guide and "See these tools"
  * sit in a quieter footer — they act on the whole plan, so they are styled as
  * secondary to the per-step actions rather than competing with them.
  *
  * ── Height and scrolling ─────────────────────────────────────────────────────
  *
- * Beside the chat (lg and up) the panel is exactly the chat's height, 736px:
+ * Beside the chat (lg and up) the panel is exactly the chat's height — the
+ * viewport minus the fixed header and a margin, clamped to 560–680px, so the
+ * whole stage fits on screen under the nav:
  * in a grid row the tallest item sets the row, so a long plan would otherwise
  * grow the whole glass shell instead of scrolling. The STEPS own that scroll,
  * not the panel, so the footer's two links are always on screen — a section
- * that scrolled as a whole used to carry them below the fold.
+ * that scrolled as a whole used to carry them below the fold. The scrollbar
+ * is thin but visible, since a shorter panel scrolls more often and a
+ * hidden bar gave no sign there was a fourth step.
  *
  * Stacked (below lg) there is no cap: the plan simply takes the height it
  * needs and the page scrolls. A nested scroller on a phone is a trap, and
@@ -133,13 +137,12 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
     window.open(`/browse?tools=${slugs.map(encodeURIComponent).join(',')}`, '_blank', 'noopener,noreferrer')
   }
 
-  const toolCount = plan ? new Set(plan.steps.map((step) => step.tool.id)).size : 0
   const status = statusLabel(session, complete)
 
   return (
     <section
       aria-label={label}
-      className="relative flex min-w-0 flex-col overflow-hidden rounded-card-lg border border-[rgba(178,150,255,0.16)] bg-[linear-gradient(168deg,rgba(124,88,244,0.13)_0%,rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.012)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.15),0_20px_44px_-46px_rgba(124,88,244,0.6)] lg:h-[736px]"
+      className="relative flex min-w-0 flex-col overflow-hidden rounded-card-lg border border-[rgba(178,150,255,0.16)] bg-[linear-gradient(168deg,rgba(124,88,244,0.13)_0%,rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.012)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.15),0_20px_44px_-46px_rgba(124,88,244,0.6)] lg:h-[clamp(560px,calc(100svh-164px),680px)]"
     >
       <span
         aria-hidden="true"
@@ -155,7 +158,7 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
         <span className="flex min-w-0 flex-col gap-[2px]">
           <h2 className="text-[15px] font-semibold tracking-[-0.016em] text-[#EFEAFB]">{label}</h2>
           <span className="text-[12px] leading-[1.4] text-pretty text-subtle">
-            The tools for your goal, in the order you'll use them
+            A step-by-step workflow for your goal
           </span>
         </span>
         {status && (
@@ -177,9 +180,11 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
       {/*
        * Everything between the header and the footer scrolls on desktop.
        * `min-h-0` is what makes it scroll rather than grow: a flex item's
-       * default `min-height: auto` refuses to shrink below its content.
+       * default `min-height: auto` refuses to shrink below its content. The
+       * 32px fade at the bottom edge says "there is more" when a step is cut
+       * by the scroll boundary; at the true end it only fades the padding.
        */}
-      <div className="flex min-h-0 flex-auto flex-col gap-[18px] px-4 pt-[18px] pb-4 sm:px-5 lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
+      <div className="flex min-h-0 flex-auto flex-col gap-[18px] px-4 pt-[18px] pb-4 sm:px-5 lg:overflow-y-auto lg:overscroll-contain lg:[mask-image:linear-gradient(180deg,#000_calc(100%-32px),transparent)] lg:[scrollbar-color:rgba(178,150,255,0.28)_transparent] lg:[scrollbar-width:thin]">
         {/*
          * The goal reads back the user's own words as the plan's title, so
          * they can see the plan is built on exactly what they asked for.
@@ -189,12 +194,11 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
             <p className="text-[10.5px] font-semibold tracking-[0.16em] text-[#8A83A6] uppercase">
               Your goal
             </p>
-            <p className="text-[22px] leading-[1.2] font-semibold tracking-[-0.026em] text-balance text-ink-bright sm:text-[26px]">
+            <p className="text-[22px] leading-[1.2] font-semibold tracking-[-0.026em] text-balance text-ink-bright sm:text-[24px]">
               {plan.goal}
             </p>
-            <p className="text-[12.5px] text-[#9E97B8]">
-              {stepCount} {stepCount === 1 ? 'step' : 'steps'} · {toolCount}{' '}
-              {toolCount === 1 ? 'tool' : 'tools'}, picked from the catalogue for this goal
+            <p className="text-[13px] text-[#9E97B8]">
+              A {stepCount}-step workflow built around your goal
             </p>
           </div>
         )}
@@ -204,7 +208,7 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
         ) : plan ? (
           <PlanSteps steps={plan.steps.slice(0, revealed)} />
         ) : (
-          /* Beside the chat the panel is 736px tall; the faded step outline
+          /* Beside the chat the panel is at least 560px tall; the faded step outline
              fills it with the shape of what is coming instead of empty glass.
              Stacked, it would only add scroll, so it is desktop-only. */
           <div className="flex flex-auto flex-col justify-center gap-6">
@@ -242,7 +246,7 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
                 Guide: <span className="text-[#C9C2DD]">{automation.title}</span>
               </span>
             ) : (
-              'Open every tool in this plan in one view'
+              'Every tool in this workflow, in one view'
             )}
           </p>
 

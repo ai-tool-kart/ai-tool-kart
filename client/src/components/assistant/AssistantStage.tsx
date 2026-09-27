@@ -18,13 +18,13 @@ import type { AssistantSession } from '@/hooks/useAssistant'
  *
  * The plan is the product; the chat is the way in. From `lg` up the shell is a
  * three-column grid — chat, seam, plan — at roughly 5:9, so the plan takes about
- * two thirds of the width and both panes share one fixed 736px height,
- * set on each panel. Below `lg` the panes stack in reading order, ask first and
+ * two thirds of the width and both panes share one height, set on each
+ * panel: the viewport minus the fixed header and a margin, clamped to
+ * 560–680px, so the whole shell sits on screen under the nav. Below `lg` the panes stack in reading order, ask first and
  * answer second, and the seam turns horizontal between them.
  *
- * The seam carries a small arrow badge — right when side by side, down when
- * stacked — so the flow "you describe it → the plan is built" reads from the
- * layout alone, without a diagram.
+ * Nothing but proportion and order says which pane answers which: the narrow
+ * one on the left is where you ask, the wide one on the right is the result.
  *
  * This component holds no state. It is handed a session and splits it in two.
  *
@@ -93,9 +93,6 @@ export default function AssistantStage({
           aria-hidden="true"
           className="relative mx-[12%] h-px bg-[linear-gradient(90deg,transparent,rgba(178,150,255,0.26)_22%,rgba(178,150,255,0.26)_78%,transparent)] lg:mx-0 lg:h-auto lg:bg-[linear-gradient(180deg,transparent,rgba(178,150,255,0.26)_22%,rgba(178,150,255,0.26)_78%,transparent)]"
         >
-          <span className="absolute top-1/2 left-1/2 flex h-[26px] w-[26px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(178,150,255,0.34)] bg-[linear-gradient(158deg,rgba(40,30,72,0.96),rgba(16,12,30,0.98))] text-[12px] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(232,222,255,0.18),0_0_22px_-6px_rgba(167,139,250,0.8)]">
-            <span className="inline-block rotate-90 lg:rotate-0">→</span>
-          </span>
           {session.status === 'thinking' && (
             <span className="absolute -left-[2px] hidden h-[5px] w-[5px] rounded-full bg-[#C8AEFF] shadow-[0_0_12px_3px_rgba(167,139,250,0.9)] [animation:akPlanTravel_1.15s_linear_infinite] lg:block" />
           )}

@@ -376,6 +376,11 @@ export interface ConversationMessage {
  */
 export interface AssistantPlanStep {
   action: string
+  /**
+   * What finishing this step means, in one plain sentence — STAGE_PURPOSES
+   * for the step's stage. Like `action`, ours, never the model's.
+   */
+  purpose: string
   tool: ToolSummary
   alsoGood: ToolSummary[]
 }

@@ -47,8 +47,8 @@ export interface AssistantToolSummary {
 }
 
 /**
- * One step of the plan: one plain-language action, the tool that leads it,
- * and its runners-up. `action` and the tools' tagline/pricing are the
+ * One step of the plan: one plain-language action, what finishing it means,
+ * the tool that leads it, and its runners-up. `action` and the tools' tagline/pricing are the
  * server's own words, read off the catalogue at answer time — never text the
  * model wrote.
  *
@@ -57,6 +57,8 @@ export interface AssistantToolSummary {
  */
 export interface AssistantPlanStep {
   action: string
+  /** What finishing this step means, one plain sentence (server STAGE_PURPOSES). */
+  purpose: string
   tool: AssistantToolSummary
   alsoGood: AssistantToolSummary[]
 }

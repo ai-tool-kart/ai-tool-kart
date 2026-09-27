@@ -10,7 +10,8 @@ import type { AssistantSession } from '@/hooks/useAssistant'
  * The left half of the assistant stage: header, transcript, composer.
  *
  * Source: AI Tool Kart Site.dc.html, `[data-panel]` inside the hero. Fixed
- * height (474px stacked, 736px beside the plan — see AssistantStage) with the
+ * height (474px stacked; beside the plan, the viewport-fitted height set in
+ * AssistantStage) with the
  * transcript as the only scrolling region, so the header and composer never
  * move while an answer arrives. Stacked, it keeps a fixed height too — a chat
  * that grew the page would push the plan panel off-screen exactly when it
@@ -80,7 +81,7 @@ export default function ChatPanel({ session, label = 'AI Assistant' }: ChatPanel
   return (
     <div
       data-panel="1"
-      className="relative flex h-[474px] min-w-0 flex-col overflow-hidden sm:h-[520px] lg:h-[736px] rounded-card-lg border border-[rgba(178,150,255,0.15)] bg-[linear-gradient(180deg,rgba(18,14,32,0.9)_0%,rgba(9,7,18,0.94)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.13),0_22px_46px_-42px_rgba(124,88,244,0.75)]"
+      className="relative flex h-[474px] min-w-0 flex-col overflow-hidden sm:h-[520px] lg:h-[clamp(560px,calc(100svh-164px),680px)] rounded-card-lg border border-[rgba(178,150,255,0.15)] bg-[linear-gradient(180deg,rgba(18,14,32,0.9)_0%,rgba(9,7,18,0.94)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.13),0_22px_46px_-42px_rgba(124,88,244,0.75)]"
     >
       <header className="flex items-start gap-[10px] border-b border-white/[0.06] bg-[linear-gradient(180deg,rgba(124,90,246,0.1),rgba(124,90,246,0))] px-4 py-[14px]">
         <span className="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-chip border border-[rgba(178,150,255,0.3)] bg-[linear-gradient(158deg,rgba(167,139,250,0.26),rgba(255,255,255,0.03))] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">

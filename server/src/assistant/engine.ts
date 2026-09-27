@@ -39,7 +39,7 @@
 
 import type { AutomationMatch, AutomationMatcher } from '../automations/match.ts'
 import type { ToolCatalogueRepository } from '../catalogue/repository.ts'
-import { STAGE_ACTIONS, type WorkflowStage } from '../catalogue/taxonomy.ts'
+import { STAGE_ACTIONS, STAGE_PURPOSES, type WorkflowStage } from '../catalogue/taxonomy.ts'
 import { ASSISTANT, AUTOMATION_MATCH, RETRIEVAL } from '../config/limits.ts'
 import type {
   AssistantAutomation,
@@ -311,7 +311,13 @@ export function createAssistantEngine({
             const alsoGood = step.alsoGoodToolIds
               .map((id) => hydrated.get(id))
               .filter((candidate): candidate is ToolSummary => candidate !== undefined)
-            return { action: STAGE_ACTIONS[step.stage as WorkflowStage], tool, alsoGood }
+            const stage = step.stage as WorkflowStage
+            return {
+              action: STAGE_ACTIONS[stage],
+              purpose: STAGE_PURPOSES[stage],
+              tool,
+              alsoGood,
+            }
           })
           .filter((step): step is AssistantPlanStep => step !== undefined)
 

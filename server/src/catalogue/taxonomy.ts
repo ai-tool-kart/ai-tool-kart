@@ -621,6 +621,30 @@ export const STAGE_ACTIONS: Record<WorkflowStage, string> = {
   collaborate: 'Work on it with your team',
 }
 
+/**
+ * What a reader is trying to get done at each stage, one sentence each — the
+ * line under a plan step's action.
+ *
+ * STAGE_ACTIONS names the step; this says what finishing it means, so a plan
+ * reads as a workflow (what to do, then which tools do it) rather than a list
+ * of tools. Same rule as STAGE_ACTIONS: plain words, written once here, never
+ * by the model. `StageDefinition.description` is not reused because it is
+ * phrased for the taxonomy's own readers ("Interrogate data…"), not for
+ * someone following a plan.
+ */
+export const STAGE_PURPOSES: Record<WorkflowStage, string> = {
+  research: 'Gather what you need to know and compare your options before you commit.',
+  ideate: 'Turn the goal into concrete ideas, angles and an outline to work from.',
+  draft: 'Get a complete first version down that you can react to and improve.',
+  design: 'Shape how it looks — the layout, visuals and assets people will see.',
+  build: 'Turn the plan into something that actually works and can ship.',
+  edit: 'Tighten and clean up what you have until it is ready to go out.',
+  analyse: 'Measure how it is performing so you know what to change next.',
+  automate: 'Hand the repetitive parts to software so they run without you.',
+  publish: 'Put the finished work in front of the people it is for.',
+  collaborate: 'Keep everyone working on it aligned, from notes to hand-offs.',
+}
+
 /* ─── Sorting ──────────────────────────────────────────────────────────────── */
 
 /**
