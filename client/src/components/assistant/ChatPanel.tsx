@@ -10,10 +10,16 @@ import type { AssistantSession } from '@/hooks/useAssistant'
  * The left half of the assistant stage: header, transcript, composer.
  *
  * Source: AI Tool Kart Site.dc.html, `[data-panel]` inside the hero. Fixed
- * 474px tall with the transcript as the only scrolling region, so the header and
- * composer never move while an answer arrives. Below the design's wrap width the
- * two panes stack and this one keeps its height — a chat that grew the page
- * would push the plan panel off-screen exactly when it filled in.
+ * height (474px stacked, 736px beside the plan — see AssistantStage) with the
+ * transcript as the only scrolling region, so the header and composer never
+ * move while an answer arrives. Stacked, it keeps a fixed height too — a chat
+ * that grew the page would push the plan panel off-screen exactly when it
+ * filled in.
+ *
+ * This is the narrow pane: the entry point, not the result. The starter chips
+ * wrap rather than scroll sideways, because at this width a horizontal rail
+ * hid the third suggestion entirely, and "Start over" sits beside them since
+ * the header no longer has room for it next to the status pill.
  *
  * Presentation only. It renders an `AssistantSession` and calls back into it;
  * it never fetches, and it holds no state but the composer's own draft text and
@@ -74,23 +80,23 @@ export default function ChatPanel({ session, label = 'AI Assistant' }: ChatPanel
   return (
     <div
       data-panel="1"
-      className="relative flex h-[474px] min-w-[min(100%,318px)] flex-[1_1_470px] flex-col overflow-hidden rounded-card-lg border border-[rgba(178,150,255,0.15)] bg-[linear-gradient(180deg,rgba(18,14,32,0.9)_0%,rgba(9,7,18,0.94)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.13),0_22px_46px_-42px_rgba(124,88,244,0.75)]"
+      className="relative flex h-[474px] min-w-0 flex-col overflow-hidden sm:h-[520px] lg:h-[736px] rounded-card-lg border border-[rgba(178,150,255,0.15)] bg-[linear-gradient(180deg,rgba(18,14,32,0.9)_0%,rgba(9,7,18,0.94)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.13),0_22px_46px_-42px_rgba(124,88,244,0.75)]"
     >
-      <header className="flex items-center gap-[10px] border-b border-white/[0.06] bg-[linear-gradient(180deg,rgba(124,90,246,0.1),rgba(124,90,246,0))] px-[15px] py-[13px]">
-        <span className="flex h-[30px] w-[30px] flex-none items-center justify-center rounded-chip border border-[rgba(178,150,255,0.3)] bg-[linear-gradient(158deg,rgba(167,139,250,0.26),rgba(255,255,255,0.03))] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+      <header className="flex items-start gap-[10px] border-b border-white/[0.06] bg-[linear-gradient(180deg,rgba(124,90,246,0.1),rgba(124,90,246,0))] px-4 py-[14px]">
+        <span className="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-chip border border-[rgba(178,150,255,0.3)] bg-[linear-gradient(158deg,rgba(167,139,250,0.26),rgba(255,255,255,0.03))] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
           <BotIcon className="h-4 w-4" />
         </span>
-        <span className="flex min-w-0 flex-col gap-px">
-          <span className="text-[14px] font-semibold tracking-[-0.014em] text-[#EFEAFB]">
+        <span className="flex min-w-0 flex-col gap-[2px]">
+          <span className="text-[15px] font-semibold tracking-[-0.016em] text-[#EFEAFB]">
             {label}
           </span>
-          <span className="truncate text-[11.5px] text-subtle">
+          <span className="text-[12px] leading-[1.4] text-pretty text-subtle">
             Describe the work — the plan builds itself
           </span>
         </span>
 
         <span
-          className="ml-auto inline-flex items-center gap-[7px] rounded-pill border border-[rgba(178,150,255,0.24)] bg-[rgba(124,90,246,0.12)] px-[10px] py-[5px] text-[10.5px] font-semibold tracking-[0.1em] whitespace-nowrap text-[#C6B2FF] uppercase"
+          className="mt-[3px] ml-auto inline-flex items-center gap-[7px] rounded-pill border border-[rgba(178,150,255,0.24)] bg-[rgba(124,90,246,0.12)] px-[10px] py-[5px] text-[10.5px] font-semibold tracking-[0.1em] whitespace-nowrap text-[#C6B2FF] uppercase"
           role="status"
         >
           <span
@@ -99,16 +105,6 @@ export default function ChatPanel({ session, label = 'AI Assistant' }: ChatPanel
           />
           {statusLabel(session)}
         </span>
-
-        {session.hasStarted && (
-          <button
-            type="button"
-            onClick={session.reset}
-            className="ml-2 cursor-pointer text-[11.5px] font-medium whitespace-nowrap text-[#7E7899] transition-colors duration-250 hover:text-[#C9B6FF]"
-          >
-            Start over
-          </button>
-        )}
       </header>
 
       <div
@@ -170,9 +166,23 @@ export default function ChatPanel({ session, label = 'AI Assistant' }: ChatPanel
       </div>
 
       <div className="flex flex-none flex-col gap-[10px] border-t border-white/[0.06] bg-[linear-gradient(180deg,rgba(255,255,255,0.022),rgba(255,255,255,0))] px-4 pt-3 pb-4">
-        <div className={`flex gap-[7px] overflow-x-auto pb-px ${SCROLLBARLESS}`}>
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-[10.5px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">
+            Try an example
+          </span>
+          {session.hasStarted && (
+            <button
+              type="button"
+              onClick={session.reset}
+              className="cursor-pointer rounded-[4px] text-[11.5px] font-medium whitespace-nowrap text-[#7E7899] transition-colors duration-250 hover:text-[#C9B6FF] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              Start over
+            </button>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-[7px]">
           {ASSISTANT_SUGGESTIONS.map((suggestion) => (
-            <AssistantChip key={suggestion} fixed disabled={busy} onClick={() => submit(suggestion)}>
+            <AssistantChip key={suggestion} disabled={busy} onClick={() => submit(suggestion)}>
               {suggestion}
             </AssistantChip>
           ))}

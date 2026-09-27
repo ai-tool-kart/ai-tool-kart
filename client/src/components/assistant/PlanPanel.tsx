@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import PlanIdleState from '@/components/assistant/PlanIdleState'
-import { PlanSteps } from '@/components/assistant/PlanBodies'
+import { PlanSteps, PlanStepsSkeleton } from '@/components/assistant/PlanBodies'
+import { PlanGraphIcon } from '@/components/assistant/icons'
 import { automationPath } from '@/components/automations/labels'
 import Button from '@/components/ui/Button'
 import type { AssistantSession } from '@/hooks/useAssistant'
@@ -29,20 +30,27 @@ import type { AssistantPlan } from '@/types/assistant'
  * steps reveal one at a time on the same 200ms + 240ms/step stagger. The
  * animation now describes rendering rather than pretending to describe work.
  *
- * ── Why the panel is capped at the chat panel's height ───────────────────
+ * ── The hero of the stage ─────────────────────────────────────────────────────
  *
- * The design sets `overflow-y: auto` here but no height, which worked only
- * because its scripted plan was short. A real plan — several tools, several
- * steps — can be taller than the 474px chat panel beside it, and in a stretch
- * row the tallest item sets the row height: the panel grew the whole glass
- * shell instead of scrolling, pushing the page down. Capping at 474px is what
- * makes the design's own `overflow-y: auto` mean something.
+ * This pane is the result the chat pane produces, so it is the wider of the
+ * two (see AssistantStage) and is laid out to be understood at a glance: a
+ * header bar that mirrors the chat's, the user's goal set as the plan's title
+ * with a one-line count of what was assembled, then the numbered steps, each
+ * with its own call to action (PlanBodies). The guide and "See these tools"
+ * sit in a quieter footer — they act on the whole plan, so they are styled as
+ * secondary to the per-step actions rather than competing with them.
  *
- * That scroll belongs to the STEPS, not to the panel. When the section itself
- * scrolled, a four-step plan put the footer's buttons below the fold — the
- * reader had to scroll a panel that gives no sign it scrolls to find the two
- * links it exists to offer. The steps region owns the overflow now and the
- * footer sits outside it, so the way out is always on screen.
+ * ── Height and scrolling ─────────────────────────────────────────────────────
+ *
+ * Beside the chat (lg and up) the panel is exactly the chat's height, 736px:
+ * in a grid row the tallest item sets the row, so a long plan would otherwise
+ * grow the whole glass shell instead of scrolling. The STEPS own that scroll,
+ * not the panel, so the footer's two links are always on screen — a section
+ * that scrolled as a whole used to carry them below the fold.
+ *
+ * Stacked (below lg) there is no cap: the plan simply takes the height it
+ * needs and the page scrolls. A nested scroller on a phone is a trap, and
+ * nothing sits beside the panel whose row it could stretch.
  */
 
 /** The design's `runPlan()` cadence, kept exactly. */
@@ -125,107 +133,123 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
     window.open(`/browse?tools=${slugs.map(encodeURIComponent).join(',')}`, '_blank', 'noopener,noreferrer')
   }
 
+  const toolCount = plan ? new Set(plan.steps.map((step) => step.tool.id)).size : 0
+  const status = statusLabel(session, complete)
+
   return (
     <section
       aria-label={label}
-      className="relative flex max-h-[474px] min-w-[min(100%,300px)] flex-[1_1_330px] flex-col gap-[10px] overflow-hidden rounded-card-lg border border-[rgba(178,150,255,0.13)] bg-[linear-gradient(168deg,rgba(124,88,244,0.12)_0%,rgba(255,255,255,0.03)_46%,rgba(255,255,255,0.012)_100%)] p-[15px] shadow-[inset_0_1px_0_rgba(232,222,255,0.15),0_20px_44px_-46px_rgba(124,88,244,0.6)]"
+      className="relative flex min-w-0 flex-col overflow-hidden rounded-card-lg border border-[rgba(178,150,255,0.16)] bg-[linear-gradient(168deg,rgba(124,88,244,0.13)_0%,rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.012)_100%)] shadow-[inset_0_1px_0_rgba(232,222,255,0.15),0_20px_44px_-46px_rgba(124,88,244,0.6)] lg:h-[736px]"
     >
       <span
         aria-hidden="true"
         className="pointer-events-none absolute top-0 right-[40%] left-[10%] h-px bg-[linear-gradient(90deg,transparent,rgba(196,168,255,0.6),transparent)]"
       />
 
-      {/*
-       * Everything above the footer scrolls; the footer does not. The section
-       * used to be the scroller itself, which put the buttons at the bottom of
-       * 617px of content inside a 474px box — below the fold, on the one
-       * element the panel exists to lead to. The cap is unchanged and so is
-       * the design's `overflow-y: auto`; only WHICH box owns it moved.
-       *
-       * `min-h-0` is what makes it scroll rather than grow: a flex item's
-       * default `min-height: auto` refuses to shrink below its content, so
-       * without it this region would push the section past 474px.
-       */}
-      <div className="flex min-h-0 flex-1 flex-col gap-[10px] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex items-center gap-[10px]">
-          <h2 className="text-[11.5px] tracking-[0.18em] text-[#C6B2FF] uppercase">{label}</h2>
-          <div className="ml-auto inline-flex items-center gap-[7px] text-[11.5px] whitespace-nowrap text-[#8A83A6]">
+      {/* Header bar — the same anatomy as the chat pane's, so the two read as
+          one instrument: mark, title, one line of what it does, status. */}
+      <header className="flex flex-none items-start gap-[10px] border-b border-white/[0.06] bg-[linear-gradient(180deg,rgba(124,90,246,0.1),rgba(124,90,246,0))] px-4 py-[14px] sm:px-5">
+        <span className="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-chip border border-[rgba(178,150,255,0.3)] bg-[linear-gradient(158deg,rgba(167,139,250,0.26),rgba(255,255,255,0.03))] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+          <PlanGraphIcon className="h-4 w-4" />
+        </span>
+        <span className="flex min-w-0 flex-col gap-[2px]">
+          <h2 className="text-[15px] font-semibold tracking-[-0.016em] text-[#EFEAFB]">{label}</h2>
+          <span className="text-[12px] leading-[1.4] text-pretty text-subtle">
+            The tools for your goal, in the order you'll use them
+          </span>
+        </span>
+        {status && (
+          <span
+            role="status"
+            className="mt-[3px] ml-auto inline-flex items-center gap-[7px] text-[11.5px] whitespace-nowrap text-[#8A83A6]"
+          >
             {busy && (
               <span
                 aria-hidden="true"
                 className="h-[11px] w-[11px] rounded-full border-[1.6px] border-[rgba(196,168,255,0.3)] border-t-[#C8AEFF] [animation:akSpin_.8s_linear_infinite]"
               />
             )}
-            {statusLabel(session, complete)}
-          </div>
-        </div>
+            {status}
+          </span>
+        )}
+      </header>
 
+      {/*
+       * Everything between the header and the footer scrolls on desktop.
+       * `min-h-0` is what makes it scroll rather than grow: a flex item's
+       * default `min-height: auto` refuses to shrink below its content.
+       */}
+      <div className="flex min-h-0 flex-auto flex-col gap-[18px] px-4 pt-[18px] pb-4 sm:px-5 lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
         {/*
-         * The goal line reads back the user's own words, so they can see the
-         * plan is built on exactly what they asked for.
+         * The goal reads back the user's own words as the plan's title, so
+         * they can see the plan is built on exactly what they asked for.
          */}
         {plan && revealed > 0 && (
-          <p className="text-[13px] leading-[1.45] font-medium tracking-[-0.01em] text-pretty text-[#D3CCE6] [animation:akFade_.4s_ease_both]">
-            Your goal: {plan.goal}
-          </p>
+          <div className="flex flex-col gap-[6px] [animation:akFade_.4s_ease_both]">
+            <p className="text-[10.5px] font-semibold tracking-[0.16em] text-[#8A83A6] uppercase">
+              Your goal
+            </p>
+            <p className="text-[22px] leading-[1.2] font-semibold tracking-[-0.026em] text-balance text-ink-bright sm:text-[26px]">
+              {plan.goal}
+            </p>
+            <p className="text-[12.5px] text-[#9E97B8]">
+              {stepCount} {stepCount === 1 ? 'step' : 'steps'} · {toolCount}{' '}
+              {toolCount === 1 ? 'tool' : 'tools'}, picked from the catalogue for this goal
+            </p>
+          </div>
         )}
 
-        {!session.hasStarted ? (
-          <PlanIdleState />
+        {busy ? (
+          <PlanStepsSkeleton />
         ) : plan ? (
-          <div className="[animation:akFade_.4s_ease_both]">
-            <PlanSteps steps={plan.steps.slice(0, revealed)} />
-          </div>
+          <PlanSteps steps={plan.steps.slice(0, revealed)} />
         ) : (
-          <PlanIdleState />
+          /* Beside the chat the panel is 736px tall; the faded step outline
+             fills it with the shape of what is coming instead of empty glass.
+             Stacked, it would only add scroll, so it is desktop-only. */
+          <div className="flex flex-auto flex-col justify-center gap-6">
+            <PlanIdleState />
+            <div className="hidden opacity-70 [mask-image:linear-gradient(180deg,#000_0%,transparent_100%)] lg:block">
+              <PlanStepsSkeleton />
+            </div>
+          </div>
         )}
       </div>
 
       {/*
-       * The footer: up to two ways out of the panel, and no row at all when
-       * the reply earned neither. Pinned — it sits outside the scroller above,
-       * so a plan long enough to scroll never carries the buttons off-screen.
+       * The footer: up to two ways out of the whole plan, and no row at all
+       * when the reply earned neither. Pinned outside the scroller above, so
+       * a plan long enough to scroll never carries them off-screen.
        *
-       * The hairline rule is what makes the pin legible. Without it a step card
-       * clipped mid-sentence at the scroll boundary sits flush against the
-       * title line and reads as colliding with it; the rule says the content
-       * above ended because it was cut, not because it finished. Same
-       * `border-t border-hairline` separator SubmitPage puts above its own
-       * buttons, at this panel's 10px rhythm rather than the form's 24px.
-       *
-       * The guide comes first because it is the closer answer to what was
-       * asked — one written procedure for this exact task, against a list of
-       * tools the reader still has to assemble. It is only ever present when
-       * the server's gate passed the match (ASSISTANT.automationMinTitleWeight
-       * server-side), so its prominence is never spent on a coincidence.
-       *
-       * `flex-wrap` rather than `whitespace-nowrap` on a narrow panel: the two
-       * stack onto separate rows instead of overflowing, which matters because
-       * this column can be as narrow as 300px and the section is capped at
-       * 474px with the steps above sharing that space.
+       * Both are deliberately quieter than the per-step "Explore" actions:
+       * those are the plan's primary moves, these act on the plan as a whole.
+       * The guide still comes first, because it is the closer answer to what
+       * was asked — one written procedure for this exact task. It is only ever
+       * present when the server's gate passed the match
+       * (ASSISTANT.automationMinTitleWeight server-side).
        */}
       {(automation || stepCount > 0) && (
-        <div className="flex flex-col gap-[10px] border-t border-hairline pt-[10px]">
+        <div className="flex flex-none flex-col gap-3 border-t border-white/[0.06] bg-[linear-gradient(180deg,rgba(255,255,255,0.022),rgba(255,255,255,0))] px-4 py-[14px] sm:flex-row sm:items-center sm:px-5">
           {/*
            * What the guide button opens. The button is the action and names
            * the kind of thing; this names the one. Not a link — two hit areas
-           * onto the same route reads as two destinations — and one row only,
-           * with the full text on the title attribute, so a long guide name
-           * costs the steps no height.
+           * onto the same route read as two destinations — and truncated to
+           * one row, with the full text on the title attribute.
            */}
-          {automation && (
-            <p
-              title={automation.title}
-              className="truncate text-[13px] leading-[1.45] font-medium tracking-[-0.01em] text-[#D3CCE6]"
-            >
-              {automation.title}
-            </p>
-          )}
+          <p className="min-w-0 flex-auto truncate text-[12.5px] leading-[1.45] text-[#8A83A6]">
+            {automation ? (
+              <span title={automation.title}>
+                Guide: <span className="text-[#C9C2DD]">{automation.title}</span>
+              </span>
+            ) : (
+              'Open every tool in this plan in one view'
+            )}
+          </p>
 
-          <div className="flex flex-wrap items-center gap-[10px]">
+          <div className="flex flex-none flex-wrap items-center gap-[10px]">
             {automation && (
               <Button
-                variant="gradient"
+                variant="ghost"
                 to={automationPath(automation.niche, automation.slug)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -235,23 +259,21 @@ export default function PlanPanel({ session, label = 'Your AI Plan' }: PlanPanel
               </Button>
             )}
 
-            {/* Same destination, same disabled-until-revealed treatment, same
-                styling it has always had — only the tab it lands in changed. */}
+            {/* Same destination and the same disabled-until-revealed rule as
+                ever; only the treatment moved to the secondary tier. */}
             {stepCount > 0 && (
               <button
                 type="button"
                 onClick={seeTheseTools}
                 disabled={!complete}
-                className={`inline-flex cursor-pointer items-center gap-2 rounded-pill border px-[15px] py-[9px] text-[12.5px] font-semibold transition-[color,border-color,background-color] duration-300 ${
+                className={`inline-flex cursor-pointer items-center gap-2 rounded-pill border px-[15px] py-2 text-[13px] font-semibold transition-[color,border-color,background-color] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   complete
-                    ? 'border-[rgba(178,150,255,0.5)] bg-[rgba(124,88,244,0.2)] text-[#F1EAFF] hover:border-[rgba(196,168,255,0.6)] hover:text-white'
-                    : 'cursor-default border-white/[0.09] bg-white/[0.03] text-[#7E7899]'
+                    ? 'border-white/[0.09] text-ink hover:border-accent-line hover:bg-accent-wash-strong hover:text-accent'
+                    : 'cursor-default border-white/[0.06] text-[#6E6884]'
                 }`}
               >
                 See these tools
-                <span aria-hidden="true" className="text-[14px]">
-                  →
-                </span>
+                <span aria-hidden="true">→</span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </button>
             )}

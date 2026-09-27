@@ -14,11 +14,17 @@ import type { AssistantSession } from '@/hooks/useAssistant'
  * gradient border — holding the chat panel, a 1px lit divider and the plan
  * panel.
  *
- * The shell wraps at the design's own breakpoints rather than at a media query:
- * the panels carry `flex: 1 1 470px` and `flex: 1 1 330px` with
- * `min-width: min(100%, …)`, so they sit side by side while there is room for
- * both and stack, full width, the moment there is not. The divider is a flex
- * item too, which is why it disappears cleanly into the gap when they stack.
+ * ── Proportions ───────────────────────────────────────────────────────────────
+ *
+ * The plan is the product; the chat is the way in. From `lg` up the shell is a
+ * three-column grid — chat, seam, plan — at roughly 5:9, so the plan takes about
+ * two thirds of the width and both panes share one fixed 736px height,
+ * set on each panel. Below `lg` the panes stack in reading order, ask first and
+ * answer second, and the seam turns horizontal between them.
+ *
+ * The seam carries a small arrow badge — right when side by side, down when
+ * stacked — so the flow "you describe it → the plan is built" reads from the
+ * layout alone, without a diagram.
  *
  * This component holds no state. It is handed a session and splits it in two.
  *
@@ -63,7 +69,7 @@ export default function AssistantStage({
       ref={panelRef}
       id={ASSISTANT_SECTION_ID}
       data-reveal="0"
-      className="relative mx-auto mt-[42px] w-[min(1120px,100%)] scroll-mt-[110px] text-left"
+      className="relative mx-auto mt-[42px] w-[min(1176px,100%)] scroll-mt-[110px] text-left"
     >
       {GLOWS.map((glow) => (
         <div key={glow} aria-hidden="true" className={`pointer-events-none ${glow}`} />
@@ -71,7 +77,7 @@ export default function AssistantStage({
 
       <div
         style={{ background: SHELL_BACKGROUND }}
-        className="relative flex flex-wrap items-stretch gap-[14px] rounded-[32px] border border-transparent p-[14px] shadow-[inset_0_1px_0_rgba(232,222,255,0.16),inset_0_0_60px_-26px_rgba(186,156,255,0.35),inset_0_-1px_0_rgba(0,0,0,0.55),0_34px_68px_-50px_rgba(0,0,0,0.95),0_0_120px_-60px_rgba(167,139,250,0.85)] backdrop-blur-[18px] backdrop-saturate-[1.25]"
+        className="relative grid grid-cols-1 gap-[14px] rounded-[32px] border border-transparent p-[10px] sm:p-[14px] lg:grid-cols-[minmax(0,5fr)_1px_minmax(0,9fr)] shadow-[inset_0_1px_0_rgba(232,222,255,0.16),inset_0_0_60px_-26px_rgba(186,156,255,0.35),inset_0_-1px_0_rgba(0,0,0,0.55),0_34px_68px_-50px_rgba(0,0,0,0.95),0_0_120px_-60px_rgba(167,139,250,0.85)] backdrop-blur-[18px] backdrop-saturate-[1.25]"
       >
         <div
           aria-hidden="true"
@@ -81,13 +87,17 @@ export default function AssistantStage({
         <ChatPanel session={session} {...(chatLabel ? { label: chatLabel } : {})} />
 
         {/* The lit seam, with the design's pulse travelling down it while a
-            turn is in flight — the one cue that ties the two panes together. */}
+            turn is in flight — the one cue that ties the two panes together.
+            Vertical beside the panes, horizontal between them when stacked. */}
         <div
           aria-hidden="true"
-          className="relative min-h-[2px] flex-[0_0_1px] self-stretch bg-[linear-gradient(180deg,transparent,rgba(178,150,255,0.26)_22%,rgba(178,150,255,0.26)_78%,transparent)]"
+          className="relative mx-[12%] h-px bg-[linear-gradient(90deg,transparent,rgba(178,150,255,0.26)_22%,rgba(178,150,255,0.26)_78%,transparent)] lg:mx-0 lg:h-auto lg:bg-[linear-gradient(180deg,transparent,rgba(178,150,255,0.26)_22%,rgba(178,150,255,0.26)_78%,transparent)]"
         >
+          <span className="absolute top-1/2 left-1/2 flex h-[26px] w-[26px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(178,150,255,0.34)] bg-[linear-gradient(158deg,rgba(40,30,72,0.96),rgba(16,12,30,0.98))] text-[12px] text-[#D8C8FF] shadow-[inset_0_1px_0_rgba(232,222,255,0.18),0_0_22px_-6px_rgba(167,139,250,0.8)]">
+            <span className="inline-block rotate-90 lg:rotate-0">→</span>
+          </span>
           {session.status === 'thinking' && (
-            <span className="absolute -left-[2px] h-[5px] w-[5px] rounded-full bg-[#C8AEFF] shadow-[0_0_12px_3px_rgba(167,139,250,0.9)] [animation:akPlanTravel_1.15s_linear_infinite]" />
+            <span className="absolute -left-[2px] hidden h-[5px] w-[5px] rounded-full bg-[#C8AEFF] shadow-[0_0_12px_3px_rgba(167,139,250,0.9)] [animation:akPlanTravel_1.15s_linear_infinite] lg:block" />
           )}
         </div>
 

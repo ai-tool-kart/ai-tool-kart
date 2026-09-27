@@ -19,8 +19,8 @@ export default function PlanIdleState() {
         />
         <PlanGraphIcon className="relative h-[23px] w-[23px]" />
       </span>
-      <p className="max-w-[26ch] text-center text-[13.5px] leading-[1.5] tracking-[-0.008em] text-pretty text-[#A9A3C0]">
-        Ask the assistant on the left — your plan builds here.
+      <p className="max-w-[30ch] text-center text-[13.5px] leading-[1.5] tracking-[-0.008em] text-pretty text-[#A9A3C0]">
+        Tell the assistant what you want to get done — your plan builds here.
       </p>
 
       <div className="mt-[6px] flex items-center gap-2 text-[11.5px] text-[#6E6884]">
