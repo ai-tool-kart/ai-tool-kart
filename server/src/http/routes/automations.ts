@@ -52,13 +52,21 @@ export interface ApiAutomationCard {
 /**
  * The full record for the detail view: steps resolved; pricingNote, status and
  * pricingTierSource removed; pricingTier absent when it was only a default.
+ *
+ * The editorial fields (automations/types.ts `AutomationEditorial`) pass
+ * through as stored — each absent unless a person wrote it — except
+ * `relatedGuides`, which is resolved from refs to cards here so the page can
+ * link them without a request per guide.
  */
 export type ApiAutomation = Omit<
   Automation,
-  'pricingNote' | 'status' | 'steps' | 'pricingTier' | 'pricingTierSource'
+  'pricingNote' | 'status' | 'steps' | 'pricingTier' | 'pricingTierSource' | 'relatedGuides'
 > & {
   pricingTier?: PricingTier
   steps: AutomationStep[]
+  /** Whether `steps` was written by a person or derived from the record (§5). */
+  stepsSource: 'authored' | 'derived'
+  relatedGuides?: ApiAutomationCard[]
 }
 
 export interface AutomationListResponse {
@@ -88,17 +96,38 @@ function toCard(automation: Automation): ApiAutomationCard {
   }
 }
 
-function toDetail(automation: Automation): ApiAutomation {
+function toDetail(automation: Automation, related: Automation[]): ApiAutomation {
   const {
     pricingNote: _pricingNote,
     status: _status,
     pricingTier: _pricingTier,
     pricingTierSource: _pricingTierSource,
     steps,
+    relatedGuides: _relatedGuides,
     ...rest
   } = automation
   // Authored steps win; otherwise the three derived at render time (§5). Never stored.
-  return { ...rest, ...shownTier(automation), steps: steps ?? deriveSteps(automation) }
+  return {
+    ...rest,
+    ...shownTier(automation),
+    steps: steps ?? deriveSteps(automation),
+    stepsSource: steps ? 'authored' : 'derived',
+    ...(related.length > 0 ? { relatedGuides: related.map(toCard) } : {}),
+  }
+}
+
+/**
+ * The curated related guides, in the editor's order. Every ref was checked
+ * at load (editorial.ts); a draft is skipped here as it is everywhere else.
+ */
+async function resolveRelated(
+  automation: Automation,
+  repository: AutomationRepository,
+): Promise<Automation[]> {
+  const found = await Promise.all(
+    (automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug)),
+  )
+  return found.filter((item): item is Automation => item?.status === 'active')
 }
 
 /**
@@ -184,7 +213,8 @@ export function createAutomationsRouter({
           // A draft is reported as missing, as tools.ts does.
           throw notFound(`No automation matches "${slug}" in ${niche}.`, { niche, slug })
         }
-        const body: AutomationResponse = { automation: toDetail(automation) }
+        const related = await resolveRelated(automation, automations)
+        const body: AutomationResponse = { automation: toDetail(automation, related) }
         res.json(body)
       } catch (error) {
         next(error)

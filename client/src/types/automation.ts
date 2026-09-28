@@ -92,19 +92,70 @@ export interface AutomationTool {
   accessNote?: string
 }
 
-/** One step — authored, or one of the three the server derives. */
+/** A link a guide hands the reader. `kind` only picks the label. */
+export interface GuideResource {
+  title: string
+  url: string
+  kind?: 'prompt' | 'template' | 'example' | 'tutorial' | 'reference' | 'checklist'
+  description?: string
+}
+
+/** A tool as one authored step uses it — the tool, plus why this step needs it. */
+export interface StepTool extends AutomationTool {
+  why?: string
+}
+
+/**
+ * One step — authored, or one of the three the server derives. A derived step
+ * only ever sets the first five fields; the rest are editorial.
+ */
 export interface AutomationStep {
   title: string
-  /** Absent on the derived "Use this prompt" step. */
+  /** The step's short description. Absent on the derived "Use this prompt" step. */
   body?: string
   /** Rendered in a bordered block with a copy button. */
   prompt?: string
+  /** A derived step's pointer into `AutomationDetail.tools`. */
   toolName?: string
+  /** A derived step's single note. */
   tip?: string
+  instructions?: string[]
+  tools?: StepTool[]
+  expectedOutcome?: string
+  tips?: string[]
+  resources?: GuideResource[]
+  cta?: { label: string; url: string }
+  alternatives?: StepTool[]
+}
+
+export interface GuideRequirement {
+  title: string
+  description?: string
+  resource?: GuideResource
+}
+
+export interface GuideIssue {
+  problem: string
+  solution: string
+}
+
+/**
+ * The editorial layer — server/src/automations/types.ts `AutomationEditorial`.
+ * Each field is present only when a person wrote it for this guide.
+ */
+export interface AutomationEditorial {
+  intro?: string[]
+  learningOutcomes?: string[]
+  beforeYouStart?: GuideRequirement[]
+  tips?: string[]
+  commonIssues?: GuideIssue[]
+  resources?: GuideResource[]
+  /** Curated related guides, resolved to cards by the server, in editor order. */
+  relatedGuides?: AutomationCard[]
 }
 
 /** GET /api/automations/:niche/:slug `automation`. */
-export interface AutomationDetail {
+export interface AutomationDetail extends AutomationEditorial {
   id: string
   slug: string
   kind: 'workflow' | 'mcp'
@@ -127,6 +178,8 @@ export interface AutomationDetail {
   accessNotes?: string
   batch: string
   steps: AutomationStep[]
+  /** Whether `steps` was written by a person or derived from the record. */
+  stepsSource: 'authored' | 'derived'
 }
 
 /** What the list page filters on. Both live in the URL. */

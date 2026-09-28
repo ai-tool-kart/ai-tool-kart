@@ -513,6 +513,24 @@ export const AUTOMATIONS = {
   stepToolNameMaxChars: 80,
   stepTipMaxChars: 300,
   maxSteps: 6,
+  /*
+   * The editorial layer (automations/editorial/). Authored steps can run
+   * longer than the derived three, so `maxEditorialSteps` sits above
+   * `maxSteps`, which still bounds steps on an imported record.
+   */
+  maxEditorialSteps: 12,
+  paragraphMaxChars: 1200,
+  maxIntroParagraphs: 6,
+  listItemMaxChars: 400,
+  maxListItems: 12,
+  maxInstructions: 12,
+  maxStepTools: 4,
+  toolWhyMaxChars: 300,
+  resourceTitleMaxChars: 120,
+  resourceDescriptionMaxChars: 300,
+  maxResources: 8,
+  ctaLabelMaxChars: 60,
+  maxRelatedGuides: 6,
 } as const
 
 /**

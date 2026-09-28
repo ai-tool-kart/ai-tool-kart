@@ -1,0 +1,140 @@
+{
+  "automationId": "demo-editorial-walkthrough-video",
+  "intro": [
+    "DEMO CONTENT — this guide exists to show every editorial field the guide page can render. The tools are placeholders and the advice is illustrative.",
+    "A walkthrough video lets buyers see how the rooms connect before they book a viewing. This demo shows how a guide walks a reader from a folder of listing photos to one finished video, with a tool attached to each step and a reason for each tool."
+  ],
+  "learningOutcomes": [
+    "How to prepare listing photos so the video steps have good input",
+    "How to turn single photos into short clips with a prompt",
+    "How to assemble clips into one walkthrough with music and captions",
+    "How to check the result before you publish it"
+  ],
+  "beforeYouStart": [
+    {
+      "title": "Your listing photos",
+      "description": "Interior and exterior shots, in the order a visitor would walk through the home."
+    },
+    {
+      "title": "Permission to use the photos",
+      "description": "Check you have the rights to edit and publish them.",
+      "resource": { "title": "Example photo-rights checklist", "url": "https://example.com/rights-checklist", "kind": "checklist" }
+    },
+    {
+      "title": "About 30 minutes",
+      "description": "Most of it is waiting for clips to generate."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Prepare the photos",
+      "body": "Pick the shots, put them in walking order, and fix exposure so every room looks consistent.",
+      "instructions": [
+        "Choose one or two photos per room.",
+        "Rename them 01, 02, 03… in the order a visitor walks through.",
+        "Straighten verticals and even out the brightness across the set."
+      ],
+      "tools": [
+        {
+          "name": "Example Photo Editor",
+          "url": "https://example.com/photo-editor",
+          "why": "Batch edits keep lighting consistent, so the clips cut together without jumps in brightness."
+        }
+      ],
+      "expectedOutcome": "A numbered folder of evenly lit photos, one route through the home.",
+      "tips": ["Leave out near-duplicate angles — they make the video feel slow."],
+      "resources": [
+        { "title": "Example shot-order template", "url": "https://example.com/shot-order", "kind": "template", "description": "A room-by-room order to copy." }
+      ],
+      "alternatives": [{ "name": "Example Mobile Photo App", "why": "Fine for a handful of photos on the go." }]
+    },
+    {
+      "title": "Generate a clip from each photo",
+      "body": "Upload each photo and use the prompt to turn it into a short, steady camera move.",
+      "instructions": [
+        "Open the video generator and start a new image-to-video project.",
+        "Upload the first photo.",
+        "Paste the prompt below and generate.",
+        "Repeat for each photo, keeping the same prompt so the motion matches."
+      ],
+      "tools": [
+        {
+          "name": "Example Video Generator",
+          "why": "It turns a still photo into a few seconds of camera movement — the core of the walkthrough."
+        }
+      ],
+      "prompt": "Create a slow, steady walkthrough clip from this photo. Gentle forward camera movement, natural lighting, no people, no text, no added furniture.",
+      "expectedOutcome": "One short clip per photo, all with the same slow camera movement.",
+      "tips": [
+        "Keep the prompt identical across photos so the clips feel like one shoot.",
+        "Regenerate any clip that invents objects that are not in the room."
+      ],
+      "cta": { "label": "Open the example generator", "url": "https://example.com/video-generator" },
+      "resources": [
+        { "title": "Download this prompt (TXT)", "url": "https://example.com/walkthrough-prompt.txt", "kind": "prompt" }
+      ]
+    },
+    {
+      "title": "Assemble the walkthrough",
+      "body": "Put the clips in walking order and join them with simple transitions.",
+      "instructions": [
+        "Import every clip into the video editor.",
+        "Order them by the numbers from step 1.",
+        "Use short cross-fades between rooms."
+      ],
+      "tools": [
+        {
+          "name": "Example Video Editor",
+          "why": "Sequencing and transitions happen on a timeline, which the generator does not have."
+        }
+      ],
+      "expectedOutcome": "One continuous video that moves room to room in order.",
+      "tips": ["Keep the total under a minute for social posts."]
+    },
+    {
+      "title": "Add music, captions and check it",
+      "body": "Add a quiet music bed and room captions, then watch it through once before publishing.",
+      "instructions": [
+        "Add a music track and lower it so it sits under everything else.",
+        "Caption each room (Kitchen, Main bedroom…).",
+        "Watch the whole video once and compare every room against the real photos."
+      ],
+      "tools": [
+        {
+          "name": "Example Video Editor",
+          "why": "Music and captions go on the same timeline as the clips."
+        }
+      ],
+      "expectedOutcome": "A finished walkthrough video, checked against the real rooms.",
+      "tips": ["Use licensed music only."],
+      "alternatives": [{ "name": "Example Caption Tool" }]
+    }
+  ],
+  "tips": [
+    "Shoot or choose photos with the same time of day, so the light matches from room to room.",
+    "Say clearly in the listing that the video was generated from photos."
+  ],
+  "commonIssues": [
+    {
+      "problem": "A clip adds furniture or objects that are not in the room",
+      "solution": "Regenerate it, and keep \"no added furniture\" in the prompt. Never publish a clip that misrepresents the property."
+    },
+    {
+      "problem": "The camera movement differs from clip to clip",
+      "solution": "Use the exact same prompt for every photo, and prefer photos taken from a similar height."
+    },
+    {
+      "problem": "Brightness jumps between rooms",
+      "solution": "Go back to step 1 and even out the exposure across the photo set before generating."
+    }
+  ],
+  "resources": [
+    { "title": "Example walkthrough checklist", "url": "https://example.com/walkthrough-checklist", "kind": "checklist", "description": "Everything in this guide on one page." },
+    { "title": "Example video tutorial", "url": "https://example.com/walkthrough-tutorial", "kind": "tutorial" }
+  ],
+  "relatedGuides": [
+    { "niche": "Real Estate", "slug": "i-want-to-turn-my-listing-photos-into-a-walkthrough-video-using" },
+    { "niche": "Real Estate", "slug": "i-want-to-remove-clutter-and-improve-lighting-in-my-listing" },
+    { "niche": "Real Estate", "slug": "i-want-to-make-a-reels-or-tiktok-style-video-from-my-listing" }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "demo-editorial-walkthrough-video",
+    "slug": "demo-editorial-guide-listing-walkthrough-video",
+    "kind": "workflow",
+    "niche": "Real Estate",
+    "persona": "DEMO persona: agents who want a walkthrough video without a film shoot",
+    "title": "DEMO: Turn listing photos into a walkthrough video (editorial example)",
+    "intentLabels": ["demo editorial guide"],
+    "tools": [
+      { "name": "Example Photo Editor", "url": "https://example.com/photo-editor" },
+      { "name": "Example Video Generator" },
+      { "name": "Example Video Editor" }
+    ],
+    "workflowSummary": "DEMO RECORD — development only. Prepare the listing photos, generate short clips from them, then assemble and polish the clips into one walkthrough video. This record exists to exercise every editorial field; its tools are placeholders.",
+    "samplePrompt": "Create a slow, steady walkthrough clip from this photo of a living room.",
+    "beginnerFriendly": "somewhat",
+    "beginnerNote": "demo only — no real account needed",
+    "trustScore": 1,
+    "pricingNote": "Demo record — no pricing",
+    "pricingTier": "free",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://example.com/demo-source",
+    "sourceType": "Demo record",
+    "freshness": "Demo — not a real source",
+    "batch": "DEMO — editorial layer example (development only)",
+    "status": "active"
+  }
+]
