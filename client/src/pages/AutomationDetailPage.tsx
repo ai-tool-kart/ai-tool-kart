@@ -133,8 +133,9 @@ function Guide({ guide }: { guide: WorkflowGuide }) {
             key={guideKey}
             guideKey={guideKey}
             steps={guide.steps}
-            tools={guide.tools}
             stepTitleAs={guide.hasWalkthrough ? 'p' : 'h3'}
+            resultHref={guide.expectedResult ? '#result' : '#related'}
+            resultLabel={guide.expectedResult ? 'Check your result' : 'Try a related workflow'}
           />
         </div>
       </GuideSection>
