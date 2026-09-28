@@ -30,10 +30,10 @@ export const PANEL =
 export const EYEBROW = 'text-[11.5px] font-medium tracking-[0.2em] text-accent uppercase'
 
 /** Section H2 on the page. */
-export const H2 = 'text-[clamp(22px,2.6vw,28px)] leading-[1.2] font-semibold tracking-[-0.03em] text-balance text-ink-bright'
+export const H2 = 'text-[clamp(24px,2.9vw,32px)] leading-[1.18] font-semibold tracking-[-0.032em] text-balance text-ink-bright'
 
 /** Body prose. */
-export const PROSE = 'text-[15.5px] leading-[1.7] tracking-[-0.006em] text-pretty text-[#B9B2CF]'
+export const PROSE = 'text-[16px] leading-[1.72] tracking-[-0.006em] text-pretty text-[#BDB6D2] sm:text-[16.5px]'
 
 /** Anchor offset under the sticky header. */
 export const ANCHOR = 'scroll-mt-[176px]'

@@ -77,7 +77,7 @@ function Snapshot({ guide }: { guide: WorkflowGuide }) {
       </div>
 
       <div>
-        <p className="text-[11px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">Built for</p>
+        <p className="text-[11px] font-semibold tracking-[0.14em] text-[#A39CBC] uppercase">Built for</p>
         <p className="mt-[6px] text-[14.5px] leading-[1.5] text-pretty text-[#E4DEF4]">{guide.persona}</p>
       </div>
 
@@ -104,11 +104,11 @@ function Snapshot({ guide }: { guide: WorkflowGuide }) {
 
       <dl className="grid grid-cols-2 gap-3 border-t border-white/[0.07] pt-4 text-[13px]">
         <div>
-          <dt className="text-[11px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">Setup</dt>
+          <dt className="text-[11px] font-semibold tracking-[0.14em] text-[#A39CBC] uppercase">Setup</dt>
           <dd className="mt-1 text-[#DCD5EE]">{guide.setupLabel}</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">
+          <dt className="text-[11px] font-semibold tracking-[0.14em] text-[#A39CBC] uppercase">
             {guide.tools.length === 1 ? 'Tool' : 'Tools'}
           </dt>
           <dd className="mt-1 text-[#DCD5EE]">
@@ -147,27 +147,28 @@ export default function GuideHero({ guide }: { guide: WorkflowGuide }) {
           {guide.lede}
         </p>
 
-        <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-subtle-soft">
+        {/* Dot separators from sm up; on a phone the line wraps, and a dot would dangle at a line end. */}
+        <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-subtle-soft sm:gap-x-3">
           <span>By AI Tool Kart</span>
           {guide.updatedAt && (
             <>
-              <span aria-hidden="true">·</span>
+              <span aria-hidden="true" className="hidden sm:inline">·</span>
               <span>
                 Updated <time dateTime={guide.updatedAt}>{formatDate(guide.updatedAt)}</time>
               </span>
             </>
           )}
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true" className="hidden sm:inline">·</span>
           <span>{guide.readingMinutes} min read</span>
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true" className="hidden sm:inline">·</span>
           <span>{guide.steps.length} steps</span>
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true" className="hidden sm:inline">·</span>
           <span>{guide.setupLabel}</span>
         </p>
 
         {guide.searchTerms.length > 0 && (
           <div className="mt-7">
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">Also searched as</p>
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-[#A39CBC] uppercase">Also searched as</p>
             <ul className="mt-3 flex list-none flex-wrap gap-2 p-0">
               {guide.searchTerms.map((term) => (
                 <li key={term}>

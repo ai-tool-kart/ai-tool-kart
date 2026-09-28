@@ -14,7 +14,7 @@ import {
   GuideSources,
   GuideTips,
 } from '@/components/guide/GuideSections'
-import GuideSectionNav, { type GuideNavItem } from '@/components/guide/GuideSectionNav'
+import GuideSectionNav, { type GuideNavItem, GuideToc } from '@/components/guide/GuideSectionNav'
 import GuideStructuredData from '@/components/guide/GuideStructuredData'
 import RelatedGuides from '@/components/guide/RelatedGuides'
 import GuideWalkthrough from '@/components/guide/GuideWalkthrough'
@@ -76,8 +76,8 @@ function navItems(guide: WorkflowGuide): GuideNavItem[] {
   ]
 }
 
-/** The reading column every prose section sits in; the workflow and related grid run full width. */
-const COLUMN = 'max-w-[780px]'
+/** The reading measure every prose section keeps; the workflow, related grid and CTA use the full main column. */
+const COLUMN = 'max-w-[720px]'
 
 /*
  * Section order is the article's order (the editorial structure):
@@ -95,91 +95,123 @@ function Guide({ guide }: { guide: WorkflowGuide }) {
     <article>
       <GuideHero guide={guide} />
 
-      <div className="sticky top-[104px] z-[5] mt-14 -mx-3 rounded-pill border border-hairline bg-[rgba(10,9,18,0.78)] px-1 shadow-nav backdrop-blur-[16px] sm:mx-0">
+      {/* Below xl: the section bar, sticky under the site header. */}
+      <div className="sticky top-[104px] z-[5] mt-14 -mx-1 rounded-pill border border-hairline bg-[rgba(10,9,18,0.8)] px-1 shadow-nav backdrop-blur-[16px] sm:mx-0 xl:hidden">
         <GuideSectionNav items={items} />
       </div>
 
-      <div className={`mt-14 ${COLUMN}`}>
-        <GuideIntro guide={guide} />
-      </div>
+      {/*
+       * xl and up: the article in a main column, and a contents list in a
+       * sticky sidebar beside it — where the page was empty glass before.
+       * Prose keeps a 720px measure inside the main column; the workflow,
+       * related grid and closing CTA use its full width.
+       */}
+      <div className="mt-14 xl:mt-20 xl:grid xl:grid-cols-[minmax(0,1fr)_208px] xl:gap-16">
+        <div className="min-w-0">
+          <div className={COLUMN}>
+            <GuideIntro guide={guide} />
+          </div>
 
-      {guide.requirements.length > 0 && (
-        <div className={`mt-16 ${COLUMN}`}>
-          <GuideRequirements guide={guide} />
+          {guide.requirements.length > 0 && (
+            <div className={`mt-16 ${COLUMN}`}>
+              <GuideRequirements guide={guide} />
+            </div>
+          )}
+
+          {guide.outcomes.length > 0 && (
+            <div className={`mt-16 ${COLUMN}`}>
+              <GuideOutcomes outcomes={guide.outcomes} />
+            </div>
+          )}
+
+          <GuideSection
+            id="workflow"
+            eyebrow="Interactive guide"
+            title="The workflow, step by step"
+            className="mt-20"
+            intro={
+              <p className="max-w-[680px]">
+                Work through each step in order and mark it done as you go. Your progress is saved in this browser, so
+                you can leave to run a step and pick up where you left off.
+              </p>
+            }
+          >
+            <div className="relative mt-8">
+              {/* A soft violet light under the window — the page's one interactive
+                  surface, lifted from the article without a louder frame. */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-x-2 -top-16 -bottom-10 -z-[1] xl:-inset-x-10 bg-[radial-gradient(60%_55%_at_50%_40%,rgba(124,88,244,0.16),transparent_70%)]"
+              />
+              {/* Keyed so moving to another guide starts its own progress. */}
+              <WorkflowStepper
+                key={guideKey}
+                guideKey={guideKey}
+                steps={guide.steps}
+                stepTitleAs={guide.hasWalkthrough ? 'p' : 'h3'}
+                resultHref={guide.expectedResult ? '#result' : '#related'}
+                resultLabel={guide.expectedResult ? 'Check your result' : 'Try a related workflow'}
+              />
+            </div>
+          </GuideSection>
+
+          {guide.hasWalkthrough && (
+            <div className={`mt-20 ${COLUMN}`}>
+              <GuideWalkthrough steps={guide.steps} />
+            </div>
+          )}
+
+          {guide.expectedResult && (
+            <div className={`mt-20 ${COLUMN}`}>
+              <GuideExpectedResult result={guide.expectedResult} />
+            </div>
+          )}
+
+          {guide.tips.length > 0 && (
+            <div className={`mt-20 ${COLUMN}`}>
+              <GuideTips tips={guide.tips} />
+            </div>
+          )}
+
+          {guide.issues.length > 0 && (
+            <div className={`mt-20 ${COLUMN}`}>
+              <GuideIssues issues={guide.issues} />
+            </div>
+          )}
+
+          {guide.resources.length > 0 && (
+            <div className={`mt-20 ${COLUMN}`}>
+              <GuideResourcesSection resources={guide.resources} />
+            </div>
+          )}
+
+          <div className="mt-20">
+            <RelatedGuides guide={guide} />
+          </div>
+
+          <div className="mt-20">
+            <GuideClosing guide={guide} />
+          </div>
+
+          <div className={`mt-16 ${COLUMN}`}>
+            <GuideSources source={guide.source} />
+          </div>
         </div>
-      )}
 
-      {guide.outcomes.length > 0 && (
-        <div className={`mt-16 ${COLUMN}`}>
-          <GuideOutcomes outcomes={guide.outcomes} />
-        </div>
-      )}
-
-      <GuideSection
-        id="workflow"
-        eyebrow="Interactive guide"
-        title="The workflow, step by step"
-        className="mt-20"
-        intro={
-          <p className="max-w-[680px]">
-            Work through each step in order and mark it done as you go. Your progress is saved in this browser, so
-            you can leave to run a step and pick up where you left off.
-          </p>
-        }
-      >
-        <div className="mt-8">
-          {/* Keyed so moving to another guide starts its own progress. */}
-          <WorkflowStepper
-            key={guideKey}
-            guideKey={guideKey}
-            steps={guide.steps}
-            stepTitleAs={guide.hasWalkthrough ? 'p' : 'h3'}
-            resultHref={guide.expectedResult ? '#result' : '#related'}
-            resultLabel={guide.expectedResult ? 'Check your result' : 'Try a related workflow'}
-          />
-        </div>
-      </GuideSection>
-
-      {guide.hasWalkthrough && (
-        <div className={`mt-20 ${COLUMN}`}>
-          <GuideWalkthrough steps={guide.steps} />
-        </div>
-      )}
-
-      {guide.expectedResult && (
-        <div className={`mt-20 ${COLUMN}`}>
-          <GuideExpectedResult result={guide.expectedResult} />
-        </div>
-      )}
-
-      {guide.tips.length > 0 && (
-        <div className={`mt-20 ${COLUMN}`}>
-          <GuideTips tips={guide.tips} />
-        </div>
-      )}
-
-      {guide.issues.length > 0 && (
-        <div className={`mt-20 ${COLUMN}`}>
-          <GuideIssues issues={guide.issues} />
-        </div>
-      )}
-
-      {guide.resources.length > 0 && (
-        <div className={`mt-20 ${COLUMN}`}>
-          <GuideResourcesSection resources={guide.resources} />
-        </div>
-      )}
-
-      <div className="mt-20">
-        <RelatedGuides guide={guide} />
-      </div>
-
-      <div className="mt-20">
-        <GuideClosing guide={guide} />
-      </div>
-
-      <div className="mt-16">
-        <GuideSources source={guide.source} />
+        <aside aria-label="Guide contents" className="hidden xl:block">
+          <div className="sticky top-[132px]">
+            <GuideToc items={items} />
+            <a
+              href="#workflow"
+              className="group mt-8 inline-flex items-center gap-2 rounded-pill border border-white/[0.1] px-4 py-2 text-[13px] font-semibold text-ink transition-[border-color,background-color] duration-200 hover:border-accent-line hover:bg-accent-wash hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              Go to the workflow
+              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-[2px]">
+                →
+              </span>
+            </a>
+          </div>
+        </aside>
       </div>
 
       <GuideStructuredData guide={guide} />

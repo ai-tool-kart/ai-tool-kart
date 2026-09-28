@@ -57,7 +57,7 @@ function StepExplained({ step }: { step: GuideStep }) {
 
       {step.tools.length > 0 && (
         <div className="mt-5">
-          <p className="text-[11px] font-semibold tracking-[0.14em] text-[#7E7899] uppercase">
+          <p className="text-[11px] font-semibold tracking-[0.14em] text-[#A39CBC] uppercase">
             {step.tools.length === 1 ? 'Tool for this step' : 'Tools for this step'}
           </p>
           <ul className="mt-2 flex list-none flex-col gap-1 p-0">
@@ -87,7 +87,6 @@ export default function GuideWalkthrough({ steps }: { steps: GuideStep[] }) {
   return (
     <GuideSection
       id="explained"
-      eyebrow="Step by step"
       title="The workflow, explained"
       intro={
         <p>

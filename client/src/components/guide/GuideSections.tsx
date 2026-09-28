@@ -63,7 +63,6 @@ export function GuideIntro({ guide }: { guide: WorkflowGuide }) {
   return (
     <GuideSection
       id="overview"
-      eyebrow="Overview"
       title={authored ? 'Why this workflow matters' : 'What this workflow solves'}
     >
       {guide.intro.map((paragraph) => (
@@ -122,7 +121,7 @@ function CheckList({ items }: { items: GuideRequirement[] }) {
 export function GuideRequirements({ guide }: { guide: WorkflowGuide }) {
   if (!guide.requirements.length) return null
   return (
-    <GuideSection id="before-you-start" eyebrow="Before you start" title="What you’ll need">
+    <GuideSection id="before-you-start" title="What you’ll need">
       <CheckList items={guide.requirements} />
       <p className="mt-5 text-[13.5px] text-[#8A83A6]">
         Setup level: <span className="text-[#C0B9D6]">{guide.setupLabel}</span>
@@ -144,7 +143,7 @@ export function GuideOutcomes({ outcomes }: { outcomes: string[] }) {
 export function GuideExpectedResult({ result }: { result: WorkflowGuide['expectedResult'] }) {
   if (!result) return null
   return (
-    <GuideSection id="result" eyebrow="The result" title="What you’ll end up with">
+    <GuideSection id="result" title="What you’ll end up with">
       <p className={`mt-4 ${PROSE}`}>{result.summary}</p>
       {result.checklist.length > 0 && (
         <>
@@ -159,7 +158,7 @@ export function GuideExpectedResult({ result }: { result: WorkflowGuide['expecte
 export function GuideTips({ tips }: { tips: string[] }) {
   if (!tips.length) return null
   return (
-    <GuideSection id="tips" eyebrow="Get better results" title="Tips & best practices">
+    <GuideSection id="tips" title="Tips & best practices">
       <ul className="mt-5 flex list-none flex-col gap-4 p-0">
         {tips.map((tip) => (
           <li key={tip} className="flex gap-3">
@@ -175,7 +174,7 @@ export function GuideTips({ tips }: { tips: string[] }) {
 export function GuideIssues({ issues }: { issues: WorkflowGuide['issues'] }) {
   if (!issues.length) return null
   return (
-    <GuideSection id="troubleshooting" eyebrow="Troubleshooting" title="Common issues & fixes">
+    <GuideSection id="troubleshooting" title="Common issues & fixes">
       <div className="mt-4 flex flex-col divide-y divide-white/[0.07]">
         {issues.map((issue) => (
           <div key={issue.problem} className="flex gap-4 py-5">
@@ -195,7 +194,7 @@ export function GuideIssues({ issues }: { issues: WorkflowGuide['issues'] }) {
 export function GuideResourcesSection({ resources }: { resources: GuideResource[] }) {
   if (!resources.length) return null
   return (
-    <GuideSection id="resources" eyebrow="Take it with you" title="Resources">
+    <GuideSection id="resources" title="Resources">
       <ResourceList resources={resources} className="mt-6 max-w-[640px]" />
     </GuideSection>
   )
