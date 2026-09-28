@@ -105,7 +105,7 @@ export interface WorkflowGuide {
   tips: string[]
   issues: GuideIssue[]
   resources: GuideResource[]
-  /** Related guides — curated first, then the same niche; resolved by the server. */
+  /** Related guides — curated, then relevance-ranked from the niche; resolved by the server (automations/related.ts). */
   relatedGuides: AutomationCard[]
   /** What the reader ends up with. Authored only — absent otherwise. */
   expectedResult?: { summary: string; checklist: string[] }

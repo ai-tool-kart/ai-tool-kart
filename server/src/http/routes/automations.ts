@@ -28,6 +28,7 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import { deriveSteps } from '../../automations/deriveSteps.ts'
+import { selectRelated } from '../../automations/related.ts'
 import type { AutomationMatcher } from '../../automations/match.ts'
 import type { AutomationRepository } from '../../automations/repository.ts'
 import type { Automation, AutomationStep } from '../../automations/types.ts'
@@ -122,11 +123,11 @@ function toDetail(automation: Automation, related: Automation[]): ApiAutomation 
 }
 
 /**
- * The related guides the page links to, in priority order:
- *   1. the editor's curated picks, in their order (every ref was checked at
- *      load, editorial.ts; a draft is skipped as it is everywhere else), then
- *   2. the same niche, in import order, minus this guide and the picks,
- * up to AUTOMATIONS.maxRelatedGuides.
+ * The related guides the page links to — curated picks, then the niche ranked
+ * by relevance to this guide, with two slots always kept for the next guides
+ * in the niche so no guide is left without inbound links. The selection
+ * itself is automations/related.ts (pure, and tested against the whole
+ * catalogue); this only gathers its inputs.
  *
  * Resolved here rather than by a second client request so the detail
  * response carries everything the page shows — which is what lets the build
@@ -135,16 +136,16 @@ function toDetail(automation: Automation, related: Automation[]): ApiAutomation 
 async function resolveRelated(
   automation: Automation,
   repository: AutomationRepository,
+  matcher: AutomationMatcher,
 ): Promise<Automation[]> {
-  const curated = (
-    await Promise.all(
-      (automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug)),
-    )
-  ).filter((item): item is Automation => item?.status === 'active')
-
-  const taken = new Set([automation.id, ...curated.map((item) => item.id)])
-  const sameNiche = (await repository.listByNiche(automation.niche)).filter((item) => !taken.has(item.id))
-  return [...curated, ...sameNiche].slice(0, AUTOMATIONS.maxRelatedGuides)
+  const [curated, niche] = await Promise.all([
+    Promise.all((automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug))),
+    repository.listByNiche(automation.niche),
+  ])
+  const ranked = matcher
+    .match(automation.title, { niche: automation.niche, limit: AUTOMATIONS.maxRelatedGuides * 2 })
+    .map((match) => match.automation)
+  return selectRelated({ automation, curated, niche, ranked, limit: AUTOMATIONS.maxRelatedGuides })
 }
 
 /**
@@ -251,7 +252,7 @@ export function createAutomationsRouter({
           // A draft is reported as missing, as tools.ts does.
           throw notFound(`No automation matches "${slug}" in ${niche}.`, { niche, slug })
         }
-        const related = await resolveRelated(automation, automations)
+        const related = await resolveRelated(automation, automations, await getMatcher())
         const body: AutomationResponse = { automation: toDetail(automation, related) }
         res.json(body)
       } catch (error) {

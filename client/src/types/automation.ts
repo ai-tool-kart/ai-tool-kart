@@ -160,7 +160,7 @@ export interface AutomationEditorial {
   tips?: string[]
   commonIssues?: GuideIssue[]
   resources?: GuideResource[]
-  /** Related guides as cards: curated picks first, then the same niche (server-resolved). */
+  /** Related guides as cards: curated picks first, then relevance-ranked from the niche (server automations/related.ts). */
   relatedGuides?: AutomationCard[]
   expectedResult?: { summary: string; checklist?: string[] }
   closing?: { title: string; body: string }

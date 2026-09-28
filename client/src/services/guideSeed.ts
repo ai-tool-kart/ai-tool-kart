@@ -7,8 +7,9 @@ import type { AutomationDetail } from '@/types/automation'
  *   <script id="guide-seed" type="application/json">…</script>
  * and useAutomation starts from it, so the SPA's first render is the same
  * complete page the HTML already showed — no skeleton flashing over content
- * a crawler and a reader have both already got. The hook still refreshes from
- * the API in the background; the seed is a head start, not a cache.
+ * a crawler and a reader have both already got — and makes no API call for
+ * it: the seed IS the response. Navigating to another guide in the app fetches
+ * as usual, since the seed only ever matches the page it was written into.
  *
  * During the prerender itself there is no DOM: the build hands the record in
  * with setGuideSeed() instead.

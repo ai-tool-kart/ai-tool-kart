@@ -135,11 +135,21 @@ export function useAutomation(
       return
     }
 
-    const controller = new AbortController()
-    // A seeded record stays on screen while it refreshes; nothing else does.
+    // A prerendered page already holds this exact response. Fetching it again
+    // would cost an API call per page view to change nothing — and if the API
+    // had moved on, would show readers a page crawlers were never given. The
+    // HTML and its seed are refreshed together, by rebuilding.
     const fromSeed = guideSeedFor(niche, slug)
-    setData(fromSeed)
-    setIsLoading(!fromSeed)
+    if (fromSeed) {
+      setData(fromSeed)
+      setIsLoading(false)
+      setError(undefined)
+      return
+    }
+
+    const controller = new AbortController()
+    setData(undefined)
+    setIsLoading(true)
     setError(undefined)
 
     getAutomation(niche, slug, controller.signal)
@@ -150,8 +160,6 @@ export function useAutomation(
       })
       .catch((cause: unknown) => {
         if (cause instanceof DOMException && cause.name === 'AbortError') return
-        // A failed refresh of a seeded page keeps the page: it is complete.
-        if (fromSeed) return
         setError(messageFor(cause))
         setIsLoading(false)
       })

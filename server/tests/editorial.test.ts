@@ -89,6 +89,11 @@ await test('applyEditorial', async (t) => {
     /no guide at Students\/missing/,
   )
   await rejects(
+    'the same related guide twice',
+    { automationId: 'rich', relatedGuides: [{ niche: 'Coaches', slug: 'other-guide' }, { niche: 'Coaches', slug: 'other-guide' }] },
+    /listed twice/,
+  )
+  await rejects(
     'a guide related to itself',
     { automationId: 'rich', relatedGuides: [{ niche: 'Students', slug: 'rich-guide' }] },
     /related to itself/,

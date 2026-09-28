@@ -9,9 +9,11 @@ import type { WorkflowGuide } from '@/types/guide'
  * Workflow → workflow first, because that is what the page is; the catalogue
  * links sit last and quieter.
  *
- * The guides arrive resolved in the detail response (server resolveRelated):
- * the editor's curated picks first, then the same niche. No request of its
- * own, so the links are in the prerendered HTML — crawlable, not fetched.
+ * The guides arrive resolved in the detail response (server
+ * automations/related.ts): the editor's curated picks first, then the niche
+ * ranked by relevance, with the next two guides in the niche always included
+ * so no guide is orphaned. No request of its own, so the links are in the
+ * prerendered HTML — crawlable, not fetched.
  */
 
 const RELATED_SHOWN = 6

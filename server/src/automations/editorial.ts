@@ -63,8 +63,15 @@ export function applyEditorial(
     if (target.steps && overlay.steps) {
       problems.push(`  ${file} — steps: the record already carries authored steps; keep them in one place`)
     }
+    const seenRefs = new Set<string>()
     for (const [index, ref] of (overlay.relatedGuides ?? []).entries()) {
-      if (!bySlug.has(refKey(ref.niche, ref.slug))) {
+      const key = refKey(ref.niche, ref.slug)
+      if (seenRefs.has(key)) {
+        problems.push(`  ${file} — relatedGuides.${index}: ${ref.niche}/${ref.slug} is listed twice`)
+        continue
+      }
+      seenRefs.add(key)
+      if (!bySlug.has(key)) {
         problems.push(`  ${file} — relatedGuides.${index}: no guide at ${ref.niche}/${ref.slug}`)
       } else if (ref.niche === target.niche && ref.slug === target.slug) {
         problems.push(`  ${file} — relatedGuides.${index}: a guide cannot be related to itself`)

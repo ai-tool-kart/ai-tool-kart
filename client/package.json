@@ -9,6 +9,7 @@
     "build:ssr": "vite build --ssr src/entry-prerender.tsx --outDir dist-ssr",
     "prerender": "node scripts/prerender.mjs",
     "build:prerendered": "npm run build && npm run build:ssr && npm run prerender",
+    "audit:guides": "node scripts/audit-guides.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
