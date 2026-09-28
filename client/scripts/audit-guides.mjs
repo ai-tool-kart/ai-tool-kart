@@ -16,13 +16,18 @@
  *             to the page's own URL; robots present (noindex pages must not
  *             be in the sitemap; every indexable page must be)
  *   outline   exactly one <h1>; headings never skip a level going down
- *   schema    BreadcrumbList and Article on every page; HowTo only when the
- *             steps are authored (stepsSource in the page's seed); FAQPage
- *             never — no guide has question-and-answer content
+ *   schema    exactly one JSON-LD block, no type twice; BreadcrumbList and
+ *             Article on every page; HowTo only when the steps are authored
+ *             (stepsSource in the page's seed); FAQPage never — no guide has
+ *             question-and-answer content. And the schema describes the page
+ *             a reader sees: Article headline = the H1, Article description =
+ *             the meta description, HowTo steps = the workflow's steps, in
+ *             order, by title
  *   links     every in-article internal link is a real route; every guide
  *             link resolves to a prerendered page (never the page itself);
  *             every /browse?tools= slug is a real catalogue tool; every
- *             new-tab link has rel="noopener"
+ *             new-tab link has rel="noopener"; no link has empty or vague
+ *             text ("click here", "read more")
  *   images    every <img> has an alt attribute
  *   content   no "undefined", "null", "NaN", "[object Object]", lorem or
  *             placeholder text; no heading-only sections; no empty lists;
@@ -152,12 +157,41 @@ async function main() {
     if (types.includes('HowTo') !== authored) fail(page, authored ? 'authored steps but no HowTo' : 'HowTo on derived steps')
     if (types.includes('HowTo')) stats.howTo++
     if (types.includes('FAQPage')) fail(page, 'FAQPage without FAQ content')
+    const ldBlocks = html.match(/<script type="application\/ld\+json">/g)?.length ?? 0
+    if (ldBlocks !== 1) fail(page, `expected one JSON-LD block, found ${ldBlocks}`)
+    if (new Set(types).size !== types.length) fail(page, `duplicate schema types: ${types.join(', ')}`)
     const article_ = graphs.find((g) => g['@type'] === 'Article')
     if (article_ && article_.mainEntityOfPage?.['@id'] !== canonical) fail(page, 'Article @id ≠ canonical')
+    // The schema must describe the page a reader sees.
+    const h1Text = textOf(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? '').trim()
+    if (article_) {
+      const headline = String(article_.headline).replace(/…$/, '')
+      if (!h1Text.startsWith(headline)) fail(page, `Article headline "${headline.slice(0, 40)}" ≠ H1 "${h1Text.slice(0, 40)}"`)
+      if (article_.description !== description) fail(page, 'Article description ≠ meta description')
+    }
+    const howTo = graphs.find((g) => g['@type'] === 'HowTo')
+    if (howTo) {
+      const panelTitles = [...article.matchAll(/<div id="step-\d+"[^>]*>[\s\S]*?<(h3|p)[^>]*tabindex="-1"[^>]*>([\s\S]*?)<\/\1>/g)].map((m) =>
+        // Drop the screen-reader prefix ("Step 1 of 5: "); React's text
+        // separators leave a space before its colon once tags are stripped.
+        textOf(m[2]).replace(/^\s*Step \d+ of \d+\s*:\s*/, '').trim(),
+      )
+      const schemaTitles = howTo.step.map((s) => s.name)
+      if (JSON.stringify(panelTitles) !== JSON.stringify(schemaTitles)) {
+        fail(page, `HowTo steps [${schemaTitles.join(' | ')}] ≠ workflow [${panelTitles.join(' | ')}]`)
+      }
+    }
     const crumbs = graphs.find((g) => g['@type'] === 'BreadcrumbList')?.itemListElement ?? []
     if (crumbs.at(-1)?.item !== canonical) fail(page, 'breadcrumb does not end at the canonical')
 
     // ── links ──
+    // Anchor text: every link says where it goes.
+    for (const [, inner] of article.matchAll(/<a\s[^>]*>([\s\S]*?)<\/a>/g)) {
+      const label = textOf(inner).trim().toLowerCase()
+      if (!label) fail(page, 'link with no text')
+      else if (/^(click here|here|read more|more|link|this)$/.test(label)) fail(page, `vague link text "${label}"`)
+    }
+
     const anchors = [...article.matchAll(/<a\s[^>]*>/g)].map((m) => m[0])
     for (const tag of anchors) {
       const href = decode(attr(tag, 'href') ?? '')

@@ -73,7 +73,10 @@ export function createJsonAutomations(
 
   const editorialOrigin = overlays !== undefined ? 'in-memory overlays' : here(EDITORIAL_DIR)
   const rawOverlays = [
-    ...(overlays ?? (records !== undefined ? [] : readOverlayDir(editorialOrigin))),
+    // editorial/ belongs to the committed data in data/. A caller loading
+    // other records (the `records` or `dir` test seams) gets no overlays
+    // unless it passes its own — the real ones name ids its data lacks.
+    ...(overlays ?? (records !== undefined || dir !== undefined ? [] : readOverlayDir(editorialOrigin))),
     ...(includeDemo ? readOverlayDir(here(DEMO_EDITORIAL_DIR)) : []),
   ]
 

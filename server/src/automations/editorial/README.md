@@ -19,23 +19,19 @@ a filler field publishes filler to every reader and every search engine.
 1. Find the guide's automation ID ([section 2](#2-how-to-find-a-guides-automation-id)).
 2. Create a JSON file in this folder ([section 3](#3-where-the-editorial-json-lives)).
 3. Write only the fields you have real content for ([section 4](#4-available-fields)).
-4. Check it:
-   ```sh
-   cd server && npm run dev          # boot validates every file here
-   cd server && npm test             # includes the whole-catalogue checks
-   ```
-   Open `http://localhost:5173/automations/<Niche>/<slug>` with the client dev
-   server running. A typo, an unknown field, an empty list, a bad date, an id
-   that matches no record, or a related guide that does not exist **stops the
-   server at boot**, naming the file and the field. Nothing is dropped silently.
-5. Before shipping, prerender and audit the whole guide set:
-   ```sh
-   cd client
-   VITE_SITE_URL=https://<site> npm run build:prerendered
-   VITE_SITE_URL=https://<site> npm run audit:guides
-   ```
-   The audit checks every page's title, description, canonical, headings,
-   structured data, links and visible text, and fails on any problem.
+4. Preview and test it ([section 10](#10-how-to-preview-and-test-a-guide-locally)).
+
+**Start from a real example.** The production guides in this folder each
+show a different kind of workflow:
+
+| File | Intent |
+|---|---|
+| `job-seekers-career-changers--prepare-to-negotiate-salary-before-accepting-an-offer.json` | A personal task |
+| `fitness-salon-personal-services--i-want-ai-to-write-and-design-my-facebook-and-instagram-ads-for.json` | Creative / marketing, several tools |
+| `sales-teams--i-want-ai-to-help-me-write-personalized-cold-sales-emails-that.json` | Repeated business work |
+
+Every tool claim in them comes from the guide's own record or from the tool's
+catalogue entry. Write new guides the same way.
 
 ## 2. How to find a guide's automation ID
 
@@ -219,3 +215,39 @@ written; a missing one falls back as below, or its section is hidden.
 
 No FAQ structured data is emitted for any guide, because no guide has
 question-and-answer content. Common issues are problem/solution notes, not FAQs.
+
+Adding an overlay changes only its own guide. A test holds this across the
+whole catalogue (`server/tests/editorial.test.ts`).
+
+## 10. How to preview and test a guide locally
+
+```sh
+# 1. Run the API and the site (two terminals)
+cd server && npm run dev        # validates every file in this folder at boot
+cd client && npm run dev        # http://localhost:5173
+
+# 2. Open the guide
+#    http://localhost:5173/automations/<Niche>/<slug>
+#    (the niche is URL-encoded: "Sales Teams" → Sales%20Teams)
+
+# 3. Run the server tests
+cd server && npm test
+
+# 4. Before shipping: prerender every guide and audit the output
+cd client
+VITE_SITE_URL=https://<site> npm run build:prerendered
+VITE_SITE_URL=https://<site> npm run audit:guides
+```
+
+- **Boot (step 1).** Stops on a typo, an unknown field, an empty list, a bad
+  date, an id that matches no record, or a related guide that doesn't exist.
+  It names the file and the field.
+- **Tests (step 3).** Include a lint of every file here. They fail on an
+  `example.com` link, a template leftover (TODO, `{{…}}`), a future
+  `updatedAt`, or a `catalogueSlug` the catalogue doesn't have.
+- **Audit (step 4).** Reads the generated HTML, as a search engine would. It
+  checks every page's title, description, canonical, headings, links and
+  visible text. It also checks that the structured data matches the page:
+  Article headline = H1, HowTo steps = the workflow's steps.
+- The **server's `NODE_ENV` must not be `production` locally** if you want the
+  demo guide. It loads in development only.

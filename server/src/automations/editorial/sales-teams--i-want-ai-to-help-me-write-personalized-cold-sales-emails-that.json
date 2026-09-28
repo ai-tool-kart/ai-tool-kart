@@ -1,0 +1,234 @@
+{
+  "automationId": "sales-teams-1509b2b1b2",
+
+  "headline": "How to Write Personalized Cold Sales Emails at Scale With AI",
+  "metaDescription": "Enrich a prospect list in Clay, draft short personalized cold emails with Copy.ai, and check each one in Lavender before sending — a repeatable outbound workflow.",
+  "lede": "A cold email that mentions something real about the recipient reads very differently from a template — but writing each one from scratch doesn't scale. This guide shows how to research, draft and check cold emails with AI, so each one still reads like it was written for one person.",
+  "updatedAt": "2026-09-28",
+
+  "intro": [
+    "Every SDR knows the trade-off: research each prospect properly and send a handful of emails a day, or send a template to hundreds and sound like everyone else. Much of the effort in a personal email goes into the research and the first line, not the rest of the message.",
+    "That repetitive part is what AI can take on. A data tool gathers what you would otherwise look up by hand, an AI writer turns it into a short draft, and an email coach checks the draft before you send. You stay responsible for who you contact and what you say; the workflow removes the busywork.",
+    "The steps below set that pipeline up once, so every new list runs through the same research, drafting and checks."
+  ],
+
+  "learningOutcomes": [
+    "How to build and enrich a prospect list so each email has something real to reference",
+    "How to draft short, specific cold emails from that research with AI",
+    "How to check every draft for tone, length and personalization before it goes out",
+    "How to turn the process into a workflow you repeat for each new list"
+  ],
+
+  "beforeYouStart": [
+    {
+      "title": "A defined target",
+      "description": "The job titles, industries and company sizes you sell to, and the problem you solve for them."
+    },
+    {
+      "title": "A prospect list, or the criteria to build one",
+      "description": "Names, companies and LinkedIn profiles — or the filters you'd use to find them."
+    },
+    {
+      "title": "Accounts on the tools",
+      "description": "Clay, Copy.ai and Lavender each need a sign-up with an email or work account. Check current plans on each site."
+    },
+    {
+      "title": "A way to send",
+      "description": "Your email or sales-engagement tool. Clay researches and personalizes; it doesn't send."
+    },
+    {
+      "title": "Your outreach rules",
+      "description": "The opt-out and data-protection rules that apply to cold email where you and your prospects are."
+    }
+  ],
+
+  "steps": [
+    {
+      "title": "Build and enrich the prospect list",
+      "body": "Bring your prospects into Clay and add the details you would otherwise look up by hand.",
+      "explanation": [
+        "Personalization needs material. A name and a company aren't enough to write an email that sounds meant for one person; a new role, a hiring push or a company announcement is.",
+        "Doing the research in a list, rather than one browser tab at a time, is what makes the rest of the workflow repeatable — the same columns for every prospect, ready for drafting."
+      ],
+      "instructions": [
+        "Import your prospect list into Clay, or build it from your targeting criteria.",
+        "Add enrichment columns for the details you'd reference: current role, company news, recent posts or hiring.",
+        "Review a sample of rows to confirm the data is right before relying on it.",
+        "Remove prospects who don't fit your target."
+      ],
+      "tools": [
+        {
+          "name": "Clay",
+          "url": "https://www.clay.com",
+          "catalogueSlug": "clay",
+          "why": "It builds and enriches prospect lists by combining many data providers in a spreadsheet-like view — the research-and-targeting half of outbound."
+        }
+      ],
+      "expectedOutcome": "A prospect list where every row has at least one specific, accurate detail to reference.",
+      "tips": ["Spot-check enriched data before you use it. A wrong detail in a personal email is worse than none."]
+    },
+    {
+      "title": "Choose one reason to reach out to each prospect",
+      "body": "Pick the single trigger each email will mention — the thing that makes it relevant now.",
+      "explanation": [
+        "An email that tries to mention everything reads like surveillance. One specific, relevant detail — a new role, a hiring push, a recent post — is enough to show you did your homework.",
+        "Writing the trigger down first also keeps the AI honest in the next step: it drafts around a fact you chose, instead of inventing one."
+      ],
+      "instructions": [
+        "For each prospect, choose one trigger event from the enriched data.",
+        "Write it as a short phrase, such as \"posted about hiring a new sales team\".",
+        "Note which problem you solve that the trigger connects to.",
+        "Set aside prospects with no usable trigger for now."
+      ],
+      "tools": [
+        {
+          "name": "Clay",
+          "url": "https://www.clay.com",
+          "catalogueSlug": "clay",
+          "why": "The trigger sits in a column beside each prospect, so drafting can use it row by row."
+        }
+      ],
+      "expectedOutcome": "One accurate trigger and one relevant problem noted for every prospect you'll email."
+    },
+    {
+      "title": "Draft the emails with AI",
+      "body": "Turn each prospect's trigger into a short, plain cold email.",
+      "explanation": [
+        "A few sentences — who you are, why them, why now, a low-pressure ask — is easier to read and easier to answer than a paragraph about your product.",
+        "Drafting every email from the same prompt keeps the structure consistent, while each prospect's trigger makes the email different."
+      ],
+      "instructions": [
+        "Open Copy.ai and set up a workflow from the prompt below — or draft row by row in Clay.",
+        "Fill in the bracketed fields from your list: job title, industry and trigger event.",
+        "Generate drafts for a first batch of ten or twenty, not the whole list.",
+        "Read every draft before moving on."
+      ],
+      "tools": [
+        {
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
+          "catalogueSlug": "copy-ai",
+          "why": "It generates outbound copy from a brief and can run it as a repeatable workflow across a list — useful when the same structure applies to every prospect."
+        }
+      ],
+      "prompt": "Write a 3-sentence cold email to a [Job Title] at a [Industry] company. Reference that they recently [trigger event, e.g. 'posted about hiring for a new sales team']. Keep it under 75 words, no jargon, end with a soft call-to-action.",
+      "expectedOutcome": "A batch of short draft emails, each built around one real detail about the recipient.",
+      "alternatives": [
+        {
+          "name": "Clay",
+          "catalogueSlug": "clay",
+          "why": "Can also draft the first outreach from the enriched data, if you'd rather keep everything in one place."
+        }
+      ]
+    },
+    {
+      "title": "Check each draft before sending",
+      "body": "Run every draft through an email coach and fix what it flags.",
+      "explanation": [
+        "Drafts written at volume drift: a line that reads as pushy, an email that creeps past its word limit, a personal detail that gets lost. A second check catches these before the prospect does.",
+        "A coach inside your inbox makes the check part of sending rather than a separate step you'll skip when you're busy."
+      ],
+      "instructions": [
+        "Install Lavender's Chrome/Gmail extension.",
+        "Open each draft in your inbox and review its score and suggestions.",
+        "Fix the tone, length and personalization issues it flags.",
+        "Confirm the trigger detail is accurate — the coach can't know whether it's true."
+      ],
+      "tools": [
+        {
+          "name": "Lavender",
+          "why": "Its Chrome/Gmail extension scores each draft for tone, length and personalization right in your inbox, with suggestions to improve it before you send."
+        }
+      ],
+      "expectedOutcome": "Every email in the batch reviewed, corrected and factually accurate.",
+      "tips": ["If you keep fixing the same problem, change the prompt in step 3 rather than each draft."]
+    },
+    {
+      "title": "Send, learn and repeat",
+      "body": "Send the first batch, see what gets replies, and feed that back into the prompt for the next list.",
+      "explanation": [
+        "The value of a workflow is that the second list goes faster than the first. Keeping the research columns, the prompt and the checks the same means each new list only needs new prospects.",
+        "Replies are your feedback. Note which triggers and which asks get answers, and adjust the prompt one change at a time, so you learn what actually made the difference."
+      ],
+      "instructions": [
+        "Send the batch from your usual email or sales-engagement tool.",
+        "Track replies by trigger type and by version of the prompt.",
+        "Adjust the prompt in step 3 based on what worked.",
+        "Run the next list through the same steps."
+      ],
+      "expectedOutcome": "A sent batch, a record of what got replies, and a prompt improved for the next list."
+    }
+  ],
+
+  "expectedResult": {
+    "summary": "A repeatable outbound workflow: an enriched prospect list, a short personalized draft for each prospect built around one real detail, and every email checked before it goes out.",
+    "checklist": [
+      "Every email references one accurate, specific detail",
+      "No email runs longer than a few sentences",
+      "Each draft has been checked for tone and length",
+      "Prospects who don't fit your target have been removed",
+      "Your outreach follows the opt-out and data rules that apply to you",
+      "You're tracking replies to improve the next batch"
+    ]
+  },
+
+  "tips": [
+    "Start with a small batch. Get the workflow right on twenty emails before you run it on two hundred.",
+    "Keep the ask low-pressure — a question or a short call — rather than a full demo request in a first email.",
+    "Never let AI invent a personal detail. If the data has no real trigger, send a shorter, honest email or skip the prospect.",
+    "Save the final prompt and enrichment columns as your team's template, so everyone runs the same process."
+  ],
+
+  "commonIssues": [
+    {
+      "problem": "The emails still sound like templates",
+      "solution": "The trigger is doing too little. Use a more specific detail from the enriched data, and ask the AI to open the email with it in plain words."
+    },
+    {
+      "problem": "An email mentions something that isn't true",
+      "solution": "Check that prospect's enriched data and trigger, and never send without the step 4 review. If the detail can't be verified, remove it."
+    },
+    {
+      "problem": "Drafts are too long",
+      "solution": "Keep a word limit in the prompt — the one in step 3 asks for under 75 words — and trim any outliers during the review."
+    },
+    {
+      "problem": "Enrichment is missing for many prospects",
+      "solution": "Add another data source in Clay, or leave those prospects out of this batch rather than guessing."
+    }
+  ],
+
+  "resources": [
+    {
+      "title": "AI email writer comparison",
+      "url": "https://www.emailvendorselection.com/best-ai-email-writer/",
+      "kind": "reference",
+      "description": "The roundup this guide's tool choices come from."
+    },
+    {
+      "title": "Clay",
+      "url": "https://www.clay.com",
+      "kind": "reference",
+      "description": "The list-building and enrichment tool used in steps 1 and 2."
+    },
+    {
+      "title": "Copy.ai",
+      "url": "https://www.copy.ai",
+      "kind": "reference",
+      "description": "The drafting tool used in step 3."
+    }
+  ],
+
+  "relatedGuides": [
+    { "niche": "Sales Teams", "slug": "i-want-to-quickly-research-a-prospect-s-company-before-i-call" },
+    { "niche": "Sales Teams", "slug": "i-want-to-set-up-a-multi-step-outbound-sequence-across-email" },
+    { "niche": "Sales Teams", "slug": "i-want-to-send-personalized-linkedin-connection-and-outreach" },
+    { "niche": "Sales Teams", "slug": "i-want-my-inbox-automatically-sorted-so-i-know-which-prospect" },
+    { "niche": "Sales Teams", "slug": "i-want-to-reach-out-to-prospects-at-scale-but-only-when-they-re" }
+  ],
+
+  "closing": {
+    "title": "Build your outbound workflow once, then reuse it",
+    "body": "Start with step 1 on a small list — twenty prospects is enough to get the research columns and the prompt right. After that, every new list runs through the same steps."
+  }
+}

@@ -10,6 +10,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { applyEditorial, type RawOverlay } from '../src/automations/editorial.ts'
 import { createJsonAutomations } from '../src/automations/json.ts'
+import { createJsonToolCatalogue } from '../src/catalogue/json.ts'
 import type { AutomationPathsResponse, AutomationResponse } from '../src/http/routes/automations.ts'
 import { makeAutomation, readJson, testContainer, testEnv, testLogger, withServer } from './helpers.ts'
 
@@ -186,4 +187,58 @@ await test('the committed editorial content', async (t) => {
     assert.ok(demo[0]?.steps && demo[0].steps.length > 3, 'the demo carries authored steps')
     assert.equal((await real.list()).some((a) => a.batch.startsWith('DEMO')), false)
   })
+
+  await t.test('an overlay changes its own guide and no other', async () => {
+    const withOverlays = await createJsonAutomations().list()
+    const withoutOverlays = new Map((await createJsonAutomations({ overlays: [] }).list()).map((a) => [a.id, a]))
+    const changed = withOverlays.filter((a) => JSON.stringify(a) !== JSON.stringify(withoutOverlays.get(a.id)))
+    const editorialIds = withOverlays.filter((a) => a.headline || a.intro || a.steps).map((a) => a.id)
+    assert.deepEqual(changed.map((a) => a.id).sort(), editorialIds.sort())
+    assert.ok(editorialIds.length >= 3, 'the production editorial guides are loaded')
+  })
+
+  /*
+   * A lint over every production overlay: the content rules the README asks
+   * for, held in code. It publishes to every reader and search engine, so
+   * placeholder links, template leftovers and invented catalogue links are
+   * failures, not style notes.
+   */
+  await t.test('production overlays contain no placeholder content or invented links', async () => {
+    const catalogue = fixtureCatalogueFromData()
+    const editorial = (await createJsonAutomations().list()).filter((a) => a.headline || a.intro || a.steps)
+    const problems: string[] = []
+    const today = new Date().toISOString().slice(0, 10)
+    for (const guide of editorial) {
+      // Every string value in the record — never its JSON syntax, where "}}"
+      // is just two objects closing.
+      const values = stringsOf(guide)
+      if (values.some((v) => /^https?:\/\/(www\.)?example\.(com|org|net)\b/.test(v))) problems.push(`${guide.id}: example.* link`)
+      const leftover = values.find((v) => /\b(TODO|TBD|lorem ipsum)\b|\bPLACEHOLDER\b|\{\{|\}\}/.test(v))
+      if (leftover) problems.push(`${guide.id}: template leftover in "${leftover.slice(0, 60)}"`)
+      if (guide.updatedAt && guide.updatedAt > today) problems.push(`${guide.id}: updatedAt is in the future`)
+      const tools = (guide.steps ?? []).flatMap((step) => [...(step.tools ?? []), ...(step.alternatives ?? [])])
+      for (const tool of tools) {
+        if (tool.catalogueSlug && !(await catalogue.findBySlug(tool.catalogueSlug))) {
+          problems.push(`${guide.id}: ${tool.name} → catalogue slug "${tool.catalogueSlug}" does not exist`)
+        }
+      }
+      for (const ref of guide.relatedGuides ?? []) {
+        if (ref.niche !== guide.niche) problems.push(`${guide.id}: related guide outside its niche (${ref.niche}) — check it is intended`)
+      }
+    }
+    assert.deepEqual(problems, [])
+  })
 })
+
+/** Every string anywhere inside a value, depth first. */
+function stringsOf(value: unknown): string[] {
+  if (typeof value === 'string') return [value]
+  if (Array.isArray(value)) return value.flatMap(stringsOf)
+  if (value && typeof value === 'object') return Object.values(value).flatMap(stringsOf)
+  return []
+}
+
+/** The real catalogue, read the way the server reads it. */
+function fixtureCatalogueFromData() {
+  return createJsonToolCatalogue()
+}
