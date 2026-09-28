@@ -1,4 +1,4 @@
-import { automationPath, beginnerLabel, priceLabel } from '@/components/automations/labels'
+import { beginnerLabel, priceLabel } from '@/components/automations/labels'
 import type { AutomationDetail, AutomationStep, GuideRequirement, StepTool } from '@/types/automation'
 import type { GuideStep, GuideTool, WorkflowGuide } from '@/types/guide'
 
@@ -201,6 +201,10 @@ export function buildWorkflowGuide(detail: AutomationDetail): WorkflowGuide {
     niche: detail.niche,
     slug: detail.slug,
     isEditorial: detail.stepsSource === 'authored',
+    // The demo record's batch is "DEMO — editorial layer example…" (server
+    // automations/demo/records/demo.json). It only loads in development, but
+    // if a dev API were ever prerendered it must still not be indexed.
+    indexable: !detail.batch.startsWith('DEMO'),
     title: detail.title,
     lede,
     metaDescription: truncate(`${intro[0] ?? detail.workflowSummary} ${lede}`, META_DESCRIPTION_MAX),
@@ -228,46 +232,4 @@ export function buildWorkflowGuide(detail: AutomationDetail): WorkflowGuide {
       accessNotes: detail.accessNotes,
     },
   }
-}
-
-/**
- * schema.org JSON-LD for the page: a BreadcrumbList and a HowTo.
- *
- * Only facts the page itself shows — the steps, the tools, the summary. No
- * ratings, prices, durations or authorship the record does not carry.
- */
-export function guideStructuredData(guide: WorkflowGuide, origin: string): object[] {
-  const pageUrl = `${origin}${automationPath(guide.niche, guide.slug)}`
-  return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}/` },
-        { '@type': 'ListItem', position: 2, name: 'Automations', item: `${origin}/automations` },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: guide.niche,
-          item: `${origin}/automations?niche=${encodeURIComponent(guide.niche)}`,
-        },
-        { '@type': 'ListItem', position: 4, name: guide.title, item: pageUrl },
-      ],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: guide.title,
-      description: guide.intro[0] ?? guide.summary,
-      url: pageUrl,
-      tool: guide.tools.map((tool) => ({ '@type': 'HowToTool', name: tool.name })),
-      step: guide.steps.map((step) => ({
-        '@type': 'HowToStep',
-        position: step.number,
-        name: step.title,
-        text: [step.body, ...step.instructions].filter(Boolean).join(' ') || step.prompt || step.title,
-        url: `${pageUrl}#${step.id}`,
-      })),
-    },
-  ]
 }

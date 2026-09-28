@@ -71,6 +71,8 @@ export interface WorkflowGuide {
   slug: string
   /** True when the steps were written by a person, not derived. */
   isEditorial: boolean
+  /** False for the development-only demo guide (server automations/demo/): never indexed. */
+  indexable: boolean
   /** The task, as a reader would type it — the page's H1. */
   title: string
   /** One sentence under the H1, built from the step and tool counts. */
@@ -97,7 +99,7 @@ export interface WorkflowGuide {
   tips: string[]
   issues: GuideIssue[]
   resources: GuideResource[]
-  /** Curated related guides — shown before the niche fallback. */
+  /** Related guides — curated first, then the same niche; resolved by the server. */
   relatedGuides: AutomationCard[]
   readingMinutes: number
   source: GuideSource

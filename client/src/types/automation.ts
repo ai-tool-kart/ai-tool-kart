@@ -150,7 +150,7 @@ export interface AutomationEditorial {
   tips?: string[]
   commonIssues?: GuideIssue[]
   resources?: GuideResource[]
-  /** Curated related guides, resolved to cards by the server, in editor order. */
+  /** Related guides as cards: curated picks first, then the same niche (server-resolved). */
   relatedGuides?: AutomationCard[]
 }
 

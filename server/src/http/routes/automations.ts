@@ -55,8 +55,8 @@ export interface ApiAutomationCard {
  *
  * The editorial fields (automations/types.ts `AutomationEditorial`) pass
  * through as stored — each absent unless a person wrote it — except
- * `relatedGuides`, which is resolved from refs to cards here so the page can
- * link them without a request per guide.
+ * `relatedGuides`, which is resolved to cards here: curated picks first, then
+ * the same niche (resolveRelated), so the page needs no second request.
  */
 export type ApiAutomation = Omit<
   Automation,
@@ -77,6 +77,11 @@ export interface AutomationListResponse {
 
 export interface AutomationResponse {
   automation: ApiAutomation
+}
+
+/** GET /api/automations/paths — every public guide URL, for prerendering and the sitemap. */
+export interface AutomationPathsResponse {
+  items: { niche: string; slug: string }[]
 }
 
 /** The tier, only when a pricing rule actually recognised the note. */
@@ -117,17 +122,29 @@ function toDetail(automation: Automation, related: Automation[]): ApiAutomation 
 }
 
 /**
- * The curated related guides, in the editor's order. Every ref was checked
- * at load (editorial.ts); a draft is skipped here as it is everywhere else.
+ * The related guides the page links to, in priority order:
+ *   1. the editor's curated picks, in their order (every ref was checked at
+ *      load, editorial.ts; a draft is skipped as it is everywhere else), then
+ *   2. the same niche, in import order, minus this guide and the picks,
+ * up to AUTOMATIONS.maxRelatedGuides.
+ *
+ * Resolved here rather than by a second client request so the detail
+ * response carries everything the page shows — which is what lets the build
+ * prerender a complete, crawlable page from one call (client/scripts/prerender).
  */
 async function resolveRelated(
   automation: Automation,
   repository: AutomationRepository,
 ): Promise<Automation[]> {
-  const found = await Promise.all(
-    (automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug)),
-  )
-  return found.filter((item): item is Automation => item?.status === 'active')
+  const curated = (
+    await Promise.all(
+      (automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug)),
+    )
+  ).filter((item): item is Automation => item?.status === 'active')
+
+  const taken = new Set([automation.id, ...curated.map((item) => item.id)])
+  const sameNiche = (await repository.listByNiche(automation.niche)).filter((item) => !taken.has(item.id))
+  return [...curated, ...sameNiche].slice(0, AUTOMATIONS.maxRelatedGuides)
 }
 
 /**
@@ -197,6 +214,27 @@ export function createAutomationsRouter({
         }
 
         const body: AutomationListResponse = { items: found.map(toCard), total }
+        res.json(body)
+      } catch (error) {
+        next(error)
+      }
+    })()
+  })
+
+  /*
+   * Every active guide's niche and slug — no other field, so it stays small
+   * (≈100 KB for the full set). The list endpoint caps at 50 and does not
+   * page, so this is the only way to enumerate guides: the client build uses
+   * it to prerender each page and to write the sitemap. One segment, so it
+   * cannot collide with /:niche/:slug.
+   */
+  router.get('/paths', (_req, res, next) => {
+    void (async () => {
+      try {
+        const all = await automations.list()
+        const body: AutomationPathsResponse = {
+          items: all.map((automation) => ({ niche: automation.niche, slug: automation.slug })),
+        }
         res.json(body)
       } catch (error) {
         next(error)

@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { automationPath } from '@/components/automations/labels'
 import { StatePanel } from '@/components/catalogue/BrowseStates'
 import GuideHero from '@/components/guide/GuideHero'
 import {
@@ -21,6 +20,7 @@ import Button from '@/components/ui/Button'
 import { useAutomation } from '@/hooks/useAutomations'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import type { WorkflowGuide } from '@/types/guide'
+import { guideHead, notFoundHead, siteOrigin } from '@/utils/guideSeo'
 import { buildWorkflowGuide } from '@/utils/workflowGuide'
 
 /*
@@ -146,15 +146,7 @@ export default function AutomationDetailPage() {
   const guide = useMemo(() => (automation ? buildWorkflowGuide(automation) : undefined), [automation])
 
   useDocumentMeta(
-    guide
-      ? {
-          title: `${guide.title} — Step-by-step AI guide | AI Tool Kart`,
-          description: guide.metaDescription,
-          canonical: `${window.location.origin}${automationPath(guide.niche, guide.slug)}`,
-        }
-      : !isLoading && !error
-        ? { title: 'Guide not found | AI Tool Kart', description: 'This workflow guide could not be found.' }
-        : undefined,
+    guide ? guideHead(guide, siteOrigin()) : !isLoading && !error ? notFoundHead() : undefined,
   )
 
   return (

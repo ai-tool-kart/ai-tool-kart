@@ -10,7 +10,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { applyEditorial, type RawOverlay } from '../src/automations/editorial.ts'
 import { createJsonAutomations } from '../src/automations/json.ts'
-import type { AutomationResponse } from '../src/http/routes/automations.ts'
+import type { AutomationPathsResponse, AutomationResponse } from '../src/http/routes/automations.ts'
 import { makeAutomation, readJson, testContainer, testEnv, testLogger, withServer } from './helpers.ts'
 
 const RECORDS = [
@@ -121,11 +121,11 @@ await test('GET /api/automations/:niche/:slug with the editorial layer', async (
       assert.deepEqual(rich.commonIssues, [{ problem: 'It fails', solution: 'Try again.' }])
     })
 
-    await t.test('curated related guides arrive as cards, drafts skipped', async () => {
+    await t.test('related guides: curated first (drafts skipped), then the same niche', async () => {
       const rich = await get('/Students/rich-guide')
       assert.deepEqual(
         rich.relatedGuides?.map((card) => `${card.niche}/${card.slug}`),
-        ['Coaches/other-guide'],
+        ['Coaches/other-guide', 'Students/plain-guide'],
       )
     })
 
@@ -133,9 +133,23 @@ await test('GET /api/automations/:niche/:slug with the editorial layer', async (
       const plain = await get('/Students/plain-guide')
       assert.equal(plain.stepsSource, 'derived')
       assert.equal(plain.steps.length, 3)
-      for (const key of ['intro', 'learningOutcomes', 'beforeYouStart', 'tips', 'commonIssues', 'resources', 'relatedGuides']) {
+      for (const key of ['intro', 'learningOutcomes', 'beforeYouStart', 'tips', 'commonIssues', 'resources']) {
         assert.equal(key in plain, false, `${key} must be absent`)
       }
+    })
+
+    await t.test('a plain guide still gets same-niche related guides, never itself', async () => {
+      const plain = await get('/Students/plain-guide')
+      assert.deepEqual(plain.relatedGuides?.map((card) => card.slug), ['rich-guide'])
+    })
+
+    await t.test('/paths lists every active guide and nothing else', async () => {
+      const body = await readJson<AutomationPathsResponse>(await fetch(`${origin}/api/automations/paths`))
+      assert.deepEqual(
+        body.items.map((item) => `${item.niche}/${item.slug}`).sort(),
+        ['Coaches/other-guide', 'Students/plain-guide', 'Students/rich-guide'],
+      )
+      assert.deepEqual(Object.keys(body.items[0] ?? {}).sort(), ['niche', 'slug'])
     })
   })
 })
