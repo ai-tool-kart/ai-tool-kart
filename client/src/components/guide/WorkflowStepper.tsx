@@ -42,6 +42,11 @@ interface WorkflowStepperProps {
   guideKey: string
   steps: GuideStep[]
   tools: GuideTool[]
+  /**
+   * 'p' when the article's written walkthrough (GuideWalkthrough) already
+   * gives each step its H3 — one heading per step in the outline.
+   */
+  stepTitleAs?: 'h3' | 'p'
 }
 
 function StepRail({
@@ -156,22 +161,25 @@ function StepPanel({
   step,
   hidden,
   headingRef,
+  titleAs,
 }: {
   step: GuideStep
   hidden: boolean
   headingRef?: Ref<HTMLHeadingElement>
+  titleAs: 'h3' | 'p'
 }) {
+  const Title = titleAs
   return (
     <div id={step.id} hidden={hidden} className="flex flex-col gap-5">
       <div className="flex flex-col gap-2">
-        <h3
+        <Title
           ref={headingRef}
           tabIndex={-1}
           className="text-[clamp(20px,2.2vw,24px)] leading-[1.25] font-semibold tracking-[-0.025em] text-ink-bright outline-none"
         >
           <span className="sr-only">Step {step.number}: </span>
           {step.title}
-        </h3>
+        </Title>
         {step.body && <p className="text-[15px] leading-[1.65] text-pretty text-[#C0B9D6]">{step.body}</p>}
         {step.prompt && !step.body && (
           <p className="text-[15px] leading-[1.65] text-pretty text-[#C0B9D6]">
@@ -321,7 +329,7 @@ function StepAside({
   )
 }
 
-export default function WorkflowStepper({ guideKey, steps, tools }: WorkflowStepperProps) {
+export default function WorkflowStepper({ guideKey, steps, tools, stepTitleAs = 'h3' }: WorkflowStepperProps) {
   const { active, completed, finished, goTo, completeAndContinue, reset } = useGuideProgress(
     guideKey,
     steps.length,
@@ -418,6 +426,7 @@ export default function WorkflowStepper({ guideKey, steps, tools }: WorkflowStep
               step={candidate}
               hidden={index !== active}
               headingRef={index === active ? headingRef : undefined}
+              titleAs={stepTitleAs}
             />
           ))}
 

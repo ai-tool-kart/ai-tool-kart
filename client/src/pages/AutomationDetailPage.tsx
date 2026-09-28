@@ -2,10 +2,13 @@ import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { StatePanel } from '@/components/catalogue/BrowseStates'
 import GuideHero from '@/components/guide/GuideHero'
+import GuideClosing from '@/components/guide/GuideClosing'
 import {
-  GuideChecklists,
+  GuideExpectedResult,
   GuideIntro,
   GuideIssues,
+  GuideOutcomes,
+  GuideRequirements,
   GuideResourcesSection,
   GuideSection,
   GuideSources,
@@ -14,6 +17,7 @@ import {
 import GuideSectionNav, { type GuideNavItem } from '@/components/guide/GuideSectionNav'
 import GuideStructuredData from '@/components/guide/GuideStructuredData'
 import RelatedGuides from '@/components/guide/RelatedGuides'
+import GuideWalkthrough from '@/components/guide/GuideWalkthrough'
 import WorkflowStepper from '@/components/guide/WorkflowStepper'
 import Section from '@/components/layout/Section'
 import Button from '@/components/ui/Button'
@@ -29,8 +33,8 @@ import { buildWorkflowGuide } from '@/utils/workflowGuide'
  * The destination of the homepage plan's "Step-by-step guide" button, the
  * setup cards and the usage stories (all via automationPath). It is written
  * to be a search landing page for the task in its title, so it reads as an
- * article — H1, overview, checklists, tips, troubleshooting, related guides —
- * with the workflow itself as an interactive window in the middle of it.
+ * article — see the section order above Guide() — with the workflow itself
+ * as an interactive window in the middle of it.
  *
  * The record comes from the API (useAutomation); utils/workflowGuide.ts turns
  * it into the page's sections, and every component below renders from that
@@ -61,15 +65,28 @@ function DetailSkeleton() {
 function navItems(guide: WorkflowGuide): GuideNavItem[] {
   return [
     { id: 'overview', label: 'Overview' },
-    { id: 'learn', label: 'What you’ll learn' },
+    ...(guide.requirements.length ? [{ id: 'before-you-start', label: 'What you’ll need' }] : []),
     { id: 'workflow', label: 'Step-by-step' },
+    ...(guide.hasWalkthrough ? [{ id: 'explained', label: 'Explained' }] : []),
+    ...(guide.expectedResult ? [{ id: 'result', label: 'Result' }] : []),
     ...(guide.tips.length ? [{ id: 'tips', label: 'Tips' }] : []),
     ...(guide.issues.length ? [{ id: 'troubleshooting', label: 'Troubleshooting' }] : []),
     ...(guide.resources.length ? [{ id: 'resources', label: 'Resources' }] : []),
-    { id: 'related', label: 'Related workflows' },
+    { id: 'related', label: 'Related' },
   ]
 }
 
+/** The reading column every prose section sits in; the workflow and related grid run full width. */
+const COLUMN = 'max-w-[780px]'
+
+/*
+ * Section order is the article's order (the editorial structure):
+ *   hero (breadcrumb, H1, lede, metadata) → why it matters → what you'll need
+ *   → what you'll learn → interactive workflow → the workflow explained →
+ *   the result → tips → common issues → resources → related → closing CTA.
+ * Every section after the workflow that an imported guide has no content for
+ * renders nothing — no heading, no gap (each wrapper is conditional).
+ */
 function Guide({ guide }: { guide: WorkflowGuide }) {
   const items = useMemo(() => navItems(guide), [guide])
   const guideKey = `${guide.niche}/${guide.slug}`
@@ -82,13 +99,21 @@ function Guide({ guide }: { guide: WorkflowGuide }) {
         <GuideSectionNav items={items} />
       </div>
 
-      <div className="mt-14 max-w-[780px]">
+      <div className={`mt-14 ${COLUMN}`}>
         <GuideIntro guide={guide} />
       </div>
 
-      <div className="mt-12">
-        <GuideChecklists guide={guide} />
-      </div>
+      {guide.requirements.length > 0 && (
+        <div className={`mt-16 ${COLUMN}`}>
+          <GuideRequirements guide={guide} />
+        </div>
+      )}
+
+      {guide.outcomes.length > 0 && (
+        <div className={`mt-16 ${COLUMN}`}>
+          <GuideOutcomes outcomes={guide.outcomes} />
+        </div>
+      )}
 
       <GuideSection
         id="workflow"
@@ -104,31 +129,52 @@ function Guide({ guide }: { guide: WorkflowGuide }) {
       >
         <div className="mt-8">
           {/* Keyed so moving to another guide starts its own progress. */}
-          <WorkflowStepper key={guideKey} guideKey={guideKey} steps={guide.steps} tools={guide.tools} />
+          <WorkflowStepper
+            key={guideKey}
+            guideKey={guideKey}
+            steps={guide.steps}
+            tools={guide.tools}
+            stepTitleAs={guide.hasWalkthrough ? 'p' : 'h3'}
+          />
         </div>
       </GuideSection>
 
-      {/* Tips, issues and resources exist only when an editor wrote them. */}
+      {guide.hasWalkthrough && (
+        <div className={`mt-20 ${COLUMN}`}>
+          <GuideWalkthrough steps={guide.steps} />
+        </div>
+      )}
+
+      {guide.expectedResult && (
+        <div className={`mt-20 ${COLUMN}`}>
+          <GuideExpectedResult result={guide.expectedResult} />
+        </div>
+      )}
+
       {guide.tips.length > 0 && (
-        <div className="mt-20">
+        <div className={`mt-20 ${COLUMN}`}>
           <GuideTips tips={guide.tips} />
         </div>
       )}
 
       {guide.issues.length > 0 && (
-        <div className="mt-20 max-w-[780px]">
+        <div className={`mt-20 ${COLUMN}`}>
           <GuideIssues issues={guide.issues} />
         </div>
       )}
 
       {guide.resources.length > 0 && (
-        <div className="mt-20">
+        <div className={`mt-20 ${COLUMN}`}>
           <GuideResourcesSection resources={guide.resources} />
         </div>
       )}
 
       <div className="mt-20">
         <RelatedGuides guide={guide} />
+      </div>
+
+      <div className="mt-20">
+        <GuideClosing guide={guide} />
       </div>
 
       <div className="mt-16">

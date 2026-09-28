@@ -105,6 +105,11 @@ export interface AutomationStep {
   cta?: { label: string; url: string }
   /** Other tools that can do this step instead. */
   alternatives?: StepTool[]
+  /**
+   * Article prose about the step — why it matters, what to watch for. Read in
+   * the page's written walkthrough; `instructions` are what to DO in it.
+   */
+  explanation?: string[]
 }
 
 /** One "Before you start" item. */
@@ -136,7 +141,15 @@ export interface GuideRef {
  * on load. See editorial/README.md.
  */
 export interface AutomationEditorial {
-  /** Paragraphs: the reader's problem, and what the guide gets them to. */
+  /** The page's H1 and title, when the record's search-phrased title is not the best headline. */
+  headline?: string
+  /** <meta name="description">, written for the result page rather than derived. */
+  metaDescription?: string
+  /** One or two sentences under the H1. */
+  lede?: string
+  /** When a person last reviewed the guide — YYYY-MM-DD. Shown, and used as dateModified. */
+  updatedAt?: string
+  /** Paragraphs: why this workflow matters — the reader's problem, and what the guide gets them to. */
   intro?: string[]
   learningOutcomes?: string[]
   beforeYouStart?: GuideRequirement[]
@@ -145,8 +158,12 @@ export interface AutomationEditorial {
   tips?: string[]
   commonIssues?: GuideIssue[]
   resources?: GuideResource[]
-  /** Curated first; the client fills the rest from the niche. */
+  /** Curated first; the server fills the rest from the niche. */
   relatedGuides?: GuideRef[]
+  /** What the reader has at the end, and how to check it. */
+  expectedResult?: { summary: string; checklist?: string[] }
+  /** The closing call to action's heading and paragraph. */
+  closing?: { title: string; body: string }
 }
 
 /**

@@ -57,6 +57,8 @@ export interface GuideStep {
   alternatives: GuideTool[]
   resources: GuideResource[]
   cta?: { label: string; url: string }
+  /** Article prose about the step. Empty on derived steps. */
+  explanation: string[]
 }
 
 export interface GuideSource {
@@ -73,13 +75,17 @@ export interface WorkflowGuide {
   isEditorial: boolean
   /** False for the development-only demo guide (server automations/demo/): never indexed. */
   indexable: boolean
-  /** The task, as a reader would type it — the page's H1. */
+  /** The page's H1 — the editor's headline, else the record's task title. */
   title: string
-  /** One sentence under the H1, built from the step and tool counts. */
+  /** The record's task title, as a reader would type it. */
+  taskTitle: string
+  /** One or two sentences under the H1 — authored, else built from the step and tool counts. */
   lede: string
-  /** ≤160 chars, for <meta name="description">. */
+  /** ≤170 chars, for <meta name="description">. */
   metaDescription: string
-  /** Authored intro paragraphs. Empty on an imported guide. */
+  /** When a person last reviewed the guide (YYYY-MM-DD). Absent on imported guides. */
+  updatedAt?: string
+  /** Why this workflow matters, in paragraphs. Empty on an imported guide. */
   intro: string[]
   /** The record's workflowSummary — what the workflow does, end to end. */
   summary: string
@@ -101,6 +107,12 @@ export interface WorkflowGuide {
   resources: GuideResource[]
   /** Related guides — curated first, then the same niche; resolved by the server. */
   relatedGuides: AutomationCard[]
+  /** What the reader ends up with. Authored only — absent otherwise. */
+  expectedResult?: { summary: string; checklist: string[] }
+  /** The closing call to action — authored, else a plain pointer back to step 1. */
+  closing: { title: string; body: string }
+  /** True when at least one step has written explanation — the article walkthrough renders. */
+  hasWalkthrough: boolean
   readingMinutes: number
   source: GuideSource
 }

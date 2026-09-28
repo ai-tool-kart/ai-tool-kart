@@ -106,8 +106,18 @@ export const AutomationStepSchema = z
       .strict()
       .optional(),
     alternatives: z.array(StepToolSchema).min(1).max(AUTOMATIONS.maxStepTools).optional(),
+    explanation: listOf(AUTOMATIONS.paragraphMaxChars, AUTOMATIONS.maxExplanationParagraphs).optional(),
   })
   .strict()
+
+/** A real calendar date, YYYY-MM-DD — "2026-02-30" is rejected, not rolled over. */
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be a date written YYYY-MM-DD')
+  .refine((value) => {
+    const date = new Date(`${value}T00:00:00Z`)
+    return !Number.isNaN(date.getTime()) && date.toISOString().startsWith(value)
+  }, 'is not a real calendar date')
 
 /**
  * The editorial layer — automations/types.ts `AutomationEditorial`. Every
@@ -116,6 +126,10 @@ export const AutomationStepSchema = z
  */
 export const AutomationEditorialSchema = z
   .object({
+    headline: nonEmpty(AUTOMATIONS.headlineMaxChars).optional(),
+    metaDescription: nonEmpty(AUTOMATIONS.metaDescriptionMaxChars).optional(),
+    lede: nonEmpty(AUTOMATIONS.ledeMaxChars).optional(),
+    updatedAt: isoDate.optional(),
     intro: listOf(AUTOMATIONS.paragraphMaxChars, AUTOMATIONS.maxIntroParagraphs).optional(),
     learningOutcomes: listOf(AUTOMATIONS.listItemMaxChars).optional(),
     beforeYouStart: z
@@ -150,6 +164,17 @@ export const AutomationEditorialSchema = z
       .array(z.object({ niche: z.enum(NICHES), slug }).strict())
       .min(1)
       .max(AUTOMATIONS.maxRelatedGuides)
+      .optional(),
+    expectedResult: z
+      .object({
+        summary: nonEmpty(AUTOMATIONS.paragraphMaxChars),
+        checklist: listOf(AUTOMATIONS.listItemMaxChars).optional(),
+      })
+      .strict()
+      .optional(),
+    closing: z
+      .object({ title: nonEmpty(AUTOMATIONS.headlineMaxChars), body: nonEmpty(AUTOMATIONS.paragraphMaxChars) })
+      .strict()
       .optional(),
   })
   .strict()

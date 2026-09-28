@@ -6,7 +6,6 @@ import {
   CheckIcon,
   EYEBROW,
   H2,
-  PANEL,
   PROSE,
 } from '@/components/guide/guideStyles'
 import { ResourceLink, ResourceList } from '@/components/guide/GuideResources'
@@ -54,17 +53,25 @@ function midSentence(text: string): string {
   return /^[A-Z][a-z]/.test(text) ? text[0].toLowerCase() + text.slice(1) : text
 }
 
-/** What the workflow solves, and who it is for. */
+/**
+ * The opening section. An authored guide leads with why the workflow matters
+ * (the editor's `intro`), and the record's summary becomes the short version;
+ * an imported guide has only the summary, under a plainer heading.
+ */
 export function GuideIntro({ guide }: { guide: WorkflowGuide }) {
+  const authored = guide.intro.length > 0
   return (
-    <GuideSection id="overview" eyebrow="Overview" title="What this workflow solves">
+    <GuideSection
+      id="overview"
+      eyebrow="Overview"
+      title={authored ? 'Why this workflow matters' : 'What this workflow solves'}
+    >
       {guide.intro.map((paragraph) => (
         <p key={paragraph} className={`mt-4 ${PROSE}`}>
           {paragraph}
         </p>
       ))}
-      {/* With an authored intro, the record's summary becomes the short version. */}
-      {guide.intro.length > 0 ? (
+      {authored ? (
         <p className="mt-6 border-l-2 border-[rgba(178,150,255,0.45)] pl-4 text-[15px] leading-[1.65] text-pretty text-[#C0B9D6]">
           <span className="font-semibold text-[#E4DEF4]">In short: </span>
           {guide.summary}
@@ -82,24 +89,25 @@ export function GuideIntro({ guide }: { guide: WorkflowGuide }) {
   )
 }
 
+/** A list with the check mark — prerequisites, outcomes, the result checklist. */
 function CheckList({ items }: { items: GuideRequirement[] }) {
   return (
-    <ul className="mt-4 flex list-none flex-col gap-3 p-0">
+    <ul className="mt-5 flex list-none flex-col gap-4 p-0">
       {items.map((item) => (
         <li key={item.title} className="flex gap-3">
           <span
             aria-hidden="true"
-            className="mt-[2px] flex h-[20px] w-[20px] flex-none items-center justify-center rounded-full bg-[rgba(124,88,244,0.2)] text-[#C8AEFF]"
+            className="mt-[3px] flex h-[20px] w-[20px] flex-none items-center justify-center rounded-full bg-[rgba(124,88,244,0.2)] text-[#C8AEFF]"
           >
             <CheckIcon className="h-3 w-3" />
           </span>
-          <span className="min-w-0 flex-auto text-[14.5px] leading-[1.55] text-pretty text-[#D3CCE6]">
-            {item.title}
+          <span className="min-w-0 flex-auto text-[15.5px] leading-[1.6] text-pretty text-[#D3CCE6]">
+            {item.description ? <span className="font-medium text-[#EDE8FA]">{item.title}</span> : item.title}
             {item.description && (
-              <span className="mt-[2px] block text-[13px] text-[#8A83A6]">{item.description}</span>
+              <span className="mt-[2px] block text-[14.5px] leading-[1.6] text-[#A9A2C2]">{item.description}</span>
             )}
             {item.resource && (
-              <span className="mt-2 block">
+              <span className="mt-2 block max-w-[520px]">
                 <ResourceLink resource={item.resource} />
               </span>
             )}
@@ -110,29 +118,41 @@ function CheckList({ items }: { items: GuideRequirement[] }) {
   )
 }
 
-/** "What you'll learn" beside "Before you start" — the reference's checklist pair. */
-export function GuideChecklists({ guide }: { guide: WorkflowGuide }) {
+/** Prerequisites — the editor's list, else the record's tool access and setup note. */
+export function GuideRequirements({ guide }: { guide: WorkflowGuide }) {
+  if (!guide.requirements.length) return null
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <section id="learn" aria-labelledby="learn-title" className={`${ANCHOR} ${PANEL} p-6`}>
-        <h2 id="learn-title" className="text-[19px] font-semibold tracking-[-0.02em] text-ink-bright">
-          What you’ll learn
-        </h2>
-        <CheckList items={guide.outcomes.map((title) => ({ title }))} />
-      </section>
+    <GuideSection id="before-you-start" eyebrow="Before you start" title="What you’ll need">
+      <CheckList items={guide.requirements} />
+      <p className="mt-5 text-[13.5px] text-[#8A83A6]">
+        Setup level: <span className="text-[#C0B9D6]">{guide.setupLabel}</span>
+      </p>
+    </GuideSection>
+  )
+}
 
-      {guide.requirements.length > 0 && (
-        <section id="before-you-start" aria-labelledby="before-you-start-title" className={`${ANCHOR} ${PANEL} p-6`}>
-          <h2 id="before-you-start-title" className="text-[19px] font-semibold tracking-[-0.02em] text-ink-bright">
-            Before you start
-          </h2>
-          <CheckList items={guide.requirements} />
-          <p className="mt-5 border-t border-white/[0.07] pt-4 text-[13px] text-[#8A83A6]">
-            Setup level: <span className="text-[#C0B9D6]">{guide.setupLabel}</span>
-          </p>
-        </section>
+export function GuideOutcomes({ outcomes }: { outcomes: string[] }) {
+  if (!outcomes.length) return null
+  return (
+    <GuideSection id="learn" title="What you’ll learn">
+      <CheckList items={outcomes.map((title) => ({ title }))} />
+    </GuideSection>
+  )
+}
+
+/** What the reader ends up with — authored only. */
+export function GuideExpectedResult({ result }: { result: WorkflowGuide['expectedResult'] }) {
+  if (!result) return null
+  return (
+    <GuideSection id="result" eyebrow="The result" title="What you’ll end up with">
+      <p className={`mt-4 ${PROSE}`}>{result.summary}</p>
+      {result.checklist.length > 0 && (
+        <>
+          <h3 className="mt-7 text-[17px] font-semibold tracking-[-0.015em] text-ink">Check before you publish</h3>
+          <CheckList items={result.checklist.map((title) => ({ title }))} />
+        </>
       )}
-    </div>
+    </GuideSection>
   )
 }
 
@@ -140,11 +160,11 @@ export function GuideTips({ tips }: { tips: string[] }) {
   if (!tips.length) return null
   return (
     <GuideSection id="tips" eyebrow="Get better results" title="Tips & best practices">
-      <ul className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2">
+      <ul className="mt-5 flex list-none flex-col gap-4 p-0">
         {tips.map((tip) => (
-          <li key={tip} className={`${PANEL} flex gap-3 p-5`}>
-            <BulbIcon className="mt-px h-5 w-5 flex-none text-[#F5D565]" />
-            <p className="text-[14.5px] leading-[1.6] text-pretty text-[#D3CCE6]">{tip}</p>
+          <li key={tip} className="flex gap-3">
+            <BulbIcon className="mt-[3px] h-5 w-5 flex-none text-[#F5D565]" />
+            <p className="text-[15.5px] leading-[1.6] text-pretty text-[#D3CCE6]">{tip}</p>
           </li>
         ))}
       </ul>
@@ -156,13 +176,13 @@ export function GuideIssues({ issues }: { issues: WorkflowGuide['issues'] }) {
   if (!issues.length) return null
   return (
     <GuideSection id="troubleshooting" eyebrow="Troubleshooting" title="Common issues & fixes">
-      <div className="mt-6 flex flex-col gap-3">
+      <div className="mt-4 flex flex-col divide-y divide-white/[0.07]">
         {issues.map((issue) => (
-          <div key={issue.problem} className={`${PANEL} flex gap-4 p-5`}>
-            <AlertIcon className="mt-[2px] h-5 w-5 flex-none text-[#FF9DB6]" />
+          <div key={issue.problem} className="flex gap-4 py-5">
+            <AlertIcon className="mt-[3px] h-5 w-5 flex-none text-[#FF9DB6]" />
             <div>
-              <h3 className="text-[15.5px] font-semibold tracking-[-0.01em] text-ink">{issue.problem}</h3>
-              <p className="mt-[6px] text-[14.5px] leading-[1.6] text-pretty text-[#B9B2CF]">{issue.solution}</p>
+              <h3 className="text-[16.5px] font-semibold tracking-[-0.012em] text-ink">{issue.problem}</h3>
+              <p className={`mt-[6px] ${PROSE}`}>{issue.solution}</p>
             </div>
           </div>
         ))}

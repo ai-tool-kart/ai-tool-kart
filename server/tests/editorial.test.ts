@@ -24,7 +24,13 @@ const RICH: RawOverlay = {
   file: 'rich.json',
   data: {
     automationId: 'rich',
+    headline: 'How to do the rich thing',
+    metaDescription: 'A written description.',
+    lede: 'A short introduction.',
+    updatedAt: '2026-09-28',
     intro: ['Why this guide exists.'],
+    expectedResult: { summary: 'A finished thing.', checklist: ['It works'] },
+    closing: { title: 'Start now', body: 'Begin with step 1.' },
     learningOutcomes: ['A finished thing'],
     beforeYouStart: [{ title: 'An account', description: 'Free is enough.' }],
     steps: [
@@ -38,6 +44,7 @@ const RICH: RawOverlay = {
         resources: [{ title: 'Checklist', url: 'https://example.com/c', kind: 'checklist' }],
         cta: { label: 'Open the editor', url: 'https://example.com/editor' },
         alternatives: [{ name: 'Other Editor' }],
+        explanation: ['Why this step matters.'],
       },
     ],
     tips: ['Guide-level tip.'],
@@ -86,6 +93,8 @@ await test('applyEditorial', async (t) => {
     { automationId: 'rich', relatedGuides: [{ niche: 'Students', slug: 'rich-guide' }] },
     /related to itself/,
   )
+  await rejects('a date that is not YYYY-MM-DD', { automationId: 'rich', updatedAt: '28/09/2026' }, /updatedAt/)
+  await rejects('a date that does not exist', { automationId: 'rich', updatedAt: '2026-02-30' }, /not a real calendar date/)
   await rejects(
     'an authored step without a description',
     { automationId: 'rich', steps: [{ title: 'No body' }] },
@@ -119,6 +128,10 @@ await test('GET /api/automations/:niche/:slug with the editorial layer', async (
       assert.equal(rich.steps[0]?.title, 'Prepare')
       assert.deepEqual(rich.learningOutcomes, ['A finished thing'])
       assert.deepEqual(rich.commonIssues, [{ problem: 'It fails', solution: 'Try again.' }])
+      assert.equal(rich.headline, 'How to do the rich thing')
+      assert.equal(rich.updatedAt, '2026-09-28')
+      assert.deepEqual(rich.expectedResult?.checklist, ['It works'])
+      assert.deepEqual(rich.steps[0]?.explanation, ['Why this step matters.'])
     })
 
     await t.test('related guides: curated first (drafts skipped), then the same niche', async () => {
@@ -133,7 +146,7 @@ await test('GET /api/automations/:niche/:slug with the editorial layer', async (
       const plain = await get('/Students/plain-guide')
       assert.equal(plain.stepsSource, 'derived')
       assert.equal(plain.steps.length, 3)
-      for (const key of ['intro', 'learningOutcomes', 'beforeYouStart', 'tips', 'commonIssues', 'resources']) {
+      for (const key of ['headline', 'metaDescription', 'lede', 'updatedAt', 'intro', 'learningOutcomes', 'beforeYouStart', 'tips', 'commonIssues', 'resources', 'expectedResult', 'closing']) {
         assert.equal(key in plain, false, `${key} must be absent`)
       }
     })

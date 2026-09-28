@@ -531,6 +531,10 @@ export const AUTOMATIONS = {
   maxResources: 8,
   ctaLabelMaxChars: 60,
   maxRelatedGuides: 6,
+  headlineMaxChars: 120,
+  metaDescriptionMaxChars: 170,
+  ledeMaxChars: 400,
+  maxExplanationParagraphs: 4,
 } as const
 
 /**

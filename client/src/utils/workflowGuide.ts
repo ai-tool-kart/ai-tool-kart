@@ -20,8 +20,10 @@ import type { GuideStep, GuideTool, WorkflowGuide } from '@/types/guide'
  * ── What the fallback may and may not do ─────────────────────────────────────
  *
  * It frames the record's own facts ("Access to {tool}", the setup note) and
- * never writes advice of its own. Tips, common issues and resources have no
- * fallback at all: without an editor they are empty, and the page hides them.
+ * never writes advice of its own. Tips, common issues, resources, the
+ * expected result and the step walkthrough have no fallback at all: without
+ * an editor they are empty, and the page hides them. The closing CTA falls
+ * back to a plain pointer to step 1 — navigation, not a claim.
  */
 
 const META_DESCRIPTION_MAX = 158
@@ -137,6 +139,7 @@ function buildStep(step: AutomationStep, index: number, known: GuideTool[]): Gui
     alternatives: (step.alternatives ?? []).map((tool) => authoredTool(tool, known)),
     resources: step.resources ?? [],
     cta: step.cta,
+    explanation: step.explanation ?? [],
   }
 }
 
@@ -176,20 +179,33 @@ export function buildWorkflowGuide(detail: AutomationDetail): WorkflowGuide {
   const issues = detail.commonIssues ?? []
   const intro = detail.intro ?? []
 
-  const lede = `A ${steps.length}-step AI workflow using ${listNames(tools.map((tool) => tool.name))}${
-    hasPrompt ? ', with the exact prompt to start from' : ''
-  }.`
+  const lede =
+    detail.lede ??
+    `A ${steps.length}-step AI workflow using ${listNames(tools.map((tool) => tool.name))}${
+      hasPrompt ? ', with the exact prompt to start from' : ''
+    }.`
+  const firstStep = steps[0]
+  const closing = detail.closing ?? {
+    title: 'Ready to try it?',
+    body: firstStep
+      ? `Start with step 1, “${firstStep.title}”, and work through the ${steps.length} steps above.`
+      : 'Work through the steps above.',
+  }
 
   const words = countWords([
     detail.title,
+    detail.lede,
     ...intro,
     detail.workflowSummary,
+    detail.expectedResult?.summary,
+    ...(detail.expectedResult?.checklist ?? []),
     ...steps.flatMap((step) => [
       step.title,
       step.body,
       ...step.instructions,
       step.prompt,
       step.expectedOutcome,
+      ...step.explanation,
       ...step.tips,
       ...step.tools.map((tool) => tool.why),
     ]),
@@ -205,9 +221,12 @@ export function buildWorkflowGuide(detail: AutomationDetail): WorkflowGuide {
     // automations/demo/records/demo.json). It only loads in development, but
     // if a dev API were ever prerendered it must still not be indexed.
     indexable: !detail.batch.startsWith('DEMO'),
-    title: detail.title,
+    title: detail.headline ?? detail.title,
+    taskTitle: detail.title,
     lede,
-    metaDescription: truncate(`${intro[0] ?? detail.workflowSummary} ${lede}`, META_DESCRIPTION_MAX),
+    metaDescription:
+      detail.metaDescription ?? truncate(`${intro[0] ?? detail.workflowSummary} ${lede}`, META_DESCRIPTION_MAX),
+    updatedAt: detail.updatedAt,
     intro,
     summary: detail.workflowSummary,
     persona: detail.persona,
@@ -224,6 +243,11 @@ export function buildWorkflowGuide(detail: AutomationDetail): WorkflowGuide {
     issues,
     resources: detail.resources ?? [],
     relatedGuides: detail.relatedGuides ?? [],
+    expectedResult: detail.expectedResult
+      ? { summary: detail.expectedResult.summary, checklist: detail.expectedResult.checklist ?? [] }
+      : undefined,
+    closing,
+    hasWalkthrough: steps.some((step) => step.explanation.length > 0),
     readingMinutes: Math.max(1, Math.round(words / WORDS_PER_MINUTE)),
     source: {
       url: detail.sourceUrl,

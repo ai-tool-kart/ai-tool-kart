@@ -126,6 +126,8 @@ export interface AutomationStep {
   resources?: GuideResource[]
   cta?: { label: string; url: string }
   alternatives?: StepTool[]
+  /** Article prose about the step — read in the written walkthrough. */
+  explanation?: string[]
 }
 
 export interface GuideRequirement {
@@ -144,6 +146,14 @@ export interface GuideIssue {
  * Each field is present only when a person wrote it for this guide.
  */
 export interface AutomationEditorial {
+  /** The H1 and title, when better than the record's search-phrased title. */
+  headline?: string
+  metaDescription?: string
+  /** One or two sentences under the H1. */
+  lede?: string
+  /** YYYY-MM-DD — when a person last reviewed the guide. */
+  updatedAt?: string
+  /** Why this workflow matters, in paragraphs. */
   intro?: string[]
   learningOutcomes?: string[]
   beforeYouStart?: GuideRequirement[]
@@ -152,6 +162,8 @@ export interface AutomationEditorial {
   resources?: GuideResource[]
   /** Related guides as cards: curated picks first, then the same niche (server-resolved). */
   relatedGuides?: AutomationCard[]
+  expectedResult?: { summary: string; checklist?: string[] }
+  closing?: { title: string; body: string }
 }
 
 /** GET /api/automations/:niche/:slug `automation`. */

@@ -52,7 +52,9 @@ export default function RelatedGuides({ guide }: { guide: WorkflowGuide }) {
             to={`/browse?tools=${catalogueTools.map((tool) => encodeURIComponent(tool.catalogueSlug ?? '')).join(',')}`}
             className={LINK_CARD}
           >
-            Compare the tools in this guide
+            {catalogueTools.length === 1
+              ? `See ${catalogueTools[0]?.name} in our catalogue`
+              : 'Compare the tools in this guide'}
             <ArrowIcon className="h-4 w-4 flex-none text-accent transition-transform duration-200 group-hover:translate-x-[3px]" />
           </Link>
         ) : (

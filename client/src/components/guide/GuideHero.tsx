@@ -14,6 +14,16 @@ import type { WorkflowGuide } from '@/types/guide'
  * for this task — each a search on the automations page for guides like it.
  */
 
+/** "2026-09-28" → "Sep 28, 2026" — in UTC, so the prerender and the browser agree. */
+function formatDate(isoDate: string): string {
+  return new Date(`${isoDate}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+}
+
 function niche(guide: WorkflowGuide): string {
   return `/automations?niche=${encodeURIComponent(guide.niche)}`
 }
@@ -139,8 +149,18 @@ export default function GuideHero({ guide }: { guide: WorkflowGuide }) {
 
         <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-subtle-soft">
           <span>By AI Tool Kart</span>
+          {guide.updatedAt && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>
+                Updated <time dateTime={guide.updatedAt}>{formatDate(guide.updatedAt)}</time>
+              </span>
+            </>
+          )}
           <span aria-hidden="true">·</span>
           <span>{guide.readingMinutes} min read</span>
+          <span aria-hidden="true">·</span>
+          <span>{guide.steps.length} steps</span>
           <span aria-hidden="true">·</span>
           <span>{guide.setupLabel}</span>
         </p>

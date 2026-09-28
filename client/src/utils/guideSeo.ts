@@ -17,7 +17,8 @@ import type { WorkflowGuide } from '@/types/guide'
  * Structured data describes visible content and nothing else:
  *   BreadcrumbList  always — the breadcrumb is on the page.
  *   Article         always — the page is an article, bylined "AI Tool Kart".
- *                   No dates: the records carry none we could honestly use.
+ *                   `dateModified` only when an editor set `updatedAt`; the
+ *                   imported records carry no date we could honestly use.
  *   HowTo           only for AUTHORED steps. The three derived steps ("Open
  *                   the tool", "Use this prompt", "How it works") are not a
  *                   procedure a person wrote, and the last is a description,
@@ -29,8 +30,8 @@ import type { WorkflowGuide } from '@/types/guide'
 
 export const SITE_NAME = 'AI Tool Kart'
 
-/** Google shows roughly this many characters of a title. */
-const TITLE_BUDGET = 60
+/** Google shows roughly this many characters of a title; the long form is used only within it. */
+const TITLE_BUDGET = 70
 const HEADLINE_MAX = 110
 
 /**
@@ -62,11 +63,10 @@ export function guideUrl(guide: Pick<WorkflowGuide, 'niche' | 'slug'>, origin: s
   return `${origin}${automationPath(guide.niche, guide.slug)}`
 }
 
-/** "{task} — Step-by-step AI guide | AI Tool Kart", dropping the middle when the task is long. */
+/** "{task} — Step-by-step AI guide | AI Tool Kart" when it fits the budget, else "{task} | AI Tool Kart". */
 export function guideTitle(guide: Pick<WorkflowGuide, 'title'>): string {
-  return guide.title.length > TITLE_BUDGET
-    ? `${guide.title} | ${SITE_NAME}`
-    : `${guide.title} — Step-by-step AI guide | ${SITE_NAME}`
+  const long = `${guide.title} — Step-by-step AI guide | ${SITE_NAME}`
+  return long.length <= TITLE_BUDGET ? long : `${guide.title} | ${SITE_NAME}`
 }
 
 export function guideHead(guide: WorkflowGuide, origin: string): HeadTags {
@@ -117,6 +117,7 @@ export function guideJsonLd(guide: WorkflowGuide, origin: string): object[] {
       author: organization,
       publisher: organization,
       about: guide.searchTerms,
+      ...(guide.updatedAt ? { dateModified: guide.updatedAt } : {}),
     },
   ]
 
