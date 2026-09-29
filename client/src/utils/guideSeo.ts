@@ -98,12 +98,12 @@ export function guideJsonLd(guide: WorkflowGuide, origin: string): object[] {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}/` },
-        { '@type': 'ListItem', position: 2, name: 'Automations', item: `${origin}/automations` },
+        { '@type': 'ListItem', position: 2, name: 'Workflows', item: `${origin}/workflows` },
         {
           '@type': 'ListItem',
           position: 3,
           name: guide.niche,
-          item: `${origin}/automations?niche=${encodeURIComponent(guide.niche)}`,
+          item: `${origin}/workflows?niche=${encodeURIComponent(guide.niche)}`,
         },
         { '@type': 'ListItem', position: 4, name: guide.title, item: url },
       ],

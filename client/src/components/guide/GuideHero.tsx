@@ -25,7 +25,7 @@ function formatDate(isoDate: string): string {
 }
 
 function niche(guide: WorkflowGuide): string {
-  return `/automations?niche=${encodeURIComponent(guide.niche)}`
+  return `/workflows?niche=${encodeURIComponent(guide.niche)}`
 }
 
 function Breadcrumb({ guide }: { guide: WorkflowGuide }) {
@@ -42,8 +42,8 @@ function Breadcrumb({ guide }: { guide: WorkflowGuide }) {
           /
         </li>
         <li>
-          <Link to="/automations" className={crumb}>
-            Automations
+          <Link to="/workflows" className={crumb}>
+            Workflows
           </Link>
         </li>
         <li aria-hidden="true" className="text-subtle-dim">
@@ -173,7 +173,7 @@ export default function GuideHero({ guide }: { guide: WorkflowGuide }) {
               {guide.searchTerms.map((term) => (
                 <li key={term}>
                   <Link
-                    to={`/automations?q=${encodeURIComponent(term)}`}
+                    to={`/workflows?q=${encodeURIComponent(term)}`}
                     className="inline-block rounded-pill border border-white/[0.09] bg-white/[0.03] px-3 py-[6px] text-[12.5px] text-muted-soft transition-[border-color,color,background-color] duration-200 hover:border-accent-line hover:bg-accent-wash hover:text-accent"
                   >
                     {term}

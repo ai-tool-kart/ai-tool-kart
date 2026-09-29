@@ -1,127 +1,105 @@
-import { useCallback, useMemo } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
-import SetupCard from '@/components/aiSetups/SetupCard'
-import { automationPath } from '@/components/automations/labels'
-import SetupCategoryChips from '@/components/aiSetups/SetupCategoryChips'
-import { AI_SETUPS } from '@/data/aiSetups'
+import { useCallback, useMemo, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import AutomationSearchInput from '@/components/automations/AutomationSearchInput'
+import { AutomationResultSkeleton } from '@/components/automations/AutomationResultCard'
+import { StatePanel } from '@/components/catalogue/BrowseStates'
+import WorkflowCard from '@/components/workflows/WorkflowCard'
+import WorkflowNicheChips from '@/components/workflows/WorkflowNicheChips'
+import { useAutomations } from '@/hooks/useAutomations'
 import { useToolIndex } from '@/hooks/useToolIndex'
-import { SETUP_CATEGORIES, type ResolvedSetup, type SetupCategory } from '@/types/aiSetup'
-import { composeSetupRequest, librarySetupsForCategory, resolveSetup } from '@/utils/aiSetups'
+import { SEARCH_DEBOUNCE_MS } from '@/hooks/useTools'
+import { MAX_AUTOMATIONS } from '@/services/automations'
+import { isNiche, type AutomationFilters, type NicheName } from '@/types/automation'
 
 /*
- * /workflows — the whole AI setup library.
+ * /workflows — the one workflow listing on the site.
  *
- * The nav has carried a "Workflows" item since the final design's export, and
- * until now it pointed at /browse because no screen existed behind it. This is
- * that screen.
+ * ── One listing, not two ─────────────────────────────────────────────────────
  *
- * ── Nothing here is a new design ─────────────────────────────────────────────
+ * This page used to render the 19 editorial homepage setups (data/aiSetups.ts)
+ * while /automations ("Guides") listed the real guide catalogue. They are now
+ * one page: this route, this design, that data. /automations redirects here
+ * (App.tsx, and a 301 in vercel.json), and each card opens the guide itself at
+ * /automations/:niche/:slug — the prerendered SEO page, unchanged.
  *
- * The card, the tool stack, the workflow strip and the filter chips are the
- * SAME components the homepage's "AI for Your Work" section draws
- * (components/aiSetups/*), rendering the SAME editorial library
- * (data/aiSetups.ts) against the SAME shared catalogue read. This page composes
- * them at full length; it does not restyle them, and it introduces no card,
- * chip or tone of its own. The header block follows New Launches, which is the
- * established shape for a catalogue-backed page.
- *
- * ── What differs from the homepage section, and why ──────────────────────────
- *
- *   ALL MEANS ALL      the section's "All" chip is a curated six, because it is
- *                      a taster with a link out of it. Here it is all nineteen.
- *                      See `librarySetupsForCategory`.
- *
- *   THE CHIP IS IN     the section filters in component state: it is a browsing
- *   THE URL            aid, not a destination. This is a destination, so a
- *                      filtered view has to be shareable and has to move
- *                      correctly under Back and Forward — the same reasoning
- *                      Browse and New Launches already apply.
+ * The 19 setups still exist; they are the homepage's "AI for Your Work" taster
+ * and are no longer read here.
  *
  * ── The data path ────────────────────────────────────────────────────────────
  *
- *   WorkflowsPage
- *     ├─ data/aiSetups.ts   19 editorial setups, tools held as slugs only
- *     └─ useToolIndex ─ services/tools.ts ─ GET /api/tools (shared, cached once)
+ *   WorkflowsPage → useAutomations → services/automations.ts
+ *                                      → GET /api/automations?q=&niche=&limit=50
  *
- * The same module-level read Featured, AI for Your Work and New Launches
- * already wait on, so arriving here from the homepage costs no request at all.
- * Filtering is then a pass over nineteen objects with nothing fetched.
+ * The same hook, the same service and the same server-side search the Guides
+ * page used. No copy of the catalogue lives in the client.
  *
- * ── Failure ──────────────────────────────────────────────────────────────────
+ * ── The URL is the state ─────────────────────────────────────────────────────
  *
- * A setup is editorial and reads perfectly well without its tool tiles, so a
- * failed catalogue read degrades the cards rather than becoming the page's
- * problem — exactly as it does in the homepage section. There is deliberately
- * no error panel and no retry button here: unlike New Launches, this page's
- * content is not the catalogue, and a page-level error over nineteen perfectly
- * readable setups would be claiming a failure the reader cannot see.
+ * `q` and `niche`, exactly as /automations had them, so the redirect carries
+ * every old filtered link across untouched. A typed query leaves one history
+ * entry, not one per keystroke; an unknown `niche` is dropped rather than sent,
+ * because the API answers an unknown niche with a 400.
+ *
+ * ── The cap ──────────────────────────────────────────────────────────────────
+ *
+ * The API returns at most 50 results and has no cursor, but counts every match.
+ * So the status line reports the real total and says when only the first 50
+ * are shown — search and the niche chips are how the rest are reached.
  */
 
-/** The query parameter carrying the chip, so a filtered library is shareable. */
-const CATEGORY_PARAM = 'kind'
-
 export default function WorkflowsPage() {
-  const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
-  const { index, isLoading, failed } = useToolIndex()
 
-  /*
-   * The URL is the state, re-derived rather than mirrored into useState, so a
-   * pasted link and a Back button take the identical path through the
-   * component. A hand-edited `?kind=Bogus` degrades to "All" rather than to an
-   * empty page.
-   */
-  const category = useMemo<SetupCategory | undefined>(() => {
-    const raw = searchParams.get(CATEGORY_PARAM)
-    return SETUP_CATEGORIES.find((known) => known === raw)
+  const filters: AutomationFilters = useMemo(() => {
+    const niche = searchParams.get('niche')
+    return {
+      q: searchParams.get('q') ?? '',
+      ...(isNiche(niche) ? { niche } : {}),
+    }
   }, [searchParams])
 
-  const resolved = useMemo(
-    () => librarySetupsForCategory(AI_SETUPS, category).map((setup) => resolveSetup(setup, index)),
-    [category, index],
-  )
-
-  const toolsStatus = isLoading ? 'loading' : index === undefined || failed ? 'unavailable' : 'ready'
-
-  const selectCategory = useCallback(
-    (next: SetupCategory | undefined) => {
-      const params = new URLSearchParams(searchParams)
-      if (next) params.set(CATEGORY_PARAM, next)
-      else params.delete(CATEGORY_PARAM)
-      setSearchParams(params)
-    },
-    [searchParams, setSearchParams],
-  )
-
   /*
-   * "View Setup" opens the setup's step-by-step guide when one was chosen for
-   * it (`setup.automation`, hand-picked — see data/aiSetups.ts). Otherwise it
-   * opens the setup in the assistant, which is where a setup becomes a plan
-   * you can refine. The rest of this note is about that second path.
-   *
-   * The assistant lives on the homepage, so the composed sentence travels in
-   * router state and useHomeAssistant sends it on arrival, scrolling the stage
-   * into view with the same `ask` the hero uses. State rather than a query
-   * parameter on purpose: it is a message, not a filter — it should not sit in
-   * the address bar, should not be bookmarkable, and must not survive a reload
-   * as a turn that sends itself again.
-   *
-   * The sentence itself comes from the shared `composeSetupRequest`, the same
-   * one the homepage card uses, so both surfaces ask the assistant the same
-   * question. No recommendation logic runs here: the server grounds every tool
-   * it names against the catalogue.
+   * The shared catalogue read (cached once per page load, and usually already
+   * resolved by the homepage), only to draw matched tools' own monograms.
    */
-  const openSetup = useCallback(
-    (entry: ResolvedSetup) => {
-      const guide = entry.setup.automation
-      if (guide) {
-        navigate(automationPath(guide.niche, guide.slug))
-        return
-      }
-      navigate('/', { state: { assistantMessage: composeSetupRequest(entry) } })
+  const { index: toolIndex, isLoading: toolsLoading, failed: toolsFailed } = useToolIndex()
+  const toolsStatus = toolsLoading ? 'loading' : toolIndex === undefined || toolsFailed ? 'unavailable' : 'ready'
+
+  /* Typing debounces; a chip click does not. */
+  const typingRef = useRef(false)
+
+  const results = useAutomations(filters, {
+    debounceMs: typingRef.current ? SEARCH_DEBOUNCE_MS : 0,
+    limit: MAX_AUTOMATIONS,
+  })
+
+  /**
+   * Writes the next filters to the URL. The first keystroke of a query pushes a
+   * history entry and the rest replace it, so Back undoes the whole query and
+   * not the chip click before it.
+   */
+  const update = useCallback(
+    (patch: Partial<AutomationFilters>, { fromTyping = false } = {}) => {
+      const continuingToType = fromTyping && typingRef.current
+      typingRef.current = fromTyping
+      const next = { ...filters, ...patch }
+      const params = new URLSearchParams()
+      if (next.q.trim()) params.set('q', next.q)
+      if (next.niche) params.set('niche', next.niche)
+      setSearchParams(params, { replace: continuingToType })
     },
-    [navigate],
+    [filters, setSearchParams],
   )
+
+  const reset = useCallback(() => {
+    typingRef.current = false
+    setSearchParams(new URLSearchParams())
+  }, [setSearchParams])
+
+  const shown = results.automations.length
+  const count = results.total
+  const countKnown = !results.isLoading && !results.error
+  const countText = count.toLocaleString()
 
   return (
     <section className="relative mx-auto max-w-site px-8 pt-16 pb-[88px]">
@@ -136,33 +114,78 @@ export default function WorkflowsPage() {
       />
 
       <header className="relative text-center">
-        <p className="text-[11.5px] tracking-[0.2em] text-accent uppercase">Complete AI setups</p>
+        <p className="text-[11.5px] tracking-[0.2em] text-accent uppercase">Complete AI workflows</p>
         <h1 className="mx-auto mt-3 text-[clamp(34px,5vw,52px)] font-bold tracking-[-0.04em] text-balance text-ink">
           Workflows
         </h1>
         <p className="mx-auto mt-[14px] max-w-[58ch] text-[15.5px] leading-[1.65] tracking-[-0.006em] text-pretty text-muted-dim">
-          Every setup in one place &mdash; the tools that work together, the order to run them
-          in, and the prompts. Pick the kind of work you&rsquo;re doing.
+          Step-by-step AI workflows for real jobs &mdash; the tools to use, the order to run them
+          in, and the prompts. Describe a task or pick who it&rsquo;s for.
         </p>
       </header>
 
-      <SetupCategoryChips selected={category} onSelect={selectCategory} />
+      <div className="relative mx-auto max-w-[760px]">
+        <AutomationSearchInput
+          query={filters.q}
+          onQueryChange={(q) => update({ q }, { fromTyping: true })}
+        />
+      </div>
 
-      {/*
-       * The section's own grid: `repeat(auto-fit,minmax(336px,1fr))` with the
-       * standard `min(336px,100%)` guard on the lower bound, without which a
-       * track stays 336px wide inside a narrower container and pushes the page
-       * sideways below about a 400px viewport.
-       */}
-      <div className="mt-[26px] grid grid-cols-[repeat(auto-fit,minmax(min(336px,100%),1fr))] gap-[18px]">
-        {resolved.map((entry) => (
-          <SetupCard
-            key={entry.setup.id}
-            resolved={entry}
-            toolsStatus={toolsStatus}
-            onOpen={openSetup}
+      <WorkflowNicheChips selected={filters.niche} onSelect={(niche?: NicheName) => update({ niche })} />
+
+      <div className="relative mt-[26px]">
+        {/* The cards' titles are h3s; this keeps the outline h1 → h2 → h3. */}
+        <h2 className="sr-only">Results</h2>
+        <div className="mb-[18px] flex items-baseline justify-between gap-4">
+          <p className="text-[14px] text-muted-dim" aria-live="polite">
+            {results.isLoading && 'Loading workflows…'}
+            {results.error && !results.isLoading && 'Workflows unavailable'}
+            {countKnown && (
+              <>
+                <span className="font-semibold text-[#E4DEF5]">{countText}</span>{' '}
+                {count === 1 ? 'workflow matches' : 'workflows match'}
+                {shown < count && (
+                  <span className="text-muted-dim"> · showing the first {shown.toLocaleString()}</span>
+                )}
+              </>
+            )}
+          </p>
+          {countKnown && filters.q.trim() && <p className="text-[13px] text-muted-dim">Best match first</p>}
+        </div>
+
+        {results.isLoading ? (
+          <AutomationResultSkeleton count={6} />
+        ) : results.error ? (
+          <StatePanel
+            role="alert"
+            title="Workflows could not be loaded"
+            detail={results.error}
+            action={{ label: 'Try again', onClick: results.retry }}
           />
-        ))}
+        ) : shown === 0 ? (
+          <StatePanel
+            role="status"
+            title="Nothing matches that search"
+            detail="Try fewer or different words, or choose All."
+            action={{ label: 'Reset search', onClick: reset }}
+          />
+        ) : (
+          /*
+           * The Workflows grid, with the `min(336px,100%)` guard on the lower
+           * bound so a track never pushes a narrow phone sideways.
+           */
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(336px,100%),1fr))] gap-[18px]">
+            {results.automations.map((automation, index) => (
+              <WorkflowCard
+                key={`${automation.niche}/${automation.slug}`}
+                automation={automation}
+                position={index}
+                toolIndex={toolIndex}
+                toolsStatus={toolsStatus}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

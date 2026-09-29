@@ -78,6 +78,12 @@ export interface AutomationCard {
   persona: string
   /** Names only. Links live on the detail view. */
   tools: string[]
+  /**
+   * The tools the importer confidently matched to a catalogue record, name →
+   * slug. Absent when none matched (most records). Slugs only: the client
+   * resolves them against its own catalogue read.
+   */
+  catalogueTools?: { name: string; catalogueSlug: string }[]
   beginnerFriendly: BeginnerFriendly
   /** Absent when the source's pricing could not be classified. */
   pricingTier?: PricingTierName

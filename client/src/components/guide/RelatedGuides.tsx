@@ -41,7 +41,7 @@ export default function RelatedGuides({ guide }: { guide: WorkflowGuide }) {
       )}
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <Link to={`/automations?niche=${encodeURIComponent(guide.niche)}`} className={LINK_CARD}>
+        <Link to={`/workflows?niche=${encodeURIComponent(guide.niche)}`} className={LINK_CARD}>
           All {guide.niche} guides
           <ArrowIcon className="h-4 w-4 flex-none text-accent transition-transform duration-200 group-hover:translate-x-[3px]" />
         </Link>

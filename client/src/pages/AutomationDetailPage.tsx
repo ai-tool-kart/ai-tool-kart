@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { StatePanel } from '@/components/catalogue/BrowseStates'
 import GuideHero from '@/components/guide/GuideHero'
 import GuideClosing from '@/components/guide/GuideClosing'
@@ -251,12 +251,9 @@ export default function AutomationDetailPage() {
             The link may be out of date, or the guide may have been withdrawn.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <Button variant="outline" to="/automations">
-              Search guides
+            <Button variant="outline" to="/workflows">
+              Search workflows
             </Button>
-            <Link to="/workflows" className="self-center text-[14px] font-medium">
-              Explore workflows →
-            </Link>
           </div>
         </div>
       )}
