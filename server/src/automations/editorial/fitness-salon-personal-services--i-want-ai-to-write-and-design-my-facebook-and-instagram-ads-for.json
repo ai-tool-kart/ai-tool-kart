@@ -1,0 +1,229 @@
+{
+  "automationId": "fitness-salon-personal-services-d93ab46755",
+
+  "headline": "How to Create Facebook and Instagram Ads for a Local Gym Promotion With AI",
+  "metaDescription": "Write an offer brief, generate ad image and headline variants with AdCreative.ai, refine them in Canva and test them in Meta Ads Manager for a local gym promotion.",
+  "lede": "You have an offer — a free trial week, a seasonal discount — and want it in front of people who live nearby. This guide shows how to turn it into a set of Facebook and Instagram ads with AI, then test which one works.",
+  "updatedAt": "2026-09-28",
+
+  "intro": [
+    "Paid social is one way for a gym or studio to reach people who live close enough to become members. The slow part is rarely the budget; it's producing enough decent ad variations to learn what works, without a designer or a copywriter.",
+    "AI ad tools close that gap. You describe the offer and the audience, and the tool produces a set of image and headline variants sized for each placement. A design tool brings them in line with your brand, and Meta Ads Manager runs them side by side, so results rather than guesswork decide which ad stays.",
+    "The workflow below keeps you in charge of the parts AI can't do — the offer, the local detail and the final check — and lets it handle the volume."
+  ],
+
+  "learningOutcomes": [
+    "How to write an offer brief an AI ad tool can work from",
+    "How to generate several ad image and headline variants from one brief",
+    "How to bring AI-generated creative in line with your brand in Canva",
+    "How to launch a small test in Meta Ads Manager and keep the ad that performs"
+  ],
+
+  "beforeYouStart": [
+    {
+      "title": "One clear offer",
+      "description": "A single promotion with a deadline, such as a free trial week or a seasonal membership discount."
+    },
+    {
+      "title": "Your brand assets",
+      "description": "Logo, brand colours and a few real photos of your space, classes or team."
+    },
+    {
+      "title": "A Facebook Page and Meta Ads Manager",
+      "description": "Launching the ads still needs basic familiarity with Ads Manager."
+    },
+    {
+      "title": "Accounts on the tools",
+      "description": "AdCreative.ai and Canva each need a sign-up. Check current plans on their sites before you commit."
+    },
+    {
+      "title": "A test budget",
+      "description": "A small daily amount you're comfortable spending while the variants run against each other."
+    }
+  ],
+
+  "steps": [
+    {
+      "title": "Write the offer brief",
+      "body": "Put the offer, the audience, the area and the call to action into a few lines the AI can work from.",
+      "explanation": [
+        "Every ad tool works from what you give it. A vague brief (\"promote the gym\") produces vague ads; a specific one (\"free trial week, people within five miles, book a free class\") produces ads someone can act on.",
+        "Writing the brief first also keeps every variant honest: the same offer, the same terms and the same deadline in every ad."
+      ],
+      "instructions": [
+        "Write the offer in one line, including any deadline or conditions.",
+        "Describe who it's for and where — the area around your location.",
+        "Choose one call to action, such as \"Book your free class\".",
+        "Note anything that must not change: prices, dates, terms."
+      ],
+      "expectedOutcome": "A short brief covering the offer, audience, area, call to action and fixed terms.",
+      "tips": ["One offer per campaign. Two offers in one ad make both harder to read."]
+    },
+    {
+      "title": "Generate ad variants",
+      "body": "Give the brief to an AI ad generator and get several image and headline variations sized for Facebook and Instagram.",
+      "explanation": [
+        "Testing needs options. An AI ad generator turns one brief into a set of images and headlines sized for each placement, so you're choosing between variants rather than starting from a blank canvas.",
+        "Treat the output as a first draft. Some variants will miss your brand or your audience — you're looking for three or four worth refining."
+      ],
+      "instructions": [
+        "Open AdCreative.ai and start a new set of creatives.",
+        "Paste the prompt below, adjusted to your offer and area.",
+        "Add your logo and brand colours if the tool asks for them.",
+        "Shortlist three or four variants that are clear, on-brand and accurate."
+      ],
+      "tools": [
+        {
+          "name": "AdCreative.ai",
+          "url": "https://www.adcreative.ai",
+          "catalogueSlug": "adcreative-ai",
+          "why": "It produces sets of ad images and headline variations sized for each platform from one brief — built for making many variants to test rather than one hero ad."
+        }
+      ],
+      "prompt": "Create 3 Facebook/Instagram ad variations promoting a free trial week at our gym, targeting people within 5 miles, with a clear 'Book your free class' call to action.",
+      "expectedOutcome": "Three or four shortlisted variants, each with an image and a headline.",
+      "tips": ["Check every price, date and claim in the generated copy against your brief — generated text can drift from the offer."],
+      "alternatives": [{ "name": "Lapis" }]
+    },
+    {
+      "title": "Refine the creative in Canva",
+      "body": "Bring the shortlisted ads in line with your brand, swap in real photos, and resize them for each placement.",
+      "explanation": [
+        "Generated ads often look generic. Replacing stock-style imagery with real photos of your space and team makes an ad look like your gym rather than any gym — and it's what people will see when they walk in.",
+        "This is also where you check sizes. Feed and stories placements use different shapes, and a design cropped badly in one of them wastes that placement."
+      ],
+      "instructions": [
+        "Upload the shortlisted variants to Canva.",
+        "Swap generated imagery for your own photos where it helps.",
+        "Apply your brand fonts and colours, and keep the text on the image short.",
+        "Resize each design for feed and stories placements, then export."
+      ],
+      "tools": [
+        {
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "catalogueSlug": "canva",
+          "why": "Template-driven design with photo editing and resizing for different channels, so each ad fits its placement and matches your brand."
+        }
+      ],
+      "expectedOutcome": "On-brand ad images in the sizes each placement needs."
+    },
+    {
+      "title": "Finish the ad copy",
+      "body": "Pair each image with a headline and a short primary text that state the offer plainly.",
+      "explanation": [
+        "The image stops the scroll; the text makes the offer. Keep it plain: what it is, who it's for, when it ends, and what to do next.",
+        "Generated headlines are a starting point. Keep the ones that sound like the way you talk to members, and cut anything that promises more than the offer does."
+      ],
+      "instructions": [
+        "Take the headline variants from step 2, or generate more from the same brief.",
+        "Write one short primary text per ad: the offer, the area, the deadline and the call to action.",
+        "Remove anything your front desk couldn't back up.",
+        "Match each final headline to an image."
+      ],
+      "tools": [
+        {
+          "name": "AdCreative.ai",
+          "url": "https://www.adcreative.ai",
+          "catalogueSlug": "adcreative-ai",
+          "why": "Its headline variants give you options to choose from and edit, rather than a single line to accept."
+        }
+      ],
+      "expectedOutcome": "Every ad has an image, a headline and primary text that state the offer accurately."
+    },
+    {
+      "title": "Launch a test in Meta Ads Manager",
+      "body": "Set up one campaign with your variants, target the local area, and let the results show which ad to keep.",
+      "explanation": [
+        "Running several variants at once is the point of the whole workflow: the audience shows you which image and headline work, and you stop paying for the ones that don't.",
+        "Keep the test simple — one offer, one area, the same budget behind each variant — so a difference in results actually means something."
+      ],
+      "instructions": [
+        "In Meta Ads Manager, create a campaign for the promotion.",
+        "Target the area around your location and the audience from your brief.",
+        "Add each variant as its own ad within the same ad set.",
+        "After a few days, pause the weakest ads and keep the strongest running."
+      ],
+      "tools": [
+        {
+          "name": "Meta Ads Manager",
+          "why": "Where the ads actually run. Launching them needs some familiarity with it."
+        }
+      ],
+      "expectedOutcome": "A live campaign running your variants against each other, with results you can compare.",
+      "tips": ["Change one thing at a time in the next test, so you know what made the difference."]
+    }
+  ],
+
+  "expectedResult": {
+    "summary": "A local Facebook and Instagram campaign for your promotion, with three or four on-brand ad variants running against each other — and results that show which one to keep.",
+    "checklist": [
+      "Every ad states the same offer, terms and deadline",
+      "Real photos of your gym replace generic imagery where possible",
+      "Each design fits its placement",
+      "Nothing in the copy promises more than the offer does",
+      "The campaign targets the area around your location",
+      "You've decided when you'll review the results"
+    ]
+  },
+
+  "tips": [
+    "Photograph your space, classes and team once in good light, and reuse the set across campaigns.",
+    "Keep a short log of each test — offer, variants, results — so the next campaign starts from what you learned.",
+    "Send the click where the ad promises: if it says \"Book your free class\", it should land on booking.",
+    "Plan promotions ahead so the creative isn't rushed in the week the offer starts."
+  ],
+
+  "commonIssues": [
+    {
+      "problem": "The generated ads look generic",
+      "solution": "Give the tool your logo and brand colours, make the brief more specific, and swap in real photos in Canva."
+    },
+    {
+      "problem": "An ad gets a detail of the offer wrong",
+      "solution": "Check every price, date and condition against your brief before launch and correct the copy. Don't rely on the generator to keep terms exact."
+    },
+    {
+      "problem": "A design is cropped badly in stories",
+      "solution": "Resize the design for that placement in Canva rather than letting one size cover every placement."
+    },
+    {
+      "problem": "You'd rather not learn Ads Manager",
+      "solution": "Launching these ads needs basic familiarity with it. If you'd rather hand that part off, see the related guide on running local Facebook ads without learning Ads Manager."
+    }
+  ],
+
+  "resources": [
+    {
+      "title": "Comparison of AI ad generators for Facebook and Instagram",
+      "url": "https://www.trylapis.com/resources/best-ai-ad-generators-facebook-instagram",
+      "kind": "reference",
+      "description": "The source for this guide's tool choices. It's published by Lapis, one of the tools it compares, so cross-check claims about competitors."
+    },
+    {
+      "title": "AdCreative.ai",
+      "url": "https://www.adcreative.ai",
+      "kind": "reference",
+      "description": "The ad generator used in steps 2 and 4."
+    },
+    {
+      "title": "Canva",
+      "url": "https://www.canva.com",
+      "kind": "reference",
+      "description": "The design tool used in step 3."
+    }
+  ],
+
+  "relatedGuides": [
+    { "niche": "Fitness-Salon-Personal Services", "slug": "i-want-ai-to-run-and-manage-my-local-facebook-ads-without-me" },
+    { "niche": "Fitness-Salon-Personal Services", "slug": "i-want-ai-to-create-short-promotional-video-ads-for-my-salon-or" },
+    { "niche": "Fitness-Salon-Personal Services", "slug": "i-want-ai-to-design-simple-promotional-graphics-and-offer" },
+    { "niche": "Fitness-Salon-Personal Services", "slug": "i-want-ai-to-help-me-plan-out-promotions-and-content-for-the" },
+    { "niche": "Fitness-Salon-Personal Services", "slug": "i-want-ai-to-help-draft-my-email-and-text-marketing-campaigns" }
+  ],
+
+  "closing": {
+    "title": "Turn your next promotion into ads that are tested, not guessed",
+    "body": "Start with step 1 — a clear offer brief takes a few minutes and shapes every ad that follows. After the first test, you'll have a workflow you can reuse for every promotion."
+  }
+}

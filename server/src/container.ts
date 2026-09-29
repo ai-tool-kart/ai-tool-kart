@@ -146,7 +146,11 @@ export function createContainer({
   // ...and the only line naming a concrete automations implementation. The
   // catalogue is not passed in: an automation embeds its tools and references
   // the catalogue only by slug (SPEC-automations.md §1).
-  const automations = injectedAutomations ?? createJsonAutomations({ logger })
+  // The demo guide (automations/demo/) exists to exercise the editorial layer
+  // locally. Development only: it must never be indexed in production.
+  const automations =
+    injectedAutomations ??
+    createJsonAutomations({ logger, includeDemo: env.environment === 'development' })
 
   // ONE search index over the active automations, shared by GET
   // /api/automations and the assistant. Built on first use and kept: the set

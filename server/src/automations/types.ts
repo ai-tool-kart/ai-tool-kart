@@ -44,26 +44,126 @@ export interface AutomationTool {
 }
 
 /**
- * One authored step of a plan. Optional at the record level — most
- * automations have none yet, and a reader gets three DERIVED steps instead
- * (SPEC-automations.md §5, deriveSteps.ts). This type exists
- * now so the schema can accept authored content the day it arrives without a
- * later shape change.
+ * A link a guide hands the reader — a prompt file, a template, a tutorial.
+ * `kind` only picks the label and icon; the url is what matters.
+ */
+export interface GuideResource {
+  title: string
+  url: string
+  kind?: GuideResourceKind
+  description?: string
+}
+
+export const GUIDE_RESOURCE_KINDS = [
+  'prompt',
+  'template',
+  'example',
+  'tutorial',
+  'reference',
+  'checklist',
+] as const
+export type GuideResourceKind = (typeof GUIDE_RESOURCE_KINDS)[number]
+
+/** A tool as ONE STEP uses it — `AutomationTool` plus why this step needs it. */
+export interface StepTool extends AutomationTool {
+  /** Why this tool, for this step. The sentence that makes a tool list a workflow. */
+  why?: string
+}
+
+/**
+ * One step of a guide — authored, or one of the three deriveSteps.ts builds.
+ *
+ * The first five fields are the original shape and are all a derived step
+ * ever sets. Everything after them is EDITORIAL: optional, set only by a
+ * person writing the guide, and never derived or guessed. Order is the array
+ * order — there is no step-number field to fall out of step with it.
  */
 export interface AutomationStep {
   title: string
   /**
-   * Optional on the TYPE because derived step 2 ("Use this prompt") has none —
-   * its title and prompt block say it all. AutomationStepSchema still requires
-   * a body on AUTHORED steps: an editor writing a step should write one.
+   * The step's short description. Optional on the TYPE because derived step 2
+   * ("Use this prompt") has none; AutomationStepSchema still requires it on
+   * AUTHORED steps: an editor writing a step should write one.
    */
   body?: string
   /** Rendered with a copy button, same as `Automation.samplePrompt`. */
   prompt?: string
-  /** Free text, not an `AutomationTool` — a step names a tool, it need not
-   *  repeat that tool's url/access note, which live on `Automation.tools`. */
+  /** A derived step's pointer into `Automation.tools`. Authored steps use `tools`. */
   toolName?: string
+  /** A derived step's single note. Authored steps use `tips`. */
   tip?: string
+
+  /** Detailed instructions, one action per entry, in order. */
+  instructions?: string[]
+  /** The tools this step uses, each with the reason it is here. */
+  tools?: StepTool[]
+  /** What the reader should have when the step is done. */
+  expectedOutcome?: string
+  tips?: string[]
+  resources?: GuideResource[]
+  /** One outbound action for the step, e.g. "Open the template". */
+  cta?: { label: string; url: string }
+  /** Other tools that can do this step instead. */
+  alternatives?: StepTool[]
+  /**
+   * Article prose about the step — why it matters, what to watch for. Read in
+   * the page's written walkthrough; `instructions` are what to DO in it.
+   */
+  explanation?: string[]
+}
+
+/** One "Before you start" item. */
+export interface GuideRequirement {
+  title: string
+  description?: string
+  resource?: GuideResource
+}
+
+export interface GuideIssue {
+  problem: string
+  solution: string
+}
+
+/** A curated link to another guide. Niche and slug: slugs repeat across niches. */
+export interface GuideRef {
+  niche: NicheName
+  slug: string
+}
+
+/**
+ * The editorial layer — everything a person writes ON TOP of an imported
+ * record. Every field is optional, and a guide with none of them renders
+ * exactly as before (deriveSteps.ts, and the client's fallback).
+ *
+ * These fields are NOT stored in the imported data files — the importer
+ * rewrites those wholesale. They live in one overlay file per guide under
+ * automations/editorial/, keyed by `Automation.id`, and json.ts merges them
+ * on load. See editorial/README.md.
+ */
+export interface AutomationEditorial {
+  /** The page's H1 and title, when the record's search-phrased title is not the best headline. */
+  headline?: string
+  /** <meta name="description">, written for the result page rather than derived. */
+  metaDescription?: string
+  /** One or two sentences under the H1. */
+  lede?: string
+  /** When a person last reviewed the guide — YYYY-MM-DD. Shown, and used as dateModified. */
+  updatedAt?: string
+  /** Paragraphs: why this workflow matters — the reader's problem, and what the guide gets them to. */
+  intro?: string[]
+  learningOutcomes?: string[]
+  beforeYouStart?: GuideRequirement[]
+  /** Authored steps. Override the derived three (SPEC-automations.md §5). */
+  steps?: AutomationStep[]
+  tips?: string[]
+  commonIssues?: GuideIssue[]
+  resources?: GuideResource[]
+  /** Curated first; the server fills the rest from the niche. */
+  relatedGuides?: GuideRef[]
+  /** What the reader has at the end, and how to check it. */
+  expectedResult?: { summary: string; checklist?: string[] }
+  /** The closing call to action's heading and paragraph. */
+  closing?: { title: string; body: string }
 }
 
 /**
@@ -75,7 +175,7 @@ export interface AutomationStep {
  * title edit on re-import), while `slug` is derived from `title` and is
  * what a URL and a lookup actually use.
  */
-export interface Automation {
+export interface Automation extends AutomationEditorial {
   id: string
   /** From `title`, lowercase-hyphenated — see AUTOMATION_SLUG_PATTERN in schema.ts. */
   slug: string
@@ -123,7 +223,5 @@ export interface Automation {
   accessNotes?: string
   /** e.g. "Students Batch 2" — which import run produced this record. */
   batch: string
-  /** Authored steps, when they exist. Overrides the derived three (§5). */
-  steps?: AutomationStep[]
   status: 'active' | 'draft'
 }

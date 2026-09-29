@@ -8,7 +8,13 @@
  *
  * Reads every per-niche file in data/ once at construction (one file per
  * niche, written by server/scripts/importAutomations.ts), concatenates them,
- * validates the lot through parseAutomations, and indexes. A bad record — or
+ * validates the lot through parseAutomations, merges the editorial overlays
+ * from editorial/ onto them (editorial.ts), and indexes.
+ *
+ * With `includeDemo` (development only — see container.ts), it also loads
+ * demo/: one clearly marked example guide, with its own record and overlay,
+ * that exercises every editorial field. It never ships in production and
+ * never touches data/. A bad record — or
  * a file that is not a JSON array — throws before the server can listen,
  * collecting every problem first, exactly as the catalogue does.
  *
@@ -22,14 +28,18 @@ import { fileURLToPath } from 'node:url'
 import { configError } from '../domain/errors.ts'
 import type { Logger } from '../utils/logger.ts'
 import type { AutomationQuery, AutomationRepository } from './repository.ts'
+import { applyEditorial, type RawOverlay } from './editorial.ts'
 import { parseAutomations } from './schema.ts'
 import type { Automation } from './types.ts'
 
 const DATA_DIR = 'data'
+const EDITORIAL_DIR = 'editorial'
+const DEMO_RECORDS_DIR = join('demo', 'records')
+const DEMO_EDITORIAL_DIR = join('demo', 'editorial')
 
 /** Resolved relative to this module so it works from src/ and from dist/. */
-function defaultDataDir(): string {
-  return join(dirname(fileURLToPath(import.meta.url)), DATA_DIR)
+function here(name: string): string {
+  return join(dirname(fileURLToPath(import.meta.url)), name)
 }
 
 export interface JsonAutomationRepositoryOptions {
@@ -41,6 +51,13 @@ export interface JsonAutomationRepositoryOptions {
   records?: unknown
   /** Override the directory. Production never sets this. */
   dir?: string
+  /**
+   * Test seam for the editorial layer, as `records` is for data/. Supplying
+   * overlays skips the editorial/ read entirely.
+   */
+  overlays?: RawOverlay[]
+  /** Load the demo guide (demo/). The container sets this in development only. */
+  includeDemo?: boolean
 }
 
 /** Niche and slug together — slugs are unique within a niche only. */
@@ -49,11 +66,25 @@ const slugKey = (niche: string, slug: string): string => `${niche}\u0000${slug}`
 export function createJsonAutomations(
   options: JsonAutomationRepositoryOptions = {},
 ): AutomationRepository {
-  const { logger, records, dir } = options
-  const origin = records !== undefined ? 'in-memory records' : (dir ?? defaultDataDir())
+  const { logger, records, dir, overlays, includeDemo = false } = options
+  const origin = records !== undefined ? 'in-memory records' : (dir ?? here(DATA_DIR))
   const raw = records !== undefined ? records : readDataDir(origin)
+  const demoRecords = includeDemo ? readDataDir(here(DEMO_RECORDS_DIR)) : []
 
-  const automations = parseAutomations(raw, { origin })
+  const editorialOrigin = overlays !== undefined ? 'in-memory overlays' : here(EDITORIAL_DIR)
+  const rawOverlays = [
+    // editorial/ belongs to the committed data in data/. A caller loading
+    // other records (the `records` or `dir` test seams) gets no overlays
+    // unless it passes its own — the real ones name ids its data lacks.
+    ...(overlays ?? (records !== undefined || dir !== undefined ? [] : readOverlayDir(editorialOrigin))),
+    ...(includeDemo ? readOverlayDir(here(DEMO_EDITORIAL_DIR)) : []),
+  ]
+
+  const automations = applyEditorial(
+    parseAutomations(Array.isArray(raw) ? [...raw, ...demoRecords] : raw, { origin }),
+    rawOverlays,
+    { origin: editorialOrigin },
+  )
 
   // Built once: the set is fixed for the life of the process.
   const bySlug = new Map<string, Automation>()
@@ -71,6 +102,8 @@ export function createJsonAutomations(
   logger?.info('Automations loaded', {
     driver: 'json',
     records: automations.length,
+    editorial: rawOverlays.length,
+    demo: includeDemo,
     active: active.length,
     niches: activeByNiche.size,
   })
@@ -149,4 +182,34 @@ function readDataDir(dir: string): unknown[] {
     records.push(...parsed)
   }
   return records
+}
+
+/**
+ * Every `.json` file in an overlay directory — one overlay object per file,
+ * named for the guide it belongs to. A missing directory is no overlays: the
+ * editorial layer is optional content, unlike data/.
+ */
+function readOverlayDir(dir: string): RawOverlay[] {
+  let names: string[]
+  try {
+    names = readdirSync(dir)
+      .filter((name) => extname(name) === '.json')
+      .sort()
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return []
+    throw configError(`Could not read the editorial directory at ${dir}.\n  ${(error as Error).message}`, {
+      origin: dir,
+    })
+  }
+
+  return names.map((name) => {
+    const file = join(dir, name)
+    try {
+      return { file: name, data: JSON.parse(readFileSync(file, 'utf8')) as unknown }
+    } catch (error) {
+      throw configError(`The editorial file ${file} could not be read as JSON.\n  ${(error as Error).message}`, {
+        origin: file,
+      })
+    }
+  })
 }

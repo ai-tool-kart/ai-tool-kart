@@ -21,7 +21,7 @@ import { z } from 'zod'
 import { AUTOMATIONS } from '../config/limits.ts'
 import { configError } from '../domain/errors.ts'
 import { CATALOGUE_KINDS, NICHES, PRICING_TIERS } from '../domain/types.ts'
-import type { Automation } from './types.ts'
+import { GUIDE_RESOURCE_KINDS, type Automation, type AutomationEditorial } from './types.ts'
 
 const nonEmpty = (max: number) => z.string().trim().min(1).max(max)
 
@@ -68,6 +68,27 @@ export const AutomationToolSchema = z
   })
   .strict()
 
+export const GuideResourceSchema = z
+  .object({
+    title: nonEmpty(AUTOMATIONS.resourceTitleMaxChars),
+    url: httpUrl,
+    kind: z.enum(GUIDE_RESOURCE_KINDS).optional(),
+    description: nonEmpty(AUTOMATIONS.resourceDescriptionMaxChars).optional(),
+  })
+  .strict()
+
+/** A tool as one step uses it: the imported tool shape, plus `why`. */
+export const StepToolSchema = AutomationToolSchema.extend({
+  why: nonEmpty(AUTOMATIONS.toolWhyMaxChars).optional(),
+}).strict()
+
+const listOf = (max: number, maxItems: number = AUTOMATIONS.maxListItems) =>
+  z.array(nonEmpty(max)).min(1).max(maxItems)
+
+/**
+ * One AUTHORED step. `body` is required here (an editor writing a step
+ * writes its description); the editorial fields after `tip` are all optional.
+ */
 export const AutomationStepSchema = z
   .object({
     title: nonEmpty(AUTOMATIONS.stepTitleMaxChars),
@@ -75,8 +96,101 @@ export const AutomationStepSchema = z
     prompt: nonEmpty(AUTOMATIONS.stepPromptMaxChars).optional(),
     toolName: nonEmpty(AUTOMATIONS.stepToolNameMaxChars).optional(),
     tip: nonEmpty(AUTOMATIONS.stepTipMaxChars).optional(),
+    instructions: listOf(AUTOMATIONS.listItemMaxChars, AUTOMATIONS.maxInstructions).optional(),
+    tools: z.array(StepToolSchema).min(1).max(AUTOMATIONS.maxStepTools).optional(),
+    expectedOutcome: nonEmpty(AUTOMATIONS.listItemMaxChars).optional(),
+    tips: listOf(AUTOMATIONS.stepTipMaxChars).optional(),
+    resources: z.array(GuideResourceSchema).min(1).max(AUTOMATIONS.maxResources).optional(),
+    cta: z
+      .object({ label: nonEmpty(AUTOMATIONS.ctaLabelMaxChars), url: httpUrl })
+      .strict()
+      .optional(),
+    alternatives: z.array(StepToolSchema).min(1).max(AUTOMATIONS.maxStepTools).optional(),
+    explanation: listOf(AUTOMATIONS.paragraphMaxChars, AUTOMATIONS.maxExplanationParagraphs).optional(),
   })
   .strict()
+
+/** A real calendar date, YYYY-MM-DD — "2026-02-30" is rejected, not rolled over. */
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be a date written YYYY-MM-DD')
+  .refine((value) => {
+    const date = new Date(`${value}T00:00:00Z`)
+    return !Number.isNaN(date.getTime()) && date.toISOString().startsWith(value)
+  }, 'is not a real calendar date')
+
+/**
+ * The editorial layer — automations/types.ts `AutomationEditorial`. Every
+ * field optional; an empty list is rejected rather than meaning "none", so
+ * "absent" has exactly one spelling.
+ */
+export const AutomationEditorialSchema = z
+  .object({
+    headline: nonEmpty(AUTOMATIONS.headlineMaxChars).optional(),
+    metaDescription: nonEmpty(AUTOMATIONS.metaDescriptionMaxChars).optional(),
+    lede: nonEmpty(AUTOMATIONS.ledeMaxChars).optional(),
+    updatedAt: isoDate.optional(),
+    intro: listOf(AUTOMATIONS.paragraphMaxChars, AUTOMATIONS.maxIntroParagraphs).optional(),
+    learningOutcomes: listOf(AUTOMATIONS.listItemMaxChars).optional(),
+    beforeYouStart: z
+      .array(
+        z
+          .object({
+            title: nonEmpty(AUTOMATIONS.listItemMaxChars),
+            description: nonEmpty(AUTOMATIONS.listItemMaxChars).optional(),
+            resource: GuideResourceSchema.optional(),
+          })
+          .strict(),
+      )
+      .min(1)
+      .max(AUTOMATIONS.maxListItems)
+      .optional(),
+    steps: z.array(AutomationStepSchema).min(1).max(AUTOMATIONS.maxEditorialSteps).optional(),
+    tips: listOf(AUTOMATIONS.listItemMaxChars).optional(),
+    commonIssues: z
+      .array(
+        z
+          .object({
+            problem: nonEmpty(AUTOMATIONS.listItemMaxChars),
+            solution: nonEmpty(AUTOMATIONS.paragraphMaxChars),
+          })
+          .strict(),
+      )
+      .min(1)
+      .max(AUTOMATIONS.maxListItems)
+      .optional(),
+    resources: z.array(GuideResourceSchema).min(1).max(AUTOMATIONS.maxResources).optional(),
+    relatedGuides: z
+      .array(z.object({ niche: z.enum(NICHES), slug }).strict())
+      .min(1)
+      .max(AUTOMATIONS.maxRelatedGuides)
+      .optional(),
+    expectedResult: z
+      .object({
+        summary: nonEmpty(AUTOMATIONS.paragraphMaxChars),
+        checklist: listOf(AUTOMATIONS.listItemMaxChars).optional(),
+      })
+      .strict()
+      .optional(),
+    closing: z
+      .object({ title: nonEmpty(AUTOMATIONS.headlineMaxChars), body: nonEmpty(AUTOMATIONS.paragraphMaxChars) })
+      .strict()
+      .optional(),
+  })
+  .strict()
+
+/**
+ * One overlay file under automations/editorial/: the editorial fields, plus
+ * the `automationId` they belong to. The id — not the slug — because the id
+ * survives a title edit on re-import and the slug does not.
+ */
+export const EditorialOverlaySchema = AutomationEditorialSchema.extend({
+  automationId: nonEmpty(AUTOMATIONS.idMaxChars),
+}).strict()
+
+export interface EditorialOverlay extends AutomationEditorial {
+  automationId: string
+}
 
 export const AutomationSchema = z
   .object({

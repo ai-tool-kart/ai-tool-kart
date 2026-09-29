@@ -1,0 +1,35 @@
+[
+  {
+    "id": "demo-editorial-walkthrough-video",
+    "slug": "demo-editorial-guide-listing-walkthrough-video",
+    "kind": "workflow",
+    "niche": "Real Estate",
+    "persona": "Listing agents and small brokerages who want video for every listing without booking a videographer",
+    "title": "Turn listing photos into a property walkthrough video with AI",
+    "intentLabels": [
+      "listing photos to video",
+      "AI real estate walkthrough video",
+      "property video from photos",
+      "real estate reel from listing photos"
+    ],
+    "tools": [
+      { "name": "Autoenhance.ai", "url": "https://autoenhance.ai/" },
+      { "name": "AutoReel", "url": "https://www.autoreelapp.com/" },
+      { "name": "CapCut", "url": "https://www.capcut.com", "catalogueSlug": "capcut" }
+    ],
+    "workflowSummary": "Choose the strongest photos and put them in the order a buyer would walk through the home, clean them up in one batch, then have an AI video tool add camera movement, transitions and music. Review every clip against the real rooms, and export a horizontal version for the listing page plus a vertical cut for Reels and TikTok.",
+    "samplePrompt": "Turn these 12 listing photos into a 45-second walkthrough video with slow, steady camera movement and light background music.",
+    "beginnerFriendly": "yes",
+    "beginnerNote": "no filming or editing experience needed — upload photos and choose settings",
+    "trustScore": 4,
+    "pricingNote": "Development demo record — see each vendor's site for current pricing",
+    "pricingTier": "freemium",
+    "pricingTierSource": "default",
+    "sourceUrl": "https://www.autoreelapp.com/",
+    "sourceType": "Editorial guide, drawing on vendor product pages",
+    "freshness": "Written September 2026",
+    "accessNotes": "Development-only demo of the editorial layer. Tool capabilities are described from the vendors' own product pages; pricing is deliberately not stated.",
+    "batch": "DEMO — editorial layer example (development only)",
+    "status": "active"
+  }
+]

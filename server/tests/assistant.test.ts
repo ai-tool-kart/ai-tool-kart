@@ -487,6 +487,8 @@ await test('a normal recommendation turn', async (t) => {
     for (const step of response.plan?.steps ?? []) {
       assert.equal(typeof step.action, 'string')
       assert.ok(step.action.length > 0)
+      assert.equal(typeof step.purpose, 'string')
+      assert.ok(step.purpose.length > 0, 'each step says what finishing it means')
     }
   })
 

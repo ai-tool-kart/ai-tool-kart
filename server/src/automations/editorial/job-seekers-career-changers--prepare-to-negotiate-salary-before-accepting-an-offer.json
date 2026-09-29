@@ -1,0 +1,224 @@
+{
+  "automationId": "job-seekers-career-changers-8382914155",
+
+  "headline": "How to Prepare a Salary Negotiation With AI Before You Accept an Offer",
+  "metaDescription": "Find the market range, set your target, draft a counter-offer email and rehearse the recruiter's pushback with ChatGPT or Claude before you reply to a job offer.",
+  "lede": "An offer has arrived and you have a few days to reply. This guide shows how to find out what the role pays, turn that into a number you can defend, and practise the conversation with an AI playing the recruiter — before the real call.",
+  "updatedAt": "2026-09-28",
+
+  "intro": [
+    "It is easy to accept the first number, or to counter with one you can't back up. Both come from the same gap: not knowing what the role pays in the market, and never having said your number out loud before the conversation that matters.",
+    "AI helps with the second half of that problem. A compensation data site gives you a market range; a general AI assistant can turn that range into a short, polite counter-offer and then play the recruiter, pushing back so you hear the objections before the real call. It won't tell you what you're worth — the data does that — but it is a patient rehearsal partner.",
+    "The workflow below takes you from the offer letter to a sent reply: gather the data, set your numbers, draft the email, rehearse the pushback, and decide against limits you set in advance."
+  ],
+
+  "learningOutcomes": [
+    "How to turn salary data into a target number and a walk-away number",
+    "How to draft a short counter-offer email you'd be comfortable sending",
+    "How to use ChatGPT or Claude to rehearse the recruiter's pushback before the real call",
+    "What to check before you send anything, and what to ask for if salary won't move"
+  ],
+
+  "beforeYouStart": [
+    {
+      "title": "The written offer",
+      "description": "Base salary, bonus, equity, benefits and the reply deadline, in one place."
+    },
+    {
+      "title": "Access to salary data",
+      "description": "A compensation data site such as Levels.fyi or Glassdoor. Check what each shows for your role, level and location."
+    },
+    {
+      "title": "An AI assistant",
+      "description": "ChatGPT or Claude, for drafting the email and rehearsing the conversation."
+    },
+    {
+      "title": "Time before your deadline",
+      "description": "Enough to rehearse without rushing — ideally a day before you reply."
+    }
+  ],
+
+  "steps": [
+    {
+      "title": "Find the market range for the role",
+      "body": "Look up what the same role pays at a similar level and location, and write down a low, middle and high figure.",
+      "explanation": [
+        "Your counter is only as strong as the evidence behind it. A range drawn from market data gives you something specific to point to — and tells you whether the offer is already fair, which is worth knowing before you ask for more.",
+        "Compare like with like: the same title and level, the same city or remote band, and a similar kind of company where the data allows. Totals that mix base salary with bonus and equity are easy to misread, so note which figure you're comparing."
+      ],
+      "instructions": [
+        "Search the role title on a compensation data site such as Levels.fyi or Glassdoor.",
+        "Filter to your location and seniority where the site allows it.",
+        "Record the base salary range separately from bonus and equity.",
+        "Note two or three data points you'd be comfortable citing."
+      ],
+      "tools": [
+        { "name": "Levels.fyi", "why": "A compensation data site to anchor your range in real figures rather than a guess." },
+        { "name": "Glassdoor", "why": "A second source to cross-check the range against." }
+      ],
+      "expectedOutcome": "A market range for your role — low, middle and high — with the sources you used.",
+      "tips": ["If the two sources disagree, work from the range where they overlap rather than the highest figure you found."]
+    },
+    {
+      "title": "Set your target and walk-away numbers",
+      "body": "Decide the number you'll ask for, and the lowest offer you would still accept.",
+      "explanation": [
+        "Going into a negotiation with one number leaves you nowhere to go. A target gives you something to ask for; a walk-away number stops you agreeing to less than you decided in advance, under pressure, on the call.",
+        "This step is yours, not the AI's. The data tells you what's reasonable; only you know what the move is worth to you."
+      ],
+      "instructions": [
+        "Set a target in the upper part of the market range, if your experience supports it.",
+        "Set a walk-away number: the lowest offer you would accept.",
+        "List two or three reasons the target is justified — experience, specific skills, market data, a competing offer.",
+        "Decide which non-salary items you'd trade for, such as a start date, remote days or a signing bonus."
+      ],
+      "expectedOutcome": "A target number, a walk-away number, and the reasons behind them, written down."
+    },
+    {
+      "title": "Draft the counter-offer email",
+      "body": "Use ChatGPT or Claude to turn your numbers into a short, polite counter-offer.",
+      "explanation": [
+        "A counter-offer email should be short: thanks, enthusiasm for the role, the number you're asking for and why, and an open door. An AI assistant gets that tone right quickly, and is good at trimming a draft that has grown defensive.",
+        "Give the assistant the facts — the offer, the range, your target — and let it handle the wording. Then read the result the way the recruiter will."
+      ],
+      "instructions": [
+        "Open ChatGPT or Claude and paste the prompt below with your own details in the brackets.",
+        "Ask for a shorter or warmer version if the draft runs long or sounds stiff.",
+        "Check every number in the draft against your offer letter and your notes."
+      ],
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com",
+          "catalogueSlug": "chatgpt",
+          "why": "Drafts the counter-offer from your numbers and adjusts the tone when you ask."
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "catalogueSlug": "claude",
+          "why": "Does the same job — use whichever assistant you already have."
+        }
+      ],
+      "prompt": "I received a job offer of [$X] for a [role] in [city]. Market data suggests the range is [$Y–$Z]. Help me draft a short counter-offer email asking for [$target]. Keep it warm and professional, under 150 words, and explain the ask using these reasons: [your two or three reasons].",
+      "expectedOutcome": "A short counter-offer email with your target and your reasons, ready to review."
+    },
+    {
+      "title": "Rehearse the recruiter's pushback",
+      "body": "Have the AI play the recruiter and push back on your number, so you practise answering before the real call.",
+      "explanation": [
+        "The first time you hear \"that's above our budget\" shouldn't be on the real call. Rehearsing with an AI playing the recruiter lets you try answers, hear how they sound, and settle on the ones you're comfortable saying.",
+        "Ask it to be firm rather than friendly. An easy rehearsal only builds false confidence."
+      ],
+      "instructions": [
+        "In the same conversation, paste the role-play prompt below.",
+        "Answer each objection as you would on the call — out loud if you can.",
+        "Ask the assistant which of your answers were weakest, and why.",
+        "Run it again with a different objection, such as fixed pay bands or an offer of benefits instead of salary."
+      ],
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com",
+          "catalogueSlug": "chatgpt",
+          "why": "Plays the recruiter, as many times as you need to practise."
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "catalogueSlug": "claude",
+          "why": "Works the same way for the role-play."
+        }
+      ],
+      "prompt": "Now role-play as the recruiter for this offer. Push back on my counter the way a recruiter might — budget limits, internal pay bands, other candidates. Stay in character, raise one objection at a time, and wait for my reply before continuing.",
+      "expectedOutcome": "Answers to the likely objections that you've already said at least once.",
+      "tips": ["Keep your best answers in a short note you can glance at during the call."]
+    },
+    {
+      "title": "Send your reply and decide",
+      "body": "Send the counter, handle the response, and decide against the numbers you set in step 2.",
+      "explanation": [
+        "Once the email is sent, the numbers you set earlier do the work. If the response meets your target, accept it. If it lands between your walk-away and your target, you've already decided what else to ask for. If it falls below your walk-away, you have your answer.",
+        "Stay courteous whatever the outcome — you may be working with these people for years."
+      ],
+      "instructions": [
+        "Send the reviewed counter-offer email.",
+        "When they reply, compare the new figure with your target and walk-away numbers.",
+        "If it's close, ask for one of the non-salary items you listed in step 2.",
+        "Get the final terms in writing before you accept."
+      ],
+      "expectedOutcome": "A decision made against numbers you set in advance, with the final terms in writing."
+    }
+  ],
+
+  "expectedResult": {
+    "summary": "A counter-offer grounded in market data, sent in a tone you're happy with, and a negotiation you've already rehearsed — with a clear line for what you will and won't accept.",
+    "checklist": [
+      "Your range comes from market data, not a guess",
+      "Your target and walk-away numbers are written down",
+      "Every figure in the email matches your offer and your notes",
+      "You've rehearsed at least two recruiter objections",
+      "You'll get the final terms in writing before accepting"
+    ]
+  },
+
+  "tips": [
+    "Negotiate the whole package, not only base salary — bonus, equity, benefits and start date all have value.",
+    "You don't need to share your full offer letter with an AI assistant. The role, location and numbers are enough for it to help.",
+    "Let the AI draft; you decide. It doesn't know your market or your circumstances better than your data and you do.",
+    "Keep the email short. A counter-offer rarely needs more than a few sentences."
+  ],
+
+  "commonIssues": [
+    {
+      "problem": "The salary sites show very different ranges",
+      "solution": "Compare like with like — the same level, location and type of company — and use the range where they overlap. Cite the figure you can best defend, not the highest one you found."
+    },
+    {
+      "problem": "The AI's draft sounds stiff or over-formal",
+      "solution": "Ask it to make the email shorter and warmer, or to write it the way you'd say it on a call. Then edit it into your own words."
+    },
+    {
+      "problem": "The role-play is too easy",
+      "solution": "Tell the assistant to play a tougher recruiter, to raise specific objections such as a budget freeze or fixed pay bands, and not to concede quickly."
+    },
+    {
+      "problem": "The recruiter says the salary is fixed",
+      "solution": "Move to the items you listed in step 2 — a signing bonus, a later start date, remote days or an early salary review."
+    }
+  ],
+
+  "resources": [
+    {
+      "title": "Salary negotiation tools roundup",
+      "url": "https://four-leaf.ai/blog/best-salary-negotiation-tools-2026",
+      "kind": "reference",
+      "description": "The comparison this guide's tool choices come from."
+    },
+    {
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com",
+      "kind": "reference",
+      "description": "One of the two assistants used for drafting and rehearsal."
+    },
+    {
+      "title": "Claude",
+      "url": "https://claude.ai",
+      "kind": "reference",
+      "description": "The other assistant used for drafting and rehearsal."
+    }
+  ],
+
+  "relatedGuides": [
+    { "niche": "Job Seekers-Career Changers", "slug": "understand-a-confusing-job-offer-letter-or-benefits-package" },
+    { "niche": "Job Seekers-Career Changers", "slug": "compare-multiple-job-offers-side-by-side-to-decide-which-to" },
+    { "niche": "Job Seekers-Career Changers", "slug": "compare-take-home-pay-between-job-offers-after-taxes" },
+    { "niche": "Job Seekers-Career Changers", "slug": "decide-whether-to-accept-a-counter-offer-from-my-current" },
+    { "niche": "Job Seekers-Career Changers", "slug": "draft-an-email-accepting-a-job-offer" }
+  ],
+
+  "closing": {
+    "title": "Go into the offer conversation prepared",
+    "body": "Start with step 1 — finding the market range takes a few minutes, and every later step builds on it. By the time you reply, you'll have a number, the reasons behind it, and an answer to the first pushback."
+  }
+}

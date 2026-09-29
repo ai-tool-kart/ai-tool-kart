@@ -28,6 +28,7 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import { deriveSteps } from '../../automations/deriveSteps.ts'
+import { selectRelated } from '../../automations/related.ts'
 import type { AutomationMatcher } from '../../automations/match.ts'
 import type { AutomationRepository } from '../../automations/repository.ts'
 import type { Automation, AutomationStep } from '../../automations/types.ts'
@@ -52,13 +53,21 @@ export interface ApiAutomationCard {
 /**
  * The full record for the detail view: steps resolved; pricingNote, status and
  * pricingTierSource removed; pricingTier absent when it was only a default.
+ *
+ * The editorial fields (automations/types.ts `AutomationEditorial`) pass
+ * through as stored — each absent unless a person wrote it — except
+ * `relatedGuides`, which is resolved to cards here: curated picks first, then
+ * the same niche (resolveRelated), so the page needs no second request.
  */
 export type ApiAutomation = Omit<
   Automation,
-  'pricingNote' | 'status' | 'steps' | 'pricingTier' | 'pricingTierSource'
+  'pricingNote' | 'status' | 'steps' | 'pricingTier' | 'pricingTierSource' | 'relatedGuides'
 > & {
   pricingTier?: PricingTier
   steps: AutomationStep[]
+  /** Whether `steps` was written by a person or derived from the record (§5). */
+  stepsSource: 'authored' | 'derived'
+  relatedGuides?: ApiAutomationCard[]
 }
 
 export interface AutomationListResponse {
@@ -69,6 +78,11 @@ export interface AutomationListResponse {
 
 export interface AutomationResponse {
   automation: ApiAutomation
+}
+
+/** GET /api/automations/paths — every public guide URL, for prerendering and the sitemap. */
+export interface AutomationPathsResponse {
+  items: { niche: string; slug: string }[]
 }
 
 /** The tier, only when a pricing rule actually recognised the note. */
@@ -88,17 +102,50 @@ function toCard(automation: Automation): ApiAutomationCard {
   }
 }
 
-function toDetail(automation: Automation): ApiAutomation {
+function toDetail(automation: Automation, related: Automation[]): ApiAutomation {
   const {
     pricingNote: _pricingNote,
     status: _status,
     pricingTier: _pricingTier,
     pricingTierSource: _pricingTierSource,
     steps,
+    relatedGuides: _relatedGuides,
     ...rest
   } = automation
   // Authored steps win; otherwise the three derived at render time (§5). Never stored.
-  return { ...rest, ...shownTier(automation), steps: steps ?? deriveSteps(automation) }
+  return {
+    ...rest,
+    ...shownTier(automation),
+    steps: steps ?? deriveSteps(automation),
+    stepsSource: steps ? 'authored' : 'derived',
+    ...(related.length > 0 ? { relatedGuides: related.map(toCard) } : {}),
+  }
+}
+
+/**
+ * The related guides the page links to — curated picks, then the niche ranked
+ * by relevance to this guide, with two slots always kept for the next guides
+ * in the niche so no guide is left without inbound links. The selection
+ * itself is automations/related.ts (pure, and tested against the whole
+ * catalogue); this only gathers its inputs.
+ *
+ * Resolved here rather than by a second client request so the detail
+ * response carries everything the page shows — which is what lets the build
+ * prerender a complete, crawlable page from one call (client/scripts/prerender).
+ */
+async function resolveRelated(
+  automation: Automation,
+  repository: AutomationRepository,
+  matcher: AutomationMatcher,
+): Promise<Automation[]> {
+  const [curated, niche] = await Promise.all([
+    Promise.all((automation.relatedGuides ?? []).map((ref) => repository.findBySlug(ref.niche, ref.slug))),
+    repository.listByNiche(automation.niche),
+  ])
+  const ranked = matcher
+    .match(automation.title, { niche: automation.niche, limit: AUTOMATIONS.maxRelatedGuides * 2 })
+    .map((match) => match.automation)
+  return selectRelated({ automation, curated, niche, ranked, limit: AUTOMATIONS.maxRelatedGuides })
 }
 
 /**
@@ -175,6 +222,27 @@ export function createAutomationsRouter({
     })()
   })
 
+  /*
+   * Every active guide's niche and slug — no other field, so it stays small
+   * (≈100 KB for the full set). The list endpoint caps at 50 and does not
+   * page, so this is the only way to enumerate guides: the client build uses
+   * it to prerender each page and to write the sitemap. One segment, so it
+   * cannot collide with /:niche/:slug.
+   */
+  router.get('/paths', (_req, res, next) => {
+    void (async () => {
+      try {
+        const all = await automations.list()
+        const body: AutomationPathsResponse = {
+          items: all.map((automation) => ({ niche: automation.niche, slug: automation.slug })),
+        }
+        res.json(body)
+      } catch (error) {
+        next(error)
+      }
+    })()
+  })
+
   router.get('/:niche/:slug', (req, res, next) => {
     void (async () => {
       try {
@@ -184,7 +252,8 @@ export function createAutomationsRouter({
           // A draft is reported as missing, as tools.ts does.
           throw notFound(`No automation matches "${slug}" in ${niche}.`, { niche, slug })
         }
-        const body: AutomationResponse = { automation: toDetail(automation) }
+        const related = await resolveRelated(automation, automations, await getMatcher())
+        const body: AutomationResponse = { automation: toDetail(automation, related) }
         res.json(body)
       } catch (error) {
         next(error)

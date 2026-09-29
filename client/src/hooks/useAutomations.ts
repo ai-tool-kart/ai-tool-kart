@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { AsyncResource } from '@/hooks/useBlogPosts'
+import { guideSeedFor } from '@/services/guideSeed'
 import { ApiRequestError } from '@/services/http'
 import {
   automationQueryString,
@@ -119,8 +120,11 @@ export function useAutomation(
   niche: string | undefined,
   slug: string | undefined,
 ): AsyncResource<AutomationDetail | null> {
-  const [data, setData] = useState<AutomationDetail | null | undefined>(undefined)
-  const [isLoading, setIsLoading] = useState(true)
+  // A prerendered page carries its record (services/guideSeed.ts): start from
+  // it, so the first render matches the static HTML instead of a skeleton.
+  const seeded = guideSeedFor(niche, slug)
+  const [data, setData] = useState<AutomationDetail | null | undefined>(seeded)
+  const [isLoading, setIsLoading] = useState(!seeded)
   const [error, setError] = useState<string | undefined>(undefined)
   const [attempt, setAttempt] = useState(0)
 
@@ -128,6 +132,18 @@ export function useAutomation(
     if (!niche || !slug) {
       setData(null)
       setIsLoading(false)
+      return
+    }
+
+    // A prerendered page already holds this exact response. Fetching it again
+    // would cost an API call per page view to change nothing — and if the API
+    // had moved on, would show readers a page crawlers were never given. The
+    // HTML and its seed are refreshed together, by rebuilding.
+    const fromSeed = guideSeedFor(niche, slug)
+    if (fromSeed) {
+      setData(fromSeed)
+      setIsLoading(false)
+      setError(undefined)
       return
     }
 

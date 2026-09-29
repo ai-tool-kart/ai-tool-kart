@@ -1,0 +1,239 @@
+{
+  "automationId": "demo-editorial-walkthrough-video",
+
+  "headline": "How to Turn Listing Photos Into a Walkthrough Video With AI",
+  "metaDescription": "Turn a listing's photos into a walkthrough video in five steps: order the shots, correct them, generate the video, check every clip and export for listing and social.",
+  "lede": "You already have the photos. This guide shows how to turn them into a smooth walkthrough video for the listing page and for social media — no filming, no editing software and no videographer.",
+  "updatedAt": "2026-09-28",
+
+  "intro": [
+    "A gallery of photos shows what each room looks like. A walkthrough video shows how the rooms connect — the route from the front door to the kitchen, how the living space opens onto the garden. For most listings, though, a filmed tour isn't worth the booking, the shoot and the edit.",
+    "AI video tools close that gap. They take the photos you already have, add camera movement and transitions, and export a finished video. The catch is that the result is only as good as the photos you feed in and the checks you do afterwards: AI animation can bend a doorway or warp a countertop, and a video that misrepresents a room does more harm than no video at all.",
+    "This workflow puts those checks in the right places. You'll choose and order the photos, correct them as one set, generate the video, review it against the real rooms, and export one version for the listing page and one for social."
+  ],
+
+  "learningOutcomes": [
+    "How to choose and order listing photos so the video follows a buyer's real route through the home",
+    "How to batch-correct photos before they're animated — and which edits to leave alone",
+    "How to generate a walkthrough video from photos, with a prompt you can reuse on every listing",
+    "What to check in every clip before the video goes anywhere near a listing",
+    "How to export a horizontal video for the listing page and a vertical cut for Reels and TikTok"
+  ],
+
+  "beforeYouStart": [
+    {
+      "title": "The listing's photos",
+      "description": "The professional set if you have one, otherwise your best phone photos. You'll use 10–15 of them."
+    },
+    {
+      "title": "Permission to edit and publish them",
+      "description": "If a photographer shot them, check that your licence covers editing and video use."
+    },
+    {
+      "title": "Accounts on the tools you choose",
+      "description": "Each tool in this guide has its own sign-up. Check current plans and pricing on the vendor's site before you commit."
+    },
+    {
+      "title": "Music you're allowed to use",
+      "description": "The video tool's built-in library, or a commercial music licence. A trending sound from social media is not cleared for a branded listing ad."
+    },
+    {
+      "title": "Your MLS's rules on video",
+      "description": "Some MLSs won't accept AI-animated stills in the video tour field. Check before you plan to upload it there."
+    }
+  ],
+
+  "steps": [
+    {
+      "title": "Choose and order the photos",
+      "body": "Pick the strongest shots and arrange them in the order a buyer would actually walk through the home.",
+      "explanation": [
+        "The order of the photos becomes the story of the video. If the kitchen appears before the front door, viewers lose their sense of where they are — and the whole point of a walkthrough is to show how the space fits together.",
+        "Fewer, stronger photos make a better video than every shot from the shoot. Each photo becomes a few seconds of movement, so near-duplicate angles only make the video feel slow."
+      ],
+      "instructions": [
+        "Start with the exterior, then the entry.",
+        "Follow the natural route: living areas, kitchen, bedrooms, bathrooms, then outdoor space.",
+        "Keep one strong photo per room — two for the rooms that sell the home.",
+        "Rename the files 01, 02, 03… so the order survives every upload."
+      ],
+      "expectedOutcome": "A numbered folder of 10–15 photos that walks through the home in order.",
+      "tips": ["Leave detail shots for the photo gallery. The video is for layout and flow."]
+    },
+    {
+      "title": "Correct the photos as one set",
+      "body": "Fix colour, windows and verticals across the whole set so every room looks like it was shot on the same day.",
+      "explanation": [
+        "Inconsistency is far more noticeable in video than in a gallery. When one room is warm and the next is blue-grey, the cut between them looks like a jump. Correcting the whole set together gives the video one consistent look.",
+        "Stick to corrections, not alterations. Sky replacement on exteriors is generally accepted; removing things that are really there — cracks, power lines, a neighbouring building — can misrepresent the property."
+      ],
+      "instructions": [
+        "Upload the whole numbered set at once.",
+        "Turn on only the corrections you want: colour correction, window pull and perspective correction.",
+        "Apply sky replacement to exterior shots only.",
+        "Review every image before you download it, and re-run anything that looks artificial."
+      ],
+      "tools": [
+        {
+          "name": "Autoenhance.ai",
+          "url": "https://autoenhance.ai/",
+          "why": "It applies the same corrections — colour, window pull, perspective and optional sky replacement — across a whole shoot in one batch, so every photo in the video matches."
+        }
+      ],
+      "prompt": "Batch settings for this listing:\nApply colour correction, window pull on all interiors, and perspective correction.\nSky replacement on front and rear exterior shots only — clear blue with light cloud, matched to the time of day the photos were taken.\nDo not apply HDR to twilight shots.\nDo not remove or alter permanent features of the property.",
+      "expectedOutcome": "Evenly corrected photos, still in their numbered order, with nothing changed about what is actually in each room.",
+      "tips": ["Skip HDR on twilight shots — they're meant to look like dusk."],
+      "alternatives": [{ "name": "AutoHDR" }, { "name": "Photello (PhotoUp)" }]
+    },
+    {
+      "title": "Generate the walkthrough video",
+      "body": "Upload the corrected photos in order and let the video tool add camera movement, transitions and music.",
+      "explanation": [
+        "This is where the photos become a video. The tool animates each photo with a camera move and joins them with transitions, so a static set starts to feel like walking through the home.",
+        "Keep the direction simple. Slow, steady movement reads as a calm walkthrough; fast moves and flashy transitions pull attention away from the rooms. If the tool takes a prompt, use the same one for the whole video so the motion stays consistent."
+      ],
+      "instructions": [
+        "Start a new project and upload the photos in their numbered order.",
+        "Choose a slow or cinematic motion style if the tool offers one.",
+        "Paste the prompt below, adjusting the photo count and length to your listing.",
+        "Pick background music from the tool's library, then generate."
+      ],
+      "tools": [
+        {
+          "name": "AutoReel",
+          "url": "https://www.autoreelapp.com/",
+          "why": "It's built for exactly this job: upload a listing's photos in room order and it adds camera movement, transitions, captions and music to produce a walkthrough-style video."
+        }
+      ],
+      "prompt": "Turn these 12 listing photos into a 45-second walkthrough video. Use slow, steady camera movement, simple transitions between rooms and light background music. Keep every room exactly as it appears in the photos — do not add, remove or reshape furniture, walls, windows or cabinets.",
+      "expectedOutcome": "A first draft of the walkthrough video, roughly 30–60 seconds long.",
+      "alternatives": [
+        {
+          "name": "PropertyPhotoVideo",
+          "url": "https://propertyphotovideo.com/",
+          "why": "Lets you choose a camera move for each photo — push-in, pan or drone-up — before merging the clips."
+        },
+        {
+          "name": "Kling",
+          "catalogueSlug": "kling",
+          "why": "General image-to-video generation, if you want to direct each clip yourself."
+        }
+      ]
+    },
+    {
+      "title": "Check every clip against the real rooms",
+      "body": "Watch the draft all the way through and regenerate any clip where the AI changed the space.",
+      "explanation": [
+        "AI animation is convincing but not always faithful. It can bend a doorway, warp a countertop or reshape a window — and it happens more often than product demos suggest. A buyer who notices will trust the rest of the listing less.",
+        "Treat this step as non-negotiable. It takes a few minutes, and it's the difference between a video that helps the listing and one that misrepresents it."
+      ],
+      "instructions": [
+        "Watch the full video once at normal speed, then again room by room.",
+        "Compare each clip with its source photo: walls, doorways, windows, counters and fixtures.",
+        "Regenerate any clip that bends, adds or removes something.",
+        "Check that any captions — room names, the address — are correct."
+      ],
+      "expectedOutcome": "A reviewed video in which every room matches its photo.",
+      "tips": ["Watch it on a phone as well as a computer — that's how social viewers will see it."]
+    },
+    {
+      "title": "Export for the listing page and for social",
+      "body": "Export a horizontal version for the listing page, then make a captioned vertical cut for Reels and TikTok.",
+      "explanation": [
+        "One video rarely fits everywhere. Listing pages and MLS video fields expect a horizontal format, while Reels, TikTok and Shorts are vertical. Making both from the same reviewed draft keeps them consistent.",
+        "Before anything goes live, check two things that are easy to miss: whether your MLS accepts AI-animated stills as a video tour, and whether the music is licensed for commercial use."
+      ],
+      "instructions": [
+        "Export the reviewed video in horizontal (16:9) format for the listing page.",
+        "Open it in a video editor and create a vertical (9:16) cut for social.",
+        "Add captions to the vertical cut so it works with the sound off.",
+        "Check your MLS's rules before uploading to its video field."
+      ],
+      "tools": [
+        {
+          "name": "CapCut",
+          "url": "https://www.capcut.com",
+          "catalogueSlug": "capcut",
+          "why": "Its short-form editing, auto-captions and templates make the vertical cut for Reels and TikTok quick to produce."
+        }
+      ],
+      "expectedOutcome": "Two finished files: a horizontal walkthrough for the listing and a captioned vertical cut for social.",
+      "tips": ["Say in the listing that the video was created from photos. It sets the right expectation."]
+    }
+  ],
+
+  "expectedResult": {
+    "summary": "A 30–60 second walkthrough video built from the listing's own photos — a horizontal version for the listing page and a captioned vertical cut for social — with every room checked against the real thing.",
+    "checklist": [
+      "The video follows the route a buyer would walk through the home",
+      "Lighting and colour are consistent from room to room",
+      "No clip adds, removes or reshapes anything in a room",
+      "Captions and the address are correct",
+      "The music is licensed for commercial use",
+      "You've checked your MLS's rules on AI-animated video"
+    ]
+  },
+
+  "tips": [
+    "Build the video from the final, corrected photo set — not the raw shoot — so the gallery and the video match.",
+    "Keep it short. A walkthrough only needs a few seconds per room.",
+    "Reuse the same prompt and settings across listings to give your brokerage a consistent style.",
+    "Keep the source photos and the reviewed draft together, so you can re-export if the listing changes."
+  ],
+
+  "commonIssues": [
+    {
+      "problem": "A doorway bends or a countertop warps",
+      "solution": "Regenerate that clip, and keep the instruction not to reshape walls, windows or cabinets in your prompt. If it keeps happening, use a different photo of that room."
+    },
+    {
+      "problem": "Brightness or colour jumps between rooms",
+      "solution": "Go back to step 2 and correct the whole set in one batch. Photos corrected separately rarely match."
+    },
+    {
+      "problem": "The exported video has a watermark",
+      "solution": "Watermarks usually mean a free tier or preview export. Check the tool's current plans for a watermark-free export."
+    },
+    {
+      "problem": "Your MLS won't accept the video",
+      "solution": "Some MLSs don't accept AI-animated stills in the video tour field. Use the video on the listing page and on social instead, or ask your MLS what it accepts."
+    },
+    {
+      "problem": "The music is flagged on social media",
+      "solution": "Use music from the tool's licensed library or a commercial music licence. Trending sounds aren't cleared for branded ads."
+    }
+  ],
+
+  "resources": [
+    {
+      "title": "AutoReel",
+      "url": "https://www.autoreelapp.com/",
+      "kind": "reference",
+      "description": "The walkthrough video tool used in step 3."
+    },
+    {
+      "title": "Autoenhance.ai",
+      "url": "https://autoenhance.ai/",
+      "kind": "reference",
+      "description": "The batch photo correction tool used in step 2."
+    },
+    {
+      "title": "PropertyPhotoVideo",
+      "url": "https://propertyphotovideo.com/",
+      "kind": "reference",
+      "description": "An alternative for step 3, with a camera move chosen per photo."
+    }
+  ],
+
+  "relatedGuides": [
+    { "niche": "Real Estate", "slug": "i-want-to-turn-my-listing-photos-into-a-walkthrough-video-using" },
+    { "niche": "Real Estate", "slug": "i-want-my-phone-photos-of-a-listing-to-look-like-a-professional" },
+    { "niche": "Real Estate", "slug": "i-want-to-remove-clutter-and-improve-lighting-in-my-listing" },
+    { "niche": "Real Estate", "slug": "i-want-to-make-a-reels-or-tiktok-style-video-from-my-listing" }
+  ],
+
+  "closing": {
+    "title": "Make your next listing video from the photos you already have",
+    "body": "Start with step 1 — choosing and ordering the photos takes a few minutes and makes every later step easier. Once you've been through it once, the same settings and prompt work for every listing."
+  }
+}
