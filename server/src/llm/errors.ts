@@ -39,17 +39,26 @@ export interface LLMErrorOptions {
   cause?: unknown
   /** Structured context. Logged; never contains prompt or model output text. */
   details?: Record<string, unknown>
+  /**
+   * False when asking again cannot help — a rejected credential, a model id
+   * that does not exist, a rate limit, a timeout. client.ts stops at the first
+   * such failure instead of spending the rest of the attempt ladder on it.
+   * Defaults to true, which is what every error meant before the flag existed.
+   */
+  retryable?: boolean
 }
 
 export class LLMError extends Error {
   readonly code: LLMErrorCode
   readonly details: Record<string, unknown>
+  readonly retryable: boolean
 
   constructor(code: LLMErrorCode, message: string, options: LLMErrorOptions = {}) {
     super(message, options.cause !== undefined ? { cause: options.cause } : undefined)
     this.name = 'LLMError'
     this.code = code
     this.details = options.details ?? {}
+    this.retryable = options.retryable ?? true
   }
 }
 

@@ -587,17 +587,18 @@ await test('the provider factory', async (t) => {
   })
 
   await t.test('availableProviders lists what actually works today', () => {
-    assert.deepEqual(availableProviders(), ['mock'])
+    assert.deepEqual(availableProviders(), ['mock', 'xai'])
   })
 
-  await t.test('no vendor adapter ships in this phase', () => {
-    // The production provider is an open decision. Being the first to write an
-    // adapter would settle it by accident.
+  await t.test('xai is the only vendor adapter that ships', () => {
+    // Phase H settled the provider as xAI. Exactly one vendor adapter is ever
+    // written (ASSISTANT_ARCHITECTURE_PLAN.md §17), so every other vendor id
+    // must still be refused rather than half-supported.
     for (const vendor of ['anthropic', 'openai', 'google', 'gemini', 'azure']) {
       assert.throws(
         () => createProvider({ env: testEnv({ llm: { provider: vendor, timeoutMs: 60_000 } }) }),
         /has no adapter/,
-        `${vendor} must not be registered in Phase D`,
+        `${vendor} must not be registered`,
       )
     }
   })
