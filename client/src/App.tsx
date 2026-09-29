@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import PageShell from '@/components/layout/PageShell'
 import AutomationDetailPage from '@/pages/AutomationDetailPage'
-import AutomationsPage from '@/pages/AutomationsPage'
+import AutomationsRedirect from '@/pages/AutomationsRedirect'
 import BlogArticlePage from '@/pages/BlogArticlePage'
 import BlogPage from '@/pages/BlogPage'
 import BrowsePage from '@/pages/BrowsePage'
@@ -40,7 +40,8 @@ export default function App() {
         <Route path="blog/:slug" element={<BlogArticlePage />} />
         <Route path="new-launches" element={<NewLaunchesPage />} />
         <Route path="mcp-servers" element={<McpServersPage />} />
-        <Route path="automations" element={<AutomationsPage />} />
+        {/* The old "Guides" listing — merged into /workflows. */}
+        <Route path="automations" element={<AutomationsRedirect />} />
         <Route path="automations/:niche/:slug" element={<AutomationDetailPage />} />
         <Route path="submit" element={<SubmitPage />} />
         {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}

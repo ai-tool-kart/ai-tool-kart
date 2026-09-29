@@ -30,7 +30,7 @@ export default function GuideClosing({ guide }: { guide: WorkflowGuide }) {
           <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-[3px]" />
         </a>
         <Link
-          to={`/automations?niche=${encodeURIComponent(guide.niche)}`}
+          to={`/workflows?niche=${encodeURIComponent(guide.niche)}`}
           className="text-[14px] font-medium text-muted-soft underline-offset-4 hover:text-ink hover:underline"
         >
           More {guide.niche} guides

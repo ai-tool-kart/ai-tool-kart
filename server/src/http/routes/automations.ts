@@ -45,6 +45,14 @@ export interface ApiAutomationCard {
   persona: string
   /** Tool names only — the card lists them; links live on the detail view. */
   tools: string[]
+  /**
+   * The subset of `tools` the importer confidently matched to a catalogue
+   * record, as name → slug. Slugs only, never hydrated records (the automations
+   * boundary): a client that holds the catalogue can draw that tool's own
+   * monogram; one that does not can ignore this. Absent when nothing matched,
+   * which is most records.
+   */
+  catalogueTools?: { name: string; catalogueSlug: string }[]
   beginnerFriendly: Automation['beginnerFriendly']
   /** Absent when no pricing rule recognised the note — no badge beats a guessed one. */
   pricingTier?: PricingTier
@@ -99,7 +107,16 @@ function toCard(automation: Automation): ApiAutomationCard {
     tools: automation.tools.map((tool) => tool.name),
     beginnerFriendly: automation.beginnerFriendly,
     ...shownTier(automation),
+    ...catalogueLinks(automation),
   }
+}
+
+/** Only the confident matches, and the key only when there is at least one. */
+function catalogueLinks(automation: Automation): Pick<ApiAutomationCard, 'catalogueTools'> {
+  const linked = automation.tools.flatMap((tool) =>
+    tool.catalogueSlug ? [{ name: tool.name, catalogueSlug: tool.catalogueSlug }] : [],
+  )
+  return linked.length > 0 ? { catalogueTools: linked } : {}
 }
 
 function toDetail(automation: Automation, related: Automation[]): ApiAutomation {

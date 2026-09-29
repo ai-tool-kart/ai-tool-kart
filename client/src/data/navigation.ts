@@ -8,14 +8,11 @@
  * the "Sign in / Get started free" pair are absent from the design and from the
  * product direction, so they are absent here too.
  *
- * "Guides" is the one item the design does not have. /automations shipped with
- * no way in at all — SPEC-automations.md §1a forbade touching the nav while it
- * was built, so 1,560 records were reachable only through the assistant's
- * "Step-by-step guide" button. The spec's §1a now records that the rule is
- * lifted for this one addition.
- *
- * It is "Guides" and not "Automations" because of a hard width limit, not
- * taste.
+ * There is no separate "Guides" item any more. It pointed at the /automations
+ * listing, which has been merged into /workflows (the guide catalogue behind
+ * the Workflows design); /automations now redirects there, so the item would
+ * have been a second link to the same page. The width notes below are kept
+ * because they still bound what the row can hold.
  *
  * ── The width budget, measured at the breakpoint ─────────────────────────────
  *
@@ -147,7 +144,6 @@ export const ASSISTANT_ROUTE = `/#${ASSISTANT_SECTION_ID}`
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Browse', to: '/browse' },
   { label: 'Workflows', to: WORKFLOWS_ROUTE },
-  { label: 'Guides', to: '/automations' },
   { label: 'New Launches', to: LAUNCHES_ROUTE },
   { label: 'Our AI Assistant', to: ASSISTANT_ROUTE, matchesRoute: false },
   { label: 'Blog', to: '/blog' },

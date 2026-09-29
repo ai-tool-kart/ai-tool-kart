@@ -1,4 +1,6 @@
-import type { SavingsDimension } from '@/types/workSavings'
+import { WORKFLOWS_ROUTE } from '@/data/navigation'
+import type { NicheName } from '@/types/automation'
+import type { SavingsDimension, WorkSavingsEstimate } from '@/types/workSavings'
 
 /*
  * The static half of "See What AI Can Save You".
@@ -154,3 +156,48 @@ export const SAVINGS_COPY = {
     effort: 'Effort reduced',
   },
 } as const
+
+/*
+ * ── From a role to its workflows ─────────────────────────────────────────────
+ *
+ * The CTA under the summary cards opens /workflows already narrowed to the
+ * reader's kind of work, using the page's own two URL parameters — nothing new:
+ *
+ *   niche  one of the guide catalogue's NICHES, where one fits the role
+ *   q      a search, for roles the niche list does not cover (the catalogue is
+ *          organised around small-business work, so "Developer" or "UI/UX
+ *          Designer" has no niche — the server's ranked search is the honest
+ *          route to what exists for them)
+ *
+ * Keyed on the estimate's stable `id`; `niche` is typed against NicheName so a
+ * renamed niche fails the build instead of silently showing everything.
+ * `plural` is presentation only, so grammar stays out of the component. An id
+ * missing here still gets a CTA, to the unfiltered listing.
+ */
+type RoleWorkflowFilter = { niche: NicheName } | { q: string }
+
+const ROLE_WORKFLOWS: Readonly<Record<string, { plural: string } & RoleWorkflowFilter>> = {
+  'restaurant-owner': { plural: 'Restaurant Owners', niche: 'Restaurants' },
+  'video-editor': { plural: 'Video Editors', niche: 'Photographers & Videographers' },
+  'ui-ux-designer': { plural: 'UI/UX Designers', q: 'design' },
+  'graphic-designer': { plural: 'Graphic Designers', q: 'graphic design' },
+  developer: { plural: 'Developers', q: 'debugging code' },
+  marketer: { plural: 'Marketers', niche: 'Marketing Agencies' },
+  'content-creator': { plural: 'Content Creators', niche: 'Content Creators-Writers' },
+  writer: { plural: 'Writers', niche: 'Content Creators-Writers' },
+  researcher: { plural: 'Researchers', q: 'research' },
+  student: { plural: 'Students', niche: 'Students' },
+  freelancer: { plural: 'Freelancers', niche: 'Freelancers-Consultants' },
+  founder: { plural: 'Founders', niche: 'Startup Founders' },
+  'sales-professional': { plural: 'Sales Professionals', niche: 'Sales Teams' },
+  'product-manager': { plural: 'Product Managers', q: 'user feedback' },
+  'data-analyst': { plural: 'Data Analysts', q: 'data analysis' },
+}
+
+/** The CTA's wording and destination for a selected role. */
+export function roleWorkflowsCta(estimate: WorkSavingsEstimate): { label: string; to: string } {
+  const link = ROLE_WORKFLOWS[estimate.id]
+  if (!link) return { label: `Explore workflows for ${estimate.role}`, to: WORKFLOWS_ROUTE }
+  const query = new URLSearchParams('niche' in link ? { niche: link.niche } : { q: link.q })
+  return { label: `Explore workflows for ${link.plural}`, to: `${WORKFLOWS_ROUTE}?${query}` }
+}

@@ -239,6 +239,31 @@ export const LLM_BUDGET = {
   maxTokens: 60_000,
 } as const
 
+/**
+ * The xAI (Grok) adapter's request tuning — llm/providers/xai.ts reads these
+ * and nothing else. The MODEL is not here: it is LLM_MODEL_STRONG in the
+ * environment, with the adapter's documented fallback.
+ *
+ * `reasoningEffort`
+ *   Grok 4.5–4.7 always reason, and default to `high`. The assistant's job is
+ *   choosing among ~30 pre-retrieved cards and filling a small closed schema —
+ *   selection, not problem solving — so `low` buys the latency a chat pane
+ *   needs without changing what the server enforces afterwards. Only sent to
+ *   the model families xAI documents as accepting it.
+ *
+ * `reasoningAllowanceTokens`
+ *   xAI's `max_output_tokens` counts reasoning AND answer tokens together. The
+ *   task ceiling above (2048) was sized for the answer alone, so on a reasoning
+ *   model the adapter adds this allowance on top rather than letting hidden
+ *   reasoning truncate the JSON. Not added for a `*-non-reasoning` model. The
+ *   per-turn LLM_BUDGET still bounds the total: 3 × (≈4k in + ≤6k out) sits
+ *   well inside 60k.
+ */
+export const XAI_REQUEST = {
+  reasoningEffort: 'low',
+  reasoningAllowanceTokens: 4096,
+} as const
+
 /* ─── Phase E — the assistant ──────────────────────────────────────────────── */
 
 /**

@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/automations",
+      "destination": "/workflows",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

@@ -61,7 +61,14 @@ const FIXTURES = [
   makeAutomation({ id: 's-draft', slug: 'draft-only', niche: 'Students', title: 'Unpublished draft', status: 'draft' }),
   makeAutomation({ id: 'c-plan', slug: 'plan-my-week', niche: 'Coaches', title: 'Plan my coaching week', pricingNote: PRICE_NOTE }),
   makeAutomation({ id: 'c-mcp', slug: 'mcp-recipe', niche: 'Coaches', title: 'Connect my CRM over MCP', kind: 'mcp', pricingNote: PRICE_NOTE }),
-  makeAutomation({ id: 'r-amp', slug: 'screen-candidates', niche: 'Recruiters & HR', title: 'Screen candidates faster', pricingNote: PRICE_NOTE }),
+  makeAutomation({
+    id: 'r-amp',
+    slug: 'screen-candidates',
+    niche: 'Recruiters & HR',
+    title: 'Screen candidates faster',
+    tools: [{ name: 'Claude', url: 'https://claude.ai', catalogueSlug: 'claude' }, { name: 'Greenhouse' }],
+    pricingNote: PRICE_NOTE,
+  }),
   ...Array.from({ length: 12 }, (_, i) =>
     makeAutomation({ id: `re-${i}`, slug: `listing-${i}`, niche: 'Real Estate', title: `Write listing number ${i}`, pricingNote: PRICE_NOTE }),
   ),
@@ -89,6 +96,16 @@ await test('GET /api/automations', async (t) => {
         'tools',
       ])
       assert.deepEqual(body.items[0]?.tools, ['Motion', 'Notion AI'], 'tool names only')
+    })
+  })
+
+  await t.test('catalogue links ride along only for confident matches', async () => {
+    await withServer(container(), async ({ origin }) => {
+      const linked = await readJson<AutomationListResponse>(await get(origin, '?niche=Recruiters%20%26%20HR'))
+      assert.deepEqual(linked.items[0]?.tools, ['Claude', 'Greenhouse'], 'names unchanged')
+      assert.deepEqual(linked.items[0]?.catalogueTools, [{ name: 'Claude', catalogueSlug: 'claude' }])
+      const unlinked = await readJson<AutomationListResponse>(await get(origin, '?niche=Students'))
+      assert.ok(unlinked.items.every((item) => !('catalogueTools' in item)), 'absent when nothing matched')
     })
   })
 

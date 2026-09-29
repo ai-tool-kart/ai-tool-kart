@@ -36,6 +36,8 @@ export type { LLMErrorCode } from './errors.ts'
 
 export { describeSchema } from './schemas.ts'
 export { createMockProvider, MOCK_MODELS } from './providers/mock.ts'
+export { createXaiProvider, XAI_DEFAULT_MODELS, XAI_PROVIDER_ID } from './providers/xai.ts'
+export type { XaiProviderOptions } from './providers/xai.ts'
 export type { MockProviderOptions, MockScript } from './providers/mock.ts'
 
 export * from './prompts/index.ts'

@@ -35,7 +35,8 @@ interface SetupToolStackProps {
   placeholders?: number
 }
 
-const TILE =
+/** Shared with components/workflows/WorkflowToolStack — one tile style. */
+export const TILE =
   'relative -ml-[9px] h-9 w-9 flex-none overflow-hidden rounded-[12px] border border-white/[0.16] shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_6px_14px_-8px_rgba(0,0,0,0.95)]'
 
 export default function SetupToolStack({ tools, placeholders }: SetupToolStackProps) {

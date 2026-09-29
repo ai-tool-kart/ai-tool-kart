@@ -170,7 +170,7 @@ export function createContainer({
 
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
-  const provider = createProvider({ env, ...(mock ? { mock } : {}) })
+  const provider = createProvider({ env, logger, ...(mock ? { mock } : {}) })
 
   const createLLMClientForTurn = (): LLMClient =>
     createLLMClient({

@@ -101,12 +101,12 @@ const HINTS: Record<string, string> = {
   PORT: 'Set an integer between 1 and 65535, e.g. PORT=3001.',
   HOST: 'Set a hostname or IP address, e.g. HOST=127.0.0.1.',
   CLIENT_ORIGIN: `Set a comma-separated origin list, e.g. ${DEFAULT_ORIGINS}.`,
-  LLM_PROVIDER: 'Set a provider id, or leave it unset to use the offline mock.',
+  LLM_PROVIDER: 'Set LLM_PROVIDER=xai for Grok, or leave it unset to use the offline mock.',
   LLM_API_KEY:
     'Set the provider credential, or leave it unset when LLM_PROVIDER=mock. ' +
     'Never prefix it with VITE_ — that would publish it in the browser bundle.',
-  LLM_MODEL_FAST: 'Set a vendor model id, e.g. LLM_MODEL_FAST=<vendor-model-id>.',
-  LLM_MODEL_STRONG: 'Set a vendor model id, e.g. LLM_MODEL_STRONG=<vendor-model-id>.',
+  LLM_MODEL_FAST: 'Set a vendor model id, e.g. LLM_MODEL_FAST=grok-4.7.',
+  LLM_MODEL_STRONG: 'Set a vendor model id, e.g. LLM_MODEL_STRONG=grok-4.7.',
   LLM_TIMEOUT_MS: 'Set milliseconds between 1000 and 300000, e.g. LLM_TIMEOUT_MS=60000.',
 }
 

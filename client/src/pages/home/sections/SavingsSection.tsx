@@ -1,10 +1,16 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDownIcon, InfoIcon, PersonIcon } from '@/components/savings/icons'
 import RoleSummaryCards from '@/components/savings/RoleSummaryCards'
 import SavingsComparisonTable from '@/components/savings/SavingsComparisonTable'
 import SavingsValueStrip from '@/components/savings/SavingsValueStrip'
 import Select from '@/components/ui/Select'
-import { GENERAL_SAVINGS_ROWS, SAVINGS_COPY, type SavingsTableRow } from '@/data/savings'
+import {
+  GENERAL_SAVINGS_ROWS,
+  roleWorkflowsCta,
+  SAVINGS_COPY,
+  type SavingsTableRow,
+} from '@/data/savings'
 import { useWorkSavings } from '@/hooks/useWorkSavings'
 
 /*
@@ -86,6 +92,9 @@ export default function SavingsSection({ heading = SAVINGS_COPY.heading }: Savin
   const tableCaption = selected
     ? `An indicative week for a ${selected.role.toLowerCase()}, without AI and with it`
     : 'An indicative week of AI-assisted work in general, without AI and with it'
+
+  /** Where the selected role leads next: its slice of the setup library. */
+  const workflowsCta = selected ? roleWorkflowsCta(selected) : undefined
 
   // The picker is dead weight until it has answers to give.
   const selectorDisabled = isLoading || failed || roles.length === 0
@@ -181,7 +190,32 @@ export default function SavingsSection({ heading = SAVINGS_COPY.heading }: Savin
               </div>
 
               {selected ? (
-                <RoleSummaryCards estimate={selected} />
+                <>
+                  <RoleSummaryCards estimate={selected} />
+                  {/*
+                   * The next step for this role: the setup library, filtered to
+                   * the matching chip. Drawn in the metric rows' own green so it
+                   * reads as part of the card, a step stronger so it reads as
+                   * the one thing here to press. A real link — middle-click,
+                   * copy-link and keyboard all behave as a link should.
+                   */}
+                  {workflowsCta && (
+                    <Link
+                      to={workflowsCta.to}
+                      className="group mt-3 block rounded-tile border border-[rgba(120,226,172,0.38)] bg-[linear-gradient(180deg,rgba(74,208,148,0.2)_0%,rgba(74,208,148,0.08)_100%)] px-4 py-3 text-center text-[14px] leading-[1.3] font-semibold tracking-[-0.012em] text-pretty text-[#DFFAEC] shadow-[inset_0_1px_0_rgba(196,246,220,0.24)] transition-[transform,border-color,background,box-shadow] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] [animation:akFade_.32s_ease-out_both] hover:-translate-y-px hover:border-[rgba(143,227,184,0.6)] hover:bg-[linear-gradient(180deg,rgba(74,208,148,0.26)_0%,rgba(74,208,148,0.11)_100%)] hover:shadow-[inset_0_1px_0_rgba(196,246,220,0.3),0_0_30px_-10px_rgba(74,208,148,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8FE3B8] active:translate-y-0 active:scale-[0.99]"
+                    >
+                      {workflowsCta.label}
+                      {/* Inline, so on a narrow card the arrow wraps with the
+                          last word instead of drifting to the edge. */}
+                      <span
+                        aria-hidden="true"
+                        className="ml-2 inline-block text-[#8FE3B8] transition-transform duration-300 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:translate-x-[3px]"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  )}
+                </>
               ) : (
                 /*
                  * The idle panel, which doubles as the failure state: if the

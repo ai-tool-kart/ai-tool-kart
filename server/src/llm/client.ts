@@ -52,6 +52,7 @@ import {
   type LLMRequest,
   type LLMResponse,
   type LLMTaskName,
+  type LLMUsageDelta,
 } from './provider.ts'
 
 export interface TaskRequest<T> {
@@ -122,6 +123,15 @@ export function extractJson(text: string): string {
   return trimmed.slice(start)
 }
 
+/** Token usage an adapter attached to a failure, if it reported any. */
+function spentUsage(details: Record<string, unknown>): LLMUsageDelta | undefined {
+  const usage = details.usage as Partial<LLMUsageDelta> | undefined
+  if (!usage || typeof usage !== 'object') return undefined
+  const inputTokens = Number(usage.inputTokens) || 0
+  const outputTokens = Number(usage.outputTokens) || 0
+  return inputTokens > 0 || outputTokens > 0 ? { inputTokens, outputTokens } : undefined
+}
+
 /** Compact, log-safe summary of what failed. Field paths and rules only. */
 function summarizeIssues(error: z.ZodError): string {
   return error.issues
@@ -186,12 +196,23 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
           // throw again, and the caller needs to see it now.
           if (isLLMError(error) && error.code === 'BUDGET_EXCEEDED') throw error
 
+          // A failure that still generated tokens (a response truncated at the
+          // output ceiling, say) is charged like any other call, so it cannot
+          // slip past the turn's token cap.
+          const spent = isLLMError(error) ? spentUsage(error.details) : undefined
+          if (spent) budget.record(spent.inputTokens, spent.outputTokens)
+
+          // An adapter marks the failures another attempt cannot fix — a bad
+          // credential, an unknown model, a rate limit, a timeout — and those
+          // end the turn now rather than after two more identical failures.
+          const retryable = !isLLMError(error) || error.retryable
           lastError = llmUnavailable('LLM provider call failed', {
             cause: error,
             details: { task: request.task, attempt },
+            retryable,
           })
-          log.warn('Provider call failed', { attempt })
-          if (attempt < LLM_RETRY.schemaAttempts) continue
+          log.warn('Provider call failed', { attempt, retryable })
+          if (retryable && attempt < LLM_RETRY.schemaAttempts) continue
           throw lastError
         }
 

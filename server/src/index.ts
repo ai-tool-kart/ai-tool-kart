@@ -35,7 +35,17 @@ function main(): void {
 
   for (const warning of warnings) logger.warn(warning)
 
-  const container = createContainer({ env, logger })
+  let container
+  try {
+    container = createContainer({ env, logger })
+  } catch (error) {
+    // Provider selection fails here — LLM_PROVIDER=xai without LLM_API_KEY, or
+    // an unknown provider id. Same treatment as an env error above: one clear
+    // message and a non-zero exit, never a silent fall back to the mock.
+    process.stderr.write(`\nConfiguration error:\n${(error as Error).message}\n\n`)
+    process.exitCode = 1
+    return
+  }
   const app = createApp(container)
 
   const server = app.listen(env.http.port, env.http.host, () => {
