@@ -1,4 +1,6 @@
-import type { SavingsDimension } from '@/types/workSavings'
+import { WORKFLOWS_ROUTE } from '@/data/navigation'
+import type { SetupCategory } from '@/types/aiSetup'
+import type { SavingsDimension, WorkSavingsEstimate } from '@/types/workSavings'
 
 /*
  * The static half of "See What AI Can Save You".
@@ -154,3 +156,49 @@ export const SAVINGS_COPY = {
     effort: 'Effort reduced',
   },
 } as const
+
+/*
+ * ── From a role to its workflows ─────────────────────────────────────────────
+ *
+ * The CTA under the summary cards sends a reader to the setup library with the
+ * chip for their kind of work already on. /workflows filters on `?kind=` and
+ * nothing else, so a role is pointed at one of the library's EXISTING
+ * SetupCategory values — no new filter, and no second list of setups.
+ *
+ * Keyed on the estimate's `id`, which the server keeps stable, and typed
+ * against SetupCategory so a renamed chip fails the build rather than silently
+ * landing on "All". `plural` is presentation only: it keeps grammar out of the
+ * component ("Explore workflows for Data Analysts", not "…for Data Analysts's").
+ * An id missing from this map still gets a CTA — to the unfiltered library,
+ * worded with the role as the server wrote it.
+ */
+interface RoleWorkflowLink {
+  plural: string
+  kind: SetupCategory
+}
+
+const ROLE_WORKFLOWS: Readonly<Record<string, RoleWorkflowLink>> = {
+  'restaurant-owner': { plural: 'Restaurant Owners', kind: 'Business' },
+  'video-editor': { plural: 'Video Editors', kind: 'Video' },
+  'ui-ux-designer': { plural: 'UI/UX Designers', kind: 'Image Generation' },
+  'graphic-designer': { plural: 'Graphic Designers', kind: 'Image Generation' },
+  developer: { plural: 'Developers', kind: 'Coding & Dev' },
+  marketer: { plural: 'Marketers', kind: 'SEO & Marketing' },
+  'content-creator': { plural: 'Content Creators', kind: 'Writing & Content' },
+  writer: { plural: 'Writers', kind: 'Writing & Content' },
+  researcher: { plural: 'Researchers', kind: 'Research' },
+  student: { plural: 'Students', kind: 'Research' },
+  freelancer: { plural: 'Freelancers', kind: 'Business' },
+  founder: { plural: 'Founders', kind: 'Business' },
+  'sales-professional': { plural: 'Sales Professionals', kind: 'SEO & Marketing' },
+  'product-manager': { plural: 'Product Managers', kind: 'Business' },
+  'data-analyst': { plural: 'Data Analysts', kind: 'Research' },
+}
+
+/** The CTA's wording and destination for a selected role. */
+export function roleWorkflowsCta(estimate: WorkSavingsEstimate): { label: string; to: string } {
+  const link = ROLE_WORKFLOWS[estimate.id]
+  if (!link) return { label: `Explore workflows for ${estimate.role}`, to: WORKFLOWS_ROUTE }
+  const query = new URLSearchParams({ kind: link.kind })
+  return { label: `Explore workflows for ${link.plural}`, to: `${WORKFLOWS_ROUTE}?${query}` }
+}
