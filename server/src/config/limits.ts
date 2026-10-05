@@ -12,6 +12,8 @@
  * ASSISTANT_ARCHITECTURE_PLAN.md §14.
  */
 
+import type { NicheName } from '../domain/types.ts'
+
 export const HTTP = {
   /*
    * Maximum request body.
@@ -619,4 +621,29 @@ export const AUTOMATIONS_API = {
   maxLimit: AUTOMATION_MATCH.maxLimit,
   /** Longer queries are rejected rather than truncated, so the caller knows. */
   maxQueryLength: 200,
+} as const
+
+/**
+ * GET /api/automations/home — the homepage's "AI for Your Work" section.
+ *
+ * Editorial configuration, not data: WHICH niches the homepage leads with, in
+ * chip order, and how many guides each shows. The guides themselves, their
+ * counts and their order come from the repository (automations/home.ts ranks
+ * them). Change the homepage here, never in the route or the client.
+ *
+ * A niche listed here with no active guides is left out of the response
+ * rather than failing it. Typed against the niche vocabulary, so a misspelt
+ * name is a compile error rather than a silently missing chip.
+ */
+export const HOME_WORKFLOWS = {
+  niches: [
+    'Content Creators-Writers',
+    'Marketing Agencies',
+    'Startup Founders',
+    'Sales Teams',
+    'Job Seekers-Career Changers',
+    'Students',
+  ] as const satisfies readonly NicheName[],
+  /** Guides per niche — and the length of the "All" list. */
+  perNiche: 6,
 } as const

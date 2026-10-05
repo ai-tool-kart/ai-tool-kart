@@ -1,5 +1,6 @@
 /*
- * GET /api/automations and GET /api/automations/:niche/:slug.
+ * GET /api/automations and GET /api/automations/:niche/:slug — plus /paths
+ * (every guide URL, for the build) and /home (the homepage's selection).
  *
  * SPEC-automations.md §9. The handlers depend on the AutomationRepository
  * INTERFACE and on the pure matcher; they never touch the filesystem and never
@@ -28,11 +29,12 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import { deriveSteps } from '../../automations/deriveSteps.ts'
+import { selectHome } from '../../automations/home.ts'
 import { selectRelated } from '../../automations/related.ts'
 import type { AutomationMatcher } from '../../automations/match.ts'
 import type { AutomationRepository } from '../../automations/repository.ts'
 import type { Automation, AutomationStep } from '../../automations/types.ts'
-import { AUTOMATIONS, AUTOMATIONS_API } from '../../config/limits.ts'
+import { AUTOMATIONS, AUTOMATIONS_API, HOME_WORKFLOWS } from '../../config/limits.ts'
 import { notFound } from '../../domain/errors.ts'
 import { CATALOGUE_KINDS, NICHES, type PricingTier } from '../../domain/types.ts'
 import { parseOrThrow } from '../validate.ts'
@@ -91,6 +93,27 @@ export interface AutomationResponse {
 /** GET /api/automations/paths — every public guide URL, for prerendering and the sitemap. */
 export interface AutomationPathsResponse {
   items: { niche: string; slug: string }[]
+}
+
+/** One niche on the homepage: its top guides, and how many it holds in all. */
+export interface AutomationHomeNiche {
+  niche: string
+  /** Every active guide in the niche — not the number shown. */
+  total: number
+  items: ApiAutomationCard[]
+}
+
+/**
+ * GET /api/automations/home — the homepage's "AI for Your Work" section.
+ *
+ * `niches` follows HOME_WORKFLOWS' order and omits a niche with no active
+ * guides. `all` is drawn from those same `niches[].items` (automations/home.ts),
+ * so every card in it also appears under its own niche; `all.total` is the sum
+ * of the niches' totals.
+ */
+export interface AutomationHomeResponse {
+  niches: AutomationHomeNiche[]
+  all: { total: number; items: ApiAutomationCard[] }
 }
 
 /** The tier, only when a pricing rule actually recognised the note. */
@@ -252,6 +275,38 @@ export function createAutomationsRouter({
         const all = await automations.list()
         const body: AutomationPathsResponse = {
           items: all.map((automation) => ({ niche: automation.niche, slug: automation.slug })),
+        }
+        res.json(body)
+      } catch (error) {
+        next(error)
+      }
+    })()
+  })
+
+  /*
+   * The homepage selection: HOME_WORKFLOWS' niches, each ranked and capped by
+   * automations/home.ts, plus "All" drawn from them — about 36 cards, so the
+   * homepage never lists the catalogue to show a handful. Workflows only: an
+   * MCP recipe is not a "setup". One segment, like /paths, so it cannot
+   * collide with /:niche/:slug. Takes no parameters.
+   */
+  router.get('/home', (_req, res, next) => {
+    void (async () => {
+      try {
+        const niches = await Promise.all(
+          HOME_WORKFLOWS.niches.map(async (niche) => ({
+            niche,
+            automations: await automations.list({ niche, kind: 'workflow' }),
+          })),
+        )
+        const selection = selectHome({ niches, perNiche: HOME_WORKFLOWS.perNiche })
+        const body: AutomationHomeResponse = {
+          niches: selection.niches.map((group) => ({
+            niche: group.niche,
+            total: group.total,
+            items: group.items.map(toCard),
+          })),
+          all: { total: selection.all.total, items: selection.all.items.map(toCard) },
         }
         res.json(body)
       } catch (error) {
