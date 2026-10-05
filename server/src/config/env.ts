@@ -37,6 +37,7 @@
  */
 
 import { z } from 'zod'
+import { assertDatabaseTarget } from '../db/target.ts'
 import { configError } from '../domain/errors.ts'
 import { registerSecret } from '../utils/logger.ts'
 
@@ -90,6 +91,22 @@ const StrictSchema = z.object({
     emptyToUndefined,
     z.coerce.number().int().min(1_000).max(300_000).default(60_000),
   ),
+
+  /*
+   * ─── Database (Phase 2B) ──────────────────────────────────────────────────
+   *
+   * Optional. Unset, the server runs exactly as before — JSON catalogue, JSON
+   * submission store — and only the account routes answer 503. That is what
+   * keeps an unchanged production deployment unchanged.
+   */
+  DATABASE_URL: z.preprocess(emptyToUndefined, z.string().trim().min(1).optional()),
+
+  /*
+   * Shared secret the Vercel → Railway proxy sends so this server can trust
+   * the client IP it forwards (http/clientIp.ts). Optional: unset, no
+   * forwarded IP is ever trusted. Long and random, never VITE_-prefixed.
+   */
+  TRUSTED_PROXY_SECRET: z.preprocess(emptyToUndefined, z.string().min(32).optional()),
 })
 
 /**
@@ -108,6 +125,8 @@ const HINTS: Record<string, string> = {
   LLM_MODEL_FAST: 'Set a vendor model id, e.g. LLM_MODEL_FAST=grok-4.7.',
   LLM_MODEL_STRONG: 'Set a vendor model id, e.g. LLM_MODEL_STRONG=grok-4.7.',
   LLM_TIMEOUT_MS: 'Set milliseconds between 1000 and 300000, e.g. LLM_TIMEOUT_MS=60000.',
+  DATABASE_URL: 'Set a postgresql:// URL, or leave it unset to run without accounts.',
+  TRUSTED_PROXY_SECRET: 'Set at least 32 random characters (e.g. openssl rand -base64 48), or leave it unset.',
 }
 
 export type NodeEnvironment = 'development' | 'production' | 'test'
@@ -132,6 +151,14 @@ export interface ServerEnv {
   log: {
     format: LogFormat
     level: LogLevelName
+  }
+  /** Present only when TRUSTED_PROXY_SECRET is set. Registered for log redaction. */
+  trustedProxySecret?: string
+  /** Absent when DATABASE_URL is unset: accounts are then unavailable. */
+  database?: {
+    /** The raw URL. Registered for log redaction; print `redacted` instead. */
+    url: string
+    redacted: string
   }
   llm: {
     /** 'mock' by default. Resolved to an adapter in llm/factory.ts. */
@@ -279,6 +306,27 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
    * anywhere — including a stack trace or an accidental object dump.
    */
   registerSecret(raw.LLM_API_KEY)
+  registerSecret(raw.TRUSTED_PROXY_SECRET)
+
+  let database: ServerEnv['database']
+  if (raw.DATABASE_URL) {
+    // Outside production a non-local database is refused unless its exact
+    // host is named in DATABASE_ALLOW_REMOTE_HOST — the same guard the db
+    // scripts use, so a dev server cannot quietly attach to Railway.
+    let target
+    try {
+      target = isProduction
+        ? undefined
+        : assertDatabaseTarget(raw.DATABASE_URL, source.DATABASE_ALLOW_REMOTE_HOST)
+    } catch (error) {
+      throw configError(`Invalid server environment:\n  DATABASE_URL: ${(error as Error).message}`)
+    }
+    const url = new URL(raw.DATABASE_URL)
+    if (url.password) registerSecret(decodeURIComponent(url.password))
+    registerSecret(raw.DATABASE_URL)
+    if (url.password) url.password = '***'
+    database = { url: raw.DATABASE_URL, redacted: target?.redacted ?? url.href }
+  }
 
   if (raw.LLM_PROVIDER !== 'mock' && !raw.LLM_API_KEY) {
     // Not fatal here: llm/factory.ts throws with the actionable message, and it
@@ -303,6 +351,8 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
     http: { host: raw.HOST, port: raw.PORT },
     cors: { allowedOrigins },
     log: { format, level },
+    ...(database ? { database } : {}),
+    ...(raw.TRUSTED_PROXY_SECRET ? { trustedProxySecret: raw.TRUSTED_PROXY_SECRET } : {}),
     llm: {
       provider: raw.LLM_PROVIDER,
       ...(raw.LLM_API_KEY ? { apiKey: raw.LLM_API_KEY } : {}),

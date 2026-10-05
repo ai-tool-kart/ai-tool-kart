@@ -30,6 +30,8 @@ import { SubmissionInputSchema } from './schema.ts'
 import type { SubmissionStore } from './store.ts'
 import type { Submission } from './types.ts'
 
+export type ParsedSubmission = Omit<z.infer<typeof SubmissionInputSchema>, 'company'>
+
 export interface SubmissionService {
   submit(rawBody: unknown): Promise<Submission>
 }
@@ -39,7 +41,7 @@ export interface CreateSubmissionServiceOptions {
   catalogue: ToolCatalogueRepository
 }
 
-const DUPLICATE_MESSAGE = 'That site has already been submitted.'
+export const DUPLICATE_MESSAGE = 'That site has already been submitted.'
 
 /**
  * One message per field, keyed the way the client's own field names read —
@@ -48,7 +50,7 @@ const DUPLICATE_MESSAGE = 'That site has already been submitted.'
  * rejection (an extra key, like the attacker-chosen `"status":"approved"`
  * from §11) has no field of its own on the form, so it is keyed `_`.
  */
-function fieldsFromZodError(error: z.ZodError): Record<string, string> {
+export function fieldsFromZodError(error: z.ZodError): Record<string, string> {
   const fields: Record<string, string> = {}
   for (const issue of error.issues) {
     const key = issue.path.length > 0 ? issue.path.join('.') : '_'
@@ -57,26 +59,31 @@ function fieldsFromZodError(error: z.ZodError): Record<string, string> {
   return fields
 }
 
+/**
+ * The zod parse both intake paths share — this JSON service and the
+ * account-backed Postgres one (submissions/accountService.ts). Throws
+ * VALIDATION_FAILED with per-field messages.
+ */
+export function parseSubmissionInput(rawBody: unknown): ParsedSubmission {
+  const parsed = SubmissionInputSchema.safeParse(rawBody)
+  if (!parsed.success) {
+    throw validationFailed('The submission has one or more invalid fields.', fieldsFromZodError(parsed.error))
+  }
+  // The honeypot field, present in the schema only so .strict() accepts the
+  // harmless empty string a real submission always sends — a non-empty one
+  // is caught upstream, in http/middleware/honeypot.ts, which answers before
+  // this ever runs. Excluded here so it never rides along into storage.
+  const { company: _company, ...input } = parsed.data
+  return input
+}
+
 export function createSubmissionService({
   store,
   catalogue,
 }: CreateSubmissionServiceOptions): SubmissionService {
   return {
     async submit(rawBody) {
-      const parsed = SubmissionInputSchema.safeParse(rawBody)
-      if (!parsed.success) {
-        throw validationFailed(
-          'The submission has one or more invalid fields.',
-          fieldsFromZodError(parsed.error),
-        )
-      }
-      // The honeypot field, present in the schema only so .strict() accepts
-      // the harmless empty string a real submission always sends — a
-      // non-empty one is caught upstream, in http/middleware/honeypot.ts,
-      // which answers before this ever runs. Excluded here purely so it
-      // doesn't ride along into store.create()'s NewSubmission, which has no
-      // field for it.
-      const { company: _company, ...input } = parsed.data
+      const input = parseSubmissionInput(rawBody)
 
       // Already proven parseable by SiteUrlSchema's own superRefine, so this
       // is not expected to throw — if it somehow did, that is a genuine bug,

@@ -1,5 +1,6 @@
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
+import AuthProvider from '@/components/auth/AuthProvider'
 import App from '@/App'
 import { automationPath } from '@/components/automations/labels'
 import { setGuideSeed } from '@/services/guideSeed'
@@ -30,7 +31,11 @@ export function renderGuide(detail: AutomationDetail, origin: string): Prerender
   try {
     const html = renderToString(
       <StaticRouter location={path}>
-        <App />
+        {/* Same tree as main.tsx. renderToString runs no effects, so this
+            stays 'loading' and never calls the API at build time. */}
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </StaticRouter>,
     )
     return { path, html, head: guideHead(buildWorkflowGuide(detail), origin) }

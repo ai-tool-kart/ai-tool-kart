@@ -7,9 +7,15 @@ interface SubmitSuccessProps {
   form: SubmitFormState
   weekLabel: string | undefined
   onSubmitAnother: () => void
+  /**
+   * The signed-in submitter's status page (/account/submissions/:id). Absent
+   * for an anonymous submission (no database on the server), which has no
+   * status page to show.
+   */
+  statusHref?: string
 }
 
-export default function SubmitSuccess({ form, weekLabel, onSubmitAnother }: SubmitSuccessProps) {
+export default function SubmitSuccess({ form, weekLabel, onSubmitAnother, statusHref }: SubmitSuccessProps) {
   const headingRef = useRef<HTMLHeadingElement>(null)
 
   // This component only exists once status has flipped to 'done', so a mount
@@ -43,7 +49,10 @@ export default function SubmitSuccess({ form, weekLabel, onSubmitAnother }: Subm
                 in the week of <span className="font-semibold text-ink">{weekLabel}</span>
               </>
             ) : null}
-            . We'll email you once the listing goes live.
+            .{' '}
+            {statusHref
+              ? "We'll review your submission and update its status here."
+              : "We'll review your submission before it goes live."}
           </p>
         </div>
 
@@ -51,7 +60,12 @@ export default function SubmitSuccess({ form, weekLabel, onSubmitAnother }: Subm
           <Button to="/" variant="outline">
             Back to homepage
           </Button>
-          <Button onClick={onSubmitAnother} variant="gradient">
+          {statusHref && (
+            <Button to={statusHref} variant="gradient">
+              View status
+            </Button>
+          )}
+          <Button onClick={onSubmitAnother} variant={statusHref ? 'outline' : 'gradient'}>
             Submit another tool
           </Button>
         </div>

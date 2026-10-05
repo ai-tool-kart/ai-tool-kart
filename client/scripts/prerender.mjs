@@ -2,7 +2,7 @@
  * Prerender every guide page into static HTML — run after `vite build` and
  * `vite build --ssr` (see `npm run build:prerendered`).
  *
- *   VITE_SITE_URL=https://aitoolkart.com VITE_API_URL=https://api…/api npm run build:prerendered
+ *   VITE_SITE_URL=https://aitoolkart.com PRERENDER_API_URL=https://api…/api npm run build:prerendered
  *
  * ── Why ──────────────────────────────────────────────────────────────────────
  *
@@ -39,7 +39,35 @@ const CONCURRENCY = 8
 const SEED_ID = 'guide-seed' // services/guideSeed.ts GUIDE_SEED_ID
 
 const origin = process.env.VITE_SITE_URL?.trim().replace(/\/+$/, '')
-const apiBase = (process.env.VITE_API_URL ?? 'http://localhost:3001/api').replace(/\/+$/, '')
+/*
+ * The API this BUILD reads guides from — a Node process, so it needs an
+ * absolute URL. Deliberately separate from the browser's VITE_API_URL, which
+ * is the same-origin `/api` once the Vercel rewrite exists:
+ *
+ *   PRERENDER_API_URL   preferred, always absolute (e.g. the Railway URL)
+ *   VITE_API_URL        still honoured when it is absolute (today's setup)
+ *   neither             the local development API
+ *
+ * A relative VITE_API_URL with no PRERENDER_API_URL is refused below rather
+ * than silently prerendering against localhost in a production build.
+ */
+const isAbsolute = (value) => /^https?:\/\//i.test(value ?? '')
+const viteApiUrl = process.env.VITE_API_URL?.trim()
+const apiBase = (
+  process.env.PRERENDER_API_URL?.trim() || (isAbsolute(viteApiUrl) ? viteApiUrl : undefined) || 'http://localhost:3001/api'
+).replace(/\/+$/, '')
+
+if (!process.env.PRERENDER_API_URL?.trim() && viteApiUrl && !isAbsolute(viteApiUrl)) {
+  console.error(
+    `prerender: VITE_API_URL is "${viteApiUrl}", a browser-relative path this build cannot fetch from.\n` +
+      'Set PRERENDER_API_URL to the absolute API URL (e.g. https://<railway-host>/api).',
+  )
+  process.exit(1)
+}
+if (!isAbsolute(apiBase)) {
+  console.error(`prerender: PRERENDER_API_URL must be an absolute http(s) URL, got "${apiBase}".`)
+  process.exit(1)
+}
 
 if (!origin) {
   console.error(

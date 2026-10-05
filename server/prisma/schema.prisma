@@ -1,0 +1,348 @@
+// AI Tool Kart — database schema.
+//
+// Phase 2A: the published catalogue, the submission queue, its append-only
+// audit trail, and a ledger of one-off data imports.
+// Phase 2B: users, server-side sessions, and tool ownership.
+//
+// Conventions:
+//  - Models are PascalCase in TypeScript, tables and columns snake_case in
+//    Postgres (@@map / @map), so raw SQL and psql read naturally.
+//  - Taxonomy values (category, pricing model, pricing tier, roles, stages)
+//    are TEXT, not Postgres enums. Their source of truth is
+//    src/catalogue/taxonomy.ts, enforced by the zod schemas on every write;
+//    a DB enum would be a second copy needing a migration per new category.
+//  - Lifecycle states the backend owns (tool status, submission status,
+//    event types) ARE enums: a typo there must be impossible.
+//  - Two things Prisma's schema language cannot express live as raw SQL in
+//    the migration: the partial unique index on submissions.normalized_url
+//    and the append-only trigger on submission_events. Prisma ignores both
+//    when diffing (verified), so later migrations won't try to drop them.
+
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "ts"
+  runtime             = "nodejs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Catalogue ────────────────────────────────────────────────────────────────
+
+enum ToolStatus {
+  active
+  draft
+
+  @@map("tool_status")
+}
+
+enum ToolSource {
+  /// Imported from the original JSON seed catalogue.
+  seed
+  /// Created by approving a submission.
+  submission
+
+  @@map("tool_source")
+}
+
+/// One catalogue record. Mirrors the `Tool` interface in src/domain/types.ts
+/// field for field; the short legacy names (cat, model, api, ctx, integr) are
+/// kept as column names so the mapping stays 1:1 and greppable.
+model Tool {
+  /// The existing string id ("claude", "notion-ai"), preserved verbatim:
+  /// usage stories, automations and client code all reference tools by it.
+  id            String     @id
+  slug          String     @unique
+  name          String
+  mono          String
+  cat           String
+  model         String
+  tagline       String
+  plainLine     String?    @map("plain_line")
+  rating        Float
+  reviews       Int
+  price         String
+  trend         String
+  badge         String
+  tags          String[]
+  pop           Int
+  /// `isMcpServer` is optional in JSON; absent is stored as false.
+  isMcpServer   Boolean    @default(false) @map("is_mcp_server")
+  api           String
+  ctx           String
+  team          String
+  trial         String
+  integr        String
+  url           String
+  /// utils/normalizeUrl.ts(url). Backs the duplicate check.
+  normalizedUrl String     @unique @map("normalized_url")
+  summary       String
+  roles         String[]
+  useCases      String[]   @map("use_cases")
+  stages        String[]
+  pricingTier   String     @map("pricing_tier")
+  status        ToolStatus @default(active)
+  verified      Boolean    @default(false)
+  /// Catalogue intake date (YYYY-MM-DD). Platform metadata, not a launch date.
+  addedAt       DateTime?  @map("added_at") @db.Date
+  source        ToolSource @default(seed)
+  createdAt     DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt     DateTime   @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  submissions Submission[]
+  owners      ToolOwner[]
+
+  @@index([status])
+  @@index([cat])
+  @@index([addedAt])
+  @@map("tools")
+}
+
+// ── Submissions ──────────────────────────────────────────────────────────────
+
+/// Allowed transitions are enforced by the backend state machine (Phase 2C),
+/// never by the client.
+enum SubmissionStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  CHANGES_REQUESTED
+  APPROVED
+  REJECTED
+  PUBLISHED
+  UNPUBLISHED
+  ARCHIVED
+
+  @@map("submission_status")
+}
+
+enum LaunchPlan {
+  free
+  featured
+
+  @@map("launch_plan")
+}
+
+enum SubmissionSource {
+  /// POST /api/submissions.
+  form
+  /// Imported from the pre-database data/submissions.json.
+  legacy_json
+
+  @@map("submission_source")
+}
+
+/// A tool owner's submission. Never rendered as a catalogue entry directly:
+/// approval maps it into a `Tool` (review/buildTool.ts). Rejected submissions
+/// are kept, never deleted.
+model Submission {
+  /// UUID. Legacy JSON submissions keep their existing randomUUID() id.
+  id       String           @id @default(uuid()) @db.Uuid
+  status   SubmissionStatus @default(SUBMITTED)
+  /// Bumped on every owner resubmission (Phase 2C).
+  revision Int              @default(1)
+  source   SubmissionSource @default(form)
+
+  /// The submitting account. Nullable ONLY for source = legacy_json (the
+  /// pre-database store was anonymous); a CHECK constraint in the Phase 2B
+  /// migration requires it for every other submission.
+  userId String? @map("user_id") @db.Uuid
+  user   User?   @relation("SubmissionAuthor", fields: [userId], references: [id], onDelete: Restrict)
+  /// The catalogue record this submission produced or updates.
+  toolId String? @map("tool_id")
+  tool   Tool?   @relation(fields: [toolId], references: [id], onDelete: SetNull)
+
+  // The form's fields, as submitted (submissions/schema.ts).
+  siteUrl       String     @map("site_url")
+  normalizedUrl String     @map("normalized_url")
+  name          String
+  tagline       String
+  description   String
+  category      String
+  pricingModel  String     @map("pricing_model")
+  price         String?
+  tags          String[]
+  audience      String?
+  alternatives  String[]
+  /// [{ question, answer }]
+  faqs          Json       @default("[]")
+  launchStory   String?    @map("launch_story")
+  plan          LaunchPlan @default(free)
+  /// The chosen launch week's local date (YYYY-MM-DD).
+  launchWeekId  String     @map("launch_week_id")
+
+  // Review outcome.
+  /// Shown to the owner (request-changes message). Internal notes live elsewhere.
+  ownerMessage    String? @map("owner_message")
+  rejectionReason String? @map("rejection_reason")
+  /// The admin who reviewed it. Null until a review happens.
+  reviewerId      String? @map("reviewer_id") @db.Uuid
+  reviewer        User?   @relation("SubmissionReviewer", fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  submittedAt DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(3)
+  reviewedAt  DateTime? @map("reviewed_at") @db.Timestamptz(3)
+  publishedAt DateTime? @map("published_at") @db.Timestamptz(3)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  events SubmissionEvent[]
+
+  @@index([status, submittedAt])
+  @@index([userId])
+  @@index([reviewerId])
+  @@index([toolId])
+  @@index([normalizedUrl])
+  @@index([createdAt])
+  @@map("submissions")
+}
+
+// ── Audit trail ──────────────────────────────────────────────────────────────
+
+enum ActorType {
+  OWNER
+  ADMIN
+  SYSTEM
+
+  @@map("actor_type")
+}
+
+/// Grows with the workflow (ALTER TYPE ... ADD VALUE is cheap).
+enum SubmissionEventType {
+  SUBMISSION_CREATED
+  LEGACY_IMPORTED
+
+  @@map("submission_event_type")
+}
+
+/// Append-only. A trigger in the migration rejects UPDATE and DELETE.
+model SubmissionEvent {
+  id           String              @id @default(uuid()) @db.Uuid
+  submissionId String              @map("submission_id") @db.Uuid
+  submission   Submission          @relation(fields: [submissionId], references: [id], onDelete: Restrict)
+  /// Null exactly when actorType = SYSTEM (CHECK constraint, Phase 2B).
+  actorUserId  String?             @map("actor_user_id") @db.Uuid
+  actor        User?               @relation(fields: [actorUserId], references: [id], onDelete: Restrict)
+  actorType    ActorType           @map("actor_type")
+  eventType    SubmissionEventType @map("event_type")
+  fromStatus   SubmissionStatus?   @map("from_status")
+  toStatus     SubmissionStatus?   @map("to_status")
+  metadata     Json                @default("{}")
+  /// The X-Request-Id of the HTTP request that caused it, for log correlation.
+  requestId    String?             @map("request_id")
+  createdAt    DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([submissionId, createdAt])
+  @@index([eventType, createdAt])
+  @@index([actorUserId])
+  @@map("submission_events")
+}
+
+// ── Data imports ─────────────────────────────────────────────────────────────
+
+/// One row per applied (non-dry-run) import, so "what was imported, from
+/// which file, when" is answerable from the database itself.
+model DataImportRun {
+  id           String    @id @default(uuid()) @db.Uuid
+  /// The imported file's name.
+  source       String
+  /// sha256 of the exact file contents imported.
+  sourceSha256 String    @map("source_sha256")
+  recordCount  Int       @map("record_count")
+  inserted     Int
+  /// Already present and identical.
+  unchanged    Int
+  /// Already present but different — reported, never overwritten.
+  conflicts    Int
+  details      Json      @default("{}")
+  startedAt    DateTime  @map("started_at") @db.Timestamptz(3)
+  finishedAt   DateTime? @map("finished_at") @db.Timestamptz(3)
+
+  @@index([source, startedAt])
+  @@map("data_import_runs")
+}
+
+// ── Identity (Phase 2B) ──────────────────────────────────────────────────────
+
+/// What a user may POTENTIALLY do. Which specific tools a TOOL_OWNER may
+/// manage is never read from the role — only from tool_owners.
+///   USER         default for a new account
+///   TOOL_OWNER   kept in sync by the server: a non-admin with >= 1 ownership row
+///   ADMIN        moderation and administrative operations
+///   SUPER_ADMIN  everything ADMIN can, plus managing roles
+enum UserRole {
+  USER
+  TOOL_OWNER
+  ADMIN
+  SUPER_ADMIN
+
+  @@map("user_role")
+}
+
+model User {
+  id              String    @id @default(uuid()) @db.Uuid
+  /// Trimmed and lowercased by the server (auth/schema.ts); a CHECK constraint
+  /// rejects anything else, so uniqueness is case-insensitive in practice.
+  email           String    @unique
+  name            String?
+  /// scrypt$N$r$p$salt$hash (auth/password.ts). Never plaintext, never logged.
+  passwordHash    String    @map("password_hash")
+  role            UserRole  @default(USER)
+  /// Set by the future email-verification flow. Unused in Phase 2B.
+  emailVerifiedAt DateTime? @map("email_verified_at") @db.Timestamptz(3)
+  /// A disabled account cannot log in, and its existing sessions stop working.
+  disabledAt      DateTime? @map("disabled_at") @db.Timestamptz(3)
+  lastLoginAt     DateTime? @map("last_login_at") @db.Timestamptz(3)
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  sessions            Session[]
+  ownedTools          ToolOwner[]       @relation("ToolOwnerUser")
+  grantedOwnerships   ToolOwner[]       @relation("ToolOwnerGrantedBy")
+  submissions         Submission[]      @relation("SubmissionAuthor")
+  reviewedSubmissions Submission[]      @relation("SubmissionReviewer")
+  submissionEvents    SubmissionEvent[]
+
+  @@index([role])
+  @@map("users")
+}
+
+/// A server-side browser session. The cookie carries a random token; only its
+/// SHA-256 is stored, so a leaked sessions table cannot be replayed.
+model Session {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @map("user_id") @db.Uuid
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// hex(sha256(token)). The raw token exists only in the cookie.
+  tokenHash  String    @unique @map("token_hash")
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  expiresAt  DateTime  @map("expires_at") @db.Timestamptz(3)
+  /// Throttled: updated at most once per AUTH.sessionTouchIntervalMs.
+  lastUsedAt DateTime  @default(now()) @map("last_used_at") @db.Timestamptz(3)
+  /// Set on logout or forced sign-out. A revoked session never authenticates.
+  revokedAt  DateTime? @map("revoked_at") @db.Timestamptz(3)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+/// Who may manage which catalogue tool. Many-to-many: a tool can have several
+/// managers (a founder and a marketer), and one person can manage several
+/// tools. tool_id references the existing catalogue ids unchanged.
+model ToolOwner {
+  toolId          String   @map("tool_id")
+  tool            Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  userId          String   @map("user_id") @db.Uuid
+  user            User     @relation("ToolOwnerUser", fields: [userId], references: [id], onDelete: Cascade)
+  /// The admin who granted it; null when granted by the system (e.g. a
+  /// future approval flow). Kept for accountability.
+  grantedByUserId String?  @map("granted_by_user_id") @db.Uuid
+  grantedBy       User?    @relation("ToolOwnerGrantedBy", fields: [grantedByUserId], references: [id], onDelete: SetNull)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@id([toolId, userId])
+  @@index([userId])
+  @@map("tool_owners")
+}

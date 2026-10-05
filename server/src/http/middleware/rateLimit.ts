@@ -1,17 +1,17 @@
 /*
  * Rate limiting — SPEC-submit-backend.md §9.
  *
- * In-memory `Map<ip, timestamps[]>`, RATE_LIMIT.maxPerWindow requests per IP
- * per RATE_LIMIT.windowMs (config/limits.ts). Generic — nothing here names
- * "submissions" — applied to POST /api/submissions only by where it is
- * mounted (routes/submissions.ts), not by anything in this file.
+ * In-memory `Map<ip, timestamps[]>`, `maxPerWindow` requests per IP per
+ * `windowMs` — RATE_LIMIT (config/limits.ts) by default, overridable per
+ * instance. Generic — applied to POST /api/submissions and the login and
+ * register routes only by where each instance is mounted.
  *
  * ── PER-PROCESS, not per-deployment ───────────────────────────────────────
  *
  * The Map lives in this module's closure, so it resets on every restart and
  * is never shared across replicas. Behind N instances of this server (a load
  * balancer, a process manager restarting workers), an IP effectively gets
- * up to N × RATE_LIMIT.maxPerWindow requests per window, one bucket per
+ * up to N × maxPerWindow requests per window, one bucket per
  * instance that happens to receive its traffic — not a coordinated limit.
  * Fine for the single-instance deployment this app runs today; a shared
  * limit across replicas needs a shared store (Redis or the database), which
@@ -42,10 +42,16 @@
 import type { NextFunction, Request, RequestHandler, Response } from 'express'
 import { RATE_LIMIT } from '../../config/limits.ts'
 import { rateLimited } from '../../domain/errors.ts'
+import { clientIpOf } from '../clientIp.ts'
 
 export interface RateLimiterOptions {
   /** Test seam: an injectable clock, so tests advance time without sleeping. */
   now?: () => number
+  /** Defaults to RATE_LIMIT (the Submit intake). The auth routes pass AUTH's limits. */
+  maxPerWindow?: number
+  windowMs?: number
+  /** What the 429 says. Defaults to the Submit intake's wording. */
+  message?: string
 }
 
 /**
@@ -62,7 +68,12 @@ export interface RateLimiterHandler extends RequestHandler {
   bucketCount(): number
 }
 
-export function createRateLimiter({ now = Date.now }: RateLimiterOptions = {}): RateLimiterHandler {
+export function createRateLimiter({
+  now = Date.now,
+  maxPerWindow = RATE_LIMIT.maxPerWindow,
+  windowMs = RATE_LIMIT.windowMs,
+  message = 'Too many submissions from this address. Try again later.',
+}: RateLimiterOptions = {}): RateLimiterHandler {
   const buckets = new Map<string, number[]>()
   let lastSweptAt = now()
 
@@ -74,9 +85,9 @@ export function createRateLimiter({ now = Date.now }: RateLimiterOptions = {}): 
    * touch only their own bucket below.
    */
   function sweepStaleBuckets(currentTime: number): void {
-    if (currentTime - lastSweptAt < RATE_LIMIT.windowMs) return
+    if (currentTime - lastSweptAt < windowMs) return
     lastSweptAt = currentTime
-    const cutoff = currentTime - RATE_LIMIT.windowMs
+    const cutoff = currentTime - windowMs
     for (const [ip, timestamps] of buckets) {
       if (timestamps.every((timestamp) => timestamp <= cutoff)) buckets.delete(ip)
     }
@@ -86,19 +97,20 @@ export function createRateLimiter({ now = Date.now }: RateLimiterOptions = {}): 
     const currentTime = now()
     sweepStaleBuckets(currentTime)
 
-    const ip = req.ip ?? 'unknown'
-    const cutoff = currentTime - RATE_LIMIT.windowMs
+    // http/clientIp.ts: req.ip, unless a verified trusted proxy vouched for the client.
+    const ip = clientIpOf(req)
+    const cutoff = currentTime - windowMs
     // Timestamps are appended in call order and `now` only moves forward, so
     // this stays sorted ascending — recent[0], once the limit is hit below,
     // is genuinely the OLDEST request still counting against the window.
     const recent = (buckets.get(ip) ?? []).filter((timestamp) => timestamp > cutoff)
 
-    if (recent.length >= RATE_LIMIT.maxPerWindow) {
+    if (recent.length >= maxPerWindow) {
       buckets.set(ip, recent)
       const oldest = recent[0] as number
-      const retryAfterSeconds = Math.ceil((oldest + RATE_LIMIT.windowMs - currentTime) / 1000)
+      const retryAfterSeconds = Math.ceil((oldest + windowMs - currentTime) / 1000)
       next(
-        rateLimited('Too many submissions from this address. Try again later.', retryAfterSeconds),
+        rateLimited(message, retryAfterSeconds),
       )
       return
     }

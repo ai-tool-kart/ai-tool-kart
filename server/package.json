@@ -14,15 +14,29 @@
     "import:automations": "node --experimental-strip-types scripts/importAutomations.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "test": "node --experimental-strip-types --test tests/**/*.test.ts"
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
+    "postinstall": "prisma generate",
+    "db:generate": "prisma generate",
+    "db:migrate": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/prisma.ts migrate dev",
+    "db:deploy": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/prisma.ts migrate deploy",
+    "db:status": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/prisma.ts migrate status",
+    "db:check": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/check.ts",
+    "db:backup": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/backup.ts",
+    "db:import": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/importLegacy.ts",
+    "auth:set-role": "node --experimental-strip-types --env-file-if-exists=.env scripts/auth/setRole.ts"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
     "express": "^5.1.0",
+    "prisma": "7.10.0",
     "zod": "^4.1.13"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^24.13.3",
+    "@types/pg": "8.23.1",
+    "pg": "8.23.1",
     "typescript": "~6.0.2",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
