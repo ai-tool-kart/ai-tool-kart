@@ -774,7 +774,17 @@ model for writing and editing. That mapping belongs in configuration.
 | id | What it is |
 |---|---|
 | `mock` | Deterministic offline provider. No key, no network, no cost. Default, and what the test suite runs against. |
+| `xai` | **Production provider.** xAI (Grok) via its OpenAI-compatible **Responses API** at `https://api.x.ai/v1`, same strict Structured Outputs request as `openai`. Configured with `XAI_API_KEY` and `XAI_MODEL`. |
 | `openai` | Live provider. OpenAI **Responses API** with strict **Structured Outputs** (`text.format.type = "json_schema"`, `strict: true`). |
+
+The xAI adapter (`agent/src/llm/providers/xai.ts`) reuses the OpenAI adapter's
+strict-schema conversion and null stripping — xAI's strict subset accepts it
+unchanged — so validation and repair behave the same on both. Differences:
+`XAI_MODEL` serves both model classes; Grok 4.x reasons, so each task's output
+ceiling gets `XAI_REQUEST.reasoningAllowanceTokens` added and Grok 4.5–4.7 are
+sent `reasoning.effort` (`config/limits.ts`); an invalid key (which xAI answers
+with HTTP 400, not 401), 401/403 and credit exhaustion are fatal config errors;
+every error is prefixed `xAI` and carries `details.provider = "xai"`.
 
 The OpenAI adapter (`agent/src/llm/providers/openai.ts`):
 
@@ -1106,8 +1116,9 @@ HTTP instance.
 WORDPRESS_API_URL=
 WORDPRESS_USERNAME=
 WORDPRESS_APP_PASSWORD=
-LLM_PROVIDER=
-LLM_API_KEY=
+LLM_PROVIDER=xai
+XAI_API_KEY=
+XAI_MODEL=
 AGENT_DB_PATH=
 AGENT_MAX_ARTICLES_PER_RUN=
 AGENT_AUTO_PUBLISH=false
@@ -1378,7 +1389,7 @@ Everything in `agent/.env.example`. The production profile is documented at the
 bottom of that file; the essentials:
 
 ```text
-LLM_PROVIDER, LLM_API_KEY            the runtime provider
+LLM_PROVIDER=xai, XAI_API_KEY, XAI_MODEL   the runtime provider
 WORDPRESS_API_URL, WORDPRESS_USERNAME, WORDPRESS_APP_PASSWORD
 AGENT_ENABLED=true                   kill switch
 AGENT_AUTO_PUBLISH=false             mandatory; startup refuses anything else
@@ -2155,7 +2166,7 @@ document is useful.
 
 | Decision | Needed by | Notes |
 |---|---|---|
-| Production LLM provider and models | Phase C | **Resolved — OpenAI.** `LLM_PROVIDER=openai`, Responses API with strict Structured Outputs. Adapter defaults `gpt-4.1-mini` (fast) / `gpt-4.1` (strong), overridable via `LLM_MODEL_FAST`/`LLM_MODEL_STRONG`. See `agent/src/llm/providers/openai.ts`; `mock` remains the offline default |
+| Production LLM provider and models | Phase C | **Resolved — xAI** (migrated from OpenAI). `LLM_PROVIDER=xai`, `XAI_API_KEY`, `XAI_MODEL`; Responses API with strict Structured Outputs. See `agent/src/llm/providers/xai.ts`. The `openai` adapter remains available; `mock` remains the offline default |
 | Exact source list (Tier 1/2/3) | Phase B | **Partially resolved** — 10 verified feeds enabled, 5 vendors have no feed. See §36a |
 | Direct OpenAI coverage | Post-MVP | openai.com blocks automated fetches (§36a). Official API or licensed feed, or rely on Tier 2 corroboration |
 | Production hosting and scheduler | Phase H | cron, GitHub Actions, Railway, Render, etc. |
