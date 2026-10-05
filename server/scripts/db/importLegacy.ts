@@ -229,7 +229,10 @@ async function apply(
         })
       }
     },
-    { timeout: 120_000 },
+    // maxWait: time allowed to START the transaction. Prisma's 2s default is
+    // fine on localhost but too short for a fresh TLS connection to a remote
+    // database (the production import runs through Railway's TCP proxy).
+    { timeout: 120_000, maxWait: 30_000 },
   )
 }
 
