@@ -67,7 +67,27 @@ npm run build   # emits dist/ for deployment
 
 ## Activating a real LLM
 
-Two adapters ship: `mock` (deterministic, offline, no key) and `openai`.
+Three adapters ship: `mock` (deterministic, offline, no key), `xai` (the
+production provider) and `openai`.
+
+### xAI (production)
+
+```env
+LLM_PROVIDER=xai
+XAI_API_KEY=xai-...
+XAI_MODEL=grok-4.7
+```
+
+The xAI adapter (`src/llm/providers/xai.ts`) speaks xAI's OpenAI-compatible
+Responses API at `https://api.x.ai/v1` with the same strict Structured Outputs
+request as the OpenAI adapter, so prompts, schemas, validation and repair
+retries behave identically. `XAI_MODEL` serves every task. Grok 4.x models
+reason, so the adapter adds `XAI_REQUEST.reasoningAllowanceTokens` to each
+task's output ceiling and sends `reasoning.effort` (`XAI_REQUEST` in
+`src/config/limits.ts`). `LLM_API_KEY` and `LLM_MODEL_*` are ignored with a
+startup warning when `LLM_PROVIDER=xai`.
+
+### OpenAI
 
 ```env
 LLM_PROVIDER=openai
@@ -102,7 +122,9 @@ against the full source list.
 1. Create `src/llm/providers/<vendor>.ts` implementing `LLMProvider` — the
    contract is documented at the top of `src/llm/factory.ts`.
 2. Register it in `PROVIDER_FACTORIES` in that file.
-3. Set `LLM_PROVIDER=<vendor>` and `LLM_API_KEY` in `.env`.
+3. Set `LLM_PROVIDER=<vendor>` and `LLM_API_KEY` in `.env` (or, like xAI, give
+   the vendor its own variables in `src/config/env.ts` and `KEY_ENV_VAR` in the
+   factory).
 
 Schema validation, repair retries, budget accounting and logging are shared, so
 an adapter only has to turn a prompt into text. The one rule it must honour:

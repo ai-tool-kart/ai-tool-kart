@@ -160,6 +160,7 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
           lastError = new AgentError('LLM_UNAVAILABLE', `LLM provider call failed`, {
             cause: error,
             storyScoped: true,
+            details: { provider: provider.id, task: request.task },
           })
           /*
            * The cause is included deliberately. This line used to read only
