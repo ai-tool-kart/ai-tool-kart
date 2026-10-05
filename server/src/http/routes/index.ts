@@ -62,14 +62,25 @@ export function createApiRouter(container: Container): Router {
     }),
   )
   router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
-  router.use(SUBMISSIONS.path, createSubmissionsRouter({ service: container.submissions }))
-
-  // Accounts. Only these routers resolve sessions; the public routes above
-  // never touch the database for identity.
+  // Accounts. Only these routers (and POST /submissions when accounts
+  // exist) resolve sessions; the public routes above never touch the
+  // database for identity.
   const { accounts } = container
-  if (accounts) {
-    const authenticate = createAuthenticate(accounts.sessions, accounts.cookie)
-    const originCheck = createOriginCheck(container.env.cors.allowedOrigins)
+  const authenticate = accounts ? createAuthenticate(accounts.sessions, accounts.cookie) : undefined
+  const originCheck = accounts ? createOriginCheck(container.env.cors.allowedOrigins) : undefined
+
+  router.use(
+    SUBMISSIONS.path,
+    createSubmissionsRouter({
+      service: container.submissions,
+      ...(accounts?.submissionLimiter ? { rateLimiter: accounts.submissionLimiter } : {}),
+      ...(accounts && authenticate && originCheck
+        ? { accounts: { submissions: accounts.submissions, authenticate, originCheck } }
+        : {}),
+    }),
+  )
+
+  if (accounts && authenticate && originCheck) {
     router.use(
       AUTH.authPath,
       createAuthRouter({

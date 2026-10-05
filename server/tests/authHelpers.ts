@@ -9,6 +9,7 @@
 import type { NextFunction, Request, Response as ExpressResponse } from 'express'
 import { hashPassword, type ScryptParams } from '../src/auth/password.ts'
 import { createContainer, type Container } from '../src/container.ts'
+import type { ToolCatalogueRepository } from '../src/catalogue/repository.ts'
 import type { Database } from '../src/db/client.ts'
 import type { User, UserRole } from '../src/generated/prisma/client.ts'
 import { fixtureCatalogue, testEnv, testLogger, withServer, type TestServer } from './helpers.ts'
@@ -22,7 +23,9 @@ const noLimit = (_req: Request, _res: ExpressResponse, next: NextFunction) => ne
 export interface AccountAppOptions {
   now?: () => Date
   loginLimiter?: (req: Request, res: ExpressResponse, next: NextFunction) => void
+  submissionLimiter?: (req: Request, res: ExpressResponse, next: NextFunction) => void
   isProduction?: boolean
+  catalogue?: ToolCatalogueRepository
 }
 
 export function accountContainer(db: Database, options: AccountAppOptions = {}): Container {
@@ -32,12 +35,13 @@ export function accountContainer(db: Database, options: AccountAppOptions = {}):
       ...(options.isProduction ? { environment: 'production', isProduction: true } : {}),
     }),
     logger: testLogger('error'),
-    catalogue: fixtureCatalogue([]),
+    catalogue: options.catalogue ?? fixtureCatalogue([]),
     database: db,
     accountOptions: {
       scryptParams: FAST_SCRYPT,
       loginLimiter: options.loginLimiter ?? noLimit,
       registerLimiter: noLimit,
+      submissionLimiter: options.submissionLimiter ?? noLimit,
       ...(options.now ? { now: options.now } : {}),
     },
   })

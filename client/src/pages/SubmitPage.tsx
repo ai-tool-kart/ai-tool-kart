@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
+import AuthGatePanel from '@/components/auth/AuthGatePanel'
 import Button from '@/components/ui/Button'
 import SubmitAdvancedSection from '@/components/submit/SubmitAdvancedSection'
 import SubmitEssentialsSection from '@/components/submit/SubmitEssentialsSection'
@@ -6,6 +7,7 @@ import SubmitLaunchSection from '@/components/submit/SubmitLaunchSection'
 import SubmitPreviewPanel from '@/components/submit/SubmitPreviewPanel'
 import SubmitSuccess from '@/components/submit/SubmitSuccess'
 import SubmitUrlSection from '@/components/submit/SubmitUrlSection'
+import { useAuth } from '@/hooks/useAuth'
 import { useTaxonomy } from '@/hooks/useTaxonomy'
 import { ApiRequestError } from '@/services/http'
 import { submitTool } from '@/services/submissions'
@@ -22,6 +24,16 @@ import { buildLaunchWeeks } from '@/utils/launchWeeks'
  * is `.strict()`, so the request body is built by types/submit.ts's
  * `toSubmissionPayload`, not the raw form — see that function's header for
  * the two places the form's own shape doesn't match the wire shape.
+ *
+ * ── Accounts (Phase 3) ───────────────────────────────────────────────────
+ * When the server has accounts, a submission needs a signed-in submitter.
+ * The form is filled exactly as before; only "Launch listing" checks the
+ * session. Signed out, it opens AuthGatePanel over the page — this form
+ * stays mounted, so nothing typed is lost or copied into browser storage —
+ * and once signed in the held submission continues automatically. A 401
+ * (an expired session) reopens the gate the same way. When the server has
+ * no accounts (auth 'unavailable') it submits anonymously, as it always
+ * has. The submitter is never sent: the server reads the session cookie.
  */
 
 type SubmitStatus = 'editing' | 'submitting' | 'done' | 'error'
@@ -121,6 +133,13 @@ export default function SubmitPage() {
   const [submittedForm, setSubmittedForm] = useState<SubmitFormState>(createEmptySubmission)
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
   const [bannerMessage, setBannerMessage] = useState<string | undefined>(undefined)
+  const { state: auth, refresh } = useAuth()
+  // The open sign-in gate and why it opened. Undefined: closed.
+  const [gate, setGate] = useState<{ message?: string } | undefined>(undefined)
+  // The created submission's id — kept so a signed-in submitter can go
+  // straight to its status page.
+  const [submissionId, setSubmissionId] = useState<string | undefined>(undefined)
+  const continueAfterAuthRef = useRef(false)
 
   const controllerRef = useRef<AbortController | undefined>(undefined)
   const timeoutRef = useRef<number | undefined>(undefined)
@@ -151,8 +170,9 @@ export default function SubmitPage() {
 
   const ready = isSubmissionReady(form)
 
-  const runSubmit = useCallback(() => {
+  const sendSubmission = useCallback(() => {
     if (!ready || status === 'submitting') return
+    const signedIn = auth.status === 'authenticated'
 
     controllerRef.current?.abort()
     const controller = new AbortController()
@@ -165,9 +185,10 @@ export default function SubmitPage() {
     setStatus('submitting')
 
     submitTool(toSubmissionPayload(form), controller.signal)
-      .then(() => {
+      .then((created) => {
         window.clearTimeout(timeoutRef.current)
         if (!mountedRef.current) return
+        setSubmissionId(signedIn ? created.id : undefined)
         setStatus('done')
       })
       .catch((cause: unknown) => {
@@ -179,12 +200,46 @@ export default function SubmitPage() {
           setStatus('error')
           return
         }
+        if (cause instanceof ApiRequestError && cause.code === 'UNAUTHENTICATED') {
+          // Signed out (or the session expired) since the page loaded: back to
+          // the intact form with the gate open; signing in continues it.
+          setStatus('editing')
+          setGate({ message: 'Please sign in again — your listing is still here and will be submitted straight after.' })
+          void refresh()
+          return
+        }
         const failure = failureFrom(cause)
         setFieldErrors(failure.fieldErrors)
         setBannerMessage(failure.bannerMessage)
         setStatus('error')
       })
-  }, [form, ready, status])
+  }, [form, ready, status, auth.status, refresh])
+
+  // "Launch listing": send now, or hold the submission until there is a session.
+  const runSubmit = useCallback(() => {
+    if (!ready || status === 'submitting') return
+    if (auth.status === 'loading') {
+      continueAfterAuthRef.current = true
+      return
+    }
+    if (auth.status === 'anonymous') {
+      setGate({})
+      return
+    }
+    // 'authenticated', or 'unavailable' (no accounts: anonymous intake as before).
+    sendSubmission()
+  }, [ready, status, auth.status, sendSubmission])
+
+  // Continues a held submission once the session is known: after the gate
+  // signs someone in, or after /auth/me answers for a click made while loading.
+  useEffect(() => {
+    if (!continueAfterAuthRef.current || auth.status === 'loading') return
+    continueAfterAuthRef.current = false
+    if (auth.status === 'anonymous') setGate({})
+    else sendSubmission()
+  }, [auth.status, sendSubmission])
+
+  const closeGate = useCallback(() => setGate(undefined), [])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -214,8 +269,10 @@ export default function SubmitPage() {
         <SubmitSuccess
           form={submittedForm}
           weekLabel={weekLabel}
+          statusHref={submissionId ? `/account/submissions/${submissionId}` : undefined}
           onSubmitAnother={() => {
             setForm(createEmptySubmission())
+            setSubmissionId(undefined)
             setStatus('editing')
           }}
         />
@@ -304,6 +361,11 @@ export default function SubmitPage() {
           )}
 
           <div className="flex flex-wrap items-center justify-end gap-3 border-t border-hairline pt-6">
+            {auth.status === 'authenticated' && (
+              <p className="mr-auto text-[13px] text-muted-dim">
+                Submitting as <span className="text-ink">{auth.user.email}</span>
+              </p>
+            )}
             <Button to="/" variant="subtle">
               Cancel
             </Button>
@@ -325,6 +387,18 @@ export default function SubmitPage() {
 
         <SubmitPreviewPanel form={form} />
       </div>
+
+      {/* Outside the <form> above: forms can't nest. The form stays mounted underneath. */}
+      {gate && (
+        <AuthGatePanel
+          message={gate.message}
+          onClose={closeGate}
+          onAuthenticated={() => {
+            setGate(undefined)
+            continueAfterAuthRef.current = true
+          }}
+        />
+      )}
     </section>
   )
 }

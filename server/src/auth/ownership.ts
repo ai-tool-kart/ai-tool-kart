@@ -54,6 +54,11 @@ export interface OwnershipService {
   getAccessibleTool(actor: Actor, toolId: string): Promise<Tool>
   /** The submission, if `actor` submitted it or is an admin. Otherwise NOT_FOUND. */
   getAccessibleSubmission(actor: Actor, submissionId: string): Promise<Submission>
+  /**
+   * `actor`'s OWN submissions, newest first. Always scoped to the actor —
+   * admins included: this backs "My submissions", not moderation.
+   */
+  listOwnSubmissions(actor: Actor): Promise<Submission[]>
   isOwner(userId: string, toolId: string): Promise<boolean>
 
   /* Admin operations. The CALLER (a route behind requireRole('ADMIN')) authorizes them. */
@@ -61,6 +66,9 @@ export interface OwnershipService {
   grant(toolId: string, userId: string, grantedByUserId: string | null): Promise<{ created: boolean; role: UserRole }>
   revoke(toolId: string, userId: string): Promise<{ removed: boolean; role: UserRole }>
 }
+
+/** A submitter with more than this is not a person; the list is a convenience, not an export. */
+const OWN_SUBMISSIONS_LIMIT = 200
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
@@ -113,6 +121,14 @@ export function createOwnershipService({ db }: { db: Database }): OwnershipServi
       })
       if (!submission) throw notFound(SUBMISSION_NOT_FOUND_MESSAGE)
       return submission
+    },
+
+    async listOwnSubmissions(actor) {
+      return db.submission.findMany({
+        where: { userId: actor.id },
+        orderBy: [{ submittedAt: 'desc' }, { id: 'asc' }],
+        take: OWN_SUBMISSIONS_LIMIT,
+      })
     },
 
     async isOwner(userId, toolId) {

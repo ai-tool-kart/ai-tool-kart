@@ -6,16 +6,19 @@
  * the catalogue when it migrates) goes through `apiRequest`; none of them
  * repeats fetch/JSON/error handling.
  *
- * ── Why the base URL has a default ───────────────────────────────────────────
+ * ── Why the base URL defaults to `/api` ──────────────────────────────────────
  *
- * services/wordpress.ts throws when its env var is missing, correctly: there is
- * no sensible default for someone else's CMS host. Our own API is different —
- * `server/.env.example` fixes the dev port at 3001 and the server runs with no
- * configuration at all, so the default below is the documented development
- * setup rather than a guess. Deployments override it with VITE_API_URL.
+ * The browser talks to the API on its OWN origin: in development through the
+ * Vite proxy (vite.config.ts → localhost:3001), in production through the
+ * Vercel /api rewrite to Railway. Same-origin is what lets the HttpOnly,
+ * SameSite=Lax session cookie work, so accounts need it.
+ *
+ * VITE_API_URL can still point somewhere absolute (production does today,
+ * until the rewrite ships). Requests then still work, anonymously: see
+ * `credentials` below.
  */
 
-const DEFAULT_API_BASE = 'http://localhost:3001/api'
+const DEFAULT_API_BASE = '/api'
 
 export const API_BASE: string = (
   import.meta.env.VITE_API_URL ?? DEFAULT_API_BASE
@@ -95,10 +98,14 @@ async function errorFrom(response: Response): Promise<ApiRequestError> {
   return new ApiRequestError(message, code, response.status, { fields, retryAfterSeconds })
 }
 
+export type ApiMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
+
 export interface ApiRequestOptions {
   signal?: AbortSignal
-  /** Present for POST/PUT; absent for GET. Serialised as JSON. */
+  /** Serialised as JSON. */
   body?: unknown
+  /** Defaults to POST when a body is given, GET otherwise. */
+  method?: ApiMethod
 }
 
 /**
@@ -109,11 +116,19 @@ export interface ApiRequestOptions {
  */
 export async function apiRequest<T>(
   path: string,
-  { signal, body }: ApiRequestOptions = {},
+  { signal, body, method }: ApiRequestOptions = {},
 ): Promise<T> {
-  const init: RequestInit = { signal }
+  const init: RequestInit = {
+    signal,
+    method: method ?? (body !== undefined ? 'POST' : 'GET'),
+    // The session cookie goes ONLY to our own origin. 'same-origin' (rather
+    // than 'include') means a cross-origin VITE_API_URL never sends or needs
+    // credentials, so it keeps working anonymously and never depends on the
+    // server's Allow-Credentials header. The token itself is HttpOnly: this
+    // code never sees it.
+    credentials: 'same-origin',
+  }
   if (body !== undefined) {
-    init.method = 'POST'
     init.headers = { 'Content-Type': 'application/json' }
     init.body = JSON.stringify(body)
   }
@@ -132,6 +147,9 @@ export async function apiRequest<T>(
   }
 
   if (!response.ok) throw await errorFrom(response)
+
+  // No Content (e.g. POST /auth/logout): nothing to parse.
+  if (response.status === 204) return undefined as T
 
   try {
     return (await response.json()) as T

@@ -42,6 +42,7 @@
 import type { NextFunction, Request, RequestHandler, Response } from 'express'
 import { RATE_LIMIT } from '../../config/limits.ts'
 import { rateLimited } from '../../domain/errors.ts'
+import { clientIpOf } from '../clientIp.ts'
 
 export interface RateLimiterOptions {
   /** Test seam: an injectable clock, so tests advance time without sleeping. */
@@ -96,7 +97,8 @@ export function createRateLimiter({
     const currentTime = now()
     sweepStaleBuckets(currentTime)
 
-    const ip = req.ip ?? 'unknown'
+    // http/clientIp.ts: req.ip, unless a verified trusted proxy vouched for the client.
+    const ip = clientIpOf(req)
     const cutoff = currentTime - windowMs
     // Timestamps are appended in call order and `now` only moves forward, so
     // this stays sorted ascending — recent[0], once the limit is hit below,

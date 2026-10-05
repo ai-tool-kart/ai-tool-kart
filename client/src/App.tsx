@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import PageShell from '@/components/layout/PageShell'
+import AccountSubmissionsPage from '@/pages/AccountSubmissionsPage'
+import AuthPage from '@/pages/AuthPage'
 import AutomationDetailPage from '@/pages/AutomationDetailPage'
 import AutomationsRedirect from '@/pages/AutomationsRedirect'
 import BlogArticlePage from '@/pages/BlogArticlePage'
@@ -12,6 +14,7 @@ import NewLaunchesPage from '@/pages/NewLaunchesPage'
 import NewsAgentDemoPage from '@/pages/NewsAgentDemoPage'
 import KitchenSinkPage from '@/pages/KitchenSinkPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import SubmissionStatusPage from '@/pages/SubmissionStatusPage'
 import SubmitPage from '@/pages/SubmitPage'
 import WorkflowsPage from '@/pages/WorkflowsPage'
 
@@ -44,6 +47,11 @@ export default function App() {
         <Route path="automations" element={<AutomationsRedirect />} />
         <Route path="automations/:niche/:slug" element={<AutomationDetailPage />} />
         <Route path="submit" element={<SubmitPage />} />
+        {/* Accounts (Phase 3). Not linked from the header yet — see data/navigation.ts. */}
+        <Route path="login" element={<AuthPage mode="login" />} />
+        <Route path="register" element={<AuthPage mode="register" />} />
+        <Route path="account/submissions" element={<AccountSubmissionsPage />} />
+        <Route path="account/submissions/:id" element={<SubmissionStatusPage />} />
         {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}
         <Route path="kitchen-sink" element={<KitchenSinkPage />} />
         {/* Keeps retired URLs (e.g. the old /pricing) inside the shell. */}

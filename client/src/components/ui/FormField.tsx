@@ -32,6 +32,8 @@ interface FormFieldProps {
    * Rendered under the control and linked to it via `aria-describedby`.
    */
   error?: string
+  /** Optional and additive: the native input's autocomplete token, e.g. "email" or "current-password". */
+  autoComplete?: string
 }
 
 export default function FormField({
@@ -48,6 +50,7 @@ export default function FormField({
   maxLength,
   hint,
   error,
+  autoComplete,
 }: FormFieldProps) {
   const errorId = name && error ? `${name}-error` : undefined
   return (
@@ -86,6 +89,7 @@ export default function FormField({
             required={required}
             maxLength={maxLength}
             placeholder={placeholder}
+            autoComplete={autoComplete}
             onChange={(e) => onChange?.(e.target.value)}
             aria-invalid={error ? true : undefined}
             aria-describedby={errorId}

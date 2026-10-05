@@ -10,6 +10,7 @@
  * Middleware order is load-bearing:
  *
  *   1. requestLogger  — assigns the id everything downstream logs against
+ *      clientIp       — resolves the rate-limit address (trusted proxy or req.ip)
  *   2. cors           — answers preflights before any body is parsed
  *   3. express.json   — bounded; its failures are mapped in errorHandler
  *   4. routes
@@ -21,6 +22,7 @@ import express, { type Express } from 'express'
 import { API_BASE_PATH, HTTP } from './config/limits.ts'
 import type { Container } from './container.ts'
 import { notFound } from './domain/errors.ts'
+import { createClientIp } from './http/clientIp.ts'
 import { createCors } from './http/cors.ts'
 import { createErrorHandler } from './http/errorHandler.ts'
 import { createRequestLogger } from './http/requestLogger.ts'
@@ -39,6 +41,8 @@ export function createApp(container: Container): Express {
   if (env.isProduction) app.set('trust proxy', 1)
 
   app.use(createRequestLogger({ logger }))
+  // Before anything that rate-limits; strips the proxy headers once read.
+  app.use(createClientIp({ trustedProxySecret: env.trustedProxySecret }))
   app.use(createCors({ allowedOrigins: env.cors.allowedOrigins }))
   app.use(express.json({ limit: HTTP.bodyLimit }))
 

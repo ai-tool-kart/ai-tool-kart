@@ -4,6 +4,7 @@
  *
  *   GET /me/tools                     tools this user owns
  *   GET /me/tools/:toolId             one of them — NOT_FOUND if not theirs
+ *   GET /me/submissions               their own submissions, newest first
  *   GET /me/submissions/:submissionId one of their submissions — NOT_FOUND if not theirs
  *
  * Every lookup goes through auth/ownership.ts with the AUTHENTICATED user;
@@ -13,32 +14,13 @@
 
 import { Router, type RequestHandler } from 'express'
 import type { OwnershipService } from '../../auth/ownership.ts'
-import type { Submission } from '../../generated/prisma/client.ts'
+import { toOwnerSubmission } from '../../submissions/ownerView.ts'
 import { getAuth, requireAuth } from '../middleware/auth.ts'
 
 export interface MeRouterOptions {
   ownership: OwnershipService
   authenticate: RequestHandler
   originCheck: RequestHandler
-}
-
-/** What an owner may see of their own submission. reviewer_id stays internal. */
-function toOwnerSubmission(submission: Submission) {
-  return {
-    id: submission.id,
-    status: submission.status,
-    revision: submission.revision,
-    toolId: submission.toolId,
-    siteUrl: submission.siteUrl,
-    name: submission.name,
-    tagline: submission.tagline,
-    ownerMessage: submission.ownerMessage,
-    rejectionReason: submission.rejectionReason,
-    submittedAt: submission.submittedAt.toISOString(),
-    reviewedAt: submission.reviewedAt?.toISOString() ?? null,
-    publishedAt: submission.publishedAt?.toISOString() ?? null,
-    updatedAt: submission.updatedAt.toISOString(),
-  }
 }
 
 export function createMeRouter({ ownership, authenticate, originCheck }: MeRouterOptions): Router {
@@ -56,6 +38,15 @@ export function createMeRouter({ ownership, authenticate, originCheck }: MeRoute
   router.get('/tools/:toolId', async (req, res, next) => {
     try {
       res.json({ tool: await ownership.getAccessibleTool(getAuth(req).user, req.params.toolId) })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  router.get('/submissions', async (req, res, next) => {
+    try {
+      const submissions = await ownership.listOwnSubmissions(getAuth(req).user)
+      res.json({ items: submissions.map(toOwnerSubmission) })
     } catch (error) {
       next(error)
     }

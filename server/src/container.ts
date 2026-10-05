@@ -61,6 +61,7 @@ import type { MockProviderOptions } from './llm/providers/mock.ts'
 import { createRetrievalService, type RetrievalService } from './retrieval/service.ts'
 import { createJsonWorkSavingsRepository } from './savings/json.ts'
 import type { WorkSavingsRepository } from './savings/repository.ts'
+import { createAccountSubmissionService, type AccountSubmissionService } from './submissions/accountService.ts'
 import { createSubmissionService, type SubmissionService } from './submissions/service.ts'
 import { createSubmissionStore, type SubmissionStore } from './submissions/store.ts'
 import { createJsonUsageStoryRepository } from './stories/json.ts'
@@ -101,9 +102,13 @@ export interface AccountServices {
   readonly auth: AuthService
   readonly ownership: OwnershipService
   readonly userAdmin: UserAdminService
+  /** POST /api/submissions intake when accounts exist: Postgres, owned by the session's user. */
+  readonly submissions: AccountSubmissionService
   readonly cookie: SessionCookieConfig
   readonly loginLimiter: RequestHandler
   readonly registerLimiter: RequestHandler
+  /** Undefined means the submissions router builds its default limiter. */
+  readonly submissionLimiter?: RequestHandler
 }
 
 /** Test seams for the account services. Production passes none of these. */
@@ -114,6 +119,8 @@ export interface AccountOptions {
   now?: () => Date
   loginLimiter?: RequestHandler
   registerLimiter?: RequestHandler
+  /** POST /api/submissions limiter. Defaults to the intake's own (RATE_LIMIT). */
+  submissionLimiter?: RequestHandler
 }
 
 export interface CreateContainerOptions {
@@ -216,7 +223,7 @@ export function createContainer({
   // connects on the first query, so a database that is down at boot fails
   // the account routes, not the whole server.
   const database = injectedDatabase ?? (env.database ? createDatabase(env.database.url) : undefined)
-  const accounts = database ? createAccountServices(database, env, logger, accountOptions) : undefined
+  const accounts = database ? createAccountServices(database, env, logger, catalogue, accountOptions) : undefined
 
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
@@ -258,7 +265,13 @@ export function createContainer({
   }
 }
 
-function createAccountServices(db: Database, env: ServerEnv, logger: Logger, options: AccountOptions): AccountServices {
+function createAccountServices(
+  db: Database,
+  env: ServerEnv,
+  logger: Logger,
+  catalogue: ToolCatalogueRepository,
+  options: AccountOptions,
+): AccountServices {
   const sessions = createSessionService({ db, logger, ...(options.now ? { now: options.now } : {}) })
   return {
     sessions,
@@ -270,11 +283,13 @@ function createAccountServices(db: Database, env: ServerEnv, logger: Logger, opt
     }),
     ownership: createOwnershipService({ db }),
     userAdmin: createUserAdminService({ db, sessions }),
+    submissions: createAccountSubmissionService({ db, catalogue }),
     // Secure cookies whenever the site is served over https — i.e. production.
     cookie: { secure: env.isProduction },
     loginLimiter:
       options.loginLimiter ??
       createRateLimiter({ ...AUTH.loginRateLimit, message: 'Too many sign-in attempts from this address. Try again later.' }),
+    ...(options.submissionLimiter ? { submissionLimiter: options.submissionLimiter } : {}),
     registerLimiter:
       options.registerLimiter ??
       createRateLimiter({ ...AUTH.registerRateLimit, message: 'Too many accounts created from this address. Try again later.' }),
