@@ -273,6 +273,28 @@ export const TASK_MAX_OUTPUT_TOKENS = {
   edit: 2048,
 } as const
 
+/**
+ * The xAI (Grok) adapter's request tuning — llm/providers/xai.ts reads these
+ * and nothing else. The MODEL is not here: it is XAI_MODEL in the environment.
+ *
+ * `reasoningEffort`
+ *   Grok 4.5–4.7 always reason and default to `high`. `low` keeps per-run
+ *   latency and token spend close to what AGENT_MAX_TOKENS_PER_RUN was sized
+ *   for. Only sent to the model families xAI documents as accepting it; same
+ *   value the server's assistant adapter uses.
+ *
+ * `reasoningAllowanceTokens`
+ *   xAI's `max_output_tokens` counts reasoning AND answer tokens together.
+ *   TASK_MAX_OUTPUT_TOKENS above budgets the answer alone, so on a reasoning
+ *   model the adapter adds this allowance rather than letting hidden reasoning
+ *   truncate the JSON. Reasoning tokens are still reported as output tokens and
+ *   charged to the run budget, so AGENT_MAX_TOKENS_PER_RUN still bounds spend.
+ */
+export const XAI_REQUEST = {
+  reasoningEffort: 'low',
+  reasoningAllowanceTokens: 4096,
+} as const
+
 /** Cleaned source text passed to extraction, in characters. */
 export const MAX_EVIDENCE_CHARS = 24_000
 
