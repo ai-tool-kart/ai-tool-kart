@@ -16,6 +16,7 @@ import { createApp } from './app.ts'
 import { describeEnv, loadEnv } from './config/env.ts'
 import { API_BASE_PATH, HEALTH, HTTP } from './config/limits.ts'
 import { createContainer } from './container.ts'
+import type { Database } from './db/client.ts'
 import { createLogger, errorFields, type Logger } from './utils/logger.ts'
 import { SERVER_VERSION } from './utils/version.ts'
 
@@ -53,6 +54,7 @@ function main(): void {
       version: SERVER_VERSION,
       url: `http://${env.http.host}:${env.http.port}${API_BASE_PATH}${HEALTH.path}`,
       ...describeEnv(env),
+      database: env.database ? env.database.redacted : 'not configured (accounts disabled)',
     })
   })
 
@@ -61,7 +63,7 @@ function main(): void {
     process.exitCode = 1
   })
 
-  installShutdownHandlers(server, logger)
+  installShutdownHandlers(server, logger, container.database)
 }
 
 /**
@@ -71,7 +73,7 @@ function main(): void {
  * deploy indefinitely. `unref()` on the timer means a server that closes
  * promptly is not held open by the timeout itself.
  */
-function installShutdownHandlers(server: Server, logger: Logger): void {
+function installShutdownHandlers(server: Server, logger: Logger, database?: Database): void {
   let shuttingDown = false
 
   const shutdown = (signal: string): void => {
@@ -90,6 +92,10 @@ function installShutdownHandlers(server: Server, logger: Logger): void {
     server.close((error) => {
       if (error) logger.error('Error while closing the server', errorFields(error))
       clearTimeout(forceExit)
+      // Close the Postgres pool last, after in-flight requests have finished.
+      void database?.$disconnect().catch((disconnectError: unknown) => {
+        logger.error('Error while closing the database', errorFields(disconnectError))
+      })
     })
   }
 

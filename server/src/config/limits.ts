@@ -503,6 +503,47 @@ export const RATE_LIMIT = {
 } as const
 
 /**
+ * Accounts, sessions and the routes that use them (Phase 2B, src/auth/).
+ * Every module under auth/ and the auth/me/admin routers read these; none
+ * hard-codes a number of its own.
+ */
+export const AUTH = {
+  authPath: '/auth',
+  mePath: '/me',
+  adminPath: '/admin',
+
+  /** NIST SP 800-63B: length, not composition rules. */
+  minPasswordChars: 10,
+  /** Caps the work one scrypt call can be asked to do. */
+  maxPasswordChars: 200,
+  maxEmailChars: 254,
+  maxNameChars: 80,
+
+  /**
+   * scrypt cost. N=2^16, r=8 → 64 MiB and ~140 ms per hash on an M-series
+   * Mac. OWASP's 2^17 (128 MiB) is too much memory to run several logins
+   * concurrently on a small Railway instance. Parameters are stored with each
+   * hash, so raising them later upgrades hashes on the next successful login.
+   */
+  scrypt: { N: 2 ** 16, r: 8, p: 1, keyLength: 64, saltBytes: 16 },
+
+  /** Bytes of randomness in a session token (256 bits). */
+  sessionTokenBytes: 32,
+  /** Absolute lifetime. A session is never extended past this. */
+  sessionTtlMs: 30 * 24 * 60 * 60 * 1000,
+  /** last_used_at is written at most this often per session. */
+  sessionTouchIntervalMs: 60 * 60 * 1000,
+
+  /** Cookie names. The __Host- prefix requires Secure, Path=/ and no Domain. */
+  cookieName: 'atk_session',
+  secureCookieName: '__Host-atk_session',
+
+  /** Per-IP attempt limits. Counted on every attempt, success or not. */
+  loginRateLimit: { maxPerWindow: 10, windowMs: 15 * 60 * 1000 },
+  registerRateLimit: { maxPerWindow: 5, windowMs: 60 * 60 * 1000 },
+} as const
+
+/**
  * Per-field length/count limits automations/schema.ts enforces
  * (SPEC-automations.md §3). Same reasoning as TOOL_FIELDS above: tuning a
  * cap must never mean editing the validation logic that enforces it.

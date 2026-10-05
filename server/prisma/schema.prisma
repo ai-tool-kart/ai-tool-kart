@@ -1,8 +1,8 @@
 // AI Tool Kart — database schema.
 //
 // Phase 2A: the published catalogue, the submission queue, its append-only
-// audit trail, and a ledger of one-off data imports. Users, sessions and
-// tool ownership arrive in Phase 2B as their own migration.
+// audit trail, and a ledger of one-off data imports.
+// Phase 2B: users, server-side sessions, and tool ownership.
 //
 // Conventions:
 //  - Models are PascalCase in TypeScript, tables and columns snake_case in
@@ -93,6 +93,7 @@ model Tool {
   updatedAt     DateTime   @updatedAt @map("updated_at") @db.Timestamptz(3)
 
   submissions Submission[]
+  owners      ToolOwner[]
 
   @@index([status])
   @@index([cat])
@@ -138,55 +139,59 @@ enum SubmissionSource {
 /// are kept, never deleted.
 model Submission {
   /// UUID. Legacy JSON submissions keep their existing randomUUID() id.
-  id              String           @id @default(uuid()) @db.Uuid
-  status          SubmissionStatus @default(SUBMITTED)
+  id       String           @id @default(uuid()) @db.Uuid
+  status   SubmissionStatus @default(SUBMITTED)
   /// Bumped on every owner resubmission (Phase 2C).
-  revision        Int              @default(1)
-  source          SubmissionSource @default(form)
+  revision Int              @default(1)
+  source   SubmissionSource @default(form)
 
-  /// Owner account. Nullable: legacy submissions were anonymous. The foreign
-  /// key to users is added in Phase 2B, when that table exists.
-  userId          String?          @map("user_id") @db.Uuid
+  /// The submitting account. Nullable ONLY for source = legacy_json (the
+  /// pre-database store was anonymous); a CHECK constraint in the Phase 2B
+  /// migration requires it for every other submission.
+  userId String? @map("user_id") @db.Uuid
+  user   User?   @relation("SubmissionAuthor", fields: [userId], references: [id], onDelete: Restrict)
   /// The catalogue record this submission produced or updates.
-  toolId          String?          @map("tool_id")
-  tool            Tool?            @relation(fields: [toolId], references: [id], onDelete: SetNull)
+  toolId String? @map("tool_id")
+  tool   Tool?   @relation(fields: [toolId], references: [id], onDelete: SetNull)
 
   // The form's fields, as submitted (submissions/schema.ts).
-  siteUrl         String           @map("site_url")
-  normalizedUrl   String           @map("normalized_url")
-  name            String
-  tagline         String
-  description     String
-  category        String
-  pricingModel    String           @map("pricing_model")
-  price           String?
-  tags            String[]
-  audience        String?
-  alternatives    String[]
+  siteUrl       String     @map("site_url")
+  normalizedUrl String     @map("normalized_url")
+  name          String
+  tagline       String
+  description   String
+  category      String
+  pricingModel  String     @map("pricing_model")
+  price         String?
+  tags          String[]
+  audience      String?
+  alternatives  String[]
   /// [{ question, answer }]
-  faqs            Json             @default("[]")
-  launchStory     String?          @map("launch_story")
-  plan            LaunchPlan       @default(free)
+  faqs          Json       @default("[]")
+  launchStory   String?    @map("launch_story")
+  plan          LaunchPlan @default(free)
   /// The chosen launch week's local date (YYYY-MM-DD).
-  launchWeekId    String           @map("launch_week_id")
+  launchWeekId  String     @map("launch_week_id")
 
   // Review outcome.
   /// Shown to the owner (request-changes message). Internal notes live elsewhere.
-  ownerMessage    String?          @map("owner_message")
-  rejectionReason String?          @map("rejection_reason")
-  /// Reviewer account. Foreign key added in Phase 2B.
-  reviewerId      String?          @map("reviewer_id") @db.Uuid
+  ownerMessage    String? @map("owner_message")
+  rejectionReason String? @map("rejection_reason")
+  /// The admin who reviewed it. Null until a review happens.
+  reviewerId      String? @map("reviewer_id") @db.Uuid
+  reviewer        User?   @relation("SubmissionReviewer", fields: [reviewerId], references: [id], onDelete: Restrict)
 
-  submittedAt     DateTime         @default(now()) @map("submitted_at") @db.Timestamptz(3)
-  reviewedAt      DateTime?        @map("reviewed_at") @db.Timestamptz(3)
-  publishedAt     DateTime?        @map("published_at") @db.Timestamptz(3)
-  createdAt       DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt       DateTime         @updatedAt @map("updated_at") @db.Timestamptz(3)
+  submittedAt DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(3)
+  reviewedAt  DateTime? @map("reviewed_at") @db.Timestamptz(3)
+  publishedAt DateTime? @map("published_at") @db.Timestamptz(3)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
 
   events SubmissionEvent[]
 
   @@index([status, submittedAt])
   @@index([userId])
+  @@index([reviewerId])
   @@index([toolId])
   @@index([normalizedUrl])
   @@index([createdAt])
@@ -213,22 +218,24 @@ enum SubmissionEventType {
 
 /// Append-only. A trigger in the migration rejects UPDATE and DELETE.
 model SubmissionEvent {
-  id           String               @id @default(uuid()) @db.Uuid
-  submissionId String               @map("submission_id") @db.Uuid
-  submission   Submission           @relation(fields: [submissionId], references: [id], onDelete: Restrict)
-  /// Null for SYSTEM events. Foreign key to users added in Phase 2B.
-  actorUserId  String?              @map("actor_user_id") @db.Uuid
-  actorType    ActorType            @map("actor_type")
-  eventType    SubmissionEventType  @map("event_type")
-  fromStatus   SubmissionStatus?    @map("from_status")
-  toStatus     SubmissionStatus?    @map("to_status")
-  metadata     Json                 @default("{}")
+  id           String              @id @default(uuid()) @db.Uuid
+  submissionId String              @map("submission_id") @db.Uuid
+  submission   Submission          @relation(fields: [submissionId], references: [id], onDelete: Restrict)
+  /// Null exactly when actorType = SYSTEM (CHECK constraint, Phase 2B).
+  actorUserId  String?             @map("actor_user_id") @db.Uuid
+  actor        User?               @relation(fields: [actorUserId], references: [id], onDelete: Restrict)
+  actorType    ActorType           @map("actor_type")
+  eventType    SubmissionEventType @map("event_type")
+  fromStatus   SubmissionStatus?   @map("from_status")
+  toStatus     SubmissionStatus?   @map("to_status")
+  metadata     Json                @default("{}")
   /// The X-Request-Id of the HTTP request that caused it, for log correlation.
-  requestId    String?              @map("request_id")
-  createdAt    DateTime             @default(now()) @map("created_at") @db.Timestamptz(3)
+  requestId    String?             @map("request_id")
+  createdAt    DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
 
   @@index([submissionId, createdAt])
   @@index([eventType, createdAt])
+  @@index([actorUserId])
   @@map("submission_events")
 }
 
@@ -254,4 +261,88 @@ model DataImportRun {
 
   @@index([source, startedAt])
   @@map("data_import_runs")
+}
+
+// ── Identity (Phase 2B) ──────────────────────────────────────────────────────
+
+/// What a user may POTENTIALLY do. Which specific tools a TOOL_OWNER may
+/// manage is never read from the role — only from tool_owners.
+///   USER         default for a new account
+///   TOOL_OWNER   kept in sync by the server: a non-admin with >= 1 ownership row
+///   ADMIN        moderation and administrative operations
+///   SUPER_ADMIN  everything ADMIN can, plus managing roles
+enum UserRole {
+  USER
+  TOOL_OWNER
+  ADMIN
+  SUPER_ADMIN
+
+  @@map("user_role")
+}
+
+model User {
+  id              String    @id @default(uuid()) @db.Uuid
+  /// Trimmed and lowercased by the server (auth/schema.ts); a CHECK constraint
+  /// rejects anything else, so uniqueness is case-insensitive in practice.
+  email           String    @unique
+  name            String?
+  /// scrypt$N$r$p$salt$hash (auth/password.ts). Never plaintext, never logged.
+  passwordHash    String    @map("password_hash")
+  role            UserRole  @default(USER)
+  /// Set by the future email-verification flow. Unused in Phase 2B.
+  emailVerifiedAt DateTime? @map("email_verified_at") @db.Timestamptz(3)
+  /// A disabled account cannot log in, and its existing sessions stop working.
+  disabledAt      DateTime? @map("disabled_at") @db.Timestamptz(3)
+  lastLoginAt     DateTime? @map("last_login_at") @db.Timestamptz(3)
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  sessions            Session[]
+  ownedTools          ToolOwner[]       @relation("ToolOwnerUser")
+  grantedOwnerships   ToolOwner[]       @relation("ToolOwnerGrantedBy")
+  submissions         Submission[]      @relation("SubmissionAuthor")
+  reviewedSubmissions Submission[]      @relation("SubmissionReviewer")
+  submissionEvents    SubmissionEvent[]
+
+  @@index([role])
+  @@map("users")
+}
+
+/// A server-side browser session. The cookie carries a random token; only its
+/// SHA-256 is stored, so a leaked sessions table cannot be replayed.
+model Session {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @map("user_id") @db.Uuid
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// hex(sha256(token)). The raw token exists only in the cookie.
+  tokenHash  String    @unique @map("token_hash")
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  expiresAt  DateTime  @map("expires_at") @db.Timestamptz(3)
+  /// Throttled: updated at most once per AUTH.sessionTouchIntervalMs.
+  lastUsedAt DateTime  @default(now()) @map("last_used_at") @db.Timestamptz(3)
+  /// Set on logout or forced sign-out. A revoked session never authenticates.
+  revokedAt  DateTime? @map("revoked_at") @db.Timestamptz(3)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+/// Who may manage which catalogue tool. Many-to-many: a tool can have several
+/// managers (a founder and a marketer), and one person can manage several
+/// tools. tool_id references the existing catalogue ids unchanged.
+model ToolOwner {
+  toolId          String   @map("tool_id")
+  tool            Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  userId          String   @map("user_id") @db.Uuid
+  user            User     @relation("ToolOwnerUser", fields: [userId], references: [id], onDelete: Cascade)
+  /// The admin who granted it; null when granted by the system (e.g. a
+  /// future approval flow). Kept for accountability.
+  grantedByUserId String?  @map("granted_by_user_id") @db.Uuid
+  grantedBy       User?    @relation("ToolOwnerGrantedBy", fields: [grantedByUserId], references: [id], onDelete: SetNull)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@id([toolId, userId])
+  @@index([userId])
+  @@map("tool_owners")
 }

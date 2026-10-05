@@ -22,7 +22,8 @@
     "db:status": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/prisma.ts migrate status",
     "db:check": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/check.ts",
     "db:backup": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/backup.ts",
-    "db:import": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/importLegacy.ts"
+    "db:import": "node --experimental-strip-types --env-file-if-exists=.env scripts/db/importLegacy.ts",
+    "auth:set-role": "node --experimental-strip-types --env-file-if-exists=.env scripts/auth/setRole.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.0",
@@ -34,6 +35,8 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^24.13.3",
+    "@types/pg": "8.23.1",
+    "pg": "8.23.1",
     "typescript": "~6.0.2",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }

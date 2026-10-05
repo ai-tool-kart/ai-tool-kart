@@ -22,7 +22,7 @@ export interface CorsOptions {
   methods?: string[]
 }
 
-const DEFAULT_METHODS = ['GET', 'POST', 'OPTIONS']
+const DEFAULT_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
 const ALLOWED_HEADERS = ['Content-Type']
 /**
  * Response headers `fetch()` may read for a cross-origin request. Without
@@ -50,6 +50,10 @@ export function createCors({ allowedOrigins, methods = DEFAULT_METHODS }: CorsOp
 
     if (typeof origin === 'string' && allowed.has(origin)) {
       res.setHeader('Access-Control-Allow-Origin', origin)
+      // Lets the browser send the session cookie on cross-origin fetches
+      // (local dev: :5173 → :3001). Only ever paired with an exact,
+      // allowlisted origin above — never with '*'.
+      res.setHeader('Access-Control-Allow-Credentials', 'true')
       res.setHeader('Access-Control-Allow-Methods', methodList)
       res.setHeader('Access-Control-Allow-Headers', headerList)
       res.setHeader('Access-Control-Expose-Headers', exposedHeaderList)

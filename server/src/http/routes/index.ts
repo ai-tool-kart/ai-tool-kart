@@ -16,6 +16,7 @@
 import { Router } from 'express'
 import {
   ASSISTANT,
+  AUTH,
   AUTOMATIONS_API,
   HEALTH,
   SAVINGS_API,
@@ -25,6 +26,12 @@ import {
   TOOLS_API,
 } from '../../config/limits.ts'
 import type { Container } from '../../container.ts'
+import { authUnavailable } from '../../domain/errors.ts'
+import { createAuthenticate } from '../middleware/auth.ts'
+import { createOriginCheck } from '../middleware/originCheck.ts'
+import { createAdminRouter } from './admin.ts'
+import { createAuthRouter } from './auth.ts'
+import { createMeRouter } from './me.ts'
 import { createAssistantRouter } from './assistant.ts'
 import { createAutomationsRouter } from './automations.ts'
 import { createHealthRouter } from './health.ts'
@@ -56,6 +63,37 @@ export function createApiRouter(container: Container): Router {
   )
   router.use(ASSISTANT.path, createAssistantRouter({ engine: container.assistant }))
   router.use(SUBMISSIONS.path, createSubmissionsRouter({ service: container.submissions }))
+
+  // Accounts. Only these routers resolve sessions; the public routes above
+  // never touch the database for identity.
+  const { accounts } = container
+  if (accounts) {
+    const authenticate = createAuthenticate(accounts.sessions, accounts.cookie)
+    const originCheck = createOriginCheck(container.env.cors.allowedOrigins)
+    router.use(
+      AUTH.authPath,
+      createAuthRouter({
+        auth: accounts.auth,
+        cookie: accounts.cookie,
+        authenticate,
+        originCheck,
+        loginLimiter: accounts.loginLimiter,
+        registerLimiter: accounts.registerLimiter,
+      }),
+    )
+    router.use(AUTH.mePath, createMeRouter({ ownership: accounts.ownership, authenticate, originCheck }))
+    router.use(
+      AUTH.adminPath,
+      createAdminRouter({ ownership: accounts.ownership, userAdmin: accounts.userAdmin, authenticate, originCheck }),
+    )
+  } else {
+    // No DATABASE_URL: say so plainly rather than 404, which would read as
+    // "this endpoint doesn't exist".
+    const unavailable = Router().use((_req, _res, next) => {
+      next(authUnavailable('Accounts are not available on this server right now.'))
+    })
+    router.use([AUTH.authPath, AUTH.mePath, AUTH.adminPath], unavailable)
+  }
 
   return router
 }

@@ -60,6 +60,10 @@ export type ApiErrorCode =
   | 'VALIDATION_FAILED'
   | 'DUPLICATE_URL'
   | 'RATE_LIMITED'
+  | 'UNAUTHENTICATED'
+  | 'FORBIDDEN'
+  | 'EMAIL_TAKEN'
+  | 'AUTH_UNAVAILABLE'
   | 'INTERNAL'
 
 const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
@@ -71,6 +75,10 @@ const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
   VALIDATION_FAILED: 400,
   DUPLICATE_URL: 409,
   RATE_LIMITED: 429,
+  UNAUTHENTICATED: 401,
+  FORBIDDEN: 403,
+  EMAIL_TAKEN: 409,
+  AUTH_UNAVAILABLE: 503,
   INTERNAL: 500,
 }
 
@@ -181,6 +189,28 @@ export function providerUnavailable(
   details?: Record<string, unknown>,
 ): ApiError {
   return new ApiError('PROVIDER_UNAVAILABLE', message, { details })
+}
+
+/** No valid session, or wrong credentials. Never says which part was wrong. */
+export function unauthenticated(message: string): ApiError {
+  return new ApiError('UNAUTHENTICATED', message)
+}
+
+/**
+ * Authenticated, but the role does not allow it. Ownership failures do NOT
+ * use this — they answer NOT_FOUND, so probing ids reveals nothing.
+ */
+export function forbidden(message: string): ApiError {
+  return new ApiError('FORBIDDEN', message)
+}
+
+export function emailTaken(message: string): ApiError {
+  return new ApiError('EMAIL_TAKEN', message, { fields: { email: message } })
+}
+
+/** No database is configured, so accounts cannot work. */
+export function authUnavailable(message: string): ApiError {
+  return new ApiError('AUTH_UNAVAILABLE', message)
 }
 
 /** Wraps an unexpected failure. The message is never sent to the client. */

@@ -38,13 +38,22 @@
  */
 
 import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
+import type { SessionCookieConfig } from './auth/cookies.ts'
+import { createOwnershipService, type OwnershipService } from './auth/ownership.ts'
+import type { ScryptParams } from './auth/password.ts'
+import { createAuthService, type AuthService } from './auth/service.ts'
+import { createSessionService, type SessionService } from './auth/sessions.ts'
+import { createUserAdminService, type UserAdminService } from './auth/users.ts'
 import { createJsonAutomations } from './automations/json.ts'
 import { createAutomationMatcher, type AutomationMatcher } from './automations/match.ts'
 import type { AutomationRepository } from './automations/repository.ts'
 import { createJsonToolCatalogue } from './catalogue/json.ts'
 import type { ToolCatalogueRepository } from './catalogue/repository.ts'
 import type { ServerEnv } from './config/env.ts'
-import { LLM_BUDGET } from './config/limits.ts'
+import { AUTH, LLM_BUDGET } from './config/limits.ts'
+import { createDatabase, type Database } from './db/client.ts'
+import { createRateLimiter } from './http/middleware/rateLimit.ts'
+import type { RequestHandler } from 'express'
 import { createBudget } from './llm/budget.ts'
 import { createLLMClient, type LLMClient } from './llm/client.ts'
 import { createProvider } from './llm/factory.ts'
@@ -78,6 +87,33 @@ export interface Container {
   readonly submissions: SubmissionService
   /** The raw store behind `submissions` — the review script reads/writes this directly. */
   readonly submissionStore: SubmissionStore
+  /**
+   * Postgres, when DATABASE_URL is set (or a test injects one). Absent, the
+   * server runs exactly as before and only the account routes answer 503.
+   */
+  readonly database?: Database
+  /** Accounts, sessions, ownership. Present exactly when `database` is. */
+  readonly accounts?: AccountServices
+}
+
+export interface AccountServices {
+  readonly sessions: SessionService
+  readonly auth: AuthService
+  readonly ownership: OwnershipService
+  readonly userAdmin: UserAdminService
+  readonly cookie: SessionCookieConfig
+  readonly loginLimiter: RequestHandler
+  readonly registerLimiter: RequestHandler
+}
+
+/** Test seams for the account services. Production passes none of these. */
+export interface AccountOptions {
+  /** Cheaper scrypt so the suite stays fast. Never set outside tests. */
+  scryptParams?: ScryptParams
+  /** Clock for session expiry tests. */
+  now?: () => Date
+  loginLimiter?: RequestHandler
+  registerLimiter?: RequestHandler
 }
 
 export interface CreateContainerOptions {
@@ -111,6 +147,12 @@ export interface CreateContainerOptions {
    */
   submissionStore?: SubmissionStore
   /**
+   * Test seam for Postgres. A test passes a client bound to its own isolated
+   * schema (tests/dbHarness.ts). Otherwise one is created from DATABASE_URL.
+   */
+  database?: Database
+  accountOptions?: AccountOptions
+  /**
    * Test seam for the provider.
    *
    * Scripted mock behaviour — malformed output, refusals, outages — is injected
@@ -129,6 +171,8 @@ export function createContainer({
   savings: injectedSavings,
   automations: injectedAutomations,
   submissionStore: injectedSubmissionStore,
+  database: injectedDatabase,
+  accountOptions = {},
   mock,
 }: CreateContainerOptions): Container {
   // The only line in the server that names a concrete catalogue implementation.
@@ -168,6 +212,12 @@ export function createContainer({
   const submissionStore = injectedSubmissionStore ?? createSubmissionStore()
   const submissions = createSubmissionService({ store: submissionStore, catalogue })
 
+  // ...and the only line that opens a Postgres connection. Lazy: Prisma
+  // connects on the first query, so a database that is down at boot fails
+  // the account routes, not the whole server.
+  const database = injectedDatabase ?? (env.database ? createDatabase(env.database.url) : undefined)
+  const accounts = database ? createAccountServices(database, env, logger, accountOptions) : undefined
+
   // ...and the only line that names a concrete LLM provider. Stateless, so one
   // instance serves every request.
   const provider = createProvider({ env, logger, ...(mock ? { mock } : {}) })
@@ -203,5 +253,30 @@ export function createContainer({
     assistant,
     submissions,
     submissionStore,
+    ...(database ? { database } : {}),
+    ...(accounts ? { accounts } : {}),
+  }
+}
+
+function createAccountServices(db: Database, env: ServerEnv, logger: Logger, options: AccountOptions): AccountServices {
+  const sessions = createSessionService({ db, logger, ...(options.now ? { now: options.now } : {}) })
+  return {
+    sessions,
+    auth: createAuthService({
+      db,
+      sessions,
+      ...(options.scryptParams ? { scryptParams: options.scryptParams } : {}),
+      ...(options.now ? { now: options.now } : {}),
+    }),
+    ownership: createOwnershipService({ db }),
+    userAdmin: createUserAdminService({ db, sessions }),
+    // Secure cookies whenever the site is served over https — i.e. production.
+    cookie: { secure: env.isProduction },
+    loginLimiter:
+      options.loginLimiter ??
+      createRateLimiter({ ...AUTH.loginRateLimit, message: 'Too many sign-in attempts from this address. Try again later.' }),
+    registerLimiter:
+      options.registerLimiter ??
+      createRateLimiter({ ...AUTH.registerRateLimit, message: 'Too many accounts created from this address. Try again later.' }),
   }
 }

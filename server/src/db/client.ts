@@ -5,9 +5,9 @@
  * rather than a bundled query engine binary. The generated client lives in
  * src/generated/prisma (gitignored, produced by `npm run db:generate`).
  *
- * Not wired into container.ts yet: Phase 2A ships the schema, migrations and
- * the import tooling only. The catalogue and the submission store keep
- * reading their JSON files until the Postgres adapters replace them.
+ * Used by container.ts (accounts, Phase 2B) and the db scripts. The
+ * catalogue and the submission store still read their JSON files until the
+ * Postgres adapters replace them.
  */
 
 import { PrismaPg } from '@prisma/adapter-pg'
@@ -15,6 +15,20 @@ import { PrismaClient } from '../generated/prisma/client.ts'
 
 export type Database = PrismaClient
 
-export function createDatabase(connectionString: string): Database {
-  return new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
+export interface DatabaseOptions {
+  /**
+   * A Postgres schema other than `public`. Tests use it to give each test
+   * file its own isolated copy of the tables (tests/dbHarness.ts). Applied to
+   * Prisma's generated queries AND the connection's search_path, so raw SQL
+   * resolves to the same tables.
+   */
+  schema?: string
+}
+
+export function createDatabase(connectionString: string, { schema }: DatabaseOptions = {}): Database {
+  if (schema === undefined) return new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
+  if (!/^[a-z_][a-z0-9_]*$/.test(schema)) throw new Error(`Invalid schema name "${schema}".`)
+  return new PrismaClient({
+    adapter: new PrismaPg({ connectionString, options: `-c search_path=${schema}` }, { schema }),
+  })
 }
