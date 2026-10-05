@@ -88,6 +88,14 @@ const EnvSchema = z.object({
   LLM_API_KEY: z.string().trim().optional(),
   LLM_MODEL_FAST: z.string().trim().optional(),
   LLM_MODEL_STRONG: z.string().trim().optional(),
+  /*
+   * xAI (LLM_PROVIDER=xai) has its own variables rather than reusing
+   * LLM_API_KEY / LLM_MODEL_*: a deployment migrating from OpenAI may still
+   * carry an OpenAI key and gpt-* model ids in those, and sending either to
+   * api.x.ai would fail on every call.
+   */
+  XAI_API_KEY: z.string().trim().optional(),
+  XAI_MODEL: z.string().trim().optional(),
 
   WORDPRESS_API_URL: z.string().trim().optional(),
   WORDPRESS_USERNAME: z.string().trim().optional(),
@@ -269,6 +277,7 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
   }
 
   registerSecret(raw.LLM_API_KEY)
+  registerSecret(raw.XAI_API_KEY)
   registerSecret(raw.WORDPRESS_APP_PASSWORD)
 
   let wordpress: WordPressCredentials | undefined
@@ -301,20 +310,51 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): LoadedEnv {
     }
   }
 
-  if (raw.LLM_PROVIDER !== 'mock' && !raw.LLM_API_KEY) {
+  const isXai = raw.LLM_PROVIDER === 'xai'
+
+  if (isXai) {
+    if (!raw.XAI_API_KEY) {
+      throw configError(
+        'XAI_API_KEY is not configured. LLM_PROVIDER="xai" reads its key from XAI_API_KEY ' +
+          '(server-side only, never with a VITE_ prefix). Set it, or use LLM_PROVIDER=mock to run offline.',
+      )
+    }
+    if (!raw.XAI_MODEL) {
+      throw configError(
+        'XAI_MODEL is not configured. LLM_PROVIDER="xai" needs an xAI model id, e.g. XAI_MODEL=grok-4.7.',
+      )
+    }
+    // Leftovers from the OpenAI configuration. Harmless, but worth removing.
+    if (raw.LLM_API_KEY) {
+      warnings.push(
+        'LLM_API_KEY is set but unused with LLM_PROVIDER=xai (the key is read from XAI_API_KEY). ' +
+          'It can be removed from the environment.',
+      )
+    }
+    if (raw.LLM_MODEL_FAST || raw.LLM_MODEL_STRONG) {
+      warnings.push(
+        'LLM_MODEL_FAST / LLM_MODEL_STRONG are ignored with LLM_PROVIDER=xai; XAI_MODEL is used for every task. ' +
+          'They can be removed from the environment.',
+      )
+    }
+  } else if (raw.LLM_PROVIDER !== 'mock' && !raw.LLM_API_KEY) {
     throw configError(
       `LLM_PROVIDER is "${raw.LLM_PROVIDER}" but LLM_API_KEY is empty. ` +
         'Set a key, or use LLM_PROVIDER=mock to run the pipeline offline against the deterministic provider.',
     )
   }
 
+  const apiKey = isXai ? raw.XAI_API_KEY : raw.LLM_API_KEY
+  const modelFast = isXai ? raw.XAI_MODEL : raw.LLM_MODEL_FAST
+  const modelStrong = isXai ? raw.XAI_MODEL : raw.LLM_MODEL_STRONG
+
   const env: AgentEnv = {
     enabled: raw.AGENT_ENABLED,
     llm: {
       provider: raw.LLM_PROVIDER,
-      ...(raw.LLM_API_KEY ? { apiKey: raw.LLM_API_KEY } : {}),
-      ...(raw.LLM_MODEL_FAST ? { modelFast: raw.LLM_MODEL_FAST } : {}),
-      ...(raw.LLM_MODEL_STRONG ? { modelStrong: raw.LLM_MODEL_STRONG } : {}),
+      ...(apiKey ? { apiKey } : {}),
+      ...(modelFast ? { modelFast } : {}),
+      ...(modelStrong ? { modelStrong } : {}),
     },
     ...(wordpress ? { wordpress } : {}),
     dbPath: raw.AGENT_DB_PATH,
@@ -347,6 +387,7 @@ export function describeEnv(env: AgentEnv): Record<string, unknown> {
     enabled: env.enabled,
     llmProvider: env.llm.provider,
     llmKey: env.llm.apiKey ? 'set' : 'absent',
+    llmModel: env.llm.modelStrong,
     wordpress: env.wordpress ? 'configured' : 'not configured',
     wordpressUser: env.wordpress ? env.wordpress.username : undefined,
     db: env.dbPath,

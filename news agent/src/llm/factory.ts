@@ -1,10 +1,11 @@
 /*
  * Provider selection.
  *
- * Two adapters ship today: `mock`, the deterministic offline provider that makes
- * the whole pipeline runnable with no key and no network, and `openai`, the
- * first real runtime provider. Nothing else in the codebase knows either one
- * exists — pipeline modules call the shared client against the LLMProvider
+ * Three adapters ship today: `mock`, the deterministic offline provider that
+ * makes the whole pipeline runnable with no key and no network; `openai`, the
+ * first real runtime provider; and `xai` (Grok), the production provider, which
+ * reads XAI_API_KEY and XAI_MODEL instead of LLM_API_KEY / LLM_MODEL_*. Nothing
+ * else in the codebase knows any of them exists — pipeline modules call the shared client against the LLMProvider
  * interface, and LLM_PROVIDER is the only switch.
  *
  * ── Adding another provider ──────────────────────────────────────────────────
@@ -42,6 +43,7 @@ import type { AgentEnv } from '../config/env.ts'
 import type { LLMProvider } from './provider.ts'
 import { createMockProvider, type MockProviderOptions } from './providers/mock.ts'
 import { createOpenAIProvider } from './providers/openai.ts'
+import { createXaiProvider, XAI_PROVIDER_ID } from './providers/xai.ts'
 
 export interface RealProviderOptions {
   apiKey: string
@@ -55,6 +57,19 @@ type ProviderFactory = (options: RealProviderOptions) => LLMProvider
 /** Real adapters. One entry per vendor; `mock` is handled separately below. */
 const PROVIDER_FACTORIES: Record<string, ProviderFactory> = {
   openai: createOpenAIProvider,
+  [XAI_PROVIDER_ID]: createXaiProvider,
+}
+
+/**
+ * The environment variable each provider reads its credential from, so a
+ * missing-key error names the variable the operator actually has to set.
+ */
+const KEY_ENV_VAR: Record<string, string> = {
+  [XAI_PROVIDER_ID]: 'XAI_API_KEY',
+}
+
+export function apiKeyEnvVar(providerId: string): string {
+  return KEY_ENV_VAR[providerId] ?? 'LLM_API_KEY'
 }
 
 export function availableProviders(): string[] {
@@ -91,7 +106,7 @@ export function createProvider({ env, mock }: CreateProviderOptions): LLMProvide
    */
   if (!env.llm.apiKey) {
     throw configError(
-      `LLM_PROVIDER="${id}" requires LLM_API_KEY to be set. ` +
+      `${apiKeyEnvVar(id)} is not configured. LLM_PROVIDER="${id}" requires ${apiKeyEnvVar(id)} to be set. ` +
         'Set it in the agent environment (server-side only, never with a VITE_ prefix), ' +
         'or use LLM_PROVIDER=mock to run offline.',
     )
