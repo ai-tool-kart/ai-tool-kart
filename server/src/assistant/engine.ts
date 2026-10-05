@@ -140,6 +140,8 @@ export interface CreateAssistantEngineOptions {
    */
   automations: () => Promise<AutomationMatcher>
   logger: Logger
+  /** Test seam: the whole-turn deadline. Defaults to ASSISTANT.turnDeadlineMs. */
+  turnDeadlineMs?: number
 }
 
 export function createAssistantEngine({
@@ -148,9 +150,11 @@ export function createAssistantEngine({
   createClient,
   automations,
   logger,
+  turnDeadlineMs = ASSISTANT.turnDeadlineMs,
 }: CreateAssistantEngineOptions): AssistantEngine {
-  return {
-    async runTurn(request) {
+  const engine = {
+    /** One turn. `signal` is the turn deadline; it reaches the model call. */
+    async turn(request: AssistantTurnRequest, signal: AbortSignal): Promise<AssistantChatResponse> {
       const log = logger.child({ step: 'assistant' })
       const previous = normalizeContext(request.context)
       const history = truncateHistory(request.messages)
@@ -264,6 +268,7 @@ export function createAssistantEngine({
         user: assistantUserPrompt({ message: request.message, history, context }),
         schema: AssistantReplySchema,
         schemaName: ASSISTANT_SCHEMA_NAME,
+        signal,
       })
 
       const grounded = groundReply(
@@ -382,6 +387,22 @@ export function createAssistantEngine({
       if (plan) result.plan = plan
       if (automation) result.automation = automation
       return result
+    },
+  }
+
+  return {
+    async runTurn(request) {
+      // ONE deadline for the whole turn (retrieval, every model attempt,
+      // hydration), kept under the 120 s a proxy in front of us allows.
+      // Aborting cancels the in-flight model call (llm/client.ts); the timer
+      // is always cleared, so nothing outlives the request.
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), turnDeadlineMs)
+      try {
+        return await engine.turn(request, controller.signal)
+      } finally {
+        clearTimeout(timer)
+      }
     },
   }
 }

@@ -33,7 +33,7 @@
  */
 
 /** Mirrors the LLM-relevant subset of the News Agent's AgentErrorCode. */
-export type LLMErrorCode = 'LLM_UNAVAILABLE' | 'LLM_SCHEMA' | 'LLM_REFUSAL' | 'BUDGET_EXCEEDED'
+export type LLMErrorCode = 'LLM_UNAVAILABLE' | 'LLM_SCHEMA' | 'LLM_REFUSAL' | 'BUDGET_EXCEEDED' | 'LLM_DEADLINE'
 
 export interface LLMErrorOptions {
   cause?: unknown
@@ -82,6 +82,14 @@ export function llmRefused(message: string, options: LLMErrorOptions = {}): LLME
 }
 
 /** A spending cap was reached. Says nothing about the quality of the request. */
+/**
+ * The turn's deadline passed (assistant/engine.ts ASSISTANT.turnDeadlineMs).
+ * Never retryable: there is no time left to retry in.
+ */
+export function llmDeadline(message: string, options: Omit<LLMErrorOptions, 'retryable'> = {}): LLMError {
+  return new LLMError('LLM_DEADLINE', message, { ...options, retryable: false })
+}
+
 export function budgetExceeded(message: string, details?: Record<string, unknown>): LLMError {
   return new LLMError('BUDGET_EXCEEDED', message, { details })
 }
