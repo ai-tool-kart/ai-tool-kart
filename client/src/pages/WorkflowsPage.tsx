@@ -16,14 +16,14 @@ import { isNiche, type AutomationFilters, type NicheName } from '@/types/automat
  *
  * ── One listing, not two ─────────────────────────────────────────────────────
  *
- * This page used to render the 19 editorial homepage setups (data/aiSetups.ts)
- * while /automations ("Guides") listed the real guide catalogue. They are now
+ * This page used to render 19 editorial homepage setups while /automations ("Guides") listed the real guide catalogue. They are now
  * one page: this route, this design, that data. /automations redirects here
  * (App.tsx, and a 301 in vercel.json), and each card opens the guide itself at
  * /automations/:niche/:slug — the prerendered SEO page, unchanged.
  *
- * The 19 setups still exist; they are the homepage's "AI for Your Work" taster
- * and are no longer read here.
+ * The homepage's "AI for Your Work" is a taster of this same data, drawn from
+ * GET /api/automations/home; its "Explore all niches" lands on the chip row
+ * here (`#niches`).
  *
  * ── The data path ────────────────────────────────────────────────────────────
  *
@@ -131,7 +131,11 @@ export default function WorkflowsPage() {
         />
       </div>
 
-      <WorkflowNicheChips selected={filters.niche} onSelect={(niche?: NicheName) => update({ niche })} />
+      <WorkflowNicheChips
+        id="niches"
+        selected={filters.niche}
+        onSelect={(niche?: NicheName) => update({ niche })}
+      />
 
       <div className="relative mt-[26px]">
         {/* The cards' titles are h3s; this keeps the outline h1 → h2 → h3. */}

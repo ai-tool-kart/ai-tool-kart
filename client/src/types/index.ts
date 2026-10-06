@@ -13,12 +13,7 @@ export type {
   ConversationMessage,
   ToolPricingTier,
 } from '@/types/assistant'
-export type {
-  AiSetup,
-  ResolvedSetup,
-  SetupCategory,
-  SetupToneName,
-} from '@/types/aiSetup'
+export type { SetupToneName } from '@/types/aiSetup'
 export type { BlogPost } from '@/types/blog'
 export type {
   CommunityChannel,

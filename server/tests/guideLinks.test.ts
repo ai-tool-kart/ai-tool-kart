@@ -1,12 +1,14 @@
 /*
  * Hand-picked guide links: every stored one resolves, and nothing else is linked.
  *
- * Three pieces of editorial content can point at a step-by-step guide, each
+ * Two pieces of editorial content can point at a step-by-step guide, each
  * chosen by hand from docs/LINK-CANDIDATES.md (the "good fit" rows only):
  *
  *   usage stories   server/src/stories/data/stories.json   `automation`
- *   AI setups       client/src/data/aiSetups.ts            `automation`
  *   Build roles     client/src/data/roleGuides.ts          ROLE_GUIDES
+ *
+ * (The homepage's "AI for Your Work" no longer holds hand-picked links: it
+ * shows guide records from GET /api/automations/home — tests/automationsHome.)
  *
  * A link is a { niche, slug } pair into the imported automations. Nothing ties
  * the two together at runtime, so a re-import that renames, drops or retires a
@@ -14,14 +16,14 @@
  * is that something: every stored pair must name an ACTIVE imported guide.
  *
  * It also pins which items are linked. Every story card links (three matched
- * to a guide, five rewritten around one). The setups and roles not listed
+ * to a guide, five rewritten around one). The roles not listed
  * below are pending a client decision and must keep today's behaviour — which
  * is exactly "has no link" — so a link added without that decision fails here.
  *
  * ── Why a server test reads client files ─────────────────────────────────────
  *
- * The setup and role links live in the client, but the automations are loaded
- * here and this is the suite that runs. Both client files import types only,
+ * The role links live in the client, but the automations are loaded
+ * here and this is the suite that runs. The client file imports types only,
  * which Node strips, so they load as plain modules. The path is computed rather
  * than written as a literal so the server's typecheck never follows it into the
  * client's `@/` aliases.
@@ -57,20 +59,6 @@ const LINKED_STORIES = [
   'startup-founder-market-research',
   'studio-owner-local-ads',
 ]
-/** The decision recorded in docs/LINK-CANDIDATES.md — the ✅ rows, and only those. */
-const LINKED_SETUPS = [
-  'seo-blog-production',
-  'social-content-pipeline',
-  'saas-landing-page',
-  'product-image-workflow',
-  'long-video-to-shorts',
-  'lead-generation-stack',
-  'campaign-research-copy',
-  'meeting-to-action-items',
-  'competitor-analysis',
-  'narration-and-dubbing',
-  'inbox-and-task-triage',
-]
 const LINKED_ROLES = ['Graphic Designer', 'Video Editor', 'Content Creator', 'Writer', 'Student', 'Data Analyst']
 
 const automations = createJsonAutomations()
@@ -78,9 +66,6 @@ const stories = await createJsonUsageStoryRepository().list()
 
 const clientModule = (path: string): Promise<Record<string, unknown>> =>
   import(new URL(`../../client/src/${path}`, import.meta.url).href)
-const { AI_SETUPS } = (await clientModule('data/aiSetups.ts')) as {
-  AI_SETUPS: Array<{ id: string; automation?: GuideRef }>
-}
 const { ROLE_GUIDES } = (await clientModule('data/roleGuides.ts')) as {
   ROLE_GUIDES: Record<string, GuideRef>
 }
@@ -109,12 +94,6 @@ await test('hand-picked guide links', async (t) => {
     assert.deepEqual(await unresolved(linked.map((s) => [s.id, s.automation as GuideRef])), [])
   })
 
-  await t.test('every setup link names an active imported guide', async () => {
-    const linked = AI_SETUPS.filter((setup) => setup.automation)
-    assert.ok(linked.length > 0, 'the scan found linked setups')
-    assert.deepEqual(await unresolved(linked.map((s) => [s.id, s.automation as GuideRef])), [])
-  })
-
   await t.test('every role link names an active imported guide, under a real role', async () => {
     const entries = Object.entries(ROLE_GUIDES)
     assert.ok(entries.length > 0, 'the scan found linked roles')
@@ -134,14 +113,6 @@ await test('hand-picked guide links', async (t) => {
     // the same niche would say the opposite.
     const niches = stories.map((s) => s.automation?.niche)
     assert.equal(new Set(niches).size, stories.length, `niches repeat: ${niches.join(', ')}`)
-  })
-
-  await t.test('exactly the chosen setups are linked; every other setup still asks the assistant', () => {
-    assert.equal(AI_SETUPS.length, 19)
-    assert.deepEqual(
-      AI_SETUPS.filter((s) => s.automation).map((s) => s.id).sort(),
-      [...LINKED_SETUPS].sort(),
-    )
   })
 
   await t.test('exactly the chosen roles are linked; every other role still asks the assistant', () => {

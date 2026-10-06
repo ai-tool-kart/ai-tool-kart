@@ -1,106 +1,85 @@
-import { useCallback, useMemo, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import SetupCard from '@/components/aiSetups/SetupCard'
-import { automationPath } from '@/components/automations/labels'
-import SetupCategoryChips from '@/components/aiSetups/SetupCategoryChips'
-import { AI_SETUPS } from '@/data/aiSetups'
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { AutomationResultSkeleton } from '@/components/automations/AutomationResultCard'
+import { StatePanel } from '@/components/catalogue/BrowseStates'
+import WorkflowCard from '@/components/workflows/WorkflowCard'
+import WorkflowNicheChips from '@/components/workflows/WorkflowNicheChips'
+import { useHomeAutomations } from '@/hooks/useAutomations'
 import { useToolIndex } from '@/hooks/useToolIndex'
-import type { ResolvedSetup, SetupCategory } from '@/types/aiSetup'
-import type { AssistantRequestSource } from '@/types/assistant'
-import { composeSetupRequest, resolveSetup, setupsForCategory } from '@/utils/aiSetups'
+import { isNiche, type AutomationCard, type NicheName } from '@/types/automation'
 
 /*
- * "AI for Your Work" — the homepage's setup library.
+ * "AI for Your Work" — the homepage's taster of the workflow library.
  *
  * Source: AI Tool Kart Site.dc.html, `data-screen-label="AI for your work"`. It
  * follows Popular Ways in the final design, and does so here.
  *
- * Where Popular Ways asks "what outcome do you want" and answers with a filtered
- * shelf, this section answers with a whole SETUP: several catalogue tools, in an
- * order, with the prompts to run them. That is why the card is not the Browse
- * tool card and is not a variant of it.
- *
  * ── The data path ────────────────────────────────────────────────────────────
  *
  *   AiForYourWorkSection
- *     ├─ data/aiSetups.ts   19 editorial setups, tools held as slugs only
+ *     ├─ useHomeAutomations ─ services/automations.ts ─ GET /api/automations/home
  *     └─ useToolIndex ─ services/tools.ts ─ GET /api/tools (paged, cached once)
  *
- * One read of the catalogue for the whole section — not one request per tool,
- * and not a fresh request per chip. Every name, monogram and tool count on
- * screen comes from a live record; everything else is editorial.
+ * The same guide records /workflows lists, through the same repository — no
+ * copy of them lives in the client. Which niches appear, in what order, how
+ * many guides each, and how they are ranked are all the server's
+ * (config/limits.ts HOME_WORKFLOWS, automations/home.ts). Nothing here names a
+ * niche or a guide.
+ *
+ * The tool index only draws matched tools' own monograms on the cards, and is
+ * the read the homepage already makes — not a second catalogue request.
  *
  * ── Filtering ────────────────────────────────────────────────────────────────
  *
- * Local state, no URL and no network. Deliberate: this is a homepage browsing
- * aid rather than a destination, and it filters a list already in memory, so
- * neither a request nor a history entry is warranted. Browse remains the
- * shareable, back/forward-correct surface. /workflows, which is the same library
- * at full length, does put its chip in the URL — it is a destination, so a
- * filtered view there has to be shareable. Same components, different job.
+ * One request when the section mounts; the response holds "All" and every
+ * offered niche, so a chip is a lookup in memory — no request, no URL, no
+ * history entry. This is a browsing aid on the homepage; /workflows is the
+ * shareable, filterable destination, and both CTAs below lead there.
  *
- * ── Where "View Setup" goes, and why it goes there ───────────────────────────
+ * ── Where a card goes ────────────────────────────────────────────────────────
  *
- * Into the assistant, on this page — and NOT to /workflows, even though that
- * route now exists. This section's reader is already looking at the assistant
- * further up the same page; sending them to the library to come back again
- * would be a detour past the thing they wanted. /workflows makes the opposite
- * call for the same reason: it has no assistant of its own, so its cards
- * navigate here carrying the request.
- *
- * So the card composes one plain-English request out of the setup and its
- * resolved tools and sends it into the page's existing conversation, then scrolls
- * the answer into view. That is precisely what the design's own "Let's Build"
- * button does (components/assistant/BuildSetupCard.tsx), it reuses the one
- * assistant rather than adding a second, and the reply is grounded server-side
- * against the same catalogue the card's tiles came from.
- *
- * A setup DETAIL view is still unbuilt. When it arrives this becomes a
- * <Link to={`/setups/${id}`}> and `composeSetupRequest` moves to that page's
- * "ask the assistant" action — the setup type already carries a stable `id`.
+ * Every card is a WorkflowCard: a real link to its guide at
+ * /automations/:niche/:slug. None of them opens the assistant.
  *
  * ── Failure ──────────────────────────────────────────────────────────────────
  *
- * If the catalogue cannot be read the cards keep their titles, descriptions,
- * workflow strips, badges, prompt counts and their CTA; they lose their tiles,
- * their name line and their tool count. Nothing about the homepage breaks and no
- * error is shown, because the section is still doing most of its job.
+ * If the selection cannot be read the section shows the site's error panel with
+ * a retry, inside its own bounds — the rest of the homepage is unaffected. If
+ * the catalogue cannot be read, the cards keep everything but their monograms.
  */
 
-interface AiForYourWorkSectionProps {
-  /** Sends a turn to the page's assistant and scrolls its answer into view. */
-  onAskAssistant: (message: string, source: AssistantRequestSource) => void
-}
+/**
+ * Placeholder cards while loading. Sized to the server's per-niche count
+ * (HOME_WORKFLOWS.perNiche) so the grid does not reflow when the cards land;
+ * it decides nothing about how many cards are shown.
+ */
+const SKELETON_CARDS = 6
 
-export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSectionProps) {
-  const [category, setCategory] = useState<SetupCategory | undefined>(undefined)
-  const navigate = useNavigate()
-  const { index, isLoading, failed } = useToolIndex()
+/* The section's own centred wrap, as the setup chips were drawn before. */
+const CHIP_ROW = 'mt-7 flex flex-wrap justify-center gap-2'
 
-  /*
-   * `index` is a stable reference for the life of the page (one shared read), so
-   * this recomputes only when the chip changes — filtering is a pass over 19
-   * objects and a handful of map lookups, with nothing fetched or mutated.
-   */
-  const resolved = useMemo(
-    () => setupsForCategory(AI_SETUPS, category).map((setup) => resolveSetup(setup, index)),
-    [category, index],
+const CTA =
+  'inline-flex items-center gap-[9px] rounded-pill border border-[rgba(178,150,255,0.28)] bg-[rgba(124,90,246,0.12)] px-[22px] py-[11px] text-[14px] font-semibold text-[#D3C4FF] transition-[border-color,background,transform] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[2px] hover:border-[rgba(196,168,255,0.5)] hover:bg-[rgba(124,90,246,0.2)] hover:text-[#D3C4FF]'
+
+export default function AiForYourWorkSection() {
+  /* `undefined` is "All", the default. */
+  const [niche, setNiche] = useState<NicheName | undefined>(undefined)
+  const home = useHomeAutomations()
+  const { index: toolIndex, isLoading: toolsLoading, failed: toolsFailed } = useToolIndex()
+  const toolsStatus = toolsLoading ? 'loading' : toolIndex === undefined || toolsFailed ? 'unavailable' : 'ready'
+
+  /* Only niches the client knows — the same guard /workflows applies to its URL. */
+  const niches = useMemo(
+    () => (home.data?.niches ?? []).filter((group) => isNiche(group.niche)),
+    [home.data],
   )
+  const nicheNames = useMemo(() => niches.map((group) => group.niche as NicheName), [niches])
 
-  const toolsStatus = isLoading ? 'loading' : index === undefined || failed ? 'unavailable' : 'ready'
-
-  /* A setup with a hand-picked guide opens it; the rest ask the assistant. */
-  const openSetup = useCallback(
-    (entry: ResolvedSetup) => {
-      const guide = entry.setup.automation
-      if (guide) {
-        navigate(automationPath(guide.niche, guide.slug))
-        return
-      }
-      onAskAssistant(composeSetupRequest(entry), 'setup')
-    },
-    [navigate, onAskAssistant],
-  )
+  /* A niche only ever shows its own guides; a niche not returned shows none. */
+  const cards: AutomationCard[] =
+    niche === undefined
+      ? (home.data?.all.items ?? [])
+      : (niches.find((group) => group.niche === niche)?.items ?? [])
 
   return (
     <section className="relative pt-[92px] pb-[88px]">
@@ -136,7 +115,13 @@ export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSe
           </p>
         </div>
 
-        <SetupCategoryChips selected={category} onSelect={setCategory} />
+        <WorkflowNicheChips
+          selected={niche}
+          onSelect={setNiche}
+          niches={nicheNames}
+          className={CHIP_ROW}
+          label="Filter setups by kind of work"
+        />
 
         {/*
          * The design's `repeat(auto-fit,minmax(336px,1fr))`, with the standard
@@ -144,22 +129,45 @@ export default function AiForYourWorkSection({ onAskAssistant }: AiForYourWorkSe
          * 336px wide inside a narrower container and pushes the page sideways —
          * which it does below about a 400px viewport.
          */}
-        <div className="mt-[26px] grid grid-cols-[repeat(auto-fit,minmax(min(336px,100%),1fr))] gap-[18px]">
-          {resolved.map((entry) => (
-            <SetupCard
-              key={entry.setup.id}
-              resolved={entry}
-              toolsStatus={toolsStatus}
-              onOpen={openSetup}
+        <div className="mt-[26px]">
+          {home.isLoading ? (
+            <AutomationResultSkeleton count={SKELETON_CARDS} />
+          ) : home.error ? (
+            <StatePanel
+              role="alert"
+              title="Setups could not be loaded"
+              detail={home.error}
+              action={{ label: 'Try again', onClick: home.retry }}
             />
-          ))}
+          ) : cards.length === 0 ? (
+            <StatePanel
+              role="status"
+              title="No setups here yet"
+              detail="Choose another kind of work, or browse every workflow."
+            />
+          ) : (
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(min(336px,100%),1fr))] gap-[18px]">
+              {cards.map((automation, position) => (
+                <WorkflowCard
+                  key={`${automation.niche}/${automation.slug}`}
+                  automation={automation}
+                  position={position}
+                  toolIndex={toolIndex}
+                  toolsStatus={toolsStatus}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        <div data-reveal="0" className="mt-[30px] flex justify-center">
-          <Link
-            to="/browse"
-            className="inline-flex items-center gap-[9px] rounded-pill border border-[rgba(178,150,255,0.28)] bg-[rgba(124,90,246,0.12)] px-[22px] py-[11px] text-[14px] font-semibold text-[#D3C4FF] transition-[border-color,background,transform] duration-300 ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-[2px] hover:border-[rgba(196,168,255,0.5)] hover:bg-[rgba(124,90,246,0.2)] hover:text-[#D3C4FF]"
-          >
+        <div data-reveal="0" className="mt-[30px] flex flex-wrap justify-center gap-3">
+          <Link to="/workflows#niches" className={CTA}>
+            Explore all niches
+            <span aria-hidden="true" className="text-[15px]">
+              →
+            </span>
+          </Link>
+          <Link to="/workflows" className={CTA}>
             Browse all setups
             <span aria-hidden="true" className="text-[15px]">
               →
