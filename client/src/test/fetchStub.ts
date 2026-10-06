@@ -9,6 +9,8 @@ import { vi } from 'vitest'
 export interface RecordedCall {
   method: string
   path: string
+  /** The query string without its "?" ('' when none), for asserting filters. */
+  query: string
   credentials: RequestCredentials | undefined
   body: unknown
 }
@@ -31,11 +33,12 @@ export function stubFetch(routes: Record<string, Route>) {
   const calls: RecordedCall[] = []
   const fetchMock = vi.fn(async (input: RequestInfo | URL, init: RequestInit = {}) => {
     const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
-    const path = url.replace(/^.*?\/api(?=\/)/, '').split('?')[0] as string
+    const [path = '', query = ''] = url.replace(/^.*?\/api(?=\/)/, '').split('?')
     const method = (init.method ?? 'GET').toUpperCase()
     const call: RecordedCall = {
       method,
       path,
+      query,
       credentials: init.credentials,
       body: typeof init.body === 'string' ? JSON.parse(init.body) : undefined,
     }

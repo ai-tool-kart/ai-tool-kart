@@ -7,6 +7,7 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchMySubmissions } from '@/services/auth'
 import { ApiRequestError } from '@/services/http'
 import type { OwnerSubmission } from '@/types/auth'
+import { isAdminRole } from '@/utils/adminFormat'
 import { accountHead, formatDate, SUBMISSION_STATUS_COPY } from '@/utils/submissionStatus'
 
 /*
@@ -52,6 +53,12 @@ function SubmissionList() {
           )}
         </div>
         <div className="flex flex-wrap gap-3">
+          {/* The admin area's entry point. Shown by role for convenience; the server guards /api/admin itself. */}
+          {auth.status === 'authenticated' && isAdminRole(auth.user.role) && (
+            <Button to="/admin" variant="outline">
+              Admin
+            </Button>
+          )}
           <Button to="/submit" variant="outline">
             Submit a tool
           </Button>
