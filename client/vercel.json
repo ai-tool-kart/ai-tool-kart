@@ -7,6 +7,48 @@
       "permanent": true
     }
   ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/api/(.*)$",
+      "dest": "${API_ORIGIN}/api/$1",
+      "env": ["API_ORIGIN"],
+      "transforms": [
+        {
+          "type": "request.headers",
+          "op": "delete",
+          "target": { "key": "x-vercel-forwarded-for" }
+        },
+        {
+          "type": "request.headers",
+          "op": "delete",
+          "target": { "key": "x-atk-client-ip" }
+        },
+        {
+          "type": "request.headers",
+          "op": "delete",
+          "target": { "key": "x-atk-proxy-secret" }
+        },
+        {
+          "type": "request.headers",
+          "op": "set",
+          "target": { "key": "x-atk-proxy-secret" },
+          "args": "$TRUSTED_PROXY_SECRET",
+          "env": ["TRUSTED_PROXY_SECRET"]
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

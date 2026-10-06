@@ -44,6 +44,11 @@ export interface LLMRequest<T> {
   schemaName: string
   maxOutputTokens: number
   temperature?: number
+  /**
+   * The turn's deadline. Aborted when the whole assistant turn runs out of
+   * time; an adapter must cancel its in-flight call when it fires.
+   */
+  signal?: AbortSignal
 }
 
 export interface LLMUsageDelta {
