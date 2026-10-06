@@ -10,7 +10,7 @@
  * Middleware order is load-bearing:
  *
  *   1. requestLogger  — assigns the id everything downstream logs against
- *      clientIp       — resolves the rate-limit address (trusted proxy or req.ip)
+ *      clientIp       — resolves the rate-limit address (trusted proxy, platform edge, req.ip)
  *   2. cors           — answers preflights before any body is parsed
  *   3. express.json   — bounded; its failures are mapped in errorHandler
  *   4. routes
@@ -42,7 +42,8 @@ export function createApp(container: Container): Express {
 
   app.use(createRequestLogger({ logger }))
   // Before anything that rate-limits; strips the proxy headers once read.
-  app.use(createClientIp({ trustedProxySecret: env.trustedProxySecret }))
+  // x-real-ip is believed only in production, where Railway's edge sets it.
+  app.use(createClientIp({ trustedProxySecret: env.trustedProxySecret, trustPlatformRealIp: env.isProduction }))
   app.use(createCors({ allowedOrigins: env.cors.allowedOrigins }))
   app.use(express.json({ limit: HTTP.bodyLimit }))
 

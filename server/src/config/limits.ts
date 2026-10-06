@@ -296,6 +296,15 @@ export const ASSISTANT = {
   /** POST target, relative to the router. */
   chatPath: '/chat',
 
+  /**
+   * Whole-turn deadline, ms. The site reaches this API through a Vercel
+   * external rewrite, which cuts a proxied request off at 120 s with a bare
+   * 502; a turn (up to LLM_RETRY.schemaAttempts model calls, each allowed
+   * LLM_TIMEOUT_MS) could otherwise run past that. At this deadline the
+   * in-flight model call is aborted and the client gets a deliberate 503.
+   */
+  turnDeadlineMs: 110_000,
+
   /* ── Request (§13) ─────────────────────────────────────────────────────── */
   /** The current message. Longer is rejected — the caller must know it was cut. */
   maxMessageChars: 2_000,

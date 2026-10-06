@@ -116,6 +116,12 @@ export function toHttpError(error: unknown): unknown {
         'The assistant could not produce a usable answer. Please try again.',
         { cause: 'schema' },
       )
+    case 'LLM_DEADLINE':
+      // Deliberately answered before an upstream proxy's own timeout
+      // (ASSISTANT.turnDeadlineMs) so the client gets a real error body.
+      return providerUnavailable('The assistant took too long to answer. Please try again.', {
+        cause: 'deadline',
+      })
     case 'LLM_REFUSAL':
     case 'LLM_UNAVAILABLE':
     case 'BUDGET_EXCEEDED':

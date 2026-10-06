@@ -337,15 +337,19 @@ export function createXaiProvider(options: XaiProviderOptions): LLMProvider {
   async function request(
     body: Record<string, unknown>,
     model: string,
+    turnSignal?: AbortSignal,
   ): Promise<{ raw: LLMRawResponse; status: number; reasoningTokens: number }> {
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), options.timeoutMs)
+    // The per-call timeout OR the whole turn's deadline, whichever fires first.
+    // Either one aborts the in-flight fetch, so nothing keeps running.
+    const signal = turnSignal ? AbortSignal.any([controller.signal, turnSignal]) : controller.signal
 
     let response: Response
     try {
       response = await transport(`${baseUrl}/responses`, {
         method: 'POST',
-        signal: controller.signal,
+        signal,
         headers: {
           authorization,
           'content-type': 'application/json',
@@ -358,6 +362,7 @@ export function createXaiProvider(options: XaiProviderOptions): LLMProvider {
       // Deliberately not chained as `cause`: a fetch error can carry request
       // internals, and nothing downstream needs more than the category.
       if (aborted) {
+        if (turnSignal?.aborted) throw failure('timeout', 'the assistant turn deadline passed', false)
         throw failure('timeout', `no response within ${options.timeoutMs}ms (LLM_TIMEOUT_MS)`, false)
       }
       throw failure('network', 'could not reach the API', true)
@@ -433,7 +438,7 @@ export function createXaiProvider(options: XaiProviderOptions): LLMProvider {
       const started = Date.now()
 
       try {
-        const { raw, status, reasoningTokens } = await request(buildBody(llmRequest, model), model)
+        const { raw, status, reasoningTokens } = await request(buildBody(llmRequest, model), model, llmRequest.signal)
         log?.info('Provider call succeeded', {
           model: raw.model,
           durationMs: Date.now() - started,

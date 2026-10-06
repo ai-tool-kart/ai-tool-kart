@@ -43,7 +43,7 @@ import type { z } from 'zod'
 import { LLM_RETRY, TASK_MAX_OUTPUT_TOKENS, TASK_MODEL_CLASS } from '../config/limits.ts'
 import type { Logger } from '../utils/logger.ts'
 import type { Budget } from './budget.ts'
-import { isLLMError, llmRefused, llmSchemaError, llmUnavailable } from './errors.ts'
+import { isLLMError, llmDeadline, llmRefused, llmSchemaError, llmUnavailable } from './errors.ts'
 import { jsonOutputInstruction, repairInstruction } from './prompts/shared.ts'
 import { describeSchema } from './schemas.ts'
 import {
@@ -64,6 +64,12 @@ export interface TaskRequest<T> {
   schema: z.ZodType<T>
   schemaName: string
   temperature?: number
+  /**
+   * The caller's deadline (assistant/engine.ts). Once aborted, no further
+   * attempt starts and an in-flight provider call is cancelled; the run then
+   * fails with LLM_DEADLINE rather than retrying.
+   */
+  signal?: AbortSignal
 }
 
 export interface LLMClient {
@@ -162,7 +168,12 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
       let user = request.user
       let lastError: unknown
 
+      const deadlinePassed = (attempt: number) =>
+        llmDeadline(`The ${request.task} task ran out of time`, { details: { task: request.task, attempt } })
+
       for (let attempt = 1; attempt <= LLM_RETRY.schemaAttempts; attempt += 1) {
+        // Never START an attempt after the deadline: it could only be cut off.
+        if (request.signal?.aborted) throw deadlinePassed(attempt)
         budget.assertCanCall()
 
         const providerRequest: LLMRequest<T> = {
@@ -174,12 +185,19 @@ export function createLLMClient({ provider, budget, logger }: CreateClientOption
           schemaName: request.schemaName,
           maxOutputTokens,
           ...(request.temperature !== undefined ? { temperature: request.temperature } : {}),
+          ...(request.signal ? { signal: request.signal } : {}),
         }
 
         let raw
         try {
           raw = await provider.complete(providerRequest as LLMRequest<unknown>)
         } catch (error) {
+          // The provider call was cancelled because the TURN ran out of time:
+          // report that, and do not retry into a deadline that has passed.
+          if (request.signal?.aborted) {
+            log.warn('Turn deadline reached during provider call', { attempt })
+            throw deadlinePassed(attempt)
+          }
           if (error instanceof LLMRefusal) {
             // A refusal is recorded as a call: the provider was invoked and the
             // round trip was spent, whatever came back.
