@@ -553,6 +553,27 @@ export const AUTH = {
 } as const
 
 /**
+ * The admin and moderation API (Phase 6, src/admin/). Every list is
+ * offset-paginated with a hard page-size cap and a hard offset cap, so no
+ * query string can ask Postgres for an unbounded scan.
+ */
+export const ADMIN = {
+  defaultPageSize: 25,
+  maxPageSize: 100,
+  /** page × pageSize beyond this is refused. Admin lists are for reading, not exporting. */
+  maxOffset: 10_000,
+  maxSearchChars: 200,
+  /** A rejection reason or change request is read by the submitter: a real sentence. */
+  reasonMinChars: 10,
+  reasonMaxChars: 2000,
+  noteMaxChars: 4000,
+  /** Recent moderation activity on the dashboard. */
+  recentActivityLimit: 10,
+  /** The window the dashboard's "decisions this week" counts over. */
+  activityWindowMs: 7 * 24 * 60 * 60 * 1000,
+} as const
+
+/**
  * Per-field length/count limits automations/schema.ts enforces
  * (SPEC-automations.md §3). Same reasoning as TOOL_FIELDS above: tuning a
  * cap must never mean editing the validation logic that enforces it.

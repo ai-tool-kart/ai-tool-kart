@@ -3,6 +3,7 @@
 // Phase 2A: the published catalogue, the submission queue, its append-only
 // audit trail, and a ledger of one-off data imports.
 // Phase 2B: users, server-side sessions, and tool ownership.
+// Phase 6: moderation event types and the administrative audit trail.
 //
 // Conventions:
 //  - Models are PascalCase in TypeScript, tables and columns snake_case in
@@ -15,7 +16,8 @@
 //    event types) ARE enums: a typo there must be impossible.
 //  - Two things Prisma's schema language cannot express live as raw SQL in
 //    the migration: the partial unique index on submissions.normalized_url
-//    and the append-only trigger on submission_events. Prisma ignores both
+//    and the append-only triggers on submission_events and
+//    admin_audit_events. Prisma ignores both
 //    when diffing (verified), so later migrations won't try to drop them.
 
 generator client {
@@ -94,6 +96,7 @@ model Tool {
 
   submissions Submission[]
   owners      ToolOwner[]
+  auditEvents AdminAuditEvent[]
 
   @@index([status])
   @@index([cat])
@@ -195,6 +198,7 @@ model Submission {
   @@index([toolId])
   @@index([normalizedUrl])
   @@index([createdAt])
+  @@index([updatedAt])
   @@map("submissions")
 }
 
@@ -212,6 +216,12 @@ enum ActorType {
 enum SubmissionEventType {
   SUBMISSION_CREATED
   LEGACY_IMPORTED
+  /// Phase 6 moderation decisions (admin/moderation.ts).
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+  /// An internal admin note. Never shown to the submitter.
+  NOTE_ADDED
 
   @@map("submission_event_type")
 }
@@ -236,7 +246,42 @@ model SubmissionEvent {
   @@index([submissionId, createdAt])
   @@index([eventType, createdAt])
   @@index([actorUserId])
+  @@index([createdAt])
   @@map("submission_events")
+}
+
+// ── Administrative audit trail (Phase 6) ─────────────────────────────────────
+
+/// Administrative actions that are not about one submission.
+enum AdminAction {
+  TOOL_UPDATED
+  TOOL_OWNER_GRANTED
+  TOOL_OWNER_REVOKED
+  USER_ROLE_CHANGED
+
+  @@map("admin_action")
+}
+
+/// Append-only, like submission_events: a trigger in the Phase 6 migration
+/// rejects UPDATE, DELETE and TRUNCATE. A CHECK requires at least one target.
+model AdminAuditEvent {
+  id           String      @id @default(uuid()) @db.Uuid
+  actorUserId  String      @map("actor_user_id") @db.Uuid
+  actor        User        @relation("AdminAuditActor", fields: [actorUserId], references: [id], onDelete: Restrict)
+  action       AdminAction
+  targetToolId String?     @map("target_tool_id")
+  targetTool   Tool?       @relation(fields: [targetToolId], references: [id], onDelete: Restrict)
+  targetUserId String?     @map("target_user_id") @db.Uuid
+  targetUser   User?       @relation("AdminAuditTarget", fields: [targetUserId], references: [id], onDelete: Restrict)
+  metadata     Json        @default("{}")
+  requestId    String?     @map("request_id")
+  createdAt    DateTime    @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([createdAt])
+  @@index([actorUserId])
+  @@index([targetToolId, createdAt])
+  @@index([targetUserId, createdAt])
+  @@map("admin_audit_events")
 }
 
 // ── Data imports ─────────────────────────────────────────────────────────────
@@ -303,6 +348,8 @@ model User {
   submissions         Submission[]      @relation("SubmissionAuthor")
   reviewedSubmissions Submission[]      @relation("SubmissionReviewer")
   submissionEvents    SubmissionEvent[]
+  adminActions        AdminAuditEvent[] @relation("AdminAuditActor")
+  adminAuditTargets   AdminAuditEvent[] @relation("AdminAuditTarget")
 
   @@index([role])
   @@map("users")

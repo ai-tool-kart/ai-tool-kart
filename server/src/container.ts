@@ -37,6 +37,10 @@
  * accounts to bill and no per-IP limiting until Phase I (§13).
  */
 
+import { createAuditService, type AuditService } from './admin/audit.ts'
+import { createModerationService, type ModerationService } from './admin/moderation.ts'
+import { createStatsService, type StatsService } from './admin/stats.ts'
+import { createToolAdminService, type ToolAdminService } from './admin/tools.ts'
 import { createAssistantEngine, type AssistantEngine } from './assistant/engine.ts'
 import type { SessionCookieConfig } from './auth/cookies.ts'
 import { createOwnershipService, type OwnershipService } from './auth/ownership.ts'
@@ -102,6 +106,11 @@ export interface AccountServices {
   readonly auth: AuthService
   readonly ownership: OwnershipService
   readonly userAdmin: UserAdminService
+  /** Phase 6 admin and moderation (src/admin/). Behind requireRole('ADMIN') in the routes. */
+  readonly moderation: ModerationService
+  readonly toolAdmin: ToolAdminService
+  readonly audit: AuditService
+  readonly stats: StatsService
   /** POST /api/submissions intake when accounts exist: Postgres, owned by the session's user. */
   readonly submissions: AccountSubmissionService
   readonly cookie: SessionCookieConfig
@@ -273,6 +282,7 @@ function createAccountServices(
   options: AccountOptions,
 ): AccountServices {
   const sessions = createSessionService({ db, logger, ...(options.now ? { now: options.now } : {}) })
+  const audit = createAuditService({ db })
   return {
     sessions,
     auth: createAuthService({
@@ -282,7 +292,11 @@ function createAccountServices(
       ...(options.now ? { now: options.now } : {}),
     }),
     ownership: createOwnershipService({ db }),
-    userAdmin: createUserAdminService({ db, sessions }),
+    userAdmin: createUserAdminService({ db }),
+    moderation: createModerationService({ db, catalogue, ...(options.now ? { now: options.now } : {}) }),
+    toolAdmin: createToolAdminService({ db, catalogue }),
+    audit,
+    stats: createStatsService({ db, catalogue, audit, ...(options.now ? { now: options.now } : {}) }),
     submissions: createAccountSubmissionService({ db, catalogue }),
     // Secure cookies whenever the site is served over https — i.e. production.
     cookie: { secure: env.isProduction },

@@ -15,6 +15,7 @@
  * them to. That is the only bypass, and it lives here, not in routes.
  */
 
+import { recordAdminAction } from '../admin/audit.ts'
 import { SLUG_PATTERN } from '../catalogue/schema.ts'
 import type { Database } from '../db/client.ts'
 import { rowToTool } from '../db/legacy/mapping.ts'
@@ -61,16 +62,29 @@ export interface OwnershipService {
   listOwnSubmissions(actor: Actor): Promise<Submission[]>
   isOwner(userId: string, toolId: string): Promise<boolean>
 
-  /* Admin operations. The CALLER (a route behind requireRole('ADMIN')) authorizes them. */
+  /*
+   * Admin operations. The CALLER (a route behind requireRole('ADMIN'))
+   * authorizes them. When an admin makes the change, the audit row is
+   * written in the same transaction (admin/audit.ts).
+   */
   listOwners(toolId: string): Promise<ToolOwnerView[]>
-  grant(toolId: string, userId: string, grantedByUserId: string | null): Promise<{ created: boolean; role: UserRole }>
-  revoke(toolId: string, userId: string): Promise<{ removed: boolean; role: UserRole }>
+  grant(
+    toolId: string,
+    userId: string,
+    grantedByUserId: string | null,
+    audit?: { requestId?: string | undefined },
+  ): Promise<{ created: boolean; role: UserRole }>
+  revoke(
+    toolId: string,
+    userId: string,
+    audit?: { actorUserId: string; requestId?: string | undefined },
+  ): Promise<{ removed: boolean; role: UserRole }>
 }
 
 /** A submitter with more than this is not a person; the list is a convenience, not an export. */
 const OWN_SUBMISSIONS_LIMIT = 200
 
-const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+export const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
 /**
  * Every catalogue id matches SLUG_PATTERN (catalogue/schema.ts), so anything
@@ -78,17 +92,24 @@ const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{
  * Postgres reject the query outright, which would surface as a 500 — a
  * distinguishable answer — instead of the uniform NOT_FOUND.
  */
-function isToolId(value: string): boolean {
+export function isToolId(value: string): boolean {
   return value.length <= 100 && SLUG_PATTERN.test(value)
 }
 
+/**
+ * Re-derives a non-admin's USER/TOOL_OWNER label from their ownership rows.
+ * Exported for the approval path (admin/moderation.ts), which grants
+ * ownership inside its own transaction.
+ */
+export async function syncDerivedRole(tx: Pick<Database, 'user' | 'toolOwner'>, user: User): Promise<UserRole> {
+  const owned = await tx.toolOwner.count({ where: { userId: user.id } })
+  const role = derivedRole(user.role, owned)
+  if (role !== user.role) await tx.user.update({ where: { id: user.id }, data: { role } })
+  return role
+}
+
 export function createOwnershipService({ db }: { db: Database }): OwnershipService {
-  async function syncRole(tx: Pick<Database, 'user' | 'toolOwner'>, user: User): Promise<UserRole> {
-    const owned = await tx.toolOwner.count({ where: { userId: user.id } })
-    const role = derivedRole(user.role, owned)
-    if (role !== user.role) await tx.user.update({ where: { id: user.id }, data: { role } })
-    return role
-  }
+  const syncRole = syncDerivedRole
 
   return {
     async listOwnedTools(actor) {
@@ -150,7 +171,7 @@ export function createOwnershipService({ db }: { db: Database }): OwnershipServi
       }))
     },
 
-    async grant(toolId, userId, grantedByUserId) {
+    async grant(toolId, userId, grantedByUserId, audit) {
       return db.$transaction(async (tx) => {
         if (!isToolId(toolId) || !(await tx.tool.findUnique({ where: { id: toolId }, select: { id: true } }))) {
           throw notFound(TOOL_NOT_FOUND_MESSAGE)
@@ -160,17 +181,40 @@ export function createOwnershipService({ db }: { db: Database }): OwnershipServi
 
         const existing = await tx.toolOwner.findUnique({ where: { toolId_userId: { toolId, userId } } })
         if (!existing) await tx.toolOwner.create({ data: { toolId, userId, grantedByUserId } })
-        return { created: !existing, role: await syncRole(tx, user) }
+        const role = await syncRole(tx, user)
+        // An idempotent repeat changes nothing, so it records nothing.
+        if (!existing && grantedByUserId !== null) {
+          await recordAdminAction(tx, {
+            actorUserId: grantedByUserId,
+            action: 'TOOL_OWNER_GRANTED',
+            targetToolId: toolId,
+            targetUserId: userId,
+            metadata: { roleBefore: user.role, roleAfter: role },
+            requestId: audit?.requestId,
+          })
+        }
+        return { created: !existing, role }
       })
     },
 
-    async revoke(toolId, userId) {
+    async revoke(toolId, userId, audit) {
       return db.$transaction(async (tx) => {
         const user = UUID_PATTERN.test(userId) ? await tx.user.findUnique({ where: { id: userId } }) : null
         if (!user) throw notFound(USER_NOT_FOUND_MESSAGE)
         if (!isToolId(toolId)) return { removed: false, role: user.role }
         const { count } = await tx.toolOwner.deleteMany({ where: { toolId, userId } })
-        return { removed: count > 0, role: await syncRole(tx, user) }
+        const role = await syncRole(tx, user)
+        if (count > 0 && audit) {
+          await recordAdminAction(tx, {
+            actorUserId: audit.actorUserId,
+            action: 'TOOL_OWNER_REVOKED',
+            targetToolId: toolId,
+            targetUserId: userId,
+            metadata: { roleBefore: user.role, roleAfter: role },
+            requestId: audit.requestId,
+          })
+        }
+        return { removed: count > 0, role }
       })
     },
   }

@@ -41,7 +41,14 @@ export interface ReviewedFields {
  * SubmissionInputSchema before this submission was ever stored (schema.ts),
  * so recovering the narrower type here is honest, not a bypass.
  */
-export function buildTool(submission: Submission, fields: ReviewedFields, today: string): Tool {
+/**
+ * Only the five fields it reads, so the admin approval path (admin/
+ * moderation.ts) can pass a Postgres submission row as well as the review
+ * CLI's JSON record.
+ */
+export type BuildToolSource = Pick<Submission, 'name' | 'category' | 'pricingModel' | 'tagline' | 'siteUrl'>
+
+export function buildTool(submission: BuildToolSource, fields: ReviewedFields, today: string): Tool {
   return {
     id: fields.slug,
     name: submission.name,

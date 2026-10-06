@@ -64,6 +64,7 @@ export type ApiErrorCode =
   | 'FORBIDDEN'
   | 'EMAIL_TAKEN'
   | 'AUTH_UNAVAILABLE'
+  | 'CONFLICT'
   | 'INTERNAL'
 
 const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
@@ -79,6 +80,7 @@ const DEFAULT_STATUS: Record<ApiErrorCode, number> = {
   FORBIDDEN: 403,
   EMAIL_TAKEN: 409,
   AUTH_UNAVAILABLE: 503,
+  CONFLICT: 409,
   INTERNAL: 500,
 }
 
@@ -211,6 +213,15 @@ export function emailTaken(message: string): ApiError {
 /** No database is configured, so accounts cannot work. */
 export function authUnavailable(message: string): ApiError {
   return new ApiError('AUTH_UNAVAILABLE', message)
+}
+
+/**
+ * The record changed under the request: another admin decided this
+ * submission first, or a tool was edited since it was opened. Re-read and
+ * try again. Distinct from DUPLICATE_URL, which is about catalogue content.
+ */
+export function conflict(message: string, fields?: Record<string, string>): ApiError {
+  return new ApiError('CONFLICT', message, { fields })
 }
 
 /** Wraps an unexpected failure. The message is never sent to the client. */

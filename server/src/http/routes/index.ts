@@ -95,7 +95,16 @@ export function createApiRouter(container: Container): Router {
     router.use(AUTH.mePath, createMeRouter({ ownership: accounts.ownership, authenticate, originCheck }))
     router.use(
       AUTH.adminPath,
-      createAdminRouter({ ownership: accounts.ownership, userAdmin: accounts.userAdmin, authenticate, originCheck }),
+      createAdminRouter({
+        ownership: accounts.ownership,
+        userAdmin: accounts.userAdmin,
+        moderation: accounts.moderation,
+        toolAdmin: accounts.toolAdmin,
+        audit: accounts.audit,
+        stats: accounts.stats,
+        authenticate,
+        originCheck,
+      }),
     )
   } else {
     // No DATABASE_URL: say so plainly rather than 404, which would read as
