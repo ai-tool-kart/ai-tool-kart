@@ -1,17 +1,17 @@
-import { TILE } from '@/components/aiSetups/SetupToolStack'
+import { TILE } from '@/components/aiSetups/setupCardStyles'
 import type { ToolIndex } from '@/services/tools'
 import type { AutomationCard } from '@/types/automation'
 
 /*
  * The overlapping tool tiles at the top of a workflow card.
  *
- * SetupToolStack's tile (the same class, imported), fed from a guide record
- * instead of an editorial setup.
+ * The setup card's tile (aiSetups/setupCardStyles TILE), fed from a guide
+ * record.
  *
  * ── Where each tile's letters come from ──────────────────────────────────────
  *
  * The catalogue has no logo images; a tool's avatar IS its `mono` ("Cl",
- * "Zp"), and SetupToolStack draws exactly that. So:
+ * "Zp"), and the tile draws exactly that. So:
  *
  *   catalogue   the importer matched the tool (`catalogueTools`) and the
  *               catalogue read has it → that record's own `mono`, full tint.

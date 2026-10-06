@@ -37,7 +37,7 @@ export default function HomePage() {
       {/* PopularWaysSection used to render here. It is unmounted, not deleted —
           see the note above. The carousel below takes its slot. */}
       <HowPeopleAreUsingAISection />
-      <AiForYourWorkSection onAskAssistant={assistant.ask} />
+      <AiForYourWorkSection />
       <FeaturedToolsSection />
       <RecentlyAddedToolsSection />
       <SavingsSection />

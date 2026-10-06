@@ -6,12 +6,14 @@ import {
   automationQueryString,
   getAutomation,
   getAutomations,
+  getHomeAutomations,
   MAX_AUTOMATIONS,
+  type AutomationHomeResponse,
 } from '@/services/automations'
 import type { AutomationCard, AutomationDetail, AutomationFilters } from '@/types/automation'
 
 /*
- * Automations data hooks — the list and one record.
+ * Automations data hooks — the list, one record, and the homepage selection.
  *
  * Modelled on hooks/useTools.ts: every filter is the server's, the hook
  * re-requests when the filters change, a stale request is aborted, and typing
@@ -166,6 +168,42 @@ export function useAutomation(
 
     return () => controller.abort()
   }, [niche, slug, attempt])
+
+  const retry = useCallback(() => setAttempt((n) => n + 1), [])
+  return { data, isLoading, error, retry }
+}
+
+/**
+ * The homepage's "AI for Your Work" selection: GET /api/automations/home, once.
+ *
+ * One request per mount, never one per chip — the response already holds every
+ * niche the section offers plus "All", so switching chips is a local lookup.
+ */
+export function useHomeAutomations(): AsyncResource<AutomationHomeResponse> {
+  const [data, setData] = useState<AutomationHomeResponse | undefined>(undefined)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | undefined>(undefined)
+  const [attempt, setAttempt] = useState(0)
+
+  useEffect(() => {
+    const controller = new AbortController()
+    setIsLoading(true)
+    setError(undefined)
+
+    getHomeAutomations(controller.signal)
+      .then((result) => {
+        if (controller.signal.aborted) return
+        setData(result)
+        setIsLoading(false)
+      })
+      .catch((cause: unknown) => {
+        if (cause instanceof DOMException && cause.name === 'AbortError') return
+        setError(messageFor(cause))
+        setIsLoading(false)
+      })
+
+    return () => controller.abort()
+  }, [attempt])
 
   const retry = useCallback(() => setAttempt((n) => n + 1), [])
   return { data, isLoading, error, retry }

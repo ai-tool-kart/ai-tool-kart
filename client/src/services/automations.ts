@@ -2,8 +2,8 @@ import { apiRequest } from '@/services/http'
 import type { AutomationCard, AutomationDetail, AutomationFilters } from '@/types/automation'
 
 /*
- * The automations transport: GET /api/automations and
- * GET /api/automations/:niche/:slug.
+ * The automations transport: GET /api/automations,
+ * GET /api/automations/:niche/:slug and GET /api/automations/home.
  *
  * Ranking and filtering are the server's. With `q` the API ranks through its
  * matcher; without it, it lists in import order. Either way this module builds
@@ -33,6 +33,26 @@ interface AutomationDetailResponse {
   automation: AutomationDetail
 }
 
+/** One homepage niche — `AutomationHomeNiche` on the server. */
+export interface AutomationHomeNiche {
+  niche: string
+  /** Every active guide in the niche, not the number sent. */
+  total: number
+  items: AutomationCard[]
+}
+
+/**
+ * GET /api/automations/home — `AutomationHomeResponse` on the server.
+ *
+ * The niches, their order, the per-niche count and the ranking are all the
+ * server's (server/src/config/limits.ts HOME_WORKFLOWS, automations/home.ts).
+ * `all` is drawn from the same records as `niches`, never a second list.
+ */
+export interface AutomationHomeResponse {
+  niches: AutomationHomeNiche[]
+  all: { total: number; items: AutomationCard[] }
+}
+
 export interface AutomationQuery extends Partial<AutomationFilters> {
   limit?: number
 }
@@ -55,6 +75,11 @@ export async function getAutomations(
   return apiRequest<AutomationListResponse>(`${AUTOMATIONS_PATH}${search ? `?${search}` : ''}`, {
     signal,
   })
+}
+
+/** The homepage's whole selection in one request — chips switch over it locally. */
+export async function getHomeAutomations(signal?: AbortSignal): Promise<AutomationHomeResponse> {
+  return apiRequest<AutomationHomeResponse>(`${AUTOMATIONS_PATH}/home`, { signal })
 }
 
 /**

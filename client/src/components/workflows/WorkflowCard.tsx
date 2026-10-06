@@ -9,9 +9,9 @@ import type { SetupToneName } from '@/types/aiSetup'
 import type { AutomationCard } from '@/types/automation'
 
 /*
- * One workflow on /workflows.
+ * One workflow — on /workflows and in the homepage's "AI for Your Work".
  *
- * The homepage setup card's design (SetupCard — same surface, spotlight,
+ * The original homepage setup card's design (the retired SetupCard — same surface, spotlight,
  * hover lift, tone rotation and CTA pill, via aiSetups/setupCardStyles) drawn
  * over one record from GET /api/automations. Slot for slot:
  *
