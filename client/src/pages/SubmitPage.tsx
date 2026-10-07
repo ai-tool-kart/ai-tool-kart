@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
+import type { AuthMode } from '@/components/auth/AuthForm'
 import AuthGatePanel from '@/components/auth/AuthGatePanel'
 import Button from '@/components/ui/Button'
 import SubmitAdvancedSection from '@/components/submit/SubmitAdvancedSection'
+import SubmitAuthActions from '@/components/submit/SubmitAuthActions'
 import SubmitEssentialsSection from '@/components/submit/SubmitEssentialsSection'
 import SubmitLaunchSection from '@/components/submit/SubmitLaunchSection'
 import SubmitPreviewPanel from '@/components/submit/SubmitPreviewPanel'
@@ -125,6 +127,9 @@ function failureFrom(error: unknown): SubmitFailure {
 export default function SubmitPage() {
   const taxonomy = useTaxonomy()
   const [form, setForm] = useState<SubmitFormState>(createEmptySubmission)
+  // The form as first rendered, so the header's account actions can tell
+  // an untouched listing (safe to leave the page) from one with input.
+  const [initialForm] = useState(() => form)
   const [status, setStatus] = useState<SubmitStatus>('editing')
   // The form submitted, frozen at submit time — the success screen reads this,
   // not the live `form`, so further edits to `form` (there shouldn't be any,
@@ -135,7 +140,9 @@ export default function SubmitPage() {
   const [bannerMessage, setBannerMessage] = useState<string | undefined>(undefined)
   const { state: auth, refresh } = useAuth()
   // The open sign-in gate and why it opened. Undefined: closed.
-  const [gate, setGate] = useState<{ message?: string } | undefined>(undefined)
+  // `fromHeader`: opened by the header's Log in / Create account, so there
+  // is no held submission to continue once the visitor is signed in.
+  const [gate, setGate] = useState<{ message?: string; mode?: AuthMode; fromHeader?: boolean } | undefined>(undefined)
   // The created submission's id — kept so a signed-in submitter can go
   // straight to its status page.
   const [submissionId, setSubmissionId] = useState<string | undefined>(undefined)
@@ -240,6 +247,12 @@ export default function SubmitPage() {
   }, [auth.status, sendSubmission])
 
   const closeGate = useCallback(() => setGate(undefined), [])
+  const openGateFromHeader = useCallback(
+    (mode: AuthMode) =>
+      setGate({ mode, fromHeader: true, message: 'Your listing stays on this page while you sign in. Nothing is submitted until you press Launch.' }),
+    [],
+  )
+  const hasUnsavedInput = JSON.stringify(form) !== JSON.stringify(initialForm)
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -292,12 +305,18 @@ export default function SubmitPage() {
         className="pointer-events-none absolute top-[26%] right-[-16%] h-[600px] w-[52%] bg-[radial-gradient(ellipse_50%_46%_at_50%_50%,rgba(154,110,255,0.16)_0%,rgba(202,168,255,0.05)_46%,transparent_74%)] blur-[52px] [animation:akMeshB_88s_cubic-bezier(.45,0,.55,1)_infinite]"
       />
 
-      <header className="relative">
-        <p className="text-[11.5px] tracking-[0.2em] text-accent uppercase">Submit</p>
-        <h1 className="mt-3 text-[clamp(34px,5vw,52px)] font-bold tracking-[-0.04em] text-ink">List your tool</h1>
-        <p className="mt-[14px] max-w-[62ch] text-[15.5px] leading-[1.65] tracking-[-0.006em] text-pretty text-muted-dim">
-          Four sections — your URL, the essentials, anything worth adding, and when it goes live. The card on the right builds itself as you go.
-        </p>
+      <header className="relative flex flex-wrap items-start justify-between gap-x-10 gap-y-6">
+        <div className="min-w-0 flex-[1_1_420px]">
+          <p className="text-[11.5px] tracking-[0.2em] text-accent uppercase">Submit</p>
+          <h1 className="mt-3 text-[clamp(34px,5vw,52px)] font-bold tracking-[-0.04em] text-ink">List your tool</h1>
+          <p className="mt-[14px] max-w-[62ch] text-[15.5px] leading-[1.65] tracking-[-0.006em] text-pretty text-muted-dim">
+            Four sections — your URL, the essentials, anything worth adding, and when it goes live. The card on the right builds itself as you go.
+          </p>
+        </div>
+        {/* Aligned with the title on wide screens; wraps under the intro on narrow ones. */}
+        <div className="flex-none sm:pt-[30px]">
+          <SubmitAuthActions auth={auth} hasUnsavedInput={hasUnsavedInput} onOpenGate={openGateFromHeader} />
+        </div>
       </header>
 
       <div className="relative mt-10 grid items-start gap-8 lg:grid-cols-[1fr_360px]">
@@ -392,10 +411,12 @@ export default function SubmitPage() {
       {gate && (
         <AuthGatePanel
           message={gate.message}
+          initialMode={gate.mode}
           onClose={closeGate}
           onAuthenticated={() => {
             setGate(undefined)
-            continueAfterAuthRef.current = true
+            // Only a gate opened by "Launch listing" holds a submission.
+            if (!gate.fromHeader) continueAfterAuthRef.current = true
           }}
         />
       )}

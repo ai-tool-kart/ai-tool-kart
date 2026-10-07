@@ -1,6 +1,6 @@
 import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
 import AuthProvider from '@/components/auth/AuthProvider'
 import SubmitPage from '@/pages/SubmitPage'
@@ -40,6 +40,11 @@ const SCHEMA_KEYS = new Set([
   'audience', 'alternatives', 'faqs', 'launchStory', 'plan', 'launchWeekId', 'company',
 ])
 
+function RouteProbe({ name }: { name: string }) {
+  const location = useLocation()
+  return <p>{`${name} ${location.search}`}</p>
+}
+
 function renderSubmit(routes: Record<string, StubRoute>) {
   const stub = stubFetch({ 'GET /taxonomy': () => apiError(503, 'INTERNAL', 'unavailable'), ...routes })
   render(
@@ -48,6 +53,8 @@ function renderSubmit(routes: Record<string, StubRoute>) {
         <Routes>
           <Route path="/submit" element={<SubmitPage />} />
           <Route path="/account/submissions/:id" element={<p>status page</p>} />
+          <Route path="/login" element={<RouteProbe name="login page" />} />
+          <Route path="/register" element={<RouteProbe name="register page" />} />
         </Routes>
       </AuthProvider>
     </MemoryRouter>,
@@ -171,5 +178,94 @@ describe('SubmitPage with accounts', () => {
     answer(json(200, { user: ADA }))
     await screen.findByText("You're on the list")
     expect(callsTo('POST /submissions')).toHaveLength(1)
+  })
+})
+
+describe('SubmitPage header account actions', () => {
+  const signedOut = { 'GET /auth/me': () => apiError(401, 'UNAUTHENTICATED', 'x') }
+  const accountNav = () => screen.findByRole('navigation', { name: 'Account' })
+
+  it('shows Log in and Create account to a signed-out visitor', async () => {
+    renderSubmit(signedOut)
+    const nav = await accountNav()
+    expect(within(nav).getByRole('link', { name: 'Log in' })).toBeTruthy()
+    expect(within(nav).getByRole('link', { name: 'Create account' })).toBeTruthy()
+  })
+
+  it('Log in goes to the existing login page and comes back to /submit', async () => {
+    const { user } = renderSubmit(signedOut)
+    await user.click(within(await accountNav()).getByRole('link', { name: 'Log in' }))
+    expect(await screen.findByText('login page ?next=%2Fsubmit')).toBeTruthy()
+  })
+
+  it('Create account goes to the existing registration page and comes back to /submit', async () => {
+    const { user } = renderSubmit(signedOut)
+    await user.click(within(await accountNav()).getByRole('link', { name: 'Create account' }))
+    expect(await screen.findByText('register page ?next=%2Fsubmit')).toBeTruthy()
+  })
+
+  it('with input on the page, the actions open the inline gate instead of leaving — nothing typed is lost', async () => {
+    const { user, callsTo } = renderSubmit(signedOut)
+    await waitFor(() => expect(nameInput()?.value).toBe('Example Tool'))
+    await user.type(nameInput()!, ' Pro')
+
+    const nav = await accountNav()
+    expect(within(nav).queryByRole('link')).toBeNull()
+    await user.click(within(nav).getByRole('button', { name: 'Log in' }))
+    const dialog = await screen.findByRole('dialog')
+    expect(within(dialog).getByText('Sign in to submit')).toBeTruthy()
+    expect(within(dialog).getByText(/Nothing is submitted until you press Launch/)).toBeTruthy()
+    expect(nameInput()?.value).toBe('Example Tool Pro')
+
+    await user.click(within(dialog).getByRole('button', { name: /not now/i }))
+    await user.click(within(nav).getByRole('button', { name: 'Create account' }))
+    expect(within(await screen.findByRole('dialog')).getByText('Create an account to submit')).toBeTruthy()
+    expect(callsTo('POST /submissions')).toHaveLength(0)
+  })
+
+  it('signing in from the header gate does not submit the listing', async () => {
+    let signedIn = false
+    const { user, callsTo } = renderSubmit({
+      'GET /auth/me': () => (signedIn ? json(200, { user: ADA }) : apiError(401, 'UNAUTHENTICATED', 'x')),
+      'POST /auth/login': () => {
+        signedIn = true
+        return json(200, { user: ADA })
+      },
+    })
+    await waitFor(() => expect(nameInput()?.value).toBe('Example Tool'))
+    await user.type(nameInput()!, ' Pro')
+    await user.click(within(await accountNav()).getByRole('button', { name: 'Log in' }))
+    const dialog = await screen.findByRole('dialog')
+    await user.type(within(dialog).getByLabelText(/email/i), 'ada@example.com')
+    await user.type(within(dialog).getByLabelText(/password/i), 'correct horse battery staple')
+    await user.click(within(dialog).getByRole('button', { name: /^sign in$/i }))
+
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+    expect(await screen.findByText(/You’re signed in/)).toBeTruthy()
+    expect(callsTo('POST /submissions')).toHaveLength(0)
+    expect(nameInput()?.value).toBe('Example Tool Pro')
+  })
+
+  it('a signed-in member sees who they are, not Log in / Create account', async () => {
+    renderSubmit({ 'GET /auth/me': () => json(200, { user: ADA }) })
+    expect(await screen.findByText(/You’re signed in/)).toBeTruthy()
+    expect(screen.getByRole('link', { name: 'My submissions' }).getAttribute('href')).toBe('/account/submissions')
+    expect(screen.queryByRole('navigation', { name: 'Account' })).toBeNull()
+    expect(screen.queryByText('Log in')).toBeNull()
+    expect(screen.queryByText('Create account')).toBeNull()
+  })
+
+  it('shows no account actions while loading or when the server has no accounts', async () => {
+    const { callsTo } = renderSubmit({ 'GET /auth/me': () => apiError(503, 'AUTH_UNAVAILABLE', 'x') })
+    await waitFor(() => expect(callsTo('GET /auth/me')).toHaveLength(1))
+    await waitFor(() => expect(nameInput()?.value).toBe('Example Tool'))
+    expect(screen.queryByRole('navigation', { name: 'Account' })).toBeNull()
+    expect(screen.queryByText(/You’re signed in/)).toBeNull()
+  })
+
+  it('adds no request of its own: /auth/me is read once', async () => {
+    const { callsTo } = renderSubmit(signedOut)
+    await accountNav()
+    expect(callsTo('GET /auth/me')).toHaveLength(1)
   })
 })

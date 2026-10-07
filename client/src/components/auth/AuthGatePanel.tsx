@@ -24,10 +24,12 @@ interface AuthGatePanelProps {
   onClose: () => void
   /** Shown above the form, e.g. why the gate appeared. */
   message?: string
+  /** Which form opens first. Defaults to account creation. */
+  initialMode?: AuthMode
 }
 
-export default function AuthGatePanel({ onAuthenticated, onClose, message }: AuthGatePanelProps) {
-  const [mode, setMode] = useState<AuthMode>('register')
+export default function AuthGatePanel({ onAuthenticated, onClose, message, initialMode = 'register' }: AuthGatePanelProps) {
+  const [mode, setMode] = useState<AuthMode>(initialMode)
   const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
