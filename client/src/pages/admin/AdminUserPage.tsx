@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import StatusBadge, { Chip, RoleBadge } from '@/components/admin/AdminBadges'
+import AdminButton from '@/components/admin/AdminButton'
+import { AdminPageHeader, EmptyState, Facts, Notice, Panel, ResourceView } from '@/components/admin/AdminStates'
 import AuditList from '@/components/admin/AuditList'
 import ConfirmDialog from '@/components/admin/ConfirmDialog'
-import { EmptyState, Facts, Notice, PageTitle, Panel, ResourceView } from '@/components/admin/AdminStates'
-import StatusBadge from '@/components/admin/StatusBadge'
-import Button from '@/components/ui/Button'
 import { describeError, useAdminResource, useSessionAwareAction } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchAdminUser, setUserRole } from '@/services/admin'
@@ -52,17 +52,33 @@ function RoleControl({ detail, onChanged }: { detail: AdminUserDetail; onChanged
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
+      <p className="text-[12.5px] leading-[1.55] text-[#8e88a8]">
+        Changes are applied and re-checked by the server, recorded in the audit log, and lowering a role signs the person out everywhere.
+        Tool owner follows tool ownership and is not set here.
+      </p>
       {feedback && <Notice tone={feedback.tone}>{feedback.message}</Notice>}
       <div className="flex flex-wrap gap-2" role="group" aria-label="Set role">
         {detail.assignableRoles.map((role) => (
-          <Button key={role} variant={role === effective ? 'ghost' : 'subtle'} disabled={busy || role === effective} onClick={() => setPending(role)}>
+          <AdminButton
+            key={role}
+            variant={role === effective ? 'secondary' : 'ghost'}
+            pressed={role === effective}
+            disabled={busy || role === effective}
+            onClick={() => setPending(role)}
+          >
             {ROLE_LABEL[role]}
-          </Button>
+            {role === effective && (
+              <span aria-hidden="true" className="font-mono text-[10.5px] text-[#7f7a95]">
+                current
+              </span>
+            )}
+          </AdminButton>
         ))}
       </div>
       {pending && (
         <ConfirmDialog
+          eyebrow="Privileged operation · audited"
           title={`Make ${detail.user.email} ${ROLE_LABEL[pending].toLowerCase()}?`}
           confirmLabel="Change role"
           destructive={pending === 'USER'}
@@ -79,62 +95,76 @@ function RoleControl({ detail, onChanged }: { detail: AdminUserDetail; onChanged
   )
 }
 
+function LinkList({ items, empty }: { items: { key: string; to: string; label: string; aside: ReactNode }[]; empty: string }) {
+  if (items.length === 0) return <p className="text-[13px] text-[#8e88a8]">{empty}</p>
+  return (
+    <ul className="divide-y divide-white/[0.05]">
+      {items.map((item) => (
+        <li key={item.key} className="flex flex-wrap items-center justify-between gap-2 py-2 first:pt-0 last:pb-0">
+          <Link to={item.to} className="min-w-0 truncate text-[13px] text-[#cbbaff] hover:text-ink">
+            {item.label}
+          </Link>
+          {item.aside}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 function UserView({ detail, reload }: { detail: AdminUserDetail; reload: () => void }) {
   const { user } = detail
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-      <div className="flex min-w-0 flex-col gap-6">
+    <div className="grid gap-5 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+      <div className="flex min-w-0 flex-col gap-5">
         <Panel title="Submissions">
-          {detail.submissions.length === 0 ? (
-            <p className="text-[14px] text-muted-dim">No submissions.</p>
-          ) : (
-            <ul className="flex flex-col gap-3 text-[14px]">
-              {detail.submissions.map((submission) => (
-                <li key={submission.id} className="flex flex-wrap items-center justify-between gap-2">
-                  <Link to={`/admin/submissions/${submission.id}`} className="text-accent hover:text-ink">
-                    {submission.name}
-                  </Link>
-                  <StatusBadge status={submission.status} />
-                </li>
-              ))}
-            </ul>
-          )}
+          <LinkList
+            empty="No submissions."
+            items={detail.submissions.map((submission) => ({
+              key: submission.id,
+              to: `/admin/submissions/${submission.id}`,
+              label: submission.name,
+              aside: <StatusBadge status={submission.status} />,
+            }))}
+          />
         </Panel>
         <Panel title="Owned tools">
-          {detail.ownedTools.length === 0 ? (
-            <p className="text-[14px] text-muted-dim">Owns no tools.</p>
+          <LinkList
+            empty="Owns no tools."
+            items={detail.ownedTools.map((tool) => ({
+              key: tool.id,
+              to: `/admin/tools/${tool.id}`,
+              label: tool.name,
+              aside: <span className="font-mono text-[11px] text-[#7f7a95]">since {formatDateTime(tool.ownerSince)}</span>,
+            }))}
+          />
+        </Panel>
+        <Panel title="Role and ownership history" flush>
+          {detail.history.length === 0 ? (
+            <div className="p-4">
+              <EmptyState>No admin changes to this account yet.</EmptyState>
+            </div>
           ) : (
-            <ul className="flex flex-col gap-3 text-[14px]">
-              {detail.ownedTools.map((tool) => (
-                <li key={tool.id} className="flex flex-wrap items-center justify-between gap-2">
-                  <Link to={`/admin/tools/${tool.id}`} className="text-accent hover:text-ink">
-                    {tool.name}
-                  </Link>
-                  <span className="text-[12.5px] text-muted-dim">since {formatDateTime(tool.ownerSince)}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="[&>ol]:rounded-none [&>ol]:border-0">
+              <AuditList entries={detail.history} />
+            </div>
           )}
         </Panel>
-        <Panel title="Role and ownership history">
-          {detail.history.length === 0 ? <EmptyState>No admin changes to this account yet.</EmptyState> : <AuditList entries={detail.history} />}
-        </Panel>
       </div>
-      <div className="flex min-w-0 flex-col gap-6">
+      <div className="flex min-w-0 flex-col gap-5">
         <Panel title="Account">
           <Facts
             items={[
-              ['Role', ROLE_LABEL[user.role]],
+              ['Role', <RoleBadge key="role" role={user.role} />],
               ['Name', user.name],
               ['Email verified', user.emailVerified ? 'Yes' : 'No'],
-              ['Status', user.disabled ? 'Disabled' : 'Active'],
+              ['Status', user.disabled ? <Chip key="status" tone="danger">Disabled</Chip> : <Chip key="status" tone="ok">Active</Chip>],
               ['Joined', formatDateTime(user.createdAt)],
               ['Last sign-in', user.lastLoginAt ? formatDateTime(user.lastLoginAt) : null],
             ]}
           />
         </Panel>
         {detail.assignableRoles.length > 0 && (
-          <Panel title="Change role">
+          <Panel title="Privileged operation · Super admin" actions={<Chip tone="warn">Change role</Chip>}>
             <RoleControl detail={detail} onChanged={reload} />
           </Panel>
         )}
@@ -148,22 +178,28 @@ export default function AdminUserPage() {
   useDocumentMeta(adminHead('User'))
   const { state, reload } = useAdminResource((signal) => fetchAdminUser(userId, signal), [userId])
   return (
-    <>
-      <Link to="/admin/users" className="text-[13.5px] font-medium text-muted-dim hover:text-ink">
-        ← Users
-      </Link>
-      <div className="mt-4">
-        <ResourceView state={state} onRetry={reload} what="user">
-          {(detail) => (
-            <>
-              <PageTitle title={detail.user.email} subtitle={detail.user.name ?? undefined} />
-              <div className="mt-6">
-                <UserView detail={detail} reload={reload} />
-              </div>
-            </>
-          )}
-        </ResourceView>
-      </div>
-    </>
+    <ResourceView state={state} onRetry={reload} what="user">
+      {(detail) => (
+        <>
+          <AdminPageHeader
+            crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Users', to: '/admin/users' }, { label: 'User' }]}
+            title={detail.user.email}
+            subtitle={detail.user.name ?? undefined}
+            meta={
+              <>
+                <RoleBadge role={detail.user.role} />
+                <span className="font-mono text-[11.5px] text-[#7f7a95]">
+                  {detail.user.submissionCount} submission{detail.user.submissionCount === 1 ? '' : 's'} · {detail.user.ownedToolCount} tool
+                  {detail.user.ownedToolCount === 1 ? '' : 's'}
+                </span>
+              </>
+            }
+          />
+          <div className="mt-5">
+            <UserView detail={detail} reload={reload} />
+          </div>
+        </>
+      )}
+    </ResourceView>
   )
 }

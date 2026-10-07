@@ -1,10 +1,12 @@
-import { Link, useSearchParams } from 'react-router-dom'
-import { FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
-import { EmptyState, PageTitle, ResourceView } from '@/components/admin/AdminStates'
-import StatusBadge from '@/components/admin/StatusBadge'
+import { useSearchParams } from 'react-router-dom'
+import StatusBadge from '@/components/admin/AdminBadges'
+import { FilterBar, FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
+import { AdminPageHeader, EmptyState, ResourceView } from '@/components/admin/AdminStates'
+import AdminTable from '@/components/admin/AdminTable'
 import { useAdminResource } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchAdminSubmissions } from '@/services/admin'
+import type { AdminSubmissionListItem } from '@/types/admin'
 import { ADMIN_STATUS_LABEL, adminHead, formatDateTime, SUBMISSION_STATUSES } from '@/utils/adminFormat'
 import { formatDate } from '@/utils/submissionStatus'
 
@@ -61,53 +63,72 @@ export default function AdminSubmissionsPage() {
 
   return (
     <>
-      <PageTitle title="Submissions" subtitle="Review what tool makers have submitted. Open one to approve, reject or request changes." />
+      <AdminPageHeader
+        crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Submissions' }]}
+        title="Submissions"
+        subtitle="The moderation queue. Open a submission to approve, reject or request changes."
+      />
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Search name, URL or submitter email" label="Search submissions" />
-        <FilterSelect label="Status" value={status} onChange={(value) => update({ status: value })} options={STATUS_OPTIONS} />
-        <FilterSelect
-          label="Sort"
-          value={`${sortKey}:${order}`}
-          onChange={(value) => {
-            const [sort, direction] = value.split(':')
-            update({ sort, order: direction })
-          }}
-          options={SORT_OPTIONS}
-        />
+      <div className="mt-5">
+        <FilterBar>
+          <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Name, URL or submitter email" label="Search submissions" />
+          <FilterSelect label="Status" value={status} onChange={(value) => update({ status: value })} options={STATUS_OPTIONS} />
+          <FilterSelect
+            label="Sort"
+            value={`${sortKey}:${order}`}
+            onChange={(value) => {
+              const [sort, direction] = value.split(':')
+              update({ sort, order: direction })
+            }}
+            options={SORT_OPTIONS}
+          />
+        </FilterBar>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-4">
         <ResourceView state={state} onRetry={reload} what="submissions">
           {(result) =>
             result.items.length === 0 ? (
-              <EmptyState>{q || status ? 'No submissions match these filters.' : 'No submissions yet.'}</EmptyState>
+              <EmptyState title={q || status ? 'No matches' : 'Queue is empty'}>
+                {q || status ? 'No submissions match these filters.' : 'No submissions yet. New ones appear here as tool makers submit them.'}
+              </EmptyState>
             ) : (
               <>
-                <ul aria-label="Submissions" className="flex flex-col divide-y divide-hairline rounded-panel border border-hairline">
-                  {result.items.map((item) => (
-                    <li key={item.id}>
-                      <Link
-                        to={`/admin/submissions/${item.id}`}
-                        className="grid grid-cols-1 items-center gap-x-6 gap-y-2 px-5 py-4 transition-colors duration-200 hover:bg-white/[0.04] md:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)_auto_auto]"
-                      >
+                <AdminTable<AdminSubmissionListItem>
+                  label="Submissions"
+                  template="md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.3fr)_130px_170px]"
+                  rows={result.items}
+                  rowKey={(item) => item.id}
+                  rowHref={(item) => `/admin/submissions/${item.id}`}
+                  columns={[
+                    {
+                      header: 'Submission',
+                      render: (item) => (
                         <span className="flex min-w-0 flex-col">
-                          <span className="truncate text-[15.5px] font-semibold text-ink">{item.name}</span>
-                          <span className="truncate text-[12.5px] text-muted-dim">{item.siteUrl}</span>
+                          <span className="truncate text-[13.5px] font-medium text-ink">{item.name}</span>
+                          <span className="truncate font-mono text-[11.5px] text-[#7f7a95]">{item.siteUrl}</span>
                         </span>
-                        <span className="min-w-0 truncate text-[13px] text-muted-soft">
+                      ),
+                    },
+                    {
+                      header: 'Submitter',
+                      render: (item) => (
+                        <span className="block truncate text-[12.5px] text-[#b4b0c4]">
                           {item.submitter ? item.submitter.name || item.submitter.email : 'Anonymous (legacy import)'}
                         </span>
-                        <span className="text-[12.5px] text-muted-dim" title={formatDateTime(item.submittedAt)}>
+                      ),
+                    },
+                    {
+                      header: sortKey === 'updated' ? 'Updated' : 'Submitted',
+                      render: (item) => (
+                        <span className="font-mono text-[11.5px] text-[#8e88a8]" title={formatDateTime(sortKey === 'updated' ? item.updatedAt : item.submittedAt)}>
                           {sortKey === 'updated' ? `Updated ${formatDate(item.updatedAt)}` : formatDate(item.submittedAt)}
                         </span>
-                        <span className="justify-self-start md:justify-self-end">
-                          <StatusBadge status={item.status} />
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                      ),
+                    },
+                    { header: 'Status', className: 'md:text-right', render: (item) => <StatusBadge status={item.status} /> },
+                  ]}
+                />
                 <Pagination page={result.page} pageSize={result.pageSize} total={result.total} onPage={(next) => update({ page: String(next) })} />
               </>
             )

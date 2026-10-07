@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import AdminLayout from '@/components/admin/AdminLayout'
+import AdminShell from '@/components/admin/AdminShell'
 import PageShell from '@/components/layout/PageShell'
 import AccountSubmissionsPage from '@/pages/AccountSubmissionsPage'
 import AdminAuditPage from '@/pages/admin/AdminAuditPage'
@@ -43,6 +43,23 @@ export default function App() {
         and it talks to the agent's own demo server rather than the site API.
       */}
       <Route path="news-agent-demo" element={<NewsAgentDemoPage />} />
+      {/*
+        Admin and moderation console (Phase 6). Its own frame, OUTSIDE
+        PageShell like the news-agent dashboard above: an internal operations
+        console carries none of the public site's chrome. Entered from the
+        account page, never from the public nav. AdminShell's guard is a UX
+        nicety; every /api/admin route authorizes on the server.
+      */}
+      <Route path="admin" element={<AdminShell />}>
+        <Route index element={<AdminDashboardPage />} />
+        <Route path="submissions" element={<AdminSubmissionsPage />} />
+        <Route path="submissions/:submissionId" element={<AdminSubmissionReviewPage />} />
+        <Route path="tools" element={<AdminToolsPage />} />
+        <Route path="tools/:toolId" element={<AdminToolPage />} />
+        <Route path="users" element={<AdminUsersPage />} />
+        <Route path="users/:userId" element={<AdminUserPage />} />
+        <Route path="audit" element={<AdminAuditPage />} />
+      </Route>
       <Route element={<PageShell />}>
         <Route index element={<HomePage />} />
         <Route path="browse" element={<BrowsePage />} />
@@ -61,21 +78,6 @@ export default function App() {
         <Route path="register" element={<AuthPage mode="register" />} />
         <Route path="account/submissions" element={<AccountSubmissionsPage />} />
         <Route path="account/submissions/:id" element={<SubmissionStatusPage />} />
-        {/*
-          Admin and moderation (Phase 6). Entered from the account page, not
-          the public header. AdminLayout's guard is a UX nicety; every
-          /api/admin route authorizes on the server.
-        */}
-        <Route path="admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboardPage />} />
-          <Route path="submissions" element={<AdminSubmissionsPage />} />
-          <Route path="submissions/:submissionId" element={<AdminSubmissionReviewPage />} />
-          <Route path="tools" element={<AdminToolsPage />} />
-          <Route path="tools/:toolId" element={<AdminToolPage />} />
-          <Route path="users" element={<AdminUsersPage />} />
-          <Route path="users/:userId" element={<AdminUserPage />} />
-          <Route path="audit" element={<AdminAuditPage />} />
-        </Route>
         {/* TEMPORARY — Phase 3 component verification surface, removed in Phase 11. */}
         <Route path="kitchen-sink" element={<KitchenSinkPage />} />
         {/* Keeps retired URLs (e.g. the old /pricing) inside the shell. */}

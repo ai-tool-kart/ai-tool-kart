@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
-import AdminLayout from '@/components/admin/AdminLayout'
+import AdminShell from '@/components/admin/AdminShell'
 import AuthProvider from '@/components/auth/AuthProvider'
 import AccountSubmissionsPage from '@/pages/AccountSubmissionsPage'
 import AdminAuditPage from '@/pages/admin/AdminAuditPage'
@@ -10,6 +10,7 @@ import AdminDashboardPage from '@/pages/admin/AdminDashboardPage'
 import AdminSubmissionReviewPage from '@/pages/admin/AdminSubmissionReviewPage'
 import AdminSubmissionsPage from '@/pages/admin/AdminSubmissionsPage'
 import AdminToolPage from '@/pages/admin/AdminToolPage'
+import AdminToolsPage from '@/pages/admin/AdminToolsPage'
 import AdminUserPage from '@/pages/admin/AdminUserPage'
 import { apiError, json, stubFetch, type Route as StubRoute } from '@/test/fetchStub'
 import {
@@ -39,10 +40,11 @@ function renderAt(path: string, routes: Record<string, StubRoute>) {
         <Routes>
           <Route path="/login" element={<LoginProbe />} />
           <Route path="/account/submissions" element={<AccountSubmissionsPage />} />
-          <Route path="/admin" element={<AdminLayout />}>
+          <Route path="/admin" element={<AdminShell />}>
             <Route index element={<AdminDashboardPage />} />
             <Route path="submissions" element={<AdminSubmissionsPage />} />
             <Route path="submissions/:submissionId" element={<AdminSubmissionReviewPage />} />
+            <Route path="tools" element={<AdminToolsPage />} />
             <Route path="tools/:toolId" element={<AdminToolPage />} />
             <Route path="users/:userId" element={<AdminUserPage />} />
             <Route path="audit" element={<AdminAuditPage />} />
@@ -384,8 +386,84 @@ describe('audit log', () => {
     })
     const list = await screen.findByRole('list', { name: 'Audit history' })
     expect(within(list).getByText('Checked the pricing page.')).toBeTruthy()
-    expect(within(list).getByText('Internal')).toBeTruthy()
+    expect(within(list).getByText('Admin-only')).toBeTruthy()
     expect(within(list).getByText('User → Admin')).toBeTruthy()
     expect(within(list).queryAllByRole('button')).toEqual([])
+  })
+})
+
+describe('admin console shell', () => {
+  it('is its own console: admin navigation and role, none of the public site chrome', async () => {
+    renderAt('/admin/submissions', {
+      ...as(ROOT_SUPER),
+      'GET /admin/submissions': () => json(200, { items: [], total: 0, page: 1, pageSize: 25 }),
+    })
+    await screen.findByText('Queue is empty')
+    const navs = screen.getAllByRole('navigation', { name: 'Admin sections' })
+    for (const nav of navs) {
+      expect(within(nav).getAllByRole('link').map((link) => link.textContent?.replace(/^\d+/, ''))).toEqual(['Overview', 'Submissions', 'Tools', 'Users', 'Audit log'])
+      expect(within(nav).getByRole('link', { current: 'page' }).textContent).toMatch(/Submissions/)
+    }
+    // The signed-in role is shown; the public header, ticker and CTA are not.
+    expect(screen.getAllByText('Super admin').length).toBeGreaterThan(0)
+    expect(screen.queryByText('Submit Your Tool')).toBeNull()
+    expect(screen.queryByText('View all updates')).toBeNull()
+    expect(screen.getByRole('link', { name: 'View site ↗' }).getAttribute('href')).toBe('/')
+  })
+
+  it('Sign out ends the session through the existing logout and leaves the console', async () => {
+    let signedIn = true
+    const { callsTo } = renderAt('/admin', {
+      'GET /auth/me': () => (signedIn ? json(200, { user: GRACE_ADMIN }) : apiError(401, 'UNAUTHENTICATED', 'x')),
+      'GET /admin/stats': () => json(200, adminStats()),
+      'POST /auth/logout': () => {
+        signedIn = false
+        return new Response(null, { status: 204 })
+      },
+    })
+    await userEvent.click(await screen.findByRole('button', { name: 'Sign out' }))
+    expect(await screen.findByText(/login page \?next=%2Fadmin/)).toBeTruthy()
+    expect(callsTo('POST /auth/logout')).toHaveLength(1)
+  })
+
+  it('an empty database catalogue is a normal, explained state', async () => {
+    renderAt('/admin/tools', {
+      ...as(GRACE_ADMIN),
+      'GET /admin/vocabulary': () => json(200, VOCABULARY),
+      'GET /admin/tools': () => json(200, { items: [], total: 0, page: 1, pageSize: 25 }),
+    })
+    expect(await screen.findByText('No database tools yet')).toBeTruthy()
+    expect(screen.getByText(/Draft tools appear here when a submission is approved/)).toBeTruthy()
+    expect(screen.getByRole('link', { name: 'Open the review queue' }).getAttribute('href')).toBe('/admin/submissions?status=SUBMITTED,UNDER_REVIEW')
+  })
+
+  it('does not call a submission’s own approved tool a duplicate', async () => {
+    renderAt(`/admin/submissions/${SUBMISSION_ID}`, {
+      ...as(GRACE_ADMIN),
+      [`GET /admin/submissions/${SUBMISSION_ID}`]: () =>
+        json(200, {
+          submission: submissionDetail({
+            status: 'APPROVED',
+            toolId: 'example-tool',
+            allowedActions: ['note'],
+            proposal: null,
+            duplicates: { catalogueTool: { id: 'example-tool', name: 'Example Tool', location: 'database' }, otherSubmissions: [] },
+          }),
+        }),
+    })
+    expect(await screen.findByText('Decided — internal notes only.')).toBeTruthy()
+    expect(screen.queryByText(/already has a tool at this address/)).toBeNull()
+  })
+
+  it('role changes are presented as a privileged, audited operation', async () => {
+    renderAt(`/admin/users/${ADA.id}`, {
+      ...as(ROOT_SUPER),
+      [`GET /admin/users/${ADA.id}`]: () => json(200, userDetail({ assignableRoles: ['USER', 'ADMIN', 'SUPER_ADMIN'] })),
+    })
+    expect(await screen.findByText('Privileged operation · Super admin')).toBeTruthy()
+    const group = screen.getByRole('group', { name: 'Set role' })
+    expect(within(group).getByRole('button', { name: 'User' }).getAttribute('aria-pressed')).toBe('true')
+    await userEvent.click(within(group).getByRole('button', { name: 'Admin' }))
+    expect(within(screen.getByRole('dialog')).getByText('Privileged operation · audited')).toBeTruthy()
   })
 })

@@ -1,9 +1,12 @@
-import { Link, useSearchParams } from 'react-router-dom'
-import { FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
-import { EmptyState, PageTitle, ResourceView } from '@/components/admin/AdminStates'
+import { useSearchParams } from 'react-router-dom'
+import { Chip, RoleBadge } from '@/components/admin/AdminBadges'
+import { FilterBar, FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
+import { AdminPageHeader, EmptyState, ResourceView } from '@/components/admin/AdminStates'
+import AdminTable from '@/components/admin/AdminTable'
 import { useAdminResource } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchAdminUsers } from '@/services/admin'
+import type { AdminUser } from '@/types/admin'
 import type { UserRole } from '@/types/auth'
 import { adminHead, ROLE_LABEL } from '@/utils/adminFormat'
 import { formatDate } from '@/utils/submissionStatus'
@@ -37,52 +40,85 @@ export default function AdminUsersPage() {
 
   return (
     <>
-      <PageTitle title="Users" subtitle="Accounts, their roles, submissions and owned tools." />
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Search email or name" label="Search users" />
-        <FilterSelect
-          label="Role"
-          value={role}
-          onChange={(value) => update({ role: value })}
-          options={[
-            { value: '', label: 'All roles' },
-            { value: 'ADMIN,SUPER_ADMIN', label: 'Admins' },
-            ...ROLES.map((value) => ({ value, label: ROLE_LABEL[value] })),
-          ]}
-        />
+      <AdminPageHeader
+        crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Users' }]}
+        title="Users"
+        subtitle="Accounts, their roles, submissions and owned tools."
+      />
+      <div className="mt-5">
+        <FilterBar>
+          <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Email or name" label="Search users" />
+          <FilterSelect
+            label="Role"
+            value={role}
+            onChange={(value) => update({ role: value })}
+            options={[
+              { value: '', label: 'All roles' },
+              { value: 'ADMIN,SUPER_ADMIN', label: 'Admins' },
+              ...ROLES.map((value) => ({ value, label: ROLE_LABEL[value] })),
+            ]}
+          />
+        </FilterBar>
       </div>
-      <div className="mt-6">
+      <div className="mt-4">
         <ResourceView state={state} onRetry={reload} what="users">
           {(result) =>
             result.items.length === 0 ? (
-              <EmptyState>No accounts match these filters.</EmptyState>
+              <EmptyState title="No matches">No accounts match these filters.</EmptyState>
             ) : (
               <>
-                <ul aria-label="Users" className="flex flex-col divide-y divide-hairline rounded-panel border border-hairline">
-                  {result.items.map((user) => (
-                    <li key={user.id}>
-                      <Link
-                        to={`/admin/users/${user.id}`}
-                        className="grid grid-cols-1 items-center gap-x-6 gap-y-2 px-5 py-4 transition-colors duration-200 hover:bg-white/[0.04] md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto]"
-                      >
+                <AdminTable<AdminUser>
+                  label="Users"
+                  template="md:grid-cols-[minmax(0,2.2fr)_150px_110px_110px_150px]"
+                  rows={result.items}
+                  rowKey={(user) => user.id}
+                  rowHref={(user) => `/admin/users/${user.id}`}
+                  columns={[
+                    {
+                      header: 'Account',
+                      render: (user) => (
                         <span className="flex min-w-0 flex-col">
-                          <span className="truncate text-[15px] font-semibold text-ink">{user.email}</span>
-                          <span className="truncate text-[12.5px] text-muted-dim">
-                            {user.name ?? 'No name'} · joined {formatDate(user.createdAt)}
+                          <span className="truncate text-[13.5px] font-medium text-ink">{user.email}</span>
+                          <span className="truncate text-[12px] text-[#7f7a95]">
+                            {user.name ?? 'No name'}
                             {user.disabled && ' · disabled'}
                           </span>
                         </span>
-                        <span className="text-[13px] text-muted-soft">
-                          {user.submissionCount} submission{user.submissionCount === 1 ? '' : 's'} · {user.ownedToolCount} tool
-                          {user.ownedToolCount === 1 ? '' : 's'}
+                      ),
+                    },
+                    {
+                      header: 'Role',
+                      render: (user) => (
+                        <span className="inline-flex flex-wrap gap-1.5">
+                          <RoleBadge role={user.role} />
+                          {user.disabled && <Chip tone="danger">Disabled</Chip>}
                         </span>
-                        <span className="justify-self-start rounded-tag bg-accent-wash-strong px-[10px] py-[5px] text-[11px] font-bold tracking-[0.05em] text-accent uppercase md:justify-self-end">
-                          {ROLE_LABEL[user.role]}
+                      ),
+                    },
+                    {
+                      header: 'Submissions',
+                      render: (user) => (
+                        <span className="font-mono text-[12px] text-[#b4b0c4]">
+                          {user.submissionCount}
+                          <span className="text-[#5e5a72] md:hidden"> submission{user.submissionCount === 1 ? '' : 's'}</span>
                         </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                      ),
+                    },
+                    {
+                      header: 'Tools',
+                      render: (user) => (
+                        <span className="font-mono text-[12px] text-[#b4b0c4]">
+                          {user.ownedToolCount}
+                          <span className="text-[#5e5a72] md:hidden"> tool{user.ownedToolCount === 1 ? '' : 's'} owned</span>
+                        </span>
+                      ),
+                    },
+                    {
+                      header: 'Joined',
+                      render: (user) => <span className="font-mono text-[11.5px] text-[#8e88a8]">{formatDate(user.createdAt)}</span>,
+                    },
+                  ]}
+                />
                 <Pagination page={result.page} pageSize={result.pageSize} total={result.total} onPage={(next) => update({ page: String(next) })} />
               </>
             )

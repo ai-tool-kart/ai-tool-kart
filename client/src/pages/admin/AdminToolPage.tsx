@@ -1,12 +1,11 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { CheckboxGroup } from '@/components/admin/AdminControls'
+import { AdminField, AdminSelectField, CheckboxGroup } from '@/components/admin/AdminControls'
 import AuditList from '@/components/admin/AuditList'
 import ConfirmDialog from '@/components/admin/ConfirmDialog'
-import { EmptyState, Facts, Notice, PageTitle, Panel, ResourceView } from '@/components/admin/AdminStates'
-import StatusBadge from '@/components/admin/StatusBadge'
-import Button from '@/components/ui/Button'
-import FormField from '@/components/ui/FormField'
+import StatusBadge, { Chip, RoleBadge } from '@/components/admin/AdminBadges'
+import AdminButton from '@/components/admin/AdminButton'
+import { AdminPageHeader, EmptyState, Facts, Notice, Panel, ResourceView } from '@/components/admin/AdminStates'
 import { describeError, useAdminResource, useSessionAwareAction } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import {
@@ -19,7 +18,7 @@ import {
 } from '@/services/admin'
 import { ApiRequestError } from '@/services/http'
 import type { AdminToolDetail, AdminVocabulary } from '@/types/admin'
-import { adminHead, formatDateTime, ROLE_LABEL } from '@/utils/adminFormat'
+import { adminHead, formatDateTime } from '@/utils/adminFormat'
 import { diffToolDraft, toolFieldErrors, toToolDraft, type ToolDraft } from '@/utils/adminForms'
 
 /*
@@ -44,25 +43,6 @@ const TEXT_FIELDS = [
   ['trial', 'Trial'],
   ['integr', 'Integrations'],
 ] as const
-
-function SelectField({ label, value, options, onChange, error }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void; error?: string }) {
-  return (
-    <FormField label={label} error={error}>
-      <select
-        aria-label={label}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="w-full cursor-pointer rounded-md border border-hairline-strong bg-white/[0.035] px-3 py-[11px] text-[15px] font-semibold text-ink outline-none"
-      >
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </FormField>
-  )
-}
 
 function EditForm({
   detail,
@@ -118,10 +98,10 @@ function EditForm({
       {feedback && <Notice tone={feedback.tone}>{feedback.message}</Notice>}
       <div className="grid gap-5 sm:grid-cols-2">
         {TEXT_FIELDS.map(([key, label]) => (
-          <FormField key={key} label={label} name={key} value={draft[key]} onChange={(value) => set(key, value)} error={errors[key]} />
+          <AdminField key={key} label={label} name={key} value={draft[key]} onChange={(value) => set(key, value)} error={errors[key]} />
         ))}
-        <SelectField label="Category" value={draft.cat} options={vocabulary.categories} onChange={(value) => set('cat', value)} error={errors.cat} />
-        <SelectField
+        <AdminSelectField label="Category" value={draft.cat} options={vocabulary.categories} onChange={(value) => set('cat', value)} error={errors.cat} />
+        <AdminSelectField
           label="Pricing tier"
           value={draft.pricingTier}
           options={vocabulary.pricingTiers}
@@ -132,7 +112,7 @@ function EditForm({
           }}
           error={errors.pricingTier}
         />
-        <SelectField
+        <AdminSelectField
           label="Pricing model"
           value={draft.model}
           options={vocabulary.pricingModelsByTier[draft.pricingTier] ?? vocabulary.pricingModels}
@@ -140,26 +120,26 @@ function EditForm({
           error={errors.model}
         />
       </div>
-      <FormField label="Plain line" name="plainLine" value={draft.plainLine} onChange={(value) => set('plainLine', value)} hint="Optional. Leave empty to remove." error={errors.plainLine} />
-      <FormField label="Summary" name="summary" textarea rows={4} value={draft.summary} onChange={(value) => set('summary', value)} maxLength={vocabulary.toolFields.summaryMaxChars} error={errors.summary} />
-      <FormField label="Tags" name="tags" value={draft.tags} onChange={(value) => set('tags', value)} hint="Comma-separated." error={errors.tags} />
+      <AdminField label="Plain line" name="plainLine" value={draft.plainLine} onChange={(value) => set('plainLine', value)} hint="Optional. Leave empty to remove." error={errors.plainLine} />
+      <AdminField label="Summary" name="summary" textarea rows={4} value={draft.summary} onChange={(value) => set('summary', value)} maxLength={vocabulary.toolFields.summaryMaxChars} error={errors.summary} />
+      <AdminField label="Tags" name="tags" value={draft.tags} onChange={(value) => set('tags', value)} hint="Comma-separated." error={errors.tags} />
       <CheckboxGroup name="roles" legend="Roles" options={vocabulary.roles} value={draft.roles} onChange={(value) => set('roles', value)} error={errors.roles} />
       <CheckboxGroup name="stages" legend="Workflow stages" options={vocabulary.stages} value={draft.stages} onChange={(value) => set('stages', value)} error={errors.stages} />
       <CheckboxGroup name="useCases" legend="Use cases" options={vocabulary.useCases} value={draft.useCases} onChange={(value) => set('useCases', value)} error={errors.useCases} />
-      <div className="flex flex-wrap gap-6 text-[14px] text-ink">
+      <div className="flex flex-wrap gap-6 text-[13px] text-ink">
         <label className="flex items-center gap-2">
-          <input type="checkbox" checked={draft.verified} onChange={(event) => set('verified', event.target.checked)} /> Verified
+          <input type="checkbox" className="accent-[#b49bff]" checked={draft.verified} onChange={(event) => set('verified', event.target.checked)} /> Verified
         </label>
         <label className="flex items-center gap-2">
-          <input type="checkbox" checked={draft.isMcpServer} onChange={(event) => set('isMcpServer', event.target.checked)} /> Ships an MCP server
+          <input type="checkbox" className="accent-[#b49bff]" checked={draft.isMcpServer} onChange={(event) => set('isMcpServer', event.target.checked)} /> Ships an MCP server
         </label>
       </div>
       <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit" disabled={busy || changed.length === 0}>
+        <AdminButton variant="primary" type="submit" disabled={busy || changed.length === 0}>
           Save changes
-        </Button>
-        <Button
-          variant="subtle"
+        </AdminButton>
+        <AdminButton
+          variant="ghost"
           disabled={busy || changed.length === 0}
           onClick={() => {
             setDraft(original)
@@ -167,12 +147,12 @@ function EditForm({
           }}
         >
           Discard
-        </Button>
-        <span className="text-[13px] text-muted-dim">{changed.length === 0 ? 'No unsaved changes.' : `${changed.length} unsaved change${changed.length === 1 ? '' : 's'}.`}</span>
+        </AdminButton>
+        <span className="font-mono text-[11.5px] text-[#7f7a95]">{changed.length === 0 ? 'No unsaved changes.' : `${changed.length} unsaved change${changed.length === 1 ? '' : 's'}.`}</span>
       </div>
 
       {confirming && (
-        <ConfirmDialog title="Save these changes?" confirmLabel="Save" busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => void save()}>
+        <ConfirmDialog eyebrow="Catalogue edit · audited" title="Save these changes?" confirmLabel="Save" busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => void save()}>
           <p>
             Changing <strong className="text-ink">{changed.join(', ')}</strong> on {detail.tool.name}. The edit is recorded in the audit log with
             the previous values.
@@ -225,36 +205,37 @@ function Owners({ detail, onChanged }: { detail: AdminToolDetail; onChanged: () 
     <div className="flex flex-col gap-4">
       {feedback && <Notice tone={feedback.tone}>{feedback.message}</Notice>}
       {detail.owners.length === 0 ? (
-        <p className="text-[14px] text-muted-dim">Nobody manages this tool yet.</p>
+        <p className="text-[13px] text-[#8e88a8]">Nobody manages this tool yet.</p>
       ) : (
         <ul className="flex flex-col gap-3 text-[14px]">
           {detail.owners.map((owner) => (
             <li key={owner.userId} className="flex flex-wrap items-center justify-between gap-2">
               <span className="min-w-0">
-                <Link to={`/admin/users/${owner.userId}`} className="break-all text-accent hover:text-ink">
+                <Link to={`/admin/users/${owner.userId}`} className="break-all text-[13px] text-[#cbbaff] hover:text-ink">
                   {owner.email}
                 </Link>
-                <span className="block text-[12.5px] text-muted-dim">
-                  {ROLE_LABEL[owner.role]} · since {formatDateTime(owner.ownerSince)}
+                <span className="mt-1 flex flex-wrap items-center gap-2 font-mono text-[11px] text-[#7f7a95]">
+                  <RoleBadge role={owner.role} /> since {formatDateTime(owner.ownerSince)}
                 </span>
               </span>
-              <Button variant="ghost" disabled={busy} onClick={() => setPending({ kind: 'revoke', userId: owner.userId, email: owner.email })}>
+              <AdminButton variant="danger" disabled={busy} onClick={() => setPending({ kind: 'revoke', userId: owner.userId, email: owner.email })}>
                 Remove
-              </Button>
+              </AdminButton>
             </li>
           ))}
         </ul>
       )}
       <form onSubmit={find} className="flex flex-col gap-3">
-        <FormField label="Add an owner by email" name="ownerEmail" type="email" value={email} onChange={setEmail} placeholder="name@example.com" />
+        <AdminField label="Add an owner by email" name="ownerEmail" type="email" value={email} onChange={setEmail} placeholder="name@example.com" />
         <div>
-          <Button type="submit" variant="subtle" disabled={busy || email.trim() === ''}>
+          <AdminButton type="submit" disabled={busy || email.trim() === ''}>
             Find account
-          </Button>
+          </AdminButton>
         </div>
       </form>
       {pending && (
         <ConfirmDialog
+          eyebrow="Ownership change · audited"
           title={pending.kind === 'grant' ? 'Grant ownership?' : 'Remove ownership?'}
           confirmLabel={pending.kind === 'grant' ? 'Grant ownership' : 'Remove owner'}
           destructive={pending.kind === 'revoke'}
@@ -278,13 +259,13 @@ function ToolView({ detail, onChange, reload }: { detail: AdminToolDetail; onCha
   const [notice, setNotice] = useState<{ tone: 'success' | 'error'; message: string } | null>(null)
   const { tool, meta, liveCatalogue } = detail
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       {notice && <Notice tone={notice.tone}>{notice.message}</Notice>}
       {!liveCatalogue.present && (
         <Notice>This record is not in the live catalogue, so visitors do not see it.</Notice>
       )}
       {liveCatalogue.present && !liveCatalogue.matchesDatabase && (
-        <Notice>The live catalogue serves a different version of this record. Edits saved here are not live yet.</Notice>
+        <Notice tone="warn">The live catalogue serves a different version of this record. Edits saved here are not live yet.</Notice>
       )}
       {detail.issues.length > 0 && (
         <Notice tone="error">
@@ -303,7 +284,7 @@ function ToolView({ detail, onChange, reload }: { detail: AdminToolDetail; onCha
           {detail.possibleDuplicates.map((dup, index) => (
             <span key={dup.id}>
               {index > 0 && ', '}
-              <Link to={`/admin/tools/${dup.id}`} className="font-semibold text-accent hover:text-ink">
+              <Link to={`/admin/tools/${dup.id}`} className="font-medium underline">
                 {dup.name}
               </Link>
             </span>
@@ -312,8 +293,8 @@ function ToolView({ detail, onChange, reload }: { detail: AdminToolDetail; onCha
         </Notice>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-        <div className="flex min-w-0 flex-col gap-6">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+        <div className="flex min-w-0 flex-col gap-5">
           <Panel title="Edit record">
             <ResourceView state={vocabulary.state} onRetry={vocabulary.reload} what="vocabulary">
               {(vocab) => (
@@ -333,16 +314,24 @@ function ToolView({ detail, onChange, reload }: { detail: AdminToolDetail; onCha
               )}
             </ResourceView>
           </Panel>
-          <Panel title="History">
-            {detail.history.length === 0 ? <EmptyState>No admin changes recorded yet.</EmptyState> : <AuditList entries={detail.history} showSubject={false} />}
+          <Panel title="History" flush>
+            {detail.history.length === 0 ? (
+              <div className="p-4">
+                <EmptyState>No admin changes recorded yet.</EmptyState>
+              </div>
+            ) : (
+              <div className="[&>ol]:rounded-none [&>ol]:border-0">
+                <AuditList entries={detail.history} showSubject={false} />
+              </div>
+            )}
           </Panel>
         </div>
-        <div className="flex min-w-0 flex-col gap-6">
+        <div className="flex min-w-0 flex-col gap-5">
           <Panel title="Record">
             <Facts
               items={[
                 ['Id / slug', <span key="id" className="font-mono text-[13px]">{tool.id}</span>],
-                ['Status', tool.status],
+                ['Status', <Chip key="status" tone={tool.status === 'active' ? 'ok' : 'neutral'}>{tool.status}</Chip>],
                 ['Source', meta.source === 'submission' ? 'Approved submission' : 'Seed catalogue'],
                 ['Added', tool.addedAt ?? null],
                 ['Created', formatDateTime(meta.createdAt)],
@@ -355,12 +344,12 @@ function ToolView({ detail, onChange, reload }: { detail: AdminToolDetail; onCha
           </Panel>
           <Panel title="Submissions">
             {detail.submissions.length === 0 ? (
-              <p className="text-[14px] text-muted-dim">No submissions are linked to this tool.</p>
+              <p className="text-[13px] text-[#8e88a8]">No submissions are linked to this tool.</p>
             ) : (
               <ul className="flex flex-col gap-3 text-[14px]">
                 {detail.submissions.map((submission) => (
                   <li key={submission.id} className="flex flex-wrap items-center justify-between gap-2">
-                    <Link to={`/admin/submissions/${submission.id}`} className="text-accent hover:text-ink">
+                    <Link to={`/admin/submissions/${submission.id}`} className="text-[13px] text-[#cbbaff] hover:text-ink">
                       {submission.name}
                     </Link>
                     <StatusBadge status={submission.status} />
@@ -380,22 +369,26 @@ export default function AdminToolPage() {
   useDocumentMeta(adminHead('Tool'))
   const { state, reload, setData } = useAdminResource((signal) => fetchAdminTool(toolId, signal), [toolId])
   return (
-    <>
-      <Link to="/admin/tools" className="text-[13.5px] font-medium text-muted-dim hover:text-ink">
-        ← Catalogue
-      </Link>
-      <div className="mt-4">
-        <ResourceView state={state} onRetry={reload} what="tool">
-          {(detail) => (
-            <>
-              <PageTitle title={detail.tool.name} subtitle={detail.tool.tagline} />
-              <div className="mt-6">
-                <ToolView detail={detail} onChange={setData} reload={reload} />
-              </div>
-            </>
-          )}
-        </ResourceView>
-      </div>
-    </>
+    <ResourceView state={state} onRetry={reload} what="tool">
+      {(detail) => (
+        <>
+          <AdminPageHeader
+            crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Tools', to: '/admin/tools' }, { label: detail.tool.id }]}
+            title={detail.tool.name}
+            subtitle={detail.tool.tagline}
+            meta={
+              <>
+                <Chip tone={detail.tool.status === 'active' ? 'ok' : 'neutral'}>{detail.tool.status}</Chip>
+                <Chip tone={detail.liveCatalogue.present ? 'ok' : 'warn'}>{detail.liveCatalogue.present ? 'In live catalogue' : 'Not live'}</Chip>
+                <span className="font-mono text-[11.5px] text-[#7f7a95]">Last saved {formatDateTime(detail.meta.updatedAt)}</span>
+              </>
+            }
+          />
+          <div className="mt-5">
+            <ToolView detail={detail} onChange={setData} reload={reload} />
+          </div>
+        </>
+      )}
+    </ResourceView>
   )
 }

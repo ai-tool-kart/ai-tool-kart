@@ -1,9 +1,8 @@
 import { useState, type FormEvent } from 'react'
-import { CheckboxGroup } from '@/components/admin/AdminControls'
+import AdminButton from '@/components/admin/AdminButton'
+import { AdminField, CheckboxGroup } from '@/components/admin/AdminControls'
 import { Notice, Panel, ResourceView } from '@/components/admin/AdminStates'
 import ConfirmDialog from '@/components/admin/ConfirmDialog'
-import Button from '@/components/ui/Button'
-import FormField from '@/components/ui/FormField'
 import { describeError, useAdminResource, useSessionAwareAction } from '@/hooks/useAdminResource'
 import { approveSubmission, fetchAdminVocabulary } from '@/services/admin'
 import { ApiRequestError } from '@/services/http'
@@ -78,15 +77,16 @@ function Form({
   return (
     <Panel title="Approve into the catalogue">
       <form onSubmit={review} className="flex flex-col gap-5" aria-label="Approval">
-        <p className="text-[14px] leading-[1.6] text-muted-soft">
+        <Notice tone="info">
           Approving creates a <strong className="text-ink">draft</strong> catalogue record from this submission and makes the submitter its
           owner. It does not publish anything to the live site.
-        </p>
+        </Notice>
         {message && <Notice tone="error">{message}</Notice>}
         <div className="grid gap-5 sm:grid-cols-2">
-          <FormField
+          <AdminField
             label="Slug (catalogue id)"
             name="slug"
+            mono
             value={fields.slug}
             onChange={(value) => set('slug', value)}
             maxLength={limits.slugMaxChars}
@@ -94,7 +94,7 @@ function Form({
             error={errors.slug}
             required
           />
-          <FormField
+          <AdminField
             label="Monogram"
             name="mono"
             value={fields.mono}
@@ -104,7 +104,7 @@ function Form({
             error={errors.mono}
             required
           />
-          <FormField
+          <AdminField
             label="Price"
             name="price"
             value={fields.price}
@@ -113,7 +113,7 @@ function Form({
             error={errors.price}
             required
           />
-          <FormField
+          <AdminField
             label="Prominence (pop)"
             name="pop"
             type="number"
@@ -124,7 +124,7 @@ function Form({
             required
           />
         </div>
-        <FormField
+        <AdminField
           label="Summary"
           name="summary"
           textarea
@@ -136,7 +136,7 @@ function Form({
           error={errors.summary}
           required
         />
-        <FormField
+        <AdminField
           label="Tags"
           name="tags"
           value={tagsText}
@@ -149,19 +149,19 @@ function Form({
         <CheckboxGroup name="stages" legend="Workflow stages" options={vocabulary.stages} value={fields.stages} onChange={(value) => set('stages', value)} error={errors.stages} />
         <CheckboxGroup name="useCases" legend="Use cases" options={vocabulary.useCases} value={fields.useCases} onChange={(value) => set('useCases', value)} error={errors.useCases} />
         <div className="flex flex-wrap gap-3">
-          <Button type="submit" disabled={busy}>
+          <AdminButton variant="primary" type="submit" disabled={busy}>
             Review approval
-          </Button>
-          <Button variant="subtle" onClick={onCancel} disabled={busy}>
+          </AdminButton>
+          <AdminButton variant="ghost" onClick={onCancel} disabled={busy}>
             Cancel
-          </Button>
+          </AdminButton>
         </div>
       </form>
 
       {confirming && (
-        <ConfirmDialog title="Approve this submission?" confirmLabel="Approve and create draft" busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => void approve()}>
+        <ConfirmDialog eyebrow="Moderation decision" title="Approve this submission?" confirmLabel="Approve and create draft" busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => void approve()}>
           <p>
-            A draft catalogue record <strong className="text-ink">{fields.slug || '—'}</strong> will be created for {submission.name}
+            A draft catalogue record <strong className="font-mono text-ink">{fields.slug || '—'}</strong> will be created for {submission.name}
             {submission.submitter ? <>, owned by {submission.submitter.email}</> : null}. This decision cannot be undone from here.
           </p>
         </ConfirmDialog>

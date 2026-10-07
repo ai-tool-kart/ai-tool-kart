@@ -1,16 +1,17 @@
 import { useEffect, useId, useRef, type ReactNode } from 'react'
-import Button from '@/components/ui/Button'
+import AdminButton from '@/components/admin/AdminButton'
+import { LABEL } from '@/components/admin/adminTheme'
 
 /*
  * A modal confirmation for consequential admin actions (approve, reject,
- * role changes, ownership removal).
+ * role changes, ownership removal, saves).
  *
  * A div with role="dialog" + aria-modal rather than <dialog>.showModal():
  * the test environment (jsdom) does not implement showModal, and this needs
  * only three behaviours — focus moves in, Escape cancels, the backdrop
  * cancels — which are cheap to provide directly. While `busy`, nothing
  * cancels and the confirm button is disabled, so a double click cannot send
- * the action twice.
+ * the action twice. It scrolls inside itself, so it always fits a phone.
  */
 
 interface ConfirmDialogProps {
@@ -22,8 +23,10 @@ interface ConfirmDialogProps {
   busy?: boolean
   /** Disables confirm (e.g. a required reason is still empty). */
   confirmDisabled?: boolean
-  /** Red-toned confirm for refusals and removals. */
+  /** Red confirm and header for refusals and removals. */
   destructive?: boolean
+  /** Small label above the title, e.g. "Privileged operation". */
+  eyebrow?: string
 }
 
 export default function ConfirmDialog({
@@ -35,6 +38,7 @@ export default function ConfirmDialog({
   busy = false,
   confirmDisabled = false,
   destructive = false,
+  eyebrow,
 }: ConfirmDialogProps) {
   const titleId = useId()
   const panel = useRef<HTMLDivElement>(null)
@@ -53,31 +57,31 @@ export default function ConfirmDialog({
   }, [busy, onCancel])
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center p-4">
-      <div aria-hidden="true" className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" onClick={() => !busy && onCancel()} />
+    <div className="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4">
+      <div aria-hidden="true" className="absolute inset-0 bg-black/75" onClick={() => !busy && onCancel()} />
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative w-full max-w-[520px] rounded-panel border border-hairline-strong bg-[#0d0b13] p-6 shadow-nav"
+        className={`relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-[520px] flex-col overflow-hidden rounded-[8px] border bg-[#0b0b0f] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.9)] ${
+          destructive ? 'border-[#f87171]/30' : 'border-white/[0.12]'
+        }`}
       >
-        <h2 id={titleId} className="text-[20px] font-semibold tracking-[-0.02em] text-ink">
-          {title}
-        </h2>
-        {children && <div className="mt-3 flex flex-col gap-4 text-[14.5px] leading-[1.6] text-muted-soft">{children}</div>}
-        <div className="mt-6 flex flex-wrap justify-end gap-3">
-          <Button variant="subtle" onClick={onCancel} disabled={busy}>
+        <div className={`border-b px-5 pt-4 pb-3 ${destructive ? 'border-[#f87171]/20' : 'border-white/[0.06]'}`}>
+          {eyebrow && <p className={`${LABEL} mb-1 ${destructive ? 'text-[#f9a3a3]' : ''}`}>{eyebrow}</p>}
+          <h2 id={titleId} className="text-[16px] font-semibold tracking-[-0.01em] text-ink">
+            {title}
+          </h2>
+        </div>
+        {children && <div className="flex flex-col gap-4 overflow-y-auto px-5 py-4 text-[13.5px] leading-[1.6] text-[#b4b0c4]">{children}</div>}
+        <div className="flex flex-wrap justify-end gap-2 border-t border-white/[0.06] bg-white/[0.01] px-5 py-3">
+          <AdminButton variant="ghost" onClick={onCancel} disabled={busy}>
             Cancel
-          </Button>
-          <Button
-            variant="gradient"
-            onClick={onConfirm}
-            disabled={busy || confirmDisabled}
-            className={destructive ? 'bg-none! bg-[#c43d63]! shadow-none!' : ''}
-          >
+          </AdminButton>
+          <AdminButton variant={destructive ? 'dangerSolid' : 'primary'} onClick={onConfirm} disabled={busy || confirmDisabled}>
             {busy ? 'Working…' : confirmLabel}
-          </Button>
+          </AdminButton>
         </div>
       </div>
     </div>

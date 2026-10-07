@@ -1,27 +1,34 @@
-import { Link, useSearchParams } from 'react-router-dom'
-import { FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
-import { EmptyState, Notice, PageTitle, ResourceView } from '@/components/admin/AdminStates'
+import { useSearchParams } from 'react-router-dom'
+import { Chip } from '@/components/admin/AdminBadges'
+import AdminButton from '@/components/admin/AdminButton'
+import { FilterBar, FilterSelect, Pagination, SearchBox } from '@/components/admin/AdminControls'
+import { AdminPageHeader, EmptyState, Notice, ResourceView } from '@/components/admin/AdminStates'
+import AdminTable from '@/components/admin/AdminTable'
 import { useAdminResource } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchAdminTools, fetchAdminVocabulary } from '@/services/admin'
+import type { AdminToolListItem } from '@/types/admin'
 import { adminHead } from '@/utils/adminFormat'
 
 /*
  * /admin/tools — the database catalogue. The note at the top is not
- * decoration: the public site still reads the bundled catalogue, so an edit
- * saved here is not live, and moderators must never be left to assume it is.
+ * decoration: the public site still reads the bundled catalogue, so a record
+ * here (an approval's draft, an edit) is not live, and moderators must never
+ * be left to assume it is. An empty list is a normal state: database tools
+ * are created by approving submissions.
  */
 
 const PAGE_SIZE = 25
 
 export default function AdminToolsPage() {
-  useDocumentMeta(adminHead('Catalogue'))
+  useDocumentMeta(adminHead('Tools'))
   const [params, setParams] = useSearchParams()
   const q = params.get('q') ?? ''
   const status = params.get('status') ?? ''
   const source = params.get('source') ?? ''
   const category = params.get('category') ?? ''
   const page = Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1)
+  const filtered = Boolean(q || status || source || category)
 
   const update = (changes: Record<string, string>) => {
     const next = new URLSearchParams(params)
@@ -53,89 +60,125 @@ export default function AdminToolsPage() {
 
   return (
     <>
-      <PageTitle title="Catalogue" subtitle="Review and correct catalogue records. Nothing is ever deleted here." />
+      <AdminPageHeader
+        crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Tools' }]}
+        title="Tools"
+        subtitle="The database catalogue: review and correct records. Nothing is ever deleted here."
+      />
       <div className="mt-5">
         <Notice>
-          The public site still serves the bundled catalogue. Edits and approvals saved here update the database catalogue, which is not yet
-          what visitors see. Each tool page shows whether its live record differs.
+          The public site still serves the bundled catalogue. Records here — approval drafts and edits — are not yet what visitors see.
+          Each tool page shows whether its live record differs.
         </Notice>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Search name, id or URL" label="Search tools" />
-        <FilterSelect
-          label="Category"
-          value={category}
-          onChange={(value) => update({ category: value })}
-          options={[{ value: '', label: 'All categories' }, ...categories.map((name) => ({ value: name, label: name }))]}
-        />
-        <FilterSelect
-          label="Status"
-          value={status}
-          onChange={(value) => update({ status: value })}
-          options={[
-            { value: '', label: 'Any status' },
-            { value: 'active', label: 'Active' },
-            { value: 'draft', label: 'Draft' },
-          ]}
-        />
-        <FilterSelect
-          label="Source"
-          value={source}
-          onChange={(value) => update({ source: value })}
-          options={[
-            { value: '', label: 'Any source' },
-            { value: 'seed', label: 'Seed catalogue' },
-            { value: 'submission', label: 'From a submission' },
-          ]}
-        />
+      <div className="mt-4">
+        <FilterBar>
+          <SearchBox value={q} onSearch={(value) => update({ q: value })} placeholder="Name, id or URL" label="Search tools" />
+          <FilterSelect
+            label="Category"
+            value={category}
+            onChange={(value) => update({ category: value })}
+            options={[{ value: '', label: 'All categories' }, ...categories.map((name) => ({ value: name, label: name }))]}
+          />
+          <FilterSelect
+            label="Status"
+            value={status}
+            onChange={(value) => update({ status: value })}
+            options={[
+              { value: '', label: 'Any status' },
+              { value: 'active', label: 'Active' },
+              { value: 'draft', label: 'Draft' },
+            ]}
+          />
+          <FilterSelect
+            label="Source"
+            value={source}
+            onChange={(value) => update({ source: value })}
+            options={[
+              { value: '', label: 'Any source' },
+              { value: 'seed', label: 'Seed catalogue' },
+              { value: 'submission', label: 'From approval' },
+            ]}
+          />
+        </FilterBar>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-4">
         <ResourceView state={state} onRetry={reload} what="tools">
           {(result) =>
             result.items.length === 0 ? (
-              <EmptyState>No tools match these filters.</EmptyState>
+              filtered ? (
+                <EmptyState title="No matches">No tools match these filters.</EmptyState>
+              ) : (
+                <EmptyState
+                  title="No database tools yet"
+                  action={
+                    <AdminButton to="/admin/submissions?status=SUBMITTED,UNDER_REVIEW" variant="primary">
+                      Open the review queue
+                    </AdminButton>
+                  }
+                >
+                  Draft tools appear here when a submission is approved. The public catalogue is served from the bundled catalogue and isn’t
+                  listed here.
+                </EmptyState>
+              )
             ) : (
               <>
-                <ul aria-label="Tools" className="flex flex-col divide-y divide-hairline rounded-panel border border-hairline">
-                  {result.items.map((tool) => (
-                    <li key={tool.id}>
-                      <Link
-                        to={`/admin/tools/${tool.id}`}
-                        className="grid grid-cols-1 items-center gap-x-6 gap-y-2 px-5 py-4 transition-colors duration-200 hover:bg-white/[0.04] md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto]"
-                      >
+                <AdminTable<AdminToolListItem>
+                  label="Tools"
+                  template="md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_90px_minmax(0,1.2fr)]"
+                  rows={result.items}
+                  rowKey={(tool) => tool.id}
+                  rowHref={(tool) => `/admin/tools/${tool.id}`}
+                  columns={[
+                    {
+                      header: 'Tool',
+                      render: (tool) => (
                         <span className="flex min-w-0 flex-col">
-                          <span className="truncate text-[15.5px] font-semibold text-ink">{tool.name}</span>
-                          <span className="truncate font-mono text-[12px] text-muted-dim">{tool.id}</span>
+                          <span className="truncate text-[13.5px] font-medium text-ink">{tool.name}</span>
+                          <span className="truncate font-mono text-[11.5px] text-[#7f7a95]">{tool.id}</span>
                         </span>
-                        <span className="text-[13px] text-muted-soft">
+                      ),
+                    },
+                    {
+                      header: 'Category',
+                      render: (tool) => (
+                        <span className="text-[12.5px] text-[#b4b0c4]">
                           {tool.cat} · {tool.model}
-                          {tool.ownerCount > 0 && ` · ${tool.ownerCount} owner${tool.ownerCount === 1 ? '' : 's'}`}
                         </span>
-                        <span className="flex flex-wrap gap-2 md:justify-end">
+                      ),
+                    },
+                    {
+                      header: 'Owners',
+                      render: (tool) => (
+                        <span className="font-mono text-[12px] text-[#b4b0c4]">
+                          {tool.ownerCount}
+                          <span className="text-[#5e5a72] md:hidden"> owner{tool.ownerCount === 1 ? '' : 's'}</span>
+                        </span>
+                      ),
+                    },
+                    {
+                      header: 'State',
+                      className: 'md:text-right',
+                      render: (tool) => (
+                        <span className="inline-flex flex-wrap gap-1.5 md:justify-end">
                           {tool.issueCount > 0 && (
-                            <span className="rounded-tag bg-pink-bg px-[10px] py-[5px] text-[11px] font-bold tracking-[0.05em] text-pink uppercase">
+                            <Chip tone="danger">
                               {tool.issueCount} issue{tool.issueCount === 1 ? '' : 's'}
-                            </span>
+                            </Chip>
                           )}
                           {tool.source === 'submission' && (
-                            <span className="rounded-tag bg-white/[0.07] px-[10px] py-[5px] text-[11px] font-bold tracking-[0.05em] text-muted-soft uppercase">
-                              Submitted
-                            </span>
+                            <Chip tone="info" dot={false}>
+                              Via approval
+                            </Chip>
                           )}
-                          <span
-                            className={`rounded-tag px-[10px] py-[5px] text-[11px] font-bold tracking-[0.05em] uppercase ${
-                              tool.status === 'active' ? 'bg-accent-wash-strong text-accent' : 'bg-white/[0.07] text-muted-soft'
-                            }`}
-                          >
-                            {tool.status}
-                          </span>
+                          <Chip tone={tool.status === 'active' ? 'ok' : 'neutral'}>{tool.status}</Chip>
                         </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                      ),
+                    },
+                  ]}
+                />
                 <Pagination page={result.page} pageSize={result.pageSize} total={result.total} onPage={(next) => update({ page: String(next) })} />
               </>
             )

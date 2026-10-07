@@ -1,14 +1,14 @@
 import { useSearchParams } from 'react-router-dom'
-import { FilterSelect, Pagination } from '@/components/admin/AdminControls'
+import { FilterBar, FilterSelect, Pagination } from '@/components/admin/AdminControls'
+import { AdminPageHeader, EmptyState, ResourceView } from '@/components/admin/AdminStates'
 import AuditList from '@/components/admin/AuditList'
-import { EmptyState, PageTitle, ResourceView } from '@/components/admin/AdminStates'
 import { useAdminResource } from '@/hooks/useAdminResource'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { fetchAuditLog } from '@/services/admin'
 import { adminHead } from '@/utils/adminFormat'
 
 /*
- * /admin/audit — the merged, read-only audit timeline. Entries cannot be
+ * /admin/audit — the merged, read-only activity stream. Entries cannot be
  * edited or removed: the tables are append-only in the database and the API
  * has no route that would try.
  */
@@ -34,24 +34,30 @@ export default function AdminAuditPage() {
 
   return (
     <>
-      <PageTitle title="Audit log" subtitle="Every submission event and administrative action, newest first. Read-only." />
-      <div className="mt-6 flex flex-wrap gap-3">
-        <FilterSelect
-          label="Show"
-          value={kind}
-          onChange={(value) => update({ kind: value })}
-          options={[
-            { value: 'all', label: 'Everything' },
-            { value: 'submission', label: 'Submission events' },
-            { value: 'admin', label: 'Catalogue and account changes' },
-          ]}
-        />
+      <AdminPageHeader
+        crumbs={[{ label: 'Admin', to: '/admin' }, { label: 'Audit log' }]}
+        title="Audit log"
+        subtitle="Every submission event and administrative action, newest first. Append-only and read-only."
+      />
+      <div className="mt-5">
+        <FilterBar>
+          <FilterSelect
+            label="Show"
+            value={kind}
+            onChange={(value) => update({ kind: value })}
+            options={[
+              { value: 'all', label: 'Everything' },
+              { value: 'submission', label: 'Submission events' },
+              { value: 'admin', label: 'Catalogue and account changes' },
+            ]}
+          />
+        </FilterBar>
       </div>
-      <div className="mt-6">
+      <div className="mt-4">
         <ResourceView state={state} onRetry={reload} what="audit entries">
           {(result) =>
             result.items.length === 0 ? (
-              <EmptyState>Nothing recorded yet.</EmptyState>
+              <EmptyState title="Nothing recorded yet">Moderation decisions, notes and admin changes appear here as they happen.</EmptyState>
             ) : (
               <>
                 <AuditList entries={result.items} />
